@@ -1,6 +1,8 @@
                                   README
 
-   Welcome to pydepro. The motivation for this project was to create a modern
+        NOTE: NOT all items are functional, please do not use yet.
+ 
+   Welcome to PyEdPro. The motivation for this project was to create a modern
 multi-platform editor. Simple, powerful, configurable, extendable.
 
  This project is a successor of pyedit, after porting it to GTK3.
@@ -9,7 +11,7 @@ Working platforms currently are: Win 7 .. Win 10 Centos 6 .. 7 Ubunto 14 ... 16
 (all linux platforms) Msys, Msys2, Mingw, Raspberry PI ... practically
  anywhere PyGTK can run.
   
-   pydepro.py has macro recording/play, search/replace, functional navigation,
+   PyEdPro.py has macro recording/play, search/replace, functional navigation,
 comment/string spell check, auto backup, persistent undo/redo, auto complete,
 auto correct, syntax check, spell suggestion ... and a lot more.
 
@@ -23,33 +25,32 @@ The default key map resembles gedit / wed / etp / brief. Full ASCII;
   See KEYS file for the list of keyboard shortcuts or press F3 in the
 editor or look at the file in pyedlib/KEYS.
 
-  On initial start, pydepro shows a left pane and a top pane. The left pane 
+  On initial start, PyEdPro shows a left pane and a top pane. The left pane 
 is for function summary and the top pane is for double view of the same file.
 (to see the caller and the callee) These panes can be hidden with the mouse by 
 dragging on their handle, or by the key combination Alt-Q (Shift-Alt-Q for
 the left pane) 
 
- pydepro remembers a lot about your editing. Loaded files, cursor positions,
+ PyEdPro remembers a lot about your editing. Loaded files, cursor positions,
 fonts, font size, colors, search strings, goto numbers, undo / redo info.
-It is all stored in ~/.pydepro. You may safely delete that directory to start
- pydepro with no memory of what has been done.
+It is all stored in ~/.PyEdPro. You may safely delete that directory to start
+ PyEdPro with no memory of what has been done.
 
-  Starting pydepro with no command line arguments will put you back to the 
+  Starting PyEdPro with no command line arguments will put you back to the 
  previous session, exactly as you left off.
 
  The editor will work on Windows, and can open UNIX and Windows files
 transparently. It will save the file as the current platform's native 
 convention dictates.
 
-  Developer's note: in order to make pydepro multi platform, we save
-the configuration info into a SQLite database in the ~/.pydepro directory.
- 
- Timings. On a 2.x GHz AMD the spell checker runs at 5-30 msec, the spell 
-suggestion runs on 100-1100 msec. Go python.
+  Developer's note: in order to make PyEdPro multi platform, we save
+the configuration info into a SQLite database in the ~/.PyEdPro directory.
 
  Contributors are welcome. Requires pygtk.
 
 UPDATES:
+
+   PyGTK 3 changed a lot of things ... workig on port
 
    PyGTK 2.24 (latest at the time of writing) has a bug on not delivering
 double click to the window. Down-graded to 2.22.x, works flawlessly.
@@ -62,7 +63,7 @@ for the other arrows (like in vim) so the defective keys are substituted
 with vi compatible navigation.
 
   On request of one of my clients, I needed to create a time sheet. So I
-extended pydepro to create a work log. 
+extended PyEdPro to create a work log. 
 
 The log contains the following elements:
 
@@ -71,10 +72,10 @@ The files have been created to be machine parsable.
  
  Example log entry:
  
-Action: Started pydepro
+Action: Started PyEdPro
 On: Tue May 08 16:44:37 2018
 
-Action: Ended pydepro
+Action: Ended PyEdPro
 On: Tue May 08 17:14:21 2018
 Time diff: 1784 0:29
 
@@ -90,9 +91,9 @@ On: Thu Jun 28 14:49:18 2018
 Delta: 5
 Date: 1530211759 httpd.c Closed
 
- The files are located at ~/.pydepro/log/account.txt and ~/.pydepro/log/timesheet.txt
+ The files are located at ~/.PyEdPro/log/account.txt and ~/.PyEdPro/log/timesheet.txt
  (the '~/' stands for your home directory. On windows it is 
- C:\Users\<UserName>\ ...) Example: 'C:\Users\PeterGlen\.pydepro\'
+ C:\Users\<UserName>\ ...) Example: 'C:\Users\PeterGlen\.PyEdPro\'
 
 UPDATES:
 
@@ -104,17 +105,6 @@ with one keystroke.  (Like collecting function headers.) Th first clipboard buff
 
 UPDATES:
 
-  jul/19/2018   Coloring improved for spell check. Trigger by scroll, more dominant 
-                (darker) red color.
- 
-  aug/16/2018   Alt - Arrow (Left/Right) on search string recalls last searches.
-                
-  aug/19/2018   Additional navigation window, extracted from local scope.
-                
+  sep/16/2018   Port to GTP3 started
  
   Peter Glen
-
-
-
-
-
