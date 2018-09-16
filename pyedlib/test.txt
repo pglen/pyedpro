@@ -1,0 +1,16 @@
+
+Line with TAB
+
+	Tab here, click
+
+        
+    if piter2:
+        win2.tree.set_cursor(win2.treestore.get_path(piter2))
+    else:
+        root = win2.treestore.get_iter_first() 
+        win2.tree.set_cursor(win2.treestore.get_path(root))                                                             
+        win2.tree.set_cursor(win2.store.get_path(root))
+
+
+
+

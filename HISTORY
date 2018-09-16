@@ -1,0 +1,75 @@
+                            HISTORY
+
+ This is a non exhaustive list of changes in the pyedit project.
+ 
+v003:
+    Misc
+v004:
+    Char add, nav, select
+v005:
+    Added find
+v006:
+    Added pos persistence, Added pane persistence    
+    Open, New, Save added
+v007:
+    Added undo / redo, Tab / sel tab
+    Auto complete
+v008:
+   Cut / Paste
+v009:
+    Spell check
+v010:
+    Undo / Pedo
+v011:
+    Begun to use to edit the editor itself
+v012:
+    Install etc ...
+v013:
+    Converted gconf to sqlite
+v014:
+    Swap words, Cleanup
+v015:
+    Spell, Syntax check
+    
+v020:
+    Misc
+    
+v021:
+    Corrected TAB display
+    Search / Replace backwards for correctness
+    Auto coloring off if not "c","py"
+
+v022:
+    Search / Replace corrected for same line match
+    
+v023:
+    Auto coloring on if sh
+    Eradicated pesky \n from messing up pango
+
+v024:
+   Some cleanup
+   
+v025:
+    Writing to a read only file now has a better error message
+    Added a long line wrapper. Wrapping to col 78 or less
+    
+v026:
+    White background forced. It's an editor ... no fancy coloring needed.
+    If you want custom color see variable BGCOLOR
+    
+v027:
+    Start from current dir on open / save as ... It was inconsistent 
+    between platforms, current directory forced.
+      
+ ....
+ ....
+
+v033:
+    Lots of new features, cleanup. Tablet like mouse handling. Drag now behaves as
+    one would expect it on a tablet.
+
+v034:
+    VIM like navigation keys. Tabbing through docs on Alt-arrow(s), Misc fixes
+
+
+

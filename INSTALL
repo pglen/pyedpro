@@ -1,0 +1,27 @@
+                              INSTALL
+                              
+   Just type 'make install'. You need to be root to install pyedit.
+(sudo ./install.py will work just as well)
+   
+   PyEdit requires gnome libs, GTK, pyGTK and related libraries. Most distros
+come with them pre-installed, so pyedit.py should run on most any system including
+Linux, Windoze and Macz. One of the motivations, of course is to have the same text
+editor on all platforms. (Pyedit is tested on Linux and Windows)
+
+ To display the keymap and documentation, pyedit needs pangview.py (included)
+     
+  If you do not have root access, pyedit will run from any directory, provided
+that the subdirectory pyedlib is under the directory pyedit.py is in.
+
+ You may also install pyedit in the user's private bin directory 
+ (if it is in the user's path) with the command like cp -a * ~/bin
+ 
+
+                                 
+
+
+
+
+
+
+

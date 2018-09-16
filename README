@@ -1,0 +1,119 @@
+                                  README
+
+   Welcome to pyedit. The motivation for this project was to create a modern
+multi-platform editor. Simple, powerful, configurable, extendable.
+
+  *** NEW ***: Tested it on the Raspberry PI. Works as expected, without 
+installing anything extra. Now we have an advanced editor on the PI. The
+platforms currently are: Win 7 .. Win 10 Centos 6 .. 7 Ubunto 14 ... 16
+(all linux platforms) Msys, Msys2, Mingw, Raspberry PI ... practically
+ anywhere PyGTK can run.
+  
+   PyEdit.py has macro recording/play, search/replace, functional navigation,
+comment/string spell check, auto backup, persistent undo/redo, auto complete,
+auto correct, syntax check, spell suggestion ... and a lot more.
+
+   It is fast, it is extendable, as python lends itself to easy tinkering. The
+editor has a table driven key mapping. One can easily edit the key map in
+keyhand.py, and the key actions in acthand.py
+
+The default key map resembles gedit / wed / etp / brief. Full ASCII; 
+ Any fixed font can be configured. 
+
+  See KEYS file for the list of keyboard shortcuts or press F3 in the
+editor or look at the file in pyedlib/KEYS.
+
+  On initial start, pyedit shows a left pane and a top pane. The left pane 
+is for function summary and the top pane is for double view of the same file.
+(to see the caller and the callee) These panes can be hidden with the mouse by 
+dragging on their handle, or by the key combination Alt-Q (Shift-Alt-Q for
+the left pane) 
+
+ PyEdit remembers a lot about your editing. Loaded files, cursor positions,
+fonts, font size, colors, search strings, goto numbers, undo / redo info.
+It is all stored in ~/.pyedit. You may safely delete that directory to start
+ pyEdit with no memory of what has been done.
+
+  Starting PyEdit with no command line arguments will put you back to the 
+ previous session, exactly as you left off.
+
+ The editor will work on Windows, and can open UNIX and Windows files
+transparently. It will save the file as the current platform's native 
+convention dictates.
+
+  Developer's note: in order to make PyEdit multi platform, we save
+the configuration info into a SQLite database in the ~/.pyedit directory.
+ 
+ Timings. On a 2.x GHz AMD the spell checker runs at 5-30 msec, the spell 
+suggestion runs on 100-1100 msec. Go python.
+
+ Contributors are welcome. Requires pygtk.
+
+UPDATES:
+
+   PyGTK 2.24 (latest at the time of writing) has a bug on not delivering
+double click to the window. Down-graded to 2.22.x, works flawlessly.
+
+   Lots of functions added. Attempted to make it tablet friendly. Drag
+on screen now does what you would expect from a tablet.
+
+   My laptop keyboard broke, so I added Ctrl-H for left arrow j, k, l
+for the other arrows (like in vim) so the defective keys are substituted 
+with vi compatible navigation.
+
+  On request of one of my clients, I needed to create a time sheet. So I
+extended pyedit to create a work log. 
+
+The log contains the following elements:
+
+ Start time, End time, Time of file Open, time of file Save. 
+The files have been created to be machine parsable.
+ 
+ Example log entry:
+ 
+Action: Started pyedit
+On: Tue May 08 16:44:37 2018
+
+Action: Ended pyedit
+On: Tue May 08 17:14:21 2018
+Time diff: 1784 0:29
+
+ Example timesheet entry:
+ 
+ Action: Opened File C:\msys32\home\peterglen\esp\esp-code\wclock\v010\common\v000\httpd.c
+On: Thu Jun 28 14:49:13 2018
+Delta: 0
+Date: 1530211753 httpd.c Opened
+
+Action: Closed File C:\msys32\home\peterglen\esp\esp-code\wclock\v010\common\v000\httpd.c
+On: Thu Jun 28 14:49:18 2018
+Delta: 5
+Date: 1530211759 httpd.c Closed
+
+ The files are located at ~/.pyedit/log/account.txt and ~/.pyedit/log/timesheet.txt
+ (the '~/' stands for your home directory. On windows it is 
+ C:\Users\<UserName>\ ...) Example: 'C:\Users\PeterGlen\.pyedit\'
+
+UPDATES:
+
+  Implemented multiple clipboards. The key combination Ctrl-0 to Ctrl-8 switches
+clipboard buffers. Switching to buffer 9 (Ctrl-9) yields the sum of all clipboards 
+from 1-8. This is useful on collecting parts of the file, and unifying it 
+with one keystroke.  (Like collecting function headers.) Th first clipboard buffer
+(Ctrl-0) is the same as the OS clipboard.
+
+UPDATES:
+
+  jul/19/2018   Coloring improved for spell check. Trigger by scroll, more dominant 
+                (darker) red color.
+ 
+  aug/16/2018   Alt - Arrow (Left/Right) on search string recalls last searches.
+                
+  aug/19/2018   Additional navigation window, extracted from local scope.
+                
+ 
+  Peter Glen
+
+
+
+
