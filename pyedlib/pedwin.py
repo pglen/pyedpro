@@ -739,12 +739,13 @@ class EdMainWindow():
 
     # Traditional open file
     def open(self):
-        but =   "Cancel", Gtk.BUTTONS_CANCEL, "Open File", Gtk.BUTTONS_OK
+        but =   "Cancel", Gtk.ButtonsType.CANCEL,\
+         "Open File", Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog("Open file", self.window, \
-            Gtk.FILE_CHOOSER_ACTION_OPEN  \
+             Gtk.FileChooserAction.OPEN  \
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
-        fc.set_default_response(Gtk.BUTTONS_OK)
+        fc.set_default_response(Gtk.ButtonsType.OK)
         fc.set_current_folder(os.getcwd())
         fc.connect("response", self.done_open_fc)
         fc.connect("current-folder-changed", self.folder_ch )
@@ -1020,7 +1021,7 @@ class EdMainWindow():
 
     def done_open_fc(self, win, resp):
         #print "done_open_fc", win, resp
-        if resp == Gtk.BUTTONS_OK:
+        if resp == Gtk.ButtonsType.OK:
             fname = win.get_filename()
             if not fname:
                 #print "Must have filename"
@@ -1100,7 +1101,7 @@ class EdMainWindow():
 
         if active:
             dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
-                Gtk.MESSAGE_INFO, Gtk.BUTTONS_CLOSE,
+                Gtk.MESSAGE_INFO, Gtk.ButtonsType.CLOSE,
                 "You activated radio action: \"%s\" of type \"%s\".\nCurrent value: %d" %
                 (current.get_name(), type(current), value))
 

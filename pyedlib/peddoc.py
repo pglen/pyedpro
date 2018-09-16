@@ -779,7 +779,7 @@ class pedDoc(Gtk.DrawingArea):
                     self.clearsel()
 
                 self.fired += 1
-                #GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, self.keytime)
+                GLib.timeout_add(300, self.keytime)
 
             if event.button == 3:
                 #print "Right Click at x=", event.x, "y=", event.y
@@ -989,8 +989,8 @@ class pedDoc(Gtk.DrawingArea):
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                #gobject.timeout_add(300, self.keytime)
-                #GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, self.keytime)
+                #goject.timeout_add(            
+                GLib.timeout_add(300, self.keytime)
                 
         if yy - self.ypos < self.vscgap and self.ypos:
             #print "Scroll from caret up"
@@ -1001,7 +1001,7 @@ class pedDoc(Gtk.DrawingArea):
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, self.keytime)
+                GLib.timeout_add(300, self.keytime)
             
         yy -= self.ypos                                                                
         if self.ypos < 0: self.ypos = 0
@@ -1058,13 +1058,15 @@ class pedDoc(Gtk.DrawingArea):
             need_inval = True
             
         # Optimize cursor movement invalidation
-        if  not need_inval :
+        '''if  not need_inval :
             rect = Gdk.Rectangle(wxx, wyy, self.cxx * self.cxx /2, self.cyy + 1)
             self.invalidate(rect)
 
             rect = Gdk.Rectangle(oldx, oldy, self.cxx + self.cxx /2 , self.cyy + 1)
             self.invalidate(rect)
-
+        '''
+        self.invalidate(None)
+        
         # Update scroll bars, prevent them from sending scroll message:
         self.oneshot = True; self.vscroll.set_value(self.ypos)        
         self.honeshot = True; self.hscroll.set_value(self.xpos)        
@@ -1087,7 +1089,7 @@ class pedDoc(Gtk.DrawingArea):
             self.invalidate()
             
     def keytime(self):
-        print "keytime raw", time.time(), self.fired
+        #print "keytime raw", time.time(), self.fired
         if self.fired ==  1:
             #print "keytime", time.time(), self.fired
             pedspell.spell(self, self.spellmode)
@@ -1095,7 +1097,7 @@ class pedDoc(Gtk.DrawingArea):
         self.fired -= 1
                 
     def walk_func(self):
-   
+        #print "walk func"
         # ts2 ---------------------------------------------------
         sumw2 = []
         if self.text:
@@ -1152,8 +1154,7 @@ class pedDoc(Gtk.DrawingArea):
         
         # Maintain a count of events, only fire only fire on the last one
         self.fired += 1  
-        #GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, self.keytime, None)
-             
+        GLib.timeout_add(300, self.keytime)         
         # The actual key handler         
         self.keyh.handle_key(self, area, event)
         
@@ -1199,7 +1200,7 @@ class pedDoc(Gtk.DrawingArea):
         self.newword = True
         # Force new spell check
         self.fired += 1
-        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, self.keytime)
+        GLib.timeout_add(300, self.keytime)
         
     def popspell(self, widget, event, xstr):
         # Credeate a new menu-item with a name...
@@ -1232,7 +1233,7 @@ class pedDoc(Gtk.DrawingArea):
         
         pedconfig.conf.keyh.act.clip_cb(None, string, self)
         self.fired += 1
-        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, self.keytime)
+        GLib.timeout_add(300, self.keytime)
 
     def activate_action(self, action):
         dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
@@ -1613,7 +1614,7 @@ class pedDoc(Gtk.DrawingArea):
         image.set_from_stock(Gtk.STOCK_CLOSE, Gtk.IconSize.MENU)
         butt = Gtk.Button();  butt.add(image)
         butt.set_focus_on_click(False)
-        #butt.set_relief( Gtk.RELIEF_NONE)        
+        butt.set_relief( Gtk.ReliefStyle.NONE)        
         rc = butt.get_modifier_style()
         #rc.xthickness = 1; rc.ythickness = 1        
         butt.modify_style(rc)        
@@ -1795,3 +1796,4 @@ def run_async_time(win):
         
 
 #eof
+

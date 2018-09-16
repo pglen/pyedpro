@@ -35,6 +35,7 @@ import py_compile
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GObject
 import pedync, pedofd, pedspell, pedbuffs, pedconfig
 
@@ -744,7 +745,7 @@ class ActHand:
             self2.countup = 0
         strx = "%d" % self2.countup
         for aa in strx:
-            event = gtk.gdk.Event(gtk.gdk.KEY_PRESS);
+            event = Gdk.Event(Gdk.EventType.KEY_PRESS);
             event.keyval = ord(aa)
             self.add_key(self2, event)
         self2.countup += 1
@@ -1422,7 +1423,7 @@ class ActHand:
 
             # Synthesize keystroke. We do not replicate state as
             # pyedit maintains its own internally. (see keyhand.reset())
-            event = gtk.gdk.Event(tt);
+            event = Gdk.EventType.Event(tt);
             event.keyval = kk;
 
             self.keyhand.state2 = ss
@@ -1483,7 +1484,7 @@ class ActHand:
     def add_key(self, self2, event):
 
         # CR / LF still haunts us, ignore CR
-        if event.keyval == gtk.keysyms.Return:
+        if event.keyval == Gdk.KEY_Return:
             #print "Ignoring Ctrl-Return"
             return
         
@@ -1659,7 +1660,7 @@ class ActHand:
             else:
                 spaces = tabstop - (xidx % tabstop)
                 while spaces:
-                    event = gtk.gdk.Event(gtk.gdk.KEY_PRESS);
+                    event = Gdk.EventType.Event(Gdk.EventType.KEY_PRESS);
                     event.keyval = ord(" ")
                     self.add_key(self2, event)
                     spaces -= 1
@@ -1688,6 +1689,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 
