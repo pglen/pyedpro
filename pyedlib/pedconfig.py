@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
-# Global configuration for pyedit. Also a place we share globals to the rest
+# Global configuration for pyedpro. Also a place we share globals to the rest
 # of the project like the main window, statusbar, keyhandler etc ...
 # so the functionality is acessable from the key handler
 # or the key handler is acessable from the main window ... etc
-# The majority of dynamic vars are inited in pyedit.py
+# The majority of dynamic vars are inited in pyedpro.py
 
 import signal, os, time, sys
     
-config_reg = "/apps/pyedit"
+config_reg = "/apps/pyedpro"
     
 class conf():  
 
@@ -24,20 +24,21 @@ class conf():
     idle = 0; syncidle = 0;   statuscount = 0
 
     # Where things are stored (backups, orgs, macros, logs)
-    config_dir = os.path.expanduser("~/.pyedit")
-    macro_dir = os.path.expanduser("~/.pyedit/macros")
-    data_dir = os.path.expanduser("~/.pyedit/data")
-    log_dir = os.path.expanduser("~/.pyedit/log")
-    sql_data = os.path.expanduser("~/.pyedit/sql_data")
+    config_dir = os.path.expanduser("~/.pyedpro")
+    macro_dir = os.path.expanduser("~/.pyedpro/macros")
+    data_dir = os.path.expanduser("~/.pyedpro/data")
+    log_dir = os.path.expanduser("~/.pyedpro/log")
+    sql_data = os.path.expanduser("~/.pyedpro/sql_data")
     sql = None
     config_file = "defaults"
 
     # Where things are stored (UI x/y pane pos.)
-    config_reg = "/apps/pyedit"
+    config_reg = "/apps/pyedpro"
     verbose = False
             
     def __init__(self): 
         pass
+
 
 
 

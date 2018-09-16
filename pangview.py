@@ -1,7 +1,17 @@
 #!/usr/bin/env python
   
 import sys, os, re, time
-import pygtk, gobject, gtk, pango
+
+#import pygtk, gobject, gtk, pango
+
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GObject
+from gi.repository import GdkPixbuf
+
 
 # Our modules
 
@@ -11,7 +21,7 @@ import  panglib.lexer as lexer
 import  panglib.pangdisp as pangdisp
 import  panglib.pangfunc as pangfunc
 
-# This parser digests formatted text similar to pango in GTK.
+# This parser digests formatted text similar to pango in Gtk.
 # Was created to quickly display formatted messages.
 # See SYNTAX for details on text formats
 
@@ -639,7 +649,7 @@ for aa in parser.parsetable:
 '''
 def main():
 
-    gtk.main()
+    Gtk.main()
     return 0
 
 # ------------------------------------------------------------------------
@@ -677,9 +687,9 @@ def link(strx):
 
 def     message_dialog(title, strx):
 
-    dialog = gtk.MessageDialog(mainview,
-            gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-            gtk.MESSAGE_INFO, gtk.BUTTONS_OK, strx)
+    dialog = Gtk.MessageDialog(mainview,
+            Gtk.DIALOG_MODAL | Gtk.DIALOG_DESTROY_WITH_PARENT,
+            Gtk.MESSAGE_INFO, Gtk.BUTTONS_OK, strx)
     dialog.set_title(title);
     dialog.run()
     dialog.destroy()
@@ -839,6 +849,7 @@ if __name__ == "__main__":
     main()
  
 # EOF
+
 
 
 

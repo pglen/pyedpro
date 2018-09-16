@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 
-import pygtk, gobject, gtk, pango
+#import pygtk, gobject, gtk, pango
+
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GObject
+from gi.repository import Pango
+from gi.repository import GdkPixbuf
+
 import copy
 import panglib.stack as stack
 import panglib.parser as parser
@@ -158,7 +168,7 @@ class CallBack():
     # --------------------------------------------------------------------
     def parseTextState(self, TextState, vparser = None):
     
-        xtag = gtk.TextTag()
+        xtag = Gtk.TextTag()
        
         if TextState.font != "":
             xtag.set_property("font", TextState.font)
@@ -172,16 +182,16 @@ class CallBack():
             
         # Decorate textag according to machine state
         if TextState.fixed:    xtag.set_property("family", "Monospace")
-        if TextState.bold:     xtag.set_property("weight", pango.WEIGHT_BOLD)
-        if TextState.italic:   xtag.set_property("style", pango.STYLE_ITALIC)
+        if TextState.bold:     xtag.set_property("weight", Pango.Weight.BOLD)
+        if TextState.italic:   xtag.set_property("style", Pango.Style.ITALIC)
         #if TextState.itbold:   xtag.set_property("foreground", "red")
-        if TextState.large:    xtag.set_property("scale", pango.SCALE_LARGE) 
-        if TextState.xlarge:   xtag.set_property("scale", pango.SCALE_X_LARGE) 
-        if TextState.xxlarge:  xtag.set_property("scale", pango.SCALE_XX_LARGE) 
-        if TextState.small:    xtag.set_property("scale", pango.SCALE_SMALL) 
-        if TextState.xsmall:    xtag.set_property("scale", pango.SCALE_X_SMALL) 
-        if TextState.ul:       xtag.set_property("underline", pango.UNDERLINE_SINGLE)
-        if TextState.dul:      xtag.set_property("underline", pango.UNDERLINE_DOUBLE)
+        '''if TextState.large:    xtag.set_property("scale", Pango.SCALE_LARGE) 
+        if TextState.xlarge:   xtag.set_property("scale", Pango.SCALE_X_LARGE) 
+        if TextState.xxlarge:  xtag.set_property("scale", Pango.SCALE_XX_LARGE) 
+        if TextState.small:    xtag.set_property("scale", Pango.SCALE_SMALL) 
+        if TextState.xsmall:    xtag.set_property("scale", Pango.SCALE_X_SMALL) '''
+        if TextState.ul:       xtag.set_property("underline", Pango.Underline.SINGLE)
+        if TextState.dul:      xtag.set_property("underline", Pango.Underline.DOUBLE)
     
         if TextState.red:      xtag.set_property("foreground", "red")
         if TextState.green:    xtag.set_property("foreground", "green")
@@ -192,11 +202,11 @@ class CallBack():
         if TextState.bgblue:   xtag.set_property("background", "blue")
         
         if TextState.strike:   xtag.set_property("strikethrough", True)
-        if TextState.wrap:     xtag.set_property("wrap_mode", gtk.WRAP_WORD)
+        if TextState.wrap:     xtag.set_property("wrap_mode", Gtk.WrapMode.WORD)
     
-        if TextState.center:   xtag.set_property("justification", gtk.JUSTIFY_CENTER)
-        if TextState.right:    xtag.set_property("justification", gtk.JUSTIFY_RIGHT)
-        if TextState.fill:     xtag.set_property("justification", gtk.JUSTIFY_FILL)
+        if TextState.center:   xtag.set_property("justification", Gtk.Justification.CENTER)
+        if TextState.right:    xtag.set_property("justification", Gtk.Justification.RIGHT)
+        if TextState.fill:     xtag.set_property("justification", Gtk.Justification.FILL)
         
         #print "bgcolor:",  TextState.bgcolor 
         if TextState.bgcolor != "":
@@ -207,7 +217,7 @@ class CallBack():
             xtag.set_property("foreground", TextState.color)
     
         if TextState.size != 0:
-            xtag.set_property("size", TextState.size * pango.SCALE)
+            xtag.set_property("size", TextState.size * Pango.SCALE)
     
         if TextState.link != "":        
             xtag.set_data("link", TextState.link)
@@ -220,16 +230,16 @@ class CallBack():
             if TextState.size != 0:
                 rr = - TextState.size / 6
                 ss  = TextState.size / 2
-            xtag.set_property("rise", rr * pango.SCALE)        
-            xtag.set_property("size", ss * pango.SCALE)
+            xtag.set_property("rise", rr * Pango.SCALE)        
+            xtag.set_property("size", ss * Pango.SCALE)
     
         if TextState.sup:       
             rr = 6; ss = 8
             if TextState.size != 0:
                 rr =  TextState.size / 2
                 ss  = TextState.size /2
-            xtag.set_property("rise", rr * pango.SCALE)        
-            xtag.set_property("size", ss * pango.SCALE)
+            xtag.set_property("rise", rr * Pango.SCALE)        
+            xtag.set_property("size", ss * Pango.SCALE)
     
         # Calculate current indent
         ind = TextState.indent * 32;
@@ -561,7 +571,7 @@ class CallBack():
             if vparser.contflag == 0:            
                 break
     
-        xtag = gtk.TextTag();  fname = ""; www = 0; hhh = 0
+        xtag = Gtk.TextTag();  fname = ""; www = 0; hhh = 0
     
         while True:
             xkey = xstack.pop()     
@@ -574,11 +584,11 @@ class CallBack():
     
             if kk == "align":
                 if vv == "left":
-                    xtag.set_property("justification", gtk.JUSTIFY_LEFT)
+                    xtag.set_property("justification", Gtk.JUSTIFY_LEFT)
                 elif vv == "center":
-                    xtag.set_property("justification", gtk.JUSTIFY_CENTER)
+                    xtag.set_property("justification", Gtk.JUSTIFY_CENTER)
                 elif vv == "right":
-                    xtag.set_property("justification", gtk.JUSTIFY_RIGHT)
+                    xtag.set_property("justification", Gtk.JUSTIFY_RIGHT)
     
             if kk == "width":
                 www = int(vv)
@@ -599,13 +609,13 @@ class CallBack():
         # Exec collected stuff
         self.Mainview.add_text_xtag(" ", xtag, self.pvg.flag)
         try:
-            pixbuf = gtk.gdk.pixbuf_new_from_file(fname)
+            pixbuf = Gtk.gdk.pixbuf_new_from_file(fname)
             if www and hhh:
                 #print "scaling to", www, hhh
-                pixbuf2 = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB, True, 8, www, hhh)
+                pixbuf2 = Gtk.gdk.Pixbuf(Gtk.gdk.COLORSPACE_RGB, True, 8, www, hhh)
                 pixbuf.scale(pixbuf2, 0, 0, www, hhh, 
                     0, 0, float(www)/pixbuf.get_width(), float(hhh)/pixbuf.get_height(), 
-                gtk.gdk.INTERP_BILINEAR)
+                Gtk.gdk.INTERP_BILINEAR)
                 self.Mainview.add_pixbuf(pixbuf2, self.pvg.flag)
             else:
                 self.Mainview.add_pixbuf(pixbuf, self.pvg.flag)
@@ -706,6 +716,7 @@ class CallBack():
         vparser.fstack.push([parser.KEYVAL, 1, stry2, vparser.strx])
         vparser.fsm = fsm2
     
+
 
 
 

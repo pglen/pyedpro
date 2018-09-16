@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 
-# Prompt Handler for pyedit
+# Prompt Handler for PyEdPro
 
-import os, string
+import os, sys, string
 
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
 from gi.repository import GObject
-
+from gi.repository import GdkPixbuf
 
 import pyedlib.pedconfig
 # ------------------------------------------------------------------------
@@ -69,28 +71,34 @@ import platform
 
 def  about():
     dialog = Gtk.AboutDialog()
-    dialog.set_name(" PyEdit - Python Editor ")
+    #dialog.set_parent(None)
+    dialog.set_name(" PyEdPro - Python Editor ")
     dialog.set_version(str(pyedlib.pedconfig.conf.version));
+    gver = (Gtk.get_major_version(), \
+                        Gtk.get_minor_version(), \
+                            Gtk.get_micro_version())
+    
     comm = "\nPython based easily configurable editor\n"\
         "with time accounting module.\n"\
-        "\nRunning PyGtk %d.%d.%d" % Gtk.pygtk_version +\
-        "\nRunning GTK %d.%d.%d\n" % Gtk.gtk_version +\
+        "\nRunning PyGtk %d.%d.%d" % GLib.pyglib_version +\
+        "\nRunning GTK %d.%d.%d\n" % gver +\
         "\nRunning Python %s\n" % platform.python_version()
     dialog.set_comments(comm);
     dialog.set_copyright("Portions \302\251 Copyright Peter Glen\n"
                           "Project placed in the Public Domain.")
-
+    dialog.set_program_name("PyEdPro")
     img_dir = os.path.join(os.path.dirname(__file__), 'images')
     img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
 
     try:
-        pixbuf = Gtk.gdk.pixbuf_new_from_file(img_path)
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file(img_path)
         #print "loaded pixbuf"
         dialog.set_logo(pixbuf)
 
-    except gobject.GError, error:
-        print "Cannot load logo for about dialog";
-
+    except:
+        print "Cannot load logo for about dialog", img_path;
+        print sys.exc_info()
+                    
     #dialog.set_website("")
 
     ## Close dialog on user response
@@ -101,54 +109,25 @@ def  about():
 
 def about_key(win, event):
     #print "about_key", event
-    if  event.type == Gtk.gdk.KEY_PRESS:
-        if event.keyval == Gtk.keysyms.x or event.keyval == Gtk.keysyms.X:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_x or event.keyval == Gdk.KEY_X:
             if event.state & Gtk.gdk.MOD1_MASK:
                 win.destroy()
     
 # Show a regular message:
 
-
-#def message(strx, title = None, icon = Gtk.MESSAGE_INFO):
 def message(strx, title = None, icon = Gtk.MessageType.INFO):
 
-    dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
-        icon, Gtk.BUTTONS_CLOSE, strx)
+    dialog = Gtk.MessageDialog(None, None,
+        icon, Gtk.ButtonsType.CLOSE, strx)
        
     if title:
         dialog.set_title(title)
     else:
-        dialog.set_title("pyedit")
+        dialog.set_title("PyEdPro")
 
     # Close dialog on user response
     dialog.connect("response", lambda d, r: d.destroy())
     dialog.show()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#EOF
