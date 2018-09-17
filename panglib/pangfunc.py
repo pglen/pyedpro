@@ -180,16 +180,22 @@ class CallBack():
                 #self.Mainview.add_text("\t")
                 TextState.tab -=1
             
+        SCALE_LARGE = 1.2
+        SCALE_X_LARGE = 1.4
+        SCALE_XX_LARGE = 1.6
+        SCALE_SMALL = 0.8
+        SCALE_X_SMALL = 0.6
+         
         # Decorate textag according to machine state
         if TextState.fixed:    xtag.set_property("family", "Monospace")
         if TextState.bold:     xtag.set_property("weight", Pango.Weight.BOLD)
         if TextState.italic:   xtag.set_property("style", Pango.Style.ITALIC)
         #if TextState.itbold:   xtag.set_property("foreground", "red")
-        '''if TextState.large:    xtag.set_property("scale", Pango.SCALE_LARGE) 
-        if TextState.xlarge:   xtag.set_property("scale", Pango.SCALE_X_LARGE) 
-        if TextState.xxlarge:  xtag.set_property("scale", Pango.SCALE_XX_LARGE) 
-        if TextState.small:    xtag.set_property("scale", Pango.SCALE_SMALL) 
-        if TextState.xsmall:    xtag.set_property("scale", Pango.SCALE_X_SMALL) '''
+        if TextState.large:    xtag.set_property("scale", SCALE_LARGE) 
+        if TextState.xlarge:   xtag.set_property("scale", SCALE_X_LARGE) 
+        if TextState.xxlarge:  xtag.set_property("scale", SCALE_XX_LARGE) 
+        if TextState.small:    xtag.set_property("scale", SCALE_SMALL) 
+        if TextState.xsmall:    xtag.set_property("scale", SCALE_X_SMALL) 
         if TextState.ul:       xtag.set_property("underline", Pango.Underline.SINGLE)
         if TextState.dul:      xtag.set_property("underline", Pango.Underline.DOUBLE)
     
@@ -716,6 +722,7 @@ class CallBack():
         vparser.fstack.push([parser.KEYVAL, 1, stry2, vparser.strx])
         vparser.fsm = fsm2
     
+
 
 
 

@@ -45,7 +45,8 @@ last_scanned = None
 
 FGCOLOR  = "#000000"
 BGCOLOR  = "#fefefe"
-RBGCOLOR = "#bbbbff"              
+RBGCOLOR = "#00ccff"              
+#RBGCOLOR = "#aaaaff"              
 CBGCOLOR = "#ff8888"
 KWCOLOR  = "#88aaff"
 CLCOLOR  = "#880000"
@@ -180,52 +181,56 @@ class pedDoc(Gtk.DrawingArea):
         self.connect("focus-in-event", self.focus_in_cb)    
         self.connect("focus-out-event", self.focus_out_cb)    
         
+    def convcolor(self, col):
+        return ( int(col[1:3], base=16), int(col[3:5], base=16), \
+                int(col[5:7], base=16) )
+        
     # Customize your colors here
     def setcol(self):        
-    
-        '''
+                         
+        #print "col", self.convcolor("#80ff81")
+        
         ccc = pedconfig.conf.sql.get_str("fgcolor")
         if ccc == "":
-            self.fgcolor  = self.colormap.alloc_color(FGCOLOR)              
+            self.fgcolor  = self.convcolor(FGCOLOR)              
         else: 
-            self.fgcolor  = self.colormap.alloc_color(ccc)              
+            self.fgcolor  = self.convcolor(ccc)              
         
         ccc = pedconfig.conf.sql.get_str("rbgcolor")
         if ccc == "":
-            self.rbgcolor = self.colormap.alloc_color(RBGCOLOR)              
+            self.rbgcolor = self.convcolor(RBGCOLOR)              
         else: 
-            self.rbgcolor = self.colormap.alloc_color(ccc)              
+            self.rbgcolor = self.convcolor(ccc)              
         
         ccc = pedconfig.conf.sql.get_str("cbgcolor")
         if ccc == "":
-            self.cbgcolor = self.colormap.alloc_color(CBGCOLOR)              
+            self.cbgcolor = self.convcolor(CBGCOLOR)              
         else: 
-            self.cbgcolor = self.colormap.alloc_color(ccc)              
+            self.cbgcolor = self.convcolor(ccc)              
         
         ccc = pedconfig.conf.sql.get_str("kwcolor")
         if ccc == "":
-            self.kwcolor = self.colormap.alloc_color(KWCOLOR)              
+            self.kwcolor = self.convcolor(KWCOLOR)              
         else: 
-            self.kwcolor = self.colormap.alloc_color(ccc)              
+            self.kwcolor = self.convcolor(ccc)              
        
         ccc = pedconfig.conf.sql.get_str("clcolor")
         if ccc == "":
-            self.clcolor = self.colormap.alloc_color(CLCOLOR)              
+            self.clcolor = self.convcolor(CLCOLOR)              
         else: 
-            self.clcolor = self.colormap.alloc_color(ccc)              
+            self.clcolor = self.convcolor(ccc)              
         
         ccc = pedconfig.conf.sql.get_str("cocolor")
         if ccc == "":
-            self.cocolor = self.colormap.alloc_color(COCOLOR)              
+            self.cocolor = self.convcolor(COCOLOR)              
         else: 
-            self.cocolor = self.colormap.alloc_color(ccc)              
+            self.cocolor = self.convcolor(ccc)              
        
         ccc = pedconfig.conf.sql.get_str("stcolor")
         if ccc == "":
-            self.stcolor = self.colormap.alloc_color(STCOLOR)              
+            self.stcolor = self.convcolor(STCOLOR)              
         else: 
-            self.stcolor = self.colormap.alloc_color(ccc)              
-        '''
+            self.stcolor = self.convcolor(ccc)              
         
     def setfont(self, fam, size):
     
@@ -392,17 +397,16 @@ class pedDoc(Gtk.DrawingArea):
         #self.invalidate()
         #print self, event
         pass
-        
-    def _draw_text(self, gc, x, y, text, foreground = None, background = None):
-        #print "_draw_text"
-        gc.move_to(x, y)
+                                                          
+    def _draw_text(self, gc, x, y, text, fg_col = None, bg_col = None):
+        #print "_draw_text, ",  self.xpos
         
         if self.hex:
             text2 = ""
             for aa in text:
                 tmp = "%02x " % ord(aa)
                 text2 += tmp                
-            self.layout.set_text(text2[self.xpos * 3:])            
+            text2 = text2[self.xpos * 3:]
         elif self.stab:
             text2 = "";  cnt = 0;
             for aa in text:
@@ -415,14 +419,31 @@ class pedDoc(Gtk.DrawingArea):
                 else:
                     text2 += aa                                    
                 cnt += 1
-            ppp = text2[self.xpos:]
-            self.layout.set_text(ppp, len(ppp))            
+            text2 = text2[self.xpos:]
+            #self.layout.set_text(ppp, len(ppp))            
         else:
             text2 = text[self.xpos:].replace("\r", " ")
-            self.layout.set_text(text2, len(text2))
-            #self.pangolayout.set_text(text[self.xpos:])
             
-        xx, yy = self.pangolayout.get_pixel_size()
+        self.layout.set_text(text2, len(text2))
+        xx, yy = self.layout.get_pixel_size()
+             
+        if bg_col:
+            gc.set_source_rgba(bg_col[0], bg_col[1], bg_col[2])
+            
+            # The hard way ....
+            #rc = self.layout.get_extents().logical_rect
+            #rc = self.layout.get_extents().ink_rect
+            #print "rc", rc.x, rc.y, rc.width / Pango.SCALE, \
+            #            rc.height   / Pango.SCALE
+            #gc.rectangle(x, y, rc.width / Pango.SCALE, \
+            #            rc.height / Pango.SCALE)
+            gc.rectangle(x, y, xx, yy)
+            gc.fill()
+        
+        if fg_col:    
+            gc.set_source_rgba(fg_col[0], fg_col[1], fg_col[2])
+            
+        gc.move_to(x, y)
         PangoCairo.show_layout(gc, self.layout)
         
         if self.scol:
@@ -433,14 +454,18 @@ class pedDoc(Gtk.DrawingArea):
         return xx, yy
 	
     def draw_doc(self, pdoc, cr):
-        #print pdoc, xcairo
+        #print pdoc, cr
         
         # paint background
         #bg_color = self.get_style_context().get_background_color(Gtk.StateFlags.NORMAL)
         #cr.set_source_rgba(*list(bg_color))
         #cr.paint()
         
-        allocation = self.get_allocation()
+        #allocation = self.get_allocation()
+        
+        hhh = self.get_height()
+        www = self.get_width()
+        
         ctx = self.get_style_context()
         
         fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
@@ -448,9 +473,9 @@ class pedDoc(Gtk.DrawingArea):
         
         #cr.set_source_rgba(*list(bg_color));
         
-        # Paint white, BG ignore system bg
+        # Paint white, ignore system BG
         cr.set_source_rgba(255, 255, 255)
-        cr.rectangle( 0, 0, allocation.width, allocation.height);
+        cr.rectangle( 0, 0, www, hhh);
         cr.fill()
         
         cr.set_source_rgba(*list(fg_color));
@@ -476,12 +501,60 @@ class pedDoc(Gtk.DrawingArea):
             dx, dy = self._draw_text(cr, xx, yy, text3)
             cnt += 1
             yy += dy
-            if yy > allocation.height:
+            if yy > hhh:
                 break
+                
+        # ----------------------------------------------------------------
+        # Paint selection        
+        xx = 0; yy = 0; 
+        cnt = self.ypos;
+    
+        # Normalize (Read: [xy]ssel - startsel  [xy]esel - endsel
+        xssel = min(self.xsel, self.xsel2)
+        xesel = max(self.xsel, self.xsel2)
+        yssel = min(self.ysel, self.ysel2)
+        yesel = max(self.ysel, self.ysel2)
+        # Override
+        if not self.colsel:  
+            if yssel != yesel:
+                xssel = self.xsel
+                xesel = self.xsel2
+       
+        draw_start = xssel
+        if xssel != -1:
+            if self.colsel: bgcol = self.cbgcolor
+            else: bgcol = self.rbgcolor
+            
+            while cnt <  xlen:
+                if cnt >= yssel and cnt <= yesel:
+                    line = self.text[cnt]#.replace("\r", " ")
+
+                    if self.colsel:
+                        frag = line[xssel:xesel]
+                    else :   # Startsel - endsel                        
+                        if cnt == yssel and cnt == yesel:   # sel on the same line
+                            frag = line[xssel:xesel]
+                        elif cnt == yssel:                  # start line
+                            frag = line[xssel:]
+                        elif cnt == yesel:                  # end line
+                            draw_start = 0
+                            frag = line[:xesel]
+                        else:
+                            draw_start = 0                  # intermediate line
+                            frag = line[:]
+
+                    dss = calc_tabs(line, draw_start, self.tabstop)
+                    dss -= self.xpos
+                    self._draw_text(cr, dss * self.cxx, yy, frag, self.fgcolor, bgcol)
+                    
+                cnt = cnt + 1
+                yy += self.cyy
+                if yy > hhh:
+                    break
 
         self._drawcaret(cr)        
         
-    def area_expose_cb(self, area, event):
+    '''def area_expose_cb(self, area, event):
 
         #print "area_expose_cb()", event.area.width, event.area.height
         
@@ -668,7 +741,8 @@ class pedDoc(Gtk.DrawingArea):
         
         self._drawcaret(gcu)        
         return True
-
+    '''
+    
     # Underline red
     def draw_wiggle(self, gcr, xx, yy, xx2, yy2):
 
@@ -1286,7 +1360,7 @@ class pedDoc(Gtk.DrawingArea):
         base1 = os.path.basename(self.fname)
         base2, ext2 =  os.path.splitext(base1)
         if base2[:len(base)] == base:
-            self.file_dlg(Gtk.RESPONSE_YES)                
+            self.file_dlg(Gtk.ResponseType.YES)                
         else:
             bn = os.path.basename(self.fname)
             err = self.writefile()
@@ -1300,7 +1374,7 @@ class pedDoc(Gtk.DrawingArea):
         self.mained.update_statusbar(strx)
 
     def saveas(self):        
-        self.file_dlg(Gtk.RESPONSE_YES)                
+        self.file_dlg(Gtk.ResponseType.YES)                
         
     def coloring(self, flag):
         self.colflag = flag
@@ -1438,21 +1512,21 @@ class pedDoc(Gtk.DrawingArea):
         msg = "\nWould you like to save:\n\n  \"%s\" \n" % self.fname
         rp = pedync.yes_no_cancel("pyedit: Save File ?", msg)
 
-        if rp == Gtk.RESPONSE_YES:   
+        if rp == Gtk.ResponseType.YES:   
             if askname:
                 self.file_dlg(rp)
             else:
                 self.save()                
-        elif rp == Gtk.RESPONSE_NO:   
+        elif rp == Gtk.ResponseType.NO:   
             pass
-        elif  rp == Gtk.RESPONSE_CANCEL:
+        elif  rp == Gtk.ResponseType.CANCEL:
             return True
         else:
             print "warning: invalid response from dialog"
                     
     def file_dlg(self, resp):
         #print "File dialog"
-        if resp == Gtk.RESPONSE_YES:
+        if resp == Gtk.ResponseType.YES:
             but =   "Cancel", Gtk.BUTTONS_CANCEL, "Save File", Gtk.BUTTONS_OK
             fc = Gtk.FileChooserDialog("Save file as ... ", None, 
                     Gtk.FILE_CHOOSER_ACTION_SAVE, but)
@@ -1543,7 +1617,7 @@ class pedDoc(Gtk.DrawingArea):
                     Gtk.MESSAGE_QUESTION, Gtk.BUTTONS_YES_NO,
                     "\nWould you like overwrite file:\n\n  \"%s\" \n" % fname)
                     dialog.set_title("Overwrite file ?")
-                    dialog.set_default_response(Gtk.RESPONSE_YES)
+                    dialog.set_default_response(Gtk.ResponseType.YES)
                     dialog.connect("response", self.overwrite_done, fname, win)
                     dialog.run()            
                 else:
@@ -1553,7 +1627,7 @@ class pedDoc(Gtk.DrawingArea):
                             
     def overwrite_done(self, win, resp, fname, win2):
         #print "overwrite done", resp
-        if resp == Gtk.RESPONSE_YES:  
+        if resp == Gtk.ResponseType.YES:  
             self.fname = fname
             self.writefile()
             # Turn off coloring if not python / c / sh / perl / header
@@ -1796,4 +1870,5 @@ def run_async_time(win):
         
 
 #eof
+
 

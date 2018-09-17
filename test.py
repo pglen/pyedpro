@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+         
 import time, sys, os, re, stat
 import string, pickle
 import commands, site
@@ -7,23 +7,23 @@ import distutils.sysconfig
 
 installerdir = sys.argv[0][:sys.argv[0].rfind("/")] + "/"
 
-depfailed = False      wwww
+depfailed = False  
 
 PROJNAME  = "pyedit"
 PROJLIB   = "pyedlib"
 PROJLIB2  = "panglib"
 
 # ------------------------------------------------------------------------
-# Return True if exists
-
+# Return True if exists:
+                 
 def isdir(fname):
-
+                  
     try:    
         ss = os.stat(fname)
     except:
         return False
     if stat.S_ISDIR(ss[stat.ST_MODE]):
-        return True
+        return True  
     return False
 
 # ------------------------------------------------------------------------
@@ -155,6 +155,11 @@ for source, dest, exe in dirlist:
 print 
 print "You may now use the", PROJNAME, "utility on your system."
 print
+
+
+
+
+
 
 
 

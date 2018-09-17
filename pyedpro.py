@@ -209,10 +209,12 @@ if __name__ == '__main__':
             print aa
         sys.exit(0)
 
-    #x Uncomment this for silent stdout
+    #Uncomment this for silent stdout
     #sys.stdout = pyedlib.log.fake_stdout()
     
+    # Uncomment this for unbuffered output
     sys.stdout = Unbuffered(sys.stdout)
+    sys.stderr = Unbuffered(sys.stderr)
 
     print "Started pydepro"
     #pyedlib.log.printx("Started pydepro")
@@ -220,6 +222,8 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
 
 
 

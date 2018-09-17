@@ -519,6 +519,7 @@ class ActHand:
         self2.mained.update_statusbar("Esc")
         self2.clearsel()
         #print "ESC"
+        #print pedync.yes_no_cancel("Escape", "This is a question" )
 
     def ins(self, self2):
         #print "INS"
@@ -1407,34 +1408,44 @@ class ActHand:
             return True
 
         self.keyhand.reset()
-
         self2.mained.update_statusbar("Started Play ...")
         idx = 0
-        while True:
+        while True:                        
             if idx >= xlen: break
-
-            #var = (int(event.type), event.keyval, int(event.state))
-
-            tt, kk, ss, \
-            self.keyhand.shift, self.keyhand.ctrl, \
+            tt, kk, ss, www, sss, \
+              self.keyhand.shift, self.keyhand.ctrl, \
                                 self.keyhand.alt = self2.recarr[idx]
-            #print "macro", tt, kk, ss
             idx+=1
 
             # Synthesize keystroke. We do not replicate state as
             # pyedit maintains its own internally. (see keyhand.reset())
-            event = Gdk.EventType.Event(tt);
-            event.keyval = kk;
-
+            
+            ttt = Gdk.EventType.KEY_PRESS 
+            if tt == 9:
+                ttt = Gdk.EventType.KEY_RELEASE
+            
+            #print "playing macro", tt, kk, ss
+            
+            event = Gdk.EventKey()
+            event.type = ttt
+            #event.time = time.clock() * 1000  
+            event.keyval = kk
+            event.window = www
+            event.string  = sss
+            
+            #print "play event", event, event.type, event.keyval
+            
             self.keyhand.state2 = ss
             self.keyhand.handle_key2(self2, None, event)
+            
             if anim:
                 usleep(30)
-
+                
+            print   
+            
         # If the state gets out or sync ...
         self.keyhand.reset()
         self2.mained.update_statusbar("Ended Play.")
-
 
     def f8(self, self2, anim = False):
         #print "F8"
@@ -1689,6 +1700,8 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
 
 
 

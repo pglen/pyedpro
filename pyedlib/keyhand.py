@@ -286,8 +286,9 @@ class KeyHand:
                 #print "avoiding record/play recursion", event
                 pass                                    
             else:
-                var = (int(event.type), event.keyval, int(event.state),\
-                        self.shift, self.ctrl, self.alt)            
+                #print "rec", event, event.type, int(event.type)
+                var = (int(event.type), int(event.keyval), int(event.state),\
+                       event.window, event.string, self.shift, self.ctrl, self.alt)            
                 self2.recarr.append(var)     
                 
         ret = self.handle_modifiers(self2, area, event)
@@ -308,9 +309,11 @@ class KeyHand:
                         "Keyboard disabled. Press Ctrl-Space to enable.")
                     if event.keyval == Gdk.KEY_Escape:
                         self2.mained.update_statusbar("ESC")            
-         
                 return
-                         
+        
+        #print "executing key ", \
+        #    event, event.type, event.keyval, event.window
+                                                      
         # Call the appropriate handlers. Note the priority.
         if self.ctrl and self.alt:
             self.handle_ctrl_alt_key(self2, area, event)
@@ -480,6 +483,7 @@ class KeyHand:
                         self2.flash(False)
                
         return ret
+
 
 
 

@@ -1195,16 +1195,16 @@ def OnExit(arg, prompt = True):
                 msg = "\nWould you like to save:\n\n  \"%s\" \n" % ppp.area.fname
                 rp = pedync.yes_no_cancel("pyedit: Save File ?", msg)
 
-                if rp == Gtk.RESPONSE_YES:
+                if rp == Gtk.ResponseType.YES:
                     ppp.area.save()
 
-                if rp == Gtk.RESPONSE_NO:
+                if rp == Gtk.ResponseType.NO:
                     #print "Gtk.RESPONSE_NO"
                     pass
-                if  rp == Gtk.RESPONSE_CANCEL or \
-                    rp == Gtk.RESPONSE_REJECT or \
-                    rp == Gtk.RESPONSE_CLOSE  or \
-                    rp == Gtk.RESPONSE_DELETE_EVENT:
+                if  rp == Gtk.ResponseType.CANCEL or \
+                    rp == Gtk.ResponseType.REJECT or \
+                    rp == Gtk.ResponseType.CLOSE  or \
+                    rp == Gtk.ResponseType.DELETE_EVENT:
                     return
         else:
             # Rescue to temporary:
@@ -1284,6 +1284,7 @@ def handler_tick():
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
 
 
 

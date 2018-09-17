@@ -19,50 +19,59 @@ def yes_no_cancel(title, message, cancel = True):
 
     dialog = Gtk.Dialog(title,
                    None,
-                   Gtk.DIALOG_MODAL | Gtk.DIALOG_DESTROY_WITH_PARENT)
+                   Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
 
-    dialog.set_default_response(Gtk.RESPONSE_YES)
-    dialog.set_position(Gtk.WIN_POS_CENTER)
+    dialog.set_default_response(Gtk.ResponseType.YES)
+    dialog.set_position(Gtk.WindowPosition.CENTER)
 
     sp = "     "
     label = Gtk.Label(message); 
-    label2 = Gtk.Label(sp);     label3 = Gtk.Label(sp)
-    hbox = Gtk.HBox() ;         hbox.pack_start(label2);  
-    hbox.pack_start(label);     hbox.pack_start(label3)
-    dialog.vbox.pack_start(hbox)
-
-    dialog.add_button("_Yes", Gtk.RESPONSE_YES)
-    dialog.add_button("_No", Gtk.RESPONSE_NO)
+    label2 = Gtk.Label(sp);      label3 = Gtk.Label(sp)
+    label2a = Gtk.Label(sp);     label3a = Gtk.Label(sp)
+    
+    hbox = Gtk.HBox() ;     
+    
+    hbox.pack_start(label2, 0, 0, 0);  
+    hbox.pack_start(label, 1, 1, 0);     
+    hbox.pack_start(label3, 0, 0, 0)
+    
+    dialog.vbox.pack_start(label2a, 0, 0, 0);  
+    dialog.vbox.pack_start(hbox, 0, 0, 0)
+    dialog.vbox.pack_start(label3a, 0, 0, 0);  
+    
+    dialog.add_button("_Yes", Gtk.ResponseType.YES)
+    dialog.add_button("_No", Gtk.ResponseType.NO)
     
     if cancel:
-        dialog.add_button("_Cancel", Gtk.RESPONSE_CANCEL)
+        dialog.add_button("_Cancel", Gtk.ResponseType.CANCEL)
 
-    dialog.connect("key-press-event", area_key, cancel)
-    #dialog.connect("key-release-event", area_key, cancel)
+    dialog.connect("key-press-event", yn_key, cancel)
+    #dialog.connect("key-release-event", yn_key, cancel)
     dialog.show_all()
     response = dialog.run()       
     # Convert all responses to cancel
-    if  response == Gtk.RESPONSE_CANCEL or \
-        response == Gtk.RESPONSE_REJECT or \
-        response == Gtk.RESPONSE_CLOSE  or \
-        response == Gtk.RESPONSE_DELETE_EVENT:
-        response = Gtk.RESPONSE_CANCEL        
+    if  response == Gtk.ResponseType.CANCEL or \
+        response == Gtk.ResponseType.REJECT or \
+        response == Gtk.ResponseType.CLOSE  or \
+        response == Gtk.ResponseType.DELETE_EVENT:
+        response = Gtk.ResponseType.CANCEL        
     dialog.destroy()
     return  response 
 
-def area_key(win, event, cancel):
+def yn_key(win, event, cancel):
     #print event
-    if event.keyval == Gtk.keysyms.y or \
-        event.keyval == Gtk.keysyms.Y:
-        win.response(Gtk.RESPONSE_YES)
-    if event.keyval == Gtk.keysyms.n or \
-        event.keyval == Gtk.keysyms.N:
-        win.response(Gtk.RESPONSE_NO)
+    if event.keyval == Gdk.KEY_y or \
+        event.keyval == Gdk.KEY_Y:
+        win.response(Gtk.ResponseType.YES)
+        
+    if event.keyval == Gdk.KEY_n or \
+        event.keyval == Gdk.KEY_N:
+        win.response(Gtk.ResponseType.NO)
 
     if cancel:
-        if event.keyval == Gtk.keysyms.c or \
-            event.keyval == Gtk.keysyms.C:
-            win.response(Gtk.RESPONSE_CANCEL)
+        if event.keyval == Gdk.KEY_c or \
+            event.keyval == Gdk.KEY_C:
+            win.response(Gtk.ResponseType.CANCEL)
 
 # ------------------------------------------------------------------------
 # Show About dialog:
@@ -116,18 +125,25 @@ def about_key(win, event):
     
 # Show a regular message:
 
-def message(strx, title = None, icon = Gtk.MessageType.INFO):
+def message(strx, title = None):
 
+    icon = Gtk.STOCK_INFO
     dialog = Gtk.MessageDialog(None, None,
-        icon, Gtk.ButtonsType.CLOSE, strx)
+                   Gtk.MessageType.INFO, Gtk.ButtonsType.CLOSE, strx)
+    
+    #dialog.parent =  
        
     if title:
         dialog.set_title(title)
     else:
         dialog.set_title("PyEdPro")
 
+    dialog.set_position(Gtk.WindowPosition.CENTER)
+        
     # Close dialog on user response
     dialog.connect("response", lambda d, r: d.destroy())
     dialog.show()
 
 #EOF
+
+
