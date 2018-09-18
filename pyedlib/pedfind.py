@@ -9,7 +9,6 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-
 import peddoc, pedync, pedconfig
 from pedutil import *
 from pedundo import *
@@ -30,14 +29,16 @@ def find(self, self2, replace = False):
     else:
         head = "pyedit: Find in text"
     
-    dialog = gtk.Dialog(head,
+    dialog = Gtk.Dialog(head,
                    None,
-                   gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                   (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-    dialog.set_default_response(gtk.RESPONSE_ACCEPT)
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_transient_for(self2.mained.window)
     dialog.replace = replace
-    dialog.set_position(gtk.WIN_POS_CENTER)
+    dialog.set_position(Gtk.WindowPosition.CENTER)
     try:
         dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
     except:
@@ -46,15 +47,13 @@ def find(self, self2, replace = False):
     self.dialog = dialog
     
     # Spacers
-    label1 = gtk.Label("   ");  label2 = gtk.Label("   ") 
-    label3 = gtk.Label("   ");  label4 = gtk.Label("   ") 
-    label5 = gtk.Label("   ");  label6 = gtk.Label("   ") 
-    label7 = gtk.Label("   ");  label8 = gtk.Label("   ") 
+    label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ") 
+    label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ") 
+    label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ") 
+    label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ") 
 
-    warnings.simplefilter("ignore")
-    entry = gtk.Entry(); 
+    entry = Gtk.Entry(); 
     myentry = entry
-    warnings.simplefilter("default")
     
     entry.set_activates_default(True)
     
@@ -81,54 +80,58 @@ def find(self, self2, replace = False):
             self2.oldsearch = self2.text[yssel][xssel:xesel]
             
     entry.set_text(self2.oldsearch)
-    dialog.vbox.pack_start(label4)  
+    dialog.vbox.pack_start(label4, 0, 0, 0)  
 
-    hbox2 = gtk.HBox()
-    hbox2.pack_start(label6, False)  
-    hbox2.pack_start(entry)  
-    hbox2.pack_start(label7, False)  
+    hbox2 = Gtk.HBox()
+    hbox2.pack_start(label6, 0, 0, 0)  
+    hbox2.pack_start(entry, True, True, 0)  
+    hbox2.pack_start(label7, 0, 0, 0)  
 
-    dialog.vbox.pack_start(hbox2)
+    dialog.vbox.pack_start(hbox2, 0, 0, 0)
 
-    dialog.checkbox = gtk.CheckButton("Use _regular expression")
-    dialog.checkbox2 = gtk.CheckButton("Case In_sensitive")
+    dialog.checkbox = Gtk.CheckButton("Use _regular expression")
+    dialog.checkbox2 = Gtk.CheckButton("Case In_sensitive")
     
     dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
     dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
-                
-    dialog.vbox.pack_start(label5)  
+                                        
+    dialog.vbox.pack_start(label5, 0, 0, 0)  
 
-    hbox = gtk.HBox()
-    hbox.pack_start(label1);  hbox.pack_start(dialog.checkbox)
-    hbox.pack_start(label2);  hbox.pack_start(dialog.checkbox2)
-    hbox.pack_start(label3);  
-    dialog.vbox.pack_start(hbox)
-    dialog.vbox.pack_start(label8)  
+    hbox = Gtk.HBox()
+    hbox.pack_start(label1, 0, 0, 0)
+    hbox.pack_start(dialog.checkbox, 0, 0, 0)
+    hbox.pack_start(label2, 0, 0, 0)  
+    hbox.pack_start(dialog.checkbox2, 0, 0, 0)
+    hbox.pack_start(label3, 0, 0, 0)  
+    dialog.vbox.pack_start(hbox, 0, 0, 0)
+    dialog.vbox.pack_start(label8, 0, 0, 0)  
 
-    label30 = gtk.Label("   ");  label31 = gtk.Label("   ") 
-    label32 = gtk.Label("   ");  label33 = gtk.Label("   ") 
-    label34 = gtk.Label("   ");  label35 = gtk.Label("   ") 
+    label30 = Gtk.Label("   ");  label31 = Gtk.Label("   ") 
+    label32 = Gtk.Label("   ");  label33 = Gtk.Label("   ") 
+    label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ") 
     
-    dialog.checkbox3 = gtk.CheckButton("Search _All Buffers")
-    #dialog.checkbox4 = gtk.CheckButton("Hello")
-    hbox4 = gtk.HBox()
-    hbox4.pack_start(label30);  hbox4.pack_start(dialog.checkbox3)
-    #hbox4.pack_start(label31);  hbox4.pack_start(dialog.checkbox4)
-    hbox4.pack_start(label32);  
-    dialog.vbox.pack_start(hbox4)
-    dialog.vbox.pack_start(label33)  
+    dialog.checkbox3 = Gtk.CheckButton("Search _All Buffers")
+    #dialog.checkbox4 = Gtk.CheckButton("Hello")
+    hbox4 = Gtk.HBox()
+    hbox4.pack_start(label30, 0, 0, 0);  
+    hbox4.pack_start(dialog.checkbox3, 0, 0, 0)
+    #hbox4.pack_start(label31, 0, 0, 0);  
+    #hbox4.pack_start(dialog.checkbox4, 0, 0, 0)
+    hbox4.pack_start(label32, 0, 0, 0);  
+    dialog.vbox.pack_start(hbox4, 0, 0, 0)
+    dialog.vbox.pack_start(label33, 0, 0, 0)  
     
     if replace:    
-        dialog.repl = gtk.Entry();  dialog.repl.set_text(self2.oldrep)
+        dialog.repl = Gtk.Entry();  dialog.repl.set_text(self2.oldrep)
         dialog.repl.set_activates_default(True)
-        label10 = gtk.Label("   ");  label11 = gtk.Label("   ") 
-        label12 = gtk.Label("   ");  label13 = gtk.Label("   ") 
-        hbox3 = gtk.HBox()
-        hbox3.pack_start(label10, False)  
-        hbox3.pack_start(dialog.repl)  
-        hbox3.pack_start(label11, False)  
-        dialog.vbox.pack_start(hbox3)  
-        dialog.vbox.pack_start(label12)          
+        label10 = Gtk.Label("   ");  label11 = Gtk.Label("   ") 
+        label12 = Gtk.Label("   ");  label13 = Gtk.Label("   ") 
+        hbox3 = Gtk.HBox()
+        hbox3.pack_start(label10, 0, 0, 0)  
+        hbox3.pack_start(dialog.repl, 0, 0, 0)  
+        hbox3.pack_start(label11, 0, 0, 0)  
+        dialog.vbox.pack_start(hbox3, 0, 0, 0)  
+        dialog.vbox.pack_start(label12, 0, 0, 0)          
       
     dialog.connect("key-press-event", find_keypress)
               
@@ -147,7 +150,7 @@ def find(self, self2, replace = False):
         
     dialog.destroy()
 
-    if response != gtk.RESPONSE_ACCEPT:   
+    if response != Gtk.ResponseType.ACCEPT:   
         return
 
     if  dialog.checkbox3.get_active():
@@ -167,17 +170,17 @@ def find(self, self2, replace = False):
 def find_keypress(area, event):
     global stridx, strhist, myentry
     #print   "find keypress", area, event
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.state  & gtk.gdk.MOD1_MASK:
-            if event.keyval == gtk.keysyms.Up or \
-                    event.keyval == gtk.keysyms.Right:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.state  & Gdk.ModifierType.MOD1_MASK:
+            if event.keyval == Gdk.KEY_Up or \
+                    event.keyval == Gdk.KEY_Right:
                 #print   "find keypress, alt UP or left key"
                 if stridx < len(strhist) -1:
                     stridx += 1
                     myentry.set_text(strhist[stridx]);
                     
-            if event.keyval == gtk.keysyms.Down or \
-                    event.keyval == gtk.keysyms.Left:
+            if event.keyval == Gdk.KEY_Down or \
+                    event.keyval == Gdk.KEY_Left:
                 #print   "find keypress, alt DOWN or right key"
                 if stridx > 0:
                     stridx -= 1
@@ -203,11 +206,13 @@ def find_show(self, self2):
             #print  sys.exc_info()        
             pedync.message("\n   Error in regular expression: \n\n"\
                             "    '%s' -- %s" % (self.srctxt, msg),\
-                            None, gtk.MESSAGE_ERROR)
+                            None, Gtk.MESSAGE_ERROR)
             return                    
 
-    win2 = gtk.Window()
-    #win2.set_position(gtk.WIN_POS_CENTER)
+    win2 = Gtk.Window()
+    #win2.set_position(Gtk.WIN_POS_CENTER)
+    win2.set_transient_for(self2.mained.window)
+    
     try:
         win2.set_icon_from_file(get_img_path("pyedit_sub.png"))
     except:
@@ -221,15 +226,7 @@ def find_show(self, self2):
         tit = "%s Searching '%s'" % (ff, self.srctxt)        
                 
     win2.set_title(tit)
-    
-    win2.set_events(    
-                    gtk.gdk.POINTER_MOTION_MASK |
-                    gtk.gdk.POINTER_MOTION_HINT_MASK |
-                    gtk.gdk.BUTTON_PRESS_MASK |
-                    gtk.gdk.BUTTON_RELEASE_MASK |
-                    gtk.gdk.KEY_PRESS_MASK |
-                    gtk.gdk.KEY_RELEASE_MASK |
-                    gtk.gdk.FOCUS_CHANGE_MASK )
+    win2.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
     win2.connect("key-press-event", area_key, self)
     win2.connect("key-release-event", area_key, self)
@@ -257,44 +254,44 @@ def find_show(self, self2):
         #win2.move(oldxx + self.xnum, oldyy + self.xnum)        
         win2.move(oldxx, oldyy)        
 	    
-    vbox = gtk.VBox()
+    vbox = Gtk.VBox()
             
     win2.treestore = None
     win2.tree = create_tree(self, win2, self.srctxt)
     win2.tree.set_headers_visible(False)
-    win2.tree.get_selection().set_mode(gtk.SELECTION_MULTIPLE)
+    win2.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
         
     if self.dialog.replace:
-        butt2 = gtk.Button(" Change _One ")
+        butt2 = Gtk.Button(" Change _One ")
         butt2.connect("clicked", chg_one, self, self2, win2)
-        butt3 = gtk.Button(" Change _Selected "); 
+        butt3 = Gtk.Button(" Change _Selected "); 
         butt3.connect("clicked", chg_sel, self, self2, win2)
-        butt4 = gtk.Button(" Change _All "); 
+        butt4 = Gtk.Button(" Change _All "); 
         butt4.connect("clicked", chg_all, self, self2, win2)
         
-        lab1 = gtk.Label("   "); lab2 = gtk.Label("   ");
+        lab1 = Gtk.Label("   "); lab2 = Gtk.Label("   ");
         
-        hbox4 = gtk.HBox()
-        hbox4.pack_start(lab1)
-        hbox4.pack_start(butt2, False)
-        hbox4.pack_start(butt3, False)
-        hbox4.pack_start(butt4, False)
-        hbox4.pack_start(lab2)
+        hbox4 = Gtk.HBox()
+        hbox4.pack_start(lab1, 0, 0, 0)
+        hbox4.pack_start(butt2, 0, 0, 0)
+        hbox4.pack_start(butt3, 0, 0, 0)
+        hbox4.pack_start(butt4, 0, 0, 0)
+        hbox4.pack_start(lab2, 0, 0, 0)
     
-        lab3 = gtk.Label("   "); 
+        lab3 = Gtk.Label("   "); 
         
-        vbox.pack_start(lab3, False)           
-        vbox.pack_start(hbox4, False)           
+        vbox.pack_start(lab3, 0, 0, 0)           
+        vbox.pack_start(hbox4, 0, 0, 0)           
         
-    lab4 = gtk.Label("   ");
-    vbox.pack_start(lab4, False)           
+    lab4 = Gtk.Label("   ");
+    vbox.pack_start(lab4, 0, 0, 0)           
     
     #self.tree.connect("row-activated",  tree_sel, self, self2)
     win2.tree.connect("cursor-changed",  tree_sel_row, self, self2)
 
-    stree = gtk.ScrolledWindow()
+    stree = Gtk.ScrolledWindow()
     stree.add(win2.tree)
-    vbox.pack_start(stree)           
+    vbox.pack_start(stree, True, True, 0)           
                             
     win2.add(vbox)
     win2.show_all()
@@ -325,11 +322,11 @@ def area_destroy(win2, self):
     xx,yy,ww,hh = win2.get_allocation()
     #print "save alloc", xx, yy, ww, hh     
     
-    aa,bb,cc,dd,ee = gtk.gdk.Window.get_geometry(win2.window) 
+    aa,bb,cc,dd,ee = Gtk.gdk.Window.get_geometry(win2.window) 
     #print "save geom",aa,bb,cc,dd'''
 
     # Finally, gdk delivers an up to date position    
-    oldxx, oldyy = gtk.gdk.Window.get_position(win2.window) 
+    oldxx, oldyy = win2.get_position() 
     oldww, oldhh = win2.get_size()
     #print "save coord", oldxx, oldyy, oldww, oldhh    
     
@@ -441,40 +438,40 @@ def area_key(area, event, self):
 
     #print "area_key", event
     # Do key down:
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Escape:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
             #print "Esc"
             area.destroy()
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Return:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
             #print "Ret"
             area.destroy()
 
-        if event.keyval == gtk.keysyms.Alt_L or \
-                event.keyval == gtk.keysyms.Alt_R:
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
             self.alt = True;
     
-        if event.keyval >= gtk.keysyms._1 and \
-                event.keyval <= gtk.keysyms._9:
+        if event.keyval >= Gdk.KEY_1 and \
+                event.keyval <= Gdk.KEY_9:
             pass
-            #print "pedwin Alt num", event.keyval - gtk.keysyms._1
+            #print "pedwin Alt num", event.keyval - Gdk.KEY__1
         
-        if event.keyval == gtk.keysyms.x or \
-                event.keyval == gtk.keysyms.X:
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
             if self.alt:
                 area.destroy()
                                   
-    elif  event.type == gtk.gdk.KEY_RELEASE:
-        if event.keyval == gtk.keysyms.Alt_L or \
-              event.keyval == gtk.keysyms.Alt_R:
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
             self.alt = False;
 
 # Tree handlers
 def start_tree(self, win2):
 
     if not win2.treestore:
-        win2.treestore = gtk.TreeStore(str)
+        win2.treestore = Gtk.TreeStore(str)
     
     # Delete previous contents
     try:      
@@ -494,15 +491,15 @@ def create_tree(self, win2, match, text = None):
     start_tree(self, win2)
     
     # create the TreeView using treestore
-    tv = gtk.TreeView(win2.treestore)
+    tv = Gtk.TreeView(win2.treestore)
     tv.set_enable_search(True)
 
     # create a CellRendererText to render the data
-    cell = gtk.CellRendererText()
+    cell = Gtk.CellRendererText()
 
     # create the TreeViewColumn to display the data
-    #tvcolumn = gtk.TreeViewColumn("Matches for '" + match + "'")
-    tvcolumn = gtk.TreeViewColumn()
+    #tvcolumn = Gtk.TreeViewColumn("Matches for '" + match + "'")
+    tvcolumn = Gtk.TreeViewColumn()
 
     # add the cell to the tvcolumn and allow it to expand
     tvcolumn.pack_start(cell, True)
@@ -640,6 +637,9 @@ def wnext(butt,self):
     pass
     
    
+
+
+
 
 
 

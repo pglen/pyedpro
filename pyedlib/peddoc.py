@@ -45,8 +45,7 @@ last_scanned = None
 
 FGCOLOR  = "#000000"
 BGCOLOR  = "#fefefe"
-RBGCOLOR = "#00ccff"              
-#RBGCOLOR = "#aaaaff"              
+RBGCOLOR = "#aaaaff"              
 CBGCOLOR = "#ff8888"
 KWCOLOR  = "#88aaff"
 CLCOLOR  = "#880000"
@@ -152,10 +151,7 @@ class pedDoc(Gtk.DrawingArea):
         self.hadj.connect("value-changed", self.hscroll_cb)
         self.vadj.connect("value-changed", self.vscroll_cb)
 
-        self.set_events(
-                    Gdk.EventMask.ALL_EVENTS_MASK | \
-                    Gdk.EventMask.KEY_PRESS_MASK | \
-                    Gdk.EventMask.KEY_RELEASE_MASK)
+        self.set_events(Gdk.EventMask.ALL_EVENTS_MASK)
         
         #self.colormap = Gtk.widget_get_default_colormap()
         self.setcol()
@@ -182,8 +178,9 @@ class pedDoc(Gtk.DrawingArea):
         self.connect("focus-out-event", self.focus_out_cb)    
         
     def convcolor(self, col):
-        return ( int(col[1:3], base=16), int(col[3:5], base=16), \
-                int(col[5:7], base=16) )
+        return ( float(int(col[1:3], base=16)) / 255, 
+                    float(int(col[3:5], base=16)) / 255, \
+                        float(int(col[5:7], base=16)) / 255 )
         
     # Customize your colors here
     def setcol(self):        
@@ -426,6 +423,8 @@ class pedDoc(Gtk.DrawingArea):
             
         self.layout.set_text(text2, len(text2))
         xx, yy = self.layout.get_pixel_size()
+        
+        offs = self.xpos * self.cxx 
              
         if bg_col:
             gc.set_source_rgba(bg_col[0], bg_col[1], bg_col[2])
@@ -437,13 +436,14 @@ class pedDoc(Gtk.DrawingArea):
             #            rc.height   / Pango.SCALE
             #gc.rectangle(x, y, rc.width / Pango.SCALE, \
             #            rc.height / Pango.SCALE)
-            gc.rectangle(x, y, xx, yy)
+            gc.rectangle(x - offs, y, xx , yy)
+            #print self.xpos, x, y, xx, yy
             gc.fill()
         
         if fg_col:    
             gc.set_source_rgba(fg_col[0], fg_col[1], fg_col[2])
             
-        gc.move_to(x, y)
+        gc.move_to(x - offs, y)
         PangoCairo.show_layout(gc, self.layout)
         
         if self.scol:
@@ -454,8 +454,8 @@ class pedDoc(Gtk.DrawingArea):
         return xx, yy
 	
     def draw_doc(self, pdoc, cr):
+    
         #print pdoc, cr
-        
         # paint background
         #bg_color = self.get_style_context().get_background_color(Gtk.StateFlags.NORMAL)
         #cr.set_source_rgba(*list(bg_color))
@@ -544,7 +544,7 @@ class pedDoc(Gtk.DrawingArea):
                             frag = line[:]
 
                     dss = calc_tabs(line, draw_start, self.tabstop)
-                    dss -= self.xpos
+                    # dss -= self.xpos
                     self._draw_text(cr, dss * self.cxx, yy, frag, self.fgcolor, bgcol)
                     
                 cnt = cnt + 1
@@ -552,6 +552,82 @@ class pedDoc(Gtk.DrawingArea):
                 if yy > hhh:
                     break
 
+        # Color keywords. Very primitive coloring, a compromise for speed
+        if self.colflag:
+            # Paint syntax colors
+            xx = 0; yy = 0; 
+            cnt = self.ypos;
+            while cnt <  xlen:
+                #line = self.text[cnt]
+                line =  untab_str(self.text[cnt])
+                for kw in keywords:
+                    ff = 0          # SOL
+                    while True:
+                        ff = line.find(kw, ff)
+                        if ff >= 0:
+                            ff2 = calc_tabs(line, ff, self.tabstop)                    
+                            self._draw_text(cr, ff2 * self.cxx, yy, line[ff:ff+len(kw)],
+                                self.kwcolor, None)
+                            ff += len(kw)
+                            #break
+                        else:        
+                            break
+                        
+                for kw in clwords:
+                    cc = 0      # SOL
+                    while True:
+                        cc = line.find(kw, cc)
+                        if cc >= 0:
+                            cc2 = calc_tabs(line, cc, self.tabstop)                    
+                            self._draw_text(cr, cc2 * self.cxx, yy, line[cc:cc+len(kw)],
+                                self.clcolor, None)
+                            cc += len(kw)
+                        else:        
+                            break
+                        
+                # Comments: # or // and "     
+                ccc = line.find("#"); 
+                if ccc < 0:
+                    ccc = line.find("//"); 
+                    
+                cccc = line.find('"')
+    
+                # See if hash preceeds quote (if any)
+                if ccc >= 0 and (cccc > ccc or cccc == -1):
+                    ccc -= self.xpos
+                    ccc2 = calc_tabs(line, ccc, self.tabstop)                    
+                    self._draw_text(cr, ccc2 * self.cxx, yy, line[ccc:],
+                            self.cocolor, None)
+                else:   
+                    qqq = 0                                 
+                    while True:
+                        quote = '"'
+                        sss = qqq
+                        qqq = line.find(quote, qqq);                     
+                        if qqq < 0:
+                            # See if single quote is found
+                            qqq = line.find("'", sss); 
+                            if qqq >= 0:
+                                quote = '\''                    
+                        if qqq >= 0:
+                            qqq += 1
+                            qqqq = line.find(quote, qqq)
+                            if qqqq >= 0:
+                                qqq -= self.xpos           
+                                qqq2 = calc_tabs(line, qqq, self.tabstop)
+                                self._draw_text(cr, 
+                                        qqq2 * self.cxx, yy, line[qqq:qqqq], self.stcolor, None)
+                                qqq = qqqq + 1
+                            else:
+                                break
+                        else:
+                            break
+                            
+                cnt = cnt + 1
+                yy += self.cyy
+                if yy > hhh:
+                    break
+        
         self._drawcaret(cr)        
         
     '''def area_expose_cb(self, area, event):
@@ -1240,8 +1316,11 @@ class pedDoc(Gtk.DrawingArea):
 
      # Invalidate currdent line
     def inval_line(self):
-        rect = Gdk.Rectangle(0, self.caret[1] * self.cyy, 
-                self.get_width(), self.cyy)
+        rect = Gdk.Rectangle()
+        rect.x = self.caret[0] * self.cxx
+        rect.y = self.caret[1] * self.cyy
+        rect.width =  self.get_width()
+        rect.height = self.cyy
         self.invalidate(rect)
    
     def invalidate(self, rect = None):                        
@@ -1870,5 +1949,8 @@ def run_async_time(win):
         
 
 #eof
+
+
+
 
 

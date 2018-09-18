@@ -637,11 +637,16 @@ class ActHand:
         #print "CTRL - C"
         if self2.xsel == -1 or  self2.ysel == -1:
             self2.mained.update_statusbar("Nothing selected, copying line.")
-            clip = gtk.Clipboard()
+
+            disp2 = Gdk.Display()
+            disp = disp2.get_default()
+            clip = Gtk.Clipboard.get_default(disp)
+            
             xidx = self2.caret[0] + self2.xpos;
             yidx = self2.caret[1] + self2.ypos
             if self.currclip == 0:
-                clip.set_text(self2.text[yidx])   
+                #print "set clip:",  self2.text[yidx]
+                clip.set_text(self2.text[yidx], len(self2.text[yidx]))   
             self.clips[self.currclip] = self2.text[yidx]
             return
             
@@ -673,9 +678,13 @@ class ActHand:
             cnt += 1; cnt2 += 1
 
         #print "clip:", cumm
-        clip = gtk.Clipboard()
+        #clip = Gtk.Clipboard()
+        disp2 = Gdk.Display()
+        disp = disp2.get_default()
+        clip = Gtk.Clipboard.get_default(disp)
+            
         if self.currclip == 0:
-            clip.set_text(cumm)
+            clip.set_text(cumm, len(cumm))
         self.clips[self.currclip] = cumm
 
     def ctrl_d(self, self2):
@@ -855,7 +864,10 @@ class ActHand:
 
     def ctrl_v(self, self2):
         #print "CTRL - V"
-        clip = gtk.Clipboard()
+        #clip = Gtk.Clipboard()
+        disp2 = Gdk.Display()
+        disp = disp2.get_default()
+        clip = Gtk.Clipboard.get_default(disp)
             
         if self.currclip == 0:
             clip.request_text(self.clip_cb, self2)
@@ -1063,9 +1075,13 @@ class ActHand:
 
         # We use this for deleting as well, so fake clip op
         if not fake:
-            clip = gtk.Clipboard()
+            #clip = Gtk.Clipboard()
+            disp2 = Gdk.Display()
+            disp = disp2.get_default()
+            clip = Gtk.Clipboard.get_default(disp)
+            
             if self.currclip == 0:
-                clip.set_text(cumm)
+                clip.set_text(cumm, len(cumm))
             self.clips[self.currclip] = cumm    
 
         self2.invalidate()
@@ -1183,7 +1199,7 @@ class ActHand:
 
     def alt_o(self, self2):
         # Simplified open
-        fname = pedofd.ofd("")
+        fname = pedofd.ofd("", self2)
         if fname != "":
             self2.mained.openfile(fname)
 
@@ -1700,6 +1716,8 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
 
 
 

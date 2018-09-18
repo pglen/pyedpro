@@ -778,7 +778,6 @@ class EdMainWindow():
         if vcurr2:
             pedconfig.conf.keyh.act.ctrl_v(vcurr2.area)
 
-
     # -------------------------------------------------------------------
     # Menu callback
 
@@ -1284,6 +1283,7 @@ def handler_tick():
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
 
 
 

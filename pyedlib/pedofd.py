@@ -3,60 +3,67 @@
 # Action Handler for find
 
 import time, os, re, string, warnings
-import  gtk
+#import  gtk
 
-def ofd(fname = None):
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GObject
+from gi.repository import GdkPixbuf
 
-    dialog = gtk.Dialog("pyedit: Open File",
+def ofd(fname = None, self2 = None):
+
+    dialog = Gtk.Dialog("pyedpo: Open File",
                    None,
-                   gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                   (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
+                   Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
                     
-    dialog.set_default_response(gtk.RESPONSE_ACCEPT)
-    dialog.set_position(gtk.WIN_POS_CENTER)
-    
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_position(Gtk.WindowPosition.CENTER)
+    dialog.set_default_size(800, 600)
+        
     dialog.connect("key-press-event", area_key, dialog)
     dialog.connect("key-release-event", area_key, dialog)
 
-    dialog.set_default_size(800, 600)
-
     # Spacers
-    label1  = gtk.Label("   ");  label2 = gtk.Label("   ") 
-    label3  = gtk.Label("   ");  label4 = gtk.Label("   ") 
-    label5  = gtk.Label("   ");  label6 = gtk.Label("   ") 
-    label7  = gtk.Label("   ");  label8 = gtk.Label("   ") 
-    label10 = gtk.Label("   ");  
+    label1  = Gtk.Label("   ");  label2 = Gtk.Label("   ") 
+    label3  = Gtk.Label("   ");  label4 = Gtk.Label("   ") 
+    label5  = Gtk.Label("   ");  label6 = Gtk.Label("   ") 
+    label7  = Gtk.Label("   ");  label8 = Gtk.Label("   ") 
+    label10 = Gtk.Label("   ");  
     
-    dialog.label11 = gtk.Label("   ") 
-    dialog.label12 = gtk.Label("   ") 
+    dialog.label11 = Gtk.Label("   ") 
+    dialog.label12 = Gtk.Label("   ") 
 
-    dialog.pbox = gtk.HBox()
+    dialog.pbox = Gtk.HBox()
     fill_path(dialog)
    
-    dialog.vbox.pack_start(label4, False)  
-    dialog.vbox.pack_start(dialog.pbox, False)  
-    dialog.vbox.pack_start(label10, False)  
+    dialog.vbox.pack_start(label4, 0, 0, 0)
+    dialog.vbox.pack_start(dialog.pbox, 0, 0, 0)
+    dialog.vbox.pack_start(label10, 0, 0, 0)
     
     warnings.simplefilter("ignore")
-    dialog.entry = gtk.Entry(); 
+    dialog.entry = Gtk.Entry(); 
     warnings.simplefilter("default")
     
     dialog.entry.set_activates_default(True)
     dialog.entry.set_text(fname)
     
-    hbox2 = gtk.HBox()
-    hbox2.pack_start(label6, False)  
-    hbox2.pack_start(dialog.entry)  
-    hbox2.pack_start(label7, False)  
+    hbox2 = Gtk.HBox()
+    hbox2.pack_start(label6, 0, 0, 0)
+    hbox2.pack_start(dialog.entry, True, True, 0)
+    hbox2.pack_start(label7, 0, 0, 0)
   
-    dialog.vbox.pack_start(hbox2, False)
-    dialog.vbox.pack_start(label8, False)  
+    dialog.vbox.pack_start(hbox2, 0, 0, 0)
+    dialog.vbox.pack_start(label8, 0, 0, 0)
 
-    dialog.ts = gtk.ListStore(str, str, str, str)
+    dialog.ts = Gtk.ListStore(str, str, str, str)
     tview = create_ftree(dialog.ts)
             
-    scroll = gtk.ScrolledWindow()
+    scroll = Gtk.ScrolledWindow()
     
     tview.connect("row-activated",  tree_sel, dialog)
     tview.connect("cursor-changed",  tree_sel_row, dialog)
@@ -64,15 +71,15 @@ def ofd(fname = None):
 
     scroll.add(tview)
     
-    frame2 = gtk.Frame(); frame2.add(scroll)
+    frame2 = Gtk.Frame(); frame2.add(scroll)
 
-    hbox3 = gtk.HBox()
-    hbox3.pack_start(label1, False)  
-    hbox3.pack_start(frame2)  
-    hbox3.pack_start(label2, False)  
+    hbox3 = Gtk.HBox()
+    hbox3.pack_start(label1, 0, 0, 0)
+    hbox3.pack_start(frame2, True, True, 0)
+    hbox3.pack_start(label2, 0, 0, 0)
   
-    dialog.vbox.pack_start(hbox3)  
-    dialog.vbox.pack_start(label3, False)  
+    dialog.vbox.pack_start(hbox3, True, True, 0)  
+    dialog.vbox.pack_start(label3, 0, 0, 0)
     
     dialog.show_all()
     populate(dialog)    
@@ -81,7 +88,7 @@ def ofd(fname = None):
     
     response = dialog.run()   
     
-    if response == gtk.RESPONSE_ACCEPT:
+    if response == Gtk.ResponseType.ACCEPT:
         res = os.path.realpath(dialog.entry.get_text())
     else:
         res = ""        
@@ -103,20 +110,23 @@ def fill_path(dialog):
             
     cwd = os.getcwd(); 
     # Hack to detect windows:
-    if cwd[1] == ":":
-        darr = cwd.split("\\")    
-    else:                   
-        darr = cwd.split("/")    
-    dialog.pbox.pack_start(dialog.label11)
+    #if cwd[1] == ":":
+    #    darr = cwd.split("\\")    
+    #else:                   
+    darr = cwd.split("/")
+            
+    dialog.pbox.pack_start(dialog.label11, 0, 0, 0)
     curr = ""
     for aa in darr:
-        butt = gtk.Button(aa + "/")
+        #butt = Gtk.Button(aa + "/")
+        butt = Gtk.Button(aa)
+        
         curr += aa + "/"; butt.path = curr
         butt.set_focus_on_click(False)
         butt.connect("clicked", butt_click, dialog)
-        dialog.pbox.pack_start(butt, False)        
+        dialog.pbox.pack_start(butt, 0, 0, 2)
         
-    dialog.pbox.pack_start(dialog.label12)
+    dialog.pbox.pack_start(dialog.label12, 0, 0, 0)
     dialog.show_all()
     
 # ------------------------------------------------------------------------
@@ -138,10 +148,10 @@ def populate(dialog):
     ppp = ".."
     filestat = os.stat(ppp)
     piter = dialog.ts.append(row=None)      
-    dialog.ts.set(piter, 0, ppp)
-    dialog.ts.set(piter, 1, filestat.st_size)
+    dialog.ts.set(piter, 0, str(ppp))
+    dialog.ts.set(piter, 1, str(filestat.st_size))
     dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
-    dialog.ts.set(piter, 3, time.ctime(filestat.st_mtime))
+    dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
 
     ddd2 = os.listdir(".")
     #ddd = sorted(ddd2)
@@ -161,9 +171,9 @@ def populate(dialog):
             #dialog.ts.set(piter, 0, "["+ filename + "]")
             #print filename,
             dialog.ts.set(piter, 0, filename )
-            dialog.ts.set(piter, 1, filestat.st_size)
+            dialog.ts.set(piter, 1, str(filestat.st_size))
             dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
-            dialog.ts.set(piter, 3, time.ctime(filestat.st_mtime))
+            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
 
     for filename in ddd:
         if filename[0] == ".":
@@ -173,43 +183,43 @@ def populate(dialog):
             piter = dialog.ts.append(row=None)      
             #print filename,
             dialog.ts.set(piter, 0, filename)
-            dialog.ts.set(piter, 1, filestat.st_size)
+            dialog.ts.set(piter, 1, str(filestat.st_size))
             dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
-            dialog.ts.set(piter, 3, time.ctime(filestat.st_mtime))
+            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
     
     # --------------------------------------------------------------------
     
 def create_ftree(ts, text = None):
         
     # create the tview using ts
-    tv = gtk.TreeView(ts)
+    tv = Gtk.TreeView(ts)
 
     # create a CellRendererText to render the data
-    cell = gtk.CellRendererText()
+    cell = Gtk.CellRendererText()
     
-    tvcolumn = gtk.TreeViewColumn('File')
+    tvcolumn = Gtk.TreeViewColumn('File')
     tvcolumn.set_min_width(240)
     tvcolumn.pack_start(cell, True)
     tvcolumn.add_attribute(cell, 'text', 0)
-    tvcolumn.set_sizing(gtk.TREE_VIEW_COLUMN_FIXED)
+    tvcolumn.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
     tv.append_column(tvcolumn)
 
-    cell2 = gtk.CellRendererText()
-    tvcolumn2 = gtk.TreeViewColumn('Size')
+    cell2 = Gtk.CellRendererText()
+    tvcolumn2 = Gtk.TreeViewColumn('Size')
     tvcolumn2.set_min_width(100)
     tvcolumn2.pack_start(cell2, True)
     tvcolumn2.add_attribute(cell2, 'text', 1)
     tv.append_column(tvcolumn2)
 
-    cell3 = gtk.CellRendererText()
-    tvcolumn3 = gtk.TreeViewColumn('Perm')
+    cell3 = Gtk.CellRendererText()
+    tvcolumn3 = Gtk.TreeViewColumn('Perm')
     tvcolumn3.set_min_width(120)
     tvcolumn3.pack_start(cell3, True)
     tvcolumn3.add_attribute(cell3, 'text', 2)
     tv.append_column(tvcolumn3)
 
-    cell4 = gtk.CellRendererText()
-    tvcolumn4 = gtk.TreeViewColumn('Modified')
+    cell4 = Gtk.CellRendererText()
+    tvcolumn4 = Gtk.TreeViewColumn('Modified')
     tvcolumn4.set_min_width(150)
     tvcolumn4.pack_start(cell4, True)
     tvcolumn4.add_attribute(cell4, 'text', 3)
@@ -250,43 +260,43 @@ def tree_sel(xtree, xiter, xpath, dialog):
         populate(dialog)
     else:
         dialog.entry.set_text(xstr)        
-        dialog.response(gtk.RESPONSE_ACCEPT)
+        dialog.response(Gtk.ResponseType.ACCEPT)
 
 # Call key handler
 def area_key(area, event, self):
 
     #print "area_key", event
     # Do key down:
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Escape:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
             #print "Esc"
             return
             #area.destroy()
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Return:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
             #print "Ret"
             return
             #area.destroy()
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.BackSpace:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_BackSpace:
             os.chdir("..")
             populate(self)            
             #print "BS"
    
-        if event.keyval == gtk.keysyms.Alt_L or \
-                event.keyval == gtk.keysyms.Alt_R:
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
             self.alt = True;
             
-        if event.keyval == gtk.keysyms.x or \
-                event.keyval == gtk.keysyms.X:
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
             if self.alt:
                 area.destroy()
                                   
-    elif  event.type == gtk.gdk.KEY_RELEASE:
-        if event.keyval == gtk.keysyms.Alt_L or \
-              event.keyval == gtk.keysyms.Alt_R:
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
             self.alt = False;
             
 # ------------------------------------------------------------------------
@@ -312,6 +322,7 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
 
 
 

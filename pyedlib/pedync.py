@@ -87,8 +87,10 @@ def  about():
                         Gtk.get_minor_version(), \
                             Gtk.get_micro_version())
     
+    
     comm = "\nPython based easily configurable editor\n"\
         "with time accounting module.\n"\
+        "\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
         "\nRunning PyGtk %d.%d.%d" % GLib.pyglib_version +\
         "\nRunning GTK %d.%d.%d\n" % gver +\
         "\nRunning Python %s\n" % platform.python_version()
@@ -145,5 +147,6 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
 
 
