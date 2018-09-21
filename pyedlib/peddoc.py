@@ -14,7 +14,9 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import keyhand, pedconfig, pedync, pedspell, pedmenu, utils
+import keyhand, pedconfig, pedync
+import pedcolor, pedspell, pedmenu, utils
+
 from pedutil import *
 
 VSCROLLGAP  = 2             # Gap between the page boundary and ver. scroll
@@ -177,57 +179,55 @@ class pedDoc(Gtk.DrawingArea):
         self.connect("focus-in-event", self.focus_in_cb)    
         self.connect("focus-out-event", self.focus_out_cb)    
         
-    def convcolor(self, col):
-        return ( float(int(col[1:3], base=16)) / 255, 
-                    float(int(col[3:5], base=16)) / 255, \
-                        float(int(col[5:7], base=16)) / 255 )
-        
     # Customize your colors here
     def setcol(self):        
-                         
-        #print "col", self.convcolor("#80ff81")
-        
         ccc = pedconfig.conf.sql.get_str("fgcolor")
+        print "fgcol", ccc
         if ccc == "":
-            self.fgcolor  = self.convcolor(FGCOLOR)              
+            self.fgcolor  = pedcolor.convcolor(FGCOLOR)              
         else: 
-            self.fgcolor  = self.convcolor(ccc)              
-        
+            self.fgcolor  = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
+        print self.fgcolor
+                     
         ccc = pedconfig.conf.sql.get_str("rbgcolor")
+        print "rbgcol", ccc
         if ccc == "":
-            self.rbgcolor = self.convcolor(RBGCOLOR)              
+            self.rbgcolor = pedcolor.convcolor(RBGCOLOR)              
         else: 
-            self.rbgcolor = self.convcolor(ccc)              
+            self.rbgcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])              
+        print self.rbgcolor
         
         ccc = pedconfig.conf.sql.get_str("cbgcolor")
+        print "cbgcol", ccc
         if ccc == "":
-            self.cbgcolor = self.convcolor(CBGCOLOR)              
+            self.cbgcolor = pedcolor.convcolor(CBGCOLOR)              
         else: 
-            self.cbgcolor = self.convcolor(ccc)              
+            self.cbgcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
         
         ccc = pedconfig.conf.sql.get_str("kwcolor")
         if ccc == "":
-            self.kwcolor = self.convcolor(KWCOLOR)              
+            self.kwcolor = pedcolor.convcolor(KWCOLOR)              
         else: 
-            self.kwcolor = self.convcolor(ccc)              
+            self.kwcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
        
         ccc = pedconfig.conf.sql.get_str("clcolor")
         if ccc == "":
-            self.clcolor = self.convcolor(CLCOLOR)              
+            self.clcolor = pedcolor.convcolor(CLCOLOR)              
         else: 
-            self.clcolor = self.convcolor(ccc)              
+            self.clcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
         
         ccc = pedconfig.conf.sql.get_str("cocolor")
         if ccc == "":
-            self.cocolor = self.convcolor(COCOLOR)              
+            self.cocolor = pedcolor.convcolor(COCOLOR)              
         else: 
-            self.cocolor = self.convcolor(ccc)              
+            self.cocolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
        
         ccc = pedconfig.conf.sql.get_str("stcolor")
         if ccc == "":
-            self.stcolor = self.convcolor(STCOLOR)              
+            self.stcolor = pedcolor.convcolor(STCOLOR)              
         else: 
-            self.stcolor = self.convcolor(ccc)              
+            self.stcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])              
+        
         
     def setfont(self, fam, size):
     
@@ -1949,6 +1949,7 @@ def run_async_time(win):
         
 
 #eof
+
 
 
 

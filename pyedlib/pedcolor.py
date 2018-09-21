@@ -17,13 +17,20 @@ from pedutil import *
 def colors(self, self2):
 
     head = "pyedit: colors"
+
+    print "fgcolor", rgb2str(col2rgb(self2.fgcolor))
+    print "rbgcolor", rgb2str(col2rgb(self2.rbgcolor))
+    print "cbgcolor", rgb2str(col2rgb(self2.cbgcolor))
     
-    dialog = gtk.Dialog(head,
+    dialog = Gtk.Dialog(head,
                    None,
-                   gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                   (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-    dialog.set_default_response(gtk.RESPONSE_ACCEPT)
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_transient_for(self2.mained.window)
+    
     dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
     self.dialog = dialog
     
@@ -33,41 +40,41 @@ def colors(self, self2):
     #xx, yy = self2.mained.window.get_size()
     #dialog.set_default_size(3*xx/4, yy/2)
 
-    vbox = gtk.VBox()
-    lab3 = gtk.Label("       ")
-    vbox.pack_start(lab3, False )
+    vbox = Gtk.VBox()
+    lab3 = Gtk.Label("       ")
+    vbox.pack_start(lab3, False, 0, 0 )
     
     hbox1 = col_line(" _Font color ", self2.fgcolor, col_one, self2)
-    vbox.pack_start(hbox1, False )
+    vbox.pack_start(hbox1, False, 0, 0 )
 
     hbox2 = col_line(" _Selection Color ", self2.rbgcolor, col_two, self2)
-    vbox.pack_start(hbox2, False )
+    vbox.pack_start(hbox2, False, 0, 0 )
     
     hbox2 = col_line(" Col_umn Sel. Color ", self2.cbgcolor, col_three,  self2)
-    vbox.pack_start(hbox2, False )
+    vbox.pack_start(hbox2, False, 0, 0 )
     
     hbox2 = col_line("_Keyword Color ", self2.kwcolor,  col_four, self2)
-    vbox.pack_start(hbox2, False )
+    vbox.pack_start(hbox2, False, 0, 0 )
   
     hbox2 = col_line("C_lass Color ", self2.clcolor,  col_five, self2)
-    vbox.pack_start(hbox2, False )
+    vbox.pack_start(hbox2, False, 0, 0 )
             
     hbox2 = col_line("Co_mment Color ", self2.cocolor,  col_six, self2)
-    vbox.pack_start(hbox2, False )
+    vbox.pack_start(hbox2, False, 0, 0 )
     
     hbox2 = col_line("S_tring Color ", self2.stcolor,  col_seven, self2)
-    vbox.pack_start(hbox2, False )
+    vbox.pack_start(hbox2, False, 0, 0 )
     
-    buttd = gtk.Button(" _Restore Defaults ")
+    buttd = Gtk.Button(" _Restore Defaults ")
     buttd.connect("clicked", def_col, self2)
     
-    lab4 = gtk.Label("       ")
-    vbox.pack_start(lab4, False )
+    lab4 = Gtk.Label("       ")
+    vbox.pack_start(lab4, False , 0, 0)
     
-    vbox.pack_start(buttd, False )
+    vbox.pack_start(buttd, False, 0, 0 )
     
-    lab5 = gtk.Label("       ")
-    vbox.pack_start(lab5, False )
+    lab5 = Gtk.Label("       ")
+    vbox.pack_start(lab5, False , 0, 0)
             
     dialog.vbox.add(vbox)
     dialog.show_all()
@@ -76,76 +83,105 @@ def colors(self, self2):
     dialog.destroy()
                       
 # ------------------------------------------------------------------------
+# Conversion routines:
+                      
+def col2rgb(col):
+
+    aa = min(col[0], 1.)
+    bb = min(col[1], 1.)
+    cc = min(col[2], 1.) 
+            
+    return Gdk.Color.from_floats(aa, bb, cc)
+
+def rgb2str(icol):
+    strx = "#%02x%02x%02x" % (icol.red & 0xff,  \
+                        icol.green & 0xff, icol.blue & 0xff)
+    return strx
+    
+def convcolor( col):
+    return ( float(int(col[1:3], base=16)) / 256, 
+                    float(int(col[3:5], base=16)) / 256, \
+                        float(int(col[5:7], base=16)) / 256 )
+
+def rgb2col(icol):
+        #print "rgb2col", icol
+        col = [0, 0, 0]
+        col[0] = float(icol.red) / 256
+        col[1] = float(icol.green) / 256
+        col[2] = float(icol.blue) / 256
+        return col
+                                                                                                                                                                                                       
+# ------------------------------------------------------------------------
 
 def area_key(area, event, dialog):
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Escape:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
             #print "Esc"
-            dialog.response(gtk.RESPONSE_REJECT)
+            dialog.response(Gtk.ResponseType.REJECT)
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Return:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
             #print "Ret"
-            dialog.response(gtk.RESPONSE_ACCEPT)
+            dialog.response(Gtk.ResponseType.ACCEPT)
 
-        if event.keyval == gtk.keysyms.Alt_L or \
-                event.keyval == gtk.keysyms.Alt_R:
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
             area.alt = True;
             
-        if event.keyval == gtk.keysyms.x or \
-                event.keyval == gtk.keysyms.X:
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
             if area.alt:
-                dialog.response(gtk.RESPONSE_REJECT)
+                dialog.response(Gtk.ResponseType.REJECT)
                               
-    elif  event.type == gtk.gdk.KEY_RELEASE:
-        if event.keyval == gtk.keysyms.Alt_L or \
-              event.keyval == gtk.keysyms.Alt_R:
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
 
 # ------------------------------------------------------------------------
 
 def   colbox(col):
 
-    lab1 = gtk.Label("        ")
-    eventbox = gtk.EventBox()
-    frame = gtk.Frame()
+    lab1 = Gtk.Label("        ")
+    eventbox = Gtk.EventBox()
+    frame = Gtk.Frame()
     frame.add(lab1)
     eventbox.add(frame)
-    eventbox.color =  col  # gtk.gdk.Color(col)
-    eventbox.modify_bg(gtk.STATE_NORMAL, eventbox.color)
+    eventbox.color =  col  # Gtk.gdk.Color(col)
+    eventbox.modify_bg(Gtk.StateFlags.NORMAL, col2rgb(eventbox.color))
     return eventbox
     
 def col_line(tit, col, callb, self2):
 
-    butt1 = gtk.Button(tit)
+    butt1 = Gtk.Button(tit)
     ev1 = colbox(col)
     tit = tit.replace("_", "")
     tit = tit.strip().rstrip()
     
     butt1.connect("clicked", callb, "Choose " + tit, ev1, self2)
 
-    hbox = gtk.HBox()
-    lab1 = gtk.Label("   ");  lab2 = gtk.Label("   ")
+    hbox = Gtk.HBox()
+    lab1 = Gtk.Label("   ");  lab2 = Gtk.Label("   ")
     
-    hbox.pack_start(lab1, False )
-    hbox.pack_start(ev1, False )
-    hbox.pack_start(lab2, False )
+    hbox.pack_start(lab1, False , 0, 0)
+    hbox.pack_start(ev1, False , 0, 0)
+    hbox.pack_start(lab2, False , 0, 0)
     
-    hbox.pack_start(butt1, False )
+    hbox.pack_start(butt1, False, 0, 0 )
     
     return hbox
 
 def colsel(ev, title):
 
-    csd = gtk.ColorSelectionDialog(title)
+    csd = Gtk.ColorSelectionDialog(title)
     col = csd.get_color_selection()
-    col.set_current_color(ev.color)    
+    col.set_current_color(col2rgb(ev.color))    
     response = csd.run()
     
-    if response == gtk.RESPONSE_OK:   
+    if response == Gtk.ResponseType.OK:   
         ev.color = col.get_current_color()
-        ev.modify_bg(gtk.STATE_NORMAL, ev.color)
+        ev.modify_bg(Gtk.StateFlags.NORMAL, ev.color)
     csd.destroy()
         
 def col_one(butt, title, ev, self2):
@@ -221,27 +257,27 @@ def col_seven(butt, title, ev, self2):
 
 def  def_col(butt, self2):
 
-    self2.fgcolor  = self2.colormap.alloc_color(peddoc.FGCOLOR)              
-    self2.rbgcolor = self2.colormap.alloc_color(peddoc.RBGCOLOR)              
-    self2.cbgcolor = self2.colormap.alloc_color(peddoc.CBGCOLOR)              
-    self2.kwcolor  = self2.colormap.alloc_color(peddoc.KWCOLOR)
-    self2.clcolor  = self2.colormap.alloc_color(peddoc.CLCOLOR)
-    self2.cocolor  = self2.colormap.alloc_color(peddoc.COCOLOR)
-    self2.stcolor  = self2.colormap.alloc_color(peddoc.STCOLOR)
+    self2.fgcolor  = convcolor(peddoc.FGCOLOR)              
+    self2.rbgcolor = convcolor(peddoc.RBGCOLOR)              
+    self2.cbgcolor = convcolor(peddoc.CBGCOLOR)              
+    self2.kwcolor  = convcolor(peddoc.KWCOLOR)
+    self2.clcolor  = convcolor(peddoc.CLCOLOR)
+    self2.cocolor  = convcolor(peddoc.COCOLOR)
+    self2.stcolor  = convcolor(peddoc.STCOLOR)
+    
     self2.invalidate()
-
-    pedconfig.conf.sql.put("fgcolor", self2.fgcolor.to_string())        
-    pedconfig.conf.sql.put("rbgcolor", self2.rbgcolor.to_string())        
-    pedconfig.conf.sql.put("cbgcolor", self2.cbgcolor.to_string())        
-    pedconfig.conf.sql.put("kwcolor", self2.kwcolor.to_string())        
-    pedconfig.conf.sql.put("clcolor", self2.clcolor.to_string())        
-    pedconfig.conf.sql.put("cocolor", self2.cocolor.to_string())        
-    pedconfig.conf.sql.put("stcolor", self2.stcolor.to_string())        
-
+    
+    '''pedconfig.conf.sql.put("fgcolor",  rgb2str(col2rgb(self2.fgcolor)) )       
+    pedconfig.conf.sql.put("rbgcolor", rgb2str(col2rgb(self2.rbgcolor)))
+    pedconfig.conf.sql.put("cbgcolor", rgb2str(col2rgb(self2.cbgcolor)))
+    pedconfig.conf.sql.put("kwcolor",  rgb2str(col2rgb(self2.kwcolor)) )
+    pedconfig.conf.sql.put("clcolor",  rgb2str(col2rgb(self2.clcolor)) )
+    pedconfig.conf.sql.put("cocolor",  rgb2str(col2rgb(self2.cocolor)) )
+    pedconfig.conf.sql.put("stcolor",  rgb2str(col2rgb(self2.stcolor)) )
+    '''
+    
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
-
-
-
-
+    
+# EOF

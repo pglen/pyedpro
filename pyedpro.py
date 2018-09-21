@@ -128,7 +128,7 @@ if __name__ == '__main__':
     
     opts = []; args = []
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:hfvxctV")
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvxctV")
     except getopt.GetoptError, err:
         print "Invalid option(s) on command line:", err
         sys.exit(1)
@@ -145,6 +145,7 @@ if __name__ == '__main__':
                 pgdebug = 0
 
         if aa[0] == "-h": help();  exit(1)
+        if aa[0] == "-?": help();  exit(1)
         if aa[0] == "-V": print "Version", pyedlib.pedconfig.conf.version; \
             exit(1)
         if aa[0] == "-f": pyedlib.pedconfig.conf.full_screen = True
@@ -222,6 +223,7 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 
 
