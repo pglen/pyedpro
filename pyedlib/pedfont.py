@@ -7,6 +7,8 @@ import  signal, os, time, sys, subprocess
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import Pango
 
 #import  gobject, gtk, pango
 
@@ -15,25 +17,28 @@ from    pedutil import *
 
 # I had to do this, as the standard font dialog does not have a mono filter.
 # Also, we do not need mono italic etc so the dialog is simpler.
-# Plus, the mono fonts are marked in correctly, this way we can filter them.
+# Plus, the mono fonts are marked incorrectly, this way we can filter them.
 # Oh yeah, live feedback ...
 
 def selfont(self, self2):
 
     head = "pyedit: Set Editor Font"
         
-    dialog = gtk.Dialog(head,
+    dialog = Gtk.Dialog(head,
                    None,
-                   gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                   (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-    dialog.set_default_response(gtk.RESPONSE_ACCEPT)
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_transient_for(self2.mained.window)
+    
     dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
     self.dialog = dialog
-                    
+                             
     dialog.myfd = self2.pangolayout.get_font_description()
     myfam = dialog.myfd.get_family()
-    mysiz = dialog.myfd.get_size() / pango.SCALE
+    mysiz = dialog.myfd.get_size() / Pango.SCALE
 
     dialog.lastfam = myfam
     dialog.lastsiz = mysiz
@@ -42,63 +47,78 @@ def selfont(self, self2):
     #dialog.set_default_size(3*xx/4, yy/2)
 
     # Spacers
-    label1 = gtk.Label("   ");  label2 = gtk.Label("   ") 
-    label3 = gtk.Label("   ");  label4 = gtk.Label("   ") 
+    label1 = Gtk.Label("  ");  
+    label2a = Gtk.Label("  ");  label2 = Gtk.Label("  ") 
+    label3 = Gtk.Label("  ");  
+    label3a = Gtk.Label("  ");  
+    label4 = Gtk.Label("  ") 
     
-    dialog.testlab = gtk.Label("The test line.\nMulti line text.")
+    dialog.testlab = Gtk.Label("The test line.\nMulti line text.")
     dialog.testlab.modify_font(dialog.myfd)
-    dialog.testlab.set_size_request(300, yy/3)
+    dialog.testlab.set_size_request(200, yy/3)
     
     dialog.tree = create_tree(self)
     dialog.tree.set_headers_visible(False)
-    dialog.tree.set_size_request(200, yy/3)
+    #dialog.tree.set_size_request(200, -1)
     
     dialog.tree.connect("cursor-changed",  tree_sel_row, dialog, self2)
     dialog.tree.connect("key-press-event", area_key, dialog)
     dialog.tree.connect("key-release-event", area_key, dialog)
     
-    stree = gtk.ScrolledWindow()
+    stree = Gtk.ScrolledWindow()
     stree.add(dialog.tree)
-    hbox = gtk.HBox()
-    hbox.pack_start(stree, False )           
-    hbox.pack_start(label2, False )           
+    stree.set_size_request(150, -1)
     
-    vbox = gtk.VBox()
+    hbox = Gtk.HBox()
+    hbox.pack_start(label2a, False, False,0)           
+    hbox.pack_start(stree, True, True,0)           
+    hbox.pack_start(label2, False ,0, 0)           
+    
+    vbox = Gtk.VBox()
     
     #dialog.tree2 = create_tree(self)
     #dialog.tree2.set_headers_visible(False)
     #dialog.tree2.set_size_request(200, 80)
     #dialog.tree2.connect("cursor-changed",  tree_sel_row2, dialog)
 
-    vbox.pack_start(label1, False)           
-    frame = gtk.Frame()
+    vbox.pack_start(label1, False, 0 ,0 )           
+    frame = Gtk.Frame()
     frame.add(dialog.testlab)
-    vbox.pack_start(frame)           
-    vbox.pack_start(label3, False )           
+    vbox.pack_start(frame, True, 0, 0)           
+    vbox.pack_start(label3, False, 0, 0 )           
     
-    hbox.pack_start(vbox)           
-    hbox.pack_start(label4, False )           
+    hbox.pack_start(vbox, True,  0, 0)           
+    hbox.pack_start(label4, False, 0, 0 )           
     
     dialog.tree3 = create_tree(self)
     dialog.tree3.set_headers_visible(False)
-    dialog.tree3.set_size_request(80, yy/3)
+    dialog.tree3.set_size_request(180, yy/3)
     
     dialog.tree3.connect("cursor-changed",  tree_sel_row3, dialog, self2)
     dialog.tree3.connect("key-press-event", area_key, dialog)
     dialog.tree3.connect("key-release-event", area_key, dialog)
 
-    stree3 = gtk.ScrolledWindow()
+    stree3 = Gtk.ScrolledWindow()
     stree3.add(dialog.tree3)
+    stree3.set_size_request(80, -1)
         
     sizes = []; add_sizes(sizes)
     update_treestore2(None, dialog.tree3, sizes, mysiz)
     
-    hbox.pack_start(stree3, False)           
+    hbox.pack_start(stree3, True, True, 0)           
+    hbox.pack_start(label3a, False, 0, 0 )           
+
+    vlab1 = Gtk.Label() ;    vlab2 = Gtk.Label()
+    vbox2 = Gtk.VBox()
     
-    dialog.vbox.add(hbox)
+    vbox2.add(vlab1)
+    vbox2.add(hbox)                                 
+    vbox2.add(vlab2)
+        
+    dialog.vbox.add(vbox2)
     dialog.show_all()
 
-    pg = gtk.Widget.create_pango_context(self.window)    
+    pg = Gtk.Widget.create_pango_context(self.window)    
     fd = pg.get_font_description()
 
     fonts = pg.list_families();  
@@ -122,10 +142,10 @@ def selfont(self, self2):
         dialog.fonts2.append(nnn)
         cnt += 1
     update_treestore(None, dialog.tree, dialog.fonts2, curr)
-
+    
     result = dialog.run()
     dialog.destroy()
-    if result == gtk.RESPONSE_ACCEPT:
+    if result == Gtk.ResponseType.ACCEPT:
         #print result, dialog.lastfam, dialog.lastsiz        
         for mm in range(self2.notebook.get_n_pages()):
             vcurr = self2.notebook.get_nth_page(mm)
@@ -146,7 +166,7 @@ def tree_sel_row(xtree, dialog, self2):
     xstr = xmodel.get_value(xiter, 0)     
     dialog.lastfam = xstr
     dialog.myfd.set_family(xstr); 
-    dialog.myfd.set_size(dialog.lastsiz * pango.SCALE)
+    dialog.myfd.set_size(dialog.lastsiz * Pango.SCALE)
     dialog.testlab.modify_font(dialog.myfd)
     
     self2.setfont(dialog.lastfam, dialog.lastsiz)
@@ -160,7 +180,7 @@ def tree_sel_row3(xtree, dialog, self2):
     #print "tree_sel_row3", xstr    
     dialog.lastsiz = int(xstr)
     dialog.myfd.set_family(dialog.lastfam); 
-    dialog.myfd.set_size(dialog.lastsiz * pango.SCALE)
+    dialog.myfd.set_size(dialog.lastsiz * Pango.SCALE)
     dialog.testlab.modify_font(dialog.myfd)
     
     self2.setfont(dialog.lastfam, dialog.lastsiz)
@@ -171,15 +191,15 @@ def tree_sel_row3(xtree, dialog, self2):
 def create_tree(self):
         
     # create the TreeView using treestore
-    treestore = gtk.TreeStore(str)
-    tv = gtk.TreeView(treestore)
+    treestore = Gtk.TreeStore(str)
+    tv = Gtk.TreeView(treestore)
     tv.set_enable_search(True)
 
     # create a CellRendererText to render the data
-    cell = gtk.CellRendererText()
+    cell = Gtk.CellRendererText()
 
     # create the TreeViewColumn to display the data
-    tvcolumn = gtk.TreeViewColumn()
+    tvcolumn = Gtk.TreeViewColumn()
 
     # add the cell to the tvcolumn and allow it to expand
     tvcolumn.pack_start(cell, True)
@@ -275,29 +295,30 @@ def add_sizes(sizes):
 
 def area_key(area, event, dialog):
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Escape:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
             #print "Esc"
-            dialog.response(gtk.RESPONSE_REJECT)
+            dialog.response(Gtk.ResponseType.REJECT)
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Return:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
             #print "Ret"
-            dialog.response(gtk.RESPONSE_ACCEPT)
+            dialog.response(Gtk.ResponseType.ACCEPT)
 
-        if event.keyval == gtk.keysyms.Alt_L or \
-                event.keyval == gtk.keysyms.Alt_R:
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
             area.alt = True;
             
-        if event.keyval == gtk.keysyms.x or \
-                event.keyval == gtk.keysyms.X:
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
             if area.alt:
-                dialog.response(gtk.RESPONSE_REJECT)
+                dialog.response(Gtk.ResponseType.REJECT)
                               
-    elif  event.type == gtk.gdk.KEY_RELEASE:
-        if event.keyval == gtk.keysyms.Alt_L or \
-              event.keyval == gtk.keysyms.Alt_R:
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
 
 
 
