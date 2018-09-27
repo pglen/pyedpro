@@ -3,7 +3,8 @@
 # Action Handler for find
 
 import time, os, re, string, warnings
-#import  gtk
+
+import pyedlib.pedconfig
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -24,7 +25,8 @@ def ofd(fname = None, self2 = None):
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_position(Gtk.WindowPosition.CENTER)
     dialog.set_default_size(800, 600)
-        
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.window);
+            
     dialog.connect("key-press-event", area_key, dialog)
     dialog.connect("key-release-event", area_key, dialog)
 
@@ -231,8 +233,10 @@ def tree_sel_row(xtree, dialog):
     #print "tree_sel_row", xtree
     sel = xtree.get_selection()
     xmodel, xiter = sel.get_selected()
-    xstr = xmodel.get_value(xiter, 0)        
-    
+    if(xiter):
+        xstr = xmodel.get_value(xiter, 0)        
+    else:
+        xstr = ""
     #xstr2 = xmodel.get_value(xiter, 1)        
     #xstr3 = xmodel.get_value(xiter, 2)        
     #print xstr, xstr2, xstr3
@@ -322,6 +326,8 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
+
 
 
 

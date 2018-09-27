@@ -40,7 +40,8 @@ from gi.repository import GObject
 import pedync, pedofd, pedspell, pedbuffs, pedconfig
 
 # Some action functions have their own file
-from pedfind import *
+#from pedfind import *
+import pedfind
 from pedgoto import *
 from pedundo import *
 from keywords import *
@@ -154,10 +155,15 @@ class ActHand:
             else:
                 self2.set_caret(idx3+1, yidx)
             self2.invalidate()
-        elif self2.alt:
+        elif self2.alt:       
             line = self2.text[yidx]
-            begs, ends = selword(line, xidx-1)
-            self2.set_caret(begs, yidx)
+            # Only move ONE word
+            try:
+                if line[xidx-1] != " ": 
+                    begs, ends = selword(line, xidx-1)
+                    self2.set_caret(begs, yidx)
+            except:
+                pass
         else:
             self2.set_caret(xidx - 1, yidx)
 
@@ -605,7 +611,7 @@ class ActHand:
 
     def ctrl_alt_h(self, self2):
         #print "CTRL - ALT - H"
-        find(self, self2, True)
+        pedfind.find(self, self2, True)
                        
     def ctrl_alt_j(self, self2):
         #print "CTRL - ALT - J"
@@ -731,7 +737,7 @@ class ActHand:
 
     def ctrl_f(self, self2):
         #print "CTRL - F"
-        find(self, self2)
+        pedfind.find(self, self2)
 
     def ctrl_h(self, self2):
         #print "CTRL - H"
@@ -1214,11 +1220,11 @@ class ActHand:
             
     def alt_s(self, self2):
         #print "ALT - S"                       
-        find(self, self2)
+        pedfind.find(self, self2)
         
     def alt_t(self, self2):
         #print "ALT - S"                       
-        find(self, self2, True)
+        pedfind.find(self, self2, True)
 
     def alt_v(self, self2):
         xidx = self2.caret[0] + self2.xpos;
@@ -1716,6 +1722,8 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
 
 
 

@@ -145,7 +145,7 @@ class EdMainWindow():
 
         try:
             mergeid = merge.add_ui_from_string(ui_info)
-        except gobject.GError, msg:
+        except GObject.GError, msg:
             print "Building menus failed: %s" % msg
 
         # Add MRU
@@ -270,7 +270,7 @@ class EdMainWindow():
         self.hpane2 = hpane2
         shbox = Gtk.HBox()
         shbox.pack_start(slab, False, 0, 0)
-        shbox.pack_start(self.statusbar, True, 0, 0)
+        shbox.pack_start(self.statusbar, False, 0, 0)
         hpane2.pack1(shbox)
 
         bbox = Gtk.VBox()
@@ -348,7 +348,7 @@ class EdMainWindow():
         #signal.alarm(1)
         
         # We use gobj instead of SIGALRM, so it is more multi platform
-        #gobject.timeout_add(1000, handler_tick)
+        GObject.timeout_add(1000, handler_tick)
 
         self.update_statusbar("Initial")
         
@@ -692,7 +692,7 @@ class EdMainWindow():
                            
     def activate_about(self, action):
         self.update_statusbar("Showing About Dialog")
-        pedync.about()
+        pedync.about(self)
 
     def newfile(self, newname = ""):
     
@@ -931,9 +931,6 @@ class EdMainWindow():
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
                 pedconfig.conf.keyh.act.f1(vcurr2.area)
-
-        if strx == "Settings":
-            pedync.message("\n    Settings: Work in progress    \n")
 
         if strx == "KeyDoc":
             self.update_statusbar("Showing Keyboard Help")
@@ -1213,6 +1210,7 @@ def OnExit(arg, prompt = True):
                 if(pedconfig.conf.verbose):
                     print "Rescuing", xfile
                 writefile(xfile, ppp.area.text)
+                
         # This way all the closing doc function gets called
         ppp.area.closedoc()
         cnt += 1
@@ -1235,6 +1233,8 @@ def OnExit(arg, prompt = True):
 #def handler_tick(signum, frame):
 def handler_tick():
 
+    #print "handler_tick"
+    
     try:
         #print 'Signal handler called with signal'
         #print pedconfig.conf.idle, pedconfig.conf.syncidle
@@ -1247,7 +1247,7 @@ def handler_tick():
                 # Rescue to save:
                 if vcurr:
                     vcurr.area.source_id = \
-                        gobject.idle_add(vcurr.area.idle_callback)
+                        GObject.idle_add(vcurr.area.idle_callback)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -1256,7 +1256,7 @@ def handler_tick():
                 if vcurr:
                     #pedspell.spell(vcurr.area)
                     vcurr.area.source_id2 = \
-                    gobject.idle_add(vcurr.area.idle_callback2)
+                    GObject.idle_add(vcurr.area.idle_callback2)
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text
                         vcurr.area2.fname = vcurr.area.fname
@@ -1278,11 +1278,13 @@ def handler_tick():
         print "Exception in timer handler", sys.exc_info()
 
     try:
-        gobject.timeout_add(1000, handler_tick)
+        GObject.timeout_add(1000, handler_tick)
     except:
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
+
 
 
 

@@ -6,6 +6,7 @@ import re, string
 
 import gi
 gi.require_version("Gtk", "3.0")
+from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GObject
 
@@ -16,18 +17,24 @@ from pedutil import *
 
 def buffers(self, self2):
 
-    head = "pyedit: buffers"
+    head = "pyedpro: buffers"
     
-    dialog = gtk.Dialog(head,
+    dialog = Gtk.Dialog(head,
                    None,
-                   gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                   (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-    dialog.set_default_response(gtk.RESPONSE_ACCEPT)
-    dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
-    dialog.set_position(gtk.WIN_POS_CENTER)
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_transient_for(self2.mained.window)
+    dialog.set_position(Gtk.WindowPosition.CENTER)
     self.dialog = dialog
- 
+
+    try:
+        dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
+    except:
+        print "Cannot load find dialog icon", sys.exc_info()
+
     xx, yy = self2.mained.window.get_size()
 
     dialog.set_default_size(3*xx/4, yy/2)
@@ -40,16 +47,16 @@ def buffers(self, self2):
     dialog.tree.connect("key-press-event", area_key, dialog)
     dialog.tree.connect("key-release-event", area_key, dialog)
    
-    stree = gtk.ScrolledWindow()
+    stree = Gtk.ScrolledWindow()
     stree.add(dialog.tree)
-    frame = gtk.Frame()
-    frame.set_shadow_type(gtk.SHADOW_ETCHED_IN)
+    frame = Gtk.Frame()
+    #frame.set_shadow_type(Gtk.SHADOW_ETCHED_IN)
     
     frame.add(stree)
     
     #dialog.vbox.set_spacing(8)
     
-    dialog.vbox.pack_start(frame)
+    dialog.vbox.pack_start(frame, 1, 1, 0)
     
     blist = []; was = -1
     nn2 = self2.notebook.get_current_page()
@@ -67,7 +74,7 @@ def buffers(self, self2):
     response = dialog.run()
     dialog.destroy()
 
-    if response != gtk.RESPONSE_ACCEPT:   
+    if response != Gtk.ResponseType.ACCEPT:
         return
         
     cc = self2.notebook.get_n_pages()
@@ -87,28 +94,28 @@ def buffers(self, self2):
 
 def area_key(area, event, dialog):
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Escape:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
             #print "Esc"
-            dialog.response(gtk.RESPONSE_REJECT)
+            dialog.response(Gtk.ResponseType.REJECT)
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Return:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
             #print "Ret"
-            dialog.response(gtk.RESPONSE_ACCEPT)
+            dialog.response(Gtk.ResponseType.ACCEPT)
 
-        if event.keyval == gtk.keysyms.Alt_L or \
-                event.keyval == gtk.keysyms.Alt_R:
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
             area.alt = True;
             
-        if event.keyval == gtk.keysyms.x or \
-                event.keyval == gtk.keysyms.X:
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
             if area.alt:
-                dialog.response(gtk.RESPONSE_REJECT)
+                dialog.response(Gtk.ResponseType.REJECT)
                               
-    elif  event.type == gtk.gdk.KEY_RELEASE:
-        if event.keyval == gtk.keysyms.Alt_L or \
-              event.keyval == gtk.keysyms.Alt_R:
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
 
 # ------------------------------------------------------------------------
@@ -128,7 +135,7 @@ def tree_sel_row(xtree, dialog, self2):
 def start_tree(self, win2):
 
     if not win2.treestore:
-        win2.treestore = gtk.TreeStore(str)
+        win2.treestore = Gtk.TreeStore(str)
     
     # Delete previous contents
     try:      
@@ -148,15 +155,15 @@ def create_tree(self, win2, match = False, text = None):
     start_tree(self, win2)
     
     # create the TreeView using treestore
-    tv = gtk.TreeView(win2.treestore)
+    tv = Gtk.TreeView(win2.treestore)
     tv.set_enable_search(True)
 
     # create a CellRendererText to render the data
-    cell = gtk.CellRendererText()
+    cell = Gtk.CellRendererText()
 
     # create the TreeViewColumn to display the data
-    #tvcolumn = gtk.TreeViewColumn("Matches for '" + match + "'")
-    tvcolumn = gtk.TreeViewColumn()
+    #tvcolumn = Gtk.TreeViewColumn("Matches for '" + match + "'")
+    tvcolumn = Gtk.TreeViewColumn()
 
     # add the cell to the tvcolumn and allow it to expand
     tvcolumn.pack_start(cell, True)
@@ -204,6 +211,7 @@ def update_treestore(self, win2, text, was):
     else:
         root = win2.treestore.get_iter_first() 
         win2.tree.set_cursor(win2.treestore.get_path(root))
+
 
 
 

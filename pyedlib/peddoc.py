@@ -182,51 +182,50 @@ class pedDoc(Gtk.DrawingArea):
     # Customize your colors here
     def setcol(self):        
         ccc = pedconfig.conf.sql.get_str("fgcolor")
-        print "fgcol", ccc
         if ccc == "":
-            self.fgcolor  = pedcolor.convcolor(FGCOLOR)              
+            self.fgcolor  = pedcolor.str2float(FGCOLOR)              
         else: 
-            self.fgcolor  = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
-        print self.fgcolor
+            self.fgcolor  = pedcolor.str2float(ccc)
+        #print "fgcol", self.fgcolor, ccc
                      
         ccc = pedconfig.conf.sql.get_str("rbgcolor")
-        print "rbgcol", ccc
         if ccc == "":
-            self.rbgcolor = pedcolor.convcolor(RBGCOLOR)              
+            self.rbgcolor = pedcolor.str2float(RBGCOLOR)              
         else: 
-            self.rbgcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])              
-        print self.rbgcolor
+            self.rbgcolor = pedcolor.str2float(ccc)
+        #print "rgbcolor", self.rbgcolor, ccc
         
         ccc = pedconfig.conf.sql.get_str("cbgcolor")
-        print "cbgcol", ccc
         if ccc == "":
-            self.cbgcolor = pedcolor.convcolor(CBGCOLOR)              
+            self.cbgcolor = pedcolor.str2float(CBGCOLOR)              
         else: 
-            self.cbgcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
+            self.cbgcolor = pedcolor.str2float(ccc)
+        #print "cbgcolor", self.cbgcolor, ccc
         
         ccc = pedconfig.conf.sql.get_str("kwcolor")
         if ccc == "":
-            self.kwcolor = pedcolor.convcolor(KWCOLOR)              
+            self.kwcolor = pedcolor.str2float(KWCOLOR)              
         else: 
-            self.kwcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
-       
+            self.kwcolor = pedcolor.str2float(ccc)
+        #print "load kwcolor", self.kwcolor, ccc
+        
         ccc = pedconfig.conf.sql.get_str("clcolor")
         if ccc == "":
-            self.clcolor = pedcolor.convcolor(CLCOLOR)              
+            self.clcolor = pedcolor.str2float(CLCOLOR)              
         else: 
-            self.clcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
+            self.clcolor = pedcolor.str2float(ccc)
         
         ccc = pedconfig.conf.sql.get_str("cocolor")
         if ccc == "":
-            self.cocolor = pedcolor.convcolor(COCOLOR)              
+            self.cocolor = pedcolor.str2float(COCOLOR)              
         else: 
-            self.cocolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])
+            self.cocolor = pedcolor.str2float(ccc)
        
         ccc = pedconfig.conf.sql.get_str("stcolor")
         if ccc == "":
-            self.stcolor = pedcolor.convcolor(STCOLOR)              
+            self.stcolor = pedcolor.str2float(STCOLOR)              
         else: 
-            self.stcolor = pedcolor.rgb2col(Gdk.Color.parse(ccc)[1])              
+            self.stcolor = pedcolor.str2float(ccc)
         
         
     def setfont(self, fam, size):
@@ -280,7 +279,7 @@ class pedDoc(Gtk.DrawingArea):
     # Do Tasks  when the system is idle
     def idle_callback(self):
         #print "Idle callback"
-        gobject.source_remove(self.source_id)        
+        GObject.source_remove(self.source_id)        
         try:
             if self.changed:
                 hhh = hash_name(self.fname) + ".sav"           
@@ -298,7 +297,7 @@ class pedDoc(Gtk.DrawingArea):
     # Do Tasks2 when the system is idle
     def idle_callback2(self):
         #print "Idle callback2"
-        gobject.source_remove(self.source_id2)        
+        GObject.source_remove(self.source_id2)        
         try:
             run_async_time(self)
         except:
@@ -1309,7 +1308,7 @@ class pedDoc(Gtk.DrawingArea):
         self.keyh.handle_key(self, area, event)
         
         #if event.type == Gdk.KEY_RELEASE:
-        #    self.source_id = gobject.idle_add(self.idle_callback)
+        #    self.source_id = GObject.idle_add(self.idle_callback)
       
         # We handled it  
         return True
@@ -1949,6 +1948,8 @@ def run_async_time(win):
         
 
 #eof
+
+
 
 
 

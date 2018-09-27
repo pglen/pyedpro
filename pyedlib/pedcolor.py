@@ -12,22 +12,23 @@ from gi.repository import GObject
 import peddoc, pedync, pedconfig
 from pedutil import *
 
+ev_arr = []
 # -------------------------------------------------------------------------
 
 def colors(self, self2):
 
-    head = "pyedit: colors"
-
-    print "fgcolor", rgb2str(col2rgb(self2.fgcolor))
-    print "rbgcolor", rgb2str(col2rgb(self2.rbgcolor))
-    print "cbgcolor", rgb2str(col2rgb(self2.cbgcolor))
+    global dialog
     
+    head = "pyedit: colors"
+    ev_arr = []
+    #printcols(self2)
     dialog = Gtk.Dialog(head,
                    None,
                    Gtk.DialogFlags.MODAL | \
                    Gtk.DialogFlags.DESTROY_WITH_PARENT,
                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                     Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+                    
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.window)
     
@@ -85,23 +86,40 @@ def colors(self, self2):
 # ------------------------------------------------------------------------
 # Conversion routines:
                       
-def col2rgb(col):
+def str2float( col):
+    return ( float(int(col[1:3], base=16)) / 256, 
+                    float(int(col[3:5], base=16)) / 256, \
+                        float(int(col[5:7], base=16)) / 256 )
 
+def float2col(col):
     aa = min(col[0], 1.)
     bb = min(col[1], 1.)
     cc = min(col[2], 1.) 
-            
-    return Gdk.Color.from_floats(aa, bb, cc)
+    return Gdk.Color(aa * 65535, bb * 65535, cc * 65535)
 
+def float2str(col):
+    aa = min(col[0], 1.)
+    bb = min(col[1], 1.)
+    cc = min(col[2], 1.) 
+    strx = "#%02x%02x%02x" % (aa * 256,  \
+                        bb * 256, cc * 256)
+    return strx
+
+def col2float(col):
+    rrr = [float(col.red) / 65535, 
+            float(col.green) / 65535,
+                float(col.blue) / 65535]
+    return rrr
+    
 def rgb2str(icol):
     strx = "#%02x%02x%02x" % (icol.red & 0xff,  \
                         icol.green & 0xff, icol.blue & 0xff)
     return strx
     
-def convcolor( col):
-    return ( float(int(col[1:3], base=16)) / 256, 
-                    float(int(col[3:5], base=16)) / 256, \
-                        float(int(col[5:7], base=16)) / 256 )
+def col2str(icol):
+    strx = "#%02x%02x%02x" % (icol.red /255,  \
+                        icol.green / 255, icol.blue / 255)
+    return strx
 
 def rgb2col(icol):
         #print "rgb2col", icol
@@ -141,7 +159,7 @@ def area_key(area, event, dialog):
 
 # ------------------------------------------------------------------------
 
-def   colbox(col):
+def colbox(col):
 
     lab1 = Gtk.Label("        ")
     eventbox = Gtk.EventBox()
@@ -149,7 +167,7 @@ def   colbox(col):
     frame.add(lab1)
     eventbox.add(frame)
     eventbox.color =  col  # Gtk.gdk.Color(col)
-    eventbox.modify_bg(Gtk.StateFlags.NORMAL, col2rgb(eventbox.color))
+    eventbox.modify_bg(Gtk.StateFlags.NORMAL, float2col(eventbox.color))
     return eventbox
     
 def col_line(tit, col, callb, self2):
@@ -159,6 +177,7 @@ def col_line(tit, col, callb, self2):
     tit = tit.replace("_", "")
     tit = tit.strip().rstrip()
     
+    ev_arr.append(ev1)
     butt1.connect("clicked", callb, "Choose " + tit, ev1, self2)
 
     hbox = Gtk.HBox()
@@ -176,19 +195,22 @@ def colsel(ev, title):
 
     csd = Gtk.ColorSelectionDialog(title)
     col = csd.get_color_selection()
-    col.set_current_color(col2rgb(ev.color))    
+    col.set_current_color(float2col(ev.color))    
     response = csd.run()
     
     if response == Gtk.ResponseType.OK:   
-        ev.color = col.get_current_color()
-        ev.modify_bg(Gtk.StateFlags.NORMAL, ev.color)
+        #print "col", col.get_current_color()
+        ev.color =  col2float( col.get_current_color())
+        #print "ev.color", ev.color
+        ev.modify_bg(Gtk.StateFlags.NORMAL, col.get_current_color())
     csd.destroy()
+    return ev.color
         
 def col_one(butt, title, ev, self2):
     
     colsel(ev, title)
     self2.fgcolor = ev.color
-    pedconfig.conf.sql.put("fgcolor", self2.fgcolor.to_string())        
+    pedconfig.conf.sql.put("fgcolor", float2str(ev.color))
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
@@ -199,7 +221,7 @@ def col_two(butt, title, ev, self2):
     
     colsel(ev, title)
     self2.rbgcolor = ev.color
-    pedconfig.conf.sql.put("rbgcolor", self2.rbgcolor.to_string())        
+    pedconfig.conf.sql.put("rbgcolor", float2str(ev.color))
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
@@ -209,7 +231,7 @@ def col_three(butt, title, ev, self2):
     
     colsel(ev, title)
     self2.cbgcolor = ev.color
-    pedconfig.conf.sql.put("cbgcolor", self2.cbgcolor.to_string())        
+    pedconfig.conf.sql.put("cbgcolor", float2str(ev.color))
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
@@ -219,7 +241,7 @@ def col_four(butt, title, ev, self2):
     
     colsel(ev, title)
     self2.kwcolor = ev.color
-    pedconfig.conf.sql.put("kwcolor", self2.kwcolor.to_string())        
+    pedconfig.conf.sql.put("kwcolor", float2str(ev.color))        
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
@@ -229,7 +251,7 @@ def col_five(butt, title, ev, self2):
     
     colsel(ev, title)
     self2.clcolor = ev.color
-    pedconfig.conf.sql.put("clcolor", self2.clcolor.to_string())        
+    pedconfig.conf.sql.put("clcolor", float2str(ev.color))
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
@@ -239,7 +261,7 @@ def col_six(butt, title, ev, self2):
     
     colsel(ev, title)
     self2.cocolor = ev.color
-    pedconfig.conf.sql.put("cocolor", self2.cocolor.to_string())        
+    pedconfig.conf.sql.put("cocolor", float2str(ev.color))
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
@@ -249,7 +271,7 @@ def col_seven(butt, title, ev, self2):
     
     colsel(ev, title)
     self2.stcolor = ev.color
-    pedconfig.conf.sql.put("stcolor", self2.stcolor.to_string())        
+    pedconfig.conf.sql.put("stcolor", float2str(ev.color))
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
@@ -257,27 +279,50 @@ def col_seven(butt, title, ev, self2):
 
 def  def_col(butt, self2):
 
-    self2.fgcolor  = convcolor(peddoc.FGCOLOR)              
-    self2.rbgcolor = convcolor(peddoc.RBGCOLOR)              
-    self2.cbgcolor = convcolor(peddoc.CBGCOLOR)              
-    self2.kwcolor  = convcolor(peddoc.KWCOLOR)
-    self2.clcolor  = convcolor(peddoc.CLCOLOR)
-    self2.cocolor  = convcolor(peddoc.COCOLOR)
-    self2.stcolor  = convcolor(peddoc.STCOLOR)
-    
+    self2.fgcolor  = str2float(peddoc.FGCOLOR)              
+    self2.rbgcolor = str2float(peddoc.RBGCOLOR)              
+    self2.cbgcolor = str2float(peddoc.CBGCOLOR)              
+    self2.kwcolor  = str2float(peddoc.KWCOLOR)
+    self2.clcolor  = str2float(peddoc.CLCOLOR)
+    self2.cocolor  = str2float(peddoc.COCOLOR)
+    self2.stcolor  = str2float(peddoc.STCOLOR)
+        
     self2.invalidate()
     
-    '''pedconfig.conf.sql.put("fgcolor",  rgb2str(col2rgb(self2.fgcolor)) )       
-    pedconfig.conf.sql.put("rbgcolor", rgb2str(col2rgb(self2.rbgcolor)))
-    pedconfig.conf.sql.put("cbgcolor", rgb2str(col2rgb(self2.cbgcolor)))
-    pedconfig.conf.sql.put("kwcolor",  rgb2str(col2rgb(self2.kwcolor)) )
-    pedconfig.conf.sql.put("clcolor",  rgb2str(col2rgb(self2.clcolor)) )
-    pedconfig.conf.sql.put("cocolor",  rgb2str(col2rgb(self2.cocolor)) )
-    pedconfig.conf.sql.put("stcolor",  rgb2str(col2rgb(self2.stcolor)) )
-    '''
+    pedconfig.conf.sql.put("fgcolor",  float2str(self2.fgcolor) )       
+    pedconfig.conf.sql.put("rbgcolor", float2str(self2.rbgcolor))
+    pedconfig.conf.sql.put("cbgcolor", float2str(self2.cbgcolor))
+    pedconfig.conf.sql.put("kwcolor",  float2str(self2.kwcolor) )
+    pedconfig.conf.sql.put("clcolor",  float2str(self2.clcolor) )
+    pedconfig.conf.sql.put("cocolor",  float2str(self2.cocolor) )
+    pedconfig.conf.sql.put("stcolor",  float2str(self2.stcolor) )
     
     for mm in range(self2.notebook.get_n_pages()):
         vcurr = self2.notebook.get_nth_page(mm)
         vcurr.area.setcol()
+
+    dialog.destroy()
+    
+#
+'''
+def  printcols(self2):
+
+    print "self2.fgcolor",   self2.fgcolor 
+    print "self2.rbgcolor",  self2.rbgcolor
+    print "self2.cbgcolor",  self2.cbgcolor
+    print "self2.kwcolor",   self2.kwcolor 
+    print "self2.clcolor",   self2.clcolor 
+    print "self2.cocolor",   self2.cocolor 
+    print "self2.stcolor",   self2.stcolor 
+
+    ccol = float2col(self2.kwcolor)
+    print "self2.kwcolor rgb", ccol
+    cstr = col2str(ccol)
+    print "self2.kwcolor cstr", cstr
+'''
     
 # EOF
+
+
+
+

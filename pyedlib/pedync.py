@@ -13,6 +13,7 @@ from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
 import pyedlib.pedconfig
+
 # ------------------------------------------------------------------------
 
 def yes_no_cancel(title, message, cancel = True):
@@ -24,6 +25,8 @@ def yes_no_cancel(title, message, cancel = True):
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
 
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.window);
+    
     sp = "     "
     label = Gtk.Label(message); 
     label2 = Gtk.Label(sp);      label3 = Gtk.Label(sp)
@@ -78,7 +81,7 @@ def yn_key(win, event, cancel):
 
 import platform
 
-def  about():
+def  about(self2):
     dialog = Gtk.AboutDialog()
     #dialog.set_parent(None)
     dialog.set_name(" PyEdPro - Python Editor ")
@@ -87,10 +90,14 @@ def  about():
                         Gtk.get_minor_version(), \
                             Gtk.get_micro_version())
     
+    dialog.set_position(Gtk.WindowPosition.CENTER)
     
+    dialog.set_transient_for(self2.window)
+    
+    #"\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
+     
     comm = "\nPython based easily configurable editor\n"\
         "with time accounting module.\n"\
-        "\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
         "\nRunning PyGtk %d.%d.%d" % GLib.pyglib_version +\
         "\nRunning GTK %d.%d.%d\n" % gver +\
         "\nRunning Python %s\n" % platform.python_version()
@@ -147,6 +154,8 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
+
 
 
 

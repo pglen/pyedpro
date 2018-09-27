@@ -217,12 +217,14 @@ if __name__ == '__main__':
     sys.stdout = Unbuffered(sys.stdout)
     sys.stderr = Unbuffered(sys.stderr)
 
-    print "Started pydepro"
-    #pyedlib.log.printx("Started pydepro")
+    #print "Started pydepro"
+    #pyedlib.log.print("Started pydepro")
      
     main(args[0:])
 
 # EOF
+
+
 
 
 

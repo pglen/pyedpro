@@ -25,9 +25,9 @@ def find(self, self2, replace = False):
     self.reptxt = ""
         
     if replace:
-        head = "pyedit: Find / Replace"
+        head = "pyedpro: Find / Replace"
     else:
-        head = "pyedit: Find in text"
+        head = "pyedpro: Find in text"
     
     dialog = Gtk.Dialog(head,
                    None,
@@ -110,7 +110,7 @@ def find(self, self2, replace = False):
     label32 = Gtk.Label("   ");  label33 = Gtk.Label("   ") 
     label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ") 
     
-    dialog.checkbox3 = Gtk.CheckButton("Search _All Buffers")
+    dialog.checkbox3 = Gtk.CheckButton("Search All Buffers")
     #dialog.checkbox4 = Gtk.CheckButton("Hello")
     hbox4 = Gtk.HBox()
     hbox4.pack_start(label30, 0, 0, 0);  
@@ -128,7 +128,7 @@ def find(self, self2, replace = False):
         label12 = Gtk.Label("   ");  label13 = Gtk.Label("   ") 
         hbox3 = Gtk.HBox()
         hbox3.pack_start(label10, 0, 0, 0)  
-        hbox3.pack_start(dialog.repl, 0, 0, 0)  
+        hbox3.pack_start(dialog.repl, True, True, 0)  
         hbox3.pack_start(label11, 0, 0, 0)  
         dialog.vbox.pack_start(hbox3, 0, 0, 0)  
         dialog.vbox.pack_start(label12, 0, 0, 0)          
@@ -637,6 +637,9 @@ def wnext(butt,self):
     pass
     
    
+
+
+
 
 
 

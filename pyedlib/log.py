@@ -78,31 +78,32 @@ def load_log():
                     
 def show_log():
     
-    win2 = gtk.Window()
+    win2 = Gtk.Window()
     try:
         win2.set_icon_from_file(get_img_path("pyedit_sub.png"))
     except:
         print( "Cannot load log icon")
 
-    win2.set_position(gtk.WIN_POS_CENTER)
+    win2.set_position(Gtk.WindowPosition.CENTER)
     win2.set_default_size(800, 600)
     
     tit = "pyedit:log"        
     win2.set_title(tit)
     
-    win2.set_events(    
-                    gtk.gdk.POINTER_MOTION_MASK |
-                    gtk.gdk.POINTER_MOTION_HINT_MASK |
-                    gtk.gdk.BUTTON_PRESS_MASK |
-                    gtk.gdk.BUTTON_RELEASE_MASK |
-                    gtk.gdk.KEY_PRESS_MASK |
-                    gtk.gdk.KEY_RELEASE_MASK |
-                    gtk.gdk.FOCUS_CHANGE_MASK )
+    '''win2.set_events(    
+                    Gtk.gdk.POINTER_MOTION_MASK |
+                    Gtk.gdk.POINTER_MOTION_HINT_MASK |
+                    Gtk.gdk.BUTTON_PRESS_MASK |
+                    Gtk.gdk.BUTTON_RELEASE_MASK |
+                    Gtk.gdk.KEY_PRESS_MASK |
+                    Gtk.gdk.KEY_RELEASE_MASK |
+                    Gtk.gdk.FOCUS_CHANGE_MASK )'''
+    win2.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
     win2.connect("key-press-event", area_key, win2)
     win2.connect("key-release-event", area_key, win2)
 
-    win2.lab = gtk.TextView()
+    win2.lab = Gtk.TextView()
     win2.lab.set_editable(False)
     tb = win2.lab.get_buffer()
     iter = tb.get_iter_at_offset(0)
@@ -110,8 +111,8 @@ def show_log():
     for aa in accum:
         tb.insert(iter, aa)
     
-    scroll = gtk.ScrolledWindow(); scroll.add(win2.lab)
-    frame = gtk.Frame(); frame.add(scroll)
+    scroll = Gtk.ScrolledWindow(); scroll.add(win2.lab)
+    frame = Gtk.Frame(); frame.add(scroll)
     win2.add(frame)
     win2.show_all()
     
@@ -119,29 +120,30 @@ def show_log():
 
 def area_key(area, event, dialog):
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Escape:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
             #print "Esc"
             area.destroy()
 
-    if  event.type == gtk.gdk.KEY_PRESS:
-        if event.keyval == gtk.keysyms.Return:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
             #print "Ret"
             area.destroy()
 
-        if event.keyval == gtk.keysyms.Alt_L or \
-                event.keyval == gtk.keysyms.Alt_R:
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
             area.alt = True;
             
-        if event.keyval == gtk.keysyms.x or \
-                event.keyval == gtk.keysyms.X:
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
             if area.alt:
                 area.destroy()
                               
-    elif  event.type == gtk.gdk.KEY_RELEASE:
-        if event.keyval == gtk.keysyms.Alt_L or \
-              event.keyval == gtk.keysyms.Alt_R:
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
 
 
 
