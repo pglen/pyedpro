@@ -127,6 +127,7 @@ def spell(self2, allflag = False):
 
     except:
         print "Exception on spell check", sys.exc_info()
+        #raise
         
     #print  "all", time.clock() - got_clock        
 
@@ -151,10 +152,12 @@ def spell_line(line, beg, end):
             err.append((ss, ee))
         idx = ee + 1
         
-    #if err:
-    #    print "spell_line", line[beg:end]
-    #    print "Error",err
-        
+    if err:
+        pass
+        #print "spell_line", line[beg:end]
+        #for aa, bb in err:
+        #    print line[aa:bb],
+        #print        
     return err
     
 # ------------------------------------------------------------------------
@@ -358,6 +361,8 @@ def suggest(self2, xstr):
     return arr[:15]
     
 # EOF
+
+
 
 
 

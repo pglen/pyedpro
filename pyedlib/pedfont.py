@@ -33,7 +33,11 @@ def selfont(self, self2):
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.window)
     
-    dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
+    try:
+        dialog.set_icon_from_file(get_img_path("spyedit_sub.png"))
+    except:
+        print "Cannot set icon in", __file__
+        
     self.dialog = dialog
                              
     dialog.myfd = self2.pangolayout.get_font_description()
@@ -318,6 +322,7 @@ def area_key(area, event, dialog):
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
 
 
 

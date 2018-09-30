@@ -190,6 +190,7 @@ if __name__ == '__main__':
     # Initialize pedconfig for use  
     pyedlib.pedconfig.conf.sql = sql
     pyedlib.pedconfig.conf.keyh = pyedlib.keyhand.KeyHand()
+    pyedlib.pedconfig.conf.mydir = os.path.abspath(__file__)
 
     # To clear all config vars
     if clear_config:    
@@ -223,6 +224,7 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 
 

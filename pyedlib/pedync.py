@@ -140,6 +140,7 @@ def message(strx, title = None):
     dialog = Gtk.MessageDialog(None, None,
                    Gtk.MessageType.INFO, Gtk.ButtonsType.CLOSE, strx)
     
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.window);
     #dialog.parent =  
        
     if title:
@@ -154,6 +155,7 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
 
 
 

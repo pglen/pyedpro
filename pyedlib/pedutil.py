@@ -8,6 +8,8 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
+import pedconfig
+
 # Cut leading space in half
 
 def cut_lead_space(xstr, divi = 2):
@@ -76,14 +78,18 @@ def  writefile(strx, buff):
 # Expand image name to image path:
 
 def get_img_path(fname):
-    img_dir = os.path.join(os.path.dirname(__file__), 'images')
+    img_dir = os.path.join(os.path.dirname(pedconfig.conf.mydir), \
+                    'pyedlib/images')
     img_path = os.path.join(img_dir, fname)
+    #print "img_path", img_path 
     return img_path
 
 # Expand file name to file path in the exec dir:
 def get_exec_path(fname):
-    exec_dir = os.path.dirname(__file__)
-    exec_path = os.path.join(exec_dir, fname)
+    exec_dir = os.path.dirname(pedconfig.conf.mydir)
+    exec_path2 = os.path.join(exec_dir, "pyedlib")
+    exec_path = os.path.join(exec_path2, fname)
+    #print exec_path
     return exec_path
 
 # It's totally optional to do this, you could just manually insert icons
@@ -543,6 +549,7 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
     return accum 
 
 # EOF
+
 
 
 

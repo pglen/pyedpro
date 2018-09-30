@@ -32,7 +32,11 @@ def colors(self, self2):
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.window)
     
-    dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
+    try:
+        dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
+    except:
+        print "Cannot set icon in ", __file__
+         
     self.dialog = dialog
     
     dialog.connect("key-press-event", area_key, dialog)
@@ -322,6 +326,7 @@ def  printcols(self2):
 '''
     
 # EOF
+
 
 
 

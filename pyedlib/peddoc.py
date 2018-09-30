@@ -109,7 +109,7 @@ class pedDoc(Gtk.DrawingArea):
         self.spell = False
         self.spellmode = False
         self.start_time = time.time();
-        
+        self.shift = False
         # Init configurables
         self.vscgap = VSCROLLGAP      
         self.hscgap = HSCROLLGAP      
@@ -627,6 +627,18 @@ class pedDoc(Gtk.DrawingArea):
                 if yy > hhh:
                     break
         
+        # Underline spelling errors
+        cr.set_source_rgba(255, 0, 0)
+        yyy = self.ypos + self.get_height() / self.cyy             
+        for xaa, ybb, lcc in self.ularr:
+            # Draw within visible range
+            if ybb >= self.ypos and ybb < yyy:
+                ybb -= self.ypos; 
+                xaa -= self.xpos; lcc -= self.xpos;
+                self.draw_wiggle(cr, 
+                     xaa * self.cxx, ybb * self.cyy + self.cyy,
+                            lcc * self.cxx, ybb * self.cyy + self.cyy)
+        
         self._drawcaret(cr)        
         
     '''def area_expose_cb(self, area, event):
@@ -828,16 +840,22 @@ class pedDoc(Gtk.DrawingArea):
         while True:
             xx3 = xx + 4        
             if xx3 >= xx2: break   
-            self.window.draw_line(gcr, xx, yy, xx3, yy2+2)
+            self.draw_line2(gcr, xx, yy, xx3, yy2+2)
             xx3 = xx3 + 4
             if xx3 >= xx2: break   
-            self.window.draw_line(gcr, xx, yy, xx3, yy2)            
+            #self.draw_line2(gcr, xx, yy, xx3, yy2)            
             xx = xx3 
-                      
+        gcr.stroke()
+                        
     def idle_queue(func):
         self.queue.append(func)
         #print queue
                                      
+    def draw_line2(self, cr, xx, yy, xx2, yy2):
+        #print "draw line", xx, yy
+        cr.move_to(xx, yy)
+        cr.line_to(xx2, yy2)
+    
     def draw_line(self, cr, xx, yy, xx2, yy2):
         #print "draw line", xx, yy
         cr.move_to(xx, yy)
@@ -1948,6 +1966,8 @@ def run_async_time(win):
         
 
 #eof
+
+
 
 
 
