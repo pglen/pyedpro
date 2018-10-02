@@ -26,9 +26,14 @@ keywords =  ("def ", "import ", "from ", "for ", "while ", " len(",
 clwords =  "class ", " self.", "try:", "except", "finally"
 
 # Keywords for summary extraction: (left side window)
+pykeywords = "class ", "def ", "TODO"
+
+pykeywords2 = "(class)|(def)|(TODO)"
 sumkeywords = "class ", "def ", "TODO"
+
 ckeywords =  "^[_a-zA-Z].*\(.*\)"
 localkwords = "(int .*)|(char .*)|(for)|(while)|(return)"
+localpywords = "(for)|(while)|(return)|(import)"
 
 # Keywords for auto correct. This corrects strings as we type.
 # As a 'C' programmer I kept typing "else" ... this feature 
@@ -51,14 +56,6 @@ acorr = [   ( "else",   "else: "                 ),
         ]
 
 # EOF
-
-
-
-
-
-
-
-
 
 
 

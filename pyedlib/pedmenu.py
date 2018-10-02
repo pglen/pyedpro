@@ -53,18 +53,18 @@ def rclick_quit(self, arg):
     print __name__, arg.name
     mained.activate_exit()
     
-rclick_menu = (
-            ( "/New",           "<control>N",   rclick_action, 0, None ),
-            ( "/sep1",          None,           None, 0, "<Separator>" ),
-            ( "/Open",          "<control>O",   rclick_action, 0, None ),
-            ( "/Save",          "<control>S",   rclick_action, 0, None ),
-            ( "/SaveAs",        None,           rclick_action, 0, None ),
-            ( "/sep1",          None,           None, 0, "<Separator>" ),
-            ( "/Copy",          "<control>C",   rclick_action, 0, None ),
-            ( "/Cut",           "<control>X",   rclick_action, 0, None ),
-            ( "/Paste",         "<control>V",   rclick_action, 0, None ),
-            ( "/sep1",          None,           None, 0, "<Separator>" ),
-            ( "/Exit",          "<alt>x",       rclick_quit, 0, None ),
+rclick_menu = (   
+            ( "_New",           "<control>N",   rclick_action, 1, None ),
+            ( "",               None,           None, 2, "<Separator>" ),
+            ( "_Open",          "<control>O",   rclick_action, 3, None ),
+            ( "_Save",          "<control>S",   rclick_action, 4, None ),
+            ( "Save_As",        None,           rclick_action, 5, None ),
+            ( "",               None,           None, 6, "<Separator>" ),
+            ( "_Copy",          "<control>C",   rclick_action, 7, None ),
+            ( "C_ut",           "<control>X",   rclick_action, 8, None ),
+            ( "_Paste",         "<control>V",   rclick_action, 9, None ),
+            ( "",               None,           None, 10, "<Separator>" ),
+            ( "E_xit",          "<alt>X",       rclick_quit, 11, None ),
             )
     
 def create_action_group(self):
@@ -326,6 +326,7 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
 
 
 

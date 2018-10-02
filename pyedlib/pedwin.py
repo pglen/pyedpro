@@ -1,4 +1,4 @@
-    #!/usr/bin/env python
+#!/usr/bin/env python
 
 import signal, os, time, sys, subprocess, platform
 
@@ -1283,6 +1283,7 @@ def handler_tick():
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
 
 
 

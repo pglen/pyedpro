@@ -14,7 +14,7 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import keyhand, pedconfig, pedync
+import keyhand, pedconfig, pedync, pedwin
 import pedcolor, pedspell, pedmenu, utils
 
 from pedutil import *
@@ -248,9 +248,9 @@ class pedDoc(Gtk.DrawingArea):
         self.pangolayout.set_tabs(self.tabarr)
         ts = self.pangolayout.get_tabs()
         
-        if ts != None: 
+        '''if ts != None: 
             al, self.tabstop = ts.get_tab(1)
-        self.tabstop /= self.cxx * Pango.SCALE
+        self.tabstop /= self.cxx * Pango.SCALE'''
         
     def  set_maxlinelen(self, mlen = -1, ignore = True):
         if mlen == -1: self.calc_maxline()  
@@ -639,212 +639,27 @@ class pedDoc(Gtk.DrawingArea):
                      xaa * self.cxx, ybb * self.cyy + self.cyy,
                             lcc * self.cxx, ybb * self.cyy + self.cyy)
         
-        self._drawcaret(cr)        
+        self._draw_caret(cr)        
         
-    '''def area_expose_cb(self, area, event):
-
-        #print "area_expose_cb()", event.area.width, event.area.height
-        
-        # We have a window, goto start pos
-        hhh = self.get_height()
-        www = self.get_width()
-        xlen = len(self.text)
-
-        style = self.get_style()
-        #self.gc = style.fg_gc[Gtk.STATE_NORMAL]
-        #colormap = Gtk.widget_get_default_colormap()        
-        gcx = Gdk.GC(self.window); gcx.copy(self.gc)
-        gcu = Gdk.GC(self.window); gcu.copy(self.gc)
-        #gcu.set_foreground(colormap.alloc_color(CBGCOLOR))
-        
-        gcr = Gdk.GC(self.window); gcr.copy(self.gc)
-        #gcr.set_foreground(colormap.alloc_color(BGCOLOR))
-        self.window.draw_rectangle(gcr, True, 0, 0, www - 1, hhh - 1)
-
-        #got_clock = time.clock()   
-            
-        # Paint text        
-        xx = 0; yy = 0; 
-        cnt = self.ypos;
-        while cnt <  xlen:
-            # Got fed up with tabs, generate an untabbed copy for drawing
-            if self.hex or self.stab:
-               text3 = self.text[cnt]
-            else: 
-               text3 = untab_str(self.text[cnt], self.tabstop)
-               
-            #print "'" + text3 + "'"
-            
-            dx, dy = self._draw_text(gcx, xx, yy, text3, self.fgcolor)
-            cnt += 1
-            yy += dy
-            if yy > hhh:
-                break
-
-        # Do not paint color on hex or tab disp:
-        if self.hex or self.stab:
-            self._drawcaret(gcx)        
-            return True
-
-        # Paint selection        
-        xx = 0; yy = 0; 
-        cnt = self.ypos;
-    
-        # Normalize (Read: [xy]ssel - startsel  [xy]esel - endsel
-        xssel = min(self.xsel, self.xsel2)
-        xesel = max(self.xsel, self.xsel2)
-        yssel = min(self.ysel, self.ysel2)
-        yesel = max(self.ysel, self.ysel2)
-        # Override
-        if not self.colsel:  
-            if yssel != yesel:
-                xssel = self.xsel
-                xesel = self.xsel2
-       
-        draw_start = xssel
-        if xssel != -1:
-            if self.colsel: bgcol = self.cbgcolor
-            else: bgcol = self.rbgcolor
-            
-            while cnt <  xlen:
-                if cnt >= yssel and cnt <= yesel:
-                    line = self.text[cnt]#.replace("\r", " ")
-
-                    if self.colsel:
-                        frag = line[xssel:xesel]
-                    else :   # Startsel - endsel                        
-                        if cnt == yssel and cnt == yesel:   # sel on the same line
-                            frag = line[xssel:xesel]
-                        elif cnt == yssel:                  # start line
-                            frag = line[xssel:]
-                        elif cnt == yesel:                  # end line
-                            draw_start = 0
-                            frag = line[:xesel]
-                        else:
-                            draw_start = 0                  # intermediate line
-                            frag = line[:]
-
-                    dss = calc_tabs(line, draw_start, self.tabstop)
-                    self._draw_text(gcx, dss * self.cxx, yy, frag, self.fgcolor, bgcol)
-                    
-                cnt = cnt + 1
-                yy += self.cyy
-                if yy > hhh:
-                    break
-
-        #print  "sel", time.clock() - got_clock        
-       
-        if self.colflag:
-            # Color keywords. Very primitive coloring, a compromise for speed
-            xx = 0; yy = 0; 
-            cnt = self.ypos;
-            while cnt <  xlen:
-                #line = self.text[cnt]
-                line =  untab_str(self.text[cnt])
-                for kw in keywords:
-                    ff = 0          # SOL
-                    while True:
-                        ff = line.find(kw, ff)
-                        if ff >= 0:
-                            ff2 = calc_tabs(line, ff, self.tabstop)                    
-                            self._draw_text(gcx, ff2 * self.cxx, yy, line[ff:ff+len(kw)],
-                                self.kwcolor, None)
-                            ff += len(kw)
-                            #break
-                        else:        
-                            break
-                        
-                for kw in clwords:
-                    cc = 0      # SOL
-                    while True:
-                        cc = line.find(kw, cc)
-                        if cc >= 0:
-                            cc2 = calc_tabs(line, cc, self.tabstop)                    
-                            self._draw_text(gcx, cc2 * self.cxx, yy, line[cc:cc+len(kw)],
-                                self.clcolor, None)
-                            cc += len(kw)
-                        else:        
-                            break
-                        
-                # Comments: # or // and "     
-                ccc = line.find("#"); 
-                if ccc < 0:
-                    ccc = line.find("//"); 
-                    
-                cccc = line.find('"')
-    
-                # See if hash preceeds quote (if any)
-                if ccc >= 0 and (cccc > ccc or cccc == -1):
-                    ccc -= self.xpos
-                    ccc2 = calc_tabs(line, ccc, self.tabstop)                    
-                    self._draw_text(gcx, ccc2 * self.cxx, yy, line[ccc:],
-                            self.cocolor, None)
-                else:   
-                    qqq = 0                                 
-                    while True:
-                        quote = '"'
-                        sss = qqq
-                        qqq = line.find(quote, qqq);                     
-                        if qqq < 0:
-                            # See if single quote is found
-                            qqq = line.find("'", sss); 
-                            if qqq >= 0:
-                                quote = '\''                    
-                        if qqq >= 0:
-                            qqq += 1
-                            qqqq = line.find(quote, qqq)
-                            if qqqq >= 0:
-                                qqq -= self.xpos           
-                                qqq2 = calc_tabs(line, qqq, self.tabstop)
-                                self._draw_text(gcx, 
-                                        qqq2 * self.cxx, yy, line[qqq:qqqq], self.stcolor, None)
-                                qqq = qqqq + 1
-                            else:
-                                break
-                        else:
-                            break
-                            
-                cnt = cnt + 1
-                yy += self.cyy
-                if yy > hhh:
-                    break
-        
-        # Underline spelling errors
-        yyy = self.ypos + self.get_height() / self.cyy             
-        for xaa, ybb, lcc in self.ularr:
-            # Draw within visible range
-            if ybb >= self.ypos and ybb < yyy:
-                ybb -= self.ypos; 
-                xaa -= self.xpos; lcc -= self.xpos;
-                self.draw_wiggle(gcu, 
-                     xaa * self.cxx, ybb * self.cyy + self.cyy,
-                            lcc * self.cxx, ybb * self.cyy + self.cyy)
-            
-        #print  "kw", time.clock() - got_clock        
-    
-        if self.startxxx != -1:
-            self.gotoxy(self.startxxx, self.startyyy)
-            self.startxxx = -1; self.startyyy = -1
-        
-        self._drawcaret(gcu)        
-        return True
-    '''
     
     # Underline red
     def draw_wiggle(self, gcr, xx, yy, xx2, yy2):
 
+        gcr.set_line_width(1)
+
         # The  wiggle took too much processing power .... just a line
-        #self.window.draw_line(gcr, xx, yy, xx2, yy2)
+        #self.draw_line(gcr, xx, yy, xx2, yy2)
     
+       
         # Back to Wiggle
         while True:
             xx3 = xx + 4        
             if xx3 >= xx2: break   
             self.draw_line2(gcr, xx, yy, xx3, yy2+2)
-            xx3 = xx3 + 4
-            if xx3 >= xx2: break   
-            #self.draw_line2(gcr, xx, yy, xx3, yy2)            
+            xx = xx3; xx3 = xx3 + 4
+            self.draw_line2(gcr, xx, yy+2, xx3, yy2)            
             xx = xx3 
+            
         gcr.stroke()
                         
     def idle_queue(func):
@@ -865,23 +680,14 @@ class pedDoc(Gtk.DrawingArea):
     # --------------------------------------------------------------------
     # Draw caret
 
-    def _drawcaret(self, gcx):
+    def _draw_caret(self, gcx):
 
         gcx.set_line_width(1)
+        gcx.set_source_rgba(0, 0, 5)
 
         #print "drawing caret", self.caret[0], self.caret[1], \
         #        self.caret[0] * self.cxx, self.caret[1] * self. cyy  
                         
-        #colormap = Gtk.widget_get_default_colormap()
-        '''
-        if self.focus:    
-            color = colormap.alloc_color("#008888")
-        else:
-            color = colormap.alloc_color("#aaaaaa")
-        '''
-        #gcx = Gdk.GC(self.window); gcx.copy(self.gc)
-        #gcx.set_foreground(color)
-      
         try:
             line = self.text[self.ypos + self.caret[1]]            
         except:
@@ -892,7 +698,7 @@ class pedDoc(Gtk.DrawingArea):
         #xx = self.caret[0] * self.cxx       
         yy = self.caret[1] * self.cyy
 
-        ch = self.cyy / 2; cw = self.cxx / 2
+        ch = 3 * self.cyy / 3; cw = 3 * self.cxx / 4
 
         # Order: Top, left right, buttom
         if self.focus:    
@@ -927,6 +733,7 @@ class pedDoc(Gtk.DrawingArea):
 
     def area_button(self, area, event):
         #print "Button press  ", event.type, " x=", event.x, " y=", event.y
+        
         if  event.type == Gdk.EventType.BUTTON_PRESS:
             if event.button == 1:
                 #print "Left Click at x=", event.x, "y=", event.y
@@ -939,8 +746,14 @@ class pedDoc(Gtk.DrawingArea):
                     
                 xxx = int(event.x / self.cxx)
                 offs = calc_tabs2(line, xxx)
+                
+                #print "offs, xxx", offs, xxx
                 self.set_caret(self.xpos + xxx - (offs - xxx), 
-                                     self.ypos + int(event.y) / self.cyy )
+                                     self.ypos + int(event.y / self.cyy) )
+                rp = xxx + self.xpos
+                print "xpos", self.xpos, "xxx", xxx, rp
+                print "line", "'" + line[rp:rp+4] + "'"
+                
                 # Erase selection
                 if self.xsel != -1:
                     self.clearsel()
@@ -1301,6 +1114,37 @@ class pedDoc(Gtk.DrawingArea):
                 except:
                     print "Exception in c func handler", sys.exc_info()
                     pass
+            if ".py" in self.fname:
+                try:
+                    aa = 0; bb = 0
+                    regex = re.compile(pykeywords2)
+                    for aa in range(sline, 0, -1):
+                        line = self.text[aa]
+                        res = regex.search(line)
+                        if res:
+                            #print "start", line, res.start(), res.end()
+                            sumw2.append(line)
+                            break  
+                    if aa > 0:               
+                        for bb in range(aa + 1, len(self.text)):
+                            line = self.text[bb]
+                            res = regex.search(line)
+                            if res:
+                                #print "end", line, res.start(), res.end()
+                                break             
+                                
+                        regex2 = re.compile(localpywords)
+                        for cc in range(aa + 1, bb - 1):
+                            line = self.text[cc]
+                            res = regex2.search(line)
+                            if res:
+                                #print "match", line, res.start(), res.end()
+                                sumw2.append(line)
+                    
+                except:
+                    print "Exception in py func handler", sys.exc_info()
+                    raise
+                    pass
             else:
                 pass                      
         
@@ -1377,7 +1221,10 @@ class pedDoc(Gtk.DrawingArea):
         menu = Gtk.Menu()      
         menu.append(self.create_menuitem("Checking '%s'" % xstr, None))
         menu.append(self.create_menuitem("Add to Dict", self.addict, xstr))
-        menu.append(self.create_menuitem("-------------", None))
+        
+        mi = self.create_menuitem("-------------", None)
+        mi.set_sensitive(False)
+        menu.append(mi)
         
         strs = "Creating suggestion list for '{0:s}'".format(xstr) 
         self.mained.update_statusbar(strs)
@@ -1389,13 +1236,14 @@ class pedDoc(Gtk.DrawingArea):
             for aa, bb in arr:
                 menu.append(self.create_menuitem(bb, self.menuitem_response))
         
-        menu.popup(None, None, None, event.button, event.time)
+        menu.popup(None, None, None, None, event.button, event.time)
         #self.mained.update_statusbar("Done.")
         
     def poprclick(self, widget, event):
         #print "Making rclick"
-        mm = self.build_menu(self.window, pedmenu.rclick_menu)
-        mm.popup(None, None, None, event.button, event.time)
+        #mm = self.build_menu(self.window, pedmenu.rclick_menu)
+        mm = self.build_menu(self, pedmenu.rclick_menu)
+        mm.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response(self, widget, string, arg):
         #print "menuitem response '%s'" % string
@@ -1413,6 +1261,27 @@ class pedDoc(Gtk.DrawingArea):
         dialog.connect ("response", lambda d, r: d.destroy())
         dialog.show()
 
+    def rclick_action(self, action, sss, ttt):
+        #print "rclck_action", sss, ttt
+        if ttt == 1:
+             self.mained.newfile() 
+        elif ttt == 3:
+            self.mained.open()
+        elif ttt == 4:
+            self.mained.save()
+        elif ttt == 5:
+            self.mained.save(True)
+        elif ttt == 7:
+            self.mained.copy()
+        elif ttt == 8:
+            self.mained.cut()
+        elif ttt == 9:
+            self.mained.paste()
+        elif ttt == 11:
+            self.mained.activate_exit()
+        else:
+            print "Invalid menu selected"    
+    
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
         if action:
@@ -1427,10 +1296,34 @@ class pedDoc(Gtk.DrawingArea):
 
     def build_menu(self, window, items):
         accel_group = Gtk.AccelGroup()
-        item_factory = Gtk.ItemFactory(Gtk.Menu, "<pydoc>", accel_group)
-        item_factory.create_items(items)
-        self.item_factory = item_factory
-        return item_factory.get_widget("<pydoc>")
+        #mmm = Gtk.Menu()
+        #bbb = Gtk.Builder.new_from_string(items, len(items))
+        menu =  Gtk.Menu()
+        #menu.set_accel_path()
+        for aa, bb, cc, dd, ee  in items:
+            #print aa
+            if ee:
+                menu_item = Gtk.MenuItem.new_with_mnemonic(
+                            "----------------------------")
+                menu_item.set_sensitive(False)
+                menu_item.set_size_request(-1, 10);
+                pass
+            else:         
+                ttt = str(bb).replace("<control>", "CTRL+")
+                ttt = str(ttt).replace("<alt>",     " ALT+")
+                fff = " " * (15 - len(aa))  
+                sss = aa + "%s\t%s" % (fff, ttt)
+                menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
+                menu_item.connect("activate", self.rclick_action, aa, dd );
+                #menu_item.
+            menu.append(menu_item)
+        menu.show_all()
+        #item_factory = Gtk.ItemFactory(Gtk.Menu, "<pydoc>", accel_group)
+        #item_factory.create_items(items)
+        #self.item_factory = item_factory
+        #return item_factory.get_widget("<pydoc>")
+        
+        return menu
 
     def get_size(self):
         rect = self.get_allocation()
@@ -1623,13 +1516,15 @@ class pedDoc(Gtk.DrawingArea):
     def file_dlg(self, resp):
         #print "File dialog"
         if resp == Gtk.ResponseType.YES:
-            but =   "Cancel", Gtk.BUTTONS_CANCEL, "Save File", Gtk.BUTTONS_OK
+            but =   "Cancel", Gtk.ResponseType.CANCEL,   \
+                            "Save File", Gtk.ResponseType.OK
             fc = Gtk.FileChooserDialog("Save file as ... ", None, 
-                    Gtk.FILE_CHOOSER_ACTION_SAVE, but)
+                    Gtk.FileChooserAction.SAVE, but)
             #fc.set_do_overwrite_confirmation(True)
+            
             fc.set_current_name(os.path.basename(self.fname))
             fc.set_current_folder(os.path.dirname(self.fname))
-            fc.set_default_response(Gtk.BUTTONS_OK)
+            fc.set_default_response(Gtk.ResponseType.OK)
             fc.connect("response", self.done_fc)                
             fc.run()             
 
@@ -1703,7 +1598,7 @@ class pedDoc(Gtk.DrawingArea):
     
     def done_fc(self, win, resp):
         #print "done_fc", win, resp
-        if resp == Gtk.BUTTONS_OK:
+        if resp == Gtk.ResponseType.OK:
             fname = win.get_filename()
             if not fname:
                 print "Must have filename"
@@ -1947,6 +1842,18 @@ def run_async_time(win):
             except:
                 print "Exception in c func handler", sys.exc_info()
                 pass
+                
+        elif ".py" in win.fname:
+            try:
+                regex = re.compile(pykeywords2)
+                for line in win.text:
+                    res = regex.search(line)
+                    if res:
+                        #print res, res.start(), res.end()
+                        sumw.append(line)
+            except:
+                print "Exception in py func handler", sys.exc_info()
+                pass
         else:
             try:
                 for kw in sumkeywords:
@@ -1963,9 +1870,10 @@ def run_async_time(win):
         # This is normal, ignore it
         print "run_async_time", sys.exc_info()    
         pass
-        
 
 #eof
+
+
 
 
 
