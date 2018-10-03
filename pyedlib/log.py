@@ -27,7 +27,8 @@ accum = []
 class fake_stdout():
 
     def __init__(self):
-        self.old_stdout = os.fdopen(sys.stdout.fileno(), "w")
+        #self.old_stdout = os.fdopen(sys.stdout.fileno(), "w")
+        self.old_stdout = sys.stdout
         self.flag = True
         self.dt = datetime.datetime(1990, 1, 1);
 
@@ -143,6 +144,7 @@ def area_key(area, event, dialog):
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
 
 
 

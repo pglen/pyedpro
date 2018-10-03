@@ -2,6 +2,8 @@
 
 123456789a123456789b123456789c123456789d123456789e123456789f123456789g123456789h
 11111111112222222222333333333344444444445555555555666666666677777777788888888888
+01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+28 29 30 31 32 33 34 35 36 37 38 39 30 3
 
 This is a list of default key assignments for PyEdit. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
@@ -192,6 +194,7 @@ Notes:
  An unrecognized key is inserted verbatim into the buffer, and a message is printed on the
 controlling terminal. If no action is listed, that key is unassigned. Most dialogs
 can be dismissed with the Esc key or the Alt-X key combination.
+
 
 
 

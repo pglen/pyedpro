@@ -60,6 +60,7 @@ mainwin = None
 show_timing = 0
 show_config = 0
 clear_config = 0
+use_stdout = 0
   
 # ------------------------------------------------------------------------
 
@@ -128,7 +129,7 @@ if __name__ == '__main__':
     
     opts = []; args = []
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvxctV")
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvxctVo")
     except getopt.GetoptError, err:
         print "Invalid option(s) on command line:", err
         sys.exit(1)
@@ -153,6 +154,7 @@ if __name__ == '__main__':
         if aa[0] == "-x": clear_config = True            
         if aa[0] == "-c": show_config = True            
         if aa[0] == "-t": show_timing = True
+        if aa[0] == "-o": use_stdout = True
     
     try:
         if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
@@ -212,26 +214,19 @@ if __name__ == '__main__':
         sys.exit(0)
 
     #Uncomment this for silent stdout
-    #sys.stdout = pyedlib.log.fake_stdout()
-    
-    # Uncomment this for unbuffered output
-    sys.stdout = Unbuffered(sys.stdout)
-    sys.stderr = Unbuffered(sys.stderr)
-
-    #print "Started pydepro"
-    #pyedlib.log.print("Started pydepro")
+    if use_stdout:
+        print "Using stdout"
+        sys.stdout = Unbuffered(sys.stdout)
+        sys.stderr = Unbuffered(sys.stderr)
+    else:
+        sys.stdout = pyedlib.log.fake_stdout()
+        sys.stderr = pyedlib.log.fake_stdout()
+        
+    # Uncomment this for buffered output
+    if pyedlib.pedconfig.conf.verbose:
+        print "Started pydepro"
+        #pyedlib.log.print("Started pydepro")
      
     main(args[0:])
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-

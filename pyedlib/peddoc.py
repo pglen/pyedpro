@@ -442,7 +442,8 @@ class pedDoc(Gtk.DrawingArea):
         if fg_col:    
             gc.set_source_rgba(fg_col[0], fg_col[1], fg_col[2])
             
-        gc.move_to(x - offs, y)
+        #gc.move_to(x - offs, y)
+        gc.move_to(x, y)
         PangoCairo.show_layout(gc, self.layout)
         
         if self.scol:
@@ -745,14 +746,16 @@ class pedDoc(Gtk.DrawingArea):
                     line = "";
                     
                 xxx = int(event.x / self.cxx)
+                yyy = int(event.y / self.cyy)
                 offs = calc_tabs2(line, xxx)
                 
                 #print "offs, xxx", offs, xxx
                 self.set_caret(self.xpos + xxx - (offs - xxx), 
-                                     self.ypos + int(event.y / self.cyy) )
+                                     self.ypos + yyy )
                 rp = xxx + self.xpos
-                print "xpos", self.xpos, "xxx", xxx, rp
-                print "line", "'" + line[rp:rp+4] + "'"
+                print "xpos", self.xpos, "xxx", xxx, "rp", rp
+                #print line
+                print "line part", "'" + line[rp:rp+8] + "'"
                 
                 # Erase selection
                 if self.xsel != -1:
@@ -1175,22 +1178,23 @@ class pedDoc(Gtk.DrawingArea):
         # We handled it  
         return True
 
-     # Invalidate currdent line
+     # Invalidate current line
     def inval_line(self):
         rect = Gdk.Rectangle()
-        rect.x = self.caret[0] * self.cxx
-        rect.y = self.caret[1] * self.cyy
-        rect.width =  self.get_width()
-        rect.height = self.cyy
-        self.invalidate(rect)
+        xx = self.caret[0] * self.cxx
+        yy = self.caret[1] * self.cyy
+        ww = self.get_width()
+        hh = self.cyy
+        #self.invalidate(rect)
+        self.queue_draw_area(xx, yy, ww, hh)
    
     def invalidate(self, rect = None):                        
         #print "Invalidate:", rect
-        #if rect == None:
-        #    ww, hh = self.get_size()
-        #    rect = Gdk.Rectangle(0,0, ww, hh)
-        #self.window.invalidate_rect(rect, False)
-        self.queue_draw()
+        if rect == None:
+            self.queue_draw()
+        else:
+             self.queue_draw_area(rect.x, rect.y, \
+                            rect.width, rect.height)
         
     def area_focus(self, area, event):
         #print "ped doc area focus", event
@@ -1202,7 +1206,7 @@ class pedDoc(Gtk.DrawingArea):
         lw = arg.lower()
         xfile = pedconfig.conf.config_dir + "/" + "userdict.txt"
         try:
-            fd = open(xfile, "a+")
+            fd = open(xfile, "a+")                 
         except:
             print "Cannot open user dictionary"
             return
@@ -1872,6 +1876,7 @@ def run_async_time(win):
         pass
 
 #eof
+
 
 
 
