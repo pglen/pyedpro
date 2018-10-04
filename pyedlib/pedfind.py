@@ -216,7 +216,7 @@ def find_show(self, self2):
     try:
         win2.set_icon_from_file(get_img_path("pyedit_sub.png"))
     except:
-        print "Cannot load icon"
+        print "Cannot load icon for find dialog"
     
     ff = os.path.basename(self2.fname)        
     if self.dialog.replace:
@@ -637,6 +637,7 @@ def wnext(butt,self):
     pass
     
    
+
 
 
 
