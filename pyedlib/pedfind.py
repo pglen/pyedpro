@@ -36,7 +36,7 @@ def find(self, self2, replace = False):
                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                     Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
-    dialog.set_transient_for(self2.mained.window)
+    dialog.set_transient_for(self2.mained.mywin)
     dialog.replace = replace
     dialog.set_position(Gtk.WindowPosition.CENTER)
     try:
@@ -89,8 +89,8 @@ def find(self, self2, replace = False):
 
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
 
-    dialog.checkbox = Gtk.CheckButton("Use _regular expression")
-    dialog.checkbox2 = Gtk.CheckButton("Case In_sensitive")
+    dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
+    dialog.checkbox2 = Gtk.CheckButton.new_with_mnemonic("Case In_sensitive")
     
     dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
     dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
@@ -110,7 +110,7 @@ def find(self, self2, replace = False):
     label32 = Gtk.Label("   ");  label33 = Gtk.Label("   ") 
     label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ") 
     
-    dialog.checkbox3 = Gtk.CheckButton("Search All Buffers")
+    dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic("Search _All Buffers")
     #dialog.checkbox4 = Gtk.CheckButton("Hello")
     hbox4 = Gtk.HBox()
     hbox4.pack_start(label30, 0, 0, 0);  
@@ -211,7 +211,7 @@ def find_show(self, self2):
 
     win2 = Gtk.Window()
     #win2.set_position(Gtk.WIN_POS_CENTER)
-    win2.set_transient_for(self2.mained.window)
+    win2.set_transient_for(self2.mained.mywin)
     
     try:
         win2.set_icon_from_file(get_img_path("pyedit_sub.png"))
@@ -242,8 +242,8 @@ def find_show(self, self2):
         
     if True or oldww == 0 or oldhh == 0 or oldxx  == 0 or oldyy == 0:    
         # Position it out of the way
-        sxx, syy = self2.mained.window.get_position()
-        wxx, wyy = self2.mained.window.get_size()
+        sxx, syy = self2.mained.mywin.get_position()
+        wxx, wyy = self2.mained.mywin.get_size()
         myww = 3 * wxx / 8; myhh = 3 * wyy / 8
         win2.set_default_size(myww, myhh)
         win2.move(sxx + wxx - (myww  + self.xnum), \
@@ -262,11 +262,11 @@ def find_show(self, self2):
     win2.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
         
     if self.dialog.replace:
-        butt2 = Gtk.Button(" Change _One ")
+        butt2 = Gtk.Button.new_with_mnemonic(" Change _One ")
         butt2.connect("clicked", chg_one, self, self2, win2)
-        butt3 = Gtk.Button(" Change _Selected "); 
+        butt3 = Gtk.Button.new_with_mnemonic(" Change _Selected "); 
         butt3.connect("clicked", chg_sel, self, self2, win2)
-        butt4 = Gtk.Button(" Change _All "); 
+        butt4 = Gtk.Button.new_with_mnemonic(" Change _All "); 
         butt4.connect("clicked", chg_all, self, self2, win2)
         
         lab1 = Gtk.Label("   "); lab2 = Gtk.Label("   ");
@@ -431,7 +431,7 @@ def area_focus(area, event, self, self2):
         vcurr = self2.notebook.get_nth_page(aa)
         if vcurr.area == self2:
             self2.notebook.set_current_page(aa)                                
-            self2.mained.window.set_focus(vcurr.area)
+            self2.mained.mywin.set_focus(vcurr.area)
     
 # Call key handler
 def area_key(area, event, self):
@@ -637,6 +637,8 @@ def wnext(butt,self):
     pass
     
    
+
+
 
 
 

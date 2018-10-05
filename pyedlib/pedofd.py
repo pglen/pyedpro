@@ -18,14 +18,19 @@ def ofd(fname = None, self2 = None):
 
     dialog = Gtk.Dialog("pyedpo: Open File",
                    None,
-                   Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                     Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
                     
+    dialog.set_transient_for(self2.mained.mywin)
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_position(Gtk.WindowPosition.CENTER)
+    #dialog.set_size_request(800, 600)
     dialog.set_default_size(800, 600)
-    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.window);
+    #print dialog
+
+    #dialog.set_transient_for(pyedlib.pedconfig.conf.pe.mywin);
             
     dialog.connect("key-press-event", area_key, dialog)
     dialog.connect("key-release-event", area_key, dialog)
@@ -193,8 +198,10 @@ def populate(dialog):
     
 def create_ftree(ts, text = None):
         
+    warnings.simplefilter("ignore")
     # create the tview using ts
     tv = Gtk.TreeView(ts)
+    warnings.simplefilter("default")
 
     # create a CellRendererText to render the data
     cell = Gtk.CellRendererText()
@@ -326,6 +333,10 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
+
+
+
 
 
 

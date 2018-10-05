@@ -26,7 +26,7 @@ def buffers(self, self2):
                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                     Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
-    dialog.set_transient_for(self2.mained.window)
+    dialog.set_transient_for(self2.mained.mywin)
     dialog.set_position(Gtk.WindowPosition.CENTER)
     self.dialog = dialog
 
@@ -35,7 +35,7 @@ def buffers(self, self2):
     except:
         print "Cannot load find dialog icon", sys.exc_info()
 
-    xx, yy = self2.mained.window.get_size()
+    xx, yy = self2.mained.mywin.get_size()
 
     dialog.set_default_size(3*xx/4, yy/2)
 
@@ -86,8 +86,8 @@ def buffers(self, self2):
             self2.notebook.set_current_page(mm)                        
             nn2 = self2.notebook.get_current_page()
             vcurr2 = self2.notebook.get_nth_page(nn2)
-            self2.mained.window.set_focus(vcurr2.vbox.area)                   
-            self2.mained.window.show_all()               
+            self2.mained.mywin.set_focus(vcurr2.vbox.area)                   
+            self2.mained.mywin.show_all()               
             break
                            
 # ------------------------------------------------------------------------
@@ -211,6 +211,7 @@ def update_treestore(self, win2, text, was):
     else:
         root = win2.treestore.get_iter_first() 
         win2.tree.set_cursor(win2.treestore.get_path(root))
+
 
 
 

@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
 import signal, os, time, sys, subprocess, platform
+import warnings
 
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
+from gi.repository import GLib
 
 import  peddoc, pedconfig, pedofd
 import  pedync, pedspell, pedfont
@@ -41,6 +43,8 @@ class edPane(Gtk.VPaned):
         self.vbox2 = edwin(buff, True)
         self.add1(self.vbox2)
 
+        self.set_size_request(100, 100)
+        
         # Shortcuts to access the editor windows
         self.area  = self.vbox.area
         self.area2 = self.vbox2.area
@@ -56,24 +60,22 @@ class edwin(Gtk.VBox):
 
         Gtk.VBox.__init__(self)
 
-        area  = peddoc.pedDoc(buff, mained, readonly)
-        #print "created", area, mained
+        # Make it acessable:
+        self.area  = peddoc.pedDoc(buff, mained, readonly)
+        #print "created", self.area, mained
 
         # Give access to notebook and main editor window
-        area.notebook = notebook
-        area.mained = mained
-        area.fname = ""
+        self.area.notebook = notebook
+        self.area.mained = mained
+        self.area.fname = ""
 
-        frame = Gtk.Frame(); frame.add(area)
+        frame = Gtk.Frame(); frame.add(self.area)
         hbox = Gtk.HBox()
         hbox.pack_start(frame, True, True, 0)
-        hbox.pack_end(area.vscroll, False, False, 0)
+        hbox.pack_end(self.area.vscroll, False, False, 0)
 
         self.pack_start(hbox, True, True, 0)
-        self.pack_end(area.hscroll, False, False, 0)
-
-        # Make it acessable:
-        self.area = area
+        self.pack_end(self.area.hscroll, False, False, 0)
 
 # ------------------------------------------------------------------------
 #  Define Application Main Window claass
@@ -107,45 +109,43 @@ class EdMainWindow():
        
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
-        window = Gtk.Window()
-        self.window = window
-
+        self.mywin = Gtk.Window()
         #www = Gdk.screen_width(); hhh = Gdk.screen_height();
 
         if pedconfig.conf.full_screen:
-            window.set_default_size(www, hhh)
+            self.mywin.set_default_size(www, hhh)
         else:
             xx = pedconfig.conf.sql.get_int("xx")
             yy = pedconfig.conf.sql.get_int("yy")
             ww = pedconfig.conf.sql.get_int("ww")
             hh = pedconfig.conf.sql.get_int("hh")
 
-            '''if ww == 0 or hh == 0:
-                window.set_position(Gtk.WIN_POS_CENTER)
-                window.set_default_size(7*www/8, 5*hhh/8)
-                window.move(www / 32, hhh / 10)
+            if ww == 0 or hh == 0:
+                self.mywin.set_position(Gtk.WindowPosition.CENTER)
+                self.mywin.set_default_size(7*www/8, 5*hhh/8)
+                self.mywin.move(www / 32, hhh / 10)
             else:
-                window.set_default_size(ww, hh)
-                window.move(xx, yy)'''
+                self.mywin.set_default_size(ww, hh)
+                self.mywin.move(xx, yy)
                 
-            window.set_default_size(7*www/8, 7*hhh/8)
-            #window.set_position(Gtk.WIN_POS_CENTER)
-            #window.move(xxx + www / 16, yyy / hhh / 16)          
+            #self.mywin.set_default_size(7*www/8, 7*hhh/8)
+            #self.mywin.set_position(Gtk.WindowPosition.CENTER)
+            #self.mywin.move(xxx + www / 16, yyy / hhh / 16)          
         try:
-            window.set_icon_from_file(get_img_path("pyedit.png"))
+            self.mywin.set_icon_from_file(get_img_path("pyedit.png"))
         except:
             print "Canot load icon."
 
         merge = Gtk.UIManager()
-        #window.set_data("ui-manager", merge)
+        #self.mywin.set_data("ui-manager", merge)
 
         aa = create_action_group(self)
         merge.insert_action_group(aa, 0)
-        window.add_accel_group(merge.get_accel_group())
+        self.mywin.add_accel_group(merge.get_accel_group())
 
         try:
             mergeid = merge.add_ui_from_string(ui_info)
-        except GObject.GError, msg:
+        except GLib.GError, msg:
             print "Building menus failed: %s" % msg
 
         # Add MRU
@@ -164,15 +164,7 @@ class EdMainWindow():
         mbar.show()
         #warnings.simplefilter("default")
 
-        '''window.set_events(  Gdk.POINTER_MOTION_MASK |
-                            Gdk.POINTER_MOTION_HINT_MASK |
-                            Gdk.BUTTON_PRESS_MASK |
-                            Gdk.BUTTON_RELEASE_MASK |
-                            Gdk.KEY_PRESS_MASK |
-                            Gdk.KEY_RELEASE_MASK |
-                            Gdk.FOCUS_CHANGE_MASK )
-        '''
-        window.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
+        self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
         
         global notebook
 
@@ -196,24 +188,24 @@ class EdMainWindow():
         #notebook.connect("create-window", self.note_create_cb)
         #notebook.connect("enter-notify-event", self.note_enter_notify)
 
-        window.connect("window_state_event", self.update_resize_grip)
-        #window.connect("destroy", OnExit)
-        window.connect("unmap", OnExit)
+        self.mywin.connect("window_state_event", self.update_resize_grip)
+        #self.mywin.connect("destroy", OnExit)
+        self.mywin.connect("unmap", OnExit)
 
-        #window.connect("key-press-event", self.area_key)
-        #window.connect("key-release-event", self.area_key)
+        #self.mywin.connect("key-press-event", self.area_key)
+        #self.mywin.connect("key-release-event", self.area_key)
 
-        #window.connect("set-focus", self.area_focus)
-        window.connect("focus-in-event", self.area_focus_in)
-        window.connect("focus-out-event", self.area_focus_out)
-        window.connect("window-state-event", self.area_winstate)
-        window.connect("size_allocate", self.area_size)
+        #self.mywin.connect("set-focus", self.area_focus)
+        self.mywin.connect("focus-in-event", self.area_focus_in)
+        self.mywin.connect("focus-out-event", self.area_focus_out)
+        self.mywin.connect("window-state-event", self.area_winstate)
+        self.mywin.connect("size_allocate", self.area_size)
 
-        #window.connect("area-focus-event", self.area_focus_in)
-        #window.connect("event", self.area_event)
-        #window.connect("enter-notify-event", self.area_enter)
-        #window.connect("leave-notify-event", self.area_leave)
-        #window.connect("event", self.unmap)
+        #self.mywin.connect("area-focus-event", self.area_focus_in)
+        #self.mywin.connect("event", self.area_event)
+        #self.mywin.connect("enter-notify-event", self.area_enter)
+        #self.mywin.connect("leave-notify-event", self.area_leave)
+        #self.mywin.connect("event", self.unmap)
 
         tbar = merge.get_widget("/ToolBar"); 
         #tbar.set_tooltips(True)
@@ -279,8 +271,8 @@ class EdMainWindow():
         bbox.pack_start(hpaned, 1,1, 0)
         bbox.pack_start(hpane2, 0,0, 0)
         
-        window.add(bbox)
-        window.show_all()
+        self.mywin.add(bbox)
+        self.mywin.show_all()
 
         # ----------------------------------------------------------------
         # Read in buffers
@@ -328,7 +320,7 @@ class EdMainWindow():
                 vpaned.area.set_tablabel()
 
         # Show newly created buffers:
-        window.show_all()
+        self.mywin.show_all()
 
         # Set last file
         fff = pedconfig.conf.sql.get_str("curr")
@@ -340,7 +332,7 @@ class EdMainWindow():
             if vcurr.area.fname == fff:
                 #print "found buff", fff
                 notebook.set_current_page(mm)
-                self.window.set_focus(vcurr.vbox.area)
+                self.mywin.set_focus(vcurr.vbox.area)
                 break
 
         # Set the signal handler for 1s tick
@@ -348,7 +340,7 @@ class EdMainWindow():
         #signal.alarm(1)
         
         # We use gobj instead of SIGALRM, so it is more multi platform
-        GObject.timeout_add(1000, handler_tick)
+        GLib.timeout_add(1000, handler_tick)
 
         self.update_statusbar("Initial")
         
@@ -377,7 +369,7 @@ class EdMainWindow():
     def area_winstate(self, arg1, arg2):
         pass
         #print "area_winstate", arg1, arg2
-        #print "state", self.window.get_state()
+        #print "state", self.mywin.get_state()
 
     def unmap(self, arg1, arg2):
         #print "unmap", arg1, arg2
@@ -402,22 +394,22 @@ class EdMainWindow():
         print "tree_sel", xtree, xiter, xpath
         # Focus on main doc
         vcurr = notebook.get_nth_page(notebook.get_current_page())
-        self.window.activate_focus()
-        self.window.set_focus(vcurr.vbox.area)
+        self.mywin.activate_focus()
+        self.mywin.set_focus(vcurr.vbox.area)
 
     def tree_sel2(self, xtree, xiter, xpath):
         pass
         print "tree_sel2", xtree, xiter, xpath
         # Focus on main doc
         vcurr = notebook.get_nth_page(notebook.get_current_page())
-        self.window.activate_focus()
-        self.window.set_focus(vcurr.vbox.area)
+        self.mywin.activate_focus()
+        self.mywin.set_focus(vcurr.vbox.area)
 
     # Call key handler
     def area_key(self, area, event):
         print "pedwin key", event
         # Inspect key press before treeview gets it
-        if self.window.get_focus() == self.treeview:
+        if self.mywin.get_focus() == self.treeview:
             # Do key down:
             if  event.type == Gdk.EventType.KEY_PRESS:
                 if event.keyval == Gtk.keysyms.Alt_L or \
@@ -428,7 +420,7 @@ class EdMainWindow():
                     #print "pedwin Alt num", event.keyval - Gtk.keysyms._1
                      # Focus on main doc
                     vcurr = notebook.get_nth_page(notebook.get_current_page())
-                    self.window.set_focus(vcurr.vbox.area)
+                    self.mywin.set_focus(vcurr.vbox.area)
 
             elif  event.type == Gdk.EventType.KEY_RELEASE:
                 if event.keyval == Gtk.keysyms.Alt_L or \
@@ -437,11 +429,11 @@ class EdMainWindow():
                     
 
     def get_height(self):
-        xx, yy = self.window.get_size()
+        xx, yy = self.mywin.get_size()
         return yy
 
     def get_width(self):
-        xx, yy = self.window.get_size()
+        xx, yy = self.mywin.get_size()
         return xx
 
     def start_tree(self):
@@ -611,7 +603,7 @@ class EdMainWindow():
         # Focus on main doc
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
-            self.window.set_focus(vcurr.vbox.area)
+            self.mywin.set_focus(vcurr.vbox.area)
 
     def area_focus_out(self, win, act):
         pass
@@ -626,7 +618,7 @@ class EdMainWindow():
         #print "note_focus_in", win, act
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
-            self.window.set_focus(vcurr.vbox.area)
+            self.mywin.set_focus(vcurr.vbox.area)
 
     def note_enter_notify(self, win):
         pass
@@ -636,13 +628,13 @@ class EdMainWindow():
         #print "note_grab_focus_cb", win
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
-            self.window.set_focus(vcurr.vbox.area)
+            self.mywin.set_focus(vcurr.vbox.area)
 
     def  note_swpage_cb(self, tabx, page, num):
         #print "note_swpage", num
         vcurr = tabx.get_nth_page(num)
-        self.window.set_title("pyedit: " + vcurr.area.fname);
-        self.window.set_focus(vcurr.vbox.area)
+        self.mywin.set_title("pyedit: " + vcurr.area.fname);
+        self.mywin.set_focus(vcurr.vbox.area)
         fname = os.path.basename(vcurr.area.fname)
         self.update_statusbar("Switched to '{1:s}'".format(num, fname))
 
@@ -654,7 +646,7 @@ class EdMainWindow():
         #print "note_focus_cb"
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
-            self.window.set_focus(vcurr.vbox.area)
+            self.mywin.set_focus(vcurr.vbox.area)
 
     def note_create_cb(self, tabx, page, xx, yy):
         pass
@@ -728,14 +720,14 @@ class EdMainWindow():
 
         #label = Gtk.Label(" " + os.path.basename(aa) + " ")
         #notebook.set_tab_label(vpaned, label)
-        self.window.show_all()
+        self.mywin.show_all()
 
         # Make it current
         nn = notebook.get_n_pages();
         if nn:
             vcurr = notebook.set_current_page(nn-1)
             vcurr = notebook.get_nth_page(nn-1)
-            self.window.set_focus(vcurr.vbox.area)
+            self.mywin.set_focus(vcurr.vbox.area)
 
     # Traditional open file
     def open(self):
@@ -790,7 +782,9 @@ class EdMainWindow():
         #dialog.connect ("response", lambda d, r: d.destroy())
         #dialog.show()
 
+        warnings.simplefilter("ignore")
         strx = action.get_name()
+        warnings.simplefilter("default")
         #print "activate_action", strx
 
         if strx == "New":
@@ -958,9 +952,9 @@ class EdMainWindow():
         notebook.set_current_page(mm)
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
-        self.window.set_focus(vcurr2.vbox.area)
+        self.mywin.set_focus(vcurr2.vbox.area)
         notebook.remove_page(nn)
-        self.window.show_all()
+        self.mywin.show_all()
 
     def  firstwin(self):
         cc = notebook.get_n_pages()
@@ -969,8 +963,8 @@ class EdMainWindow():
         notebook.set_current_page(0)
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
-        self.window.set_focus(vcurr2.vbox.area)
-        self.window.show_all()
+        self.mywin.set_focus(vcurr2.vbox.area)
+        self.mywin.show_all()
 
     def  lastwin(self):
         cc = notebook.get_n_pages()
@@ -979,8 +973,8 @@ class EdMainWindow():
         notebook.set_current_page(cc-1)
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
-        self.window.set_focus(vcurr2.vbox.area)
-        self.window.show_all()
+        self.mywin.set_focus(vcurr2.vbox.area)
+        self.mywin.show_all()
 
     def  nextwin(self):
         cc = notebook.get_n_pages()
@@ -993,8 +987,8 @@ class EdMainWindow():
         notebook.set_current_page(mm)
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
-        self.window.set_focus(vcurr2.vbox.area)
-        self.window.show_all()
+        self.mywin.set_focus(vcurr2.vbox.area)
+        self.mywin.show_all()
 
     def  prevwin(self):
         cc = notebook.get_n_pages()
@@ -1007,8 +1001,8 @@ class EdMainWindow():
         notebook.set_current_page(mm)
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
-        self.window.set_focus(vcurr2.vbox.area)
-        self.window.show_all()
+        self.mywin.set_focus(vcurr2.vbox.area)
+        self.mywin.show_all()
 
     def folder_ch(self, win):
         #print "folder_ch"
@@ -1057,7 +1051,7 @@ class EdMainWindow():
                 self.update_statusbar("Already open, activating '{0:s}'".format(fname))
                 vcurr = notebook.set_current_page(aa)
                 vcurr = notebook.get_nth_page(aa)
-                self.window.set_focus(vcurr.vbox.area)
+                self.mywin.set_focus(vcurr.vbox.area)
                 return
 
         if(pedconfig.conf.verbose):
@@ -1075,21 +1069,21 @@ class EdMainWindow():
         # Add to the list of buffers
         notebook.append_page(vpaned)
         vpaned.area.set_tablabel()
-        self.window.show_all()
+        self.mywin.show_all()
         # Make it current
         nn = notebook.get_n_pages();
         if nn:
             vcurr = notebook.set_current_page(nn-1)
             vcurr = notebook.get_nth_page(nn-1)
-            self.window.set_focus(vcurr.vbox.area)
+            self.mywin.set_focus(vcurr.vbox.area)
 
     def activate_exit(self, action = None):
         #print "activate_exit called"
-        OnExit(self.window)
+        OnExit(self.mywin)
 
     def activate_quit(self, action):
         #print "activate_quit called"
-        OnExit(self.window, False)
+        OnExit(self.mywin, False)
 
     def activate_radio_action(self, action, current):
         active = current.get_active()
@@ -1129,7 +1123,7 @@ class EdMainWindow():
 
     def update_resize_grip(self, widget, event):
         #print "update state", event, event.changed_mask
-        #self.window.set_focus(notebook)
+        #self.mywin.set_focus(notebook)
 
         mask = Gdk.WindowState.MAXIMIZED
         # | Gdk.FULLSCREEN
@@ -1159,12 +1153,12 @@ def OnExit(arg, prompt = True):
     #print mained.full
 
     if not mained.full:
-        xx, yy = mained.window.get_position()
+        xx, yy = mained.mywin.get_position()
 
         pedconfig.conf.sql.put("xx", xx)
         pedconfig.conf.sql.put("yy", yy)
 
-        ww, hh = mained.window.get_size()
+        ww, hh = mained.mywin.get_size()
 
         pedconfig.conf.sql.put("ww", ww)
         pedconfig.conf.sql.put("hh", hh)
@@ -1247,7 +1241,7 @@ def handler_tick():
                 # Rescue to save:
                 if vcurr:
                     vcurr.area.source_id = \
-                        GObject.idle_add(vcurr.area.idle_callback)
+                        GLib.idle_add(vcurr.area.idle_callback)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -1256,7 +1250,7 @@ def handler_tick():
                 if vcurr:
                     #pedspell.spell(vcurr.area)
                     vcurr.area.source_id2 = \
-                    GObject.idle_add(vcurr.area.idle_callback2)
+                    GLib.idle_add(vcurr.area.idle_callback2)
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text
                         vcurr.area2.fname = vcurr.area.fname
@@ -1278,11 +1272,17 @@ def handler_tick():
         print "Exception in timer handler", sys.exc_info()
 
     try:
-        GObject.timeout_add(1000, handler_tick)
+        GLib.timeout_add(1000, handler_tick)
     except:
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
+
+
+
+
+
 
 
 

@@ -5,12 +5,12 @@ HISTORY                     ChangeLog
 INDEX                       This file
 INSTALL                     Install instructions
 install.py                  Installer
-Makefile                    Project Make File
+Makefile                    Project Make File (not updated)
 pack.sh                     Pack project
 panglib                     The help viewer library
 pangview.py                 The help viewer script
-pyedit-027.tgz              Archived project
-pyedit.py                   Main editor script
+pyedpro.py                  Main editor script
 pyedlib                     Main editor library
 README                      General project info
+
 

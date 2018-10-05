@@ -14,7 +14,7 @@ Working platforms currently are: Win 7 .. Win 10 Centos 6 .. 7 Ubunto 14 ... 16
    PyEdPro.py has macro recording/play, search/replace, functional navigation,
 comment/string spell check, auto backup, persistent undo/redo, auto complete,
 auto correct, syntax check, spell suggestion ... and a lot more.
-
+   
    It is fast, it is extendable, as python lends itself to easy tinkering. The
 editor has a table driven key mapping. One can easily edit the key map in
 keyhand.py, and the key actions in acthand.py
@@ -108,3 +108,4 @@ UPDATES:
   sep/16/2018   Port to GTP3 started
  
   Peter Glen
+

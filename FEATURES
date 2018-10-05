@@ -10,6 +10,9 @@
    o User Interface remembers last settings, last files, last edit point
    o Interactive status bar to let you know what is happening
    o Spell check, code spell check, text spell check
+   o Spell suggestion
+   o Code parsing, funtion window, loval vars window
+   o Accounting functions. Time of open / close file logged.
    o Syntax coloring (primitive coloring for speed)
    o Configurable
    o Easy to extend, as it is written in Python
@@ -19,6 +22,7 @@
                           
                           
  
+
 
 
 

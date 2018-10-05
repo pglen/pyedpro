@@ -30,7 +30,7 @@ def colors(self, self2):
                     Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
                     
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
-    dialog.set_transient_for(self2.mained.window)
+    dialog.set_transient_for(self2.mained.mywin)
     
     try:
         dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
@@ -42,7 +42,7 @@ def colors(self, self2):
     dialog.connect("key-press-event", area_key, dialog)
     dialog.connect("key-release-event", area_key, dialog)
     
-    #xx, yy = self2.mained.window.get_size()
+    #xx, yy = self2.mained.mywin.get_size()
     #dialog.set_default_size(3*xx/4, yy/2)
 
     vbox = Gtk.VBox()
@@ -326,6 +326,7 @@ def  printcols(self2):
 '''
     
 # EOF
+
 
 
 

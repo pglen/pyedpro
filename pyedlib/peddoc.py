@@ -22,7 +22,6 @@ from pedutil import *
 VSCROLLGAP  = 2             # Gap between the page boundary and ver. scroll
 HSCROLLGAP  = 4             # Gap between the page boundary and hor. scroll
 PAGEUP      = 20            # One page worth of scroll
-BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
 
 # Do not redefine this here, as it is determined by the gtk (pango) lib
 #TABSTOP = 8                 # One tab stop worth of spaces
@@ -297,7 +296,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # Do Tasks2 when the system is idle
     def idle_callback2(self):
         #print "Idle callback2"
-        GObject.source_remove(self.source_id2)        
+        GLib.source_remove(self.source_id2)        
         try:
             run_async_time(self)
         except:
@@ -350,7 +349,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print "scroll_event"
         xidx = self.xpos + self.caret[0]
         yidx = self.ypos + self.caret[1]
-        if event.direction == Gdk.SCROLL_UP:
+        if event.direction == Gdk.ScrollDirection.UP:
             yidx -= self.pgup / 2
         else:
             yidx += self.pgup / 2                    
@@ -414,12 +413,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.layout = PangoCairo.create_layout(cr)
         self.layout.set_font_description(self.fd)
         
-        # Do the text drawing in stages ...
         self.draw_maintext(cr)
-        self.draw_selection(cr)
-        self.draw_syntax(cr)
-        self.draw_comments(cr)
-        self.draw_spellerr(cr)
+            
+        if not self.hex:
+            # Do the text drawing in stages ...
+            self.draw_selection(cr)
+            self.draw_syntax(cr)
+            self.draw_comments(cr)
+            self.draw_spellerr(cr)
         self.draw_caret(cr)        
         
     def idle_queue(func):
@@ -1570,17 +1571,5 @@ def run_async_time(win):
         pass
 
 #eof
-
-
-
-
-
-
-
-
-
-
-
-
 
 

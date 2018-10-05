@@ -20,6 +20,8 @@ import pedconfig
 from keywords import *
 from pedutil import *
 
+BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
+
 class peddraw(object):   
 
     def __init__(self):
@@ -166,9 +168,10 @@ class peddraw(object):
         PangoCairo.show_layout(gc, self.layout)
         
         if self.scol:
+            gc.set_source_rgba(0, 0, 0)
             pos = BOUNDLINE - self.xpos       
-            #self.window.draw_line(gc, pos * self.cxx, \
-            #         0, pos * self.cxx, self.hhh)            
+            self.draw_line(gc, pos * self.cxx, \
+                     0, pos * self.cxx, self.hhh)            
         
         return xx, yy
 	
@@ -214,9 +217,6 @@ class peddraw(object):
                             frag = line[:]
 
                     dss = calc_tabs(line, draw_start, self.tabstop)
-                    #print "dss", dss, "draw_start", draw_start
-                    #print "dss", dss, "frag", frag
-                    #frag2 = frag[self.xpos:]
                     draw_start -= self.xpos
                     self.draw_text(gc, draw_start * self.cxx, yy, \
                                       frag, self.fgcolor, bgcol)
@@ -226,7 +226,7 @@ class peddraw(object):
                 if yy > self.hhh:
                     break
 
-# --------------------------------------------------------------------       
+    # --------------------------------------------------------------------       
     # Color keywords. Very primitive coloring, a compromise for speed
     
     def draw_syntax(self, cr):
@@ -270,6 +270,10 @@ class peddraw(object):
             if yy > self.hhh:
                 break
        
+    # Draw comments. Most files have # comments, so draw it
+    # In C and C++ we draw the // comments, Luckily 
+    # preprocessor has hash, default to drawing it as before.
+    
     def draw_comments(self, cr):
         xx = 0; yy = 0; 
         cnt = self.ypos;
@@ -324,7 +328,6 @@ class peddraw(object):
             yy += self.cyy
             if yy > self.hhh:
                 break
-       
            
     # Underline spelling errors
     def draw_spellerr(self, cr):
@@ -361,4 +364,7 @@ class peddraw(object):
         
 
 # EOF
+
+
+
 

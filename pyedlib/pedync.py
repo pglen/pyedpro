@@ -25,7 +25,7 @@ def yes_no_cancel(title, message, cancel = True):
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
 
-    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.window);
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin);
     
     sp = "     "
     label = Gtk.Label(message); 
@@ -92,7 +92,7 @@ def  about(self2):
     
     dialog.set_position(Gtk.WindowPosition.CENTER)
     
-    dialog.set_transient_for(self2.window)
+    dialog.set_transient_for(self2.mywin)
     
     #"\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
      
@@ -140,7 +140,7 @@ def message(strx, title = None):
     dialog = Gtk.MessageDialog(None, None,
                    Gtk.MessageType.INFO, Gtk.ButtonsType.CLOSE, strx)
     
-    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.window);
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin);
     #dialog.parent =  
        
     if title:
@@ -155,6 +155,7 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
 
 
 

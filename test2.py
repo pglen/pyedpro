@@ -7,10 +7,9 @@ import distutils.sysconfig
 
 installerdir = sys.argv[0][:sys.argv[0].rfind("/")] + "/"
 
-depfailed = False     # comment after content
-
-PROJNAME  = "pyedit"
-PROJLIB   = "pyedlib"
+	depfailed = False      # comment after content
+PROJNAME  =  "pyedit"  # no comment after quotes
+PROJLIB   = 'pyedlib'  # but OK after single quote
 PROJLIB2  = "panglib"
 
 # ------------------------------------------------------------------------
@@ -155,6 +154,10 @@ for source, dest, exe in dirlist:
 print 
 print "You may now use the", PROJNAME, "utility on your system."
 print
+
+
+
+
 
 
 

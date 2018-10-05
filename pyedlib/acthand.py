@@ -761,7 +761,9 @@ class ActHand:
             self2.countup = 0
         strx = "%d" % self2.countup
         for aa in strx:
-            event = Gdk.Event(Gdk.EventType.KEY_PRESS);
+            #event = Gdk.Event(Gdk.EventType.KEY_PRESS);
+            event = Gdk.EventKey()
+            event.string  = aa
             event.keyval = ord(aa)
             self.add_key(self2, event)
         self2.countup += 1
@@ -1500,10 +1502,10 @@ class ActHand:
 
     def f11(self, self2):
         if self2.mained.full:
-            self2.mained.window.unfullscreen()
+            self2.mained.mywin.unfullscreen()
             self2.mained.full = False
         else:
-            self2.mained.window.fullscreen()
+            self2.mained.mywin.fullscreen()
             self2.mained.full = True
         #print "F11"
 
@@ -1693,7 +1695,9 @@ class ActHand:
             else:
                 spaces = tabstop - (xidx % tabstop)
                 while spaces:
-                    event = Gdk.EventType.Event(Gdk.EventType.KEY_PRESS);
+                    #event = Gdk.Event(Gdk.EventType.KEY_PRESS);
+                    event = Gdk.EventKey()
+                    event.string  = " "
                     event.keyval = ord(" ")
                     self.add_key(self2, event)
                     spaces -= 1
@@ -1722,6 +1726,8 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
 
 
 

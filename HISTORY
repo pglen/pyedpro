@@ -71,5 +71,8 @@ v033:
 v034:
     VIM like navigation keys. Tabbing through docs on Alt-arrow(s), Misc fixes
 
+v042:
+
+ Moved to pyedpro, version number restarted at 043.
 
 
