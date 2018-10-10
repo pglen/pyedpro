@@ -338,7 +338,7 @@ class peddraw(object):
             if ybb >= self.ypos and ybb < yyy:
                 ybb -= self.ypos; 
                 xaa -= self.xpos; lcc -= self.xpos;
-                self.draw.draw_wiggle(cr, 
+                self.draw_wiggle(cr, 
                      xaa * self.cxx, ybb * self.cyy + self.cyy,
                             lcc * self.cxx, ybb * self.cyy + self.cyy)
     
@@ -364,6 +364,7 @@ class peddraw(object):
         
 
 # EOF
+
 
 
 

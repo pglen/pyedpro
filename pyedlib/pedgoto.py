@@ -2,27 +2,32 @@
 
 # Action Handler for goto
 
-import gtk, warnings
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+
+import warnings
 import  pedconfig
 
-def goto(self2):
+def gotodlg(self2):
 
-    dialog = gtk.Dialog("pyedit: Goto Line",
+    dialog = Gtk.Dialog("pyedit: Goto Line",
                    None,
-                   gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                   (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
-                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-    dialog.set_default_response(gtk.RESPONSE_ACCEPT)
-    dialog.set_position(gtk.WIN_POS_CENTER)
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_transient_for(self2.mained.mywin)
     
     # Spacers
-    label1 = gtk.Label("   ");  label2 = gtk.Label("   ") 
-    label3 = gtk.Label("   ");  label4 = gtk.Label("   ") 
-    label5 = gtk.Label("   ");  label6 = gtk.Label("   ") 
-    label7 = gtk.Label("   ");  label8 = gtk.Label("   ") 
+    label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ") 
+    label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ") 
+    label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ") 
+    label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ") 
 
     warnings.simplefilter("ignore")
-    entry = gtk.Entry(); 
+    entry = Gtk.Entry(); 
     warnings.simplefilter("default")
 
     entry.set_activates_default(True)
@@ -34,25 +39,25 @@ def goto(self2):
 
     entry.set_text(self2.oldgoto)
     entry.set_width_chars(24)
-    dialog.vbox.pack_start(label4)  
+    dialog.vbox.pack_start(label4, 0, 0, 0)  
 
-    hbox2 = gtk.HBox()
-    hbox2.pack_start(label6, False)  
-    hbox2.pack_start(entry)  
-    hbox2.pack_start(label7, False)  
-    dialog.vbox.pack_start(hbox2)
-    dialog.vbox.pack_start(label5)  
+    hbox2 = Gtk.HBox()
+    hbox2.pack_start(label6, 0, 0, 0)  
+    hbox2.pack_start(entry, 0, 0, 0)  
+    hbox2.pack_start(label7, 0, 0, 0)  
+    dialog.vbox.pack_start(hbox2, 0, 0, 0)
+    dialog.vbox.pack_start(label5, 0, 0, 0)  
 
-    hbox = gtk.HBox()
-    dialog.vbox.pack_start(hbox)
-    dialog.vbox.pack_start(label8)  
+    hbox = Gtk.HBox()
+    dialog.vbox.pack_start(hbox, 0, 0, 0)
+    dialog.vbox.pack_start(label8, 0, 0, 0)  
     
     dialog.show_all()
     response = dialog.run()   
     gotxt = entry.get_text()     
     dialog.destroy()
 
-    if response == gtk.RESPONSE_ACCEPT:        
+    if response == Gtk.ResponseType.ACCEPT:        
     
         # Save it for later use 
         self2.oldgoto = gotxt
@@ -69,13 +74,19 @@ def goto(self2):
 
         if num > len(self2.text):
             num = len(self2.text)     
-            self2.gotoxy(0, num)
+            self2.gotoxy(0, num - 1)
             self2.mained.update_statusbar("Goto line passed end, landed on %d" %  num)
         else:
-            self2.gotoxy(self2.xpos + self2.caret[0], num)
+            self2.gotoxy(self2.xpos + self2.caret[0], num -1)
             self2.mained.update_statusbar("Done goto line %d" % num)            
         
 # EOF
+
+
+
+
+
+
 
 
 

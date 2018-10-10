@@ -22,7 +22,7 @@ from    pedutil import *
 
 def selfont(self, self2):
 
-    head = "pyedit: Set Editor Font"
+    head = "pyedpro: Set Editor Font"
         
     dialog = Gtk.Dialog(head,
                    None,
@@ -34,7 +34,7 @@ def selfont(self, self2):
     dialog.set_transient_for(self2.mained.mywin)
     
     try:
-        dialog.set_icon_from_file(get_img_path("spyedit_sub.png"))
+        dialog.set_icon_from_file(get_img_path("spyedpro_sub.png"))
     except:
         print "Cannot set icon in", __file__
         
@@ -122,7 +122,7 @@ def selfont(self, self2):
     dialog.vbox.add(vbox2)
     dialog.show_all()
 
-    pg = Gtk.Widget.create_pango_context(self.window)    
+    pg = Gtk.Widget.create_pango_context(self.mywin)    
     fd = pg.get_font_description()
 
     fonts = pg.list_families();  
@@ -322,6 +322,8 @@ def area_key(area, event, dialog):
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
+
 
 
 

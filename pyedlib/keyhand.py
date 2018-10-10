@@ -442,7 +442,7 @@ class KeyHand:
                         self2.notebook.set_current_page(num)
                 
             elif event.keyval == Gdk.KEY_0:
-                self2.appwin.window.set_focus(self2.appwin.treeview)
+                self2.appwin.mywin.set_focus(self2.appwin.treeview)
             else:
                 self._handle_key(self2, area, event, self.alt_keytab)
         
@@ -483,6 +483,7 @@ class KeyHand:
                         self2.flash(False)
                
         return ret
+
 
 
 

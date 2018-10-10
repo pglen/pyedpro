@@ -733,7 +733,7 @@ class EdMainWindow():
     def open(self):
         but =   "Cancel", Gtk.ButtonsType.CANCEL,\
          "Open File", Gtk.ButtonsType.OK
-        fc = Gtk.FileChooserDialog("Open file", self.window, \
+        fc = Gtk.FileChooserDialog("Open file", self.mywin, \
              Gtk.FileChooserAction.OPEN  \
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
@@ -1277,6 +1277,7 @@ def handler_tick():
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
 
 
 

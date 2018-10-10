@@ -1645,7 +1645,7 @@ class ActHand:
         self2.mained.saveall()
 
     def alt_g(self, self2):
-        goto(self2)
+        gotodlg(self2)
 
     def alt_y(self, self2):
         #print "Compile"
@@ -1726,6 +1726,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 
