@@ -31,9 +31,9 @@ def buffers(self, self2):
     self.dialog = dialog
 
     try:
-        dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
+        dialog.set_icon_from_file(get_img_path("pyedro_sub.png"))
     except:
-        print "Cannot load find dialog icon", sys.exc_info()
+        print "Cannot load buffs dialog icon", sys.exc_info()
 
     xx, yy = self2.mained.mywin.get_size()
 
@@ -211,6 +211,7 @@ def update_treestore(self, win2, text, was):
     else:
         root = win2.treestore.get_iter_first() 
         win2.tree.set_cursor(win2.treestore.get_path(root))
+
 
 
 

@@ -9,7 +9,7 @@ installerdir = sys.argv[0][:sys.argv[0].rfind("/")] + "/"
 
 depfailed = False
 
-PROJNAME  = "pyedit"
+PROJNAME  = "PyEdPro"
 PROJLIB   = "pyedlib"
 PROJLIB2  = "panglib"
 
@@ -106,7 +106,7 @@ bindir = "/usr/bin"
 
     # --- file  ---  target dir ---- exec flag ----
 filelist = \
-    ['pyedit.py',       bindir,         True ],     \
+    ['PyEdPro.py',       bindir,         True ],     \
     ['pangview.py',     bindir,         True ],     \
     ['README',          shared,         False ],     \
     ['HISTORY',         shared,         False ],     \
@@ -155,6 +155,7 @@ for source, dest, exe in dirlist:
 print 
 print "You may now use the", PROJNAME, "utility on your system."
 print
+
 
 
 

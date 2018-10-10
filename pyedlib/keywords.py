@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Global keyword configuration for pyedit.
+# Global keyword configuration for pyedpro.
 
 # ------------------------------------------------------------------------
 # Add keywords to your taste. Note that we are cheating here, as the
@@ -56,6 +56,7 @@ acorr = [   ( "else",   "else: "                 ),
         ]
 
 # EOF
+
 
 
 

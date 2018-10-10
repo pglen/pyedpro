@@ -1,6 +1,6 @@
-                            PyEdit Key Assignments
+                            PyEdPro Key Assignments
 
-This is a list of default key assignments for PyEdit. The keys are assigned
+This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
 added to the buffer. To implement a new feature follow a particular key's 
 execution path, and replicate functionality. It is eazy to follow, as it is
@@ -179,7 +179,7 @@ Notes:
     *       Alt-Arrow   Goto begin / end of current word. Word delimited with
                         alpha_num + punctuation
     **      Ctrl-Q      Quit program, no save, but files are backed up in
-                        (~/.pyedit/data) '*.sav'
+                        (~/.pyedpro/data) '*.sav'
     ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
                         Useful for turining assignments.
     ****    F9          Only Comments and strings are checked, otherwise all 
@@ -189,6 +189,7 @@ Notes:
  An unrecognized key is inserted verbatim into the buffer, and a message is printed on the
 controlling terminal. If no action is listed, that key is unassigned. Most dialogs
 can be dismissed with the Esc key or the Alt-X key combination.
+
 
 
 

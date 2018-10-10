@@ -13,7 +13,7 @@ import peddoc, pedync, pedconfig
 from pedutil import *
 from pedundo import *
 
-strhist = []
+strhist = [] #strhist.append("aa")
 stridx = 0
 myentry = None
 
@@ -23,6 +23,10 @@ def find(self, self2, replace = False):
 
     global myentry
     self.reptxt = ""
+    
+    stridx = len(strhist) -1
+    if stridx < 0: stridx = 0
+    #print "stridx", stridx
         
     if replace:
         head = "pyedpro: Find / Replace"
@@ -40,7 +44,7 @@ def find(self, self2, replace = False):
     dialog.replace = replace
     dialog.set_position(Gtk.WindowPosition.CENTER)
     try:
-        dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
+        dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
         print "Cannot load find dialog icon", sys.exc_info()
         
@@ -174,17 +178,22 @@ def find_keypress(area, event):
         if event.state  & Gdk.ModifierType.MOD1_MASK:
             if event.keyval == Gdk.KEY_Up or \
                     event.keyval == Gdk.KEY_Right:
-                #print   "find keypress, alt UP or left key"
+                #print   "find dlg keypress, alt UP or right key", stridx
                 if stridx < len(strhist) -1:
                     stridx += 1
                     myentry.set_text(strhist[stridx]);
                     
             if event.keyval == Gdk.KEY_Down or \
                     event.keyval == Gdk.KEY_Left:
-                #print   "find keypress, alt DOWN or right key"
+                #print   "find dlg keypress, alt DOWN or left", stridx
                 if stridx > 0:
-                    stridx -= 1
+                    stridx = stridx - 1
                     myentry.set_text(strhist[stridx]);
+                    
+            if event.state  & Gdk.ModifierType.MOD1_MASK:
+                if event.keyval == Gdk.KEY_X or \
+                    event.keyval == Gdk.KEY_x:
+                    area.destroy()
             
 # -------------------------------------------------------------------------
     
@@ -214,7 +223,7 @@ def find_show(self, self2):
     win2.set_transient_for(self2.mained.mywin)
     
     try:
-        win2.set_icon_from_file(get_img_path("pyedit_sub.png"))
+        win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
         print "Cannot load icon for find dialog"
     
@@ -455,7 +464,7 @@ def area_key(area, event, self):
         if event.keyval >= Gdk.KEY_1 and \
                 event.keyval <= Gdk.KEY_9:
             pass
-            #print "pedwin Alt num", event.keyval - Gdk.KEY__1
+            print "pedwin Alt num", event.keyval - Gdk.KEY__1
         
         if event.keyval == Gdk.KEY_x or \
                 event.keyval == Gdk.KEY_X:
@@ -637,6 +646,23 @@ def wnext(butt,self):
     pass
     
    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,8 +13,8 @@ all:
 help:
 	@echo 
 	@echo "Targets:"
-	@echo "	 make install    -- Install pyedit "
-	@echo "	 make pack       -- package pyedit "
+	@echo "	 make install    -- Install PyEdPro "
+	@echo "	 make pack       -- package PyEdPro "
 	@echo 
 
 install:
@@ -24,6 +24,7 @@ pack:
 	@./pack.sh
 
 # End of Makefile
+
 
 
 

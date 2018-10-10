@@ -132,7 +132,7 @@ class EdMainWindow():
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)          
         try:
-            self.mywin.set_icon_from_file(get_img_path("pyedit.png"))
+            self.mywin.set_icon_from_file(get_img_path("pyedpro.png"))
         except:
             print "Canot load icon."
 
@@ -346,7 +346,7 @@ class EdMainWindow():
         
         # Add to accounting:
         self.start_time = time.time()
-        utils.timesheet("Started pyedit", self.start_time, 0)
+        utils.timesheet("Started pyedpro", self.start_time, 0)
 
     # --------------------------------------------------------------------
 
@@ -633,7 +633,7 @@ class EdMainWindow():
     def  note_swpage_cb(self, tabx, page, num):
         #print "note_swpage", num
         vcurr = tabx.get_nth_page(num)
-        self.mywin.set_title("pyedit: " + vcurr.area.fname);
+        self.mywin.set_title("pyedpro: " + vcurr.area.fname);
         self.mywin.set_focus(vcurr.vbox.area)
         fname = os.path.basename(vcurr.area.fname)
         self.update_statusbar("Switched to '{1:s}'".format(num, fname))
@@ -1183,7 +1183,7 @@ def OnExit(arg, prompt = True):
         if prompt:
             if ppp.area.changed:
                 msg = "\nWould you like to save:\n\n  \"%s\" \n" % ppp.area.fname
-                rp = pedync.yes_no_cancel("pyedit: Save File ?", msg)
+                rp = pedync.yes_no_cancel("pyedpro: Save File ?", msg)
 
                 if rp == Gtk.ResponseType.YES:
                     ppp.area.save()
@@ -1215,7 +1215,7 @@ def OnExit(arg, prompt = True):
         print  "Exiting"
 
     # Add to accounting:
-    utils.timesheet("Ended pyedit", mained.start_time, time.time())
+    utils.timesheet("Ended pyedpro", mained.start_time, time.time())
 
     # Exit here
     Gtk.main_quit()
@@ -1277,6 +1277,7 @@ def handler_tick():
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
 
 
 

@@ -1,7 +1,5 @@
                                   README
 
-        NOTE: NOT all items are functional, please do not use yet.
- 
    Welcome to PyEdPro. The motivation for this project was to create a modern
 multi-platform editor. Simple, powerful, configurable, extendable.
 
@@ -108,4 +106,5 @@ UPDATES:
   sep/16/2018   Port to GTP3 started
  
   Peter Glen
+
 

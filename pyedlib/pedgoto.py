@@ -11,7 +11,7 @@ import  pedconfig
 
 def gotodlg(self2):
 
-    dialog = Gtk.Dialog("pyedit: Goto Line",
+    dialog = Gtk.Dialog("pyedpro: Goto Line",
                    None,
                    Gtk.DialogFlags.MODAL | \
                    Gtk.DialogFlags.DESTROY_WITH_PARENT,
@@ -81,6 +81,7 @@ def gotodlg(self2):
             self2.mained.update_statusbar("Done goto line %d" % num)            
         
 # EOF
+
 
 
 

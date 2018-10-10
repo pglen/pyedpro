@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Action Handler for the editor. Extracted to a separate module for
-# easy update. These are the actions for pyedit. You may define more
+# easy update. These are the actions for pyedpro. You may define more
 # and attach a key handler to it in the tables of keyhand.py
 
 # Notes:
@@ -1442,7 +1442,7 @@ class ActHand:
             idx+=1
 
             # Synthesize keystroke. We do not replicate state as
-            # pyedit maintains its own internally. (see keyhand.reset())
+            # pyedpro maintains its own internally. (see keyhand.reset())
             
             ttt = Gdk.EventType.KEY_PRESS 
             if tt == 9:
@@ -1726,6 +1726,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 

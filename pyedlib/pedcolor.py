@@ -19,7 +19,7 @@ def colors(self, self2):
 
     global dialog
     
-    head = "pyedit: colors"
+    head = "pyedro: colors"
     ev_arr = []
     #printcols(self2)
     dialog = Gtk.Dialog(head,
@@ -33,7 +33,7 @@ def colors(self, self2):
     dialog.set_transient_for(self2.mained.mywin)
     
     try:
-        dialog.set_icon_from_file(get_img_path("pyedit_sub.png"))
+        dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
         print "Cannot set icon in ", __file__
          
@@ -326,6 +326,7 @@ def  printcols(self2):
 '''
     
 # EOF
+
 
 
 

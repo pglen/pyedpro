@@ -1198,7 +1198,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             return 
         
         msg = "\nWould you like to save:\n\n  \"%s\" \n" % self.fname
-        rp = pedync.yes_no_cancel("pyedit: Save File ?", msg)
+        rp = pedync.yes_no_cancel("pyedpro: Save File ?", msg)
 
         if rp == Gtk.ResponseType.YES:   
             if askname:
@@ -1571,6 +1571,7 @@ def run_async_time(win):
         pass
 
 #eof
+
 
 
 

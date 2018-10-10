@@ -81,14 +81,14 @@ def show_log():
     
     win2 = Gtk.Window()
     try:
-        win2.set_icon_from_file(get_img_path("pyedit_sub.png"))
+        win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
         print( "Cannot load log icon")
 
     win2.set_position(Gtk.WindowPosition.CENTER)
     win2.set_default_size(800, 600)
     
-    tit = "pyedit:log"        
+    tit = "pyedpro:log"        
     win2.set_title(tit)
     
     '''win2.set_events(    
@@ -144,6 +144,7 @@ def area_key(area, event, dialog):
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
 
 
 
