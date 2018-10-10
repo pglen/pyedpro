@@ -346,13 +346,19 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         pass
         
     def scroll_event(self, widget, event):    
-        #print "scroll_event"
+        #print "scroll_event", event, event.direction
         xidx = self.xpos + self.caret[0]
         yidx = self.ypos + self.caret[1]
-        if event.direction == Gdk.ScrollDirection.UP:
-            yidx -= self.pgup / 2
+        if event.direction == Gdk.ScrollDirection.SMOOTH:
+            flag, directx, directy = event.get_scroll_deltas()
+            #print directx, directy
+            yidx += int(directy)
         else:
-            yidx += self.pgup / 2                    
+            if direct == Gdk.ScrollDirection.UP:
+                yidx -= self.pgup / 2
+            else:
+                yidx += self.pgup / 2                    
+                
         self.set_caret(xidx, yidx)
         self.invalidate()
         
@@ -812,7 +818,18 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 except:
                     print "Exception in c func handler", sys.exc_info()
                     pass
-            if ".py" in self.fname:
+            if ".bas" in self.fname.lower():
+                try:
+                    regex = re.compile(basekeywords)
+                    for line in win.text:
+                        res = regex.search(line)
+                        if res:
+                            #print res, res.start(), res.end()
+                            sumw.append(line)
+                except:
+                    print "Exception in bas func extraction handler", sys.exc_info()
+                    pass
+            if ".py" in self.fname.lower:
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(pykeywords2)
@@ -843,7 +860,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     print "Exception in py func handler", sys.exc_info()
                     raise
                     pass
-            else:
+       	    else:
                 pass                      
         
         try:        
@@ -1530,7 +1547,7 @@ def run_async_time(win):
     
     sumw = []
     if win.text:
-        if ".c" in win.fname:
+        if ".c" in win.fname.lower():
             try:
                 regex = re.compile(ckeywords)
                 for line in win.text:
@@ -1542,7 +1559,7 @@ def run_async_time(win):
                 print "Exception in c func handler", sys.exc_info()
                 pass
                 
-        elif ".py" in win.fname:
+        elif ".py" in win.fname.lower():
             try:
                 regex = re.compile(pykeywords2)
                 for line in win.text:
@@ -1552,6 +1569,17 @@ def run_async_time(win):
                         sumw.append(line)
             except:
                 print "Exception in py func handler", sys.exc_info()
+                pass
+        if ".bas" in win.fname.lower():
+            try:
+                regex = re.compile(basekeywords)
+                for line in win.text:
+                    res = regex.search(line)
+                    if res:
+                        #print res, res.start(), res.end()
+                        sumw.append(line)
+            except:
+                print "Exception in func extraction handler", sys.exc_info()
                 pass
         else:
             try:
@@ -1571,6 +1599,17 @@ def run_async_time(win):
         pass
 
 #eof
+
+
+
+
+
+
+
+
+
+
+
 
 
 

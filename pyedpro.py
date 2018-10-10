@@ -136,7 +136,7 @@ if __name__ == '__main__':
 
     #print "opts", opts, "args", args
     
-    pyedlib.pedconfig.conf.version = 0.43
+    pyedlib.pedconfig.conf.version = 0.44
 
     for aa in opts:
         if aa[0] == "-d":
@@ -230,5 +230,6 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 

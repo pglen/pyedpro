@@ -25,9 +25,10 @@ keywords =  ("def ", "import ", "from ", "for ", "while ", " len(",
 # Keywords for class releted enrties:
 clwords =  "class ", " self.", "try:", "except", "finally"
 
+
 # Keywords for summary extraction: (left side window)
 pykeywords = "class ", "def ", "TODO"
-
+basekeywords = "(sub)|(SUB)"
 pykeywords2 = "(class)|(def)|(TODO)"
 sumkeywords = "class ", "def ", "TODO"
 
@@ -56,6 +57,7 @@ acorr = [   ( "else",   "else: "                 ),
         ]
 
 # EOF
+
 
 
 
