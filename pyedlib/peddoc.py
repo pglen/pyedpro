@@ -913,7 +913,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             rect.width, rect.height)
         
     def area_focus(self, area, event):
-        print "ped doc area focus", event
+        #print "ped doc area focus", event
         return False
 
     # Add to usder dictionary:
@@ -1405,7 +1405,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         butt.set_relief( Gtk.ReliefStyle.NONE)        
         rc = butt.get_modifier_style()
         #rc.xthickness = 1; rc.ythickness = 1        
-        butt.modify_style(rc)        
+        #butt.modify_style(rc)        
         
         butt.connect("clicked", self.close_button)
         butt.set_tooltip_text("Close '%s'" % os.path.basename(self.fname))
@@ -1606,6 +1606,7 @@ def run_async_time(win):
         pass
 
 #eof
+
 
 
 
