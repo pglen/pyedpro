@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
@@ -11,13 +14,13 @@ from gi.repository import GObject
   COLOR_RED,
   COLOR_GREEN,
   COLOR_BLUE
-) = range(3)
+) = list(range(3))
 
 (
   SHAPE_SQUARE,
   SHAPE_RECTANGLE,
   SHAPE_OVAL,
-) = range(3)
+) = list(range(3))
 
 mained = None
 
@@ -50,7 +53,7 @@ def rclick_action(self, arg):
         mained.paste()
     
 def rclick_quit(self, arg):
-    print __name__, arg.name
+    print(__name__, arg.name)
     mained.activate_exit()
     
 rclick_menu = (   

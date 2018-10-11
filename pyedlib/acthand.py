@@ -29,25 +29,28 @@
 #       "Token Completion"
 #
 
+from __future__ import absolute_import
+from __future__ import print_function
 import string, subprocess, os, platform
 import py_compile
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
-import pedync, pedofd, pedspell, pedbuffs, pedconfig
+from . import pedync, pedofd, pedspell, pedbuffs, pedconfig
 
 # Some action functions have their own file
 #from pedfind import *
-import pedfind
-from pedgoto import *
-from pedundo import *
-from keywords import *
+from . import pedfind
+from .pedgoto import *
+from .pedundo import *
+from .keywords import *
 
 # General set of utilities
-from pedutil import *
+from .pedutil import *
 
 # Action handler. Called from key handler.
 # Function name hints to key / action. like up() is key up, and the action
@@ -1328,7 +1331,7 @@ class ActHand:
             else:            
                 ret = subprocess.Popen(["pangview.py",  rr])
         except:
-            print "Cannot launch pangview", sys.exc_info()
+            print("Cannot launch pangview", sys.exc_info())
             pedync.message("\n   Cannot launch pangview.py   \n\n"
                        "              (Please install)")            
 
@@ -1465,7 +1468,7 @@ class ActHand:
             if anim:
                 usleep(30)
                 
-            print   
+            print()   
             
         # If the state gets out or sync ...
         self.keyhand.reset()
@@ -1635,8 +1638,8 @@ class ActHand:
             # Usualy unhandled control, so helps developmet
             #print  "Other key", sys.exc_info(), event.keyval
             if(pedconfig.conf.verbose):
-                print "Other key", event.keyval, \
-                    hex(event.keyval), hex(event.state)
+                print("Other key", event.keyval, \
+                    hex(event.keyval), hex(event.state))
             pass
         return True
 
@@ -1652,13 +1655,13 @@ class ActHand:
         writefile("tmp", self2.text)
         try:
            py_compile.compile('tmp', doraise = True)
-        except py_compile.PyCompileError, msg:
+        except py_compile.PyCompileError as msg:
             ln  = msg[2][1][1]; col = msg[2][1][2]
             mmm = msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
             pedync.message("    " + mmm + "    ", msg[1])
             self2.gotoxy(col - 1, ln - 1)
         except:
-            print sys.exc_info()
+            print(sys.exc_info())
         else:
             self2.mained.update_statusbar("Syntax OK.")
         finally:

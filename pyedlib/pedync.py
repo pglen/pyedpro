@@ -2,6 +2,8 @@
 
 # Prompt Handler for PyEdPro
 
+from __future__ import absolute_import
+from __future__ import print_function
 import os, sys, string
 import warnings
 
@@ -119,8 +121,8 @@ def  about(self2):
         dialog.set_logo(pixbuf)
 
     except:
-        print "Cannot load logo for about dialog", img_path;
-        print sys.exc_info()
+        print("Cannot load logo for about dialog", img_path);
+        print(sys.exc_info())
                     
     #dialog.set_website("")
 

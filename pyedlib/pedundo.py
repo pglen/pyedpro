@@ -19,7 +19,9 @@
 #   Args: cursor x, cursor y, opcode, original content
 
 # Op codes:
-(NOOP, MODIFIED, ADDED, DELETED) = range(4)
+from __future__ import print_function
+from six.moves import range
+(NOOP, MODIFIED, ADDED, DELETED) = list(range(4))
 #print "(NOOP, MODIFIED, ADDED, DELETED)", NOOP, MODIFIED, ADDED, DELETED
 
 CONTFLAG = 0x80                         # Continuation flag
@@ -107,7 +109,7 @@ def undo(self2, keyh):
             pass
         else:
             # Just to confirm 
-            print "warninig: undo - invalid mode"
+            print("warninig: undo - invalid mode")
             pass
 
         del (self2.undoarr[xlen-1])
@@ -182,7 +184,7 @@ def redo(self2, keyh):
             pass
         else:
             # Just to confirm 
-            print "warninig: redo - invalid mode"
+            print("warninig: redo - invalid mode")
             pass 
 
         del (revredo[xlen2-1])

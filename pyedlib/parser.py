@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import sys, os, re
 
 # Our modules
-import stack, lexer
+from . import stack, lexer
 
 ''' 
 The parser needs several variables to operate. 
@@ -101,11 +103,11 @@ class Parse():
         self.strx = data[mmm.start():mmm.end()]
         #print "parser:", tt[0], "=", "'" + self.strx + "'"        
         if self.pvg.show_state:
-            print "state:", self.fsm, "str:", "'" + self.strx + "' token:", tt[0]    
+            print("state:", self.fsm, "str:", "'" + self.strx + "' token:", tt[0])    
         try:
             curr = self.pardict[self.fsm[1]]
         except:
-            print "no state on", tt[0], self.strx        
+            print("no state on", tt[0], self.strx)        
         try:
             item = curr[tt[0][0]]
         except:
@@ -115,7 +117,7 @@ class Parse():
                 cont = data[bbb:mmm.start()] + "'" +  self.strx + "'" + \
                         data[mmm.end():eee]
                 
-                print "no key on", tt[0], cont
+                print("no key on", tt[0], cont)
             return 
             
         #print "item:", item
@@ -189,14 +191,14 @@ class Parse():
 
         if not match:
             if _show_default_action:
-                print " default action on",  tt[0], "'" + self.strx + "'", \
-                "Pos:", mmm.start()
+                print(" default action on",  tt[0], "'" + self.strx + "'", \
+                "Pos:", mmm.start())
 
     def popstate(self):
         self.fsm, self.contflag, self.ttt, self.stry = self.fstack.pop()
 
 if __name__ == "__main__":
-    print "This module was not meant to operate as main."
+    print("This module was not meant to operate as main.")
 
 # EOF
 

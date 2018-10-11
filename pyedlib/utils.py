@@ -1,7 +1,10 @@
 #!/usr/bin/env python
  
+from __future__ import absolute_import
+from __future__ import print_function
 import sys, os, re, time, stat
-import pedconfig
+from . import pedconfig
+from six import unichr
 
 # ------------------------------------------------------------------------
 # Convert octal string to integer
@@ -107,15 +110,15 @@ def unescape(strx):
                                 xtablen = 3
                                 xtab.append(octx)
                             elif octx & 0xf8 == 0xf0: # four numbers
-                                print "four ",str.format("{0:b}", octx)
+                                print("four ",str.format("{0:b}", octx))
                                 xtablen = 4
                                 xtab.append(octx)
                             elif octx & 0xfc == 0xf8: # five numbers
-                                print "five ",str.format("{0:b}", octx)
+                                print("five ",str.format("{0:b}", octx))
                                 xtablen = 5
                                 xtab.append(octx)
                             elif octx & 0xfe == 0xfc: # six numbers
-                                print "six ",str.format("{0:b}", octx)
+                                print("six ",str.format("{0:b}", octx))
                                 xtablen = 6
                                 xtab.append(octx)
                             else:
@@ -184,16 +187,16 @@ def logentry(kind, startt, fname):
             fp = open(logfile, "w+")
             fp.seek(0, os.SEEK_END);
         except:
-            print "Cannot open/create log file", logfile
+            print("Cannot open/create log file", logfile)
             return
                                                            
     log_clock = time.time()
         
-    print >> fp, "Action:", "%s %s" % (kind, os.path.realpath(fname)) 
-    print >> fp, "On:", time.ctime(log_clock)
-    print >> fp, "Delta:", "%.0f" % (log_clock - startt)
-    print >> fp, "Date:", "%.0f %s %s\n" % \
-                        (log_clock, os.path.basename(fname), kind.split()[0])
+    print("Action:", "%s %s" % (kind, os.path.realpath(fname)), file=fp) 
+    print("On:", time.ctime(log_clock), file=fp)
+    print("Delta:", "%.0f" % (log_clock - startt), file=fp)
+    print("Date:", "%.0f %s %s\n" % \
+                        (log_clock, os.path.basename(fname), kind.split()[0]), file=fp)
     fp.close()
 
 # Append to timesheet
@@ -208,18 +211,18 @@ def timesheet(kind, startt, endd):
             fp = open(logfile, "w+")
             fp.seek(0, os.SEEK_END);
         except:
-            print "Cannot open/create log file", logfile
+            print("Cannot open/create log file", logfile)
             return
                                                            
     log_clock = time.time()
         
-    print >> fp, "Action:", "%s" % (kind) 
-    print >> fp, "On:", time.ctime(log_clock)
+    print("Action:", "%s" % (kind), file=fp) 
+    print("On:", time.ctime(log_clock), file=fp)
     if endd:
         td = endd - startt
-        print >> fp, "Time diff:", "%.0f %d:%d" % (td, td / 3600, (td % 3600) / 60)
+        print("Time diff:", "%.0f %d:%d" % (td, td / 3600, (td % 3600) / 60), file=fp)
 
-    print >> fp                                               
+    print(file=fp)                                               
     fp.close()
 
 # EOF

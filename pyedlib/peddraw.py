@@ -2,9 +2,11 @@
 
 # Drawing operations done here
  
+from __future__ import absolute_import
 import signal, os, time, sys
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -15,10 +17,10 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedconfig
+from . import pedconfig
 
-from keywords import *
-from pedutil import *
+from .keywords import *
+from .pedutil import *
 
 BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
 

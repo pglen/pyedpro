@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import sys, os, time, sqlite3
 
 # Replaces g c o n f, so it is less platforrm dependent 
@@ -13,7 +15,7 @@ class pedsql():
         try:
             self.conn = sqlite3.connect(file)
         except:
-            print "Cannot open/create db:", file, sys.exc_info() 
+            print("Cannot open/create db:", file, sys.exc_info()) 
             return            
         try:
             self.c = self.conn.cursor()
@@ -26,7 +28,7 @@ class pedsql():
             # Save (commit) the changes
             self.conn.commit()            
         except:
-            print "Cannot insert sql data", sys.exc_info() 
+            print("Cannot insert sql data", sys.exc_info()) 
              
         finally:    
             # We close the cursor, we are done with it
@@ -45,7 +47,7 @@ class pedsql():
                 self.c.execute("select * from config indexed by iconfig where key = ?", (kkk,))
             rr = self.c.fetchone()
         except:
-            print "Cannot get sql data", sys.exc_info() 
+            print("Cannot get sql data", sys.exc_info()) 
             rr = None
         finally:
             #c.close   
@@ -105,7 +107,7 @@ class pedsql():
                                      (val, key))                                     
             self.conn.commit()          
         except:
-            print "Cannot put sql data", sys.exc_info()             
+            print("Cannot put sql data", sys.exc_info())             
             ret = False  
         finally:
             #c.close     
@@ -124,7 +126,7 @@ class pedsql():
             self.c.execute("select * from config")
             rr = self.c.fetchall()
         except:
-            print "Cannot get sql data", sys.exc_info() 
+            print("Cannot get sql data", sys.exc_info()) 
         finally:
             #c.close   
             pass
@@ -134,13 +136,13 @@ class pedsql():
     # Return None if no data
     
     def   rmall(self):
-        print "removing all"
+        print("removing all")
         try:      
             #c = self.conn.cursor()
             self.c.execute("delete from config")
             rr = self.c.fetchone()
         except:
-            print "Cannot delete sql data", sys.exc_info() 
+            print("Cannot delete sql data", sys.exc_info()) 
         finally:
             #c.close   
             pass

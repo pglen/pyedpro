@@ -2,12 +2,13 @@
 
 # Action Handler for goto
 
+from __future__ import absolute_import
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
       
 import warnings
-import  pedconfig
+from . import  pedconfig
 
 def gotodlg(self2):
 

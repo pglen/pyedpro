@@ -2,9 +2,12 @@
  
 # Ped font selection
 
+from __future__ import absolute_import
+from __future__ import print_function
 import  signal, os, time, sys, subprocess
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -12,8 +15,8 @@ from gi.repository import Pango
 
 #import  gobject, gtk, pango
 
-import  pedconfig
-from    pedutil import *
+from . import  pedconfig
+from    .pedutil import *
 
 # I had to do this, as the standard font dialog does not have a mono filter.
 # Also, we do not need mono italic etc so the dialog is simpler.
@@ -36,7 +39,7 @@ def selfont(self, self2):
     try:
         dialog.set_icon_from_file(get_img_path("spyedpro_sub.png"))
     except:
-        print "Cannot set icon in", __file__
+        print("Cannot set icon in", __file__)
         
     self.dialog = dialog
                              

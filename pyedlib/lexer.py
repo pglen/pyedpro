@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import re
 
 # ------------------------------------------------------------------------
@@ -56,7 +58,7 @@ class Lexer():
                 pos += 1  # step to next
 
 if __name__ == "__main__":
-    print "This module was not meant to operate as main."
+    print("This module was not meant to operate as main.")
 
 # EOF
 

@@ -2,16 +2,19 @@
 
 # Action Handler for buffers
 
+from __future__ import absolute_import
+from __future__ import print_function
 import re, string
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GObject
 
-import peddoc, pedync, pedconfig
-from pedutil import *
+from . import pedync, pedconfig
+from .pedutil import *
 
 # -------------------------------------------------------------------------
 
@@ -33,7 +36,7 @@ def buffers(self, self2):
     try:
         dialog.set_icon_from_file(get_img_path("pyedro_sub.png"))
     except:
-        print "Cannot load buffs dialog icon", sys.exc_info()
+        print("Cannot load buffs dialog icon", sys.exc_info())
 
     xx, yy = self2.mained.mywin.get_size()
 
@@ -211,6 +214,7 @@ def update_treestore(self, win2, text, was):
     else:
         root = win2.treestore.get_iter_first() 
         win2.tree.set_cursor(win2.treestore.get_path(root))
+
 
 
 

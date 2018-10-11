@@ -36,6 +36,8 @@
 # ASCII test editor, requires pyGtk. See pygtk-dependencied for 
 # eazy access to depencdencies.
 
+from __future__ import absolute_import
+from __future__ import print_function
 import os, sys, getopt, signal
 
 #import gobject
@@ -67,11 +69,11 @@ use_stdout = 0
 def main(strarr):
 
     if(pyedlib.pedconfig.conf.verbose):
-        print "pydepro running on", "'" + os.name + "'", \
+        print("pydepro running on", "'" + os.name + "'", \
             "GTK", Gtk._version, "PyGtk", \
                "%d.%d.%d" % (Gtk.get_major_version(), \
                     Gtk.get_minor_version(), \
-                        Gtk.get_micro_version())
+                        Gtk.get_micro_version()))
 
     signal.signal(signal.SIGTERM, terminate)
     mainwin = pyedlib.pedwin.EdMainWindow(None, None, strarr)
@@ -81,18 +83,18 @@ def main(strarr):
               
 def help():
 
-    print 
-    print "pydepro version: ", pyedlib.pedconfig.conf.version
-    print "Usage: " + os.path.basename(sys.argv[0]) + " [options] [[filename] ... [filenameN]]"
-    print "Options:"
-    print "            -d level  - Debug level 1-10. (Limited implementation)"
-    print "            -v        - Verbose (to stdout and log)"
-    print "            -f        - Start Full screen"
-    print "            -c        - Dump Config"
-    print "            -V        - Show version"
-    print "            -x        - Clear (eXtinguish) config (will prompt)"
-    print "            -h        - Help"
-    print
+    print() 
+    print("pydepro version: ", pyedlib.pedconfig.conf.version)
+    print("Usage: " + os.path.basename(sys.argv[0]) + " [options] [[filename] ... [filenameN]]")
+    print("Options:")
+    print("            -d level  - Debug level 1-10. (Limited implementation)")
+    print("            -v        - Verbose (to stdout and log)")
+    print("            -f        - Start Full screen")
+    print("            -c        - Dump Config")
+    print("            -V        - Show version")
+    print("            -x        - Clear (eXtinguish) config (will prompt)")
+    print("            -h        - Help")
+    print()
 
 # ------------------------------------------------------------------------
 
@@ -114,7 +116,7 @@ class Unbuffered(object):
 def terminate(arg1, arg2):
 
     if(pyedlib.pedconfig.conf.verbose):
-        print "Terminating pydepro.py, saving files to ~/pydepro"
+        print("Terminating pydepro.py, saving files to ~/pydepro")
         
     # Save all     
     pyedlib.pedconfig.conf.pedwin.activate_quit(None)    
@@ -130,8 +132,8 @@ if __name__ == '__main__':
     opts = []; args = []
     try:
         opts, args = getopt.getopt(sys.argv[1:], "d:h?fvxctVo")
-    except getopt.GetoptError, err:
-        print "Invalid option(s) on command line:", err
+    except getopt.GetoptError as err:
+        print("Invalid option(s) on command line:", err)
         sys.exit(1)
 
     #print "opts", opts, "args", args
@@ -147,7 +149,7 @@ if __name__ == '__main__':
 
         if aa[0] == "-h": help();  exit(1)
         if aa[0] == "-?": help();  exit(1)
-        if aa[0] == "-V": print "Version", pyedlib.pedconfig.conf.version; \
+        if aa[0] == "-V": print("Version", pyedlib.pedconfig.conf.version); \
             exit(1)
         if aa[0] == "-f": pyedlib.pedconfig.conf.full_screen = True
         if aa[0] == "-v": pyedlib.pedconfig.conf.verbose = True            
@@ -159,32 +161,32 @@ if __name__ == '__main__':
     try:
         if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
             if(pyedlib.pedconfig.conf.verbose):
-                print "making", pyedlib.pedconfig.con.config_dir
+                print("making", pyedlib.pedconfig.con.config_dir)
             os.mkdir(pyedlib.pedconfig.conf.config_dir)
     except: pass
     
     # Let the user know it needs fixin'
     if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
-        print "Cannot access config dir:", pyedlib.pedconfig.conf.config_dir
+        print("Cannot access config dir:", pyedlib.pedconfig.conf.config_dir)
         sys.exit(1)
 
     if not os.path.isdir(pyedlib.pedconfig.conf.data_dir):
         if(pyedlib.pedconfig.conf.verbose):
-            print "making", pyedlib.pedconfig.con.data_dir
+            print("making", pyedlib.pedconfig.con.data_dir)
         os.mkdir(pyedlib.pedconfig.conf.data_dir)
          
     if not os.path.isdir(pyedlib.pedconfig.conf.log_dir):
         if(pyedlib.pedconfig.conf.verbose):
-            print "making", pyedlib.pedconfig.conf.log_dir
+            print("making", pyedlib.pedconfig.conf.log_dir)
         os.mkdir(pyedlib.pedconfig.conf.log_dir)
     
     if not os.path.isdir(pyedlib.pedconfig.conf.macro_dir):
         if(pyedlib.pedconfig.conf.verbose):
-            print "making", pyedlib.pedconfig.conf.macro_dir
+            print("making", pyedlib.pedconfig.conf.macro_dir)
         os.mkdir(pyedlib.pedconfig.conf.macro_dir)
 
     if(pyedlib.pedconfig.conf.verbose):
-        print "Data stored in ", pyedlib.pedconfig.conf.config_dir
+        print("Data stored in ", pyedlib.pedconfig.conf.config_dir)
         
     # Initialize sqlite to load / save preferences & other info    
     sql = pyedlib.pedsql.pedsql(pyedlib.pedconfig.conf.sql_data)
@@ -196,26 +198,26 @@ if __name__ == '__main__':
 
     # To clear all config vars
     if clear_config:    
-        print "Are you sure you want to clear config ? (y/n)"
+        print("Are you sure you want to clear config ? (y/n)")
         sys.stdout.flush()
         aa = sys.stdin.readline()
         if aa[0] == "y":
-            print "Removing configuration ... ",
+            print("Removing configuration ... ", end=' ')
             sql.rmall()        
-            print "OK"
+            print("OK")
         sys.exit(0)
 
     # To check all config vars
     if show_config:    
-        print "Dumping configuration:"
+        print("Dumping configuration:")
         ss = sql.getall(); 
         for aa in ss: 
-            print aa
+            print(aa)
         sys.exit(0)
 
     #Uncomment this for silent stdout
     if use_stdout:
-        print "Using stdout"
+        print("Using stdout")
         sys.stdout = Unbuffered(sys.stdout)
         sys.stderr = Unbuffered(sys.stderr)
     else:
@@ -224,7 +226,7 @@ if __name__ == '__main__':
         
     # Uncomment this for buffered output
     if pyedlib.pedconfig.conf.verbose:
-        print "Started pydepro"
+        print("Started pydepro")
         #pyedlib.log.print("Started pydepro")
      
     main(args[0:])

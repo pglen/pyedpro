@@ -2,15 +2,18 @@
 
 # Action Handler for buffers
 
+from __future__ import absolute_import
+from __future__ import print_function
 import re, string
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-import peddoc, pedync, pedconfig
-from pedutil import *
+from . import pedync, pedconfig
+from .pedutil import *
 
 ev_arr = []
 # -------------------------------------------------------------------------
@@ -35,7 +38,7 @@ def colors(self, self2):
     try:
         dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
-        print "Cannot set icon in ", __file__
+        print("Cannot set icon in ", __file__)
          
     self.dialog = dialog
     
@@ -326,6 +329,7 @@ def  printcols(self2):
 '''
     
 # EOF
+
 
 
 

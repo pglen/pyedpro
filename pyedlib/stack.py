@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
 class Stack():
 
     def __init__(self):
@@ -10,7 +11,7 @@ class Stack():
         try:
             self._store.append(item)
         except Exception as xxx:
-            print xxx
+            print(xxx)
         self.cnt = self.cnt+1
 
     def last(self):
@@ -60,15 +61,15 @@ class Stack():
     def dump(self):
         cnt = 0; xlen = len(self._store)
         while cnt < xlen:            
-            print self._store[cnt];  cnt += 1
+            print(self._store[cnt]);  cnt += 1
 
     def show(self):
         cnt = len(self._store) - 1
         while cnt >= 0:            
-            print self._store[cnt];  cnt -= 1
+            print(self._store[cnt]);  cnt -= 1
 
 if __name__ == "__main__":
-    print "This module was not meant to operate as main."
+    print("This module was not meant to operate as main.")
 
 # EOF
 

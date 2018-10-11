@@ -4,6 +4,8 @@
 
 #import re, string, gtk, glib, gobject
 
+from __future__ import print_function
+from six.moves import range
 darr = []; 
 MXDIM   =   36
  
@@ -30,11 +32,11 @@ def show_mx(darr):
     for ii in darr:
         cnt2 = 0
         for iii in ii:
-            print  darr[cnt][cnt2],
+            print(darr[cnt][cnt2], end=' ')
             cnt2 += 1
-        print
+        print()
         cnt += 1 
-    print   
+    print()   
 
 #//****************************
 #// Create Matrix
@@ -62,7 +64,7 @@ def     Distance (s, t):
     n = len(s);  m = len(t);
 
     if n > MXDIM or m > MXDIM:
-        print "Levenshtine -- Warn: Array Dim exceeded ", s, t
+        print("Levenshtine -- Warn: Array Dim exceeded ", s, t)
         return MXDIM
         
     #print "'" + s+ "'", "'" + t + "'"

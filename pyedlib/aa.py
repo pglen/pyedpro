@@ -1,6 +1,9 @@
 #!/usr/bin/env python
  
+from __future__ import absolute_import
+from __future__ import print_function
 import signal, os, time, sys, gtk, gobject
+from six.moves import range
 
 # Cut leading space in half
 
@@ -110,7 +113,7 @@ def register_stock_icons():
         icon_set = gtk.IconSet(transparent)
         factory.add('demo-gtk-logo', icon_set)
 
-    except gobject.GError, error:
+    except gobject.GError as error:
         #print 'failed to load GTK logo ... trying local'
         try:
 		    #img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
@@ -122,8 +125,8 @@ def register_stock_icons():
 		    icon_set = gtk.IconSet(transparent)
 		    factory.add('demo-gtk-logo', icon_set)
 
-        except gobject.GError, error:
-            print 'failed to load GTK logo for toolbar'
+        except gobject.GError as error:
+            print('failed to load GTK logo for toolbar')
 
 
 # ------------------------------------------------------------------------

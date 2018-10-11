@@ -1,24 +1,27 @@
 
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import signal, os, time, sys, subprocess, platform
 import warnings
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
-import  peddoc, pedconfig, pedofd
-import  pedync, pedspell, pedfont
-import  pedcolor, log, utils
+from . import  peddoc, pedconfig, pedofd
+from . import  pedync, pedspell, pedfont
+from . import  pedcolor, log, utils
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
+from    .pedmenu import *
+from    .pedui import *
+from    .pedutil import *
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
@@ -135,7 +138,7 @@ class EdMainWindow():
         try:
             self.mywin.set_icon_from_file(get_img_path("pyedpro.png"))
         except:
-            print "Canot load icon."
+            print("Canot load icon.")
 
         merge = Gtk.UIManager()
         #self.mywin.set_data("ui-manager", merge)
@@ -146,8 +149,8 @@ class EdMainWindow():
 
         try:
             mergeid = merge.add_ui_from_string(ui_info)
-        except GLib.GError, msg:
-            print "Building menus failed: %s" % msg
+        except GLib.GError as msg:
+            print("Building menus failed: %s" % msg)
 
         # Add MRU
         for cnt in range(6):
@@ -316,7 +319,7 @@ class EdMainWindow():
 
         if cnt == 0:
             if(pedconfig.conf.verbose):
-                print "Loading session in", os.getcwd()
+                print("Loading session in", os.getcwd())
             fcnt = pedconfig.conf.sql.get_int("cnt")
 
             # Load old session
@@ -325,7 +328,7 @@ class EdMainWindow():
                 fff = pedconfig.conf.sql.get_str(ss)
 
                 if(pedconfig.conf.verbose):
-                    print "Loading file:", fff
+                    print("Loading file:", fff)
 
                 vpaned = edPane()
                 ret = vpaned.area.loadfile(fff)
@@ -409,7 +412,7 @@ class EdMainWindow():
 
     def tree_sel(self, xtree, xiter, xpath):
         pass
-        print "tree_sel", xtree, xiter, xpath
+        print("tree_sel", xtree, xiter, xpath)
         # Focus on main doc
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         self.mywin.activate_focus()
@@ -417,7 +420,7 @@ class EdMainWindow():
 
     def tree_sel2(self, xtree, xiter, xpath):
         pass
-        print "tree_sel2", xtree, xiter, xpath
+        print("tree_sel2", xtree, xiter, xpath)
         # Focus on main doc
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         self.mywin.activate_focus()
@@ -425,7 +428,7 @@ class EdMainWindow():
 
     # Call key handler
     def area_key(self, area, event):
-        print "pedwin key", event
+        print("pedwin key", event)
         # Inspect key press before treeview gets it
         if self.mywin.get_focus() == self.treeview:
             # Do key down:
@@ -475,9 +478,9 @@ class EdMainWindow():
                 try:
                     treestore.remove(root)
                 except:
-                    print "Exception on rm treestore"
+                    print("Exception on rm treestore")
         except:
-            print  "strt_tree", sys.exc_info()
+            print("strt_tree", sys.exc_info())
             pass
 
         piter = treestore.append(None, ["Extracting .."])
@@ -552,9 +555,9 @@ class EdMainWindow():
                 try:
                     treestore.remove(root)
                 except:
-                    print "except: treestore remove"
+                    print("except: treestore remove")
         except:
-            print  "update_tree", sys.exc_info()
+            print("update_tree", sys.exc_info())
             pass
 
         if not text:
@@ -564,7 +567,7 @@ class EdMainWindow():
             for line in text:
                 piter = treestore.append(None, [cut_lead_space(line)])
         except:
-            print  "Exception in append treestore", sys.exc_info()
+            print("Exception in append treestore", sys.exc_info())
     
     # --------------------------------------------------------------------
     def update_treestore2(self, text):
@@ -581,9 +584,9 @@ class EdMainWindow():
                 try:
                     treestore2.remove(root)
                 except:
-                    print "except: treestore remove"
+                    print("except: treestore remove")
         except:
-            print  "update_tree2", sys.exc_info()
+            print("update_tree2", sys.exc_info())
             pass
 
         if not text:
@@ -593,7 +596,7 @@ class EdMainWindow():
             for line in text:
                 piter = treestore2.append(None, [cut_lead_space(line)])
         except:
-            print  "Exception in append treestore2", sys.exc_info()
+            print("Exception in append treestore2", sys.exc_info())
 
     # --------------------------------------------------------------------
     # Handlers: (deactivated)
@@ -692,7 +695,7 @@ class EdMainWindow():
         try:
             if platform.system().find("Win") >= 0:
                 xxx = get_exec_path(".." + os.sep + "pangview.py")
-                print xxx, rr
+                print(xxx, rr)
                 ret = subprocess.Popen(["python", xxx,  rr])
             else:            
                 ret = subprocess.Popen(["pangview.py",  rr])
@@ -726,7 +729,7 @@ class EdMainWindow():
             except:
                 sss = "Cannot create file %s" % newname
                 self.update_statusbar(sss)
-                print sss,  sys.exc_info() 
+                print(sss,  sys.exc_info()) 
                 pedync.message("\n" + sss + "\n")
                 return
         
@@ -1077,7 +1080,7 @@ class EdMainWindow():
                 return
 
         if(pedconfig.conf.verbose):
-            print "Opening '"+ fname + "'"
+            print("Opening '"+ fname + "'")
             
         self.update_statusbar("Opening file '{0:s}'".format(fname))
         vpaned = edPane()
@@ -1226,7 +1229,7 @@ def OnExit(arg, prompt = True):
                 hhh = hash_name(ppp.area.fname) + ".rescue"
                 xfile = pedconfig.conf.config_dir + "/" + hhh
                 if(pedconfig.conf.verbose):
-                    print "Rescuing", xfile
+                    print("Rescuing", xfile)
                 writefile(xfile, ppp.area.text)
                 
         # This way all the closing doc function gets called
@@ -1236,7 +1239,7 @@ def OnExit(arg, prompt = True):
     pedconfig.conf.sql.put("cnt", cnt)
 
     if(pedconfig.conf.verbose):
-        print  "Exiting"
+        print("Exiting")
 
     # Add to accounting:
     utils.timesheet("Ended pyedpro", mained.start_time, time.time())
@@ -1293,12 +1296,12 @@ def handler_tick():
                 pedconfig.conf.pedwin.statuscount = 0
         
     except:
-        print "Exception in timer handler", sys.exc_info()
+        print("Exception in timer handler", sys.exc_info())
 
     try:
         GLib.timeout_add(1000, handler_tick)
     except:
-        print "Exception in setting timer handler", sys.exc_info()
+        print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
 

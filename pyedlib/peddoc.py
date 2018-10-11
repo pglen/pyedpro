@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import signal, os, time, string, pickle, re
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -13,11 +16,11 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import keyhand, pedconfig, pedync, pedwin
-import pedcolor, pedspell, pedmenu, utils
-import peddraw
+from . import keyhand, pedconfig, pedync
+from . import pedcolor, pedspell, pedmenu, utils
+from . import peddraw
 
-from pedutil import *
+from .pedutil import *
 
 VSCROLLGAP  = 2             # Gap between the page boundary and ver. scroll
 HSCROLLGAP  = 4             # Gap between the page boundary and hor. scroll
@@ -36,7 +39,7 @@ TABSTOP = 4                 # One tab stop worth of spaces
 # profiled code here
 #print  "Str", time.clock() - got_clock        
 
-from keywords import *
+from .keywords import *
 
 # Globals
 
@@ -291,7 +294,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     
                 self.mained.update_statusbar(strx)
         except:
-            print "Exception in idle handler", sys.exc_info()
+            print("Exception in idle handler", sys.exc_info())
             
     # Do Tasks2 when the system is idle
     def idle_callback2(self):
@@ -300,7 +303,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             run_async_time(self)
         except:
-            print "Exception in async handler", sys.exc_info()
+            print("Exception in async handler", sys.exc_info())
         
     def locate(self, xstr):
         #print "locate '" + xstr +"'"        
@@ -519,7 +522,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             else: 
                 pedconfig.conf.keyh.act.alt_v(self)
         else:
-            print "Unexpected mouse op."
+            print("Unexpected mouse op.")
             
         self.grab_focus()
         return True
@@ -820,7 +823,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                                 sumw2.append(line)
                     
                 except:
-                    print "Exception in c func handler", sys.exc_info()
+                    print("Exception in c func handler", sys.exc_info())
                     pass
             if ".bas" in self.fname.lower():
                 try:
@@ -831,7 +834,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             #print res, res.start(), res.end()
                             sumw.append(line)
                 except:
-                    print "Exception in bas func extraction handler", sys.exc_info()
+                    print("Exception in bas func extraction handler", sys.exc_info())
                     pass
             if ".py" in self.fname.lower():
                 try:
@@ -861,7 +864,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                                 sumw2.append(line)
                     
                 except:
-                    print "Exception in py func handler", sys.exc_info()
+                    print("Exception in py func handler", sys.exc_info())
                     raise
                     pass
        	    else:
@@ -871,7 +874,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.appwin.update_treestore2(sumw2)
         except:
             # This is normal, ignore it
-            print "run_async_time", sys.exc_info()    
+            print("run_async_time", sys.exc_info())    
             pass
    
     # Call key handler
@@ -924,12 +927,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             fd = open(xfile, "a+")                 
         except:
-            print "Cannot open user dictionary"
+            print("Cannot open user dictionary")
             return
         try:
             fd.write(lw); fd.write("\n")
         except:
-            print "Cannot write to user dictionary"
+            print("Cannot write to user dictionary")
         fd.close()
         self.newword = True
         # Force new spell check
@@ -1000,7 +1003,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         elif ttt == 11:
             self.mained.activate_exit()
         else:
-            print "Invalid menu selected"    
+            print("Invalid menu selected")    
     
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
@@ -1079,7 +1082,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 strx = "Not Saved '{0:s}' {1:s}".format(bn, err[1]) 
                 
         if(pedconfig.conf.verbose):
-            print strx
+            print(strx)
         self.mained.update_statusbar(strx)
 
     def saveas(self):        
@@ -1109,7 +1112,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def closedoc(self):
         strx = "Closing '{0:s}'".format(self.fname) 
         if(pedconfig.conf.verbose):
-            print strx
+            print(strx)
         self.mained.update_statusbar(strx)
         self.saveparms()
         
@@ -1124,7 +1127,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.start_time = time.time();
         if self.fname == "": 
             strx = "Must specify file name."
-            print  strx
+            print(strx)
             self.mained.update_statusbar(strx)
             return False
         try:            
@@ -1132,7 +1135,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             errr = "Cannot read file '" + self.fname + "'" #, sys.exc_info()
             if(pedconfig.conf.verbose):
-                print errr
+                print(errr)
             self.mained.update_statusbar(errr) 
             usleep(20)
             return False
@@ -1200,7 +1203,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         if not os.path.isfile(xfile):
             err =  writefile(xfile, self.text)                
             if not err[0]:
-                print "Cannot create (org) backup file", xfile, sys.exc_info()
+                print("Cannot create (org) backup file", xfile, sys.exc_info())
 
    # Create backup
     def savebackup(self):
@@ -1210,7 +1213,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             writefile(xfile, self.text)                
         except:
             sss = "Cannot create backup file" + xfile + sys.exc_info()
-            print sss
+            print(sss)
                     
     def prompt_save(self, askname = True):
 
@@ -1234,7 +1237,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         elif  rp == Gtk.ResponseType.CANCEL:
             return True
         else:
-            print "warning: invalid response from dialog"
+            print("warning: invalid response from dialog")
                     
     def file_dlg(self, resp):
         #print "File dialog"
@@ -1253,7 +1256,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def writefile(self):
         if(pedconfig.conf.verbose):
-            print "Saving '"+ self.fname + "'"
+            print("Saving '"+ self.fname + "'")
         err = writefile(self.fname, self.text)
         if err[0]:
             self.set_changed(False)
@@ -1286,7 +1289,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             fh = open(xfile, "w")
             pickle.dump(self.undoarr, fh)
         except:
-            print "Cannot save undo file", sys.exc_info()
+            print("Cannot save undo file", sys.exc_info())
 
         hhh = hash_name(self.fname) + ".rdo"           
         xfile = pedconfig.conf.data_dir + "/" + hhh
@@ -1294,7 +1297,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             fh = open(xfile, "w")
             pickle.dump(self.redoarr, fh)
         except:
-            print "Cannot save redo file", sys.exc_info()
+            print("Cannot save redo file", sys.exc_info())
 
     def loadundo(self):
         hhh = hash_name(self.fname) + ".udo"           
@@ -1324,7 +1327,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         if resp == Gtk.ResponseType.OK:
             fname = win.get_filename()
             if not fname:
-                print "Must have filename"
+                print("Must have filename")
             else:         
                 if os.path.isfile(fname):
                     dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
@@ -1431,7 +1434,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             os.chdir(os.path.dirname(xfile))
         except:
-            print "No macros directory"
+            print("No macros directory")
             
         but =   "Cancel", Gtk.BUTTONS_CANCEL, "Save Macro", Gtk.BUTTONS_OK
         fc = Gtk.FileChooserDialog("Save Macro", None, Gtk.FILE_CHOOSER_ACTION_SAVE, \
@@ -1451,12 +1454,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             try:
                 fname = win.get_filename()
                 if not fname:
-                    print "Must have filename"
+                    print("Must have filename")
                 else:         
                     fh = open(fname, "w")
                     pickle.dump(self.recarr, fh)
             except:
-                print "Cannot save macro file", sys.exc_info()
+                print("Cannot save macro file", sys.exc_info())
             
         win.destroy()      
                 
@@ -1468,7 +1471,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             os.chdir(os.path.dirname(xfile))
         except:
-            print "No macros directory"
+            print("No macros directory")
             
         but =   "Cancel", Gtk.BUTTONS_CANCEL, "Load Macro", Gtk.BUTTONS_OK
         fc = Gtk.FileChooserDialog("Load Macro", None, Gtk.FILE_CHOOSER_ACTION_OPEN, \
@@ -1489,13 +1492,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             try:
                 fname = win.get_filename()
                 if not fname:
-                    print "Must have filename"
+                    print("Must have filename")
                 else:         
                     fh = open(fname, "r")
                     self.recarr = pickle.load(fh)
                     fh.close()
             except:
-                print "Cannot load macro file", sys.exc_info()
+                print("Cannot load macro file", sys.exc_info())
             
         win.destroy()                
 
@@ -1563,7 +1566,7 @@ def run_async_time(win):
                         #print res, res.start(), res.end()
                         sumw.append(line)
             except:
-                print "Exception in c func handler", sys.exc_info()
+                print("Exception in c func handler", sys.exc_info())
                 pass
                 
         elif ".py" in win.fname.lower():
@@ -1575,7 +1578,7 @@ def run_async_time(win):
                         #print res, res.start(), res.end()
                         sumw.append(line)
             except:
-                print "Exception in py func handler", sys.exc_info()
+                print("Exception in py func handler", sys.exc_info())
                 pass
         if ".bas" in win.fname.lower():
             try:
@@ -1586,7 +1589,7 @@ def run_async_time(win):
                         #print res, res.start(), res.end()
                         sumw.append(line)
             except:
-                print "Exception in func extraction handler", sys.exc_info()
+                print("Exception in func extraction handler", sys.exc_info())
                 pass
         else:
             try:
@@ -1602,10 +1605,11 @@ def run_async_time(win):
         win.appwin.update_treestore(sumw)
     except:
         # This is normal, ignore it
-        print "run_async_time", sys.exc_info()    
+        print("run_async_time", sys.exc_info())    
         pass
 
 #eof
+
 
 
 

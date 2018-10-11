@@ -1,14 +1,17 @@
 #!/usr/bin/env python
  
+from __future__ import absolute_import
+from __future__ import print_function
 import signal, os, time, sys
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-import pedconfig
+from . import pedconfig
 
 # Cut leading space in half
 
@@ -122,7 +125,7 @@ def register_stock_icons():
         #icon_set = Gtk.IconSet(transparent)
         #factory.add('demo-gtk-logo', icon_set)
         pass
-    except GObject.GError, error:
+    except GObject.GError as error:
         #print 'failed to load GTK logo ... trying local'
         try:
 		    #img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
@@ -134,8 +137,8 @@ def register_stock_icons():
 		    icon_set = Gtk.IconSet(transparent)
 		    factory.add('demo-gtk-logo', icon_set)
 
-        except GObject.GError, error:
-            print 'failed to load GTK logo for toolbar'
+        except GObject.GError as error:
+            print('failed to load GTK logo for toolbar')
 
 
 # ------------------------------------------------------------------------

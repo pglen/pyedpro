@@ -5,13 +5,14 @@
 # assignments can be made with ease
 
 #import gtk  
+from __future__ import absolute_import
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
           
-import acthand
+from . import acthand
 
 # Grabbed modifier defines from GTK
 #

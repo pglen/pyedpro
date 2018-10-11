@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from __future__ import absolute_import
+from __future__ import print_function
 import signal, os, time, string, pickle
 from threading import Timer
 
@@ -10,9 +12,9 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-import leven, pedconfig
+from . import leven, pedconfig
 
-from pedutil import *
+from .pedutil import *
 
 index2 = []; index3 = []; index4 = [] 
 userdic = []
@@ -126,7 +128,7 @@ def spell(self2, allflag = False):
         #self2.mained.update_statusbar("%d spelling mistakes." % errcnt)                     
 
     except:
-        print "Exception on spell check", sys.exc_info()
+        print("Exception on spell check", sys.exc_info())
         #raise
         
     #print  "all", time.clock() - got_clock        
@@ -248,7 +250,7 @@ def load_user_dict():
     try:
         fd = open(xfile, "r")
     except:
-        print "Cannot open user dictionary"
+        print("Cannot open user dictionary")
         return
    
     userdic = []

@@ -2,16 +2,19 @@
 
 # Action Handler for find
 
+from __future__ import absolute_import
+from __future__ import print_function
 import  time, datetime
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-import peddoc, pedync, pedconfig
+from . import peddoc, pedync, pedconfig
 
-from pedutil import *
+from .pedutil import *
 
 # Adjust to taste. Estimated memory usage is 50 * MAX_LOG bytes
 # Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if 

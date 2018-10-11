@@ -6,6 +6,7 @@
 # or the key handler is acessable from the main window ... etc
 # The majority of dynamic vars are inited in pyedpro.py
 
+from __future__ import absolute_import
 import signal, os, time, sys
     
 config_reg = "/apps/pyedpro"

@@ -2,11 +2,14 @@
 
 # Action Handler for find
 
+from __future__ import absolute_import
+from __future__ import print_function
 import time, os, re, string, warnings
 
 import pyedlib.pedconfig
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -150,7 +153,7 @@ def populate(dialog):
         try:
             dialog.ts.remove(root)                           
         except:
-            print "Exception on rm ts"
+            print("Exception on rm ts")
 
     ppp = ".."
     filestat = os.stat(ppp)

@@ -2,16 +2,19 @@
 
 # Action Handler for find
 
+from __future__ import absolute_import
+from __future__ import print_function
 import re, string, warnings
 
 import gi
+from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-import peddoc, pedync, pedconfig
-from pedutil import *
-from pedundo import *
+from . import  pedync, pedconfig
+from .pedutil import *
+from .pedundo import *
 
 strhist = [] #strhist.append("aa")
 stridx = 0
@@ -48,7 +51,7 @@ def find(self, self2, replace = False):
     try:
         dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
-        print "Cannot load find dialog icon", sys.exc_info()
+        print("Cannot load find dialog icon", sys.exc_info())
         
     self.dialog = dialog
     
@@ -215,7 +218,7 @@ def find_show(self, self2):
         self.dialog.checkbox2.set_active(False)
         try:
             self.regex = re.compile(self.srctxt)
-        except re.error, msg:
+        except re.error as msg:
             #print  sys.exc_info()        
             pedync.message("\n   Error in regular expression: \n\n"\
                             "    '%s' -- %s" % (self.srctxt, msg),\
@@ -229,7 +232,7 @@ def find_show(self, self2):
     try:
         win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
-        print "Cannot load icon for find dialog"
+        print("Cannot load icon for find dialog")
     
     ff = os.path.basename(self2.fname)        
     if self.dialog.replace:
@@ -470,7 +473,7 @@ def area_key(area, event, self):
         if event.keyval >= Gdk.KEY_1 and \
                 event.keyval <= Gdk.KEY_9:
             pass
-            print "pedwin Alt num", event.keyval - Gdk.KEY__1
+            print("pedwin Alt num", event.keyval - Gdk.KEY__1)
         
         if event.keyval == Gdk.KEY_x or \
                 event.keyval == Gdk.KEY_X:
@@ -652,6 +655,7 @@ def wnext(butt,self):
     pass
     
 #eof
+
 
 
 
