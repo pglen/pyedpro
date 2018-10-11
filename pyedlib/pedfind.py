@@ -2,7 +2,7 @@
 
 # Action Handler for find
 
-import re, string
+import re, string, warnings
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -24,6 +24,8 @@ def find(self, self2, replace = False):
     global myentry
     self.reptxt = ""
     
+    warnings.simplefilter("ignore")
+
     stridx = len(strhist) -1
     if stridx < 0: stridx = 0
     #print "stridx", stridx
@@ -152,6 +154,7 @@ def find(self, self2, replace = False):
     else:
         strhist.append(self.srctxt)
         
+    warnings.simplefilter("default")
     dialog.destroy()
 
     if response != Gtk.ResponseType.ACCEPT:   
@@ -201,6 +204,7 @@ def find_show(self, self2):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
+    warnings.simplefilter("ignore")
     self.regex = None
     
     if self.srctxt == "":
@@ -320,6 +324,8 @@ def find_show(self, self2):
         pedconfig.conf.sql.put("rep", self.reptxt)
                     
     win2.tree.grab_focus()
+    warnings.simplefilter("ignore")
+
 
 def area_destroy(win2, self):
 
@@ -645,80 +651,7 @@ def wnext(butt,self):
     #print "wnext"
     pass
     
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#eof
 
 
 

@@ -321,18 +321,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 cnt2 += 1
         
     def focus_out_cb(self, widget, event):
-        self.focus = False
         #print "focus_out_cb", widget, event    
-    
+        self.focus = False
+        
     def focus_in_cb(self, widget, event):
+        #print "focus_in_cb"
         self.focus = True
         os.chdir(os.path.dirname(self.fname))
         self.update_bar2()
         self.needscan = True 
         self.do_chores()
-
-        #print "focus_in_cb"
-    
+        
     def grab_focus_cb(self, widget):
         #print "grab_focus_cb", widget
         pass
@@ -427,6 +426,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.draw_syntax(cr)
             self.draw_comments(cr)
             self.draw_spellerr(cr)
+            
+        if self.startxxx != -1:
+            self.gotoxy(self.startxxx, self.startyyy)
+            self.startxxx = -1; self.startyyy = -1
+        
         self.draw_caret(cr)        
         
     def idle_queue(func):
@@ -829,7 +833,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 except:
                     print "Exception in bas func extraction handler", sys.exc_info()
                     pass
-            if ".py" in self.fname.lower:
+            if ".py" in self.fname.lower():
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(pykeywords2)
@@ -909,7 +913,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             rect.width, rect.height)
         
     def area_focus(self, area, event):
-        #print "ped doc area focus", event
+        print "ped doc area focus", event
         return False
 
     # Add to usder dictionary:
@@ -1152,13 +1156,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         pedmenu.mained = self.mained
         
         # Turn off coloring if not python / c / sh / perl / header
-        nocol = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp")
+        '''nocol = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp")
         self.colflag = False
         ext = os.path.splitext(self.fname)[1].lower()
         for aa in nocol:
             if ext == aa:
                 self.colflag = True
                 break
+        '''        
+        # Color ON
+        self.colflag = True
         return True
        
     def calc_maxline(self):
@@ -1599,6 +1606,11 @@ def run_async_time(win):
         pass
 
 #eof
+
+
+
+
+
 
 
 

@@ -175,8 +175,9 @@ class peddraw(object):
         
         return xx, yy
 	
-# ----------------------------------------------------------------
+    # ----------------------------------------------------------------
     # Paint selection        
+    
     def draw_selection(self, gc):
            
         xx = 0; yy = 0; 
@@ -204,6 +205,7 @@ class peddraw(object):
                     line = self.text[cnt]   #.replace("\r", " ")
                     if self.colsel:
                         frag = line[xssel:xesel]
+                        draw_start = xssel
                     else :   # Startsel - endsel                        
                         if cnt == yssel and cnt == yesel:   # sel on the same line
                             frag = line[xssel:xesel]
@@ -364,6 +366,9 @@ class peddraw(object):
         
 
 # EOF
+
+
+
 
 
 

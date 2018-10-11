@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 
 import signal, os, time, sys, subprocess, platform
@@ -36,7 +37,7 @@ class edPane(Gtk.VPaned):
         if pos == 0: pos = 120
 
         Gtk.VPaned.__init__(self)
-        self.set_border_width(5)
+        self.set_border_width(3)
         self.set_position(pos)
         self.vbox = edwin(buff);
         self.add2(self.vbox)
@@ -252,23 +253,40 @@ class EdMainWindow():
         self.hpaned = hpaned
 
         # Create statusbars
-        self.statusbar = Gtk.Statusbar()
-        self.statusbar2 = Gtk.Statusbar()
-        slab = Gtk.Label("   ")
-        hpane2 = Gtk.HPaned()
-
-        hpane2.set_position(self.get_width() - 280)
-        hpane2.pack2(self.statusbar2)
-        self.hpane2 = hpane2
+        #self.statusbar = Gtk.Statusbar()
+        #self.statusbar2 = Gtk.Statusbar()
+        #self.statusbar2.set_spacing(0)
+        
+        # Replaced it with simple labels
+        slabs = Gtk.Label("   ")
+        self.slab = Gtk.Label(" status  ")
+        self.slab.set_xalign(Gtk.Align.START)
+        self.slab.set_yalign(Gtk.Align.START)
+        
         shbox = Gtk.HBox()
-        shbox.pack_start(slab, False, 0, 0)
-        shbox.pack_start(self.statusbar, False, 0, 0)
-        hpane2.pack1(shbox)
+        shbox.pack_start(slabs, 0,0, 0)
+        shbox.pack_start(self.slab, 0,0, 0)
+        
+        self.slab2 = Gtk.Label(" status2  ")
+        
+        hpane2 = Gtk.HPaned()
+        self.hpane2 = hpane2
+        
+        #hpane2.set_border_width(5)
+        
+        hpane2.pack1(shbox, 1, 1)
+        hpane2.set_position(self.get_width() - 320)
+        hpane2.pack2(self.slab2, 1, 1)
+        
+        #hpane2.pack2(self.statusbar2, 0, 0)
+        #shbox.pack_start(slab, False, 0, 0)
+        #shbox.pack_start(self.statusbar, False, 0, 0)
+        #hpane2.pack1(self.statusbar, 1, 0)
 
         bbox = Gtk.VBox()
         bbox.pack_start(mbar, 0,0, 0)
         bbox.pack_start(tbar, 0,0, 0)
-        bbox.pack_start(hpaned, 1,1, 0)
+        bbox.pack_start(hpaned, 1, 1, 0)
         bbox.pack_start(hpane2, 0,0, 0)
         
         self.mywin.add(bbox)
@@ -731,17 +749,21 @@ class EdMainWindow():
 
     # Traditional open file
     def open(self):
+
+        warnings.simplefilter("ignore")
         but =   "Cancel", Gtk.ButtonsType.CANCEL,\
          "Open File", Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog("Open file", self.mywin, \
              Gtk.FileChooserAction.OPEN  \
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
+        warnings.simplefilter("default")
+        
         fc.set_default_response(Gtk.ButtonsType.OK)
         fc.set_current_folder(os.getcwd())
         fc.connect("response", self.done_open_fc)
         fc.connect("current-folder-changed", self.folder_ch )
-
+        
         #fc.set_current_name(self.fname)
         fc.run()
 
@@ -1107,18 +1129,20 @@ class EdMainWindow():
         strx2 = "Ln {0:d} Col {1:d} Tot {3:d}  {2:s} Clip {4:d}".\
                                 format(yy+1, xx+1, str2, tlen, clip)
 
-        self.statusbar2.pop(0)
-        self.statusbar2.push(0, strx2)
+        #self.statusbar2.pop(0)
+        #self.statusbar2.push(0, strx2)
+        self.slab2.set_text(strx2)
 
     def update_statusbar(self, strx):
         # Clear any previous message, underflow is allowed
-        self.statusbar.pop(0)
+        #self.statusbar.pop(0)
         if not strx:
             self.update_statusbar("Idle")
             return
 
-        self.statusbar.push(0, strx)
+        #self.statusbar.push(0, strx)
         self.statuscount = STATUSCOUNT
+        self.slab.set_text(strx)
         pass
 
     def update_resize_grip(self, widget, event):
@@ -1277,6 +1301,43 @@ def handler_tick():
         print "Exception in setting timer handler", sys.exc_info()
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

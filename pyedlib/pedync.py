@@ -3,6 +3,7 @@
 # Prompt Handler for PyEdPro
 
 import os, sys, string
+import warnings
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -18,15 +19,16 @@ import pyedlib.pedconfig
 
 def yes_no_cancel(title, message, cancel = True):
 
+    warnings.simplefilter("ignore")
     dialog = Gtk.Dialog(title,
                    None,
                    Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
 
+    
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
-
     dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin);
-    
+ 
     sp = "     "
     label = Gtk.Label(message); 
     label2 = Gtk.Label(sp);      label3 = Gtk.Label(sp)
@@ -50,6 +52,8 @@ def yes_no_cancel(title, message, cancel = True):
 
     dialog.connect("key-press-event", yn_key, cancel)
     #dialog.connect("key-release-event", yn_key, cancel)
+    warnings.simplefilter("default")
+    
     dialog.show_all()
     response = dialog.run()       
     # Convert all responses to cancel
@@ -59,6 +63,7 @@ def yes_no_cancel(title, message, cancel = True):
         response == Gtk.ResponseType.DELETE_EVENT:
         response = Gtk.ResponseType.CANCEL        
     dialog.destroy()
+    
     return  response 
 
 def yn_key(win, event, cancel):
@@ -155,6 +160,12 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
+
+
+
+
+
 
 
 

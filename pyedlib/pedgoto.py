@@ -5,12 +5,14 @@
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
-
+      
 import warnings
 import  pedconfig
 
 def gotodlg(self2):
 
+    warnings.simplefilter("ignore")
+    
     dialog = Gtk.Dialog("pyedpro: Goto Line",
                    None,
                    Gtk.DialogFlags.MODAL | \
@@ -26,9 +28,9 @@ def gotodlg(self2):
     label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ") 
     label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ") 
 
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
     entry = Gtk.Entry(); 
-    warnings.simplefilter("default")
+    #warnings.simplefilter("default")
 
     entry.set_activates_default(True)
 
@@ -79,8 +81,13 @@ def gotodlg(self2):
         else:
             self2.gotoxy(self2.xpos + self2.caret[0], num -1)
             self2.mained.update_statusbar("Done goto line %d" % num)            
+    
+    warnings.simplefilter("default")
         
 # EOF
+
+
+
 
 
 
