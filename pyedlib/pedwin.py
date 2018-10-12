@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 
 from __future__ import absolute_import
@@ -1130,7 +1129,7 @@ class EdMainWindow():
         if ins: str2 = "INS"
         else: str2 ="OVR"
         strx2 = "Ln {0:d} Col {1:d} Tot {3:d}  {2:s} Clip {4:d}".\
-                                format(yy+1, xx+1, str2, tlen, clip)
+                                format(int(yy+1), int(xx+1), str2, tlen, clip)
 
         #self.statusbar2.pop(0)
         #self.statusbar2.push(0, strx2)
@@ -1304,6 +1303,8 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
 
 
 

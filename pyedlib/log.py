@@ -35,6 +35,9 @@ class fake_stdout():
         self.flag = True
         self.dt = datetime.datetime(1990, 1, 1);
 
+    def flush(self, *args):
+        pass
+    
     def write(self, *args):
         global accum
         strx = ""
@@ -147,6 +150,7 @@ def area_key(area, event, dialog):
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
 
 
 

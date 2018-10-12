@@ -281,7 +281,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # Do Tasks  when the system is idle
     def idle_callback(self):
         #print "Idle callback"
-        GObject.source_remove(self.source_id)        
+        GLib.source_remove(self.source_id)        
         try:
             if self.changed:
                 hhh = hash_name(self.fname) + ".sav"           
@@ -637,7 +637,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # Put it back in view:                    
         off = (self.get_height() / self.cyy) / quart
         if yy > off:            
-            self.ypos = yy - off
+            self.ypos = int(yy - off)
         else:
             self.ypos = 0
             
@@ -676,7 +676,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             #print "Scroll from caret down"
             if yy > self.ypos + self.caret[1]:
                 #print "move d", "ypos", self.ypos, "yy", yy
-                self.ypos = yy - off
+                self.ypos = int(yy - off)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
@@ -687,8 +687,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             #print "Scroll from caret up"
             if yy < self.ypos + self.caret[1]:
                 #print "move u", "ypos", self.ypos, "yy", yy
-                self.ypos = yy - self.vscgap
-                self.ypos = max(self.ypos, 0)            
+                self.ypos = int(yy - self.vscgap)
+                self.ypos = int(max(self.ypos, 0))
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
@@ -705,16 +705,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             #print "Scroll from caret right", "xx", xx, "xpos", self.xpos
             if self.xpos + self.caret[0] < xx:
                 #print "moved r",  xx, self.caret[0], self.xpos                
-                self.xpos =  xx - xoff
-                self.xpos = max(self.xpos, 0)
+                self.xpos =  int(xx - xoff)
+                self.xpos = int(max(self.xpos, 0))
                 need_inval = True
         
         if  xx - self.xpos <  self.hscgap: 
             #print "Scroll from caret left ", xx, self.xpos
             if self.xpos + self.caret[0] > xx:
                 #print "moved l", "xx", xx, "caret", self.caret[0], "xpos", self.xpos 
-                self.xpos = xx - self.hscgap
-                self.xpos = max(self.xpos, 0)            
+                self.xpos = int(xx - self.hscgap)
+                self.xpos = int(max(self.xpos, 0))
                 need_inval = True
                 
         xx -= self.xpos          
@@ -792,7 +792,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # ts2 ---------------------------------------------------
         sumw2 = []
         if self.text:
-            sline = self.caret[1] + self.ypos
+            sline = self.caret[1] + int(self.ypos)
             #print "Start point", sline, self.text[sline]
             # Walk back to last function
             if ".c" in self.fname:
@@ -840,7 +840,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(pykeywords2)
-                    for aa in range(sline, 0, -1):
+                    for aa in range(int(sline), 0, -1):
                         line = self.text[aa]
                         res = regex.search(line)
                         if res:
@@ -1609,6 +1609,10 @@ def run_async_time(win):
         pass
 
 #eof
+
+
+
+
 
 
 

@@ -31,7 +31,6 @@
 # Jul/xx/2018   Update README, KEYS.TXT
 # Jun/xx/2018   Log Files for time accounting.
 # Jun/xx/2018   Log Files for time accounting.
- 
 
 # ASCII test editor, requires pyGtk. See pygtk-dependencied for 
 # eazy access to depencdencies.
@@ -138,7 +137,7 @@ if __name__ == '__main__':
 
     #print "opts", opts, "args", args
     
-    pyedlib.pedconfig.conf.version = 0.44
+    pyedlib.pedconfig.conf.version = 0.45
 
     for aa in opts:
         if aa[0] == "-d":
@@ -232,6 +231,8 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
 
 
 

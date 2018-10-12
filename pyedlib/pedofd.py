@@ -19,6 +19,8 @@ from gi.repository import GdkPixbuf
 
 def ofd(fname = None, self2 = None):
 
+    warnings.simplefilter("ignore")
+        
     dialog = Gtk.Dialog("pyedpo: Open File",
                    None,
                    Gtk.DialogFlags.MODAL | \
@@ -29,7 +31,7 @@ def ofd(fname = None, self2 = None):
     dialog.set_transient_for(self2.mained.mywin)
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_position(Gtk.WindowPosition.CENTER)
-    #dialog.set_size_request(800, 600)
+    dialog.set_size_request(800, 600)
     dialog.set_default_size(800, 600)
     #print dialog
 
@@ -95,6 +97,8 @@ def ofd(fname = None, self2 = None):
     populate(dialog)    
     dialog.set_focus(tview)    
     #dialog.set_focus(dialog.entry)
+    
+    warnings.simplefilter("default")
     
     response = dialog.run()   
     
@@ -336,6 +340,8 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
+
 
 
 

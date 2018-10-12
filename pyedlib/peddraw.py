@@ -240,7 +240,7 @@ class peddraw(object):
            
         # Paint syntax colors
         xx = 0; yy = 0; 
-        cnt = self.ypos;
+        cnt = int(self.ypos)
         while cnt <  self.xlen:
             #line = self.text[cnt]
             line =  untab_str(self.text[cnt])
@@ -280,7 +280,7 @@ class peddraw(object):
     
     def draw_comments(self, cr):
         xx = 0; yy = 0; 
-        cnt = self.ypos;
+        cnt = int(self.ypos)
         while cnt <  self.xlen:
             #line = self.text[cnt]
             line =  untab_str(self.text[cnt])
@@ -350,7 +350,7 @@ class peddraw(object):
     def draw_maintext(self, cr):
     
         xx = 0; yy = 0; 
-        cnt = self.ypos;
+        cnt = int(self.ypos)
         while cnt <  self.xlen:
             # Got fed up with tabs, generate an untabbed copy for drawing
             if self.hex or self.stab:
@@ -368,6 +368,8 @@ class peddraw(object):
         
 
 # EOF
+
+
 
 
 
