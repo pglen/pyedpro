@@ -9,7 +9,7 @@ import time, os, re, string, warnings
 import pyedlib.pedconfig
 
 import gi
-from six.moves import range
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -129,7 +129,7 @@ def fill_path(dialog):
     curr = ""
     for aa in darr:
         #butt = Gtk.Button(aa + "/")
-        butt = Gtk.Button(aa)
+        butt = Gtk.Button(label=aa)
         
         curr += aa + "/"; butt.path = curr
         butt.set_focus_on_click(False)
@@ -336,6 +336,7 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
 
 
 

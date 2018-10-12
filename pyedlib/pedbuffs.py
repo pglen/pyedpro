@@ -7,7 +7,7 @@ from __future__ import print_function
 import re, string
 
 import gi
-from six.moves import range
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gdk
 from gi.repository import Gtk
@@ -214,6 +214,7 @@ def update_treestore(self, win2, text, was):
     else:
         root = win2.treestore.get_iter_first() 
         win2.tree.set_cursor(win2.treestore.get_path(root))
+
 
 
 

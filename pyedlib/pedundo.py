@@ -20,7 +20,7 @@
 
 # Op codes:
 from __future__ import print_function
-from six.moves import range
+#from six.moves import range
 (NOOP, MODIFIED, ADDED, DELETED) = list(range(4))
 #print "(NOOP, MODIFIED, ADDED, DELETED)", NOOP, MODIFIED, ADDED, DELETED
 
@@ -203,6 +203,7 @@ def redo(self2, keyh):
     self2.mained.update_statusbar("Redo %d done." % xlen)
   
 # EOF
+
 
 
 

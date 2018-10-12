@@ -103,9 +103,11 @@ def  about(self2):
     
     #"\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
      
+    # GLib.pyglib_version
+    vvv = gi.version_info
     comm = "\nPython based easily configurable editor\n"\
         "with time accounting module.\n"\
-        "\nRunning PyGtk %d.%d.%d" % GLib.pyglib_version +\
+        "\nRunning PyGtk %d.%d.%d" % vvv +\
         "\nRunning GTK %d.%d.%d\n" % gver +\
         "\nRunning Python %s\n" % platform.python_version()
     dialog.set_comments(comm);
@@ -136,7 +138,7 @@ def about_key(win, event):
     #print "about_key", event
     if  event.type == Gdk.EventType.KEY_PRESS:
         if event.keyval == Gdk.KEY_x or event.keyval == Gdk.KEY_X:
-            if event.state & Gtk.gdk.MOD1_MASK:
+            if event.state & Gdk.ModifierType.MOD1_MASK:
                 win.destroy()
     
 # Show a regular message:
@@ -162,6 +164,7 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
 
 
 

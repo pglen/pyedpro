@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import signal, os, time, sys
 
 import gi
-from six.moves import range
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -368,6 +368,7 @@ class peddraw(object):
         
 
 # EOF
+
 
 
 

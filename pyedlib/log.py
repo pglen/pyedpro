@@ -7,7 +7,7 @@ from __future__ import print_function
 import  time, datetime
 
 import gi
-from six.moves import range
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
@@ -147,6 +147,7 @@ def area_key(area, event, dialog):
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
             area.alt = False;
+
 
 
 

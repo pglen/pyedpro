@@ -5,7 +5,7 @@ from __future__ import print_function
 import signal, os, time, string, pickle, re
 
 import gi
-from six.moves import range
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -1609,6 +1609,7 @@ def run_async_time(win):
         pass
 
 #eof
+
 
 
 

@@ -35,7 +35,7 @@ import string, subprocess, os, platform
 import py_compile
 
 import gi
-from six.moves import range
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -1729,6 +1729,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 

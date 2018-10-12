@@ -4,7 +4,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 import sys, os, re, time, stat
 from . import pedconfig
-from six import unichr
+#from six import unichr
 
 # ------------------------------------------------------------------------
 # Convert octal string to integer
@@ -123,7 +123,8 @@ def unescape(strx):
                                 xtab.append(octx)
                             else:
                                 #print "other ",str.format("{0:b}", octx)
-                                retx += unichr(octx)
+                                #retx += unichr(octx)
+                                retx += chr(octx)
                         else:
                             xtab.append(octx)
                             #print "data ",str.format("{0:b}", octx)
@@ -226,4 +227,5 @@ def timesheet(kind, startt, endd):
     fp.close()
 
 # EOF
+
 

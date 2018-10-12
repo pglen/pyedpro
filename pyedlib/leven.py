@@ -5,7 +5,7 @@
 #import re, string, gtk, glib, gobject
 
 from __future__ import print_function
-from six.moves import range
+#from six.moves import range
 darr = []; 
 MXDIM   =   36
  
@@ -103,6 +103,7 @@ def     Distance (s, t):
     result = darr[n][m]                
     return result;
             
+
 
 
 

@@ -63,7 +63,7 @@ class pedsql():
     def get_int(self, kkk):
         ret = self.get(kkk)
         if ret: 
-            return int(ret)        
+            return int(float(ret))        
         else:   
             return int(0)
 
@@ -150,6 +150,7 @@ class pedsql():
             return rr[1]
         else:
             return None
+
 
 
 

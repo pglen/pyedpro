@@ -5,7 +5,7 @@ from __future__ import print_function
 import signal, os, time, sys
 
 import gi
-from six.moves import range
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -128,14 +128,14 @@ def register_stock_icons():
     except GObject.GError as error:
         #print 'failed to load GTK logo ... trying local'
         try:
-		    #img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
-		    pixbuf = Gdk.pixbuf_new_from_file('gtk-logo-rgb.gif')
-		    # Register icon to accompany stock item
-		    # The gtk-logo-rgb icon has a white background, make it transparent
-		    # the call is wrapped to (gboolean, guchar, guchar, guchar)
-		    transparent = pixbuf.add_alpha(True, chr(255), chr(255),chr(255))
-		    icon_set = Gtk.IconSet(transparent)
-		    factory.add('demo-gtk-logo', icon_set)
+            #img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
+            xbuf = Gdk.pixbuf_new_from_file('gtk-logo-rgb.gif')
+            #Register icon to accompany stock item
+            #The gtk-logo-rgb icon has a white background, make it transparent
+            #the call is wrapped to (gboolean, guchar, guchar, guchar)
+            transparent = pixbuf.add_alpha(True, chr(255), chr(255),chr(255))
+            icon_set = Gtk.IconSet(transparent)
+            factory.add('demo-gtk-logo', icon_set)
 
         except GObject.GError as error:
             print('failed to load GTK logo for toolbar')
@@ -552,6 +552,7 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
     return accum 
 
 # EOF
+
 
 
 
