@@ -348,15 +348,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         pass
         
     def scroll_event(self, widget, event):    
-        #print "scroll_event", event, event.direction
+        #print( "scroll_event", event, event.direction)
         xidx = self.xpos + self.caret[0]
         yidx = self.ypos + self.caret[1]
         if event.direction == Gdk.ScrollDirection.SMOOTH:
             flag, directx, directy = event.get_scroll_deltas()
-            #print directx, directy
             yidx += int(directy)
         else:
-            if direct == Gdk.ScrollDirection.UP:
+            if event.type == Gdk.ScrollDirection.UP:
                 yidx -= self.pgup / 2
             else:
                 yidx += self.pgup / 2                    
@@ -1609,6 +1608,11 @@ def run_async_time(win):
         pass
 
 #eof
+
+
+
+
+
 
 
 

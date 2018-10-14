@@ -1,0 +1,71 @@
+ curl
+ filesystem
+ gawk
+ gcc
+ gcc-libs
+ git
+ gnupg
+ gzip
+ icu
+ isl
+ libcurl
+ libmetalink
+ libnghttp2
+ libpsl
+ libtasn1
+ libxml2
+ mingw-w64-i686-gcc-libs
+ mingw-w64-i686-libsystre
+ mingw-w64-i686-libtasn1
+ mingw-w64-i686-libtre-git
+ mingw-w64-i686-libwinpthread-git
+ mingw-w64-i686-mpc
+ mingw-w64-i686-mpfr
+ mingw-w64-i686-ncurses
+ mingw-w64-i686-python2
+ mingw-w64-i686-termcap
+ mintty
+ mpc
+ mpfr
+ msys2-runtime
+ msys2-runtime-devel
+ msys2-w32api-headers
+ msys2-w32api-runtime
+ nano
+ ncurses
+ ncurses-devel
+ openssh
+ pacman
+ perl
+ perl-Convert-BinHex
+ perl-Encode-Locale
+ perl-Error
+ perl-HTML-Parser
+ perl-HTTP-Cookies
+ perl-HTTP-Message
+ perl-IO-Socket-SSL
+ perl-libwww
+ perl-MailTools
+ perl-MIME-tools
+ perl-Net-HTTP
+ perl-Net-SMTP-SSL
+ perl-Net-SSLeay
+ perl-TermReadKey
+ perl-URI
+ tftp-hpa
+ tzcode
+ vim
+ wget
+
+
+
+
+
+
+
+
+
+
+
+
+
