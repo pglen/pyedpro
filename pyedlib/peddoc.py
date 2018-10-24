@@ -1554,9 +1554,9 @@ def run_async_time(win):
           
     #print "run_sync_time", time.time()    
     
-    sumw = []
+    sumw = [] ; lname = win.fname.lower()
     if win.text:
-        if ".c" in win.fname.lower():
+        if ".c" in lname:
             try:
                 regex = re.compile(ckeywords)
                 for line in win.text:
@@ -1568,7 +1568,7 @@ def run_async_time(win):
                 print("Exception in c func handler", sys.exc_info())
                 pass
                 
-        elif ".py" in win.fname.lower():
+        elif ".py" in lname:
             try:
                 regex = re.compile(pykeywords2)
                 for line in win.text:
@@ -1579,7 +1579,7 @@ def run_async_time(win):
             except:
                 print("Exception in py func handler", sys.exc_info())
                 pass
-        if ".bas" in win.fname.lower():
+        elif ".bas" in lname:
             try:
                 regex = re.compile(basekeywords)
                 for line in win.text:
@@ -1608,6 +1608,7 @@ def run_async_time(win):
         pass
 
 #eof
+
 
 
 

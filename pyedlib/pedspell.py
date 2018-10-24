@@ -286,25 +286,27 @@ def build_index():
         index2.append(ww.lower())               
         
     #print index2[0:10]        
-    prev = ""; prevs = ""; cnt = 0
+    pprev = ""; prev = ""; prevs = ""; cnt = 0
     for ii in index2:
         if len(ii) >= 2:
-            # The dictionary contained some garbage
-            if ii[0].isalnum() and ii[1].isalnum():        
-                ss = ii[0:2]
-                if ss != prev:                                      
-                    index3.append((ss, cnt))    
-                    prev = ss                    
-                # Do single index as well
-                sss = ii[0:1]
-                if sss != prevs:                                      
-                    index4.append((sss, cnt))    
-                    prevs = sss                    
+            # The dictionary contained some intl chars, filter ascii
+            if str(ii[0]) <= "z" and str(ii[0]) >= "0":
+                if str(ii[1]) <= "z" and str(ii[1]) >= "0":
+                    ss = ii[0:2]
+                    if ss != prev: 
+                        #print ("idx:", ss , cnt, ii)
+                        index3.append((ss, cnt))    
+                        prev = ss                    
+                    # Do single index as well
+                    sss = ii[0:1]
+                    if sss != prevs:                                      
+                        index4.append((sss, cnt))    
+                        prevs = sss                    
         cnt += 1     
         
     # End Marker              
     index3.append((" ", cnt))            
-    #print index3
+    #print ("index3", index3)
     
     #global got_clock
     #print  "building idx", time.clock() - got_clock        
@@ -363,6 +365,18 @@ def suggest(self2, xstr):
     return arr[:15]
     
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
