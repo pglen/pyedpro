@@ -398,9 +398,10 @@ class EdMainWindow():
     def tree_sel_row(self, xtree):
         sel = xtree.get_selection()
         xmodel, xiter = sel.get_selected()
-        xstr = xmodel.get_value(xiter, 0)
-        vcurr = notebook.get_nth_page(notebook.get_current_page())
-        vcurr.area.locate(xstr)
+        if xiter:
+            xstr = xmodel.get_value(xiter, 0)
+            vcurr = notebook.get_nth_page(notebook.get_current_page())
+            vcurr.area.locate(xstr)
 
     def tree_sel_row2(self, xtree):
         sel = xtree.get_selection()
@@ -1303,6 +1304,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 
