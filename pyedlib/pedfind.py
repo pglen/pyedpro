@@ -225,9 +225,10 @@ def find_show(self, self2):
                             None, Gtk.MESSAGE_ERROR)
             return                    
 
-    win2 = Gtk.Window()
+    win2 = Gtk.Window(Gtk.WindowType.TOPLEVEL)
     #win2.set_position(Gtk.WIN_POS_CENTER)
-    win2.set_transient_for(self2.mained.mywin)
+    #win2.set_transient_for(self2.mained.mywin)
+    win2.set_transient_for(None)
     
     try:
         win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
@@ -655,6 +656,9 @@ def wnext(butt,self):
     pass
     
 #eof
+
+
+
 
 
 
