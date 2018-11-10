@@ -176,12 +176,14 @@ def find(self, self2, replace = False):
         self.xnum = 0
         find_show(self, self2)
     
-            
 def find_keypress(area, event):
     global stridx, strhist, myentry
-    #print   "find keypress", area, event
+    #print   ("find keypress", area, event)
     if  event.type == Gdk.EventType.KEY_PRESS:
         if event.state  & Gdk.ModifierType.MOD1_MASK:
+            #print("stridx", stridx)
+            #for aa in strhist:
+            #    print (aa)
             if event.keyval == Gdk.KEY_Up or \
                     event.keyval == Gdk.KEY_Right:
                 #print   "find dlg keypress, alt UP or right key", stridx
@@ -193,7 +195,7 @@ def find_keypress(area, event):
                     event.keyval == Gdk.KEY_Left:
                 #print   "find dlg keypress, alt DOWN or left", stridx
                 if stridx > 0:
-                    stridx = stridx - 1
+                    stridx -= 1
                     myentry.set_text(strhist[stridx]);
                     
             if event.state  & Gdk.ModifierType.MOD1_MASK:
@@ -656,6 +658,13 @@ def wnext(butt,self):
     pass
     
 #eof
+
+
+
+
+
+
+
 
 
 

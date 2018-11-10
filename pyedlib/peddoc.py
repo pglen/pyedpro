@@ -904,6 +904,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         ww = self.get_width()
         hh = self.cyy
         #self.invalidate(rect)
+        xx = 0;
         self.queue_draw_area(xx, yy, ww, hh)
    
     def invalidate(self, rect = None):                        
@@ -1608,6 +1609,7 @@ def run_async_time(win):
         pass
 
 #eof
+
 
 
 
