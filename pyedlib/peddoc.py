@@ -792,6 +792,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         sumw2 = []
         if self.text:
             sline = self.caret[1] + int(self.ypos)
+            sline = max(sline, 0); sline = min(sline, len(self.text))
             #print "Start point", sline, self.text[sline]
             # Walk back to last function
             if ".c" in self.fname:
@@ -1608,6 +1609,7 @@ def run_async_time(win):
         pass
 
 #eof
+
 
 
 
