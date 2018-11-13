@@ -942,6 +942,7 @@ class EdMainWindow():
                 pedfont.selfont(self, vcurr2.area)
 
         if strx == "Settings":
+            self.update_statusbar("Showing Settings Dialog")
             pedync.message("\n    Settings: Work in progress    \n")
 
         if strx == "Help":
@@ -1304,6 +1305,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 
