@@ -1,0 +1,21 @@
+|    def _draw_text(self, gc, x, y, text, foreground = None, background = None):
+        #print "draw_text" d
+  d      if self.hex:       d d
+            text2 = ""        d
+            for aa in text:d
+                tmp = "%02x " % ord(aa)
+                text2 += tmp                
+            self.pangolayout.set_text(text2[self.xpos * 3:])            
+        elif self.stab:
+            text2 = "";  cnt = 0;
+            for aa in text:
+                if aa == " ":  text2 += "_"                
+                elif aa == "\t":
+                    spaces = self.tabstop - (cnt % self.tabstop)
+                    cnt += spaces - 1
+                    for bb in range(spaces): 
+                        text2 += "o"
+                else:
+
+
+

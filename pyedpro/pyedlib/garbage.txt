@@ -1,0 +1,10 @@
+        #cr.translate(20, 0)
+        '''cr.select_font_face('sans-serif')
+        cr.set_font_size(28)
+        (x, y, width, height, dx, dy) = cr.text_extents('Hello World')
+
+        cr.set_source_rgb(255, 0, 0)
+        cr.show_text('Hello World')'''
+        
+
+

@@ -2,25 +2,17 @@
                               
    Just type 'make install'. You need to be root to install PyEdPro.
 (sudo ./install.py will work just as well)
-      
-  PyEdpro requires GTK3, PyGobject and related libraries. Most distros
+   
+ PyEdpro requires GTK3, pyGOobj and related libraries. Most distros
 come with them pre-installed, so PyEdPro.py should run on most any system 
 including Linux, Windoze and Macz. One of the motivations, of course is to 
 have the same text editor on all platforms.
 
  (PyEdPro is extensively tested on Linux and Windows)
 
-To install pygtk3 on python 2/3 issue msys32:
-
-    pacman -S mingw-w64-i686-gtk3 mingw-w64-i686-python2-gobject \
-                 mingw-w64-i686-python3-gobject
+come with them pre-installed,
  
-Or on 64 bit:   (support incomplete as of dec/2018)
-
-    pacman -S mingw-w64-x86_64-python3-gobject
-
- 
-   To display the keymap and documentation, PyEdPro needs pangview.py (included)
+ To display the keymap and documentation, PyEdPro needs pangview.py (included)
      
   If you do not have root access, PyEdPro will run from any directory, provided
 that the subdirectory pyedlib is under the directory PyEdPro.py is in.
@@ -33,10 +25,6 @@ Enjoy.
  
 
                                  
-
-
-
-
 
 
 
