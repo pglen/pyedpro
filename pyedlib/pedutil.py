@@ -2,7 +2,7 @@
  
 from __future__ import absolute_import
 from __future__ import print_function
-import signal, os, time, sys
+import signal, os, time, sys, pickle
 
 import gi
 #from six.moves import range
@@ -11,6 +11,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
+#import pedwin
 from . import pedconfig
 
 # Cut leading space in half
@@ -551,59 +552,100 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
            
     return accum 
 
+# Save session file
+
+def done_sess_fc(win, resp, fc):
+
+    #print  ("done_sess_fc", resp)
+    # Back to original dir
+    if resp == Gtk.ButtonsType.OK:        
+        try:
+            fname = win.get_filename()
+            if not fname:
+                print("Must have filename")
+            else:         
+                #print("Saving session file under:", fname) 
+                fh = open(fname, "w")
+                pickle.dump(fc.sesslist, fh)
+        except:
+            print("Cannot save session file", sys.exc_info())
+    else:
+        pass
+        #print("Cancelled") 
+        
+    os.chdir(os.path.dirname(fc.old))        
+    win.destroy()
+    
+# Save session to file in the config dir
+
+def save_sess(sesslist):
+
+    but =   "Cancel", Gtk.ButtonsType.CANCEL, "Save Session", Gtk.ButtonsType.OK
+    fc = Gtk.FileChooserDialog("Save Session", None, Gtk.FileChooserAction.SAVE, \
+        but)
+  
+    filter = Gtk.FileFilter()
+    filter.add_pattern ("*.sess");  filter.add_pattern ("*");
+
+    fc.sesslist = sesslist
+    fc.old = os.getcwd()
+    fc.set_filter(filter)
+    fc.set_current_folder(pedconfig.conf.sess_data)
+    fc.set_current_name(os.path.basename("Untitled.sess"))
+    fc.set_default_response(Gtk.ButtonsType.OK)
+    fc.connect("response", done_sess_fc, fc)                
+    fc.run()   
+    
+# ------------------------------------------------------------------------       
+# Load session file
+
+def done_sess2_fc(win, resp, fc):
+
+    #print  ("done_sess2_fc", resp)
+    # Back to original dir
+    if resp == Gtk.ButtonsType.OK:        
+        try:
+            fname = win.get_filename()
+            if not fname:
+                print("Must have filename")
+            else:         
+                #print("Loading session file under:", fname) 
+                fh = open(fname, "r")
+                sesslist = pickle.load(fh)
+                for fff in sesslist.split("\n"):
+                    #print ("Session file:", "'" + fff + "'") 
+                    if fff != "":
+                        pedconfig.conf.pedwin.openfile(fff)
+
+        except:
+            print("Cannot load session file", sys.exc_info())
+    else:
+        pass
+        #print("Cancelled") 
+        
+    os.chdir(os.path.dirname(fc.old))        
+    win.destroy()
+
+# Load session from file in the config dir
+
+def load_sess():
+
+    but =   "Cancel", Gtk.ButtonsType.CANCEL, "Load Session", Gtk.ButtonsType.OK
+    fc = Gtk.FileChooserDialog("Save Session", None, Gtk.FileChooserAction.OPEN, \
+        but)
+  
+    filter = Gtk.FileFilter()
+    filter.add_pattern ("*.sess");
+    filter.add_pattern ("*");
+
+    fc.old = os.getcwd()
+    fc.set_filter(filter)
+    fc.set_current_folder(pedconfig.conf.sess_data)
+    #fc.set_current_name(os.path.basename("Untitled.sess"))
+    fc.set_default_response(Gtk.ButtonsType.OK)
+    fc.connect("response", done_sess2_fc, fc)                
+    fc.run()   
+    
+
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

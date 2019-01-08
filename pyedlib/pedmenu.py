@@ -100,6 +100,11 @@ def create_action_group(self):
         "Close current buffer",                   
         self.activate_action ),                   
         
+      ( "Close All", Gtk.STOCK_CLEAR,                 
+        "Close All","<control><shift>W",                    
+        "Close all buffers",                   
+        self.activate_action ),                   
+        
       ( "Save", Gtk.STOCK_SAVE,                   
         "_Save","<control>S",                     
         "Save current file",                      
@@ -110,6 +115,21 @@ def create_action_group(self):
         "Save to a file",                         
         self.activate_action ),                   
         
+      ( "Save Session", Gtk.STOCK_SAVE,                 
+        "Save _Session ...", "",       
+        "Save session to a file",                         
+        self.activate_action ),                   
+      
+      ( "Load Session", Gtk.STOCK_OPEN,                 
+        "Load _Session ...", "<control><shift>O",       
+        "Load session from a file",                         
+        self.activate_action ),                   
+      
+      ( "Start Terminal", Gtk.STOCK_FILE,                 
+        "Start _Terminal ...", "<control><shift>T",       
+        "Star terminal in current dir",                         
+        self.activate_action ),                   
+      
       ( "Quit", Gtk.STOCK_QUIT,                   
         "_Quit  (No Save)", "<control>Q",         
         "Quit program, abandon files",            
@@ -129,7 +149,7 @@ def create_action_group(self):
         "_Copy   \t\tCtrl-C", "",                   
         "Copy selection to clipboard",            
          self.activate_action ),                  
-         
+                                                 
       ( "Paste", Gtk.STOCK_PASTE,                 
         "_Paste  \t\tCtrl-V", "",                   
         "Paste clipboard into text",              
@@ -334,6 +354,14 @@ def create_action_group(self):
 
 
 
+
+
+
+
+
+
+
+                                      
 
 
 

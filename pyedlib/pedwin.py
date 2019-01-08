@@ -368,6 +368,19 @@ class EdMainWindow():
         self.start_time = time.time()
         utils.timesheet("Started pyedpro", self.start_time, 0)
 
+    '''def loadfile(self, fff):
+        if(pedconfig.conf.verbose):
+            print("Loading file:", fff)
+        vpaned = edPane()
+        ret = vpaned.area.loadfile(fff)
+        if not ret:
+            self.update_statusbar("Cannot read file '{0:s}'".format(fff))
+            print("Cannot read file '{0:s}'".format(fff))
+        else:
+            vpaned.area2.loadfile(fff)
+            notebook.append_page(vpaned)
+            vpaned.area.set_tablabel()
+    '''   
     # --------------------------------------------------------------------
 
     def add_mru(self, merge, action_group, fname, mru):
@@ -810,7 +823,35 @@ class EdMainWindow():
         warnings.simplefilter("ignore")
         strx = action.get_name()
         warnings.simplefilter("default")
-        #print "activate_action", strx
+        
+        #print ("activate_action", strx)
+        
+        if strx == "Close All":
+            self.closeall()
+
+        if strx == "Load Session":
+            #print("Loading session")
+            load_sess()
+
+        if strx == "Save Session":
+            #print("Saving session")
+            # Gather all file names
+            accum = ""
+            nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
+            while True:
+                if cnt >= nn: break
+                ppp = notebook.get_nth_page(cnt)
+                #print ("file:", ppp.area.fname)
+                accum +=  ppp.area.fname + "\n"
+                cnt += 1
+            #print ("file list", accum)
+            save_sess(accum)
+            
+            self.update_statusbar("Session %s saved." % ("noname"))
+
+        if strx == "Start Terminal":
+            #print("Starting terminal")
+            os.system("C:\msys64\mingw32.exe")
 
         if strx == "New":
             self.newfile();
@@ -957,6 +998,14 @@ class EdMainWindow():
             fname = get_exec_path("KEYS.TXT")
             self.openfile(fname)
         
+    def closeall(self):
+        cc = notebook.get_n_pages()
+        for aa in range(cc-1, -1, -1):
+            #print ("closing doc index", aa)
+            vcurr = notebook.get_nth_page(aa)
+            vcurr.area.closedoc()
+            notebook.remove_page(aa)
+    
     def closedoc(self, other = None):
         cc = notebook.get_n_pages()
         if other:
@@ -1074,6 +1123,8 @@ class EdMainWindow():
         for aa in range(nn):
             vcurr = notebook.get_nth_page(aa)
             if vcurr.area.fname == fname:
+                if(pedconfig.conf.verbose):
+                    print("Already open '"+ fname + "'")
                 self.update_statusbar("Already open, activating '{0:s}'".format(fname))
                 vcurr = notebook.set_current_page(aa)
                 vcurr = notebook.get_nth_page(aa)
@@ -1305,6 +1356,19 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

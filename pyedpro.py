@@ -92,6 +92,7 @@ def help():
     print("            -v        - Verbose (to stdout and log)")
     print("            -f        - Start Full screen")
     print("            -c        - Dump Config")
+    print("            -o        - Use real stdout (for debug strings)")
     print("            -V        - Show version")
     print("            -x        - Clear (eXtinguish) config (will prompt)")
     print("            -h        - Help")
@@ -139,7 +140,7 @@ if __name__ == '__main__':
 
     #print "opts", opts, "args", args
     
-    pyedlib.pedconfig.conf.version = 0.45
+    pyedlib.pedconfig.conf.version = 0.66
 
     for aa in opts:
         if aa[0] == "-d":
@@ -186,6 +187,11 @@ if __name__ == '__main__':
             print("making", pyedlib.pedconfig.conf.macro_dir)
         os.mkdir(pyedlib.pedconfig.conf.macro_dir)
 
+    if not os.path.isdir(pyedlib.pedconfig.conf.sess_data):
+        if(pyedlib.pedconfig.conf.verbose):
+            print("making", pyedlib.pedconfig.conf.sess_data)
+        os.mkdir(pyedlib.pedconfig.conf.sess_data)
+
     if(pyedlib.pedconfig.conf.verbose):
         print("Data stored in ", pyedlib.pedconfig.conf.config_dir)
         
@@ -218,7 +224,7 @@ if __name__ == '__main__':
 
     #Uncomment this for silent stdout
     if use_stdout:
-        print("Using stdout")
+        #print("Using real stdout")
         sys.stdout = Unbuffered(sys.stdout)
         sys.stderr = Unbuffered(sys.stderr)
     else:
@@ -233,6 +239,10 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
+
+
 
 
 

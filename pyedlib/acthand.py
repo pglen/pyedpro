@@ -1653,16 +1653,19 @@ class ActHand:
     def alt_y(self, self2):
         #print "Compile"
         writefile("tmp", self2.text)
-        try:
+        try:              
            py_compile.compile('tmp', doraise = True)
         except py_compile.PyCompileError as msg:
             ln  = msg[2][1][1]; col = msg[2][1][2]
-            mmm = msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
+            mmm = "\n" + msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
+            self2.mained.update_statusbar("Syntax OK.")
             pedync.message("    " + mmm + "    ", msg[1])
             self2.gotoxy(col - 1, ln - 1)
-        except:
+            
+        except:                 
             print(sys.exc_info())
         else:
+            pedync.message("\n  Syntax OK   \n") 
             self2.mained.update_statusbar("Syntax OK.")
         finally:
             os.remove("tmp")
@@ -1729,6 +1732,11 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
 
 
 

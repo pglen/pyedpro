@@ -979,7 +979,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def activate_action(self, action):
         dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
-            Gtk.MESSAGE_INFO, Gtk.BUTTONS_CLOSE,
+            Gtk.ButtonsType.INFO, Gtk.ButtonsType.CLOSE,
             'You activated action: "%s" of type "%s"' % (action.get_name(), type(action)))
         # Close dialog on user response
         dialog.connect ("response", lambda d, r: d.destroy())
@@ -1332,7 +1332,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             else:         
                 if os.path.isfile(fname):
                     dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
-                    Gtk.MESSAGE_QUESTION, Gtk.BUTTONS_YES_NO,
+                    Gtk.MESSAGE_QUESTION, Gtk.ButtonsType.YES_NO,
                     "\nWould you like overwrite file:\n\n  \"%s\" \n" % fname)
                     dialog.set_title("Overwrite file ?")
                     dialog.set_default_response(Gtk.ResponseType.YES)
@@ -1437,13 +1437,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             print("No macros directory")
             
-        but =   "Cancel", Gtk.BUTTONS_CANCEL, "Save Macro", Gtk.BUTTONS_OK
-        fc = Gtk.FileChooserDialog("Save Macro", None, Gtk.FILE_CHOOSER_ACTION_SAVE, \
+        but =   "Cancel", Gtk.ButtonsType.CANCEL, "Save Macro", Gtk.ButtonsType.OK
+        fc = Gtk.FileChooserDialog("Save Macro", None, Gtk.FileChooserAction.SAVE, \
             but)
       
         fc.set_current_folder(xfile)
         fc.set_current_name(os.path.basename(xfile))
-        fc.set_default_response(Gtk.BUTTONS_OK)
+        fc.set_default_response(Gtk.ButtonsType.OK)
         fc.connect("response", self.done_mac_fc, old)                
         fc.run()   
         
@@ -1451,7 +1451,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print  "done_mac_fc", resp
         # Back to original dir
         os.chdir(os.path.dirname(old))        
-        if resp == Gtk.BUTTONS_OK:        
+        if resp == Gtk.ButtonsType.OK:        
             try:
                 fname = win.get_filename()
                 if not fname:
@@ -1474,13 +1474,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             print("No macros directory")
             
-        but =   "Cancel", Gtk.BUTTONS_CANCEL, "Load Macro", Gtk.BUTTONS_OK
-        fc = Gtk.FileChooserDialog("Load Macro", None, Gtk.FILE_CHOOSER_ACTION_OPEN, \
+        but =   "Cancel", Gtk.ButtonsType.CANCEL, "Load Macro", Gtk.ButtonsType.OK
+        fc = Gtk.FileChooserDialog("Load Macro", None, Gtk.FileChooserAction.OPEN, \
             but)
       
         fc.set_current_folder(xfile)
         #fc.set_current_folder(old)
-        fc.set_default_response(Gtk.BUTTONS_OK)
+        fc.set_default_response(Gtk.ButtonsType.OK)
         fc.connect("response", self.done_mac_open_fc, old)                
         fc.run()   
         
@@ -1489,7 +1489,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         
         # Back to original dir
         os.chdir(os.path.dirname(old))        
-        if resp == Gtk.BUTTONS_OK:        
+        if resp == Gtk.ButtonsType.OK:        
             try:
                 fname = win.get_filename()
                 if not fname:
@@ -1610,6 +1610,10 @@ def run_async_time(win):
         pass
 
 #eof
+
+
+
+
 
 
 

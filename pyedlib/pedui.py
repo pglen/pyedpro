@@ -24,8 +24,14 @@ ui_info = \
       <menuitem action='New'/>
       <menuitem action='Open'/>
       <menuitem action='Close'/>
+      <menuitem action='Close All'/>
       <menuitem action='Save'/>
       <menuitem action='SaveAs'/>
+      <separator/>
+      <menuitem action='Load Session'/>
+      <menuitem action='Save Session'/>
+      <separator/>
+      <menuitem action='Start Terminal'/>
       <separator/>
       <menuitem action='Quit'/>
       <menuitem action='Exit'/>
@@ -44,7 +50,6 @@ ui_info = \
       <separator/>
       <menuitem action='Spell'/>
       <menuitem action='Spell2'/>
-      
     </menu>
 
     <menu action='NavMenu'>
@@ -123,6 +128,11 @@ ui_info = \
     <toolitem action='Help'/>   '''
     
  
+
+
+
+
+
 
 
 

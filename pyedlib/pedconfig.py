@@ -30,6 +30,7 @@ class conf():
     data_dir = os.path.expanduser("~/.pyedpro/data")
     log_dir = os.path.expanduser("~/.pyedpro/log")
     sql_data = os.path.expanduser("~/.pyedpro/sql_data")
+    sess_data = os.path.expanduser("~/.pyedpro/sess")
     sql = None
     config_file = "defaults"
 
@@ -39,6 +40,7 @@ class conf():
             
     def __init__(self): 
         pass
+
 
 
 
