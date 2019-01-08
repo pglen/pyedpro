@@ -203,12 +203,41 @@ def populate(dialog):
     
     # --------------------------------------------------------------------
     
+def compare(model, row1, row2, user_data):
+    
+    sort_column, _ = model.get_sort_column_id()
+    value1 = model.get_value(row1, sort_column)
+    value2 = model.get_value(row2, sort_column)
+    #print(sort_column, value1, value2)
+    if value1 < value2:
+        return -1
+    elif value1 == value2:
+        return 0
+    else:
+        return 1    
+
+def ncompare(model, row1, row2, user_data):
+    sort_column, _ = model.get_sort_column_id()
+    value1 = model.get_value(row1, sort_column)
+    value2 = model.get_value(row2, sort_column)
+    #print("n", sort_column, value1, value2, type(value1))
+    if int(value1) < int(value2):
+        return -1
+    elif int(value1) == int(value2):
+        return 0
+    else:
+        return 1    
+    
 def create_ftree(ts, text = None):
         
-    warnings.simplefilter("ignore")
     # create the tview using ts
-    tv = Gtk.TreeView(ts)
-    warnings.simplefilter("default")
+    tv = Gtk.TreeView(model=ts)
+    tv.set_search_column(0)
+    tv.set_headers_clickable(True)
+    tv.set_enable_search(True)
+    
+    ts.set_sort_func(0, compare, None)
+    ts.set_sort_func(1, ncompare, None)
 
     # create a CellRendererText to render the data
     cell = Gtk.CellRendererText()
@@ -218,11 +247,13 @@ def create_ftree(ts, text = None):
     tvcolumn.pack_start(cell, True)
     tvcolumn.add_attribute(cell, 'text', 0)
     tvcolumn.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
+    tvcolumn.set_sort_column_id(0)
     tv.append_column(tvcolumn)
 
     cell2 = Gtk.CellRendererText()
     tvcolumn2 = Gtk.TreeViewColumn('Size')
     tvcolumn2.set_min_width(100)
+    tvcolumn2.set_sort_column_id(1)
     tvcolumn2.pack_start(cell2, True)
     tvcolumn2.add_attribute(cell2, 'text', 1)
     tv.append_column(tvcolumn2)
@@ -238,6 +269,7 @@ def create_ftree(ts, text = None):
     tvcolumn4 = Gtk.TreeViewColumn('Modified')
     tvcolumn4.set_min_width(150)
     tvcolumn4.pack_start(cell4, True)
+    tvcolumn4.set_sort_column_id(3)
     tvcolumn4.add_attribute(cell4, 'text', 3)
     tv.append_column(tvcolumn4)
 
@@ -317,6 +349,8 @@ def area_key(area, event, self):
               event.keyval == Gdk.KEY_Alt_R:
             self.alt = False;
             
+    return None
+    
 # ------------------------------------------------------------------------
 def mode2str(mode):
 
@@ -340,6 +374,32 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
