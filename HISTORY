@@ -1,7 +1,71 @@
                             HISTORY
 
- This is a non exhaustive list of changes in the pyedit project.
+ This is a non exhaustive list of changes in the pyedpro project.
  
+ feb-03-2019
+ 
+    Added readme section for installing python-gi-cairo
+  
+UPDATES:
+
+   PyGTK 3 changed a lot of things ... workig on port
+
+   PyGTK 2.24 (latest at the time of writing) has a bug on not delivering
+double click to the window. Down-graded to 2.22.x, works flawlessly.
+
+   Lots of functions added. Attempted to make it tablet friendly. Drag
+on screen now does what you would expect from a tablet.
+
+   My laptop keyboard broke, so I added Ctrl-H for left arrow j, k, l
+for the other arrows (like in vim) so the defective keys are substituted 
+with vi compatible navigation.
+
+  On request of one of my clients, I needed to create a time sheet. So I
+extended PyEdPro to create a work log. 
+
+The log contains the following elements:
+
+ Start time, End time, Time of file Open, time of file Save. 
+The files have been created to be machine parsable.
+ 
+ Example log entry:
+ 
+Action: Started PyEdPro
+On: Tue May 08 16:44:37 2018
+
+Action: Ended PyEdPro
+On: Tue May 08 17:14:21 2018
+Time diff: 1784 0:29
+
+ Example timesheet entry:
+ 
+ Action: Opened File C:\msys32\home\peterglen\esp\esp-code\wclock\v010\common\v000\httpd.c
+On: Thu Jun 28 14:49:13 2018
+Delta: 0
+Date: 1530211753 httpd.c Opened
+
+Action: Closed File C:\msys32\home\peterglen\esp\esp-code\wclock\v010\common\v000\httpd.c
+On: Thu Jun 28 14:49:18 2018
+Delta: 5
+Date: 1530211759 httpd.c Closed
+
+ The files are located at ~/.PyEdPro/log/account.txt and ~/.PyEdPro/log/timesheet.txt
+ (the '~/' stands for your home directory. On windows it is 
+ C:\Users\<UserName>\ ...) Example: 'C:\Users\PeterGlen\.PyEdPro\'
+
+UPDATES:
+
+  Implemented multiple clipboards. The key combination Ctrl-0 to Ctrl-8 switches
+clipboard buffers. Switching to buffer 9 (Ctrl-9) yields the sum of all clipboards 
+from 1-8. This is useful on collecting parts of the file, and unifying it 
+with one keystroke.  (Like collecting function headers.) Th first clipboard buffer
+(Ctrl-0) is the same as the OS clipboard.
+
+UPDATES:
+
+  sep/16/2018   Port to GTP3 started
+  oct/10/2018   Port stable, almost done
+
 v003:
     Misc
 v004:
@@ -74,5 +138,6 @@ v034:
 v042:
 
  Moved to pyedpro, version number restarted at 043.
+
 
 

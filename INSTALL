@@ -17,7 +17,7 @@ To install pygtk3 on python 2/3 issue msys32:
  
 Or on 64 bit:   (support incomplete as of dec/2018)
 
-    pacman -S mingw-w64-x86_64-python3-gobject
+    pacman -S mingw-w64-x86_64-python3-gobject python-gi-cairo
 
  
    To display the keymap and documentation, PyEdPro needs pangview.py (included)
@@ -28,11 +28,27 @@ that the subdirectory pyedlib is under the directory PyEdPro.py is in.
  You may also install PyEdPro in the user's private bin directory 
  (if it is in the user's path) with the command like cp -a * ~/bin
 
+Additional tweaks neede for different platforms:
+
+  On Unix you may need to execute dos2unix pyedpro.py to allow it to run from 
+command line. 
+
+  Some platforms will need the 'python-gi-cairo' module. The syptom is that the 
+editor's text field remains blank. Pydit will issue appropriate messages for the
+missing library, install it with:
+
+  sudo apt install python-gi-cairo
+  
+  
+  
+  
+
 Enjoy.
 
  
 
                                  
+
 
 
 
