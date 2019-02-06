@@ -5,7 +5,7 @@
 # this project was to create a modern multi-platform editor. 
 # Simple, powerful, configurable, extendable.
 #
-# This project was derived from pydepro.py
+# This project was derived from pyedit.py
 # 
 # pyedpro functions near flawless on Linux / Windows / Mac / Raspberry PI
 
@@ -239,6 +239,7 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 
 

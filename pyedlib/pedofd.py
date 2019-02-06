@@ -21,7 +21,7 @@ def ofd(fname = None, self2 = None):
 
     warnings.simplefilter("ignore")
         
-    dialog = Gtk.Dialog("pyedpo: Open File",
+    dialog = Gtk.Dialog("pyedpro: Open File",
                    None,
                    Gtk.DialogFlags.MODAL | \
                    Gtk.DialogFlags.DESTROY_WITH_PARENT,
@@ -234,8 +234,7 @@ def create_ftree(ts, text = None):
     tv = Gtk.TreeView(model=ts)
     tv.set_search_column(0)
     tv.set_headers_clickable(True)
-    tv.set_enable_search(True)
-    
+    #tv.set_enable_search(True)
     ts.set_sort_func(0, compare, None)
     ts.set_sort_func(1, ncompare, None)
 
@@ -374,6 +373,10 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
+
+
+
 
 
 

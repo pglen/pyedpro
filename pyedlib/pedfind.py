@@ -313,7 +313,6 @@ def find_show(self, self2):
     vbox.pack_start(stree, True, True, 0)           
                             
     win2.add(vbox)
-    win2.show_all()
     
     # ---------------------------------------------------------------------
     was, cnt2 = self2.search(self.srctxt, self.regex, self.dialog.checkbox2.get_active(), 
@@ -331,7 +330,14 @@ def find_show(self, self2):
                     
     win2.tree.grab_focus()
     warnings.simplefilter("ignore")
-
+    # close if multiselect and no hits
+    if cnt2 == 0:
+       #print ("closing this one")
+       win2.destroy()
+       self2.mained.update_statusbar("Window closed on no matches.")
+    else:
+        win2.show_all()
+    
 
 def area_destroy(win2, self):
 
@@ -658,6 +664,9 @@ def wnext(butt,self):
     pass
     
 #eof
+
+
+
 
 
 
