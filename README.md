@@ -56,6 +56,9 @@ the configuration info into a SQLite database in the ~/.pyedpro directory.
  
   Peter Glen
 
+![Screen Shot](image.png)
+
+
 
 
 
