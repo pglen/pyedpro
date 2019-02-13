@@ -328,7 +328,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.focus = False
         
     def focus_in_cb(self, widget, event):
-        #print "focus_in_cb"
+        #print ("focus_in_cb")
         self.focus = True
         os.chdir(os.path.dirname(self.fname))
         self.update_bar2()
@@ -605,7 +605,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def gotoxy(self, xx, yy, sel = None, mid = False):
 
-        #print "gotoxy", xx, yy
+        #print ("gotoxy", xx, yy)
         
         # Contain
         ylen = len(self.text)
@@ -874,7 +874,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.appwin.update_treestore2(sumw2)
         except:
             # This is normal, ignore it
-            print("run_async_time", sys.exc_info())    
+            print("walk2", sys.exc_info())    
             pass
    
     # Call key handler
@@ -1605,11 +1605,19 @@ def run_async_time(win):
     try:        
         win.appwin.update_treestore(sumw)
     except:
-        # This is normal, ignore it
+        # This is 'normal', ignore it
         print("run_async_time", sys.exc_info())    
         pass
 
 #eof
+
+
+
+
+
+
+
+
 
 
 

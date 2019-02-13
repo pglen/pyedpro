@@ -24,15 +24,18 @@ myentry = None
                                     
 def find(self, self2, replace = False):
 
-    global myentry
+    global myentry, stridx
     self.reptxt = ""
     
     warnings.simplefilter("ignore")
 
-    stridx = len(strhist) -1
-    if stridx < 0: stridx = 0
-    #print "stridx", stridx
+    xll = len(strhist)
+    if xll:
+        stridx =  xll - 1 
+        myentry.set_text(strhist[stridx]);
         
+    print ("stridx", stridx)
+                            
     if replace:
         head = "pyedpro: Find / Replace"
     else:
@@ -157,6 +160,8 @@ def find(self, self2, replace = False):
     else:
         strhist.append(self.srctxt)
         
+    print("post", strhist)
+    
     warnings.simplefilter("default")
     dialog.destroy()
 
@@ -186,14 +191,14 @@ def find_keypress(area, event):
             #    print (aa)
             if event.keyval == Gdk.KEY_Up or \
                     event.keyval == Gdk.KEY_Right:
-                #print   "find dlg keypress, alt UP or right key", stridx
-                if stridx < len(strhist) -1:
+                #print   ("find dlg keypress, alt UP or right key", stridx)
+                if stridx < len(strhist) - 1:
                     stridx += 1
                     myentry.set_text(strhist[stridx]);
                     
             if event.keyval == Gdk.KEY_Down or \
                     event.keyval == Gdk.KEY_Left:
-                #print   "find dlg keypress, alt DOWN or left", stridx
+                #print   ("find dlg keypress, alt DOWN or left", stridx)
                 if stridx > 0:
                     stridx -= 1
                     myentry.set_text(strhist[stridx]);
@@ -329,15 +334,20 @@ def find_show(self, self2):
         pedconfig.conf.sql.put("rep", self.reptxt)
                     
     win2.tree.grab_focus()
-    warnings.simplefilter("ignore")
-    # close if multiselect and no hits
-    if cnt2 == 0:
-       #print ("closing this one")
-       win2.destroy()
-       self2.mained.update_statusbar("Window closed on no matches.")
-    else:
-        win2.show_all()
+    #warnings.simplefilter("ignore")
     
+    #print("cnt2:", cnt2)
+    # close if multiselect and no hits
+    if self.dialog.checkbox3.get_active():
+        if cnt2 == 0: 
+            #print ("closing this one")
+            win2.destroy()
+            self2.mained.update_statusbar("Window closed on no matches.")
+        else:
+            win2.show_all()
+    else:   
+        win2.show_all()
+
 
 def area_destroy(win2, self):
 
@@ -664,6 +674,23 @@ def wnext(butt,self):
     pass
     
 #eof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

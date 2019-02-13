@@ -1,6 +1,12 @@
-                            HISTORY
+                              HISTORY
 
  This is a non exhaustive list of changes in the pyedpro project.
+ 
+ feb-13-2019
+ 
+    Solved jump on parse local
+    solved FIFO on search Alt-Left Alt-Right
+    V.67
  
  feb-03-2019
  
@@ -58,13 +64,15 @@ UPDATES:
   Implemented multiple clipboards. The key combination Ctrl-0 to Ctrl-8 switches
 clipboard buffers. Switching to buffer 9 (Ctrl-9) yields the sum of all clipboards 
 from 1-8. This is useful on collecting parts of the file, and unifying it 
-with one keystroke.  (Like collecting function headers.) Th first clipboard buffer
+with one keystroke.  (Like collecting function headers.) The first clipboard buffer
 (Ctrl-0) is the same as the OS clipboard.
 
 UPDATES:
 
   sep/16/2018   Port to GTP3 started
   oct/10/2018   Port stable, almost done
+
+Pre GIT:
 
 v003:
     Misc
@@ -138,6 +146,7 @@ v034:
 v042:
 
  Moved to pyedpro, version number restarted at 043.
+
 
 
 

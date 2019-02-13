@@ -221,13 +221,15 @@ class EdMainWindow():
         #warnings.simplefilter("default")
 
         treeview = self.create_tree()
+        treeview.set_activate_on_single_click (True)
         treeview.connect("row-activated",  self.tree_sel)
-        treeview.connect("cursor-changed",  self.tree_sel_row)
+        #treeview.connect("cursor-changed",  self.tree_sel_row)
         self.treeview = treeview
 
         treeview2 = self.create_vartree()
+        treeview2.set_activate_on_single_click (True)
         treeview2.connect("row-activated",  self.tree_sel2)
-        treeview2.connect("cursor-changed",  self.tree_sel_row2)
+        #treeview2.connect("cursor-changed",  self.tree_sel_row2)
         self.treeview2 = treeview2
 
         vpaned = Gtk.VPaned(); vpaned.set_border_width(5)
@@ -409,6 +411,27 @@ class EdMainWindow():
         pass
 
     def tree_sel_row(self, xtree):
+        pass
+        #sel = xtree.get_selection()
+        #xmodel, xiter = sel.get_selected()
+        #if xiter:
+        #    xstr = xmodel.get_value(xiter, 0)
+        #    vcurr = notebook.get_nth_page(notebook.get_current_page())
+        #    vcurr.area.locate(xstr)
+
+    def tree_sel_row2(self, xtree):
+        pass
+        #sel = xtree.get_selection()
+        #xmodel, xiter = sel.get_selected()
+        #print("tree_sel_row2", xtree, xmodel, xiter)
+        #if xiter:
+        #    xstr = xmodel.get_value(xiter, 0)
+        #    vcurr = notebook.get_nth_page(notebook.get_current_page())
+        #    vcurr.area.locate(xstr)
+
+    def tree_sel(self, xtree, xiter, xpath):
+        #print("tree_sel", xtree, xiter, xpath)
+        # Focus on main doc
         sel = xtree.get_selection()
         xmodel, xiter = sel.get_selected()
         if xiter:
@@ -416,32 +439,19 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(notebook.get_current_page())
             vcurr.area.locate(xstr)
 
-    def tree_sel_row2(self, xtree):
+    def tree_sel2(self, xtree, xiter, xpath):
+        #print("tree_sel2", xtree, xiter, xpath)
+        # Focus on main doc
         sel = xtree.get_selection()
         xmodel, xiter = sel.get_selected()
-        xstr = xmodel.get_value(xiter, 0)
-        vcurr = notebook.get_nth_page(notebook.get_current_page())
-        vcurr.area.locate(xstr)
-
-    def tree_sel(self, xtree, xiter, xpath):
-        pass
-        print("tree_sel", xtree, xiter, xpath)
-        # Focus on main doc
-        vcurr = notebook.get_nth_page(notebook.get_current_page())
-        self.mywin.activate_focus()
-        self.mywin.set_focus(vcurr.vbox.area)
-
-    def tree_sel2(self, xtree, xiter, xpath):
-        pass
-        print("tree_sel2", xtree, xiter, xpath)
-        # Focus on main doc
-        vcurr = notebook.get_nth_page(notebook.get_current_page())
-        self.mywin.activate_focus()
-        self.mywin.set_focus(vcurr.vbox.area)
+        if xiter:
+            xstr = xmodel.get_value(xiter, 0)
+            vcurr = notebook.get_nth_page(notebook.get_current_page())
+            vcurr.area.locate(xstr)
 
     # Call key handler
     def area_key(self, area, event):
-        print("pedwin key", event)
+        #print("pedwin key", event)
         # Inspect key press before treeview gets it
         if self.mywin.get_focus() == self.treeview:
             # Do key down:
@@ -1206,9 +1216,9 @@ class EdMainWindow():
 
         mask = Gdk.WindowState.MAXIMIZED
         # | Gdk.FULLSCREEN
-        if (event.changed_mask & mask):
+        '''if (event.changed_mask & mask):
             self.statusbar.set_has_resize_grip(not (event.new_window_state & mask))
-
+        '''
 # ------------------------------------------------------------------------
 
 def OnExit(arg, prompt = True):
@@ -1356,6 +1366,14 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 
