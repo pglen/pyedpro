@@ -49,6 +49,8 @@ table driven.
     Ctrl-Y                      -- Redo last undo
     Ctrl-Z                      -- Undo last change
                                 
+    Ctrl Up                     -- Go up 10 loines
+    Ctrl Down                   -- Go down 10 lines
     Ctrl Left                   -- Go left one word
     Ctrl Right                  -- Go right one word
     Ctrl PgUp                   -- Go up one large page (2x)
@@ -59,7 +61,8 @@ table driven.
                                 
     Ctrl 0                      -- Switch to clipboard 0 (OS Clipboard)
     Ctrl 1                      -- Switch to clipboard 1
-     ...
+      .
+      .
     Ctrl 8                      -- Switch to clipboard 8
     Ctrl 9                      -- Switch to sum of all clipboards
 
@@ -189,6 +192,7 @@ Notes:
  An unrecognized key is inserted verbatim into the buffer, and a message is printed on the
 controlling terminal. If no action is listed, that key is unassigned. Most dialogs
 can be dismissed with the Esc key or the Alt-X key combination.
+
 
 
 

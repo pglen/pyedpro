@@ -52,7 +52,9 @@ from .keywords import *
 # General set of utilities
 from .pedutil import *
 
+# ------------------------------------------------------------------------
 # Action handler. Called from key handler.
+# There is a function for most every key. Have at it.
 # Function name hints to key / action. like up() is key up, and the action
 
 class ActHand:
@@ -79,10 +81,11 @@ class ActHand:
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
 
+        incr = 1
         if self2.alt:
             self.pgup(self2)
         elif self2.ctrl:
-            pass
+            incr = 10
         elif self2.shift:
             # Begin select
             if self2.xsel == -1:
@@ -91,7 +94,7 @@ class ActHand:
             if self2.ysel == -1:
                 self2.ysel = yidx
 
-        self2.set_caret(xidx, yidx - 1)
+        self2.set_caret(xidx, yidx - incr)
 
         if self2.shift:
             self2.ysel2 = self2.caret[1] + self2.ypos
@@ -105,9 +108,9 @@ class ActHand:
 
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
-
+        incr = 1
         if self2.ctrl:
-            pass
+            incr = 10
         elif self2.alt:
             self.pgdn(self2)
         elif self2.shift:
@@ -119,7 +122,7 @@ class ActHand:
             if self2.ysel == -1:
                 self2.ysel = yidx
 
-        self2.set_caret(xidx, yidx + 1)
+        self2.set_caret(xidx, yidx + incr)
 
         if self2.shift:
             self2.ysel2 = self2.caret[1] + self2.ypos
@@ -1732,6 +1735,9 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
 
 
 

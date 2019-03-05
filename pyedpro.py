@@ -19,6 +19,7 @@
 #    o  auto backup, 
 #    o  persistent undo/redo,  (undo beyond last save) 
 #    o  auto complete, auto correct, 
+#    o  
 #    o  ... and a lot more. 
 #
 # It is fast, it is extendable. The editor has a table driven key mapping. 
@@ -32,11 +33,12 @@
 # Jun/xx/2018   Log Files for time accounting.
 # Jun/xx/2018   Log Files for time accounting.
 
-# ASCII test editor, requires pyGtk. See pygtk-dependencied for 
-# eazy access to depencdencies.
+# ASCII test editor, requires pyGtk. (pygobject) 
+# See pygtk-dependencied for eazy access to depencdencies.
 
 from __future__ import absolute_import
 from __future__ import print_function
+
 import os, sys, getopt, signal
 
 import traceback
@@ -239,6 +241,7 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 
 
