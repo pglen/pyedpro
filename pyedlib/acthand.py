@@ -1332,7 +1332,8 @@ class ActHand:
                 xxx = get_exec_path(".." + os.sep + "pangview.py")
                 ret = subprocess.Popen(["python", xxx,  rr])
             else:            
-                ret = subprocess.Popen(["pangview.py",  rr])
+                xxx = get_exec_path(".." + os.sep + "pangview.py")
+                ret = subprocess.Popen(["python", xxx,  rr])
         except:
             print("Cannot launch pangview", sys.exc_info())
             pedync.message("\n   Cannot launch pangview.py   \n\n"
@@ -1735,6 +1736,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 

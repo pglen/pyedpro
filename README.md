@@ -7,24 +7,27 @@ configurable, extendable. Goodies like macro recording / playback, spell check,
 column select, multiple clipboards, unlimited undo ... makes it an editor 
 that I use every day.
 
- This project is a successor of pyedit, after porting it to GTK3.
+ This project is a successor of pyedit, after porting it to GTK3. PyEdPro
+ will run anywhere PyGTK can run.
 
-  Working platforms currently are: 
+  Working and tested platforms currently are: 
   
-                Win 7 .. Win 10 ...
-                Centos 6 .. 7 Ubunto 14 ... 16 (all linux platforms) ...
-                Msys, Msys2, Mingw, Raspberry PI ... 
-                
-                practically anywhere PyGTK can run.
- 
-  I mainly run it in MSYS2, Ubuntu and the Raspberry-Pi, and it behaves consistently
-on all three platforms.
+        Win 7 .. Win 10 ...
+        Centos 6 .. 7 Ubuntu 14 ... 16 
+        Msys, Msys2, Mingw, Raspberry PI ... 
+
+  If you encounter blank screen after start, cairo is not installed. The terminal interface 
+will complain, but if you start from the GUI, you can see the message in the 
+log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install cairo'.
+  
+  I mainly run it in MSYS2, Ubuntu, Windows 10, and the Raspberry-Pi. 
+It behaves consistently on all the tested platforms.
  
    PyEdPro.py has macro recording/play, search/replace, functional navigation,
 comment/string spell check, auto backup, persistent undo/redo, auto complete,
 auto correct, syntax check, spell suggestion ... and a lot more.
    
-   It is fast, it is extendable, as python lends itself to easy extending. The
+   PyEdPro is fast, it is extendable, as python lends itself to easy extending. The
 editor has a table driven key mapping. One can easily edit the key map in
 keyhand.py, and the key actions in acthand.py
 
@@ -49,8 +52,8 @@ directory to start PyEdPro with no memory of what has been done.
   Starting PyEdPro with no command line arguments will put you back to the 
  previous session, exactly where you left off.
 
- The editor will work on Windows, and can open UNIX and Windows files
-transparently. It will save the file as the current platform's native 
+ The editor will work on all PyGobject platforms, and can open UNIX and Windows files
+transparently. It will save the file as the current platform's native CRLF
 convention dictates.
 
   Developer's note: in order to make PyEdPro multi platform, we save
@@ -58,9 +61,9 @@ the configuration info into a SQLite database in the ~/.PyEdPro directory.
 
      (~/ stands for the user's home directory)
 
- Contributors are welcome. Requires python and pygtk / pygobject.
+ Contributors are welcome. 
 
-                            PyEdPro Key Assignments
+ ### PyEdPro Key Assignments
 
    This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
@@ -256,6 +259,7 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt-X key combination.
 
 The author,
+
       Peter Glen
 
 ![Screen Shot](image.png)
@@ -263,5 +267,8 @@ The author,
 Screen from Ubuntu:
 
 ![Screen Shot](pyedpro_ubuntu.png)
+
+
+
 
 

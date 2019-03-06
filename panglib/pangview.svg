@@ -15,23 +15,23 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="pyedpro.svg"
-   inkscape:export-filename="/home/peterglen/peterglen/pgpygtk/pyedpro/pyedlib/images/pyedpro.png"
+   sodipodi:docname="pangview.svg"
+   inkscape:export-filename="/home/peterglen/peterglen/pgpygtk/pyedpro/panglib/pangview.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
      id="defs4">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient3594">
+       id="linearGradient4551">
       <stop
-         style="stop-color:#19cfdf;stop-opacity:1;"
+         style="stop-color:#19b93f;stop-opacity:1;"
          offset="0"
-         id="stop3596" />
+         id="stop4547" />
       <stop
-         style="stop-color:#19cfdf;stop-opacity:0;"
+         style="stop-color:#19b93f;stop-opacity:0;"
          offset="1"
-         id="stop3598" />
+         id="stop4549" />
     </linearGradient>
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
@@ -42,14 +42,13 @@
        id="perspective10" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient3594"
-       id="linearGradient3600"
-       x1="168.07143"
-       y1="198.07647"
-       x2="250.5"
-       y2="198.07647"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0869485,0,0,1.0391213,76.802929,157.96529)" />
+       xlink:href="#linearGradient4551"
+       id="linearGradient4553"
+       x1="260.0314"
+       y1="326.67932"
+       x2="348.54007"
+       y2="400.90228"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -59,7 +58,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="326.72103"
+     inkscape:cx="325.29246"
      inkscape:cy="602.63806"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -77,7 +76,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -86,7 +85,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:url(#linearGradient3600);fill-opacity:1;stroke:#000000;stroke-width:1.06276596;stroke-opacity:1"
+       style="fill:url(#linearGradient4553);fill-opacity:1;stroke:#000000;stroke-width:1.06276596;stroke-opacity:1;opacity:1"
        id="rect2820"
        width="88.508667"
        height="74.222954"
@@ -97,15 +96,15 @@
        inkscape:export-ydpi="200.96001" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:17.420784px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.45173204"
-       x="387.81979"
-       y="270.8237"
+       style="font-style:normal;font-weight:normal;font-size:13.42974567px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.11914551"
+       x="381.41687"
+       y="266.2594"
        id="text2816"
-       transform="scale(0.68883237,1.451732)"><tspan
+       transform="scale(0.69518989,1.4384559)"><tspan
          sodipodi:role="line"
          id="tspan2818"
-         x="387.81979"
-         y="270.8237"
-         style="font-size:58.06927872px;line-height:1.25;stroke-width:1.45173204">Ped</tspan></text>
+         x="381.41687"
+         y="266.2594"
+         style="font-size:44.76581955px;line-height:1.25;stroke-width:1.11914551">Pang</tspan></text>
   </g>
 </svg>

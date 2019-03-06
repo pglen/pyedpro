@@ -1,6 +1,13 @@
-                              HISTORY
+                         HISTORY
 
- This is a non exhaustive list of changes in the pyedpro project.
+ This is a non exhaustive list of changes in the PyEdPro project. Git
+has a more complete list of logs.
+ 
+ mar-05-2019
+ 
+    Mouse scroll added shift / ctrl to accelarate 
+    Key Up/Down added shift / ctrl to accelarate 
+    Still V.67
  
  feb-13-2019
  
@@ -145,8 +152,10 @@ v034:
 
 v042:
 
- Moved to pyedpro, version number restarted at 043.
+  Moved to pyedpro, version number restarted at 043.
 
+
+  
 
 
 

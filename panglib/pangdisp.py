@@ -2,7 +2,6 @@
 
 import sys, os, re
 
-
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -60,10 +59,14 @@ class PangoView(Gtk.Window):
         self.set_title(self.__class__.__name__)
         #self.set_border_width(0)
         
+        img_dir = os.path.dirname(os.path.abspath(__file__))
+        img_path = os.path.join(img_dir, "pangview.png")
+    
         try:
-            self.set_icon_from_file("/usr/share/pangview/pang.png")
+            self.set_icon_from_file(img_path)
         except:
-            print "Cannot load app icon."
+            #print "Cannot load app icon."
+            pass
 
         #rect = self.get_allocation()
         
@@ -425,6 +428,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
 
 
 
