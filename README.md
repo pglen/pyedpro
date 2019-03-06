@@ -60,9 +60,9 @@ the configuration info into a SQLite database in the ~/.PyEdPro directory.
 
  Contributors are welcome. Requires python and pygtk / pygobject.
 
-PyEdPro Key Assignments
+                            PyEdPro Key Assignments
 
- This is a list of default key assignments for PyEdPro. The keys are assigned
+   This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
 added to the buffer. To implement a new feature follow a particular key's 
 execution path, and replicate functionality. It is eazy to follow, as it is
@@ -90,7 +90,7 @@ table driven.
     Ctrl-F                      -- Find in file or all buffers
     Ctrl-G                      -- Goto next match
     Shift-Ctrl-G                -- Goto previous match
-    Ctrl-H                      -- Cursor left
+    Ctrl-H                      -- Cursor left  (like in Emacs)
     Ctrl-I                      -- Insert count-up number
     Shift-Ctrl-I                -- Reset and insert count-up number
     Ctrl-J                      -- Down Arrow
@@ -111,7 +111,7 @@ table driven.
     Ctrl-Y                      -- Redo last undo
     Ctrl-Z                      -- Undo last change
                                 
-    Ctrl Up                     -- Go up 10 loines
+    Ctrl Up                     -- Go up 10 lines
     Ctrl Down                   -- Go down 10 lines
     Ctrl Left                   -- Go left one word
     Ctrl Right                  -- Go right one word
@@ -137,7 +137,7 @@ table driven.
     Alt Home                    -- Go to first buffer
     Alt End                     -- Go to last buffer
                                 
-    Home Home                   -- Go to begininig of page (PgUp)
+    Home Home                   -- Go to beginning of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl-Home)
                                 
     Alt-A                       -- Save All buffers
@@ -159,7 +159,7 @@ table driven.
     Alt-Q                       -- Hide top Pane
     Alt-R                       -- Redo
     Alt-S                       -- Search for text
-    Alt-T                       -- Find / Replace (taush)
+    Alt-T                       -- Find / Replace (Taush)
     Alt-U                       -- Undo
     Alt-V                       -- Select Current Word (till delimiters)
     Alt-W                       -- Write (Save) Current buffer
@@ -183,9 +183,9 @@ table driven.
     Alt-F2                      --  Gnome - Run App
     Alt-F4                      --  Gnome - Exit program (Use Alt-X)
     Alt-F7                      --  Gnome - Move window
-    Alt-F8                      --  Gnome - Resize window
+    Alt-F8                      --  Gnome - Re-size window
     Alt-F9                      --  Gnome - Minimize window
-    Alt-F10                     --  Gnome - Fumm Screen window
+    Alt-F10                     --  Gnome - Full Screen window
  
     Ctrl-Alt-H                  --  Left Arrow
     Ctrl-Alt-J                  --  Toggle coloring
@@ -227,12 +227,12 @@ Context dependent key assignments:
     Alt-O                       -- Change One (rescans buffer)
     Alt-A                       -- Change All
     Alt-Tab                     -- Navigate between search / main windows
-    Arrow Up/Down               -- Next / prev match
+    Arrow Up/Down               -- Next / Prev match
     ENTER                       -- Change selection
 
   Mouse actions:
 
-    Left Click                  -- Positon caret (text cursor)
+    Left Click                  -- position caret (text cursor)
     Right Click                 -- Call up right click menu
     Right Click (on spell)      -- Call up spell correction list
     Click - Hold - Drag (L-R)   -- Select
@@ -251,26 +251,17 @@ Notes:
                         text is checked
     *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
 
- An unrecognized key is inserted verbatim into the buffer, and a message is printed on the
-controlling terminal. If no action is listed, that key is unassigned. Most dialogs
+  Any unrecognized key is inserted verbatim into the buffer, and a message is printed 
+on the controlling terminal. If no action is listed, that key is unassigned. Most dialogs
 can be dismissed with the Esc key or the Alt-X key combination.
 
-  Peter Glen
-
+The author,
+      Peter Glen
 
 ![Screen Shot](image.png)
 
 Screen from Ubuntu:
 
 ![Screen Shot](pyedpro_ubuntu.png)
-
-
-
-
-
-
-
-
-
 
 

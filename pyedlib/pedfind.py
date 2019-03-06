@@ -34,7 +34,7 @@ def find(self, self2, replace = False):
         stridx =  xll - 1 
         myentry.set_text(strhist[stridx]);
         
-    print ("stridx", stridx)
+    #print ("stridx", stridx)
                             
     if replace:
         head = "pyedpro: Find / Replace"
@@ -160,7 +160,7 @@ def find(self, self2, replace = False):
     else:
         strhist.append(self.srctxt)
         
-    print("post", strhist)
+    #print("post", strhist)
     
     warnings.simplefilter("default")
     dialog.destroy()
@@ -674,6 +674,7 @@ def wnext(butt,self):
     pass
     
 #eof
+
 
 
 

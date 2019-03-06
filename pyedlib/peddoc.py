@@ -353,7 +353,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         yidx = self.ypos + self.caret[1]
         if event.direction == Gdk.ScrollDirection.SMOOTH:
             flag, directx, directy = event.get_scroll_deltas()
-            yidx += int(directy)
+            if event.state & Gdk.ModifierType.CONTROL_MASK:
+                yidx += 10 * int(directy)
+            elif event.state & Gdk.ModifierType.SHIFT_MASK:
+                yidx += 5 * int(directy)
+            else:
+                yidx += int(directy)
         else:
             if event.type == Gdk.ScrollDirection.UP:
                 yidx -= self.pgup / 2
@@ -880,7 +885,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # Call key handler
     def area_key(self, area, event):
     
-        #print "area_key", event
+        #print ("area_key", event)
         # Restart timer ticks
         pedconfig.conf.idle = pedconfig.conf.IDLE_TIMEOUT
         pedconfig.conf.syncidle = pedconfig.conf.SYNCIDLE_TIMEOUT
@@ -1610,6 +1615,13 @@ def run_async_time(win):
         pass
 
 #eof
+
+
+
+
+
+
+
 
 
 
