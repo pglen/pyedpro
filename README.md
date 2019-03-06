@@ -21,7 +21,8 @@ will complain, but if you start from the GUI, you can see the message in the
 log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install cairo'.
   
   I mainly run it in MSYS2, Ubuntu, Windows 10, and the Raspberry-Pi. 
-It behaves consistently on all the tested platforms.
+It behaves consistently on all the tested platforms. If you want an editor
+that works the same way in all your workspaces, PyEdPro is the one.
  
    PyEdPro.py has macro recording/play, search/replace, functional navigation,
 comment/string spell check, auto backup, persistent undo/redo, auto complete,
@@ -255,8 +256,11 @@ Notes:
     *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
 
   Any unrecognized key is inserted verbatim into the buffer, and a message is printed 
-on the controlling terminal. If no action is listed, that key is unassigned. Most dialogs
-can be dismissed with the Esc key or the Alt-X key combination.
+on the controlling terminal. If no action is listed, that key is unassigned.
+
+  As a matter of consistancey, most dialogs can be dismissed with the Esc key or 
+the Alt-X key combination. The main window can be exited by Alt-X or standard exit
+keys like Alt-F4; 
 
 The author,
 
@@ -268,7 +272,6 @@ Screen from Ubuntu:
 
 ![Screen Shot](pyedpro_ubuntu.png)
 
-
-
+License:    Open Source, FreeWare
 
 
