@@ -1213,9 +1213,10 @@ class ActHand:
 
     def alt_o(self, self2):
         # Simplified open
-        fname = pedofd.ofd("", self2)
-        if fname != "":
-            self2.mained.openfile(fname)
+        fnames = pedofd.ofd("", self2)
+        for fff in fnames: 
+            #print("Open", fff)
+            self2.mained.openfile(fff)
 
     def alt_q(self, self2):
         #print "ALT - Q"
@@ -1736,6 +1737,9 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
 
 
 

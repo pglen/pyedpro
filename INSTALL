@@ -1,14 +1,14 @@
                               INSTALL
                               
-   Just type 'make install'. You need to be root to install PyEdPro.
-(sudo ./install.py will work just as well)
+   Just copy the files anywhere and type ./pyedpro.py The only pre-requisite
+ is to have the pyedlib sub directory in the same directory as pyedpro.py
       
   PyEdpro requires GTK3, PyGobject and related libraries. Most distros
 come with them pre-installed, so PyEdPro.py should run on most any system 
 including Linux, Windoze and Macz. One of the motivations, of course is to 
 have the same text editor on all platforms.
 
- (PyEdPro is extensively tested on Linux and Windows)
+ (PyEdPro is extensively tested on Linux, Raspberry PI and Windows)
 
 To install pygtk3 on python 2/3 issue msys32:
 
@@ -19,7 +19,11 @@ Or on 64 bit:   (support incomplete as of dec/2018)
 
     pacman -S mingw-w64-x86_64-python3-gobject python-gi-cairo
 
- 
+To install pyedpro on Ubuntu:
+
+    sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo 
+            gir1.2-gtk-3.0
+  
    To display the keymap and documentation, PyEdPro needs pangview.py (included)
      
   If you do not have root access, PyEdPro will run from any directory, provided
@@ -33,14 +37,11 @@ Additional tweaks neede for different platforms:
   On Unix you may need to execute dos2unix pyedpro.py to allow it to run from 
 command line. 
 
-  Some platforms will need the 'python-gi-cairo' module. The syptom is that the 
-editor's text field remains blank. Pydit will issue appropriate messages for the
-missing library, install it with:
+  Some platforms will need the 'python-gi-cairo' module. The symptom is that the 
+editor's text field remains blank. PyedPro will issue appropriate messages on the
+controlling terminal for the missing library, install it with:
 
   sudo apt install python-gi-cairo
-  
-  
-  
   
 
 Enjoy.
@@ -48,6 +49,7 @@ Enjoy.
  
 
                                  
+
 
 
 

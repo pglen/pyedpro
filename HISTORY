@@ -3,7 +3,12 @@
  This is a non exhaustive list of changes in the PyEdPro project. Git
 has a more complete list of logs.
  
- mar-05-2019
+  mar-29-2019
+ 
+ .h files parsed as .c
+ multi select on custom file load (alt-o)
+
+  mar-05-2019
  
     Mouse scroll added shift / ctrl to accelarate 
     Key Up/Down added shift / ctrl to accelarate 
@@ -156,6 +161,7 @@ v042:
 
 
   
+
 
 
 

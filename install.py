@@ -42,6 +42,9 @@ def softmkdir(dirx):
 path = os.environ['PATH']; home = os.environ['HOME']
 user = os.environ['USER']
 
+print "This script is not updated for pyedpro"
+sys.exit(0)
+
 #print "path", path
 #print "home", home, "user", user
 
@@ -155,6 +158,7 @@ for source, dest, exe in dirlist:
 print 
 print "You may now use the", PROJNAME, "utility on your system."
 print
+
 
 
 

@@ -1563,7 +1563,7 @@ def run_async_time(win):
     
     sumw = [] ; lname = win.fname.lower()
     if win.text:
-        if ".c" in lname:
+        if ".c" in lname or ".h" in lname:
             try:
                 regex = re.compile(ckeywords)
                 for line in win.text:
@@ -1606,7 +1606,6 @@ def run_async_time(win):
             except:
                 pass
                 
-
     try:        
         win.appwin.update_treestore(sumw)
     except:
@@ -1614,58 +1613,5 @@ def run_async_time(win):
         print("run_async_time", sys.exc_info())    
         pass
 
-#eof
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# eof
 

@@ -258,7 +258,7 @@ Notes:
   Any unrecognized key is inserted verbatim into the buffer, and a message is printed 
 on the controlling terminal. If no action is listed, that key is unassigned.
 
-  As a matter of consistancey, most dialogs can be dismissed with the Esc key or 
+  As a matter of consistency, most dialogs can be dismissed with the Esc key or 
 the Alt-X key combination. The main window can be exited by Alt-X or standard exit
 keys like Alt-F4; 
 
@@ -273,5 +273,6 @@ Screen from Ubuntu:
 ![Screen Shot](pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
+
 
 

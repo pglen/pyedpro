@@ -17,6 +17,7 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
+
 def ofd(fname = None, self2 = None):
 
     warnings.simplefilter("ignore")
@@ -35,6 +36,8 @@ def ofd(fname = None, self2 = None):
     dialog.set_default_size(800, 600)
     #print dialog
 
+    dialog.xmulti = None;
+    
     #dialog.set_transient_for(pyedlib.pedconfig.conf.pe.mywin);
             
     dialog.connect("key-press-event", area_key, dialog)
@@ -97,18 +100,20 @@ def ofd(fname = None, self2 = None):
     populate(dialog)    
     dialog.set_focus(tview)    
     #dialog.set_focus(dialog.entry)
-    
     warnings.simplefilter("default")
     
+    res = []
     response = dialog.run()   
-    
     if response == Gtk.ResponseType.ACCEPT:
-        res = os.path.realpath(dialog.entry.get_text())
-    else:
-        res = ""        
-    #print "response", response, "res", res    
+        # Is multi selection?
+        if  dialog.xmulti:
+            for bb in dialog.xmulti:
+                res.append(os.path.realpath(bb));
+        else:
+            res.append(os.path.realpath(dialog.entry.get_text()))
+        
+    #print ("response", response, "res", res  )
     dialog.destroy()
-    
     return res
  
 def butt_click(butt, dialog):
@@ -232,6 +237,7 @@ def create_ftree(ts, text = None):
         
     # create the tview using ts
     tv = Gtk.TreeView(model=ts)
+    
     tv.set_search_column(0)
     tv.set_headers_clickable(True)
     #tv.set_enable_search(True)
@@ -272,45 +278,54 @@ def create_ftree(ts, text = None):
     tvcolumn4.add_attribute(cell4, 'text', 3)
     tv.append_column(tvcolumn4)
 
-    return tv
-
-def tree_sel_row(xtree, dialog):
-    #print "tree_sel_row", xtree
-    sel = xtree.get_selection()
-    xmodel, xiter = sel.get_selected()
-    if(xiter):
-        xstr = xmodel.get_value(xiter, 0)        
-    else:
-        xstr = ""
-    #xstr2 = xmodel.get_value(xiter, 1)        
-    #xstr3 = xmodel.get_value(xiter, 2)        
-    #print xstr, xstr2, xstr3
-        
-    if os.path.isdir(xstr):
-        dialog.entry.set_text("")
-    else:
-         dialog.entry.set_text(xstr)        
+    tv.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
     
+    return tv
+    sel.get_selected()
+    
+def tree_sel_row(xtree, dialog):
+    #print ("tree_sel_row", xtree)
+    xstr = ""
+    sel = xtree.get_selection()
+    xmodel, xpath = sel.get_selected_rows()
+    if xpath:
+        cumm = ""  
+        dialog.xmulti = []
+        for aa in xpath:
+            xiter2 = xmodel.get_iter(aa)
+            xstr = xmodel.get_value(xiter2, 0)        
+            #print("mul selstr:", xstr )
+            cumm += '"' + xstr + '" '
+            dialog.xmulti.append(xstr)
+        dialog.entry.set_text(cumm)
+    else:
+        dialog.entry.set_text("")
+        xstr = ""
+        
 def tree_sel(xtree, xiter, xpath, dialog):
     #print "tree_sel", xtree, xiter, xpath
     sel = xtree.get_selection()
-    xmodel, xiter = sel.get_selected()
-    xstr = xmodel.get_value(xiter, 0)        
-    
-    #xstr2 = xmodel.get_value(xiter, 1)        
-    #xstr3 = xmodel.get_value(xiter, 2)        
-    #print xstr, xstr2, xstr3
+    xmodel, xpath = sel.get_selected_rows()
+    if xpath:
+        for aa in xpath:
+            xiter2 = xmodel.get_iter(aa)
+            xstr = xmodel.get_value(xiter2, 0)        
+            print("mul selstr: ", "'" + xstr + "'" )
+            if click_dir_action(xstr):
+                dialog.xmulti = []
+                populate(dialog)
+                return
+        dialog.response(Gtk.ResponseType.ACCEPT)
         
+# If directory, change to it
+def click_dir_action(xstr):
     if xstr[0] == "[":
          xstr = xstr[1:len(xstr)-1]    
     if os.path.isdir(xstr):
         #print "dir", xstr
         os.chdir(xstr)
-        populate(dialog)
-    else:
-        dialog.entry.set_text(xstr)        
-        dialog.response(Gtk.ResponseType.ACCEPT)
-
+        return True  
+    
 # Call key handler
 def area_key(area, event, self):
 
@@ -373,6 +388,29 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
