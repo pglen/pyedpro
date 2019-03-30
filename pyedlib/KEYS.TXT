@@ -1,4 +1,4 @@
-                            PyEdPro Key Assignments
+                             PyEdPro Key Assignments
 
    This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
@@ -194,3 +194,4 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt-X key combination.
 
 // EOF
+

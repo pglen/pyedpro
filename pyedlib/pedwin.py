@@ -797,6 +797,8 @@ class EdMainWindow():
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if flag:
             vcurr.area.saveas()
+            self.mywin.set_title("pyedpro: " + vcurr.area.fname);
+        
         else:
             vcurr.area.save()
 
@@ -1221,7 +1223,7 @@ class EdMainWindow():
         '''
 # ------------------------------------------------------------------------
 
-def OnExit(arg, prompt = True):
+def     OnExit(arg, prompt = True):
 
     arg.set_title("Exiting ...")
 
@@ -1252,53 +1254,39 @@ def OnExit(arg, prompt = True):
         pedconfig.conf.sql.put("ww", ww)
         pedconfig.conf.sql.put("hh", hh)
 
-    # Save current doc:
+    # Save current doc to config memory: 
     vcurr = notebook.get_nth_page(notebook.get_current_page())
     if vcurr:
         pedconfig.conf.sql.put("curr", vcurr.area.fname)
 
-    # Prompt for save files
-    nn = notebook.get_n_pages(); cnt = 0
-    while True:
-        if cnt >= nn: break
-        ppp = notebook.get_nth_page(cnt)
-        #print "page:", ppp.area
+    # Prompt for save files. Build list and execute saves
+    parr = []
+    for aa in range(notebook.get_n_pages()):
+        parr.append(notebook.get_nth_page(aa))
+    
+    cnt2 = 0
+    for ppp in parr:
+        #print ("close:", ppp.area.fname)
         ppp.area.saveparms()
-
-        ss = "/sess_%d" % cnt
-        if cnt < 30:
+        ss = "/sess_%d" % cnt2
+        if cnt2 < 30:
             pedconfig.conf.sql.put(ss, ppp.area.fname)
+            cnt2 += 1
 
-        if prompt:
-            if ppp.area.changed:
-                msg = "\nWould you like to save:\n\n  \"%s\" \n" % ppp.area.fname
-                rp = pedync.yes_no_cancel("pyedpro: Save File ?", msg)
-
-                if rp == Gtk.ResponseType.YES:
-                    ppp.area.save()
-
-                if rp == Gtk.ResponseType.NO:
-                    #print "Gtk.RESPONSE_NO"
-                    pass
-                if  rp == Gtk.ResponseType.CANCEL or \
-                    rp == Gtk.ResponseType.REJECT or \
-                    rp == Gtk.ResponseType.CLOSE  or \
-                    rp == Gtk.ResponseType.DELETE_EVENT:
-                    return
-        else:
-            # Rescue to temporary:
-            if ppp.area.changed:
+        if ppp.area.changed:
+            if prompt:
+                # This way all the closing doc functions get called
+                if ppp.area.closedoc():
+                    return 
+            else:
+                # Rescue to temporary:
                 hhh = hash_name(ppp.area.fname) + ".rescue"
                 xfile = pedconfig.conf.config_dir + "/" + hhh
                 if(pedconfig.conf.verbose):
                     print("Rescuing", xfile)
                 writefile(xfile, ppp.area.text)
                 
-        # This way all the closing doc function gets called
-        ppp.area.closedoc()
-        cnt += 1
-
-    pedconfig.conf.sql.put("cnt", cnt)
+    pedconfig.conf.sql.put("cnt", cnt2)
 
     if(pedconfig.conf.verbose):
         print("Exiting")
@@ -1366,176 +1354,5 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

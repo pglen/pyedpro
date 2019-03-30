@@ -648,9 +648,10 @@ class ActHand:
     def ctrl_c(self, self2):
         #print "CTRL - C"
         if self2.xsel == -1 or  self2.ysel == -1:
-            self2.mained.update_statusbar("Nothing selected, copying line.")
+            #self2.mained.update_statusbar("Nothing selected, copying line.")
+            self2.mained.update_statusbar("Nothing selected, refuse to copy.")
 
-            disp2 = Gdk.Display()
+            '''disp2 = Gdk.Display()
             disp = disp2.get_default()
             clip = Gtk.Clipboard.get_default(disp)
             
@@ -659,7 +660,7 @@ class ActHand:
             if self.currclip == 0:
                 #print "set clip:",  self2.text[yidx]
                 clip.set_text(self2.text[yidx], len(self2.text[yidx]))   
-            self.clips[self.currclip] = self2.text[yidx]
+            self.clips[self.currclip] = self2.text[yidx]'''
             return
             
         # Normalize
@@ -1418,10 +1419,17 @@ class ActHand:
         #print "F7"
         self.keyhand.reset()
         if self2.record:
-            self2.mained.update_statusbar("Ended recording.")
             self2.record = False
+            # Nothing recorded, restore old
+            if self2.recarr == []:
+                self2.mained.update_statusbar("Nothing recorded, resored old macro.")
+                self2.recarr = self2.recarr2
+            else:
+                self2.mained.update_statusbar("Ended recording.")
+            
         else:
             self2.mained.update_statusbar("Started recording ...")
+            self2.recarr2 = self2.recarr   
             self2.recarr = []
             self2.record = True
         self.keyhand.reset()
@@ -1447,7 +1455,7 @@ class ActHand:
             tt, kk, ss, www, sss, \
               self.keyhand.shift, self.keyhand.ctrl, \
                                 self.keyhand.alt = self2.recarr[idx]
-            idx+=1
+            idx += 1
 
             # Synthesize keystroke. We do not replicate state as
             # pyedpro maintains its own internally. (see keyhand.reset())
@@ -1457,24 +1465,19 @@ class ActHand:
                 ttt = Gdk.EventType.KEY_RELEASE
             
             #print "playing macro", tt, kk, ss
-            
             event = Gdk.EventKey()
             event.type = ttt
             #event.time = time.clock() * 1000  
             event.keyval = kk
             event.window = www
             event.string  = sss
-            
             #print "play event", event, event.type, event.keyval
             
             self.keyhand.state2 = ss
             self.keyhand.handle_key2(self2, None, event)
-            
             if anim:
                 usleep(30)
-                
-            print()   
-            
+            #print()   
         # If the state gets out or sync ...
         self.keyhand.reset()
         self2.mained.update_statusbar("Ended Play.")
@@ -1737,6 +1740,12 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
 
 
 

@@ -25,7 +25,6 @@ def yes_no_cancel(title, message, cancel = True):
     dialog = Gtk.Dialog(title,
                    None,
                    Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
-
     
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
@@ -58,14 +57,17 @@ def yes_no_cancel(title, message, cancel = True):
     
     dialog.show_all()
     response = dialog.run()       
+    
     # Convert all responses to cancel
     if  response == Gtk.ResponseType.CANCEL or \
-        response == Gtk.ResponseType.REJECT or \
-        response == Gtk.ResponseType.CLOSE  or \
-        response == Gtk.ResponseType.DELETE_EVENT:
+            response == Gtk.ResponseType.REJECT or \
+                response == Gtk.ResponseType.CLOSE  or \
+                    response == Gtk.ResponseType.DELETE_EVENT:
         response = Gtk.ResponseType.CANCEL        
+        
     dialog.destroy()
     
+    #print("YNC result:", response);
     return  response 
 
 def yn_key(win, event, cancel):
@@ -144,7 +146,9 @@ def about_key(win, event):
 # Show a regular message:
 
 def message(strx, title = None):
-
+          
+    #print("called: message()", strx)      
+          
     icon = Gtk.STOCK_INFO
     dialog = Gtk.MessageDialog(None, None,
                    Gtk.MessageType.INFO, Gtk.ButtonsType.CLOSE, strx)
@@ -164,6 +168,15 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
+
+
+
+
+
+
+
+
 
 
 

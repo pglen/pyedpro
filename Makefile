@@ -23,7 +23,13 @@ install:
 pack:
 	@./pack.sh
 
+git:
+	git add .
+	git commit -m autocheck
+	git push
+
 # End of Makefile
+
 
 
 

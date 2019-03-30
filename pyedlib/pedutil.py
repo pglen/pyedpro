@@ -13,6 +13,7 @@ from gi.repository import GObject
 
 #import pedwin
 from . import pedconfig
+from . import pedync
 
 # Cut leading space in half
 
@@ -602,7 +603,10 @@ def save_sess(sesslist):
 def done_sess2_fc(win, resp, fc):
 
     #print  ("done_sess2_fc", resp)
-    # Back to original dir
+    ddd = fc.old
+    sesslist = []
+    
+    # Gather list of files
     if resp == Gtk.ButtonsType.OK:        
         try:
             fname = win.get_filename()
@@ -612,23 +616,28 @@ def done_sess2_fc(win, resp, fc):
                 #print("Loading session file under:", fname) 
                 fh = open(fname, "r")
                 sesslist = pickle.load(fh)
-                for fff in sesslist.split("\n"):
-                    #print ("Session file:", "'" + fff + "'") 
-                    if fff != "":
-                        pedconfig.conf.pedwin.openfile(fff)
-
+                
         except:
             print("Cannot load session file", sys.exc_info())
+            message("Cannot load session file")
     else:
         pass
         #print("Cancelled") 
         
-    os.chdir(os.path.dirname(fc.old))        
     win.destroy()
-
+        
+    for fff in sesslist.split("\n"):
+        #print ("Session file:", "'" + fff + "'") 
+        if fff != "":
+            pedconfig.conf.pedwin.openfile(fff)
+            usleep(30)
+        
+    # Back to original dir
+    os.chdir(os.path.dirname(fc.old))        
+    
 # Load session from file in the config dir
 
-def load_sess():
+def     load_sess():
 
     but =   "Cancel", Gtk.ButtonsType.CANCEL, "Load Session", Gtk.ButtonsType.OK
     fc = Gtk.FileChooserDialog("Save Session", None, Gtk.FileChooserAction.OPEN, \
@@ -648,4 +657,7 @@ def load_sess():
     
 
 # EOF
+
+
+
 

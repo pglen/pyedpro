@@ -1009,7 +1009,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         elif ttt == 11:
             self.mained.activate_exit()
         else:
-            print("Invalid menu selected")    
+            print("Invalid menu item selected")    
     
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
@@ -1067,6 +1067,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         return rect.width
 
     def save(self):
+        # Always save params
+        self.saveparms()
         strx = ""        
         if not self.changed:
             strx = "File is not modified." 
@@ -1115,17 +1117,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.scol = flag
         self.invalidate()
         
-    def closedoc(self):
+    def closedoc(self, noprompt = False):
         strx = "Closing '{0:s}'".format(self.fname) 
         if(pedconfig.conf.verbose):
-            print(strx)
+            print("Closing doc:", strx)
         self.mained.update_statusbar(strx)
         self.saveparms()
         
         # Add to accounting:
         utils.logentry("Closed File", self.start_time, self.fname)
         
-        return self.prompt_save(False)
+        return self.prompt_save(noprompt)
        
     # Load file into this buffer, return False on failure
     def loadfile(self, filename, create = False):
@@ -1172,7 +1174,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if ext == aa:
                 self.colflag = True
                 break
-        '''        
+        ''' 
+        # Let the system breed
+        usleep(30)
+                   
         # Color ON
         self.colflag = True
         return True
@@ -1192,6 +1197,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         
         self.startxxx  =  pedconfig.conf.sql.get_int(hhh + "/xx")
         self.startyyy  =  pedconfig.conf.sql.get_int(hhh + "/yy")
+        print("got cursor pos:", self.fname, self.startxxx, self.startyyy)
         # Note: we set cursor on first focus
         
     # Save per file parms (cursor, fname, etc)         
@@ -1228,7 +1234,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         
         if not self.changed:
             #print "not changed", self.fname
-            return 
+            return False 
         
         msg = "\nWould you like to save:\n\n  \"%s\" \n" % self.fname
         rp = pedync.yes_no_cancel("pyedpro: Save File ?", msg)
@@ -1614,4 +1620,12 @@ def run_async_time(win):
         pass
 
 # eof
+
+
+
+
+
+
+
+
 
