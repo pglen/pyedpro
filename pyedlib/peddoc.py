@@ -331,9 +331,19 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print ("focus_in_cb")
         self.focus = True
         os.chdir(os.path.dirname(self.fname))
+        xstat = os.stat(self.fname)
+        #print(self.fname, "stat", self.stat.st_mtime, "xstat", xstat.st_mtime)
+        
+        if self.stat.st_mtime !=  xstat.st_mtime:
+            pedync.message("File changed outside PyEdPro. Please check if needs reload.");
+         
+        # Update stat info
+        self.stat = xstat
+                    
         self.update_bar2()
         self.needscan = True 
         self.do_chores()
+        
         
     def grab_focus_cb(self, widget):
         #print "grab_focus_cb", widget
@@ -1132,6 +1142,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # Load file into this buffer, return False on failure
     def loadfile(self, filename, create = False):
         self.fname = filename
+        self.stat = os.stat(self.fname)
+        #print("stat", self.stat.st_mtime)
         self.start_time = time.time();
         if self.fname == "": 
             strx = "Must specify file name."
@@ -1197,7 +1209,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         
         self.startxxx  =  pedconfig.conf.sql.get_int(hhh + "/xx")
         self.startyyy  =  pedconfig.conf.sql.get_int(hhh + "/yy")
-        print("got cursor pos:", self.fname, self.startxxx, self.startyyy)
+        #print("got cursor pos:", self.fname, self.startxxx, self.startyyy)
         # Note: we set cursor on first focus
         
     # Save per file parms (cursor, fname, etc)         
@@ -1280,6 +1292,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # Add to accounting:
         utils.logentry("Wrote File", self.start_time, self.fname)
         
+        # Update stat info
+        self.stat = os.stat(self.fname)
+
         return err
 
     def delundo(self):
@@ -1620,6 +1635,12 @@ def run_async_time(win):
         pass
 
 # eof
+
+
+
+
+
+
 
 
 
