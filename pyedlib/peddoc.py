@@ -126,7 +126,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.nokey = False 
         self.newword = False
         self.scrtab = False
-        
+        self.stat = None
+                
         # Parent widget                 
         Gtk.DrawingArea.__init__(self)
         self.set_can_focus(True)
@@ -330,20 +331,21 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def focus_in_cb(self, widget, event):
         #print ("focus_in_cb")
         self.focus = True
-        os.chdir(os.path.dirname(self.fname))
-        xstat = os.stat(self.fname)
-        #print(self.fname, "stat", self.stat.st_mtime, "xstat", xstat.st_mtime)
         
-        if self.stat.st_mtime !=  xstat.st_mtime:
-            pedync.message("File changed outside PyEdPro. Please check if needs reload.");
-         
-        # Update stat info
-        self.stat = xstat
-                    
+        try:
+            os.chdir(os.path.dirname(self.fname))
+            xstat = os.stat(self.fname)
+            #print(self.fname, "stat", self.stat.st_mtime, "xstat", xstat.st_mtime)
+            if self.stat.st_mtime !=  xstat.st_mtime:
+                pedync.message("File changed outside PyEdPro. Please check if needs reload.");
+            # Update stat info
+            self.stat = xstat
+     	except:
+            pass
+            
         self.update_bar2()
         self.needscan = True 
         self.do_chores()
-        
         
     def grab_focus_cb(self, widget):
         #print "grab_focus_cb", widget
@@ -814,7 +816,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(ckeywords)
-                    for aa in range(sline, 0, -1):
+                    for aa in range(sline - 1, 0, -1):
                         line = self.text[aa]
                         res = regex.search(line)
                         if res:
@@ -855,7 +857,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(pykeywords2)
-                    for aa in range(int(sline), 0, -1):
+                    for aa in range(int(sline) - 1, 0, -1):
                         line = self.text[aa]
                         res = regex.search(line)
                         if res:
@@ -1142,7 +1144,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # Load file into this buffer, return False on failure
     def loadfile(self, filename, create = False):
         self.fname = filename
-        self.stat = os.stat(self.fname)
+        try:
+            self.stat = os.stat(self.fname)
+        except:
+            pass
+            
         #print("stat", self.stat.st_mtime)
         self.start_time = time.time();
         if self.fname == "": 
@@ -1635,6 +1641,13 @@ def run_async_time(win):
         pass
 
 # eof
+
+
+
+
+
+
+
 
 
 

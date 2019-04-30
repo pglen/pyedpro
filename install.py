@@ -64,15 +64,15 @@ if commands.getoutput("whoami").strip() != "root":
     print "FAILED: You must be root to install", PROJNAME
     sys.exit()
            
-#print "Verifying dependencies:"
+print "Verifying dependencies:"
  
 try:
-    import pygtk
-    pygtk.require('2.0')
-    import gtk
-    import gobject
+
+    gi.require_version("Gtk", "4.0")
+    from gi.repository import Gtk
+
 except ImportError:
-    print "  >>>  Missing Dependencies: Python GTK+ bindings (python-gtk2)."
+    print "  >>>  Missing Dependencies: Python GTK+ bindings"
     depfailed = True
 
 try:
@@ -101,7 +101,8 @@ if depfailed:
 
 print "All dependencies are met."
 
-shared  = "/usr/share" + "/" + PROJNAME
+shared =  "/usr/share"
+xshared  = "/usr/share" + "/" + PROJNAME
 bindir = "/usr/bin"
 
 #print "prefix:", prefix
@@ -109,14 +110,14 @@ bindir = "/usr/bin"
 
     # --- file  ---  target dir ---- exec flag ----
 filelist = \
-    ['pyedpro.py',       bindir,         True ],     \
-    ['pangview.py',     bindir,         True ],     \
-    ['README',          shared,         False ],     \
-    ['HISTORY',         shared,         False ],     \
+    ['pyedpro.py',      bindir,          True ],     \
+    ['pangview.py',     bindir,          True ],     \
+    ['README',          xshared,         False ],     \
+    ['HISTORY',         xshared,         False ],     \
 
     # --- dir  ---  target dir ---- root owner flag ----
 dirlist = \
-    [PROJNAME,    "/usr/share",    True ], \
+    [PROJNAME,     xshared,        True ], \
     [PROJLIB,      pylib,          True ], \
     [PROJLIB2,     pylib,          True ], \
 
@@ -158,6 +159,8 @@ for source, dest, exe in dirlist:
 print 
 print "You may now use the", PROJNAME, "utility on your system."
 print
+
+
 
 
 

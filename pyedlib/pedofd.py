@@ -310,7 +310,7 @@ def tree_sel(xtree, xiter, xpath, dialog):
         for aa in xpath:
             xiter2 = xmodel.get_iter(aa)
             xstr = xmodel.get_value(xiter2, 0)        
-            print("mul selstr: ", "'" + xstr + "'" )
+            #print("mul selstr: ", "'" + xstr + "'" )
             if click_dir_action(xstr):
                 dialog.xmulti = []
                 populate(dialog)
@@ -388,6 +388,7 @@ def mode2str(mode):
         
     estr = dstr + estr
     return estr
+
 
 
 

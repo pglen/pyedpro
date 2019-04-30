@@ -32,7 +32,7 @@ table driven.
     Ctrl-I                      -- Insert count-up number
     Shift-Ctrl-I                -- Reset and insert count-up number
     Ctrl-J                      -- Down Arrow
-    Ctrl-K                      -- Up Arrow
+    Ctrl-K                      -- Up Arrow 
     Ctrl-L                      -- Right Arrow
     Ctrl-M                      -- Toggle auto correct
     Ctrl-N                      -- New File
@@ -141,7 +141,7 @@ table driven.
     F9                           -- Toggle code spell check****
     Shift-F9                     -- Toggle full file (text) spell check
     F10                          -- Application's main - Menu
-    shift F10                    -- Notebook tab menu (if enabled)
+    shift-F10                    -- Notebook tab menu (if enabled)
     F11                          -- Toggle full Screen
     F12                          -- Cursor Locator
     Shift-F12                    -- Reveal tabs and spaces and 80 column marker
@@ -194,5 +194,6 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt-X key combination.
 
 // EOF
+
 
 

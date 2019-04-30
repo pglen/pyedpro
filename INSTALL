@@ -1,4 +1,4 @@
-                              INSTALL
+                                   INSTALL
                               
    Just copy the files anywhere and type ./pyedpro.py The only pre-requisite
  is to have the pyedlib sub directory in the same directory as pyedpro.py
@@ -49,6 +49,7 @@ Enjoy.
  
 
                                  
+
 
 
 
