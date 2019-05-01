@@ -121,15 +121,20 @@ table driven.
     Alt-F2                      --  Gnome - Run App
     Alt-F4                      --  Gnome - Exit program (Use Alt-X)
     Alt-F7                      --  Gnome - Move window
-    Alt-F8                      --  Gnome - Resize window
+    Alt-F8                      --  Gnome - Re-size window
     Alt-F9                      --  Gnome - Minimize window
     Alt-F10                     --  Gnome - Full Screen window
  
+    Ctrl-Alt-A                  --  Cleanse non ascii
+    Ctrl-Alt-B                  --  Not implemented
+                                                               
+    # more coming
+    
     Ctrl-Alt-H                  --  Left Arrow
     Ctrl-Alt-J                  --  Toggle coloring
     Ctrl-Alt-K                  --  Toggle Hex View
     Ctrl-Alt-L                  --  Lowercase word
-                                                               
+    
     F1                           -- Help
     F2                           -- Dev Help
     F3                           -- Key assignments Help
@@ -194,6 +199,8 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt-X key combination.
 
 // EOF
+
+
 
 
 

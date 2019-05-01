@@ -195,6 +195,10 @@ class KeyHand:
             
             [Gdk.KEY_a, self.act.ctrl_alt_a],
             [Gdk.KEY_A, self.act.ctrl_alt_a],
+            
+            [Gdk.KEY_b, self.act.ctrl_alt_b],
+            [Gdk.KEY_B, self.act.ctrl_alt_b],
+            
             ]
 
         # Separate keytab on alt for easy customization. 
@@ -484,6 +488,7 @@ class KeyHand:
                         self2.flash(False)
                
         return ret
+
 
 
 

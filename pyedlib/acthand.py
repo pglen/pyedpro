@@ -611,8 +611,27 @@ class ActHand:
     # --------------------------------------------------------------------
     # No ctrl - alt handlers yet (reserved for gnome shortcuts)
     
+    # Cleanse non ascii
     def ctrl_alt_a(self, self2):
-        #print "CTRL - ALT - A"
+        #print ("CTRL - ALT - A")
+        xidx = self2.caret[0] + self2.xpos;
+        yidx = self2.caret[1] + self2.ypos
+        line = self2.text[yidx]
+        #print("line: ", line)
+        newline = ""
+        for aa in line:
+            #print("%d" % ord(aa)),
+            if ord(aa) < 128:
+                newline += aa
+            
+        if line != newline:
+            self2.text[yidx] = newline  
+            self2.mained.update_statusbar("Cleaned non ASCII characters.")
+            self2.invalidate()           
+        pass
+
+    def ctrl_alt_b(self, self2):
+        #print ("CTRL - ALT - B")
         pass
 
     def ctrl_alt_h(self, self2):
@@ -1740,6 +1759,15 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
+
+
+
 
 
 
