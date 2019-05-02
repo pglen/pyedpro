@@ -1,5 +1,5 @@
 #!/usr/bin/env python
- 
+
 from __future__ import absolute_import
 from __future__ import print_function
 import signal, os, time, sys, pickle
@@ -19,7 +19,7 @@ from . import pedync
 
 def cut_lead_space(xstr, divi = 2):
     res = ""; cnt = 0; idx = 0; spcnt = 0
-    xlen = len(xstr); 
+    xlen = len(xstr);
     while True:
         if cnt >= xlen: break
         chh = xstr[idx]
@@ -29,51 +29,60 @@ def cut_lead_space(xstr, divi = 2):
                spcnt = 0; res += " "
         else:
             res += xstr[idx:]
-            break                     
+            break
         idx += 1
     return res
-    
+
 # ------------------------------------------------------------------------
 # Let the higher level deal with errors.
 
-def readfile(strx, sep = "\n"):
+def     readfile(strx, sep):
 
-    text = []                  
+    text = []
     if strx == "":
         return text
-      
+
     # Now read and parse
-    f = open(strx); 
-    buff = f.read();
-    
-    # Deteremine separator, use a partial search
+    f = open(strx);  buff = f.read();  f.close()
+
+    # Deteremine separator, use a partial length search
     if buff.find("\r\n", 0, 300) >= 0:
         sep = "\r\n"
     elif buff.find("\n\r", 0, 300) >= 0:
         sep = "\n\r"
     elif buff.find("\r", 0, 300) >= 0:
         sep = "\r"
-    elif buff.find("\n", 0, 300) >= 0:
+    else:
         sep = "\n"
-  
-    #print strx, ord(sep[0])
-      
-    text = str.split(buff, sep)
-    f.close()
-    
+
+    text2 = str.split(buff, sep)
+
+    #if "Makefile" in strx:
+    #    print(strx, "sep: '"+ sep + "'", ord(sep[0]), ord(sep[1]))
+
+    # Clean out spuriously occurring \r and \n
+    # Example: ST Microelectronics Makefiles
+
+    text = []
+    for aa in text2:
+        #print("'%s\n" % aa)
+        bb = aa.replace("\r", "");
+        cc = bb.replace("\n", "");
+        text.append(cc)
+    #text2 = []
     return text
 
 # ------------------------------------------------------------------------
 # Propagate exceptions to higher level
 
-def  writefile(strx, buff):          
-    #print "writefile", strx
+def  writefile(strx, buff, sep = "\n"):
+    #print ("writefile", strx, sep)
     ret = True, ""
     if strx != "":
         try:
             f = open(strx, "w")
             for aa in buff:
-                f.write(aa); f.write("\n")
+                f.write(aa.rstrip() + sep)
             f.close()
         except:
             ret = False, sys.exc_info()[1]
@@ -86,7 +95,7 @@ def get_img_path(fname):
     img_dir = os.path.join(os.path.dirname(pedconfig.conf.mydir), \
                     'pyedlib/images')
     img_path = os.path.join(img_dir, fname)
-    #print "img_path", img_path 
+    #print "img_path", img_path
     return img_path
 
 # Expand file name to file path in the exec dir:
@@ -120,7 +129,7 @@ def register_stock_icons():
     try:
         #pixbuf = Gdk.pixbuf_new_from_file(img_path)
         # Register icon to accompany stock item
-     
+
         # The gtk-logo-rgb icon has a white background, make it transparent
         # the call is wrapped to (gboolean, guchar, guchar, guchar)
         #transparent = pixbuf.add_alpha(True, chr(255), chr(255),chr(255))
@@ -148,7 +157,7 @@ def register_stock_icons():
 
 def genstr(strx, num):
     ret = ""
-    while num:        
+    while num:
         ret += strx; num -= 1
     return ret
 
@@ -156,7 +165,7 @@ def cntleadchar(strx, chh):
     xlen = len(strx); pos = 0; ret = ""
     if xlen == 0: return ret
     while pos < xlen:
-        if strx[pos] != chh:        
+        if strx[pos] != chh:
             break
         ret += chh
         pos = pos + 1
@@ -168,7 +177,7 @@ def nextchar(strx, xchar, start):
     while True:
         if idx > end: break
         chh = strx[idx]
-        if chh == xchar: break               
+        if chh == xchar: break
         idx += 1
     return idx
 
@@ -179,7 +188,7 @@ def xnextchar( strx, xchar, start):
         if idx > end: break
         chh = strx[idx]
         if chh != xchar:
-            break               
+            break
         idx += 1
     return idx
 
@@ -190,30 +199,30 @@ def xnextchar2( strx, xchar, start):
         if idx > end: break
         chh = strx[idx]
         if xchar.find(chh) == -1:
-            break               
+            break
         idx += 1
     return idx
 
 # Find prev char
 def prevchar( strx, xchar, start):
-    idx = start; 
+    idx = start;
     idx = min(len(strx) - 1, idx)
     while True:
         if idx < 0: break
         chh = strx[idx]
-        if chh == xchar: break               
-        idx -= 1            
+        if chh == xchar: break
+        idx -= 1
     return idx
 
 # Find prev not char
 def xprevchar( strx, xchar, start):
-    idx = start; 
+    idx = start;
     idx = min(len(strx) - 1, idx)
     while True:
         if idx < 0: break
         chh = strx[idx]
         if chh != xchar:
-            break               
+            break
         idx -= 1
     return idx
 
@@ -224,7 +233,7 @@ def shortenstr(xstr, xlen):
         xlen -= 5
         ret = xstr[:xlen / 2] + "..." + xstr[zlen - xlen / 2:]
     else:
-        ret = xstr        
+        ret = xstr
 
     return ret
 
@@ -235,7 +244,7 @@ def handle_keys(host):
         if event.keyval == Gdk.KEY_Alt_L or \
                 event.keyval == Gdk.KEY_Alt_R:
             #print "Alt down"
-            host.alt = True; 
+            host.alt = True;
         elif event.keyval == Gdk.KEY_Control_L or \
                 event.keyval == Gdk.KEY_Control_R:
             #print "Ctrl down"
@@ -258,8 +267,8 @@ def handle_keys(host):
         if event.keyval == Gdk.KEY_Shift_L or \
               event.keyval == Gdk.KEY_Shift_R:
             #print "shift up"
-            host.shift = False; 
-        
+            host.shift = False;
+
 # -----------------------------------------------------------------------
 # Sleep just a little, but allow the system to breed
 
@@ -270,8 +279,8 @@ def  usleep(msec):
     while True:
         if time.clock() > got_clock:
             break
-        Gtk.main_iteration_do(False)        
-      
+        Gtk.main_iteration_do(False)
+
 # Create a one way hash of a name. Not cryptographically secure,
 # but it can make a good unique name in hex.
 
@@ -297,9 +306,9 @@ def untab_str(strx, tabstop = 4):
         if  chh == "\t":
             # Generate string
             spaces = tabstop - (cnt % tabstop)
-            ttt = ""; 
+            ttt = "";
             for aa in range(spaces):
-                ttt += " "            
+                ttt += " "
             res += ttt
             cnt += spaces
         else:
@@ -311,7 +320,7 @@ def untab_str(strx, tabstop = 4):
 # Calculate tabs up to till count
 def calc_tabs(strx, till, tabstop = 4):
     idx = 0; cnt = 0
-    xlen = min(len(strx), till); 
+    xlen = min(len(strx), till);
     while True:
         if idx >= xlen: break
         chh = strx[idx]
@@ -325,7 +334,7 @@ def calc_tabs(strx, till, tabstop = 4):
 # Calculate tabs up to till count, include full length
 def calc_tabs2(strx, till, tabstop = 4):
     idx = 0; cnt = 0; slen = len(strx)
-    xlen = min(slen, till); 
+    xlen = min(slen, till);
     while True:
         if idx >= xlen: break
         chh = strx[idx]
@@ -334,7 +343,7 @@ def calc_tabs2(strx, till, tabstop = 4):
         else:
             cnt += 1
         idx += 1
-        
+
     # Pad full lengh
     if till > slen:
         cnt += till - slen
@@ -356,9 +365,9 @@ def decalc_tabs(strx, pos, tabstop = 4):
             cnt += tabstop - (cnt % tabstop)
         else:
             cnt += 1
-        if cnt >= pos: break 
+        if cnt >= pos: break
         idx += 1
-        
+
     return idx
 
 # Remove up to num leading spaces
@@ -377,16 +386,16 @@ def rmlspace(strx, num):
 def  selword(strx, xidx):
 
     #print "selword:", strx, xidx
-    
-    xlen = len(strx); 
-    if xlen == 0: return 0, 0        
+
+    xlen = len(strx);
+    if xlen == 0: return 0, 0
     if xidx >= xlen: return xlen, xlen
-    
+
     if strx[xidx] == " ":
         return xidx, xidx
-        
+
     cnte = xidx; cntb = xidx
-    
+
     # Find space to end
     while True:
         if cnte >= xlen: break
@@ -395,14 +404,14 @@ def  selword(strx, xidx):
         cnte += 1
     # Find space to begin
     while True:
-        if cntb < 0:      
-            cntb += 1    
+        if cntb < 0:
+            cntb += 1
             break
         if strx[cntb] == " " or strx[cntb] == "\t":
             cntb += 1               # Already on space, back off
             break
-        cntb -= 1            
-        
+        cntb -= 1
+
     return cntb, cnte
 
 # ------------------------------------------------------------------------
@@ -411,15 +420,15 @@ def  selword(strx, xidx):
 def  selasci(strx, xidx, additional = None):
 
     #print "selasci:", "'" + strx + "'", xidx
-    
-    xlen = len(strx); 
-    if xlen == 0: return 0, 0        
+
+    xlen = len(strx);
+    if xlen == 0: return 0, 0
     if xidx >= xlen: return xlen, xlen
     if strx[xidx] == " ":
         return xidx, xidx
-        
+
     cnte = xidx; cntb = xidx
-    
+
     # Find space to end
     while True:
         if cnte >= xlen:    break
@@ -428,19 +437,19 @@ def  selasci(strx, xidx, additional = None):
         cnte += 1
     # Find space to begin
     while True:
-        if cntb < 0:  
-            cntb += 1    
+        if cntb < 0:
+            cntb += 1
             break
         if not strx[cntb].isalnum():
-            cntb += 1               
+            cntb += 1
             break
-        cntb -= 1            
-        
+        cntb -= 1
+
     #print cntb, cnte
     #print  "'" + strx[cntb:cnte] + "'"
-    
+
     return cntb, cnte
-               
+
 # ------------------------------------------------------------------------
 # Select an ascii word - Return tuple of begin and end index
 # You may specify additional characters to see as part of the word
@@ -449,17 +458,17 @@ def  selasci2(strx, xidx, addi = ""):
 
     #print "selasci2:", "'" + strx + "'", xidx
 
-    xlen = len(strx); 
-    if xlen == 0: return 0, 0        
+    xlen = len(strx);
+    if xlen == 0: return 0, 0
     if xidx >= xlen: return xlen, xlen
     if strx[xidx] == " ":
-        if xidx: 
+        if xidx:
             xidx -= 1
         if strx[xidx-1] == " ":
             return xidx, xidx
-    
+
     cnte = xidx; cntb = xidx
-    
+
     # Find space to end
     while True:
         if cnte >= xlen:  break
@@ -469,18 +478,18 @@ def  selasci2(strx, xidx, addi = ""):
     # Find space to begin
     while True:
         #print cntb,
-        if cntb < 0:       
-            cntb += 1    
+        if cntb < 0:
+            cntb += 1
             break
-            
+
         if not strx[cntb].isalnum() and addi.find(strx[cntb]) < 0:
-            cntb += 1    
+            cntb += 1
             break
-        cntb -= 1            
-        
+        cntb -= 1
+
     #print cntb, cnte
     #print  "'" + strx[cntb:cnte] + "'"
-        
+
     return cntb, cnte
 
 # ------------------------------------------------------------------------
@@ -488,8 +497,8 @@ def  selasci2(strx, xidx, addi = ""):
 
 '''def untab(strx):
 
-    xlen = len(strx); cnt = 0; ret = ""    
-    
+    xlen = len(strx); cnt = 0; ret = ""
+
     while True:
         if cnt >= xlen: break
         chh = strx[cnt]
@@ -498,7 +507,7 @@ def  selasci2(strx, xidx, addi = ""):
         else:
             ret += chh
         cnt += 1
-           
+
     return ret'''
 
 # Search one line, return array
@@ -508,11 +517,11 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
     idx = 0; idx2 = 0;
     mlen = len(srctxt)
     accum = []
-        
+
     while True:
         if boolcase:
             idx = line.lower().find(srctxt.lower(), idx)
-            idx2 = idx                    
+            idx2 = idx
         elif boolregex:
             line2 = line[idx:]
             #print "line2", line2
@@ -528,11 +537,11 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
                     #print "null match", idx, res.start(), res.end()
                     # Proceed no matter what
                     if res.end() != 0:
-                        idx = res.end() + 1                            
+                        idx = res.end() + 1
                     else:
                          idx += 1
-                    continue                          
-                    
+                    continue
+
                 idx2 = res.end() + idx
                 mlen = res.end() - res.start()
                 #print "match", line2[res.start():res.end()]
@@ -542,7 +551,7 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
         else:
             idx = line.find(srctxt, idx)
             idx2 = idx
-        
+
         if  idx >= 0:
             line2 =  str(idx) + ":"  + str(cnt) +\
                      ":" + str(mlen) + " " + line
@@ -550,8 +559,8 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
             idx = idx2 + 1
         else:
             break
-           
-    return accum 
+
+    return accum
 
 # Save session file
 
@@ -559,24 +568,24 @@ def done_sess_fc(win, resp, fc):
 
     #print  ("done_sess_fc", resp)
     # Back to original dir
-    if resp == Gtk.ButtonsType.OK:        
+    if resp == Gtk.ButtonsType.OK:
         try:
             fname = win.get_filename()
             if not fname:
                 print("Must have filename")
-            else:         
-                #print("Saving session file under:", fname) 
+            else:
+                #print("Saving session file under:", fname)
                 fh = open(fname, "w")
                 pickle.dump(fc.sesslist, fh)
         except:
             print("Cannot save session file", sys.exc_info())
     else:
         pass
-        #print("Cancelled") 
-        
-    os.chdir(os.path.dirname(fc.old))        
+        #print("Cancelled")
+
+    os.chdir(os.path.dirname(fc.old))
     win.destroy()
-    
+
 # Save session to file in the config dir
 
 def save_sess(sesslist):
@@ -584,7 +593,7 @@ def save_sess(sesslist):
     but =   "Cancel", Gtk.ButtonsType.CANCEL, "Save Session", Gtk.ButtonsType.OK
     fc = Gtk.FileChooserDialog("Save Session", None, Gtk.FileChooserAction.SAVE, \
         but)
-  
+
     filter = Gtk.FileFilter()
     filter.add_pattern ("*.sess");  filter.add_pattern ("*");
 
@@ -594,10 +603,10 @@ def save_sess(sesslist):
     fc.set_current_folder(pedconfig.conf.sess_data)
     fc.set_current_name(os.path.basename("Untitled.sess"))
     fc.set_default_response(Gtk.ButtonsType.OK)
-    fc.connect("response", done_sess_fc, fc)                
-    fc.run()   
-    
-# ------------------------------------------------------------------------       
+    fc.connect("response", done_sess_fc, fc)
+    fc.run()
+
+# ------------------------------------------------------------------------
 # Load session file
 
 def done_sess2_fc(win, resp, fc):
@@ -605,36 +614,36 @@ def done_sess2_fc(win, resp, fc):
     #print  ("done_sess2_fc", resp)
     ddd = fc.old
     sesslist = []
-    
+
     # Gather list of files
-    if resp == Gtk.ButtonsType.OK:        
+    if resp == Gtk.ButtonsType.OK:
         try:
             fname = win.get_filename()
             if not fname:
                 print("Must have filename")
-            else:         
-                #print("Loading session file under:", fname) 
+            else:
+                #print("Loading session file under:", fname)
                 fh = open(fname, "r")
                 sesslist = pickle.load(fh)
-                
+
         except:
             print("Cannot load session file", sys.exc_info())
             message("Cannot load session file")
     else:
         pass
-        #print("Cancelled") 
-        
+        #print("Cancelled")
+
     win.destroy()
-        
+
     for fff in sesslist.split("\n"):
-        #print ("Session file:", "'" + fff + "'") 
+        #print ("Session file:", "'" + fff + "'")
         if fff != "":
             pedconfig.conf.pedwin.openfile(fff)
             usleep(30)
-        
+
     # Back to original dir
-    os.chdir(os.path.dirname(fc.old))        
-    
+    os.chdir(os.path.dirname(fc.old))
+
 # Load session from file in the config dir
 
 def     load_sess():
@@ -642,7 +651,7 @@ def     load_sess():
     but =   "Cancel", Gtk.ButtonsType.CANCEL, "Load Session", Gtk.ButtonsType.OK
     fc = Gtk.FileChooserDialog("Save Session", None, Gtk.FileChooserAction.OPEN, \
         but)
-  
+
     filter = Gtk.FileFilter()
     filter.add_pattern ("*.sess");
     filter.add_pattern ("*");
@@ -652,11 +661,25 @@ def     load_sess():
     fc.set_current_folder(pedconfig.conf.sess_data)
     #fc.set_current_name(os.path.basename("Untitled.sess"))
     fc.set_default_response(Gtk.ButtonsType.OK)
-    fc.connect("response", done_sess2_fc, fc)                
-    fc.run()   
-    
+    fc.connect("response", done_sess2_fc, fc)
+    fc.run()
+
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

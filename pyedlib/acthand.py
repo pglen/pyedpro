@@ -62,20 +62,20 @@ class ActHand:
     def __init__(self):
         self.was_home = 0
         self.was_end = 0
-        
+
         self.clips = []
         for aa in range(10):
             self.clips.append("");
         self.currclip = 0;
-              
+
     # -----------------------------------------------------------------------
 
     def ctrl_tab(self, self2):
         #print "ctrl_tab"
         if self2.shift:
-            self2.mained.prevwin()        
+            self2.mained.prevwin()
         else:
-            self2.mained.nextwin()        
+            self2.mained.nextwin()
 
     def up(self, self2):
         xidx = self2.caret[0] + self2.xpos;
@@ -161,11 +161,11 @@ class ActHand:
             else:
                 self2.set_caret(idx3+1, yidx)
             self2.invalidate()
-        elif self2.alt:       
+        elif self2.alt:
             line = self2.text[yidx]
             # Only move ONE word
             try:
-                if line[xidx-1] != " ": 
+                if line[xidx-1] != " ":
                     begs, ends = selword(line, xidx-1)
                     self2.set_caret(begs, yidx)
             except:
@@ -272,7 +272,7 @@ class ActHand:
             self2.set_maxlines(mlines)
 
         self2.set_changed(True)
-        self2.src_changed = True  
+        self2.src_changed = True
         self2.invalidate()
 
     def delete(self, self2):
@@ -307,7 +307,7 @@ class ActHand:
 
         self2.xsel = -1
         self2.set_changed(True)
-        self2.src_changed = True  
+        self2.src_changed = True
         self2.invalidate()
 
     # --------------------------------------------------------------------
@@ -347,8 +347,8 @@ class ActHand:
                         self2.set_caret(xidx, yidx-1)
 
         self2.set_changed(True)
-        self2.src_changed = True  
-        
+        self2.src_changed = True
+
     # --------------------------------------------------------------------
 
     def pgup(self, self2):
@@ -546,10 +546,10 @@ class ActHand:
         self.currclip = num
         #print "current", self.clips[self.currclip]
         #for aa in range(len(self.clips)):
-        #    print aa, self.clips[aa] 
+        #    print aa, self.clips[aa]
         self2.invalidate()
         self2.update_bar2()
-        
+
     def ctrl_1(self, self2):
         self.ctrl_num(self2, 1)
 
@@ -605,12 +605,12 @@ class ActHand:
         else:
             self2.mained.update_statusbar("Please navigate to word.")
 
-        self2.invalidate()           
+        self2.invalidate()
         #self2.set_changed(True)
 
     # --------------------------------------------------------------------
     # No ctrl - alt handlers yet (reserved for gnome shortcuts)
-    
+
     # Cleanse non ascii
     def ctrl_alt_a(self, self2):
         #print ("CTRL - ALT - A")
@@ -623,11 +623,11 @@ class ActHand:
             #print("%d" % ord(aa)),
             if ord(aa) < 128:
                 newline += aa
-            
+
         if line != newline:
-            self2.text[yidx] = newline  
+            self2.text[yidx] = newline
             self2.mained.update_statusbar("Cleaned non ASCII characters.")
-            self2.invalidate()           
+            self2.invalidate()
         pass
 
     def ctrl_alt_b(self, self2):
@@ -637,18 +637,18 @@ class ActHand:
     def ctrl_alt_h(self, self2):
         #print "CTRL - ALT - H"
         pedfind.find(self, self2, True)
-                       
+
     def ctrl_alt_j(self, self2):
         #print "CTRL - ALT - J"
         self2.coloring(not self2.colflag)
         if self2.colflag: strx = "on"
         else: strx = "off"
         self2.mained.update_statusbar("Coloring is %s." % strx)
-        
+
     def ctrl_alt_k(self, self2):
         #print "CTRL - ALT - K"
         self2.hexview(not self2.hex)
-        
+
     def ctrl_alt_l(self, self2):
         #print "CTRL - ALT - L"
         xidx = self2.caret[0] + self2.xpos;
@@ -661,7 +661,7 @@ class ActHand:
         self2.text[yidx] = line[:cntb] + wlow + line[cnte:]
         self2.inval_line()
         self2.set_changed(True)
-        
+
      # --------------------------------------------------------------------
 
     def ctrl_c(self, self2):
@@ -673,15 +673,15 @@ class ActHand:
             '''disp2 = Gdk.Display()
             disp = disp2.get_default()
             clip = Gtk.Clipboard.get_default(disp)
-            
+
             xidx = self2.caret[0] + self2.xpos;
             yidx = self2.caret[1] + self2.ypos
             if self.currclip == 0:
                 #print "set clip:",  self2.text[yidx]
-                clip.set_text(self2.text[yidx], len(self2.text[yidx]))   
+                clip.set_text(self2.text[yidx], len(self2.text[yidx]))
             self.clips[self.currclip] = self2.text[yidx]'''
             return
-            
+
         # Normalize
         xssel = min(self2.xsel, self2.xsel2)
         xesel = max(self2.xsel, self2.xsel2)
@@ -714,7 +714,7 @@ class ActHand:
         disp2 = Gdk.Display()
         disp = disp2.get_default()
         clip = Gtk.Clipboard.get_default(disp)
-            
+
         if self.currclip == 0:
             clip.set_text(cumm, len(cumm))
         self.clips[self.currclip] = cumm
@@ -736,7 +736,7 @@ class ActHand:
 
         if cnt2 > 0:
             self2.set_changed(True)
-              
+
         self2.invalidate()
 
      # --------------------------------------------------------------------
@@ -770,7 +770,7 @@ class ActHand:
         self2.ctrl = False
         self2.alt = False
         self.left(self2)
-        
+
     def ctrl_g(self, self2):
         #print "CTRL - G"
         #self2.closedoc()
@@ -902,13 +902,13 @@ class ActHand:
         disp2 = Gdk.Display()
         disp = disp2.get_default()
         clip = Gtk.Clipboard.get_default(disp)
-            
+
         if self.currclip == 0:
             clip.request_text(self.clip_cb, self2)
         else:
             self.clip_cb(clip, self.clips[self.currclip],
                 self2)
-              
+
     # Pad line list to accomodate insert
     # We group this operation into change (no undo needed)
     def pad_list(self, self2, yidx):
@@ -1006,7 +1006,7 @@ class ActHand:
         #self2.set_maxlines(len(self2.text), False)
 
         self2.set_changed(True)
-        self2.src_changed = True  
+        self2.src_changed = True
         self2.invalidate()
 
     # --------------------------------------------------------------------
@@ -1113,14 +1113,14 @@ class ActHand:
             disp2 = Gdk.Display()
             disp = disp2.get_default()
             clip = Gtk.Clipboard.get_default(disp)
-            
+
             if self.currclip == 0:
                 clip.set_text(cumm, len(cumm))
-            self.clips[self.currclip] = cumm    
+            self.clips[self.currclip] = cumm
 
         self2.invalidate()
         self2.set_changed(True)
-        self2.src_changed = True  
+        self2.src_changed = True
 
     def ctrl_y(self, self2):
         #print "CTRL - Y"
@@ -1134,12 +1134,12 @@ class ActHand:
         self2.nokey = True
         #print "CTRL - SP"
         self2.mained.update_statusbar("Keyboard disabled.")
-                    
-    
+
+
     def alt_b(self, self2):
         #print "ALT - B"
         pedbuffs.buffers(self, self2)
-        
+
     def alt_c(self, self2):
         #print "ALT - C"
         xidx = self2.caret[0] + self2.xpos;
@@ -1171,8 +1171,8 @@ class ActHand:
         self2.mained.update_statusbar("Deleted line %d" % yidx)
         self2.invalidate()
         self2.set_changed(True)
-        self2.src_changed = True  
-        
+        self2.src_changed = True
+
     def alt_i(self, self2):
         #print "ALT - I"
         xidx = self2.caret[0] + self2.xpos;
@@ -1234,7 +1234,7 @@ class ActHand:
     def alt_o(self, self2):
         # Simplified open
         fnames = pedofd.ofd("", self2)
-        for fff in fnames: 
+        for fff in fnames:
             #print("Open", fff)
             self2.mained.openfile(fff)
 
@@ -1243,16 +1243,16 @@ class ActHand:
         for mm in range(self2.notebook.get_n_pages()):
             vcurr = self2.notebook.get_nth_page(mm)
             vcurr.set_position(1)
-            
+
         if self2.shift:
             self2.mained.hpaned.set_position(1)
-            
+
     def alt_s(self, self2):
-        #print "ALT - S"                       
+        #print "ALT - S"
         pedfind.find(self, self2)
-        
+
     def alt_t(self, self2):
-        #print "ALT - S"                       
+        #print "ALT - S"
         pedfind.find(self, self2, True)
 
     def alt_v(self, self2):
@@ -1280,7 +1280,7 @@ class ActHand:
         while True:
             if cnt >= zlen: break
             line = self2.text[cnt];  xlen = len(line)
-            
+
             if xlen > 78:
                 cnt2 += 1
                 # Delete this line from doc
@@ -1300,7 +1300,7 @@ class ActHand:
                         self2.undoarr.append((xidx, cnt, ADDED + CONTFLAG,
                                        ttt))
                         zlen += 1; cnt += 1; cnt3 += 1
-                        ttt = aa + " " 
+                        ttt = aa + " "
                     else:
                         ttt += aa + " "
                 if ttt:
@@ -1314,7 +1314,7 @@ class ActHand:
                     zlen += 1; cnt += 1; cnt3 += 1
             else:
                 cnt += 1
-            
+
         self2.invalidate()
         self2.set_changed(True)
         self2.mained.update_statusbar(\
@@ -1352,13 +1352,13 @@ class ActHand:
             if platform.system().find("Win") >= 0:
                 xxx = get_exec_path(".." + os.sep + "pangview.py")
                 ret = subprocess.Popen(["python", xxx,  rr])
-            else:            
+            else:
                 xxx = get_exec_path(".." + os.sep + "pangview.py")
                 ret = subprocess.Popen(["python", xxx,  rr])
         except:
             print("Cannot launch pangview", sys.exc_info())
             pedync.message("\n   Cannot launch pangview.py   \n\n"
-                       "              (Please install)")            
+                       "              (Please install)")
 
     def f4(self, self2):
         #print "F4"
@@ -1413,7 +1413,7 @@ class ActHand:
         match = False
 
         self2.search_again()
-    
+
         for xstr in self2.accum:
             # Get back numbers the python way
             try:
@@ -1445,10 +1445,10 @@ class ActHand:
                 self2.recarr = self2.recarr2
             else:
                 self2.mained.update_statusbar("Ended recording.")
-            
+
         else:
             self2.mained.update_statusbar("Started recording ...")
-            self2.recarr2 = self2.recarr   
+            self2.recarr2 = self2.recarr
             self2.recarr = []
             self2.record = True
         self.keyhand.reset()
@@ -1469,7 +1469,7 @@ class ActHand:
         self.keyhand.reset()
         self2.mained.update_statusbar("Started Play ...")
         idx = 0
-        while True:                        
+        while True:
             if idx >= xlen: break
             tt, kk, ss, www, sss, \
               self.keyhand.shift, self.keyhand.ctrl, \
@@ -1478,25 +1478,25 @@ class ActHand:
 
             # Synthesize keystroke. We do not replicate state as
             # pyedpro maintains its own internally. (see keyhand.reset())
-            
-            ttt = Gdk.EventType.KEY_PRESS 
+
+            ttt = Gdk.EventType.KEY_PRESS
             if tt == 9:
                 ttt = Gdk.EventType.KEY_RELEASE
-            
+
             #print "playing macro", tt, kk, ss
             event = Gdk.EventKey()
             event.type = ttt
-            #event.time = time.clock() * 1000  
+            #event.time = time.clock() * 1000
             event.keyval = kk
             event.window = www
             event.string  = sss
             #print "play event", event, event.type, event.keyval
-            
+
             self.keyhand.state2 = ss
             self.keyhand.handle_key2(self2, None, event)
             if anim:
                 usleep(30)
-            #print()   
+            #print()
         # If the state gets out or sync ...
         self.keyhand.reset()
         self2.mained.update_statusbar("Ended Play.")
@@ -1545,28 +1545,28 @@ class ActHand:
 
     # ---------------------------------------------------------------------
     # Add regular key
-                             
+
     def add_key(self, self2, event):
 
         # CR / LF still haunts us, ignore CR
         if event.keyval == Gdk.KEY_Return:
             #print "Ignoring Ctrl-Return"
             return
-        
+
         if self2.readonly:
             self2.mained.update_statusbar("This buffer is read only.")
             return
 
         if self2.hex:
             self2.mained.update_statusbar("Cannot edit in hex mode.")
-            return               
+            return
 
         # Replace selection
         if self2.xsel != -1:
             #print "sel replace"
             #self2.set_caret(self., yidx)
             self.cut(self2, True)
-    
+
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
 
@@ -1578,14 +1578,14 @@ class ActHand:
         line2 = self2.text[yidx][:]
         #xidx2 = decalc_tabs(line2, self2.caret[0] + self2.xpos, self2.tabstop);
         #print "before/after", xidx, xidx2, event.string
-        
+
         ccc = ""
         try:
             if event.string != "":
                 ccc = event.string
-            else: 
+            else:
                 ccc = chr(event.keyval)
-                              
+
             self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
             # Replace selection
             if self2.xsel != -1:
@@ -1658,8 +1658,8 @@ class ActHand:
 
             self2.inval_line()
             self2.set_changed(True)
-            self2.src_changed = True  
-        
+            self2.src_changed = True
+
         except:
             # Could not convert it to character, alert user
             # Usualy unhandled control, so helps developmet
@@ -1679,8 +1679,8 @@ class ActHand:
 
     def alt_y(self, self2):
         #print "Compile"
-        writefile("tmp", self2.text)
-        try:              
+        writefile("tmp", self2.text, "\n")
+        try:
            py_compile.compile('tmp', doraise = True)
         except py_compile.PyCompileError as msg:
             ln  = msg[2][1][1]; col = msg[2][1][2]
@@ -1688,11 +1688,11 @@ class ActHand:
             self2.mained.update_statusbar("Syntax OK.")
             pedync.message("    " + mmm + "    ", msg[1])
             self2.gotoxy(col - 1, ln - 1)
-            
-        except:                 
+
+        except:
             print(sys.exc_info())
         else:
-            pedync.message("\n  Syntax OK   \n") 
+            pedync.message("\n  Syntax OK   \n")
             self2.mained.update_statusbar("Syntax OK.")
         finally:
             os.remove("tmp")
@@ -1759,6 +1759,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 

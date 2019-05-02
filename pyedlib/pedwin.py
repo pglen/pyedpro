@@ -47,7 +47,7 @@ class edPane(Gtk.VPaned):
         self.add1(self.vbox2)
 
         self.set_size_request(100, 100)
-        
+
         # Shortcuts to access the editor windows
         self.area  = self.vbox.area
         self.area2 = self.vbox2.area
@@ -102,14 +102,14 @@ class EdMainWindow():
         scr = disp.get_default_screen()
         ptr = disp.get_pointer()
         mon = scr.get_monitor_at_point(ptr[1], ptr[2])
-        geo = scr.get_monitor_geometry(mon)   
+        geo = scr.get_monitor_geometry(mon)
         www = geo.width; hhh = geo.height
         xxx = geo.x;     yyy = geo.y
-        
+
         # Resort to old means of getting screen w / h
         if www == 0 or hhh == 0:
             www = Gdk.screen_width(); hhh = Gdk.screen_height();
-       
+
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
         self.mywin = Gtk.Window()
@@ -130,10 +130,10 @@ class EdMainWindow():
             else:
                 self.mywin.set_default_size(ww, hh)
                 self.mywin.move(xx, yy)
-                
+
             #self.mywin.set_default_size(7*www/8, 7*hhh/8)
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
-            #self.mywin.move(xxx + www / 16, yyy / hhh / 16)          
+            #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
         try:
             self.mywin.set_icon_from_file(get_img_path("pyedpro.png"))
         except:
@@ -168,7 +168,7 @@ class EdMainWindow():
         #warnings.simplefilter("default")
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
-        
+
         global notebook
 
         # Create note for the main window, give access to it for all
@@ -177,7 +177,7 @@ class EdMainWindow():
         notebook.set_scrollable(True)
         # test
         #notebook.append_page(edPane([]))
-            
+
         #notebook.add_events(Gdk.FOCUS_CHANGE_MASK)
         #notebook.add_events(Gdk.ALL_EVENTS_MASK)
 
@@ -210,10 +210,10 @@ class EdMainWindow():
         #self.mywin.connect("leave-notify-event", self.area_leave)
         #self.mywin.connect("event", self.unmap)
 
-        tbar = merge.get_widget("/ToolBar"); 
+        tbar = merge.get_widget("/ToolBar");
         #tbar.set_tooltips(True)
         #tbar.show()
-        
+
         hpaned = Gtk.HPaned(); hpaned.set_border_width(5)
 
         #warnings.simplefilter("ignore")
@@ -237,51 +237,51 @@ class EdMainWindow():
         scroll.add(treeview)
         frame2 = Gtk.Frame(); frame2.add(scroll)
         vpaned.add(frame2)
-        
+
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(treeview2)
         frame3 = Gtk.Frame(); frame3.add(scroll2)
         vpaned.set_focus_chain((frame2,))
         vpaned.add(frame3)
-        
+
         vpaned.set_position(self.get_height() - 340)
         hpaned.add(vpaned)
-        
+
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200
         hpaned.set_position(self.hpanepos)
-        
+
         #hpaned.pack2(Gtk.Label("hello "))
         hpaned.pack2(notebook)
-        
+
         self.hpaned = hpaned
 
         # Create statusbars
         #self.statusbar = Gtk.Statusbar()
         #self.statusbar2 = Gtk.Statusbar()
         #self.statusbar2.set_spacing(0)
-        
+
         # Replaced it with simple labels
         slabs = Gtk.Label("   ")
         self.slab = Gtk.Label(" status  ")
         self.slab.set_xalign(Gtk.Align.START)
         self.slab.set_yalign(Gtk.Align.START)
-        
+
         shbox = Gtk.HBox()
         shbox.pack_start(slabs, 0,0, 0)
         shbox.pack_start(self.slab, 0,0, 0)
-        
+
         self.slab2 = Gtk.Label(" status2  ")
-        
+
         hpane2 = Gtk.HPaned()
         self.hpane2 = hpane2
-        
+
         #hpane2.set_border_width(5)
-        
+
         hpane2.pack1(shbox, 1, 1)
         hpane2.set_position(self.get_width() - 320)
         hpane2.pack2(self.slab2, 1, 1)
-        
+
         #hpane2.pack2(self.statusbar2, 0, 0)
         #shbox.pack_start(slab, False, 0, 0)
         #shbox.pack_start(self.statusbar, False, 0, 0)
@@ -292,13 +292,13 @@ class EdMainWindow():
         bbox.pack_start(tbar, 0,0, 0)
         bbox.pack_start(hpaned, 1, 1, 0)
         bbox.pack_start(hpane2, 0,0, 0)
-        
+
         self.mywin.add(bbox)
         self.mywin.show_all()
 
         # ----------------------------------------------------------------
         # Read in buffers
-        
+
         cnt = 0
         for aa in names:
             aaa = os.path.realpath(aa)
@@ -311,7 +311,7 @@ class EdMainWindow():
                 if not ret:
                     self.update_statusbar("Cannot create fle '{0:s}'". format(aaa))
                     continue
-                
+
             ret = vpaned.area2.loadfile(aaa)
 
             cnt += 1
@@ -360,12 +360,12 @@ class EdMainWindow():
         # Set the signal handler for 1s tick
         #signal.signal(signal.SIGALRM, handler_tick)
         #signal.alarm(1)
-        
+
         # We use gobj instead of SIGALRM, so it is more multi platform
         GLib.timeout_add(1000, handler_tick)
 
         self.update_statusbar("Initial")
-        
+
         # Add to accounting:
         self.start_time = time.time()
         utils.timesheet("Started pyedpro", self.start_time, 0)
@@ -382,7 +382,7 @@ class EdMainWindow():
             vpaned.area2.loadfile(fff)
             notebook.append_page(vpaned)
             vpaned.area.set_tablabel()
-    '''   
+    '''
     # --------------------------------------------------------------------
 
     def add_mru(self, merge, action_group, fname, mru):
@@ -470,7 +470,7 @@ class EdMainWindow():
                 if event.keyval == Gtk.keysyms.Alt_L or \
                       event.keyval == Gtk.keysyms.Alt_R:
                     self.alt = False;
-                    
+
 
     def get_height(self):
         xx, yy = self.mywin.get_size()
@@ -591,7 +591,7 @@ class EdMainWindow():
                 piter = treestore.append(None, [cut_lead_space(line)])
         except:
             print("Exception in append treestore", sys.exc_info())
-    
+
     # --------------------------------------------------------------------
     def update_treestore2(self, text):
 
@@ -720,18 +720,18 @@ class EdMainWindow():
                 xxx = get_exec_path(".." + os.sep + "pangview.py")
                 print(xxx, rr)
                 ret = subprocess.Popen(["python", xxx,  rr])
-            else:            
+            else:
                 ret = subprocess.Popen(["pangview.py",  rr])
         except:
             pedync.message("\n   Cannot launch the pangview.py utility.   \n\n"
                            "              (Please install)")
-                           
+
     def activate_about(self, action):
         self.update_statusbar("Showing About Dialog")
         pedync.about(self)
 
     def newfile(self, newname = ""):
-    
+
         if newname == "":
             # Find non existing file
             cnt = self.fcount + 1; fff = ""
@@ -742,9 +742,9 @@ class EdMainWindow():
                 if not os.path.isfile(fff):
                     break;
                 cnt += 1
-    
+
             self.fcount = cnt
-        else: 
+        else:
             fff = newname
             # Touch
             try:
@@ -752,10 +752,10 @@ class EdMainWindow():
             except:
                 sss = "Cannot create file %s" % newname
                 self.update_statusbar(sss)
-                print(sss,  sys.exc_info()) 
+                print(sss,  sys.exc_info())
                 pedync.message("\n" + sss + "\n")
                 return
-        
+
         vpaned = edPane([])
         vpaned.area.fname = os.path.realpath(fff) + ""
         global notebook
@@ -784,12 +784,12 @@ class EdMainWindow():
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
         warnings.simplefilter("default")
-        
+
         fc.set_default_response(Gtk.ButtonsType.OK)
         fc.set_current_folder(os.getcwd())
         fc.connect("response", self.done_open_fc)
         fc.connect("current-folder-changed", self.folder_ch )
-        
+
         #fc.set_current_name(self.fname)
         fc.run()
 
@@ -798,7 +798,7 @@ class EdMainWindow():
         if flag:
             vcurr.area.saveas()
             self.mywin.set_title("pyedpro: " + vcurr.area.fname);
-        
+
         else:
             vcurr.area.save()
 
@@ -835,9 +835,9 @@ class EdMainWindow():
         warnings.simplefilter("ignore")
         strx = action.get_name()
         warnings.simplefilter("default")
-        
+
         #print ("activate_action", strx)
-        
+
         if strx == "Close All":
             self.closeall()
 
@@ -858,7 +858,7 @@ class EdMainWindow():
                 cnt += 1
             #print ("file list", accum)
             save_sess(accum)
-            
+
             self.update_statusbar("Session %s saved." % ("noname"))
 
         if strx == "Start Terminal":
@@ -1009,7 +1009,7 @@ class EdMainWindow():
             self.update_statusbar("Showing Keyboard Help")
             fname = get_exec_path("KEYS.TXT")
             self.openfile(fname)
-        
+
     def closeall(self):
         cc = notebook.get_n_pages()
         for aa in range(cc-1, -1, -1):
@@ -1017,7 +1017,7 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(aa)
             vcurr.area.closedoc()
             notebook.remove_page(aa)
-    
+
     def closedoc(self, other = None):
         cc = notebook.get_n_pages()
         if other:
@@ -1121,7 +1121,7 @@ class EdMainWindow():
             if cnt >= nn: break
             ppp = notebook.get_nth_page(cnt)
             if ppp.area.changed:
-                ppp.area.writefile()
+                ppp.area.writeout()
                 cnt2 += 1
             cnt += 1
 
@@ -1145,7 +1145,7 @@ class EdMainWindow():
 
         if(pedconfig.conf.verbose):
             print("Opening '"+ fname + "'")
-            
+
         self.update_statusbar("Opening file '{0:s}'".format(fname))
         vpaned = edPane()
         ret = vpaned.area.loadfile(os.path.realpath(fname))
@@ -1154,7 +1154,7 @@ class EdMainWindow():
             return
         vpaned.area2.loadfile(os.path.realpath(fname))
         self.update_statusbar("Opened file '{0:s}'".format(fname))
-        
+
         # Add to the list of buffers
         notebook.append_page(vpaned)
         vpaned.area.set_tablabel()
@@ -1254,7 +1254,7 @@ def     OnExit(arg, prompt = True):
         pedconfig.conf.sql.put("ww", ww)
         pedconfig.conf.sql.put("hh", hh)
 
-    # Save current doc to config memory: 
+    # Save current doc to config memory:
     vcurr = notebook.get_nth_page(notebook.get_current_page())
     if vcurr:
         pedconfig.conf.sql.put("curr", vcurr.area.fname)
@@ -1263,7 +1263,7 @@ def     OnExit(arg, prompt = True):
     parr = []
     for aa in range(notebook.get_n_pages()):
         parr.append(notebook.get_nth_page(aa))
-    
+
     cnt2 = 0
     for ppp in parr:
         #print ("close:", ppp.area.fname)
@@ -1277,15 +1277,15 @@ def     OnExit(arg, prompt = True):
             if prompt:
                 # This way all the closing doc functions get called
                 if ppp.area.closedoc():
-                    return 
+                    return
             else:
                 # Rescue to temporary:
                 hhh = hash_name(ppp.area.fname) + ".rescue"
                 xfile = pedconfig.conf.config_dir + "/" + hhh
                 if(pedconfig.conf.verbose):
                     print("Rescuing", xfile)
-                writefile(xfile, ppp.area.text)
-                
+                writefile(xfile, ppp.area.text, "\n")
+
     pedconfig.conf.sql.put("cnt", cnt2)
 
     if(pedconfig.conf.verbose):
@@ -1298,14 +1298,14 @@ def     OnExit(arg, prompt = True):
     Gtk.main_quit()
 
     #print "OnExit called \"" + arg.get_title() + "\""
-         
+
 # ------------------------------------------------------------------------
 
 #def handler_tick(signum, frame):
 def handler_tick():
 
     #print "handler_tick"
-    
+
     try:
         #print 'Signal handler called with signal'
         #print pedconfig.conf.idle, pedconfig.conf.syncidle
@@ -1344,7 +1344,7 @@ def handler_tick():
             if pedconfig.conf.pedwin.statuscount == 0:
                 pedconfig.conf.pedwin.update_statusbar("Idle.");
                 pedconfig.conf.pedwin.statuscount = 0
-        
+
     except:
         print("Exception in timer handler", sys.exc_info())
 
@@ -1354,5 +1354,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
 
 

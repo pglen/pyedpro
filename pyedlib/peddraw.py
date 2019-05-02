@@ -235,9 +235,7 @@ class peddraw(object):
     
     def draw_syntax(self, cr):
                
-        print("syntax")
         if not self.colflag:
-            print("syntax off")
             return
            
         # Paint syntax colors
@@ -285,11 +283,11 @@ class peddraw(object):
         if not self.colflag:
             return
             
-        xx = 0; yy = 0; 
+        xx = 0; yy = 0; ln = 0; 
         cnt = int(self.ypos)
         while cnt <  self.xlen:
             #line = self.text[cnt]
-            line =  untab_str(self.text[cnt])
+            line =  untab_str(self.text[cnt])  #.replace("\r", " ")
            
             # Comments: # or // and "     
             # This gives us PY comments, C comments and C defines
@@ -373,6 +371,14 @@ class peddraw(object):
         
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 
