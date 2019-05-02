@@ -235,7 +235,9 @@ class peddraw(object):
     
     def draw_syntax(self, cr):
                
+        print("syntax")
         if not self.colflag:
+            print("syntax off")
             return
            
         # Paint syntax colors
@@ -279,15 +281,18 @@ class peddraw(object):
     # preprocessor has hash, default to drawing it as before.
     
     def draw_comments(self, cr):
+    
+        if not self.colflag:
+            return
+            
         xx = 0; yy = 0; 
         cnt = int(self.ypos)
         while cnt <  self.xlen:
             #line = self.text[cnt]
             line =  untab_str(self.text[cnt])
            
-           # Comments: # or // and "     
-           # This gives us
-           # PY comments, C comments and C defines
+            # Comments: # or // and "     
+            # This gives us PY comments, C comments and C defines
             ccc = line.find("#"); 
             if ccc < 0:
                 ccc = line.find("//"); 
@@ -301,7 +306,7 @@ class peddraw(object):
                 ccc2 -= self.xpos
                 line2 = line[ccc:]                 
                 self.draw_text(cr, ccc2 * self.cxx, yy, 
-                            line2, self.cocolor, None)
+                                    line2, self.cocolor, None)
             else:   
                 qqq = 0                                 
                 while True:
@@ -368,6 +373,11 @@ class peddraw(object):
         
 
 # EOF
+
+
+
+
+
 
 
 
