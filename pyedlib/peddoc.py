@@ -341,7 +341,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 pedync.message("File changed outside PyEdPro. Please check if needs reload.");
             # Update stat info
             self.stat = xstat
-     	except:
+        except:
             pass
 
         self.update_bar2()
