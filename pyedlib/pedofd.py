@@ -17,7 +17,6 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
-
 def ofd(fname = None, self2 = None):
 
     warnings.simplefilter("ignore")
@@ -390,6 +389,7 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
 
 
 

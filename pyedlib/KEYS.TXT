@@ -2,7 +2,7 @@
 
    This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
-added to the buffer. To implement a new feature follow a particular key's 
+added to the buffer. To implement a new feature follow a particular key's
 execution path, and replicate functionality. It is eazy to follow, as it is
 table driven.
 
@@ -14,10 +14,10 @@ table driven.
     PgDn                        -- Go down one page
     Home                        -- Go to beginning of line
     End                         -- Go end of line
-                                
+
     [a-z]|[A-Z]|[0-9]           -- Insert character (key)
     !@#$%^&*()_ ...             -- Insert punctuation (key)
-    
+
     Tab                         -- Insert 4 spaces up to % 4
     Shift-Tab                   -- Insert a real tab up to % 4
     Ctrl-A                      -- Select All text in buffer
@@ -30,9 +30,9 @@ table driven.
     Shift-Ctrl-G                -- Goto previous match
     Ctrl-H                      -- Cursor left  (like in Emacs)
     Ctrl-I                      -- Insert count-up number
-    Shift-Ctrl-I                -- Reset and insert count-up number
+    Shift-Ctrl-I                -- Reset count-up number to zero
     Ctrl-J                      -- Down Arrow
-    Ctrl-K                      -- Up Arrow 
+    Ctrl-K                      -- Up Arrow
     Ctrl-L                      -- Right Arrow
     Ctrl-M                      -- Toggle auto correct
     Ctrl-N                      -- New File
@@ -48,7 +48,7 @@ table driven.
     Ctrl-X                      -- Cut to Clipboard
     Ctrl-Y                      -- Redo last undo
     Ctrl-Z                      -- Undo last change
-                                
+
     Ctrl Up                     -- Go up 10 lines
     Ctrl Down                   -- Go down 10 lines
     Ctrl Left                   -- Go left one word
@@ -58,7 +58,7 @@ table driven.
     Ctrl Home                   -- Go to beginning of file
     Ctrl End                    -- Go end of file
     Ctrl Space                  -- Enable / disable keyboard
-                                
+
     Ctrl 0                      -- Switch to clipboard 0 (OS Clipboard)
     Ctrl 1                      -- Switch to clipboard 1
       .
@@ -74,10 +74,10 @@ table driven.
     Alt PgDn                    -- Go to previous buffer
     Alt Home                    -- Go to first buffer
     Alt End                     -- Go to last buffer
-                                
+
     Home Home                   -- Go to begininig of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl-Home)
-                                
+
     Alt-A                       -- Save All buffers
     Alt-B                       -- Show Buffers
     Alt-C                       -- Start column select
@@ -104,9 +104,9 @@ table driven.
     Alt-X                       -- Exit program
     Alt-Y                       -- Check Python syntax (compile buffer)
     Alt-Z                       -- Wrap long lines
-                                
+
     Alt-0                       -- Switch to Function pane (left)****
-                                
+
     Alt-1                       -- Switch to buffer 1
     Alt-2                       -- Switch to buffer 2
     Alt-3                       -- Switch to buffer 3
@@ -116,7 +116,7 @@ table driven.
     Alt-7                       -- Switch to buffer 7
     Alt-8                       -- Switch to buffer 8
     Alt-9                       -- Switch to buffer 9
-                                
+
     Alt-F1                      --  Gnome - Menu
     Alt-F2                      --  Gnome - Run App
     Alt-F4                      --  Gnome - Exit program (Use Alt-X)
@@ -124,17 +124,18 @@ table driven.
     Alt-F8                      --  Gnome - Re-size window
     Alt-F9                      --  Gnome - Minimize window
     Alt-F10                     --  Gnome - Full Screen window
- 
+
     Ctrl-Alt-A                  --  Cleanse non ascii
     Ctrl-Alt-B                  --  Not implemented
-                                                               
+    Ctrl-Alt-C                  --  Comment out line, and jump down below
+
     # more coming
-    
+
     Ctrl-Alt-H                  --  Left Arrow
     Ctrl-Alt-J                  --  Toggle coloring
     Ctrl-Alt-K                  --  Toggle Hex View
     Ctrl-Alt-L                  --  Lowercase word
-    
+
     F1                           -- Help
     F2                           -- Dev Help
     F3                           -- Key assignments Help
@@ -159,7 +160,7 @@ Context dependent key assignments:
     ENTER                       -- Exit dialog (accept)
 
  Find / Replace context:
- 
+
     Alt-S                       -- Case Insensitive search
     Alt-R                       -- Regular expression search
     Alt-A                       -- All buffer search
@@ -190,15 +191,17 @@ Notes:
                         (~/.pyedpro/data) '*.sav'
     ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
                         Useful for turining assignments.
-    ****    F9          Only Comments and strings are checked, otherwise all 
+    ****    F9          Only Comments and strings are checked, otherwise all
                         text is checked
     *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
 
-  Any unrecognized key is inserted verbatim into the buffer, and a message is printed 
+  Any unrecognized key is inserted verbatim into the buffer, and a message is printed
 on the controlling terminal. If no action is listed, that key is unassigned. Most dialogs
 can be dismissed with the Esc key or the Alt-X key combination.
 
 // EOF
+
+
 
 
 

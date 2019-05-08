@@ -8,7 +8,7 @@ column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
  This project is a successor of pyedit, after porting it to GTK3. PyEdPro
- will run anywhere PyGTK can run.
+ will run anywhere PyGTK (GObject) can run.
 
   Working and tested platforms currently are:
 
@@ -16,15 +16,11 @@ that I use every day.
         Centos 6 .. 7 Ubuntu 14 ... 16
         Msys, Msys2, Mingw, Raspberry PI ...
 
-  If you encounter blank screen after start, cairo is not installed. The terminal interface
-will complain, but if you start from the GUI, you can see the message in the
-log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install cairo'.
-
-  I mainly run it in MSYS2, Ubuntu, Windows 10, and the Raspberry-Pi.
-It behaves consistently on all the tested platforms. If you want an editor
+  I mainly run it in MSYS2, Ubuntu, Fedora, Windows 10, and the Raspberry-Pi.
+It behaves consistently on all these platforms. If you want an editor
 that works the same way in all your workspaces, PyEdPro is the one.
 
-   PyEdPro.py has macro recording/play, search/replace, functional navigation,
+   PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 comment/string spell check, auto backup, persistent undo/redo, auto complete,
 auto correct, syntax check, spell suggestion ... and a lot more.
 
@@ -32,7 +28,11 @@ auto correct, syntax check, spell suggestion ... and a lot more.
 editor has a table driven key mapping. One can easily edit the key map in
 keyhand.py, and the key actions in acthand.py
 
-The default key map resembles gedit / wed / etp / brief. Full ASCII;
+  If you encounter blank screen after start, cairo is not installed. The terminal interface
+will complain, but if you start from the GUI, you can see the message in the
+log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install cairo'.
+
+ The default key map resembles gedit / wed / etp / brief. Full ASCII;
  Any fixed font can be configured.
 
   See KEYS file for the list of keyboard shortcuts or press F3 in the
@@ -44,14 +44,14 @@ is for function summary and the top pane is for double view of the same file.
 dragging on their handle, or by the key combination Alt-Q (Shift-Alt-Q for
 the left pane)
 
- PyEdPro remembers a lot about the editing session. Loaded files, cursor positions,
+  PyEdPro remembers a lot about the editing session. Loaded files, cursor positions,
 fonts, font size, colors, search strings, goto numbers, undo / redo info,
 window positions ... and more.
  This is all stored in the directory ~/.PyEdPro. You may safely delete that
 directory to start PyEdPro with no memory of what has been done.
 
   Starting PyEdPro with no command line arguments will put you back to the
- previous session, exactly where you left off.
+previous session, exactly where you left off.
 
  The editor will work on all PyGobject platforms, and can open UNIX and Windows files
 transparently. It will save the file as the current platform's native CRLF
@@ -266,6 +266,8 @@ The author,
 
       Peter Glen
 
+Screen from a regular session, note the function list on the left:
+
 ![Screen Shot](image.png)
 
 Screen from Ubuntu:
@@ -273,6 +275,7 @@ Screen from Ubuntu:
 ![Screen Shot](pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
+
 
 
 

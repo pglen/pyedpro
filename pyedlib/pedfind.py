@@ -106,9 +106,6 @@ def find(self, self2, replace = False):
     dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
     dialog.checkbox2 = Gtk.CheckButton.new_with_mnemonic("Case In_sensitive")
 
-    dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
-    dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
-
     dialog.vbox.pack_start(label5, 0, 0, 0)
 
     hbox = Gtk.HBox()
@@ -125,12 +122,18 @@ def find(self, self2, replace = False):
     label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ")
 
     dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic("Search _All Buffers")
-    #dialog.checkbox4 = Gtk.CheckButton("Hello")
+    dialog.checkbox4 = Gtk.CheckButton.new_with_mnemonic("Search All _Files")
+
+    dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
+    dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
+    dialog.checkbox3.set_active(pedconfig.conf.sql.get_int("allbuf"))
+    #dialog.checkbox4.set_active(pedconfig.conf.sql.get_int("allfil"))
+
     hbox4 = Gtk.HBox()
     hbox4.pack_start(label30, 0, 0, 0);
     hbox4.pack_start(dialog.checkbox3, 0, 0, 0)
-    #hbox4.pack_start(label31, 0, 0, 0);
-    #hbox4.pack_start(dialog.checkbox4, 0, 0, 0)
+    hbox4.pack_start(label31, 0, 0, 0);
+    hbox4.pack_start(dialog.checkbox4, 0, 0, 0)
     hbox4.pack_start(label32, 0, 0, 0);
     dialog.vbox.pack_start(hbox4, 0, 0, 0)
     dialog.vbox.pack_start(label33, 0, 0, 0)
@@ -170,7 +173,12 @@ def find(self, self2, replace = False):
     if response != Gtk.ResponseType.ACCEPT:
         return
 
-    if  dialog.checkbox3.get_active():
+    if  dialog.checkbox4.get_active():
+        #print("Searching all files")
+        dialog.checkbox3.set_active(False)      # Force one
+        find_show_file(self, self2)
+
+    elif  dialog.checkbox3.get_active():
         nn = self2.mained.notebook.get_n_pages();
         cnt = 0; cnt2 = 0
         while True:
@@ -184,7 +192,9 @@ def find(self, self2, replace = False):
         find_show(self, self2)
 
 def find_keypress(area, event):
+
     global stridx, strhist, myentry
+
     #print   ("find keypress", area, event)
     if  event.type == Gdk.EventType.KEY_PRESS:
         if event.state  & Gdk.ModifierType.MOD1_MASK:
@@ -220,7 +230,7 @@ def find_show(self, self2):
     self.regex = None
 
     if self.srctxt == "":
-        self2.mained.update_statusbar("Must specify search string")
+        self2.mained.update_statusbar("Must specify search string.")
         return
 
     if self.dialog.checkbox.get_active():
@@ -235,7 +245,7 @@ def find_show(self, self2):
             return
 
     win2 = Gtk.Window(Gtk.WindowType.TOPLEVEL)
-    #win2.set_position(Gtk.WIN_POS_CENTER)
+    #win2.set_position(Gtk.WindowPosition.CENTER)
     #win2.set_transient_for(self2.mained.mywin)
     win2.set_transient_for(None)
 
@@ -331,6 +341,8 @@ def find_show(self, self2):
     pedconfig.conf.sql.put("src", self.srctxt)
     pedconfig.conf.sql.put("regex", self.dialog.checkbox.get_active())
     pedconfig.conf.sql.put("nocase", self.dialog.checkbox2.get_active())
+    pedconfig.conf.sql.put("allbuf", self.dialog.checkbox3.get_active())
+    pedconfig.conf.sql.put("allfil", self.dialog.checkbox4.get_active())
 
     if self.reptxt != "":
         pedconfig.conf.sql.put("rep", self.reptxt)
@@ -350,6 +362,163 @@ def find_show(self, self2):
     else:
         win2.show_all()
 
+
+def find_show_file(self, self2):
+
+    #print "find_show", "'" + self.srctxt + "'" + self2.fname
+
+    warnings.simplefilter("ignore")
+    self.regex = None
+
+    if self.srctxt == "":
+        self2.mained.update_statusbar("Must specify search string.")
+        return
+
+    if self.dialog.checkbox.get_active():
+        self.dialog.checkbox2.set_active(False)
+        try:
+            self.regex = re.compile(self.srctxt)
+        except re.error as msg:
+            #print  sys.exc_info()
+            pedync.message("\n   Error in regular expression: \n\n"\
+                            "    '%s' -- %s" % (self.srctxt, msg),\
+                            None, Gtk.MESSAGE_ERROR)
+            return
+
+    win2 = Gtk.Window(Gtk.WindowType.TOPLEVEL)
+    win2.set_position((Gtk.WindowPosition.CENTER))
+
+    #win2.set_transient_for(self2.mained.mywin)
+    win2.set_transient_for(None)
+
+    try:
+        win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
+    except:
+        print("Cannot load icon for find dialog")
+
+    ff = os.path.basename(self2.fname)
+    dd = os.getcwd()
+    if len(dd) > 24:
+        dd = " ... " + dd[-24:]
+
+    tit = "Searching '%s' for '%s'" % (dd, self.srctxt)
+
+    win2.set_title(tit)
+    win2.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
+
+    win2.connect("key-press-event", area_key2, self, win2)
+    win2.connect("key-release-event", area_key2, self, win2)
+    win2.connect("focus-in-event", area_focus, self, self2)
+    win2.connect("unmap", area_destroy, self)
+
+    '''
+    oldxx = pedconfig.conf.sql.get_int("srcx")
+    oldyy = pedconfig.conf.sql.get_int("srcy")
+    oldww = pedconfig.conf.sql.get_int("srcw")
+    oldhh = pedconfig.conf.sql.get_int("srch")
+    '''
+
+    #print "win2 oldconfig (x y w h) xnum", oldxx, oldyy, oldww, oldhh, self.xnum
+
+    if True or oldww == 0 or oldhh == 0 or oldxx  == 0 or oldyy == 0:
+        # Position it out of the way
+        sxx, syy = self2.mained.mywin.get_position()
+        wxx, wyy = self2.mained.mywin.get_size()
+        myww = 5 * wxx / 8; myhh = 5 * wyy / 8
+        win2.set_default_size(myww, myhh)
+        #win2.move(sxx + wxx - (myww  + self.xnum), \
+        #                    syy + wyy - (myhh + self.xnum))
+    else:
+        # Restore old size / location
+        win2.set_default_size(oldww, oldhh)
+        #win2.move(oldxx + self.xnum, oldyy + self.xnum)
+        win2.move(oldxx, oldyy)
+
+    vbox = Gtk.VBox()
+
+    win2.treestore = None
+    win2.tree = create_tree(self, win2, self.srctxt)
+    win2.tree.set_headers_visible(False)
+    win2.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
+
+    lab4 = Gtk.Label("   ");
+    vbox.pack_start(lab4, 0, 0, 0)
+
+    #self.tree.connect("row-activated",  tree_sel, self, self2)
+    win2.tree.connect("cursor-changed",  tree_sel_row2, self, self2)
+    #win2.connect("unmap", area_destroy, self)
+
+    stree = Gtk.ScrolledWindow()
+    stree.add(win2.tree)
+    vbox.pack_start(stree, True, True, 0)
+
+    win2.add(vbox)
+
+    ddd = []; ddd3 = []
+
+    filter = [".pyc", ".exe", ".obj", ".o", ".elf", ".bin" ]
+    ddd2 = os.listdir(".")
+    for aa in ddd2:
+        # Filter the obvious candidates:
+        extx = os.path.splitext(aa)[1]
+        if not extx in filter:
+            ddd.append(aa)
+
+    matches = 0
+    for filename in ddd:
+        if filename[0] == ".":
+            continue
+        if os.path.isfile(filename):
+            filestat = os.stat(filename)
+            #print("stat", filestat)
+            if filestat.st_size < 100000:
+                #print("Seaching: ", filename)
+                rrr = findinfile(self.srctxt, filename)
+                if rrr:
+                    matches += 1
+                    #print ("found: rrr", rrr)
+                    #ddd3.append(rrr)
+                    ddd3.append("%s matches %s times" % (filename, len(rrr)) )
+                    # Limit finds:
+                    lim = 5
+                    for aa in rrr:
+                        ddd3.append("         %s" % aa)
+                        if lim == 0:
+                            break
+                        lim = lim - 1
+
+    # ---------------------------------------------------------------------
+    #was, cnt2 = self2.search(self.srctxt, self.regex, self.dialog.checkbox2.get_active(),
+    #                self.dialog.checkbox.get_active())
+
+    update_treestore(self, win2, ddd3, 0)
+
+    self2.mained.update_statusbar("Found %d matching files total of %d matches."
+                                        % (matches, len(ddd3)))
+
+    pedconfig.conf.sql.put("src", self.srctxt)
+    pedconfig.conf.sql.put("regex", self.dialog.checkbox.get_active())
+    pedconfig.conf.sql.put("nocase", self.dialog.checkbox2.get_active())
+    pedconfig.conf.sql.put("allbuf", self.dialog.checkbox3.get_active())
+    pedconfig.conf.sql.put("allfil", self.dialog.checkbox4.get_active())
+
+    if self.reptxt != "":
+        pedconfig.conf.sql.put("rep", self.reptxt)
+
+    win2.tree.grab_focus()
+    #warnings.simplefilter("ignore")
+    win2.show_all()
+
+# Return an array of lines found
+
+def findinfile(nnn, ffff):
+
+    rrr = []
+    text = readfile(ffff, "\r\n")
+    for aa in text:
+        if nnn in aa:
+            rrr.append(aa)
+    return rrr
 
 def area_destroy(win2, self):
 
@@ -462,6 +631,36 @@ def tree_sel_row(xtree, self, self2):
     except:
         pass
 
+def     tree_sel_row2(xtree, self, self2):
+
+    sel = xtree.get_selection()
+    xmodel, xiter = sel.get_selected_rows()
+    # In muti selection, only process first
+    for aa in xiter:
+        xstr = xmodel.get_value(xmodel.get_iter(aa), 0)
+        print ("Selected:", xstr)
+        break
+
+    # Get back numbers (the C++ way)
+    #idx = xstr.find(":");          xxx = xstr[:idx]
+    #idx2 = xstr.find(":", idx+1);  yyy = xstr[idx+1:idx2]
+    #idx3 = xstr.find(" ", idx2+1); mlen = xstr[idx2+1:idx3]
+
+    # Get back numbers the python way
+    try:
+        bb = xstr.split(" ")[0].split(":")
+    except:
+        pass
+
+    # Confirm results:
+    # print "TREE sel", bb
+
+    try:
+        #self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
+        pass
+    except:
+        pass
+
 # Focus on the current window
 def area_focus(area, event, self, self2):
     #print "area_focus"
@@ -472,7 +671,9 @@ def area_focus(area, event, self, self2):
             self2.notebook.set_current_page(aa)
             self2.mained.mywin.set_focus(vcurr.area)
 
+# ------------------------------------------------------------------------
 # Call key handler
+
 def area_key(area, event, self):
 
     #print "area_key", event
@@ -485,6 +686,75 @@ def area_key(area, event, self):
     if  event.type == Gdk.EventType.KEY_PRESS:
         if event.keyval == Gdk.KEY_Return:
             #print "Ret"
+            area.destroy()
+
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
+            self.alt = True;
+
+        if event.keyval >= Gdk.KEY_1 and \
+                event.keyval <= Gdk.KEY_9:
+            pass
+            print("pedwin Alt num", event.keyval - Gdk.KEY__1)
+
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
+            if self.alt:
+                area.destroy()
+
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
+            self.alt = False;
+
+# ------------------------------------------------------------------------
+# Call key handler
+
+def area_key2(area, event, self, win2):
+
+    #print "area_key", event
+    # Do key down:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
+            #print "Esc"
+            area.destroy()
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
+
+            ''' root = win2.treestore.get_iter_first()
+            while root is not None:
+                xstr = win2.tree.get_model().get_value(root, 0)
+                print (root, xstr)
+                root = win2.treestore.iter_next(root) '''
+
+            #print ("Ret key")
+            sel = win2.tree.get_selection()
+            xstr = ""
+            xmodel, xiter = sel.get_selected_rows()
+            # In muti selection, only process first
+            for aa in xiter:
+                xstr = xmodel.get_value(xmodel.get_iter(aa), 0)
+                if xstr[0] == " ":
+                    #print ("Please select a file name field:", xstr)
+                    #pedconfig.conf.pedwin.update_statusbar(
+                    #    "Please select a file name line instead of a match line.")
+
+                    # Walk back ...
+                    root =  xmodel.get_iter(aa)
+                    while root is not None:
+                        xstr = win2.tree.get_model().get_value(root, 0)
+                        #print (root, xstr)
+                        if xstr[0] != " ":
+                            break
+                        root = win2.treestore.iter_previous(root)
+                break
+
+            idx = str.find(xstr, " matches")
+            #print ("Selected: '%s'" % xstr[:idx] )
+
+            pedconfig.conf.pedwin.openfile(xstr[:idx])
+
             area.destroy()
 
         if event.keyval == Gdk.KEY_Alt_L or \
@@ -676,6 +946,62 @@ def wnext(butt,self):
     pass
 
 #eof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

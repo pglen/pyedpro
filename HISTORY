@@ -14,8 +14,9 @@
 
   mar-29-2019
 
- .h files parsed as .c
- multi select on custom file load (alt-o)
+  .h files parsed as .c
+  multi select on custom file load (alt-o)
+  fixed coloring anomaly on color on / off
 
   mar-05-2019    (0.70)
 
@@ -167,11 +168,6 @@ v034:
 v042:
 
   Moved to pyedpro, version number restarted at 043.
-
-
-
-
-
 
 
 

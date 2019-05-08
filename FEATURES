@@ -1,9 +1,9 @@
-                        Special Features
-                        
+                           Special Features
+
    o PyEdPro runs wherever pyGTK is available. (Linux, Mac, Win)
    o Fast enough for large files
    o Easily customizable
-   o Macro Record / Play 
+   o Macro Record / Play
    o Comfortable key presets for Linux / Windows / Mac users
    o Multi window Editing
    o Regex and multi file search / replace
@@ -19,9 +19,17 @@
    o Undo / Redo that survives app restart
    o Long line wrapper for quick conversion
    o Lots lots more ...
-                          
-                          
- 
+
+
+ New:
+
+  Added directory search. Looks for strings and displays a summary of matches
+  in the current directory. Selecting a file will load it. Most useful for
+  development.
+
+  Extended PyEdPro to create a work log. It now saves a work log and timestamps
+  of file open / close / write operations. Also session start, session exit.
+
 
 
 

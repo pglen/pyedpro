@@ -634,6 +634,27 @@ class ActHand:
         #print ("CTRL - ALT - B")
         pass
 
+    def ctrl_alt_c(self, self2):
+        #print ("CTRL - ALT - C")
+        extx = os.path.splitext(self2.fname)[1]
+        # This will catch al 'C' varieties
+        if extx[1] == "c" or extx[1] == "h":
+            strx = "//"
+        else:
+            strx = "#"
+
+        for aa in strx:
+            #event = Gdk.Event(Gdk.EventType.KEY_PRESS);
+            event = Gdk.EventKey()
+            event.string  = aa
+            event.keyval = ord(aa)
+            self.add_key(self2, event)
+
+        xidx = self2.caret[0] + self2.xpos;
+        yidx = self2.caret[1] + self2.ypos
+        xidx -= len(strx); yidx += 1
+        self2.set_caret(xidx, yidx)
+
     def ctrl_alt_h(self, self2):
         #print "CTRL - ALT - H"
         pedfind.find(self, self2, True)
@@ -785,14 +806,15 @@ class ActHand:
 
         if self2.shift and self2.countup:
             self2.countup = 0
-        strx = "%d" % self2.countup
-        for aa in strx:
-            #event = Gdk.Event(Gdk.EventType.KEY_PRESS);
-            event = Gdk.EventKey()
-            event.string  = aa
-            event.keyval = ord(aa)
-            self.add_key(self2, event)
-        self2.countup += 1
+        else:
+            strx = "%d" % self2.countup
+            for aa in strx:
+                #event = Gdk.Event(Gdk.EventType.KEY_PRESS);
+                event = Gdk.EventKey()
+                event.string  = aa
+                event.keyval = ord(aa)
+                self.add_key(self2, event)
+            self2.countup += 1
 
     def ctrl_j(self, self2):
         #print "CTRL - J"
@@ -1759,6 +1781,17 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
 
 
 

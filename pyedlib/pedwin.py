@@ -1132,32 +1132,33 @@ class EdMainWindow():
         self.update_statusbar("%d of %d buffers saved." % (cnt2, nn))
 
     # -------------------------------------------------------------------
-    def openfile(self, fname):
+    def openfile(self, fnamex):
 
         # Is it already loaded? ... activate
         nn = notebook.get_n_pages();
+        fname2 = os.path.realpath(fnamex)
         for aa in range(nn):
             vcurr = notebook.get_nth_page(aa)
-            if vcurr.area.fname == fname:
+            if vcurr.area.fname == fname2:
                 if(pedconfig.conf.verbose):
-                    print("Already open '"+ fname + "'")
-                self.update_statusbar("Already open, activating '{0:s}'".format(fname))
+                    print("Already open '"+ fname2 + "'")
+                self.update_statusbar("Already open, activating '{0:s}'".format(fname2))
                 vcurr = notebook.set_current_page(aa)
                 vcurr = notebook.get_nth_page(aa)
                 self.mywin.set_focus(vcurr.vbox.area)
                 return
 
         if(pedconfig.conf.verbose):
-            print("Opening '"+ fname + "'")
+            print("Opening '"+ fname2 + "'")
 
-        self.update_statusbar("Opening file '{0:s}'".format(fname))
+        self.update_statusbar("Opening file '{0:s}'".format(fname2))
         vpaned = edPane()
-        ret = vpaned.area.loadfile(os.path.realpath(fname))
+        ret = vpaned.area.loadfile(fname2)
         if not ret:
-            self.update_statusbar("Cannot read file '{0:s}'".format(fname))
+            self.update_statusbar("Cannot read file '{0:s}'".format(fname2))
             return
-        vpaned.area2.loadfile(os.path.realpath(fname))
-        self.update_statusbar("Opened file '{0:s}'".format(fname))
+        vpaned.area2.loadfile(fname2)
+        self.update_statusbar("Opened file '{0:s}'".format(fname2))
 
         # Add to the list of buffers
         notebook.append_page(vpaned)
@@ -1374,4 +1375,6 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
 

@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 
 # Key Handler for the editor. Extracted to a separate module
-# for easy update. The key handler is table driven, so new key 
+# for easy update. The key handler is table driven, so new key
 # assignments can be made with ease
 
-#import gtk  
+#import gtk
 from __future__ import absolute_import
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
-          
+
 from . import acthand
 
 # Grabbed modifier defines from GTK
 #
 #  ... Turns out Gtk.gdk 2.6+ defines these (above) constants as ...
-#      Gtk.gdk.*_MASK 
+#      Gtk.gdk.*_MASK
 # Anyway, it was an exercise in grabbin' 'C' into python.
 
 GDK_SHIFT_MASK      = 1 << 0
@@ -41,7 +41,7 @@ GDK_BUTTON5_MASK    = 1 << 12
 GDK_SUPER_MASK    = 1 << 26
 GDK_HYPER_MASK    = 1 << 27
 GDK_META_MASK     = 1 << 28
-  
+
 GDK_RELEASE_MASK  = 1 << 30
 GDK_MODIFIER_MASK = 0x5c001fff
 
@@ -86,7 +86,7 @@ class KeyHand:
 
             [Gdk.KEY_Tab, self.act.tab],
             [Gdk.KEY_ISO_Left_Tab, self.act.tab],
-    
+
             [Gdk.KEY_F1, self.act.f1],
             [Gdk.KEY_F2, self.act.f2],
             [Gdk.KEY_F3, self.act.f3],
@@ -103,7 +103,7 @@ class KeyHand:
 
         # Separate keytab on ctrl for easy customization. May call functions
         # in any other keytabs. (if sensitive to mod key, separate actions result)
-        
+
         self.ctrl_keytab = [
             [Gdk.KEY_Tab, self.act.ctrl_tab],
             [Gdk.KEY_Up, self.act.up],
@@ -180,8 +180,8 @@ class KeyHand:
             [Gdk.KEY_space, self.act.ctrl_space],
             ]
 
-        # Separate keytab on ctrl - alt for easy customization. 
-        # Do upper and lower for catching shift in the routine 
+        # Separate keytab on ctrl - alt for easy customization.
+        # Do upper and lower for catching shift in the routine
 
         self.ctrl_alt_keytab = [
             [Gdk.KEY_h, self.act.ctrl_alt_h],
@@ -192,16 +192,19 @@ class KeyHand:
             [Gdk.KEY_K, self.act.ctrl_alt_k],
             [Gdk.KEY_l, self.act.ctrl_alt_l],
             [Gdk.KEY_L, self.act.ctrl_alt_l],
-            
+
             [Gdk.KEY_a, self.act.ctrl_alt_a],
             [Gdk.KEY_A, self.act.ctrl_alt_a],
-            
+
             [Gdk.KEY_b, self.act.ctrl_alt_b],
             [Gdk.KEY_B, self.act.ctrl_alt_b],
-            
+
+            [Gdk.KEY_c, self.act.ctrl_alt_c],
+            [Gdk.KEY_C, self.act.ctrl_alt_c],
+
             ]
 
-        # Separate keytab on alt for easy customization. 
+        # Separate keytab on alt for easy customization.
 
         self.alt_keytab = [
             [Gdk.KEY_Up, self.act.up],
@@ -276,49 +279,49 @@ class KeyHand:
     # Main entry point for handling keys:
     def handle_key(self, self2, area, event):
 
-        #print "key event",  int(event.type), int(event.state), 
+        #print "key event",  int(event.type), int(event.state),
         #print event.keyval, hex(event.keyval)
         #print event.state, event.string
-        
+
         self.state2 = int(event.state)
         self.handle_key2(self2, area, event)
-        
+
     # Internal entry point for handling keys:
     def handle_key2(self, self2, area, event):
         if self2.record:
             if event.keyval == Gdk.KEY_F7 or \
                     event.keyval == Gdk.KEY_F8:
                 #print "avoiding record/play recursion", event
-                pass                                    
+                pass
             else:
                 #print "rec", event, event.type, int(event.type)
                 var = (int(event.type), int(event.keyval), int(event.state),\
-                       event.window, event.string, self.shift, self.ctrl, self.alt)            
-                self2.recarr.append(var)     
-                
+                       event.window, event.string, self.shift, self.ctrl, self.alt)
+                self2.recarr.append(var)
+
         ret = self.handle_modifiers(self2, area, event)
         # Propagate to document (just for easy access)
         self2.ctrl = self.ctrl
         self2.alt = self.alt
         self2.shift = self.shift
         if ret: return
-                
+
         if  event.type == Gdk.EventType.KEY_PRESS:
-            if self2.nokey:                                  
+            if self2.nokey:
                 if  (self.ctrl == True) and \
                     (event.keyval == Gdk.KEY_space):
-                    self2.mained.update_statusbar("Keyboard enabled.")  
+                    self2.mained.update_statusbar("Keyboard enabled.")
                     self2.nokey = False
-                else:                 
+                else:
                     self2.mained.update_statusbar(\
                         "Keyboard disabled. Press Ctrl-Space to enable.")
                     if event.keyval == Gdk.KEY_Escape:
-                        self2.mained.update_statusbar("ESC")            
+                        self2.mained.update_statusbar("ESC")
                 return
-        
+
         #print "executing key ", \
         #    event, event.type, event.keyval, event.window
-                                                      
+
         # Call the appropriate handlers. Note the priority.
         if self.ctrl and self.alt:
             self.handle_ctrl_alt_key(self2, area, event)
@@ -335,32 +338,32 @@ class KeyHand:
     def handle_modifiers(self, self2, area, event):
 
         ret = False
-        
+
         # This turned out to be a bust ... let the OS feed me the right state
         # However, we still interpret them so the key is discarded
-        # The key state was inconsistent, as the key is not fed when there is 
-        # no focus. For example alt-tab - the focus goes away on tab - 
+        # The key state was inconsistent, as the key is not fed when there is
+        # no focus. For example alt-tab - the focus goes away on tab -
         # alt release is never fed to us. See Below.
-        # Also, if you want to interpret Left-Alt or Right-Alt, 
-        # (or L/R shift/control), here is the place to do it.        
+        # Also, if you want to interpret Left-Alt or Right-Alt,
+        # (or L/R shift/control), here is the place to do it.
 
         # Do key down:
-        if  event.type == Gdk.EventType.KEY_PRESS:    
+        if  event.type == Gdk.EventType.KEY_PRESS:
             if event.keyval == Gdk.KEY_Alt_L or \
                     event.keyval == Gdk.KEY_Alt_R:
                 #print "Alt down"
                 #self2.flash(True)
-                #self.alt = True; 
+                #self.alt = True;
                 ret = True
             elif event.keyval == Gdk.KEY_Control_L or \
                     event.keyval == Gdk.KEY_Control_R:
                 #print "Ctrl down"
-                #self.ctrl = True; 
+                #self.ctrl = True;
                 ret = True
             if event.keyval == Gdk.KEY_Shift_L or \
                   event.keyval == Gdk.KEY_Shift_R:
                 #print "shift down"
-                #self.shift = True; 
+                #self.shift = True;
                 ret = True
 
         # Do key up
@@ -369,19 +372,19 @@ class KeyHand:
                   event.keyval == Gdk.KEY_Alt_R:
                 #print "Alt up"
                 #self2.flash(False)
-                #self.alt = False; 
+                #self.alt = False;
                 ret = True
             if event.keyval == Gdk.KEY_Control_L or \
                   event.keyval == Gdk.KEY_Control_R:
                 #print "Ctrl up"
-                #self.ctrl = False; 
+                #self.ctrl = False;
                 ret = True
             if event.keyval == Gdk.KEY_Shift_L or \
                   event.keyval == Gdk.KEY_Shift_R:
                 #print "shift up"
-                #self.shift = False; 
-                ret = True           
-    
+                #self.shift = False;
+                ret = True
+
         #if event.state & GDK_SHIFT_MASK:
         #if event.state & Gdk.EventType.SHIFT_MASK:
         if self.state2 & Gdk.ModifierType.SHIFT_MASK:
@@ -423,9 +426,9 @@ class KeyHand:
         if event.type == Gdk.EventType.KEY_PRESS:
             if event.keyval != Gdk.KEY_Home:
                 self.act.was_home = 0
-            if event.keyval != Gdk.KEY_End:                
+            if event.keyval != Gdk.KEY_End:
                 self.act.was_end = 0
-            
+
         self._handle_key(self2, area, event, self.reg_keytab)
 
     # --------------------------------------------------------------------
@@ -445,12 +448,12 @@ class KeyHand:
                         self2.mained.update_statusbar("Already at page %d ..." % old)
                     else:
                         self2.notebook.set_current_page(num)
-                
+
             elif event.keyval == Gdk.KEY_0:
                 self2.appwin.mywin.set_focus(self2.appwin.treeview)
             else:
                 self._handle_key(self2, area, event, self.alt_keytab)
-        
+
     # Internal key handler. Keytab preselected by caller
     def _handle_key(self, self2, area, event, xtab):
         #print event
@@ -458,7 +461,7 @@ class KeyHand:
         if  event.type == Gdk.EventType.KEY_PRESS:
             gotkey = False
             for kk, func in xtab:
-                if event.keyval == kk:        
+                if event.keyval == kk:
                     gotkey = True
                     func(self2)
                     break
@@ -475,7 +478,7 @@ class KeyHand:
                         self2.flash(True)
                else:
                     self.act.add_key(self2, event)
-               
+
         if  event.type == Gdk.EventType.KEY_RELEASE:
             if event.keyval == Gdk.KEY_F12:
                     if self.shift:
@@ -486,8 +489,9 @@ class KeyHand:
                         self2.showcol(False)
                     else:
                         self2.flash(False)
-               
+
         return ret
+
 
 
 
