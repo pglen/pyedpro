@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+
 import signal, os, time, string, pickle, re
 
 import gi
@@ -361,7 +362,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         pass
 
     def scroll_event(self, widget, event):
+
         #print( "scroll_event", event, event.direction)
+
         xidx = self.xpos + self.caret[0]
         yidx = self.ypos + self.caret[1]
         if event.direction == Gdk.ScrollDirection.SMOOTH:
@@ -373,7 +376,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             else:
                 yidx += int(directy)
         else:
-            if event.type == Gdk.ScrollDirection.UP:
+            #print( "type", type(event.type))
+            #print("truth", isinstance(event.type, Gdk.EventType))
+            if event.direction == Gdk.ScrollDirection.UP:
                 yidx -= self.pgup / 2
             else:
                 yidx += self.pgup / 2
@@ -574,7 +579,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         return int(self.xpos + xx / self.cxx), int(self.ypos + yy / self.cyy)
 
     def area_motion(self, area, event):
-        #print "motion event", event.state, event.x, event.y
+        #print ("motion event", event.state, event.x, event.y)
         if event.state & Gdk.ModifierType.BUTTON1_MASK:
             #print "motion event butt 1", event.state, event.x, event.y
             if self.xsel == -1 and self.scrtab != True:
@@ -959,33 +964,32 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         GLib.timeout_add(300, self.keytime)
 
     def popspell(self, widget, event, xstr):
-        # Credeate a new menu-item with a name...
-        menu = Gtk.Menu()
-        menu.append(self.create_menuitem("Checking '%s'" % xstr, None))
-        menu.append(self.create_menuitem("Add to Dict", self.addict, xstr))
+        # Create a new menu-item with a name...
+        self.menu2 = Gtk.Menu()
+        self.menu2.append(self.create_menuitem("Checking '%s'" % xstr, None))
+        self.menu2.append(self.create_menuitem("Add to Dict", self.addict, xstr))
 
         mi = self.create_menuitem("-------------", None)
         mi.set_sensitive(False)
-        menu.append(mi)
+        self.menu2.append(mi)
 
         strs = "Creating suggestion list for '{0:s}'".format(xstr)
         self.mained.update_statusbar(strs)
         arr = pedspell.suggest(self, xstr)
 
         if len(arr) == 0:
-            menu.append(self.create_menuitem("No Matches", None))
+            self.menu2.append(self.create_menuitem("No Matches", None))
         else:
             for aa, bb in arr:
-                menu.append(self.create_menuitem(bb, self.menuitem_response))
+                self.menu2.append(self.create_menuitem(bb, self.menuitem_response))
 
-        menu.popup(None, None, None, None, event.button, event.time)
-        #self.mained.update_statusbar("Done.")
+        self.menu2.popup(None, None, None, None, event.button, event.time)
+        self.mained.update_statusbar("Done menu popup.")
 
     def poprclick(self, widget, event):
-        #print "Making rclick"
-        #mm = self.build_menu(self.window, pedmenu.rclick_menu)
-        mm = self.build_menu(self, pedmenu.rclick_menu)
-        mm.popup(None, None, None, None, event.button, event.time)
+        print ("Making rclick")
+        self.build_menu(self, pedmenu.rclick_menu)
+        self.menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response(self, widget, string, arg):
         #print "menuitem response '%s'" % string
@@ -1037,13 +1041,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         return action_group
 
     def build_menu(self, window, items):
-        accel_group = Gtk.AccelGroup()
-        #mmm = Gtk.Menu()
-        #bbb = Gtk.Builder.new_from_string(items, len(items))
-        menu =  Gtk.Menu()
-        #menu.set_accel_path()
+        self.menu =  Gtk.Menu()
         for aa, bb, cc, dd, ee  in items:
-            #print aa
+            #print ("menu item", aa)
             if ee:
                 menu_item = Gtk.MenuItem.new_with_mnemonic(
                             "----------------------------")
@@ -1057,15 +1057,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 sss = aa + "%s\t%s" % (fff, ttt)
                 menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
                 menu_item.connect("activate", self.rclick_action, aa, dd );
-                #menu_item.
-            menu.append(menu_item)
-        menu.show_all()
-        #item_factory = Gtk.ItemFactory(Gtk.Menu, "<pydoc>", accel_group)
-        #item_factory.create_items(items)
-        #self.item_factory = item_factory
-        #return item_factory.get_widget("<pydoc>")
-
-        return menu
+            self.menu.append(menu_item)
+        self.menu.show_all()
+        return self.menu
 
     def get_size(self):
         rect = self.get_allocation()
@@ -1644,6 +1638,22 @@ def run_async_time(win):
         pass
 
 # eof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

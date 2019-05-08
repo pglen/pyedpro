@@ -1,56 +1,56 @@
 #   PyEdPro README
 
 ## Python editor.
- 
-   Welcome to PyEdPro. This is modern multi-platform editor. Simple, powerful, 
+
+   Welcome to PyEdPro. This is modern multi-platform editor. Simple, powerful,
 configurable, extendable. Goodies like macro recording / playback, spell check,
-column select, multiple clipboards, unlimited undo ... makes it an editor 
+column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
  This project is a successor of pyedit, after porting it to GTK3. PyEdPro
  will run anywhere PyGTK can run.
 
-  Working and tested platforms currently are: 
-  
-        Win 7 .. Win 10 ...
-        Centos 6 .. 7 Ubuntu 14 ... 16 
-        Msys, Msys2, Mingw, Raspberry PI ... 
+  Working and tested platforms currently are:
 
-  If you encounter blank screen after start, cairo is not installed. The terminal interface 
-will complain, but if you start from the GUI, you can see the message in the 
+        Win 7 .. Win 10 ...
+        Centos 6 .. 7 Ubuntu 14 ... 16
+        Msys, Msys2, Mingw, Raspberry PI ...
+
+  If you encounter blank screen after start, cairo is not installed. The terminal interface
+will complain, but if you start from the GUI, you can see the message in the
 log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install cairo'.
-  
-  I mainly run it in MSYS2, Ubuntu, Windows 10, and the Raspberry-Pi. 
+
+  I mainly run it in MSYS2, Ubuntu, Windows 10, and the Raspberry-Pi.
 It behaves consistently on all the tested platforms. If you want an editor
 that works the same way in all your workspaces, PyEdPro is the one.
- 
+
    PyEdPro.py has macro recording/play, search/replace, functional navigation,
 comment/string spell check, auto backup, persistent undo/redo, auto complete,
 auto correct, syntax check, spell suggestion ... and a lot more.
-   
+
    PyEdPro is fast, it is extendable, as python lends itself to easy extending. The
 editor has a table driven key mapping. One can easily edit the key map in
 keyhand.py, and the key actions in acthand.py
 
-The default key map resembles gedit / wed / etp / brief. Full ASCII; 
- Any fixed font can be configured. 
+The default key map resembles gedit / wed / etp / brief. Full ASCII;
+ Any fixed font can be configured.
 
   See KEYS file for the list of keyboard shortcuts or press F3 in the
 editor or look at the file in pyedlib/KEYS.
 
-  On initial start, PyEdPro shows a left pane and a top pane. The left pane 
+  On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
-(to see the caller and the callee) These panes can be hidden with the mouse by 
+(to see the caller and the callee) These panes can be hidden with the mouse by
 dragging on their handle, or by the key combination Alt-Q (Shift-Alt-Q for
-the left pane) 
+the left pane)
 
  PyEdPro remembers a lot about the editing session. Loaded files, cursor positions,
 fonts, font size, colors, search strings, goto numbers, undo / redo info,
 window positions ... and more.
- This is all stored in the directory ~/.PyEdPro. You may safely delete that 
+ This is all stored in the directory ~/.PyEdPro. You may safely delete that
 directory to start PyEdPro with no memory of what has been done.
 
-  Starting PyEdPro with no command line arguments will put you back to the 
+  Starting PyEdPro with no command line arguments will put you back to the
  previous session, exactly where you left off.
 
  The editor will work on all PyGobject platforms, and can open UNIX and Windows files
@@ -62,15 +62,15 @@ the configuration info into a SQLite database in the ~/.PyEdPro directory.
 
      (~/ stands for the user's home directory)
 
- Contributors are welcome. 
+ Contributors are welcome.
 
  ### PyEdPro Key Assignments
 
    This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
-added to the buffer. To implement a new feature follow a particular key's 
+added to the buffer. To implement a new feature follow a particular key's
 execution path, and replicate functionality. It is eazy to follow, as it is
-table driven.
+table driven. (For the latest vestion of the table see: KEYS.TXT)
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char
@@ -80,10 +80,10 @@ table driven.
     PgDn                        -- Go down one page
     Home                        -- Go to beginning of line
     End                         -- Go end of line
-                                
+
     [a-z]|[A-Z]|[0-9]           -- Insert character (key)
     !@#$%^&*()_ ...             -- Insert punctuation (key)
-    
+
     Tab                         -- Insert 4 spaces up to % 4
     Shift-Tab                   -- Insert a real tab up to % 4
     Ctrl-A                      -- Select All text in buffer
@@ -114,7 +114,7 @@ table driven.
     Ctrl-X                      -- Cut to Clipboard
     Ctrl-Y                      -- Redo last undo
     Ctrl-Z                      -- Undo last change
-                                
+
     Ctrl Up                     -- Go up 10 lines
     Ctrl Down                   -- Go down 10 lines
     Ctrl Left                   -- Go left one word
@@ -124,7 +124,7 @@ table driven.
     Ctrl Home                   -- Go to beginning of file
     Ctrl End                    -- Go end of file
     Ctrl Space                  -- Enable / disable keyboard
-                                
+
     Ctrl 0                      -- Switch to clipboard 0 (OS Clipboard)
     Ctrl 1                      -- Switch to clipboard 1
       .
@@ -140,10 +140,10 @@ table driven.
     Alt PgDn                    -- Go to previous buffer
     Alt Home                    -- Go to first buffer
     Alt End                     -- Go to last buffer
-                                
+
     Home Home                   -- Go to beginning of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl-Home)
-                                
+
     Alt-A                       -- Save All buffers
     Alt-B                       -- Show Buffers
     Alt-C                       -- Start column select
@@ -170,9 +170,9 @@ table driven.
     Alt-X                       -- Exit program
     Alt-Y                       -- Check Python syntax (compile buffer)
     Alt-Z                       -- Wrap long lines
-                                
+
     Alt-0                       -- Switch to Function pane (left)****
-                                
+
     Alt-1                       -- Switch to buffer 1
     Alt-2                       -- Switch to buffer 2
     Alt-3                       -- Switch to buffer 3
@@ -182,7 +182,7 @@ table driven.
     Alt-7                       -- Switch to buffer 7
     Alt-8                       -- Switch to buffer 8
     Alt-9                       -- Switch to buffer 9
-                                
+
     Alt-F1                      --  Gnome - Menu
     Alt-F2                      --  Gnome - Run App
     Alt-F4                      --  Gnome - Exit program (Use Alt-X)
@@ -190,12 +190,12 @@ table driven.
     Alt-F8                      --  Gnome - Re-size window
     Alt-F9                      --  Gnome - Minimize window
     Alt-F10                     --  Gnome - Full Screen window
- 
+
     Ctrl-Alt-H                  --  Left Arrow
     Ctrl-Alt-J                  --  Toggle coloring
     Ctrl-Alt-K                  --  Toggle Hex View
     Ctrl-Alt-L                  --  Lowercase word
-                                                               
+
     F1                           -- Help
     F2                           -- Dev Help
     F3                           -- Key assignments Help
@@ -220,7 +220,7 @@ Context dependent key assignments:
     ENTER                       -- Exit dialog (accept)
 
  Find / Replace context:
- 
+
     Alt-S                       -- Case Insensitive search
     Alt-R                       -- Regular expression search
     Alt-A                       -- All buffer search
@@ -251,16 +251,16 @@ Notes:
                         (~/.pyedpro/data) '*.sav'
     ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
                         Useful for turining assignments.
-    ****    F9          Only Comments and strings are checked, otherwise all 
+    ****    F9          Only Comments and strings are checked, otherwise all
                         text is checked
     *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
 
-  Any unrecognized key is inserted verbatim into the buffer, and a message is printed 
+  Any unrecognized key is inserted verbatim into the buffer, and a message is printed
 on the controlling terminal. If no action is listed, that key is unassigned.
 
-  As a matter of consistency, most dialogs can be dismissed with the Esc key or 
+  As a matter of consistency, most dialogs can be dismissed with the Esc key or
 the Alt-X key combination. The main window can be exited by Alt-X or standard exit
-keys like Alt-F4; 
+keys like Alt-F4;
 
 The author,
 
@@ -273,6 +273,7 @@ Screen from Ubuntu:
 ![Screen Shot](pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
+
 
 
 

@@ -3,6 +3,8 @@
 from __future__ import absolute_import
 from __future__ import print_function
 import signal, os, time, sys, subprocess, platform
+import ctypes
+
 import warnings
 
 import gi
@@ -27,6 +29,8 @@ STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 treestore = None
 treestore2 = None
 notebook = None
+
+hidden = 0
 
 # -----------------------------------------------------------------------
 # Create document
@@ -1309,7 +1313,23 @@ def handler_tick():
     try:
         #print 'Signal handler called with signal'
         #print pedconfig.conf.idle, pedconfig.conf.syncidle
-        global notebook
+        global notebook, hidden
+
+        if not hidden:
+            hidden = True
+            try:
+                #a = input('Input value here:')
+                kernel32 = ctypes.WinDLL('kernel32')
+                user32 = ctypes.WinDLL('user32')
+
+                if kernel32:
+                    print("Hiding controlling terminal")
+                    SW_HIDE = 0
+                    hWnd = kernel32.GetConsoleWindow()
+                    user32.ShowWindow(hWnd, SW_HIDE)
+            except:
+                pass
+
 
         if pedconfig.conf.idle:
             pedconfig.conf.idle -= 1
@@ -1354,7 +1374,4 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
-
-
-
 
