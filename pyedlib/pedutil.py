@@ -73,6 +73,18 @@ def     readfile(strx, sep):
     return text
 
 # ------------------------------------------------------------------------
+# Return an array of lines found
+
+def findinfile(nnn, ffff):
+
+    rrr = []
+    text = readfile(ffff, "\r\n")
+    for aa in text:
+        if nnn in aa:
+            rrr.append(aa)
+    return rrr
+
+# ------------------------------------------------------------------------
 # Propagate exceptions to higher level
 
 def  writefile(strx, buff, sep = "\n"):
@@ -666,6 +678,7 @@ def     load_sess():
 
 
 # EOF
+
 
 
 

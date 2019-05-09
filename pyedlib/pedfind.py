@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+
 import re, string, warnings
 
 import gi
@@ -444,25 +445,24 @@ def find_show_file(self, self2):
     lab4 = Gtk.Label("   ");
     vbox.pack_start(lab4, 0, 0, 0)
 
-    #self.tree.connect("row-activated",  tree_sel, self, self2)
+    win2.tree.connect("row-activated",   tree_sel2, self, self2, win2)
     win2.tree.connect("cursor-changed",  tree_sel_row2, self, self2)
     #win2.connect("unmap", area_destroy, self)
 
     stree = Gtk.ScrolledWindow()
     stree.add(win2.tree)
     vbox.pack_start(stree, True, True, 0)
-
     win2.add(vbox)
 
     ddd = []; ddd3 = []
-
     filter = [".pyc", ".exe", ".obj", ".o", ".elf", ".bin" ]
     ddd2 = os.listdir(".")
     for aa in ddd2:
         # Filter the obvious candidates:
         extx = os.path.splitext(aa)[1]
-        if not extx in filter:
+        if not extx in filter :
             ddd.append(aa)
+    ddd2 = []
 
     matches = 0
     for filename in ddd:
@@ -471,6 +471,7 @@ def find_show_file(self, self2):
         if os.path.isfile(filename):
             filestat = os.stat(filename)
             #print("stat", filestat)
+
             if filestat.st_size < 100000:
                 #print("Seaching: ", filename)
                 rrr = findinfile(self.srctxt, filename)
@@ -486,6 +487,10 @@ def find_show_file(self, self2):
                         if lim == 0:
                             break
                         lim = lim - 1
+            else:
+                #print("Skipped searching: ", filename)
+                pass
+
 
     # ---------------------------------------------------------------------
     #was, cnt2 = self2.search(self.srctxt, self.regex, self.dialog.checkbox2.get_active(),
@@ -509,16 +514,7 @@ def find_show_file(self, self2):
     #warnings.simplefilter("ignore")
     win2.show_all()
 
-# Return an array of lines found
-
-def findinfile(nnn, ffff):
-
-    rrr = []
-    text = readfile(ffff, "\r\n")
-    for aa in text:
-        if nnn in aa:
-            rrr.append(aa)
-    return rrr
+# ------------------------------------------------------------------------
 
 def area_destroy(win2, self):
 
@@ -602,7 +598,7 @@ def src_line2(self, self2, line, cnt):
 
 # -------------------------------------------------------------------------
 
-def tree_sel_row(xtree, self, self2):
+def     tree_sel_row(xtree, self, self2):
 
     sel = xtree.get_selection()
     xmodel, xiter = sel.get_selected_rows()
@@ -631,6 +627,22 @@ def tree_sel_row(xtree, self, self2):
     except:
         pass
 
+def     tree_sel2(xtree, self, self2, par1, par2, par3):
+    print( self2, par1, par2, par3)
+    sel = xtree.get_selection()
+    xmodel, xiter = sel.get_selected_rows()
+    # In muti selection, only process first
+    for aa in xiter:
+        xstr = xmodel.get_value(xmodel.get_iter(aa), 0)
+        #print ("selSelected:", xstr)
+        if xstr[0] != " ":
+            idx = str.find(xstr, " matches")
+            #print ("Selected: '%s'" % xstr[:idx] )
+            pedconfig.conf.pedwin.openfile(xstr[:idx])
+            par3.destroy()
+        break
+    pass
+
 def     tree_sel_row2(xtree, self, self2):
 
     sel = xtree.get_selection()
@@ -638,7 +650,7 @@ def     tree_sel_row2(xtree, self, self2):
     # In muti selection, only process first
     for aa in xiter:
         xstr = xmodel.get_value(xmodel.get_iter(aa), 0)
-        print ("Selected:", xstr)
+        #print ("Selected:", xstr)
         break
 
     # Get back numbers (the C++ way)
@@ -695,7 +707,7 @@ def area_key(area, event, self):
         if event.keyval >= Gdk.KEY_1 and \
                 event.keyval <= Gdk.KEY_9:
             pass
-            print("pedwin Alt num", event.keyval - Gdk.KEY__1)
+            #print("pedwin Alt num", event.keyval - Gdk.KEY__1)
 
         if event.keyval == Gdk.KEY_x or \
                 event.keyval == Gdk.KEY_X:
@@ -764,7 +776,7 @@ def area_key2(area, event, self, win2):
         if event.keyval >= Gdk.KEY_1 and \
                 event.keyval <= Gdk.KEY_9:
             pass
-            print("pedwin Alt num", event.keyval - Gdk.KEY__1)
+            #print("pedwin Alt num", event.keyval - Gdk.KEY__1)
 
         if event.keyval == Gdk.KEY_x or \
                 event.keyval == Gdk.KEY_X:
@@ -946,6 +958,13 @@ def wnext(butt,self):
     pass
 
 #eof
+
+
+
+
+
+
+
 
 
 

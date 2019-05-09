@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+
 import signal, os, time, string, pickle, re
 
 import gi
@@ -982,14 +983,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         self.menu2.popup(None, None, None, None, event.button, event.time)
         #self.mained.update_statusbar("Done menu popup.")
-         
+
     def poprclick(self, widget, event):
         #print ("Making rclick")
         self.build_menu(self, pedmenu.rclick_menu)
-                                                       
+
         self.build_menu(self, pedmenu.rclick_menu)
         self.menu.popup(None, None, None, None, event.button, event.time)
-          
+
     def menuitem_response(self, widget, string, arg):
         #print "menuitem response '%s'" % string
         # See if capitalized:
@@ -1040,7 +1041,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         return action_group
 
     def build_menu(self, window, items):
-        
+
         self.menu =  Gtk.Menu()
         for aa, bb, cc, dd, ee  in items:
             #print ("menu item", aa)
@@ -1057,11 +1058,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 sss = aa + "%s\t%s" % (fff, ttt)
                 menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
                 menu_item.connect("activate", self.rclick_action, aa, dd );
-               
+
             self.menu.append(menu_item)
         self.menu.show_all()
         return self.menu
-        
+
 
     def get_size(self):
         rect = self.get_allocation()
@@ -1640,5 +1641,6 @@ def run_async_time(win):
         pass
 
 # eof
+
 
 

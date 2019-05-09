@@ -387,6 +387,7 @@ class EdMainWindow():
             notebook.append_page(vpaned)
             vpaned.area.set_tablabel()
     '''
+
     # --------------------------------------------------------------------
 
     def add_mru(self, merge, action_group, fname, mru):
@@ -1375,6 +1376,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 
