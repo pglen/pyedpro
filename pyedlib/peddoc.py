@@ -987,8 +987,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def poprclick(self, widget, event):
         #print ("Making rclick")
         self.build_menu(self, pedmenu.rclick_menu)
-
-        self.build_menu(self, pedmenu.rclick_menu)
         self.menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response(self, widget, string, arg):
@@ -1024,6 +1022,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         elif ttt == 9:
             self.mained.paste()
         elif ttt == 11:
+            #self.mained.activate_exit()
+            #print("Toggle read only");
+            self.readonly = not self.readonly
+            arrx = ["OFF", "ON"]
+            self.mained.update_statusbar("Toggled read only to %s" % arrx[self.readonly])
+
+        elif ttt == 13:
             self.mained.activate_exit()
         else:
             print("Invalid menu item selected")
@@ -1641,6 +1646,13 @@ def run_async_time(win):
         pass
 
 # eof
+
+
+
+
+
+
+
 
 
 

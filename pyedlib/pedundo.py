@@ -145,7 +145,7 @@ def redo(self2, keyh):
     revredo = [];
     while True:
         xarridx = len(self2.redoarr)
-        if xarridx == 1 : break
+        if xarridx == 0 : break
         xx, yy, mode, line = self2.redoarr[xarridx - 1]
         #print "redo", mode, "line '", line, "'"
         revredo.append((xx, yy, mode, line))
@@ -210,6 +210,7 @@ def redo(self2, keyh):
     self2.mained.update_statusbar("Redo %d done." % xlen)
 
 # EOF
+
 
 
 

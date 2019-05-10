@@ -2,8 +2,11 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+
 import gi
+
 #from six.moves import range
+
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
@@ -65,7 +68,9 @@ rclick_menu = (
             ( "C_ut",           "<control>X",   rclick_action, 8, None ),
             ( "_Paste",         "<control>V",   rclick_action, 9, None ),
             ( "",               None,           None, 10, "<Separator>" ),
-            ( "E_xit",          "<alt>X",       rclick_quit, 11, None ),
+            ( "Toggle _RO",     None,           rclick_action, 11, None ),
+            ( "",               None,           None, 12, "<Separator>" ),
+            ( "E_xit",          "<alt>X",       rclick_quit, 13, None ),
             )
 
 def create_action_group(self):
@@ -347,6 +352,11 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
+
+
+
+
 
 
 
