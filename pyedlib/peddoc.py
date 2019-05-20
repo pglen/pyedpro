@@ -1594,49 +1594,62 @@ def run_async_time(win):
     #print "run_sync_time", time.time()
 
     sumw = [] ; lname = win.fname.lower()
-    if win.text:
-        if ".c" in lname or ".h" in lname:
-            try:
-                regex = re.compile(ckeywords)
-                for line in win.text:
-                    res = regex.search(line)
-                    if res:
-                        #print res, res.start(), res.end()
-                        sumw.append(line)
-            except:
-                print("Exception in c func handler", sys.exc_info())
-                pass
+    if not win.text:
+        return
 
-        elif ".py" in lname:
-            try:
-                regex = re.compile(pykeywords2)
+    if ".c" in lname or ".h" in lname:
+        try:
+            regex = re.compile(ckeywords)
+            for line in win.text:
+                res = regex.search(line)
+                if res:
+                    #print res, res.start(), res.end()
+                    sumw.append(line)
+        except:
+            print("Exception in c func handler", sys.exc_info())
+            pass
+
+    elif ".py" in lname:
+        try:
+            regex = re.compile(pykeywords2)
+            for line in win.text:
+                res = regex.search(line)
+                if res:
+                    #print res, res.start(), res.end()
+                    sumw.append(line)
+        except:
+            print("Exception in py func handler", sys.exc_info())
+            pass
+    elif ".bas" in lname:
+        try:
+            regex = re.compile(basekeywords)
+            for line in win.text:
+                res = regex.search(line)
+                if res:
+                    #print res, res.start(), res.end()
+                    sumw.append(line)
+        except:
+            print("Exception in func extraction handler", sys.exc_info())
+            pass
+    elif ".s" in lname:
+        try:
+            regex = re.compile(Skeywords)
+            for line in win.text:
+                res = regex.search(line)
+                if res:
+                    #print res, res.start(), res.end()
+                    sumw.append(line)
+        except:
+            print("Exception in func extraction handler", sys.exc_info())
+            pass
+    else:
+        try:
+            for kw in sumkeywords:
                 for line in win.text:
-                    res = regex.search(line)
-                    if res:
-                        #print res, res.start(), res.end()
+                    if line.find(kw) >= 0:
                         sumw.append(line)
-            except:
-                print("Exception in py func handler", sys.exc_info())
-                pass
-        elif ".bas" in lname:
-            try:
-                regex = re.compile(basekeywords)
-                for line in win.text:
-                    res = regex.search(line)
-                    if res:
-                        #print res, res.start(), res.end()
-                        sumw.append(line)
-            except:
-                print("Exception in func extraction handler", sys.exc_info())
-                pass
-        else:
-            try:
-                for kw in sumkeywords:
-                    for line in win.text:
-                        if line.find(kw) >= 0:
-                            sumw.append(line)
-            except:
-                pass
+        except:
+            pass
 
     try:
         win.appwin.update_treestore(sumw)
@@ -1646,6 +1659,8 @@ def run_async_time(win):
         pass
 
 # eof
+
+
 
 
 

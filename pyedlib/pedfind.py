@@ -20,13 +20,13 @@ from .pedundo import *
 
 strhist = [] #strhist.append("aa")
 stridx = 0
-myentry = None
+dialog = None
 
 # -------------------------------------------------------------------------
 
 def find(self, self2, replace = False):
 
-    global myentry, stridx
+    global stridx, dialog
     self.reptxt = ""
 
     warnings.simplefilter("ignore")
@@ -34,7 +34,7 @@ def find(self, self2, replace = False):
     xll = len(strhist)
     if xll:
         stridx =  xll - 1
-        myentry.set_text(strhist[stridx]);
+        dialog.entry.set_text(strhist[stridx]);
 
     #print ("stridx", stridx)
 
@@ -68,7 +68,7 @@ def find(self, self2, replace = False):
     label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ")
 
     entry = Gtk.Entry();
-    myentry = entry
+    dialog.entry = entry
 
     entry.set_activates_default(True)
 
@@ -95,15 +95,18 @@ def find(self, self2, replace = False):
             self2.oldsearch = self2.text[yssel][xssel:xesel]
 
     entry.set_text(self2.oldsearch)
-    dialog.vbox.pack_start(label4, 0, 0, 0)
+
+    #dialog.vbox.pack_start(label4, 0, 0, 0)
 
     hbox2 = Gtk.HBox()
     hbox2.pack_start(label6, 0, 0, 0)
     hbox2.pack_start(entry, True, True, 0)
     hbox2.pack_start(label7, 0, 0, 0)
 
-    dialog.vbox.pack_start(hbox2, 0, 0, 0)
+    dialog.vbox.pack_start(Gtk.Label("Alt Keys: Left/Right -> History"), 0, 0 , 4)
+    dialog.vbox.pack_start(Gtk.Label("1-CFunc 2-PyDef 3-AsmLab 4-Default"), 0, 0, 4)
 
+    dialog.vbox.pack_start(hbox2, 0, 0, 0)
     dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
     dialog.checkbox2 = Gtk.CheckButton.new_with_mnemonic("Case In_sensitive")
 
@@ -115,6 +118,7 @@ def find(self, self2, replace = False):
     hbox.pack_start(label2, 0, 0, 0)
     hbox.pack_start(dialog.checkbox2, 0, 0, 0)
     hbox.pack_start(label3, 0, 0, 0)
+
     dialog.vbox.pack_start(hbox, 0, 0, 0)
     dialog.vbox.pack_start(label8, 0, 0, 0)
 
@@ -192,9 +196,9 @@ def find(self, self2, replace = False):
         self.xnum = 0
         find_show(self, self2)
 
-def find_keypress(area, event):
+def     find_keypress(area, event):
 
-    global stridx, strhist, myentry
+    global stridx, strhist, dialog
 
     #print   ("find keypress", area, event)
     if  event.type == Gdk.EventType.KEY_PRESS:
@@ -207,19 +211,55 @@ def find_keypress(area, event):
                 #print   ("find dlg keypress, alt UP or right key", stridx)
                 if stridx < len(strhist) - 1:
                     stridx += 1
-                    myentry.set_text(strhist[stridx]);
+                    dialog.entry.set_text(strhist[stridx]);
 
             if event.keyval == Gdk.KEY_Down or \
                     event.keyval == Gdk.KEY_Left:
-                #print   ("find dlg keypress, alt DOWN or left", stridx)
+                #print ("find dlg keypress, alt DOWN or left", stridx)
                 if stridx > 0:
                     stridx -= 1
-                    myentry.set_text(strhist[stridx]);
+                    dialog.entry.set_text(strhist[stridx]);
 
             if event.state  & Gdk.ModifierType.MOD1_MASK:
                 if event.keyval == Gdk.KEY_X or \
                     event.keyval == Gdk.KEY_x:
                     area.destroy()
+
+            if event.state  & Gdk.ModifierType.MOD1_MASK:
+                if event.keyval == Gdk.KEY_1 or \
+                    event.keyval == Gdk.KEY_1:
+                    #print("find dlg keypress, Alt-1 pressed")
+                    dialog.entry.set_text("^[a-z].*\(.*\)")
+                    dialog.checkbox.set_active(1)
+                    dialog.checkbox2.set_active(0)
+                    dialog.checkbox3.set_active(0)
+
+            if event.state  & Gdk.ModifierType.MOD1_MASK:
+                if event.keyval == Gdk.KEY_2 or \
+                    event.keyval == Gdk.KEY_2:
+                    #print("find dlg keypress, Alt-2 pressed")
+                    dialog.entry.set_text("^def.*[a-z].*\(.*\):")
+                    dialog.checkbox.set_active(1)
+                    dialog.checkbox2.set_active(0)
+                    dialog.checkbox3.set_active(0)
+
+            if event.state  & Gdk.ModifierType.MOD1_MASK:
+                if event.keyval == Gdk.KEY_3 or \
+                    event.keyval == Gdk.KEY_3:
+                    #print("find dlg keypress, Alt-3 pressed")
+                    dialog.entry.set_text("^[a-z].*:")
+                    dialog.checkbox.set_active(1)
+                    dialog.checkbox2.set_active(0)
+                    dialog.checkbox3.set_active(0)
+
+            if event.state  & Gdk.ModifierType.MOD1_MASK:
+                if event.keyval == Gdk.KEY_4 or \
+                    event.keyval == Gdk.KEY_4:
+                    #print("find dlg keypress, Alt-3 pressed")
+                    dialog.entry.set_text("")
+                    dialog.checkbox.set_active(0)
+                    dialog.checkbox2.set_active(1)
+                    dialog.checkbox3.set_active(0)
 
 # -------------------------------------------------------------------------
 
@@ -298,6 +338,9 @@ def find_show(self, self2):
     win2.tree.set_headers_visible(False)
     win2.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
 
+    hbox4 = Gtk.HBox()
+    hbox4.pack_start(Gtk.Label("   "), 1, 0, 0)
+
     if self.dialog.replace:
         butt2 = Gtk.Button.new_with_mnemonic(" Change _One ")
         butt2.connect("clicked", chg_one, self, self2, win2)
@@ -305,23 +348,26 @@ def find_show(self, self2):
         butt3.connect("clicked", chg_sel, self, self2, win2)
         butt4 = Gtk.Button.new_with_mnemonic(" Change _All ");
         butt4.connect("clicked", chg_all, self, self2, win2)
+        hbox4.pack_start(butt2, 0, 0, 4)
+        hbox4.pack_start(butt3, 0, 0, 4)
+        hbox4.pack_start(butt4, 0, 0, 4)
+    else:
+        butt2 = Gtk.Button.new_with_mnemonic(" _Copy all to clipboard")
+        butt2.connect("clicked", cp_all, self, self2, win2)
+        #butt3 = Gtk.Button.new_with_mnemonic(" No op button");
+        #butt3.connect("clicked", cp_all, self, self2, win2)
+        #butt4 = Gtk.Button.new_with_mnemonic(" Unallocated button ");
+        #butt4.connect("clicked", cp_all, self, self2, win2)
+        hbox4.pack_start(butt2, 0, 0, 2)
 
-        lab1 = Gtk.Label("   "); lab2 = Gtk.Label("   ");
+    hbox4.pack_start(Gtk.Label("   "), 1, 0, 2)
 
-        hbox4 = Gtk.HBox()
-        hbox4.pack_start(lab1, 0, 0, 0)
-        hbox4.pack_start(butt2, 0, 0, 0)
-        hbox4.pack_start(butt3, 0, 0, 0)
-        hbox4.pack_start(butt4, 0, 0, 0)
-        hbox4.pack_start(lab2, 0, 0, 0)
+    #vbox.pack_start(Gtk.Label("   "), 0, 0, 0)
+    vbox.pack_start(hbox4, 0, 0, 4)
+    #vbox.pack_start( Gtk.Label("   "), 0, 0, 0)
 
-        lab3 = Gtk.Label("   ");
-
-        vbox.pack_start(lab3, 0, 0, 0)
-        vbox.pack_start(hbox4, 0, 0, 0)
-
-    lab4 = Gtk.Label("   ");
-    vbox.pack_start(lab4, 0, 0, 0)
+    #lab4a = Gtk.Label(" Alt-C to copy all  ");
+    #vbox.pack_start(lab4a, 0, 0, 0)
 
     #self.tree.connect("row-activated",  tree_sel, self, self2)
     win2.tree.connect("cursor-changed",  tree_sel_row, self, self2)
@@ -490,7 +536,6 @@ def find_show_file(self, self2):
             else:
                 #print("Skipped searching: ", filename)
                 pass
-
 
     # ---------------------------------------------------------------------
     #was, cnt2 = self2.search(self.srctxt, self.regex, self.dialog.checkbox2.get_active(),
@@ -870,6 +915,36 @@ def update_treestore(self, win2, text, was):
         win2.tree.set_cursor(win2.treestore.get_path(root))
 
 # -------------------------------------------------------------------------
+# Copy all hits to clipboard
+
+def  cp_all(butt, self, self2, win2, iter = None):
+
+    #print("Copy all to clip")
+    win2.tree.get_selection().select_all()
+
+    sel = win2.tree.get_selection()
+    xmodel, xiter = sel.get_selected_rows()
+
+    cumm  = ""
+    for aa in xiter:
+        iter = xmodel.get_iter(aa)
+        xstr = xmodel.get_value(iter, 0)
+
+        #print("got %s" % xstr);
+        cc = xstr.split(" ")
+        bb = cc[0].split(":")
+        dd =  xstr[len(cc[0]) + 1:]
+        #print("str '%s'" % dd);
+        cumm += dd + "\n"
+
+    disp = Gdk.Display().get_default()
+    clip = Gtk.Clipboard.get_default(disp)
+    clip.set_text(cumm, len(cumm))
+
+    self2.mained.update_statusbar("Copied hits to clipboard.")
+    win2.destroy()
+
+# -------------------------------------------------------------------------
 # Change current item in the list
 
 def chg_one(butt, self, self2, win2, iter = None):
@@ -877,6 +952,10 @@ def chg_one(butt, self, self2, win2, iter = None):
     single = (iter == None)
     sel = win2.tree.get_selection()
     xmodel, xiter = sel.get_selected_rows()
+
+    for aa in xiter:
+        iter = xmodel.get_iter(aa)
+        sel.select_path(xmodel.get_path(iter))
 
     # Iter from wrappers?
     if iter:
@@ -917,6 +996,7 @@ def chg_one(butt, self, self2, win2, iter = None):
     return next
 
 # -------------------------------------------------------------------------
+#
 
 def chg_all(butt, self, self2, win2):
     win2.tree.get_selection().select_all()
@@ -958,73 +1038,6 @@ def wnext(butt,self):
     pass
 
 #eof
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
