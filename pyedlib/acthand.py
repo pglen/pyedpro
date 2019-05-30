@@ -1278,8 +1278,8 @@ class ActHand:
         pedfind.find(self, self2, True)
 
     def alt_v(self, self2):
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
+        xidx = int(self2.caret[0] + self2.xpos)
+        yidx = int(self2.caret[1] + self2.ypos)
         line = self2.text[yidx]
         #self2.xsel, self2.xsel2 = selasci2(line, xidx, "-_.[]")
         self2.xsel, self2.xsel2 = selasci2(line, xidx,"-_")
@@ -1705,11 +1705,17 @@ class ActHand:
         try:
            py_compile.compile('tmp', doraise = True)
         except py_compile.PyCompileError as msg:
-            ln  = msg[2][1][1]; col = msg[2][1][2]
-            mmm = "\n" + msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
-            self2.mained.update_statusbar("Syntax OK.")
-            pedync.message("    " + mmm + "    ", msg[1])
-            self2.gotoxy(col - 1, ln - 1)
+            print("Error on copile: '", msg, "'")
+            try:
+                self2.mained.update_statusbar("Syntax error.")
+                ln  = msg[2][1][1]; col = msg[2][1][2]
+                mmm = "\n" + msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
+                pedync.message("    " + mmm + "    ", msg[1])
+                self2.gotoxy(col - 1, ln - 1)
+            except:
+                pedync.message(" " + str(msg) + "  ", "Syntax Error")
+                #print("line", msg);
+                pass
 
         except:
             print(sys.exc_info())
@@ -1781,6 +1787,17 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
 
 
 

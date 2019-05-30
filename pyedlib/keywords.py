@@ -37,7 +37,7 @@ localkwords = "(int .*)|(char .*)|(for)|(while)|(if)|(return)"
 localpywords = "(for)|(while)|(return)|(import)"
 
 # Keywords for auto correct. This corrects strings as we type.
-# As a 'C' programmer I kept typing "else" ... this feature
+# As a 'C' programmer I kept typing "else" in python ... this feature
 # corrects it to "else:"  (trailing colon for python)
 # It is contra indicatory to support bad habits, but for productivity ....
 # ... all is forgiven. (Especially if your next assignment is in 'C')
@@ -57,6 +57,7 @@ acorr = [   ( "else",   "else: "                 ),
         ]
 
 # EOF
+
 
 
 

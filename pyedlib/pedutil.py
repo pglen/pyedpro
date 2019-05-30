@@ -39,11 +39,13 @@ def cut_lead_space(xstr, divi = 2):
 def     readfile(strx, sep):
 
     text = []
+
     if strx == "":
         return text
 
     # Now read and parse
     f = open(strx);  buff = f.read();  f.close()
+
 
     # Deteremine separator, use a partial length search
     if buff.find("\r\n", 0, 300) >= 0:
@@ -70,6 +72,7 @@ def     readfile(strx, sep):
         cc = bb.replace("\n", "");
         text.append(cc)
     #text2 = []
+
     return text
 
 # ------------------------------------------------------------------------
@@ -640,14 +643,16 @@ def done_sess2_fc(win, resp, fc):
 
         except:
             print("Cannot load session file", sys.exc_info())
-            message("Cannot load session file")
+            pedync.message("Cannot load session file")
     else:
         pass
         #print("Cancelled")
 
     win.destroy()
 
-    for fff in sesslist.split("\n"):
+    print ("session list:", sesslist)
+    #for fff in sesslist.split("\n"):
+    for fff in sesslist:
         #print ("Session file:", "'" + fff + "'")
         if fff != "":
             pedconfig.conf.pedwin.openfile(fff)
@@ -678,6 +683,14 @@ def     load_sess():
 
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 

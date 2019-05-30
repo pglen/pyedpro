@@ -1597,7 +1597,8 @@ def run_async_time(win):
     if not win.text:
         return
 
-    if ".c" in lname or ".h" in lname:
+    # Added flex and yacc
+    if ".c" in lname or ".h" in lname or ".y" in lname or ".f" in lname:
         try:
             regex = re.compile(ckeywords)
             for line in win.text:
@@ -1659,6 +1660,7 @@ def run_async_time(win):
         pass
 
 # eof
+
 
 
 
