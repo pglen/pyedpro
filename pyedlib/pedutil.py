@@ -46,7 +46,6 @@ def     readfile(strx, sep):
     # Now read and parse
     f = open(strx);  buff = f.read();  f.close()
 
-
     # Deteremine separator, use a partial length search
     if buff.find("\r\n", 0, 300) >= 0:
         sep = "\r\n"
@@ -81,10 +80,16 @@ def     readfile(strx, sep):
 def findinfile(nnn, ffff):
 
     rrr = []
-    text = readfile(ffff, "\r\n")
+    try:
+        text = readfile(ffff, "\r\n")
+    except:
+        print("Cannot read file", ffff);
+        text = ""
+
     for aa in text:
         if nnn in aa:
             rrr.append(aa)
+
     return rrr
 
 # ------------------------------------------------------------------------
@@ -590,8 +595,9 @@ def done_sess_fc(win, resp, fc):
                 print("Must have filename")
             else:
                 #print("Saving session file under:", fname)
-                fh = open(fname, "w")
+                fh = open(fname, "wb")
                 pickle.dump(fc.sesslist, fh)
+                fh.close()
         except:
             print("Cannot save session file", sys.exc_info())
     else:
@@ -601,6 +607,7 @@ def done_sess_fc(win, resp, fc):
     os.chdir(os.path.dirname(fc.old))
     win.destroy()
 
+# ------------------------------------------------------------------------
 # Save session to file in the config dir
 
 def save_sess(sesslist):
@@ -638,9 +645,12 @@ def done_sess2_fc(win, resp, fc):
                 print("Must have filename")
             else:
                 #print("Loading session file under:", fname)
-                fh = open(fname, "r")
-                sesslist = pickle.load(fh)
-
+                fh = open(fname, "rb")
+                try:
+                    sesslist = pickle.load(fh)
+                except:
+                    pass
+                fh.close()
         except:
             print("Cannot load session file", sys.exc_info())
             pedync.message("Cannot load session file")
@@ -650,10 +660,8 @@ def done_sess2_fc(win, resp, fc):
 
     win.destroy()
 
-    print ("session list:", sesslist)
-    #for fff in sesslist.split("\n"):
-    for fff in sesslist:
-        #print ("Session file:", "'" + fff + "'")
+    for fff in sesslist.split("\n"):
+        #print ("Session opening file:", "'" + fff + "'")
         if fff != "":
             pedconfig.conf.pedwin.openfile(fff)
             usleep(30)
@@ -683,6 +691,10 @@ def     load_sess():
 
 
 # EOF
+
+
+
+
 
 
 

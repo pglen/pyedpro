@@ -3,7 +3,8 @@
 # Drawing operations done here
 
 from __future__ import absolute_import
-import signal, os, time, sys
+
+import signal, os, time, sys, codecs
 
 import gi
 #from six.moves import range
@@ -21,6 +22,7 @@ from . import pedconfig
 
 from .keywords import *
 from .pedutil import *
+from .utils import *
 
 BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
 
@@ -143,7 +145,26 @@ class peddraw(object):
             #text2 = text[self.xpos:].replace("\r", " ")
             text2 = text.replace("\r", " ")
 
+        xx, yy = self.layout.get_pixel_size()
+
+        #utf8_decoder = codecs.getincrementaldecoder('utf8')()
+        '''try:
+            codecs.decode(text2)
+            print ("string is UTF-8, length %d bytes" % len(string))
+        except UnicodeError:
+            print ("string is not UTF-8")
+            return xx, yy'''
+
+        text2 = kill_non_ascii(text2)
+
+        '''bbb = is_ascii(text2)
+        if bbb > 0:
+            text2 = text2[:bbb-1] + " Non ASCII char "
+            #return xx, yy
+        '''
+
         self.layout.set_text(text2, len(text2))
+
         xx, yy = self.layout.get_pixel_size()
 
         #offs = self.xpos * self.cxx
@@ -227,6 +248,7 @@ class peddraw(object):
                             draw_start = 0                  # intermediate line
                             frag = line[:]
 
+                    #dss = draw_start #-= self.xpos
                     dss = calc_tabs(line2, draw_start, self.tabstop)
                     dss -= self.xpos
                     self.draw_text(gc, dss * self.cxx, yy, \
@@ -378,6 +400,8 @@ class peddraw(object):
 
 
 # EOF
+
+
 
 
 

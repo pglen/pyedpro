@@ -1,5 +1,5 @@
 
-// test file
+s// test file
 
 "string" with test // comment
 	tabbed "string" with test // comment
@@ -7,7 +7,7 @@
 # comment with "string"
 # comment with  	 and tab "string"
 
-line with space end     
+line with space end   ccee  ccc
 
 ######################################
 # target
@@ -15,11 +15,23 @@ line with space end
 TARGET = test_5
 
 1234 1234
-
+       d
 undo that
 
 redo that
 
 qqqqq
+
+
+
+
+
+
+
+
+
+
+
+
 
 

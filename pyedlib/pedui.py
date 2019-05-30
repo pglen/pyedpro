@@ -2,7 +2,7 @@
 
 # Menu items for the pyedit project
 
-''' 
+'''
     <menuitem action='Stop'/>
       <menu action='ColorMenu'>
         <menuitem action='Red'/>
@@ -16,7 +16,7 @@
         <menuitem action='Bold'/>
       </menu>
 '''
-         
+
 ui_info = \
 '''<ui>
   <menubar name='MenuBar'>
@@ -62,7 +62,7 @@ ui_info = \
       <menuitem action='Begin'/>
       <menuitem action='End'/>
     </menu>
-   
+
     <menu action='MacrosMenu'>
       <menuitem action='Record'/>
       <menuitem action='Play'/>
@@ -72,7 +72,7 @@ ui_info = \
       <menuitem action='Loadmacro'/>
     </menu>
 
-    <menu action='PreferencesMenu'>     
+    <menu action='PreferencesMenu'>
         <menuitem action='Colors'/>
         <menuitem action='Fonts'/>
       <menuitem action='Settings'/>
@@ -86,15 +86,16 @@ ui_info = \
     <separator/>
       <menuitem action='ShowLog'/>
     </menu>
-    
+
     <menu action='HelpMenu'>
       <menuitem action='Help'/>
       <menuitem action='DevHelp'/>
-      <menuitem action='KeyHelp'/>      
-      <menuitem action='KeyDoc'/>      
+      <menuitem action='KeyHelp'/>
+      <menuitem action='KeyDoc'/>
       <menuitem action='QuickHelp'/>
-      <menuitem action='About'/>      
+      <menuitem action='About'/>
     </menu>
+
   </menubar>
 
   <toolbar  name='ToolBar'>
@@ -108,26 +109,27 @@ ui_info = \
     <toolitem action='Copy'/>
     <toolitem action='Cut'/>
     <toolitem action='Paste'/>
-    
-    
+
+
    <toolitem action='Undo'/>
     <toolitem action='Redo'/>
     <separator/>
     <toolitem action='Find'/>
     <toolitem action='Goto'/>
-    
+
      </toolbar>
 </ui>'''
 
 '''    <toolitem action='Record'/>
     <toolitem action='Play'/>
     <separator/>
-    
+
     <toolitem action='About'/>
     <toolitem action='QuickHelp'/>
     <toolitem action='Help'/>   '''
-    
- 
+
+
+
 
 
 

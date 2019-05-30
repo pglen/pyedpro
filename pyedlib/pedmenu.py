@@ -3,6 +3,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+import sys
 import gi
 
 #from six.moves import range
@@ -75,6 +76,11 @@ rclick_menu = (
 
 def create_action_group(self):
     # GtkActionEntry
+    if sys.version_info[0] < 3:
+        verx = "_Help2"
+    else:
+        verx = "_Help3"
+
     entries = (
       ( "FileMenu", None, "_File" ),                # name, stock id, label
       ( "EditMenu", None, "_Edit" ),
@@ -84,7 +90,8 @@ def create_action_group(self):
       ( "ColorMenu", None, "_Color"  ),
       ( "ShapeMenu", None, "Shape" ),
       ( "WinMenu", None, "Windows" ),
-      ( "HelpMenu", None, "_Help" ),
+      ( "HelpMenu", None, verx ),
+
 
       # -------------------------------------------------------------------
 
@@ -352,6 +359,7 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
 
 
 

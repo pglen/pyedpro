@@ -1324,16 +1324,20 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         hhh = hash_name(self.fname) + ".udo"
         xfile = pedconfig.conf.data_dir + "/" + hhh
         try:
-            fh = open(xfile, "w")
+            fh = open(xfile, "wb")
             pickle.dump(self.undoarr, fh)
+            fh.close()
         except:
             print("Cannot save undo file", sys.exc_info())
+            utils.put_exception("undo")
+
 
         hhh = hash_name(self.fname) + ".rdo"
         xfile = pedconfig.conf.data_dir + "/" + hhh
         try:
-            fh = open(xfile, "w")
+            fh = open(xfile, "wb")
             pickle.dump(self.redoarr, fh)
+            fh.close()
         except:
             print("Cannot save redo file", sys.exc_info())
 
@@ -1341,8 +1345,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         hhh = hash_name(self.fname) + ".udo"
         xfile = pedconfig.conf.data_dir + "/" + hhh
         try:
-            fh = open(xfile)
-            self.undoarr = pickle.load(fh)
+            fh = open(xfile, "rb")
+            try:
+                self.undoarr = pickle.load(fh)
+            except:
+                pass
+            fh.close()
         except:
             pass
             # Ignore it, not all files will have undo
@@ -1352,8 +1360,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         hhh = hash_name(self.fname) + ".rdo"
         xfile = pedconfig.conf.data_dir + "/" + hhh
         try:
-            fh = open(xfile)
-            self.redoarr = pickle.load(fh)
+            fh = open(xfile, "rb")
+            try:
+                self.redoarr = pickle.load(fh)
+            except:
+                pass
+            fh.close()
         except:
             pass
             # Ignore it, not all files will have redo
@@ -1494,8 +1506,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 if not fname:
                     print("Must have filename")
                 else:
-                    fh = open(fname, "w")
+                    fh = open(fname, "wb")
                     pickle.dump(self.recarr, fh)
+                    fh.close()
             except:
                 print("Cannot save macro file", sys.exc_info())
 
@@ -1532,7 +1545,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 if not fname:
                     print("Must have filename")
                 else:
-                    fh = open(fname, "r")
+                    fh = open(fname, "rb")
                     self.recarr = pickle.load(fh)
                     fh.close()
             except:
@@ -1660,6 +1673,8 @@ def run_async_time(win):
         pass
 
 # eof
+
+
 
 
 
