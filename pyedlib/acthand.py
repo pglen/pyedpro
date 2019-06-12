@@ -1465,7 +1465,9 @@ class ActHand:
             if self2.recarr == []:
                 self2.mained.update_statusbar("Nothing recorded, resored old macro.")
                 self2.recarr = self2.recarr2
+                pedconfig.conf.recarr = self2.recarr[:]
             else:
+                pedconfig.conf.recarr = self2.recarr[:]
                 self2.mained.update_statusbar("Ended recording.")
 
         else:
@@ -1482,6 +1484,11 @@ class ActHand:
         if self2.record:
             self2.mained.update_statusbar("Still recording, press F7 to stop")
             return True
+
+        xlen = len(self2.recarr)
+        if xlen == 0:
+            # pull in global
+            self2.recarr = pedconfig.conf.recarr[:]
 
         xlen = len(self2.recarr)
         if xlen == 0:
@@ -1787,6 +1794,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 

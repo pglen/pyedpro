@@ -186,7 +186,10 @@ def populate(dialog):
         if filename[0] == ".":
             continue
         if os.path.isdir(filename):
-            filestat = os.stat(filename)
+            try:
+                filestat = os.stat(filename)
+            except:
+                pass
             piter = dialog.ts.append(row=None)
             #dialog.ts.set(piter, 0, "["+ filename + "]")
             #print filename,
@@ -199,7 +202,12 @@ def populate(dialog):
         if filename[0] == ".":
             continue
         if not os.path.isdir(filename):
-            filestat = os.stat(filename)
+            try:
+                filestat = os.stat(filename)
+            except:
+                print("Cannot stat", filename)
+                pass
+
             piter = dialog.ts.append(row=None)
             #print filename,
             dialog.ts.set(piter, 0, filename)
@@ -389,6 +397,8 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
+
 
 
 

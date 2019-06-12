@@ -8,10 +8,10 @@
 
 from __future__ import absolute_import
 import signal, os, time, sys
-    
+
 config_reg = "/apps/pyedpro"
-    
-class conf():  
+
+class conf():
 
     IDLE_TIMEOUT = 15           # Time for a backup save
     SYNCIDLE_TIMEOUT = 2        # Time for syncing windows and spelling
@@ -37,9 +37,11 @@ class conf():
     # Where things are stored (UI x/y pane pos.)
     config_reg = "/apps/pyedpro"
     verbose = False
-            
-    def __init__(self): 
+    recarr = []
+
+    def __init__(self):
         pass
+
 
 
 

@@ -148,11 +148,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         # Create scroll items
         sm = len(self.text) + self.get_height() / self.cyy + 10
-        self.hadj = Gtk.Adjustment(0, 0, self.maxlinelen, 1, 15, 25);
-        self.vadj = Gtk.Adjustment(0, 0, sm, 1, 15, 25)
+        self.hadj = Gtk.Adjustment(value=0, lower=0, upper=self.maxlinelen,
+                            step_increment = 1, page_increment = 15, page_size = 25);
+        self.vadj = Gtk.Adjustment(value=0, lower=0, upper=sm,
+                            step_increment = 1, page_increment = 15, page_size = 25);
 
-        self.vscroll = Gtk.VScrollbar(self.vadj)
-        self.hscroll = Gtk.HScrollbar(self.hadj)
+        self.vscroll = Gtk.VScrollbar(adjustment=self.vadj)
+        self.hscroll = Gtk.HScrollbar(adjustment=self.hadj)
 
         # We connect scrollers after construction
         self.hadj.connect("value-changed", self.hscroll_cb)
@@ -1447,7 +1449,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             str2 = "  *" + ss + "  "
         else:
             str2 = "  " + ss + "  "
-        label = Gtk.Label(str2)
+        label = Gtk.Label.new(str2)
         label.set_tooltip_text(self.fname)
         label.set_single_line_mode(True)
 
@@ -1673,6 +1675,7 @@ def run_async_time(win):
         pass
 
 # eof
+
 
 
 
