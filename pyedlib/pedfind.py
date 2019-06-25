@@ -669,6 +669,7 @@ def     tree_sel_row(xtree, self, self2):
 
     try:
         self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
+        self2.walk_func()
     except:
         pass
 
@@ -1038,6 +1039,7 @@ def wnext(butt,self):
     pass
 
 #eof
+
 
 
 

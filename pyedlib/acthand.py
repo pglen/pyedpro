@@ -737,8 +737,18 @@ class ActHand:
         clip = Gtk.Clipboard.get_default(disp)
 
         if self.currclip == 0:
-            clip.set_text(cumm, len(cumm))
-        self.clips[self.currclip] = cumm
+            if self2.shift:
+                self2.mained.update_statusbar("Clipboard append only works on clip 1 - 7")
+            else:
+                self2.mained.update_statusbar("Clipboard copied.")
+                clip.set_text(cumm, len(cumm))
+        else:
+            if self2.shift:
+                self2.mained.update_statusbar("Clipboard %d appended." % self.currclip)
+                self.clips[self.currclip] += cumm
+            else:
+                self2.mained.update_statusbar("Clipboard %d copied." % self.currclip)
+                self.clips[self.currclip] = cumm
 
     def ctrl_d(self, self2):
         #print "CTRL - D"
@@ -1794,6 +1804,9 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
 
 
 
