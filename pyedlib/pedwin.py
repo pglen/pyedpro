@@ -199,8 +199,8 @@ class EdMainWindow():
         #self.mywin.connect("destroy", OnExit)
         self.mywin.connect("unmap", OnExit)
 
-        #self.mywin.connect("key-press-event", self.area_key)
-        #self.mywin.connect("key-release-event", self.area_key)
+        self.mywin.connect("key-press-event", self.area_key)
+        self.mywin.connect("key-release-event", self.area_key)
 
         #self.mywin.connect("set-focus", self.area_focus)
         self.mywin.connect("focus-in-event", self.area_focus_in)
@@ -416,6 +416,7 @@ class EdMainWindow():
         pass
 
     def tree_sel_row(self, xtree):
+        #print("tree_sel_row", xtree)
         pass
         #sel = xtree.get_selection()
         #xmodel, xiter = sel.get_selected()
@@ -443,9 +444,12 @@ class EdMainWindow():
             xstr = xmodel.get_value(xiter, 0)
             vcurr = notebook.get_nth_page(notebook.get_current_page())
             vcurr.area.locate(xstr)
+            # Focus on main doc
+            vcurr = notebook.get_nth_page(notebook.get_current_page())
+            self.mywin.set_focus(vcurr.vbox.area)
 
     def tree_sel2(self, xtree, xiter, xpath):
-        #print("tree_sel2", xtree, xiter, xpath)
+        print("tree_sel2", xtree, xiter, xpath)
         # Focus on main doc
         sel = xtree.get_selection()
         xmodel, xiter = sel.get_selected()
@@ -453,27 +457,34 @@ class EdMainWindow():
             xstr = xmodel.get_value(xiter, 0)
             vcurr = notebook.get_nth_page(notebook.get_current_page())
             vcurr.area.locate(xstr)
+            # Focus on main doc
+            vcurr = notebook.get_nth_page(notebook.get_current_page())
+            self.mywin.set_focus(vcurr.vbox.area)
 
     # Call key handler
     def area_key(self, area, event):
-        #print("pedwin key", event)
+        #print("pedwin key", event.keyval)
         # Inspect key press before treeview gets it
         if self.mywin.get_focus() == self.treeview:
             # Do key down:
+
             if  event.type == Gdk.EventType.KEY_PRESS:
-                if event.keyval == Gtk.keysyms.Alt_L or \
-                        event.keyval == Gtk.keysyms.Alt_R:
+                if event.keyval == Gdk.KEY_Alt_L or \
+                        event.keyval == Gdk.KEY_Alt_R:
                     self.alt = True;
 
-                if event.keyval >= Gtk.keysyms._1 and event.keyval <= Gtk.keysyms._9:
-                    #print "pedwin Alt num", event.keyval - Gtk.keysyms._1
-                     # Focus on main doc
-                    vcurr = notebook.get_nth_page(notebook.get_current_page())
-                    self.mywin.set_focus(vcurr.vbox.area)
+            if event.keyval == Gdk.KEY_Tab:
+                print ("pedwin TREE TAB", event.keyval)
+
+            if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
+                print ("pedwin Alt num", event.keyval - Gdk.KEY_1)
+                # Focus on main doc
+                vcurr = notebook.get_nth_page(notebook.get_current_page())
+                self.mywin.set_focus(vcurr.vbox.area)
 
             elif  event.type == Gdk.EventType.KEY_RELEASE:
-                if event.keyval == Gtk.keysyms.Alt_L or \
-                      event.keyval == Gtk.keysyms.Alt_R:
+                if event.keyval == Gdk.KEY_Alt_L or \
+                      event.keyval == Gdk.KEY_Alt_R:
                     self.alt = False;
 
 
@@ -1376,6 +1387,20 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

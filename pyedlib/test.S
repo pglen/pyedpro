@@ -10,7 +10,7 @@
 
 /*
  * =============================== I2C code ==========================================
- * Implementation of pseudo code from
+ * Implementation of pseudopseudo code from
  * https://en.wikipedia.org/wiki/I%C2%B2C#Example_of_bit-banging_the_I.C2.B2C_master_protocol
  */
 
@@ -219,6 +219,7 @@ next_bit_read:
 	move r0,r2
 
 	ret
+
 
 
 

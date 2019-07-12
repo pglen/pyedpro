@@ -538,11 +538,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 self.clearsel()
             # Select word
             if event.state & Gdk.ModifierType.CONTROL_MASK:
-                pedconfig.conf.keyh.act.alt_l(self)
-            elif event.state & Gdk.ModifierType.SHIFT_MASK:
+                #pedconfig.conf.keyh.act.alt_l(self)
                 pedconfig.conf.keyh.act.ctrl_b(self)
             else:
                 pedconfig.conf.keyh.act.alt_v(self)
+            # Copy to clip
+            if event.state & Gdk.ModifierType.SHIFT_MASK:
+                pedconfig.conf.keyh.act.ctrl_c(self)
+
         else:
             print("Unexpected mouse op.")
 
@@ -1675,6 +1678,8 @@ def run_async_time(win):
         pass
 
 # eof
+
+
 
 
 
