@@ -201,7 +201,6 @@ class KeyHand:
 
             [Gdk.KEY_c, self.act.ctrl_alt_c],
             [Gdk.KEY_C, self.act.ctrl_alt_c],
-
             ]
 
         # Separate keytab on alt for easy customization.
@@ -270,6 +269,8 @@ class KeyHand:
             [Gdk.KEY_W, self.act.alt_w],
             [Gdk.KEY_z, self.act.alt_z],
             [Gdk.KEY_Z, self.act.alt_z],
+            [Gdk.KEY_bracketleft, self.act.ctrl_u],
+            [Gdk.KEY_bracketright, self.act.ctrl_alt_l],
             ]
 
     # When we get focus, we start out with no modifier keys
@@ -491,6 +492,9 @@ class KeyHand:
                         self2.flash(False)
 
         return ret
+
+
+
 
 
 

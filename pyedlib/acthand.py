@@ -672,16 +672,7 @@ class ActHand:
 
     def ctrl_alt_l(self, self2):
         #print "CTRL - ALT - L"
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        line = self2.text[yidx]
-
-        cntb, cnte = selword(line, xidx)
-        wlow = line[cntb:cnte].lower()
-        #print "word   ", line[cntb:cnte], wlow
-        self2.text[yidx] = line[:cntb] + wlow + line[cnte:]
-        self2.inval_line()
-        self2.set_changed(True)
+        self.ctrl_u(self2, True)
 
      # --------------------------------------------------------------------
 
@@ -915,16 +906,40 @@ class ActHand:
         self2.text[yidx] = line[:cntb] + w2 + " " + w1 + line[cnte2:]
         self2.inval_line()
 
-    def ctrl_u(self, self2):
+    # Uppercase stuff
+    def ctrl_u(self, self2, lowit = False):
         #print "CTRL - U"
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        line = self2.text[yidx]
-        self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+        #line = ""; xidx = 0; yidx = 0
+        # No selection, assume word
+        if self2.xsel == -1 or self2.ysel == -1:
+            xidx = self2.caret[0] + self2.xpos
+            yidx = self2.caret[1] + self2.ypos
+            line = self2.text[yidx]
+            #cntb, cnte = selword(line, xidx)
+            cntb, cnte = selasci2(line, xidx, "_-")
+        else:
+            # Normalize
+            xssel = min(self2.xsel, self2.xsel2)
+            xesel = max(self2.xsel, self2.xsel2)
+            yssel = min(self2.ysel, self2.ysel2)
+            yesel = max(self2.ysel, self2.ysel2)
 
-        cntb, cnte = selword(line, xidx)
-        wlow = line[cntb:cnte].upper()
-        #print "word   ", line[cntb:cnte], wlow
+            xidx = xssel; yidx = yssel;
+            line = self2.text[yidx]
+            cntb = xssel; cnte = xesel
+
+        if cnte == cntb:
+            self2.mained.update_statusbar("Please nav to a word first.")
+            return
+
+        self2.undoarr.append((xidx, yidx, MODIFIED, line))
+        #print ("word / selection", line[cntb:cnte])
+
+        if self2.shift or lowit:
+            wlow = line[cntb:cnte].lower()
+        else:
+            wlow = line[cntb:cnte].upper()
+
         self2.text[yidx] = line[:cntb] + wlow + line[cnte:]
         self2.inval_line()
 
@@ -1804,6 +1819,19 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

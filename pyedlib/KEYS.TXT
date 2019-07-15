@@ -20,34 +20,35 @@ table driven.
 
     Tab                         -- Insert 4 spaces up to % 4
     Shift-Tab                   -- Insert a real tab up to % 4
-    Ctrl-A                      -- Select All text in buffer
-    Ctrl-B                      -- Select word (till spaces)
-    Ctrl-C                      -- Copy selection to Clipboard
-    Ctrl-D                      -- Delete (trim) spaces from end of line
-    Ctrl-E                      -- Capitalize (emphasize) word
-    Ctrl-F                      -- Find in file or all buffers
-    Ctrl-G                      -- Goto next match
-    Shift-Ctrl-G                -- Goto previous match
-    Ctrl-H                      -- Cursor left  (like in Emacs)
-    Ctrl-I                      -- Insert count-up number
-    Shift-Ctrl-I                -- Reset count-up number to zero
-    Ctrl-J                      -- Down Arrow
-    Ctrl-K                      -- Up Arrow
-    Ctrl-L                      -- Right Arrow
-    Ctrl-M                      -- Toggle auto correct
-    Ctrl-N                      -- New File
-    Ctrl-O                      -- Open file
-    Ctrl-P                      -- Print (not implemented on all platforms)
-    Ctrl-Q                      -- Quit program **
-    Ctrl-R                      -- Reverse three words ***
-    Ctrl-S                      -- Save current file
-    Ctrl-T                      -- Transpose two words
-    Ctrl-U                      -- Uppercase word
-    Ctrl-V                      -- Paste from Clipboard
-    Ctrl-W                      -- Close current file
-    Ctrl-X                      -- Cut to Clipboard
-    Ctrl-Y                      -- Redo last undo
-    Ctrl-Z                      -- Undo last change
+    Ctrl A                      -- Select All text in buffer
+    Ctrl B                      -- Select word (till spaces)
+    Ctrl C                      -- Copy selection to Clipboard
+    Ctrl D                      -- Delete (trim) spaces from end of line
+    Ctrl E                      -- Capitalize (emphasize) word
+    Ctrl F                      -- Find in file or all buffers
+    Ctrl G                      -- Goto next match
+    Shift-Ctrl G                -- Goto previous match
+    Ctrl H                      -- Cursor left  (like in Emacs)
+    Ctrl I                      -- Insert count-up number
+    Shift-Ctrl I                -- Reset count-up number to zero
+    Ctrl J                      -- Down Arrow
+    Ctrl K                      -- Up Arrow
+    Ctrl L                      -- Right Arrow
+    Ctrl M                      -- Toggle auto correct
+    Ctrl N                      -- New File
+    Ctrl O                      -- Open file
+    Ctrl P                      -- Print (not implemented on all platforms)
+    Ctrl Q                      -- Quit program **
+    Ctrl R                      -- Reverse three words ***
+    Ctrl S                      -- Save current file
+    Ctrl T                      -- Transpose two words
+    Ctrl U                      -- Upper case word
+    Shift-Ctrl U                -- Lower case word
+    Ctrl V                      -- Paste from Clipboard
+    Ctrl W                      -- Close current file
+    Ctrl X                      -- Cut to Clipboard
+    Ctrl Y                      -- Redo last undo
+    Ctrl Z                      -- Undo last change
 
     Ctrl Up                     -- Go up 10 lines
     Ctrl Down                   -- Go down 10 lines
@@ -76,65 +77,68 @@ table driven.
     Alt End                     -- Go to last buffer
 
     Home Home                   -- Go to begininig of page (PgUp)
-    3x Home                     -- Go to begin of file (Ctrl-Home)
+    3x Home                     -- Go to begin of file (Ctrl Home)
 
-    Alt-A                       -- Save All buffers
-    Alt-B                       -- Show Buffers
-    Alt-C                       -- Start column select
-    Alt-D                       -- Delete current line
-    Alt-E                       -- Show edit Menu
-    Alt-F                       -- Show File Menu
-    Alt-G                       -- Goto line dialog
-    Alt-H                       -- Help Menu
-    Alt-I                       -- Ignore (convert) tabs to spaces
-    Alt-J                       -- Jump to next long line (80+)
-    Alt-K                       -- Delete (kill) till end of line
-    Alt-L                       -- Select current line
-    Alt-M                       -- Macros menu
-    Alt-N                       -- Next search result
-    Alt-O                       -- Open file (Simplified Dialog)
-    Alt-P                       -- Previous search result
-    Alt-Q                       -- Hide top Pane
-    Alt-R                       -- Redo
-    Alt-S                       -- Search for text
-    Alt-T                       -- Find / Replace (taush)
-    Alt-U                       -- Undo
-    Alt-V                       -- Select Current Word (till delimiters)
-    Alt-W                       -- Write (Save) Current buffer
-    Alt-X                       -- Exit program
-    Alt-Y                       -- Check Python syntax (compile buffer)
-    Alt-Z                       -- Wrap long lines
+    Alt A                       -- Save All buffers
+    Alt B                       -- Show Buffers
+    Alt C                       -- Start column select
+    Alt D                       -- Delete current line
+    Alt E                       -- Show edit Menu
+    Alt F                       -- Show File Menu
+    Alt G                       -- Goto line dialog
+    Alt H                       -- Help Menu
+    Alt I                       -- Ignore (convert) tabs to spaces
+    Alt J                       -- Jump to next long line (80+)
+    Alt K                       -- Delete (kill) till end of line
+    Alt L                       -- Select current line
+    Alt M                       -- Macros menu
+    Alt N                       -- Next search result
+    Alt O                       -- Open file (Simplified Dialog)
+    Alt P                       -- Previous search result
+    Alt Q                       -- Hide top Pane
+    Alt R                       -- Redo
+    Alt S                       -- Search for text
+    Alt T                       -- Find / Replace (taush)
+    Alt U                       -- Undo
+    Alt V                       -- Select Current Word (till delimiters)
+    Alt W                       -- Write (Save) Current buffer
+    Alt X                       -- Exit program
+    Alt Y                       -- Check Python syntax (compile buffer)
+    Alt Z                       -- Wrap long lines
 
-    Alt-0                       -- Switch to Function pane (left)****
+    Alt 0                       -- Switch to Function pane (left)****
 
-    Alt-1                       -- Switch to buffer 1
-    Alt-2                       -- Switch to buffer 2
-    Alt-3                       -- Switch to buffer 3
-    Alt-4                       -- Switch to buffer 4
-    Alt-5                       -- Switch to buffer 5
-    Alt-6                       -- Switch to buffer 6
-    Alt-7                       -- Switch to buffer 7
-    Alt-8                       -- Switch to buffer 8
-    Alt-9                       -- Switch to buffer 9
+    Alt 1                       -- Switch to buffer 1
+    Alt 2                       -- Switch to buffer 2
+    Alt 3                       -- Switch to buffer 3
+    Alt 4                       -- Switch to buffer 4
+    Alt 5                       -- Switch to buffer 5
+    Alt 6                       -- Switch to buffer 6
+    Alt 7                       -- Switch to buffer 7
+    Alt 8                       -- Switch to buffer 8
+    Alt 9                       -- Switch to buffer 9
 
-    Alt-F1                      --  Gnome - Menu
-    Alt-F2                      --  Gnome - Run App
-    Alt-F4                      --  Gnome - Exit program (Use Alt-X)
-    Alt-F7                      --  Gnome - Move window
-    Alt-F8                      --  Gnome - Re-size window
-    Alt-F9                      --  Gnome - Minimize window
-    Alt-F10                     --  Gnome - Full Screen window
+    Alt F1                      --  Gnome - Menu
+    Alt F2                      --  Gnome - Run App
+    Alt F4                      --  Gnome - Exit program (Use Alt X)
+    Alt F7                      --  Gnome - Move window
+    Alt F8                      --  Gnome - Re-size window
+    Alt F9                      --  Gnome - Minimize window
+    Alt F10                     --  Gnome - Full Screen window
 
-    Ctrl-Alt-A                  --  Cleanse non ascii
-    Ctrl-Alt-B                  --  Not implemented
-    Ctrl-Alt-C                  --  Comment out line, and jump down below
+    Ctrl Alt A                  --  Cleanse non ascii
+    Ctrl Alt B                  --  Not implemented
+    Ctrl Alt C                  --  Comment out line, and jump down below
 
-    # more coming
+    Alt <                       -- Lower case word/selection
+    Alt >                       -- Upper case word/selection
 
-    Ctrl-Alt-H                  --  Left Arrow
-    Ctrl-Alt-J                  --  Toggle coloring
-    Ctrl-Alt-K                  --  Toggle Hex View
-    Ctrl-Alt-L                  --  Lowercase word
+    # More coming
+
+    Ctrl Alt H                  --  Left Arrow
+    Ctrl Alt J                  --  Toggle coloring
+    Ctrl Alt K                  --  Toggle Hex View
+    Ctrl Alt L                  --  Lowercase word
 
     F1                           -- Help
     F2                           -- Dev Help
@@ -151,26 +155,26 @@ table driven.
     F11                          -- Toggle full Screen
     F12                          -- Cursor Locator
     Shift-F12                    -- Reveal tabs and spaces and 80 column marker
-    Ctrl-F12                     -- Reveal Hex view
+    Ctrl F12                     -- Reveal Hex view
 
 Context dependent key assignments:
 
-    Alt-X                       -- Exit dialog
+    Alt X                       -- Exit dialog
     ESC                         -- Exit dialog (cancel)
     ENTER                       -- Exit dialog (accept)
 
  Find / Replace context:
 
-    Alt-S                       -- Case Insensitive search
-    Alt-R                       -- Regular expression search
-    Alt-A                       -- All buffer search
+    Alt S                       -- Case Insensitive search
+    Alt R                       -- Regular expression search
+    Alt A                       -- All buffer search
 
  Find / Replace results context:
 
-    Alt-S                       -- Change currently Selected
-    Alt-O                       -- Change One (rescans buffer)
-    Alt-A                       -- Change All
-    Alt-Tab                     -- Navigate between search / main windows
+    Alt S                       -- Change currently Selected
+    Alt O                       -- Change One (rescans buffer)
+    Alt A                       -- Change All
+    Alt Tab                     -- Navigate between search / main windows
     Arrow Up/Down               -- Next / prev match
     ENTER                       -- Change selection
 
@@ -185,20 +189,21 @@ Context dependent key assignments:
 
 Notes:
 
-    *       Alt-Arrow   Goto begin / end of current word. Word delimited with
+    *       Alt Arrow   Goto begin / end of current word. Word delimited with
                         alpha_num + punctuation
-    **      Ctrl-Q      Quit program, no save, but files are backed up in
+    **      Ctrl Q      Quit program, no save, but files are backed up in
                         (~/.pyedpro/data) '*.sav'
-    ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
+    ***     Ctrl R      Reverse words around the middle. (a = b becomes b = a)
                         Useful for turining assignments.
     ****    F9          Only Comments and strings are checked, otherwise all
                         text is checked
-    *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
+    *****   Alt 0       Alt - 1 .. 9 brings back the focus to current buffer
 
   Any unrecognized key is inserted verbatim into the buffer, and a message is printed
 on the controlling terminal. If no action is listed, that key is unassigned. Most dialogs
-can be dismissed with the Esc key or the Alt-X key combination.
+can be dismissed with the Esc key or the Alt X key combination.
 
 // EOF
+
 
 
