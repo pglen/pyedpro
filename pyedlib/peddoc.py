@@ -3,7 +3,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import signal, os, time, string, pickle, re
+import signal, os, time, string, pickle, re, platform, subprocess
 
 import gi
 #from six.moves import range
@@ -1035,8 +1035,23 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         elif ttt == 13:
             self.mained.activate_exit()
+        elif ttt == 14:
+            self.start_term()
         else:
             print("Invalid menu item selected")
+
+    def start_term(self):
+        #print("Terminal Here")
+        try:
+            if platform.system().find("Win") >= 0:
+                print("No terminal on windows. (TODO)")
+            else:
+                ret = subprocess.Popen(["gnome-terminal"])
+        except:
+            print("Cannot launch terminal", sys.exc_info())
+            pedync.message("\n   Cannot launch gnome-terminal executable \n\n"
+                       "              (Please install)")
+
 
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
@@ -1063,7 +1078,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 pass
             else:
                 ttt = str(bb).replace("<control>", "CTRL+")
-                ttt = str(ttt).replace("<alt>",     " ALT+")
+                ttt = str(ttt).replace("<alt>",     "ALT+")
+                ttt = str(ttt).replace("<shift>",   "SHIFT+")
                 fff = " " * (15 - len(aa))
                 sss = aa + "%s\t%s" % (fff, ttt)
                 menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
@@ -1678,6 +1694,15 @@ def run_async_time(win):
         pass
 
 # eof
+
+
+
+
+
+
+
+
+
 
 
 

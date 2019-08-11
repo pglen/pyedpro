@@ -28,12 +28,12 @@ table driven.
     Ctrl F                      -- Find in file or all buffers
     Ctrl G                      -- Goto next match
     Shift-Ctrl G                -- Goto previous match
-    Ctrl H                      -- Cursor left  (like in Emacs)
+    Ctrl H                      -- Cursor left  (like in vi)
     Ctrl I                      -- Insert count-up number
     Shift-Ctrl I                -- Reset count-up number to zero
-    Ctrl J                      -- Down Arrow
-    Ctrl K                      -- Up Arrow
-    Ctrl L                      -- Right Arrow
+    Ctrl J                      -- Down Arrow (like in vi)
+    Ctrl K                      -- Up Arrow   (like in vi)
+    Ctrl L                      -- Right Arrow (like in vi)
     Ctrl M                      -- Toggle auto correct
     Ctrl N                      -- New File
     Ctrl O                      -- Open file
@@ -204,6 +204,7 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt X key combination.
 
 // EOF
+
 
 
 
