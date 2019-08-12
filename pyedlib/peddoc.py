@@ -1046,7 +1046,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if platform.system().find("Win") >= 0:
                 print("No terminal on windows. (TODO)")
             else:
+                # Stumble until terminal found
                 ret = subprocess.Popen(["gnome-terminal"])
+                if not ret.returncode:
+                    ret = subprocess.Popen(["xfce4-terminal"])
         except:
             print("Cannot launch terminal", sys.exc_info())
             pedync.message("\n   Cannot launch gnome-terminal executable \n\n"
@@ -1694,6 +1697,10 @@ def run_async_time(win):
         pass
 
 # eof
+
+
+
+
 
 
 

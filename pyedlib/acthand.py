@@ -888,7 +888,7 @@ class ActHand:
         line = self2.text[yidx]
 
         if self2.shift:
-            print("Starting terminal from hotkey.");
+            #print("Starting terminal from hotkey.");
             self2.start_term();
         else:
             self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
@@ -1824,6 +1824,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 
