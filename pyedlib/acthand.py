@@ -634,26 +634,30 @@ class ActHand:
         #print ("CTRL - ALT - B")
         pass
 
+    #// Deactivate code:
     def ctrl_alt_c(self, self2):
         #print ("CTRL - ALT - C")
+        self.ctrl_c(self2)
         extx = os.path.splitext(self2.fname)[1]
-        # This will catch al 'C' varieties
+        # This will catch all 'C' varieties, else py assumed
         if extx[1] == "c" or extx[1] == "h":
-            strx = "//"
+            strx  = "#if 0\n"
+            strx2 = "#endif\n"
         else:
-            strx = "#"
+            strx  = "''' "
+            strx2 = "''' "
 
-        for aa in strx:
-            #event = Gdk.Event(Gdk.EventType.KEY_PRESS);
-            event = Gdk.EventKey()
-            event.string  = aa
-            event.keyval = ord(aa)
-            self.add_key(self2, event)
+        self.add_str(self2, strx)
+        self.ctrl_v(self2)
+        self.add_str(self2, strx2)
 
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
         xidx -= len(strx); yidx += 1
         self2.set_caret(xidx, yidx)
+        self2.mained.update_statusbar("Selection commented out.")
+        self2.invalidate()
+
 
     def ctrl_alt_h(self, self2):
         #print ("CTRL - ALT - H")
@@ -1300,7 +1304,7 @@ class ActHand:
             self2.mained.hpaned.set_position(1)
 
     def alt_s(self, self2):
-        #print ("ALT - S")
+        #print (("ALT - T")
         pedfind.find(self, self2)
 
     def alt_t(self, self2):
@@ -1603,6 +1607,21 @@ class ActHand:
         pass
 
     # ---------------------------------------------------------------------
+    # Add synthesized str
+
+    def add_str(self, self2, strx):
+
+        for aa in strx:
+            if aa == '\n':
+                self.ret(self2)
+            else:
+                #event = Gdk.Event(Gdk.EventType.KEY_PRESS);
+                event = Gdk.EventKey()
+                event.string  = aa
+                event.keyval = ord(aa)
+                self.add_key(self2, event)
+
+    #-------------------------------------------------------------------
     # Add regular key
 
     def add_key(self, self2, event):
@@ -1824,105 +1843,6 @@ class ActHand:
             self2.invalidate()
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
