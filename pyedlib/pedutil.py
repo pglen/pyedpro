@@ -674,8 +674,10 @@ def done_sess2_fc(win, resp, fc):
 def     load_sess():
 
     but =   "Cancel", Gtk.ButtonsType.CANCEL, "Load Session", Gtk.ButtonsType.OK
-    fc = Gtk.FileChooserDialog("Save Session", None, Gtk.FileChooserAction.OPEN, \
-        but)
+    fc = Gtk.FileChooserDialog("Load Session", None, Gtk.FileChooserAction.OPEN)
+
+    fc.add_button("Cancel", Gtk.ButtonsType.CANCEL)
+    fc.add_button("Load Session", Gtk.ButtonsType.OK)
 
     filter = Gtk.FileFilter()
     filter.add_pattern ("*.sess");
@@ -691,6 +693,11 @@ def     load_sess():
 
 
 # EOF
+
+
+
+
+
 
 
 

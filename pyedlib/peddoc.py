@@ -1163,6 +1163,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.mained.update_statusbar(strx)
         self.saveparms()
 
+        # Clear treestore(s)
+        self.appwin.update_treestore([])
+        self.appwin.update_treestore2([])
+
         # Add to accounting:
         utils.logentry("Closed File", self.start_time, self.fname)
 
@@ -1696,35 +1700,6 @@ def run_async_time(win):
         print("run_async_time", sys.exc_info())
         pass
 
-# eof
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# EOF
 
 

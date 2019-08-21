@@ -133,12 +133,11 @@ table driven.
     Alt <                       -- Lower case word/selection
     Alt >                       -- Upper case word/selection
 
-    # More coming
+    # More coming ... under construction
 
-    Ctrl Alt H                  --  Left Arrow
-    Ctrl Alt J                  --  Toggle coloring
-    Ctrl Alt K                  --  Toggle Hex View
-    Ctrl Alt L                  --  Lowercase word
+    #Ctrl Alt H                  --  Left Arrow
+    #Ctrl Alt J                  --  Toggle coloring
+    #Ctrl Alt K                  --  Toggle Hex View
 
     F1                           -- Help
     F2                           -- Dev Help
@@ -204,6 +203,7 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt X key combination.
 
 // EOF
+
 
 
 
