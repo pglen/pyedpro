@@ -1,10 +1,11 @@
                              PyEdPro Key Assignments
 
-   This is a list of default key assignments for PyEdPro. The keys are assigned
-in keyhand.py and the actions are implemented in acthand.py. Regular keys are
-added to the buffer. To implement a new feature follow a particular key's
-execution path, and replicate functionality. It is eazy to follow, as it is
-table driven.
+   This is a list of default key assignments for PyEdPro. We tried to follow
+existing keyboard standards. The keys are assigned in keyhand.py and the
+actions are implemented in acthand.py. Regular keys are added to the buffer.
+
+  To implement a new feature follow a particular key's execution path, and
+replicate functionality. It is eazy to follow, as it is table driven.
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char
@@ -24,6 +25,7 @@ table driven.
     Ctrl B                      -- Select word (till spaces)
     Ctrl C                      -- Copy selection to Clipboard
     Ctrl D                      -- Delete (trim) spaces from end of line
+    Ctrl-Shift D                -- Insert date string at cursor clocation
     Ctrl E                      -- Capitalize (emphasize) word
     Ctrl F                      -- Find in file or all buffers
     Ctrl G                      -- Goto next match
@@ -37,15 +39,17 @@ table driven.
     Ctrl M                      -- Toggle auto correct
     Ctrl N                      -- New File
     Ctrl O                      -- Open file
+    Ctrl-Shift O                -- Open session
     Ctrl P                      -- Print (not implemented on all platforms)
     Ctrl Q                      -- Quit program **
     Ctrl R                      -- Reverse three words ***
     Ctrl S                      -- Save current file
-    Ctrl T                      -- Transpose two words
+    Ctrl T                      -- Transpose two words (taush)
     Ctrl U                      -- Upper case word
     Shift-Ctrl U                -- Lower case word
     Ctrl V                      -- Paste from Clipboard
     Ctrl W                      -- Close current file
+    Ctrl-Shift W                -- Close all files
     Ctrl X                      -- Cut to Clipboard
     Ctrl Y                      -- Redo last undo
     Ctrl Z                      -- Undo last change
@@ -127,17 +131,17 @@ table driven.
     Alt F10                     --  Gnome - Full Screen window
 
     Ctrl Alt A                  --  Cleanse non ascii
-    Ctrl Alt B                  --  Not implemented
+    Ctrl Alt B                  --  ''' '''
     Ctrl Alt C                  --  Comment out line, and jump down below
-
-    Alt <                       -- Lower case word/selection
-    Alt >                       -- Upper case word/selection
 
     # More coming ... under construction
 
     #Ctrl Alt H                  --  Left Arrow
     #Ctrl Alt J                  --  Toggle coloring
     #Ctrl Alt K                  --  Toggle Hex View
+
+    #Alt <                       -- Lower case word/selection
+    #Alt >                       -- Upper case word/selection
 
     F1                           -- Help
     F2                           -- Dev Help
@@ -203,6 +207,8 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt X key combination.
 
 // EOF
+
+
 
 
 

@@ -31,7 +31,8 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
-import string, subprocess, os, platform
+
+import string, subprocess, os, platform, datetime
 import py_compile
 
 import gi
@@ -609,7 +610,7 @@ class ActHand:
         #self2.set_changed(True)
 
     # --------------------------------------------------------------------
-    # No ctrl - alt handlers yet (reserved for gnome shortcuts)
+    # Not many ctrl - alt handlers yet (reserved for gnome shortcuts)
 
     # Cleanse non ascii
     def ctrl_alt_a(self, self2):
@@ -746,22 +747,28 @@ class ActHand:
                 self.clips[self.currclip] = cumm
 
     def ctrl_d(self, self2):
-        #print ("CTRL - D")
-        xidx = self2.caret[0] + self2.xpos;
-        cnt = 0; cnt2 = 0; zlen = len(self2.text)
-        while True:
-            if cnt >= zlen: break
-            line = self2.text[cnt];  xlen = len(line)
-            if xlen and line[xlen-1] == " ":
-                self2.undoarr.append((xidx, cnt, MODIFIED, self2.text[cnt]))
-                self2.text[cnt] = line.rstrip()
-                cnt2 += 1
-            cnt += 1
+        if self2.shift:
+            dt = datetime.datetime(1990, 1, 1);
+            dt2 = dt.now()
+            strx2 =  dt2.strftime("%d/%m/%y %H:%M:%S ")
+            self.add_str(self2, strx2)
+        else:
+            #print ("CTRL - D")
+            xidx = self2.caret[0] + self2.xpos;
+            cnt = 0; cnt2 = 0; zlen = len(self2.text)
+            while True:
+                if cnt >= zlen: break
+                line = self2.text[cnt];  xlen = len(line)
+                if xlen and line[xlen-1] == " ":
+                    self2.undoarr.append((xidx, cnt, MODIFIED, self2.text[cnt]))
+                    self2.text[cnt] = line.rstrip()
+                    cnt2 += 1
+                cnt += 1
 
-        self2.mained.update_statusbar("Trimmed %d lines." % cnt2)
+            self2.mained.update_statusbar("Trimmed %d lines." % cnt2)
 
-        if cnt2 > 0:
-            self2.set_changed(True)
+            if cnt2 > 0:
+                self2.set_changed(True)
 
         self2.invalidate()
 
@@ -1843,6 +1850,9 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
 
 
 

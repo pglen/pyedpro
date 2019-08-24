@@ -946,7 +946,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print "ped doc area focus", event
         return False
 
-    # Add to usder dictionary:
+    # Add to user dictionary:
     def addict(self, widget, string, arg):
         #print "addict", arg
         lw = arg.lower()
@@ -1048,7 +1048,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             else:
                 # Stumble until terminal found
                 ret = subprocess.Popen(["gnome-terminal"])
-                if not ret.returncode:
+                if ret.returncode:
                     ret = subprocess.Popen(["xfce4-terminal"])
         except:
             print("Cannot launch terminal", sys.exc_info())
@@ -1701,5 +1701,7 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
 
 
