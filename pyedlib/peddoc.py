@@ -1226,6 +1226,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 self.colflag = True
                 break
         '''
+
+        try:
+            os.chdir(os.path.dirname(self.fnamefile))
+        except:
+            print("Cannot change dir to file's cwd")
+
         # Let the system breed
         usleep(30)
 
@@ -1701,6 +1707,7 @@ def run_async_time(win):
         pass
 
 # EOF
+
 
 
 
