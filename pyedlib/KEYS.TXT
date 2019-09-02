@@ -2,7 +2,8 @@
 
    This is a list of default key assignments for PyEdPro. We tried to follow
 existing keyboard standards. The keys are assigned in keyhand.py and the
-actions are implemented in acthand.py. Regular keys are added to the buffer.
+actions are implemented in acthand.py. Regular keys are added to the text
+buffer verbatim.
 
   To implement a new feature follow a particular key's execution path, and
 replicate functionality. It is eazy to follow, as it is table driven.
@@ -207,6 +208,7 @@ on the controlling terminal. If no action is listed, that key is unassigned. Mos
 can be dismissed with the Esc key or the Alt X key combination.
 
 // EOF
+
 
 
 

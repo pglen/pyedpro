@@ -69,8 +69,8 @@ the configuration info into a SQLite database in the ~/.PyEdPro directory.
    This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
 added to the buffer. To implement a new feature follow a particular key's
-execution path, and replicate functionality. It is eazy to follow, as it is
-table driven. (For the latest vestion of the table see: KEYS.TXT)
+execution path, and replicate functionality. It is easy to follow, as it is
+table driven. (For the latest version of the table see: KEYS.TXT)
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char
@@ -250,7 +250,7 @@ Notes:
     **      Ctrl-Q      Quit program, no save, but files are backed up in
                         (~/.pyedpro/data) '*.sav'
     ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
-                        Useful for turining assignments.
+                        Useful for turning around assignments.
     ****    F9          Only Comments and strings are checked, otherwise all
                         text is checked
     *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
@@ -275,6 +275,7 @@ Screen from Ubuntu:
 ![Screen Shot](pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
+
 
 
 
