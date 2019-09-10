@@ -478,14 +478,15 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if event.button == 1:
                 #print "Left Click at x=", event.x, "y=", event.y
                 self.mx = event.x; self.my = event.y
+                xxx = int(event.x / self.cxx)
+                yyy = int(event.y / self.cyy)
+
                 # Find current pos, gather tabs, adjust back
                 try:
-                    line = self.text[self.ypos + int(event.y) / self.cyy]
+                    line = self.text[self.ypos + yyy]
                 except:
                     line = "";
 
-                xxx = int(event.x / self.cxx)
-                yyy = int(event.y / self.cyy)
                 offs = calc_tabs2(line, xxx)
 
                 #print "offs, xxx", offs, xxx
@@ -537,14 +538,27 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.scrtab = False
             ttt = "Release"
         elif  event.type == Gdk.EventType._2BUTTON_PRESS:
-            #print "Double click", event.x, event.y
+            #print ("Double click", event.x, event.y)
             self.mx = event.x; self.my = event.y
-            # Find current pos
-            self.set_caret(self.xpos + int(event.x) / self.cxx,
-                                 self.ypos + int(event.y) / self.cyy )
+            xxx = int(event.x) / self.cxx
+            yyy = int(event.y) / self.cyy
+
+            # Find current pos, gather tabs, adjust back
+            try:
+                line = self.text[self.ypos + yyy]
+            except:
+                line = "";
+
+            # Find current pos on tabbed line
+            offs = calc_tabs2(line, xxx)
+            self.set_caret(self.xpos + xxx - (offs - xxx),
+                                     self.ypos + yyy )
+            #self.set_caret(len(xxx2), yyy)
+
             # Erase selection
             if self.xsel != -1:
                 self.clearsel()
+
             # Select word
             if event.state & Gdk.ModifierType.CONTROL_MASK:
                 #pedconfig.conf.keyh.act.alt_l(self)
@@ -1716,6 +1730,23 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
