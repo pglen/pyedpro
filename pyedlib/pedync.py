@@ -116,7 +116,7 @@ def  about(self2):
         "\nPyedPro Build Date: %s\n" % pyedlib.pedconfig.conf.build_date
 
     dialog.set_comments(comm);
-    dialog.set_copyright("Portions \302\251 Copyright Peter Glen\n"
+    dialog.set_copyright("PyEdpro Created by Peter Glen\n"
                           "Project placed in the Public Domain.")
     dialog.set_program_name("PyEdPro")
     img_dir = os.path.join(os.path.dirname(__file__), 'images')
@@ -171,6 +171,7 @@ def message(strx, title = None):
     dialog.show()
 
 #EOF
+
 
 
 

@@ -340,10 +340,15 @@ class EdMainWindow():
                 if not ret:
                     self.update_statusbar("Cannot read file '{0:s}'".format(fff))
                     continue
-                    vpaned.area2.loadfile(fff)
+                vpaned.area2.loadfile(fff)
 
                 notebook.append_page(vpaned)
                 vpaned.area.set_tablabel()
+                nn = notebook.get_n_pages();
+                if nn:
+                    vcurr = notebook.set_current_page(nn-1)
+                    vcurr = notebook.get_nth_page(nn-1)
+                    self.mywin.set_focus(vcurr.vbox.area)
 
         # Show newly created buffers:
         self.mywin.show_all()
@@ -943,6 +948,26 @@ class EdMainWindow():
             if vcurr2:
                 pedconfig.conf.keyh.act.f9(vcurr2.area, True)
 
+        if strx == "MakeRO":
+            nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
+            while True:
+                if cnt >= nn: break
+                ppp = notebook.get_nth_page(cnt)
+                #print ("Make read only file:", ppp.area.fname)
+                ppp.area.readonly = True
+                cnt += 1
+            self.update_statusbar("Made all buffers READ only")
+
+        if strx == "MakeRW":
+            nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
+            while True:
+                if cnt >= nn: break
+                ppp = notebook.get_nth_page(cnt)
+                #print ("Make read only file:", ppp.area.fname)
+                ppp.area.readonly = False
+                cnt += 1
+            self.update_statusbar("Made all buffers READ/WRITE")
+
         if strx == "Animate":
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
@@ -1183,6 +1208,9 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(nn-1)
             self.mywin.set_focus(vcurr.vbox.area)
 
+        return vcurr.vbox.area
+
+
     def activate_exit(self, action = None):
         #print "activate_exit called"
         OnExit(self.mywin)
@@ -1387,6 +1415,12 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
 
 
 

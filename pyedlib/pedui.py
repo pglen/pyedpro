@@ -50,6 +50,9 @@ ui_info = \
       <separator/>
       <menuitem action='Spell'/>
       <menuitem action='Spell2'/>
+      <separator/>
+      <menuitem action='MakeRO'/>
+      <menuitem action='MakeRW'/>
     </menu>
 
     <menu action='NavMenu'>
@@ -127,6 +130,9 @@ ui_info = \
     <toolitem action='About'/>
     <toolitem action='QuickHelp'/>
     <toolitem action='Help'/>   '''
+
+
+
 
 
 

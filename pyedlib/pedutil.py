@@ -77,18 +77,39 @@ def     readfile(strx, sep):
 # ------------------------------------------------------------------------
 # Return an array of lines found
 
-def findinfile(nnn, ffff):
+def findinfile(nnn, ffff, nocase = False):
 
     rrr = []
     try:
         text = readfile(ffff, "\r\n")
+
+        # See if text file
+        cnt = 0
+        try:
+            line = text[0] + text[1]
+            for ccc in line:
+                chh = ord(ccc)
+                if chh < 32 or chh > 127:
+                    #print("bin", ccc, ord(ccc) )
+                    cnt += 1
+        except:
+            print("except",  sys.exc_info())
+
+        if cnt > 3:
+            #print ("Not a text file:", ffff)
+            return rrr
     except:
         print("Cannot read file", ffff);
         text = ""
 
+    unnn = nnn.lower()
     for aa in text:
-        if nnn in aa:
-            rrr.append(aa)
+        if nocase:
+            if unnn in aa.lower():
+                rrr.append(aa)
+        else:
+            if nnn in aa:
+                rrr.append(aa)
 
     return rrr
 
@@ -667,7 +688,7 @@ def done_sess2_fc(win, resp, fc):
             usleep(30)
 
     # Back to original dir
-    os.chdir(os.path.dirname(fc.old))
+    #os.chdir(os.path.dirname(fc.old))
 
 # Load session from file in the config dir
 
@@ -693,6 +714,21 @@ def     load_sess():
 
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

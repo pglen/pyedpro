@@ -154,7 +154,7 @@ def create_action_group(self):
          self.activate_exit ),
 
       ( "Cut", Gtk.STOCK_CUT,
-        "Cu_t   \t\tCtrl-C", "",
+        "Cu_t   \t\tCtrl-X", "",
         "Cut selection to clipboard",
          self.activate_action ),
 
@@ -178,19 +178,29 @@ def create_action_group(self):
         "Redo last Undo",
          self.activate_action ),
 
-      ( "Discard Undo", Gtk.STOCK_REDO,
+      ( "Discard Undo", Gtk.STOCK_QUIT,
         "Discard Undo / Redo", "",
         "Discard all undo / redo information",
          self.activate_action ),
 
-      ( "Spell", Gtk.STOCK_REDO,
+      ( "Spell", Gtk.STOCK_SPELL_CHECK,
         "_Spell (code) \tF9", "",
         "Spell Buffer (code mode)",
          self.activate_action ),
 
-      ( "Spell2", Gtk.STOCK_REDO,
+      ( "Spell2", Gtk.STOCK_SPELL_CHECK,
         "S_pell (text) \tShift-F9", "",
         "Spell Buffer (text mode)",
+         self.activate_action ),
+
+      ( "MakeRO", Gtk.STOCK_NO,
+        "Make _Buffs Read Only \t", "",
+        "Make All ReadOnly",
+         self.activate_action ),
+
+       ( "MakeRW", Gtk.STOCK_YES,
+        "Make Buffs Read _Write \t", "",
+        "Make All Read_Write",
          self.activate_action ),
 
       ( "Settings", Gtk.STOCK_REDO,
@@ -362,6 +372,12 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
+
+
+
+
+
 
 
 

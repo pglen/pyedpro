@@ -180,10 +180,11 @@ def find(self, self2, replace = False):
 
     if  dialog.checkbox4.get_active():
         #print("Searching all files")
+        #dialog.checkbox2.set_active(False)      # Force case sensitive
         dialog.checkbox3.set_active(False)      # Force one
-        find_show_file(self, self2)
+        find_show_file(self, self2, dialog.checkbox2.get_active() )
 
-    elif  dialog.checkbox3.get_active():
+    elif dialog.checkbox3.get_active():
         nn = self2.mained.notebook.get_n_pages();
         cnt = 0; cnt2 = 0
         while True:
@@ -196,7 +197,9 @@ def find(self, self2, replace = False):
         self.xnum = 0
         find_show(self, self2)
 
-def     find_keypress(area, event):
+# ------------------------------------------------------------------------
+
+def find_keypress(area, event):
 
     global stridx, strhist, dialog
 
@@ -410,7 +413,7 @@ def find_show(self, self2):
         win2.show_all()
 
 
-def find_show_file(self, self2):
+def find_show_file(self, self2, casex):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
@@ -520,7 +523,7 @@ def find_show_file(self, self2):
 
             if filestat.st_size < 100000:
                 #print("Seaching: ", filename)
-                rrr = findinfile(self.srctxt, filename)
+                rrr = findinfile(self.srctxt, filename, casex)
                 if rrr:
                     matches += 1
                     #print ("found: rrr", rrr)
@@ -684,7 +687,8 @@ def     tree_sel2(xtree, self, self2, par1, par2, par3):
         if xstr[0] != " ":
             idx = str.find(xstr, " matches")
             #print ("Selected: '%s'" % xstr[:idx] )
-            pedconfig.conf.pedwin.openfile(xstr[:idx])
+            rrr = pedconfig.conf.pedwin.openfile(xstr[:idx])
+            print (rrr)
             par3.destroy()
         break
     pass
@@ -1039,6 +1043,10 @@ def wnext(butt,self):
     pass
 
 #eof
+
+
+
+
 
 
 
