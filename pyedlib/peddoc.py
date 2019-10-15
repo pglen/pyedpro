@@ -1060,6 +1060,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.mained.activate_exit()
         elif ttt == 14:
             self.start_term()
+        elif ttt == 15:
+            self.start_edit()
         else:
             print("Invalid menu item selected")
 
@@ -1075,7 +1077,28 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     ret = subprocess.Popen(["xfce4-terminal"])
         except:
             print("Cannot launch terminal", sys.exc_info())
-            pedync.message("\n   Cannot launch gnome-terminal executable \n\n"
+            pedync.message("\n   Cannot launch terminal executable \n\n"
+                       "              (Please install)")
+
+
+    def start_edit(self):
+        #print("Editor Here")
+
+        myscript = os.path.join(os.path.dirname(__file__), '../pyedpro.py')
+        myscript = os.path.realpath(myscript)
+        print("myscript: python", myscript);
+
+        try:
+            if platform.system().find("Win") >= 0:
+                print("No exe on windows. (TODO)")
+            else:
+                # Stumble until editor found
+                ret = subprocess.Popen(["python", myscript])
+                if ret.returncode:
+                    ret = subprocess.Popen(["xfce4-terminal"])
+        except:
+            print("Cannot launch terminal", sys.exc_info())
+            pedync.message("\n   Cannot launch editor script \n\n"
                        "              (Please install)")
 
 
@@ -1730,6 +1753,15 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
+
+
+
+
+
 
 
 

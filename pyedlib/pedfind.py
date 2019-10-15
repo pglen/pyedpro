@@ -181,7 +181,7 @@ def find(self, self2, replace = False):
     if  dialog.checkbox4.get_active():
         #print("Searching all files")
         #dialog.checkbox2.set_active(False)      # Force case sensitive
-        dialog.checkbox3.set_active(False)      # Force one
+        dialog.checkbox3.set_active(False)       # Force one
         find_show_file(self, self2, dialog.checkbox2.get_active() )
 
     elif dialog.checkbox3.get_active():
@@ -413,7 +413,9 @@ def find_show(self, self2):
         win2.show_all()
 
 
-def find_show_file(self, self2, casex):
+# ------------------------------------------------------------------------
+
+def     find_show_file(self, self2, casex):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
@@ -1042,61 +1044,4 @@ def wnext(butt,self):
     #print "wnext"
     pass
 
-#eof
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# EOF
