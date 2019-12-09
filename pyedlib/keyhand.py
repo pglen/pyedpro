@@ -439,7 +439,7 @@ class KeyHand:
         if  event.type == Gdk.EventType.KEY_PRESS:
             #print "alt hand", event
             if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
-                print "Keyhand Alt num", event.keyval - Gdk.KEY_1
+                print ("Keyhand Alt num", event.keyval - Gdk.KEY_1)
                 num = event.keyval - Gdk.KEY_1
                 if num >  self2.notebook.get_n_pages() - 1:
                     self2.mained.update_statusbar("Invalid tab (page) index.")
