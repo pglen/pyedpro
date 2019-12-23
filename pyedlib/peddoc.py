@@ -38,7 +38,7 @@ TABSTOP = 4                 # One tab stop worth of spaces
 # Profile line, use it on bottlenecks
 #got_clock = time.clock()
 # profiled code here
-#print  "Str", time.clock() - got_clock
+#print(  "Str", time.clock() - got_clock)
 
 from .keywords import *
 
@@ -193,28 +193,28 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.fgcolor  = pedcolor.str2float(FGCOLOR)
         else:
             self.fgcolor  = pedcolor.str2float(ccc)
-        #print "fgcol", self.fgcolor, ccc
+        #print( "fgcol", self.fgcolor, ccc)
 
         ccc = pedconfig.conf.sql.get_str("rbgcolor")
         if ccc == "":
             self.rbgcolor = pedcolor.str2float(RBGCOLOR)
         else:
             self.rbgcolor = pedcolor.str2float(ccc)
-        #print "rgbcolor", self.rbgcolor, ccc
+        #print( "rgbcolor", self.rbgcolor, ccc)
 
         ccc = pedconfig.conf.sql.get_str("cbgcolor")
         if ccc == "":
             self.cbgcolor = pedcolor.str2float(CBGCOLOR)
         else:
             self.cbgcolor = pedcolor.str2float(ccc)
-        #print "cbgcolor", self.cbgcolor, ccc
+        #print( "cbgcolor", self.cbgcolor, ccc)
 
         ccc = pedconfig.conf.sql.get_str("kwcolor")
         if ccc == "":
             self.kwcolor = pedcolor.str2float(KWCOLOR)
         else:
             self.kwcolor = pedcolor.str2float(ccc)
-        #print "load kwcolor", self.kwcolor, ccc
+        #print( "load kwcolor", self.kwcolor, ccc)
 
         ccc = pedconfig.conf.sql.get_str("clcolor")
         if ccc == "":
@@ -285,7 +285,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     # Do Tasks  when the system is idle
     def idle_callback(self):
-        #print "Idle callback"
+        #print( "Idle callback")
         GLib.source_remove(self.source_id)
         try:
             if self.changed:
@@ -303,7 +303,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     # Do Tasks2 when the system is idle
     def idle_callback2(self):
-        #print "Idle callback2"
+        #print( "Idle callback2")
         GLib.source_remove(self.source_id2)
         try:
             run_async_time(self)
@@ -311,7 +311,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             print("Exception in async handler", sys.exc_info())
 
     def locate(self, xstr):
-        #print "locate '" + xstr +"'"
+        #print( "locate '" + xstr +"'")
         cnt = 0; cnt2 = 0; idx = 0; found = 0
         for line in self.text:
             if xstr == line:
@@ -329,7 +329,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 cnt2 += 1
 
     def focus_out_cb(self, widget, event):
-        #print "focus_out_cb", widget, event
+        #print( "focus_out_cb", widget, event)
         self.focus = False
 
     def focus_in_cb(self, widget, event):
@@ -361,15 +361,15 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.do_chores()
 
     def grab_focus_cb(self, widget):
-        #print "grab_focus_cb", widget
+        #print( "grab_focus_cb", widget)
         pass
 
     def area_enter(self, widget, event):
-        #print "area_enter"
+        #print( "area_enter")
         pass
 
     def area_leave(self, widget, event):
-        #print "area_leave"
+        #print( "area_leave")
         pass
 
     def scroll_event(self, widget, event):
@@ -396,40 +396,40 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.invalidate()
 
     def hscroll_cb(self, widget):
-        #print "hscroll_cb", widget.get_value()
+        #print( "hscroll_cb", widget.get_value())
         # Skip one callback
         if self.honeshot:
             self.honeshot = False; return
         xidx = int(widget.get_value())
 
-        #print "hscroll_cb ok", widget.get_value()
+        #print( "hscroll_cb ok", widget.get_value())
         self.set_caret(xidx, self.ypos + self.caret[1])
         self.invalidate()
 
     def vscroll_cb(self, widget):
-        #print "vscroll_cb", widget.get_value()
+        #print( "vscroll_cb", widget.get_value())
         # Skip one callback
         if self.oneshot:
             self.oneshot = False; return
-        #print "vscroll_cb ok", widget.get_value()
+        #print( "vscroll_cb ok", widget.get_value())
         yidx = int(widget.get_value())
         self.set_caret(self.xpos + self.caret[0], yidx + self.caret[1])
         self.invalidate()
 
     def size_request(self, widget, req):
-        #print "size_request", req
+        #print( "size_request", req)
         pass
 
     def size_alloc(self, widget, req):
-        #print "size_alloc", req
+        #print( "size_alloc", req)
         pass
 
     def configure_event(self, widget, event):
-        #print "configure_event", event
+        #print( "configure_event", event)
         #self.grab_focus()
         #self.width = 0; self.height = 0
         #self.invalidate()
-        #print self, event
+        #print( self, event)
         pass
 
     def draw_event(self, pdoc, cr):
@@ -469,14 +469,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def idle_queue(func):
         self.queue.append(func)
-        #print queue
+        #print( queue)
 
     def area_button(self, area, event):
-        #print "Button press  ", event.type, " x=", event.x, " y=", event.y
+        #print( "Button press  ", event.type, " x=", event.x, " y=", event.y)
 
         if  event.type == Gdk.EventType.BUTTON_PRESS:
             if event.button == 1:
-                #print "Left Click at x=", event.x, "y=", event.y
+                #print( "Left Click at x=", event.x, "y=", event.y)
                 self.mx = event.x; self.my = event.y
                 xxx = int(event.x / self.cxx)
                 yyy = int(event.y / self.cyy)
@@ -489,13 +489,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
                 offs = calc_tabs2(line, xxx)
 
-                #print "offs, xxx", offs, xxx
+                #print( "offs, xxx", offs, xxx)
                 self.set_caret(self.xpos + xxx - (offs - xxx),
                                      self.ypos + yyy )
                 #rp = xxx + self.xpos
-                #print "xpos", self.xpos, "xxx", xxx, "rp", rp
-                #print line
-                #print "line part", "'" + line[rp:rp+8] + "'"
+                #print( "xpos", self.xpos, "xxx", xxx, "rp", rp)
+                #print( line)
+                #print( "line part", "'" + line[rp:rp+8] + "'")
 
                 # Erase selection
                 if self.xsel != -1:
@@ -505,7 +505,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 GLib.timeout_add(300, self.keytime)
 
             if event.button == 3:
-                #print "Right Click at x=", event.x, "y=", event.y
+                #print( "Right Click at x=", event.x, "y=", event.y)
                 flag = False; xx = 0; yy = 0; zz = 0
                 if self.spell:
                     yyy = self.ypos + self.get_height() / self.cyy
@@ -525,7 +525,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                                 flag = True
                 if flag:
                     line = self.text[yy];
-                    #print "'" + line[xx:zz] + "'"
+                    #print( "'" + line[xx:zz] + "'")
                     self.xsel = xx; self.xsel2 = zz
                     self.ysel = self.ysel2 = yy
                     self.popspell(area, event, line[xx:zz] )
@@ -533,7 +533,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     self.poprclick(area, event)
 
         elif  event.type == Gdk.EventType.BUTTON_RELEASE:
-            #print "button release", event.button
+            #print( "button release", event.button)
             self.mx = -1; self.my = -1
             self.scrtab = False
             ttt = "Release"
@@ -579,7 +579,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def intersect(self, xx, yy, xx2, yy2, event):
         # Does X intersect?
         if event.x > xx and event.x < xx2:
-            #print "x inter", xaa, lcc
+            #print( "x inter", xaa, lcc)
             # Does Y intersect?
             if event.y > yy and event.y < yy2:
                 return True
@@ -607,7 +607,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
         if event.state & Gdk.ModifierType.BUTTON1_MASK:
-            #print "motion event butt 1", event.state, event.x, event.y
+            #print( "motion event butt 1", event.state, event.x, event.y)
             if self.xsel == -1 and self.scrtab != True:
                 begsel = False
                 # Horiz drag - regular sel
@@ -617,7 +617,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 if begsel:
                     self.xsel = self.xsel2 = self.xpos + self.caret[0]
                     self.ysel = self.ysel2 = self.ypos + self.caret[1]
-                    #print "colsel xsel, ysel", self.colsel, self.xsel, self.ysel
+                    #print( "colsel xsel, ysel", self.colsel, self.xsel, self.ysel)
                 if self.scrtab == False:
                     # Vert drag - colsel
                     if abs(event.y - self.my) > DRAGTRESH:
@@ -648,7 +648,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         if event.state & Gdk.ModifierType.SHIFT_MASK and \
             event.state & Gdk.ModifierType.BUTTON1_MASK:
-            #print "Shift Drag", event.x, event.y
+            #print( "Shift Drag", event.x, event.y)
             pass
         pass
 
@@ -708,7 +708,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def set_caret(self, xx, yy):
 
-        #print "set_caret", xx, yy
+        #print( "set_caret", xx, yy)
 
         # Needs scroll?
         need_inval = False
@@ -721,9 +721,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         off = chh - self.vscgap
         if yy - self.ypos > off:
-            #print "Scroll from caret down"
+            #print( "Scroll from caret down")
             if yy > self.ypos + self.caret[1]:
-                #print "move d", "ypos", self.ypos, "yy", yy
+                #print( "move d", "ypos", self.ypos, "yy", yy)
                 self.ypos = int(yy - off)
                 need_inval = True
                 # Force new spell check
@@ -732,9 +732,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 GLib.timeout_add(300, self.keytime)
 
         if yy - self.ypos < self.vscgap and self.ypos:
-            #print "Scroll from caret up"
+            #print( "Scroll from caret up")
             if yy < self.ypos + self.caret[1]:
-                #print "move u", "ypos", self.ypos, "yy", yy
+                #print( "move u", "ypos", self.ypos, "yy", yy)
                 self.ypos = int(yy - self.vscgap)
                 self.ypos = int(max(self.ypos, 0))
                 need_inval = True
@@ -750,17 +750,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         xoff = cww - self.hscgap
         if  xx - self.xpos  > xoff:
-            #print "Scroll from caret right", "xx", xx, "xpos", self.xpos
+            #print( "Scroll from caret right", "xx", xx, "xpos", self.xpos)
             if self.xpos + self.caret[0] < xx:
-                #print "moved r",  xx, self.caret[0], self.xpos
+                #print( "moved r",  xx, self.caret[0], self.xpos)
                 self.xpos =  int(xx - xoff)
                 self.xpos = int(max(self.xpos, 0))
                 need_inval = True
 
         if  xx - self.xpos <  self.hscgap:
-            #print "Scroll from caret left ", xx, self.xpos
+            #print( "Scroll from caret left ", xx, self.xpos)
             if self.xpos + self.caret[0] > xx:
-                #print "moved l", "xx", xx, "caret", self.caret[0], "xpos", self.xpos
+                #print( "moved l", "xx", xx, "caret", self.caret[0], "xpos", self.xpos)
                 self.xpos = int(xx - self.hscgap)
                 self.xpos = int(max(self.xpos, 0))
                 need_inval = True
@@ -828,21 +828,21 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.invalidate()
 
     def keytime(self):
-        #print "keytime raw", time.time(), self.fired
+        #print( "keytime raw", time.time(), self.fired)
         if self.fired ==  1:
-            #print "keytime", time.time(), self.fired
+            #print( "keytime", time.time(), self.fired)
             pedspell.spell(self, self.spellmode)
             self.walk_func()
         self.fired -= 1
 
     def walk_func(self):
-        #print "walk func"
+        #print( "walk func")
         # ts2 ---------------------------------------------------
         sumw2 = []
         if self.text:
             sline = self.caret[1] + int(self.ypos)
             sline = max(sline, 0); sline = min(sline, len(self.text))
-            #print "Start point", sline, self.text[sline]
+            #print( "Start point", sline, self.text[sline])
             # Walk back to last function
             if ".c" in self.fname:
                 try:
@@ -852,7 +852,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                         line = self.text[aa]
                         res = regex.search(line)
                         if res:
-                            #print "start", line, res.start(), res.end()
+                            #print( "start", line, res.start(), res.end())
                             sumw2.append(line)
                             break
                     if aa > 0:
@@ -860,7 +860,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             line = self.text[bb]
                             res = regex.search(line)
                             if res:
-                                #print "end", line, res.start(), res.end()
+                                #print( "end", line, res.start(), res.end())
                                 break
 
                         regex2 = re.compile(localkwords)
@@ -868,7 +868,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             line = self.text[cc]
                             res = regex2.search(line)
                             if res:
-                                #print "match", line, res.start(), res.end()
+                                #print( "match", line, res.start(), res.end())
                                 sumw2.append(line)
 
                 except:
@@ -880,7 +880,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     for line in win.text:
                         res = regex.search(line)
                         if res:
-                            #print res, res.start(), res.end()
+                            #print( res, res.start(), res.end())
                             sumw.append(line)
                 except:
                     print("Exception in bas func extraction handler", sys.exc_info())
@@ -893,7 +893,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                         line = self.text[aa]
                         res = regex.search(line)
                         if res:
-                            #print "start", line, res.start(), res.end()
+                            #print( "start", line, res.start(), res.end())
                             sumw2.append(line)
                             break
                     if aa > 0:
@@ -901,7 +901,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             line = self.text[bb]
                             res = regex.search(line)
                             if res:
-                                #print "end", line, res.start(), res.end()
+                                #print( "end", line, res.start(), res.end())
                                 break
 
                         regex2 = re.compile(localpywords)
@@ -909,7 +909,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             line = self.text[cc]
                             res = regex2.search(line)
                             if res:
-                                #print "match", line, res.start(), res.end()
+                                #print( "match", line, res.start(), res.end())
                                 sumw2.append(line)
 
                 except:
@@ -958,7 +958,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.queue_draw_area(xx, yy, ww, hh)
 
     def invalidate(self, rect = None):
-        #print "Invalidate:", rect
+        #print( "Invalidate:", rect)
         if rect == None:
             self.queue_draw()
         else:
@@ -966,12 +966,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             rect.width, rect.height)
 
     def area_focus(self, area, event):
-        #print "ped doc area focus", event
+        #print( "ped doc area focus", event)
         return False
 
     # Add to user dictionary:
     def addict(self, widget, string, arg):
-        #print "addict", arg
+        #print( "addict", arg)
         lw = arg.lower()
         xfile = pedconfig.conf.config_dir + "/" + "userdict.txt"
         try:
@@ -1018,7 +1018,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response(self, widget, string, arg):
-        #print "menuitem response '%s'" % string
+        #print( "menuitem response '%s'" % string)
         # See if capitalized:
 
         pedconfig.conf.keyh.act.clip_cb(None, string, self)
@@ -1034,7 +1034,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         dialog.show()
 
     def rclick_action(self, action, sss, ttt):
-        #print "rclck_action", sss, ttt
+        #print( "rclck_action", sss, ttt)
         if ttt == 1:
              self.mained.newfile()
         elif ttt == 3:
@@ -1240,7 +1240,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             errr = "Cannot read file '" + self.fname + "'" #, sys.exc_info()
             if(pedconfig.conf.verbose):
-                print(errr)
+                print(errr, sys.exc_info())
+
+            pedync.message("\n   Cannot open / read file:  \n\n"
+                              "      %s" % self.fname)
+
             self.mained.update_statusbar(errr)
             usleep(20)
             return False
@@ -1434,7 +1438,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             pass
             # Ignore it, not all files will have undo
-            #print "Cannot load undo file", xfile
+            #print( "Cannot load undo file", xfile)
         self.initial_undo_size = len(self.undoarr)
 
         hhh = hash_name(self.fname) + ".rdo"
@@ -1449,11 +1453,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             pass
             # Ignore it, not all files will have redo
-            #print "Cannot load redo file", xfile
+            #print( "Cannot load redo file", xfile)
         self.initial_redo_size = len(self.redoarr)
 
     def done_fc(self, win, resp):
-        #print "done_fc", win, resp
+        #print( "done_fc", win, resp)
         if resp == Gtk.ResponseType.OK:
             fname = win.get_filename()
             if not fname:
@@ -1473,7 +1477,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     self.writeout()
 
     def overwrite_done(self, win, resp, fname, win2):
-        #print "overwrite done", resp
+        #print( "overwrite done", resp)
         if resp == Gtk.ResponseType.YES:
             self.fname = fname
             self.writeout()
@@ -1490,7 +1494,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def do_chores(self):
 
-        #print "do_chores"
+        #print( "do_chores")
 
         if  not self.needscan:
             return
@@ -1506,7 +1510,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.changed = flag
         # Exec actions:
         if old != self.changed:
-            #print "Setting changed on ", self.fname
+            #print( "Setting changed on ", self.fname)
             self.set_tablabel()
 
     def set_tablabel(self):
@@ -1550,13 +1554,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.notebook.set_tab_label(ppp, hbox)
 
     def close_button(self, arg1):
-        #print "close_button", arg1
+        #print( "close_button", arg1)
         # Select me first
         self.mained.closedoc(self)
 
     # --------------------------------------------------------------------
     def savemacro(self):
-        #print "Savemacro"
+        #print( "Savemacro")
 
         fname = "untitled.mac"
         xfile = pedconfig.conf.config_dir + "/macros/" + fname
@@ -1577,7 +1581,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         fc.run()
 
     def done_mac_fc(self, win, resp, old):
-        #print  "done_mac_fc", resp
+        #print(  "done_mac_fc", resp)
         # Back to original dir
         os.chdir(os.path.dirname(old))
         if resp == Gtk.ButtonsType.OK:
@@ -1595,7 +1599,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         win.destroy()
 
     def loadmacro(self):
-        #print "Loadmacro"
+        #print( "Loadmacro")
 
         xfile = pedconfig.conf.config_dir + "/macros/"
         old = os.getcwd()
@@ -1615,7 +1619,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         fc.run()
 
     def done_mac_open_fc(self, win, resp, old):
-        #print  "done_mac_fc", resp
+        #print(  "done_mac_fc", resp)
 
         # Back to original dir
         os.chdir(os.path.dirname(old))
@@ -1676,7 +1680,7 @@ def run_async_time(win):
 
     global last_scanned
 
-    #print "run_async_time enter"
+    #print( "run_async_time enter")
 
     if  last_scanned == win:
         return
@@ -1684,7 +1688,7 @@ def run_async_time(win):
     last_scanned = win
     win.appwin.start_tree()
 
-    #print "run_sync_time", time.time()
+    #print( "run_sync_time", time.time())
 
     sumw = [] ; lname = win.fname.lower()
     if not win.text:
@@ -1697,7 +1701,7 @@ def run_async_time(win):
             for line in win.text:
                 res = regex.search(line)
                 if res:
-                    #print res, res.start(), res.end()
+                    #print( res, res.start(), res.end())
                     sumw.append(line)
         except:
             print("Exception in c func handler", sys.exc_info())
@@ -1709,7 +1713,7 @@ def run_async_time(win):
             for line in win.text:
                 res = regex.search(line)
                 if res:
-                    #print res, res.start(), res.end()
+                    #print( res, res.start(), res.end())
                     sumw.append(line)
         except:
             print("Exception in py func handler", sys.exc_info())
@@ -1720,7 +1724,7 @@ def run_async_time(win):
             for line in win.text:
                 res = regex.search(line)
                 if res:
-                    #print res, res.start(), res.end()
+                    #print( res, res.start(), res.end())
                     sumw.append(line)
         except:
             print("Exception in func extraction handler", sys.exc_info())
@@ -1731,7 +1735,7 @@ def run_async_time(win):
             for line in win.text:
                 res = regex.search(line)
                 if res:
-                    #print res, res.start(), res.end()
+                    #print( res, res.start(), res.end())
                     sumw.append(line)
         except:
             print("Exception in func extraction handler", sys.exc_info())
@@ -1753,6 +1757,10 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
 
 
 

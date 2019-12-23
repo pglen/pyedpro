@@ -145,7 +145,7 @@ replicate functionality. It is eazy to follow, as it is table driven.
     #Alt >                       -- Upper case word/selection
 
     F1                           -- Help
-    F2                           -- Dev Help
+    F2                           -- Dev Help  (if installed)
     F3                           -- Key assignments Help
     F4                           -- Animate macro
     F5                           -- Previous Match
@@ -172,11 +172,12 @@ Context dependent key assignments:
     Alt S                       -- Case Insensitive search
     Alt R                       -- Regular expression search
     Alt A                       -- All buffer search
+    Alt F                       -- All files search (curr dir)
 
  Find / Replace results context:
 
     Alt S                       -- Change currently Selected
-    Alt O                       -- Change One (rescans buffer)
+    Alt O                       -- Change One (rescans buffer for live next)
     Alt A                       -- Change All
     Alt Tab                     -- Navigate between search / main windows
     Arrow Up/Down               -- Next / prev match
@@ -203,16 +204,11 @@ Notes:
                         text is checked
     *****   Alt 0       Alt - 1 .. 9 brings back the focus to current buffer
 
-  Any unrecognized key is inserted verbatim into the buffer, and a message is printed
-on the controlling terminal. If no action is listed, that key is unassigned. Most dialogs
-can be dismissed with the Esc key or the Alt X key combination.
+  Any unrecognized key is inserted verbatim into the buffer. If it is not a
+letter / number / punctuation, a message is printed on the controlling
+terminal. If no action is listed, that key is unassigned.
+
+Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
 
 // EOF
-
-
-
-
-
-
-
 

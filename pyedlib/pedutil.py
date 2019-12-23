@@ -44,7 +44,11 @@ def     readfile(strx, sep):
         return text
 
     # Now read and parse
-    f = open(strx);  buff = f.read();  f.close()
+    f = open(strx, "rb");  buff2 = f.read();  f.close()
+    try:
+        buff = buff2.decode('UTF-8')
+    except UnicodeDecodeError:
+        buff = buff2.decode('cp437')
 
     # Deteremine separator, use a partial length search
     if buff.find("\r\n", 0, 300) >= 0:
@@ -136,7 +140,7 @@ def get_img_path(fname):
     img_dir = os.path.join(os.path.dirname(pedconfig.conf.mydir), \
                     'pyedlib/images')
     img_path = os.path.join(img_dir, fname)
-    #print "img_path", img_path
+    #print( "img_path", img_path)
     return img_path
 
 # Expand file name to file path in the exec dir:
@@ -144,7 +148,7 @@ def get_exec_path(fname):
     exec_dir = os.path.dirname(pedconfig.conf.mydir)
     exec_path2 = os.path.join(exec_dir, "pyedlib")
     exec_path = os.path.join(exec_path2, fname)
-    #print exec_path
+    #print( exec_path)
     return exec_path
 
 # It's totally optional to do this, you could just manually insert icons
@@ -166,7 +170,7 @@ def register_stock_icons():
     img_dir = os.path.join(os.path.dirname(__file__), 'images')
     img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
 
-    #print img_path
+    #print( img_path)
     try:
         #pixbuf = Gdk.pixbuf_new_from_file(img_path)
         # Register icon to accompany stock item
@@ -178,7 +182,7 @@ def register_stock_icons():
         #factory.add('demo-gtk-logo', icon_set)
         pass
     except GObject.GError as error:
-        #print 'failed to load GTK logo ... trying local'
+        #print( 'failed to load GTK logo ... trying local')
         try:
             #img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
             xbuf = Gdk.pixbuf_new_from_file('gtk-logo-rgb.gif')
@@ -284,30 +288,30 @@ def handle_keys(host):
     if  event.type == Gdk.KEY_PRESS:
         if event.keyval == Gdk.KEY_Alt_L or \
                 event.keyval == Gdk.KEY_Alt_R:
-            #print "Alt down"
+            #print( "Alt down")
             host.alt = True;
         elif event.keyval == Gdk.KEY_Control_L or \
                 event.keyval == Gdk.KEY_Control_R:
-            #print "Ctrl down"
+            #print( "Ctrl down")
             self.ctrl = True; ret = True
         if event.keyval == Gdk.KEY_Shift_L or \
               event.keyval == Gdk.KEY_Shift_R:
-            #print "shift down"
+            #print( "shift down")
             host.shift = True;
 
     # Do key up
     elif  event.type == Gdk.KEY_RELEASE:
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
-            #print "Alt up"
+            #print( "Alt up")
             host.alt = False;
         if event.keyval == Gdk.KEY_Control_L or \
               event.keyval == Gdk.KEY_Control_R:
-            #print "Ctrl up"
+            #print( "Ctrl up")
             host.ctrl = False;
         if event.keyval == Gdk.KEY_Shift_L or \
               event.keyval == Gdk.KEY_Shift_R:
-            #print "shift up"
+            #print( "shift up")
             host.shift = False;
 
 # -----------------------------------------------------------------------
@@ -316,7 +320,7 @@ def handle_keys(host):
 def  usleep(msec):
 
     got_clock = time.clock() + float(msec) / 1000
-    #print got_clock
+    #print( got_clock)
     while True:
         if time.clock() > got_clock:
             break
@@ -426,7 +430,7 @@ def rmlspace(strx, num):
 
 def  selword(strx, xidx):
 
-    #print "selword:", strx, xidx
+    #print( "selword:", strx, xidx)
 
     xlen = len(strx);
     if xlen == 0: return 0, 0
@@ -460,7 +464,7 @@ def  selword(strx, xidx):
 
 def  selasci(strx, xidx, additional = None):
 
-    #print "selasci:", "'" + strx + "'", xidx
+    #print( "selasci:", "'" + strx + "'", xidx)
 
     xlen = len(strx);
     if xlen == 0: return 0, 0
@@ -486,8 +490,8 @@ def  selasci(strx, xidx, additional = None):
             break
         cntb -= 1
 
-    #print cntb, cnte
-    #print  "'" + strx[cntb:cnte] + "'"
+    #print( cntb, cnte)
+    #print(  "'" + strx[cntb:cnte] + "'")
 
     return cntb, cnte
 
@@ -497,7 +501,7 @@ def  selasci(strx, xidx, additional = None):
 
 def  selasci2(strx, xidx, addi = ""):
 
-    #print "selasci2:", "'" + strx + "'", xidx
+    #print( "selasci2:", "'" + strx + "'", xidx)
 
     xlen = len(strx);
     if xlen == 0: return 0, 0
@@ -518,7 +522,7 @@ def  selasci2(strx, xidx, addi = ""):
         cnte += 1
     # Find space to begin
     while True:
-        #print cntb,
+        #print( cntb,)
         if cntb < 0:
             cntb += 1
             break
@@ -528,8 +532,8 @@ def  selasci2(strx, xidx, addi = ""):
             break
         cntb -= 1
 
-    #print cntb, cnte
-    #print  "'" + strx[cntb:cnte] + "'"
+    #print( cntb, cnte)
+    #print(  "'" + strx[cntb:cnte] + "'")
 
     return cntb, cnte
 
@@ -565,17 +569,17 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
             idx2 = idx
         elif boolregex:
             line2 = line[idx:]
-            #print "line2", line2
+            #print( "line2", line2)
             if line2 == "":
                 idx = -1
                 break
             res = regex.search(line2)
-            #print res, res.start(), res.end()
+            #print( res, res.start(), res.end())
             if res:
                 idx = res.start() + idx
                 # Null match, ignore it ('*' with zero length match)
                 if res.end() == res.start():
-                    #print "null match", idx, res.start(), res.end()
+                    #print( "null match", idx, res.start(), res.end())
                     # Proceed no matter what
                     if res.end() != 0:
                         idx = res.end() + 1
@@ -585,7 +589,7 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
 
                 idx2 = res.end() + idx
                 mlen = res.end() - res.start()
-                #print "match", line2[res.start():res.end()]
+                #print( "match", line2[res.start():res.end()])
             else:
                 idx = -1
                 break
@@ -714,6 +718,10 @@ def     load_sess():
 
 
 # EOF
+
+
+
+
 
 
 
