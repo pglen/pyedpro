@@ -13,16 +13,24 @@ that I use every day.
   Working and tested platforms currently are:
 
         Win 7 .. Win 10 ...
-        Centos 6 .. 7 Ubuntu 14 ... 16
-        Msys, Msys2, Mingw, Raspberry PI ...
+        Centos 6 .. 7 Ubuntu 14 ... 16 ...  (should run on any linux)
+        Windows (Native) plus MSYS2, Mingw,
+        Raspberry PI ...
 
-  I mainly run it in MSYS2, Ubuntu, Fedora, Windows 10, and the Raspberry-Pi.
+  I mainly run it on Ubuntu, in MSYS2, Fedora, Windows 10, and the Raspberry-Pi.
 It behaves consistently on all these platforms. If you want an editor
 that works the same way in all your workspaces, PyEdPro is the one.
 
    PyEdPro.py has macro recording/play, search/replace, one click function navigation,
-comment/string spell check, auto backup, persistent undo/redo, auto complete,
-auto correct, syntax check, spell suggestion ... and a lot more.
+auto backup, persistent undo/redo, auto complete, auto correct, syntax check,
+spell suggestion ... and a lot more.
+
+    The spel checker can check code comments. The parsing on the code is
+rudimentary,  comments and strings are spell checked. (Press F9) The code is filtered
+out for Python and  'C', which assures most derivate languages have correct
+code spell code check. The whole file can be checked in text spell mode.
+(Shift-F9)
+
 
    PyEdPro is fast, it is extendable, as python lends itself to easy extending. The
 editor has a table driven key mapping. One can easily edit the key map in
@@ -275,6 +283,7 @@ Screen from Ubuntu:
 ![Screen Shot](pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
+
 
 
 

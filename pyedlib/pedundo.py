@@ -11,7 +11,7 @@
 #
 # In order to group operations, (like multi line cut) set the
 # CONTFLAG by OR-ing it in. (adding) To signal the end of group do
-# a NOOP without the CONTFLAG. Redo is generated automatcally.
+# a NOOP without the CONTFLAG. Redo is generated .
 # Because of redo, please provide the old info every time.
 # Like the old buffer on delete, even though it is discarded,
 # still the redo uses the info for its operation.
@@ -90,6 +90,8 @@ def undo(self2, keyh):
         if xlen == 0: break
 
         xx, yy, mode, line = self2.undoarr[xlen-1]
+        xx = int(xx); yy = int(yy);
+
         mode2 = mode & CONTMASK
         #print "undo", hex(mode), xx, yy, "line '", line, "'"
 
@@ -141,12 +143,14 @@ def redo(self2, keyh):
         self2.mained.update_statusbar("Nothing to redo.")
         return
 
-    # Reverese actions till first non CONTFLAG
+    # reverse actions till first non CONTFLAG
     revredo = [];
     while True:
         xarridx = len(self2.redoarr)
         if xarridx == 0 : break
         xx, yy, mode, line = self2.redoarr[xarridx - 1]
+        xx = int(xx); yy = int(yy);
+
         #print "redo", mode, "line '", line, "'"
         revredo.append((xx, yy, mode, line))
         del (self2.redoarr[xarridx - 1])
@@ -210,6 +214,11 @@ def redo(self2, keyh):
     self2.mained.update_statusbar("Redo %d done." % xlen)
 
 # EOF
+
+
+
+
+
 
 
 

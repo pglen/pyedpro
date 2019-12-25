@@ -7,7 +7,7 @@
 #
 # This project was derived from pyedit.py
 #
-# pyedpro functions near flawless on Linux / Windows / Mac / Raspberry PI
+# Pyedpro functions near flawless on Linux / Windows / Mac / Raspberry PI
 
 #
 # Pyedpro has:
@@ -34,7 +34,7 @@
 # Jun/xx/2018   Log Files for time accounting.
 
 # ASCII test editor, requires pyGtk. (pygobject)
-# See pygtk-dependencied for eazy access to depencdencies.
+# See pygtk-dependencied for easy access to dependencies.
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -252,4 +252,6 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
 

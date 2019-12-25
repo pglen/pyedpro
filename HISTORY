@@ -3,6 +3,15 @@
  This is a non exhaustive list of changes in the PyEdPro project. Git has
  a more complete list of logs.
 
+    Wed Dec 25   (version 0.95)
+    Spell check - loading 8 bit clean; Capitalize resoration
+
+    Wed Dec 24
+    Harmonized py 2 and py 3 differences - unicode mess cleaned up
+
+    xx Nov 2019
+    Switched to Ubuntu as main platform
+
     Mon Sep 2 2019
     Reload yes/no dialog, old buffer saved in backup dir
 
@@ -177,6 +186,7 @@ v034:
 v042:
 
   Moved to pyedpro, version number restarted at 043.
+
 
 
 

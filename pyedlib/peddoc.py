@@ -388,9 +388,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             #print( "type", type(event.type))
             #print("truth", isinstance(event.type, Gdk.EventType))
             if event.direction == Gdk.ScrollDirection.UP:
-                yidx -= self.pgup / 2
+                yidx -= int(self.pgup / 2)
             else:
-                yidx += self.pgup / 2
+                yidx += int(self.pgup / 2)
 
         self.set_caret(xidx, yidx)
         self.invalidate()
@@ -439,7 +439,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         ctx = self.get_style_context()
         fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
-        #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
+        #bg_color = ctx.get_background_color(Gtk..NORMAL)
 
         # Paint white, ignore system BG
         cr.set_source_rgba(255, 255, 255)
@@ -472,12 +472,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print( queue)
 
     def area_button(self, area, event):
-        #print( "Button press  ", event.type, " x=", event.x, " y=", event.y)
+
+        if pedconfig.conf.pgdebug > 5:
+            print( "Button press  ", event.type, " x=", event.x, " y=", event.y)
+
+        event.x = int(event.x)
+        event.y = int(event.y)
 
         if  event.type == Gdk.EventType.BUTTON_PRESS:
             if event.button == 1:
                 #print( "Left Click at x=", event.x, "y=", event.y)
-                self.mx = event.x; self.my = event.y
+                self.mx = int(event.x); self.my = int(event.y)
                 xxx = int(event.x / self.cxx)
                 yyy = int(event.y / self.cyy)
 
@@ -508,7 +513,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 #print( "Right Click at x=", event.x, "y=", event.y)
                 flag = False; xx = 0; yy = 0; zz = 0
                 if self.spell:
-                    yyy = self.ypos + self.get_height() / self.cyy
+                    yyy = int(self.ypos + self.get_height() / self.cyy)
                     for xaa, ybb, lcc in self.ularr:
                         # Look within visible range
                         if ybb >= self.ypos and ybb < yyy:
@@ -519,16 +524,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             yy2 = ybb + self.cyy
 
                             if self.intersect(xaa, ybb, lcc, yy2, event):
-                                xx = xaa / self.cxx + self.xpos
-                                yy = ybb / self.cyy + self.ypos
-                                zz = lcc / self.cxx + self.xpos
+                                xx = int(xaa / self.cxx + self.xpos)
+                                yy = int(ybb / self.cyy + self.ypos)
+                                zz = int(lcc / self.cxx + self.xpos)
                                 flag = True
                 if flag:
                     line = self.text[yy];
                     #print( "'" + line[xx:zz] + "'")
                     self.xsel = xx; self.xsel2 = zz
                     self.ysel = self.ysel2 = yy
-                    self.popspell(area, event, line[xx:zz] )
+                    self.spellstr = line[int(xx):int(zz)]
+                    self.popspell(area, event, self.spellstr)
                 else:
                     self.poprclick(area, event)
 
@@ -538,10 +544,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.scrtab = False
             ttt = "Release"
         elif  event.type == Gdk.EventType._2BUTTON_PRESS:
-            #print ("Double click", event.x, event.y)
-            self.mx = event.x; self.my = event.y
-            xxx = int(event.x) / self.cxx
-            yyy = int(event.y) / self.cyy
+
+            if pedconfig.conf.pgdebug > 2:
+                print ("Double click %.2f %.2f" % (event.x, event.y))
+
+            self.mx = int(event.x); self.my = int(event.y)
+            xxx = int(event.x / self.cxx)
+            yyy = int(event.y / self.cyy)
 
             # Find current pos, gather tabs, adjust back
             try:
@@ -551,8 +560,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
             # Find current pos on tabbed line
             offs = calc_tabs2(line, xxx)
-            self.set_caret(self.xpos + xxx - (offs - xxx),
-                                     self.ypos + yyy )
+            self.set_caret(self.xpos + xxx - (offs - xxx), self.ypos + yyy )
             #self.set_caret(len(xxx2), yyy)
 
             # Erase selection
@@ -561,11 +569,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
             # Select word
             if event.state & Gdk.ModifierType.CONTROL_MASK:
-                #pedconfig.conf.keyh.act.alt_l(self)
                 pedconfig.conf.keyh.act.ctrl_b(self)
             else:
                 pedconfig.conf.keyh.act.alt_v(self)
             # Copy to clip
+
             if event.state & Gdk.ModifierType.SHIFT_MASK:
                 pedconfig.conf.keyh.act.ctrl_c(self)
 
@@ -678,6 +686,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def set_caret_middle(self, xx, yy, sel = None, quart = 2):
 
+        xx = int(xx); yy = int(yy)
+
         # Needs scroll?
         #xxx, yyy = self.get_size()
         xlen = len(self.text)
@@ -700,7 +710,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         return self.get_width() / self.cxx;
 
     # --------------------------------------------------------------------
-    # Goto position, put caret (cursor) back to view, [vh]scgap
+    # Goto position, put caret (cursor) back to view, [vh]scrap
     # distance from ends. This function was a difficult to write. :-{
     # Note the trick with comparing old cursor pos for a hint on scroll
     # direction.
@@ -709,6 +719,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def set_caret(self, xx, yy):
 
         #print( "set_caret", xx, yy)
+        xx = int(xx); yy = int(yy)
 
         # Needs scroll?
         need_inval = False
@@ -1017,11 +1028,19 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.build_menu(self, pedmenu.rclick_menu)
         self.menu.popup(None, None, None, None, event.button, event.time)
 
-    def menuitem_response(self, widget, string, arg):
-        #print( "menuitem response '%s'" % string)
-        # See if capitalized:
+    def menuitem_response(self, widget, stringx, arg):
+        #print( "menuitem response '%s'" % stringx)
+        #print( "Original str '%s'" % self.spellstr)
 
-        pedconfig.conf.keyh.act.clip_cb(None, string, self)
+        # See if Capitalized or UPPERCASE :
+        if self.spellstr[0] in string.ascii_uppercase:
+            stringx = stringx.capitalize()
+
+        if self.spellstr.isupper():
+            stringx = stringx.upper()
+
+        pedconfig.conf.keyh.act.clip_cb(None, stringx, self, False)
+
         self.fired += 1
         GLib.timeout_add(300, self.keytime)
 
@@ -1761,6 +1780,27 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
