@@ -1239,7 +1239,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.mained.update_statusbar(strx)
             return False
         try:
-            self.text = readfile(self.fname, "\n")
+            self.text = readfile(self.fname)
         except:
             errr = "Cannot read file '" + self.fname + "'" #, sys.exc_info()
             if(pedconfig.conf.verbose):
@@ -1249,7 +1249,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             #                  "      %s" % self.fname)
 
             self.mained.update_statusbar(errr)
-            usleep(20)
+            usleep(10)
             return False
 
         #self.ularr.append((10 ,10, 20))
@@ -1287,7 +1287,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         # Let the system breed
         self.invalidate()
-        usleep(30)
+        usleep(10)
 
         # Color ON
         self.colflag = True
@@ -1761,6 +1761,8 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
 
 
 

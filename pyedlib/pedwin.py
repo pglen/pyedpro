@@ -1147,7 +1147,7 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(nn-1)
             self.mywin.set_focus(vcurr.vbox.area)
 
-        usleep(300)
+        usleep(10)
         return vcurr.vbox.area
 
 
@@ -1340,15 +1340,15 @@ def  loader_tick(self2):
                 nn = notebook.get_n_pages();
                 if nn:
                     vcurr = notebook.set_current_page(nn-1)
-                    usleep(30)
+                    usleep(10)
                     vcurr = notebook.get_nth_page(nn-1)
                     self2.mywin.set_focus(vcurr.vbox.area)
-                    usleep(30)
+                    usleep(10)
 
                 #vpaned.queue_draw();
                 #notebook.queue_draw();
                 self2.mywin.show_all()
-                usleep(30)
+                usleep(10)
 
         # Show newly created buffers:
         self2.mywin.show_all()
@@ -1440,6 +1440,8 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
 
 
 

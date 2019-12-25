@@ -20,6 +20,7 @@ class conf():
     full_screen = False
     keyh = None
     pedwin = None
+    pgdebug = 0
 
     # Count down variables
     idle = 0; syncidle = 0;   statuscount = 0
@@ -41,6 +42,7 @@ class conf():
 
     def __init__(self):
         pass
+
 
 
 

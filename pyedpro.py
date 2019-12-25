@@ -49,6 +49,10 @@ import traceback
 #import gtk
 #warnings.simplefilter("default")
 
+VERSION = 0.95
+BUILDDATE = "Dec-25-2019"
+PROGNAME = "PyEdPro"
+
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -81,17 +85,16 @@ def main(strarr):
     signal.signal(signal.SIGTERM, terminate)
     mainwin = pyedlib.pedwin.EdMainWindow(None, None, strarr)
     pyedlib.pedconfig.conf.pedwin = mainwin
-    #pyedlib.pedconfig.conf.mained.mywin = mainwin.mywin
 
     Gtk.main()
 
 def help():
 
     print()
-    print("pydepro version: ", pyedlib.pedconfig.conf.version)
-    print("Usage: " + os.path.basename(sys.argv[0]) + " [options] [[filename] ... [filenameN]]")
+    print(PROGNAME, "Version: ", pyedlib.pedconfig.conf.version)
+    print("Usage: " + PROGNAME + " [options] [[filename] ... [filename]]")
     print("Options:")
-    print("            -d level  - Debug level 1-10. (Limited implementation)")
+    print("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)")
     print("            -v        - Verbose (to stdout and log)")
     print("            -f        - Start Full screen")
     print("            -c        - Dump Config")
@@ -127,6 +130,7 @@ def terminate(arg1, arg2):
     pyedlib.pedconfig.conf.pedwin.activate_quit(None)
     #return signal.SIG_IGN
 
+# ------------------------------------------------------------------------
 # Start of program:
 
 if __name__ == '__main__':
@@ -143,15 +147,17 @@ if __name__ == '__main__':
 
     #print "opts", opts, "args", args
 
-    pyedlib.pedconfig.conf.version = 0.90
-    pyedlib.pedconfig.conf.build_date = "sep 25 2019"
+    pyedlib.pedconfig.conf.version = VERSION
+    pyedlib.pedconfig.conf.build_date = BUILDDATE
+    pyedlib.pedconfig.conf.progname = PROGNAME
 
     for aa in opts:
         if aa[0] == "-d":
             try:
-                pgdebug = int(aa[1])
+                pyedlib.pedconfig.conf.pgdebug = int(aa[1])
+                print( PROGNAME, "Running at debug level",  pyedlib.pedconfig.conf.pgdebug)
             except:
-                pgdebug = 0
+                pyedlib.pedconfig.conf.pgdebug = 0
 
         if aa[0] == "-h": help();  exit(1)
         if aa[0] == "-?": help();  exit(1)
@@ -227,7 +233,7 @@ if __name__ == '__main__':
         sys.exit(0)
 
     #Uncomment this for silent stdout
-    if use_stdout:
+    if use_stdout or pyedlib.pedconfig.conf.pgdebug:
         if pyedlib.pedconfig.conf.verbose:
             print("Using real stdout")
         # Do not hide console
@@ -246,11 +252,4 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
-
-
-
-
-
-
-
 

@@ -257,7 +257,13 @@ def load_user_dict():
     while True :
         try:
             line = fd.readline(size=128)
-            line = line.rstrip("\n")
+            if sys.version_info.major < 3:
+                line = str(line)
+
+            #line = line.rstrip("\n")
+            line = line.replace("\r", "");
+            line = line.replace("\n", "");
+
             #print( "load line", "'" + line + "'")
             if line == "":
                 break
@@ -282,7 +288,7 @@ def build_index():
 
     # It is an msdos file (don't ask)
 
-    index = readfile(get_exec_path("spell.txt"), "\r\n")
+    index = readfile(get_exec_path("spell.txt"))
 
     #print (index[0:10])
     #return  []
@@ -370,6 +376,10 @@ def suggest(self2, xstr):
     return arr[:15]
 
 # EOF
+
+
+
+
 
 
 

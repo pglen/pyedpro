@@ -28,7 +28,7 @@ def yes_no_cancel(title, message, cancel = True):
 
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
-    #dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin);
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin)
 
     sp = "     "
     label = Gtk.Label(message);
@@ -91,9 +91,10 @@ def yn_key(win, event, cancel):
 import platform
 
 def  about(self2):
+
     dialog = Gtk.AboutDialog()
-    #dialog.set_parent(None)
-    dialog.set_name(" PyEdPro - Python Editor ")
+    dialog.set_name(pyedlib.pedconfig.conf.progname +  " - Python Editor ")
+
     dialog.set_version(str(pyedlib.pedconfig.conf.version));
     gver = (Gtk.get_major_version(), \
                         Gtk.get_minor_version(), \
@@ -101,7 +102,7 @@ def  about(self2):
 
     dialog.set_position(Gtk.WindowPosition.CENTER)
 
-    #dialog.set_transient_for(self2.mywin)
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin)
 
     #"\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
 
@@ -116,9 +117,9 @@ def  about(self2):
         "\nPyedPro Build Date: %s\n" % pyedlib.pedconfig.conf.build_date
 
     dialog.set_comments(comm);
-    dialog.set_copyright("PyEdpro Created by Peter Glen\n"
+    dialog.set_copyright(pyedlib.pedconfig.conf.progname + " Created by Peter Glen\n"
                           "Project placed in the Public Domain.")
-    dialog.set_program_name("PyEdPro")
+    dialog.set_program_name(pyedlib.pedconfig.conf.progname)
     img_dir = os.path.join(os.path.dirname(__file__), 'images')
     img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
 
@@ -146,6 +147,7 @@ def about_key(win, event):
             if event.state & Gdk.ModifierType.MOD1_MASK:
                 win.destroy()
 
+# ------------------------------------------------------------------------
 # Show a regular message:
 
 def message(strx, title = None):
@@ -156,8 +158,7 @@ def message(strx, title = None):
     dialog = Gtk.MessageDialog(None, None,
                    Gtk.MessageType.INFO, Gtk.ButtonsType.CLOSE, strx)
 
-    #dialog.set_transient_for(pyedlib.pedconfig.mained.mywin);
-    #dialog.parent =
+    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin)
 
     if title:
         dialog.set_title(title)
@@ -169,8 +170,17 @@ def message(strx, title = None):
     # Close dialog on user response
     dialog.connect("response", lambda d, r: d.destroy())
     dialog.show()
+    dialog.run()
 
 #EOF
+
+
+
+
+
+
+
+
 
 
 

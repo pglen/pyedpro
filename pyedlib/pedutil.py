@@ -36,7 +36,7 @@ def cut_lead_space(xstr, divi = 2):
 # ------------------------------------------------------------------------
 # Let the higher level deal with errors.
 
-def     readfile(strx, sep):
+def     readfile(strx, sep = None):
 
     text = []
 
@@ -45,20 +45,26 @@ def     readfile(strx, sep):
 
     # Now read and parse
     f = open(strx, "rb");  buff2 = f.read();  f.close()
-    try:
-        buff = buff2.decode('UTF-8')
-    except UnicodeDecodeError:
-        buff = buff2.decode('cp437')
-
-    # Deteremine separator, use a partial length search
-    if buff.find("\r\n", 0, 300) >= 0:
-        sep = "\r\n"
-    elif buff.find("\n\r", 0, 300) >= 0:
-        sep = "\n\r"
-    elif buff.find("\r", 0, 300) >= 0:
-        sep = "\r"
+    if sys.version_info.major < 3:
+        buff = buff2
     else:
-        sep = "\n"
+        try:
+            buff = buff2.decode('UTF-8')
+        except UnicodeDecodeError:
+            buff = buff2.decode('cp437')
+
+    buff2 = ""
+
+    if not sep:
+        # Deteremine separator, use a partial length search
+        if buff.find("\r\n", 0, 300) >= 0:
+            sep = "\r\n"
+        elif buff.find("\n\r", 0, 300) >= 0:
+            sep = "\n\r"
+        elif buff.find("\r", 0, 300) >= 0:
+            sep = "\r"
+        else:
+            sep = "\n"
 
     text2 = str.split(buff, sep)
 
@@ -85,7 +91,7 @@ def findinfile(nnn, ffff, nocase = False):
 
     rrr = []
     try:
-        text = readfile(ffff, "\r\n")
+        text = readfile(ffff)
 
         # See if text file
         cnt = 0
@@ -686,6 +692,9 @@ def done_sess2_fc(win, resp, fc):
 
     win.destroy()
 
+    if sys.version_info.major < 3:
+        sesslist =  sesslist.decode(decode('UTF-8'))
+
     for fff in sesslist.split("\n"):
         #print ("Session opening file:", "'" + fff + "'")
         if fff != "":
@@ -719,6 +728,14 @@ def     load_sess():
 
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 

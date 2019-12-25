@@ -1295,6 +1295,10 @@ class ActHand:
         self2.inval_line()
 
     def alt_o(self, self2):
+
+        # Test
+        #pedync.message("\n   Testing    \n\n")
+
         # Simplified open
         fnames = pedofd.ofd("", self2)
         for fff in fnames:
@@ -1850,6 +1854,8 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
 
 
 
