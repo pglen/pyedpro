@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Action Handler for find
+# Action Handler for simple open file dialog
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -9,7 +9,7 @@ import time, os, re, string, warnings
 import pyedlib.pedconfig
 
 import gi
-#from six.moves import range
+
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -34,7 +34,6 @@ def ofd(fname = None, self2 = None):
     dialog.set_size_request(800, 600)
     dialog.set_default_size(800, 600)
     #print dialog
-
     dialog.xmulti = None;
 
     #dialog.set_transient_for(pyedlib.pedconfig.conf.pe.mywin);
@@ -127,21 +126,16 @@ def fill_path(dialog):
         dialog.pbox.remove(cc)
 
     cwd = os.getcwd();
-    # Hack to detect windows:
-    #if cwd[1] == ":":
-    #    darr = cwd.split("\\")
-    #else:
-    #    darr = cwd.split("/")
-
     darr = cwd.split(os.sep)
-
     dialog.pbox.pack_start(dialog.label11, 0, 0, 0)
-    curr = ""
+
+    curr = os.sep
     for aa in darr:
-        #butt = Gtk.Button(aa + "/")
         butt = Gtk.Button(label=aa)
 
-        curr += aa + "/"; butt.path = curr
+        curr = os.path.join(curr, aa)
+
+        butt.path = curr
         butt.set_focus_on_click(False)
         butt.connect("clicked", butt_click, dialog)
         dialog.pbox.pack_start(butt, 0, 0, 2)
@@ -397,6 +391,10 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
+
+
+
 
 
 

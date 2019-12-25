@@ -49,7 +49,7 @@ import traceback
 #import gtk
 #warnings.simplefilter("default")
 
-VERSION = 0.95
+VERSION = 0.97
 BUILDDATE = "Dec-25-2019"
 PROGNAME = "PyEdPro"
 
@@ -252,6 +252,3 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
-
-
-

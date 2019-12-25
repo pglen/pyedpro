@@ -63,7 +63,8 @@ def spell(self2, allflag = False):
             self2.invalidate()
         return
 
-    #print( "spell", allflag)
+    if pedconfig.conf.pgdebug > 3:
+        print( "spell started", allflag)
 
     self2.ularr = []
     try:
@@ -138,7 +139,9 @@ def spell(self2, allflag = False):
 
 def spell_line(line, beg, end):
 
-    #print( "spell_line", line[beg:end])
+    if pedconfig.conf.pgdebug > 6:
+        print( "spell_line", line[beg:end])
+
     err = [];  idx = beg
     while True:
         if idx >= end: break
@@ -149,7 +152,7 @@ def spell_line(line, beg, end):
         if not found:
             found = spell_user(line[ss:ee])
 
-        # communicate it to upper layers
+        # Communicate it to upper layers
         if not found:
             err.append((ss, ee))
         idx = ee + 1
@@ -167,7 +170,8 @@ def spell_line(line, beg, end):
 
 def spell_word(word):
 
-    #print( "word", "'" + word + "'")
+    if pedconfig.conf.pgdebug > 9:
+        print( "spell word", "'" + word + "'")
 
     if len(word) <= 1:                      # Do not spell short words
         return  True
@@ -210,6 +214,9 @@ def spell_word(word):
 
 def spell_user(word):
 
+    if pedconfig.conf.pgdebug > 5:
+        print("Spell user", word)
+
     # Load / re-load
     global userdic, document
     if (len(userdic) == 0) or (document.newword == True):
@@ -226,23 +233,48 @@ def spell_user(word):
     lw = word.lower().strip().lstrip()
 
     for aa in userdic:
-        #print( "dic", aa)
         if  aa == lw:
             found = True
             break
-
     return found
+
+
+def  append_user_dict(self2, arg):
+
+    ret = True
+
+    if pedconfig.conf.pgdebug > 5:
+        print( "user add dict", arg)
+
+    lw = arg.lower()
+    xfile = pedconfig.conf.config_dir + os.sep + "userdict.txt"
+    try:
+        fd = open(xfile, "a+")
+    except:
+        print("Cannot open user dictionary.", sys.exc_info())
+        return False
+    try:
+        fd.write(lw); fd.write("\n")
+    except:
+        print("Cannot write to user dictionary.", sys.exc_info())
+        ret = False
+
+    fd.close()
+    return ret
 
 # ------------------------------------------------------------------------
 # User dictionary. Crafted to be as simple as possible, no indexing etc ..
 # We do not expect the user dictionary to grow beyond tens of words.
 # Note: the dictionary reloads as we add new words.
 
-def load_user_dict():
+def     load_user_dict():
 
-    global userdic
-    xfile = pedconfig.conf.config_dir + "/" + "userdict.txt"
-    #print( "load_user_dict", xfile)
+    global userdic, document
+
+    xfile = os.path.join(pedconfig.conf.config_dir, "userdict.txt")
+
+    if pedconfig.conf.pgdebug > 5:
+        print( "load_user_dict", xfile)
 
     # No dictionary yet
     if not os.path.isfile(xfile):
@@ -250,27 +282,25 @@ def load_user_dict():
     try:
         fd = open(xfile, "rt")
     except:
-        print("Cannot open user dictionary")
+        print("Cannot open user dictionary", sys.exc_info())
         return
 
     userdic = []
     while True :
         try:
-            line = fd.readline(size=128)
-            if sys.version_info.major < 3:
-                line = str(line)
-
-            #line = line.rstrip("\n")
-            line = line.replace("\r", "");
-            line = line.replace("\n", "");
-
-            #print( "load line", "'" + line + "'")
+            line = fd.readline(128)
+            line = line.replace("\r", ""); line = line.replace("\n", "");
             if line == "":
                 break
-            break
+
+            if pedconfig.conf.pgdebug > 9:
+                print( "load dict:", "'" + line + "'")
             userdic.append(line)
+
         except:
+            print( "Cannot read user dictionary", sys.exc_info())
             break
+
     fd.close()
 
 # ------------------------------------------------------------------------
@@ -376,6 +406,21 @@ def suggest(self2, xstr):
     return arr[:15]
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

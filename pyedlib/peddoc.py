@@ -983,19 +983,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # Add to user dictionary:
     def addict(self, widget, string, arg):
         #print( "addict", arg)
-        lw = arg.lower()
-        xfile = pedconfig.conf.config_dir + "/" + "userdict.txt"
-        try:
-            fd = open(xfile, "a+")
-        except:
-            print("Cannot open user dictionary")
-            return
-        try:
-            fd.write(lw); fd.write("\n")
-        except:
-            print("Cannot write to user dictionary")
-        fd.close()
-        self.newword = True
+        if not pedspell.append_user_dict(self, arg):
+            self.mained.update_statusbar("Cannot append to user dict")
+        else:
+            self.mained.update_statusbar("Added '%s' to user dict" % arg)
+            self.newword = True
+
         # Force new spell check
         self.fired += 1
         GLib.timeout_add(300, self.keytime)
@@ -1302,7 +1295,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             os.chdir(os.path.dirname(self.fname))
         except:
-            print("Cannot change dir to file's cwd")
+            print("Cannot change dir to file's cwd", sys.exc_info())
 
         # Let the system breed
         self.invalidate()
@@ -1591,7 +1584,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             os.chdir(os.path.dirname(xfile))
         except:
-            print("No macros directory")
+            print("No macros directory", sys.exc_info())
 
         but =   "Cancel", Gtk.ButtonsType.CANCEL, "Save Macro", Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog("Save Macro", None, Gtk.FileChooserAction.SAVE, \
@@ -1629,7 +1622,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             os.chdir(os.path.dirname(xfile))
         except:
-            print("No macros directory")
+            print("No macros directory", sys.exc_info())
 
         but =   "Cancel", Gtk.ButtonsType.CANCEL, "Load Macro", Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog("Load Macro", None, Gtk.FileChooserAction.OPEN, \
@@ -1780,6 +1773,10 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
 
 
 
