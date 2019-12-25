@@ -81,6 +81,7 @@ def main(strarr):
     signal.signal(signal.SIGTERM, terminate)
     mainwin = pyedlib.pedwin.EdMainWindow(None, None, strarr)
     pyedlib.pedconfig.conf.pedwin = mainwin
+    #pyedlib.pedconfig.conf.mained.mywin = mainwin.mywin
 
     Gtk.main()
 
@@ -245,6 +246,7 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 
 

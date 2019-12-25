@@ -1228,6 +1228,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             pass
 
+        #pedync.message("\n   open / read file:  \n\n"
+        #                      "      %s" % self.fname)
+
         #print("stat", self.stat.st_mtime)
         self.start_time = time.time();
         if self.fname == "":
@@ -1242,8 +1245,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if(pedconfig.conf.verbose):
                 print(errr, sys.exc_info())
 
-            pedync.message("\n   Cannot open / read file:  \n\n"
-                              "      %s" % self.fname)
+            #pedync.message("\n   Cannot open / read file:  \n\n"
+            #                  "      %s" % self.fname)
 
             self.mained.update_statusbar(errr)
             usleep(20)
@@ -1283,6 +1286,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             print("Cannot change dir to file's cwd")
 
         # Let the system breed
+        self.invalidate()
         usleep(30)
 
         # Color ON
@@ -1757,6 +1761,11 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
+
 
 
 

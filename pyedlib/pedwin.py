@@ -95,6 +95,7 @@ class EdMainWindow():
         self.fcount = 0
         self.statuscount = 0
         self.alt = False
+        self.names = names
         register_stock_icons()
 
         global mained
@@ -300,76 +301,14 @@ class EdMainWindow():
         self.mywin.add(bbox)
         self.mywin.show_all()
 
-        # ----------------------------------------------------------------
-        # Read in buffers
-
-        cnt = 0
-        for aa in names:
-            aaa = os.path.realpath(aa)
-            #print "loading file: ", aaa
-            vpaned = edPane()
-            ret = vpaned.area.loadfile(aaa)
-            if not ret:
-                self.update_statusbar("Cannot read file '{0:s}', creating ...". format(aaa))
-                ret = self.newfile(aaa)
-                if not ret:
-                    self.update_statusbar("Cannot create fle '{0:s}'". format(aaa))
-                    continue
-
-            ret = vpaned.area2.loadfile(aaa)
-
-            cnt += 1
-            notebook.append_page(vpaned)
-            vpaned.area.set_tablabel()
-
-        if cnt == 0:
-            if(pedconfig.conf.verbose):
-                print("Loading session in", os.getcwd())
-            fcnt = pedconfig.conf.sql.get_int("cnt")
-
-            # Load old session
-            for nnn in range(fcnt):
-                ss = "/sess_%d" % nnn
-                fff = pedconfig.conf.sql.get_str(ss)
-
-                if(pedconfig.conf.verbose):
-                    print("Loading file:", fff)
-
-                vpaned = edPane()
-                ret = vpaned.area.loadfile(fff)
-                if not ret:
-                    self.update_statusbar("Cannot read file '{0:s}'".format(fff))
-                    continue
-                vpaned.area2.loadfile(fff)
-
-                notebook.append_page(vpaned)
-                vpaned.area.set_tablabel()
-                nn = notebook.get_n_pages();
-                if nn:
-                    vcurr = notebook.set_current_page(nn-1)
-                    vcurr = notebook.get_nth_page(nn-1)
-                    self.mywin.set_focus(vcurr.vbox.area)
-
-        # Show newly created buffers:
-        self.mywin.show_all()
-
-        # Set last file
-        fff = pedconfig.conf.sql.get_str("curr")
-
-        #print "curr file", fff
-        cc = notebook.get_n_pages()
-        for mm in range(cc):
-            vcurr = notebook.get_nth_page(mm)
-            if vcurr.area.fname == fff:
-                #print "found buff", fff
-                notebook.set_current_page(mm)
-                self.mywin.set_focus(vcurr.vbox.area)
-                break
-
         # Set the signal handler for 1s tick
         #signal.signal(signal.SIGALRM, handler_tick)
         #signal.alarm(1)
 
+        # Show newly created buffers:
+        #self.mywin.show_all()
+
+        GLib.timeout_add(100, loader_tick, self)
         # We use gobj instead of SIGALRM, so it is more multi platform
         GLib.timeout_add(1000, handler_tick)
 
@@ -1208,6 +1147,7 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(nn-1)
             self.mywin.set_focus(vcurr.vbox.area)
 
+        usleep(300)
         return vcurr.vbox.area
 
 
@@ -1344,6 +1284,91 @@ def     OnExit(arg, prompt = True):
 
     #print "OnExit called \"" + arg.get_title() + "\""
 
+def  loader_tick(self2):
+
+    try:
+        #print 'Signal handler called with signal'
+        #print pedconfig.conf.idle, pedconfig.conf.syncidle
+        global notebook, hidden
+        #print ("exec init handler")
+
+        # ----------------------------------------------------------------
+        # Read in buffers
+
+        cnt = 0
+        for aa in self2.names:
+            aaa = os.path.realpath(aa)
+            #print "loading file: ", aaa
+            vpaned = edPane()
+            ret = vpaned.area.loadfile(aaa)
+            if not ret:
+                self2.update_statusbar("Cannot read file '{0:s}', creating ...". format(aaa))
+                ret = self2.newfile(aaa)
+                if not ret:
+                    self2.update_statusbar("Cannot create fle '{0:s}'". format(aaa))
+                    continue
+
+            ret = vpaned.area2.loadfile(aaa)
+
+            cnt += 1
+            notebook.append_page(vpaned)
+            vpaned.area.set_tablabel()
+
+        if cnt == 0:
+            if(pedconfig.conf.verbose):
+                print("Loading session in", os.getcwd())
+            fcnt = pedconfig.conf.sql.get_int("cnt")
+
+            # Load old session
+            for nnn in range(fcnt):
+                ss = "/sess_%d" % nnn
+                fff = pedconfig.conf.sql.get_str(ss)
+
+                if(pedconfig.conf.verbose):
+                    print("Loading file:", fff)
+
+                vpaned = edPane()
+                ret = vpaned.area.loadfile(fff)
+                if not ret:
+                    self2.update_statusbar("Cannot read file '{0:s}'".format(fff))
+                    continue
+                vpaned.area2.loadfile(fff)
+
+                notebook.append_page(vpaned)
+                self2.mywin.show_all()
+                vpaned.area.set_tablabel()
+                nn = notebook.get_n_pages();
+                if nn:
+                    vcurr = notebook.set_current_page(nn-1)
+                    usleep(30)
+                    vcurr = notebook.get_nth_page(nn-1)
+                    self2.mywin.set_focus(vcurr.vbox.area)
+                    usleep(30)
+
+                #vpaned.queue_draw();
+                #notebook.queue_draw();
+                self2.mywin.show_all()
+                usleep(30)
+
+        # Show newly created buffers:
+        self2.mywin.show_all()
+
+        # Set last file
+        fff = pedconfig.conf.sql.get_str("curr")
+
+        #print "curr file", fff
+        cc = notebook.get_n_pages()
+        for mm in range(cc):
+            vcurr = notebook.get_nth_page(mm)
+            if vcurr.area.fname == fff:
+                #print "found buff", fff
+                notebook.set_current_page(mm)
+                self2.mywin.set_focus(vcurr.vbox.area)
+                break
+    except:
+        print("Exception in load handler", sys.exc_info())
+        pass
+
 # ------------------------------------------------------------------------
 
 #def handler_tick(signum, frame):
@@ -1415,6 +1440,23 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

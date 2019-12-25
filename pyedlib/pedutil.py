@@ -324,6 +324,7 @@ def  usleep(msec):
     while True:
         if time.clock() > got_clock:
             break
+        #print ("Sleeping")
         Gtk.main_iteration_do(False)
 
 # Create a one way hash of a name. Not cryptographically secure,
@@ -718,6 +719,7 @@ def     load_sess():
 
 
 # EOF
+
 
 
 
