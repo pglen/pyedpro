@@ -49,7 +49,7 @@ class PangoView(Gtk.Window):
 
     # Create the toplevel window
     def __init__(self, pvg, parent=None):
-    
+
         Gtk.Window.__init__(self)
         try:
             self.set_screen(parent.get_screen())
@@ -58,31 +58,31 @@ class PangoView(Gtk.Window):
 
         self.set_title(self.__class__.__name__)
         #self.set_border_width(0)
-        
+
         img_dir = os.path.dirname(os.path.abspath(__file__))
         img_path = os.path.join(img_dir, "pangview.png")
-    
+
         try:
             self.set_icon_from_file(img_path)
         except:
-            #print "Cannot load app icon."
+            #print ("Cannot load app icon.")
             pass
 
         #rect = self.get_allocation()
-        
+
         disp2 = Gdk.Display()
         disp = disp2.get_default()
-        #print disp
+        #print (disp)
         scr = disp.get_default_screen()
         ptr = disp.get_pointer()
         mon = scr.get_monitor_at_point(ptr[1], ptr[2])
-        geo = scr.get_monitor_geometry(mon)   
+        geo = scr.get_monitor_geometry(mon)
         www = geo.width; hhh = geo.height
         xxx = geo.x;     yyy = geo.y
-        
+
         #www = rect.width;
         #hhh = rect.height;
-        
+
         #self.set_default_size(7*www/8, 7*hhh/8)
         if pvg.full_screen:
             self.set_default_size(www, hhh)
@@ -94,9 +94,9 @@ class PangoView(Gtk.Window):
 
         hpaned = Gtk.HPaned()
         hpaned.set_border_width(5)
-        
+
         self.add(hpaned)
-                 
+
         view1 = Gtk.TextView();
         view1.set_border_width(8)
 
@@ -114,7 +114,7 @@ class PangoView(Gtk.Window):
         sw.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
         sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         sw.add(view1)
-       
+
         view2 = Gtk.TextView();
         view2.set_border_width(8)
         view2.set_editable(False)
@@ -123,39 +123,39 @@ class PangoView(Gtk.Window):
         sw2.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
         sw2.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         sw2.add(view2)
-        
+
         view2.connect("key-press-event", self.key_press_event2)
         view2.connect("event-after", self.event_after2)
         view2.connect("motion-notify-event", self.motion_notify_event2)
         view2.connect("visibility-notify-event", self.visibility_notify_event2)
-       
+
         hpaned.add1(sw2)
         hpaned.add2(sw)
-        
-        self.hpaned = hpaned        
+
+        self.hpaned = hpaned
         self.set_pane_position(1)
-        
+
         self.iter = self.buffer_1.get_iter_at_offset(0)
         self.iter2 = self.buffer_1.get_iter_at_offset(0)
-        
+
         self.set_focus(view1)
-         
+
         self.show_all()
 
-    def set_pane_position(self, pos):        
+    def set_pane_position(self, pos):
         self.hpaned.set_position(pos);
-        
+
     def set_fullscreen(self):
         www = Gdk.screen_width();
         hhh = Gdk.screen_height();
         self.resize(www, hhh)
-        
+
     def showcur(self, flag):
         #return
         self.waiting = flag
         #wx, wy, modx = self.view.window.get_pointer()
         wx, wy = self.view.get_pointer()
-        
+
         bx, by = self.view.window_to_buffer_coords(Gtk.TextWindowType.TEXT, wx, wy)
         self.set_cursor_if_appropriate (self.view, bx, by)
         #self.view.window.get_pointer()
@@ -164,12 +164,12 @@ class PangoView(Gtk.Window):
 
     def clear(self, flag=False):
         if flag:
-            self.buffer_2.set_text("", 0)        
-            self.iter2 = self.buffer_2.get_iter_at_offset(0)        
+            self.buffer_2.set_text("", 0)
+            self.iter2 = self.buffer_2.get_iter_at_offset(0)
         else:
-            self.buffer_1.set_text("", 0)        
+            self.buffer_1.set_text("", 0)
             self.iter = self.buffer_1.get_iter_at_offset(0)
-        
+
     def add_pixbuf(self, pixbuf, flag=False):
         if flag:
             self.buffer_2.insert_pixbuf(self.iter2, pixbuf)
@@ -189,9 +189,9 @@ class PangoView(Gtk.Window):
         if flag:
             self.buffer_2.insert(self.iter2, text)
         else:
-            self.buffer_1.insert(self.iter, text)            
+            self.buffer_1.insert(self.iter, text)
         self.waiting = False
-                
+
     def add_text_tag(self, text, tags, flag=False):
         if flag:
             self.buffer_2.insert_with_tags_by_name(self.iter2, text, tags)
@@ -199,7 +199,7 @@ class PangoView(Gtk.Window):
             self.buffer_1.insert_with_tags_by_name(self.iter, text, tags)
         self.waiting = False
 
-    def add_text_xtag(self, text, tags, flag=False):        
+    def add_text_xtag(self, text, tags, flag=False):
         if flag:
             try: self.buffer_2.get_tag_table().add(tags)
             except: pass
@@ -207,34 +207,34 @@ class PangoView(Gtk.Window):
         else:
             try: self.buffer_1.get_tag_table().add(tags)
             except: pass
-            
+
             self.buffer_1.insert_with_tags(self.iter, text, tags)
         self.waiting = False
 
     # --------------------------------------------------------------------
     # Links can be activated by pressing Enter.
-    
+
     def key_press_event(self, text_view, event):
         if (event.keyval == Gdk.KEY_Return or
             event.keyval == Gdk.KEY_KP_Enter):
             buffer = text_view.get_buffer()
             iter = buffer.get_iter_at_mark(buffer.get_insert())
             self.follow_if_link(text_view, iter)
-        elif event.keyval == Gdk.KEY_Tab: 
-            #print "Tab"
+        elif event.keyval == Gdk.KEY_Tab:
+            #print ("Tab")
             pass
-        elif event.keyval == Gdk.KEY_space: 
-            #print "Space"
+        elif event.keyval == Gdk.KEY_space:
+            #print ("Space")
             pass
-        elif event.keyval == Gdk.KEY_BackSpace: 
+        elif event.keyval == Gdk.KEY_BackSpace:
             if self.bscallback:
                 self.bscallback()
         if event.keyval == Gdk.KEY_Escape or event.keyval == Gdk.KEY_q:
             sys.exit(0)
-           
-        if event.state & Gdk.ModifierType.MOD1_MASK:       
+
+        if event.state & Gdk.ModifierType.MOD1_MASK:
             if event.keyval == Gdk.KEY_x or event.keyval == Gdk.KEY_X:
-                sys.exit(0)            
+                sys.exit(0)
         return False
 
     # Links can also be activated by clicking.
@@ -271,7 +271,7 @@ class PangoView(Gtk.Window):
         for tag in tags:
             page = tag.get_data("link")
             if page != None:
-                #print "Calling link ", page
+                #print ("Calling link ", page)
                 # Paint a new cursor
                 self.waiting = True
                 wx, wy = text_view.get_pointer()
@@ -304,18 +304,18 @@ class PangoView(Gtk.Window):
         if hovering != self.hovering_over_link:
             self.hovering_over_link = hovering
         '''
-        
+
         if self.waiting:
             cur = self.wait_cursor
         elif self.hovering_over_link:
             cur = self.hand_cursor
         else:
             cur = self.regular_cursor
-         
-        try:   
+
+        try:
             text_view.get_window(Gtk.TextWindowType.TEXT).set_cursor()
         except:
-            print sys.exc_info()
+            print (sys.exc_info())
 
     # Update the cursor image if the pointer moved.
 
@@ -328,7 +328,7 @@ class PangoView(Gtk.Window):
 
     # Also update the cursor image if the window becomes visible
     # (e.g. when a window covering it got iconified).
-    
+
     def visibility_notify_event(self, text_view, event):
         wx, wy = text_view.get_pointer()
         bx, by = text_view.window_to_buffer_coords(Gtk.TextWindowType.WIDGET, wx, wy)
@@ -342,22 +342,22 @@ class PangoView(Gtk.Window):
             buffer = text_view.get_buffer()
             iter = buffer.get_iter_at_mark(buffer.get_insert())
             self.follow_if_link(text_view, iter)
-        elif event.keyval == Gdk.KEY_Tab: 
-            #print "Tab"
+        elif event.keyval == Gdk.KEY_Tab:
+            #print ("Tab")
             pass
-        elif event.keyval == Gdk.KEY_space: 
-            #print "Space"
+        elif event.keyval == Gdk.KEY_space:
+            #print ("Space")
             pass
-        elif event.keyval == Gdk.KEY_BackSpace: 
+        elif event.keyval == Gdk.KEY_BackSpace:
             if self.bscallback:
                 self.bscallback()
         if event.keyval == Gdk.KEY_Escape or event.keyval == Gdk.KEY_q:
             sys.exit(0)
-           
-        if event.state & Gdk.ModifierType.MOD1_MASK:       
+
+        if event.state & Gdk.ModifierType.MOD1_MASK:
             if event.keyval == Gdk.KEY_x or event.keyval == Gdk.KEY_X:
                 sys.exit(0)
-            
+
         return False
 
     def event_after2(self, text_view, event):
@@ -398,7 +398,7 @@ class PangoView(Gtk.Window):
         self.set_cursor_if_appropriate(text_view, x, y)
         #text_view.window.get_pointer()
         return False
-        
+
     def set_cursor_if_appropriate2(self, text_view, x, y):
 
         hovering = False
@@ -428,6 +428,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
