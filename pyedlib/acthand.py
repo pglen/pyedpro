@@ -41,7 +41,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
-from . import pedync, pedofd, pedspell, pedbuffs, pedconfig
+from . import pedync, pedofd, pedspell, pedbuffs, pedconfig, pedtts
 
 # Some action functions have their own file
 #from pedfind import *
@@ -699,11 +699,15 @@ class ActHand:
 
         self2.hexview(not self2.hex)
 
-    def ctrl_alt_l(self, self2):
+    def ctrl_alt_r(self, self2):
         if pedconfig.conf.pgdebug > 9:
-            print ("CTRL - ALT - L")
+            print ("CTRL - ALT - R")
 
-        self.ctrl_u(self2, True)
+        #print("Read file on tts ");
+        if not self2.tts:
+            self2.tts = pedtts.tts(self2.mained.update_statusbar)
+
+        self2.tts.read_tts(self2)
 
      # --------------------------------------------------------------------
 
@@ -1977,6 +1981,13 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
+
 
 
 

@@ -184,14 +184,6 @@ class KeyHand:
         # Do upper and lower for catching shift in the routine
 
         self.ctrl_alt_keytab = [
-            [Gdk.KEY_h, self.act.ctrl_alt_h],
-            [Gdk.KEY_H, self.act.ctrl_alt_h],
-            [Gdk.KEY_j, self.act.ctrl_alt_j],
-            [Gdk.KEY_J, self.act.ctrl_alt_j],
-            [Gdk.KEY_k, self.act.ctrl_alt_k],
-            [Gdk.KEY_K, self.act.ctrl_alt_k],
-            [Gdk.KEY_l, self.act.ctrl_alt_l],
-            [Gdk.KEY_L, self.act.ctrl_alt_l],
 
             [Gdk.KEY_a, self.act.ctrl_alt_a],
             [Gdk.KEY_A, self.act.ctrl_alt_a],
@@ -201,7 +193,16 @@ class KeyHand:
 
             [Gdk.KEY_c, self.act.ctrl_alt_c],
             [Gdk.KEY_C, self.act.ctrl_alt_c],
-            ]
+            [Gdk.KEY_h, self.act.ctrl_alt_h],
+            [Gdk.KEY_H, self.act.ctrl_alt_h],
+            [Gdk.KEY_j, self.act.ctrl_alt_j],
+            [Gdk.KEY_J, self.act.ctrl_alt_j],
+            [Gdk.KEY_k, self.act.ctrl_alt_k],
+            [Gdk.KEY_K, self.act.ctrl_alt_k],
+
+            [Gdk.KEY_r, self.act.ctrl_alt_r],
+            [Gdk.KEY_R, self.act.ctrl_alt_r],
+        ]
 
         # Separate keytab on alt for easy customization.
 
@@ -269,8 +270,8 @@ class KeyHand:
             [Gdk.KEY_W, self.act.alt_w],
             [Gdk.KEY_z, self.act.alt_z],
             [Gdk.KEY_Z, self.act.alt_z],
-            [Gdk.KEY_bracketleft, self.act.ctrl_u],
-            [Gdk.KEY_bracketright, self.act.ctrl_alt_l],
+            #[Gdk.KEY_bracketleft, self.act.ctrl_u],
+            #[Gdk.KEY_bracketright, self.act.ctrl_alt_l],
             ]
 
     # When we get focus, we start out with no modifier keys
@@ -492,6 +493,8 @@ class KeyHand:
                         self2.flash(False)
 
         return ret
+
+
 
 
 

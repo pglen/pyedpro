@@ -774,6 +774,13 @@ class EdMainWindow():
         if vcurr2:
              pedconfig.conf.keyh.act.ctrl_x(vcurr2.area)
 
+    def tts(self):
+        nn2 = notebook.get_current_page()
+        vcurr2 = notebook.get_nth_page(nn2)
+        if vcurr2:
+             pedconfig.conf.keyh.act.ctrl_alt_r(vcurr2.area)
+
+
     def paste(self):
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
@@ -1440,6 +1447,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 

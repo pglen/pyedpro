@@ -25,13 +25,17 @@ class conf():
     # Count down variables
     idle = 0; syncidle = 0;   statuscount = 0
 
-    # Where things are stored (backups, orgs, macros, logs)
+    # Where things are stored (backups, orgs, macros, logs, temp, tts)
     config_dir = os.path.expanduser("~/.pyedpro")
     macro_dir = os.path.expanduser("~/.pyedpro/macros")
     data_dir = os.path.expanduser("~/.pyedpro/data")
     log_dir = os.path.expanduser("~/.pyedpro/log")
-    sql_data = os.path.expanduser("~/.pyedpro/sql_data")
     sess_data = os.path.expanduser("~/.pyedpro/sess")
+    temp_dir = os.path.expanduser("~/.pyedpro/tmp")
+    tts_dir = os.path.expanduser("~/.pyedpro/tts")
+
+    sql_data = os.path.expanduser("~/.pyedpro/sql_data")
+
     sql = None
     config_file = "defaults"
 
@@ -43,12 +47,34 @@ class conf():
     def __init__(self):
         pass
 
+# ------------------------------------------------------------------------
 
+def softmake(ddd):
 
+    if conf.pgdebug > 9:
+        print("softmake: ", ddd)
 
+    if not os.path.isdir(ddd):
+        if(conf.verbose):
+            print("making", ddd)
+        os.mkdir(ddd)
 
+# Create config dirs
 
+def ensure_dirs(conf):
 
+    if conf.pgdebug > 5:
+        print("ensure_dirs: ")
+
+    softmake(conf.config_dir)
+    softmake(conf.macro_dir)
+    softmake(conf.data_dir)
+    softmake(conf.log_dir)
+    softmake(conf.sess_data)
+    softmake(conf.temp_dir)
+    softmake(conf.tts_dir)
+
+# EOF
 
 
 

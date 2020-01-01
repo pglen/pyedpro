@@ -129,6 +129,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.scrtab = False
         self.stat = None
         self.sep = "\n";
+        self.tts = None
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
@@ -1074,8 +1075,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.start_term()
         elif ttt == 15:
             self.start_edit()
+        elif ttt == 16:
+            self.mained.tts()
         else:
-            print("Invalid menu item selected")
+            print("peddoc: Invalid menu item selected")
 
     def start_term(self):
         #print("Terminal Here")
@@ -1329,6 +1332,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         pedconfig.conf.sql.put(hhh + "/xx", self.xpos + self.caret[0])
         pedconfig.conf.sql.put(hhh + "/yy", self.ypos + self.caret[1])
         pedconfig.conf.sql.put(hhh + "/fname", self.fname)
+
+        if self.tts:
+            self.tts.haltspeak = True
+
         #print  "saveparm", time.clock() - got_clock
 
     # Create org backup
@@ -1756,6 +1763,8 @@ def run_async_time(win):
         except:
             print("Exception in func extraction handler", sys.exc_info())
             pass
+    elif ".txt" in lname:
+        pass
     else:
         try:
             for kw in sumkeywords:
@@ -1773,6 +1782,11 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
+
 
 
 

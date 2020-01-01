@@ -31,7 +31,7 @@ mained = None
 
 def rclick_action(self, arg):
 
-    #print ("rclick_action", "'" + arg.name + "'")
+    print ("rclick_action", "'" + arg.name + "'")
 
     if arg.name == "<pydoc>/New":
         mained. newfile()
@@ -54,6 +54,8 @@ def rclick_action(self, arg):
     if arg.name == "<pydoc>/Paste":
         mained.paste()
 
+    if arg.name == "<pydoc>/Read":
+        mained.tts()
 
 def rclick_quit(self, arg):
     print(__name__, arg.name)
@@ -72,9 +74,11 @@ rclick_menu = (
             ( "",               None,               None, 10, "<Separator>" ),
             ( "Terminal Here",  None,               rclick_action, 14, None ),
             ( "",               None,               None, 10, "<Separator>" ),
-            ( "New Instance",   None,         rclick_action, 15, None ),
+            ( "New Instance",   None,               rclick_action, 15, None ),
             ( "",               None,               None, 12, "<Separator>" ),
             ( "Toggle _RO",     None,               rclick_action, 11, None ),
+            ( "",               None,               None, 12, "<Separator>" ),
+            ( "Read Selection", None,               rclick_action, 16, None ),
             ( "",               None,               None, 12, "<Separator>" ),
             ( "E_xit",          "<alt>X",           rclick_quit, 13, None ),
             )
@@ -374,6 +378,7 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
 
 
 

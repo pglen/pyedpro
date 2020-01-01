@@ -14,7 +14,7 @@ from gi.repository import GObject
 from . import pedync, pedofd, pedspell, pedbuffs, pedconfig
 
 # Some action functions have their own file
-#from peddfind import *
+#from pedfind import *
 from . import pedfind
 from .pedgoto import *
 from .pedundo import *
@@ -72,6 +72,8 @@ class ActHand:
             self2.invalidate()
         else:
             self2.clearsel()
+
+
 
 
 

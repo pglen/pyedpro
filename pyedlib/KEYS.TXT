@@ -134,6 +134,12 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Ctrl Alt A                  --  Cleanse non ascii
     Ctrl Alt B                  --  ''' '''
     Ctrl Alt C                  --  Comment out line, and jump down below
+        ...
+
+    Ctrl Alt H                  --  Find (alias)
+    Ctrl Alt J                  --  Coloring
+    Ctrl Alt K                  --  Hex view
+    Ctrl Alt R                  --  Read file (text to speach)
 
     # More coming ... under construction
 
@@ -211,4 +217,5 @@ terminal. If no action is listed, that key is unassigned.
 Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
 
 // EOF
+
 

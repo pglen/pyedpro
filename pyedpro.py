@@ -177,30 +177,12 @@ if __name__ == '__main__':
             os.mkdir(pyedlib.pedconfig.conf.config_dir)
     except: pass
 
-    # Let the user know it needs fixin'
+    # Let the user know if it needs fixin'
     if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
         print("Cannot access config dir:", pyedlib.pedconfig.conf.config_dir)
         sys.exit(1)
 
-    if not os.path.isdir(pyedlib.pedconfig.conf.data_dir):
-        if(pyedlib.pedconfig.conf.verbose):
-            print("making", pyedlib.pedconfig.con.data_dir)
-        os.mkdir(pyedlib.pedconfig.conf.data_dir)
-
-    if not os.path.isdir(pyedlib.pedconfig.conf.log_dir):
-        if(pyedlib.pedconfig.conf.verbose):
-            print("making", pyedlib.pedconfig.conf.log_dir)
-        os.mkdir(pyedlib.pedconfig.conf.log_dir)
-
-    if not os.path.isdir(pyedlib.pedconfig.conf.macro_dir):
-        if(pyedlib.pedconfig.conf.verbose):
-            print("making", pyedlib.pedconfig.conf.macro_dir)
-        os.mkdir(pyedlib.pedconfig.conf.macro_dir)
-
-    if not os.path.isdir(pyedlib.pedconfig.conf.sess_data):
-        if(pyedlib.pedconfig.conf.verbose):
-            print("making", pyedlib.pedconfig.conf.sess_data)
-        os.mkdir(pyedlib.pedconfig.conf.sess_data)
+    pyedlib.pedconfig.ensure_dirs(pyedlib.pedconfig.conf)
 
     if(pyedlib.pedconfig.conf.verbose):
         print("Data stored in ", pyedlib.pedconfig.conf.config_dir)
@@ -252,4 +234,8 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
+
+
 
