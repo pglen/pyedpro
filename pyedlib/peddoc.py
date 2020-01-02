@@ -1503,7 +1503,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # --------------------------------------------------------------------
     # Turn off coloring if not python / c / sh / perl / header(s)
 
-    def set_nocol():
+    def set_nocol(self):
         colflag = False
         ext = os.path.splitext(self.fname)[1].lower()
         for aa in pedconfig.conf.color_on:
@@ -1780,6 +1780,7 @@ def run_async_time(win):
         pass
 
 # EOF
+
 
 
 
