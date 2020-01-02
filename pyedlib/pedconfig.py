@@ -44,6 +44,9 @@ class conf():
     verbose = False
     recarr = []
 
+    # Which extensions are colored
+    color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp")
+
     def __init__(self):
         pass
 
@@ -75,6 +78,7 @@ def ensure_dirs(conf):
     softmake(conf.tts_dir)
 
 # EOF
+
 
 
 

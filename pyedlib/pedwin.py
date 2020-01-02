@@ -692,6 +692,8 @@ class EdMainWindow():
 
     def newfile(self, newname = ""):
 
+        fff = ""
+
         if newname == "":
             # Find non existing file
             cnt = self.fcount + 1; fff = ""
@@ -715,6 +717,12 @@ class EdMainWindow():
                 print(sss,  sys.exc_info())
                 pedync.message("\n" + sss + "\n")
                 return
+
+        # Change access/ownership to group write
+        try:
+            os.chmod(fff, stat.S_IWGRP)
+        except:
+            print("Cannot change group write on '%s'" % fff,  sys.exc_info())
 
         vpaned = edPane([])
         vpaned.area.fname = os.path.realpath(fff) + ""
@@ -1447,6 +1455,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 

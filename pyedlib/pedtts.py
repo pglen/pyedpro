@@ -124,7 +124,7 @@ class tts():
 
         # Running?
 
-        if self.haltspeak:
+        if self.haltspeak and self.speech_pid:
             return
 
         self.haltspeak = True
@@ -238,5 +238,6 @@ class tts():
         self.speech_pid = None
 
 # EOF
+
 
 

@@ -1153,7 +1153,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.menu.show_all()
         return self.menu
 
-
     def get_size(self):
         rect = self.get_allocation()
         return rect.width, rect.height
@@ -1285,15 +1284,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # Propagate main wndow ref
         pedmenu.mained = self.mained
 
-        # Turn off coloring if not python / c / sh / perl / header
-        '''nocol = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp")
-        self.colflag = False
-        ext = os.path.splitext(self.fname)[1].lower()
-        for aa in nocol:
-            if ext == aa:
-                self.colflag = True
-                break
-        '''
+        self.set_nocol()
 
         try:
             os.chdir(os.path.dirname(self.fname))
@@ -1304,8 +1295,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.invalidate()
         usleep(10)
 
-        # Color ON
-        self.colflag = True
+        # Color ON?
+        self.set_nocol()
+
         return True
 
     def calc_maxline(self):
@@ -1504,16 +1496,22 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         if resp == Gtk.ResponseType.YES:
             self.fname = fname
             self.writeout()
-            # Turn off coloring if not python / c / sh / perl / header
-            nocol = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp")
-            self.colflag = False
-            ext = os.path.splitext(self.fname)[1].lower()
-            for aa in nocol:
-                if ext == aa:
-                    self.colflag = True
-                    break
+            self.set_nocol()
             win2.destroy()
         win.destroy()
+
+    # --------------------------------------------------------------------
+    # Turn off coloring if not python / c / sh / perl / header(s)
+
+    def set_nocol():
+        colflag = False
+        ext = os.path.splitext(self.fname)[1].lower()
+        for aa in pedconfig.conf.color_on:
+            if ext == aa:
+                colflag = True
+                break
+        self.colflag = colflag
+
 
     def do_chores(self):
 
@@ -1782,6 +1780,7 @@ def run_async_time(win):
         pass
 
 # EOF
+
 
 
 
