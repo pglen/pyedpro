@@ -35,7 +35,7 @@ classx=[
           'Topic :: Software Development :: Editor',
         ],
 
-dirx = "pyedlib/data"; libs = []
+'''dirx = "pyedlib/data"; libs = []
 arr = os.listdir(dirx)
 for aa in arr:
     if os.path.isfile(dirx + os.sep +  aa):
@@ -48,14 +48,12 @@ for aa in arr:
         else:
             libs.append(dirx + os.sep +  aa)
 print("libs", libs)
-
 diry = "pyedlib/images"; imgs = []
 arr = os.listdir(diry)
-
 for aa in arr:
     imgs.append(diry + os.sep +  aa)
-
 print("imgs", imgs)
+'''
 
 setup(name = "pyedpro.py",      # Name of the program.
       version = "1.0",          # Version of the program.
@@ -64,18 +62,21 @@ setup(name = "pyedpro.py",      # Name of the program.
       classifiers=classx,
       author = "Peter Glen",
       author_email = "peterglen@gail.com",
-      license='GPLv3/Freeware',            # The license of the program.
-      url="none",
+      license='GPLv3',            # The license of the program.
+      url="none.specified",
       scripts = ['pyedpro.py', 'pangview.py'],
       packages=['pyedlib', 'panglib', ],
       package_dir = {'pyedlib': 'pyedlib', 'panglib': 'panglib'},
       package_data = {'pyedlib': ['data/*', 'images/*']},
       data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pyedlib/images/pyedpro.png']),
                         ('/usr/share/applications', ['pyedpro.desktop'])],
-      include_package_data=True
+      #include_package_data=True
       )
 
 # EOF
+
+
+
 
 
 

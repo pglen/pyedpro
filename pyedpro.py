@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 # ------------------------------------------------------------------------
 # This is open source text editor. Written on python. The motivation for
@@ -234,6 +234,9 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
+
 
 
 
