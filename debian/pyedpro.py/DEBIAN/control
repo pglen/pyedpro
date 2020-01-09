@@ -1,0 +1,10 @@
+Package: pyedpro.py
+Version: 1.0
+Architecture: all
+Maintainer: My Name <myemail@email.com>
+Installed-Size: 3132
+Depends: python-gi
+Section: utils editors
+Priority: optional
+Description: Python Text Editor
+ Here you can add a short description about your program.

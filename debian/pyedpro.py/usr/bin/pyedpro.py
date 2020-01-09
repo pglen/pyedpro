@@ -44,10 +44,10 @@ import os, sys, getopt, signal
 import traceback, gettext, locale
 
 locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain('pyedpro', '/usr/share/locale')
-gettext.textdomain('pyedpro')
+gettext.bindtextdomain('myprogram', '/usr/share/locale')
+gettext.textdomain('myprogram')
 _ = gettext.gettext
-gettext.install("pyedpro", "/usr/share/locale")
+gettext.install("myprogram", "/usr/share/locale")
 
 
 VERSION = 1.0
@@ -94,7 +94,7 @@ def help():
     print()
     print(PROGNAME, _("Version: "), pyedlib.pedconfig.conf.version)
     print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
-    print(_("Option(s):"))
+    print(_("Options:"))
     print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
     print(_("            -v        - Verbose (to stdout and log)"))
     print(_("            -f        - Start Full screen"))
@@ -235,7 +235,6 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
-
 
 
 
