@@ -758,7 +758,7 @@ def showfile(strx):
 def help():
     myname = os.path.basename(sys.argv[0])
     print()
-    print (myname + ":", "Version 0.013 - Utility for displaying a pango file.")
+    print (myname + ":", "Version 0.95 - Utility for displaying a pango file.")
     print ()
     print ("Usage: " + myname + " [options] filename")
     print ()
@@ -852,6 +852,7 @@ if __name__ == "__main__":
     main()
 
 # EOF
+
 
 
 

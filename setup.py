@@ -1,18 +1,84 @@
-from cx_Freeze import setup, Executable
+# Here we imported the 'setup' module which allows us to install Python
+#scripts to the local system beside performing some other tasks, you can find the
+# documentation here: https://docs.python.org/2/distutils/apiref.html
 
-# Dependencies are automatically detected, but it might need
-# fine tuning.
-buildOptions = dict(packages = [], excludes = [])
+import os, sys, fnmatch
 
-import sys
-base = 'Win32GUI' if sys.platform=='win32' else None
+#from distutils.core import setup
+from setuptools import setup
 
-executables = [
-    Executable('pyedpro.py', base=base)
-]
+descx = '''PyEdPro is modern multi-platform editor. Simple, powerful,
+configurable, extendable. Goodies like macro recording / playback, spell check,
+column select, multiple clipboards, unlimited undo ...
+   PyEdPro.py has macro recording/play, search/replace, one click function navigation,
+auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion
+ ... and a lot more.
+   The recorded macros, undo / redo information / editing session detail persists
+ after the editor is closed.
+    The spell checker can check code comments. The parsing of the code is
+rudimentary, comments and strings are spell checked. (Press F9) The code is filtered
+out for Python and  'C'. The spell checker is executed on live text. (while typing)
+'''
 
-setup(name='pyedpro',
-      version = '1.0',
-      description = '',
-      options = dict(build_exe = buildOptions),
-      executables = executables)
+classx=[
+          'Development Status :: Mature',
+          'Environment :: GUI',
+          'Intended Audience :: End Users/Desktop',
+          'Intended Audience :: Developers',
+          'Intended Audience :: System Administrators',
+          'License :: OSI Approved :: Python Software Foundation License',
+          'Operating System :: MacOS :: MacOS X',
+          'Operating System :: Microsoft :: Windows',
+          'Operating System :: POSIX',
+          'Programming Language :: Python',
+          'Topic :: Editors',
+          'Topic :: Software Development :: Editor',
+        ],
+
+dirx = "pyedlib/data"; libs = []
+arr = os.listdir(dirx)
+for aa in arr:
+    if os.path.isfile(dirx + os.sep +  aa):
+        if fnmatch.fnmatch(aa, "*.pyc"):
+            pass
+        elif fnmatch.fnmatch(aa, "*.py"):
+            pass
+        elif fnmatch.fnmatch(aa, "*cache*"):
+            pass
+        else:
+            libs.append(dirx + os.sep +  aa)
+print("libs", libs)
+
+diry = "pyedlib/images"; imgs = []
+arr = os.listdir(diry)
+
+for aa in arr:
+    imgs.append(diry + os.sep +  aa)
+
+print("imgs", imgs)
+
+setup(name = "pyedpro.py",      # Name of the program.
+      version = "1.0",          # Version of the program.
+      description = "Easy-to-use advanced editor",
+      long_description = descx,
+      classifiers=classx,
+      author = "Peter Glen",
+      author_email = "peterglen@gail.com",
+      license='GPLv3/Freeware',            # The license of the program.
+      url="none",
+      scripts = ['pyedpro.py', 'pangview.py'],
+      packages=['pyedlib', 'panglib', ],
+      package_dir = {'pyedlib': 'pyedlib', 'panglib': 'panglib'},
+      package_data = {'pyedlib': ['data/*', 'images/*']},
+      data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pyedlib/images/pyedpro.png']),
+                        ('/usr/share/applications', ['pyedpro.desktop'])],
+      include_package_data=True
+      )
+
+# EOF
+
+
+
+
+
+

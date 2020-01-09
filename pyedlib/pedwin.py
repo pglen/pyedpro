@@ -675,16 +675,7 @@ class EdMainWindow():
     def activate_qhelp(self, action):
         self.update_statusbar("Showing quick help")
         rr = get_exec_path("QHELP")
-        try:
-            if platform.system().find("Win") >= 0:
-                xxx = get_exec_path(".." + os.sep + "pangview.py")
-                print(xxx, rr)
-                ret = subprocess.Popen(["python", xxx,  rr])
-            else:
-                ret = subprocess.Popen(["pangview.py",  rr])
-        except:
-            pedync.message("\n   Cannot launch the pangview.py utility.   \n\n"
-                           "              (Please install)")
+        launch_pangview(rr)
 
     def activate_about(self, action):
         self.update_statusbar("Showing About Dialog")
@@ -1455,6 +1446,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 

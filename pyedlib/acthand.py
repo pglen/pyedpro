@@ -1511,17 +1511,7 @@ class ActHand:
 
         self2.mained.update_statusbar("Opening KEYS help file ...")
         rr = get_exec_path("KEYS")
-        try:
-            if platform.system().find("Win") >= 0:
-                xxx = get_exec_path(".." + os.sep + "pangview.py")
-                ret = subprocess.Popen(["python", xxx,  rr])
-            else:
-                xxx = get_exec_path(".." + os.sep + "pangview.py")
-                ret = subprocess.Popen(["python", xxx,  rr])
-        except:
-            print("Cannot launch pangview", sys.exc_info())
-            pedync.message("\n   Cannot launch pangview.py   \n\n"
-                       "              (Please install)")
+        launch_pangview(rr)
 
     def f4(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -1981,6 +1971,7 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
 
 
 

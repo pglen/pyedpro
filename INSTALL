@@ -10,7 +10,15 @@ have the same text editor on all platforms.
 
  (PyEdPro is extensively tested on UBU/FEDO Linux, Raspberry PI and Windows)
 
-To install pygtk3 on python 2/3 issue the msys32/64 commands:
+
+ Updates:
+
+    switched to python 3.x
+    setup.py install updated
+    .deb file created
+    .rpm file created
+
+To install pygtobj on python 2/3 issue the msys32/64 commands:
 
     pacman -S mingw-w64-i686-gtk3 mingw-w64-i686-python2-gobject \
                  mingw-w64-i686-python3-gobject
@@ -62,6 +70,7 @@ controlling terminal for the missing library, install it with:
 
 
 Enjoy.
+
 
 
 

@@ -3,6 +3,12 @@
  This is a non exhaustive list of changes in the PyEdPro project. Git has
  a more complete list of logs.
 
+    Thu Jan 09 2020   (version 1.0)
+    setup.py and company
+
+    Wed Jan 08 2020   (version 1.0)
+    pango dirs and cleanup
+
     Wed Dec 25   (version 0.95)
     Spell check - loading 8 bit clean; Capitalize resoration
 
@@ -186,6 +192,7 @@ v034:
 v042:
 
   Moved to pyedpro, version number restarted at 043.
+
 
 
 

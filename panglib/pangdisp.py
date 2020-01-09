@@ -87,7 +87,8 @@ class PangoView(Gtk.Window):
         if pvg.full_screen:
             self.set_default_size(www, hhh)
         else:
-            self.set_default_size(3*www/4, 3*hhh/4)
+            #self.set_default_size(3*www/4, 3*hhh/4)
+            self.set_default_size(hhh, 3*hhh/4)
 
         self.set_position(Gtk.WindowPosition.CENTER)
         #self.set_title("Pango test display");
@@ -428,6 +429,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 

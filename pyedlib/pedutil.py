@@ -2,7 +2,8 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
-import signal, os, time, sys, pickle
+
+import signal, os, time, sys, pickle, subprocess
 
 import gi
 #from six.moves import range
@@ -143,19 +144,57 @@ def  writefile(strx, buff, sep = "\n"):
 # Expand image name to image path:
 
 def get_img_path(fname):
-    img_dir = os.path.join(os.path.dirname(pedconfig.conf.mydir), \
-                    'pyedlib/images')
-    img_path = os.path.join(img_dir, fname)
-    #print( "img_path", img_path)
+
+    img_dir = os.path.dirname(__file__)
+    img_dir2 = os.path.join(img_dir, "images")
+    img_path = os.path.join(img_dir2, fname)
+
+    if(pedconfig.conf.verbose):
+        print( "img_path", img_path)
+
     return img_path
 
 # Expand file name to file path in the exec dir:
+# We now deliver module data directory
+
 def get_exec_path(fname):
-    exec_dir = os.path.dirname(pedconfig.conf.mydir)
-    exec_path2 = os.path.join(exec_dir, "pyedlib")
+
+    #exec_dir = os.path.dirname(pedconfig.conf.mydir)
+    exec_dir = os.path.dirname(__file__)
+
+    exec_path2 = os.path.join(exec_dir, "data")
     exec_path = os.path.join(exec_path2, fname)
-    #print( exec_path)
+
+    if(pedconfig.conf.verbose):
+        print( exec_path)
+
     return exec_path
+
+def get_pangview_path():
+
+    fname = "pangview.py"
+    pname = get_exec_path(".." +  os.sep +  ".." + os.sep + fname)
+    if not os.path.isfile(pname):
+        pname = fname
+
+    return pname
+
+# ------------------------------------------------------------------------
+
+def launch_pangview(docx):
+
+    pname = get_pangview_path()
+
+    if(pedconfig.conf.verbose):
+        print("launching pangview:", pname, "with", docx)
+    try:
+        ret = subprocess.Popen([pname,  docx])
+
+    except:
+        print("except on pang",  sys.exc_info())
+        pedync.message("\n   Cannot launch the pangview.py utility.   \n\n"
+                       "              (Please install)\n")
+
 
 # It's totally optional to do this, you could just manually insert icons
 # and have them not be themeable, especially if you never expect people
@@ -729,3 +768,21 @@ def     load_sess():
 # ------------------------------------------------------------------------
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

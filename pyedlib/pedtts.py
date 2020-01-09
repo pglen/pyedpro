@@ -15,7 +15,7 @@ from gi.repository import GObject
 from gi.repository import Pango
 
 # General set of utilities
-from . import pedync, pedofd, pedspell, pedbuffs, pedconfig, pedtts
+from . import pedync, pedofd, pedspell, pedbuffs, pedconfig
 
 # Locally used
 from .pedutil import *
@@ -238,6 +238,7 @@ class tts():
         self.speech_pid = None
 
 # EOF
+
 
 
 
