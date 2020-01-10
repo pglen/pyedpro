@@ -43,12 +43,15 @@ import os, sys, getopt, signal
 
 import traceback, gettext, locale
 
-locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain('myprogram', '/usr/share/locale')
-gettext.textdomain('myprogram')
-_ = gettext.gettext
-gettext.install("myprogram", "/usr/share/locale")
+#locale.setlocale(locale.LC_ALL, '')
 
+import gettext
+gettext.bindtextdomain('pyedpro', './locale/')
+gettext.textdomain('pyedpro')
+
+_ = gettext.gettext
+
+#print("domain", gettext.textdomain)
 
 VERSION = 1.0
 BUILDDATE = "Jan-09-2019"
@@ -58,13 +61,9 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-#import pyedlib.keyhand, pyedlib.acthand
-
 import pyedlib.pedutil, pyedlib.pedwin
 import pyedlib.log, pyedlib.pedsql
 import pyedlib.pedconfig
-
-#from pyedlib.pedutil import *
 
 mainwin = None
 show_timing = 0
@@ -94,7 +93,7 @@ def help():
     print()
     print(PROGNAME, _("Version: "), pyedlib.pedconfig.conf.version)
     print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
-    print(_("Options:"))
+    print(_("Option(s):"))
     print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
     print(_("            -v        - Verbose (to stdout and log)"))
     print(_("            -f        - Start Full screen"))
@@ -235,6 +234,30 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

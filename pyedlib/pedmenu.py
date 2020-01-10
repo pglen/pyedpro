@@ -6,7 +6,11 @@ from __future__ import print_function
 import sys
 import gi
 
-#from six.moves import range
+import gettext
+gettext.bindtextdomain('pyedpro', './locale/')
+gettext.textdomain('pyedpro')
+
+_ = gettext.gettext
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -62,25 +66,25 @@ def rclick_quit(self, arg):
     mained.activate_exit()
 
 rclick_menu = (
-	        ( "_New",           "<control>N",       rclick_action, 1, None ),
+	        ( _("_New"),           "<control>N",       rclick_action, 1, None ),
             ( "",               None,               None, 2, "<Separator>" ),
-            ( "_Open",          "<control>O",       rclick_action, 3, None ),
-            ( "_Save",          "<control>S",       rclick_action, 4, None ),
-            ( "Save_As",        None,               rclick_action, 5, None ),
+            ( _("_Open"),          "<control>O",       rclick_action, 3, None ),
+            ( _("_Save"),          "<control>S",       rclick_action, 4, None ),
+            ( _("Save_As"),        None,               rclick_action, 5, None ),
             ( "",               None,               None, 6, "<Separator>" ),
-            ( "_Copy",          "<control>C",       rclick_action, 7, None ),
-            ( "C_ut",           "<control>X",       rclick_action, 8, None ),
-            ( "_Paste",         "<control>V",       rclick_action, 9, None ),
+            ( _("_Copy"),          "<control>C",       rclick_action, 7, None ),
+            ( _("C_ut"),           "<control>X",       rclick_action, 8, None ),
+            ( _("_Paste"),         "<control>V",       rclick_action, 9, None ),
             ( "",               None,               None, 10, "<Separator>" ),
-            ( "Terminal Here",  None,               rclick_action, 14, None ),
+            ( _("Terminal Here"),  None,               rclick_action, 14, None ),
             ( "",               None,               None, 10, "<Separator>" ),
-            ( "New Instance",   None,               rclick_action, 15, None ),
+            ( _("New Instance"),   None,               rclick_action, 15, None ),
             ( "",               None,               None, 12, "<Separator>" ),
-            ( "Toggle _RO",     None,               rclick_action, 11, None ),
+            ( _("Toggle _RO"),     None,               rclick_action, 11, None ),
             ( "",               None,               None, 12, "<Separator>" ),
-            ( "Read Selection", None,               rclick_action, 16, None ),
+            ( _("Read Selection"), None,               rclick_action, 16, None ),
             ( "",               None,               None, 12, "<Separator>" ),
-            ( "E_xit",          "<alt>X",           rclick_quit, 13, None ),
+            ( _("E_xit"),          "<alt>X",           rclick_quit, 13, None ),
             )
 
 def create_action_group(self):
@@ -378,6 +382,7 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
 
 
 

@@ -43,12 +43,15 @@ import os, sys, getopt, signal
 
 import traceback, gettext, locale
 
-locale.setlocale(locale.LC_ALL, '')
-gettext.bindtextdomain('pyedpro', '/usr/share/locale')
-gettext.textdomain('pyedpro')
-_ = gettext.gettext
-gettext.install("pyedpro", "/usr/share/locale")
+#locale.setlocale(locale.LC_ALL, '')
 
+import gettext
+gettext.bindtextdomain('pyedpro', './locale/')
+gettext.textdomain('pyedpro')
+
+_ = gettext.gettext
+
+#print("domain", gettext.textdomain)
 
 VERSION = 1.0
 BUILDDATE = "Jan-09-2019"
@@ -58,13 +61,9 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-#import pyedlib.keyhand, pyedlib.acthand
-
 import pyedlib.pedutil, pyedlib.pedwin
 import pyedlib.log, pyedlib.pedsql
 import pyedlib.pedconfig
-
-#from pyedlib.pedutil import *
 
 mainwin = None
 show_timing = 0
@@ -235,6 +234,29 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

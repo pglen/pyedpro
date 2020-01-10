@@ -8,29 +8,77 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-09 16:44-0500\n"
+"POT-Creation-Date: 2020-01-09 19:31+EST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: pyedlib/pedmenu.py:69
+msgid "_New"
+msgstr ""
+
+#: pyedlib/pedmenu.py:71
+msgid "_Open"
+msgstr ""
+
+#: pyedlib/pedmenu.py:72
+msgid "_Save"
+msgstr ""
+
+#: pyedlib/pedmenu.py:73
+msgid "Save_As"
+msgstr ""
+
+#: pyedlib/pedmenu.py:75
+msgid "_Copy"
+msgstr ""
+
+#: pyedlib/pedmenu.py:76
+msgid "C_ut"
+msgstr ""
+
+#: pyedlib/pedmenu.py:77
+msgid "_Paste"
+msgstr ""
+
+#: pyedlib/pedmenu.py:79
+msgid "Terminal Here"
+msgstr ""
+
+#: pyedlib/pedmenu.py:81
+msgid "New Instance"
+msgstr ""
+
+#: pyedlib/pedmenu.py:83
+msgid "Toggle _RO"
+msgstr ""
+
+#: pyedlib/pedmenu.py:85
+msgid "Read Selection"
+msgstr ""
+
+#: pyedlib/pedmenu.py:87
+msgid "E_xit"
+msgstr ""
 
 #: pyedpro.py:94
 msgid "Version: "
 msgstr "版本；"
 
 #: pyedpro.py:95
-msgid "Usage: "
-msgstr ""
-
-#: pyedpro.py:95
 msgid " [options] [[filename] ... [filename]]"
 msgstr ""
 
+#: pyedpro.py:95
+msgid "Usage: "
+msgstr ""
+
 #: pyedpro.py:96
-msgid "Options:"
+msgid "Option(s):"
 msgstr ""
 
 #: pyedpro.py:97
@@ -90,5 +138,6 @@ msgid "Are you sure you want to clear config ? (y/n)"
 msgstr ""
 
 #: pyedpro.py:204
-msgid "Removing configuration ... )"
+#, fuzzy
+msgid "Removing configuration ... "
 msgstr "（计算机）程序；编码指令"

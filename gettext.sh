@@ -1,1 +1,5 @@
-xgettext --language=Python --keyword=_ -o po/pyedpro.pot pyedpro.py
+pygettext -d po/pyedpro  pyedpro.py pyedlib/pedmenu.py
+
+msgmerge -U po/de_DE.po po/pyedpro.pot
+msgmerge -U po/zh_CN.po po/pyedpro.pot
+
