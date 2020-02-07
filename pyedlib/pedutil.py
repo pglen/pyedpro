@@ -321,7 +321,7 @@ def shortenstr(xstr, xlen):
     if(zlen > xlen):
         if xlen < 5: raise Valuerror;
         xlen -= 5
-        ret = xstr[:xlen / 2] + "..." + xstr[zlen - xlen / 2:]
+        ret = xstr[:xlen // 2] + "..." + xstr[zlen - xlen // 2:]
     else:
         ret = xstr
 
@@ -768,6 +768,7 @@ def     load_sess():
 # ------------------------------------------------------------------------
 
 # EOF
+
 
 
 
