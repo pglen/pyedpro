@@ -27,7 +27,7 @@ Or on 64 bit:   (support incomplete as of dec/2018 - now complete (may/2019))
 
     pacman -S mingw-w64-x86_64-python3-gobject python-gi-cairo
 
-To install pyedpro on Ubuntu:
+To install pyedpro on Ubuntu (py2 and py3):
 
     sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo \
             gir1.2-gtk-3.0
@@ -70,6 +70,7 @@ controlling terminal for the missing library, install it with:
 
 
 Enjoy.
+
 
 
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 # ------------------------------------------------------------------------
 # This is open source text editor. Written on python. The motivation for
@@ -60,6 +60,9 @@ PROGNAME = "PyEdPro"
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+
+# So it is universally found
+sys.path.append(os.path.abspath(__file__))
 
 import pyedlib.pedutil, pyedlib.pedwin
 import pyedlib.log, pyedlib.pedsql
@@ -234,41 +237,5 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
