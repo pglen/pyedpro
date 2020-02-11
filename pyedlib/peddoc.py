@@ -340,16 +340,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             os.chdir(os.path.dirname(self.fname))
             xstat = os.stat(self.fname)
-            #print(self.fname, "stat", self.stat.st_mtime, "xstat", xstat.st_mtime)
-            if self.stat.st_mtime !=  xstat.st_mtime:
-                rrr = pedync.yes_no_cancel("File changed outside PyEdPro",
-                    "'%s'\n" \
-                    "changed outside PyEdPro." \
-                    "Reload?" % self.fname, False);
-                if rrr == Gtk.ResponseType.YES:
-                    print("Reloading")
-                    self.savebackup()
-                    self.loadfile(self.fname)
+            if not self.readonly:
+                #print(self.fname, "stat", self.stat.st_mtime, "xstat", xstat.st_mtime)
+                if self.stat.st_mtime !=  xstat.st_mtime:
+                    rrr = pedync.yes_no_cancel("File changed outside PyEdPro",
+                        "'%s'\n" \
+                        "changed outside PyEdPro." \
+                        "Reload?" % self.fname, False);
+                    if rrr == Gtk.ResponseType.YES:
+                        print("Reloading")
+                        self.savebackup()
+                        self.loadfile(self.fname)
 
             # Update stat info
             self.stat = xstat
@@ -1780,6 +1781,8 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
 
 
 

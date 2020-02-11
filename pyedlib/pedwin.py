@@ -61,7 +61,7 @@ class edPane(Gtk.VPaned):
 
 class edwin(Gtk.VBox):
 
-    def __init__(self, buff, readonly = False):
+    def __init__(self, buff, readonly = False, second = False):
 
         global notebook, mained
 
@@ -1446,6 +1446,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 

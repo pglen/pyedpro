@@ -46,8 +46,8 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Ctrl R                      -- Reverse three words ***
     Ctrl S                      -- Save current file
     Ctrl T                      -- Transpose two words (taush)
-    Ctrl U                      -- Upper case word
-    Shift-Ctrl U                -- Lower case word
+    Ctrl U                      -- Upper case word / selection
+    Shift-Ctrl U                -- Lower case word / selection
     Ctrl V                      -- Paste from Clipboard
     Ctrl W                      -- Close current file
     Ctrl-Shift W                -- Close all files
@@ -217,5 +217,6 @@ terminal. If no action is listed, that key is unassigned.
 Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
 
 // EOF
+
 
 
