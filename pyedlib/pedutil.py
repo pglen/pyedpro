@@ -731,14 +731,10 @@ def done_sess2_fc(win, resp, fc):
 
     win.destroy()
 
-    if sys.version_info.major < 3:
-        sesslist =  sesslist.decode(decode('UTF-8'))
-
-    for fff in sesslist.split("\n"):
+    for fff in str.split(sesslist, "\n"):
         #print ("Session opening file:", "'" + fff + "'")
-        if fff != "":
-            pedconfig.conf.pedwin.openfile(fff)
-            usleep(30)
+        pedconfig.conf.pedwin.openfile(fff)
+        usleep(30)
 
     # Back to original dir
     #os.chdir(os.path.dirname(fc.old))
@@ -768,6 +764,16 @@ def     load_sess():
 # ------------------------------------------------------------------------
 
 # EOF
+
+
+
+
+
+
+
+
+
+
 
 
 

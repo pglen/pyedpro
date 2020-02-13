@@ -130,6 +130,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.stat = None
         self.sep = "\n";
         self.tts = None
+        self.lastcmd = ""
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
@@ -1109,7 +1110,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 print("No exe on windows. (TODO)")
             else:
                 # Stumble until editor found
-                ret = subprocess.Popen(["python", myscript])
+                ret = subprocess.Popen(["python3", myscript])
                 if ret.returncode:
                     ret = subprocess.Popen(["xfce4-terminal"])
         except:
@@ -1781,6 +1782,8 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
 
 
 

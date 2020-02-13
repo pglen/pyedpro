@@ -193,12 +193,16 @@ class KeyHand:
 
             [Gdk.KEY_c, self.act.ctrl_alt_c],
             [Gdk.KEY_C, self.act.ctrl_alt_c],
+            [Gdk.KEY_e, self.act.ctrl_alt_e],
+            [Gdk.KEY_E, self.act.ctrl_alt_e],
             [Gdk.KEY_h, self.act.ctrl_alt_h],
             [Gdk.KEY_H, self.act.ctrl_alt_h],
             [Gdk.KEY_j, self.act.ctrl_alt_j],
             [Gdk.KEY_J, self.act.ctrl_alt_j],
             [Gdk.KEY_k, self.act.ctrl_alt_k],
             [Gdk.KEY_K, self.act.ctrl_alt_k],
+            [Gdk.KEY_t, self.act.ctrl_alt_t],
+            [Gdk.KEY_T, self.act.ctrl_alt_t],
 
             [Gdk.KEY_r, self.act.ctrl_alt_r],
             [Gdk.KEY_R, self.act.ctrl_alt_r],
@@ -493,6 +497,8 @@ class KeyHand:
                         self2.flash(False)
 
         return ret
+
+
 
 
 

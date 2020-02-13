@@ -134,6 +134,13 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Ctrl Alt A                  --  Cleanse non ascii
     Ctrl Alt B                  --  ''' '''
     Ctrl Alt C                  --  Comment out line, and jump down below
+
+        ...
+
+    Ctrl Alt E                  --  Execute last command
+    Ctrl Alt Shift E            --  Execute last command, force prompt
+
+    Ctrl Alt T                  --  Execute terminal here
         ...
 
     Ctrl Alt H                  --  Find (alias)
@@ -217,6 +224,9 @@ terminal. If no action is listed, that key is unassigned.
 Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
 
 // EOF
+
+
+
 
 
 

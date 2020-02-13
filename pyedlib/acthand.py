@@ -47,11 +47,14 @@ from . import pedync, pedofd, pedspell, pedbuffs, pedconfig, pedtts
 #from pedfind import *
 from . import pedfind
 from .pedgoto import *
+from .pedlcmd import *
 from .pedundo import *
 from .keywords import *
 
 # General set of utilities
 from .pedutil import *
+
+lastcmd = ""
 
 # ------------------------------------------------------------------------
 # Action handler. Called from key handler.
@@ -649,8 +652,6 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - B")
 
-        pass
-
     #// Deactivate code:
     def ctrl_alt_c(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -676,6 +677,31 @@ class ActHand:
         self2.set_caret(xidx, yidx)
         self2.mained.update_statusbar("Selection commented out.")
         self2.invalidate()
+
+    def ctrl_alt_e(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - ALT - E")
+
+        if self2.lastcmd == "" or self2.shift:
+            #print("Asking lastcmd")
+            cmddlg(self2)
+
+        if self2.lastcmd == "":
+            self2.mained.update_statusbar("No command specified.")
+            return
+
+        comarr = self2.lastcmd.split(" ")
+        if pedconfig.conf.pgdebug > 9:
+            print("comarr",  comarr)
+        ret = subprocess.Popen(comarr)
+        if ret:
+            self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
+
+
+    def ctrl_alt_t(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - ALT - T")
+        self2.start_term()
 
 
     def ctrl_alt_h(self, self2):
@@ -1971,18 +1997,6 @@ class ActHand:
             self2.invalidate()
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
