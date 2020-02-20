@@ -1086,12 +1086,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print("Terminal Here")
         try:
             if platform.system().find("Win") >= 0:
-                print("No terminal on windows. (TODO)")
+                ret = subprocess.Popen(["putty"])
+                if not ret.returncode:
+                    raise OSError
+                #print("No terminal on windows. (TODO)")
             else:
                 # Stumble until terminal found
-                #ret = subprocess.Popen(["gnome-terminal"])
-                #if ret.returncode:
                 ret = subprocess.Popen(["xfce4-terminal"])
+                if ret.returncode:
+                    ret = subprocess.Popen(["gnome-terminal"])
+                    if ret.returncode:
+                        raise OSError
         except:
             print("Cannot launch terminal", sys.exc_info())
             pedync.message("\n   Cannot launch terminal executable \n\n"
@@ -1103,8 +1108,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         myscript = os.path.join(os.path.dirname(__file__), '../pyedpro.py')
         myscript = os.path.realpath(myscript)
-        print("myscript: python", myscript);
-
+        #print("myscript: python", myscript);
+        ret = 0
         try:
             if platform.system().find("Win") >= 0:
                 print("No exe on windows. (TODO)")
@@ -1112,12 +1117,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 # Stumble until editor found
                 ret = subprocess.Popen(["python3", myscript])
                 if ret.returncode:
-                    ret = subprocess.Popen(["xfce4-terminal"])
+                    ret = subprocess.Popen(["python", myscript])
+                    if not ret.returncode:
+                        raise OSError
         except:
-            print("Cannot launch terminal", sys.exc_info())
-            pedync.message("\n   Cannot launch editor script \n\n"
-                       "              (Please install)")
-
+            print("Cannot launch editor instance", sys.exc_info())
+            pedync.message("\n   Cannot launch new editor instance \n\n")
 
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
@@ -1782,6 +1787,19 @@ def run_async_time(win):
         pass
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -84,6 +84,8 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Home Home                   -- Go to begininig of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl Home)
 
+    # Both upper and lower case
+
     Alt A                       -- Save All buffers
     Alt B                       -- Show Buffers
     Alt C                       -- Start column select
@@ -155,7 +157,7 @@ replicate functionality. It is eazy to follow, as it is table driven.
     #Ctrl Alt K                  --  Toggle Hex View
 
     #Alt <                       -- Lower case word/selection
-    #Alt >                       -- Upper case word/selection
+    #Alt >                       -- Upper c￥            ase word/selection
 
     F1                           -- Help
     F2                           -- Dev Help  (if installed)
@@ -224,6 +226,8 @@ terminal. If no action is listed, that key is unassigned.
 Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
 
 // EOF
+
+
 
 
 
