@@ -20,6 +20,7 @@ from gi.repository import PangoCairo
 from . import keyhand, pedconfig, pedync
 from . import pedcolor, pedspell, pedmenu, utils
 from . import peddraw
+from . import pedmisc
 
 from .pedutil import *
 
@@ -1079,6 +1080,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.start_edit()
         elif ttt == 16:
             self.mained.tts()
+        elif ttt == 17:
+            pedmisc.exec_test(self, "rc")
+        elif ttt == 18:
+            self.start_external(["libreoffice", "--writer"],
+                                        ["libreoffice", "--writer"])
         else:
             print("peddoc: Invalid menu item selected")
 
@@ -1087,8 +1093,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             if platform.system().find("Win") >= 0:
                 ret = subprocess.Popen(["putty"])
-                if not ret.returncode:
-                    raise OSError
+                #if not ret.returncode:
+                #    raise OSError
                 #print("No terminal on windows. (TODO)")
             else:
                 # Stumble until terminal found
@@ -1103,9 +1109,25 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                        "              (Please install)")
 
 
+    # Pass in two lists, one for linux and one for windows
+    def start_external(self, linprog, winprog):
+
+        try:
+            if platform.system().find("Win") >= 0:
+                ret = subprocess.Popen(winprog)
+                #if not ret.returncode:
+                #    raise OSError
+            else:
+                ret = subprocess.Popen(linprog)
+                #if not ret.returncode:
+                #    raise OSError
+        except:
+            print("Cannot launch %s" % str(linprog), sys.exc_info())
+            pedync.message("\n   Cannot launch %s \n\n"  % str(linprog) +
+                       "              (Please install)")
+
     def start_edit(self):
         #print("Editor Here")
-
         myscript = os.path.join(os.path.dirname(__file__), '../pyedpro.py')
         myscript = os.path.realpath(myscript)
         #print("myscript: python", myscript);
@@ -1702,6 +1724,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             cnt += 1
         return was, cnt2
 
+
+# ------------------------------------------------------------------------
 # Run this on an idle callback so the user can work while this is going
 
 def run_async_time(win):
@@ -1786,102 +1810,8 @@ def run_async_time(win):
         print("run_async_time", sys.exc_info())
         pass
 
+
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -77,8 +77,9 @@ rclick_menu = (
             ( _("_Paste"),         "<control>V",       rclick_action, 9, None ),
             ( "",               None,               None, 10, "<Separator>" ),
             ( _("Terminal Here"),  None,               rclick_action, 14, None ),
-            ( "",               None,               None, 10, "<Separator>" ),
-            ( _("New Instance"),   None,               rclick_action, 15, None ),
+            ( _("Exec current"),  None,                rclick_action, 17, None ),
+            ( _("Start libre office"),  None,             rclick_action, 18, None ),
+            ( _("New pyedpro"),   None,               rclick_action, 15, None ),
             ( "",               None,               None, 12, "<Separator>" ),
             ( _("Toggle _RO"),     None,               rclick_action, 11, None ),
             ( "",               None,               None, 12, "<Separator>" ),
@@ -382,6 +383,9 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
+
+
 
 
 

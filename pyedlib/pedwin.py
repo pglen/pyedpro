@@ -219,7 +219,7 @@ class EdMainWindow():
         #tbar.set_tooltips(True)
         #tbar.show()
 
-        hpaned = Gtk.HPaned(); hpaned.set_border_width(5)
+        self.hpaned = Gtk.HPaned(); self.hpaned.set_border_width(2)
 
         #warnings.simplefilter("ignore")
         scroll = Gtk.ScrolledWindow()
@@ -237,7 +237,7 @@ class EdMainWindow():
         #treeview2.connect("cursor-changed",  self.tree_sel_row2)
         self.treeview2 = treeview2
 
-        vpaned = Gtk.VPaned(); vpaned.set_border_width(5)
+        vpaned = Gtk.VPaned(); #vpaned.set_border_width(2)
 
         scroll.add(treeview)
         frame2 = Gtk.Frame(); frame2.add(scroll)
@@ -250,16 +250,15 @@ class EdMainWindow():
         vpaned.add(frame3)
 
         vpaned.set_position(self.get_height() - 340)
-        hpaned.add(vpaned)
+        self.hpaned.add(vpaned)
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200
-        hpaned.set_position(self.hpanepos)
+        self.hpaned.set_position(self.hpanepos)
 
-        #hpaned.pack2(Gtk.Label("hello "))
-        hpaned.pack2(notebook)
-
-        self.hpaned = hpaned
+        #self.hpaned.pack2(Gtk.Label("hello "))
+        self.hpaned.pack2(notebook)
+        #notebook.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
         # Create statusbars
         #self.statusbar = Gtk.Statusbar()
@@ -278,25 +277,24 @@ class EdMainWindow():
 
         self.slab2 = Gtk.Label(" status2  ")
 
-        hpane2 = Gtk.HPaned()
-        self.hpane2 = hpane2
+        self.hpane2 = Gtk.HPaned()        #; self.hpane2.set_border_width(5)
 
-        #hpane2.set_border_width(5)
+        self.hpane2.pack1(shbox, 1, 1)
+        self.hpane2.pack2(self.slab2, 1, 1)
+        self.hpane2.set_position(self.get_width() - 320)
 
-        hpane2.pack1(shbox, 1, 1)
-        hpane2.set_position(self.get_width() - 320)
-        hpane2.pack2(self.slab2, 1, 1)
-
-        #hpane2.pack2(self.statusbar2, 0, 0)
+        #self.hpane2.pack2(self.statusbar2, 0, 0)
         #shbox.pack_start(slab, False, 0, 0)
         #shbox.pack_start(self.statusbar, False, 0, 0)
-        #hpane2.pack1(self.statusbar, 1, 0)
+        #self.hpane2.pack1(self.statusbar, 1, 0)
 
         bbox = Gtk.VBox()
         bbox.pack_start(mbar, 0,0, 0)
         bbox.pack_start(tbar, 0,0, 0)
-        bbox.pack_start(hpaned, 1, 1, 0)
-        bbox.pack_start(hpane2, 0,0, 0)
+        bbox.pack_start(self.hpaned, 1, 1, 0)
+        bbox.pack_start(self.hpane2, 0,0, 0)
+
+        #self.hpane2.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
         self.mywin.add(bbox)
         self.mywin.show_all()
@@ -1446,6 +1444,24 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

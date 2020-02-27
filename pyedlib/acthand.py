@@ -46,8 +46,10 @@ from . import pedync, pedofd, pedspell, pedbuffs, pedconfig, pedtts
 # Some action functions have their own file
 #from pedfind import *
 from . import pedfind
+from . import pedmisc
+
 from .pedgoto import *
-from .pedlcmd import *
+#from .pedlcmd import *
 from .pedundo import *
 from .keywords import *
 
@@ -682,21 +684,7 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - E")
 
-        if self2.lastcmd == "" or self2.shift:
-            #print("Asking lastcmd")
-            cmddlg(self2)
-
-        if self2.lastcmd == "":
-            self2.mained.update_statusbar("No command specified.")
-            return
-
-        comarr = self2.lastcmd.split(" ")
-        if pedconfig.conf.pgdebug > 9:
-            print("comarr",  comarr)
-        ret = subprocess.Popen(comarr)
-        if ret:
-            self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
-
+        pedmisc.exec_test(self2, "kb")
 
     def ctrl_alt_t(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -1997,6 +1985,10 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
 
 
 
