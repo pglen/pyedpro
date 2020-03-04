@@ -17,7 +17,7 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-from . import keyhand, pedconfig, pedync
+#from . import keyhand, pedconfig, pedync
 from . import pedcolor, pedspell, pedmenu, utils
 from . import peddraw
 

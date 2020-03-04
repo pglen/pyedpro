@@ -217,17 +217,18 @@ if __name__ == '__main__':
             print(aa)
         sys.exit(0)
 
-    #Uncomment this for silent stdout
-    if use_stdout or pyedlib.pedconfig.conf.pgdebug:
-        if pyedlib.pedconfig.conf.verbose:
-            print("Using real stdout")
+    # Uncomment this for silent stdout
+    if use_stdout or pyedlib.pedconfig.conf.pgdebug or \
+                    pyedlib.pedconfig.conf.verbose:
         # Do not hide console
-        pyedlib.pedwin.hidden = True
+        #print("Using real stdout")
+        pyedlib.pedwin.hidden = True    # Already hidden no hide
         sys.stdout = Unbuffered(sys.stdout)
         sys.stderr = Unbuffered(sys.stderr)
     else:
         sys.stdout = pyedlib.log.fake_stdout()
         sys.stderr = pyedlib.log.fake_stdout()
+        pyedlib.pedwin.hidden = False   # Take action, hide
 
     # Uncomment this for buffered output
     if pyedlib.pedconfig.conf.verbose:
@@ -237,6 +238,9 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
+
 
 
 
