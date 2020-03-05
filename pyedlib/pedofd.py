@@ -4,7 +4,8 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
-import time, os, re, string, warnings
+
+import time, os, re, string, warnings, platform
 
 import pyedlib.pedconfig
 
@@ -129,12 +130,18 @@ def fill_path(dialog):
     darr = cwd.split(os.sep)
     dialog.pbox.pack_start(dialog.label11, 0, 0, 0)
 
-    curr = os.sep
+    if platform.system().find("Win") >= 0:
+        curr = "" ;
+    else:
+        os.sep
+
     for aa in darr:
         butt = Gtk.Button(label=aa)
-
-        curr = os.path.join(curr, aa)
-
+        if platform.system().find("Win") >= 0:
+            curr = curr + aa + os.sep
+        else:
+            curr = os.path.join(curr, aa)
+        #print("path aa '%s' '%s'" % (aa, curr) )
         butt.path = curr
         butt.set_focus_on_click(False)
         butt.connect("clicked", butt_click, dialog)
@@ -325,7 +332,7 @@ def click_dir_action(xstr):
     if xstr[0] == "[":
          xstr = xstr[1:len(xstr)-1]
     if os.path.isdir(xstr):
-        #print "dir", xstr
+        print ("dir", xstr)
         os.chdir(xstr)
         return True
 
@@ -391,6 +398,17 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
+
+
+
+
+
+
+
+
+
+
 
 
 

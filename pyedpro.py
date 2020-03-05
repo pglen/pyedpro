@@ -79,7 +79,7 @@ use_stdout = 0
 def main(strarr):
 
     if(pyedlib.pedconfig.conf.verbose):
-        print("pydepro running on", "'" + os.name + "'", \
+        print(PROGNAME, "running on", "'" + os.name + "'", \
             "GTK", Gtk._version, "PyGtk", \
                "%d.%d.%d" % (Gtk.get_major_version(), \
                     Gtk.get_minor_version(), \
@@ -108,21 +108,6 @@ def help():
     print()
 
 # ------------------------------------------------------------------------
-
-class Unbuffered(object):
-   def __init__(self, stream):
-       self.stream = stream
-
-   def write(self, data):
-       self.stream.write(data)
-       self.stream.flush()
-
-   def writelines(self, datas):
-       self.stream.writelines(datas)
-       self.stream.flush()
-
-   def __getattr__(self, attr):
-       return getattr(self.stream, attr)
 
 def terminate(arg1, arg2):
 
@@ -223,22 +208,19 @@ if __name__ == '__main__':
         # Do not hide console
         #print("Using real stdout")
         pyedlib.pedwin.hidden = True    # Already hidden no hide
-        sys.stdout = Unbuffered(sys.stdout)
-        sys.stderr = Unbuffered(sys.stderr)
     else:
-        sys.stdout = pyedlib.log.fake_stdout()
-        sys.stderr = pyedlib.log.fake_stdout()
         pyedlib.pedwin.hidden = False   # Take action, hide
+
+    sys.stdout = pyedlib.log.fake_stdout(sys.stdout)
+    sys.stderr = pyedlib.log.fake_stdout(sys.stdout)
 
     # Uncomment this for buffered output
     if pyedlib.pedconfig.conf.verbose:
-        print("Started pydepro")
-        #pyedlib.log.print("Started pydepro")
+        print("Started", PROGNAME)
 
     main(args[0:])
 
 # EOF
-
 
 
 

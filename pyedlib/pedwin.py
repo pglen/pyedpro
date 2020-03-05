@@ -960,7 +960,7 @@ class EdMainWindow():
             self.prevwin()
 
         if strx == "ShowLog":
-            log.show_log()
+            log.show_logwin()
 
         if strx.find("/sess_") >= 0:
             fname = pedconfig.conf.sql.get_str(strx)
@@ -1444,6 +1444,8 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
 
 
 

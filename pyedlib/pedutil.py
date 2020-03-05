@@ -149,8 +149,8 @@ def get_img_path(fname):
     img_dir2 = os.path.join(img_dir, "images")
     img_path = os.path.join(img_dir2, fname)
 
-    if(pedconfig.conf.verbose):
-        print( "img_path", img_path)
+    #if(pedconfig.conf.verbose):
+    #    print( "img_path", img_path)
 
     return img_path
 
@@ -764,6 +764,7 @@ def     load_sess():
 # ------------------------------------------------------------------------
 
 # EOF
+
 
 
 

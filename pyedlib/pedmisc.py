@@ -29,7 +29,8 @@ def exec_test(self2, testx):
         if self2.lastcmd == "" or self2.shift:
 
             #print("Asking lastcmd")
-            if not cmddlg(self2):
+            ret = cmddlg(self2)
+            if not ret:
                 self2.mained.update_statusbar("Cancelled exec dialog.")
                 return
 
@@ -41,9 +42,15 @@ def exec_test(self2, testx):
         if pedconfig.conf.pgdebug > 9:
             print("comarr",  comarr)
 
+        print("comarr",  comarr)
+
         ret = subprocess.Popen(comarr)
         if ret:
-            self.mained.update_statusbar("Cannot execute command: " + self.lastcmd)
+            self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
+
+
+
+
 
 
 

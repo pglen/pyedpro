@@ -10,6 +10,8 @@ from gi.repository import Gtk
 import warnings
 from . import  pedconfig
 
+# ------------------------------------------------------------------------
+
 def cmddlg(self2):
 
     warnings.simplefilter("ignore")
@@ -60,6 +62,8 @@ def cmddlg(self2):
     gotxt = entry.get_text()
     dialog.destroy()
 
+    warnings.simplefilter("default")
+
     if response == Gtk.ResponseType.ACCEPT:
 
         # Save it for later use
@@ -69,10 +73,13 @@ def cmddlg(self2):
         if gotxt == "":
             #self2.mained.update_statusbar("Must specify line to goto.")
             return
+        return True
 
-    warnings.simplefilter("default")
+    return False
 
 # EOF
+
+
 
 
 
