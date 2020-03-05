@@ -131,9 +131,9 @@ def fill_path(dialog):
     dialog.pbox.pack_start(dialog.label11, 0, 0, 0)
 
     if platform.system().find("Win") >= 0:
-        curr = "" ;
+        curr = ""
     else:
-        os.sep
+        curr = os.sep
 
     for aa in darr:
         butt = Gtk.Button(label=aa)
@@ -398,6 +398,7 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
 
 
 

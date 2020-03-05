@@ -89,6 +89,9 @@ def main(strarr):
     mainwin = pyedlib.pedwin.EdMainWindow(None, None, strarr)
     pyedlib.pedconfig.conf.pedwin = mainwin
 
+    # Create log window
+    pyedlib.log.create_logwin()
+
     Gtk.main()
 
 def help():
@@ -221,6 +224,7 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 
 

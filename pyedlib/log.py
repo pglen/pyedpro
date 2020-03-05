@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
-# Action Handler for find
+# ------------------------------------------------------------------------
+# Log window. Special as it hides instead of dies.
+# Intercepts stdout; printing show both in stdout and this window
 
 from __future__ import absolute_import
 from __future__ import print_function
 import  time, datetime
 
 import gi
-#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
@@ -18,23 +19,22 @@ from .pedutil import *
 
 # Adjust to taste. Estimated memory usage is 50 * MAX_LOG bytes
 # Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if
-# you would like to free the memory used by log
+# you would like to free / limit the memory used by the log
+
 MAX_LOG  = 2000
 
 # Print as 'print' would, but replicate to log. This class replicate stdout
 # and replicates stdout to regular fd, and puts an entry onto accum.
 
+logwin = None
+
 class fake_stdout():
 
     def __init__(self, old_stdout):
 
-        global logwin;
-
-        #self.old_stdout = os.fdopen(sys.stdout.fileno(), "w")
         self.old_stdout = sys.stdout
         self.flag = True
         self.dt = datetime.datetime(1990, 1, 1);
-        logwin = LogWin()
 
     def flush(self, *args):
         pass
@@ -59,9 +59,12 @@ class fake_stdout():
             self.flag = True
 
         self.limit_loglen()
+        self.old_stdout.flush()
 
         global logwin;
-        logwin.append_logwin(strx)
+
+        if logwin:
+            logwin.append_logwin(strx)
 
 
     def limit_loglen(self):
@@ -87,16 +90,15 @@ def  save_log():
 def load_log():
     pass
 
+iconfile = "pyedpro_sub.png"
+
 # A quick window to display what is in accum
 
 class   LogWin():
 
+
     def __init__(self):
         self.win2 = Gtk.Window()
-        try:
-            win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
-        except:
-            print( "Cannot load log icon")
 
         self.win2.set_position(Gtk.WindowPosition.CENTER)
         self.win2.set_default_size(800, 600)
@@ -107,7 +109,8 @@ class   LogWin():
 
         self.win2.connect("key-press-event", self._area_key, self.win2)
         self.win2.connect("key-release-event", self._area_key, self.win2)
-        #self.win2.connect("focus", self._area_focus, self.win2)
+        self.win2.connect("delete-event", self._area_delete, self.win2)
+        self.win2.connect("delete-event", self._area_destroy, self.win2)
 
         self.win2.lab = Gtk.TextView()
         self.win2.lab.set_editable(False)
@@ -115,21 +118,33 @@ class   LogWin():
         scroll = Gtk.ScrolledWindow(); scroll.add(self.win2.lab)
         frame = Gtk.Frame(); frame.add(scroll)
         self.win2.add(frame)
-        self.win2.connect("delete-event", self.closewin);
 
-    # Turn close into minimze
     def closewin(self, win):
         print("close", win)
 
     def show_log(self):
+        try:
+            win2.set_icon_from_file(get_img_path(iconfile))
+        except:
+            print( "Cannot load log icon:", iconfile)
+
         self.win2.show_all()
+
+    # Turn close into minimze
+    def _area_delete(self, area, event, dialog):
+        #print("delete", event)
+        self.win2.hide()
+        return True
+
+    def _area_destroy(self, area, event, dialog):
+        #print("destroy", event)
+        return True
 
     def _area_focus(self, area, event, dialog):
         print("focus", event)
 
     def append_logwin(self, strx):
         tb = self.win2.lab.get_buffer()
-        #iter = tb.get_iter_at_offset(0)
         iter = tb.get_end_iter()
         tb.insert(iter, strx)
 
@@ -165,120 +180,9 @@ def show_logwin():
     global logwin
     logwin.show_log()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def create_logwin():
+    global logwin
+    logwin = LogWin()
 
 
 
