@@ -877,23 +877,28 @@ class   SimpleEdit(Gtk.TextView):
         self.modified = False
         self.text = ""
         self.savecb = None
-        self.mefocus = False
+        #self.mefocus = False
 
     def focus_out(self, win, arg):
-        print("SimpleEdit focus_out")
-        if self.buffer.get_modified():
-            print("Saving")
-            startt = self.buffer.get_start_iter()
-            endd = self.buffer.get_end_iter()
-            self.text = self.buffer.get_text(startt, endd, False)
-            if self.savecb:
-                self.savecb(self.text)
-        self.mefocus = False
+        #print("SimpleEdit focus_out")
+        self.check_saved()
+        #self.mefocus = False
+
+    def check_saved(self):
+        if not self.buffer.get_modified():
+            return
+        #print("Saving")
+        startt = self.buffer.get_start_iter()
+        endd = self.buffer.get_end_iter()
+        self.text = self.buffer.get_text(startt, endd, False)
+        if self.savecb:
+            self.savecb(self.text)
 
     def focus_in(self, win, arg):
-        self.buffer.set_modified(False)
-        self.mefocus = True
-        print("SimpleEdit focus_in")
+        pass
+        #self.buffer.set_modified(False)
+        #self.mefocus = True
+        #print("SimpleEdit focus_in")
 
     def unmapx(self, widget):
         #print("SimpleEdit unmap", widget)
@@ -905,65 +910,22 @@ class   SimpleEdit(Gtk.TextView):
         pass
 
     def append(self, strx):
+        self.check_saved()
         iter = self.buffer.get_end_iter()
         self.buffer.insert(iter, strx)
+        self.buffer.set_modified(False)
 
     def clear(self):
-         startt = self.buffer.get_start_iter()
-         endd = self.buffer.get_end_iter()
-         self.buffer.delete(startt, endd)
+        self.check_saved()
+        startt = self.buffer.get_start_iter()
+        endd = self.buffer.get_end_iter()
+        self.buffer.delete(startt, endd)
+        self.buffer.set_modified(False)
 
     def setsavecb(self, callb):
         self.savecb = callb
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

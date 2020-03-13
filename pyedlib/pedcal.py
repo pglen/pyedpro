@@ -75,7 +75,8 @@ class pgcal(Gtk.VBox):
         self.edit = Gtk.Entry()
 
         self.pack_start(self.edit, 0, 0, 2)
-        self.treeview2 = SimpleTree(("Hour", "Subject", "Notes"))
+        #self.treeview2 = SimpleTree(("Hour", "Subject", "Notes"))
+        self.treeview2 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview2.setcallb(self.treesel)
         self.treeview2.setCHcallb(self.treechange)
 
@@ -110,13 +111,14 @@ class pgcal(Gtk.VBox):
         self.sql.put(key, val)
 
     def treesel(self, args):
-        print("treesel", args)
-        self.lastsel = args[0]
+        #print("treesel", args)
         self.edview.clear()
-        strx = ""
-        for aa in args:
-            strx += aa + "\n";
-        self.edview.append(strx)
+        ddd = self.cal.get_date()
+        key = "%d-%d-%d %s TXT" % (ddd[0], ddd[1], ddd[2], args[0])
+        strx = self.sql.get(key)
+        if strx:
+            self.edview.append(strx)
+        self.lastsel = args[0]
 
     def today(self, butt, cal):
         ddd = datetime.datetime.today()
@@ -136,19 +138,31 @@ class pgcal(Gtk.VBox):
             #self.treeview2.append((ampmstr(aa), utils.randstr(8), utils.randstr(14)) )
             ddd = self.cal.get_date()
             key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], ampmstr(aa) )
-            val =  self.sql.get(key)
-            if val:
-                #print("val", val)
-                idx = val.find("]~[")
-                self.treeview2.append((ampmstr(aa), val[1:idx], val[idx+3:-1]) )
-            else:
-                self.treeview2.append((ampmstr(aa), "", "") )
+            try:
+                val =  self.sql.get(key)
+                if val:
+                    #print("val", val)
+                    idx = val.find("]~[")
+                    self.treeview2.append((ampmstr(aa), val[1:idx], val[idx+3:-1], "") )
+                else:
+                    self.treeview2.append((ampmstr(aa), "", "", "") )
+            except:
+                pass
 
     def dayseldouble(self, cal):
         print("Day dbl", cal.get_date())
         pass
 
 # EOF
+
+
+
+
+
+
+
+
+
 
 
 
