@@ -3,11 +3,31 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import sys, os, re, time, stat
+import sys, os, re, time, stat, string, random
 import string,  traceback
 
 from . import pedconfig
-#from six import unichr
+
+# Add the new line twice for more balaced string
+
+allstr =    " " + "\r" + "\n" + \
+            "\r" + "\n" + \
+            string.ascii_lowercase +  string.ascii_uppercase +  \
+                string.digits #+
+                    #string.punctuation +
+
+# ------------------------------------------------------------------------
+# Get random str
+
+def randstr(lenx):
+
+    strx = ""
+    for aa in range(lenx):
+        ridx = random.randint(0, len(allstr)-1)
+        rr = allstr[ridx]
+        strx += str(rr)
+
+    return strx
 
 # ------------------------------------------------------------------------
 # Convert octal string to integer
@@ -317,6 +337,18 @@ def put_exception2(xstr):
     #syslog.syslog("%s %s %s" % (xstr, a, b))
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

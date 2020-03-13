@@ -37,7 +37,7 @@ def cut_lead_space(xstr, divi = 2):
 # ------------------------------------------------------------------------
 # Let the higher level deal with errors.
 
-def     readfile(strx, sep = None):
+def  readfile(strx, sep = None):
 
     text = []
 
@@ -762,32 +762,68 @@ def     load_sess():
 
 # ------------------------------------------------------------------------
 
+class   SimpleTree(Gtk.TreeView):
+
+    def __init__(self, head = []):
+
+        Gtk.TreeView.__init__(self)
+
+        if len(head) == 0:
+            head.append("")
+
+        types = []
+        for aa in head:
+            types.append(str)
+
+        self.treestore = Gtk.TreeStore()
+        self.treestore.set_column_types(types)
+
+        # Create a CellRendererText to render the data
+        cell = Gtk.CellRendererText()
+        cnt = 0
+        for aa in head:
+            # create the TreeViewColumn to display the data
+            tvcolumn = Gtk.TreeViewColumn(aa)
+            # add the cell to the tvcolumn and allow it to expand
+            tvcolumn.pack_start(cell, True)
+            # set the cell "text" attribute to column 0 - retrieve text
+            # from that column in treestore
+            tvcolumn.add_attribute(cell, 'text', cnt)
+            self.append_column(tvcolumn)
+            cnt += 1
+
+        ## add tvcolumn to treeview
+        #self.append_column(self.tvcolumn)
+
+        self.set_model(self.treestore)
+
+    def append(self, args):
+        piter = self.treestore.append(None, args)
+
+    def clear(self):
+        self.treestore.clear()
+
+# ------------------------------------------------------------------------
+
+class   SimpleEdit(Gtk.TextView):
+
+    def __init__(self, head = []):
+
+        Gtk.TextView.__init__(self)
+        self.buffer = Gtk.TextBuffer()
+        self.set_buffer(self.buffer)
+        self.set_editable(True)
+
+    def append(self, strx):
+        iter = self.buffer.get_end_iter()
+        self.buffer.insert(iter, strx)
+
+    def clear(self):
+         startt = self.buffer.get_start_iter()
+         endd = self.buffer.get_end_iter()
+         self.buffer.delete(startt, endd)
+
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

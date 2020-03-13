@@ -17,7 +17,7 @@ from gi.repository import GLib
 
 from . import  peddoc, pedconfig, pedofd
 from . import  pedync, pedspell, pedfont
-from . import  pedcolor, log, utils
+from . import  pedcolor, log, utils, pedcal
 
 # Into our name space
 from    .pedmenu import *
@@ -29,6 +29,7 @@ STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 treestore = None
 treestore2 = None
 notebook = None
+notebook2 = None
 
 hidden = 0
 
@@ -174,7 +175,7 @@ class EdMainWindow():
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
-        global notebook
+        global notebook, notebook2
 
         # Create note for the main window, give access to it for all
         notebook = Gtk.Notebook(); self.notebook = notebook
@@ -182,6 +183,10 @@ class EdMainWindow():
         notebook.set_scrollable(True)
         # test
         #notebook.append_page(edPane([]))
+
+        notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
+        notebook2.popup_enable()
+        notebook2.set_scrollable(True)
 
         #notebook.add_events(Gdk.FOCUS_CHANGE_MASK)
         #notebook.add_events(Gdk.ALL_EVENTS_MASK)
@@ -250,11 +255,29 @@ class EdMainWindow():
         vpaned.add(frame3)
 
         vpaned.set_position(self.get_height() - 340)
-        self.hpaned.add(vpaned)
+        #self.hpaned.add(vpaned)
+
+        notebook2.append_page(vpaned)
+        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+        self.notebook2.set_tab_label(ppp, self.make_label("Editor"))
+
+        notebook2.append_page(pedcal.pgcal())
+        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+        self.notebook2.set_tab_label(ppp, self.make_label("Calendar"))
+
+        notebook2.append_page(Gtk.Label("Notes"))
+        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+        self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
+
+        notebook2.append_page(Gtk.Label("Outline"))
+        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+        self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200
         self.hpaned.set_position(self.hpanepos)
+
+        self.hpaned.add(notebook2)
 
         #self.hpaned.pack2(Gtk.Label("hello "))
         self.hpaned.pack2(notebook)
@@ -331,6 +354,12 @@ class EdMainWindow():
     '''
 
     # --------------------------------------------------------------------
+
+    def make_label(self, strx):
+        hbox = Gtk.HBox()
+        hbox.pack_start(Gtk.Label(strx), 0, 0, 0)
+        hbox.show_all()
+        return hbox
 
     def add_mru(self, merge, action_group, fname, mru):
 
@@ -1444,6 +1473,30 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
