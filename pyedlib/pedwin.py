@@ -17,7 +17,7 @@ from gi.repository import GLib
 
 from . import  peddoc, pedconfig, pedofd
 from . import  pedync, pedspell, pedfont
-from . import  pedcolor, log, utils, pedcal
+from . import  pedcolor, pedlog, utils, pedcal
 
 # Into our name space
 from    .pedmenu import *
@@ -1473,6 +1473,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 

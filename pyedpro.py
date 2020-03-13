@@ -65,7 +65,7 @@ from gi.repository import Gtk
 sys.path.append(os.path.abspath(__file__))
 
 import pyedlib.pedutil, pyedlib.pedwin
-import pyedlib.log, pyedlib.pedsql
+import pyedlib.pedlog, pyedlib.pedsql
 import pyedlib.pedconfig
 
 mainwin = None
@@ -90,7 +90,7 @@ def main(strarr):
     pyedlib.pedconfig.conf.pedwin = mainwin
 
     # Create log window
-    pyedlib.log.create_logwin()
+    pyedlib.pedlog.create_logwin()
 
     Gtk.main()
 
@@ -214,8 +214,8 @@ if __name__ == '__main__':
     else:
         pyedlib.pedwin.hidden = False   # Take action, hide
 
-    sys.stdout = pyedlib.log.fake_stdout(sys.stdout)
-    sys.stderr = pyedlib.log.fake_stdout(sys.stdout)
+    sys.stdout = pyedlib.pedlog.fake_stdout(sys.stdout)
+    sys.stderr = pyedlib.pedlog.fake_stdout(sys.stdout)
 
     # Uncomment this for buffered output
     if pyedlib.pedconfig.conf.verbose:
@@ -224,6 +224,8 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
+
 
 
 
