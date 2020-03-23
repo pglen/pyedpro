@@ -20,7 +20,7 @@ from . import pedync
 
 class   SimpleTree(Gtk.TreeView):
 
-    def __init__(self, head = []):
+    def __init__(self, head = [], editx = [], skipedit = 0):
 
         Gtk.TreeView.__init__(self)
 
@@ -30,6 +30,9 @@ class   SimpleTree(Gtk.TreeView):
         # repair missing column
         if len(head) == 0:
             head.append("")
+
+        if len(editx) == 0:
+            editx.append("")
 
         self.types = []
         for aa in head:
@@ -42,7 +45,7 @@ class   SimpleTree(Gtk.TreeView):
         for aa in head:
             # Create a CellRendererText to render the data
             cell = Gtk.CellRendererText()
-            if cnt > 0:
+            if cnt > skipedit:
                 cell.set_property("editable", True)
                 cell.connect("edited", self.text_edited, cnt)
 
@@ -84,6 +87,17 @@ class   SimpleTree(Gtk.TreeView):
 
     def append(self, args):
         piter = self.treestore.append(None, args)
+
+    def sel_last(self):
+        sel = self.get_selection()
+        xmodel, xiter = sel.get_selected()
+        iter = self.treestore.get_iter_first()
+        while True:
+            iter2 = self.treestore.iter_next(iter)
+            if not iter2:
+                break
+            iter = iter2
+        sel.select_iter(iter)
 
     def clear(self):
         self.treestore.clear()
@@ -152,6 +166,52 @@ class   SimpleEdit(Gtk.TextView):
 
     def setsavecb(self, callb):
         self.savecb = callb
+
+class   SimpleSel(Gtk.Label):
+
+    def __init__(self, text = " ", callb = None):
+        self.text = text
+        self.callb = callb
+        Gtk.Label.__init__(self, text)
+        self.set_has_window(True)
+        self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
+        self.connect("button-press-event", self.area_button)
+
+    def area_button(self, but, event):
+        #print("click", but, event)
+        #print("sss =", self.get_allocation().width)
+        #print("click", event.x, event.y)
+
+        prop = event.x / float(self.get_allocation().width)
+        idx = int(prop * len(self.text))
+        if self.text[idx] == " ":
+            idx += 1
+        #print("letter", self.text[idx])
+        self.lastsel =  self.text[idx]
+        if self.callb:
+            self.callb(self.lastsel)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -132,6 +132,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.sep = "\n";
         self.tts = None
         self.lastcmd = ""
+        self.caps = False
+        self.scr = False
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
@@ -833,7 +835,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def update_bar2(self):
         clip = pedconfig.conf.keyh.act.currclip;
         self.mained.update_statusbar2(self.caret[0] + self.xpos, \
-                self.caret[1] + self.ypos, self.insert, len(self.text), clip)
+                self.caret[1] + self.ypos, self.insert, len(self.text), clip, self.caps, self.scr)
 
     def clearsel(self):
         old = self.xsel
@@ -1812,6 +1814,9 @@ def run_async_time(win):
 
 
 # EOF
+
+
+
 
 
 

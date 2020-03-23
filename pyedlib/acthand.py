@@ -1753,6 +1753,8 @@ class ActHand:
 
     def add_key(self, self2, event):
 
+        #print("add_key: '%s'" % event.string)
+
         # CR / LF still haunts us, ignore CR
         if event.keyval == Gdk.KEY_Return:
             #print ("Ignoring Ctrl-Return")
@@ -1790,6 +1792,12 @@ class ActHand:
                 ccc = event.string
             else:
                 ccc = chr(event.keyval)
+
+            if ord(ccc) > 255:
+                #print("NOT Inserting: '%s' len=%d ord=%d" % (ccc, len(ccc), ord(ccc)) );
+                self2.mained.update_statusbar("Cannot insert char %d" % ord(ccc))
+                return
+
 
             self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
             # Replace selection
@@ -1868,7 +1876,7 @@ class ActHand:
         except:
             # Could not convert it to character, alert user
             # Usualy unhandled control, so helps developmet
-            #print  ("Other key", sys.exc_info(), event.keyval)
+            print  ("Other key", sys.exc_info(), event.keyval)
             if(pedconfig.conf.verbose):
                 print("Other key", event.keyval, \
                     hex(event.keyval), hex(event.state))
@@ -1985,6 +1993,17 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
 
 
 

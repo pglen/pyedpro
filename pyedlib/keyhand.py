@@ -12,6 +12,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
+from . import pedconfig
 from . import acthand
 
 # Grabbed modifier defines from GTK
@@ -285,9 +286,11 @@ class KeyHand:
     # Main entry point for handling keys:
     def handle_key(self, self2, area, event):
 
-        #print "key event",  int(event.type), int(event.state),
-        #print event.keyval, hex(event.keyval)
-        #print event.state, event.string
+        if pedconfig.conf.pgdebug > 3:
+            print( "key event",  event.type, event.state)
+        if pedconfig.conf.pgdebug > 2:
+            print ("KEY:", event.keyval, hex(event.keyval))
+            print ("KEYSTR:", event.state, event.string)
 
         self.state2 = int(event.state)
         self.handle_key2(self2, area, event)
@@ -297,13 +300,34 @@ class KeyHand:
         if self2.record:
             if event.keyval == Gdk.KEY_F7 or \
                     event.keyval == Gdk.KEY_F8:
-                #print "avoiding record/play recursion", event
+                #print( "avoiding record/play recursion", event)
                 pass
             else:
-                #print "rec", event, event.type, int(event.type)
+                #print( "rec", event, event.type, int(event.type))
                 var = (int(event.type), int(event.keyval), int(event.state),\
                        event.window, event.string, self.shift, self.ctrl, self.alt)
                 self2.recarr.append(var)
+
+        # Ignore it, the KB calculates it for us. Update status bar though.
+        if event.keyval == Gdk.KEY_Caps_Lock:
+            if event.type == Gdk.EventType.KEY_PRESS:
+                if self.state2 & Gdk.ModifierType.LOCK_MASK:
+                    self2.caps = False
+                else:
+                    self2.caps = True
+                self2.update_bar2()
+            #print("caps lock", self2.caps, Gdk.EventType.KEY_PRESS )
+            return
+
+        if event.keyval == Gdk.KEY_Scroll_Lock:
+            if event.type == Gdk.EventType.KEY_PRESS:
+
+                #print("scroll lock", event.keyval, event.string, \
+                #    self.state2, hex(self.state2))
+
+                self2.scr = not self2.scr
+                self2.update_bar2()
+            return
 
         ret = self.handle_modifiers(self2, area, event)
         # Propagate to document (just for easy access)
@@ -325,7 +349,7 @@ class KeyHand:
                         self2.mained.update_statusbar("ESC")
                 return
 
-        #print "executing key ", \
+        #print( "executing key ", \)
         #    event, event.type, event.keyval, event.window
 
         # Call the appropriate handlers. Note the priority.
@@ -357,18 +381,18 @@ class KeyHand:
         if  event.type == Gdk.EventType.KEY_PRESS:
             if event.keyval == Gdk.KEY_Alt_L or \
                     event.keyval == Gdk.KEY_Alt_R:
-                #print "Alt down"
+                #print( "Alt down")
                 #self2.flash(True)
                 #self.alt = True;
                 ret = True
             elif event.keyval == Gdk.KEY_Control_L or \
                     event.keyval == Gdk.KEY_Control_R:
-                #print "Ctrl down"
+                #print( "Ctrl down")
                 #self.ctrl = True;
                 ret = True
             if event.keyval == Gdk.KEY_Shift_L or \
                   event.keyval == Gdk.KEY_Shift_R:
-                #print "shift down"
+                #print( "shift down")
                 #self.shift = True;
                 ret = True
 
@@ -376,20 +400,23 @@ class KeyHand:
         elif  event.type == Gdk.EventType.KEY_RELEASE:
             if event.keyval == Gdk.KEY_Alt_L or \
                   event.keyval == Gdk.KEY_Alt_R:
-                #print "Alt up"
+                #print( "Alt up")
                 #self2.flash(False)
                 #self.alt = False;
                 ret = True
             if event.keyval == Gdk.KEY_Control_L or \
                   event.keyval == Gdk.KEY_Control_R:
-                #print "Ctrl up"
+                #print( "Ctrl up")
                 #self.ctrl = False;
                 ret = True
             if event.keyval == Gdk.KEY_Shift_L or \
                   event.keyval == Gdk.KEY_Shift_R:
-                #print "shift up"
+                #print( "shift up")
                 #self.shift = False;
                 ret = True
+
+            #if self.state2  & Gdk.ModifierType.LOCK_MASK:
+            #    ret = True
 
         #if event.state & GDK_SHIFT_MASK:
         #if event.state & Gdk.EventType.SHIFT_MASK:
@@ -442,9 +469,10 @@ class KeyHand:
 
     def handle_alt_key(self, self2, area, event):
         if  event.type == Gdk.EventType.KEY_PRESS:
-            #print "alt hand", event
+            #print( "alt hand", event)
             if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
-                print ("Keyhand Alt num", event.keyval - Gdk.KEY_1)
+                if pedconfig.conf.pgdebug > 2:
+                    print( "Keyhand Alt num", event.keyval - Gdk.KEY_1)
                 num = event.keyval - Gdk.KEY_1
                 if num >  self2.notebook.get_n_pages() - 1:
                     self2.mained.update_statusbar("Invalid tab (page) index.")
@@ -462,7 +490,7 @@ class KeyHand:
 
     # Internal key handler. Keytab preselected by caller
     def _handle_key(self, self2, area, event, xtab):
-        #print event
+        #print( event)
         ret = False
         if  event.type == Gdk.EventType.KEY_PRESS:
             gotkey = False
@@ -497,6 +525,46 @@ class KeyHand:
                         self2.flash(False)
 
         return ret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

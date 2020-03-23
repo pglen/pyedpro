@@ -17,7 +17,6 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-#from . import keyhand, pedconfig, pedync
 from . import pedcolor, pedspell, pedmenu, utils
 from . import peddraw
 
@@ -47,6 +46,7 @@ def exec_test(self2, testx):
         ret = subprocess.Popen(comarr)
         if ret:
             self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
+
 
 
 

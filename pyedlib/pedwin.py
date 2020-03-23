@@ -17,7 +17,7 @@ from gi.repository import GLib
 
 from . import  peddoc, pedconfig, pedofd
 from . import  pedync, pedspell, pedfont
-from . import  pedcolor, pedlog, utils, pedcal
+from . import  pedcolor, pedlog, utils, pedcal, pednotes
 
 # Into our name space
 from    .pedmenu import *
@@ -265,7 +265,7 @@ class EdMainWindow():
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook2.set_tab_label(ppp, self.make_label("Calendar"))
 
-        notebook2.append_page(Gtk.Label("Notes"))
+        notebook2.append_page(pednotes.pgnotes())
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
 
@@ -989,7 +989,7 @@ class EdMainWindow():
             self.prevwin()
 
         if strx == "ShowLog":
-            log.show_logwin()
+            pedlog.show_logwin()
 
         if strx.find("/sess_") >= 0:
             fname = pedconfig.conf.sql.get_str(strx)
@@ -1207,12 +1207,20 @@ class EdMainWindow():
             dialog.show()
 
     # This is the line count / pos status bar
-    def update_statusbar2(self, xx = 0, yy = 0, ins = 0, tlen = 0, clip = 0):
+    def update_statusbar2(self, xx = 0, yy = 0, ins = 0, tlen = 0, clip = 0, caps = 0, scr = 0):
         # Always update line / col
         if ins: str2 = "INS"
         else: str2 ="OVR"
-        strx2 = "Ln {0:d} Col {1:d} Tot {3:d}  {2:s} Clip {4:d}".\
-                                format(int(yy+1), int(xx+1), str2, tlen, clip)
+
+        # Always update CAPS
+        if caps: str3 = "CAP"
+        else: str3 ="cap"
+
+        if scr: str4 = "SCR"
+        else: str4 ="scr"
+
+        strx2 = "Ln {0:d} Col {1:d} Tot {3:d}  {2:s} {5:s} {6:s} Clip: {4:d}".\
+                                format(int(yy+1), int(xx+1), str2, tlen, clip, str3, str4)
 
         #self.statusbar2.pop(0)
         #self.statusbar2.push(0, strx2)
@@ -1473,6 +1481,13 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
 
 
 
