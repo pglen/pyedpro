@@ -1424,19 +1424,21 @@ def handler_tick():
 
         if not hidden:
             hidden = True
-            try:
-                #a = input('Input value here:')
-                kernel32 = ctypes.WinDLL('kernel32')
-                user32 = ctypes.WinDLL('user32')
 
-                if kernel32:
-                    print("Hiding controlling terminal")
-                    SW_HIDE = 0
-                    hWnd = kernel32.GetConsoleWindow()
-                    user32.ShowWindow(hWnd, SW_HIDE)
-            except:
-                pass
+            if os.name == "nt":
+                try:
+                    #a = input('Input value here:')
+                    kernel32 = ctypes.WinDLL('kernel32')
+                    user32 = ctypes.WinDLL('user32')
 
+                    if kernel32:
+                        print("Hiding controlling terminal")
+                        SW_HIDE = 0
+                        hWnd = kernel32.GetConsoleWindow()
+                        user32.ShowWindow(hWnd, SW_HIDE)
+                except:
+                    print("Exception in hide console", sys.exc_info())
+                    pass
 
         if pedconfig.conf.idle:
             pedconfig.conf.idle -= 1
@@ -1481,6 +1483,8 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
 
 
 
