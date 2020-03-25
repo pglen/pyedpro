@@ -29,7 +29,7 @@ clwords =  "class ", " self.", "try:", "except", "finally"
 pykeywords = "class ", "def ", "TODO "
 basekeywords = "(sub )|(SUB )"
 Skeywords = "(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)"
-pykeywords2 = "(class )|(def )|(TODO )"
+pykeywords2 = "(class )|(def )|(TODO )|(__main__)"
 sumkeywords = "class ", "def ", "TODO "
 
 ckeywords =  "^[_a-zA-Z].*\(.*\)"
@@ -57,6 +57,8 @@ acorr = [   ( "else",   "else: "                 ),
         ]
 
 # EOF
+
+
 
 
 
