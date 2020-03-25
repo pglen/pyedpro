@@ -38,14 +38,65 @@ def exec_test(self2, testx):
             return
 
         comarr = self2.lastcmd.split(" ")
+
         if pedconfig.conf.pgdebug > 9:
             print("comarr",  comarr)
 
-        print("comarr",  comarr)
+        #print("comarr",  comarr)
 
-        ret = subprocess.Popen(comarr)
-        if ret:
+        proc = None
+        try:
+            #proc = subprocess.Popen(comarr, shell = True)
+            proc = subprocess.run(comarr)
+        except:
+             print("Exception in subprocess", sys.exc_info())
+
+        if not proc:
             self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
+            print("Cannot execute")
+
+        #print("retcode", proc.returncode)
+        '''
+        try:
+            while  True:
+                if not proc:
+                    break
+                if proc.returncode
+                    break
+                outs, errs = proc.communicate()
+                print("com", outs, errs)
+                usleep(10)
+
+        except subprocess.TimeoutExpired:
+             print("Exception timeout in comm", sys.exc_info())
+        except:
+             print("Exception in comm", sys.exc_info())
+        '''
+
+        if not proc:
+            self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
+
+
+# EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
