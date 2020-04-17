@@ -5,6 +5,8 @@ existing keyboard standards. The keys are assigned in keyhand.py and the
 actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
+Updated:    Fri 17.Apr.2020
+
   To implement a new feature follow a particular key's execution path, and
 replicate functionality. It is eazy to follow, as it is table driven.
 
@@ -26,7 +28,7 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Ctrl B                      -- Select word (till spaces)
     Ctrl C                      -- Copy selection to Clipboard
     Ctrl D                      -- Delete (trim) spaces from end of line
-    Ctrl-Shift D                -- Insert date string at cursor clocation
+    Ctrl-Shift D                -- Insert date string at cursor location
     Ctrl E                      -- Capitalize (emphasize) word
     Ctrl F                      -- Find in file or all buffers
     Ctrl G                      -- Goto next match
@@ -46,6 +48,7 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Ctrl R                      -- Reverse three words ***
     Ctrl S                      -- Save current file
     Ctrl T                      -- Transpose two words (taush)
+    Ctrl-Shift T                -- Add Time/Date in document
     Ctrl U                      -- Upper case word / selection
     Shift-Ctrl U                -- Lower case word / selection
     Ctrl V                      -- Paste from Clipboard
@@ -226,6 +229,11 @@ terminal. If no action is listed, that key is unassigned.
 Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
 
 // EOF
+
+
+
+
+
 
 
 

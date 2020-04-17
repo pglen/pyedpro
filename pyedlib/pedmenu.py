@@ -150,7 +150,7 @@ def create_action_group(self):
         self.activate_action ),
 
       ( "Start Terminal", Gtk.STOCK_FILE,
-        "Start _Terminal ...", "<control><shift>T",
+        "Start _Terminal ...", "",
         "Star terminal in current dir",
         self.activate_action ),
 
@@ -383,6 +383,7 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
 
 
 

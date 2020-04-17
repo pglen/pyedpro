@@ -796,7 +796,7 @@ class ActHand:
         if self2.shift:
             dt = datetime.datetime(1990, 1, 1);
             dt2 = dt.now()
-            strx2 =  dt2.strftime("%d/%m/%y %H:%M:%S ")
+            strx2 =  dt2.strftime("%a %d.%b.%Y")
             self.add_str(self2, strx2)
         else:
             #print ("CTRL - D")
@@ -967,8 +967,10 @@ class ActHand:
         line = self2.text[yidx]
 
         if self2.shift:
-            #print("Starting terminal from hotkey.");
-            self2.start_term();
+            dt = datetime.datetime(1990, 1, 1);
+            dt2 = dt.now()
+            strx2 =  dt2.strftime("%d/%m/%y %H:%M:%S ")
+            self.add_str(self2, strx2)
         else:
             self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
 
@@ -1993,6 +1995,10 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
 
 
 
