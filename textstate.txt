@@ -1,0 +1,51 @@
+# Restore textag object state
+def reststate(fromx):
+    ccc = gtk.TextTag()
+    for aa in fromx.__dict__:
+        if aa == 'name':
+            continue
+        try:
+            print "Rest", aa, fromx.__dict__[aa]
+            ccc.set_property(aa,  fromx[aa])
+        except:
+            print sys.exc_info()
+            pass
+    return ccc           
+
+# Remember textag object state
+def dupstate(fromx):
+    class Blank():
+        def __setitem__(self, aaa, bbb):
+            self.__dict__[aaa] = bbb
+        def __getitem__(self, aaa):
+            return self.__dict__[aaa]
+    ccc = Blank()
+    
+    for aa in fromx.props:
+        try:
+            print "Save", aa.name, fromx.get_property(aa.name)
+            ccc[aa.name] =  fromx.get_property(aa.name)
+        except:
+            print sys.exc_info()
+            pass
+            
+    return ccc           
+
+# Check for state match, return True for change
+def chkstate(obj_1, xtag):
+    ret = False
+    # Assume non existing object as change 
+    if not obj_1:  return True 
+    if not xtag:   return True 
+    
+    # See if variables match to properties:
+    for aa in obj_1.__dict__:
+        if obj_1.__dict__[aa] != xtag.get_property(aa):
+            #print "check  ", aa, obj_1.__dict__[aa]
+            #print "check2 ", aa, xtag.get_property(aa)
+            ret = True 
+            break
+    return ret
+
+
+
