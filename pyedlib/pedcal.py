@@ -1,15 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from __future__ import absolute_import
-from __future__ import print_function
+from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
-import ctypes, datetime, sqlite3
+import ctypes, datetime, sqlite3, warnings
 
-import warnings
-
-import gi
 #from six.moves import range
-gi.require_version("Gtk", "3.0")
+
+import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
@@ -48,6 +45,10 @@ class pgcal(Gtk.VBox):
             self.sql = calsql(self.data_dir + os.sep + "caldata.sql")
         except:
             print("Cannot make calendar database")
+
+        self.pack_start(xSpacer(), 0, 0, 0)
+        self.lsel = LetterSel(self.letterfilter)
+        self.pack_start(self.lsel, 0, 0, 2)
 
         self.cal = Gtk.Calendar()
         hbox.pack_start(self.cal, 1, 1, 0)
@@ -107,9 +108,32 @@ class pgcal(Gtk.VBox):
         self.pack_start(Gtk.Label(" "), 0, 0, 0)
         self.daysel(self.cal)
 
+    def  letterfilter(self, letter):
+        #print("letterfilter", letter)
+        if letter == "All":
+            self.treeview2.clear()
+            print("Erase selection")
+        else:
+            aaa = self.sql.getall(letter + "%")
+            print("all->", aaa)
+
+            self.treeview2.clear()
+            for aa in aaa:
+                try:
+                    #aa.append("ddd")
+                    #aa.append("eee")
+                    #aa.append("fff")
+                    self.treeview2.append(aa[1:])
+                except:
+                    print(sys.exc_info())
+
     def find(self, arg):
-        #print ("find", arg)
-        pass
+        print ("find", self.edit.get_text() )
+        aaa = self.sql.getall("%" + self.edit.get_text() + "%")
+        print("all ... ", aaa)
+        self.treeview2.clear()
+        for aa in aaa:
+            self.treeview2.append(aa[1:])
 
     def savetext(self, txt):
         ddd = self.cal.get_date()
@@ -162,6 +186,7 @@ class pgcal(Gtk.VBox):
                 else:
                     self.treeview2.append((ampmstr(aa), "", "", "") )
             except:
+                print(sys.exc_info())
                 pass
 
     def dayseldouble(self, cal):
@@ -339,17 +364,23 @@ class calsql():
     # --------------------------------------------------------------------
     # Get All
 
-    def   getall(self):
+    def   getall(self, strx = "", limit = 1000):
+
+        #print("getall '" +  strx + "'")
+
         try:
             #c = self.conn.cursor()
-            self.c.execute("select * from calendar")
+            self.c.execute("select * from calendar where val like ? or val2 like ? or val3 like ? limit  ?",
+                                            (strx, strx, strx, limit))
             rr = self.c.fetchall()
         except:
-            print("Cannot get sql data", sys.exc_info())
+            rr = []
+            print("Cannot get all sql data", sys.exc_info())
             self.errstr = "Cannot get sql data" + str(sys.exc_info())
         finally:
             #c.close
             pass
+
         return rr
 
     # --------------------------------------------------------------------
@@ -390,6 +421,13 @@ class calsql():
             return None
 
 # EOF
+
+
+
+
+
+
+
 
 
 

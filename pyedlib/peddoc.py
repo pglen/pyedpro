@@ -1,13 +1,10 @@
 #!/usr/bin/env python
 
-from __future__ import absolute_import
-from __future__ import print_function
+from __future__ import absolute_import, print_function
 
 import signal, os, time, string, pickle, re, platform, subprocess
 
-import gi
-#from six.moves import range
-gi.require_version("Gtk", "3.0")
+import gi;  gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GLib
@@ -19,10 +16,10 @@ from gi.repository import PangoCairo
 
 from . import keyhand, pedconfig, pedync
 from . import pedcolor, pedspell, pedmenu, utils
-from . import peddraw
-from . import pedmisc
+from . import peddraw, pedmisc
 
 from .pedutil import *
+from .keywords import *
 
 VSCROLLGAP  = 2             # Gap between the page boundary and ver. scroll
 HSCROLLGAP  = 4             # Gap between the page boundary and hor. scroll
@@ -40,8 +37,6 @@ TABSTOP = 4                 # One tab stop worth of spaces
 #got_clock = time.clock()
 # profiled code here
 #print(  "Str", time.clock() - got_clock)
-
-from .keywords import *
 
 # Globals
 
@@ -1814,6 +1809,10 @@ def run_async_time(win):
 
 
 # EOF
+
+
+
+
 
 
 

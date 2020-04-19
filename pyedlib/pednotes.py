@@ -1,17 +1,14 @@
 #!/usr/bin/env python
 
-from __future__ import absolute_import
-from __future__ import print_function
+from __future__ import absolute_import, print_function
+
 import signal, os, time, sys, subprocess, platform
-import ctypes, datetime, sqlite3
+import ctypes, datetime, sqlite3, warnings
 
-import warnings
-
-import gi
 #from six.moves import range
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
-from gi.repository import Gdk
+
+import gi; gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
@@ -31,8 +28,9 @@ class pgnotes(Gtk.VBox):
 
     def __init__(self):
 
-        #vbox = Gtk.VBox()
         Gtk.VBox.__init__(self)
+
+        #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#444444"))
 
         hbox = Gtk.HBox()
         self.lastsel = ""
@@ -49,30 +47,20 @@ class pgnotes(Gtk.VBox):
         except:
             print("Cannot make notes database")
 
-        self.pack_start(Gtk.Label(""), 0, 0, 0)
+        #self.pack_start(Gtk.Label(""), 0, 0, 0)
+        self.pack_start(xSpacer(), 0, 0, 0)
+        self.lsel = LetterSel(self.letterfilter)
+        self.pack_start(self.lsel, 0, 0, 2)
 
-        hbox3a = Gtk.HBox()
-        hbox3a.pack_start(Gtk.Label(" "), 1, 1, 0)
-        strx = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
-        self.simsel = SimpleSel(strx, self.letter)
-        hbox3a.pack_start(self.simsel, 0, 0, 0)
-        hbox3a.pack_start(Gtk.Label(" "), 1, 1, 0)
-        self.pack_start(hbox3a, 0, 0, 2)
-
-        hbox3b = Gtk.HBox()
-        hbox3b.pack_start(Gtk.Label(" "), 1, 1, 0)
-        strn = "1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * _ +"
-        self.simsel2 = SimpleSel(strn, self.letter)
-        hbox3b.pack_start(self.simsel2, 0, 0, 0)
-        hbox3b.pack_start(Gtk.Label(" "), 1, 1, 0)
-        self.pack_start(hbox3b, 0, 0, 2)
+        #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#dd8822"))
 
         hbox3 = Gtk.HBox()
-        hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
+        hbox3.pack_start(xSpacer(4), 0, 0, 0)
         self.edit = Gtk.Entry()
         hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
         hbox3.pack_start(self.edit, 1, 1, 0)
-        butt2 = Gtk.Button.new_with_mnemonic("Fin_d")
+        butt2 = Gtk.Button.new_with_mnemonic("Find")
         butt2.connect("pressed", self.find)
         hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
         hbox3.pack_start(butt2, 0, 0, 0)
@@ -80,8 +68,7 @@ class pgnotes(Gtk.VBox):
         butt3 = Gtk.Button.new_with_mnemonic("_New")
         butt3.connect("pressed", self.newitem, 1)
         hbox3.pack_start(butt3, 0, 0, 0)
-        hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
-
+        #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#668822"))
         self.pack_start(hbox3, 0, 0, 2)
 
         self.treeview2 = SimpleTree(("Header", "Subject", "Description"), skipedit=-1)
@@ -101,11 +88,19 @@ class pgnotes(Gtk.VBox):
         frame4 = Gtk.Frame(); frame4.add(scroll3)
         #frame4.set_size_request(200, 320)
         self.pack_start(frame4, 1, 1, 2)
-        self.pack_start(Gtk.Label(" "), 0, 0, 0)
-        #self.daysel(self.cal)
+        self.pack_start(xSpacer(), 0, 0, 0)
 
-    def  letter(self, letter):
-        print("letterx", letter)
+    def  letterfilter(self, letter):
+        #print("letterfilter", letter)
+        if letter == "All":
+            print("Erase selection")
+        else:
+            aaa = self.sql.getall(letter + "%")
+            print("all", aaa)
+
+            self.treeview2.clear()
+            for aa in aaa:
+                self.treeview2.append(aa[2:])
 
     def newitem(self, arg, num):
         print ("new", arg, num)
@@ -115,7 +110,11 @@ class pgnotes(Gtk.VBox):
 
     def find(self, arg):
         print ("find", arg)
-        pass
+        aaa = self.sql.getall("%" + self.edit.get_text() + "%")
+        print("all", aaa)
+        self.treeview2.clear()
+        for aa in aaa:
+            self.treeview2.append(aa[2:])
 
     def savetext(self, txt):
         #ddd = self.cal.get_date()
@@ -347,17 +346,22 @@ class notesql():
     # --------------------------------------------------------------------
     # Get All
 
-    def   getall(self):
+    def   getall(self, strx = "", limit = 100):
+
+        #print("getall '" +  strx + "'")
+
         try:
             #c = self.conn.cursor()
-            self.c.execute("select * from notes")
+            self.c.execute("select * from notes where val like ? limit  ?", (strx, limit))
             rr = self.c.fetchall()
         except:
-            print("Cannot get sql data", sys.exc_info())
+            rr = []
+            print("Cannot get all sql data", sys.exc_info())
             self.errstr = "Cannot get sql data" + str(sys.exc_info())
         finally:
             #c.close
             pass
+
         return rr
 
     # --------------------------------------------------------------------
@@ -398,6 +402,15 @@ class notesql():
             return None
 
 # EOF
+
+
+
+
+
+
+
+
+
 
 
 

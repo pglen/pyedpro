@@ -1,17 +1,12 @@
 #!/usr/bin/env python
 
-from __future__ import absolute_import
-from __future__ import print_function
+from __future__ import absolute_import, print_function
+
 import signal, os, time, sys, subprocess, platform
-import ctypes
+import ctypes, warnings
 
-import warnings
-
-import gi
-#from six.moves import range
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
-from gi.repository import Gdk
+import gi; gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
@@ -1483,6 +1478,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 

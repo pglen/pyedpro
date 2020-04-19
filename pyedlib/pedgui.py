@@ -11,10 +11,23 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
+from gi.repository import Pango
 
 #import pedwin
 from . import pedconfig
 from . import pedync
+
+testmode = 0
+
+def randcol():
+    return random.randint(0, 255)
+
+def randcolstr(start = 0, endd = 255):
+    rr =  random.randint(start, endd)
+    gg =  random.randint(start, endd)
+    bb =  random.randint(start, endd)
+    strx = "#%02x%02x%02x" % (rr, gg, bb)
+    return strx
 
 # ------------------------------------------------------------------------
 
@@ -167,29 +180,168 @@ class   SimpleEdit(Gtk.TextView):
     def setsavecb(self, callb):
         self.savecb = callb
 
+# Select character by index
+
 class   SimpleSel(Gtk.Label):
 
     def __init__(self, text = " ", callb = None):
         self.text = text
         self.callb = callb
+        self.axx = self.text.find("[All]")
         Gtk.Label.__init__(self, text)
         self.set_has_window(True)
         self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
         self.connect("button-press-event", self.area_button)
+        self.modify_font(Pango.FontDescription("Mono 13"))
 
     def area_button(self, but, event):
-        #print("click", but, event)
+
         #print("sss =", self.get_allocation().width)
         #print("click", event.x, event.y)
 
         prop = event.x / float(self.get_allocation().width)
         idx = int(prop * len(self.text))
         if self.text[idx] == " ":
-            idx += 1
-        #print("letter", self.text[idx])
-        self.lastsel =  self.text[idx]
+            idx -= 1
+        try:
+            # See of it is all
+            if self.axx >= 0:
+                if idx > self.axx:
+                    #print("all", idx, self.text[idx-5:idx+7])
+                    self.lastsel =  "All"
+                    self.newtext = self.text[:self.axx] + self.text[self.axx:].upper()
+                    self.set_text(self.newtext)
+                else:
+                    self.newtext = self.text[:self.axx] + self.text[self.axx:].lower()
+                    self.set_text(self.newtext)
+
+            else:
+                self.lastsel =  self.text[idx]
+                self.newtext = self.text[:idx] + self.text[idx].upper() + self.text[idx+1:]
+                self.set_text(self.newtext)
+
+
+            if self.callb:
+                self.callb(self.lastsel)
+
+        except:
+            print(sys.exc_info())
+
+# ------------------------------------------------------------------------
+# Letter selection control
+
+class   LetterSel(Gtk.VBox):
+
+    def __init__(self, callb = None):
+
+        Gtk.VBox.__init__(self)
+        self.callb = callb
+
+        strx = "abcdefghijklmnopqrstuvwxyz"
+        hbox3a = Gtk.HBox()
+        hbox3a.pack_start(Gtk.Label(" "), 1, 1, 0)
+        self.simsel = SimpleSel(strx, self.letter)
+        hbox3a.pack_start(self.simsel, 0, 0, 0)
+        hbox3a.pack_start(Gtk.Label(" "), 1, 1, 0)
+
+        strn = "1234567890!@#$^&*_+ [All]"
+        hbox3b = Gtk.HBox()
+        hbox3b.pack_start(Gtk.Label(" "), 1, 1, 0)
+        self.simsel2 = SimpleSel(strn, self.letter)
+        hbox3b.pack_start(self.simsel2, 0, 0, 0)
+        hbox3b.pack_start(Gtk.Label(" "), 1, 1, 0)
+
+        self.pack_start(hbox3a, 0, 0, False)
+        self.pack_start(xSpacer(4), 0, 0, False)
+        self.pack_start(hbox3b, 0, 0, False)
+
+    def  letter(self, letter):
+        #print("LetterSel::letterx:", letter)
         if self.callb:
-            self.callb(self.lastsel)
+            self.callb(letter)
+
+# ------------------------------------------------------------------------
+# An N pixel horizontal spacer. Defaults to X pix
+
+class xSpacer(Gtk.HBox):
+
+    def __init__(self, sp = None):
+        GObject.GObject.__init__(self)
+        #self.pack_start()
+        if testmode:
+            col = randcolstr(100, 200)
+            self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(col))
+        if sp == None:
+            sp = 6
+        self.set_size_request(sp, sp)
+
+# ------------------------------------------------------------------------
+# An N pixel spacer. Defaults to 1 char height / width
+
+class Spacer(Gtk.Label):
+
+    global testmode
+
+    def __init__(self, sp = 1, title=None, left=False, bottom=False, test=False):
+
+        GObject.GObject.__init__(self)
+
+        #sp *= 1000
+        #self.set_markup("<span  size=\"" + str(sp) + "\"> </span>")
+        #self.set_text(" " * sp)
+
+        if title:
+            self.set_text(title)
+        else:
+            self.set_text(" " * sp)
+
+        if left:
+            self.set_xalign(0)
+
+        if bottom:
+            self.set_yalign(1)
+
+        if test or testmode:
+            self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
+
+        #self.set_property("angle", 15)
+        #attr = self.get_property("attributes")
+        #attr2 = Pango.AttrList()
+        #print ("attr", dir(attr))
+        #attr.
+        #self.set_property("attributes", attr)
+        #self.set_property("label", "wtf")
+        #self.set_property("background-set", True)
+
+# ------------------------------------------------------------------------
+# Highlite test items
+
+def set_testmode(flag):
+    global testmode
+    testmode = flag
+
+if __name__ == '__main__':
+    print("This file was not meant to run as the main module")
+
+# EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
