@@ -88,7 +88,7 @@ class Rectangle(Gdk.Rectangle):
         return "Rect: x=%d y=%d w=%d h=%d" % (self.x, self.y, self.width, self.height)
 
     def dump(self):
-        print("Rect: ",  self.x, self.y, self.width, self.height)
+        print("Rect: ", self.x, self.y, self.width, self.height)
 
 # ------------------------------------------------------------------------
 # Bemd some of the parameters for us
@@ -645,6 +645,33 @@ class Led(Gtk.DrawingArea):
         cr.arc(rect.width/2+1, rect.height/2, rect.width / 2. * .2, 0., 2 * math.pi)
         cr.fill()
 
+class Menu():
+
+    def __init__(self, menarr, callb, event):
+
+        #GObject.GObject.__init__(self)
+
+        self.callb = callb
+        self.menarr = menarr
+        self.menu2 = Gtk.Menu()
+        cnt = 0
+        for aa in self.menarr:
+            self.menu2.append(self._create_menuitem(aa, self.menu_fired, cnt))
+            cnt = cnt + 1
+        self.menu2.popup(None, None, None, None, event.button, event.time)
+
+    def _create_menuitem(self, string, action, arg = None):
+        rclick_menu = Gtk.MenuItem(string)
+        rclick_menu.connect("activate", action, string, arg);
+        rclick_menu.show()
+        return rclick_menu
+
+    def menu_fired(self, menu, menutext, arg):
+        print ("menu item fired:", menutext, arg)
+        if self.callb:
+            self.callb(menutext, arg)
+        self.menu2 = None
+
 class MenuButt(Gtk.DrawingArea):
 
     def __init__(self, menarr, callb, tooltip = "Menu", size = 20, border = 2):
@@ -1056,6 +1083,14 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 

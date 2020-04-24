@@ -54,13 +54,14 @@ class DrawObj():
         self.id = utils.randlett(8)
         self.groupid = 0
         self.pgroupid = 0
+        self.orgdrag = ()
 
         globzorder = globzorder + 1
 
         pass
 
     def dump(self):
-        print ("zorder", self.zorder, "groupid", self.groupid)
+        print ("zorder", self.zorder, "groupid", self.groupid + str(self.rect))
 
     def expand_size(self, self2):
 
@@ -190,106 +191,151 @@ class Canvas(Gtk.DrawingArea):
         self.cnt = 0
         self.drag = None
         self.resize = None
-        self.coord = (0,0)
-        self.coord2 = (0,0)
+        self.dragcoord = (0,0)
         self.size2 = (0,0)
+        self.hand = Gdk.Cursor(Gdk.CursorType.HAND1)
+        self.arrow = Gdk.Cursor(Gdk.CursorType.ARROW)
+        self.sizing =  Gdk.Cursor(Gdk.CursorType.SIZING)
 
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
         if self.drag:
-            #print ("drag", self.drag.text,  event.x, event.y)
-            xd = int(self.coord[0] - event.x)
-            yd = int(self.coord[1] - event.y)
+
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.hand)
+
+            #print ("drag coord", self.dragcoord[0],  self.dragcoord[1], event.x, event.y)
+
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+
             #print ("delta", xd, yd)
-            self.drag.rect.x = self.coord2[0] - xd
-            self.drag.rect.y = self.coord2[1] - yd
+
+            for aa in self.coll:
+                if aa.selected:
+                    aa.rect.x = aa.orgdrag.x - xd
+                    aa.rect.y = aa.orgdrag.y  - yd
+                    #print("new coords of ", aa.id, aa.rect.x, aa.rect.y)
+
             self.queue_draw()
 
         elif self.resize:
+
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.sizing)
+
             #print ("resize", self.resize.text,  event.x, event.y)
-            xd = int(self.coord[0] - event.x)
-            yd = int(self.coord[1] - event.y)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
             #print ("rdelta", xd, yd)
             self.resize.rect.w = self.size2[0] - xd
             self.resize.rect.h = self.size2[1] - yd
             self.queue_draw()
 
+        else:
+
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.arrow)
+
     def area_button(self, area, event):
 
-        print( "ButPress", event.type, "state", event.state, " x =", event.x, "y =", event.y)
+        print( "Buuton", event.button, "state", event.state, " x =", event.x, "y =", event.y)
 
         if  event.type == Gdk.EventType.BUTTON_RELEASE:
             self.drag = None
             self.resize = None
 
-
         if  event.type == Gdk.EventType.BUTTON_PRESS:
-            if event.get_state() & Gdk.ModifierType.BUTTON1_MASK:
-                print("but1")
-
-            if event.get_state() & Gdk.ModifierType.BUTTON3_MASK:
-                print("but3")
-
-
-            '''if event.state & Gdk.ModifierType.SHIFT_MASK:
-                print( "Shift ButPress x =", event.x, "y =", event.y)
-
-            if event.state & Gdk.ModifierType.CONTROL_MASK:
-                print( "Ctrl ButPress x =", event.x, "y =", event.y)
-
-            if event.state & Gdk.ModifierType.MOD1_MASK :
-                print( "Alt ButPress x =", event.x, "y =", event.y)
-            '''
 
             hit = Rectangle(event.x, event.y, 2, 2)
-            #hit.dump()
-
             hitx = None
-            # Operate on pre selected
-            for bb in self.coll:
-                if bb.selected:
-                    print("Operate on selected", bb.id)
-                    if bb.hitmarker(hit):
-                        print("Hit on marker")
-                        self.resize = bb
-                        self.drag = None
-                        self.coord  = (event.x, event.y)
-                        self.size2 = (self.resize.rect.w, self.resize.rect.h)
-                        return
-                    elif bb.hittest(hit):
-                        self.drag = bb
-                        self.coord  = (event.x, event.y)
-                        self.coord2 = (self.drag.rect.x, self.drag.rect.y)
+
+            if event.button == 1:
+                '''if event.state & Gdk.ModifierType.SHIFT_MASK:
+                    print( "Shift ButPress x =", event.x, "y =", event.y)
+                if event.state & Gdk.ModifierType.CONTROL_MASK:
+                    print( "Ctrl ButPress x =", event.x, "y =", event.y)
+                if event.state & Gdk.ModifierType.MOD1_MASK :
+                    print( "Alt ButPress x =", event.x, "y =", event.y)
+                '''
+
+                if not event.state & Gdk.ModifierType.SHIFT_MASK and \
+                            not event.state & Gdk.ModifierType.CONTROL_MASK:
+                    # Operate on pre selected
+                    if not self.drag:
+                        for bb in self.coll:
+                            if bb.selected:
+                                print("Operate on selected", bb.id)
+                                if bb.hitmarker(hit):
+                                    print("Hit on marker")
+                                    self.resize = bb
+                                    self.drag = None
+                                    self.dragcoord  = (event.x, event.y)
+                                    self.size2 = (self.resize.rect.w, self.resize.rect.h)
+                                    return
+                                elif bb.hittest(hit):
+                                    self.drag = bb
+                                    self.dragcoord  = (event.x, event.y)
+                                    print("self.dragcoord", self.dragcoord)
+
+                                    for cc in self.coll:
+                                        if cc.selected:
+                                            cc.orgdrag = cc.rect.copy()
+                    if self.drag:
                         return
 
-            # Execute new hit test
-            for aa in self.coll:
-                if aa.hittest(hit):
-                    print("intersect", aa.text, aa.id)
-                    hitx = aa
-                    self.drag = aa
-                    self.coord  = (event.x, event.y)
-                    self.coord2 = (self.drag.rect.x, self.drag.rect.y)
-                    break
+                # Execute new hit test on drag immidiate
+                for aa in self.coll:
+                    if aa.hittest(hit):
+                        print("intersect", aa.text, aa.id)
+                        hitx = aa
+                        self.drag = aa
+                        self.dragcoord  = (event.x, event.y)
+                        aa.orgdrag = aa.rect.copy()
+                        break
 
-            for bb in self.coll:
-                if bb == hitx:
-                    bb.selected = True
+                for bb in self.coll:
+                    if bb == hitx:
+                        if event.state & Gdk.ModifierType.CONTROL_MASK:
+                            bb.selected = not bb.selected
+                        else:
+                            bb.selected = True
+                    else:
+                        if event.state & Gdk.ModifierType.SHIFT_MASK or \
+                            event.state & Gdk.ModifierType.CONTROL_MASK:
+                            pass
+                        else:
+                            bb.selected = False
+
+                self.queue_draw()
+
+
+            elif event.button == 3:
+                print("Right click")
+
+                #butt2m = MenuButt(["New Instance", "New Instance (minsize)",
+                #"Minimal Size", "Regular Size", "Exit Program"], self.menu_action)
+                bb = None
+                # Execute new hit test
+                for aa in self.coll:
+                    if aa.hittest(hit):
+                        bb = aa
+
+                if bb:
+                    Menu((bb.text, "Hello 1", "Hello 2"), self.menu_action, event)
+                    #bb.selected = True
+                    self.queue_draw()
+
                 else:
-                    bb.selected = False
+                    Menu(("Hello 3", "Hello 4"), self.menu_action, event)
 
-            self.queue_draw()
+            else:
+                print("??? click", event.button)
 
-                #if type(aa) == RectObj: # or type(aa) == RombObj:
-                #    rect = aa.rect
-
-                #if aa[0] == CIRC:
-                #    rect = Rectangle(aa[1][0], aa[1][1], aa[1][2], aa[1][2])
-
-                #inte = hit.intersect(rect)
-                #if inte[0]:
-
-            pass
+    def menu_action(self, item, num):
+        print("Menu action:", item, num)
+        #if num == 0:
+        #    print ("menu item clicked", item, num)
 
     def show_objects(self):
         for aa in self.coll:
@@ -401,6 +447,81 @@ class Canvas(Gtk.DrawingArea):
 def set_canv_testmode(flag):
     global canv_testmode
     canv_testmode = flag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
