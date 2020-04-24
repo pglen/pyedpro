@@ -10,11 +10,14 @@ from . import pedconfig
 
 # Add the new line twice for more balaced string
 
-allstr =    " " + "\r" + "\n" + \
-            "\r" + "\n" + \
+allcr =    " " + "\r" + "\n" + \
+            "\r" + "\n"
+
+                   #string.punctuation +
+
+allstr =    " " + \
             string.ascii_lowercase +  string.ascii_uppercase +  \
-                string.digits #+
-                    #string.punctuation +
+                string.digits
 
 allasc =      string.ascii_lowercase +  string.ascii_uppercase +  \
                 string.digits + "_"
@@ -362,6 +365,9 @@ def put_exception2(xstr):
     #syslog.syslog("%s %s %s" % (xstr, a, b))
 
 # EOF
+
+
+
 
 
 

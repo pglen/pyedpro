@@ -54,7 +54,7 @@ def     limit_undo(self2):
     if xlen == 0: return
     if xlen  <  MAX_UNDO: return
     #print "limiting undo size from", len(self2.undoarr)
-    for aa in range(MAX_UNDO / 5):
+    for aa in range(MAX_UNDO // 5):
         try:
             del (self2.undoarr[0])
         except:
@@ -214,6 +214,7 @@ def redo(self2, keyh):
     self2.mained.update_statusbar("Redo %d done." % xlen)
 
 # EOF
+
 
 
 

@@ -55,13 +55,13 @@ class DrawObj():
         self.groupid = 0
         self.pgroupid = 0
         self.orgdrag = ()
-
+        self.other = []
         globzorder = globzorder + 1
 
         pass
 
     def dump(self):
-        print ("zorder", self.zorder, "groupid", self.groupid + str(self.rect))
+        print (self.text, self.id, "zorder", self.zorder, "groupid", self.groupid, str(self.rect))
 
     def expand_size(self, self2):
 
@@ -142,6 +142,9 @@ class RectObj(DrawObj):
                     ret = True
                     break
         return ret
+
+    def center(self):
+        return (self.rect.x + self.rect.w / 2, self.rect.y + self.rect.h / 2)
 
 #self.coll.append((ROMB, coord, text, col1, col2, border, fill))
 
@@ -311,8 +314,7 @@ class Canvas(Gtk.DrawingArea):
 
 
             elif event.button == 3:
-                print("Right click")
-
+                #print("Right click")
                 #butt2m = MenuButt(["New Instance", "New Instance (minsize)",
                 #"Minimal Size", "Regular Size", "Exit Program"], self.menu_action)
                 bb = None
@@ -320,22 +322,51 @@ class Canvas(Gtk.DrawingArea):
                 for aa in self.coll:
                     if aa.hittest(hit):
                         bb = aa
-
                 if bb:
-                    Menu((bb.text, "Hello 1", "Hello 2"), self.menu_action, event)
+                    Menu((bb.text, "Connect Objects", "Disconnect Objects"), self.menu_action, event)
                     #bb.selected = True
                     self.queue_draw()
 
                 else:
-                    Menu(("Hello 3", "Hello 4"), self.menu_action, event)
+                    Menu(("Dump Objects", "Hello 4"), self.menu_action_blank, event)
 
             else:
                 print("??? click", event.button)
 
     def menu_action(self, item, num):
+        #print("Menu action:", item, num)
+        if num == 1:
+            #print ("Conn obj", item, num)
+            ccc = []
+            for aa in self.coll:
+                if aa.selected:
+                    ccc.append(aa)
+
+            #print("connecting", ccc[0].text, ccc[1].text)
+            for aa in ccc[1:]:
+                ccc[0].other.append(aa.id)
+            self.queue_draw()
+
+        if num == 2:
+            #print ("DisConn obj", item, num)
+            ccc = []
+            for aa in self.coll:
+                if aa.selected:
+                    ccc.append(aa)
+
+            if len(ccc) != 2:
+                print("Please select two objects to disconnect")
+                return
+            print("disconnecting", ccc[0].text, ccc[1].text)
+            ccc[0].other.remove(ccc[1].id)
+            self.queue_draw()
+
+
+    def menu_action_blank(self, item, num):
         print("Menu action:", item, num)
-        #if num == 0:
-        #    print ("menu item clicked", item, num)
+        if num == 0:
+            for aa in self.coll:
+                aa.dump()
 
     def show_objects(self):
         for aa in self.coll:
@@ -375,7 +406,19 @@ class Canvas(Gtk.DrawingArea):
         cr.set_source_rgba(255/255, 255/255, 255/255)
         cr.rectangle( border, border, self.rect.width - border * 2, self.rect.height - border * 2);
         cr.fill()
-        #cr.stroke()
+
+        # Draw connections
+        cr.set_source_rgba(55/255, 55/255, 55/255)
+        for aa in self.coll:
+            for cc in aa.other:
+                for bb in self.coll:
+                    if cc == bb.id:
+                        #print("connect draw", aa.text, bb.text)
+                        aac = aa.center()
+                        cr.move_to(aac[0], aac[1])
+                        bbc = bb.center()
+                        cr.line_to(bbc[0], bbc[1])
+                        cr.stroke()
 
         # Draw objects
         for aa in self.coll:
@@ -383,10 +426,6 @@ class Canvas(Gtk.DrawingArea):
             if type(aa) == RectObj:
                 #print("rectobj", aa)
                 aa.draw(cr, self)
-
-            #if type(aa) == RombObj:
-            #    #print("rombobj", aa)
-            #    aa.draw(cr, self)
 
             '''
             if aa[0] == CIRC:
@@ -447,6 +486,23 @@ class Canvas(Gtk.DrawingArea):
 def set_canv_testmode(flag):
     global canv_testmode
     canv_testmode = flag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

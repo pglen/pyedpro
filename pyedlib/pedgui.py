@@ -645,6 +645,9 @@ class Led(Gtk.DrawingArea):
         cr.arc(rect.width/2+1, rect.height/2, rect.width / 2. * .2, 0., 2 * math.pi)
         cr.fill()
 
+
+# ------------------------------------------------------------------------
+
 class Menu():
 
     def __init__(self, menarr, callb, event):
@@ -655,9 +658,25 @@ class Menu():
         self.menarr = menarr
         self.menu2 = Gtk.Menu()
         cnt = 0
+
+        #self.menu2.set_title("Hello")
+
         for aa in self.menarr:
-            self.menu2.append(self._create_menuitem(aa, self.menu_fired, cnt))
+            mmm = self._create_menuitem(aa, self.menu_fired, cnt)
+
+            if cnt == 0:
+                #print(dir(mmm))
+                mmm.set_sensitive(False)
+
+            self.menu2.append(mmm)
+
+            if cnt == 0:
+                mmm = self._create_menuitem("-" * len(aa), self.menu_fired, cnt)
+                mmm.set_sensitive(False)
+                self.menu2.append(mmm)
+
             cnt = cnt + 1
+
         self.menu2.popup(None, None, None, None, event.button, event.time)
 
     def _create_menuitem(self, string, action, arg = None):
@@ -1083,6 +1102,17 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
 
 
 
