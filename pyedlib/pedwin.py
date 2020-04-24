@@ -12,7 +12,8 @@ from gi.repository import GLib
 
 from . import  peddoc, pedconfig, pedofd
 from . import  pedync, pedspell, pedfont
-from . import  pedcolor, pedlog, utils, pedcal, pednotes
+from . import  pedcolor, pedlog, utils
+from . import  pedcal, pednotes, pedoline
 
 # Into our name space
 from    .pedmenu import *
@@ -174,13 +175,13 @@ class EdMainWindow():
 
         # Create note for the main window, give access to it for all
         notebook = Gtk.Notebook(); self.notebook = notebook
-        notebook.popup_enable()
+        #notebook.popup_enable()
         notebook.set_scrollable(True)
         # test
         #notebook.append_page(edPane([]))
 
         notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
-        notebook2.popup_enable()
+        #notebook2.popup_enable()
         notebook2.set_scrollable(True)
 
         #notebook.add_events(Gdk.FOCUS_CHANGE_MASK)
@@ -264,7 +265,8 @@ class EdMainWindow():
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
 
-        notebook2.append_page(Gtk.Label("Outline"))
+        #notebook2.append_page(Gtk.Label("Outline"))
+        notebook2.append_page(pedoline.pgoline())
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
 
@@ -1478,6 +1480,8 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
 
 
 

@@ -16,6 +16,11 @@ allstr =    " " + "\r" + "\n" + \
                 string.digits #+
                     #string.punctuation +
 
+allasc =      string.ascii_lowercase +  string.ascii_uppercase +  \
+                string.digits + "_"
+
+alllett =      string.ascii_lowercase +  string.ascii_uppercase
+
 # ------------------------------------------------------------------------
 # Get random str
 
@@ -25,6 +30,26 @@ def randstr(lenx):
     for aa in range(lenx):
         ridx = random.randint(0, len(allstr)-1)
         rr = allstr[ridx]
+        strx += str(rr)
+
+    return strx
+
+def randasc(lenx):
+
+    strx = ""
+    for aa in range(lenx):
+        ridx = random.randint(0, len(allasc)-1)
+        rr = allasc[ridx]
+        strx += str(rr)
+
+    return strx
+
+def randlett(lenx):
+
+    strx = ""
+    for aa in range(lenx):
+        ridx = random.randint(0, len(alllett)-1)
+        rr = alllett[ridx]
         strx += str(rr)
 
     return strx
@@ -337,6 +362,7 @@ def put_exception2(xstr):
     #syslog.syslog("%s %s %s" % (xstr, a, b))
 
 # EOF
+
 
 
 
