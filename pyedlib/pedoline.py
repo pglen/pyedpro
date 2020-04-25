@@ -74,8 +74,11 @@ class pgoline(Gtk.VBox):
         except:
             print("Cannot make notes data dir")
 
+        self.statbox = Gtk.Label(" Idle")
+        self.statbox.set_xalign(0); self.statbox.set_yalign(0)
+
         self.pack_start(xSpacer(), 0, 0, 0)
-        self.canvas = Canvas()
+        self.canvas = Canvas(self.statbox)
 
         for aa in range(10):
 
@@ -92,20 +95,26 @@ class pgoline(Gtk.VBox):
                 rect = genrandrect(100, 100)
                 self.canvas.add_text(rect, "Text_" + rstr, randcolstr() )
             else:
-                circ = genrandcircle(500, 1000)
+                circ = genrandcircle(500, 500)
                 self.canvas.add_circle(circ, "Circ_" + rstr, randcolstr() )
 
         #self.canvas.show_objects()
         #self.canvas.setsavecb(self.savetext)
 
+        hbox2 = xHBox()
+        hbox2.pack(self.statbox, True)
+
+        mbut = MenuButt(("Open", "Save", "Export"), self.main_callb)
+        hbox2.pack(mbut)
+
         scroll3a = Gtk.ScrolledWindow()
         scroll3a.set_policy(Gtk.PolicyType.ALWAYS, Gtk.PolicyType.ALWAYS)
         scroll3a.add(self.canvas)
         frame5 = Gtk.Frame(); frame5.add(scroll3a)
-        #frame4.set_size_request(200, 320)
         self.pack_start(frame5, 1, 1, 2)
+        self.pack_start(hbox2, 0, 0, 2)
 
-        self.pack_start(xSpacer(), 0, 0, 0)
+        #self.pack_start(xSpacer(), 0, 0, 0)
 
     def  letterfilter(self, letter):
         #print("letterfilter", letter)
@@ -118,6 +127,10 @@ class pgoline(Gtk.VBox):
             self.treeview2.clear()
             for aa in aaa:
                 self.treeview2.append(aa[2:])
+
+    def  main_callb(self, text, arg):
+        print("main_callb", text, arg)
+        pass
 
     def newitem(self, arg, num):
         print ("new", arg, num)
@@ -419,6 +432,22 @@ class notesql():
             return None
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -686,47 +686,46 @@ class Led(Gtk.DrawingArea):
         cr.arc(rect.width/2+1, rect.height/2, rect.width / 2. * .2, 0., 2 * math.pi)
         cr.fill()
 
-
 # ------------------------------------------------------------------------
 
 class Menu():
 
-    def __init__(self, menarr, callb, event):
+    def __init__(self, menarr, callb, event, submenu = False):
 
         #GObject.GObject.__init__(self)
 
         self.callb = callb
         self.menarr = menarr
-        self.menu2 = Gtk.Menu()
-
-        #self.menu3 = Gtk.Menu()
+        self.gtkmenu = Gtk.Menu()
+        self.title = menarr[0]
 
         cnt = 0
-        sss = self._create_menuitem("sub", self.menu_fired, cnt)
-        self.menu3.append(sss)
-
-        #self.menu2.set_title("Hello")
 
         for aa in self.menarr:
+            #print("type aa", type(aa))
+            if type(aa) == str:
+                mmm = self._create_menuitem(aa, self.menu_fired, cnt)
+                if cnt == 0:
+                    mmm.set_sensitive(False)
+                self.gtkmenu.append(mmm)
+                if cnt == 0:
+                    sep = Gtk.SeparatorMenuItem.new()
+                    sep.show()
+                    self.gtkmenu.append(sep)
 
-            mmm = self._create_menuitem(aa, self.menu_fired, cnt)
-
-            if cnt == 0:
-                mmm.set_sensitive(False)
-
-            self.menu2.append(mmm)
-
-            if cnt == 0:
-                mmm = self._create_menuitem("-" * len(aa), self.menu_fired, cnt)
-                mmm.set_sensitive(False)
-                self.menu2.append(mmm)
-
-            if cnt == 1:
-                mmm.set_submenu(self.menu3)
-
+            elif type(aa) == Menu:
+                mmm = self._create_menuitem(aa.title, self.dummy, cnt)
+                mmm.set_submenu(aa.gtkmenu)
+                self.gtkmenu.append(mmm)
+            else:
+                raise(ValuError, "Menu needs text or submenu")
             cnt = cnt + 1
 
-        self.menu2.popup(None, None, None, None, event.button, event.time)
+        if not submenu:
+            self.gtkmenu.popup(None, None, None, None, event.button, event.time)
+
+    def dummy(self, menu, menutext, arg):
+        pass
 
     def _create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
@@ -738,7 +737,7 @@ class Menu():
         #print ("menu item fired:", menutext, arg)
         if self.callb:
             self.callb(menutext, arg)
-        self.menu2 = None
+        self.gtkmenu = None
 
 class MenuButt(Gtk.DrawingArea):
 
@@ -775,13 +774,13 @@ class MenuButt(Gtk.DrawingArea):
             if event.button == 1:
                 #print( "Left Click at x=", event.x, "y=", event.y)
                 self.grab_focus()
-                self.menu2 = Gtk.Menu()
+                self.menu3 = Gtk.Menu()
                 cnt = 0
                 for aa in self.menarr:
-                    self.menu2.append(self._create_menuitem(aa, self.menu_fired, cnt))
+                    self.menu3.append(self._create_menuitem(aa, self.menu_fired, cnt))
                     cnt = cnt + 1
 
-                self.menu2.popup(None, None, None, None, event.button, event.time)
+                self.menu3.popup(None, None, None, None, event.button, event.time)
 
     def menu_fired(self, menu, menutext, arg):
         #print ("menu item fired:", menutext, arg)
@@ -1151,6 +1150,30 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

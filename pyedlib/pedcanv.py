@@ -38,6 +38,22 @@ ROMB = 4
 globzorder = 0
 globgroup = 0
 
+def canv_colsel(oldcol, title):
+
+    csd = Gtk.ColorSelectionDialog(title)
+    col = csd.get_color_selection()
+    #col.set_current_color(float2col(oldcol))
+    response = csd.run()
+    color = 0
+    if response == Gtk.ResponseType.OK:
+        color = col.get_current_color()
+        print ("color", color)
+        #ev.color =  col2float( col.get_current_color())
+        #print "ev.color", ev.color
+        #ev.modify_bg(Gtk.StateFlags.NORMAL, col.get_current_color())
+    csd.destroy()
+    return color
+
 class DrawObj():
 
     def __init__(self,  rect, text, col1, col2, border, fill):
@@ -313,11 +329,11 @@ class CircObj(DrawObj):
     def center(self):
         return (self.rect.x, self.rect.y)
 
-
 class Canvas(Gtk.DrawingArea):
 
-    def __init__(self):
+    def __init__(self, statbox = None):
         Gtk.DrawingArea.__init__(self)
+        self.statbox = statbox
         self.set_can_focus(True)
         self.set_events(Gdk.EventMask.ALL_EVENTS_MASK)
 
@@ -337,6 +353,10 @@ class Canvas(Gtk.DrawingArea):
         self.sizing =  Gdk.Cursor(Gdk.CursorType.SIZING)
         self.cross =  Gdk.Cursor(Gdk.CursorType.TCROSS)
         self.hair =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
+
+    def show_status(self, strx):
+        if self.statusbar:
+            self.statusbar.set_text(strx)
 
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
@@ -486,14 +506,26 @@ class Canvas(Gtk.DrawingArea):
                         if aa.selected:
                             cnt += 1
 
+                    mms = ("Alignment",
+                            "Align Left","Align Right",
+                            "Align Top","Align Buttom",
+                            "Align Mid X","Align Mid Y",)
+                    sss = Menu(mms, self.menu_sss, event, True)
+
+                    mmz = ("Z-Order",
+                            "To Front","To Back",
+                            "One forward","One Backward",)
+                    zzz = Menu(mmz, self.menu_zzz, event, True)
+
                     if cnt > 1:
                         mmm = (bb.text, "Connect Objects", "Disconnect Objects",
-                        "Group Objects", "Ungroup Objects", "Align Left")
+                        "Group Objects", "Ungroup Objects", sss, zzz)
 
                         Menu(mmm, self.menu_action, event)
+
                     else:
-                        mmm = (bb.text, "Objects Properties", "Text",
-                                "FG Color", "BG Color", "To Back", "To Front")
+                        mmm = (bb.text, "Object Properties", "Text",
+                                "FG Color", "BG Color", zzz)
                         Menu(mmm, self.menu_action2, event)
 
                     self.queue_draw()
@@ -503,6 +535,12 @@ class Canvas(Gtk.DrawingArea):
                     Menu(mmm, self.menu_action3, event)
             else:
                 print("??? click", event.button)
+
+    def menu_zzz(self, item, num):
+            print ("Z order", item, num)
+
+    def menu_sss(self, item, num):
+            print ("Align", item, num)
 
     def menu_action(self, item, num):
         if num == 1:
@@ -558,6 +596,9 @@ class Canvas(Gtk.DrawingArea):
     def menu_action2(self, item, num):
 
         global globzorder
+
+        if num == 3:
+            canv_colsel(0, "Foreground color")
 
         if num == 5:
             for aa in self.coll:
@@ -684,6 +725,24 @@ def set_canv_testmode(flag):
 
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
