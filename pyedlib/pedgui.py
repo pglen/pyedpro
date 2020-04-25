@@ -3,7 +3,8 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import signal, os, time, sys, pickle, subprocess, random, math
+import signal, os, time, sys, pickle, subprocess, random
+import math, copy
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -12,7 +13,6 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Pango
 
-#import pedwin
 from . import pedconfig
 from . import pedync
 
@@ -56,6 +56,47 @@ class Rectangle(Gdk.Rectangle):
                 break
             pass
 
+    # make it smaller
+    def resize(self, ww, hh = 0):
+        if hh == 0:
+            hh = ww
+
+        #if ww + self.w <= 0 or hh + self.h <= 0:
+        #    raise (ValuError, "Cannot have negative rect size")
+
+        self.x -= ww/2; self.w += ww
+        self.y -= hh/2; self.h += hh
+
+    def copy(self):
+        #print("rect to copy", str(self))
+        #print("rect to copy", dir(self))
+        nnn = Rectangle()                   # New Instance
+        '''
+        # Self
+        for aa in dir(self):
+            try:
+                #nnn.__setattr__(aa, self.__getattribute__(aa))
+                nnn.aa = self.__getattribute__(aa)
+                #print("cp:", aa, end = "")
+                #if type(self.__getattribute__(aa)) == int:
+                #    print(" -> ", self.__getattribute__(aa), end= " ")
+                #print(" --- ", end = "")
+            except:
+                #print(sys.exc_info())
+                print("no", aa)
+                pass
+        '''
+
+        # Assign explictly
+        nnn.x = self.x
+        nnn.y = self.y
+        nnn.width = self.width
+        nnn.height = self.height
+
+        #print("rect out", str(nnn))
+        #print("rect out", dir(nnn))
+        return nnn
+
     def __getitem__(self, key):
         if key == 0:
             return self.x
@@ -67,6 +108,9 @@ class Rectangle(Gdk.Rectangle):
             return self.height
         else:
             raise IndexError;
+
+    def dump(self):
+        print("Rect: ", self.x, self.y, self.width, self.height)
 
     def __getattr__(self, attr):
         if attr == "w":
@@ -86,9 +130,6 @@ class Rectangle(Gdk.Rectangle):
 
     def __str__(self):
         return "Rect: x=%d y=%d w=%d h=%d" % (self.x, self.y, self.width, self.height)
-
-    def dump(self):
-        print("Rect: ", self.x, self.y, self.width, self.height)
 
 # ------------------------------------------------------------------------
 # Bemd some of the parameters for us
@@ -657,11 +698,17 @@ class Menu():
         self.callb = callb
         self.menarr = menarr
         self.menu2 = Gtk.Menu()
+
+        #self.menu3 = Gtk.Menu()
+
         cnt = 0
+        sss = self._create_menuitem("sub", self.menu_fired, cnt)
+        self.menu3.append(sss)
 
         #self.menu2.set_title("Hello")
 
         for aa in self.menarr:
+
             mmm = self._create_menuitem(aa, self.menu_fired, cnt)
 
             if cnt == 0:
@@ -673,6 +720,9 @@ class Menu():
                 mmm = self._create_menuitem("-" * len(aa), self.menu_fired, cnt)
                 mmm.set_sensitive(False)
                 self.menu2.append(mmm)
+
+            if cnt == 1:
+                mmm.set_submenu(self.menu3)
 
             cnt = cnt + 1
 
@@ -1101,6 +1151,46 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

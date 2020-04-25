@@ -89,11 +89,11 @@ class pgoline(Gtk.VBox):
                 rect = genrandrect(500, 1000)
                 self.canvas.add_romb(rect, "Romb_" + rstr, randcolstr() )
             elif rrr == 2:
-                rect = genrandrect(500, 1000)
+                rect = genrandrect(100, 100)
                 self.canvas.add_text(rect, "Text_" + rstr, randcolstr() )
             else:
                 circ = genrandcircle(500, 1000)
-                #self.canvas.add_circ(circ, "Circ_" + rstr, randcolstr() )
+                self.canvas.add_circle(circ, "Circ_" + rstr, randcolstr() )
 
         #self.canvas.show_objects()
         #self.canvas.setsavecb(self.savetext)
@@ -419,6 +419,10 @@ class notesql():
             return None
 
 # EOF
+
+
+
+
 
 
 

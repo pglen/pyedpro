@@ -76,6 +76,37 @@ class DrawObj():
         if newhh > self2.rect.height:
             self2.set_size_request(self2.rect.width, newhh + 20)
 
+
+    def corners(self, self2, rectz, rsize):
+
+        self2.crh.set_source_rgb(self.col2);
+
+        self.mx[0] = Rectangle(rectz.x - rsize/2,
+                    rectz.y - rsize/2, rsize, rsize)
+
+        #rsize += 3
+        self.mx[1] = Rectangle(rectz.x + rectz.w - rsize/2,
+                    rectz.y - rsize/2, rsize, rsize)
+
+        #rsize += 3
+        self.mx[2] = Rectangle(rectz.x - rsize/2,
+                    rectz.y + rectz.h - rsize/2, rsize, rsize)
+
+        #rsize += 3
+        self.mx[3] = Rectangle(rectz.x + rectz.w - rsize/2,
+                    rectz.y + rectz.h - rsize/2, rsize, rsize)
+
+        for aa in self.mx:
+            if aa:
+                self2.crh.rectangle(aa)
+        self2.cr.fill()
+
+        # Last one is handler
+        bb = self.mx[3].copy();  bb.resize(-8)
+        self2.crh.set_source_rgb(self.col1);
+        self2.crh.rectangle(bb)
+        self2.cr.fill()
+
 # ------------------------------------------------------------------------
 # Rectangle object
 
@@ -99,30 +130,10 @@ class RectObj(DrawObj):
         cr.stroke()
 
         if self.selected:
-            rsize = self.rsize;
-            self2.crh.set_source_rgb(self.col2);
-
-            self.mx[0] = Rectangle(self.rect.x - rsize/2,
-                        self.rect.y - rsize/2, rsize, rsize)
-
-            self.mx[1] = Rectangle(self.rect.x + self.rect.w - rsize/2,
-                        self.rect.y - rsize/2, rsize, rsize)
-
-            self.mx[2] = Rectangle(self.rect.x + self.rect.w - rsize/2,
-                        self.rect.y + self.rect.h - rsize/2, rsize, rsize)
-
-            self.mx[3] = Rectangle(self.rect.x - rsize/2,
-                        self.rect.y + self.rect.h - rsize/2, rsize, rsize)
-
-            for aa in self.mx:
-                if aa:
-                    self2.crh.rectangle(aa)
-
-            cr.fill()
-            #print("selected", self.id)
-            pass
+            self.corners(self2, self.rect, self.rsize)
 
         if self.text:
+            self2.crh.set_source_rgb(self.col2);
             self2.layout.set_text(self.text, len(self.text))
             xx, yy = self2.layout.get_pixel_size()
             xxx = self.rect.w / 2 - xx / 2
@@ -165,43 +176,19 @@ class TextObj(DrawObj):
         self.expand_size(self2)
 
         if self.selected:
-            rsize = self.rsize;
-            self2.crh.set_source_rgb(self.col2);
-
-            self.mx[0] = Rectangle(self.rect.x - rsize/2,
-                        self.rect.y - rsize/2, rsize, rsize)
-
-            self.mx[1] = Rectangle(self.rect.x + self.txx - rsize/2,
-                        self.rect.y - rsize/2, rsize, rsize)
-
-            self.mx[2] = Rectangle(self.rect.x + self.txx - rsize/2,
-                        self.rect.y + self.tyy - rsize/2, rsize, rsize)
-
-            self.mx[3] = Rectangle(self.rect.x - rsize/2,
-                        self.rect.y + self.tyy - rsize/2, rsize, rsize)
-
-            for aa in self.mx:
-                if aa:
-                    self2.crh.rectangle(aa)
-
-            cr.fill()
-            #print("selected", self.id)
-            pass
+            rrr = Rectangle(self.rect.x, self.rect.y, self.txx, self.tyy)
+            self.corners(self2, rrr, self.rsize)
 
         if self.text:
 
+            self2.crh.set_source_rgb(self.col2);
             self.fd.set_family("Arial")
-            self.fd.set_size(22 * Pango.SCALE);
+            self.fd.set_size(self.rect.h * Pango.SCALE);
 
             self.pangolayout = self2.create_pango_layout("a")
             self.pangolayout.set_font_description(self.fd)
             self.pangolayout.set_text(self.text, len(self.text))
             self.txx, self.tyy = self.pangolayout.get_pixel_size()
-
-            #self2.crh.set_source_rgb(self.col1); self2.crh.rectangle(self.rect)
-            #txtrect = Rectangle(self.rect.x, self.rect.y, self.txx, self.tyy)
-            #self2.crh.set_source_rgb(self.col2); self2.crh.rectangle(txtrect)
-            #cr.stroke()
 
             self2.crh.set_source_rgb(self.col2);
             cr.move_to(self.rect.x, self.rect.y)
@@ -258,28 +245,9 @@ class RombObj(DrawObj):
         cr.stroke()
 
         if self.selected:
-            rsize = self.rsize;
-            self2.crh.set_source_rgb(self.col2);
-
-            self.mx[0] = Rectangle(self.rect.x - rsize/2,
-                        self.rect.y - rsize/2, rsize, rsize)
-
-            self.mx[1] = Rectangle(self.rect.x + self.rect.w - rsize/2,
-                        self.rect.y - rsize/2, rsize, rsize)
-
-            self.mx[2] = Rectangle(self.rect.x + self.rect.w - rsize/2,
-                        self.rect.y + self.rect.h - rsize/2, rsize, rsize)
-
-            self.mx[3] = Rectangle(self.rect.x - rsize/2,
-                        self.rect.y + self.rect.h - rsize/2, rsize, rsize)
-
-            for aa in self.mx:
-                if aa:
-                    self2.crh.rectangle(aa)
-
-            cr.fill()
-
+            self.corners(self2, self.rect, self.rsize)
         if self.text:
+            self2.crh.set_source_rgb(self.col2);
             self2.layout.set_text(self.text, len(self.text))
             xx, yy = self2.layout.get_pixel_size()
             xxx = self.rect.w / 2 - xx / 2
@@ -329,33 +297,14 @@ class CircObj(DrawObj):
         cr.stroke()
 
         if self.selected:
-            rsize = self.rsize;
-
             ulx = self.rect.x - self.rect.w
             uly = self.rect.y - self.rect.w
-            lrx = self.rect.x + self.rect.w
-            lry = self.rect.y + self.rect.w
-
-            self2.crh.set_source_rgb(self.col2);
-
-            self.mx[0] = Rectangle(ulx - rsize/2,
-                        uly - rsize/2, rsize, rsize)
-
-            self.mx[1] = Rectangle(ulx - rsize/2,
-                        lry - rsize/2, rsize, rsize)
-
-            self.mx[2] = Rectangle(lrx - rsize/2,
-                        lry - rsize/2, rsize, rsize)
-
-            self.mx[3] = Rectangle(lrx - rsize/2,
-                        uly - rsize/2, rsize, rsize)
-
-            for aa in self.mx:
-                if aa:
-                    self2.crh.rectangle(aa)
-            cr.fill()
+            www = 2 * self.rect.w
+            rrr = Rectangle(ulx, uly, www, www)
+            self.corners(self2, rrr, self.rsize)
 
         if self.text:
+            self2.crh.set_source_rgb(self.col2);
             self2.layout.set_text(self.text, len(self.text))
             xx, yy = self2.layout.get_pixel_size()
             cr.move_to(self.rect.x - xx / 2, self.rect.y - yy / 2 )
@@ -382,9 +331,12 @@ class Canvas(Gtk.DrawingArea):
         self.resize = None
         self.dragcoord = (0,0)
         self.size2 = (0,0)
+        self.noop_down = False
         self.hand = Gdk.Cursor(Gdk.CursorType.HAND1)
         self.arrow = Gdk.Cursor(Gdk.CursorType.ARROW)
         self.sizing =  Gdk.Cursor(Gdk.CursorType.SIZING)
+        self.cross =  Gdk.Cursor(Gdk.CursorType.TCROSS)
+        self.hair =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
 
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
@@ -414,12 +366,28 @@ class Canvas(Gtk.DrawingArea):
             xd = int(self.dragcoord[0] - event.x)
             yd = int(self.dragcoord[1] - event.y)
             #print ("rdelta", xd, yd)
-            self.resize.rect.w = self.size2[0] - xd
-            self.resize.rect.h = self.size2[1] - yd
+
+            if self.size2[0] - xd > 2:
+                self.resize.rect.w = self.size2[0] - xd
+            if self.size2[1] - yd > 2:
+                self.resize.rect.h = self.size2[1] - yd
+
             self.queue_draw()
         else:
+            onmarker = False
+            hit = Rectangle(event.x, event.y, 2, 2)
+            # Check if on marker
+            for cc in self.coll:
+                if cc.hitmarker(hit):
+                    onmarker = True
+
             gdk_window = self.get_root_window()
-            gdk_window.set_cursor(self.arrow)
+            if onmarker:
+                gdk_window.set_cursor(self.cross)
+            elif self.noop_down:
+                gdk_window.set_cursor(self.hair)
+            else:
+                gdk_window.set_cursor(self.arrow)
 
     def area_button(self, area, event):
         self.mouse = Rectangle(event.x, event.y, 4, 4)
@@ -427,6 +395,9 @@ class Canvas(Gtk.DrawingArea):
         if  event.type == Gdk.EventType.BUTTON_RELEASE:
             self.drag = None
             self.resize = None
+            self.noop_down = False
+            self.get_root_window().set_cursor(self.arrow)
+
         if  event.type == Gdk.EventType.BUTTON_PRESS:
             hit = Rectangle(event.x, event.y, 2, 2)
             hitx = None
@@ -493,6 +464,12 @@ class Canvas(Gtk.DrawingArea):
                             pass
                         else:
                             bb.selected = False
+
+                if not hitx:
+                    self.noop_down = True
+                    gdk_window = self.get_root_window()
+                    gdk_window.set_cursor(self.hair)
+
                 self.queue_draw()
 
             elif event.button == 3:
@@ -512,39 +489,20 @@ class Canvas(Gtk.DrawingArea):
                     if cnt > 1:
                         mmm = (bb.text, "Connect Objects", "Disconnect Objects",
                         "Group Objects", "Ungroup Objects", "Align Left")
+
                         Menu(mmm, self.menu_action, event)
                     else:
                         mmm = (bb.text, "Objects Properties", "Text",
-                                "FG color", "BG Color", "To Back", "To Front")
+                                "FG Color", "BG Color", "To Back", "To Front")
                         Menu(mmm, self.menu_action2, event)
 
                     self.queue_draw()
                 else:
-                    mmm = ("Main Menu","Dump Objects", "Add rect", "Add Rombus")
+                    mmm = ("Main Menu","Dump Objects", "Add Rectangle",
+                            "Add Rombus", "Add Circle", "Add Text", )
                     Menu(mmm, self.menu_action3, event)
-
             else:
                 print("??? click", event.button)
-
-    def menu_action2(self, item, num):
-
-        global globzorder
-
-        if num == 5:
-            for aa in self.coll:
-                if aa.selected:
-                    globzorder = globzorder + 1
-                    aa.zorder = globzorder
-                    break
-
-        if num == 6:
-            for aa in self.coll:
-                aa.zorder += 1
-            for aa in self.coll:
-                if aa.selected:
-                    aa.zorder = 0
-                    break
-        self.queue_draw()
 
     def menu_action(self, item, num):
         if num == 1:
@@ -597,6 +555,26 @@ class Canvas(Gtk.DrawingArea):
                     break
         self.queue_draw()
 
+    def menu_action2(self, item, num):
+
+        global globzorder
+
+        if num == 5:
+            for aa in self.coll:
+                if aa.selected:
+                    globzorder = globzorder + 1
+                    aa.zorder = globzorder
+                    break
+
+        if num == 6:
+            for aa in self.coll:
+                aa.zorder += 1
+            for aa in self.coll:
+                if aa.selected:
+                    aa.zorder = 0
+                    break
+        self.queue_draw()
+
     def menu_action3(self, item, num):
         if num == 1:
             for aa in self.coll:
@@ -611,6 +589,16 @@ class Canvas(Gtk.DrawingArea):
             rstr = utils.randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
             self.add_romb(coord, rstr, randcolstr())
+
+        if num == 4:
+            rstr = utils.randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 70, 70)
+            self.add_circle(coord, rstr, randcolstr())
+
+        if num == 5:
+            rstr = utils.randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+            self.add_text(coord, rstr, randcolstr())
 
     def show_objects(self):
         for aa in self.coll:
@@ -631,7 +619,7 @@ class Canvas(Gtk.DrawingArea):
         self.queue_draw()
         return rob
 
-    def add_circ(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
+    def add_circle(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
         col1 = str2float(crb);    col2 = str2float(crf)
         rob = CircObj(coord, text, col1, col2, border, fill)
         self.coll.append(rob)
@@ -655,6 +643,7 @@ class Canvas(Gtk.DrawingArea):
 
         self.layout = PangoCairo.create_layout(cr)
         self.rect = self.get_allocation()
+        self.cr = cr
         self.crh = CairoHelper(cr)
 
         # Paint white, ignore system BG
@@ -680,15 +669,14 @@ class Canvas(Gtk.DrawingArea):
         #    aa.dump()
 
         sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
-
         # Draw objects
         #for aa in self.coll:
         for aa in sortx:
             try:
                 aa.draw(cr, self)
             except:
-                print("Cannot draw object", type(aa), sys.exc_info())
-                aa.dump()
+                utils.put_exception("Cannot draw " + str(type(aa)))
+                #aa.dump()
 
 def set_canv_testmode(flag):
     global canv_testmode
@@ -696,6 +684,72 @@ def set_canv_testmode(flag):
 
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
