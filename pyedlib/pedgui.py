@@ -665,7 +665,6 @@ class Menu():
             mmm = self._create_menuitem(aa, self.menu_fired, cnt)
 
             if cnt == 0:
-                #print(dir(mmm))
                 mmm.set_sensitive(False)
 
             self.menu2.append(mmm)
@@ -686,7 +685,7 @@ class Menu():
         return rclick_menu
 
     def menu_fired(self, menu, menutext, arg):
-        print ("menu item fired:", menutext, arg)
+        #print ("menu item fired:", menutext, arg)
         if self.callb:
             self.callb(menutext, arg)
         self.menu2 = None
@@ -1102,6 +1101,9 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
 
 
 

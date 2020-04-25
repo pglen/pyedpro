@@ -50,7 +50,7 @@ def genrandcircle(maxww, maxhh):
         if ww < xx and ww < yy:
             break
 
-    return (xx, yy, ww)
+    return (xx, yy, ww, ww)
 
 # ------------------------------------------------------------------------
 
@@ -81,20 +81,23 @@ class pgoline(Gtk.VBox):
 
             rstr = utils.randstr(6)
 
-            rrr = random.randint(0, 2)
+            rrr = random.randint(0, 3)
             if rrr == 0:
                 rect = genrandrect(500, 1000)
                 self.canvas.add_rect(rect, "Rect_" + rstr, randcolstr() )
             elif rrr == 1:
                 rect = genrandrect(500, 1000)
                 self.canvas.add_romb(rect, "Romb_" + rstr, randcolstr() )
+            elif rrr == 2:
+                rect = genrandrect(500, 1000)
+                self.canvas.add_text(rect, "Text_" + rstr, randcolstr() )
             else:
                 circ = genrandcircle(500, 1000)
                 #self.canvas.add_circ(circ, "Circ_" + rstr, randcolstr() )
 
         #self.canvas.show_objects()
-
         #self.canvas.setsavecb(self.savetext)
+
         scroll3a = Gtk.ScrolledWindow()
         scroll3a.set_policy(Gtk.PolicyType.ALWAYS, Gtk.PolicyType.ALWAYS)
         scroll3a.add(self.canvas)
@@ -416,6 +419,13 @@ class notesql():
             return None
 
 # EOF
+
+
+
+
+
+
+
 
 
 
