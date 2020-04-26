@@ -1,10 +1,9 @@
-
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from __future__ import absolute_import, print_function
 
 import signal, os, time, sys, subprocess, platform
-import ctypes, datetime, sqlite3, warnings, math
+import ctypes, datetime, sqlite3, warnings, math, pickle
 
 #from six.moves import range
 
@@ -47,12 +46,9 @@ def canv_colsel(oldcol, title):
     color = 0
     if response == Gtk.ResponseType.OK:
         color = col.get_current_color()
-        print ("color", color)
-        #ev.color =  col2float( col.get_current_color())
-        #print "ev.color", ev.color
-        #ev.modify_bg(Gtk.StateFlags.NORMAL, col.get_current_color())
+        #print ("color", color)
     csd.destroy()
-    return color
+    return col2float(color)
 
 class DrawObj():
 
@@ -75,12 +71,26 @@ class DrawObj():
         self.mouse = Rectangle()
         self.zorder = globzorder
         globzorder = globzorder + 1
-
-        pass
+        self.type = ""
 
     def dump(self):
-        print (self.text, self.id, "zorder", self.zorder,
-                    "groid", self.groupid, str(self.rect), self.other)
+        col1 = float2str(self.col1)
+        col2 = float2str(self.col2)
+
+        rect2 = self.rect.copy()
+
+        #if self.type == "Circ":
+        #    print("Half")
+        #    rect2.w = rect2.w / 2; rect2.h = rect2.h / 2
+        #print("x type: ", self.type, self.rect.dump(), rect2.dump())
+
+        return (self.id, self.text, self.type, str(self.zorder),
+                    str(self.groupid), rect2.dump(),
+                        str(col1), str(col2), self.other)
+
+    def __str__(self):
+        return (self.id, "[" + self.text + "]", self.type, str(self.zorder),
+                    str(self.groupid), str(self.rect), str(self.other))
 
     def expand_size(self, self2):
 
@@ -118,7 +128,7 @@ class DrawObj():
         self2.cr.fill()
 
         # Last one is handler
-        bb = self.mx[3].copy();  bb.resize(-8)
+        bb = self.mx[3].copy();  bb.resize(-5)
         self2.crh.set_source_rgb(self.col1);
         self2.crh.rectangle(bb)
         self2.cr.fill()
@@ -133,6 +143,7 @@ class RectObj(DrawObj):
 
         self.mx = [0, 0, 0, 0]      # side markers
         self.rsize = 12             # Marker size
+        self.type = "Rect"
 
     def draw(self, cr, self2):
 
@@ -186,6 +197,7 @@ class TextObj(DrawObj):
         self.fd = Pango.FontDescription()
         self.txx = 0
         self.tyy = 0
+        self.type = "Text"
 
     def draw(self, cr, self2):
 
@@ -235,6 +247,7 @@ class RombObj(DrawObj):
 
         self.mx = [0, 0, 0, 0]      # side markers
         self.rsize = 12             # Marker size
+        self.type = "Romb"
 
     def hittest(self, rectx):
 
@@ -284,6 +297,7 @@ class CircObj(DrawObj):
 
         self.mx = [0, 0, 0, 0]      # side markers
         self.rsize = 12             # Marker size
+        self.type = "Circ"
 
     def hittest(self, rectx):
 
@@ -472,7 +486,10 @@ class Canvas(Gtk.DrawingArea):
                                     bb.orgdrag = bb.rect.copy()
                         break
 
-                for bb in self.coll:
+                sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
+
+                #for bb in self.coll:
+                for bb in sortx:
                     if bb == hitx:
                         if event.state & Gdk.ModifierType.CONTROL_MASK:
                             bb.selected = not bb.selected
@@ -530,14 +547,32 @@ class Canvas(Gtk.DrawingArea):
 
                     self.queue_draw()
                 else:
-                    mmm = ("Main Menu","Dump Objects", "Add Rectangle",
-                            "Add Rombus", "Add Circle", "Add Text", )
+                    mmm = ("Main Menu", "Dump Objects", "Add Rectangle",
+                                "Add Rombus", "Add Circle", "Add Text",
+                                    "Save Objects", "Load Objects", "-", "Clear Canvas")
                     Menu(mmm, self.menu_action3, event)
             else:
                 print("??? click", event.button)
 
     def menu_zzz(self, item, num):
-            print ("Z order", item, num)
+        #print ("Z order", item, num)
+
+        if num == 1:
+            for aa in self.coll:
+                aa.zorder += 1
+            for aa in self.coll:
+                if aa.selected:
+                    aa.zorder = 0
+                    break
+        if num == 2:
+            for aa in self.coll:
+                if aa.selected:
+                    globzorder = globzorder + 1
+                    aa.zorder = globzorder
+                    break
+
+        self.queue_draw()
+
 
     def menu_sss(self, item, num):
             print ("Align", item, num)
@@ -595,31 +630,25 @@ class Canvas(Gtk.DrawingArea):
 
     def menu_action2(self, item, num):
 
-        global globzorder
-
         if num == 3:
-            canv_colsel(0, "Foreground color")
-
-        if num == 5:
+            ccc = canv_colsel(0, "Foreground Color")
             for aa in self.coll:
                 if aa.selected:
-                    globzorder = globzorder + 1
-                    aa.zorder = globzorder
-                    break
+                    aa.col2 = ccc
+            self.queue_draw()
 
-        if num == 6:
-            for aa in self.coll:
-                aa.zorder += 1
+        if num == 4:
+            ccc = canv_colsel(0, "Background Color")
             for aa in self.coll:
                 if aa.selected:
-                    aa.zorder = 0
-                    break
-        self.queue_draw()
+                    aa.col1 = ccc
+            self.queue_draw()
+
 
     def menu_action3(self, item, num):
         if num == 1:
             for aa in self.coll:
-                aa.dump()
+                print(aa.dump())
 
         if num == 2:
             rstr = utils.randstr(6)
@@ -640,6 +669,48 @@ class Canvas(Gtk.DrawingArea):
             rstr = utils.randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
             self.add_text(coord, rstr, randcolstr())
+
+        if num == 6:
+            fff = "outline.pickle"
+            #print("Saving to:", fff)
+            sum = []
+            for aa in self.coll:
+                sum.append(aa.dump())
+            ff = open(fff, "wb")
+            pickle.dump(sum, ff)
+            ff.close()
+
+        if num == 7:
+            fff = "outline.pickle"
+            #print("Loading:", fff)
+            ff = open(fff, "rb")
+            sum2  = pickle.load(ff)
+            ff.close()
+            print(sum2)
+
+            for aa in sum2:
+                rectx = Rectangle(aa[5])
+                if aa[2] == "Rect":
+                    obj = self.add_rect(rectx, aa[1], aa[7], aa[6])
+                if aa[2] == "Circ":
+                    obj = self.add_circle(rectx, aa[1], aa[7], aa[6])
+                if aa[2] == "Text":
+                    obj = self.add_text(rectx, aa[1], aa[7], aa[6])
+                if aa[2] == "Romb":
+                    obj = self.add_romb(rectx, aa[1], aa[7], aa[6])
+
+                obj.id = aa[0]
+                obj.zorder = int(aa[3])
+                obj.groupid = int(aa[4])
+                obj.other  = list(aa[8])
+
+        if num == 8:
+            pass
+
+        if num == 9:
+            self.coll = []
+            self.queue_draw()
+
 
     def show_objects(self):
         for aa in self.coll:
@@ -725,6 +796,72 @@ def set_canv_testmode(flag):
 
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

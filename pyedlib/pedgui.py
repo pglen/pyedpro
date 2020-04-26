@@ -30,33 +30,39 @@ def randcolstr(start = 0, endd = 255):
 
 # ------------------------------------------------------------------------
 
-class Rectangle(Gdk.Rectangle):
+class Rectangle():
 
     # Accept rect, array, integers
     def __init__(self, *rrr):
-        Gdk.Rectangle.__init__(self)
+        #Gdk.Rectangle.__init__(self)
         if len(rrr) == 4:
             idx = 0
             for aa in rrr:
+                bb = int(aa)
                 if idx == 0:
-                    self.x = aa
+                    self.x = bb
                 elif idx == 1:
-                    self.y = aa
+                    self.y = bb
                 elif idx == 2:
-                    self.width = aa
+                    #self.width = bb
+                    self.w = bb
                 elif idx == 3:
-                    self.height = aa
+                    #self.height = bb
+                    self.h = bb
                 else:
                     raise ValueError
                 idx += 1
         else:
             for aaa in rrr:
                 self.x = aaa[0]; self.y =  aaa[1]
-                self.width =  aaa[2]; self.height =  aaa[3]
+                self.w =  aaa[2];
+                #self.width =  aaa[2];
+                self.h =  aaa[3]
+                #self.height =  aaa[3]
                 break
             pass
 
-    # make it smaller
+    # Make it smaller
     def resize(self, ww, hh = 0):
         if hh == 0:
             hh = ww
@@ -88,30 +94,82 @@ class Rectangle(Gdk.Rectangle):
         '''
 
         # Assign explictly
-        nnn.x = self.x
-        nnn.y = self.y
-        nnn.width = self.width
-        nnn.height = self.height
+        nnn.x = self.x + 0
+        nnn.y = self.y + 0
+        nnn.w = self.w + 0
+        nnn.h = self.h + 0
+
+        #nnn.width = self.width + 1
+        #nnn.height = self.height + 1
 
         #print("rect out", str(nnn))
         #print("rect out", dir(nnn))
         return nnn
 
+    # I was too lazy to write it; Crappy Gdt rect kicked me to it
+
+    # ==========    self
+    # =        =
+    # =    ----=----
+    # ====|======   |  rect2
+    #     |         |
+    #      ---------
+
+    def intersect(self, rect2):
+
+        urx = self.x + self.w;      lry = self.y + self.h
+        urx2 = rect2.x + rect2.w;   lry2 = rect2.y + rect2.h
+        inter = 0
+
+        # X intersect
+        if rect2.x >= self.x and rect2.x <= urx:
+            inter += 1;
+        # Y intersect
+        if rect2.y >= self.y and rect2.y <= lry:
+            inter += 1;
+
+        # X intersect rev
+        if self.x >= rect2.x and self.x <= urx2:
+            inter += 1;
+        # Y intersect rev
+        if self.y >= rect2.y and self.y <= lry2:
+            inter += 1;
+
+        #print("inter", inter, str(self), "->", str(rect2))
+        return (inter >= 2, self.x)
+
+    # I was too lazy to write it; Crappy Gdt rect kicked me to it
+    def contain(self, rect2):
+        #self.dump()
+        #rect2.dump()
+        inter = 0
+        # X intersect
+        if rect2.x >= self.x and rect2.x + rect2.w <= self.x + self.w:
+            inter += 1;
+        # Y intersect
+        if rect2.y >= self.y and rect2.y + rect2.h <= self.y + self.h:
+            inter += 1;
+        #print("inter", inter)
+        return (inter == 2, self.x)
+
+    # Convert index to values
     def __getitem__(self, key):
         if key == 0:
             return self.x
         elif key == 1:
             return self.y
         elif key == 2:
-            return self.width
+            return self.w
         elif key == 3:
-            return self.height
+            return self.h
         else:
             raise IndexError;
 
     def dump(self):
-        print("Rect: ", self.x, self.y, self.width, self.height)
+        return (self.x, self.y, self.w, self.h)
 
+    '''
+    # This was killed in favour of self implemented Rectangle class
     def __getattr__(self, attr):
         if attr == "w":
             return self.width
@@ -127,9 +185,10 @@ class Rectangle(Gdk.Rectangle):
             self.height = val
         else:
             super(Gdk.Rectangle, self).__setattr__(attr, val)
+    '''
 
     def __str__(self):
-        return "Rect: x=%d y=%d w=%d h=%d" % (self.x, self.y, self.width, self.height)
+        return "R: x=%d y=%d w=%d h=%d" % (self.x, self.y, self.w, self.h)
 
 # ------------------------------------------------------------------------
 # Bemd some of the parameters for us
@@ -704,7 +763,12 @@ class Menu():
         for aa in self.menarr:
             #print("type aa", type(aa))
             if type(aa) == str:
-                mmm = self._create_menuitem(aa, self.menu_fired, cnt)
+                if aa == "-":
+                    mmm = Gtk.SeparatorMenuItem.new()
+                    mmm.show()
+                else:
+                    mmm = self._create_menuitem(aa, self.menu_fired, cnt)
+
                 if cnt == 0:
                     mmm.set_sensitive(False)
                 self.gtkmenu.append(mmm)
@@ -1150,6 +1214,32 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

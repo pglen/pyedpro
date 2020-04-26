@@ -35,7 +35,7 @@ def ofd(fname = None, self2 = None):
     dialog.set_size_request(800, 600)
     dialog.set_default_size(800, 600)
     #print dialog
-    dialog.xmulti = None;
+    dialog.xmulti = []
 
     #dialog.set_transient_for(pyedlib.pedconfig.conf.pe.mywin);
 
@@ -105,13 +105,14 @@ def ofd(fname = None, self2 = None):
     response = dialog.run()
     if response == Gtk.ResponseType.ACCEPT:
         # Is multi selection?
-        if  dialog.xmulti:
+        if  len (dialog.xmulti):
             for bb in dialog.xmulti:
+                print("Multi select:", bb)
                 res.append(os.path.realpath(bb));
-        else:
-            res.append(os.path.realpath(dialog.entry.get_text()))
+        #else:
+        res.append(os.path.realpath(dialog.entry.get_text()))
 
-    #print ("response", response, "res", res  )
+    print ("response", response, "result", res  )
     dialog.destroy()
     return res
 
@@ -291,29 +292,48 @@ def create_ftree(ts, text = None):
     tv.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
 
     return tv
-    sel.get_selected()
+
+    #sel.get_selected()
 
 def tree_sel_row(xtree, dialog):
-    #print ("tree_sel_row", xtree)
+    print ("tree_sel_row", xtree)
     xstr = ""
+    #xmodel = xtree.get_model()
     sel = xtree.get_selection()
     xmodel, xpath = sel.get_selected_rows()
-    if xpath:
-        cumm = ""
-        dialog.xmulti = []
+    if sel:
+        cumm = ""; dialog.xmulti = []
+
+        '''iter = xmodel.get_iter_first()
+        cnt = 0
+        while True:
+            if sel.iter_is_selected(iter):
+                xstr = xmodel.get_value(iter, 0)
+                print("Selected %d" % cnt, xstr)
+            #else:
+            #    print("         %d" % cnt, xstr)
+
+            iter = xmodel.iter_next(iter)
+            if not iter:
+                break
+            cnt += 1
+        '''
+
         for aa in xpath:
             xiter2 = xmodel.get_iter(aa)
             xstr = xmodel.get_value(xiter2, 0)
             #print("mul selstr:", xstr )
-            cumm += '"' + xstr + '" '
             dialog.xmulti.append(xstr)
+            cumm += '"' + xstr + '" '
+
         dialog.entry.set_text(cumm)
+
     else:
         dialog.entry.set_text("")
         xstr = ""
 
 def tree_sel(xtree, xiter, xpath, dialog):
-    #print "tree_sel", xtree, xiter, xpath
+    #print ("tree_sel", xtree, xiter, xpath)
     sel = xtree.get_selection()
     xmodel, xpath = sel.get_selected_rows()
     if xpath:
@@ -398,6 +418,29 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
