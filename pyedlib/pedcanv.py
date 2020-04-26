@@ -26,6 +26,7 @@ from    .pedui import *
 from    .pedutil import *
 from    .pedgui import *
 from    .pedcolor import *
+from    .pedtdlg import *
 
 canv_testmode = 0
 
@@ -69,8 +70,9 @@ class DrawObj():
         self.orgdrag = ()
         self.other = []
         self.mouse = Rectangle()
-        self.zorder = globzorder
         globzorder = globzorder + 1
+        self.zorder = globzorder
+        #globzorder = globzorder + 1
         self.type = ""
 
     def dump(self):
@@ -385,8 +387,8 @@ class Canvas(Gtk.DrawingArea):
                 if aa.selected:
                     aa.rect.x = aa.orgdrag.x  - xd
                     aa.rect.y = aa.orgdrag.y  - yd
-                    # Also move whole group
-                    if aa.groupid:
+                    # Also move whole group IN NOT SHIFT
+                    if aa.groupid and not (event.state & Gdk.ModifierType.SHIFT_MASK) :
                         for bb in self.coll:
                             if aa.groupid == bb.groupid:
                                 bb.rect.x = bb.orgdrag.x  - xd
@@ -423,9 +425,21 @@ class Canvas(Gtk.DrawingArea):
             else:
                 gdk_window.set_cursor(self.arrow)
 
+        '''if event.state & Gdk.ModifierType.SHIFT_MASK:
+                    print( "Shift ButPress x =", event.x, "y =", event.y)
+                if event.state & Gdk.ModifierType.CONTROL_MASK:
+                    print( "Ctrl ButPress x =", event.x, "y =", event.y)
+                if event.state & Gdk.ModifierType.MOD1_MASK :
+                    print( "Alt ButPress x =", event.x, "y =", event.y)
+                '''
+
     def area_button(self, area, event):
         self.mouse = Rectangle(event.x, event.y, 4, 4)
         #print( "Button", event.button, "state", event.state, " x =", event.x, "y =", event.y)
+
+        if  event.type == Gdk.EventType.DOUBLE_BUTTON_PRESS:
+            print("DBL click", event.button)
+
         if  event.type == Gdk.EventType.BUTTON_RELEASE:
             self.drag = None
             self.resize = None
@@ -436,13 +450,6 @@ class Canvas(Gtk.DrawingArea):
             hit = Rectangle(event.x, event.y, 2, 2)
             hitx = None
             if event.button == 1:
-                '''if event.state & Gdk.ModifierType.SHIFT_MASK:
-                    print( "Shift ButPress x =", event.x, "y =", event.y)
-                if event.state & Gdk.ModifierType.CONTROL_MASK:
-                    print( "Ctrl ButPress x =", event.x, "y =", event.y)
-                if event.state & Gdk.ModifierType.MOD1_MASK :
-                    print( "Alt ButPress x =", event.x, "y =", event.y)
-                '''
                 if not event.state & Gdk.ModifierType.SHIFT_MASK and \
                             not event.state & Gdk.ModifierType.CONTROL_MASK:
                     # Operate on pre selected
@@ -472,9 +479,12 @@ class Canvas(Gtk.DrawingArea):
                     if self.drag:
                         return
 
+                sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
+
                 # Execute new hit test on drag immidiate
-                for aa in self.coll:
-                    if aa.hittest(hit):
+                #for aa in self.coll:
+                for aa in sortx:
+                    if aa.hittest(hit): # and aa.selected:
                         hitx = aa
                         self.drag = aa
                         self.dragcoord  = (event.x, event.y)
@@ -486,8 +496,6 @@ class Canvas(Gtk.DrawingArea):
                                     bb.orgdrag = bb.rect.copy()
                         break
 
-                sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
-
                 #for bb in self.coll:
                 for bb in sortx:
                     if bb == hitx:
@@ -495,6 +503,7 @@ class Canvas(Gtk.DrawingArea):
                             bb.selected = not bb.selected
                         else:
                             bb.selected = True
+                            #break
                     else:
                         if event.state & Gdk.ModifierType.SHIFT_MASK or \
                             event.state & Gdk.ModifierType.CONTROL_MASK:
@@ -529,13 +538,19 @@ class Canvas(Gtk.DrawingArea):
                             "Align Mid X","Align Mid Y",)
                     sss = Menu(mms, self.menu_sss, event, True)
 
-                    mmz = ("Z-Order",
+                    mmz = ( "Z-Order",
                             "To Front","To Back",
                             "One forward","One Backward",)
                     zzz = Menu(mmz, self.menu_zzz, event, True)
 
+                    ccs = ( "Connect",
+                            "Connect Objects (Reg)", "Connect Objects (Yes)",
+                            "Connect Objects (No)", "Disconnect Objects",)
+
+                    ccc = Menu(ccs, self.menu_ccc, event, True)
+
                     if cnt > 1:
-                        mmm = (bb.text, "Connect Objects", "Disconnect Objects",
+                        mmm = (bb.text, ccc,
                         "Group Objects", "Ungroup Objects", sss, zzz)
 
                         Menu(mmm, self.menu_action, event)
@@ -554,30 +569,8 @@ class Canvas(Gtk.DrawingArea):
             else:
                 print("??? click", event.button)
 
-    def menu_zzz(self, item, num):
-        #print ("Z order", item, num)
-
-        if num == 1:
-            for aa in self.coll:
-                aa.zorder += 1
-            for aa in self.coll:
-                if aa.selected:
-                    aa.zorder = 0
-                    break
-        if num == 2:
-            for aa in self.coll:
-                if aa.selected:
-                    globzorder = globzorder + 1
-                    aa.zorder = globzorder
-                    break
-
-        self.queue_draw()
-
-
-    def menu_sss(self, item, num):
-            print ("Align", item, num)
-
-    def menu_action(self, item, num):
+    def menu_ccc(self, item, num):
+        print ("Connect", item, num)
         if num == 1:
             #print ("Conn obj", item, num)
             ccc = []
@@ -587,7 +580,7 @@ class Canvas(Gtk.DrawingArea):
             for aa in ccc[1:]:
                 ccc[0].other.append(aa.id)
 
-        if num == 2:
+        if num == 4:
             ccc = []
             for aa in self.coll:
                 if aa.selected:
@@ -602,8 +595,36 @@ class Canvas(Gtk.DrawingArea):
                 for dd in ccc:
                     dd.other = []
 
+
+    def menu_zzz(self, item, num):
+
+        #print ("Z order", item, num)
+        global globzorder
+        if num == 1:
+            for aa in self.coll:
+                if aa.selected:
+                    globzorder = globzorder + 1
+                    aa.zorder = globzorder
+                    break
+
+        if num == 2:
+            for aa in self.coll:
+                aa.zorder += 1
+            for aa in self.coll:
+                if aa.selected:
+                    aa.zorder = 0
+                    break
+
+        self.queue_draw()
+
+
+    def menu_sss(self, item, num):
+            print ("Align", item, num)
+
+    def menu_action(self, item, num):
+
         # Group
-        if num == 3:
+        if num == 2:
             global globgroup
             globgroup += 1
             for aa in self.coll:
@@ -611,7 +632,7 @@ class Canvas(Gtk.DrawingArea):
                     aa.groupid = globgroup
 
         # Ungroup
-        if num == 4:
+        if num == 3:
             for aa in self.coll:
                 if aa.selected:
                     for bb in self.coll:
@@ -629,6 +650,19 @@ class Canvas(Gtk.DrawingArea):
         self.queue_draw()
 
     def menu_action2(self, item, num):
+
+        if num == 2:
+            print("Getting text")
+            bb = None
+            for aa in self.coll:
+                    if aa.selected:
+                        bb = aa
+            if bb:
+                response, txt = textdlg(bb.text, self.get_toplevel())
+                if response == Gtk.ResponseType.ACCEPT:
+                    #print("Got text", txt)
+                    bb.text = txt
+                    self.queue_draw()
 
         if num == 3:
             ccc = canv_colsel(0, "Foreground Color")
@@ -727,6 +761,7 @@ class Canvas(Gtk.DrawingArea):
     def add_text(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
         col1 = str2float(crb);    col2 = str2float(crf)
         rob = TextObj(coord, text, col1, col2, border, fill)
+
         self.coll.append(rob)
         self.queue_draw()
         return rob
@@ -780,7 +815,8 @@ class Canvas(Gtk.DrawingArea):
         #for aa in self.coll:
         #    aa.dump()
 
-        sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
+        sortx = sorted(self.coll, reverse = False, key = lambda item: item.zorder)
+
         # Draw objects
         #for aa in self.coll:
         for aa in sortx:
@@ -796,129 +832,6 @@ def set_canv_testmode(flag):
 
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -29,7 +29,9 @@ def ofd(fname = None, self2 = None):
                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                     Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
 
-    dialog.set_transient_for(self2.mained.mywin)
+    #dialog.set_transient_for(self2.mained.mywin)
+    dialog.set_transient_for(self2.get_toplevel())
+
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_position(Gtk.WindowPosition.CENTER)
     dialog.set_size_request(800, 600)
@@ -100,7 +102,6 @@ def ofd(fname = None, self2 = None):
     dialog.set_focus(tview)
     #dialog.set_focus(dialog.entry)
     warnings.simplefilter("default")
-
     res = []
     response = dialog.run()
     if response == Gtk.ResponseType.ACCEPT:
@@ -112,7 +113,7 @@ def ofd(fname = None, self2 = None):
         #else:
         res.append(os.path.realpath(dialog.entry.get_text()))
 
-    print ("response", response, "result", res  )
+    #print ("response", response, "result", res  )
     dialog.destroy()
     return res
 
@@ -296,7 +297,9 @@ def create_ftree(ts, text = None):
     #sel.get_selected()
 
 def tree_sel_row(xtree, dialog):
-    print ("tree_sel_row", xtree)
+
+    #print("tree_sel_row", xtree)
+
     xstr = ""
     #xmodel = xtree.get_model()
     sel = xtree.get_selection()
@@ -418,6 +421,9 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
+
+
 
 
 

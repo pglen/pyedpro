@@ -745,6 +745,15 @@ class Led(Gtk.DrawingArea):
         cr.arc(rect.width/2+1, rect.height/2, rect.width / 2. * .2, 0., 2 * math.pi)
         cr.fill()
 
+
+# Bug fix in Gtk
+
+class   SeparatorMenuItem(Gtk.SeparatorMenuItem):
+
+    def __init__(self):
+        Gtk.SeparatorMenuItem.__init__(self);
+        self.show()
+
 # ------------------------------------------------------------------------
 
 class Menu():
@@ -759,30 +768,29 @@ class Menu():
         self.title = menarr[0]
 
         cnt = 0
-
         for aa in self.menarr:
             #print("type aa", type(aa))
             if type(aa) == str:
                 if aa == "-":
-                    mmm = Gtk.SeparatorMenuItem.new()
-                    mmm.show()
+                    mmm = SeparatorMenuItem()
                 else:
                     mmm = self._create_menuitem(aa, self.menu_fired, cnt)
 
-                if cnt == 0:
-                    mmm.set_sensitive(False)
-                self.gtkmenu.append(mmm)
-                if cnt == 0:
-                    sep = Gtk.SeparatorMenuItem.new()
-                    sep.show()
-                    self.gtkmenu.append(sep)
+                if not submenu:
+                    self.gtkmenu.append(mmm)
+                    if cnt == 0:
+                        mmm.set_sensitive(False)
+                        self.gtkmenu.append(SeparatorMenuItem())
+                else:
+                    if cnt != 0:
+                        self.gtkmenu.append(mmm)
 
             elif type(aa) == Menu:
                 mmm = self._create_menuitem(aa.title, self.dummy, cnt)
                 mmm.set_submenu(aa.gtkmenu)
                 self.gtkmenu.append(mmm)
             else:
-                raise(ValuError, "Menu needs text or submenu")
+                raise ValueError("Menu needs text or submenu")
             cnt = cnt + 1
 
         if not submenu:
@@ -1214,6 +1222,14 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 
