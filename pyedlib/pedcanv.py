@@ -12,6 +12,7 @@ from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Pango
+from gi.repository import cairo
 
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
@@ -557,14 +558,14 @@ class Canvas(Gtk.DrawingArea):
 
                     else:
                         mmm = (bb.text, "Object Properties", "Text",
-                                "FG Color", "BG Color", zzz)
+                                "FG Color", "BG Color", "Ungroup", zzz)
                         Menu(mmm, self.menu_action2, event)
 
                     self.queue_draw()
                 else:
                     mmm = ("Main Menu", "Dump Objects", "Add Rectangle",
                                 "Add Rombus", "Add Circle", "Add Text",
-                                    "Save Objects", "Load Objects", "-", "Clear Canvas")
+                                    "Save Objects", "Load Objects", "-", "Clear Canvas", "-", "Export")
                     Menu(mmm, self.menu_action3, event)
             else:
                 print("??? click", event.button)
@@ -595,6 +596,7 @@ class Canvas(Gtk.DrawingArea):
                 for dd in ccc:
                     dd.other = []
 
+            self.queue_draw()
 
     def menu_zzz(self, item, num):
 
@@ -616,7 +618,6 @@ class Canvas(Gtk.DrawingArea):
                     break
 
         self.queue_draw()
-
 
     def menu_sss(self, item, num):
             print ("Align", item, num)
@@ -678,6 +679,14 @@ class Canvas(Gtk.DrawingArea):
                     aa.col1 = ccc
             self.queue_draw()
 
+        if num == 5:
+            for aa in self.coll:
+                if aa.selected:
+                    for bb in self.coll:
+                        if aa.groupid == bb.groupid:
+                            bb.groupid = 0
+                        aa.groupid = 0
+            self.queue_draw()
 
     def menu_action3(self, item, num):
         if num == 1:
@@ -745,6 +754,24 @@ class Canvas(Gtk.DrawingArea):
             self.coll = []
             self.queue_draw()
 
+        if num == 11:
+            # crate PNG
+            for aa in self.coll:
+                aa.selected = False
+            self.queue_draw()
+            usleep(10)
+            rect = self.get_allocation()
+
+            #pixbuf = Gdk.pixbuf_get_from_window(self.get_window(), 0, 0, rect.width, rect.height)
+            #self.surface = cairo.create_for_rectangle(0, 0, width, height)
+            #self.surface = cairo.create_similar_image(cairo.Format.ARGB32, rect.width, rect.height)
+            #cr =  self.get_window().cairo_create()
+            #cr =  cairo.Context(self.surface)
+
+            cr = Gdk.cairo_create(self.get_window())
+            self.draw_event(self, cr)
+            pixbuf = Gdk.pixbuf_get_from_surface(cr.get_target(), 0, 0, rect.width, rect.height)
+            pixbuf.savev("buff.png", "png", [None], [])
 
     def show_objects(self):
         for aa in self.coll:
@@ -832,26 +859,6 @@ def set_canv_testmode(flag):
 
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

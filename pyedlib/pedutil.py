@@ -761,6 +761,56 @@ def     load_sess():
     fc.run()
 
 # ------------------------------------------------------------------------
+# Open file dialog
+
+def    _done_fcd(win, resp, fc):
+
+    #print  ("_done_fcd", fc, resp)
+    fc.resp = resp
+    # Gather list of files
+    if resp == Gtk.ButtonsType.OK:
+        fc.fname = fc.get_filename()
+        #print("OK")
+    else:
+        fc.fname = ""
+        #print("Cancelled")
+
+    # Back to original dir
+    os.chdir(os.path.dirname(fc.old))
+    fc.done = True
+
+def  getfilename(parent, title = "Open File", oktext = "OK", filter = []):
+
+    but =   "Cancel", Gtk.ButtonsType.CANCEL, title, Gtk.ButtonsType.OK
+    fc = Gtk.FileChooserDialog(title, None, Gtk.FileChooserAction.OPEN)
+
+    fc.set_transient_for(parent.get_toplevel())
+
+    fc.add_button("Cancel", Gtk.ButtonsType.CANCEL)
+    fc.add_button(oktext, Gtk.ButtonsType.OK)
+
+    filter2 = Gtk.FileFilter()
+    for aa in filter:
+        filter2.add_pattern (aa);
+    filter2.add_pattern ("*");
+
+    fc.old = os.getcwd()
+    fc.set_filter(filter2)
+    #fc.set_current_folder(pedconfig.conf.sess_data)
+    #fc.set_current_name(os.path.basename("Untitled.sess"))
+    fc.set_default_response(Gtk.ButtonsType.OK)
+    fc.connect("response", _done_fcd, fc)
+    fc.done = False
+    fc.run()
+    while 1:
+        if fc.done:  break
+        usleep(200)
+    fname =  fc.fname
+    fc.destroy()
+    #print("resp", fc.resp, "fname", fc.fname)
+    return  fname
+
+# ------------------------------------------------------------------------
 # Get am pm version of a number
 
 def ampmstr(bb):
@@ -775,6 +825,25 @@ def ampmstr(bb):
     return "%02d %s" % (bb, dd)
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

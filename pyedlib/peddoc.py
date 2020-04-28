@@ -900,6 +900,15 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if ".py" in self.fname.lower():
                 try:
                     aa = 0; bb = 0
+                    regex = re.compile("class")
+                    for aa in range(int(sline) - 1, 0, -1):
+                        line = self.text[aa]
+                        res = regex.search(line)
+                        if res:
+                            #print( "start", line, res.start(), res.end())
+                            sumw2.append(line)
+                            break
+
                     regex = re.compile(pykeywords2)
                     for aa in range(int(sline) - 1, 0, -1):
                         line = self.text[aa]
@@ -908,6 +917,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                             #print( "start", line, res.start(), res.end())
                             sumw2.append(line)
                             break
+
                     if aa > 0:
                         for bb in range(aa + 1, len(self.text)):
                             line = self.text[bb]
@@ -1809,14 +1819,4 @@ def run_async_time(win):
 
 
 # EOF
-
-
-
-
-
-
-
-
-
-
 

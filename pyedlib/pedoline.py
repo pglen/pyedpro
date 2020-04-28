@@ -129,7 +129,13 @@ class pgoline(Gtk.VBox):
                 self.treeview2.append(aa[2:])
 
     def  main_callb(self, text, arg):
-        print("main_callb", text, arg)
+        #print("main_callb", text, arg)
+
+        if arg == 0:
+            fff = getfilename(self) # "Open File", "Load Annotation", [])
+            if fff:
+                print("fff", fff)
+
         pass
 
     def newitem(self, arg, num):
@@ -432,6 +438,12 @@ class notesql():
             return None
 
 # EOF
+
+
+
+
+
+
 
 
 
