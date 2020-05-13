@@ -132,7 +132,7 @@ class pgoline(Gtk.VBox):
         #print("main_callb", text, arg)
 
         if arg == 0:
-            fff = getfilename(self) # "Open File", "Load Annotation", [])
+            fff = getfilename(parent=self) # "Open File", "Load Annotation", [])
             if fff:
                 print("fff", fff)
 
@@ -438,6 +438,9 @@ class notesql():
             return None
 
 # EOF
+
+
+
 
 
 

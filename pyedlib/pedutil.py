@@ -779,12 +779,21 @@ def    _done_fcd(win, resp, fc):
     os.chdir(os.path.dirname(fc.old))
     fc.done = True
 
-def  getfilename(parent, title = "Open File", oktext = "OK", filter = []):
+# ------------------------------------------------------------------------
+
+def  getfilename(title = "Open File", save = False, oktext = "OK", filter = [], parent = None ):
+
+    if save:
+        fc = Gtk.FileChooserDialog(title, None, Gtk.FileChooserAction.SAVE)
+    else:
+        fc = Gtk.FileChooserDialog(title, None, Gtk.FileChooserAction.OPEN)
 
     but =   "Cancel", Gtk.ButtonsType.CANCEL, title, Gtk.ButtonsType.OK
-    fc = Gtk.FileChooserDialog(title, None, Gtk.FileChooserAction.OPEN)
 
-    fc.set_transient_for(parent.get_toplevel())
+    if not parent:
+        fc.set_transient_for(fc.get_toplevel())
+    else:
+        fc.set_transient_for(parent.get_toplevel())
 
     fc.add_button("Cancel", Gtk.ButtonsType.CANCEL)
     fc.add_button(oktext, Gtk.ButtonsType.OK)
@@ -796,7 +805,7 @@ def  getfilename(parent, title = "Open File", oktext = "OK", filter = []):
 
     fc.old = os.getcwd()
     fc.set_filter(filter2)
-    #fc.set_current_folder(pedconfig.conf.sess_data)
+    fc.set_current_folder(fc.old)
     #fc.set_current_name(os.path.basename("Untitled.sess"))
     fc.set_default_response(Gtk.ButtonsType.OK)
     fc.connect("response", _done_fcd, fc)
@@ -825,6 +834,13 @@ def ampmstr(bb):
     return "%02d %s" % (bb, dd)
 
 # EOF
+
+
+
+
+
+
+
 
 
 

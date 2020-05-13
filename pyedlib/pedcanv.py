@@ -438,6 +438,13 @@ class Canvas(Gtk.DrawingArea):
         self.mouse = Rectangle(event.x, event.y, 4, 4)
         #print( "Button", event.button, "state", event.state, " x =", event.x, "y =", event.y)
 
+        mods = event.state & Gtk.accelerator_get_default_mod_mask()
+        if(mods & Gdk.ModifierType.MOD1_MASK):
+            print("Modifier ALT",  event.state)
+
+        if event.state & Gdk.ModifierType.CONTROL_MASK:
+            print( "Ctrl ButPress x =", event.x, "y =", event.y)
+
         if  event.type == Gdk.EventType.DOUBLE_BUTTON_PRESS:
             print("DBL click", event.button)
 
@@ -859,6 +866,14 @@ def set_canv_testmode(flag):
 
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 

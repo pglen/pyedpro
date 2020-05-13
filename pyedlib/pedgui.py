@@ -461,7 +461,7 @@ class   LetterSel(Gtk.VBox):
             self.callb(letter)
 
 # ------------------------------------------------------------------------
-# An N pixel horizontal spacer. Defaults to X pix
+# An N pixel horizontal spacer. Defaults to X pix  get_center
 
 class xSpacer(Gtk.HBox):
 
@@ -1222,6 +1222,7 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
 
 
 

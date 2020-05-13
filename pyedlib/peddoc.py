@@ -16,7 +16,7 @@ from gi.repository import PangoCairo
 
 from . import keyhand, pedconfig, pedync
 from . import pedcolor, pedspell, pedmenu, utils
-from . import peddraw, pedmisc
+from . import peddraw, pedmisc, pedstruct
 
 from .pedutil import *
 from .keywords import *
@@ -33,7 +33,7 @@ PAGEUP      = 20            # One page worth of scroll
 # this way. (See mess on tabs before V21)
 TABSTOP = 4                 # One tab stop worth of spaces
 
-# Profile line, use it on bottlenecks
+# Profile line, use it on bottlenecks Widget set_a
 #got_clock = time.clock()
 # profiled code here
 #print(  "Str", time.clock() - got_clock)
@@ -233,7 +233,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.stcolor = pedcolor.str2float(STCOLOR)
         else:
             self.stcolor = pedcolor.str2float(ccc)
-
 
     def setfont(self, fam, size):
 
@@ -532,12 +531,27 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 if flag:
                     line = self.text[yy];
                     #print( "'" + line[xx:zz] + "'")
-                    self.xsel = xx; self.xsel2 = zz
+                    self.xsel = xx; self.xsel2 = xx + 10
                     self.ysel = self.ysel2 = yy
                     self.spellstr = line[int(xx):int(zz)]
                     self.popspell(area, event, self.spellstr)
                 else:
-                    self.poprclick(area, event)
+                    if event.state & Gdk.ModifierType.SHIFT_MASK:
+                        if self.xsel == -1:
+                            yyy = int(event.y / self.cyy + self.ypos)
+                            xxx = int(event.x / self.cxx + self.xpos)
+                            line = self.text[yyy];
+                            self.xsel, self.xsel2 = selasci2(line, xxx, "_-")
+                            self.ysel = self.ysel2 = yyy
+                        else:
+                            line = self.text[self.ysel];
+
+                        strx = line[int(self.xsel):int(self.xsel2)]
+                        #print("'" + strx + "'")
+                        if strx:
+                            self.poprclick2(area, event, strx)
+                    else:
+                        self.poprclick(area, event)
 
         elif  event.type == Gdk.EventType.BUTTON_RELEASE:
             #print( "button release", event.button)
@@ -1014,7 +1028,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         mi.set_sensitive(False)
         self.menu2.append(mi)
 
-        strs = "Creating suggestion list for '{0:s}'".format(xstr)
+        strs = "Creating suggestion list for '{0:s}'".format(self.spellstr)
         self.mained.update_statusbar(strs)
         arr = pedspell.suggest(self, xstr)
 
@@ -1027,10 +1041,32 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.menu2.popup(None, None, None, None, event.button, event.time)
         #self.mained.update_statusbar("Done menu popup.")
 
+    def poprclick2(self, widget, event, strx):
+        #print ("Making shift rclick2")
+        self.menu2 = Gtk.Menu()
+        self.menu2.append(self.create_menuitem("Checking '%s'" % strx, None))
+        mi = self.create_menuitem("-------------", None)
+        mi.set_sensitive(False)
+        self.menu2.append(mi)
+        strs = "Creating class list for '{0:s}'".format(strx)
+        self.mained.update_statusbar(strs)
+        arr = pedstruct.suggest(self, strx)
+        if len(arr) == 0:
+            self.menu2.append(self.create_menuitem("No Matches", None))
+        else:
+            for bb in arr:
+                self.menu2.append(self.create_menuitem(bb, self.menuitem_response2))
+
+        self.menu2.popup(None, None, None, None, event.button, event.time)
+
     def poprclick(self, widget, event):
         #print ("Making rclick")
         self.build_menu(self, pedmenu.rclick_menu)
         self.menu.popup(None, None, None, None, event.button, event.time)
+
+    def menuitem_response2(self, widget, stringx, arg):
+        print( "menuitem response2 '%s'" % stringx)
+        #print( "Original str '%s'" % self.spellstr)
 
     def menuitem_response(self, widget, stringx, arg):
         #print( "menuitem response '%s'" % stringx)
@@ -1819,4 +1855,36 @@ def run_async_time(win):
 
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

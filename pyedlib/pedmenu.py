@@ -88,6 +88,11 @@ rclick_menu = (
             ( _("E_xit"),          "<alt>X",           rclick_quit, 13, None ),
             )
 
+rclick_menu2 = (
+            ( _("Terminal Here"),  None,               rclick_action, 14, None ),
+            ( _("Exec current"),  None,                rclick_action, 17, None ),
+            )
+
 def create_action_group(self):
     # GtkActionEntry
     if sys.version_info[0] < 3:
@@ -383,6 +388,8 @@ def create_action_group(self):
     #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
 
     return action_group
+
+
 
 
 

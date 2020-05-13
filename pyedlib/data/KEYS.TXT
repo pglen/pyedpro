@@ -45,7 +45,7 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Ctrl-Shift O                -- Open session
     Ctrl P                      -- Print (not implemented on all platforms)
     Ctrl Q                      -- Quit program **
-    Ctrl R                      -- Reverse three words ***
+    Ctrl R                      -- Reverse three words. Cursor on W1 ***
     Ctrl S                      -- Save current file
     Ctrl T                      -- Transpose two words (taush)
     Ctrl-Shift T                -- Add Time/Date in document
@@ -229,6 +229,7 @@ terminal. If no action is listed, that key is unassigned.
 Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
 
 // EOF
+
 
 
 
