@@ -1065,8 +1065,15 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response2(self, widget, stringx, arg):
-        print( "menuitem response2 '%s'" % stringx)
+        #print( "menuitem response2 '%s'" % stringx)
         #print( "Original str '%s'" % self.spellstr)
+        disp2 = Gdk.Display()
+        disp = disp2.get_default()
+        clip = Gtk.Clipboard.get_default(disp)
+        stringx = stringx.strip()
+        clip.set_text(stringx, len(stringx))
+        strs = "Copied to clipboard '{0:s}'".format(stringx)
+        self.mained.update_statusbar(strs)
 
     def menuitem_response(self, widget, stringx, arg):
         #print( "menuitem response '%s'" % stringx)
@@ -1855,6 +1862,9 @@ def run_async_time(win):
 
 
 # EOF
+
+
+
 
 
 

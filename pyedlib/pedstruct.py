@@ -43,17 +43,21 @@ def  suggest(self2, strx):
                             arr.append("   " + ssss)
                         cnt += 1
 
-            #if cnt > 30:
-            #    break
+            if cnt > 100:
+                break
+
             cnt2 += 1
     except:
-        print("Exception")
+        #print("Exception")
+        pass
 
     #print("searched", cnt2)
 
     return arr
 
 # EOF
+
+
 
 
 
