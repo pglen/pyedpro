@@ -16,6 +16,9 @@ from gi.repository import GObject
 from . import pedconfig
 from . import pedync
 
+(TARGET_ENTRY_TEXT, TARGET_ENTRY_PIXBUF) = range(2)
+(COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
+
 # Cut leading space in half
 
 def cut_lead_space(xstr, divi = 2):
@@ -834,6 +837,7 @@ def ampmstr(bb):
     return "%02d %s" % (bb, dd)
 
 # EOF
+
 
 
 

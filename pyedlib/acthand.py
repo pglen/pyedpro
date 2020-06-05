@@ -33,6 +33,12 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import string, subprocess, os, platform, datetime
+
+try:
+    import cups
+except:
+    print ("Printing subsys might not be available")
+
 import py_compile
 
 import gi
@@ -897,6 +903,7 @@ class ActHand:
             print ("CTRL - K")
 
         self2.ctrl = False
+
         self2.alt = False
         self.up(self2)
 
@@ -918,6 +925,34 @@ class ActHand:
                 "Autocorrect is on with %d enties." % len(acorr))
         else:
             self2.mained.update_statusbar("Autocorrect is off.")
+
+    def ctrl_p(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - P")
+
+        self2.save()
+        conn = cups.Connection()
+        printers = conn.getPrinters()
+        if not printers:
+            pedync.message("\n   No printer detected  \n\n")
+            return
+
+        #for printer in printers:
+        #    print (printer, printers[printer]["device-uri"])
+
+        #print("printers", printers, "key", printers.keys())
+        if  printers.keys():
+            printer_names = list(printers.keys())
+            #print("printer_name", printer_names[0])
+            shortname = os.path.basename(self2.fname)
+            try:
+                conn.printFile(printer_names[0], self2.fname, "pyedpro",  {}, )
+                #print("printing", self2.fname)
+                self2.mained.update_statusbar("File '%s' sent to printer."
+                                                                % shortname )
+            except:
+                pedync.message("\n   Cannot print  '%s'\n\n" % shortname)
+
 
     def ctrl_r(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -1995,6 +2030,39 @@ class ActHand:
             self2.invalidate()
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

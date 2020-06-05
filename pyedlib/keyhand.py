@@ -152,6 +152,8 @@ class KeyHand:
             [Gdk.KEY_L, self.act.ctrl_l],
             [Gdk.KEY_m, self.act.ctrl_m],
             [Gdk.KEY_M, self.act.ctrl_m],
+            [Gdk.KEY_p, self.act.ctrl_p],
+            [Gdk.KEY_P, self.act.ctrl_p],
             [Gdk.KEY_g, self.act.ctrl_g],
             [Gdk.KEY_G, self.act.ctrl_g],
             [Gdk.KEY_r, self.act.ctrl_r],
@@ -525,6 +527,7 @@ class KeyHand:
                         self2.flash(False)
 
         return ret
+
 
 
 

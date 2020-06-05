@@ -21,6 +21,11 @@ from . import peddraw, pedmisc, pedstruct
 from .pedutil import *
 from .keywords import *
 
+(TARGET_ENTRY_TEXT, TARGET_ENTRY_PIXBUF) = range(2)
+(COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
+DRAG_ACTION = Gdk.DragAction.COPY
+
+
 VSCROLLGAP  = 2             # Gap between the page boundary and ver. scroll
 HSCROLLGAP  = 4             # Gap between the page boundary and hor. scroll
 PAGEUP      = 20            # One page worth of scroll
@@ -171,6 +176,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             #self.modify_bg(Gtk.STATE_NORMAL, color)
             pass
 
+
         #self.connect("expose-event", self.area_expose_cb)
         self.connect("draw", self.draw_event)
         self.connect("motion-notify-event", self.area_motion)
@@ -185,6 +191,32 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.connect("scroll-event", self.scroll_event)
         self.connect("focus-in-event", self.focus_in_cb)
         self.connect("focus-out-event", self.focus_out_cb)
+
+        self.drag_dest_set(0, [], 0)
+        self.connect('drag-motion', self.on_drag_motion)
+        self.connect('drag-drop', self.on_drag_drop)
+        self.connect("drag-data-received", self.on_drag_data_received)
+
+    def on_drag_motion(self, widgt, context, c, y, time):
+        Gdk.drag_status(context, Gdk.DragAction.COPY, time)
+        return True
+
+    def on_drag_drop(self, widget, context, x, y, time):
+        widget.drag_get_data(context, context.list_targets()[-1], time)
+
+    def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
+
+        if info ==  TARGET_ENTRY_TEXT:
+            text = data.get_text()
+            #print("Received text: %s" % text)
+            pedconfig.conf.keyh.act.add_str(self, text)
+
+        elif info ==  TARGET_ENTRY_PIXBUF:
+            pixbuf = data.get_pixbuf()
+            width = pixbuf.get_width()
+            height = pixbuf.get_height()
+
+            print("Received pixbuf with width %spx and height %spx" % (width, height))
 
     # Customize your colors here
     def setcol(self):
@@ -1862,19 +1894,6 @@ def run_async_time(win):
 
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

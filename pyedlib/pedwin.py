@@ -30,6 +30,13 @@ notebook2 = None
 hidden = 0
 
 # -----------------------------------------------------------------------
+
+def add_page(page):
+    global notebook
+    notebook.append_page(page)
+    notebook.set_tab_detachable(page, True)
+
+# -----------------------------------------------------------------------
 # Create document
 
 class edPane(Gtk.VPaned):
@@ -180,6 +187,24 @@ class EdMainWindow():
         # test
         #notebook.append_page(edPane([]))
 
+        #notebook.drag_dest_set(0, [], 0)
+
+        #notebook.drag_dest_set(Gtk.DestDefaults.HIGHLIGHT | Gtk.DestDefaults.DROP
+        #                 | Gtk.DestDefaults.MOTION,
+        #                 [Gtk.TargetEntry.new('GTK_NOTEBOOK_TAB',
+        #                                      Gtk.TargetFlags.SAME_APP, 0)],
+        #                                         Gdk.DragAction.MOVE)
+
+        notebook.set_group_name('0')
+
+        #notebook.drag_source_set(Gdk.ModifierType.BUTTON1_MASK, [], Gdk.DragAction.MOVE)
+
+        #notebook.connect_after('drag-begin', self.on_drag_begin)
+        #notebook.connect_after('drag-motion', self.on_drag_motion)
+        #notebook.connect_after('drag-drop', self.on_drag_drop)
+        #notebook.connect_after("drag-data-received", self.on_drag_data_received)
+
+        # This is the left notebook
         notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
         #notebook2.popup_enable()
         notebook2.set_scrollable(True)
@@ -189,6 +214,7 @@ class EdMainWindow():
 
         notebook.connect("switch-page", self.note_swpage_cb)
         notebook.connect("focus-in-event", self.note_focus_in)
+        notebook.connect("drag-data-received", self.on_drag_data_received)
 
         # Futile attempts
         #notebook.connect("change-current-page", self.note_page_cb)
@@ -346,9 +372,39 @@ class EdMainWindow():
             print("Cannot read file '{0:s}'".format(fff))
         else:
             vpaned.area2.loadfile(fff)
-            notebook.append_page(vpaned)
+            add_page(vpaned)
             vpaned.area.set_tablabel()
     '''
+
+    def on_drag_begin(self, widget, context):
+        global drag_page_number
+        drag_page_number = widget.get_current_page()
+        print('drag-begin:', drag_page_number, widget)
+
+    def on_drag_motion(self, widgt, context, c, y, time):
+        #Gdk.drag_status(context, Gdk.DragAction.COPY, time)
+        print ("motion")
+        #return True
+
+    def on_drag_drop(self, widget, context, x, y, time):
+        #widget.drag_get_data(context, context.list_targets()[-1], time)
+        pass
+        print ("Dropping")
+
+    def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
+
+        print("Received drop: %s" % data)
+
+        if info == TARGET_ENTRY_TEXT:
+            text = data.get_text()
+            print("Received text: %s" % text)
+
+        elif info == TARGET_ENTRY_PIXBUF:
+            pixbuf = data.get_pixbuf()
+            width = pixbuf.get_width()
+            height = pixbuf.get_height()
+
+            print("Received pixbuf with width %spx and height %spx" % (width, height))
 
     # --------------------------------------------------------------------
 
@@ -742,7 +798,7 @@ class EdMainWindow():
         vpaned = edPane([])
         vpaned.area.fname = os.path.realpath(fff) + ""
         global notebook
-        notebook.append_page(vpaned)
+        add_page(vpaned)
         vpaned.area.set_tablabel()
 
         #label = Gtk.Label(" " + os.path.basename(aa) + " ")
@@ -1167,7 +1223,7 @@ class EdMainWindow():
         self.update_statusbar("Opened file '{0:s}'".format(fname2))
 
         # Add to the list of buffers
-        notebook.append_page(vpaned)
+        add_page(vpaned)
         vpaned.area.set_tablabel()
         self.mywin.show_all()
         # Make it current
@@ -1349,7 +1405,7 @@ def  loader_tick(self2):
             ret = vpaned.area2.loadfile(aaa)
 
             cnt += 1
-            notebook.append_page(vpaned)
+            add_page(vpaned)
             vpaned.area.set_tablabel()
 
         if cnt == 0:
@@ -1372,7 +1428,7 @@ def  loader_tick(self2):
                     continue
                 vpaned.area2.loadfile(fff)
 
-                notebook.append_page(vpaned)
+                add_page(vpaned)
                 self2.mywin.show_all()
                 vpaned.area.set_tablabel()
                 nn = notebook.get_n_pages();
@@ -1480,6 +1536,32 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
