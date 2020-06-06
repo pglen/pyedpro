@@ -9,11 +9,12 @@ import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import GLib
+from gi.repository import Gio
 
 from . import  peddoc, pedconfig, pedofd
 from . import  pedync, pedspell, pedfont
 from . import  pedcolor, pedlog, utils
-from . import  pedcal, pednotes, pedoline
+from . import  pedcal, pednotes, pedoline, pedgui
 
 # Into our name space
 from    .pedmenu import *
@@ -342,6 +343,39 @@ class EdMainWindow():
 
         #self.hpane2.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
+        self.headbar = Gtk.HeaderBar()
+        self.headbar.set_decoration_layout("icon,menu:minimize,maximize,close")
+        self.headbar.set_show_close_button(True)
+
+        button = Gtk.Button()
+        icon = Gio.ThemedIcon(name="mail-send-receive-symbolic")
+        image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
+        button.add(image)
+
+        self.headbar.pack_end(button)
+
+        self.menu = pedgui.MenuButt(("Under Construction", "Open", "Close", "Exit"), self.menu_click)
+        self.headbar.pack_start(Gtk.Label())
+        self.headbar.pack_start(self.menu)
+        self.headbar.pack_start(Gtk.Label())
+
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        Gtk.StyleContext.add_class(box.get_style_context(), "linked")
+
+        button = Gtk.Button()
+        button.add(Gtk.Arrow(Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE))
+        box.add(button)
+        box.add(Gtk.Label(" "))
+        button.connect("pressed", self.bleft)
+
+        button = Gtk.Button()
+        button.add(Gtk.Arrow(Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE))
+        box.add(button)
+        button.connect("pressed", self.bright)
+
+        self.headbar.pack_start(box)
+        self.mywin.set_titlebar(self.headbar)
+
         self.mywin.add(bbox)
         self.mywin.show_all()
 
@@ -361,6 +395,15 @@ class EdMainWindow():
         # Add to accounting:
         self.start_time = time.time()
         utils.timesheet("Started pyedpro", self.start_time, 0)
+
+    def bleft(self, butt):
+        print(butt)
+
+    def bright(self, butt):
+        print(butt)
+
+    def menu_click(self, item, arg):
+        print("menu_click", item, arg)
 
     '''def loadfile(self, fff):
         if(pedconfig.conf.verbose):
@@ -1536,6 +1579,30 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

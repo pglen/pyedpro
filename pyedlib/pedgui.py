@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# Note that this is a duplicated file from pggui.py in the common directory
+# It is done so the editor is self contained
+# Edit in sync with the global one ....
+
 from __future__ import absolute_import
 from __future__ import print_function
 
@@ -868,17 +872,36 @@ class MenuButt(Gtk.DrawingArea):
         rect = self.get_allocation()
         #print ("draw", rect)
 
-        if self.is_focus():
-            cr.set_line_width(3)
-        else:
-            cr.set_line_width(2)
+        if rect.height > 24:
 
-        self._draw_line(cr, self.border, rect.height/4,
-                                rect.width - self.border, rect.height/4);
-        self._draw_line(cr, self.border, 2*rect.height/4,
-                                rect.width - self.border, 2*rect.height/4);
-        self._draw_line(cr, self.border, 3*rect.height/4,
-                                rect.width - self.border, 3*rect.height/4);
+            if self.is_focus():
+                cr.set_line_width(4)
+            else:
+                cr.set_line_width(3)
+
+            self._draw_line(cr, self.border, 2*rect.height/6,
+                                    rect.width - self.border, 2*rect.height/6);
+
+            self._draw_line(cr, self.border, 3*rect.height/6,
+                                    rect.width - self.border, 3*rect.height/6);
+
+            self._draw_line(cr, self.border, 4 * rect.height/6,
+                                    rect.width - self.border, 4*rect.height/6);
+
+            self._draw_line(cr, self.border, 5*rect.height/6,
+                                    rect.width - self.border, 5*rect.height/6);
+        else:
+            if self.is_focus():
+                cr.set_line_width(3)
+            else:
+                cr.set_line_width(2)
+
+            self._draw_line(cr, self.border, rect.height/4,
+                                    rect.width - self.border, rect.height/4);
+            self._draw_line(cr, self.border, 2*rect.height/4,
+                                    rect.width - self.border, 2*rect.height/4);
+            self._draw_line(cr, self.border, 3*rect.height/4,
+                                    rect.width - self.border, 3*rect.height/4);
 
 # ------------------------------------------------------------------------
 
@@ -1222,6 +1245,20 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
