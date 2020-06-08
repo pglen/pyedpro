@@ -348,13 +348,15 @@ class EdMainWindow():
         self.headbar.set_show_close_button(True)
 
         button = Gtk.Button()
+        button.connect("pressed", self.xmail)
+
         icon = Gio.ThemedIcon(name="mail-send-receive-symbolic")
         image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
         button.add(image)
 
         self.headbar.pack_end(button)
 
-        self.menu = pedgui.MenuButt(("Under Construction", "Open", "Close", "Exit"), self.menu_click)
+        self.menu = pedgui.MenuButt(("Open", "Close", "Exit"), self.menu_click)
         self.headbar.pack_start(Gtk.Label())
         self.headbar.pack_start(self.menu)
         self.headbar.pack_start(Gtk.Label())
@@ -396,14 +398,27 @@ class EdMainWindow():
         self.start_time = time.time()
         utils.timesheet("Started pyedpro", self.start_time, 0)
 
+    def xmail(self, butt):
+        pedync.message("\n" + "Under construction" + "\n")
+
     def bleft(self, butt):
-        print(butt)
+        #print(butt)
+        self.prevwin()
 
     def bright(self, butt):
-        print(butt)
+        #print(butt)
+        self.nextwin()
 
     def menu_click(self, item, arg):
-        print("menu_click", item, arg)
+        #print("menu_click", item, arg)
+        if "pen" in item:
+             self.open()
+
+        if "lose" in item:
+            self.closedoc()
+
+        if "xit" in item:
+             self.activate_exit();
 
     '''def loadfile(self, fff):
         if(pedconfig.conf.verbose):
@@ -1579,6 +1594,14 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
 
 
 
