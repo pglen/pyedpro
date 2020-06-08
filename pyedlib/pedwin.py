@@ -100,7 +100,12 @@ class EdMainWindow():
         self.fcount = 0
         self.statuscount = 0
         self.alt = False
+        self.altkey = False
         self.names = names
+        self.show_menu = True
+        self.show_tbar = True
+        self.alttime = 0
+
         register_stock_icons()
 
         global mained
@@ -173,8 +178,8 @@ class EdMainWindow():
         #None, Gtk.UI_MANAGER_SEPARATOR, False)
 
         #warnings.simplefilter("ignore")
-        mbar = merge.get_widget("/MenuBar")
-        mbar.show()
+        self.mbar = merge.get_widget("/MenuBar")
+        self.mbar.show()
         #warnings.simplefilter("default")
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
@@ -243,7 +248,7 @@ class EdMainWindow():
         #self.mywin.connect("leave-notify-event", self.area_leave)
         #self.mywin.connect("event", self.unmap)
 
-        tbar = merge.get_widget("/ToolBar");
+        self.tbar = merge.get_widget("/ToolBar");
         #tbar.set_tooltips(True)
         #tbar.show()
 
@@ -336,8 +341,8 @@ class EdMainWindow():
         #self.hpane2.pack1(self.statusbar, 1, 0)
 
         bbox = Gtk.VBox()
-        bbox.pack_start(mbar, 0,0, 0)
-        bbox.pack_start(tbar, 0,0, 0)
+        bbox.pack_start(self.mbar, 0,0, 0)
+        bbox.pack_start(self.tbar, 0,0, 0)
         bbox.pack_start(self.hpaned, 1, 1, 0)
         bbox.pack_start(self.hpane2, 0,0, 0)
 
@@ -349,6 +354,7 @@ class EdMainWindow():
 
         button = Gtk.Button()
         button.connect("pressed", self.xmail)
+        button.set_tooltip_text("Whatever you want")
 
         icon = Gio.ThemedIcon(name="mail-send-receive-symbolic")
         image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
@@ -365,15 +371,30 @@ class EdMainWindow():
         Gtk.StyleContext.add_class(box.get_style_context(), "linked")
 
         button = Gtk.Button()
-        button.add(Gtk.Arrow(Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE))
+        button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
+        button.set_tooltip_text("Show / Hide Toolbar")
         box.add(button)
         box.add(Gtk.Label(" "))
+        button.connect("pressed", self.ttt)
+
+        button = Gtk.Button()
+        button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
+        button.connect("pressed", self.mmm)
+        button.set_tooltip_text("Show / Hide menu")
+        box.add(button)
+        box.add(Gtk.Label(" "))
+        box.add(Gtk.Label(" "))
+
+        button = Gtk.Button()
+        button.add(Gtk.Arrow(Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE))
         button.connect("pressed", self.bleft)
+        box.add(button)
+        box.add(Gtk.Label(" "))
 
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE))
-        box.add(button)
         button.connect("pressed", self.bright)
+        box.add(button)
 
         self.headbar.pack_start(box)
         self.mywin.set_titlebar(self.headbar)
@@ -398,6 +419,20 @@ class EdMainWindow():
         self.start_time = time.time()
         utils.timesheet("Started pyedpro", self.start_time, 0)
 
+    def ttt(self, butt):
+        self.show_tbar = not self.show_tbar
+        if self.show_tbar:
+            self.tbar.show()
+        else:
+            self.tbar.hide()
+
+    def mmm(self, butt):
+        self.show_menu = not self.show_menu
+        if self.show_menu:
+            self.mbar.show()
+        else:
+            self.mbar.hide()
+
     def xmail(self, butt):
         pedync.message("\n" + "Under construction" + "\n")
 
@@ -419,20 +454,6 @@ class EdMainWindow():
 
         if "xit" in item:
              self.activate_exit();
-
-    '''def loadfile(self, fff):
-        if(pedconfig.conf.verbose):
-            print("Loading file:", fff)
-        vpaned = edPane()
-        ret = vpaned.area.loadfile(fff)
-        if not ret:
-            self.update_statusbar("Cannot read file '{0:s}'".format(fff))
-            print("Cannot read file '{0:s}'".format(fff))
-        else:
-            vpaned.area2.loadfile(fff)
-            add_page(vpaned)
-            vpaned.area.set_tablabel()
-    '''
 
     def on_drag_begin(self, widget, context):
         global drag_page_number
@@ -546,6 +567,24 @@ class EdMainWindow():
     # Call key handler
     def area_key(self, area, event):
         #print("pedwin key", event.keyval)
+        if event.keyval ==  Gdk.KEY_Alt_L:
+            if event.type == Gdk.EventType.KEY_RELEASE:
+                self.altkey = True
+                if time.time() - self.alttime > 2:
+                    self.show_menu = not self.show_menu
+                #print("self.alttime", time.time() - self.alttime)
+                self.alttime = 0
+            else:
+                #print("pedwin ALT key down", event.keyval)
+                self.altkey = False
+                if self.alttime == 0:
+                    self.alttime = time.time()
+
+        if self.show_menu:
+            self.mbar.show()
+        else:
+            self.mbar.hide()
+
         # Inspect key press before treeview gets it
         if self.mywin.get_focus() == self.treeview:
             # Do key down:
@@ -568,7 +607,6 @@ class EdMainWindow():
                 if event.keyval == Gdk.KEY_Alt_L or \
                       event.keyval == Gdk.KEY_Alt_R:
                     self.alt = False;
-
 
     def get_height(self):
         xx, yy = self.mywin.get_size()
@@ -1594,6 +1632,30 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

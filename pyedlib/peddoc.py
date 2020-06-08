@@ -176,7 +176,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             #self.modify_bg(Gtk.STATE_NORMAL, color)
             pass
 
-
         #self.connect("expose-event", self.area_expose_cb)
         self.connect("draw", self.draw_event)
         self.connect("motion-notify-event", self.area_motion)
@@ -1894,6 +1893,7 @@ def run_async_time(win):
 
 
 # EOF
+
 
 
 

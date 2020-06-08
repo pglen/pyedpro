@@ -31,7 +31,7 @@
 # jul/19/2018   Coloring for spell check, Trigger by scroll, more dominant color
 # Jul/xx/2018   Update README, KEYS.TXT
 # Jun/xx/2018   Log Files for time accounting.
-# Jun/xx/2018   Log Files for time accounting.
+# Jun/08/2020   Menu control / Headerbar / Version update
 
 # ASCII test editor, requires pyGtk. (pygobject)
 # See pygtk-dependencied for easy access to dependencies.
@@ -224,6 +224,7 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
+
 
 
 
