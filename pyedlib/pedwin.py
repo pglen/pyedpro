@@ -580,10 +580,10 @@ class EdMainWindow():
                 if self.alttime == 0:
                     self.alttime = time.time()
 
-        if self.show_menu:
-            self.mbar.show()
-        else:
-            self.mbar.hide()
+        #if self.show_menu:
+        #    self.mbar.show()
+        #else:
+        #    self.mbar.hide()
 
         # Inspect key press before treeview gets it
         if self.mywin.get_focus() == self.treeview:
@@ -885,11 +885,13 @@ class EdMainWindow():
                 pedync.message("\n" + sss + "\n")
                 return
 
-        # Change access/ownership to group write
+        # Try and change access/ownership to group write
         try:
-            os.chmod(fff, stat.S_IWGRP)
+            ostat = os.stat(fff)
+            os.chmod(fff, ostat.st_mode | stat.S_IWGRP)
         except:
-            print("Cannot change group write on '%s'" % fff,  sys.exc_info())
+            #print("Cannot change group write on '%s'" % fff,  sys.exc_info())
+            pass
 
         vpaned = edPane([])
         vpaned.area.fname = os.path.realpath(fff) + ""
@@ -1237,7 +1239,7 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         self.mywin.set_focus(vcurr2.vbox.area)
-        self.mywin.show_all()
+        #self.mywin.show_all()
 
     def  prevwin(self):
         cc = notebook.get_n_pages()
@@ -1251,7 +1253,7 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         self.mywin.set_focus(vcurr2.vbox.area)
-        self.mywin.show_all()
+        #self.mywin.show_all()
 
     def folder_ch(self, win):
         #print "folder_ch"
@@ -1632,191 +1634,4 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

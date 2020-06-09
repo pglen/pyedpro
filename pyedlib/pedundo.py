@@ -177,7 +177,7 @@ def redo(self2, keyh):
             keyh.pad_list(self2, yy)
             self2.undoarr.append((xx, yy, mode, self2.text[yy]))
             self2.text[yy] = line
-            self2.gotoxy(xx, yy)
+            self2.gotoxy(xx+1, yy)
 
         elif mode2 == ADDED:                    # Redo Addition
             keyh.pad_list(self2, yy)
@@ -186,7 +186,7 @@ def redo(self2, keyh):
             text.append(line)
             text += self2.text[yy:]
             self2.text = text
-            self2.gotoxy(xx, yy)
+            self2.gotoxy(xx+1, yy)
         elif mode2 == DELETED:                  # Redo Deletion
             #keyh.pad_list(self2, yy)
             self2.undoarr.append((xx, yy, mode, self2.text[yy]))
@@ -214,16 +214,3 @@ def redo(self2, keyh):
     self2.mained.update_statusbar("Redo %d done." % xlen)
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-

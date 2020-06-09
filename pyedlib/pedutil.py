@@ -136,8 +136,13 @@ def  writefile(strx, buff, sep = "\n"):
     if strx != "":
         try:
             f = open(strx, "w")
+            cnt = 0; sepx = ""
             for aa in buff:
-                f.write(aa.rstrip() + sep)
+                if cnt:
+                    sepx = sep
+                f.write(sepx + aa.rstrip())
+                cnt += 1
+
             f.close()
         except:
             ret = False, sys.exc_info()[1]
@@ -837,49 +842,4 @@ def ampmstr(bb):
     return "%02d %s" % (bb, dd)
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -2,7 +2,7 @@
 
 from __future__ import absolute_import, print_function
 
-import signal, os, time, string, pickle, re, platform, subprocess
+import signal, os, time, string, pickle, re, platform, subprocess, stat
 
 import gi;  gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -384,7 +384,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             # Update stat info
             self.stat = xstat
         except:
-            utils.put_exception("cmp mtime")
+            #utils.put_exception("cmp mtime")
             pass
 
         self.update_bar2()
@@ -1498,16 +1498,27 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             fc.connect("response", self.done_fc)
             fc.run()
 
+    # --------------------------------------------------------------------
+
     def writeout(self):
+
         if(pedconfig.conf.verbose):
             print("Saving '"+ self.fname + "'")
+
+        wasfile = os.access(self.fname, os.R_OK)
         err = writefile(self.fname, self.text, "\n")
         if err[0]:
             self.set_changed(False)
 
-        self.saveundo()
-        self.saveparms()
-        self.set_tablabel()
+        if not wasfile:
+            # Change access/ownership to group write
+            try:
+                ostat = os.stat(self.fname)
+                os.chmod(self.fname, ostat.st_mode | stat.S_IWGRP)
+            except:
+                print("Cannot change group write on '%s'" % self.fname,  sys.exc_info())
+
+        self.saveundo();  self.saveparms(); self.set_tablabel()
 
         # Add to accounting:
         utils.logentry("Wrote File", self.start_time, self.fname)
@@ -1893,27 +1904,3 @@ def run_async_time(win):
 
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

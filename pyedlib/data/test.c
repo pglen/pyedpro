@@ -526,5 +526,4 @@ static  void    timeTask(void *pvParameters)
     vTaskDelete(NULL);
 }
 
-
 # EOF
