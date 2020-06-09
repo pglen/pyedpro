@@ -190,6 +190,62 @@ class RectObj(DrawObj):
 # ------------------------------------------------------------------------
 # Rectangle object
 
+class LineObj(DrawObj):
+
+    def __init__(self, rect, text, col1, col2, border, fill):
+        super(LineObj, self).__init__( rect, text, col1, col2, border, fill)
+
+        self.mx = [0, 0, 0, 0]      # side markers
+        self.rsize = 12             # Marker size
+        self.type = "Line"
+
+    def draw(self, cr, self2):
+
+        #print("LineObj draw", str(self.rect))
+
+        self.expand_size(self2)
+        cr.set_source_rgb(self.col2[0], self.col2[1], self.col2[2])
+
+        cr.move_to(self.rect[0], self.rect[1])
+        cr.line_to(self.rect[0] + self.rect[2], self.rect[1] + self.rect[3])
+        #cr.fill()
+        cr.stroke()
+
+        #self2.crh.set_source_rgb(self.col2); self2.crh.rectangle(self.rect)
+        #cr.stroke()
+
+        if self.selected:
+            self.corners(self2, self.rect, self.rsize)
+
+        '''if self.text:
+            self2.crh.set_source_rgb(self.col2);
+            self2.layout.set_text(self.text, len(self.text))
+            xx, yy = self2.layout.get_pixel_size()
+            xxx = self.rect.w / 2 - xx / 2
+            yyy = self.rect.h / 2 - yy / 2
+            cr.move_to(self.rect.x + xxx, self.rect.y + yyy)
+            PangoCairo.show_layout(cr, self2.layout)'''
+
+    def hittest(self, rectx):
+        inte = rectx.intersect(self.rect)
+        print("intersect", inte, "rectx", str(rectx), str(self.rect))
+        return inte[0]
+
+    def hitmarker(self, rectx):
+        ret = False
+        for aa in self.mx:
+            if aa:
+                if rectx.intersect(aa)[0]:
+                    ret = True
+                    break
+        return ret
+
+    def center(self):
+        return (self.rect.x + self.rect.w / 2, self.rect.y + self.rect.h / 2)
+
+# ------------------------------------------------------------------------
+# Rectangle object
+
 class TextObj(DrawObj):
 
     def __init__(self, rect, text, col1, col2, border, fill):
@@ -404,10 +460,15 @@ class Canvas(Gtk.DrawingArea):
             yd = int(self.dragcoord[1] - event.y)
             #print ("rdelta", xd, yd)
 
-            if self.size2[0] - xd > 2:
-                self.resize.rect.w = self.size2[0] - xd
-            if self.size2[1] - yd > 2:
-                self.resize.rect.h = self.size2[1] - yd
+            #if self.size2[0] - xd > 2:
+            self.resize.rect.w = self.size2[0] - xd
+            #if self.size2[1] - yd > 2:
+            self.resize.rect.h = self.size2[1] - yd
+
+            #print("resize rect", self.resize.rect.w, self.resize.rect.h)
+            #if self.resize.rect.h < 0:
+            #    self.resize.rect.y -= 2 * abs(self.resize.rect.h)
+            #    self.resize.rect.h = abs(self.resize.rect.h)
 
             self.queue_draw()
         else:
@@ -571,7 +632,7 @@ class Canvas(Gtk.DrawingArea):
                     self.queue_draw()
                 else:
                     mmm = ("Main Menu", "Dump Objects", "Add Rectangle",
-                                "Add Rombus", "Add Circle", "Add Text",
+                                "Add Rombus", "Add Circle", "Add Text", "Add Line",
                                     "Save Objects", "Load Objects", "-", "Clear Canvas", "-", "Export")
                     Menu(mmm, self.menu_action3, event)
             else:
@@ -721,6 +782,11 @@ class Canvas(Gtk.DrawingArea):
             self.add_text(coord, rstr, randcolstr())
 
         if num == 6:
+            rstr = utils.randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+            self.add_line(coord, rstr, randcolstr())
+
+        if num == 7:
             fff = "outline.pickle"
             #print("Saving to:", fff)
             sum = []
@@ -730,7 +796,7 @@ class Canvas(Gtk.DrawingArea):
             pickle.dump(sum, ff)
             ff.close()
 
-        if num == 7:
+        if num == 8:
             fff = "outline.pickle"
             #print("Loading:", fff)
             ff = open(fff, "rb")
@@ -754,17 +820,16 @@ class Canvas(Gtk.DrawingArea):
                 obj.groupid = int(aa[4])
                 obj.other  = list(aa[8])
 
-        if num == 8:
+        if num == 9:
             pass
 
-        if num == 9:
+        if num == 10:
             self.coll = []
             self.queue_draw()
 
         if num == 11:
             # crate PNG
-            for aa in self.coll:
-                aa.selected = False
+            for aa in self.coll:                                                               aa.selected = False
             self.queue_draw()
             usleep(10)
             rect = self.get_allocation()
@@ -788,6 +853,13 @@ class Canvas(Gtk.DrawingArea):
     def add_rect(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
         col1 = str2float(crb);    col2 = str2float(crf)
         rob = RectObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_line(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
+        col1 = str2float(crb);    col2 = str2float(crf)
+        rob = LineObj(coord, text, col1, col2, border, fill)
         self.coll.append(rob)
         self.queue_draw()
         return rob
@@ -866,6 +938,29 @@ def set_canv_testmode(flag):
 
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

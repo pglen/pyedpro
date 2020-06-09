@@ -570,8 +570,8 @@ class EdMainWindow():
         if event.keyval ==  Gdk.KEY_Alt_L:
             if event.type == Gdk.EventType.KEY_RELEASE:
                 self.altkey = True
-                if time.time() - self.alttime > 2:
-                    self.show_menu = not self.show_menu
+                #if time.time() - self.alttime > 2:
+                #    self.show_menu = not self.show_menu
                 #print("self.alttime", time.time() - self.alttime)
                 self.alttime = 0
             else:
@@ -1632,6 +1632,7 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
 
 

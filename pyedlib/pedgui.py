@@ -110,7 +110,20 @@ class Rectangle():
         #print("rect out", dir(nnn))
         return nnn
 
-    # I was too lazy to write it; Crappy Gdt rect kicked me to it
+    # Normalize; Put the rect in positive space
+
+    def norm(self, rect):
+        rect3 = rect.copy()
+        if rect3.h < 0:
+            rect3.y -= abs(rect3.h)
+            rect3.h = abs(rect3.h)
+        if rect3.w < 0:
+            rect3.x -= abs(rect3.w)
+            rect3.w = abs(rect3.w)
+        return rect3
+
+
+    # I was too lazy to write it; Crappy Gdk rect kicked me to it
 
     # ==========    self
     # =        =
@@ -121,22 +134,24 @@ class Rectangle():
 
     def intersect(self, rect2):
 
-        urx = self.x + self.w;      lry = self.y + self.h
-        urx2 = rect2.x + rect2.w;   lry2 = rect2.y + rect2.h
+        rect3 = self.norm(rect2);   rect4 = self.norm(self)
+
+        urx = rect4.x + rect4.w;    lry = rect4.y + rect4.h
+        urx2 = rect3.x + rect3.w;   lry2 = rect3.y + rect3.h
         inter = 0
 
         # X intersect
-        if rect2.x >= self.x and rect2.x <= urx:
+        if rect3.x >= rect4.x and rect3.x <= urx:
             inter += 1;
         # Y intersect
-        if rect2.y >= self.y and rect2.y <= lry:
+        if rect3.y >= rect4.y and rect3.y <= lry:
             inter += 1;
 
         # X intersect rev
-        if self.x >= rect2.x and self.x <= urx2:
+        if rect4.x >= rect3.x and rect4.x <= urx2:
             inter += 1;
         # Y intersect rev
-        if self.y >= rect2.y and self.y <= lry2:
+        if rect4.y >= rect3.y and rect4.y <= lry2:
             inter += 1;
 
         #print("inter", inter, str(self), "->", str(rect2))
@@ -1245,6 +1260,24 @@ if __name__ == '__main__':
     print("This file was not meant to run as the main module")
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
