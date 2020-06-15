@@ -84,7 +84,7 @@ class pgoline(Gtk.VBox):
 
             rstr = utils.randstr(6)
 
-            rrr = random.randint(0, 4)
+            rrr = random.randint(0, 5)
             if rrr == 0:
                 rect = genrandrect(500, 1000)
                 self.canvas.add_rect(rect, "Rect_" + rstr, randcolstr() )
@@ -97,6 +97,9 @@ class pgoline(Gtk.VBox):
             elif rrr == 3:
                 rect = genrandrect(500, 1000)
                 self.canvas.add_line(rect, "Line_" + rstr, randcolstr() )
+            elif rrr == 4:
+                rect = genrandrect(500, 1000)
+                self.canvas.add_curve(rect, "Curve_" + rstr, randcolstr() )
             else:
                 circ = genrandcircle(500, 500)
                 self.canvas.add_circle(circ, "Circ_" + rstr, randcolstr() )

@@ -130,11 +130,23 @@ class DrawObj():
                 self2.crh.rectangle(aa)
         self2.cr.fill()
 
-        # Last one is handler
+        # Last one is the handler
         bb = self.mx[3].copy();  bb.resize(-5)
         self2.crh.set_source_rgb(self.col1);
         self2.crh.rectangle(bb)
         self2.cr.fill()
+
+    def hitmarker(self, rectx):
+        ret = 0 #False
+        for aa in range(len(self.mx)):
+            if self.mx[aa]:
+                if rectx.intersect(self.mx[aa])[0]:
+                    ret = aa + 1
+                    break
+        #if ret:
+        #    print ("drawobj  hitmarker", ret)
+
+        return ret
 
 # ------------------------------------------------------------------------
 # Rectangle object
@@ -175,20 +187,20 @@ class RectObj(DrawObj):
         inte = rectx.intersect(self.rect)
         return inte[0]
 
-    def hitmarker(self, rectx):
+    '''def hitmarker(self, rectx):
         ret = False
-        for aa in self.mx:
-            if aa:
-                if rectx.intersect(aa)[0]:
-                    ret = True
+        for aa in range(len(self.mx)):
+            if self.mx[aa]:
+                if rectx.intersect(self.mx[aa])[0]:
+                    ret = aa
                     break
         return ret
-
+    '''
     def center(self):
         return (self.rect.x + self.rect.w / 2, self.rect.y + self.rect.h / 2)
 
 # ------------------------------------------------------------------------
-# Rectangle object
+# Line object
 
 class LineObj(DrawObj):
 
@@ -228,16 +240,80 @@ class LineObj(DrawObj):
 
     def hittest(self, rectx):
         inte = rectx.intersect(self.rect)
-        print("intersect", inte, "rectx", str(rectx), str(self.rect))
+        #print("intersect", inte, "rectx", str(rectx), str(self.rect))
         return inte[0]
 
-    def hitmarker(self, rectx):
+    '''def hitmarker(self, rectx):
         ret = False
         for aa in self.mx:
             if aa:
                 if rectx.intersect(aa)[0]:
                     ret = True
                     break
+        return ret
+    '''
+    def center(self):
+        return (self.rect.x + self.rect.w / 2, self.rect.y + self.rect.h / 2)
+
+class CurveObj(DrawObj):
+
+    def __init__(self, rect, text, col1, col2, border, fill):
+        super(CurveObj, self).__init__( rect, text, col1, col2, border, fill)
+
+        self.mx = [0, 0, 0, 0]      # side markers
+        self.rsize = 12             # Marker size
+        self.type = "Curve"
+
+    def draw(self, cr, self2):
+
+        #print("CurveObj draw", str(self.rect))
+
+        self.expand_size(self2)
+        cr.set_source_rgb(self.col2[0], self.col2[1], self.col2[2])
+
+        cr.move_to(self.rect[0], self.rect[1])
+        cr.line_to(self.rect[0] + self.rect[2], self.rect[1] + self.rect[3])
+        #cr.fill()
+        cr.stroke()
+
+        #self2.crh.set_source_rgb(self.col2); self2.crh.rectangle(self.rect)
+        #cr.stroke()
+
+        cent = self.center()
+        self.crect = Rectangle(cent[0], cent[1], self.rsize, self.rsize)
+
+        if self.selected:
+            self.corners(self2, self.rect, self.rsize)
+
+        if self.text:
+            self2.crh.set_source_rgb(self.col2);
+            self2.layout.set_text(self.text, len(self.text))
+            xx, yy = self2.layout.get_pixel_size()
+            xxx = self.rect.w / 2 - xx / 2
+            yyy = self.rect.h / 2 - yy / 2
+            cr.move_to(self.rect.x + xxx, self.rect.y + yyy)
+            PangoCairo.show_layout(cr, self2.layout)
+
+        if self.selected:
+            self2.crh.set_source_rgb(self.col2);
+            self2.crh.rectangle(self.crect)
+            cr.stroke()
+
+    def hittest(self, rectx):
+        inte = rectx.intersect(self.rect)
+        #print("intersect", inte, "rectx", str(rectx), str(self.rect))
+        return inte[0]
+
+    def hitmarker(self, rectx):
+        ret = 0
+        ret = super(CurveObj, self).hitmarker(rectx)
+        if not ret:
+            if rectx.intersect(self.crect)[0]:
+                ret = 5
+
+        #if ret:
+        #    print("hit curve",  ret)
+
         return ret
 
     def center(self):
@@ -286,7 +362,7 @@ class TextObj(DrawObj):
         inte = rectx.intersect(recttxt)
         return inte[0]
 
-    def hitmarker(self, rectx):
+    '''def hitmarker(self, rectx):
         ret = False
         for aa in self.mx:
             if aa:
@@ -294,7 +370,7 @@ class TextObj(DrawObj):
                     ret = True
                     break
         return ret
-
+    '''
     def center(self):
         return (self.rect.x + self.txx / 2, self.rect.y + self.tyy / 2)
 
@@ -315,7 +391,7 @@ class RombObj(DrawObj):
         inte = rectx.intersect(self.rect)
         return inte[0]
 
-    def hitmarker(self, rectx):
+    '''def hitmarker(self, rectx):
         ret = False
         for aa in self.mx:
             if aa:
@@ -323,6 +399,7 @@ class RombObj(DrawObj):
                     ret = True
                     break
         return ret
+    '''
 
     def draw(self, cr, self2):
 
@@ -366,7 +443,7 @@ class CircObj(DrawObj):
         inte = rectx.intersect(rectc)
         return inte[0]
 
-    def hitmarker(self, rectx):
+    '''def hitmarker(self, rectx):
         ret = False
         for aa in self.mx:
             if aa:
@@ -374,7 +451,7 @@ class CircObj(DrawObj):
                     ret = True
                     break
         return ret
-
+    '''
     def draw(self, cr, self2):
 
         self2.crh.set_source_rgb(self.col1)
@@ -417,6 +494,7 @@ class Canvas(Gtk.DrawingArea):
         self.coll = []
         self.cnt = 0
         self.drag = None
+        self.curl = None
         self.resize = None
         self.dragcoord = (0,0)
         self.size2 = (0,0)
@@ -426,6 +504,8 @@ class Canvas(Gtk.DrawingArea):
         self.sizing =  Gdk.Cursor(Gdk.CursorType.SIZING)
         self.cross =  Gdk.Cursor(Gdk.CursorType.TCROSS)
         self.hair =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
+        self.curve =  Gdk.Cursor(Gdk.CursorType.TARGET)
+        self.pencil =  Gdk.Cursor(Gdk.CursorType.PENCIL)
 
     def show_status(self, strx):
         if self.statusbar:
@@ -452,6 +532,14 @@ class Canvas(Gtk.DrawingArea):
                                 bb.rect.y = bb.orgdrag.y  - yd
             self.queue_draw()
 
+        elif self.curl:
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.pencil)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+            print ("curl rdelta", xd, yd)
+            self.queue_draw()
+
         elif self.resize:
             gdk_window = self.get_root_window()
             gdk_window.set_cursor(self.sizing)
@@ -472,15 +560,19 @@ class Canvas(Gtk.DrawingArea):
 
             self.queue_draw()
         else:
-            onmarker = False
+            onmarker = 0 #False
             hit = Rectangle(event.x, event.y, 2, 2)
             # Check if on marker
             for cc in self.coll:
-                if cc.hitmarker(hit):
-                    onmarker = True
+                mark = cc.hitmarker(hit)
+                if mark:
+                    onmarker = mark
+                    break
 
             gdk_window = self.get_root_window()
-            if onmarker:
+            if onmarker == 5:
+                gdk_window.set_cursor(self.pencil)
+            elif onmarker:
                 gdk_window.set_cursor(self.cross)
             elif self.noop_down:
                 gdk_window.set_cursor(self.hair)
@@ -493,7 +585,7 @@ class Canvas(Gtk.DrawingArea):
                     print( "Ctrl ButPress x =", event.x, "y =", event.y)
                 if event.state & Gdk.ModifierType.MOD1_MASK :
                     print( "Alt ButPress x =", event.x, "y =", event.y)
-                '''
+        '''
 
     def area_button(self, area, event):
         self.mouse = Rectangle(event.x, event.y, 4, 4)
@@ -510,6 +602,7 @@ class Canvas(Gtk.DrawingArea):
             print("DBL click", event.button)
 
         if  event.type == Gdk.EventType.BUTTON_RELEASE:
+            self.curl = None
             self.drag = None
             self.resize = None
             self.noop_down = False
@@ -525,15 +618,23 @@ class Canvas(Gtk.DrawingArea):
                     if not self.drag:
                         for bb in self.coll:
                             if bb.selected:
+                                hitx = bb.hittest(hit)
+                                hity = bb.hitmarker(hit)
                                 #print("Operate on selected", bb.id)
-                                if bb.hitmarker(hit):
+                                if hity == 5:
+                                    #print("Hit on curve marker")
+                                    self.resize = None
+                                    self.drag = None
+                                    self.curl = bb
+                                    self.dragcoord  = (event.x, event.y)
+                                elif hity:
                                     #print("Hit on marker")
                                     self.resize = bb
                                     self.drag = None
                                     self.dragcoord  = (event.x, event.y)
                                     self.size2 = (self.resize.rect.w, self.resize.rect.h)
                                     return
-                                elif bb.hittest(hit):
+                                elif hitx:
                                     self.drag = bb
                                     self.dragcoord  = (event.x, event.y)
                                     for cc in self.coll:
@@ -544,6 +645,8 @@ class Canvas(Gtk.DrawingArea):
                                                 for bb in self.coll:
                                                     if cc.groupid == bb.groupid:
                                                         bb.orgdrag = bb.rect.copy()
+                                else:
+                                    pass
 
                     if self.drag:
                         return
@@ -864,6 +967,13 @@ class Canvas(Gtk.DrawingArea):
         self.queue_draw()
         return rob
 
+    def add_curve(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
+        col1 = str2float(crb);    col2 = str2float(crf)
+        rob = CurveObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
     def add_text(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
         col1 = str2float(crb);    col2 = str2float(crf)
         rob = TextObj(coord, text, col1, col2, border, fill)
@@ -938,4 +1048,6 @@ def set_canv_testmode(flag):
 
 
 # EOF
+
+
 

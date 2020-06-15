@@ -901,7 +901,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             sline = max(sline, 0); sline = min(sline, len(self.text))
             #print( "Start point", sline, self.text[sline])
             # Walk back to last function
-            if ".c" in self.fname:
+            if ".c" in self.fname or ".h" in self.fname or ".php" in self.fname:
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(ckeywords)
@@ -1839,7 +1839,8 @@ def run_async_time(win):
         return
 
     # Added flex and yacc
-    if ".c" in lname or ".h" in lname or ".y" in lname or ".f" in lname:
+    if ".c" in lname or ".h" in lname or ".y" in lname or ".f" in lname or \
+        ".php" in lname:
         try:
             regex = re.compile(ckeywords)
             for line in win.text:

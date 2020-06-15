@@ -566,7 +566,19 @@ class EdMainWindow():
 
     # Call key handler
     def area_key(self, area, event):
+
         #print("pedwin key", event.keyval)
+
+        if event.keyval ==  Gdk.KEY_F11:
+            if event.type == Gdk.EventType.KEY_PRESS:
+                if self.full:
+                    self.mywin.unfullscreen()
+                    self.full = False
+                else:
+                    self.mywin.fullscreen()
+                    self.full = True
+                return True
+
         if event.keyval ==  Gdk.KEY_Alt_L:
             if event.type == Gdk.EventType.KEY_RELEASE:
                 self.altkey = True
