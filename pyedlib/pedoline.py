@@ -60,12 +60,16 @@ class pgoline(Gtk.VBox):
 
         Gtk.VBox.__init__(self)
 
+        self.init = 0
         #set_testmode(1)
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#444444"))
 
         hbox = Gtk.HBox()
         self.lastsel = ""
+
+        self.connect("motion-notify-event", self.motion_event)
+        #self.connect("event", self.all_event)
 
         self.data_dir = os.path.expanduser("~/.pyednotes")
         try:
@@ -78,6 +82,7 @@ class pgoline(Gtk.VBox):
         self.statbox.set_xalign(0); self.statbox.set_yalign(0)
 
         self.pack_start(xSpacer(), 0, 0, 0)
+        self.toolbox = ToolBox(self.toolcb, pedconfig.conf.pedwin)
         self.canvas = Canvas(self.statbox)
 
         for aa in range(10):
@@ -121,6 +126,34 @@ class pgoline(Gtk.VBox):
         self.pack_start(hbox2, 0, 0, 2)
 
         #self.pack_start(xSpacer(), 0, 0, 0)
+
+    def toolcb(self, butt, num):
+        print("toolsb", num)
+
+    def focus_out(self):
+        self.toolbox.hide()
+
+    def focus_in(self):
+        self.toolbox.show_box(pedconfig.conf.pedwin.mywin)
+
+    def switched(self, pageto):
+        #print("SW page signal", pageto)
+        if pageto == self:
+            #print("me")
+            self.toolbox.show_box(pedconfig.conf.pedwin.mywin)
+        else:
+            self.toolbox.hide()
+
+    def motion_event(self, win, event):
+        #print("motion_event", win, event)
+        if not self.init:
+            pass
+            #self.init = True
+            #self.toolbox.show_box(pedconfig.conf.pedwin.mywin)
+
+    def all_event(self, win, event):
+        if event.type != Gdk.EventType.MOTION_NOTIFY:
+            print("all_event", win, event)
 
     def  letterfilter(self, letter):
         #print("letterfilter", letter)
@@ -444,4 +477,16 @@ class notesql():
             return None
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
 

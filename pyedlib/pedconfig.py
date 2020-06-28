@@ -45,7 +45,7 @@ class conf():
     recarr = []
 
     # Which extensions are colored
-    color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp")
+    color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp", ".php")
 
     def __init__(self):
         pass

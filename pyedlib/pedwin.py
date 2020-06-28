@@ -74,7 +74,7 @@ class edwin(Gtk.VBox):
 
         # Make it acessable:
         self.area  = peddoc.pedDoc(buff, mained, readonly)
-        #print "created", self.area, mained
+        #print( "created", self.area, mained)
 
         # Give access to notebook and main editor window
         self.area.notebook = notebook
@@ -113,7 +113,7 @@ class EdMainWindow():
 
         disp2 = Gdk.Display()
         disp = disp2.get_default()
-        #print disp
+        #print( disp)
         scr = disp.get_default_screen()
         ptr = disp.get_pointer()
         mon = scr.get_monitor_at_point(ptr[1], ptr[2])
@@ -214,6 +214,8 @@ class EdMainWindow():
         notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
         #notebook2.popup_enable()
         notebook2.set_scrollable(True)
+        notebook2.connect("switch-page", self.note_swpage_cb2)
+        notebook2.connect("move_focus_out", self.focus_out2)
 
         #notebook.add_events(Gdk.FOCUS_CHANGE_MASK)
         #notebook.add_events(Gdk.ALL_EVENTS_MASK)
@@ -419,6 +421,10 @@ class EdMainWindow():
         self.start_time = time.time()
         utils.timesheet("Started pyedpro", self.start_time, 0)
 
+    def focus_out2(self, book, obj):
+        #print("nb2 focus out", obj)
+        pass
+
     def ttt(self, butt):
         self.show_tbar = not self.show_tbar
         if self.show_tbar:
@@ -511,11 +517,11 @@ class EdMainWindow():
 
     def area_winstate(self, arg1, arg2):
         pass
-        #print "area_winstate", arg1, arg2
-        #print "state", self.mywin.get_state()
+        #print( "area_winstate", arg1, arg2)
+        #print( "state", self.mywin.get_state())
 
     def unmap(self, arg1, arg2):
-        #print "unmap", arg1, arg2
+        #print( "unmap", arg1, arg2)
         pass
 
     def tree_sel_row(self, xtree):
@@ -774,22 +780,22 @@ class EdMainWindow():
 
     def area_event(self, win, act):
         pass
-        #print  "pedwin area event", win, act
+        #print(  "pedwin area event", win, act)
 
     def area_leave(self, win, act):
         pass
-        #print  "pedwin area leave", win, act
+        #print(  "pedwin area leave", win, act)
 
     def area_enter(self, win, act):
         pass
-        #print  "pedwin area enter", win, act
+        #print(  "pedwin area enter", win, act)
 
     def area_focus(self, win, act):
         pass
-        #print  "pedwin area focus", win, act
+        #print(  "pedwin area focus", win, act)
 
     def area_focus_in(self, win, act):
-        #print  "area focus in", win, act
+        #print(  "area focus in", win, act)
         # This was needed as pygtk leaves the alt key hanging
         pedconfig.conf.keyh.reset()
         # Focus on main doc
@@ -797,33 +803,66 @@ class EdMainWindow():
         if vcurr:
             self.mywin.set_focus(vcurr.vbox.area)
 
-    def area_focus_out(self, win, act):
+
+        vcurr2 = notebook2.get_nth_page(notebook2.get_current_page())
+        cc = notebook2.get_n_pages()
+        for mm in range(cc):
+            curr = notebook2.get_nth_page(mm)
+            try:
+                if curr == vcurr2:
+                    #print("sending page focus signal to ", curr)
+                    curr.focus_in()
+            except:
+                pass
         pass
-        #print  "area focus out", win, act
+
+
+    def area_focus_out(self, win, act):
+        #print  ("area focus out", win, act)
+        cc = notebook2.get_n_pages()
+        for mm in range(cc):
+            curr = notebook2.get_nth_page(mm)
+            #print("sending page change signal to ", curr)
+            try:
+                curr.focus_out()
+            except:
+                pass
+        pass
 
     def area_size(self, win, rect):
-        #print  "area size", rect
+        #print(  "area size", rect)
         self.hpane2.set_position(self.get_width() - 280)
 
     def  note_focus_in(self, win, act):
         pass
-        #print "note_focus_in", win, act
+        #print( "note_focus_in", win, act)
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
             self.mywin.set_focus(vcurr.vbox.area)
 
     def note_enter_notify(self, win):
         pass
-        #print "note_enter_notify", win
+        #print( "note_enter_notify", win)
 
     def  note_grab_focus_cb(self, win):
-        #print "note_grab_focus_cb", win
+        #print( "note_grab_focus_cb", win)
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
             self.mywin.set_focus(vcurr.vbox.area)
 
+    def  note_swpage_cb2(self, tabx, page, num):
+        #print ("note_swpage2", num)
+        cc = notebook2.get_n_pages()
+        for mm in range(cc):
+            curr = notebook2.get_nth_page(mm)
+            #print("sending page change signal to ", curr)
+            try:
+                curr.switched(page)
+            except:
+                pass
+
     def  note_swpage_cb(self, tabx, page, num):
-        #print "note_swpage", num
+        #print( "note_swpage", num)
         vcurr = tabx.get_nth_page(num)
         self.mywin.set_title("pyedpro: " + vcurr.area.fname);
         self.mywin.set_focus(vcurr.vbox.area)
@@ -832,17 +871,17 @@ class EdMainWindow():
 
     def  note_page_cb(self, tabx, child, num):
         pass
-        #print "note_page"
+        #print( "note_page")
 
     def note_focus_cb(self, tabx, foc):
-        #print "note_focus_cb"
+        #print( "note_focus_cb")
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
             self.mywin.set_focus(vcurr.vbox.area)
 
     def note_create_cb(self, tabx, page, xx, yy):
         pass
-        #print "note_create"
+        #print( "note_create")
 
     # Devhelp Message handler
     def activate_dhelp(self, action):
@@ -879,7 +918,7 @@ class EdMainWindow():
             base, ext = os.path.splitext(pedconfig.conf.UNTITLED)
             while True:
                 fff =  "%s_%d.txt" % (base, cnt)
-                #print fff
+                #print( fff)
                 if not os.path.isfile(fff):
                     break;
                 cnt += 1
@@ -1430,7 +1469,7 @@ def     OnExit(arg, prompt = True):
         pedconfig.conf.sql.put("vpaned", pos)
 
     # Do not save full screen coordinates (when used F11)
-    #print mained.full
+    #print( mained.full)
 
     if not mained.full:
         xx, yy = mained.mywin.get_position()
@@ -1486,13 +1525,13 @@ def     OnExit(arg, prompt = True):
     # Exit here
     Gtk.main_quit()
 
-    #print "OnExit called \"" + arg.get_title() + "\""
+    #print( "OnExit called \"" + arg.get_title() + "\"")
 
 def  loader_tick(self2):
 
     try:
-        #print 'Signal handler called with signal'
-        #print pedconfig.conf.idle, pedconfig.conf.syncidle
+        #print( 'Signal handler called with signal')
+        #print( pedconfig.conf.idle, pedconfig.conf.syncidle)
         global notebook, hidden
         #print ("exec init handler")
 
@@ -1502,7 +1541,7 @@ def  loader_tick(self2):
         cnt = 0
         for aa in self2.names:
             aaa = os.path.realpath(aa)
-            #print "loading file: ", aaa
+            #print( "loading file: ", aaa)
             vpaned = edPane()
             ret = vpaned.area.loadfile(aaa)
             if not ret:
@@ -1560,12 +1599,12 @@ def  loader_tick(self2):
         # Set last file
         fff = pedconfig.conf.sql.get_str("curr")
 
-        #print "curr file", fff
+        #print( "curr file", fff)
         cc = notebook.get_n_pages()
         for mm in range(cc):
             vcurr = notebook.get_nth_page(mm)
             if vcurr.area.fname == fff:
-                #print "found buff", fff
+                #print( "found buff", fff)
                 notebook.set_current_page(mm)
                 self2.mywin.set_focus(vcurr.vbox.area)
                 break
@@ -1578,11 +1617,11 @@ def  loader_tick(self2):
 #def handler_tick(signum, frame):
 def handler_tick():
 
-    #print "handler_tick"
+    #print( "handler_tick")
 
     try:
-        #print 'Signal handler called with signal'
-        #print pedconfig.conf.idle, pedconfig.conf.syncidle
+        #print( 'Signal handler called with signal')
+        #print( pedconfig.conf.idle, pedconfig.conf.syncidle)
         global notebook, hidden
 
         if not hidden:
@@ -1646,4 +1685,5 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
+
 
