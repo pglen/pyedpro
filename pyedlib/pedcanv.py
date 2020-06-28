@@ -49,13 +49,14 @@ class ToolBox(Gtk.Window):
 
     def __init__(self, callb, parent):
         Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
-        #self.set_size_request(150, 100)
-        #self.set_default_size(150, 100)
+        #self.set_size_request(10, 10)
+        #self.set_default_size(10, 10)
         #self.set_keep_above(True)
         self.set_decorated(False)
         self.drag = False
         self.dragpos = (0, 0)
         self.callb = callb
+        self.opacity = 1
 
         self.connect("button-press-event", self.area_button)
         self.connect("button-release-event", self.area_button_rel)
@@ -72,7 +73,7 @@ class ToolBox(Gtk.Window):
         self.hboxt.pack_start(self.toolt, 1, 1, 0)
         self.hboxt.pack_start(self.labelx, 0, 0, 0)
 
-        hbox = Gtk.HBox()
+        self.hbox = Gtk.HBox()
         tarr = ((Gtk.STOCK_OPEN, "Open"), (Gtk.STOCK_SAVE, "Save"),
                     (Gtk.STOCK_COPY, "Copy"), (Gtk.STOCK_PASTE, "Paste"),
                     (Gtk.STOCK_NO, "None"), (Gtk.STOCK_CLEAR, "Clear"),
@@ -84,9 +85,9 @@ class ToolBox(Gtk.Window):
             butt.set_tooltip_text(aa[1])
             butt.connect("clicked", self.callb, cnt)
             cnt += 1
-            hbox.add(butt)
+            self.hbox.add(butt)
 
-        hbox2 = Gtk.HBox()
+        self.hbox2 = Gtk.HBox()
         tarr2 = ( (Gtk.STOCK_UNDO, "Undo"), (Gtk.STOCK_REDO, "Redo"),
                     (Gtk.STOCK_COLOR_PICKER, "Color"), (Gtk.STOCK_YES , "yes?"),
                     (Gtk.STOCK_SELECT_ALL , "SelAll"), (Gtk.STOCK_SELECT_FONT , "Font"),
@@ -97,14 +98,13 @@ class ToolBox(Gtk.Window):
             butt.set_tooltip_text(aa[1])
             butt.connect("clicked", self.callb, cnt)
             cnt += 1
-            hbox2.add(butt)
+            self.hbox2.add(butt)
 
         vbox.add(self.hboxt)
-        vbox.add(hbox)
-        vbox.add(hbox2)
+        vbox.add(self.hbox)
+        vbox.add(self.hbox2)
         self.add(vbox)
 
-        #self.show_all()
 
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
@@ -126,12 +126,17 @@ class ToolBox(Gtk.Window):
         rr = self.labelm.get_allocation()
         rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
         if rrr.intersect(hit)[0]:
-            print("objl", rr.x, rr.y)
+            #print("objl", rr.x, rr.y)
+            if self.opacity == 1:
+                self.opacity = 0.5
+            else:
+                self.opacity = 1
+            self.set_opacity(self.opacity)
 
         rr = self.toolt.get_allocation()
         rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
         if rrr.intersect(hit)[0]:
-            print("objhead", rr.x, rr.y)
+            #print("objhead", rr.x, rr.y)
             self.dragpos = event.x, event.y
             self.drag = True
 
@@ -146,6 +151,7 @@ class ToolBox(Gtk.Window):
     def show_box(self, parent):
         self.parent = parent
         self.set_transient_for (self.parent)
+        #self.set_parent(parent)
         sxx, syy = self.parent.get_position()
         self.move(sxx + 30, syy + 180)
         self.show_all()

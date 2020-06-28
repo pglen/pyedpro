@@ -54,6 +54,8 @@ def genrandcircle(maxww, maxhh):
 
 # ------------------------------------------------------------------------
 
+#class pgoline(Gtk.Window):
+
 class pgoline(Gtk.VBox):
 
     def __init__(self):
@@ -69,6 +71,7 @@ class pgoline(Gtk.VBox):
         self.lastsel = ""
 
         self.connect("motion-notify-event", self.motion_event)
+        self.connect("configure-event", self.config_event)
         #self.connect("event", self.all_event)
 
         self.data_dir = os.path.expanduser("~/.pyednotes")
@@ -81,14 +84,13 @@ class pgoline(Gtk.VBox):
         self.statbox = Gtk.Label(" Idle")
         self.statbox.set_xalign(0); self.statbox.set_yalign(0)
 
+        #self.vbox = Gtk.VBox()
         self.pack_start(xSpacer(), 0, 0, 0)
         self.toolbox = ToolBox(self.toolcb, pedconfig.conf.pedwin)
         self.canvas = Canvas(self.statbox)
 
         for aa in range(10):
-
             rstr = utils.randstr(6)
-
             rrr = random.randint(0, 5)
             if rrr == 0:
                 rect = genrandrect(500, 1000)
@@ -124,8 +126,11 @@ class pgoline(Gtk.VBox):
         frame5 = Gtk.Frame(); frame5.add(scroll3a)
         self.pack_start(frame5, 1, 1, 2)
         self.pack_start(hbox2, 0, 0, 2)
-
+        #self.add(self.vbox)
         #self.pack_start(xSpacer(), 0, 0, 0)
+
+    def config_event(self, win, event):
+        print("config_event", win, event)
 
     def toolcb(self, butt, num):
         print("toolsb", num)

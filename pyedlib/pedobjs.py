@@ -154,6 +154,11 @@ class RectObj(DrawObj):
 
         #print("RectObj draw", str(self.rect))
 
+        www = self.rect.w / 40
+
+        if www < .1: www = .1
+        cr.set_line_width(www);
+
         self.expand_size(self2)
         self2.crh.set_source_rgb(self.col1); self2.crh.rectangle(self.rect)
         cr.fill()
@@ -172,6 +177,8 @@ class RectObj(DrawObj):
             yyy = self.rect.h / 2 - yy / 2
             cr.move_to(self.rect.x + xxx, self.rect.y + yyy)
             PangoCairo.show_layout(cr, self2.layout)
+
+        cr.set_line_width(1);
 
     def hittest(self, rectx):
         inte = rectx.intersect(self.rect)

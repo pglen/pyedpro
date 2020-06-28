@@ -105,6 +105,8 @@ class EdMainWindow():
         self.show_menu = True
         self.show_tbar = True
         self.alttime = 0
+        self.old_x = 0
+        self.old_y = 0
 
         register_stock_icons()
 
@@ -243,6 +245,7 @@ class EdMainWindow():
         self.mywin.connect("focus-out-event", self.area_focus_out)
         self.mywin.connect("window-state-event", self.area_winstate)
         self.mywin.connect("size_allocate", self.area_size)
+        self.mywin.connect("configure-event", self.config_event)
 
         #self.mywin.connect("area-focus-event", self.area_focus_in)
         #self.mywin.connect("event", self.area_event)
@@ -519,6 +522,12 @@ class EdMainWindow():
         pass
         #print( "area_winstate", arg1, arg2)
         #print( "state", self.mywin.get_state())
+
+    def config_event(self, win, event):
+        pass
+        #print( "config_event", event.x, event.y, "old events", self.old_x, self.old_y)
+        self.old_x = event.x
+        self.old_y = event.y
 
     def unmap(self, arg1, arg2):
         #print( "unmap", arg1, arg2)
@@ -803,7 +812,6 @@ class EdMainWindow():
         if vcurr:
             self.mywin.set_focus(vcurr.vbox.area)
 
-
         vcurr2 = notebook2.get_nth_page(notebook2.get_current_page())
         cc = notebook2.get_n_pages()
         for mm in range(cc):
@@ -812,6 +820,7 @@ class EdMainWindow():
                 if curr == vcurr2:
                     #print("sending page focus signal to ", curr)
                     curr.focus_in()
+                    pass
             except:
                 pass
         pass
@@ -825,6 +834,7 @@ class EdMainWindow():
             #print("sending page change signal to ", curr)
             try:
                 curr.focus_out()
+                pass
             except:
                 pass
         pass
