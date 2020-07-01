@@ -49,7 +49,8 @@ last_scanned = None
 
 # Colors for the text, configure the defaults here
 
-FGCOLOR  = "#000000"
+FGCOLOR    = "#000000"
+FGCOLORRO  = "#222222"
 RFGCOLOR = "#fefefe"
 BGCOLOR  = "#fefefe"
 RBGCOLOR = "#aaaaff"
@@ -491,7 +492,15 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # Paint white, ignore system BG
         #cr.set_source_rgba(255, 255, 255)
         # Paint prescribed color
-        cr.set_source_rgba(*list(self.bgcolor))
+        if self.readonly:
+            # Slightly darker / lighter
+            newcol =  list(self.bgcolor)
+            for aa in range(len(newcol)):
+                if newcol[aa] > 0.5: newcol[aa] -= .1;
+                else: newcol[aa] += .2;
+            cr.set_source_rgba(*list(newcol))
+        else:
+            cr.set_source_rgba(*list(self.bgcolor))
 
         cr.rectangle( 0, 0, self.www, self.hhh)
         cr.fill()
@@ -1007,6 +1016,15 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     pass
             else:
                 pass
+
+            # Always show todo
+            got_todo = 0
+            for line in self.text:
+                if "TODO" in line:
+                    if not got_todo:
+                        got_todo = 1
+                        sumw2.append("----------- TODO List ----------")
+                    sumw2.append(line)
 
         try:
             self.appwin.update_treestore2(sumw2)

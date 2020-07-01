@@ -268,6 +268,7 @@ class EdMainWindow():
         treeview.connect("row-activated",  self.tree_sel)
         #treeview.connect("cursor-changed",  self.tree_sel_row)
         self.treeview = treeview
+        #treeview.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
         treeview2 = self.create_vartree()
         treeview2.set_activate_on_single_click (True)
@@ -567,7 +568,7 @@ class EdMainWindow():
             self.mywin.set_focus(vcurr.vbox.area)
 
     def tree_sel2(self, xtree, xiter, xpath):
-        print("tree_sel2", xtree, xiter, xpath)
+        #print("tree_sel2", xtree, xiter, xpath)
         # Focus on main doc
         sel = xtree.get_selection()
         xmodel, xiter = sel.get_selected()
