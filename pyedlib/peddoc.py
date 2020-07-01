@@ -16,7 +16,7 @@ from gi.repository import PangoCairo
 
 from . import keyhand, pedconfig, pedync
 from . import pedcolor, pedspell, pedmenu, utils
-from . import peddraw, pedmisc, pedstruct
+from . import peddraw, pedmisc, pedstruct, pedgui
 
 from .pedutil import *
 from .keywords import *
@@ -50,6 +50,7 @@ last_scanned = None
 # Colors for the text, configure the defaults here
 
 FGCOLOR  = "#000000"
+RFGCOLOR = "#fefefe"
 BGCOLOR  = "#fefefe"
 RBGCOLOR = "#aaaaff"
 CBGCOLOR = "#ff8888"
@@ -57,6 +58,8 @@ KWCOLOR  = "#88aaff"
 CLCOLOR  = "#880000"
 COCOLOR  = "#4444ff"
 STCOLOR  = "#ee44ee"
+
+CARCOLOR = "#4455dd"
 
 # UI specific values:
 
@@ -138,7 +141,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # Parent widget
         Gtk.DrawingArea.__init__(self)
         self.set_can_focus(True)
-        peddraw.peddraw.__init__(self)
+        peddraw.peddraw.__init__(self, self)
 
         # Our font
         fsize  =  pedconfig.conf.sql.get_int("fsize")
@@ -233,6 +236,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.rbgcolor = pedcolor.str2float(ccc)
         #print( "rgbcolor", self.rbgcolor, ccc)
 
+        ccc = pedconfig.conf.sql.get_str("bgcolor")
+        if ccc == "":
+            self.bgcolor = pedcolor.str2float(BGCOLOR)
+        else:
+            self.bgcolor = pedcolor.str2float(ccc)
+        #print( "bgcolor", self.bgcolor, ccc)
+
         ccc = pedconfig.conf.sql.get_str("cbgcolor")
         if ccc == "":
             self.cbgcolor = pedcolor.str2float(CBGCOLOR)
@@ -264,6 +274,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.stcolor = pedcolor.str2float(STCOLOR)
         else:
             self.stcolor = pedcolor.str2float(ccc)
+
+        ccc = pedconfig.conf.sql.get_str("carcolor")
+        if ccc == "":
+            self.carcolor = pedcolor.str2float(CARCOLOR)
+        else:
+            self.carcolor = pedcolor.str2float(ccc)
 
     def setfont(self, fam, size):
 
@@ -473,12 +489,18 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #bg_color = ctx.get_background_color(Gtk..NORMAL)
 
         # Paint white, ignore system BG
-        cr.set_source_rgba(255, 255, 255)
-        cr.rectangle( 0, 0, self.www, self.hhh);
+        #cr.set_source_rgba(255, 255, 255)
+        # Paint prescribed color
+        cr.set_source_rgba(*list(self.bgcolor))
+
+        cr.rectangle( 0, 0, self.www, self.hhh)
         cr.fill()
 
         # Pre set for drawing
-        cr.set_source_rgba(*list(fg_color));
+        #cr.set_source_rgba(*list(fg_color));
+        # Paint prescribed color
+        cr.set_source_rgba(*list(self.fgcolor))
+
         cr.move_to(0, 0)
         self.layout = PangoCairo.create_layout(cr)
         self.layout.set_font_description(self.fd)

@@ -28,8 +28,8 @@ BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
 
 class peddraw(object):
 
-    def __init__(self):
-        return self
+    def __init__(self, self2):
+        self.self2 = self2
 
     # Underline with red wiggle
     def draw_wiggle(self, gcr, xx, yy, xx2, yy2):
@@ -57,9 +57,13 @@ class peddraw(object):
 
     def draw_line(self, cr, xx, yy, xx2, yy2):
         #print "draw line", xx, yy
+        cr.set_source_rgba(*list(self.self2.carcolor))
         cr.move_to(xx, yy)
         cr.line_to(xx2, yy2)
         cr.stroke()
+        cr.set_source_rgba(*list(self.self2.fgcolor))
+
+
 
     # --------------------------------------------------------------------
     # Draw caret
@@ -67,7 +71,7 @@ class peddraw(object):
     def draw_caret(self, gcx):
 
         gcx.set_line_width(1)
-        gcx.set_source_rgba(0, 0, 5)
+        gcx.set_source_rgba(*list(self.self2.cocolor))
 
         #print "drawing caret", self.caret[0], self.caret[1], \
         #        self.caret[0] * self.cxx, self.caret[1] * self. cyy
@@ -194,7 +198,7 @@ class peddraw(object):
             gc.set_source_rgba(0, 0, 0)
             pos = BOUNDLINE - self.xpos
             self.draw_line(gc, pos * self.cxx, \
-                     0, pos * self.cxx, self.hhh)
+                     0, pos * self.cxx, self.hhh, )
 
         return xx, yy
 

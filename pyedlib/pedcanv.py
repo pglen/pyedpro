@@ -45,14 +45,18 @@ def canv_colsel(oldcol, title):
     csd.destroy()
     return col2float(color)
 
+#class ToolBox(Gtk.Toolbar):
 class ToolBox(Gtk.Window):
 
     def __init__(self, callb, parent):
         Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
+        #Gtk.Toolbar.__init__(self)
+
         #self.set_size_request(10, 10)
         #self.set_default_size(10, 10)
         #self.set_keep_above(True)
         self.set_decorated(False)
+
         self.drag = False
         self.dragpos = (0, 0)
         self.callb = callb
@@ -105,6 +109,11 @@ class ToolBox(Gtk.Window):
         vbox.add(self.hbox2)
         self.add(vbox)
 
+        '''openbtn = Gtk.ToolButton(Gtk.STOCK_OPEN)
+        self.insert(openbtn, 0)
+        self.show_all()
+        '''
+
 
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
@@ -120,6 +129,7 @@ class ToolBox(Gtk.Window):
 
     def area_button(self, area, event):
 
+        #return
         #print("moudown", event.x, event.y)
         hit = Rectangle(event.x, event.y, 2, 2)
 

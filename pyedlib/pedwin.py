@@ -1211,7 +1211,7 @@ class EdMainWindow():
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedcolor.colors(self, vcurr2.area)
+                pedcolor.colordlg(self, vcurr2.area)
 
         if strx == "Fonts":
             nn2 = notebook.get_current_page()
