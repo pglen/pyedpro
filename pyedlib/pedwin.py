@@ -828,16 +828,20 @@ class EdMainWindow():
         pass
 
     def area_focus_out(self, win, act):
-        print  ("area focus out", win, act)
-        cc = notebook2.get_n_pages()
+        #print  ("area focus out", win, act)
+        global savearr
+        cc = notebook.get_n_pages()
         for mm in range(cc):
-            curr = notebook2.get_nth_page(mm)
+            curr = notebook.get_nth_page(mm)
             #print("saving tab ", curr)
             try:
-                savearr.append(curr.area.fname)
-                curr.focus_out()
+                #savearr.append(curr.area.fname)
+                #print("Adding", curr.area.fname)
+                curr.vbox.area.save()
+                #curr.vbox.focus_out()
                 pass
             except:
+                #print(sys.exc_info())
                 pass
         pass
 
@@ -1639,16 +1643,12 @@ def handler_tick():
     global savearr
 
     #print( "handler_tick")
-
     try:
         for bb in savearr:
             print("SAVE", bb)
-
         savearr = []
-
     except:
         print("Exception in save handler", sys.exc_info())
-
 
     try:
         #print( 'Signal handler called with signal')

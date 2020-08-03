@@ -1318,7 +1318,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def save(self):
 
-        print ("Saving", self.fname)
+        #print ("Saving", self.fname)
         # Always save params
         self.saveparms()
         strx = ""
