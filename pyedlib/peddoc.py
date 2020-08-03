@@ -1187,12 +1187,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         elif ttt == 9:
             self.mained.paste()
         elif ttt == 11:
-            #self.mained.activate_exit()
-            #print("Toggle read only");
-            self.readonly = not self.readonly
-            arrx = ["OFF", "ON"]
-            self.mained.update_statusbar("Toggled read only to %s" % arrx[self.readonly])
-
+            self.toggle_ro()
         elif ttt == 13:
             self.mained.activate_exit()
         elif ttt == 14:
@@ -1208,6 +1203,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                                         ["libreoffice", "--writer"])
         else:
             print("peddoc: Invalid menu item selected")
+
+    def toggle_ro(self):
+            self.readonly = not self.readonly
+            self.set_tablabel()
+            arrx = ["OFF", "ON"]
+            self.mained.update_statusbar("Toggled read only to %s" % arrx[self.readonly])
 
     def start_term(self):
         #print("Terminal Here")
@@ -1316,6 +1317,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         return rect.width
 
     def save(self):
+
+        print ("Saving", self.fname)
         # Always save params
         self.saveparms()
         strx = ""
@@ -1710,10 +1713,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # Set label to tab
         ss = shortenstr(os.path.basename(self.fname), 24)
         if  self.changed:
-            str2 = "  *" + ss + "  "
+            str2 = "* " + ss + "  "
         else:
-            str2 = "  " + ss + "  "
-        label = Gtk.Label.new(str2)
+            str2 = "" + ss + "  "
+
+        if  self.readonly:
+            str3 = "ro " + str2
+        else:
+            str3 = "" + str2
+
+        label = Gtk.Label.new(str3)
         label.set_tooltip_text(self.fname)
         label.set_single_line_mode(True)
 

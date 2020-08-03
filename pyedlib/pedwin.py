@@ -29,6 +29,7 @@ notebook = None
 notebook2 = None
 
 hidden = 0
+savearr = []
 
 # -----------------------------------------------------------------------
 
@@ -826,14 +827,14 @@ class EdMainWindow():
                 pass
         pass
 
-
     def area_focus_out(self, win, act):
-        #print  ("area focus out", win, act)
+        print  ("area focus out", win, act)
         cc = notebook2.get_n_pages()
         for mm in range(cc):
             curr = notebook2.get_nth_page(mm)
-            #print("sending page change signal to ", curr)
+            #print("saving tab ", curr)
             try:
+                savearr.append(curr.area.fname)
                 curr.focus_out()
                 pass
             except:
@@ -1135,21 +1136,29 @@ class EdMainWindow():
 
         if strx == "MakeRO":
             nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
+            vcurr2 = notebook.get_nth_page(notebook.get_current_page())
             while True:
                 if cnt >= nn: break
                 ppp = notebook.get_nth_page(cnt)
                 #print ("Make read only file:", ppp.area.fname)
                 ppp.area.readonly = True
+                ppp.area.set_tablabel()
+                if ppp == vcurr2:
+                    ppp.area.invalidate();
                 cnt += 1
             self.update_statusbar("Made all buffers READ only")
 
         if strx == "MakeRW":
             nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
+            vcurr2 = notebook.get_nth_page(notebook.get_current_page())
             while True:
                 if cnt >= nn: break
                 ppp = notebook.get_nth_page(cnt)
                 #print ("Make read only file:", ppp.area.fname)
                 ppp.area.readonly = False
+                ppp.area.set_tablabel()
+                if ppp == vcurr2:
+                    ppp.area.invalidate();
                 cnt += 1
             self.update_statusbar("Made all buffers READ/WRITE")
 
@@ -1627,8 +1636,19 @@ def  loader_tick(self2):
 
 #def handler_tick(signum, frame):
 def handler_tick():
+    global savearr
 
     #print( "handler_tick")
+
+    try:
+        for bb in savearr:
+            print("SAVE", bb)
+
+        savearr = []
+
+    except:
+        print("Exception in save handler", sys.exc_info())
+
 
     try:
         #print( 'Signal handler called with signal')
