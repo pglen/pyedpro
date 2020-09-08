@@ -111,7 +111,6 @@ def create_action_group(self):
       ( "WinMenu", None, "Windows" ),
       ( "HelpMenu", None, verx ),
 
-
       # -------------------------------------------------------------------
 
       ( "New", Gtk.STOCK_NEW,                       # name, stock id
@@ -314,13 +313,8 @@ def create_action_group(self):
         "About",
         self.activate_about ),
 
-      ( "QuickHelp", Gtk.STOCK_INFO,
-        "_Quick Help", "",
-        "Show quick help",
-        self.activate_qhelp ),
-
       ( "KeyHelp", Gtk.STOCK_INFO,
-        "_Key Help          \tF3", "",
+        "_Sys Help          \tShift-F2", "",
         "Show keyboard help",
         self.activate_khelp ),
 
@@ -390,54 +384,4 @@ def create_action_group(self):
     return action_group
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# EOF

@@ -95,7 +95,6 @@ ui_info = \
       <menuitem action='DevHelp'/>
       <menuitem action='KeyHelp'/>
       <menuitem action='KeyDoc'/>
-      <menuitem action='QuickHelp'/>
       <menuitem action='About'/>
     </menu>
 

@@ -837,7 +837,7 @@ class EdMainWindow():
             try:
                 #savearr.append(curr.area.fname)
                 #print("Adding", curr.area.fname)
-                curr.vbox.area.save()
+                #curr.vbox.area.save()
                 #curr.vbox.focus_out()
                 pass
             except:
@@ -913,7 +913,9 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
-            pedconfig.conf.keyh.act.f3(vcurr2.area)
+            vcurr2.area.shift = True
+            pedconfig.conf.keyh.act.f2(vcurr2.area)
+            vcurr2.area.shift = False
 
     def activate_qhelp(self, action):
         self.update_statusbar("Showing quick help")

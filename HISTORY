@@ -3,6 +3,16 @@
  This is a non exhaustive list of changes in the PyEdPro project. Git has
  a more complete list of logs.
 
+    Thu Tue 08.Sep.2020   (version 1.4)
+    F2 key starts devhelp, and puts you into a search with the
+    current selection. For instance if Gtk.DrawingArea is selected,
+    the help page of that class comes up. Devhelp must be installed.
+
+    Tue xx.Sep.2020
+    Lot of changes; submitted under auto submit;
+    Last: Reallocated some keys ... F3 is now find next and shift F3
+    is find previous (as most programs do)
+
     Thu Jan 09 2020   (version 1.0)
     setup.py and company
 

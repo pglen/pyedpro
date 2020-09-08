@@ -80,6 +80,37 @@ class ActHand:
             self.clips.append("");
         self.currclip = 0;
 
+    def _getsel(self, self2):
+
+        # Normalize
+        xssel = min(self2.xsel, self2.xsel2)
+        xesel = max(self2.xsel, self2.xsel2)
+        yssel = min(self2.ysel, self2.ysel2)
+        yesel = max(self2.ysel, self2.ysel2)
+
+        cnt = yssel; cnt2 = 0; cumm = ""
+        while True:
+            if cnt > yesel: break
+            self.pad_list(self2, cnt)
+            line = self2.text[cnt]
+            if self2.colsel:
+                frag = line[xssel:xesel]
+            else :                                  # startsel - endsel
+                if cnt == yssel and cnt == yesel:   # sel on the same line
+                    frag = line[xssel:xesel]
+                elif cnt == yssel:                  # start line
+                    frag = line[xssel:]
+                elif cnt == yesel:                  # end line
+                    frag = line[:xesel]
+                else:
+                    frag = line[:]
+
+            if cnt2: frag = "\n" + frag
+            cumm += frag
+            cnt += 1; cnt2 += 1
+
+        return cumm
+
     # -----------------------------------------------------------------------
 
     def ctrl_tab(self, self2):
@@ -1531,38 +1562,48 @@ class ActHand:
     def f1(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("F1")
+        self2.mained.update_statusbar("Opening KEYS help file ...")
+        rr = get_exec_path("KEYS")
+        launch_pangview(rr)
 
-        if platform.system().find("Win") >= 0:
-            pedync.message("\n   This feature is Linux only   \n\n"
-                               "              ()")
-        else:
-            self2.mained.update_statusbar("Opening help file ...")
-            try:
-                ret = subprocess.Popen(["gnome-help",])
-            except:
-                pedync.message("\n   Cannot launch devhelp   \n\n"
-                               "              (Please install)")
     def f2(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("F2")
+        if self2.shift:
+            if platform.system().find("Win") >= 0:
+                pedync.message("\n   This feature is Linux only   \n\n"
+                                   "              ()")
+            else:
+                self2.mained.update_statusbar("Opening help file ...")
+                try:
+                    ret = subprocess.Popen(["gnome-help",])
+                except:
+                    pedync.message("\n   Cannot launch devhelp   \n\n"
+                                   "              (Please install)")
 
-        if platform.system().find("Win") >= 0:
-            pedync.message("\n   This feature is Linux only   \n\n"
-                               "              ()")
         else:
-            self2.mained.update_statusbar("Opening DEV help file ...")
-            try:
-                ret = subprocess.Popen(["devhelp",])
-            except:
-                pedync.message("\n   Cannot launch devhelp   \n\n"
-                               "              (Please install)")
+            if platform.system().find("Win") >= 0:
+                pedync.message("\n   This feature is Linux only   \n\n"
+                                   "              ()")
+            else:
+                sss = self._getsel(self2)
+                self2.mained.update_statusbar("Opening DEV help file ...")
+                try:
+                    #print("sss", sss)
+                    ret = subprocess.Popen(["devhelp", "-s", sss,])
+                except:
+                    pedync.message("\n   Cannot launch devhelp   \n\n"
+                                   "              (Please install)")
+
     def f3(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("F3")
 
-        self2.mained.update_statusbar("Opening KEYS help file ...")
-        rr = get_exec_path("KEYS")
-        launch_pangview(rr)
+        if self2.shift:
+            self.f5(self2)
+        else:
+            self.f6(self2)
+
 
     def f4(self, self2):
         if pedconfig.conf.pgdebug > 9:

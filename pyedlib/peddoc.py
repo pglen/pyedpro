@@ -1324,7 +1324,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         strx = ""
         if not self.changed:
             strx = "File is not modified."
-            self.mained.update_statusbar(strx)
+            #self.mained.update_statusbar(strx)
             return
 
         # Is this file named 'untitled'?
