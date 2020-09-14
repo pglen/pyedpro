@@ -123,7 +123,7 @@ class peddraw(object):
     # This is a response to the draw event request
 
     def draw_text(self, gc, x, y, text, fg_col = None, bg_col = None):
-        #print "draw_text, ",  self.xpos
+    	#print "draw_text, ",  self.xpos
 
         if self.hex:
             text2 = ""
@@ -147,7 +147,7 @@ class peddraw(object):
             #self.layout.set_text(ppp, len(ppp))
         else:
             #text2 = text[self.xpos:].replace("\r", " ")
-            text2 = text.replace("\r", " ")
+            text2 = text.replace("\r", "a ")
 
         xx, yy = self.layout.get_pixel_size()
 
@@ -398,7 +398,9 @@ class peddraw(object):
             text4 = text3[self.xpos:]
             dx, dy = self.draw_text(cr, xx, yy, text4)
             cnt += 1
-            yy += dy
+            #yy += dy
+            yy += self.cyy
+
             if yy > self.hhh:
                 break
 

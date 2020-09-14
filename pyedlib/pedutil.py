@@ -371,14 +371,21 @@ def handle_keys(host):
 
 def  usleep(msec):
 
-    got_clock = time.clock() + float(msec) / 1000
+    if sys.version_info[0] < 3 or \
+        (sys.version_info[0] == 3 and sys.version_info[1] < 3):
+        timefunc = time.clock
+    else:
+        timefunc = time.process_time
+
+    got_clock = timefunc() + float(msec) / 1000
     #print( got_clock)
     while True:
-        if time.clock() > got_clock:
+        if timefunc() > got_clock:
             break
         #print ("Sleeping")
         Gtk.main_iteration_do(False)
 
+# -----------------------------------------------------------------------
 # Create a one way hash of a name. Not cryptographically secure,
 # but it can make a good unique name in hex.
 
