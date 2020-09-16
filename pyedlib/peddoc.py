@@ -545,15 +545,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if event.button == 1:
                 #print( "Left Click at x=", event.x, "y=", event.y)
                 self.mx = int(event.x); self.my = int(event.y)
-                xxx = int(event.x / self.cxx)
-                yyy = int(event.y / self.cyy)
-
+                xxx = int(event.x / self.cxx); yyy = int(event.y / self.cyy)
                 # Find current pos, gather tabs, adjust back
                 try:
                     line = self.text[self.ypos + yyy]
                 except:
                     line = "";
-
                 offs = calc_tabs2(line, xxx)
 
                 #print( "offs, xxx", offs, xxx)
@@ -620,6 +617,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.mx = -1; self.my = -1
             self.scrtab = False
             ttt = "Release"
+            xxx = int(event.x / self.cxx); yyy = int(event.y / self.cyy)
+            # Find current pos, gather tabs, adjust back
+            try:
+                line = self.text[self.ypos + yyy]
+            except:
+                line = "";
+            offs = calc_tabs2(line, xxx)
+            self.set_caret(self.xpos + xxx - (offs - xxx),
+                                     self.ypos + yyy )
+
         elif  event.type == Gdk.EventType._2BUTTON_PRESS:
 
             if pedconfig.conf.pgdebug > 2:
