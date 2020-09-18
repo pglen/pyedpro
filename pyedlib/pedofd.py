@@ -46,10 +46,10 @@ def ofd(fname = None, self2 = None):
 
     # Spacers
     label1  = Gtk.Label("   ");  label2 = Gtk.Label("   ")
-    label3  = Gtk.Label("   ");  label4 = Gtk.Label("   ")
+    label3  = Gtk.Label("   ");  label4 = Gtk.Label("  4 ")
     label5  = Gtk.Label("   ");  label6 = Gtk.Label("   ")
     label7  = Gtk.Label("   ");  label8 = Gtk.Label("   ")
-    label10 = Gtk.Label("   ");
+    label10 = Gtk.Label(" 10  ");
 
     dialog.label11 = Gtk.Label("   ")
     dialog.label12 = Gtk.Label("   ")
