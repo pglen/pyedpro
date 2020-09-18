@@ -18,6 +18,8 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
+from    .pedgui import *
+
 def ofd(fname = None, self2 = None):
 
     warnings.simplefilter("ignore")
@@ -46,10 +48,10 @@ def ofd(fname = None, self2 = None):
 
     # Spacers
     label1  = Gtk.Label("   ");  label2 = Gtk.Label("   ")
-    label3  = Gtk.Label("   ");  label4 = Gtk.Label("  4 ")
+    label3  = Gtk.Label("   ");  label4 = Gtk.Label("   ")
     label5  = Gtk.Label("   ");  label6 = Gtk.Label("   ")
     label7  = Gtk.Label("   ");  label8 = Gtk.Label("   ")
-    label10 = Gtk.Label(" 10  ");
+    label9  = Gtk.Label("   ");  label10 = Gtk.Label("   ");
 
     dialog.label11 = Gtk.Label("   ")
     dialog.label12 = Gtk.Label("   ")
@@ -74,7 +76,11 @@ def ofd(fname = None, self2 = None):
     hbox2.pack_start(label7, 0, 0, 0)
 
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
-    dialog.vbox.pack_start(label8, 0, 0, 0)
+
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+    label13 = Gtk.Label.new(" Dbl click to select one File/Dir, or Shift/Ctrl for multi select; then press Alt-O or click OK");
+    dialog.vbox.pack_start(label13, 0, 0, 0)
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
 
     dialog.ts = Gtk.ListStore(str, str, str, str)
     tview = create_ftree(dialog.ts)
@@ -104,6 +110,7 @@ def ofd(fname = None, self2 = None):
     warnings.simplefilter("default")
 
     response = dialog.run()
+
     res = []
     if response == Gtk.ResponseType.ACCEPT:
         xmodel = dialog.ts
