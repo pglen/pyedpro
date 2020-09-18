@@ -4,7 +4,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
-import  time, datetime
+import  time, datetime, sys
 
 import gi
 #from six.moves import range
@@ -17,7 +17,7 @@ from . import peddoc, pedync, pedconfig
 from .pedutil import *
 
 # Adjust to taste. Estimated memory usage is 50 * MAX_LOG bytes
-# Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if 
+# Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if
 # you would like to free the memory used by log
 MAX_LOG  = 2000
 
@@ -37,29 +37,29 @@ class fake_stdout():
 
     def flush(self, *args):
         pass
-    
+
     def write(self, *args):
         global accum
         strx = ""
         if self.flag:
             dt2 = self.dt.now()
             strx =  dt2.strftime("%d/%m/%y %H:%M:%S ")
-            self.flag = False 
-        
+            self.flag = False
+
         for aa in args:
             if type(aa) == 'tuple':
                 for bb in aa:
                     self.old_stdout.write(str(bb) + " ")
                     strx += str(bb)
-            else: 
+            else:
                 self.old_stdout.write(str(aa))
-                strx +=  str(aa)   
-        
+                strx +=  str(aa)
+
         if strx.find("\n") >= 0:
-            self.flag = True 
-            
+            self.flag = True
+
         accum.append(strx)
-        self.limit_loglen()       
+        self.limit_loglen()
 
     def limit_loglen(self):
         global accum
@@ -77,14 +77,14 @@ class fake_stdout():
 
 def  save_log():
     pass
-    
+
 def load_log():
     pass
-                        
+
 # A quick window to dispat what is in accum
-                    
+
 def show_log():
-    
+
     win2 = Gtk.Window()
     try:
         win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
@@ -93,11 +93,11 @@ def show_log():
 
     win2.set_position(Gtk.WindowPosition.CENTER)
     win2.set_default_size(800, 600)
-    
-    tit = "pyedpro:log"        
+
+    tit = "pyedpro:log"
     win2.set_title(tit)
-    
-    '''win2.set_events(    
+
+    '''win2.set_events(
                     Gtk.gdk.POINTER_MOTION_MASK |
                     Gtk.gdk.POINTER_MOTION_HINT_MASK |
                     Gtk.gdk.BUTTON_PRESS_MASK |
@@ -117,12 +117,12 @@ def show_log():
     global accum
     for aa in accum:
         tb.insert(iter, aa)
-    
+
     scroll = Gtk.ScrolledWindow(); scroll.add(win2.lab)
     frame = Gtk.Frame(); frame.add(scroll)
     win2.add(frame)
     win2.show_all()
-    
+
 # ------------------------------------------------------------------------
 
 def area_key(area, event, dialog):
@@ -140,12 +140,12 @@ def area_key(area, event, dialog):
         if event.keyval == Gdk.KEY_Alt_L or \
                 event.keyval == Gdk.KEY_Alt_R:
             area.alt = True;
-            
+
         if event.keyval == Gdk.KEY_x or \
                 event.keyval == Gdk.KEY_X:
             if area.alt:
                 area.destroy()
-                              
+
     elif  event.type == Gdk.EventType.KEY_RELEASE:
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:

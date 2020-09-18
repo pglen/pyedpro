@@ -5,7 +5,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import time, os, re, string, warnings, platform
+import time, os, re, string, warnings, platform, sys
 
 import pyedlib.pedconfig
 
@@ -102,16 +102,23 @@ def ofd(fname = None, self2 = None):
     dialog.set_focus(tview)
     #dialog.set_focus(dialog.entry)
     warnings.simplefilter("default")
-    res = []
+
     response = dialog.run()
+    res = []
     if response == Gtk.ResponseType.ACCEPT:
+        xmodel = dialog.ts
+        sel = tview.get_selection()
         # Is multi selection?
-        if  len (dialog.xmulti):
-            for bb in dialog.xmulti:
-                print("Multi select:", bb)
-                res.append(os.path.realpath(bb));
-        #else:
-        res.append(os.path.realpath(dialog.entry.get_text()))
+        iter = xmodel.get_iter_first()
+        while True:
+            #print("iterate", xmodel.get_value(iter, 0))
+            if sel.iter_is_selected(iter):
+                xstr = xmodel.get_value(iter, 0)
+                xstr2 = os.path.realpath(xstr)
+                res.append(xstr2)
+            iter = xmodel.iter_next(iter)
+            if not iter:
+                break
 
     #print ("response", response, "result", res  )
     dialog.destroy()
@@ -299,43 +306,21 @@ def create_ftree(ts, text = None):
 def tree_sel_row(xtree, dialog):
 
     #print("tree_sel_row", xtree)
-
-    xstr = ""
-    #xmodel = xtree.get_model()
     sel = xtree.get_selection()
     xmodel, xpath = sel.get_selected_rows()
     if sel:
-        cumm = ""; dialog.xmulti = []
-
-        '''iter = xmodel.get_iter_first()
-        cnt = 0
-        while True:
-            if sel.iter_is_selected(iter):
-                xstr = xmodel.get_value(iter, 0)
-                print("Selected %d" % cnt, xstr)
-            #else:
-            #    print("         %d" % cnt, xstr)
-
-            iter = xmodel.iter_next(iter)
-            if not iter:
-                break
-            cnt += 1
-        '''
-
-        for aa in xpath:
-            xiter2 = xmodel.get_iter(aa)
+        try:
+            xiter2 = xmodel.get_iter(xpath)
             xstr = xmodel.get_value(xiter2, 0)
-            #print("mul selstr:", xstr )
-            dialog.xmulti.append(xstr)
-            cumm += '"' + xstr + '" '
-
-        dialog.entry.set_text(cumm)
-
+            dialog.entry.set_text(xstr)
+        except:
+            pass
+            #print("sel row", sys.exc_info())
     else:
         dialog.entry.set_text("")
-        xstr = ""
 
 def tree_sel(xtree, xiter, xpath, dialog):
+
     #print ("tree_sel", xtree, xiter, xpath)
     sel = xtree.get_selection()
     xmodel, xpath = sel.get_selected_rows()

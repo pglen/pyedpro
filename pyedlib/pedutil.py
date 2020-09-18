@@ -16,6 +16,10 @@ from gi.repository import GObject
 from . import pedconfig
 from . import pedync
 
+import inspect
+if inspect.isbuiltin(time.process_time):
+    time.clock = time.process_time
+
 (TARGET_ENTRY_TEXT, TARGET_ENTRY_PIXBUF) = range(2)
 (COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
 
