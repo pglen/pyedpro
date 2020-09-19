@@ -6,15 +6,13 @@ from __future__ import print_function
 import signal, os, time, string, pickle
 from threading import Timer
 
-#import gobject, gtk, pango
-
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from . import leven, pedconfig
-from .pedutil import *
+import leven, pedconfig
+from pedutil import *
 
 # ------------------------------------------------------------------------
 

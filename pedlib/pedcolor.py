@@ -8,14 +8,14 @@ from __future__ import print_function
 import re, string, warnings
 
 import gi
-#from six.moves import range
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from . import pedync, pedconfig, peddoc
-from .pedutil import *
+import pedync, pedconfig, peddoc
+
+from pedutil import *
 
 ev_arr = []
 

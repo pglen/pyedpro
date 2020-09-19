@@ -11,18 +11,18 @@ from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Gio
 
-from . import  peddoc, pedconfig, pedofd
-from . import  pedync, pedspell, pedfont
-from . import  pedcolor, pedlog, utils
-from . import  pedcal, pednotes, pedoline
+import  peddoc, pedconfig, pedofd
+import  pedync, pedspell, pedfont
+import  pedcolor, pedlog
+import  pedcal, pednotes, pedoline
 
 sys.path.append('../common')
 import pggui
 
 # Into our name space
-from    .pedmenu import *
-from    .pedui import *
-from    .pedutil import *
+from    pedmenu import *
+from    pedui import *
+from    pedutil import *
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
@@ -427,7 +427,7 @@ class EdMainWindow():
 
         # Add to accounting:
         self.start_time = time.time()
-        utils.timesheet("Started pyedpro", self.start_time, 0)
+        timesheet("Started pyedpro", self.start_time, 0)
 
     def focus_out2(self, book, obj):
         #print("nb2 focus out", obj)
@@ -1549,7 +1549,7 @@ def     OnExit(arg, prompt = True):
         print("Exiting")
 
     # Add to accounting:
-    utils.timesheet("Ended pyedpro", mained.start_time, time.time())
+    timesheet("Ended pyedpro", mained.start_time, time.time())
 
     # Exit here
     Gtk.main_quit()

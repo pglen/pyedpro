@@ -3,12 +3,14 @@
 # Action Handler for goto
 
 from __future__ import absolute_import
+
+import warnings
+
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-import warnings
-from . import  pedconfig
+import  pedconfig
 
 # ------------------------------------------------------------------------
 

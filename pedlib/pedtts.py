@@ -15,11 +15,10 @@ from gi.repository import GObject
 from gi.repository import Pango
 
 # General set of utilities
-from . import pedync, pedofd, pedspell, pedbuffs, pedconfig
+import pedync, pedofd, pedspell, pedbuffs, pedconfig
 
-# Locally used
-from .pedutil import *
-from .utils import *
+from pedutil import *
+from utils import *
 
 # Set this to non zero if you want festival to speak
 USE_FESTIVAL = 1

@@ -14,12 +14,12 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-from . import keyhand, pedconfig, pedync
-from . import pedcolor, pedspell, pedmenu, utils
-from . import peddraw, pedmisc, pedstruct
+import keyhand, pedconfig, pedync
+import pedcolor, pedspell, pedmenu
+import peddraw, pedmisc, pedstruct
 
-from .pedutil import *
-from .keywords import *
+from pedutil import *
+from keywords import *
 
 (TARGET_ENTRY_TEXT, TARGET_ENTRY_PIXBUF) = range(2)
 (COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
@@ -1388,7 +1388,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.appwin.update_treestore2([])
 
         # Add to accounting:
-        utils.logentry("Closed File", self.start_time, self.fname)
+        logentry("Closed File", self.start_time, self.fname)
 
         return self.prompt_save(noprompt)
 
@@ -1439,7 +1439,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.loadparms()
 
         # Add to accounting:
-        utils.logentry("Opened File", self.start_time, self.fname)
+        logentry("Opened File", self.start_time, self.fname)
 
         # Propagate main wndow ref
         pedmenu.mained = self.mained
@@ -1571,7 +1571,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.saveundo();  self.saveparms(); self.set_tablabel()
 
         # Add to accounting:
-        utils.logentry("Wrote File", self.start_time, self.fname)
+        logentry("Wrote File", self.start_time, self.fname)
 
         # Update stat info
         self.stat = os.stat(self.fname)

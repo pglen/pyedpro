@@ -12,8 +12,8 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-from . import pedconfig
-from . import acthand
+import pedconfig
+import acthand
 
 # Grabbed modifier defines from GTK
 #

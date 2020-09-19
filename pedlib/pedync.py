@@ -15,7 +15,7 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
-import pyedlib.pedconfig
+import pedconfig
 
 # ------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ def yes_no_cancel(title, message, cancel = True):
 
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
-    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin)
+    dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 
     sp = "     "
     label = Gtk.Label(message);
@@ -93,16 +93,16 @@ import platform
 def  about(self2):
 
     dialog = Gtk.AboutDialog()
-    dialog.set_name(pyedlib.pedconfig.conf.progname +  " - Python Editor ")
+    dialog.set_name(pedconfig.conf.progname +  " - Python Editor ")
 
-    dialog.set_version(str(pyedlib.pedconfig.conf.version));
+    dialog.set_version(str(pedconfig.conf.version));
     gver = (Gtk.get_major_version(), \
                         Gtk.get_minor_version(), \
                             Gtk.get_micro_version())
 
     dialog.set_position(Gtk.WindowPosition.CENTER)
 
-    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin)
+    dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 
     #"\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
 
@@ -114,12 +114,12 @@ def  about(self2):
         "\non GTK %d.%d.%d\n" % gver +\
         "\nRunning Python %s" % platform.python_version() +\
         "\non %s %s\n" % (platform.system(), platform.release()) +\
-        "\nPyedPro Build Date: %s\n" % pyedlib.pedconfig.conf.build_date
+        "\nPyedPro Build Date: %s\n" % pedconfig.conf.build_date
 
     dialog.set_comments(comm);
-    dialog.set_copyright(pyedlib.pedconfig.conf.progname + " Created by Peter Glen\n"
+    dialog.set_copyright(pedconfig.conf.progname + " Created by Peter Glen\n"
                           "Project placed in the Public Domain.")
-    dialog.set_program_name(pyedlib.pedconfig.conf.progname)
+    dialog.set_program_name(pedconfig.conf.progname)
     img_dir = os.path.join(os.path.dirname(__file__), 'images')
     img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
 
@@ -158,7 +158,7 @@ def message(strx, title = None):
     dialog = Gtk.MessageDialog(None, None,
                    Gtk.MessageType.INFO, Gtk.ButtonsType.CLOSE, strx)
 
-    dialog.set_transient_for(pyedlib.pedconfig.conf.pedwin.mywin)
+    dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 
     if title:
         dialog.set_title(title)

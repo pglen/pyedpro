@@ -7,7 +7,7 @@ from __future__ import print_function
 
 import time, os, re, string, warnings, platform, sys
 
-import pyedlib.pedconfig
+import pedconfig
 
 import gi
 

@@ -47,20 +47,14 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
-from . import pedync, pedofd, pedspell, pedbuffs, pedconfig, pedtts
 
-# Some action functions have their own file
-#from pedfind import *
-from . import pedfind
-from . import pedmisc
+import pedync, pedofd, pedspell, pedbuffs, pedconfig, pedtts
+import pedfind, pedmisc
 
-from .pedgoto import *
-#from .pedlcmd import *
-from .pedundo import *
-from .keywords import *
-
-# General set of utilities
-from .pedutil import *
+from pedgoto import *
+from pedundo import *
+from keywords import *
+from pedutil import *
 
 lastcmd = ""
 

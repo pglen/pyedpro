@@ -14,15 +14,15 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-from . import  peddoc, pedconfig, pedofd
-from . import  pedync, pedspell, pedfont
-from . import  pedcolor, pedlog, utils
+import  peddoc, pedconfig, pedofd
+import  pedync, pedspell, pedfont
+import  pedcolor, pedlog
 
 # Into our name space
-from    .pedmenu import *
-from    .pedui import *
-from    .pedutil import *
-from    .pedcanv import *
+from    pedmenu import *
+from    pedui import *
+from    pedutil import *
+from    pedcanv import *
 
 sys.path.append('../common')
 from pggui import *
@@ -93,7 +93,7 @@ class pgoline(Gtk.VBox):
         self.canvas = Canvas(self.statbox)
 
         for aa in range(10):
-            rstr = utils.randstr(6)
+            rstr = randstr(6)
             rrr = random.randint(0, 5)
             if rrr == 0:
                 rect = genrandrect(500, 1000)
@@ -241,7 +241,7 @@ class pgoline(Gtk.VBox):
         #self.edit.set_text(str(cal.get_date()))
         self.treeview2.clear()
         for aa in range(8, 20):
-            #self.treeview2.append((ampmstr(aa), utils.randstr(8), utils.randstr(14)) )
+            #self.treeview2.append((ampmstr(aa), randstr(8), randstr(14)) )
             ddd = self.cal.get_date()
             key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], ampmstr(aa) )
             try:

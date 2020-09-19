@@ -63,10 +63,9 @@ from gi.repository import Gtk
 
 # So it is universally found
 sys.path.append(os.path.abspath(__file__))
+sys.path.append(os.path.abspath("pedlib"))
 
-import pyedlib.pedutil, pyedlib.pedwin
-import pyedlib.pedlog, pyedlib.pedsql
-import pyedlib.pedconfig
+import pedutil, pedwin, pedlog, pedsql, pedconfig, keyhand
 
 mainwin = None
 show_timing = 0
@@ -78,7 +77,7 @@ use_stdout = 0
 
 def main(strarr):
 
-    if(pyedlib.pedconfig.conf.verbose):
+    if(pedconfig.conf.verbose):
         print(PROGNAME, "running on", "'" + os.name + "'", \
             "GTK", Gtk._version, "PyGtk", \
                "%d.%d.%d" % (Gtk.get_major_version(), \
@@ -86,18 +85,18 @@ def main(strarr):
                         Gtk.get_micro_version()))
 
     signal.signal(signal.SIGTERM, terminate)
-    mainwin = pyedlib.pedwin.EdMainWindow(None, None, strarr)
-    pyedlib.pedconfig.conf.pedwin = mainwin
+    mainwin = pedwin.EdMainWindow(None, None, strarr)
+    pedconfig.conf.pedwin = mainwin
 
     # Create log window
-    pyedlib.pedlog.create_logwin()
+    pedlog.create_logwin()
 
     Gtk.main()
 
 def help():
 
     print()
-    print(PROGNAME, _("Version: "), pyedlib.pedconfig.conf.version)
+    print(PROGNAME, _("Version: "), pedconfig.conf.version)
     print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
     print(_("Option(s):"))
     print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
@@ -114,11 +113,11 @@ def help():
 
 def terminate(arg1, arg2):
 
-    if(pyedlib.pedconfig.conf.verbose):
+    if(pedconfig.conf.verbose):
         print(_("Terminating pydepro.py, saving files to ~/pydepro"))
 
     # Save all
-    pyedlib.pedconfig.conf.pedwin.activate_quit(None)
+    pedconfig.conf.pedwin.activate_quit(None)
     #return signal.SIG_IGN
 
 # ------------------------------------------------------------------------
@@ -138,53 +137,53 @@ if __name__ == '__main__':
 
     #print "opts", opts, "args", args
 
-    pyedlib.pedconfig.conf.version = VERSION
-    pyedlib.pedconfig.conf.build_date = BUILDDATE
-    pyedlib.pedconfig.conf.progname = PROGNAME
+    pedconfig.conf.version = VERSION
+    pedconfig.conf.build_date = BUILDDATE
+    pedconfig.conf.progname = PROGNAME
 
     for aa in opts:
         if aa[0] == "-d":
             try:
-                pyedlib.pedconfig.conf.pgdebug = int(aa[1])
-                print( PROGNAME, _("Running at debug level"),  pyedlib.pedconfig.conf.pgdebug)
+                pedconfig.conf.pgdebug = int(aa[1])
+                print( PROGNAME, _("Running at debug level"),  pedconfig.conf.pgdebug)
             except:
-                pyedlib.pedconfig.conf.pgdebug = 0
+                pedconfig.conf.pgdebug = 0
 
         if aa[0] == "-h": help();  exit(1)
         if aa[0] == "-?": help();  exit(1)
-        if aa[0] == "-V": print("Version", pyedlib.pedconfig.conf.version); \
+        if aa[0] == "-V": print("Version", pedconfig.conf.version); \
             exit(1)
-        if aa[0] == "-f": pyedlib.pedconfig.conf.full_screen = True
-        if aa[0] == "-v": pyedlib.pedconfig.conf.verbose = True
+        if aa[0] == "-f": pedconfig.conf.full_screen = True
+        if aa[0] == "-v": pedconfig.conf.verbose = True
         if aa[0] == "-x": clear_config = True
         if aa[0] == "-c": show_config = True
         if aa[0] == "-t": show_timing = True
         if aa[0] == "-o": use_stdout = True
 
     try:
-        if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
-            if(pyedlib.pedconfig.conf.verbose):
-                print("making", pyedlib.pedconfig.con.config_dir)
-            os.mkdir(pyedlib.pedconfig.conf.config_dir)
+        if not os.path.isdir(pedconfig.conf.config_dir):
+            if(pedconfig.conf.verbose):
+                print("making", pedconfig.con.config_dir)
+            os.mkdir(pedconfig.conf.config_dir)
     except: pass
 
     # Let the user know if it needs fixin'
-    if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
-        print(_("Cannot access config dir:"), pyedlib.pedconfig.conf.config_dir)
+    if not os.path.isdir(pedconfig.conf.config_dir):
+        print(_("Cannot access config dir:"), pedconfig.conf.config_dir)
         sys.exit(1)
 
-    pyedlib.pedconfig.ensure_dirs(pyedlib.pedconfig.conf)
+    pedconfig.ensure_dirs(pedconfig.conf)
 
-    if(pyedlib.pedconfig.conf.verbose):
-        print(_("Data stored in "), pyedlib.pedconfig.conf.config_dir)
+    if(pedconfig.conf.verbose):
+        print(_("Data stored in "), pedconfig.conf.config_dir)
 
     # Initialize sqlite to load / save preferences & other info
-    sql = pyedlib.pedsql.pedsql(pyedlib.pedconfig.conf.sql_data)
+    sql = pedsql.pedsql(pedconfig.conf.sql_data)
 
     # Initialize pedconfig for use
-    pyedlib.pedconfig.conf.sql = sql
-    pyedlib.pedconfig.conf.keyh = pyedlib.keyhand.KeyHand()
-    pyedlib.pedconfig.conf.mydir = os.path.abspath(__file__)
+    pedconfig.conf.sql = sql
+    pedconfig.conf.keyh = keyhand.KeyHand()
+    pedconfig.conf.mydir = os.path.abspath(__file__)
 
     # To clear all config vars
     if clear_config:
@@ -206,19 +205,19 @@ if __name__ == '__main__':
         sys.exit(0)
 
     # Uncomment this for silent stdout
-    if use_stdout or pyedlib.pedconfig.conf.pgdebug or \
-                    pyedlib.pedconfig.conf.verbose:
+    if use_stdout or pedconfig.conf.pgdebug or \
+                    pedconfig.conf.verbose:
         # Do not hide console
         #print("Using real stdout")
-        pyedlib.pedwin.hidden = True    # Already hidden no hide
+        pedwin.hidden = True    # Already hidden no hide
     else:
-        pyedlib.pedwin.hidden = False   # Take action, hide
+        pedwin.hidden = False   # Take action, hide
 
-    sys.stdout = pyedlib.pedlog.fake_stdout(sys.stdout)
-    sys.stderr = pyedlib.pedlog.fake_stdout(sys.stdout)
+    sys.stdout = pedlog.fake_stdout(sys.stdout)
+    sys.stderr = pedlog.fake_stdout(sys.stdout)
 
     # Uncomment this for buffered output
-    if pyedlib.pedconfig.conf.verbose:
+    if pedconfig.conf.verbose:
         print("Started", PROGNAME)
 
     main(args[0:])

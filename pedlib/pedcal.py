@@ -4,22 +4,20 @@ from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
 
-#from six.moves import range
-
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
-from . import  peddoc, pedconfig, pedofd
-from . import  pedync, pedspell, pedfont
-from . import  pedcolor, pedlog, utils
+import  peddoc, pedconfig, pedofd
+import  pedync, pedspell, pedfont
+import  pedcolor, pedlog, utils
 
 # Into our name space
-from    .pedmenu import *
-from    .pedui import *
-from    .pedutil import *
+from    pedmenu import *
+from    pedui import *
+from    pedutil import *
 
 sys.path.append('../common')
 from pggui import *

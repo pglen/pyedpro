@@ -14,9 +14,10 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from . import  pedync, pedconfig
-from .pedutil import *
-from .pedundo import *
+import  pedync, pedconfig
+
+from pedutil import *
+from pedundo import *
 
 strhist = [] #strhist.append("aa")
 stridx = 0

@@ -17,11 +17,10 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-from . import pedcolor, pedspell, pedmenu, utils
-from . import peddraw
+import pedcolor, pedspell, pedmenu, utils, peddraw
 
-from .pedlcmd import *
-from .pedutil import *
+from pedlcmd import *
+from pedutil import *
 
 def exec_test(self2, testx):
 

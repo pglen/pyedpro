@@ -12,14 +12,14 @@ from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
-from . import  peddoc, pedconfig, pedofd
-from . import  pedync, pedspell, pedfont
-from . import  pedcolor, pedlog, utils
+import  peddoc, pedconfig, pedofd
+import  pedync, pedspell, pedfont
+import  pedcolor, pedlog, utils
 
 # Into our name space
-from    .pedmenu import *
-from    .pedui import *
-from    .pedutil import *
+from    pedmenu import *
+from    pedui import *
+from    pedutil import *
 
 sys.path.append('../common')
 from pggui import *

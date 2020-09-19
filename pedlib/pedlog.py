@@ -13,9 +13,9 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from . import peddoc, pedync, pedconfig
+import peddoc, pedync, pedconfig
 
-from .pedutil import *
+from pedutil import *
 
 # Adjust to taste. Estimated memory usage is 50 * MAX_LOG bytes
 # Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if

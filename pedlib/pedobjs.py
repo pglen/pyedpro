@@ -17,16 +17,16 @@ from gi.repository import cairo
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-from . import  peddoc, pedconfig, pedofd
-from . import  pedync, pedspell, pedfont
-from . import  pedcolor, pedlog, utils
+import  peddoc, pedconfig, pedofd
+import  pedync, pedspell, pedfont
+import  pedcolor, pedlog, utils
 
 # Into our name space
-from    .pedmenu import *
-from    .pedui import *
-from    .pedutil import *
-from    .pedcolor import *
-from    .pedtdlg import *
+from    pedmenu import *
+from    pedui import *
+from    pedutil import *
+from    pedcolor import *
+from    pedtdlg import *
 
 sys.path.append('../common')
 from pggui import *
@@ -54,7 +54,7 @@ class DrawObj():
         self.border = border
         self.fill = fill
         self.selected = False
-        self.id = utils.randlett(8)
+        self.id =  randlett(8)
         self.groupid = 0
         self.pgroupid = 0
         self.orgdrag = ()

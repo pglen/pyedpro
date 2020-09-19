@@ -6,7 +6,7 @@ from __future__ import print_function
 import sys, os, re, time, stat, string, random
 import string,  traceback
 
-from . import pedconfig
+import pedconfig
 
 # Add the new line twice for more balaced string
 
