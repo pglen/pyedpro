@@ -20,7 +20,9 @@ from . import  pedcolor, pedlog, utils
 from    .pedmenu import *
 from    .pedui import *
 from    .pedutil import *
-from    .pedgui import *
+
+sys.path.append('../common')
+from pggui import *
 
 # ------------------------------------------------------------------------
 

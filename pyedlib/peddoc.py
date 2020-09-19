@@ -16,7 +16,7 @@ from gi.repository import PangoCairo
 
 from . import keyhand, pedconfig, pedync
 from . import pedcolor, pedspell, pedmenu, utils
-from . import peddraw, pedmisc, pedstruct, pedgui
+from . import peddraw, pedmisc, pedstruct
 
 from .pedutil import *
 from .keywords import *

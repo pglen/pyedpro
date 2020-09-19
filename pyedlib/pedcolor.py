@@ -14,7 +14,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from . import pedync, pedconfig, peddoc, pedgui
+from . import pedync, pedconfig, peddoc
 from .pedutil import *
 
 ev_arr = []

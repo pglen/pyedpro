@@ -14,7 +14,10 @@ from gi.repository import Gio
 from . import  peddoc, pedconfig, pedofd
 from . import  pedync, pedspell, pedfont
 from . import  pedcolor, pedlog, utils
-from . import  pedcal, pednotes, pedoline, pedgui
+from . import  pedcal, pednotes, pedoline
+
+sys.path.append('../common')
+import pggui
 
 # Into our name space
 from    .pedmenu import *
@@ -369,7 +372,7 @@ class EdMainWindow():
 
         self.headbar.pack_end(button)
 
-        self.menu = pedgui.MenuButt(("Open", "Close", "Exit"), self.menu_click)
+        self.menu = pggui.MenuButt(("Open", "Close", "Exit"), self.menu_click)
         self.headbar.pack_start(Gtk.Label())
         self.headbar.pack_start(self.menu)
         self.headbar.pack_start(Gtk.Label())
