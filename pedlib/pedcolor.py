@@ -275,8 +275,6 @@ def colordlg(self, self2):
     lab4a = Gtk.Label(label="       ")
     vbox.pack_start(lab4a, False , 0, 0)
 
-    #vbox.pack_start(pedgui.xSpacer(12), False , 0, 0)
-
     buttda = Gtk.Button.new_with_mnemonic(" _Dark Mode ")
     buttda.connect("clicked", dark_col, self2)
 
