@@ -21,7 +21,6 @@ from gi.repository import GdkPixbuf
 sys.path.append('../common')
 from pggui import *
 
-
 def ofd(fname = None, self2 = None):
 
     warnings.simplefilter("ignore")
@@ -42,6 +41,7 @@ def ofd(fname = None, self2 = None):
     dialog.set_default_size(800, 600)
     #print dialog
     dialog.xmulti = []
+    dialog.self2 = self2
 
     #dialog.set_transient_for(pyedlib.pedconfig.conf.pe.mywin);
 
@@ -54,6 +54,7 @@ def ofd(fname = None, self2 = None):
     label5  = Gtk.Label("   ");  label6 = Gtk.Label("   ")
     label7  = Gtk.Label("   ");  label8 = Gtk.Label("   ")
     label9  = Gtk.Label("   ");  label10 = Gtk.Label("   ");
+    label11  = Gtk.Label(" ");  label12 = Gtk.Label(" ");
 
     dialog.label11 = Gtk.Label("   ")
     dialog.label12 = Gtk.Label("   ")
@@ -72,9 +73,14 @@ def ofd(fname = None, self2 = None):
     dialog.entry.set_activates_default(True)
     dialog.entry.set_text(fname)
 
+    ot =  Gtk.Button(label="Open this")
+    ot.connect("clicked", butt_this, dialog)
+
     hbox2 = Gtk.HBox()
     hbox2.pack_start(label6, 0, 0, 0)
     hbox2.pack_start(dialog.entry, True, True, 0)
+    hbox2.pack_start(label11, 0, 0, 0)
+    hbox2.pack_start(ot, 0, 0, 0)
     hbox2.pack_start(label7, 0, 0, 0)
 
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
@@ -132,6 +138,12 @@ def ofd(fname = None, self2 = None):
     #print ("response", response, "result", res  )
     dialog.destroy()
     return res
+
+def butt_this(butt, dialog):
+    ttt = dialog.entry.get_text()
+    print("butt_this", ttt)
+    if ttt:
+        dialog.self2.mained.openfile(ttt)
 
 def butt_click(butt, dialog):
     #print butt.path
