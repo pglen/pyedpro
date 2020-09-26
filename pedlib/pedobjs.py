@@ -28,7 +28,7 @@ from    pedutil import *
 from    pedcolor import *
 from    pedtdlg import *
 
-sys.path.append('../common')
+sys.path.append('../pycommon')
 from pggui import *
 
 RECT = 1

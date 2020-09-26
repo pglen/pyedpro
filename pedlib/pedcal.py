@@ -19,7 +19,7 @@ from    pedmenu import *
 from    pedui import *
 from    pedutil import *
 
-sys.path.append('../common')
+sys.path.append('../pycommon')
 from pggui import *
 
 # ------------------------------------------------------------------------

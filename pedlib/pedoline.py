@@ -24,7 +24,7 @@ from    pedui import *
 from    pedutil import *
 from    pedcanv import *
 
-sys.path.append('../common')
+sys.path.append('../pycommon')
 from pggui import *
 
 random.seed()

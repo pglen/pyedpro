@@ -16,7 +16,7 @@ import  pedync, pedspell, pedfont
 import  pedcolor, pedlog
 import  pedcal, pednotes, pedoline
 
-sys.path.append('../common')
+sys.path.append('../pycommon')
 import pggui
 
 # Into our name space

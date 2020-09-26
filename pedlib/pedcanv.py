@@ -29,7 +29,7 @@ from    pedcolor import *
 from    pedtdlg import *
 from    pedobjs import *
 
-sys.path.append('../common')
+sys.path.append('../pycommon')
 from pggui import *
 
 canv_testmode = 0

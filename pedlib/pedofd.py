@@ -18,7 +18,7 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
-sys.path.append('../common')
+sys.path.append('../pycommon')
 from pggui import *
 
 def ofd(fname = None, self2 = None):
