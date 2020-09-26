@@ -53,7 +53,7 @@ _ = gettext.gettext
 
 #print("domain", gettext.textdomain)
 
-VERSION = 1.5
+VERSION = 1.6
 BUILDDATE = "Sat 26.Sep.2020"
 PROGNAME = "PyEdPro"
 
