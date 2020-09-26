@@ -5,7 +5,7 @@ existing keyboard standards. The keys are assigned in keyhand.py and the
 actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
-Updated:    Fri 17.Apr.2020
+Updated:    Fri 17.Apr.2020  Sat 26.Sep.2020
 
   To implement a new feature follow a particular key's execution path, and
 replicate functionality. It is eazy to follow, as it is table driven.
@@ -25,11 +25,13 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Tab                         -- Insert 4 spaces up to % 4
     Shift-Tab                   -- Insert a real tab up to % 4
     Ctrl A                      -- Select All text in buffer
+    Ctrl-Shift A                -- Goto beginning of line
     Ctrl B                      -- Select word (till spaces)
     Ctrl C                      -- Copy selection to Clipboard
     Ctrl D                      -- Delete (trim) spaces from end of line
     Ctrl-Shift D                -- Insert date string at cursor location
     Ctrl E                      -- Capitalize (emphasize) word
+    Ctrl-Shift E                -- Goto end of line
     Ctrl F                      -- Find in file or all buffers
     Ctrl G                      -- Goto next match
     Shift-Ctrl G                -- Goto previous match
@@ -160,86 +162,3 @@ replicate functionality. It is eazy to follow, as it is table driven.
     #Ctrl Alt K                  --  Toggle Hex View
 
     #Alt <                       -- Lower case word/selection
-    #Alt >                       -- Upper c￥            ase word/selection
-
-    F1                           -- Help
-    F2                           -- Dev Help  (if installed)
-    F3                           -- Key assignments Help
-    F4                           -- Animate macro
-    F5                           -- Previous Match
-    F6                           -- Next Match
-    F7                           -- Start / Stop Record
-    F8                           -- Play Macro
-    F9                           -- Toggle code spell check****
-    Shift-F9                     -- Toggle full file (text) spell check
-    F10                          -- Application's main - Menu
-    shift-F10                    -- Notebook tab menu (if enabled)
-    F11                          -- Toggle full Screen
-    F12                          -- Cursor Locator
-    Shift-F12                    -- Reveal tabs and spaces and 80 column marker
-    Ctrl F12                     -- Reveal Hex view
-
-Context dependent key assignments:
-
-    Alt X                       -- Exit dialog
-    ESC                         -- Exit dialog (cancel)
-    ENTER                       -- Exit dialog (accept)
-
- Find / Replace context:
-
-    Alt S                       -- Case Insensitive search
-    Alt R                       -- Regular expression search
-    Alt A                       -- All buffer search
-    Alt F                       -- All files search (curr dir)
-
- Find / Replace results context:
-
-    Alt S                       -- Change currently Selected
-    Alt O                       -- Change One (rescans buffer for live next)
-    Alt A                       -- Change All
-    Alt Tab                     -- Navigate between search / main windows
-    Arrow Up/Down               -- Next / prev match
-    ENTER                       -- Change selection
-
-  Mouse actions:
-
-    Left Click                  -- Positon caret (text cursor)
-    Right Click                 -- Call up right click menu
-    Right Click (on spell)      -- Call up spell correction list
-    Click - Hold - Drag (L-R)   -- Select
-    Click - Hold - Drag  (U-D)  -- Column Select
-    Double Click                -- Select Word
-
-Notes:
-
-    *       Alt Arrow   Goto begin / end of current word. Word delimited with
-                        alpha_num + punctuation
-    **      Ctrl Q      Quit program, no save, but files are backed up in
-                        (~/.pyedpro/data) '*.sav'
-    ***     Ctrl R      Reverse words around the middle. (a = b becomes b = a)
-                        Useful for turining assignments.
-    ****    F9          Only Comments and strings are checked, otherwise all
-                        text is checked
-    *****   Alt 0       Alt - 1 .. 9 brings back the focus to current buffer
-
-  Any unrecognized key is inserted verbatim into the buffer. If it is not a
-letter / number / punctuation, a message is printed on the controlling
-terminal. If no action is listed, that key is unassigned.
-
-Most dialogs can be dismissed with the Esc key or the Alt-X key combo.
-
-// EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-

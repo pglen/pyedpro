@@ -511,6 +511,7 @@ class ActHand:
                 self2.xsel = xidx
             if self2.ysel == -1:
                 self2.ysel = yidx
+
         if self2.alt:
             #print ("alt-end")
             self2.mained.lastwin()
@@ -633,11 +634,17 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL -- A")
 
-        self2.xsel = 0; self2.ysel = 0
-        self2.ysel2 = len(self2.text)
-        self2.xsel2 = self2.maxlinelen
-        self2.set_caret(self2.maxlinelen,  len(self2.text))
-        self2.invalidate()
+        if self2.shift:
+            xidx = self2.caret[0] + self2.xpos;
+            yidx = self2.caret[1] + self2.ypos
+            line = self2.text[yidx]
+            self2.gotoxy(0, yidx)
+        else:
+            self2.xsel = 0; self2.ysel = 0
+            self2.ysel2 = len(self2.text)
+            self2.xsel2 = self2.maxlinelen
+            self2.set_caret(self2.maxlinelen,  len(self2.text))
+            self2.invalidate()
 
     def ctrl_b(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -856,17 +863,23 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - E")
 
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        line = self2.text[yidx]
-        self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+        if self2.shift:
+            xidx = self2.caret[0] + self2.xpos;
+            yidx = self2.caret[1] + self2.ypos
+            line = self2.text[yidx]
+            self2.gotoxy(len(line), yidx)
+        else:
+            xidx = self2.caret[0] + self2.xpos;
+            yidx = self2.caret[1] + self2.ypos
+            line = self2.text[yidx]
+            self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
 
-        cntb, cnte = selword(line, xidx)
-        wlow = line[cntb:cnte].capitalize()
-        #print ("word   '" + line[cntb:cnte] + "'", wlow)
-        self2.text[yidx] = line[:cntb] + wlow + line[cnte:]
-        self2.set_changed(True)
-        self2.inval_line()
+            cntb, cnte = selword(line, xidx)
+            wlow = line[cntb:cnte].capitalize()
+            #print ("word   '" + line[cntb:cnte] + "'", wlow)
+            self2.text[yidx] = line[:cntb] + wlow + line[cnte:]
+            self2.set_changed(True)
+            self2.inval_line()
 
     def alt_f(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -2065,62 +2078,3 @@ class ActHand:
             self2.invalidate()
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

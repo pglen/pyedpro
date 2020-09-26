@@ -25,7 +25,6 @@ from keywords import *
 (COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
 DRAG_ACTION = Gdk.DragAction.COPY
 
-
 VSCROLLGAP  = 2             # Gap between the page boundary and ver. scroll
 HSCROLLGAP  = 4             # Gap between the page boundary and hor. scroll
 PAGEUP      = 20            # One page worth of scroll
@@ -1346,7 +1345,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if  err[0]:
                 strx = "Saved '{0:s}'".format(self.fname)
             else:
-                strx = "Not Saved '{0:s}' {1:s}".format(bn, err[1])
+                #strx = "Not Saved '{0:s}' {1:s}".format(bn, err[1])
+                strx = "Not Saved "
 
         if(pedconfig.conf.verbose):
             print(strx)
