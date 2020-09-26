@@ -17,7 +17,7 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedcolor, pedspell, pedmenu, utils, peddraw
+import pedcolor, pedspell, pedmenu, peddraw
 
 from pedlcmd import *
 from pedutil import *

@@ -24,6 +24,10 @@ import  panglib.lexer as lexer
 import  panglib.pangdisp as pangdisp
 import  panglib.pangfunc as pangfunc
 
+import inspect
+if inspect.isbuiltin(time.process_time):
+    time.clock = time.process_time
+
 # This parser digests formatted text similar to pango in Gtk.
 # Was created to quickly display formatted messages.
 # See SYNTAX for details on text formats

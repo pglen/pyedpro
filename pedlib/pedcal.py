@@ -12,7 +12,7 @@ from gi.repository import GLib
 
 import  peddoc, pedconfig, pedofd
 import  pedync, pedspell, pedfont
-import  pedcolor, pedlog, utils
+import  pedcolor, pedlog
 
 # Into our name space
 from    pedmenu import *
@@ -175,7 +175,7 @@ class pgcal(Gtk.VBox):
         #self.edit.set_text(str(cal.get_date()))
         self.treeview2.clear()
         for aa in range(8, 20):
-            #self.treeview2.append((ampmstr(aa), utils.randstr(8), utils.randstr(14)) )
+            #self.treeview2.append((ampmstr(aa), pedutil.randstr(8), pedutil.randstr(14)) )
             ddd = self.cal.get_date()
             key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], ampmstr(aa) )
             try:
@@ -421,32 +421,4 @@ class calsql():
             return None
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

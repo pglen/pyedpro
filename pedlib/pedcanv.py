@@ -19,7 +19,7 @@ from gi.repository import PangoCairo
 
 import  peddoc, pedconfig, pedofd
 import  pedync, pedspell, pedfont
-import  pedcolor, pedlog, utils
+import  pedcolor, pedlog
 
 # Into our name space
 from    pedmenu import *
@@ -329,7 +329,7 @@ class Canvas(Gtk.DrawingArea):
             if self.drawline:
                 self.drawline = False
                 #print (self.stroke)
-                rstr = "" #utils.randstr(6)
+                rstr = "" #pedutil.randstr(6)
                 coord = Rectangle(stroke_dims(self.stroke))
                 self.add_stroke(coord, rstr, randcolstr(), arr = self.stroke)
                 self.stroke = []
@@ -605,27 +605,27 @@ class Canvas(Gtk.DrawingArea):
                 print(aa.dump())
 
         if num == 2:
-            rstr = utils.randstr(6)
+            rstr = pedutil.randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
             self.add_rect(coord, rstr, randcolstr())
 
         if num == 3:
-            rstr = utils.randstr(6)
+            rstr = pedutil.randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
             self.add_romb(coord, rstr, randcolstr())
 
         if num == 4:
-            rstr = utils.randstr(6)
+            rstr = pedutil.randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 70, 70)
             self.add_circle(coord, rstr, randcolstr())
 
         if num == 5:
-            rstr = utils.randstr(6)
+            rstr = pedutil.randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
             self.add_text(coord, rstr, randcolstr())
 
         if num == 6:
-            rstr = utils.randstr(6)
+            rstr = pedutil.randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
             self.add_line(coord, rstr, randcolstr())
 
@@ -789,7 +789,7 @@ class Canvas(Gtk.DrawingArea):
             try:
                 aa.draw(cr, self)
             except:
-                utils.put_exception("Cannot draw " + str(type(aa)))
+                pedutil.put_exception("Cannot draw " + str(type(aa)))
                 #aa.dump()
 
         init = 0;
@@ -806,26 +806,4 @@ def set_canv_testmode(flag):
     global canv_testmode
     canv_testmode = flag
 
-
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

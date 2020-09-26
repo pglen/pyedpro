@@ -1721,5 +1721,3 @@ def handler_tick():
         print("Exception in setting timer handler", sys.exc_info())
 
 # EOF
-
-

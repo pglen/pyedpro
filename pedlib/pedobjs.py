@@ -19,7 +19,7 @@ from gi.repository import PangoCairo
 
 import  peddoc, pedconfig, pedofd
 import  pedync, pedspell, pedfont
-import  pedcolor, pedlog, utils
+import  pedcolor, pedlog
 
 # Into our name space
 from    pedmenu import *
@@ -560,13 +560,4 @@ class StrokeObj(DrawObj):
         return (self.rect.x, self.rect.y)
 
 
-
-
-
-
-
-
-
-
-
-
+# eof

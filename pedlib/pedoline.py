@@ -485,16 +485,3 @@ class notesql():
             return None
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-

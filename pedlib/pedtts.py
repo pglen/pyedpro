@@ -18,7 +18,6 @@ from gi.repository import Pango
 import pedync, pedofd, pedspell, pedbuffs, pedconfig
 
 from pedutil import *
-from utils import *
 
 # Set this to non zero if you want festival to speak
 USE_FESTIVAL = 1

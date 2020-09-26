@@ -1,14 +1,20 @@
-                             PyEdPro Key Assignments
+                         PyEdPro Key Assignments
 
    This is a list of default key assignments for PyEdPro. We tried to follow
 existing keyboard standards. The keys are assigned in keyhand.py and the
 actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
-Updated:    Fri 17.Apr.2020  Sat 26.Sep.2020
+Updated:    Fri 17.Apr.2020
+            Cleanup
+
+            Sat 26.Sep.2020
+            Added navigation keys for line/file  beginning/end for
+            the purpose on navigating on machines with no home/end key
+            (Chromebook is one of them)
 
   To implement a new feature follow a particular key's execution path, and
-replicate functionality. It is eazy to follow, as it is table driven.
+replicate functionality. It is easy to follow, as it is table driven.
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char
@@ -42,6 +48,7 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Ctrl K                      -- Up Arrow   (like in vi)
     Ctrl L                      -- Right Arrow (like in vi)
     Ctrl M                      -- Toggle auto correct
+    Ctrl-Shift M                -- Call up right click menu
     Ctrl N                      -- New File
     Ctrl O                      -- Open file
     Ctrl-Shift O                -- Open session
@@ -86,7 +93,7 @@ replicate functionality. It is eazy to follow, as it is table driven.
     Alt Home                    -- Go to first buffer
     Alt End                     -- Go to last buffer
 
-    Home Home                   -- Go to begininig of page (PgUp)
+    Home Home                   -- Go to beginning of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl Home)
 
     # Both upper and lower case
@@ -162,3 +169,5 @@ replicate functionality. It is eazy to follow, as it is table driven.
     #Ctrl Alt K                  --  Toggle Hex View
 
     #Alt <                       -- Lower case word/selection
+
+# eof

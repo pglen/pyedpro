@@ -48,7 +48,7 @@ for aa in arr:
         else:
             libs.append(dirx + os.sep +  aa)
 print("libs", libs)
-diry = "pyedlib/images"; imgs = []
+diry = "pedlib/images"; imgs = []
 arr = os.listdir(diry)
 for aa in arr:
     imgs.append(diry + os.sep +  aa)
@@ -56,19 +56,19 @@ print("imgs", imgs)
 '''
 
 setup(name = "pyedpro.py",      # Name of the program.
-      version = "1.0",          # Version of the program.
-      description = "Easy-to-use advanced editor",
+      version = "1.6",          # Version of the program.
+      description = "Easy-to-use advanced editor in python",
       long_description = descx,
       classifiers=classx,
       author = "Peter Glen",
-      author_email = "peterglen@gail.com",
+      author_email = "peterglen@gmail.com",
       license='GPLv3',            # The license of the program.
       url="none.specified",
       scripts = ['pyedpro.py', 'pangview.py'],
-      packages=['pyedlib', 'panglib', ],
-      package_dir = {'pyedlib': 'pyedlib', 'panglib': 'panglib'},
-      package_data = {'pyedlib': ['data/*', 'images/*']},
-      data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pyedlib/images/pyedpro.png']),
+      packages=['pedlib', 'panglib', 'pycommon'],
+      package_dir = {'pydlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../pycommon'},
+      package_data = {'pedlib': ['data/*', 'images/*']},
+      data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pedlib/images/pyedpro.png']),
                         ('/usr/share/applications', ['pyedpro.desktop'])],
       #include_package_data=True
       )

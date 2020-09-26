@@ -639,6 +639,7 @@ class ActHand:
             yidx = self2.caret[1] + self2.ypos
             line = self2.text[yidx]
             self2.gotoxy(0, yidx)
+            self2.mained.update_statusbar("Goto beginning of line.")
         else:
             self2.xsel = 0; self2.ysel = 0
             self2.ysel2 = len(self2.text)
@@ -868,6 +869,7 @@ class ActHand:
             yidx = self2.caret[1] + self2.ypos
             line = self2.text[yidx]
             self2.gotoxy(len(line), yidx)
+            self2.mained.update_statusbar("Goto end of line.")
         else:
             xidx = self2.caret[0] + self2.xpos;
             yidx = self2.caret[1] + self2.ypos
@@ -957,12 +959,16 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - M")
 
-        self2.acorr = not self2.acorr
-        if self2.acorr:
-            self2.mained.update_statusbar(\
-                "Autocorrect is on with %d enties." % len(acorr))
+        if self2.shift:
+            self2.mained.update_statusbar("Popped right click menu.")
+            self2.poprclick(self2, None)
         else:
-            self2.mained.update_statusbar("Autocorrect is off.")
+            self2.acorr = not self2.acorr
+            if self2.acorr:
+                self2.mained.update_statusbar(\
+                    "Autocorrect is on with %d enties." % len(acorr))
+            else:
+                self2.mained.update_statusbar("Autocorrect is off.")
 
     def ctrl_p(self, self2):
         if pedconfig.conf.pgdebug > 9:

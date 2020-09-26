@@ -29,14 +29,17 @@ def gotodlg(self2):
     dialog.alt = self2.keyh.alt
 
     # Spacers
-    label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ")
-    label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ")
+    #label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ")
+    #label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ")
     label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ")
     label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ")
-    label9 = Gtk.Label("   ");  labela = Gtk.Label("   ")
+    label9 = Gtk.Label("   ");
 
-    labelb = Gtk.Label("   Home: ALT-A Bottom: ALT-Z  ");
-    labelc = Gtk.Label("   Start: ALT-S End: ALT-E Exit: ALT-X   ");
+    labela = Gtk.Label("   ")
+    labelb = Gtk.Label("  Top of File: ALT-A   End of File: ALT-Z  ");
+    labelc = Gtk.Label("  Line Start: ALT-S    Line End: ALT-E  ");
+    labeld = Gtk.Label("  Exit Dialog: ESC or ALT-X  ");
+    labele = Gtk.Label("   ")
 
     dialog.connect("key-press-event", area_key)
     dialog.connect("key-release-event", area_key)
@@ -55,21 +58,24 @@ def gotodlg(self2):
     entry.set_text(self2.oldgoto)
     entry.set_width_chars(24)
 
-    dialog.vbox.pack_start(label4, 0, 0, 0)
+    # Assemble it all
+
+    dialog.vbox.pack_start(labela, 0, 0, 0)
     dialog.vbox.pack_start(labelb, 0, 0, 0)
     dialog.vbox.pack_start(labelc, 0, 0, 0)
-    dialog.vbox.pack_start(labela, 0, 0, 0)
+    dialog.vbox.pack_start(labele, 0, 0, 0)
 
     hbox2 = Gtk.HBox()
     hbox2.pack_start(label6, 0, 0, 0)
-    hbox2.pack_start(entry, 0, 0, 0)
+    hbox2.pack_start(entry, 1, 1, 0)
     hbox2.pack_start(label7, 0, 0, 0)
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
     dialog.vbox.pack_start(label5, 0, 0, 0)
 
     hbox = Gtk.HBox()
     dialog.vbox.pack_start(hbox, 0, 0, 0)
-    dialog.vbox.pack_start(label8, 0, 0, 0)
+    #dialog.vbox.pack_start(label8, 0, 0, 0)
+    dialog.vbox.pack_start(labeld, 0, 0, 0)
 
     dialog.show_all()
     response = dialog.run()
@@ -77,7 +83,6 @@ def gotodlg(self2):
     dialog.destroy()
 
     if response == Gtk.ResponseType.ACCEPT:
-
         # Save it for later use
         self2.oldgoto = gotxt
         pedconfig.conf.sql.put("goto", gotxt)

@@ -137,6 +137,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.lastcmd = ""
         self.caps = False
         self.scr = False
+        self.lastevent = None
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
@@ -400,7 +401,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             # Update stat info
             self.stat = xstat
         except:
-            #utils.put_exception("cmp mtime")
+            #pedutil.put_exception("cmp mtime")
             pass
 
         self.update_bar2()
@@ -533,6 +534,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print( queue)
 
     def area_button(self, area, event):
+
+        self.lastevent = event
 
         if pedconfig.conf.pgdebug > 5:
             print( "Button press  ", event.type, " x=", event.x, " y=", event.y)
@@ -1139,7 +1142,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def poprclick(self, widget, event):
         #print ("Making rclick")
         self.build_menu(self, pedmenu.rclick_menu)
-        self.menu.popup(None, None, None, None, event.button, event.time)
+        if event:
+            self.menu.popup(None, None, None, None, event.button, event.time)
+        else:
+            event = Gdk.EventButton()
+            self.menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response2(self, widget, stringx, arg):
         #print( "menuitem response2 '%s'" % stringx)
@@ -1599,7 +1606,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             fh.close()
         except:
             print("Cannot save undo file", sys.exc_info())
-            utils.put_exception("undo")
+            pedutil.put_exception("undo")
 
 
         hhh = hash_name(self.fname) + ".rdo"

@@ -16,7 +16,6 @@ from gi.repository import GObject
 #import pedwin
 import pedconfig
 import pedync
-import utils
 
 import inspect
 if inspect.isbuiltin(time.process_time):
