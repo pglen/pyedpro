@@ -53,8 +53,8 @@ _ = gettext.gettext
 
 #print("domain", gettext.textdomain)
 
-VERSION = 1.6
-BUILDDATE = "Sat 26.Sep.2020"
+VERSION = 1.7
+BUILDDATE = "Mon 28.Sep.2020"
 PROGNAME  = "PyEdPro"
 
 import gi

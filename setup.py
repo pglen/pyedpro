@@ -37,7 +37,7 @@ classx = [
         ]
 
 setup(name = "pyedpro.py",      # Name of the program.
-      version = "1.6",          # Version of the program.
+      version = "1.7",          # Version of the program.
       description = "Easy-to-use advanced editor in python",
       long_description = descx,
       classifiers = classx,
@@ -47,7 +47,7 @@ setup(name = "pyedpro.py",      # Name of the program.
       url="https://github.com/pglen/pyedpro.git",
       scripts = ['pyedpro.py', 'pangview.py'],
       packages=['pedlib', 'panglib', 'pycommon'],
-      package_dir = {'pydlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../pycommon'},
+      package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../pycommon'},
       package_data = {'pedlib': ['data/*', 'images/*']},
       data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pedlib/images/pyedpro.png']),
                         ('/usr/share/applications', ['pyedpro.desktop'])],
