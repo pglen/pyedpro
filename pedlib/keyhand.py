@@ -14,7 +14,6 @@ from gi.repository import GObject
 import pedlib.pedconfig as pedconfig
 import pedlib.pedlog as pedlog
 import pedlib.pedsql as pedsql
-import pedlib.keyhand as keyhand
 import pedlib.acthand as acthand
 import pedlib.pedofd   as  pedofd
 import pedlib.pedync   as  pedync
