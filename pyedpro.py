@@ -63,7 +63,8 @@ from gi.repository import Gtk
 
 # So it is universally found
 sys.path.append(os.path.abspath(__file__))
-sys.path.append(os.path.abspath("pedlib"))
+sys.path.append("pedlib")
+sys.path.append("pycommon")
 
 import pedutil, pedwin, pedlog, pedsql, pedconfig, keyhand
 

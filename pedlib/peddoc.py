@@ -1262,10 +1262,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                        "              (Please install)")
 
     def start_edit(self):
-        #print("Editor Here")
-        myscript = os.path.join(os.path.dirname(__file__), '../pyedpro.py')
-        myscript = os.path.realpath(myscript)
-        #print("myscript: python", myscript);
+        print("Editor Here:", __file__)
+        myscript2 = os.path.join(os.path.dirname(__file__), '../pyedpro.py')
+        #myscript = '../pyedpro.py'
+        print("myscript2: ", myscript2);
+        myscript = os.path.realpath(myscript2)
+        print("myscript:", myscript);
         ret = 0
         try:
             if platform.system().find("Win") >= 0:
