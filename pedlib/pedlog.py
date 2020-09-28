@@ -25,7 +25,6 @@ import pedlib.pedofd   as  pedofd
 import pedlib.pedync   as  pedync
 import pedlib.pedspell as  pedspell
 import pedlib.pedcolor as  pedcolor
-import pedlib.pedlog   as  pedlog
 import pedlib.pedcal   as  pedcal
 import pedlib.pednotes as  pednotes
 import pedlib.pedoline as  pedoline
