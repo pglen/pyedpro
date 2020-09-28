@@ -16,7 +16,7 @@ from gi.repository import PangoCairo
 
 import pedlib.pedconfig as pedconfig
 import pedlib.pedsql as pedsql
-import pedlib.keyhand as keyhand
+#import pedlib.keyhand as keyhand
 import pedlib.acthand as acthand
 import pedlib.peddraw as  peddraw
 import pedlib.pedofd   as  pedofd
