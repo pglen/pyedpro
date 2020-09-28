@@ -24,7 +24,6 @@
 #from __future__ import print_function
 
 import pedlib.pedconfig as pedconfig
-import pedlib.pedlog as pedlog
 import pedlib.pedsql as pedsql
 import pedlib.keyhand as keyhand
 import pedlib.acthand as acthand

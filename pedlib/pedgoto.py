@@ -12,12 +12,9 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 
 import pedlib.pedconfig as pedconfig
-import pedlib.pedlog as pedlog
 import pedlib.pedsql as pedsql
 import pedlib.keyhand as keyhand
 import pedlib.acthand as acthand
-#import pedlib.peddraw as  peddraw
-#import pedlib.peddoc   as  peddoc
 import pedlib.pedofd   as  pedofd
 import pedlib.pedync   as  pedync
 import pedlib.pedspell as  pedspell

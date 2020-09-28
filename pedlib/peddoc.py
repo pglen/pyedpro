@@ -15,7 +15,6 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 import pedlib.pedconfig as pedconfig
-import pedlib.pedlog as pedlog
 import pedlib.pedsql as pedsql
 import pedlib.keyhand as keyhand
 import pedlib.acthand as acthand

@@ -12,8 +12,7 @@ from gi.repository import GLib
 from gi.repository import Gio
 
 import pedlib.pedconfig as pedconfig
-import pedlib.peddoc   as  peddoc
-import pedlib.pedlog as pedlog
+import pedlib.peddoc as peddoc
 import pedlib.pedsql as pedsql
 import pedlib.keyhand as keyhand
 import pedlib.acthand as acthand
