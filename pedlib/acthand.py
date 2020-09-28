@@ -32,7 +32,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import string, subprocess, os, platform, datetime
+import string, subprocess, os, platform, datetime, sys
 
 try:
     import cups
@@ -42,19 +42,32 @@ except:
 import py_compile
 
 import gi
-#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-import pedync, pedofd, pedspell, pedbuffs, pedconfig, pedtts
-import pedfind, pedmisc
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedfind  as  pedfind
+import pedlib.pedundo  as  pedundo
 
-from pedgoto import *
-from pedundo import *
-from keywords import *
-from pedutil import *
+from pedlib.keywords import *
+from pedlib.pedutil import *
+#from pedlib.pedundo import *
+from pedlib.pedgoto import *
+from pedlib.pedcanv import *
 
 lastcmd = ""
 
@@ -284,12 +297,12 @@ class ActHand:
         yidx = self2.caret[1] + self2.ypos
         self.pad_list(self2, yidx)
         line = self2.text[yidx][:]
-        self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
         spaces = cntleadchar(line, " ")
         self2.text[yidx] = line[:xidx];
         # Insert new after current
         yidx += 1
-        self2.undoarr.append((xidx, yidx, ADDED + CONTFLAG, \
+        self2.undoarr.append((xidx, yidx, pedundo.ADDED + pedundo.CONTFLAG, \
                 spaces + line[xidx:]))
         text = self2.text[:yidx]
         text.append(spaces + line[xidx:])
@@ -303,7 +316,7 @@ class ActHand:
                 self2.needscan = True
 
         # Contain undo
-        limit_undo(self2)
+        pedundo.limit_undo(self2)
 
         # Update maxlines
         mlines = len(self2.text)
@@ -327,16 +340,16 @@ class ActHand:
             if xlen:
                 line = self2.text[yidx][:]
                 if xidx >= xlen:     # bring in line from below
-                    self2.undoarr.append((xidx, yidx, MODIFIED, \
+                    self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, \
                         self2.text[yidx]))
                     self2.text[yidx] += genstr(" ", xidx-xlen)
                     self2.text[yidx] += self2.text[yidx+1][:]
                     self2.undoarr.append((xidx, yidx+1, \
-                        DELETED + CONTFLAG, self2.text[yidx+1]))
+                        pedundo.DELETED + pedundo.CONTFLAG, self2.text[yidx+1]))
                     del (self2.text[yidx+1])
                     self2.invalidate()
                 else:               # remove char
-                    self2.undoarr.append((xidx, yidx, MODIFIED, \
+                    self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, \
                             self2.text[yidx]))
                     self2.text[yidx] = line[:xidx] + line[xidx+1:]
                     self2.set_caret(xidx, yidx)
@@ -364,7 +377,7 @@ class ActHand:
         else:
             if xidx > 0:
                 line = self2.text[yidx][:]
-                self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+                self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
                 self2.text[yidx] = line[:xidx - 1] + line[xidx:]
                 self2.set_caret(xidx - 1, yidx)
                 self2.inval_line()
@@ -372,13 +385,13 @@ class ActHand:
                 if yidx > 0:
                     if yidx < len(self2.text):      # Any text?
                         self2.undoarr.append((xidx, yidx-1, \
-                                MODIFIED, self2.text[yidx-1]))
+                                pedundo.MODIFIED, self2.text[yidx-1]))
                         line = self2.text[yidx][:]
                         lenx = len(self2.text[yidx-1])
                         self2.text[yidx-1] += line
                         self2.set_caret(lenx, yidx-1)
                         self2.undoarr.append(\
-                                (xidx, yidx, DELETED + CONTFLAG, \
+                                (xidx, yidx, pedundo.DELETED + pedundo.CONTFLAG, \
                                         self2.text[yidx]))
                         del (self2.text[yidx])
                         self2.invalidate()
@@ -845,7 +858,7 @@ class ActHand:
                 if cnt >= zlen: break
                 line = self2.text[cnt];  xlen = len(line)
                 if xlen and line[xlen-1] == " ":
-                    self2.undoarr.append((xidx, cnt, MODIFIED, self2.text[cnt]))
+                    self2.undoarr.append((xidx, cnt, pedundo.MODIFIED, self2.text[cnt]))
                     self2.text[cnt] = line.rstrip()
                     cnt2 += 1
                 cnt += 1
@@ -874,7 +887,7 @@ class ActHand:
             xidx = self2.caret[0] + self2.xpos;
             yidx = self2.caret[1] + self2.ypos
             line = self2.text[yidx]
-            self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+            self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
 
             cntb, cnte = selword(line, xidx)
             wlow = line[cntb:cnte].capitalize()
@@ -1005,7 +1018,7 @@ class ActHand:
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
         line = self2.text[yidx]
-        self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
 
         cntb, cnte = selword(line, xidx)
         if cntb == cnte:
@@ -1051,7 +1064,7 @@ class ActHand:
             strx2 =  dt2.strftime("%d/%m/%y %H:%M:%S ")
             self.add_str(self2, strx2)
         else:
-            self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+            self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
 
             cntb, cnte = selword(line, xidx)
             if cntb == cnte:
@@ -1099,7 +1112,7 @@ class ActHand:
             self2.mained.update_statusbar("Please nav to a word first.")
             return
 
-        self2.undoarr.append((xidx, yidx, MODIFIED, line))
+        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, line))
         #print ("word / selection", line[cntb:cnte])
 
         if self2.shift or lowit:
@@ -1133,16 +1146,16 @@ class ActHand:
         if yidx >= ylen:
             cnt = 0
             for aa in range(yidx - ylen):
-                #self2.undoarr.append((0,  yidx + cnt, ADDED + CONTFLAG, ""))
+                #self2.undoarr.append((0,  yidx + cnt, pedundo.ADDED + pedundo.CONTFLAG, ""))
                 self2.text.append("")
                 cnt += 1
-            #self2.undoarr.append((0, yidx, NOOP, ""))
+            #self2.undoarr.append((0, yidx, pedundo.NOOP, ""))
 
     # Pad line to accomodate insert
     def pad_line(self, self2, xidx, yidx):
         xlen = len(self2.text[yidx])
         if xidx >= xlen:
-            #self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+            #self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
             for aa in range(xidx - xlen):
                 self2.text[yidx] += " "
 
@@ -1165,11 +1178,11 @@ class ActHand:
 
         if self2.colsel:
             if boundary:
-                self2.undoarr.append((xidx, yidx, NOOP, ""))
+                self2.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
             for aa in ttt:
                 self.pad_list(self2, yidx)
                 line = self2.text[yidx]
-                self2.undoarr.append((xidx, yidx, MODIFIED  + CONTFLAG, \
+                self2.undoarr.append((xidx, yidx, pedundo.MODIFIED  + pedundo.CONTFLAG, \
                                  self2.text[yidx]))
                 if xidx > len(line):        # pad line
                     line +=  genstr(" ", xidx - len(line))
@@ -1179,17 +1192,17 @@ class ActHand:
         else:
             if len(ttt) == 1:               # single line
                 if boundary:
-                   self2.undoarr.append((xidx, yidx, NOOP, ""))
+                   self2.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
                 self.pad_list(self2, yidx)
                 line = self2.text[int(yidx)]
-                self2.undoarr.append((xidx, yidx, MODIFIED + CONTFLAG, self2.text[yidx]))
+                self2.undoarr.append((xidx, yidx, pedundo.MODIFIED + pedundo.CONTFLAG, self2.text[yidx]))
                 if xidx > len(line):        # pad line
                     line +=  genstr(" ", xidx - len(line))
                 self2.text[yidx] = line[:xidx] + ttt[0] + line[xidx:]
                 self2.gotoxy(xidx+len(ttt[0]), yidx)
             else:
                 if boundary:
-                    self2.undoarr.append((xidx, yidx, NOOP, ""))
+                    self2.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
                 for aa in ttt:
                     self.pad_list(self2, cnt)
                     if cnt == yidx :            # first line
@@ -1197,12 +1210,12 @@ class ActHand:
                         if xidx > len(line):    # pad line
                             line += genstr(" ", xidx - len(line))
                         self2.undoarr.append((xidx, yidx, \
-                            MODIFIED + CONTFLAG, self2.text[yidx]))
+                            pedundo.MODIFIED + pedundo.CONTFLAG, self2.text[yidx]))
                         bb  =  line[:xidx] + aa
                         cc = line[xidx:]
                         self2.text[yidx] = bb
                     else:
-                        self2.undoarr.append((xidx, cnt, ADDED + CONTFLAG,\
+                        self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,\
                                         self2.text[cnt]))
                         text2 = self2.text[:cnt]
                         text2.append(aa)
@@ -1210,7 +1223,7 @@ class ActHand:
                         self2.text = text2
                     cnt += 1
                 #last line:
-                self2.undoarr.append((xidx, cnt-1, MODIFIED + CONTFLAG,\
+                self2.undoarr.append((xidx, cnt-1, pedundo.MODIFIED + pedundo.CONTFLAG,\
                      self2.text[cnt-1]))
                 text2 = self2.text[cnt-1]
                 self2.text[cnt-1] = text2 + cc
@@ -1269,7 +1282,7 @@ class ActHand:
 
         #  undo (grouping stops)
         if boundary:
-            self2.undoarr.append((xidx, yidx, NOOP, ""))
+            self2.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
 
         cnt = yssel; cnt2 = 0; cumm = ""; darr = []
         while True:
@@ -1280,12 +1293,12 @@ class ActHand:
             line = self2.text[int(cnt)]
             if self2.colsel:
                 self2.undoarr.append((xidx, cnt, \
-                    MODIFIED + CONTFLAG, self2.text[int(cnt)]))
+                    pedundo.MODIFIED + pedundo.CONTFLAG, self2.text[int(cnt)]))
                 frag = line[xssel:xesel]
                 self2.text[int(cnt)] = line[:int(xssel)] + line[int(xesel):]
             else:
                 self2.undoarr.append((xssel, cnt, \
-                    MODIFIED + CONTFLAG, self2.text[int(cnt)]))
+                    pedundo.MODIFIED + pedundo.CONTFLAG, self2.text[int(cnt)]))
                 if cnt == yssel and cnt == yesel:   # Selection on one line
                     frag = line[int(xssel):int(xesel)]
                     self2.text[int(cnt)] = line[:int(xssel)] + line[int(xesel):]
@@ -1316,7 +1329,7 @@ class ActHand:
         darr.reverse()
         for aa in darr:
             self2.undoarr.append((xidx, aa, \
-                DELETED + CONTFLAG, self2.text[aa]))
+                pedundo.DELETED + pedundo.CONTFLAG, self2.text[aa]))
             #print ("del", aa)
             del(self2.text[aa])
 
@@ -1344,13 +1357,13 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - Y")
 
-        redo(self2, self)
+        pedundo.redo(self2, self)
 
     def ctrl_z(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - Z")
 
-        undo(self2, self)
+        pedundo.undo(self2, self)
 
     def ctrl_space(self, self2):
         self2.nokey = True
@@ -1395,7 +1408,7 @@ class ActHand:
             yidx = self2.caret[1] + self2.ypos
 
         self.pad_list(self2, yidx)
-        self2.undoarr.append((xidx, yidx, DELETED, self2.text[yidx]))
+        self2.undoarr.append((xidx, yidx, pedundo.DELETED, self2.text[yidx]))
 
         del (self2.text[yidx])
         self2.mained.update_statusbar("Deleted line %d" % yidx)
@@ -1410,7 +1423,7 @@ class ActHand:
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos;
 
-        self2.undoarr.append((xidx, yidx, NOOP, ""))
+        self2.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
 
         cnt = 0; cnt2 = 0; found  = False;
         zlen = len(self2.text)
@@ -1418,7 +1431,7 @@ class ActHand:
             if cnt >= zlen: break
             line = self2.text[cnt];  xlen = len(line)
             if line.find("\t") >= 0:
-                self2.undoarr.append((xidx, cnt, MODIFIED + CONTFLAG,
+                self2.undoarr.append((xidx, cnt, pedundo.MODIFIED + pedundo.CONTFLAG,
                                        self2.text[cnt]))
                 line2 = untab_str(line, self2.tabstop)
                 self2.text[cnt] = line2
@@ -1453,7 +1466,7 @@ class ActHand:
 
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
-        self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
         line = self2.text[yidx]
         self2.text[yidx] = line[:xidx]
         self2.invalidate()
@@ -1525,7 +1538,7 @@ class ActHand:
 
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos;
-        self2.undoarr.append((xidx, yidx, NOOP, ""))
+        self2.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
 
         cnt = 0; cnt2 = 0; cnt3 = 0
         zlen = len(self2.text)
@@ -1537,7 +1550,7 @@ class ActHand:
                 cnt2 += 1
                 # Delete this line from doc
                 self2.undoarr.append((xidx, cnt, \
-                                DELETED + CONTFLAG, line))
+                                pedundo.DELETED + pedundo.CONTFLAG, line))
                 text = self2.text[:cnt] + self2.text[cnt+1:]
                 self2.text = text
                 zlen -= 1
@@ -1549,7 +1562,7 @@ class ActHand:
                         text.append(ttt)
                         text += self2.text[cnt:]
                         self2.text = text
-                        self2.undoarr.append((xidx, cnt, ADDED + CONTFLAG,
+                        self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
                                        ttt))
                         zlen += 1; cnt += 1; cnt3 += 1
                         ttt = aa + " "
@@ -1561,7 +1574,7 @@ class ActHand:
                     text.append(ttt)
                     text += self2.text[cnt:]
                     self2.text = text
-                    self2.undoarr.append((xidx, cnt, ADDED + CONTFLAG,
+                    self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
                                        ttt))
                     zlen += 1; cnt += 1; cnt3 += 1
             else:
@@ -1890,7 +1903,7 @@ class ActHand:
                 return
 
 
-            self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+            self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
             # Replace selection
             if self2.xsel != -1:
                 #print ("sel replace")
@@ -2041,7 +2054,7 @@ class ActHand:
 
         # No Selection, do tab
         if self2.ysel == -1:
-            self2.undoarr.append((xidx, yidx, MODIFIED, self2.text[yidx]))
+            self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
             if self2.shift:
                 line2 = self2.text[yidx][:]
                 self2.text[yidx] = line2[:xidx] + "\t" + line2[xidx:]
@@ -2066,19 +2079,19 @@ class ActHand:
             yesel = max(self2.ysel, self2.ysel2)
             #print ("TAB in sel")
             cnt = yssel
-            self2.undoarr.append((xidx, yidx, NOOP, ""))
+            self2.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
             if self2.shift:
                 while True:
                     if cnt > yesel: break
                     self2.undoarr.append((xidx, cnt, \
-                            MODIFIED | CONTFLAG, self2.text[cnt]))
+                            pedundo.MODIFIED | pedundo.CONTFLAG, self2.text[cnt]))
                     self2.text[cnt] =  rmlspace(self2.text[cnt], 4)
                     cnt += 1
             else:
                 while True:
                     if cnt > yesel: break
                     self2.undoarr.append((xidx, cnt, \
-                        MODIFIED | CONTFLAG, self2.text[cnt]))
+                        pedundo.MODIFIED | pedundo.CONTFLAG, self2.text[cnt]))
                     self2.text[cnt] = "    " + self2.text[cnt]
                     cnt += 1
             self2.invalidate()

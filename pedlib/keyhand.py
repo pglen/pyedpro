@@ -4,7 +4,6 @@
 # for easy update. The key handler is table driven, so new key
 # assignments can be made with ease
 
-#import gtk
 from __future__ import absolute_import
 import gi
 gi.require_version("Gtk", "3.0")
@@ -12,11 +11,23 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-import pedconfig
-import acthand
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
 
 # Grabbed modifier defines from GTK
-#
 #  ... Turns out Gtk.gdk 2.6+ defines these (above) constants as ...
 #      Gtk.gdk.*_MASK
 # Anyway, it was an exercise in grabbin' 'C' into python.

@@ -21,10 +21,25 @@
 # self2.undoarr.append((xidx, yidx, MODIFIED + CONTFLAG, self2.text[cnt]))
 #   Args: cursor x, cursor y, opcode, original content
 
-# Op codes:
-from __future__ import print_function
-#from six.moves import range
+#from __future__ import print_function
 
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
+
+# Op codes:
 (NOOP, MODIFIED, ADDED, DELETED) = list(range(4))
 
 #print "(NOOP, MODIFIED, ADDED, DELETED)", NOOP, MODIFIED, ADDED, DELETED

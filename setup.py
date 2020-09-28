@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
+
 # Here we imported the 'setup' module which allows us to install Python
 #scripts to the local system beside performing some other tasks, you can find the
 # documentation here: https://docs.python.org/2/distutils/apiref.html
 
 import os, sys, fnmatch
 
-#from distutils.core import setup
 from setuptools import setup
 
 descx = '''PyEdPro is modern multi-platform editor. Simple, powerful,
@@ -20,7 +21,7 @@ rudimentary, comments and strings are spell checked. (Press F9) The code is filt
 out for Python and  'C'. The spell checker is executed on live text. (while typing)
 '''
 
-classx=[
+classx = [
           'Development Status :: Mature',
           'Environment :: GUI',
           'Intended Audience :: End Users/Desktop',
@@ -33,33 +34,13 @@ classx=[
           'Programming Language :: Python',
           'Topic :: Editors',
           'Topic :: Software Development :: Editor',
-        ],
-
-'''dirx = "pyedlib/data"; libs = []
-arr = os.listdir(dirx)
-for aa in arr:
-    if os.path.isfile(dirx + os.sep +  aa):
-        if fnmatch.fnmatch(aa, "*.pyc"):
-            pass
-        elif fnmatch.fnmatch(aa, "*.py"):
-            pass
-        elif fnmatch.fnmatch(aa, "*cache*"):
-            pass
-        else:
-            libs.append(dirx + os.sep +  aa)
-print("libs", libs)
-diry = "pedlib/images"; imgs = []
-arr = os.listdir(diry)
-for aa in arr:
-    imgs.append(diry + os.sep +  aa)
-print("imgs", imgs)
-'''
+        ]
 
 setup(name = "pyedpro.py",      # Name of the program.
       version = "1.6",          # Version of the program.
       description = "Easy-to-use advanced editor in python",
       long_description = descx,
-      classifiers=classx,
+      classifiers = classx,
       author = "Peter Glen",
       author_email = "peterglen@gmail.com",
       license='GPLv3',            # The license of the program.

@@ -11,25 +11,35 @@ from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Gio
 
-import  peddoc, pedconfig, pedofd
-import  pedync, pedspell, pedfont
-import  pedcolor, pedlog
-import  pedcal, pednotes, pedoline
+import pedlib.pedconfig as pedconfig
+import pedlib.peddoc   as  peddoc
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
 
-sys.path.append('../pycommon')
-import pggui
+sys.path.append('..')
+from pycommon.pggui import *
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedutil import *
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
-treestore = None
-treestore2 = None
-notebook = None
-notebook2 = None
+treestore = None; treestore2 = None
+notebook = None;  notebook2 = None
 
 hidden = 0
 savearr = []
@@ -111,6 +121,8 @@ class EdMainWindow():
         self.alttime = 0
         self.old_x = 0
         self.old_y = 0
+
+        pedconfig.conf.keyh = keyhand.KeyHand()
 
         register_stock_icons()
 
@@ -372,7 +384,7 @@ class EdMainWindow():
 
         self.headbar.pack_end(button)
 
-        self.menu = pggui.MenuButt(("Open", "Close", "Exit"), self.menu_click)
+        self.menu = MenuButt(("Open", "Close", "Exit"), self.menu_click)
         self.headbar.pack_start(Gtk.Label())
         self.headbar.pack_start(self.menu)
         self.headbar.pack_start(Gtk.Label())
@@ -1230,7 +1242,8 @@ class EdMainWindow():
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedcolor.colordlg(self, vcurr2.area)
+                pass
+                #pedcolor.colordlg(self, vcurr2.area)
 
         if strx == "Fonts":
             nn2 = notebook.get_current_page()
@@ -1543,7 +1556,9 @@ def     OnExit(arg, prompt = True):
                     print("Rescuing", xfile)
                 writefile(xfile, ppp.area.text, "\n")
 
-    pedconfig.conf.sql.put("cnt", cnt2)
+    # Prevent empty session from clearing old session
+    if cnt2 != 0:
+        pedconfig.conf.sql.put("cnt", cnt2)
 
     if(pedconfig.conf.verbose):
         print("Exiting")

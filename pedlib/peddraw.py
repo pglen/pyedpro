@@ -7,7 +7,6 @@ from __future__ import absolute_import
 import signal, os, time, sys, codecs
 
 import gi
-#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -18,10 +17,24 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedconfig
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
 
-from keywords import *
-from pedutil import *
+from pedlib.keywords import *
+from pedlib.pedutil import *
 
 BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
 

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# !!!!! TEST FILE !!!!
+
+# This is used when testing the editor. (like undo redo tests)
+
+
 # ------------------------------------------------------------------------
 # This is open source text editor. Written on python. The motivation for
 # this project was to create a modern multi-platform editor.
@@ -57,6 +62,8 @@ VERSION = 1.4
 BUILDDATE = "Mon 08.Jun.2020"
 PROGNAME = "PyEdPro"
 
+12345678
+
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -64,28 +71,12 @@ from gi.repository import Gtk
 # So it is universally found
 sys.path.append(os.path.abspath(__file__))
 
-import pyedlib.pedutil, pyedlib.pedwin
-import pyedlib.pedlog, pyedlib.pedsql
-import pyedlib.pedconfig
-
-mainwin = None
-show_timing = 0
-show_config = 0
-clear_config = 0
-use_stdout = 0
-
-# ------------------------------------------------------------------------
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedync   as  pedync
 
 def main(strarr):
 
-    if(pyedlib.pedconfig.conf.verbose):
-        print(PROGNAME, "running on", "'" + os.name + "'", \
-            "GTK", Gtk._version, "PyGtk", \
-               "%d.%d.%d" % (Gtk.get_major_version(), \
-                    Gtk.get_minor_version(), \
-                        Gtk.get_micro_version()))
-
-    signal.signal(signal.SIGTERM, terminate)
     mainwin = pyedlib.pedwin.EdMainWindow(None, None, strarr)
     pyedlib.pedconfig.conf.pedwin = mainwin
 

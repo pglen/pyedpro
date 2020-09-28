@@ -14,12 +14,26 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import keyhand, pedconfig, pedync
-import pedcolor, pedspell, pedmenu
-import peddraw, pedmisc, pedstruct
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.peddraw as  peddraw
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedmenu  as  pedmenu
+import pedlib.pedundo  as  pedundo
 
-from pedutil import *
-from keywords import *
+from pedlib.pedutil import *
+from pedlib.keywords import *
 
 (TARGET_ENTRY_TEXT, TARGET_ENTRY_PIXBUF) = range(2)
 (COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
@@ -1262,16 +1276,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                        "              (Please install)")
 
     def start_edit(self):
-        print("Editor Here:", __file__)
-        myscript2 = os.path.join(os.path.dirname(__file__), '../pyedpro.py')
-        #myscript = '../pyedpro.py'
-        print("myscript2: ", myscript2);
-        myscript = os.path.realpath(myscript2)
+        fdir = os.path.realpath(__file__)
+        print("fdir:", fdir);
+        mydir = os.path.dirname(fdir)
+        print("mydir:", mydir);
+        myscript = os.path.realpath(os.path.join(mydir, '../pyedpro.py'))
         print("myscript:", myscript);
         ret = 0
         try:
             if platform.system().find("Win") >= 0:
-                print("No exe on windows. (TODO)")
+                print("No exe function on windows. (TODO)")
             else:
                 # Stumble until editor found
                 ret = subprocess.Popen(["python3", myscript])

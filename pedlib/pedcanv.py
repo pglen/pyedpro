@@ -17,20 +17,32 @@ from gi.repository import cairo
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import  peddoc, pedconfig, pedofd
-import  pedync, pedspell, pedfont
-import  pedcolor, pedlog
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
-from    pedcolor import *
-from    pedtdlg import *
-from    pedobjs import *
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedcolor import *
+from    pedlib.pedtdlg import *
+from    pedlib.pedobjs import *
+from    pedlib.pedutil import *
 
-sys.path.append('../pycommon')
-from pggui import *
+sys.path.append('..')
+from pycommon.pggui import *
 
 canv_testmode = 0
 
@@ -697,28 +709,28 @@ class Canvas(Gtk.DrawingArea):
 
     # Add rectangle to collection of objects
     def add_rect(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
-        col1 = str2float(crb);    col2 = str2float(crf)
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
         rob = RectObj(coord, text, col1, col2, border, fill)
         self.coll.append(rob)
         self.queue_draw()
         return rob
 
     def add_line(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
-        col1 = str2float(crb);    col2 = str2float(crf)
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
         rob = LineObj(coord, text, col1, col2, border, fill)
         self.coll.append(rob)
         self.queue_draw()
         return rob
 
     def add_curve(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
-        col1 = str2float(crb);    col2 = str2float(crf)
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
         rob = CurveObj(coord, text, col1, col2, border, fill)
         self.coll.append(rob)
         self.queue_draw()
         return rob
 
     def add_text(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
-        col1 = str2float(crb);    col2 = str2float(crf)
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
         rob = TextObj(coord, text, col1, col2, border, fill)
 
         self.coll.append(rob)
@@ -726,21 +738,21 @@ class Canvas(Gtk.DrawingArea):
         return rob
 
     def add_circle(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
-        col1 = str2float(crb);    col2 = str2float(crf)
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
         rob = CircObj(coord, text, col1, col2, border, fill)
         self.coll.append(rob)
         self.queue_draw()
         return rob
 
     def add_stroke(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False, arr = []):
-        col1 = str2float(crb);    col2 = str2float(crf)
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
         rob = StrokeObj(coord, text, col1, col2, border, fill, arr)
         self.coll.append(rob)
         self.queue_draw()
         return rob
 
     def add_romb(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
-        col1 = str2float(crb);    col2 = str2float(crf)
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
         rob = RombObj(coord, text, col1, col2, border, fill)
         self.coll.append(rob)
         self.queue_draw()

@@ -6,7 +6,6 @@ from __future__ import print_function
 import signal, os, time, string, pickle, re, platform, subprocess
 
 import gi
-#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -17,10 +16,23 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedcolor, pedspell, pedmenu, peddraw
-
-from pedlcmd import *
-from pedutil import *
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+#import pedlib.peddraw as  peddraw
+#import pedlib.peddoc   as  peddoc
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
 
 def exec_test(self2, testx):
 

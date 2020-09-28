@@ -55,18 +55,31 @@ _ = gettext.gettext
 
 VERSION = 1.6
 BUILDDATE = "Sat 26.Sep.2020"
-PROGNAME = "PyEdPro"
+PROGNAME  = "PyEdPro"
 
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-# So it is universally found
-sys.path.append(os.path.abspath(__file__))
-sys.path.append("pedlib")
-sys.path.append("pycommon")
+import pedlib.pedconfig as pedconfig
+import pedlib.pedwin as pedwin
+import pedlib.pedsql as pedsql
+import pedlib.pedlog   as  pedlog
 
-import pedutil, pedwin, pedlog, pedsql, pedconfig, keyhand
+
+'''import pedlib.pedlog as pedlog
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
+'''
 
 mainwin = None
 show_timing = 0
@@ -179,12 +192,11 @@ if __name__ == '__main__':
         print(_("Data stored in "), pedconfig.conf.config_dir)
 
     # Initialize sqlite to load / save preferences & other info
-    sql = pedsql.pedsql(pedconfig.conf.sql_data)
-
     # Initialize pedconfig for use
-    pedconfig.conf.sql = sql
-    pedconfig.conf.keyh = keyhand.KeyHand()
+
+    pedconfig.conf.sql = pedsql.pedsql(pedconfig.conf.sql_data)
     pedconfig.conf.mydir = os.path.abspath(__file__)
+    #print("Exe path:",  pedconfig.conf.mydir)
 
     # To clear all config vars
     if clear_config:

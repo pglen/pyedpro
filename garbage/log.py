@@ -12,13 +12,28 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-from . import peddoc, pedync, pedconfig
-
-from .pedutil import *
+import pedlib.pedconfig as pedconfig
+import pedlib.pedlog as pedlog
+import pedlib.pedsql as pedsql
+import pedlib.keyhand as keyhand
+import pedlib.acthand as acthand
+import pedlib.peddraw as  peddraw
+import pedlib.peddoc   as  peddoc
+import pedlib.pedofd   as  pedofd
+import pedlib.pedync   as  pedync
+import pedlib.pedspell as  pedspell
+import pedlib.pedcolor as  pedcolor
+import pedlib.pedlog   as  pedlog
+import pedlib.pedcal   as  pedcal
+import pedlib.pednotes as  pednotes
+import pedlib.pedoline as  pedoline
+import pedlib.pedfont  as  pedfont
+import pedlib.pedundo  as  pedundo
 
 # Adjust to taste. Estimated memory usage is 50 * MAX_LOG bytes
 # Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if
-# you would like to free the memory used by log
+# you would like to free the resourced used by log
+
 MAX_LOG  = 2000
 
 
