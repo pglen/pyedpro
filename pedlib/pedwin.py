@@ -2,30 +2,30 @@
 
 from __future__ import absolute_import, print_function
 
-import signal, os, time, sys, subprocess, platform
-import ctypes, warnings
+import os
+import time
+import sys
+import ctypes
+import warnings
+import stat
 
 import gi; gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Gdk
-from gi.repository import GObject
+from gi.repository import Gtk
+from gi.repository import Gdk
 from gi.repository import GLib
 from gi.repository import Gio
 
 import pedlib.pedconfig as pedconfig
 import pedlib.peddoc as peddoc
-import pedlib.pedsql as pedsql
 import pedlib.keyhand as keyhand
 import pedlib.acthand as acthand
-import pedlib.pedofd   as  pedofd
 import pedlib.pedync   as  pedync
-import pedlib.pedspell as  pedspell
-import pedlib.pedcolor as  pedcolor
 import pedlib.pedlog   as  pedlog
 import pedlib.pedcal   as  pedcal
 import pedlib.pednotes as  pednotes
 import pedlib.pedoline as  pedoline
 import pedlib.pedfont  as  pedfont
-import pedlib.pedundo  as  pedundo
+import pedlib.pedcolor  as  pedcolor
 
 sys.path.append('..')
 from pycommon.pggui import *
@@ -63,7 +63,7 @@ class edPane(Gtk.VPaned):
         Gtk.VPaned.__init__(self)
         self.set_border_width(3)
         self.set_position(pos)
-        self.vbox = edwin(buff);
+        self.vbox = edwin(buff)
         self.add2(self.vbox)
         self.vbox2 = edwin(buff, True)
         self.add1(self.vbox2)
@@ -91,7 +91,7 @@ class edwin(Gtk.VBox):
 
         # Give access to notebook and main editor window
         self.area.notebook = notebook
-        self.area.mained = mained
+        #self.area.mained = mained
         self.area.fname = ""
 
         frame = Gtk.Frame(); frame.add(self.area)
@@ -121,6 +121,7 @@ class EdMainWindow():
         self.old_x = 0
         self.old_y = 0
 
+        pedconfig.conf.acth = acthand.ActHand()
         pedconfig.conf.keyh = keyhand.KeyHand()
 
         register_stock_icons()
@@ -140,7 +141,7 @@ class EdMainWindow():
 
         # Resort to old means of getting screen w / h
         if www == 0 or hhh == 0:
-            www = Gdk.screen_width(); hhh = Gdk.screen_height();
+            www = Gdk.screen_width(); hhh = Gdk.screen_height()
 
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
@@ -268,7 +269,7 @@ class EdMainWindow():
         #self.mywin.connect("leave-notify-event", self.area_leave)
         #self.mywin.connect("event", self.unmap)
 
-        self.tbar = merge.get_widget("/ToolBar");
+        self.tbar = merge.get_widget("/ToolBar")
         #tbar.set_tooltips(True)
         #tbar.show()
 
@@ -291,7 +292,7 @@ class EdMainWindow():
         #treeview2.connect("cursor-changed",  self.tree_sel_row2)
         self.treeview2 = treeview2
 
-        vpaned = Gtk.VPaned(); #vpaned.set_border_width(2)
+        vpaned = Gtk.VPaned() #vpaned.set_border_width(2)
 
         scroll.add(treeview)
         frame2 = Gtk.Frame(); frame2.add(scroll)
@@ -472,13 +473,13 @@ class EdMainWindow():
     def menu_click(self, item, arg):
         #print("menu_click", item, arg)
         if "pen" in item:
-             self.open()
+            self.open()
 
         if "lose" in item:
             self.closedoc()
 
         if "xit" in item:
-             self.activate_exit();
+            self.activate_exit()
 
     def on_drag_begin(self, widget, context):
         global drag_page_number
@@ -635,7 +636,7 @@ class EdMainWindow():
             if  event.type == Gdk.EventType.KEY_PRESS:
                 if event.keyval == Gdk.KEY_Alt_L or \
                         event.keyval == Gdk.KEY_Alt_R:
-                    self.alt = True;
+                    self.alt = True
 
             if event.keyval == Gdk.KEY_Tab:
                 print ("pedwin TREE TAB", event.keyval)
@@ -649,7 +650,8 @@ class EdMainWindow():
             elif  event.type == Gdk.EventType.KEY_RELEASE:
                 if event.keyval == Gdk.KEY_Alt_L or \
                       event.keyval == Gdk.KEY_Alt_R:
-                    self.alt = False;
+                    self.alt = False
+        return None
 
     def get_height(self):
         xx, yy = self.mywin.get_size()
@@ -789,7 +791,6 @@ class EdMainWindow():
                     print("except: treestore remove")
         except:
             print("update_tree2", sys.exc_info())
-            pass
 
         if not text:
             return
@@ -894,7 +895,7 @@ class EdMainWindow():
     def  note_swpage_cb(self, tabx, page, num):
         #print( "note_swpage", num)
         vcurr = tabx.get_nth_page(num)
-        self.mywin.set_title("pyedpro: " + vcurr.area.fname);
+        self.mywin.set_title("pyedpro: " + vcurr.area.fname)
         self.mywin.set_focus(vcurr.vbox.area)
         fname = os.path.basename(vcurr.area.fname)
         self.update_statusbar("Switched to '{1:s}'".format(num, fname))
@@ -952,7 +953,7 @@ class EdMainWindow():
                 fff =  "%s_%d.txt" % (base, cnt)
                 #print( fff)
                 if not os.path.isfile(fff):
-                    break;
+                    break
                 cnt += 1
 
             self.fcount = cnt
@@ -987,7 +988,7 @@ class EdMainWindow():
         self.mywin.show_all()
 
         # Make it current
-        nn = notebook.get_n_pages();
+        nn = notebook.get_n_pages()
         if nn:
             vcurr = notebook.set_current_page(nn-1)
             vcurr = notebook.get_nth_page(nn-1)
@@ -1017,7 +1018,7 @@ class EdMainWindow():
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if flag:
             vcurr.area.saveas()
-            self.mywin.set_title("pyedpro: " + vcurr.area.fname);
+            self.mywin.set_title("pyedpro: " + vcurr.area.fname)
 
         else:
             vcurr.area.save()
@@ -1032,7 +1033,7 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
-             pedconfig.conf.keyh.act.ctrl_x(vcurr2.area)
+            pedconfig.conf.keyh.act.ctrl_x(vcurr2.area)
 
     def tts(self):
         nn2 = notebook.get_current_page()
@@ -1090,10 +1091,10 @@ class EdMainWindow():
 
         if strx == "Start Terminal":
             #print("Starting terminal")
-            os.system("C:\msys64\mingw32.exe")
+            os.system("C:\\msys64\\mingw32.exe")
 
         if strx == "New":
-            self.newfile();
+            self.newfile()
 
         if strx == "Open":
             self.open()
@@ -1164,7 +1165,7 @@ class EdMainWindow():
                 ppp.area.readonly = True
                 ppp.area.set_tablabel()
                 if ppp == vcurr2:
-                    ppp.area.invalidate();
+                    ppp.area.invalidate()
                 cnt += 1
             self.update_statusbar("Made all buffers READ only")
 
@@ -1178,7 +1179,7 @@ class EdMainWindow():
                 ppp.area.readonly = False
                 ppp.area.set_tablabel()
                 if ppp == vcurr2:
-                    ppp.area.invalidate();
+                    ppp.area.invalidate()
                 cnt += 1
             self.update_statusbar("Made all buffers READ/WRITE")
 
@@ -1242,7 +1243,7 @@ class EdMainWindow():
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
                 pass
-                #pedcolor.colordlg(self, vcurr2.area)
+                pedcolor.colordlg(self, vcurr2.area)
 
         if strx == "Fonts":
             nn2 = notebook.get_current_page()
@@ -1387,12 +1388,12 @@ class EdMainWindow():
     def openfile(self, fnamex):
 
         # Is it already loaded? ... activate
-        nn = notebook.get_n_pages();
+        nn = notebook.get_n_pages()
         fname2 = os.path.realpath(fnamex)
         for aa in range(nn):
             vcurr = notebook.get_nth_page(aa)
             if vcurr.area.fname == fname2:
-                if(pedconfig.conf.verbose):
+                if pedconfig.conf.verbose:
                     print("Already open '"+ fname2 + "'")
                 self.update_statusbar("Already open, activating '{0:s}'".format(fname2))
                 vcurr = notebook.set_current_page(aa)
@@ -1400,7 +1401,7 @@ class EdMainWindow():
                 self.mywin.set_focus(vcurr.vbox.area)
                 return
 
-        if(pedconfig.conf.verbose):
+        if pedconfig.conf.verbose:
             print("Opening '"+ fname2 + "'")
 
         self.update_statusbar("Opening file '{0:s}'".format(fname2))
@@ -1417,7 +1418,7 @@ class EdMainWindow():
         vpaned.area.set_tablabel()
         self.mywin.show_all()
         # Make it current
-        nn = notebook.get_n_pages();
+        nn = notebook.get_n_pages()
         if nn:
             vcurr = notebook.set_current_page(nn-1)
             vcurr = notebook.get_nth_page(nn-1)
@@ -1479,7 +1480,6 @@ class EdMainWindow():
         #self.statusbar.push(0, strx)
         self.statuscount = STATUSCOUNT
         self.slab.set_text(strx)
-        pass
 
     def update_resize_grip(self, widget, event):
         #print "update state", event, event.changed_mask
@@ -1487,6 +1487,7 @@ class EdMainWindow():
 
         mask = Gdk.WindowState.MAXIMIZED
         # | Gdk.FULLSCREEN
+
         '''if (event.changed_mask & mask):
             self.statusbar.set_has_resize_grip(not (event.new_window_state & mask))
         '''
@@ -1551,7 +1552,7 @@ def     OnExit(arg, prompt = True):
                 # Rescue to temporary:
                 hhh = hash_name(ppp.area.fname) + ".rescue"
                 xfile = pedconfig.conf.config_dir + "/" + hhh
-                if(pedconfig.conf.verbose):
+                if pedconfig.conf.verbose:
                     print("Rescuing", xfile)
                 writefile(xfile, ppp.area.text, "\n")
 
@@ -1559,7 +1560,7 @@ def     OnExit(arg, prompt = True):
     if cnt2 != 0:
         pedconfig.conf.sql.put("cnt", cnt2)
 
-    if(pedconfig.conf.verbose):
+    if pedconfig.conf.verbose:
         print("Exiting")
 
     # Add to accounting:
@@ -1601,7 +1602,7 @@ def  loader_tick(self2):
             vpaned.area.set_tablabel()
 
         if cnt == 0:
-            if(pedconfig.conf.verbose):
+            if pedconfig.conf.verbose:
                 print("Loading session in", os.getcwd())
             fcnt = pedconfig.conf.sql.get_int("cnt")
 
@@ -1610,7 +1611,7 @@ def  loader_tick(self2):
                 ss = "/sess_%d" % nnn
                 fff = pedconfig.conf.sql.get_str(ss)
 
-                if(pedconfig.conf.verbose):
+                if pedconfig.conf.verbose:
                     print("Loading file:", fff)
 
                 vpaned = edPane()
@@ -1623,7 +1624,7 @@ def  loader_tick(self2):
                 add_page(vpaned)
                 self2.mywin.show_all()
                 vpaned.area.set_tablabel()
-                nn = notebook.get_n_pages();
+                nn = notebook.get_n_pages()
                 if nn:
                     vcurr = notebook.set_current_page(nn-1)
                     usleep(10)

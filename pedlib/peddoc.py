@@ -2,7 +2,13 @@
 
 from __future__ import absolute_import, print_function
 
-import signal, os, time, string, pickle, re, platform, subprocess, stat
+import os
+import time
+import string
+import pickle
+import re
+import platform
+import subprocess
 
 import gi;  gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -15,19 +21,10 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 import pedlib.pedconfig as pedconfig
-import pedlib.pedsql as pedsql
-#import pedlib.keyhand as keyhand
-import pedlib.acthand as acthand
 import pedlib.peddraw as  peddraw
-import pedlib.pedofd   as  pedofd
 import pedlib.pedync   as  pedync
 import pedlib.pedspell as  pedspell
 import pedlib.pedcolor as  pedcolor
-import pedlib.pedlog   as  pedlog
-import pedlib.pedcal   as  pedcal
-import pedlib.pednotes as  pednotes
-import pedlib.pedoline as  pedoline
-import pedlib.pedfont  as  pedfont
 import pedlib.pedmenu  as  pedmenu
 import pedlib.pedundo  as  pedundo
 
@@ -84,21 +81,22 @@ DRAGTRESH = 3                   # This many pixels for drag highlight
 
 class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
-    def __init__(self, buff, appwin, readonly = False):
+    def __init__(self, buff, mained, readonly = False):
 
         # Save params
-        self.appwin = appwin;
+        self.mained = mained
         self.readonly = readonly
 
         # Gather globals
         self.keyh = pedconfig.conf.keyh
+        self.acth = pedconfig.conf.acth
 
         # Init vars
         self.xpos = 0; self.ypos = 0
-        self.changed = False;
+        self.changed = False
         self.src_changed = False
-        self.needscan = True;
-        self.record = False;
+        self.needscan = True
+        self.record = False
         self.recarr = []                # Macros
         self.undoarr = []               # Undo
         self.redoarr = []               # Redo
@@ -118,17 +116,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.colflag = True
         self.acorr = False
         self.scol = False
-        self.accum = [];
-        self.tokens = [];
+        self.accum = []
+        self.tokens = []
         self.ularr = []
         self.bigcaret = False
         self.stab = False
-        self.honeshot = False
+        self.oneshot = False
         self.initial_undo_size = 0
         self.initial_redo_size = 0
         self.spell = False
         self.spellmode = False
-        self.start_time = time.time();
+        self.start_time = time.time()
         self.shift = False
         # Init configurables
         self.vscgap = VSCROLLGAP
@@ -145,13 +143,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.newword = False
         self.scrtab = False
         self.stat = None
-        self.sep = "\n";
+        self.sep = "\n"
         self.tts = None
         self.lastcmd = ""
         self.caps = False
         self.scr = False
         self.lastevent = None
-
+        self.hhh = self.www = 0
         # Parent widget
         Gtk.DrawingArea.__init__(self)
         self.set_can_focus(True)
@@ -171,9 +169,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         # Create scroll items
         sm = len(self.text) + self.get_height() / self.cyy + 10
         self.hadj = Gtk.Adjustment(value=0, lower=0, upper=self.maxlinelen,
-                            step_increment = 1, page_increment = 15, page_size = 25);
+                            step_increment = 1, page_increment = 15, page_size = 25)
         self.vadj = Gtk.Adjustment(value=0, lower=0, upper=sm,
-                            step_increment = 1, page_increment = 15, page_size = 25);
+                            step_increment = 1, page_increment = 15, page_size = 25)
 
         self.vscroll = Gtk.VScrollbar(adjustment=self.vadj)
         self.hscroll = Gtk.HScrollbar(adjustment=self.hadj)
@@ -225,7 +223,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         if info ==  TARGET_ENTRY_TEXT:
             text = data.get_text()
             #print("Received text: %s" % text)
-            pedconfig.conf.keyh.act.add_str(self, text)
+            pedconfig.conf.keyh.acth.add_str(self, text)
 
         elif info ==  TARGET_ENTRY_PIXBUF:
             pixbuf = data.get_pixbuf()
@@ -299,7 +297,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
         self.fd = Pango.FontDescription()
         self.fd.set_family(fam)
-        self.fd.set_size(size * Pango.SCALE);
+        self.fd.set_size(size * Pango.SCALE)
 
         self.pangolayout = self.create_pango_layout("a")
         self.pangolayout.set_font_description(self.fd)
@@ -324,7 +322,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.maxlinelen = mlen
         self.oneshot = ignore
         #value, lower, upper, step_increment, page_increment, page_size)
-        #self.hadj.set_all(0, 0, self.maxlinelen * 2, 1, 15, 25);
+        #self.hadj.set_all(0, 0, self.maxlinelen * 2, 1, 15, 25)
         self.hadj.set_value(0)
         self.hadj.set_lower(0)
         self.hadj.set_upper(self.maxlinelen * 2)
@@ -335,7 +333,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def  set_maxlines(self, lines = 0, ignore = True):
         self.maxlines = len(self.text) + self.get_height() / self.cyy + 25
         self.oneshot = ignore
-        #self.vadj.set_all(0, 0, self.maxlines, 1, 15, 25);
+        #self.vadj.set_all(0, 0, self.maxlines, 1, 15, 25)
         self.vadj.set_value(0)
         self.vadj.set_lower(0)
         self.vadj.set_upper(self.maxlines)
@@ -405,7 +403,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     rrr = pedync.yes_no_cancel("File changed outside PyEdPro",
                         "'%s'\n" \
                         "changed outside PyEdPro." \
-                        "Reload?" % self.fname, False);
+                        "Reload?" % self.fname, False)
                     if rrr == Gtk.ResponseType.YES:
                         print("Reloading")
                         self.savebackup()
@@ -509,8 +507,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             # Slightly darker / lighter
             newcol =  list(self.bgcolor)
             for aa in range(len(newcol)):
-                if newcol[aa] > 0.5: newcol[aa] -= .1;
-                else: newcol[aa] += .2;
+                if newcol[aa] > 0.5: newcol[aa] -= .1
+                else: newcol[aa] += .2
             cr.set_source_rgba(*list(newcol))
         else:
             cr.set_source_rgba(*list(self.bgcolor))
@@ -519,7 +517,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         cr.fill()
 
         # Pre set for drawing
-        #cr.set_source_rgba(*list(fg_color));
+        #cr.set_source_rgba(*list(fg_color))
         # Paint prescribed color
         cr.set_source_rgba(*list(self.fgcolor))
 
@@ -565,7 +563,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 try:
                     line = self.text[self.ypos + yyy]
                 except:
-                    line = "";
+                    line = ""
                 offs = calc_tabs2(line, xxx)
 
                 #print( "offs, xxx", offs, xxx)
@@ -591,8 +589,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     for xaa, ybb, lcc in self.ularr:
                         # Look within visible range
                         if ybb >= self.ypos and ybb < yyy:
-                            ybb -= self.ypos;
-                            xaa -= self.xpos; lcc -= self.xpos;
+                            ybb -= self.ypos
+                            xaa -= self.xpos; lcc -= self.xpos
                             xaa *= self.cxx ; ybb *= self.cyy
                             lcc *= self.cxx
                             yy2 = ybb + self.cyy
@@ -603,7 +601,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                                 zz = int(lcc / self.cxx + self.xpos)
                                 flag = True
                 if flag:
-                    line = self.text[yy];
+                    line = self.text[yy]
                     #print( "'" + line[xx:zz] + "'")
                     self.xsel = xx; self.xsel2 = xx + 10
                     self.ysel = self.ysel2 = yy
@@ -614,11 +612,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                         if self.xsel == -1:
                             yyy = int(event.y / self.cyy + self.ypos)
                             xxx = int(event.x / self.cxx + self.xpos)
-                            line = self.text[yyy];
+                            line = self.text[yyy]
                             self.xsel, self.xsel2 = selasci2(line, xxx, "_-")
                             self.ysel = self.ysel2 = yyy
                         else:
-                            line = self.text[self.ysel];
+                            line = self.text[self.ysel]
 
                         strx = line[int(self.xsel):int(self.xsel2)]
                         #print("'" + strx + "'")
@@ -637,7 +635,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             try:
                 line = self.text[self.ypos + yyy]
             except:
-                line = "";
+                line = ""
             offs = calc_tabs2(line, xxx)
             self.set_caret(self.xpos + xxx - (offs - xxx),
                                      self.ypos + yyy )
@@ -655,7 +653,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             try:
                 line = self.text[self.ypos + yyy]
             except:
-                line = "";
+                line = ""
 
             # Find current pos on tabbed line
             offs = calc_tabs2(line, xxx)
@@ -668,13 +666,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
             # Select word
             if event.state & Gdk.ModifierType.CONTROL_MASK:
-                pedconfig.conf.keyh.act.ctrl_b(self)
+                pedconfig.conf.keyh.acth.ctrl_b(self)
             else:
-                pedconfig.conf.keyh.act.alt_v(self)
+                pedconfig.conf.keyh.acth.alt_v(self)
             # Copy to clip
 
             if event.state & Gdk.ModifierType.SHIFT_MASK:
-                pedconfig.conf.keyh.act.ctrl_c(self)
+                pedconfig.conf.keyh.acth.ctrl_c(self)
 
         else:
             print("Unexpected mouse op.")
@@ -699,7 +697,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         yssel = min(self.ysel, self.ysel2)
         yesel = max(self.ysel, self.ysel2)
 
-        self.xsel  = xssel;  self.ysel  = yssel;
+        self.xsel  = xssel;  self.ysel  = yssel
         self.xsel2 = xesel;  self.ysel2 = yesel
 
     def pix2xpos(self, xx):
@@ -803,10 +801,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     # Dimenswions in character cell
     def get_height_char(self):
-        return self.get_height()  / self.cyy;
+        return self.get_height()  / self.cyy
 
     def get_width_char(self):
-        return self.get_width() / self.cxx;
+        return self.get_width() / self.cxx
 
     # --------------------------------------------------------------------
     # Goto position, put caret (cursor) back to view, [vh]scrap
@@ -878,7 +876,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         xx -= self.xpos
         if self.xpos < 0: self.xpos = 0
 
-        oldx = self.caret[0] * self.cxx;
+        oldx = self.caret[0] * self.cxx
         oldy = self.caret[1] * self.cyy
 
         # Cheat - invalidate all if tab is involved at old line
@@ -926,7 +924,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.invalidate()
 
     def update_bar2(self):
-        clip = pedconfig.conf.keyh.act.currclip;
+        clip = pedconfig.conf.keyh.acth.currclip
         self.mained.update_statusbar2(self.caret[0] + self.xpos, \
                 self.caret[1] + self.ypos, self.insert, len(self.text), clip, self.caps, self.scr)
 
@@ -1049,7 +1047,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     sumw2.append(line)
 
         try:
-            self.appwin.update_treestore2(sumw2)
+            self.mained.update_treestore2(sumw2)
         except:
             # This is normal, ignore it
             print("walk2", sys.exc_info())
@@ -1083,7 +1081,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         ww = self.get_width()
         hh = self.cyy
         #self.invalidate(rect)
-        xx = 0;
+        xx = 0
         self.queue_draw_area(xx, yy, ww, hh)
 
     def invalidate(self, rect = None):
@@ -1091,7 +1089,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         if rect == None:
             self.queue_draw()
         else:
-             self.queue_draw_area(rect.x, rect.y, \
+            self.queue_draw_area(rect.x, rect.y,
                             rect.width, rect.height)
 
     def area_focus(self, area, event):
@@ -1183,7 +1181,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         if self.spellstr.isupper():
             stringx = stringx.upper()
 
-        pedconfig.conf.keyh.act.clip_cb(None, stringx, self, False)
+        pedconfig.conf.keyh.acth.clip_cb(None, stringx, self, False)
 
         self.fired += 1
         GLib.timeout_add(300, self.keytime)
@@ -1199,7 +1197,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def rclick_action(self, action, sss, ttt):
         #print( "rclck_action", sss, ttt)
         if ttt == 1:
-             self.mained.newfile()
+            self.mained.newfile()
         elif ttt == 3:
             self.mained.open()
         elif ttt == 4:
@@ -1231,10 +1229,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             print("peddoc: Invalid menu item selected")
 
     def toggle_ro(self):
-            self.readonly = not self.readonly
-            self.set_tablabel()
-            arrx = ["OFF", "ON"]
-            self.mained.update_statusbar("Toggled read only to %s" % arrx[self.readonly])
+        self.readonly = not self.readonly
+        self.set_tablabel()
+        arrx = ["OFF", "ON"]
+        self.mained.update_statusbar("Toggled read only to %s" % arrx[self.readonly])
 
     def start_term(self):
         #print("Terminal Here")
@@ -1276,11 +1274,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def start_edit(self):
         fdir = os.path.realpath(__file__)
-        print("fdir:", fdir);
+        print("fdir:", fdir)
         mydir = os.path.dirname(fdir)
-        print("mydir:", mydir);
+        print("mydir:", mydir)
         myscript = os.path.realpath(os.path.join(mydir, '../pyedpro.py'))
-        print("myscript:", myscript);
+        print("myscript:", myscript)
         ret = 0
         try:
             if platform.system().find("Win") >= 0:
@@ -1299,7 +1297,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
         if action:
-            rclick_menu.connect("activate", action, string, arg);
+            rclick_menu.connect("activate", action, string, arg)
         rclick_menu.show()
         return rclick_menu
 
@@ -1317,7 +1315,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 menu_item = Gtk.MenuItem.new_with_mnemonic(
                             "----------------------------")
                 menu_item.set_sensitive(False)
-                menu_item.set_size_request(-1, 10);
+                menu_item.set_size_request(-1, 10)
                 pass
             else:
                 ttt = str(bb).replace("<control>", "CTRL+")
@@ -1326,7 +1324,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 fff = " " * (15 - len(aa))
                 sss = aa + "%s\t%s" % (fff, ttt)
                 menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
-                menu_item.connect("activate", self.rclick_action, aa, dd );
+                menu_item.connect("activate", self.rclick_action, aa, dd )
 
             self.menu.append(menu_item)
         self.menu.show_all()
@@ -1370,7 +1368,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 #strx = "Not Saved '{0:s}' {1:s}".format(bn, err[1])
                 strx = "Not Saved "
 
-        if(pedconfig.conf.verbose):
+        if pedconfig.conf.verbose:
             print(strx)
         self.mained.update_statusbar(strx)
 
@@ -1400,14 +1398,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def closedoc(self, noprompt = False):
         strx = "Closing '{0:s}'".format(self.fname)
-        if(pedconfig.conf.verbose):
+        if pedconfig.conf.verbose:
             print("Closing doc:", strx)
         self.mained.update_statusbar(strx)
         self.saveparms()
 
         # Clear treestore(s)
-        self.appwin.update_treestore([])
-        self.appwin.update_treestore2([])
+        self.mained.update_treestore([])
+        self.mained.update_treestore2([])
 
         # Add to accounting:
         logentry("Closed File", self.start_time, self.fname)
@@ -1428,7 +1426,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #                      "      %s" % self.fname)
 
         #print("stat", self.stat.st_mtime)
-        self.start_time = time.time();
+        self.start_time = time.time()
         if self.fname == "":
             strx = "Must specify file name."
             print(strx)
@@ -1438,7 +1436,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.text = readfile(self.fname)
         except:
             errr = "Cannot read file '" + self.fname + "'" #, sys.exc_info()
-            if(pedconfig.conf.verbose):
+            if pedconfig.conf.verbose:
                 print(errr, sys.exc_info())
 
             #pedync.message("\n   Cannot open / read file:  \n\n"
@@ -1574,7 +1572,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def writeout(self):
 
-        if(pedconfig.conf.verbose):
+        if pedconfig.conf.verbose:
             print("Saving '"+ self.fname + "'")
 
         wasfile = os.access(self.fname, os.R_OK)
@@ -1755,7 +1753,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         label.set_tooltip_text(self.fname)
         label.set_single_line_mode(True)
 
-        image = Gtk.Image();
+        image = Gtk.Image()
         image.set_from_stock(Gtk.STOCK_CLOSE, Gtk.IconSize.MENU)
         butt = Gtk.Button();  butt.add(image)
         butt.set_focus_on_click(False)
@@ -1873,7 +1871,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.boolcase = boolcase;   self.boolregex = boolregex
         self.src_changed = False
 
-        self.accum = [];
+        self.accum = []
 
         curr = self.caret[1] + self.ypos
         was = -1; cnt = 0; cnt2 = 0
@@ -1885,7 +1883,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if cnt > curr and was == -1:
                 was = cnt2
             if  mmm:
-                cnt2 += 1;
+                cnt2 += 1
                 for sss in mmm:
                     self.accum.append(sss)
             if cnt % 100 == 0:
@@ -1908,7 +1906,7 @@ def run_async_time(win):
         return
 
     last_scanned = win
-    win.appwin.start_tree()
+    win.mained.start_tree()
 
     #print( "run_sync_time", time.time())
 
@@ -1975,7 +1973,7 @@ def run_async_time(win):
             pass
 
     try:
-        win.appwin.update_treestore(sumw)
+        win.mained.update_treestore(sumw)
     except:
         # This is 'normal', ignore it
         print("run_async_time", sys.exc_info())

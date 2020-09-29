@@ -18,19 +18,6 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 import pedlib.pedconfig as pedconfig
-import pedlib.pedsql as pedsql
-import pedlib.keyhand as keyhand
-import pedlib.acthand as acthand
-import pedlib.pedofd   as  pedofd
-import pedlib.pedync   as  pedync
-import pedlib.pedspell as  pedspell
-import pedlib.pedcolor as  pedcolor
-import pedlib.pedlog   as  pedlog
-import pedlib.pedcal   as  pedcal
-import pedlib.pednotes as  pednotes
-import pedlib.pedoline as  pedoline
-import pedlib.pedfont  as  pedfont
-import pedlib.pedundo  as  pedundo
 
 # Into our name space
 from    pedlib.pedmenu import *
@@ -230,9 +217,10 @@ class Canvas(Gtk.DrawingArea):
         return True
 
 
-    def show_status(self, strx):
+    '''def show_status(self, strx):
         if self.statusbar:
             self.statusbar.set_text(strx)
+    '''
 
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
@@ -340,7 +328,7 @@ class Canvas(Gtk.DrawingArea):
             if self.drawline:
                 self.drawline = False
                 #print (self.stroke)
-                rstr = "" #pedutil.randstr(6)
+                rstr = "" #randstr(6)
                 coord = Rectangle(stroke_dims(self.stroke))
                 self.add_stroke(coord, rstr, randcolstr(), arr = self.stroke)
                 self.stroke = []
@@ -616,27 +604,27 @@ class Canvas(Gtk.DrawingArea):
                 print(aa.dump())
 
         if num == 2:
-            rstr = pedutil.randstr(6)
+            rstr = randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
             self.add_rect(coord, rstr, randcolstr())
 
         if num == 3:
-            rstr = pedutil.randstr(6)
+            rstr = randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
             self.add_romb(coord, rstr, randcolstr())
 
         if num == 4:
-            rstr = pedutil.randstr(6)
+            rstr = randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 70, 70)
             self.add_circle(coord, rstr, randcolstr())
 
         if num == 5:
-            rstr = pedutil.randstr(6)
+            rstr = randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
             self.add_text(coord, rstr, randcolstr())
 
         if num == 6:
-            rstr = pedutil.randstr(6)
+            rstr = randstr(6)
             coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
             self.add_line(coord, rstr, randcolstr())
 
@@ -800,7 +788,7 @@ class Canvas(Gtk.DrawingArea):
             try:
                 aa.draw(cr, self)
             except:
-                pedutil.put_exception("Cannot draw " + str(type(aa)))
+                put_exception("Cannot draw " + str(type(aa)))
                 #aa.dump()
 
         init = 0;

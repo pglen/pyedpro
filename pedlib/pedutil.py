@@ -3,8 +3,19 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import signal, os, time, sys, pickle, subprocess
-import string, random
+import os
+import sys
+import time
+import string
+import pickle
+import random
+import stat
+import traceback
+import subprocess
+
+import inspect
+if inspect.isbuiltin(time.process_time):
+    time.clock = time.process_time
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -12,24 +23,10 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-import pedlib.pedconfig as pedconfig
-import pedlib.pedsql as pedsql
-import pedlib.keyhand as keyhand
-import pedlib.acthand as acthand
-import pedlib.pedofd   as  pedofd
-import pedlib.pedync   as  pedync
-import pedlib.pedspell as  pedspell
-import pedlib.pedcolor as  pedcolor
-import pedlib.pedlog   as  pedlog
-import pedlib.pedcal   as  pedcal
-import pedlib.pednotes as  pednotes
-import pedlib.pedoline as  pedoline
-import pedlib.pedfont  as  pedfont
-import pedlib.pedundo  as  pedundo
+#from gi.repository import GdkPixbuf
 
-import inspect
-if inspect.isbuiltin(time.process_time):
-    time.clock = time.process_time
+import pedlib.pedconfig as pedconfig
+import pedlib.pedync   as  pedync
 
 (TARGET_ENTRY_TEXT, TARGET_ENTRY_PIXBUF) = range(2)
 (COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
@@ -38,14 +35,14 @@ if inspect.isbuiltin(time.process_time):
 
 def cut_lead_space(xstr, divi = 2):
     res = ""; cnt = 0; idx = 0; spcnt = 0
-    xlen = len(xstr);
+    xlen = len(xstr)
     while True:
         if cnt >= xlen: break
         chh = xstr[idx]
         if chh == " ":
             spcnt += 1
             if spcnt >= divi:
-               spcnt = 0; res += " "
+                spcnt = 0; res += " "
         else:
             res += xstr[idx:]
             break
@@ -96,8 +93,8 @@ def  readfile(strx, sep = None):
     text = []
     for aa in text2:
         #print("'%s\n" % aa)
-        bb = aa.replace("\r", "");
-        cc = bb.replace("\n", "");
+        bb = aa.replace("\r", "")
+        cc = bb.replace("\n", "")
         text.append(cc)
     #text2 = []
 
@@ -128,7 +125,7 @@ def findinfile(nnn, ffff, nocase = False):
             #print ("Not a text file:", ffff)
             return rrr
     except:
-        print("Cannot read file", ffff);
+        print("Cannot read file", ffff)
         text = ""
 
     unnn = nnn.lower()
@@ -171,7 +168,7 @@ def get_img_path(fname):
     img_dir = os.path.dirname(__file__)
     img_path = os.path.join(img_dir, "images", fname)
 
-    if(pedconfig.conf.verbose):
+    if pedconfig.conf.verbose:
         print( "img_path", img_path)
 
     return img_path
@@ -187,7 +184,7 @@ def get_exec_path(fname):
     exec_path2 = os.path.join(exec_dir, "data")
     exec_path = os.path.join(exec_path2, fname)
 
-    if(pedconfig.conf.verbose):
+    if pedconfig.conf.verbose:
         print( exec_path)
 
     return exec_path
@@ -205,9 +202,10 @@ def get_pangview_path():
 
 def launch_pangview(docx):
 
+    ret = 0
     pname = get_pangview_path()
 
-    if(pedconfig.conf.verbose):
+    if pedconfig.conf.verbose:
         print("launching pangview:", pname, "with", docx)
     try:
         ret = subprocess.Popen([pname,  docx])
@@ -216,7 +214,7 @@ def launch_pangview(docx):
         print("except on pang",  sys.exc_info())
         pedync.message("\n   Cannot launch the pangview.py utility.   \n\n"
                        "              (Please install)\n")
-
+    return ret
 
 # It's totally optional to do this, you could just manually insert icons
 # and have them not be themeable, especially if you never expect people
@@ -256,7 +254,7 @@ def register_stock_icons():
             #Register icon to accompany stock item
             #The gtk-logo-rgb icon has a white background, make it transparent
             #the call is wrapped to (gboolean, guchar, guchar, guchar)
-            transparent = pixbuf.add_alpha(True, chr(255), chr(255),chr(255))
+            transparent = xbuf.add_alpha(True, chr(255), chr(255),chr(255))
             icon_set = Gtk.IconSet(transparent)
             factory.add('demo-gtk-logo', icon_set)
 
@@ -317,7 +315,7 @@ def xnextchar2( strx, xchar, start):
 
 # Find prev char
 def prevchar( strx, xchar, start):
-    idx = start;
+    idx = start
     idx = min(len(strx) - 1, idx)
     while True:
         if idx < 0: break
@@ -328,7 +326,7 @@ def prevchar( strx, xchar, start):
 
 # Find prev not char
 def xprevchar( strx, xchar, start):
-    idx = start;
+    idx = start
     idx = min(len(strx) - 1, idx)
     while True:
         if idx < 0: break
@@ -340,8 +338,8 @@ def xprevchar( strx, xchar, start):
 
 def shortenstr(xstr, xlen):
     ret = ""; zlen = len(xstr)
-    if(zlen > xlen):
-        if xlen < 5: raise Valuerror;
+    if zlen > xlen:
+        if xlen < 5: raise ValueError
         xlen -= 5
         ret = xstr[:xlen // 2] + "..." + xstr[zlen - xlen // 2:]
     else:
@@ -349,37 +347,41 @@ def shortenstr(xstr, xlen):
 
     return ret
 
-def handle_keys(host):
+def handle_keys(host, event):
+
+    ret = 0
 
     # Do key down:
     if  event.type == Gdk.KEY_PRESS:
         if event.keyval == Gdk.KEY_Alt_L or \
                 event.keyval == Gdk.KEY_Alt_R:
             #print( "Alt down")
-            host.alt = True;
+            host.alt = True
         elif event.keyval == Gdk.KEY_Control_L or \
                 event.keyval == Gdk.KEY_Control_R:
             #print( "Ctrl down")
-            self.ctrl = True; ret = True
+            host.ctrl = True; ret = True
         if event.keyval == Gdk.KEY_Shift_L or \
               event.keyval == Gdk.KEY_Shift_R:
             #print( "shift down")
-            host.shift = True;
+            host.shift = True
 
     # Do key up
     elif  event.type == Gdk.KEY_RELEASE:
         if event.keyval == Gdk.KEY_Alt_L or \
               event.keyval == Gdk.KEY_Alt_R:
             #print( "Alt up")
-            host.alt = False;
+            host.alt = False
         if event.keyval == Gdk.KEY_Control_L or \
               event.keyval == Gdk.KEY_Control_R:
             #print( "Ctrl up")
-            host.ctrl = False;
+            host.ctrl = False
         if event.keyval == Gdk.KEY_Shift_L or \
               event.keyval == Gdk.KEY_Shift_R:
             #print( "shift up")
-            host.shift = False;
+            host.shift = False
+
+    return ret
 
 # -----------------------------------------------------------------------
 # Sleep just a little, but allow the system to breed
@@ -426,7 +428,7 @@ def untab_str(strx, tabstop = 4):
         if  chh == "\t":
             # Generate string
             spaces = tabstop - (cnt % tabstop)
-            ttt = "";
+            ttt = ""
             for aa in range(spaces):
                 ttt += " "
             res += ttt
@@ -440,7 +442,7 @@ def untab_str(strx, tabstop = 4):
 # Calculate tabs up to till count
 def calc_tabs(strx, till, tabstop = 4):
     idx = 0; cnt = 0
-    xlen = min(len(strx), till);
+    xlen = min(len(strx), till)
     while True:
         if idx >= xlen: break
         chh = strx[idx]
@@ -454,7 +456,7 @@ def calc_tabs(strx, till, tabstop = 4):
 # Calculate tabs up to till count, include full length
 def calc_tabs2(strx, till, tabstop = 4):
     idx = 0; cnt = 0; slen = len(strx)
-    xlen = min(slen, till);
+    xlen = min(slen, till)
     while True:
         if idx >= xlen: break
         chh = strx[idx]
@@ -507,7 +509,7 @@ def  selword(strx, xidx):
 
     #print( "selword:", strx, xidx)
 
-    xlen = len(strx);
+    xlen = len(strx)
     if xlen == 0: return 0, 0
     if xidx >= xlen: return xlen, xlen
 
@@ -541,7 +543,7 @@ def  selasci(strx, xidx, additional = None):
 
     #print( "selasci:", "'" + strx + "'", xidx)
 
-    xlen = len(strx);
+    xlen = len(strx)
     if xlen == 0: return 0, 0
     if xidx >= xlen: return xlen, xlen
     if strx[xidx] == " ":
@@ -578,7 +580,7 @@ def  selasci2(strx, xidx, addi = ""):
 
     #print( "selasci2:", "'" + strx + "'", xidx)
 
-    xlen = len(strx);
+    xlen = len(strx)
     if xlen == 0: return 0, 0
     if xidx >= xlen: return xlen, xlen
     if strx[xidx] == " ":
@@ -634,7 +636,7 @@ def  selasci2(strx, xidx, addi = ""):
 
 def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
 
-    idx = 0; idx2 = 0;
+    idx = 0; idx2 = 0
     mlen = len(srctxt)
     accum = []
 
@@ -659,7 +661,7 @@ def src_line(line, cnt, srctxt, regex, boolcase, boolregex):
                     if res.end() != 0:
                         idx = res.end() + 1
                     else:
-                         idx += 1
+                        idx += 1
                     continue
 
                 idx2 = res.end() + idx
@@ -717,12 +719,12 @@ def save_sess(sesslist):
     but =   "Cancel", Gtk.ButtonsType.CANCEL, "Save Session", Gtk.ButtonsType.OK
     fc.add_buttons(*but)
 
-    filter = Gtk.FileFilter()
-    filter.add_pattern ("*.sess");  filter.add_pattern ("*");
+    filter2 = Gtk.FileFilter()
+    filter2.add_pattern ("*.sess");  filter2.add_pattern ("*")
 
     fc.sesslist = sesslist
     fc.old = os.getcwd()
-    fc.set_filter(filter)
+    fc.set_filter(filter2)
     fc.set_current_folder(pedconfig.conf.sess_data)
     fc.set_current_name(os.path.basename("Untitled.sess"))
     fc.set_default_response(Gtk.ButtonsType.OK)
@@ -781,8 +783,8 @@ def     load_sess():
     fc.add_button("Load Session", Gtk.ButtonsType.OK)
 
     filter = Gtk.FileFilter()
-    filter.add_pattern ("*.sess");
-    filter.add_pattern ("*");
+    filter.add_pattern ("*.sess")
+    filter.add_pattern ("*")
 
     fc.old = os.getcwd()
     fc.set_filter(filter)
@@ -832,8 +834,8 @@ def  getfilename(title = "Open File", save = False, oktext = "OK", filter = [], 
 
     filter2 = Gtk.FileFilter()
     for aa in filter:
-        filter2.add_pattern (aa);
-    filter2.add_pattern ("*");
+        filter2.add_pattern (aa)
+    filter2.add_pattern ("*")
 
     fc.old = os.getcwd()
     fc.set_filter(filter2)
@@ -935,6 +937,11 @@ def uni(xtab):
 
     #print str.format("{0:b}",  xtab[0])
 
+    try:
+        unichr
+    except NameError:
+        unichr = chr
+
     cc = 0
     try:
         if xtab[0] & 0xe0 == 0xc0:  # two numbers
@@ -1022,7 +1029,7 @@ def unescape(strx):
 
         chh = strx[pos]
 
-        if(chh == '\\'):
+        if chh == '\\':
             #print "backslash", strx[pos:]
             pos2 = pos + 1; strx2 = ""
             while True:
@@ -1130,7 +1137,7 @@ def logentry(kind, startt, fname):
     except:
         try:
             fp = open(logfile, "w+")
-            fp.seek(0, os.SEEK_END);
+            fp.seek(0, os.SEEK_END)
         except:
             print("Cannot open/create log file", logfile)
             return
@@ -1154,7 +1161,7 @@ def timesheet(kind, startt, endd):
     except:
         try:
             fp = open(logfile, "w+")
-            fp.seek(0, os.SEEK_END);
+            fp.seek(0, os.SEEK_END)
         except:
             print("Cannot open/create log file", logfile)
             return

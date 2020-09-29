@@ -48,7 +48,6 @@ from gi.repository import Gdk
 from gi.repository import GObject
 
 import pedlib.pedconfig as pedconfig
-import pedlib.keyhand as keyhand
 import pedlib.pedofd   as  pedofd
 import pedlib.pedync   as  pedync
 import pedlib.pedspell as  pedspell
@@ -63,7 +62,6 @@ import pedlib.pedundo  as  pedundo
 
 from pedlib.keywords import *
 from pedlib.pedutil import *
-#from pedlib.pedundo import *
 from pedlib.pedgoto import *
 from pedlib.pedcanv import *
 
@@ -1713,7 +1711,7 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("F7")
 
-        self.keyhand.reset()
+        pedconfig.conf.keyh.reset()
         if self2.record:
             self2.record = False
             # Nothing recorded, restore old
@@ -1730,7 +1728,7 @@ class ActHand:
             self2.recarr2 = self2.recarr
             self2.recarr = []
             self2.record = True
-        self.keyhand.reset()
+        pedconfig.conf.keyh.reset()
 
     # ---------------------------------------------------------------------
 
@@ -1750,14 +1748,14 @@ class ActHand:
             self2.mained.update_statusbar("Nothing recorded, cannot play.")
             return True
 
-        self.keyhand.reset()
+        pedconfig.conf.keyh.reset()
         self2.mained.update_statusbar("Started Play ...")
         idx = 0
         while True:
             if idx >= xlen: break
             tt, kk, ss, www, sss, \
-              self.keyhand.shift, self.keyhand.ctrl, \
-                                self.keyhand.alt = self2.recarr[idx]
+              pedconfig.conf.keyh.shift, pedconfig.conf.keyh.ctrl, \
+                                pedconfig.conf.keyh.alt = self2.recarr[idx]
             idx += 1
 
             # Synthesize keystroke. We do not replicate state as
@@ -1776,13 +1774,13 @@ class ActHand:
             event.string  = sss
             #print ("play event", event, event.type, event.keyval)
 
-            self.keyhand.state2 = ss
-            self.keyhand.handle_key2(self2, None, event)
+            pedconfig.conf.keyh.state2 = ss
+            pedconfig.conf.keyh.handle_key2(self2, None, event)
             if anim:
                 usleep(30)
             #print()
         # If the state gets out or sync ...
-        self.keyhand.reset()
+        pedconfig.conf.keyh.reset()
         self2.mained.update_statusbar("Ended Play.")
 
     def f8(self, self2, anim = False):

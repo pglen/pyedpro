@@ -28,10 +28,11 @@
 
 # History:  (recent first, incomplete list)
 #
-# jul/19/2018   Coloring for spell check, Trigger by scroll, more dominant color
-# Jul/xx/2018   Update README, KEYS.TXT
-# Jun/xx/2018   Log Files for time accounting.
-# Jun/08/2020   Menu control / Headerbar / Version update
+# jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
+# Jul/xx/2018       Update README, KEYS.TXT
+# Jun/xx/2018       Log Files for time accounting.
+# Jun/08/2020       Menu control / Headerbar / Version update
+# Mon 28.Sep.2020   Reshuffled imports pylint
 
 # ASCII test editor, requires pyGtk. (pygobject)
 # See pygtk-dependencied for easy access to dependencies.
@@ -39,9 +40,19 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import os, sys, getopt, signal
+import os
+import sys
+import getopt
+import signal
 
-import traceback, gettext, locale
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+
+import pedlib.pedconfig as pedconfig
+import pedlib.pedwin as pedwin
+import pedlib.pedsql as pedsql
+import pedlib.pedlog as pedlog
 
 #locale.setlocale(locale.LC_ALL, '')
 
@@ -57,31 +68,9 @@ VERSION = 1.7
 BUILDDATE = "Mon 28.Sep.2020"
 PROGNAME  = "PyEdPro"
 
-import gi
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
-
-import pedlib.pedconfig as pedconfig
-import pedlib.pedwin as pedwin
-import pedlib.pedsql as pedsql
-import pedlib.pedlog   as  pedlog
-
-
-'''import pedlib.pedlog as pedlog
-import pedlib.keyhand as keyhand
-import pedlib.acthand as acthand
-import pedlib.pedofd   as  pedofd
-import pedlib.pedync   as  pedync
-import pedlib.pedspell as  pedspell
-import pedlib.pedcolor as  pedcolor
-import pedlib.pedcal   as  pedcal
-import pedlib.pednotes as  pednotes
-import pedlib.pedoline as  pedoline
-import pedlib.pedfont  as  pedfont
-import pedlib.pedundo  as  pedundo
-'''
 
 mainwin = None
+
 show_timing = 0
 show_config = 0
 clear_config = 0
@@ -91,7 +80,9 @@ use_stdout = 0
 
 def main(strarr):
 
-    if(pedconfig.conf.verbose):
+    global mainwin
+
+    if pedconfig.conf.verbose:
         print(PROGNAME, "running on", "'" + os.name + "'", \
             "GTK", Gtk._version, "PyGtk", \
                "%d.%d.%d" % (Gtk.get_major_version(), \
@@ -107,7 +98,7 @@ def main(strarr):
 
     Gtk.main()
 
-def help():
+def __help():
 
     print()
     print(PROGNAME, _("Version: "), pedconfig.conf.version)
@@ -127,7 +118,7 @@ def help():
 
 def terminate(arg1, arg2):
 
-    if(pedconfig.conf.verbose):
+    if pedconfig.conf.verbose:
         print(_("Terminating pydepro.py, saving files to ~/pydepro"))
 
     # Save all
@@ -163,8 +154,8 @@ if __name__ == '__main__':
             except:
                 pedconfig.conf.pgdebug = 0
 
-        if aa[0] == "-h": help();  exit(1)
-        if aa[0] == "-?": help();  exit(1)
+        if aa[0] == "-h": __help();  sys.exit(1)
+        if aa[0] == "-?": __help();  sys.exit(1)
         if aa[0] == "-V": print("Version", pedconfig.conf.version); \
             exit(1)
         if aa[0] == "-f": pedconfig.conf.full_screen = True
@@ -176,8 +167,8 @@ if __name__ == '__main__':
 
     try:
         if not os.path.isdir(pedconfig.conf.config_dir):
-            if(pedconfig.conf.verbose):
-                print("making", pedconfig.con.config_dir)
+            if pedconfig.conf.verbose:
+                print("making", pedconfig.conf.config_dir)
             os.mkdir(pedconfig.conf.config_dir)
     except: pass
 
@@ -188,7 +179,7 @@ if __name__ == '__main__':
 
     pedconfig.ensure_dirs(pedconfig.conf)
 
-    if(pedconfig.conf.verbose):
+    if pedconfig.conf.verbose:
         print(_("Data stored in "), pedconfig.conf.config_dir)
 
     # Initialize sqlite to load / save preferences & other info
@@ -205,14 +196,14 @@ if __name__ == '__main__':
         aa = sys.stdin.readline()
         if aa[0] == "y":
             print(_("Removing configuration ... "), end=' ')
-            sql.rmall()
+            pedconfig.conf.sql.rmall()
             print("OK")
         sys.exit(0)
 
     # To check all config vars
     if show_config:
         print("Dumping configuration:")
-        ss = sql.getall();
+        ss = pedconfig.conf.sql.getall()
         for aa in ss:
             print(aa)
         sys.exit(0)
@@ -236,16 +227,3 @@ if __name__ == '__main__':
     main(args[0:])
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
