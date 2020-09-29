@@ -18,6 +18,7 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 import pedlib.pedconfig as pedconfig
+import pedlib.pedcolor as pedcolor
 
 # Into our name space
 from    pedlib.pedmenu import *
