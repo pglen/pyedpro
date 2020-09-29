@@ -5,10 +5,9 @@
 # this project was to create a modern multi-platform editor.
 # Simple, powerful, configurable, extendable.
 #
-# This project was derived from pyedit.py
+# This project is a successor of pyedit.py
 #
-# Pyedpro functions near flawless on Linux / Windows / Mac / Raspberry PI
-
+# Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
 #
 # Pyedpro has:
 #
@@ -16,6 +15,7 @@
 #    o  search/replace,
 #    o  functional navigation,
 #    o  comment/string spell check,
+#    o  full spell check, spell suggestion dialog
 #    o  auto backup,
 #    o  persistent undo/redo,  (undo beyond last save)
 #    o  auto complete, auto correct,
@@ -34,8 +34,9 @@
 # Jun/08/2020       Menu control / Headerbar / Version update
 # Mon 28.Sep.2020   Reshuffled imports pylint
 
-# ASCII test editor, requires pyGtk. (pygobject)
-# See pygtk-dependencied for easy access to dependencies.
+# ASCII text editor, requires pyGtk. (pygobject)
+# See pygtk-dependencies for easy install of dependencies.
+# See also the INSTALL file.
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -67,7 +68,6 @@ _ = gettext.gettext
 VERSION = 1.7
 BUILDDATE = "Mon 28.Sep.2020"
 PROGNAME  = "PyEdPro"
-
 
 mainwin = None
 

@@ -602,8 +602,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                                 flag = True
                 if flag:
                     line = self.text[yy]
-                    #print( "'" + line[xx:zz] + "'")
-                    self.xsel = xx; self.xsel2 = xx + 10
+                    #print( "Spell delimit: '" + line[xx:zz] + "'")
+                    self.xsel = xx;
+                    self.xsel2 = zz
+
                     self.ysel = self.ysel2 = yy
                     self.spellstr = line[int(xx):int(zz)]
                     self.popspell(area, event, self.spellstr)

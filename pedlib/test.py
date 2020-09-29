@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # !!!!! TEST FILE !!!!
 
@@ -7,12 +7,12 @@
 
 # ------------------------------------------------------------------------
 # This is open source text editor. Written on python. The motivation for
-# this project was to create a modern multi-platform editor.
+# this project was to create a modern mufti-platform editor.
 # Simple, powerful, configurable, extendable.
 #
-# This project was derived from pyedit.py
+# This project is a successor of pyedit.py
 #
-# Pyedpro functions near flawless on Linux / Windows / Mac / Raspberry PI
+# Pyedpro functions well on Linux / Windows / Mac / Raspberry PI
 
 #
 # Pyedpro has:
