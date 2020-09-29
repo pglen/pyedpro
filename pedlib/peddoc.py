@@ -58,16 +58,16 @@ last_scanned = None
 
 # Colors for the text, configure the defaults here
 
-FGCOLOR    = "#000000"
-FGCOLORRO  = "#222222"
-RFGCOLOR = "#fefefe"
-BGCOLOR  = "#fefefe"
-RBGCOLOR = "#aaaaff"
-CBGCOLOR = "#ff8888"
-KWCOLOR  = "#88aaff"
-CLCOLOR  = "#880000"
-COCOLOR  = "#4444ff"
-STCOLOR  = "#ee44ee"
+FGCOLOR     = "#000000"
+FGCOLORRO   = "#222222"
+RFGCOLOR    = "#fefefe"
+BGCOLOR     = "#fefefe"
+RBGCOLOR    = "#aaaaff"
+CBGCOLOR    = "#ff8888"
+KWCOLOR     = "#88aaff"
+CLCOLOR     = "#880000"
+COCOLOR     = "#4444ff"
+STCOLOR     = "#ee44ee"
 
 CARCOLOR = "#4455dd"
 
@@ -150,6 +150,18 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.scr = False
         self.lastevent = None
         self.hhh = self.www = 0
+
+        self.FGCOLOR    = FGCOLOR
+        self.FGCOLORRO  = FGCOLORRO
+        self.RFGCOLOR   = RFGCOLOR
+        self.BGCOLOR    = BGCOLOR
+        self.RBGCOLOR   = RBGCOLOR
+        self.CBGCOLOR   = CBGCOLOR
+        self.KWCOLOR    = KWCOLOR
+        self.CLCOLOR    = CLCOLOR
+        self.COCOLOR    = COCOLOR
+        self.STCOLOR    = STCOLOR
+
         # Parent widget
         Gtk.DrawingArea.__init__(self)
         self.set_can_focus(True)

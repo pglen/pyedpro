@@ -14,7 +14,6 @@ from gi.repository import Gdk
 from gi.repository import GObject
 
 import pedlib.pedconfig as pedconfig
-import pedlib.peddoc as peddoc
 
 from pedlib.pedutil import *
 
@@ -309,14 +308,14 @@ def save_all(self2):
 
 def  def_col(butt, self2):
 
-    self2.fgcolor  = str2float(peddoc.FGCOLOR)
-    self2.bgcolor  = str2float(peddoc.BGCOLOR)
-    self2.rbgcolor = str2float(peddoc.RBGCOLOR)
-    self2.cbgcolor = str2float(peddoc.CBGCOLOR)
-    self2.kwcolor  = str2float(peddoc.KWCOLOR)
-    self2.clcolor  = str2float(peddoc.CLCOLOR)
-    self2.cocolor  = str2float(peddoc.COCOLOR)
-    self2.stcolor  = str2float(peddoc.STCOLOR)
+    self2.fgcolor  = str2float(self2.FGCOLOR)
+    self2.bgcolor  = str2float(self2.BGCOLOR)
+    self2.rbgcolor = str2float(self2.RBGCOLOR)
+    self2.cbgcolor = str2float(self2.CBGCOLOR)
+    self2.kwcolor  = str2float(self2.KWCOLOR)
+    self2.clcolor  = str2float(self2.CLCOLOR)
+    self2.cocolor  = str2float(self2.COCOLOR)
+    self2.stcolor  = str2float(self2.STCOLOR)
 
     save_all(self2)
     self2.invalidate()
@@ -328,14 +327,14 @@ def  def_col(butt, self2):
 
 def  dark_col(butt, self2):
 
-    self2.fgcolor  = str2float(peddoc.BGCOLOR)
-    self2.bgcolor  = str2float(peddoc.FGCOLOR)
-    self2.rbgcolor = str2float(peddoc.RBGCOLOR)
-    self2.cbgcolor = str2float(peddoc.CBGCOLOR)
-    self2.kwcolor  = str2float(peddoc.KWCOLOR)
-    self2.clcolor  = str2float(peddoc.CLCOLOR)
-    self2.cocolor  = str2float(peddoc.COCOLOR)
-    self2.stcolor  = str2float(peddoc.STCOLOR)
+    self2.fgcolor  = str2float(self2.BGCOLOR)
+    self2.bgcolor  = str2float(self2.FGCOLOR)
+    self2.rbgcolor = str2float(self2.RBGCOLOR)
+    self2.cbgcolor = str2float(self2.CBGCOLOR)
+    self2.kwcolor  = str2float(self2.KWCOLOR)
+    self2.clcolor  = str2float(self2.CLCOLOR)
+    self2.cocolor  = str2float(self2.COCOLOR)
+    self2.stcolor  = str2float(self2.STCOLOR)
 
     save_all(self2)
     self2.invalidate()
