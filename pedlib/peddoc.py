@@ -27,6 +27,7 @@ import pedlib.pedspell as  pedspell
 import pedlib.pedcolor as  pedcolor
 import pedlib.pedmenu  as  pedmenu
 import pedlib.pedundo  as  pedundo
+import pedlib.pedmisc  as  pedmisc
 
 from pedlib.pedutil import *
 from pedlib.keywords import *
@@ -1287,12 +1288,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                        "              (Please install)")
 
     def start_edit(self):
-        fdir = os.path.realpath(__file__)
-        print("fdir:", fdir)
-        mydir = os.path.dirname(fdir)
-        print("mydir:", mydir)
-        myscript = os.path.realpath(os.path.join(mydir, '../pyedpro.py'))
-        print("myscript:", myscript)
+
+        old = os.getcwd()
+        fdir = os.path.dirname(os.path.realpath(__file__))
+        #print("fdir:", fdir)
+        mydir = os.path.dirname(os.path.join(fdir, "../"))
+        #print("mydir:", mydir)
+        os.chdir(mydir)
+        myscript = os.path.realpath(os.path.join(mydir, 'pyedpro.py'))
+        #print("myscript:", myscript)
+
         ret = 0
         try:
             if platform.system().find("Win") >= 0:
@@ -1307,6 +1312,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         except:
             print("Cannot launch editor instance", sys.exc_info())
             pedync.message("\n   Cannot launch new editor instance \n\n")
+
+        # Back to original dir
+        os.chdir(os.path.dirname(old))
 
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)

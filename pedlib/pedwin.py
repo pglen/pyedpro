@@ -15,6 +15,8 @@ from gi.repository import Gdk
 from gi.repository import GLib
 from gi.repository import Gio
 
+sys.path.append('..')
+
 import pedlib.pedconfig as pedconfig
 import pedlib.peddoc as peddoc
 import pedlib.keyhand as keyhand
@@ -27,7 +29,6 @@ import pedlib.pedoline as  pedoline
 import pedlib.pedfont  as  pedfont
 import pedlib.pedcolor  as  pedcolor
 
-sys.path.append('..')
 from pycommon.pggui import *
 
 # Into our name space
@@ -920,7 +921,7 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
-            pedconfig.conf.keyh.act.f2(vcurr2.area)
+            pedconfig.conf.keyh.acth.f2(vcurr2.area)
 
     # Devhelp Message handler
     def activate_khelp(self, action):
@@ -929,7 +930,7 @@ class EdMainWindow():
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
             vcurr2.area.shift = True
-            pedconfig.conf.keyh.act.f2(vcurr2.area)
+            pedconfig.conf.keyh.acth.f2(vcurr2.area)
             vcurr2.area.shift = False
 
     def activate_qhelp(self, action):
@@ -1027,26 +1028,26 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
-            pedconfig.conf.keyh.act.ctrl_c(vcurr2.area)
+            pedconfig.conf.keyh.acth.ctrl_c(vcurr2.area)
 
     def cut(self):
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
-            pedconfig.conf.keyh.act.ctrl_x(vcurr2.area)
+            pedconfig.conf.keyh.acth.ctrl_x(vcurr2.area)
 
     def tts(self):
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
-             pedconfig.conf.keyh.act.ctrl_alt_r(vcurr2.area)
+             pedconfig.conf.keyh.acth.ctrl_alt_r(vcurr2.area)
 
 
     def paste(self):
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         if vcurr2:
-            pedconfig.conf.keyh.act.ctrl_v(vcurr2.area)
+            pedconfig.conf.keyh.acth.ctrl_v(vcurr2.area)
 
     # -------------------------------------------------------------------
     # Menu callback
@@ -1121,39 +1122,39 @@ class EdMainWindow():
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.alt_g(vcurr2.area)
+                pedconfig.conf.keyh.acth.alt_g(vcurr2.area)
 
         if strx == "Find":
             #print "find"
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.ctrl_f(vcurr2.area)
+                pedconfig.conf.keyh.acth.ctrl_f(vcurr2.area)
 
         if strx == "Record":
             #print "record"
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.f7(vcurr2.area)
+                pedconfig.conf.keyh.acth.f7(vcurr2.area)
 
         if strx == "Play":
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.f8(vcurr2.area)
+                pedconfig.conf.keyh.acth.f8(vcurr2.area)
 
         if strx == "Spell":
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.f9(vcurr2.area)
+                pedconfig.conf.keyh.acth.f9(vcurr2.area)
 
         if strx == "Spell2":
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.f9(vcurr2.area, True)
+                pedconfig.conf.keyh.acth.f9(vcurr2.area, True)
 
         if strx == "MakeRO":
             nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
@@ -1187,25 +1188,25 @@ class EdMainWindow():
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.f8(vcurr2.area, True)
+                pedconfig.conf.keyh.acth.f8(vcurr2.area, True)
 
         if strx == "Undo":
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.ctrl_z(vcurr2.area)
+                pedconfig.conf.keyh.acth.ctrl_z(vcurr2.area)
 
         if strx == "Redo":
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.ctrl_y(vcurr2.area)
+                pedconfig.conf.keyh.acth.ctrl_y(vcurr2.area)
 
         if strx == "SaveAll":
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.alt_a(vcurr2.area)
+                pedconfig.conf.keyh.acth.alt_a(vcurr2.area)
 
         if strx == "Discard Undo":
             nn2 = notebook.get_current_page()
@@ -1260,7 +1261,7 @@ class EdMainWindow():
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-                pedconfig.conf.keyh.act.f1(vcurr2.area)
+                pedconfig.conf.keyh.acth.f1(vcurr2.area)
 
         if strx == "KeyDoc":
             self.update_statusbar("Showing Keyboard Help")

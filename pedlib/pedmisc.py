@@ -3,7 +3,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import signal, os, time, string, pickle, re, platform, subprocess
+import sys, signal, os, time, string, pickle, re, platform, subprocess
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -17,13 +17,14 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 import pedlib.pedconfig as pedconfig
+import pedlib.pedlcmd as pedlcmd
 
 def exec_test(self2, testx):
 
         if self2.lastcmd == "" or self2.shift:
 
             #print("Asking lastcmd")
-            ret = cmddlg(self2)
+            ret = pedlcmd.cmddlg(self2)
             if not ret:
                 self2.mained.update_statusbar("Cancelled exec dialog.")
                 return
@@ -47,8 +48,8 @@ def exec_test(self2, testx):
              print("Exception in subprocess", sys.exc_info())
 
         if not proc:
-            self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
-            print("Cannot execute")
+            #self2.mained.update_statusbar("Cannot execute command: " + "'" + self2.lastcmd + "'")
+            print("Cannot execute", self2.lastcmd)
 
         #print("retcode", proc.returncode)
         '''
@@ -69,7 +70,7 @@ def exec_test(self2, testx):
         '''
 
         if not proc:
-            self2.mained.update_statusbar("Cannot execute command: " + self2.lastcmd)
+            self2.mained.update_statusbar("Cannot execute command: " + "'" + self2.lastcmd + "'")
 
 
 # EOF

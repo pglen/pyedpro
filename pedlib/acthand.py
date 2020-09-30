@@ -47,18 +47,22 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
+sys.path.append('..')
+
 import pedlib.pedconfig as pedconfig
 import pedlib.pedofd   as  pedofd
 import pedlib.pedync   as  pedync
 import pedlib.pedspell as  pedspell
 import pedlib.pedcolor as  pedcolor
 import pedlib.pedlog   as  pedlog
-import pedlib.pedcal   as  pedcal
-import pedlib.pednotes as  pednotes
-import pedlib.pedoline as  pedoline
 import pedlib.pedfont  as  pedfont
 import pedlib.pedfind  as  pedfind
 import pedlib.pedundo  as  pedundo
+import pedlib.pedtts   as  pedtts
+
+#import pedlib.pedcal   as  pedcal
+#import pedlib.pednotes as  pednotes
+#import pedlib.pedoline as  pedoline
 
 from pedlib.keywords import *
 from pedlib.pedutil import *
@@ -766,11 +770,13 @@ class ActHand:
             print ("CTRL - ALT - R")
 
         #print("Read file on tts ");
-        if not self2.tts:
-            self2.tts = pedtts.tts(self2.mained.update_statusbar)
+        try:
+            if not self2.tts:
+                self2.tts = pedtts.tts(self2.mained.update_statusbar)
 
-        self2.tts.read_tts(self2)
-
+            self2.tts.read_tts(self2)
+        except:
+            print("No TTS", sys.exc_info())
      # --------------------------------------------------------------------
 
     def ctrl_c(self, self2):

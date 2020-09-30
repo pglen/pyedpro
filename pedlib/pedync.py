@@ -102,27 +102,31 @@ def  about(self2):
                             Gtk.get_micro_version())
 
     dialog.set_position(Gtk.WindowPosition.CENTER)
-
     dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 
     #"\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
 
+    ddd = os.path.join(os.path.dirname(__file__), "../", "../")
+
     # GLib.pyglib_version
     vvv = gi.version_info
-    comm = "\nPython based easily configurable editor\n"\
-        "with time accounting module.\n"\
+    comm = "Python based easily configurable editor\n"\
+        "with time accounting module, spell "\
+        "check \n and macro recording.\n"\
         "\nRunning PyGtk %d.%d.%d" % vvv +\
         "\non GTK %d.%d.%d\n" % gver +\
         "\nRunning Python %s" % platform.python_version() +\
         "\non %s %s\n" % (platform.system(), platform.release()) +\
-        "\nPyedPro Build Date: %s\n" % pedconfig.conf.build_date
+        "\nPyedPro Build Date: %s\n" % pedconfig.conf.build_date +\
+        "Exe Path:\n%s\n" % os.path.realpath(ddd)
 
     dialog.set_comments(comm);
-    dialog.set_copyright(pedconfig.conf.progname + " Created by Peter Glen\n"
-                          "Project placed in the Public Domain.")
+    dialog.set_copyright(pedconfig.conf.progname + " Created by Peter Glen.\n"
+                          "Project is in the Public Domain.")
     dialog.set_program_name(pedconfig.conf.progname)
     img_dir = os.path.join(os.path.dirname(__file__), 'images')
-    img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
+    #img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
+    img_path = os.path.join(img_dir, 'pyedpro.png')
 
     try:
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(img_path)

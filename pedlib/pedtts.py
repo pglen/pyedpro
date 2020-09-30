@@ -54,7 +54,6 @@ class tts():
         self.prog_set_text = prog
         self.prog_set_text("Inited TTS")
 
-
     # Create a file, send it to festival
     def _speak(self, cstr):
 
@@ -77,9 +76,11 @@ class tts():
                 self.speech_pid = subprocess.Popen(["espeak-ng", "-f", fname,])
         except:
             print ("Cannot start TTS", sys.exc_info())
+            return
 
         #print ("started", self.speech_pid.pid)
         GLib.timeout_add(100, self.check_speak)
+        return True
 
     def check_speak2(self, ss, opt):
         if self.speech_pid:
@@ -166,7 +167,10 @@ class tts():
 
                     #print("line %d: '%s'" % (yy, sss))
                     self.prog_set_text("Reading at line %d" % (yy2))
-                    self._speak(sss)
+                    if not self._speak(sss):
+                        self2.mained.update_statusbar("TTS cannot start (installed?)")
+                        break
+
                     self.wait_done()
 
                     self2.xsel = idx; self2.ysel = yy2;

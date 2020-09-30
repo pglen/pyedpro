@@ -5,22 +5,28 @@
 # assignments can be made with ease
 
 from __future__ import absolute_import
+
+import sys
+
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
+sys.path.append('..')
+
 import pedlib.pedconfig as pedconfig
 import pedlib.pedlog as pedlog
 import pedlib.pedsql as pedsql
 import pedlib.pedspell as  pedspell
 import pedlib.pedcolor as  pedcolor
-import pedlib.pedcal   as  pedcal
-import pedlib.pednotes as  pednotes
-import pedlib.pedoline as  pedoline
 import pedlib.pedfont  as  pedfont
 import pedlib.pedundo  as  pedundo
+
+#import pedlib.pedcal   as  pedcal
+#import pedlib.pednotes as  pednotes
+#import pedlib.pedoline as  pedoline
 
 # Grabbed modifier defines from GTK
 #  ... Turns out Gtk.gdk 2.6+ defines these (above) constants as ...
