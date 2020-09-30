@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Here we imported the 'setup' module which allows us to install Python
-#scripts to the local system beside performing some other tasks, you can find the
+# scripts to the local system beside performing some other tasks, you can find the
 # documentation here: https://docs.python.org/2/distutils/apiref.html
 
 import os, sys, fnmatch
@@ -14,7 +14,7 @@ column select, multiple clipboards, unlimited undo ...
    PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion
  ... and a lot more.
-   The recorded macros, undo / redo information / editing session detail persists
+   The recorded macros, the undo / redo information the editing session details persist
  after the editor is closed.
     The spell checker can check code comments. The parsing of the code is
 rudimentary, comments and strings are spell checked. (Press F9) The code is filtered
@@ -49,18 +49,10 @@ setup(name = "pyedpro.py",      # Name of the program.
       packages=['pedlib', 'panglib', 'pycommon'],
       package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../pycommon'},
       package_data = {'pedlib': ['data/*', 'images/*']},
-      data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pedlib/images/pyedpro.png']),
+      data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pedlib/images/pyedpro.png',
+                           'pedlib/images/pedicon.png' ]),
                         ('/usr/share/applications', ['pyedpro.desktop'])],
       #include_package_data=True
       )
 
 # EOF
-
-
-
-
-
-
-
-
-

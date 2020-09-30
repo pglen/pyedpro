@@ -34,4 +34,4 @@ Icon=/usr/share/icons/hicolor/96x96/apps/pyedpro.png
 Categories=GNOME;GTK;Utility;
 StartupNotify=false
 
-
+# EOF
