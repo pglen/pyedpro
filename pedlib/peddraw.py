@@ -157,7 +157,7 @@ class peddraw(object):
             print ("string is not UTF-8")
             return xx, yy'''
 
-        text2 = kill_non_ascii(text2)
+        #text2 = kill_non_ascii(text2)
 
         '''bbb = is_ascii(text2)
         if bbb > 0:
