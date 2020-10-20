@@ -59,6 +59,7 @@ import pedlib.pedfont  as  pedfont
 import pedlib.pedfind  as  pedfind
 import pedlib.pedundo  as  pedundo
 import pedlib.pedtts   as  pedtts
+import pedlib.pedmisc  as  pedmisc
 
 #import pedlib.pedcal   as  pedcal
 #import pedlib.pednotes as  pednotes
