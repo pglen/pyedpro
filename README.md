@@ -18,8 +18,8 @@ that I use every day.
         Raspberry PI ...
 
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, and the Raspberry-Pi.
-It behaves consistently on all these platforms. If you want an editor
-that works the same way in all your workspaces, PyEdPro is the one.
+It behaves consistently on all these platforms. If you want an editor  that works the
+same way in all your workspaces, PyEdPro is the one.
 
    PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion
