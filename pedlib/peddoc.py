@@ -840,7 +840,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # direction.
     # xx, yy - absolute position in the text buffer
 
-    def set_caret(self, xx, yy):
+    def set_caret(self, xx, yy, ignore = False):
+
+        if self.oneshot:
+            self.oneshot = False; return
+
+        self.oneshot = True
 
         #print( "set_caret", xx, yy)
         xx = int(xx); yy = int(yy)
@@ -976,7 +981,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.mained.diffpane.area.xpos = self.xpos
             self.mained.diffpane.area.ypos = self.ypos
             self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
-                                                        self.ypos + self.caret[1])
+                                                        self.ypos + self.caret[1], True)
 
         # Track pane buffer back to diff components
         if self.diffpane:
@@ -1020,11 +1025,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             if got_targ:
                 dst_tab.area.xpos = self.xpos
                 dst_tab.area.ypos = self.ypos
-                dst_tab.area.set_caret(self.xpos + self.caret[0], yyy)
+                dst_tab.area.set_caret(self.xpos + self.caret[0], yyy, True)
+
             if got_src:
                 src_tab.area.xpos = self.xpos
                 src_tab.area.ypos = self.ypos
-                src_tab.area.set_caret(self.xpos + self.caret[0], zzz)
+                src_tab.area.set_caret(self.xpos + self.caret[0], zzz, True)
 
     def walk_func(self):
         #print( "walk func")
