@@ -32,8 +32,7 @@ position of the cursor on the current buffer.
 
   The diff buffer is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
-same right click menu, by selecting 'Stop Diffing'. The diff algorythm is crude, but
-the simplicity has its advantages. Speed and predictibility.
+same right click menu, by selecting 'Stop Diffing'
 
    PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion

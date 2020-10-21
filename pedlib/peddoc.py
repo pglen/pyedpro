@@ -123,6 +123,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.bigcaret = False
         self.stab = False
         self.oneshot = False
+        self.honeshot = False
+        self.caretshot = False
         self.initial_undo_size = 0
         self.initial_redo_size = 0
         self.spell = False
@@ -479,7 +481,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #print( "hscroll_cb ok", widget.get_value())
         self.set_caret(xidx, self.ypos + self.caret[1])
         self.invalidate()
-
 
         #print( "vscroll_cb", widget.get_value())
         # Skip one callback
@@ -842,10 +843,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def set_caret(self, xx, yy, ignore = False):
 
-        if self.oneshot:
-            self.oneshot = False; return
-
-        self.oneshot = True
+        if self.caretshot:
+            self.caretshot = False; return
+        self.caretshot = ignore
 
         #print( "set_caret", xx, yy)
         xx = int(xx); yy = int(yy)
@@ -1026,7 +1026,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 dst_tab.area.xpos = self.xpos
                 dst_tab.area.ypos = self.ypos
                 dst_tab.area.set_caret(self.xpos + self.caret[0], yyy, True)
-
             if got_src:
                 src_tab.area.xpos = self.xpos
                 src_tab.area.ypos = self.ypos
