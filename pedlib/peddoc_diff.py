@@ -1225,11 +1225,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         #self.mained.diffpane.area.text.append("Diff started.")
 
         for aa in range(len(targtxt)):
-            if srctxt[aa] == targtxt[aa]
+            if srctxt[aa] == targtxt[aa]:
                 self.mained.diffpane.area.text.append(targtxt[aa])
             else:
                 self.mained.diffpane.area.text.append(" --- ")
-
 
         self.mained.diffpane.area.xpos = self.xpos
         self.mained.diffpane.area.ypos = self.ypos
