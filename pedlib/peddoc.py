@@ -152,6 +152,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.lastevent = None
         self.hhh = self.www = 0
         self.diffmode = 0
+        self.diffpane = False
 
         self.FGCOLOR    = FGCOLOR
         self.FGCOLORRO  = FGCOLORRO
@@ -531,7 +532,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             # Slightly darker / lighter
             newcol =  list(self.bgcolor)
             for aa in range(len(newcol)):
-                if newcol[aa] > 0.5: newcol[aa] -= .1
+                if newcol[aa] > 0.5: newcol[aa] -= .08
                 else: newcol[aa] += .2
             cr.set_source_rgba(*list(newcol))
         else:
@@ -962,6 +963,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.invalidate()
 
     def keytime(self):
+
         #print( "keytime raw", time.time(), self.fired)
         if self.fired ==  1:
             #print( "keytime", time.time(), self.fired)
@@ -975,6 +977,54 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.mained.diffpane.area.ypos = self.ypos
             self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
                                                         self.ypos + self.caret[1])
+
+        # Track pane buffer back to diff components
+        if self.diffpane:
+            got_src = 0; got_targ = 0
+            src = ""; targ = ""
+            srctxt = [] ;  targtxt = []
+            dst_tab = None ; src_tab = None
+
+            # See if diff complete, put it in motion
+            nn = self.notebook.get_n_pages(); cnt = 0
+            while True:
+                if cnt >= nn: break
+                ppp = self.notebook.get_nth_page(cnt)
+                if ppp.area.diffmode == 1:
+                    got_src = True
+                    src = os.path.basename(ppp.area.fname)
+                    srctxt = ppp.area.text
+                    src_tab = ppp
+                elif ppp.area.diffmode == 2:
+                    got_targ = True
+                    targ = os.path.basename(ppp.area.fname)
+                    targtxt = ppp.area.text
+                    dst_tab = ppp
+
+                cnt += 1
+
+            yyy = self.ypos +  self.caret[1]
+            zzz = self.ypos +  self.caret[1]
+            txt = ""
+            for aa in range( self.ypos + self.caret[1]):
+                try:
+                    txt = self.text[aa]
+                except:
+                    pass
+                if txt[:8] == " --del--":
+                    yyy -= 1
+
+                if txt[:8] == " --ins--":
+                    zzz -= 1
+
+            if got_targ:
+                dst_tab.area.xpos = self.xpos
+                dst_tab.area.ypos = self.ypos
+                dst_tab.area.set_caret(self.xpos + self.caret[0], yyy)
+            if got_src:
+                src_tab.area.xpos = self.xpos
+                src_tab.area.ypos = self.ypos
+                src_tab.area.set_caret(self.xpos + self.caret[0], zzz)
 
     def walk_func(self):
         #print( "walk func")
@@ -1217,12 +1267,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 self.mained.update_statusbar(    \
                             "Diff started.  Source: '%s' Target: '%s'" % (src, targ))
 
+                pppp = self.notebook3.get_nth_page(0)
+                self.notebook3.set_tab_label(pppp,
+                            self.mained.make_label("'" + src + "' --vs-- '" + targ + "'"))
                 self.notebook.set_current_page(action_page)
                 action_tab.area.diffx(srctxt, targtxt)
 
+    # --------------------------------------------------------------------
 
     def diffx(self, srctxt, targtxt):
         arrx = []; forw = 0; forw2 = 0
+        diffscan = 500
         for aa in range(len(targtxt)):
             try:
                 if srctxt[aa + forw2] == targtxt[aa + forw]:
@@ -1230,45 +1285,53 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                     continue
                 fff = False
                 # Resync forward
-                for bb in range(20):
-                    ttt = targtxt[aa + forw]
-                    if srctxt[aa + forw2] == ttt:
-                        for cc in range(bb):
-                            strx = " --ins-- [ " + targtxt[aa + forw + cc] + " ] "
-                            arrx.append(strx)
-                        arrx.append(ttt)
-                        forw += bb
-                        #print("forward set", forw, ttt)
-                        fff = True
-                        break
+                try:
+                    for bb in range(diffscan):
+                        ttt = targtxt[aa + forw + bb]
+                        if srctxt[aa + forw2] == ttt:
+                            for cc in range(bb):
+                                strx = " --ins-- [ " + targtxt[aa + forw + cc] + " ] "
+                                arrx.append(strx)
+                            arrx.append(ttt)
+                            forw += bb
+                            #print("forward set", forw, ttt)
+                            fff = True
+                            break
+                except:
+                    pass #print("EOB while fw", ttt)
+
                 if fff:
                     continue
 
                 # Resync on the other file
-                for bb in range(20):
-                    if srctxt[aa  + forw2 + bb] ==  targtxt[aa + forw]:
-                        for cc in range(bb):
-                            strx = " --del-- [ " + srctxt[aa + forw2 + cc] + " ] "
-                            arrx.append(strx)
-                        arrx.append(targtxt[aa + forw])
-                        forw2 += bb
-                        #print("backward set", forw, ttt)
-                        fff = True
-                        break
+                try:
+                    for bb in range(diffscan):
+                        ttt = srctxt[aa  + forw2 + bb]
+                        if ttt ==  targtxt[aa + forw]:
+                            for cc in range(bb):
+                                strx = " --del-- [ " + srctxt[aa + forw2 + cc] + " ] "
+                                arrx.append(strx)
+                            arrx.append(targtxt[aa + forw])
+                            forw2 += bb
+                            #print("backward set", forw, ttt)
+                            fff = True
+                            break
+                except:
+                    pass #print("EOB while other fw")
+
                 if fff:
                     continue
 
                 # See if diff is small
-                #lendiff = len(srctxt[aa + forw2]) - len(targtxt[aa + forw])
+                lendiff = len(srctxt[aa + forw2]) - len(targtxt[aa + forw])
                 #print ("lendiff", lendiff, srctxt[aa], targtxt[aa+forw])
-                #if False: # abs(lendiff) < 3:
-                #   strx = " --src-- [ " + srctxt[aa + forw2] + " ] --targ-- [ " + targtxt[aa + forw] + " ] "
-                #   arrx.append(strx)
-
-                strx = " --src-- [ " + srctxt[aa + forw2] + " ] --targ-- [ " + targtxt[aa + forw] + " ] "
+                if abs(lendiff) < 3:
+                    strx = " --chg-- [ " + srctxt[aa + forw2] + " ] "
+                else:
+                    strx = " --ins-- [ " + targtxt[aa + forw] + " ] "
+                    forw2 -= 1   # Stand still on the other
                 arrx.append(strx)
                 #print("could not resync")
-
 
             except:
                 #print("Buffers are different lengths", sys.exc_info())
@@ -1305,7 +1368,44 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         print("set_ro")
 
     def re_diff(self, arg1, arg2, arg3):
-        print("re_diff")
+        got_src = 0; got_targ = 0; action_page = 0;
+        src = ""; targ = ""
+        srctxt = [] ;  targtxt = []
+        action_tab = None
+
+        # See if diff complete, put it in motion
+        nn = self.notebook.get_n_pages(); cnt = 0
+        while True:
+            if cnt >= nn: break
+            ppp = self.notebook.get_nth_page(cnt)
+            #print("Area", ppp.area.fname, ppp.area.diffmode)
+            if ppp.area.diffmode == 1:
+                got_src = True
+                src = os.path.basename(ppp.area.fname)
+                srctxt = ppp.area.text
+
+            if ppp.area.diffmode == 2:
+                got_targ = True
+                targ = os.path.basename(ppp.area.fname)
+                targtxt = ppp.area.text
+                action_page = cnt
+                action_tab = ppp
+
+            if ppp.area.diffmode == 1:
+                got_src = True
+            cnt += 1
+
+        if got_src and got_targ:
+            www = self.mained.get_width()
+            if self.mained.hpaned3.get_position() > www - 20:
+                self.mained.hpaned3.set_position(www - www / 3)
+
+            self.mained.update_statusbar(    \
+                        "Diff re-started.  Source: '%s' Target: '%s'" % (src, targ))
+
+            self.notebook.set_current_page(action_page)
+            action_tab.area.diffx(srctxt, targtxt)
+
 
     def poprclick3(self, event):
         #print ("Making shift rclick3")
@@ -1990,9 +2090,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             str3 = "" + str2
 
         if  self.diffmode == 1:
-            str4 = "Diff/Src " + str3
+            str4 = "Diff/Source: " + str3
         elif  self.diffmode == 2:
-            str4 = "Diff/Tar " + str3
+            str4 = "Diff/Target: " + str3
         else:
             str4 = "" + str3
 

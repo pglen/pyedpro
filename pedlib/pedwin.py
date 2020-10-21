@@ -83,7 +83,7 @@ class edwin(Gtk.VBox):
 
     def __init__(self, buff, readonly = False, second = False):
 
-        global notebook, mained
+        global notebook, notebook3, mained
 
         Gtk.VBox.__init__(self)
 
@@ -93,6 +93,8 @@ class edwin(Gtk.VBox):
 
         # Give access to notebook and main editor window
         self.area.notebook = notebook
+        self.area.notebook3 = notebook3
+
         #self.area.mained = mained
         self.area.fname = ""
 
@@ -234,6 +236,9 @@ class EdMainWindow():
         notebook3 = Gtk.Notebook(); self.notebook3 = notebook3
         notebook3.set_scrollable(True)
         self.diffpane = edPane()
+        self.diffpane.area.readonly = True
+        self.diffpane.area.diffpane = True
+
         notebook3.append_page(self.diffpane)
         ppp = self.notebook3.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook3.set_tab_label(ppp, self.make_label(" Diff "))
