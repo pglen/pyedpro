@@ -1220,69 +1220,21 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
                 self.notebook.set_current_page(action_page)
                 action_tab.area.diffx(srctxt, targtxt)
 
-
     def diffx(self, srctxt, targtxt):
-        arrx = []; forw = 0; forw2 = 0
+
+        #self.mained.diffpane.area.text.append("Diff started.")
+
         for aa in range(len(targtxt)):
-            try:
-                if srctxt[aa + forw2] == targtxt[aa + forw]:
-                    arrx.append(targtxt[aa + forw])
-                    continue
-                fff = False
-                # Resync forward
-                for bb in range(20):
-                    ttt = targtxt[aa + forw]
-                    if srctxt[aa + forw2] == ttt:
-                        for cc in range(bb):
-                            strx = " --ins-- [ " + targtxt[aa + forw + cc] + " ] "
-                            arrx.append(strx)
-                        arrx.append(ttt)
-                        forw += bb
-                        #print("forward set", forw, ttt)
-                        fff = True
-                        break
-                if fff:
-                    continue
+            if srctxt[aa] == targtxt[aa]
+                self.mained.diffpane.area.text.append(targtxt[aa])
+            else:
+                self.mained.diffpane.area.text.append(" --- ")
 
-                # Resync on the other file
-                for bb in range(20):
-                    if srctxt[aa  + forw2 + bb] ==  targtxt[aa + forw]:
-                        for cc in range(bb):
-                            strx = " --del-- [ " + srctxt[aa + forw2 + cc] + " ] "
-                            arrx.append(strx)
-                        arrx.append(targtxt[aa + forw])
-                        forw2 += bb
-                        #print("backward set", forw, ttt)
-                        fff = True
-                        break
-                if fff:
-                    continue
-
-                # See if diff is small
-                #lendiff = len(srctxt[aa + forw2]) - len(targtxt[aa + forw])
-                #print ("lendiff", lendiff, srctxt[aa], targtxt[aa+forw])
-                #if False: # abs(lendiff) < 3:
-                #   strx = " --src-- [ " + srctxt[aa + forw2] + " ] --targ-- [ " + targtxt[aa + forw] + " ] "
-                #   arrx.append(strx)
-
-                strx = " --src-- [ " + srctxt[aa + forw2] + " ] --targ-- [ " + targtxt[aa + forw] + " ] "
-                arrx.append(strx)
-                #print("could not resync")
-
-
-            except:
-                #print("Buffers are different lengths", sys.exc_info())
-                pass
-
-        self.mained.diffpane.area.loadbuff(arrx)
-        usleep(100)
-        self.gotoxy(self.xpos + self.caret[0], self.ypos + self.caret[1])
 
         self.mained.diffpane.area.xpos = self.xpos
         self.mained.diffpane.area.ypos = self.ypos
         self.mained.diffpane.area.gotoxy(
                          self.xpos + self.caret[0], self.ypos + self.caret[1])
-        usleep(10)
         self.mained.diffpane.area.invalidate()
 
 
@@ -1300,12 +1252,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             got_src = True
         if ppp.area.diffmode == 2:
             got_targ = True
-
-    def set_ro(self, arg1, arg2, arg3):
-        print("set_ro")
-
-    def re_diff(self, arg1, arg2, arg3):
-        print("re_diff")
 
     def poprclick3(self, event):
         #print ("Making shift rclick3")
@@ -1339,15 +1285,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             self.menu3.append(self.create_menuitem("Set as Diff Source", self.set_diffs, 1))
         if not got_targ:
             self.menu3.append(self.create_menuitem("Set as Diff Target", self.set_diffs, 2))
-        else:
-            self.menu3.append(self.create_menuitem("Re-Diff Buffers",  self.re_diff, 0))
 
-        self.menu3.append(self.create_menuitem("Stop Diffing",  self.set_diffs, 0))
-
-        #mi = self.create_menuitem("-------------", None)
-        #mi.set_sensitive(False); self.menu3.append(mi)
-        #self.menu3.append(self.create_menuitem("Toggle Read Only",  self.set_ro, 0))
-
+        self.menu3.append(self.create_menuitem("Unset (stop) Diff",  self.set_diffs, 0))
         self.menu3.popup(None, None, None, None, event.button, event.time)
 
     def poprclick2(self, widget, event, strx):
@@ -1704,14 +1643,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.set_nocol()
 
         return True
-
-    def loadbuff(self, arrx):
-        self.text = arrx
-        usleep(1)
-        # Set up scroll bars
-        mlen = self.calc_maxline()
-        self.set_maxlinelen(mlen, False)
-        self.set_maxlines(len(self.text), False)
 
     def calc_maxline(self):
         mlen = 0

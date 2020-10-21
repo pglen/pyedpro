@@ -5,6 +5,9 @@ existing keyboard standards. The keys are assigned in keyhand.py and the
 actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
+Updated:    Tue 20.Oct.2020
+            Key Allocation Revisions
+
 Updated:    Fri 17.Apr.2020
             Cleanup
 

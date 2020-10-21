@@ -14,13 +14,13 @@
 # Also note that coloring too much distracts from readability, so configure
 # this conservatively.
 
-# Keywords for coloring:
+# Keywords for Python coloring:
 keywords =  ("def ", "import ", "from ", "for ", "while ", " len(",
             "return ", "range(", "if ", "elif ", "not ", " abs(",
             " any(", " all(", " min(", " max(",  " map(", " print ",
             " open(", " in ", " break ", "[]", "()", "{}", " pass", "pass ",
             "True", " False", "True;", "False;",
-            "global ", "else:", "continue")
+            "global ", "else:", "continue", "None")
 
 # Keywords for class releted enrties:
 clwords =  "class ", " self.", "try:", "except", "finally"

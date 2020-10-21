@@ -1592,8 +1592,10 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("F1")
         self2.mained.update_statusbar("Opening KEYS help file ...")
-        rr = get_exec_path("KEYS")
-        launch_pangview(rr)
+        kk = get_exec_path("KEYS")
+        if pedconfig.conf.verbose:
+            print("Pang open", kk)
+        launch_pangview(kk)
 
     def f2(self, self2):
         if pedconfig.conf.pgdebug > 9:

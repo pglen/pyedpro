@@ -39,7 +39,8 @@ from    pedlib.pedutil import *
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
 treestore = None; treestore2 = None
-notebook = None;  notebook2 = None
+notebook = None;   notebook2 = None
+notebook3 = None;  notebook4 = None
 
 hidden = 0
 savearr = []
@@ -203,7 +204,7 @@ class EdMainWindow():
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
-        global notebook, notebook2
+        global notebook, notebook2, notebook3
 
         # Create note for the main window, give access to it for all
         notebook = Gtk.Notebook(); self.notebook = notebook
@@ -228,6 +229,14 @@ class EdMainWindow():
         #notebook.connect_after('drag-motion', self.on_drag_motion)
         #notebook.connect_after('drag-drop', self.on_drag_drop)
         #notebook.connect_after("drag-data-received", self.on_drag_data_received)
+
+        # This is the right notebook
+        notebook3 = Gtk.Notebook(); self.notebook3 = notebook3
+        notebook3.set_scrollable(True)
+        self.diffpane = edPane()
+        notebook3.append_page(self.diffpane)
+        ppp = self.notebook3.get_nth_page(self.notebook.get_n_pages()-1)
+        self.notebook3.set_tab_label(ppp, self.make_label(" Diff "))
 
         # This is the left notebook
         notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
@@ -330,10 +339,16 @@ class EdMainWindow():
         self.hpaned.set_position(self.hpanepos)
 
         self.hpaned.add(notebook2)
-
         #self.hpaned.pack2(Gtk.Label("hello "))
         self.hpaned.pack2(notebook)
         #notebook.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
+
+        self.hpaned3 = Gtk.HPaned(); self.hpaned3.set_border_width(2)
+        self.hpaned3.add(self.hpaned)
+
+        self.hpaned3.pack2(notebook3)
+        self.hpaned3.set_position(self.get_width() - 10)
+        vpaned.set_position(self.get_height() - 340)
 
         # Create statusbars
         #self.statusbar = Gtk.Statusbar()
@@ -366,7 +381,7 @@ class EdMainWindow():
         bbox = Gtk.VBox()
         bbox.pack_start(self.mbar, 0,0, 0)
         bbox.pack_start(self.tbar, 0,0, 0)
-        bbox.pack_start(self.hpaned, 1, 1, 0)
+        bbox.pack_start(self.hpaned3, 1, 1, 0)
         bbox.pack_start(self.hpane2, 0,0, 0)
 
         #self.hpane2.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
@@ -514,9 +529,17 @@ class EdMainWindow():
 
     # --------------------------------------------------------------------
 
+    def label_callb(self, lab, widg, context):
+        print("label_callb", context)
+
     def make_label(self, strx):
         hbox = Gtk.HBox()
-        hbox.pack_start(Gtk.Label(strx), 0, 0, 0)
+        labx  = Gtk.Label(strx)
+        eb = Gtk.EventBox(); eb.add(labx)
+        eb.connect_after("button-press-event", self.label_callb, strx)
+        eb.set_above_child(True)
+
+        hbox.pack_start(eb, 0, 0, 0)
         hbox.show_all()
         return hbox
 
@@ -1183,6 +1206,20 @@ class EdMainWindow():
                     ppp.area.invalidate()
                 cnt += 1
             self.update_statusbar("Made all buffers READ/WRITE")
+
+        if strx == "StopDiff":
+            nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
+            vcurr2 = notebook.get_nth_page(notebook.get_current_page())
+            while True:
+                if cnt >= nn: break
+                ppp = notebook.get_nth_page(cnt)
+                #print ("Make read only file:", ppp.area.fname)
+                ppp.area.diffmode = 0
+                ppp.area.set_tablabel()
+                if ppp == vcurr2:
+                    ppp.area.invalidate()
+                cnt += 1
+            self.update_statusbar("Stopped diffing.")
 
         if strx == "Animate":
             nn2 = notebook.get_current_page()

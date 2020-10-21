@@ -53,6 +53,8 @@ ui_info = \
       <separator/>
       <menuitem action='MakeRO'/>
       <menuitem action='MakeRW'/>
+      <separator/>
+      <menuitem action='StopDiff'/>
     </menu>
 
     <menu action='NavMenu'>
