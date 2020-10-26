@@ -27,15 +27,16 @@ dialog = None
 def find(self, self2, replace = False):
 
     global stridx, dialog
+
     self.reptxt = ""
 
     warnings.simplefilter("ignore")
 
+    entry = Gtk.Entry();
     xll = len(strhist)
     if xll:
         stridx =  xll - 1
-        dialog.entry.set_text(strhist[stridx]);
-
+        entry.set_text(strhist[stridx]);
     #print ("stridx", stridx)
 
     if replace:
@@ -54,6 +55,7 @@ def find(self, self2, replace = False):
     dialog.set_transient_for(self2.mained.mywin)
     dialog.replace = replace
     dialog.set_position(Gtk.WindowPosition.CENTER)
+
     try:
         dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
@@ -67,9 +69,7 @@ def find(self, self2, replace = False):
     label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ")
     label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ")
 
-    entry = Gtk.Entry();
     dialog.entry = entry
-
     entry.set_activates_default(True)
 
     if  self2.oldsearch == "":
@@ -155,7 +155,7 @@ def find(self, self2, replace = False):
         dialog.vbox.pack_start(hbox3, 0, 0, 0)
         dialog.vbox.pack_start(label12, 0, 0, 0)
 
-    dialog.connect("key-press-event", find_keypress)
+    dialog.connect("key-press-event", __find_keypress)
 
     dialog.show_all()
     response = dialog.run()
@@ -197,9 +197,32 @@ def find(self, self2, replace = False):
         self.xnum = 0
         find_show(self, self2)
 
+#// -----------------------------------------------------------------------
+#// Find history
+
+def load_find_history(flag):
+
+    global strhist
+
+    if flag:
+        cnt = 0
+        for aa in strhist:
+            strx = "hist%d" % cnt
+            if strhist[cnt]:
+                pedconfig.conf.sql.put(strx, strhist[cnt])
+                #print("save find_history", strx, strhist[cnt])
+            cnt+=1
+    else:
+        for aa in range(30):
+            strx = "hist%d" % aa
+            hist = pedconfig.conf.sql.get_str(strx)
+            if hist:
+                strhist.append(hist)
+                #print("load find_history", strx, hist)
+
 # ------------------------------------------------------------------------
 
-def find_keypress(area, event):
+def __find_keypress(area, event):
 
     global stridx, strhist, dialog
 

@@ -28,6 +28,7 @@ import pedlib.pednotes as  pednotes
 import pedlib.pedoline as  pedoline
 import pedlib.pedfont  as  pedfont
 import pedlib.pedcolor  as  pedcolor
+import pedlib.pedfind  as   pedfind
 
 from pycommon.pggui import *
 
@@ -455,6 +456,8 @@ class EdMainWindow():
         GLib.timeout_add(100, loader_tick, self)
         # We use gobj instead of SIGALRM, so it is more multi platform
         GLib.timeout_add(1000, handler_tick)
+
+        pedfind.load_find_history(False)
 
         self.update_statusbar("Initial")
 
@@ -1543,6 +1546,8 @@ def     OnExit(arg, prompt = True):
     # Save UI related data
     pos = mained.hpaned.get_position()
     pos = max(pos, 1)
+
+    pedfind.load_find_history(True)
 
     pedconfig.conf.sql.put("hpaned", pos)
 

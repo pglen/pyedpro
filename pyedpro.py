@@ -98,6 +98,10 @@ def main(strarr):
 
     Gtk.main()
 
+def __version():
+    print("Version", pedconfig.conf.version);
+    exit(1)
+
 def __help():
 
     print()
@@ -135,7 +139,7 @@ if __name__ == '__main__':
 
     opts = []; args = []
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvxctVo")
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvVxcto", ["debug=", "help", "help", "verbose", "version"])
     except getopt.GetoptError as err:
         print(_("Invalid option(s) on command line:"), err)
         sys.exit(1)
@@ -146,8 +150,12 @@ if __name__ == '__main__':
     pedconfig.conf.build_date = BUILDDATE
     pedconfig.conf.progname = PROGNAME
 
+    # Outdated parsing ... for now, leave it as is
     for aa in opts:
-        if aa[0] == "-d":
+
+        #print("opt", aa[0])
+
+        if aa[0] == "-d" or aa[0] == "--debug":
             try:
                 pedconfig.conf.pgdebug = int(aa[1])
                 print( PROGNAME, _("Running at debug level"),  pedconfig.conf.pgdebug)
@@ -155,9 +163,10 @@ if __name__ == '__main__':
                 pedconfig.conf.pgdebug = 0
 
         if aa[0] == "-h": __help();  sys.exit(1)
+        if aa[0] == "--help": __help();  sys.exit(1)
         if aa[0] == "-?": __help();  sys.exit(1)
-        if aa[0] == "-V": print("Version", pedconfig.conf.version); \
-            exit(1)
+        if aa[0] == "-v" or aa[0] == "--verbose": pedconfig.conf.verbose = True
+        if aa[0] == "-V" or aa[0] == "--version": __version()
         if aa[0] == "-f": pedconfig.conf.full_screen = True
         if aa[0] == "-v": pedconfig.conf.verbose = True
         if aa[0] == "-x": clear_config = True

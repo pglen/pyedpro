@@ -1635,12 +1635,17 @@ class ActHand:
         else:
             self.f6(self2)
 
-
     def f4(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("F4")
-
-        self.play(self2, True)
+        #self.play(self2, True)
+        try:
+            sss = self._getsel(self2)
+            ret = subprocess.Popen(["firefox",
+                        "/home/peterglen/pydoc/python-3.8.6rc1-docs-html/index.html" ])
+        except:
+            pedync.message("\n   Cannot launch python help  \n\n"
+                       "              (Please install)")
 
     def f5(self, self2):
         if pedconfig.conf.pgdebug > 9:

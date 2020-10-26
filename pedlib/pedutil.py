@@ -13,9 +13,12 @@ import stat
 import traceback
 import subprocess
 
-import inspect
-if inspect.isbuiltin(time.process_time):
-    time.clock = time.process_time
+if sys.version_info.major < 3:
+    pass
+else:
+    import inspect
+    if inspect.isbuiltin(time.process_time):
+        time.clock = time.process_time
 
 import gi
 gi.require_version("Gtk", "3.0")

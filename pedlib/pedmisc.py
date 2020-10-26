@@ -43,7 +43,8 @@ def exec_test(self2, testx):
         proc = None
         try:
             #proc = subprocess.Popen(comarr, shell = True)
-            proc = subprocess.run(comarr)
+            proc = subprocess.Popen(comarr)
+            #proc = subprocess.run(comarr)
         except:
              print("Exception in subprocess", sys.exc_info())
 

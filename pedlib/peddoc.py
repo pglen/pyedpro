@@ -22,6 +22,7 @@ from gi.repository import PangoCairo
 
 import pedlib.pedconfig as pedconfig
 import pedlib.peddraw as  peddraw
+import pedlib.pedxtnd as  pedxtnd
 import pedlib.pedync   as  pedync
 import pedlib.pedspell as  pedspell
 import pedlib.pedcolor as  pedcolor
@@ -80,7 +81,7 @@ DRAGTRESH = 3                   # This many pixels for drag highlight
 # We create a custom class for display, as we want a text editor that
 # can take thousands of lines.
 
-class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
+class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
 
     def __init__(self, buff, mained, readonly = False):
 
@@ -2043,12 +2044,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
 
     def do_chores(self):
-
         #print( "do_chores")
-
         if  not self.needscan:
             return
-
         self.needscan = False
 
         # Scan left pane

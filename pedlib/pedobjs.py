@@ -36,7 +36,7 @@ ROMB = 4
 
 globzorder = 0; globgroup = 0
 
-class DrawObj():
+class DrawObj(object):
 
     def __init__(self,  rect, text, col1, col2, border, fill):
 
