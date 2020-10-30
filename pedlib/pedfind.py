@@ -442,6 +442,9 @@ def     find_show_file(self, self2, casex):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
+    global matchfiles
+
+    matchfiles = []
     warnings.simplefilter("ignore")
     self.regex = None
 
@@ -516,8 +519,15 @@ def     find_show_file(self, self2, casex):
     win2.tree.set_headers_visible(False)
     win2.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
 
-    lab4 = Gtk.Label("   ");
-    vbox.pack_start(lab4, 0, 0, 0)
+    hbox = Gtk.HBox()
+    lab4 = Gtk.Label("  ");
+    hbox.pack_start(lab4, 1,0,0)
+    butt = Gtk.Button("Load All Matched Files")
+    butt.connect("clicked", loadfiles, win2.tree)
+    hbox.pack_start(butt, 0,0,0)
+    lab4a = Gtk.Label("  ");
+    hbox.pack_start(lab4a, 1,0,0)
+    vbox.pack_start(hbox, 0, 0, 4)
 
     win2.tree.connect("row-activated",   tree_sel2, self, self2, win2)
     win2.tree.connect("cursor-changed",  tree_sel_row2, self, self2)
@@ -553,6 +563,7 @@ def     find_show_file(self, self2, casex):
                     matches += 1
                     #print ("found: rrr", rrr)
                     #ddd3.append(rrr)
+                    matchfiles.append(filename)
                     ddd3.append("%s matches %s times" % (filename, len(rrr)) )
                     # Limit finds:
                     lim = 5
@@ -586,6 +597,13 @@ def     find_show_file(self, self2, casex):
     win2.tree.grab_focus()
     #warnings.simplefilter("ignore")
     win2.show_all()
+
+def loadfiles(butt, tree):
+    #print("loading files", butt, tree)
+    global matchfiles
+    for aa in matchfiles:
+        #print("Match", aa)
+        pedconfig.conf.pedwin.openfile(aa)
 
 # ------------------------------------------------------------------------
 
@@ -839,7 +857,6 @@ def area_key2(area, event, self, win2):
 
             idx = str.find(xstr, " matches")
             #print ("Selected: '%s'" % xstr[:idx] )
-
             pedconfig.conf.pedwin.openfile(xstr[:idx])
 
             area.destroy()

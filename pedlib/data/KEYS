@@ -6,6 +6,8 @@ in keyhand.py and the actions are implemented in acthand.py. \
 Regular keys are added to the buffer. To implement a new feature follow a \
 particular key's execution path, and replicate functionality.
 
+NOTE: the document keys.txt is always up-to-date. See: 'Keyhelp in Doc' in the help meu.
+
 </j></w>  \
 <f><l>
 <in><in><in>\

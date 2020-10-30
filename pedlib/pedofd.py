@@ -360,7 +360,7 @@ def click_dir_action(xstr):
     if xstr[0] == "[":
          xstr = xstr[1:len(xstr)-1]
     if os.path.isdir(xstr):
-        print ("dir", xstr)
+        #print ("dir", xstr)
         os.chdir(xstr)
         return True
 

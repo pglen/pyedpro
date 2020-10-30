@@ -7,17 +7,16 @@ buffer verbatim.
 
 Updated:    Tue 20.Oct.2020
             Key Allocation Revisions
-
 Updated:    Fri 17.Apr.2020
             Cleanup
-
-            Sat 26.Sep.2020
+Updated:    Sat 26.Sep.2020
             Added navigation keys for line/file  beginning/end for
             the purpose on navigating on machines with no home/end key
             (Chromebook is one of them)
 
   To implement a new feature follow a particular key's execution path, and
-replicate functionality. It is easy to follow, as it is table driven.
+replicate functionality. The key actions are easy to follow, as the code is
+table driven.
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char

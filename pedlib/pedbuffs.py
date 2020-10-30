@@ -4,7 +4,8 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
-import re, string
+
+import re, string, sys
 
 import gi
 #from six.moves import range
@@ -14,6 +15,8 @@ from gi.repository import Gtk
 from gi.repository import GObject
 
 import pedlib.pedconfig as pedconfig
+
+from pedlib.pedutil import *
 
 # -------------------------------------------------------------------------
 
@@ -33,7 +36,7 @@ def buffers(self, self2):
     self.dialog = dialog
 
     try:
-        dialog.set_icon_from_file(get_img_path("pyedro_sub.png"))
+        dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
         print("Cannot load buffs dialog icon", sys.exc_info())
 
@@ -98,12 +101,12 @@ def area_key(area, event, dialog):
 
     if  event.type == Gdk.EventType.KEY_PRESS:
         if event.keyval == Gdk.KEY_Escape:
-            #print "Esc"
+            #print ("Esc")
             dialog.response(Gtk.ResponseType.REJECT)
 
     if  event.type == Gdk.EventType.KEY_PRESS:
         if event.keyval == Gdk.KEY_Return:
-            #print "Ret"
+            #print ("Ret")
             dialog.response(Gtk.ResponseType.ACCEPT)
 
         if event.keyval == Gdk.KEY_Alt_L or \
@@ -129,7 +132,7 @@ def tree_sel_row(xtree, dialog, self2):
     # In muti selection, only process first
     for aa in xiter:
         xstr = xmodel.get_value(xmodel.get_iter(aa), 0)
-        #print "Selected:", xstr
+        #print ("Selected:", xstr)
         dialog.res = xstr
         break
 
@@ -145,7 +148,7 @@ def start_tree(self, win2):
             root = win2.treestore.get_iter_first()
             win2.treestore.remove(root)
     except:
-        #print  sys.exc_info()
+        #print  (sys.exc_info())
         pass
 
     piter = win2.treestore.append(None, ["Searching .."])
@@ -179,9 +182,9 @@ def create_tree(self, win2, match = False, text = None):
 
     return tv
 
-def update_treestore(self, win2, text, was):
+def  update_treestore(self, win2, text, was):
 
-    #print "was", was
+    #print ("was", was)
 
     # Delete previous contents
     try:
@@ -190,7 +193,7 @@ def update_treestore(self, win2, text, was):
             win2.treestore.remove(root)
     except:
         pass
-        #print  sys.exc_info()
+        #print  (sys.exc_info())
     if not text:
         win2.treestore.append(None, ["No Match",])
         return
@@ -206,16 +209,18 @@ def update_treestore(self, win2, text, was):
             cnt += 1
     except:
         pass
-        #print  sys.exc_info()
+        #print(sys.exc_info())
 
-    if piter2:
-        win2.tree.set_cursor(win2.treestore.get_path(piter2))
-    else:
-        root = win2.treestore.get_iter_first()
-        win2.tree.set_cursor(win2.treestore.get_path(root))
+    try:
+        if piter2:
+            win2.tree.set_cursor(win2.treestore.get_path(piter2))
+        else:
+            root = win2.treestore.get_iter_first()
+            win2.tree.set_cursor(win2.treestore.get_path(root))
+    except:
+        print(sys.exc_info())
 
-
-
+# EOF
 
 
 
