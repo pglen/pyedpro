@@ -50,6 +50,11 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
+
+base = os.path.realpath(__file__)
+#print("file", os.path.dirname(base))
+os.chdir(os.path.dirname(base))
+
 import pedlib.pedconfig as pedconfig
 import pedlib.pedwin as pedwin
 import pedlib.pedsql as pedsql
@@ -133,6 +138,7 @@ def terminate(arg1, arg2):
 # Start of program:
 
 if __name__ == '__main__':
+
 
     # Redirect stdout to a fork to real stdout and log. This way messages can
     # be seen even if pydepro is started without a terminal (from the GUI)
