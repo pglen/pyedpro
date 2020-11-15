@@ -1572,9 +1572,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
                 termstr = ("xfce4-terminal", "gnome-terminal", "lxterminal", "xterm",)
                 for aa in termstr:
                     # Stumble until terminal found
-                    ret = subprocess.Popen([aa],)
-                    if not ret.returncode:
-                        break
+                    try:
+                        ret = subprocess.Popen([aa],)
+                        if not ret.returncode:
+                            break
+                    except:
+                        pass
+
                 if ret.returncode:
                     raise OSError
         except:
