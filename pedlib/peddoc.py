@@ -1567,12 +1567,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
                 #    raise OSError
                 #print("No terminal on windows. (TODO)")
             else:
-                # Stumble until terminal found
-                ret = subprocess.Popen(["xfce4-terminal"])
+                ret = None
+                # The order represents the priority of opening
+                termstr = ("xfce4-terminal", "gnome-terminal", "lxterminal", "xterm",)
+                for aa in termstr:
+                    # Stumble until terminal found
+                    ret = subprocess.Popen([aa],)
+                    if not ret.returncode:
+                        break
                 if ret.returncode:
-                    ret = subprocess.Popen(["gnome-terminal"])
-                    if ret.returncode:
-                        raise OSError
+                    raise OSError
         except:
             print("Cannot launch terminal", sys.exc_info())
             pedync.message("\n   Cannot launch terminal executable \n\n"

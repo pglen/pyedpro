@@ -48,7 +48,7 @@ class conf():
     keyh = None
 
     # Which extensions are colored
-    color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp", ".php")
+    color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp", ".php", ".f", ".y", ".pc")
 
     def __init__(self):
         pass

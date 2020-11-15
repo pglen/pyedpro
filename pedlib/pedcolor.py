@@ -387,27 +387,3 @@ def  printcols(self2):
     print( "self2.kwcolor cstr", cstr)
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
