@@ -158,6 +158,11 @@ def create_action_group(self):
         "Star terminal in current dir",
         self.activate_action ),
 
+      ( "Recent", Gtk.STOCK_OPEN,
+        "Recent  ", "",
+        "Load recent file",
+         self.activate_action ),
+
       ( "Quit", Gtk.STOCK_QUIT,
         "_Quit  (No Save)", "<control>Q",
         "Quit program, abandon files",

@@ -35,6 +35,7 @@ class conf():
     tts_dir = os.path.expanduser("~/.pyedpro/tts")
 
     sql_data = os.path.expanduser("~/.pyedpro/sql_data")
+    history  = os.path.expanduser("~/.pyedpro/history")
 
     sql = None
     config_file = "defaults"

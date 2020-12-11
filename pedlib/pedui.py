@@ -32,6 +32,7 @@ ui_info = \
       <menuitem action='Save Session'/>
       <separator/>
       <menuitem action='Start Terminal'/>
+      <menuitem action='Recent'/>
       <separator/>
       <menuitem action='Quit'/>
       <menuitem action='Exit'/>

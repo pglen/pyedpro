@@ -8,6 +8,7 @@ import sys
 import ctypes
 import warnings
 import stat
+import collections
 
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -46,12 +47,69 @@ notebook3 = None;  notebook4 = None
 hidden = 0
 savearr = []
 
+openhist = []
+
 # -----------------------------------------------------------------------
 
 def add_page(page):
     global notebook
     notebook.append_page(page)
     notebook.set_tab_detachable(page, True)
+
+class openhistory():
+
+    def __init__(self):
+        global openhist
+        try:
+            fh = open(pedconfig.conf.history, "rb")
+            try:
+                openhist = pickle.load(fh)
+            except:
+                #print("Cannot open history file.", sys.exc_info())
+                pass
+            fh.close()
+        except:
+            print("Cannot load history data", sys.exc_info())
+            pass
+
+        openhist.sort(reverse=True)
+        #self.dump()
+
+    def add(self, fname):
+        global openhist
+        got = False
+        for aa in openhist:
+            if aa[2] == fname:
+                aa[1] += 1
+                aa[0] = time.time()
+                got = True
+
+        if not got:
+          openhist.append([time.time(), 1, fname]);
+
+        openhist.sort(reverse=True)
+        if len(openhist) > 12:
+            openhist = openhist[:-2]
+
+    def gettops(self):
+        pass
+
+    def dump(self):
+        for aa in openhist:
+            print(aa)
+
+    def save(self):
+        global openhist
+        try:
+            fh = open(pedconfig.conf.history, "wb")
+            pickle.dump(openhist, fh)
+            fh.close()
+        except:
+            #print("Cannot save history file", sys.exc_info())
+            #pedutil.put_exception("history")
+            pass
+
+        #print("Saved", openhist)
 
 # -----------------------------------------------------------------------
 # Create document
@@ -125,6 +183,7 @@ class EdMainWindow():
         self.alttime = 0
         self.old_x = 0
         self.old_y = 0
+        self.oh = openhistory()
 
         pedconfig.conf.acth = acthand.ActHand()
         pedconfig.conf.keyh = keyhand.KeyHand()
@@ -1459,6 +1518,8 @@ class EdMainWindow():
         vpaned.area2.loadfile(fname2)
         self.update_statusbar("Opened file '{0:s}'".format(fname2))
 
+        #self.oh.add(fname2) # added at lower level now
+
         # Add to the list of buffers
         add_page(vpaned)
         vpaned.area.set_tablabel()
@@ -1472,7 +1533,6 @@ class EdMainWindow():
 
         usleep(10)
         return vcurr.vbox.area
-
 
     def activate_exit(self, action = None):
         #print "activate_exit called"
@@ -1542,6 +1602,11 @@ class EdMainWindow():
 def     OnExit(arg, prompt = True):
 
     arg.set_title("Exiting ...")
+
+    try:
+        pedconfig.conf.pedwin.oh.save()
+    except:
+        print("Cannot save history.", sys.exc_info())
 
     # Save UI related data
     pos = mained.hpaned.get_position()

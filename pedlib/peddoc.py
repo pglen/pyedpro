@@ -1755,6 +1755,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
     # Load file into this buffer, return False on failure
 
     def loadfile(self, filename, create = False):
+
+        self.mained.oh.add(filename)
+
         self.fname = filename
         try:
             self.stat = os.stat(self.fname)
