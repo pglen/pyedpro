@@ -32,7 +32,10 @@ ui_info = \
       <menuitem action='Save Session'/>
       <separator/>
       <menuitem action='Start Terminal'/>
-      <menuitem action='Recent'/>
+      <menu action='Recent'>
+          <placeholder action='Recent Files'/>
+          <separator/>
+      </menu>
       <separator/>
       <menuitem action='Quit'/>
       <menuitem action='Exit'/>
@@ -114,7 +117,6 @@ ui_info = \
     <toolitem action='Copy'/>
     <toolitem action='Cut'/>
     <toolitem action='Paste'/>
-
 
    <toolitem action='Undo'/>
     <toolitem action='Redo'/>

@@ -139,7 +139,6 @@ def terminate(arg1, arg2):
 
 if __name__ == '__main__':
 
-
     # Redirect stdout to a fork to real stdout and log. This way messages can
     # be seen even if pydepro is started without a terminal (from the GUI)
 

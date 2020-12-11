@@ -159,9 +159,14 @@ def create_action_group(self):
         self.activate_action ),
 
       ( "Recent", Gtk.STOCK_OPEN,
-        "Recent  ", "",
-        "Load recent file",
+        "_Recent  ", "",
+        "Load recent file list",
          self.activate_action ),
+
+      ( "Recent Files", Gtk.STOCK_OPEN,
+        "Recent Files ", "",
+        "Load recent file",
+         self.open_recent ),
 
       ( "Quit", Gtk.STOCK_QUIT,
         "_Quit  (No Save)", "<control>Q",

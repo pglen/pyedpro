@@ -69,7 +69,7 @@ class openhistory():
                 pass
             fh.close()
         except:
-            print("Cannot load history data", sys.exc_info())
+            #print("Cannot load history data", sys.exc_info())
             pass
 
         openhist.sort(reverse=True)
@@ -239,8 +239,8 @@ class EdMainWindow():
         merge = Gtk.UIManager()
         #self.mywin.set_data("ui-manager", merge)
 
-        aa = create_action_group(self)
-        merge.insert_action_group(aa, 0)
+        ag = create_action_group(self)
+        merge.insert_action_group(ag, 0)
         self.mywin.add_accel_group(merge.get_accel_group())
 
         try:
@@ -248,21 +248,15 @@ class EdMainWindow():
         except GLib.GError as msg:
             print("Building menus failed: %s" % msg)
 
-        # Add MRU
-        for cnt in range(6):
-            ss = "/sess_%d" % cnt
-            fname = pedconfig.conf.sql.get(ss)
-            if fname != "":
-                self.add_mru(merge, aa, fname, ss)
-
         merge_id = merge.new_merge_id()
-        #merge.add_ui(merge_id, "ui/MenuBar/FileMenu/SaveAs", "", \
-        #None, Gtk.UI_MANAGER_SEPARATOR, False)
+        self.add_mru(merge, merge_id, ag)
 
-        #warnings.simplefilter("ignore")
         self.mbar = merge.get_widget("/MenuBar")
         self.mbar.show()
-        #warnings.simplefilter("default")
+
+        #mb = self.mbar.get_children()
+        #for aa in mb:
+        #    print("menu", aa, aa.get_label())
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
@@ -610,21 +604,42 @@ class EdMainWindow():
         hbox.show_all()
         return hbox
 
-    def add_mru(self, merge, action_group, fname, mru):
+    def open_recent(self, action):
+        #print(action)
+        #warnings.simplefilter("ignore")
+        strx = action.get_name()
+        #print(strx)
+        #warnings.simplefilter("default")
+        self.openfile(strx);
 
-        if not fname:
-            return
+    # --------------------------------------------------------------------
+    # Add MRU
 
-        sname = os.path.basename(fname)
+    def add_mru(self, merge, merge_id, action_group):
 
-        #Gtk.Action(name, label, tooltip, stock_id)
-        ac = Gtk.Action(mru, sname, fname, None)
-        ac.connect('activate', self.activate_action)
-        action_group.add_action(ac)
-        merge_id = merge.new_merge_id()
-        #add_ui(merge_id, path, name, action, type, top)
-        #merge.add_ui(merge_id, "/MenuBar/FileMenu/SaveAs", \
-        #            mru, mru, Gtk.UI_MANAGER_MENUITEM, False)
+        '''for cnt in range(6):
+            ss = "/sess_%d" % cnt
+            fname = pedconfig.conf.sql.get(ss)
+            if fname != "":
+                sname = os.path.basename(fname)
+                #print("Adding", sname);
+                #Gtk.Action(name, label, tooltip, stock_id)
+                ac = Gtk.Action(fname, fname, fname, None)
+                ac.connect('activate', self.open_recent)
+                action_group.add_action(ac)
+                merge.add_ui(merge_id, "/MenuBar/FileMenu/Recent/Recent Files/",
+                    fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+         '''
+
+        global openhist
+        for aa in openhist:
+            if aa[2]:
+                fname = aa[2]
+                ac = Gtk.Action(fname, fname, fname, None)
+                ac.connect('activate', self.open_recent)
+                action_group.add_action(ac)
+                merge.add_ui(merge_id, "/MenuBar/FileMenu/Recent/Recent Files/",
+                    fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
 
     def area_winstate(self, arg1, arg2):
         pass
