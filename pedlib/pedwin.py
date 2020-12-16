@@ -237,6 +237,8 @@ class EdMainWindow():
             print("Canot load icon.")
 
         merge = Gtk.UIManager()
+        #merge.connect("pre-activate", self.menu_open)
+        #merge.connect("add_widget", self.menu_open)
         #self.mywin.set_data("ui-manager", merge)
 
         ag = create_action_group(self)
@@ -451,7 +453,7 @@ class EdMainWindow():
 
         button = Gtk.Button()
         button.connect("pressed", self.xmail)
-        button.set_tooltip_text("Whatever you want")
+        button.set_tooltip_text("You may configure whatever you want ...")
 
         icon = Gio.ThemedIcon(name="mail-send-receive-symbolic")
         image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
@@ -518,6 +520,9 @@ class EdMainWindow():
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
 
+    def menu_open(self, arg, arg2):
+        print("menu_open", arg, arg2)
+
     def focus_out2(self, book, obj):
         #print("nb2 focus out", obj)
         pass
@@ -537,7 +542,8 @@ class EdMainWindow():
             self.mbar.hide()
 
     def xmail(self, butt):
-        pedync.message("\n" + "Under construction" + "\n")
+        #pedync.message("\n" + "Under construction" + "\n")
+        self.update_statusbar("Under construction, will prepare mail.")
 
     def bleft(self, butt):
         #print(butt)
@@ -591,7 +597,8 @@ class EdMainWindow():
     # --------------------------------------------------------------------
 
     def label_callb(self, lab, widg, context):
-        print("label_callb", context)
+        #print("label_callb", context)
+        pass
 
     def make_label(self, strx):
         hbox = Gtk.HBox()
@@ -605,7 +612,9 @@ class EdMainWindow():
         return hbox
 
     def open_recent(self, action):
-        #print(action)
+        if pedconfig.conf.pgdebug > 0:
+            print("open recent", action)
+
         #warnings.simplefilter("ignore")
         strx = action.get_name()
         #print(strx)

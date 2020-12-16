@@ -84,6 +84,19 @@
 #include "lcd7_i2c.h"
 #include "lcd_imain.h"
 
+/// \file
+/// How it works:
+///
+/// The MAC adderess is the key to the table, it is used as the index. All the
+/// events (last ones + one deep stack) are stored under the key, and we
+/// consult this table for telling what is on the air.
+///
+/// RF packets come in that have been seen are discarded. If an RF packet has
+/// to be pushed through, (ex: statuses) it receives a random number in
+/// one of the fields, so it is unique and it goes through.
+/// see: qcan_main.c line 202
+///
+
 extern const uint8_t ulp_main_bin_start[] asm("_binary_ulp_main_bin_start");
 extern const uint8_t ulp_main_bin_end[]   asm("_binary_ulp_main_bin_end");
 

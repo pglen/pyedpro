@@ -1748,6 +1748,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
 
         # Add to accounting:
         logentry("Closed File", self.start_time, self.fname)
+        self.mained.oh.add(self.fname)
 
         return self.prompt_save(noprompt)
 

@@ -70,8 +70,8 @@ _ = gettext.gettext
 
 #print("domain", gettext.textdomain)
 
-VERSION = 1.7
-BUILDDATE = "Mon 28.Sep.2020"
+VERSION = 1.8
+BUILDDATE = "Tue 15.Dec.2020"
 PROGNAME  = "PyEdPro"
 
 mainwin = None
@@ -149,7 +149,7 @@ if __name__ == '__main__':
         print(_("Invalid option(s) on command line:"), err)
         sys.exit(1)
 
-    #print "opts", opts, "args", args
+    #print ("opts", opts, "args", args)
 
     pedconfig.conf.version = VERSION
     pedconfig.conf.build_date = BUILDDATE
@@ -157,13 +157,11 @@ if __name__ == '__main__':
 
     # Outdated parsing ... for now, leave it as is
     for aa in opts:
-
         #print("opt", aa[0])
-
         if aa[0] == "-d" or aa[0] == "--debug":
             try:
                 pedconfig.conf.pgdebug = int(aa[1])
-                print( PROGNAME, _("Running at debug level"),  pedconfig.conf.pgdebug)
+                print( PROGNAME, _("Running at debug level:"),  pedconfig.conf.pgdebug)
             except:
                 pedconfig.conf.pgdebug = 0
 
@@ -178,6 +176,9 @@ if __name__ == '__main__':
         if aa[0] == "-c": show_config = True
         if aa[0] == "-t": show_timing = True
         if aa[0] == "-o": use_stdout = True
+
+    if pedconfig.conf.pgdebug > 0:
+        print("Running '{}'".format(os.path.abspath(sys.argv[0])) )
 
     try:
         if not os.path.isdir(pedconfig.conf.config_dir):

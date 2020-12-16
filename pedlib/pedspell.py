@@ -86,17 +86,28 @@ def spell(self2, allflag = False):
                     errcnt += 1
             else:
                 # Comments
-                ccc = line.find("#"); cccc = line.find('"')
+                got = 0; doit = 0
+                ssss    = line.find('"')
 
-                # See if hash precedes quote (if any)
-                if ccc >= 0 and (cccc > ccc or cccc == -1):
+                ccc     = line.find("#");
+                if ccc < 0:
+                    ccc  = line.find("//")
+
+                # See if comment precedes quote (if any)
+                if ssss >= 0:
+                    if ssss > ccc:
+                        doit = True
+
+                if ccc >= 0 or doit == True:
+                    got = True
                     ccc2 = calc_tabs(line, ccc)
                     err = spell_line(line, ccc, len(line))
                     for ss, ee in err:
                         self2.ularr.append((ss, cnt, ee))
                         #print(  ss, ee, cnt, "'" + line[ss:ee] + "'")
                         errcnt += 1
-                else:
+
+                if not got:
                     # Locate strings
                     qqq = 0
                     while True:
