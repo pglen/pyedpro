@@ -425,7 +425,10 @@ class EdMainWindow():
 
         shbox = Gtk.HBox()
         shbox.pack_start(slabs, 0,0, 0)
-        shbox.pack_start(self.slab, 0,0, 0)
+        shbox.pack_start(self.slab, 0, 0, 0)
+
+        buttonsb = Gtk.Button("Hist")
+        shbox.pack_end(buttonsb, 0,0, 0)
 
         self.slab2 = Gtk.Label(" status2  ")
 
