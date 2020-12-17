@@ -319,7 +319,7 @@ def create_action_group(self):
          self.activate_action ),
 
       ( "ShowLog", Gtk.STOCK_DIALOG_INFO,
-        "Show Log", None,
+        "Show Log Window", None,
         "Show log window",
          self.activate_action ),
 
@@ -344,7 +344,7 @@ def create_action_group(self):
         self.activate_dhelp ),
 
         ( "Help", Gtk.STOCK_HELP,
-         "_Help        \t\tF1", "",
+         "_Help          \t\t\tF1", "",
         "Show Help",
         self.activate_action ),
 

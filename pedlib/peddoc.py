@@ -1539,7 +1539,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
         elif ttt == 13:
             self.mained.activate_exit()
         elif ttt == 14:
-            self.start_term()
+             pedconfig.conf.pedwin.start_term()
         elif ttt == 15:
             self.start_edit()
         elif ttt == 16:
@@ -1557,35 +1557,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
         self.set_tablabel()
         arrx = ["OFF", "ON"]
         self.mained.update_statusbar("Toggled read only to %s" % arrx[self.readonly])
-
-    def start_term(self):
-        #print("Terminal Here")
-        try:
-            if platform.system().find("Win") >= 0:
-                ret = subprocess.Popen(["putty"])
-                #if not ret.returncode:
-                #    raise OSError
-                #print("No terminal on windows. (TODO)")
-            else:
-                ret = None
-                # The order represents the priority of opening
-                termstr = ("xfce4-terminal", "gnome-terminal", "lxterminal", "xterm",)
-                for aa in termstr:
-                    # Stumble until terminal found
-                    try:
-                        ret = subprocess.Popen([aa],)
-                        if not ret.returncode:
-                            break
-                    except:
-                        pass
-
-                if ret.returncode:
-                    raise OSError
-        except:
-            print("Cannot launch terminal", sys.exc_info())
-            pedync.message("\n   Cannot launch terminal executable \n\n"
-                       "              (Please install)")
-
 
     # Pass in two lists, one for linux and one for windows
     def start_external(self, linprog, winprog):

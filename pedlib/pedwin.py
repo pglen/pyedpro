@@ -9,6 +9,7 @@ import ctypes
 import warnings
 import stat
 import collections
+import platform
 
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -1206,7 +1207,9 @@ class EdMainWindow():
 
         if strx == "Start Terminal":
             #print("Starting terminal")
-            os.system("C:\\msys64\\mingw32.exe")
+            #if os.name == "nt":
+            #    os.system("C:\\msys64\\mingw32.exe")
+            self.start_term()
 
         if strx == "New":
             self.newfile()
@@ -1510,10 +1513,40 @@ class EdMainWindow():
                 ppp.area.writeout()
                 cnt2 += 1
             cnt += 1
-
         self.update_statusbar("%d of %d buffers saved." % (cnt2, nn))
 
-    # -------------------------------------------------------------------
+    def start_term(self):
+        print("Terminal Here")
+        exename = ""
+        try:
+            if platform.system().find("Win") >= 0:
+                ret = subprocess.Popen(["putty"])
+                #if not ret.returncode:
+                #    raise OSError
+                #print("No terminal on windows. (TODO)")
+            else:
+                ret = None
+                # The order represents the priority of opening
+                termstr = ("xfce4-terminal", "gnome-terminal", "lxterminal", "xterm",)
+                for exename in termstr:
+                    # Stumble until terminal found
+                    try:
+                        ret = subprocess.Popen([exename],)
+                        if not ret.returncode:
+                            break
+                    except:
+                        pass
+
+                if ret.returncode:
+                    raise OSError
+        except:
+            print("Cannot launch terminal", sys.exc_info())
+            pedync.message("\n   Cannot launch terminal executable \n\n"
+                       "              (Please install)")
+        finally:
+            self.update_statusbar("Started terminal '%s'" % exename)
+
+# -------------------------------------------------------------------
     def openfile(self, fnamex):
 
         # Is it already loaded? ... activate
