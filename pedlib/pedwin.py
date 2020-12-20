@@ -424,14 +424,26 @@ class EdMainWindow():
         self.slab.set_yalign(Gtk.Align.START)
 
         shbox = Gtk.HBox()
-        shbox.pack_start(slabs, 0,0, 0)
+        shbox.pack_start(slabs, 0, 0, 0)
         shbox.pack_start(self.slab, 0, 0, 0)
 
-        buttonsb = Gtk.Button("Hist")
-        shbox.pack_end(buttonsb, 0,0, 0)
+        label = Gtk.Label.new(" | Hist | ")
+        label.set_tooltip_text("Look at event history")
+        label.set_single_line_mode(True)
+        eb = Gtk.EventBox(); eb.add(label)
+        eb.connect_after("button-press-event", self.status_hist)
+        eb.set_above_child(True)
+        shbox.pack_end(eb, 0, 0, 0)
+
+        label2 = Gtk.Label.new(" | Lang | ")
+        label2.set_tooltip_text("Change language")
+        label2.set_single_line_mode(True)
+        eb2 = Gtk.EventBox(); eb2.add(label2)
+        eb2.connect_after("button-press-event", self.status_lang)
+        eb2.set_above_child(True)
+        shbox.pack_end(eb2, 0, 0, 0)
 
         self.slab2 = Gtk.Label(" status2  ")
-
         self.hpane2 = Gtk.HPaned()        #; self.hpane2.set_border_width(5)
 
         self.hpane2.pack1(shbox, 1, 1)
@@ -1549,6 +1561,10 @@ class EdMainWindow():
         finally:
             self.update_statusbar("Started terminal '%s'" % exename)
 
+    def status_hist(self, arg1, arg2):
+        print("Hello event status")
+        pass
+
 # -------------------------------------------------------------------
     def openfile(self, fnamex):
 
@@ -1635,6 +1651,9 @@ class EdMainWindow():
         #self.statusbar2.pop(0)
         #self.statusbar2.push(0, strx2)
         self.slab2.set_text(strx2)
+
+    def status_lang(self, atg1, arf2):
+        print("Lang pressed")
 
     def update_statusbar(self, strx):
         # Clear any previous message, underflow is allowed

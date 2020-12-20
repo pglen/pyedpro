@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 # ------------------------------------------------------------------------
 # This is open source text editor. Written on python. The motivation for
