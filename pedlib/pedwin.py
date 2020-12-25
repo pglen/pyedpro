@@ -31,6 +31,7 @@ import pedlib.pedoline as  pedoline
 import pedlib.pedfont  as  pedfont
 import pedlib.pedcolor  as  pedcolor
 import pedlib.pedfind  as   pedfind
+import pedlib.pedweb  as   pedweb
 
 from pycommon.pggui import *
 
@@ -295,6 +296,7 @@ class EdMainWindow():
         self.diffpane = edPane()
         self.diffpane.area.readonly = True
         self.diffpane.area.diffpane = True
+        self.diffpane.area.nomenu = True
 
         notebook3.append_page(self.diffpane)
         ppp = self.notebook3.get_nth_page(self.notebook.get_n_pages()-1)
@@ -391,10 +393,13 @@ class EdMainWindow():
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
 
-        #notebook2.append_page(Gtk.Label("Outline"))
         notebook2.append_page(pedoline.pgoline())
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
+
+        notebook2.append_page(pedweb.pgweb())
+        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+        self.notebook2.set_tab_label(ppp, self.make_label("Web"))
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200

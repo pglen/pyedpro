@@ -29,6 +29,7 @@ import pedlib.pedcolor as  pedcolor
 import pedlib.pedmenu  as  pedmenu
 import pedlib.pedundo  as  pedundo
 import pedlib.pedmisc  as  pedmisc
+import pedlib.pedtask  as  pedtask
 
 from pedlib.pedutil import *
 from pedlib.keywords import *
@@ -81,7 +82,7 @@ DRAGTRESH = 3                   # This many pixels for drag highlight
 # We create a custom class for display, as we want a text editor that
 # can take thousands of lines.
 
-class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
+class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask):
 
     def __init__(self, buff, mained, readonly = False):
 
@@ -156,7 +157,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
         self.hhh = self.www = 0
         self.diffmode = 0
         self.diffpane = False
-
+        self.webwin = None
+        self.nomenu = False
         self.FGCOLOR    = FGCOLOR
         self.FGCOLORRO  = FGCOLORRO
         self.RFGCOLOR   = RFGCOLOR
@@ -236,19 +238,73 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
     def on_drag_drop(self, widget, context, x, y, time):
         widget.drag_get_data(context, context.list_targets()[-1], time)
 
-    def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
 
-        if info ==  TARGET_ENTRY_TEXT:
-            text = data.get_text()
-            #print("Received text: %s" % text)
-            pedconfig.conf.keyh.acth.add_str(self, text)
+    # Insert text at current point
+    def inserttext(self, xtext):
+
+        newtxt = xtext.split("\n")
+        ycoord = self.ypos + self.caret[1]
+        #ycoord = self.ypos + y
+
+        tmptext = self.text[:ycoord]
+        tmptext += newtxt
+        tmptext += self.text[ycoord:]
+        self.text = tmptext
+        self.changed = True
+        self.set_caret(self.xpos + self.caret[0],
+                    self.ypos + self.caret[1] + len(newtxt))
+
+        mlen = self.calc_maxline()
+        # Set up scroll bars
+        self.set_maxlinelen(mlen, False)
+        self.set_maxlines(len(self.text), False)
+        self.invalidate()
+
+    # Drag and drop here
+    def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
+        #print("Received data:", data, data.get_data_type(), x, y, info)
+        if info == TARGET_ENTRY_TEXT:
+            if str(data.get_data_type()) == "text/plain":
+                xtext = data.get_text()
+                if xtext:
+                    #print("Received text: %s" % xtext[:48])
+                    self.inserttext(xtext)
+
+            if str(data.get_data_type()) == "text/uri-list":
+                xuris = data.get_uris()
+                #print("got uri", xuris)
+                uuu = "file://"
+                for aa in xuris:
+                    if aa[:7] != uuu:
+                        continue
+                    try:
+                        xfname = aa[7:]
+                        try:
+                            xstat = os.stat(xfname)
+                        except:
+                            pass
+                        print("drop xfname", xfname, xstat)
+                        if xstat.st_size > 100000:
+                            pedync.message("\nDragged file is too big.\n"
+                                "To open anyway, use the regular open function\n\n"  )
+                            continue
+
+                        fp = open(xfname)
+                        xtext = fp.read()
+                        fp.close()
+                        self.inserttext(xtext)
+                    except:
+                        print("Cannot open dragged file.")
+                        self.mained.update_statusbar("Cannot open dragged file. '%s'", xfname)
+
 
         elif info ==  TARGET_ENTRY_PIXBUF:
             pixbuf = data.get_pixbuf()
             width = pixbuf.get_width()
             height = pixbuf.get_height()
-
             print("Received pixbuf with width %spx and height %spx" % (width, height))
+
+        Gtk.drag_finish(drag_context, True, False, time)
 
     # Customize your colors here
     def setcol(self):
@@ -576,7 +632,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
         self.lastevent = event
 
         if pedconfig.conf.pgdebug > 5:
-            print( "Button press  ", event.type, " x=", event.x, " y=", event.y)
+            print( "Button press  ", self, event.type, " x=", event.x, " y=", event.y)
 
         event.x = int(event.x)
         event.y = int(event.y)
@@ -1415,6 +1471,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
 
     def poprclick3(self, event):
         #print ("Making shift rclick3")
+        if self.nomenu: return
+
         got_src = 0; got_targ = 0
 
         nn = self.notebook.get_n_pages(); cnt = 0
@@ -1458,6 +1516,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
 
     def poprclick2(self, widget, event, strx):
         #print ("Making shift rclick2")
+        if self.nomenu: return
+
         self.menu2 = Gtk.Menu()
         self.menu2.append(self.create_menuitem("Checking '%s'" % strx, None))
         mi = self.create_menuitem("-------------", None)
@@ -1475,6 +1535,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
         self.menu2.popup(None, None, None, None, event.button, event.time)
 
     def poprclick(self, widget, event):
+
+        if self.nomenu: return
+
         #print ("Making rclick")
         self.build_menu(self, pedmenu.rclick_menu)
         if event:
@@ -1549,6 +1612,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
         elif ttt == 18:
             self.start_external(["libreoffice", "--writer"],
                                         ["libreoffice", "--writer"])
+        elif ttt == 19:
+            self.start_m4filter()
+        elif ttt == 20:
+            self.start_mdfilter()
+        elif ttt == 21:
+            self.start_browser(self.fname)
+        elif ttt == 22:
+            self.start_htmlwin(self.fname)
+        elif ttt == 23:
+            self.start_htmlstr()
         else:
             print("peddoc: Invalid menu item selected")
 
@@ -1557,52 +1630,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
         self.set_tablabel()
         arrx = ["OFF", "ON"]
         self.mained.update_statusbar("Toggled read only to %s" % arrx[self.readonly])
-
-    # Pass in two lists, one for linux and one for windows
-    def start_external(self, linprog, winprog):
-
-        try:
-            if platform.system().find("Win") >= 0:
-                ret = subprocess.Popen(winprog)
-                #if not ret.returncode:
-                #    raise OSError
-            else:
-                ret = subprocess.Popen(linprog)
-                #if not ret.returncode:
-                #    raise OSError
-        except:
-            print("Cannot launch %s" % str(linprog), sys.exc_info())
-            pedync.message("\n   Cannot launch %s \n\n"  % str(linprog) +
-                       "              (Please install)")
-
-    def start_edit(self):
-
-        old = os.getcwd()
-        fdir = os.path.dirname(os.path.realpath(__file__))
-        #print("fdir:", fdir)
-        mydir = os.path.dirname(os.path.join(fdir, "../"))
-        #print("mydir:", mydir)
-        os.chdir(mydir)
-        myscript = os.path.realpath(os.path.join(mydir, 'pyedpro.py'))
-        #print("myscript:", myscript)
-
-        ret = 0
-        try:
-            if platform.system().find("Win") >= 0:
-                print("No exe function on windows. (TODO)")
-            else:
-                # Stumble until editor found
-                ret = subprocess.Popen(["python3", myscript])
-                if ret.returncode:
-                    ret = subprocess.Popen(["python", myscript])
-                    if not ret.returncode:
-                        raise OSError
-        except:
-            print("Cannot launch editor instance", sys.exc_info())
-            pedync.message("\n   Cannot launch new editor instance \n\n")
-
-        # Back to original dir
-        os.chdir(os.path.dirname(old))
 
     def create_menuitem(self, string, action, arg = None):
         rclick_menu = Gtk.MenuItem(string)
@@ -1797,10 +1824,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
     def loadbuff(self, arrx):
         self.text = arrx
         usleep(1)
-        # Set up scroll bars
+        # Set up scroll bars and other parameters
         mlen = self.calc_maxline()
         self.set_maxlinelen(mlen, False)
         self.set_maxlines(len(self.text), False)
+        self.changed = True
 
     def calc_maxline(self):
         mlen = 0
@@ -1891,6 +1919,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
             fc.run()
 
     # --------------------------------------------------------------------
+    # The actual savefile routine
 
     def writeout(self):
 
@@ -1992,17 +2021,19 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd):
                 print("Must have filename")
             else:
                 if os.path.isfile(fname):
-                    dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
-                    Gtk.MESSAGE_QUESTION, Gtk.ButtonsType.YES_NO,
-                    "\nWould you like overwrite file:\n\n  \"%s\" \n" % fname)
-                    dialog.set_title("Overwrite file ?")
-                    dialog.set_default_response(Gtk.ResponseType.YES)
-                    dialog.connect("response", self.overwrite_done, fname, win)
-                    dialog.run()
+                    resp = pedync.yes_no_cancel("Overwrite File Prompt",
+                                "Overwrite existing file?\n '%s'" % fname, False)
+                    print("resp", resp)
+                    if resp == Gtk.ResponseType.YES:
+                        self.fname = fname
+                        self.writeout()
+                        self.mained.update_statusbar("Saved under new filename '%s'" % fname)
+                    else:
+                        self.mained.update_statusbar("No new file name supplied, cancelled 'Save As'")
                 else:
-                    win.destroy()
                     self.fname = fname
                     self.writeout()
+        win.destroy()
 
     def overwrite_done(self, win, resp, fname, win2):
         #print( "overwrite done", resp)
