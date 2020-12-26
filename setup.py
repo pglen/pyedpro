@@ -37,7 +37,7 @@ classx = [
         ]
 
 setup(name = "pyedpro.py",      # Name of the program.
-      version = "1.7",          # Version of the program.
+      version = "1.9",          # Version of the program.
       description = "Easy-to-use advanced editor in python",
       long_description = descx,
       classifiers = classx,

@@ -28,6 +28,11 @@ setup:
 pack:
 	@./pack.sh
 
+clean:
+	rm -f *.pyc
+	rm -f pedlib/*.pyc
+	rm -rf pedlib/__pycache__
+
 git:
 	git add .
 	git commit -m autocheck

@@ -21,6 +21,7 @@ from    pedlib.pedutil import *
 
 sys.path.append('..')
 from pycommon.pggui import *
+from pycommon.pgsimp import *
 
 # ------------------------------------------------------------------------
 
