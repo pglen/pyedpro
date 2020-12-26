@@ -17,7 +17,7 @@ auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggest
    The recorded macros, the undo / redo information the editing session details persist
  after the editor is closed.
     The spell checker can check code comments. The parsing of the code is
-rudimentary, comments and strings are spell checked. (Press F9) The code is filtered
+rudimentary, comments and strings are spell checked. (Press F9 or Shit-F9) The code is filtered
 out for Python and  'C'. The spell checker is executed on live text. (while typing)
 '''
 
@@ -42,7 +42,7 @@ setup(name = "pyedpro.py",      # Name of the program.
       long_description = descx,
       classifiers = classx,
       author = "Peter Glen",
-      author_email = "peterglen@gmail.com",
+      author_email = "peterglen99@gmail.com",
       license='GPLv3',            # The license of the program.
       url="https://github.com/pglen/pyedpro.git",
       scripts = ['pyedpro.py', 'pangview.py'],

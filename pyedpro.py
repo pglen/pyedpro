@@ -1,5 +1,21 @@
 #!/usr/bin/python3
 
+'''
+This is open source text editor. Written on python. The motivation for
+this project was to create a modern multi-platform editor. Simple,
+powerful, configurable, extendable. To run this module without
+installation put the supporting files in the 'pedlib'
+subdirectory under the main file's direcory.
+'''
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+import os
+import sys
+import getopt
+import signal
+
 # ------------------------------------------------------------------------
 # This is open source text editor. Written on python. The motivation for
 # this project was to create a modern multi-platform editor.
@@ -33,23 +49,17 @@
 # Jun/xx/2018       Log Files for time accounting.
 # Jun/08/2020       Menu control / Headerbar / Version update
 # Mon 28.Sep.2020   Reshuffled imports pylint
+# Fri 25.Dec.2020   Added web view, m4 filter md2html filter
 
 # ASCII text editor, requires pyGtk. (pygobject)
 # See pygtk-dependencies for easy install of dependencies.
 # See also the INSTALL file.
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-import os
-import sys
-import getopt
-import signal
-
-import gi
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
-
+import gettext
+gettext.bindtextdomain('pyedpro', './locale/')
+gettext.textdomain('pyedpro')
+_ = gettext.gettext
+#locale.setlocale(locale.LC_ALL, '')
 
 base = os.path.realpath(__file__)
 #print("file", os.path.dirname(base))
@@ -60,13 +70,10 @@ import pedlib.pedwin as pedwin
 import pedlib.pedsql as pedsql
 import pedlib.pedlog as pedlog
 
-#locale.setlocale(locale.LC_ALL, '')
 
-import gettext
-gettext.bindtextdomain('pyedpro', './locale/')
-gettext.textdomain('pyedpro')
-
-_ = gettext.gettext
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
 
 #print("domain", gettext.textdomain)
 
@@ -74,18 +81,16 @@ VERSION = 1.9
 BUILDDATE = "Fri 25.Dec.2020"
 PROGNAME  = "PyEdPro"
 
-mainwin = None
-
-show_timing = 0
-show_config = 0
-clear_config = 0
-use_stdout = 0
+SHOW_TIMING = 0
+SHOW_CONFIG = 0
+CLEAR_CONFIG = 0
+USE_STDOUT = 0
 
 # ------------------------------------------------------------------------
 
 def main(strarr):
 
-    global mainwin
+    ''' Rotate around this axis '''
 
     if pedconfig.conf.verbose:
         print(PROGNAME, "running on", "'" + os.name + "'", \
@@ -103,12 +108,13 @@ def main(strarr):
 
     Gtk.main()
 
-def __version():
-    print("Version", pedconfig.conf.version);
-    exit(1)
+def xversion():
+    ''' Offer version number '''
+    print("Version", pedconfig.conf.version)
+    sys.exit(1)
 
-def __help():
-
+def xhelp():
+    ''' Offer Help '''
     print()
     print(PROGNAME, _("Version: "), pedconfig.conf.version)
     print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
@@ -122,11 +128,13 @@ def __help():
     print(_("            -x        - Clear (eXtinguish) config (will prompt)"))
     print(_("            -h        - Help"))
     print()
+    sys.exit(1)
 
 # ------------------------------------------------------------------------
 
-def terminate(arg1, arg2):
-
+#def terminate(arg1 = None, arg2 = None):
+def terminate():
+    ''' Termination Handler'''
     if pedconfig.conf.verbose:
         print(_("Terminating pydepro.py, saving files to ~/pydepro"))
 
@@ -137,14 +145,20 @@ def terminate(arg1, arg2):
 # ------------------------------------------------------------------------
 # Start of program:
 
+
 if __name__ == '__main__':
+
+    ''' Main Entry Point for the editor '''
 
     # Redirect stdout to a fork to real stdout and log. This way messages can
     # be seen even if pydepro is started without a terminal (from the GUI)
 
-    opts = []; args = []
+    opts = []
+    args = []
+
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvVxcto", ["debug=", "help", "help", "verbose", "version"])
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvVxcto",
+                        ["debug=", "help", "help", "verbose", "version"])
     except getopt.GetoptError as err:
         print(_("Invalid option(s) on command line:"), err)
         sys.exit(1)
@@ -165,17 +179,24 @@ if __name__ == '__main__':
             except:
                 pedconfig.conf.pgdebug = 0
 
-        if aa[0] == "-h": __help();  sys.exit(1)
-        if aa[0] == "--help": __help();  sys.exit(1)
-        if aa[0] == "-?": __help();  sys.exit(1)
-        if aa[0] == "-v" or aa[0] == "--verbose": pedconfig.conf.verbose = True
-        if aa[0] == "-V" or aa[0] == "--version": __version()
-        if aa[0] == "-f": pedconfig.conf.full_screen = True
-        if aa[0] == "-v": pedconfig.conf.verbose = True
-        if aa[0] == "-x": clear_config = True
-        if aa[0] == "-c": show_config = True
-        if aa[0] == "-t": show_timing = True
-        if aa[0] == "-o": use_stdout = True
+        if aa[0] == "-h" or  aa[0] == "--help" or aa[0] == "-?":
+            xhelp()
+        if aa[0] == "-V" or aa[0] == "--version":
+            xversion()
+        if aa[0] == "-v" or aa[0] == "--verbose":
+            pedconfig.conf.verbose = True
+        if aa[0] == "-f":
+            pedconfig.conf.full_screen = True
+        if aa[0] == "-v":
+            pedconfig.conf.verbose = True
+        if aa[0] == "-x":
+            CLEAR_CONFIG = True
+        if aa[0] == "-c":
+            SHOW_CONFIG = True
+        if aa[0] == "-t":
+            SHOW_TIMING = True
+        if aa[0] == "-o":
+            USE_STDOUT = True
 
     if pedconfig.conf.pgdebug > 0:
         print("Running '{}'".format(os.path.abspath(sys.argv[0])) )
@@ -185,7 +206,8 @@ if __name__ == '__main__':
             if pedconfig.conf.verbose:
                 print("making", pedconfig.conf.config_dir)
             os.mkdir(pedconfig.conf.config_dir)
-    except: pass
+    except:
+        pass
 
     # Let the user know if it needs fixin'
     if not os.path.isdir(pedconfig.conf.config_dir):
@@ -205,7 +227,7 @@ if __name__ == '__main__':
     #print("Exe path:",  pedconfig.conf.mydir)
 
     # To clear all config vars
-    if clear_config:
+    if CLEAR_CONFIG:
         print(_("Are you sure you want to clear config ? (y/n)"))
         sys.stdout.flush()
         aa = sys.stdin.readline()
@@ -216,7 +238,7 @@ if __name__ == '__main__':
         sys.exit(0)
 
     # To check all config vars
-    if show_config:
+    if SHOW_CONFIG:
         print("Dumping configuration:")
         ss = pedconfig.conf.sql.getall()
         for aa in ss:
@@ -224,7 +246,7 @@ if __name__ == '__main__':
         sys.exit(0)
 
     # Uncomment this for silent stdout
-    if use_stdout or pedconfig.conf.pgdebug or \
+    if USE_STDOUT or pedconfig.conf.pgdebug or \
                     pedconfig.conf.verbose:
         # Do not hide console
         #print("Using real stdout")

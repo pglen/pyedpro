@@ -10,7 +10,7 @@
 #       within the document.
 #
 # b.) Some functions are sensitive to shift ctrl alt etc ...
-    #       See the arrow key code [left()] how it is implemented to extend
+#       See the arrow key code [left()] how it is implemented to extend
 #       selection.
 #
 # c.) Anatomy of key handler function:
@@ -25,7 +25,7 @@
 #       probability to fill in the var names from local scope.
 #       If token completion filled in an unwanted string, backpedal to the
 #       half point in the string and type as usual.
-#       If the completion behavure is not desired, disable the code marked
+#       If the completion behavior is not desired, disable the code marked
 #       "Token Completion"
 #
 
