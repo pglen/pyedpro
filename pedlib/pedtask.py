@@ -92,7 +92,11 @@ class pedtask():
 
         #print("MD Filter called.", os.getcwd())
 
-        comline = ["md2html", "-s", "default.yml", self.fname,]
+        yfname = os.path.dirname(__file__) + os.sep + "default.yml"
+
+        print(yfname)
+
+        comline = ["md2html", "-s", yfname, self.fname,]
         try:
             ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         except:

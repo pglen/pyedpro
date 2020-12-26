@@ -8,27 +8,45 @@ column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
  This project is a successor of pyedit, after porting it to GTK3. PyEdPro
- will run anywhere PyGTK (GObject) can run.
+ will run anywhere PyGObject can run.
 
   Working and tested platforms currently are:
 
         Win 7 .. Win 10 ...
-        Centos 6 .. 7 Ubuntu 14 ... 16 ...  (should run on any linux)
+        Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
         Windows (Native) plus MSYS2, Mingw,
-        Raspberry PI ...
+        Raspberry PI 3, Raspberry PI 4, ...
 
-  I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, and the Raspberry-Pi.
-It behaves consistently on all these platforms. If you want an editor  that works the
+  I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
+and the Raspberry-Pi. It behaves consistently on all these platforms,
+it is an absolute joy to edit in a different platform without the learning
+curve of new keystrokes.  If you want an editor  that works the
 same way in all your workspaces, PyEdPro is the one.
 
 ### New:
+
+  Implemented html preview. Just right click on the file body, an select the
+corresponding menu item.
+Implemented markdown preview. Right click ...
+Implemented M4 preview. The files are pulled in from the current directory,
+and expanded with the m4 macro processor. The results than are previewed
+in an html window. (Yes, head and footer are now one file for the whole site,
+the way it should be) Right click ... and look for: Filter to M4
+
+  Added drag and drop. Accepts file name from file manager, and accepts clipboard text.
+The dropped content is inserted where the editor's caret is. (not where the cursor is)
+The caret is moved to the end of insertion.
 
   Pyedpro now has buffer diff. Right clicking on the file's tab header presents a menu.
 One may select the diff source, the diff destination (or target). When the source and
 target is selected, a diff window slides in from the right. The diff window presents
 th diff of the two buffers, relative to 'target'. The three buffers navigate in sync,
 one may inspect them. The sync is somewhat intelligent by guessing the correct
-position of the cursor on the current buffer.
+position of the cursor on the current buffer. Please note, that this diff is somewhat
+simple, as it marks only --del --ins points. Again, its simplicity yields benefits
+that are surprizing. For instance; hand merging small changes become more visual. And
+yes, it is no substitute for a real diff.
+
 
   The diff buffer is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
@@ -104,7 +122,4 @@ Screen from Ubuntu:
 ![Screen Shot](pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
-
-
-
 

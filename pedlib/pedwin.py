@@ -233,6 +233,7 @@ class EdMainWindow():
             #self.mywin.set_default_size(7*www/8, 7*hhh/8)
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
+
         try:
             self.mywin.set_icon_from_file(get_img_path("pyedpro.png"))
         except:

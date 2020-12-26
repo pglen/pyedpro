@@ -22,7 +22,7 @@ on a chromebook in a debian window.
  Updates:
 
     3.8 py changes OK  (timer updates)
-    switched to python 3.x  (2.x will still work)
+    switched to python 3.x  (2.x will still works)
     setup.py install updated
 
   Obsolete:
@@ -46,8 +46,10 @@ To install pyedpro on Ubuntu (py2 and py3):
 
 To install pyedpro on Windows:
 
-    Download and install python 2.7
-    Download and install pygobject for windows.
+    #Download and install python 3.4
+    #Download and install pygobject for windows from sourceforge
+
+    This may change in the future; pygobject windows src build is broken
 
   Links (may/2019):
 
