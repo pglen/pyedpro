@@ -12,13 +12,20 @@ except:
 import gi;
 
 gi.require_version("Gtk", "3.0")
-gi.require_version('WebKit2', '4.0')
+try:
+    gi.require_version('WebKit2', '4.0')
+except:
+    pass
 
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
-from gi.repository import WebKit2
+
+try:
+    from gi.repository import WebKit2
+except:
+    pass
 
 import pedlib.pedconfig as pedconfig
 
@@ -127,8 +134,13 @@ class pgweb(Gtk.VBox):
 
         #self.pack_start(Gtk.Label("TODO"), 1, 1, 2)
         scrolled_window = Gtk.ScrolledWindow()
-        webview = WebKit2.WebView()
-        webview.load_uri("")
+        try:
+            webview = WebKit2.WebView()
+            webview.load_uri("")
+        except:
+            webview = Gtk.Label("No WebView Available.")
+            pass
+
         #webview.load_uri("https://google.cl")
         scrolled_window.add(webview)
         self.pack_start(scrolled_window, 1, 1, 2)

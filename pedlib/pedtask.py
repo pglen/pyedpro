@@ -36,7 +36,7 @@ from pedlib.keywords import *
 try:
     import webview
 except:
-    print("Webview function is not available, please install")
+    print("Webview function is not available, please install.")
 
 class pedtask():
     def __init__(self):
