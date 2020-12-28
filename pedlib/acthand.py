@@ -1019,6 +1019,12 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - R")
 
+        if self2.shift:
+            if pedconfig.conf.pgdebug > 9:
+                print ("CTRL-SHIFT - R")
+            self2.start_m4filter()
+            return
+
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
         line = self2.text[yidx]

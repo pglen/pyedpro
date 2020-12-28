@@ -177,6 +177,7 @@ class pedtask():
     def start_m4filter(self):
 
         #print("Filter called.")
+        self.save()
         comline = ["m4", self.fname,]
         try:
             ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
