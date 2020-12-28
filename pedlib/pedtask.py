@@ -33,7 +33,10 @@ import pedlib.pedmisc  as  pedmisc
 from pedlib.pedutil import *
 from pedlib.keywords import *
 
-import webview
+try:
+    import webview
+except:
+    print("Webview function is not available, please install")
 
 class pedtask():
     def __init__(self):
