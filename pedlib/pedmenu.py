@@ -83,7 +83,7 @@ rclick_menu = (
             ( "",               None,               None, 12, "<Separator>" ),
             ( _("Toggle _RO"),     None,            rclick_action, 11, None ),
             ( "",               None,               None, 12, "<Separator>" ),
-            ( _("Filter to M4"), None,              rclick_action, 19, None ),
+            ( _("Filter to M4"), "<control><shift>R", rclick_action, 19, None ),
             ( _("Filter to Markdown"), None,        rclick_action, 20, None ),
             ( _("Show in Browser"), None,           rclick_action, 21, None ),
             ( _("Show as HTML String"), None,       rclick_action, 23, None ),
