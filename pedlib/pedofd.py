@@ -18,6 +18,8 @@ from gi.repository import GdkPixbuf
 import pedlib.pedconfig as pedconfig
 
 sys.path.append('..')
+sys.path.append('..' + os.sep + '..')
+
 from pycommon.pggui import *
 
 def ofd(fname = None, self2 = None):

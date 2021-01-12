@@ -21,8 +21,9 @@ from    pedlib.pedutil import *
 from    pedlib.pedync import *
 
 sys.path.append('..')
-from pycommon.pggui import *
-from pycommon.pgsimp import *
+
+from pycommon import pggui
+from pycommon import pgsimp
 
 # ------------------------------------------------------------------------
 
@@ -52,15 +53,15 @@ class pgnotes(Gtk.VBox):
 
         #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label(""), 0, 0, 0)
-        self.pack_start(xSpacer(), 0, 0, 0)
-        self.lsel = LetterSel(self.letterfilter)
+        self.pack_start(pggui.xSpacer(), 0, 0, 0)
+        self.lsel = pggui.LetterSel(self.letterfilter)
         self.pack_start(self.lsel, 0, 0, 2)
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#dd8822"))
 
         hbox3 = Gtk.HBox()
         #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
-        hbox3.pack_start(xSpacer(4), 0, 0, 0)
+        hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
         self.edit = Gtk.Entry()
         hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
         hbox3.pack_start(self.edit, 1, 1, 0)
@@ -70,21 +71,23 @@ class pgnotes(Gtk.VBox):
         hbox3.pack_start(butt2, 0, 0, 0)
         hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
         butt3 = Gtk.Button.new_with_mnemonic("New")
-        butt3.connect("pressed", self.newitem, 1)
+        butt3.connect("pressed", self.newitem)
         hbox3.pack_start(butt3, 0, 0, 0)
         #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#668822"))
         self.pack_start(hbox3, 0, 0, 2)
 
-        self.treeview2 = SimpleTree(("Header", "Subject", "Description"), skipedit=-1)
+        self.treeview2 = pgsimp.SimpleTree(("Header", "Subject", "Description"), skipedit=-1)
         self.treeview2.setcallb(self.treesel)
         self.treeview2.setCHcallb(self.treechange)
 
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(self.treeview2)
+        #scroll2.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+
         frame3 = Gtk.Frame(); frame3.add(scroll2)
         self.pack_start(frame3, 1, 1, 2)
 
-        self.edview = SimpleEdit()
+        self.edview = pgsimp.SimpleEdit()
         self.edview.set_wrap_mode(Gtk.WrapMode.WORD)
         self.edview.setsavecb(self.savetext)
 
@@ -120,7 +123,7 @@ class pgnotes(Gtk.VBox):
 
         self.pack_start(hbox13, 0, 0, 0)
 
-        self.pack_start(xSpacer(), 0, 0, 0)
+        self.pack_start(pggui.xSpacer(), 0, 0, 0)
         self.load()
 
     def  letterfilter(self, letter):
@@ -135,14 +138,16 @@ class pgnotes(Gtk.VBox):
             for aa in aaa:
                 self.treeview2.append(aa[2:5])
 
-    def newitem(self, arg, num):
-        #print ("new", arg, num)
+    def newitem(self, arg):
+
         self.cnt += 1
-        item = ("New Item %d" % self.cnt, "", "")
-        self.treeview2.append(item)
-        key = str(uuid.uuid4())
-        self.sql.put(key, item[0], item[1], item[2])
+        itemx = ("New Item %d" % self.cnt, "", "")
+        print ("newitem", itemx)
+        self.treeview2.append(itemx)
         self.treeview2.sel_last()
+        key = str(uuid.uuid4())
+        self.sql.put(key, itemx[0], itemx[1], itemx[2])
+        print ("done new", itemx)
         pass
 
     def delitem(self, arg):

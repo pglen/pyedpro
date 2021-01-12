@@ -32,6 +32,8 @@ clean:
 	rm -f *.pyc
 	rm -f pedlib/*.pyc
 	rm -rf pedlib/__pycache__
+	rm -rf ../pycommon/__pycache__
+	rm -f  ../pycommon/*.pyc
 
 git:
 	git add .
