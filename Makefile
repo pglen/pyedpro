@@ -17,13 +17,21 @@ help:
 	@echo "	 make install  -- Install PyEdPro (unofficial structure)"
 	@echo "	 make setup    -- Run the setup.py script as install "
 	@echo "	 make pack     -- package PyEdPro "
+	@echo "	 make remove   -- remove (all) traces of pyedpro from the system
 	@echo
 
-install:
-	@python3 ./install.py
+# OLD install; use setup.py
+
+#install:
+#	@python3 ./install.py
 
 setup:
 	@python3 ./setup.py install
+
+remove:
+	@python3 ./setup.py install --record files.txt
+	xargs rm -rf < files.txt
+	@rm -f files.txt
 
 pack:
 	@./pack.sh
@@ -34,6 +42,11 @@ clean:
 	rm -rf pedlib/__pycache__
 	rm -rf ../pycommon/__pycache__
 	rm -f  ../pycommon/*.pyc
+
+#CHECK=xxx
+
+echo:
+	@echo Echoing: ${CHECK}
 
 git:
 	git add .

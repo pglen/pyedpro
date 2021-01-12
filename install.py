@@ -8,6 +8,8 @@ import string, pickle, site
 
 import distutils.sysconfig
 
+# This is a very old install
+
 #installerdir = sys.argv[0][:sys.argv[0].rfind("/")] + "/"
 
 depfailed = False
