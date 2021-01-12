@@ -2142,7 +2142,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     def close_button(self, arg1):
         #print( "close_button", arg1)
         # Select me first
-        self.mained.closedoc(self)
+        self.mained.close_document(self)
 
     # --------------------------------------------------------------------
     def savemacro(self):

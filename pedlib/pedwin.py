@@ -581,7 +581,7 @@ class EdMainWindow():
             self.open()
 
         if "lose" in item:
-            self.closedoc()
+            self.close_document()
 
         if "xit" in item:
             self.activate_exit()
@@ -1156,7 +1156,6 @@ class EdMainWindow():
         if flag:
             vcurr.area.saveas()
             self.mywin.set_title("pyedpro: " + vcurr.area.fname)
-
         else:
             vcurr.area.save()
 
@@ -1245,7 +1244,7 @@ class EdMainWindow():
             self.save(True)
 
         if strx == "Close":
-            self.closedoc()
+            self.close_document()
 
         if strx == "Copy":
             self.copy()
@@ -1427,8 +1426,9 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(aa)
             vcurr.area.closedoc()
             notebook.remove_page(aa)
+        self.mywin.set_title("pyedpro ")
 
-    def closedoc(self, other = None):
+    def close_document(self, other = None):
         cc = notebook.get_n_pages()
         if other:
             for aa in range(cc):
@@ -1438,9 +1438,13 @@ class EdMainWindow():
                     break
         nn = notebook.get_current_page()
         vcurr = notebook.get_nth_page(nn)
+
         # Disable close
         if vcurr.area.closedoc():
+            self.update_statusbar("Did not close doc: '%s'" %  vcurr.area.fname);
             return
+
+        self.mywin.set_title("pyedpro: (closed doc)")
 
         # Wrap around if closed first
         if nn == 0: mm = cc - 1
