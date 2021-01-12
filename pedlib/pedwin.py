@@ -48,7 +48,6 @@ notebook3 = None;  notebook4 = None
 
 hidden = 0
 savearr = []
-
 openhist = []
 
 # -----------------------------------------------------------------------

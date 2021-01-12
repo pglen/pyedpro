@@ -34,9 +34,7 @@ class pgnotes(Gtk.VBox):
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#444444"))
 
-        hbox = Gtk.HBox()
-        self.lastsel = ""
-        self.lastkey = None
+        self.lastsel = None;  self.lastkey = None
         self.cnt = 0
         self.data_dir = os.path.expanduser("~/.pyednotes")
         try:
@@ -52,6 +50,7 @@ class pgnotes(Gtk.VBox):
 
         #message("Cannot make notes database")
 
+        #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label(""), 0, 0, 0)
         self.pack_start(xSpacer(), 0, 0, 0)
         self.lsel = LetterSel(self.letterfilter)
@@ -109,10 +108,15 @@ class pgnotes(Gtk.VBox):
         hbox13.pack_start(butt12, 0, 0, 0)
         hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt22 = Gtk.Button.new_with_mnemonic("Save")
-        butt22.connect("pressed", self.save)
-        hbox13.pack_start(butt22, 0, 0, 0)
+        butt14 = Gtk.Button.new_with_mnemonic("Export Data")
+        butt14.connect("pressed", self.exportd)
+        hbox13.pack_start(butt14, 0, 0, 0)
         hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        #butt22 = Gtk.Button.new_with_mnemonic("Save")
+        #butt22.connect("pressed", self.save)
+        #hbox13.pack_start(butt22, 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
         self.pack_start(hbox13, 0, 0, 0)
 
@@ -120,16 +124,16 @@ class pgnotes(Gtk.VBox):
         self.load()
 
     def  letterfilter(self, letter):
-        #print("letterfilter", letter)
+        print("letterfilter", letter)
         if letter == "All":
-            print("Erase selection")
+            #print("Erase selection")
+            self.load()
         else:
-            aaa = self.sql.getall(letter + "%")
+            aaa = self.sql.findhead(letter + "%")
             #print("all", aaa)
-
             self.treeview2.clear()
             for aa in aaa:
-                self.treeview2.append(aa[2:])
+                self.treeview2.append(aa[2:5])
 
     def newitem(self, arg, num):
         #print ("new", arg, num)
@@ -145,6 +149,7 @@ class pgnotes(Gtk.VBox):
         #print ("delitem", self.lastkey, self.lastsel)
         if not self.lastkey:
             print("Nothing to delete")
+            pedconfig.conf.pedwin.update_statusbar("Nothing selected for deletion.");
             return
 
         rrr = yes_no_cancel("   Delete Item ?   ", str(self.lastsel), False)
@@ -158,29 +163,36 @@ class pgnotes(Gtk.VBox):
         datax = self.sql.getall()
         for aa in datax:
             print(aa)
+
+    def exportd(self, arg):
         print ("export data")
         datay = self.sql.getalldata()
         for bb in datay:
             print(bb)
 
-
     def save(self, arg):
         print ("save unimplemented")
 
     def find(self, arg):
-        print ("find", arg)
-        aaa = self.sql.gethead("%" + self.edit.get_text() + "%")
+        print ("find", self.edit.get_text())
+
+        if not self.edit.get_text():
+            self.load()
+            return
+
+        aaa = self.sql.findhead("%" + self.edit.get_text() + "%")
         print("all", aaa)
+
         self.treeview2.clear()
         for aa in aaa:
-            self.treeview2.append(aa[2:])
+            print("aa", aa)
+            self.treeview2.append(aa[2:5])
 
     def savetext(self, txt):
 
-        print("savetext", self.lastkey, self.lastsel, "--",  txt)
+        #print("savetext", self.lastkey, self.lastsel, "--",  txt)
         self.sql.putdata(self.lastkey, txt, "", "")
-
-        pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % txt);
+        #pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % txt);
 
     # --------------------------------------------------------------------
 
@@ -198,7 +210,7 @@ class pgnotes(Gtk.VBox):
             self.lastkey = ddd[1]
 
         self.sql.put(self.lastkey, args[0], args[1], args[2])
-        pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
+        #pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
 
     # --------------------------------------------------------------------
 
@@ -220,21 +232,26 @@ class pgnotes(Gtk.VBox):
         if strx:
             self.edview.append(strx[0])
 
-    def load(self, cal = ""):
+    def load(self):
+
+        self.lastsel = None; self.lastkey = None
         self.treeview2.clear()
-        datax = self.sql.getall()
-        for aa in datax:
-            bb = aa[2]
-            # Follow 'New Item' count, update it
-            if "New Item" in bb:
-                try:
-                    cntx = int(bb[9:])
-                    if cntx > self.cnt:
-                        self.cnt = cntx
-                except:
-                    pass
-            print(aa)
-            self.treeview2.append(aa[2:5])
+        try:
+            datax = self.sql.getall()
+            for aa in datax:
+                bb = aa[2]
+                # Follow 'New Item' count, update it
+                if "New Item" in bb:
+                    try:
+                        cntx = int(bb[9:])
+                        if cntx > self.cnt:
+                            self.cnt = cntx
+                    except:
+                        pass
+                #print(aa)
+                self.treeview2.append(aa[2:5])
+        except:
+            print("Cannot load notes Data.")
 
         #print("cnt=", self.cnt)
 
@@ -255,6 +272,7 @@ class notesql():
             self.conn = sqlite3.connect(file)
         except:
             print("Cannot open/create db:", file, sys.exc_info())
+            pedconfig.conf.pedwin.update_statusbar("Cannot open/create the database.");
             return
         try:
             self.c = self.conn.cursor()
@@ -319,6 +337,26 @@ class notesql():
             pass
 
         return rr
+
+    def   findhead(self, vvv):
+        try:
+            #c = self.conn.cursor()
+            if os.name == "nt":
+                self.c.execute("select * from notes where val like ?", (vvv,))
+            else:
+                self.c.execute("select * from notes indexed by knotes where val like ?", (vvv,))
+            rr = self.c.fetchall()
+        except:
+            print("Cannot get sql data", sys.exc_info())
+            rr = None
+            self.errstr = "Cannot get sql data" + str(sys.exc_info())
+
+        finally:
+            #c.close
+            pass
+
+        return rr
+
 
     def   getdata(self, kkk):
         try:
