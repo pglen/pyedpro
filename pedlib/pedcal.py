@@ -27,7 +27,6 @@ class pgcal(Gtk.VBox):
 
     def __init__(self):
 
-        #vbox = Gtk.VBox()
         Gtk.VBox.__init__(self)
 
         hbox = Gtk.HBox()
@@ -46,7 +45,7 @@ class pgcal(Gtk.VBox):
             print("Cannot make calendar database")
 
         self.pack_start(xSpacer(), 0, 0, 0)
-        self.lsel = LetterSel(self.letterfilter)
+        self.lsel = LetterNumberSel(self.letterfilter)
         self.pack_start(self.lsel, 0, 0, 2)
 
         self.cal = Gtk.Calendar()
@@ -86,7 +85,6 @@ class pgcal(Gtk.VBox):
 
         self.pack_start(hbox3, 0, 0, 2)
 
-        #self.treeview2 = SimpleTree(("Hour", "Subject", "Notes"))
         self.treeview2 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview2.setcallb(self.treesel)
         self.treeview2.setCHcallb(self.treechange)
@@ -102,8 +100,6 @@ class pgcal(Gtk.VBox):
         scroll3 = Gtk.ScrolledWindow()
         scroll3.add(self.edview)
         frame4 = Gtk.Frame(); frame4.add(scroll3)
-        #frame4.set_size_request(200, 320)
-        self.pack_start(frame4, 1, 1, 2)
         self.pack_start(Gtk.Label(" "), 0, 0, 0)
         self.daysel(self.cal)
 

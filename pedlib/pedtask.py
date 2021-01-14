@@ -33,11 +33,6 @@ import pedlib.pedmisc  as  pedmisc
 from pedlib.pedutil import *
 from pedlib.keywords import *
 
-try:
-    import webview
-except:
-    print("Webview function is not available, please install.")
-
 class pedtask():
     def __init__(self):
         print("Pedtask started", pedtask)
@@ -136,9 +131,6 @@ class pedtask():
 
     def start_htmlwin(self, newfname):
         try:
-            #self.webwin = webview.create_window(newfname, newfname)
-            #webview.start(newfname)
-
             xfname = os.path.dirname(__file__) + os.sep + "webwin.py"
             #print("xfname", )
             comline3 = ["python", xfname, newfname,]

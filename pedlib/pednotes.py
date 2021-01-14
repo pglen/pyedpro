@@ -11,6 +11,7 @@ import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import GLib
+from gi.repository import Pango
 
 import pedlib.pedconfig as pedconfig
 
@@ -34,7 +35,7 @@ class pgnotes(Gtk.VBox):
         Gtk.VBox.__init__(self)
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#444444"))
-
+        self.prevsel = None;  self.prevkey = None;
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
         self.data_dir = os.path.expanduser("~/.pyednotes")
@@ -54,7 +55,8 @@ class pgnotes(Gtk.VBox):
         #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label(""), 0, 0, 0)
         self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        self.lsel = pggui.LetterSel(self.letterfilter)
+        self.lsel = pgsimp.LetterNumberSel(self.letterfilter)
+        self.lsel.set_tooltip_text("Filter entries by letter / number")
         self.pack_start(self.lsel, 0, 0, 2)
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#dd8822"))
@@ -70,9 +72,6 @@ class pgnotes(Gtk.VBox):
         hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
         hbox3.pack_start(butt2, 0, 0, 0)
         hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
-        butt3 = Gtk.Button.new_with_mnemonic("New")
-        butt3.connect("pressed", self.newitem)
-        hbox3.pack_start(butt3, 0, 0, 0)
         #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#668822"))
         self.pack_start(hbox3, 0, 0, 2)
 
@@ -84,24 +83,46 @@ class pgnotes(Gtk.VBox):
         scroll2.add(self.treeview2)
         #scroll2.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
-        frame3 = Gtk.Frame(); frame3.add(scroll2)
-        self.pack_start(frame3, 1, 1, 2)
+        vpaned = Gtk.VPaned()
 
-        self.edview = pgsimp.SimpleEdit()
-        self.edview.set_wrap_mode(Gtk.WrapMode.WORD)
-        self.edview.setsavecb(self.savetext)
+        frame3 = Gtk.Frame();
+        frame3.add(scroll2)
+        vpaned.add(frame3)
 
-        scroll3 = Gtk.ScrolledWindow()
-        scroll3.add(self.edview)
-        frame4 = Gtk.Frame(); frame4.add(scroll3)
-        #frame4.set_size_request(200, 320)
-        self.pack_start(frame4, 1, 1, 2)
+        vpaned.set_position(300)
 
-        #self.pack_start(Gtk.Label("here"), 0, 0, 0)
+        self.edview = pgsimp.TextViewWin()
+        self.edview.callb = self.savetext
+
+        self.edview.textview.set_margin_left(2)
+        self.edview.textview.set_margin_right(2)
+        self.edview.textview.set_margin_top(2)
+        self.edview.textview.set_margin_bottom(2)
+
+        self.fd = Pango.FontDescription()
+        pg = Gtk.Widget.create_pango_context(self.edview.textview)
+        myfd = pg.get_font_description()
+        mysize = myfd.get_size() / Pango.SCALE
+        self.fd.set_size((mysize + 2) * Pango.SCALE)
+        self.edview.textview.modify_font(self.fd)
+
+        self.pack_start(Gtk.Label("Font formatting is not preserved."), 0, 0, 0)
+        frame4 = Gtk.Frame();
+        frame4.set_border_width(3)
+        frame4.add(self.edview)
+
+        vpaned.add(frame4)
+        self.pack_start(vpaned, 1, 1, 2)
+
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label("  "), 1, 1, 0)
 
-        butt11 = Gtk.Button.new_with_mnemonic("Del Item")
+        butt3 = Gtk.Button.new_with_mnemonic("New")
+        butt3.connect("pressed", self.newitem)
+        hbox13.pack_start(butt3, 0, 0, 0)
+        hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        butt11 = Gtk.Button.new_with_mnemonic("Del")
         butt11.connect("pressed", self.delitem)
         hbox13.pack_start(butt11, 0, 0, 0)
         hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
@@ -121,34 +142,26 @@ class pgnotes(Gtk.VBox):
         #hbox13.pack_start(butt22, 0, 0, 0)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        self.pack_start(hbox13, 0, 0, 0)
-
-        self.pack_start(pggui.xSpacer(), 0, 0, 0)
+        self.pack_start(hbox13, 0, 0, 2)
         self.load()
 
     def  letterfilter(self, letter):
-        print("letterfilter", letter)
+        #print("letterfilter", letter)
         if letter == "All":
-            #print("Erase selection")
             self.load()
         else:
             aaa = self.sql.findhead(letter + "%")
-            #print("all", aaa)
             self.treeview2.clear()
             for aa in aaa:
                 self.treeview2.append(aa[2:5])
 
     def newitem(self, arg):
-
         self.cnt += 1
         itemx = ("New Item %d" % self.cnt, "", "")
-        print ("newitem", itemx)
         self.treeview2.append(itemx)
         self.treeview2.sel_last()
         key = str(uuid.uuid4())
         self.sql.put(key, itemx[0], itemx[1], itemx[2])
-        print ("done new", itemx)
-        pass
 
     def delitem(self, arg):
         #print ("delitem", self.lastkey, self.lastsel)
@@ -179,68 +192,58 @@ class pgnotes(Gtk.VBox):
         print ("save unimplemented")
 
     def find(self, arg):
-        print ("find", self.edit.get_text())
-
+        #print ("find", self.edit.get_text())
         if not self.edit.get_text():
             self.load()
             return
-
         aaa = self.sql.findhead("%" + self.edit.get_text() + "%")
-        print("all", aaa)
-
+        #print("all", aaa)
         self.treeview2.clear()
         for aa in aaa:
-            print("aa", aa)
+            #print("aa", aa)
             self.treeview2.append(aa[2:5])
 
     def savetext(self, txt):
-
-        #print("savetext", self.lastkey, self.lastsel, "--",  txt)
-        self.sql.putdata(self.lastkey, txt, "", "")
+        if not self.prevkey:
+            return
+        #print("savetext", self.prevkey, "--",  txt)
+        self.sql.putdata(self.prevkey, txt, "", "")
         #pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % txt);
 
     # --------------------------------------------------------------------
 
     def treechange(self, args):
-
         # Old entry
         #print("old", self.lastsel)
         #print("treechange", args)
-
         self.lastsel = args[0][:]
         # Is there one like this?
         ddd = self.sql.gethead(args[0])
         #print("ddd", ddd)
         if ddd:
             self.lastkey = ddd[1]
-
         self.sql.put(self.lastkey, args[0], args[1], args[2])
         #pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
 
     # --------------------------------------------------------------------
 
     def treesel(self, args):
-
         # Old entry
         #print("old", self.lastsel)
-        #print("treesel", args)
-
         self.lastsel = args[0][:]
-        self.edview.clear()
-
+        #self.edview.clear()
         ddd = self.sql.gethead(args[0])
-        #print("ddd", ddd)
         if ddd:
+            self.prevkey =  self.lastkey
             self.lastkey = ddd[1]
             strx = self.sql.getdata(self.lastkey)
-
         if strx:
-            self.edview.append(strx[0])
+            #self.edview.append(strx[0])
+            self.edview.set_text(strx[0])
 
     def load(self):
-
         self.lastsel = None; self.lastkey = None
-        self.treeview2.clear()
+        #self.treeview2.clear()
         try:
             datax = self.sql.getall()
             for aa in datax:
@@ -258,12 +261,6 @@ class pgnotes(Gtk.VBox):
         except:
             print("Cannot load notes Data.")
 
-        #print("cnt=", self.cnt)
-
-    def dayseldouble(self, cal):
-        #print("Day dbl", cal.get_date())
-        pass
-
 # -------------------------------------------------------------------
 
 class notesql():
@@ -272,7 +269,6 @@ class notesql():
 
         #self.take = 0
         self.errstr = ""
-
         try:
             self.conn = sqlite3.connect(file)
         except:
@@ -501,7 +497,7 @@ class notesql():
         return rr
 
     def   rmone(self, key):
-        print("removing one '%s'" % key)
+        #print("removing one '%s'" % key)
         try:
             #c = self.conn.cursor()
             self.c.execute("delete from notes where key = ?", (key,))
@@ -518,7 +514,7 @@ class notesql():
         return rr
 
     def   rmonedata(self, key):
-        print("removing one data '%s'" % key)
+        #print("removing one data '%s'" % key)
         try:
             #c = self.conn.cursor()
             self.c.execute("delete from notedata where key = ?", (key,))
@@ -570,6 +566,30 @@ class notesql():
             return rr[1]
         else:
             return None
+
+
+class SearchDialog(Gtk.Dialog):
+    def __init__(self, parent):
+        Gtk.Dialog.__init__(
+            self, title="Search", transient_for=parent, modal=True,
+        )
+        self.add_buttons(
+            Gtk.STOCK_FIND,
+            Gtk.ResponseType.OK,
+            Gtk.STOCK_CANCEL,
+            Gtk.ResponseType.CANCEL,
+        )
+
+        box = self.get_content_area()
+
+        label = Gtk.Label(label="Insert text you want to search for:")
+        box.add(label)
+
+        self.entry = Gtk.Entry()
+        box.add(self.entry)
+
+        self.show_all()
+
 
 # EOF
 

@@ -4,28 +4,14 @@ from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
 
-try:
-    import webview
-except:
-    print("Warning: Cannot import web component")
-
 import gi;
-
-gi.require_version("Gtk", "3.0")
-try:
-    gi.require_version('WebKit2', '4.0')
-except:
-    pass
 
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
-try:
-    from gi.repository import WebKit2
-except:
-    pass
+#    gi.require_version('WebKit2', '4.0')
 
 import pedlib.pedconfig as pedconfig
 
@@ -37,6 +23,11 @@ from    pedlib.pedutil import *
 sys.path.append('..')
 from pycommon.pggui import *
 from pycommon.pgsimp import *
+
+try:
+    from  pycommon import pgwkit
+except:
+    pass
 
 def load_html(window):
     sleep(5)
@@ -51,63 +42,60 @@ class pgweb(Gtk.VBox):
         #vbox = Gtk.VBox()
         Gtk.VBox.__init__(self)
 
+        self.fname = os.path.dirname(__file__) + os.sep + "home.html"
+        #print("fname", self.fname)
+
         hbox = Gtk.HBox()
         self.lastsel = ""
 
-        self.data_dir = os.path.expanduser("~/.pyedcal")
-        try:
-            if not os.path.isdir(self.data_dir):
-                os.mkdir(self.data_dir)
-        except:
-            print("Cannot make calendar data dir")
-
-        try:
-            self.sql = calsql(self.data_dir + os.sep + "caldata.sql")
-        except:
-            print("Cannot make calendar database")
-
-        #self.pack_start(xSpacer(), 0, 0, 0)
-        #self.lsel = LetterSel(self.letterfilter)
-        #self.pack_start(self.lsel, 0, 0, 2)
-
-        self.cal = Gtk.Calendar()
-        hbox.pack_start(self.cal, 1, 1, 0)
-
-        self.cal.connect("day-selected", self.daysel)
-        self.cal.connect("day-selected-double-click", self.dayseldouble)
-
-        #self.pack_start(Gtk.Label(" "), 0, 0, 0)
-        #self.pack_start(hbox, 0, 0, 0)
-        #self.pack_start(Gtk.Label(" "), 0, 0, 0)
-
-        hbox2 = Gtk.HBox()
-        butt = Gtk.Button("Goto Today")
-        butt.connect("pressed", self.today, self.cal)
-        hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
-        hbox2.pack_start(butt, 1, 1, 0)
-        hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
-
-        butt2 = Gtk.Button("Edit Selection")
-        butt2.connect("pressed", self.demand, self.cal)
-        hbox2.pack_start(butt2, 1, 1, 0)
-        hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
-
-        #self.pack_start(hbox2, 0, 0, 0)
-        #self.pack_start(Gtk.Label(""), 0, 0, 0)
-
         hbox3 = Gtk.HBox()
+        #scroll12 = Gtk.ScrolledWindow()
         self.edit = Gtk.Entry()
-        hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
+        #scroll12.add(self.edit)
+
+        #self.edit.set_width_chars(12)
+        #self.edit.set_size_request(96,96)
+
+        self.edit.set_activates_default(True)
+        self.edit.connect("activate", self.go)
+
+        hbox3.pack_start(Gtk.Label(" URL: "), 0, 0, 0)
         hbox3.pack_start(self.edit, 1, 1, 0)
-        butt2 = Gtk.Button("Find")
-        butt2.connect("pressed", self.find)
+        #hbox3.pack_start(scroll12, 1, 1, 0)
+        hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+
+        butt2 = Gtk.Button("Go")
+        butt2.connect("pressed", self.go)
         hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
         hbox3.pack_start(butt2, 0, 0, 0)
-        hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
 
-        #self.pack_start(hbox3, 0, 0, 2)
+        self.pack_start(hbox3, 0, 0, 2)
 
-        #self.treeview2 = SimpleTree(("Hour", "Subject", "Notes"))
+        hbox4 = Gtk.HBox()
+        hbox4.pack_start(Gtk.Label(" "), 1, 1, 0)
+
+        butt3 = Gtk.Button("<")
+        butt3.connect("pressed", self.backurl)
+        butt3.set_tooltip_text("Back")
+        hbox4.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox4.pack_start(butt3, 0, 0, 0)
+
+        butt4 = Gtk.Button(">")
+        butt4.connect("pressed", self.forwurl)
+        butt4.set_tooltip_text("Forward")
+        hbox4.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox4.pack_start(butt4, 0, 0, 0)
+
+        butt5 = Gtk.Button("~")
+        butt5.connect("pressed", self.anchor)
+        butt5.set_tooltip_text("Goto local anchor page")
+        hbox4.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox4.pack_start(butt5, 0, 0, 0)
+
+        #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+
+        self.pack_start(hbox4, 0, 0, 2)
+
         self.treeview2 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview2.setcallb(self.treesel)
         self.treeview2.setCHcallb(self.treechange)
@@ -123,27 +111,28 @@ class pgweb(Gtk.VBox):
         scroll3 = Gtk.ScrolledWindow()
         scroll3.add(self.edview)
         frame4 = Gtk.Frame(); frame4.add(scroll3)
-        #frame4.set_size_request(200, 320)
 
-        #self.pack_start(frame4, 1, 1, 2)
-        #self.pack_start(Gtk.Label(" "), 0, 0, 0)
-        #self.daysel(self.cal)
-        #self.webwin = webview.create_window('Load HTML Example', html='<h1>This is initial HTML</h1>')
-        #self.webwin.start(load_html, self.webwin)
-        #self.pack_start(self.webwin, 0, 0, 0)
-
-        #self.pack_start(Gtk.Label("TODO"), 1, 1, 2)
         scrolled_window = Gtk.ScrolledWindow()
         try:
-            webview = WebKit2.WebView()
-            webview.load_uri("")
+            #self.webview = WebKit2.WebView()
+            self.webview = pgwkit.pgwebw(self)
+            #self.webview.load_uri("file://" + self.fname)
         except:
-            webview = Gtk.Label("No WebView Available.")
-            pass
+            self.webview = Gtk.Label("No WebView Available.")
 
-        #webview.load_uri("https://google.cl")
-        scrolled_window.add(webview)
+
+        #webview.load_uri("https://google.com")
+        scrolled_window.add(self.webview)
         self.pack_start(scrolled_window, 1, 1, 2)
+
+        self.status = Gtk.Label(" Status ")
+        self.pack_start(self.status, 0, 0, 2)
+
+    def backurl(self, arg1): #, url, parm, buff):
+        self.webview.go_back()
+
+    def forwurl(self, arg1): #, url, parm, buff):
+        self.webview.go_forward()
 
     def  letterfilter(self, letter):
         #print("letterfilter", letter)
@@ -164,13 +153,13 @@ class pgweb(Gtk.VBox):
                 except:
                     print(sys.exc_info())
 
-    def find(self, arg):
-        print ("find", self.edit.get_text() )
-        aaa = self.sql.getall("%" + self.edit.get_text() + "%")
-        print("all ... ", aaa)
-        self.treeview2.clear()
-        for aa in aaa:
-            self.treeview2.append(aa[1:])
+    def go(self, arg):
+        txt = self.edit.get_text()
+        #print ("go", txt)
+        self.webview.load_uri(txt)
+
+    def anchor(self, arg):
+        self.webview.load_uri("file://" + self.fname)
 
     def savetext(self, txt):
         ddd = self.cal.get_date()

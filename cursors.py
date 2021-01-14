@@ -127,7 +127,6 @@ curnames = ( \
     "zoom-out",
 )
 
-
 class MainWindow(Gtk.Window):
 
     def __init__(self):
