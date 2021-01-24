@@ -14,7 +14,7 @@ config_reg = "/apps/pyedpro"
 class conf():
 
     IDLE_TIMEOUT = 15           # Time for a backup save
-    SYNCIDLE_TIMEOUT = 2        # Time for syncing windows and spelling
+    SYNCIDLE_TIMEOUT = 1        # Time for syncing windows and spelling
     UNTITLED = "untitled.txt"   # New (empty) file name
 
     full_screen = False

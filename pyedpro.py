@@ -49,7 +49,7 @@ import signal
 # Jun/xx/2018       Log Files for time accounting.
 # Jun/08/2020       Menu control / Headerbar / Version update
 # Mon 28.Sep.2020   Reshuffled imports pylint
-# Fri 25.Dec.2020   Added web view, m4 filter md2html filter
+# Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
 
 # ASCII text editor, requires pyGtk. (pygobject)
 # See pygtk-dependencies for easy install of dependencies.

@@ -92,7 +92,7 @@ class pgnotes(Gtk.VBox):
         vpaned.set_position(300)
 
         self.edview = pgsimp.TextViewWin()
-        self.edview.callb = self.savetext
+        #self.edview.callb = self.savetext
 
         self.edview.textview.set_margin_left(2)
         self.edview.textview.set_margin_right(2)
@@ -160,8 +160,13 @@ class pgnotes(Gtk.VBox):
         itemx = ("New Item %d" % self.cnt, "", "")
         self.treeview2.append(itemx)
         self.treeview2.sel_last()
+
+        self.edview.set_text("")
+
+        #usleep(10)
         key = str(uuid.uuid4())
         self.sql.put(key, itemx[0], itemx[1], itemx[2])
+
 
     def delitem(self, arg):
         #print ("delitem", self.lastkey, self.lastsel)
@@ -174,7 +179,9 @@ class pgnotes(Gtk.VBox):
         if rrr == Gtk.ResponseType.YES:
             self.sql.rmone(self.lastkey)
             self.sql.rmonedata(self.lastkey)
+            self.treeview2.clear()
             self.load()
+            self.treeview2.sel_last()
 
     def export(self, arg):
         print ("export")
@@ -183,7 +190,7 @@ class pgnotes(Gtk.VBox):
             print(aa)
 
     def exportd(self, arg):
-        print ("export data")
+        #print ("export data")
         datay = self.sql.getalldata()
         for bb in datay:
             print(bb)
@@ -206,40 +213,45 @@ class pgnotes(Gtk.VBox):
     def savetext(self, txt):
         if not self.prevkey:
             return
-        #print("savetext", self.prevkey, "--",  txt)
-        self.sql.putdata(self.prevkey, txt, "", "")
-        #pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % txt);
+        print("savetext", self.prevkey, self.prevsel, "--",  txt)
+        self.sql.putdata(self.prevkey,  txt, "", "")
+        pedconfig.conf.pedwin.update_statusbar("Saved note '%s'" % self.prevsel);
 
     # --------------------------------------------------------------------
 
     def treechange(self, args):
         # Old entry
-        #print("old", self.lastsel)
-        #print("treechange", args)
+        print("treechange", args)
         self.lastsel = args[0][:]
         # Is there one like this?
         ddd = self.sql.gethead(args[0])
         #print("ddd", ddd)
+
         if ddd:
             self.lastkey = ddd[1]
-        self.sql.put(self.lastkey, args[0], args[1], args[2])
+            self.sql.put(self.lastkey, args[0], args[1], args[2])
         #pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
 
     # --------------------------------------------------------------------
 
     def treesel(self, args):
         # Old entry
-        #print("old", self.lastsel)
-        self.lastsel = args[0][:]
-        #self.edview.clear()
+        #print("old", self.prevsel)
+        #print("treesel", args)
+
+        if self.edview.get_modified():
+            self.savetext(self.edview.get_text())
+
         ddd = self.sql.gethead(args[0])
         if ddd:
             self.prevkey =  self.lastkey
+            self.prevsel =  self.lastsel
+
+            self.lastsel = args[0][:]
             self.lastkey = ddd[1]
             strx = self.sql.getdata(self.lastkey)
-        if strx:
-            #self.edview.append(strx[0])
-            self.edview.set_text(strx[0])
+            if strx:
+                self.edview.set_text(strx[0])
 
     def load(self):
         self.lastsel = None; self.lastkey = None
@@ -260,6 +272,8 @@ class pgnotes(Gtk.VBox):
                 self.treeview2.append(aa[2:5])
         except:
             print("Cannot load notes Data.")
+
+        self.treeview2.sel_last()
 
 # -------------------------------------------------------------------
 

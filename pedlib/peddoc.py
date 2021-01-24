@@ -1034,11 +1034,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.fired -= 1
 
         # Track this buffer
-        if self.diffmode == 2:
-            self.mained.diffpane.area.xpos = self.xpos
-            self.mained.diffpane.area.ypos = self.ypos
-            self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
-                                                        self.ypos + self.caret[1], True)
+        #if self.diffmode == 2:
+        #    self.mained.diffpane.area.xpos = self.xpos
+        #    self.mained.diffpane.area.ypos = self.ypos
+        #    self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
+        #                                                self.ypos + self.caret[1], True)
 
         # Track pane buffer back to diff components
         if self.diffpane:

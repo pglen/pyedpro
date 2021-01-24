@@ -211,7 +211,8 @@ def populate(dialog):
     ddd = []
 
     for aa in ddd2:
-        if os.path.splitext(aa)[1] != ".pyc":
+        ext = os.path.splitext(aa)[1]
+        if ext != ".pyc" and ext != ".o" and ext != ".lo":
             ddd.append(aa)
 
     for filename in ddd:

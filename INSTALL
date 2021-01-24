@@ -81,6 +81,10 @@ controlling terminal for the missing library, install it with:
 
   sudo apt install python-gi-cairo
 
+ If you want to use the built in browser, install WebKit2
+
+  sudo apt install gir1.2-webkit2-4.0
+
 
 Enjoy.
 
