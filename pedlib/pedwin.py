@@ -385,21 +385,24 @@ class EdMainWindow():
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
         self.notebook2.set_tab_label(ppp, self.make_label("Editor"))
 
-        notebook2.append_page(pedcal.pgcal())
-        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
-        self.notebook2.set_tab_label(ppp, self.make_label("Calendar"))
+        try:
+            notebook2.append_page(pedcal.pgcal())
+            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            self.notebook2.set_tab_label(ppp, self.make_label("Calendar"))
 
-        notebook2.append_page(pednotes.pgnotes())
-        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
-        self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
+            notebook2.append_page(pednotes.pgnotes())
+            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
 
-        notebook2.append_page(pedoline.pgoline())
-        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
-        self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
+            notebook2.append_page(pedoline.pgoline())
+            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
 
-        notebook2.append_page(pedweb.pgweb())
-        ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
-        self.notebook2.set_tab_label(ppp, self.make_label("Web"))
+            notebook2.append_page(pedweb.pgweb())
+            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            self.notebook2.set_tab_label(ppp, self.make_label("Web"))
+        except:
+            print("Cannot load auxiliary tabs")
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200
