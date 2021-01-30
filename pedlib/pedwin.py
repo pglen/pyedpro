@@ -402,7 +402,9 @@ class EdMainWindow():
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Web"))
         except:
-            print("Cannot load auxiliary tabs")
+            print("Cannot load auxiliary tabs.")
+            if pedconfig.conf.verbose:
+                print("Auxiliary tabs message:", sys.exc_info())
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200
