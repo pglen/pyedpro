@@ -54,8 +54,7 @@ class pgweb(Gtk.VBox):
         #scroll12 = Gtk.ScrolledWindow()
         self.edit = Gtk.Entry()
         #scroll12.add(self.edit)
-
-        #self.edit.set_width_chars(12)
+        self.edit.set_width_chars(12)
         #self.edit.set_size_request(96,96)
 
         self.edit.set_activates_default(True)
