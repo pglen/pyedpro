@@ -194,6 +194,21 @@ class KeyHand:
             [Gdk.KEY_space, self.acth.ctrl_space],
             ]
 
+        # Separate keytab on right alt
+
+        self.right_alt_keytab = [
+
+            [Gdk.KEY_Up, self.acth.top],
+            [Gdk.KEY_KP_Up, self.acth.top],
+            [Gdk.KEY_Down, self.acth.bottom],
+            [Gdk.KEY_KP_Down, self.acth.bottom],
+
+            [Gdk.KEY_Left, self.acth.home],
+            [Gdk.KEY_KP_Left, self.acth.home],
+            [Gdk.KEY_Right, self.acth.end],
+            [Gdk.KEY_KP_Right, self.acth.end],
+            ]
+
         # Separate keytab on ctrl - alt for easy customization.
         # Do upper and lower for catching shift in the routine
 
@@ -295,6 +310,7 @@ class KeyHand:
     # When we get focus, we start out with no modifier keys
     def reset(self):
         self.ctrl = 0; self.alt = 0; self.shift = 0
+        self.ralt = 0; self.lalt = 0;
 
     # Main entry point for handling keys:
     def handle_key(self, self2, area, event):
@@ -366,6 +382,13 @@ class KeyHand:
         #    event, event.type, event.keyval, event.window
 
         # Call the appropriate handlers. Note the priority.
+        if self.ralt:
+            self.alt = self2.alt = False
+            ret =  self.handle_right_alt_key(self2, area, event)
+            # Was a new combo ... done
+            if ret:
+                return
+
         if self.ctrl and self.alt:
             self.handle_ctrl_alt_key(self2, area, event)
         elif self.alt:
@@ -392,6 +415,12 @@ class KeyHand:
 
         # Do key down:
         if  event.type == Gdk.EventType.KEY_PRESS:
+            if event.keyval == Gdk.KEY_Alt_R:
+                pass
+                print( "Alt R down")
+                self.ralt = True
+                ret = True
+
             if event.keyval == Gdk.KEY_Alt_L or \
                     event.keyval == Gdk.KEY_Alt_R:
                 #print( "Alt down")
@@ -411,6 +440,13 @@ class KeyHand:
 
         # Do key up
         elif  event.type == Gdk.EventType.KEY_RELEASE:
+
+            if event.keyval == Gdk.KEY_Alt_R:
+                pass
+                print( "Alt R up")
+                self.ralt = False
+                ret = True
+
             if event.keyval == Gdk.KEY_Alt_L or \
                   event.keyval == Gdk.KEY_Alt_R:
                 #print( "Alt up")
@@ -450,6 +486,11 @@ class KeyHand:
         else:
             self.ctrl = False
 
+        return ret
+
+    def handle_right_alt_key(self, self2, area, event):
+        print("Right alt combo",self.ctrl, self.shift)
+        ret = self._handle_key(self2, area, event, self.right_alt_keytab)
         return ret
 
     # --------------------------------------------------------------------
@@ -504,7 +545,7 @@ class KeyHand:
     # Internal key handler. Keytab preselected by caller
     def _handle_key(self, self2, area, event, xtab):
         #print( event)
-        ret = False
+        ret = True
         if  event.type == Gdk.EventType.KEY_PRESS:
             gotkey = False
             for kk, func in xtab:
@@ -514,7 +555,8 @@ class KeyHand:
                     break
             # No key assignment found, assume char
             if not gotkey:
-               if event.keyval == Gdk.KEY_F12:
+                ret = False
+                if event.keyval == Gdk.KEY_F12:
                     if self.shift:
                         self2.showtab(True)
                     elif self.ctrl:
@@ -523,146 +565,21 @@ class KeyHand:
                         self2.showcol(True)
                     else:
                         self2.flash(True)
-               else:
+                else:
                     self.acth.add_key(self2, event)
 
         if  event.type == Gdk.EventType.KEY_RELEASE:
             if event.keyval == Gdk.KEY_F12:
-                    if self.shift:
-                        self2.showtab(False)
-                    if self.ctrl:
-                        self2.hexview(False)
-                    elif self.alt:
-                        self2.showcol(False)
-                    else:
-                        self2.flash(False)
+                if self.shift:
+                    self2.showtab(False)
+                if self.ctrl:
+                    self2.hexview(False)
+                elif self.alt:
+                    self2.showcol(False)
+                else:
+                    self2.flash(False)
 
+        #print("handle key", ret)
         return ret
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# EOF
