@@ -21,6 +21,7 @@ class conf():
     keyh = None
     pedwin = None
     pgdebug = 0
+    show_keys = 0
 
     # Count down variables
     idle = 0; syncidle = 0;   statuscount = 0
