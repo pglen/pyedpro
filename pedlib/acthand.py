@@ -471,8 +471,13 @@ class ActHand:
         else:
             self2.clearsel()
 
-
     # --------------------------------------------------------------------
+
+    def top(self, self2):
+
+        self.was_home = 0
+        self2.set_caret(0, 0)
+        self2.invalidate()
 
     def home(self, self2):
 
@@ -486,7 +491,8 @@ class ActHand:
                 self2.ysel = yidx
         if self2.alt:
             #print ("alt-home")
-            self2.mained.firstwin()
+            #self2.mained.firstwin()
+            pass
         elif self2.ctrl:
             self2.set_caret(0, 0)
             self2.invalidate()
@@ -500,8 +506,7 @@ class ActHand:
                 self2.invalidate()
             elif self.was_home == 3:
                 #print ("bof")
-                self2.set_caret(0, 0)
-                self2.invalidate()
+                self.top(self2)
                 self.was_home = 0
 
         if self2.shift:
@@ -512,6 +517,18 @@ class ActHand:
         else:
             self2.clearsel()
             self2.invalidate()
+
+    def bottom(self, self2):
+
+        self.was_end = 0
+        xidx = self2.caret[0] + self2.xpos;
+        yidx = self2.caret[1] + self2.ypos
+
+        self2.xsel2 = self2.caret[0] + self2.xpos
+        self2.ysel2 = self2.caret[1] + self2.ypos
+        last = len(self2.text) - 1
+        xlen = len(self2.text[last])
+        self2.set_caret(xlen, last)
 
     # --------------------------------------------------------------------
 
@@ -529,11 +546,10 @@ class ActHand:
 
         if self2.alt:
             #print ("alt-end")
-            self2.mained.lastwin()
+            #self2.mained.lastwin()
+            pass
         elif self2.ctrl:
-            last = len(self2.text) - 1
-            xlen = len(self2.text[last])
-            self2.set_caret(xlen, last)
+            self.bottom(self2)
             self2.invalidate()
         elif self2.shift:
             # Begin select
@@ -541,11 +557,7 @@ class ActHand:
                 self2.xsel = self2.caret[0]  + self2.xpos
             if self2.ysel == -1:
                 self2.ysel = self2.caret[1]  + self2.ypos
-            xlen = len(self2.text[yidx])
-            self2.set_caret(xlen, self2.caret[1] + self2.ypos)
-            self2.xsel2 = self2.caret[0] + self2.xpos
-            self2.ysel2 = self2.caret[1] + self2.ypos
-            self2.invalidate()
+
         else:
             self2.clearsel()
             self.was_end += 1
