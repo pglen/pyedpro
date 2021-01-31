@@ -17,6 +17,8 @@ from gi.repository import GObject
 
 import pedlib.pedconfig as pedconfig
 
+from pedlib.pedutil import *
+
 # Adjust to taste. Estimated memory usage is 50 * MAX_LOG bytes
 # Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if
 # you would like to free / limit the memory used by the log
@@ -27,12 +29,16 @@ MAX_LOG  = 2000
 # and replicates stdout to regular fd, and puts an entry onto accum.
 
 logwin = None
+old_stdout = None
 
 class fake_stdout():
 
-    def __init__(self, old_stdout):
+    def __init__(self, x_stdout):
 
-        self.old_stdout = sys.stdout
+        global old_stdout
+        old_stdout = sys.stdout #.copy()
+        self.x_stdout = x_stdout
+
         self.flag = True
         self.dt = datetime.datetime(1990, 1, 1);
 
@@ -49,17 +55,17 @@ class fake_stdout():
         for aa in args:
             if type(aa) == 'tuple':
                 for bb in aa:
-                    self.old_stdout.write(str(bb) + " ")
+                    self.x_stdout.write(str(bb) + " ")
                     strx += str(bb)
             else:
-                self.old_stdout.write(str(aa))
+                self.x_stdout.write(str(aa))
                 strx +=  str(aa)
 
         if strx.find("\n") >= 0:
             self.flag = True
 
         self.limit_loglen()
-        self.old_stdout.flush()
+        self.x_stdout.flush()
 
         global logwin;
 
@@ -74,7 +80,7 @@ class fake_stdout():
         xlen = len(accum)
         if xlen == 0: return
         if xlen  <  MAX_LOG: return
-        self.old_stdout.write("limiting loglen " + str(xlen))
+        self.x_stdout.write("limiting loglen " + str(xlen))
         for aa in range(MAX_LOG / 5):
             try:
                 del (accum[0])
@@ -115,8 +121,8 @@ class   LogWin():
         self.win2.lab = Gtk.TextView()
         self.win2.lab.set_editable(False)
 
-        scroll = Gtk.ScrolledWindow(); scroll.add(self.win2.lab)
-        frame = Gtk.Frame(); frame.add(scroll)
+        self.scroll = Gtk.ScrolledWindow(); self.scroll.add(self.win2.lab)
+        frame = Gtk.Frame(); frame.add(self.scroll)
         self.win2.add(frame)
 
     def closewin(self, win):
@@ -144,9 +150,22 @@ class   LogWin():
         print("focus", event)
 
     def append_logwin(self, strx):
-        tb = self.win2.lab.get_buffer()
-        iter = tb.get_end_iter()
-        tb.insert(iter, strx)
+        try:
+            tb = self.win2.lab.get_buffer()
+            iter = tb.get_end_iter()
+            tb.insert(iter, strx)
+            iter2 = tb.get_end_iter()
+            self.win2.lab.scroll_to_iter (iter2, 0., True, 0., 0.)
+            # This shows that the iterator needs breathing room
+            #usleep(10)
+            adj = self.scroll.get_vadjustment()
+            adj.set_value(adj.get_upper())
+
+        except:
+            pass
+            pedconfig.conf.pedwin.update_statusbar("logwin" + str(sys.exc_info()) );
+            #global old_stdout
+            #old_stdout.write(sys.exc_info())
 
     # ------------------------------------------------------------------------
 
@@ -186,7 +205,4 @@ def create_logwin():
 
 
 
-
-
-
-
+# EOF

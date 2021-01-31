@@ -126,6 +126,7 @@ def xhelp():
     print(_("            -o        - Use real stdout (for debug strings)"))
     print(_("            -V        - Show version"))
     print(_("            -x        - Clear (eXtinguish) config (will prompt)"))
+    print(_("            -k        - Show Keys Presses"))
     print(_("            -h        - Help"))
     print()
     sys.exit(1)
@@ -153,11 +154,10 @@ if __name__ == '__main__':
     # Redirect stdout to a fork to real stdout and log. This way messages can
     # be seen even if pydepro is started without a terminal (from the GUI)
 
-    opts = []
-    args = []
+    opts = []; args = []
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvVxcto",
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvVxctok",
                         ["debug=", "help", "help", "verbose", "version"])
     except getopt.GetoptError as err:
         print(_("Invalid option(s) on command line:"), err)
@@ -197,6 +197,9 @@ if __name__ == '__main__':
             SHOW_TIMING = True
         if aa[0] == "-o":
             USE_STDOUT = True
+        if aa[0] == "-k":
+            pedconfig.conf.show_keys = True
+            #print("Showing keys")
 
     if pedconfig.conf.pgdebug > 0:
         print("Running '{}'".format(os.path.abspath(sys.argv[0])) )

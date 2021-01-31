@@ -299,9 +299,9 @@ class KeyHand:
     # Main entry point for handling keys:
     def handle_key(self, self2, area, event):
 
-        if pedconfig.conf.pgdebug > 3:
-            print( "key event",  event.type, event.state)
-        if pedconfig.conf.pgdebug > 2:
+        if pedconfig.conf.show_keys:
+            if pedconfig.conf.pgdebug > 3:
+                print( "key event",  event.type, event.state)
             print ("KEY:", event.keyval, hex(event.keyval))
             print ("KEYSTR:", event.state, event.string)
 
