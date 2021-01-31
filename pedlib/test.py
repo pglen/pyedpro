@@ -1,19 +1,29 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-# !!!!! TEST FILE !!!!
+'''
+This is open source text editor. Written on python. The motivation for
+this project was to create a modern multi-platform editor. Simple,
+powerful, configurable, extendable. To run this module without
+installation put the supporting files in the 'pedlib'
+subdirectory under the main file's direcory.
+'''
 
-# This is used when testing the editor. (like undo redo tests)
+from __future__ import absolute_import
+from __future__ import print_function
 
+import os
+import sys
+import getopt
+import signal
 
 # ------------------------------------------------------------------------
 # This is open source text editor. Written on python. The motivation for
-# this project was to create a modern mufti-platform editor.
+# this project was to create a modern multi-platform editor.
 # Simple, powerful, configurable, extendable.
 #
 # This project is a successor of pyedit.py
 #
-# Pyedpro functions well on Linux / Windows / Mac / Raspberry PI
-
+# Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
 #
 # Pyedpro has:
 #
@@ -21,6 +31,7 @@
 #    o  search/replace,
 #    o  functional navigation,
 #    o  comment/string spell check,
+#    o  full spell check, spell suggestion dialog
 #    o  auto backup,
 #    o  persistent undo/redo,  (undo beyond last save)
 #    o  auto complete, auto correct,
@@ -33,62 +44,79 @@
 
 # History:  (recent first, incomplete list)
 #
-# jul/19/2018   Coloring for spell check, Trigger by scroll, more dominant color
-# Jul/xx/2018   Update README, KEYS.TXT
-# Jun/xx/2018   Log Files for time accounting.
-# Jun/08/2020   Menu control / Headerbar / Version update
+# jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
+# Jul/xx/2018       Update README, KEYS.TXT
+# Jun/xx/2018       Log Files for time accounting.
+# Jun/08/2020       Menu control / Headerbar / Version update
+# Mon 28.Sep.2020   Reshuffled imports pylint
+# Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
 
-# ASCII test editor, requires pyGtk. (pygobject)
-# See pygtk-dependencied for easy access to dependencies.
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-import os, sys, getopt, signal
-
-import traceback, gettext, locale
-
-#locale.setlocale(locale.LC_ALL, '')
+# ASCII text editor, requires pyGtk. (pygobject)
+# See pygtk-dependencies for easy install of dependencies.
+# See also the INSTALL file.
 
 import gettext
 gettext.bindtextdomain('pyedpro', './locale/')
 gettext.textdomain('pyedpro')
-
 _ = gettext.gettext
+#locale.setlocale(locale.LC_ALL, '')
 
-#print("domain", gettext.textdomain)
+base = os.path.realpath(__file__)
+#print("file", os.path.dirname(base))
+os.chdir(os.path.dirname(base))
 
-VERSION = 1.4
-BUILDDATE = "Mon 08.Jun.2020"
-PROGNAME = "PyEdPro"
+import pedlib.pedconfig as pedconfig
+import pedlib.pedwin as pedwin
+import pedlib.pedsql as pedsql
+import pedlib.pedlog as pedlog
 
-12345678
 
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
-# So it is universally found
-sys.path.append(os.path.abspath(__file__))
+#print("domain", gettext.textdomain)
 
-import pedlib.pedconfig as pedconfig
-import pedlib.pedlog as pedlog
-import pedlib.pedync   as  pedync
+VERSION = 1.9
+BUILDDATE = "Fri 25.Dec.2020"
+PROGNAME  = "PyEdPro"
+
+SHOW_TIMING = 0
+SHOW_CONFIG = 0
+CLEAR_CONFIG = 0
+USE_STDOUT = 0
+
+# ------------------------------------------------------------------------
 
 def main(strarr):
 
-    mainwin = pyedlib.pedwin.EdMainWindow(None, None, strarr)
-    pyedlib.pedconfig.conf.pedwin = mainwin
+    ''' Rotate around this axis '''
+
+    if pedconfig.conf.verbose:
+        print(PROGNAME, "running on", "'" + os.name + "'", \
+            "GTK", Gtk._version, "PyGtk", \
+               "%d.%d.%d" % (Gtk.get_major_version(), \
+                    Gtk.get_minor_version(), \
+                        Gtk.get_micro_version()))
+
+    signal.signal(signal.SIGTERM, terminate)
+    mainwin = pedwin.EdMainWindow(None, None, strarr)
+    pedconfig.conf.pedwin = mainwin
 
     # Create log window
-    pyedlib.pedlog.create_logwin()
+    pedlog.create_logwin()
 
     Gtk.main()
 
-def help():
+def xversion():
+    ''' Offer version number '''
+    print("Version", pedconfig.conf.version)
+    sys.exit(1)
 
+def xhelp():
+    ''' Offer Help '''
     print()
-    print(PROGNAME, _("Version: "), pyedlib.pedconfig.conf.version)
+    print(PROGNAME, _("Version: "), pedconfig.conf.version)
     print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
     print(_("Option(s):"))
     print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
@@ -98,133 +126,145 @@ def help():
     print(_("            -o        - Use real stdout (for debug strings)"))
     print(_("            -V        - Show version"))
     print(_("            -x        - Clear (eXtinguish) config (will prompt)"))
+    print(_("            -k        - Show Keys Presses"))
     print(_("            -h        - Help"))
     print()
+    sys.exit(1)
 
 # ------------------------------------------------------------------------
 
-def terminate(arg1, arg2):
-
-    if(pyedlib.pedconfig.conf.verbose):
+#def terminate(arg1 = None, arg2 = None):
+def terminate():
+    ''' Termination Handler'''
+    if pedconfig.conf.verbose:
         print(_("Terminating pydepro.py, saving files to ~/pydepro"))
 
     # Save all
-    pyedlib.pedconfig.conf.pedwin.activate_quit(None)
+    pedconfig.conf.pedwin.activate_quit(None)
     #return signal.SIG_IGN
 
 # ------------------------------------------------------------------------
 # Start of program:
 
+
 if __name__ == '__main__':
+
+    ''' Main Entry Point for the editor '''
 
     # Redirect stdout to a fork to real stdout and log. This way messages can
     # be seen even if pydepro is started without a terminal (from the GUI)
 
     opts = []; args = []
+
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvxctVo")
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvVxctok",
+                        ["debug=", "help", "help", "verbose", "version"])
     except getopt.GetoptError as err:
         print(_("Invalid option(s) on command line:"), err)
         sys.exit(1)
 
-    #print "opts", opts, "args", args
+    #print ("opts", opts, "args", args)
 
-    pyedlib.pedconfig.conf.version = VERSION
-    pyedlib.pedconfig.conf.build_date = BUILDDATE
-    pyedlib.pedconfig.conf.progname = PROGNAME
+    pedconfig.conf.version = VERSION
+    pedconfig.conf.build_date = BUILDDATE
+    pedconfig.conf.progname = PROGNAME
 
+    # Outdated parsing ... for now, leave it as is
     for aa in opts:
-        if aa[0] == "-d":
+        #print("opt", aa[0])
+        if aa[0] == "-d" or aa[0] == "--debug":
             try:
-                pyedlib.pedconfig.conf.pgdebug = int(aa[1])
-                print( PROGNAME, _("Running at debug level"),  pyedlib.pedconfig.conf.pgdebug)
+                pedconfig.conf.pgdebug = int(aa[1])
+                print( PROGNAME, _("Running at debug level:"),  pedconfig.conf.pgdebug)
             except:
-                pyedlib.pedconfig.conf.pgdebug = 0
+                pedconfig.conf.pgdebug = 0
 
-        if aa[0] == "-h": help();  exit(1)
-        if aa[0] == "-?": help();  exit(1)
-        if aa[0] == "-V": print("Version", pyedlib.pedconfig.conf.version); \
-            exit(1)
-        if aa[0] == "-f": pyedlib.pedconfig.conf.full_screen = True
-        if aa[0] == "-v": pyedlib.pedconfig.conf.verbose = True
-        if aa[0] == "-x": clear_config = True
-        if aa[0] == "-c": show_config = True
-        if aa[0] == "-t": show_timing = True
-        if aa[0] == "-o": use_stdout = True
+        if aa[0] == "-h" or  aa[0] == "--help" or aa[0] == "-?":
+            xhelp()
+        if aa[0] == "-V" or aa[0] == "--version":
+            xversion()
+        if aa[0] == "-v" or aa[0] == "--verbose":
+            pedconfig.conf.verbose = True
+        if aa[0] == "-f":
+            pedconfig.conf.full_screen = True
+        if aa[0] == "-v":
+            pedconfig.conf.verbose = True
+        if aa[0] == "-x":
+            CLEAR_CONFIG = True
+        if aa[0] == "-c":
+            SHOW_CONFIG = True
+        if aa[0] == "-t":
+            SHOW_TIMING = True
+        if aa[0] == "-o":
+            USE_STDOUT = True
+        if aa[0] == "-k":
+            pedconfig.conf.show_keys = True
+            #print("Showing keys")
+
+    if pedconfig.conf.pgdebug > 0:
+        print("Running '{}'".format(os.path.abspath(sys.argv[0])) )
 
     try:
-        if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
-            if(pyedlib.pedconfig.conf.verbose):
-                print("making", pyedlib.pedconfig.con.config_dir)
-            os.mkdir(pyedlib.pedconfig.conf.config_dir)
-    except: pass
+        if not os.path.isdir(pedconfig.conf.config_dir):
+            if pedconfig.conf.verbose:
+                print("making", pedconfig.conf.config_dir)
+            os.mkdir(pedconfig.conf.config_dir)
+    except:
+        pass
 
     # Let the user know if it needs fixin'
-    if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
-        print(_("Cannot access config dir:"), pyedlib.pedconfig.conf.config_dir)
+    if not os.path.isdir(pedconfig.conf.config_dir):
+        print(_("Cannot access config dir:"), pedconfig.conf.config_dir)
         sys.exit(1)
 
-    pyedlib.pedconfig.ensure_dirs(pyedlib.pedconfig.conf)
+    pedconfig.ensure_dirs(pedconfig.conf)
 
-    if(pyedlib.pedconfig.conf.verbose):
-        print(_("Data stored in "), pyedlib.pedconfig.conf.config_dir)
+    if pedconfig.conf.verbose:
+        print(_("Data stored in "), pedconfig.conf.config_dir)
 
     # Initialize sqlite to load / save preferences & other info
-    sql = pyedlib.pedsql.pedsql(pyedlib.pedconfig.conf.sql_data)
-
     # Initialize pedconfig for use
-    pyedlib.pedconfig.conf.sql = sql
-    pyedlib.pedconfig.conf.keyh = pyedlib.keyhand.KeyHand()
-    pyedlib.pedconfig.conf.mydir = os.path.abspath(__file__)
+
+    pedconfig.conf.sql = pedsql.pedsql(pedconfig.conf.sql_data)
+    pedconfig.conf.mydir = os.path.abspath(__file__)
+    #print("Exe path:",  pedconfig.conf.mydir)
 
     # To clear all config vars
-    if clear_config:
+    if CLEAR_CONFIG:
         print(_("Are you sure you want to clear config ? (y/n)"))
         sys.stdout.flush()
         aa = sys.stdin.readline()
         if aa[0] == "y":
             print(_("Removing configuration ... "), end=' ')
-            sql.rmall()
+            pedconfig.conf.sql.rmall()
             print("OK")
         sys.exit(0)
 
     # To check all config vars
-    if show_config:
+    if SHOW_CONFIG:
         print("Dumping configuration:")
-        ss = sql.getall();
+        ss = pedconfig.conf.sql.getall()
         for aa in ss:
             print(aa)
         sys.exit(0)
 
     # Uncomment this for silent stdout
-    if use_stdout or pyedlib.pedconfig.conf.pgdebug or \
-                    pyedlib.pedconfig.conf.verbose:
+    if USE_STDOUT or pedconfig.conf.pgdebug or \
+                    pedconfig.conf.verbose:
         # Do not hide console
         #print("Using real stdout")
-        pyedlib.pedwin.hidden = True    # Already hidden no hide
+        pedwin.hidden = True    # Already hidden no hide
     else:
-        pyedlib.pedwin.hidden = False   # Take action, hide
+        pedwin.hidden = False   # Take action, hide
 
-    sys.stdout = pyedlib.pedlog.fake_stdout(sys.stdout)
-    sys.stderr = pyedlib.pedlog.fake_stdout(sys.stdout)
+    sys.stdout = pedlog.fake_stdout(sys.stdout)
+    sys.stderr = pedlog.fake_stdout(sys.stdout)
 
     # Uncomment this for buffered output
-    if pyedlib.pedconfig.conf.verbose:
+    if pedconfig.conf.verbose:
         print("Started", PROGNAME)
 
     main(args[0:])
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -416,8 +416,7 @@ class KeyHand:
         # Do key down:
         if  event.type == Gdk.EventType.KEY_PRESS:
             if event.keyval == Gdk.KEY_Alt_R:
-                pass
-                print( "Alt R down")
+                #print( "Alt R down")
                 self.ralt = True
                 ret = True
 
@@ -442,8 +441,7 @@ class KeyHand:
         elif  event.type == Gdk.EventType.KEY_RELEASE:
 
             if event.keyval == Gdk.KEY_Alt_R:
-                pass
-                print( "Alt R up")
+                #print( "Alt R up")
                 self.ralt = False
                 ret = True
 
@@ -489,7 +487,7 @@ class KeyHand:
         return ret
 
     def handle_right_alt_key(self, self2, area, event):
-        print("Right alt combo",self.ctrl, self.shift)
+        #print("Right alt combo",self.ctrl, self.shift)
         ret = self._handle_key(self2, area, event, self.right_alt_keytab)
         return ret
 

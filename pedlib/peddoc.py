@@ -169,6 +169,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.CLCOLOR    = CLCOLOR
         self.COCOLOR    = COCOLOR
         self.STCOLOR    = STCOLOR
+        self.drag = False
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
@@ -230,6 +231,41 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect('drag-motion', self.on_drag_motion)
         self.connect('drag-drop', self.on_drag_drop)
         self.connect("drag-data-received", self.on_drag_data_received)
+        self.connect("drag-data-get", self.on_drag_data_get)
+
+    def on_drag_data_get(self, widget, drag_context, data, info, time):
+        #print("Drag data get entry")
+        if self.xsel == -1 or self.ysel == -1:
+            return
+        # Normalize
+        xssel = min(self.xsel, self.xsel2)
+        xesel = max(self.xsel, self.xsel2)
+        yssel = min(self.ysel, self.ysel2)
+        yesel = max(self.ysel, self.ysel2)
+
+        cnt = yssel; cnt2 = 0; cumm = ""
+        while True:
+            if cnt > yesel: break
+
+            #self.pad_list(self, cnt)
+            line = self.text[cnt]
+            if self.colsel:
+                frag = line[xssel:xesel]
+            else :                                  # startsel - endsel
+                if cnt == yssel and cnt == yesel:   # sel on the same line
+                    frag = line[xssel:xesel]
+                elif cnt == yssel:                  # start line
+                    frag = line[xssel:]
+                elif cnt == yesel:                  # end line
+                    frag = line[:xesel]
+                else:
+                    frag = line[:]
+
+            if cnt2: frag = "\n" + frag
+            cumm += frag
+            cnt += 1; cnt2 += 1
+
+        data.set_text(cumm, -1)
 
     def on_drag_motion(self, widgt, context, c, y, time):
         Gdk.drag_status(context, Gdk.DragAction.COPY, time)
@@ -237,7 +273,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def on_drag_drop(self, widget, context, x, y, time):
         widget.drag_get_data(context, context.list_targets()[-1], time)
-
 
     # Insert text at current point
     def inserttext(self, xtext):
@@ -262,7 +297,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     # Drag and drop here
     def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
-        #print("Received data:", data, data.get_data_type(), x, y, info)
+        print("Received data:", data, data.get_data_type(), x, y, info)
         if info == TARGET_ENTRY_TEXT:
             if str(data.get_data_type()) == "text/plain":
                 xtext = data.get_text()
@@ -649,17 +684,34 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                     line = ""
                 offs = calc_tabs2(line, xxx)
 
-                #print( "offs, xxx", offs, xxx)
-                self.set_caret(self.xpos + xxx - (offs - xxx),
-                                     self.ypos + yyy )
+                # Are we in selection?
+                #print( "xxx", self.xpos + xxx, "yyy", self.ypos + yyy)
                 #rp = xxx + self.xpos
                 #print( "xpos", self.xpos, "xxx", xxx, "rp", rp)
                 #print( line)
                 #print( "line part", "'" + line[rp:rp+8] + "'")
 
-                # Erase selection
+                # Are we in selection?
                 if self.xsel != -1:
-                    self.clearsel()
+                    #print("xsel", self.xsel, "ysel", self.ysel)
+                    #print("xsel2", self.xsel2, "ysel2", self.ysel2)
+
+                    xssel = min(self.xsel, self.xsel2)
+                    xesel = max(self.xsel, self.xsel2)
+                    yssel = min(self.ysel, self.ysel2)
+                    yesel = max(self.ysel, self.ysel2)
+
+                    if self.ypos + yyy >= yssel and self.ypos + yyy <= yesel:
+                        #print("in selection")
+                        self.drag = True
+                    else:
+                        # Erase selection, pos cursor
+                        self.clearsel()
+                        self.set_caret(self.xpos + xxx - (offs - xxx),
+                                     self.ypos + yyy )
+                else:
+                    self.set_caret(self.xpos + xxx - (offs - xxx),
+                                 self.ypos + yyy )
 
                 self.fired += 1
                 GLib.timeout_add(300, self.keytime)
@@ -714,6 +766,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             #print( "button release", event.button)
             self.mx = -1; self.my = -1
             self.scrtab = False
+            self.drag = False
             ttt = "Release"
             xxx = int(event.x / self.cxx); yyy = int(event.y / self.cyy)
             # Find current pos, gather tabs, adjust back
@@ -798,6 +851,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         #print ("motion event", event.state, event.x, event.y)
         if event.state & Gdk.ModifierType.BUTTON1_MASK:
             #print( "motion event butt 1", event.state, event.x, event.y)
+            if self.drag:
+                #print ("drag motion event", event.state, event.x, event.y)
+                targ = Gtk.TargetList(); targ.add_text_targets(0)
+                self.drag_begin(targ, Gdk.DragAction.COPY, 0, event)
+                self.drag = False
+                return
+
             if self.xsel == -1 and self.scrtab != True:
                 begsel = False
                 # Horiz drag - regular sel
@@ -2346,6 +2406,5 @@ def run_async_time(win):
         # This is 'normal', ignore it
         print("run_async_time", sys.exc_info())
         pass
-
 
 # EOF
