@@ -537,12 +537,12 @@ class ActHand:
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
 
-        if self2.shift:
-            # Begin select
-            if self2.xsel == -1:
-                self2.xsel = xidx
-            if self2.ysel == -1:
-                self2.ysel = yidx
+        #//if self2.shift:
+        #//    # Begin select
+        #//    if self2.xsel == -1:
+        #//        self2.xsel = xidx
+        #//    if self2.ysel == -1:
+        #//        self2.ysel = yidx
 
         if self2.alt:
             #print ("alt-end")
@@ -557,6 +557,11 @@ class ActHand:
                 self2.xsel = self2.caret[0]  + self2.xpos
             if self2.ysel == -1:
                 self2.ysel = self2.caret[1]  + self2.ypos
+            try:
+                xlen = len(self2.text[yidx])
+                self2.set_caret(xlen, yidx)
+            except:
+                pass
 
         else:
             self2.clearsel()
@@ -584,6 +589,7 @@ class ActHand:
 
         if self2.shift:
             # End select
+            #print("end sel", self2.caret[0], self2.caret[1])
             self2.xsel2 = self2.caret[0] + self2.xpos
             self2.ysel2 = self2.caret[1] + self2.ypos
             self2.invalidate()
