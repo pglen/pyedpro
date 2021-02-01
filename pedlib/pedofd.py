@@ -54,8 +54,10 @@ def ofd(fname = None, self2 = None):
     label3  = Gtk.Label("   ");  label4 = Gtk.Label("   ")
     label5  = Gtk.Label("   ");  label6 = Gtk.Label("   ")
     label7  = Gtk.Label("   ");  label8 = Gtk.Label("   ")
-    label9  = Gtk.Label("   ");  label10 = Gtk.Label("   ");
-    label11  = Gtk.Label(" ");  label12 = Gtk.Label(" ");
+    label9  = Gtk.Label("   ");
+    label10 = Gtk.Label(" Open File by Name (click on 'Open This' to open it) ");
+    label11  = Gtk.Label("  ");  label12 = Gtk.Label(" ");
+    #label13  = Gtk.Label("  ");  label14 = Gtk.Label(" ");
 
     dialog.label11 = Gtk.Label("   ")
     dialog.label12 = Gtk.Label("   ")
@@ -65,7 +67,10 @@ def ofd(fname = None, self2 = None):
 
     dialog.vbox.pack_start(label4, 0, 0, 0)
     dialog.vbox.pack_start(dialog.pbox, 0, 0, 0)
+
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
     dialog.vbox.pack_start(label10, 0, 0, 0)
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
 
     warnings.simplefilter("ignore")
     dialog.entry = Gtk.Entry();
@@ -142,9 +147,11 @@ def ofd(fname = None, self2 = None):
 
 def butt_this(butt, dialog):
     ttt = dialog.entry.get_text()
-    print("butt_this", ttt)
+    #print("butt_this", ttt)
     if ttt:
         dialog.self2.mained.openfile(ttt)
+    else:
+        pedconfig.conf.pedwin.update_statusbar("Plese enter filename to open.");
 
 def butt_click(butt, dialog):
     #print butt.path
@@ -195,7 +202,7 @@ def populate(dialog):
         try:
             dialog.ts.remove(root)
         except:
-            print("Exception on rm ts")
+            print("Exception on rm ts", sys.exc_info())
 
     ppp = ".."
     filestat = os.stat(ppp)
@@ -246,7 +253,8 @@ def populate(dialog):
             dialog.ts.set(piter, 0, filename)
             dialog.ts.set(piter, 1, str(filestat.st_size))
             dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
-            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+            #dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_atime)))
 
     # --------------------------------------------------------------------
 
