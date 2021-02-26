@@ -5,6 +5,8 @@ existing keyboard standards. The keys are assigned in keyhand.py and the
 actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
+Updated:    Fri 26.Feb.2021
+            Key Allocation Documented
 Updated:    Tue 20.Oct.2020
             Key Allocation Revisions
 Updated:    Fri 17.Apr.2020
@@ -16,7 +18,7 @@ Updated:    Sat 26.Sep.2020
 
   To implement a new feature follow a particular key's execution path, and
 replicate functionality. The key actions are easy to follow, as the code is
-table driven.
+table driven. Relevant files: acthand.py and keyhand.py
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char
@@ -96,6 +98,11 @@ table driven.
     Alt Home                    -- Go to first buffer
     Alt End                     -- Go to last buffer
 
+    Right-Alt Up                -- Go to begin of file
+    Right-Alt Down              -- Go to end of file
+    Right-Alt left              -- Go to begin of line
+    Right-Alt right             -- Go to end of line
+
     Home Home                   -- Go to beginning of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl Home)
 
@@ -148,13 +155,14 @@ table driven.
     Alt F9                      --  Gnome - Minimize window
     Alt F10                     --  Gnome - Full Screen window
 
+    # The OS may override some of these keys ... configure accordingly
+
     Ctrl Alt A                  --  Cleanse non ascii
-    Ctrl Alt B                  --  ''' '''
+    Ctrl Alt B                  --  ????
     Ctrl Alt C                  --  Comment out line, and jump down below
-
-        ...
-
+    Ctrl Alt D                  --  Display terminal here
     Ctrl Alt E                  --  Execute last command
+    Ctrl Alt F                  --  ????
     Ctrl Alt Shift E            --  Execute last command, force prompt
 
     Ctrl Alt T                  --  Execute terminal here
@@ -163,7 +171,7 @@ table driven.
     Ctrl Alt H                  --  Find (alias)
     Ctrl Alt J                  --  Coloring
     Ctrl Alt K                  --  Hex view
-    Ctrl Alt R                  --  Read file (text to speach)
+    Ctrl Alt R                  --  Read file (text to speech)
 
     # More coming ... under construction
 
@@ -173,4 +181,6 @@ table driven.
 
     #Alt <                       -- Lower case word/selection
 
-# eof
+# EOF
+
+

@@ -699,13 +699,12 @@ class ActHand:
         #self2.set_changed(True)
 
     # --------------------------------------------------------------------
-    # Not many ctrl - alt handlers yet (reserved for gnome shortcuts)
+    # Not many ctrl - alt handlers yet (may conflict with Gnome/OS shortcuts)
 
     # Cleanse non ascii
     def ctrl_alt_a(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - A")
-
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
         line = self2.text[yidx]
@@ -725,6 +724,7 @@ class ActHand:
     def ctrl_alt_b(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - B")
+        self2.mained.update_statusbar("C-A-B key pressed.")
 
     #// Deactivate code:
     def ctrl_alt_c(self, self2):
@@ -752,28 +752,35 @@ class ActHand:
         self2.mained.update_statusbar("Selection commented out.")
         self2.invalidate()
 
+    #// Start termnal
+    def ctrl_alt_d(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - ALT - D")
+        self2.mained.start_term()
+
     def ctrl_alt_e(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - E")
-
         pedmisc.exec_test(self2, "kb")
+
+    def ctrl_alt_f(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - ALT - F")
+        self2.mained.update_statusbar("C-A-F Key pressed.")
 
     def ctrl_alt_t(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - T")
         self2.start_term()
 
-
     def ctrl_alt_h(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - H")
-
         pedfind.find(self, self2, True)
 
     def ctrl_alt_j(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - J")
-
         self2.coloring(not self2.colflag)
         if self2.colflag: strx = "on"
         else: strx = "off"
@@ -782,13 +789,11 @@ class ActHand:
     def ctrl_alt_k(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - K")
-
         self2.hexview(not self2.hex)
 
     def ctrl_alt_r(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - R")
-
         #print("Read file on tts ");
         try:
             if not self2.tts:
@@ -797,6 +802,9 @@ class ActHand:
             self2.tts.read_tts(self2)
         except:
             print("No TTS", sys.exc_info())
+            self2.mained.update_statusbar("No TTS installed")
+
+
      # --------------------------------------------------------------------
 
     def ctrl_c(self, self2):
