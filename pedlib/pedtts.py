@@ -66,6 +66,8 @@ class tts():
         except:
             put_exception("Cannot create festival file")
             return
+        finally:
+            fh.close()
         try:
             if USE_FESTIVAL:
                 self.speech_pid = subprocess.Popen(["festival", "--tts", fname])

@@ -701,7 +701,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                     yssel = min(self.ysel, self.ysel2)
                     yesel = max(self.ysel, self.ysel2)
 
-                    if self.ypos + yyy >= yssel and self.ypos + yyy <= yesel:
+                    if (self.ypos + yyy >= yssel and self.ypos + yyy <= yesel) and \
+                         (self.xpos + xxx >= xssel and self.xpos + xxx <= xesel):
                         #print("in selection")
                         self.drag = True
                     else:
@@ -2391,7 +2392,7 @@ def run_async_time(win):
             pass
     elif ".txt" in lname:
         pass
-    else:
+    else:            # Default to 'C' like syntax
         try:
             for kw in sumkeywords:
                 for line in win.text:
@@ -2399,6 +2400,18 @@ def run_async_time(win):
                         sumw.append(line)
         except:
             pass
+
+        try:
+            regex = re.compile(ckeywords)
+            for line in win.text:
+                res = regex.search(line)
+                if res:
+                    #print( res, res.start(), res.end())
+                    sumw.append(line)
+        except:
+            print("Exception in c func handler", sys.exc_info())
+            pass
+
 
     try:
         win.mained.update_treestore(sumw)
