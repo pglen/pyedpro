@@ -182,7 +182,7 @@ class CallBack():
 
         SCALE_LARGE = 1.2
         SCALE_X_LARGE = 1.4
-        SCALE_XX_LARGE = 1.6
+        SCALE_XX_LARGE = 1.8
         SCALE_SMALL = 0.8
         SCALE_X_SMALL = 0.6
 

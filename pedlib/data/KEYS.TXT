@@ -181,6 +181,67 @@ table driven. Relevant files: acthand.py and keyhand.py
 
     #Alt <                       -- Lower case word/selection
 
+
+    F1                           -- Help
+    F2                           -- Dev Help
+    F3                           -- Key assignments Help
+    F4                           -- Animate macro
+    F5                           -- Previous Match
+    F6                           -- Next Match
+    F7                           -- Start / Stop Record
+    F8                           -- Play Macro
+    F9                           -- Toggle code spell check****
+    Shift-F9                     -- Toggle full file (text) spell check
+    F10                          -- Application's main - Menu
+    shift F10                    -- Notebook tab menu (if enabled)
+    F11                          -- Toggle full Screen
+    F12                          -- Cursor Locator
+    Shift-F12                    -- Reveal tabs and spaces and 80 column marker
+    Ctrl-F12                     -- Reveal Hex view
+
+Context dependent key assignments:
+
+    Alt-X                       -- Exit dialog
+    ESC                         -- Exit dialog (cancel)
+    ENTER                       -- Exit dialog (accept)
+
+ Find / Replace context:
+
+    Alt-S                       -- Case Insensitive search
+    Alt-R                       -- Regular expression search
+    Alt-A                       -- All buffer search
+
+ Find / Replace results context:
+
+    Alt-S                       -- Change currently Selected
+    Alt-O                       -- Change One (rescans buffer)
+    Alt-A                       -- Change All
+    Alt-Tab                     -- Navigate between search / main windows
+    Arrow Up/Down               -- Next / prev match
+    ENTER                       -- Change selection
+
+  Mouse actions:
+
+    Left Click                  -- Positon caret (text cursor)
+    Right Click                 -- Call up right click menu
+    Right Click (on spell)      -- Call up spell correction list
+    Click - Hold - Drag (L-R)   -- Select
+    Click - Hold - Drag  (U-D)  -- Column Select
+    Double Click                -- Select Word
+
+Notes:
+
+    *       Alt-Arrow   Goto begin / end of current word. Word delimited with
+                        alpha_num + punctuation
+    **      Ctrl-Q      Quit program, no save, but files are backed up in
+                        (~/.pyedpro/data) '*.sav'
+    ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
+                        Useful for turining assignments.
+    ****    F9          Only Comments and strings are checked, otherwise all
+                        text is checked
+    *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
+
+
 # EOF
 
 

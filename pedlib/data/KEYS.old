@@ -1,10 +1,12 @@
-<c><b><xxl>PyEdPro <i>default</i> Key Assignments</xxl></b></c>
+<c><b><xl>PyEdPro Key Assignments</xl></b></c>
 <w><j>\
 
   This is a list of default key assignments for PyEdPro. The keys are assigned \
 in keyhand.py and the actions are implemented in acthand.py. \
 Regular keys are added to the buffer. To implement a new feature follow a \
 particular key's execution path, and replicate functionality.
+
+NOTE: the document keys.txt is always up-to-date. See: 'Keyhelp in Doc' in the help meu.
 
 </j></w>  \
 <f><l>
@@ -22,41 +24,33 @@ particular key's execution path, and replicate functionality.
     !@#$%^&*()_ ...             -- Insert punctuation (key)
 
     Tab                         -- Insert 4 spaces up to % 4
-    Shift-Tab                   -- Insert a real tab up to % 4
+    Shift Tab                   -- Insert a real tab up to % 4
     Ctrl A                      -- Select All text in buffer
-    Ctrl-Shift A                -- Goto beginning of line
     Ctrl B                      -- Select word (till spaces)
     Ctrl C                      -- Copy selection to Clipboard
     Ctrl D                      -- Delete (trim) spaces from end of line
-    Ctrl-Shift D                -- Insert date string at cursor location
     Ctrl E                      -- Capitalize (emphasize) word
-    Ctrl-Shift E                -- Goto end of line
     Ctrl F                      -- Find in file or all buffers
     Ctrl G                      -- Goto next match
     Shift-Ctrl G                -- Goto previous match
-    Ctrl H                      -- Cursor left  (like in vi)
+    Ctrl H                      -- Cursor left  (like in Emacs)
     Ctrl I                      -- Insert count-up number
-    Shift-Ctrl I                -- Reset count-up number to zero
-    Ctrl J                      -- Down Arrow (like in vi)
-    Ctrl K                      -- Up Arrow   (like in vi)
-    Ctrl L                      -- Right Arrow (like in vi)
+    Shift-Ctrl I                -- Reset and insert count-up number
+    Ctrl J                      -- Down Arrow
+    Ctrl K                      -- Up Arrow
+    Ctrl L                      -- Right Arrow
     Ctrl M                      -- Toggle auto correct
-    Ctrl-Shift M                -- Call up right click menu
     Ctrl N                      -- New File
     Ctrl O                      -- Open file
-    Ctrl-Shift O                -- Open session
     Ctrl P                      -- Print (not implemented on all platforms)
     Ctrl Q                      -- Quit program **
-    Ctrl R                      -- Reverse (swap) three words. Cursor on W1 ***
-    Ctrl-Shift R                -- Review M4 macro file
+    Ctrl R                      -- Reverse three words ***
     Ctrl S                      -- Save current file
-    Ctrl T                      -- Transpose two words (taush)
-    Ctrl-Shift T                -- Add Time/Date in document
-    Ctrl U                      -- Upper case word / selection
-    Shift-Ctrl U                -- Lower case word / selection
+    Ctrl T                      -- Transpose two words
+    Ctrl U                      -- Upper case word
+    Shift-Ctrl U                -- Lower case word
     Ctrl V                      -- Paste from Clipboard
     Ctrl W                      -- Close current file
-    Ctrl-Shift W                -- Close all files
     Ctrl X                      -- Cut to Clipboard
     Ctrl Y                      -- Redo last undo
     Ctrl Z                      -- Undo last change
@@ -87,15 +81,8 @@ particular key's execution path, and replicate functionality.
     Alt Home                    -- Go to first buffer
     Alt End                     -- Go to last buffer
 
-    Right-Alt Up                -- Go to begin of file
-    Right-Alt Down              -- Go to end of file
-    Right-Alt left              -- Go to begin of line
-    Right-Alt right             -- Go to end of line
-
-    Home Home                   -- Go to beginning of page (PgUp)
+    Home Home                   -- Go to begininig of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl Home)
-
-    # Both upper and lower case
 
     Alt A                       -- Save All buffers
     Alt B                       -- Show Buffers
@@ -136,39 +123,21 @@ particular key's execution path, and replicate functionality.
     Alt 8                       -- Switch to buffer 8
     Alt 9                       -- Switch to buffer 9
 
+    Alt <                       -- Lower case word/selection
+    Alt >                       -- Upper case word/selection
+
     Alt F1                      --  Gnome - Menu
     Alt F2                      --  Gnome - Run App
     Alt F4                      --  Gnome - Exit program (Use Alt X)
     Alt F7                      --  Gnome - Move window
-    Alt F8                      --  Gnome - Re-size window
+    Alt F8                      --  Gnome - Resize window
     Alt F9                      --  Gnome - Minimize window
     Alt F10                     --  Gnome - Full Screen window
 
-    # The OS may override some of these keys ... configure accordingly
-
-    Ctrl Alt A                  --  Cleanse non ascii
-    Ctrl Alt B                  --  ????
-    Ctrl Alt C                  --  Comment out line, and jump down below
-    Ctrl Alt D                  --  Display terminal here
-    Ctrl Alt E                  --  Execute last command
-    Ctrl Alt F                  --  ????
-    Ctrl Alt Shift E            --  Execute last command, force prompt
-
-    Ctrl Alt T                  --  Execute terminal here
-        ...
-
-    Ctrl Alt H                  --  Find (alias)
-    Ctrl Alt J                  --  Coloring
-    Ctrl Alt K                  --  Hex view
-    Ctrl Alt R                  --  Read file (text to speech)
-
-    # More coming ... under construction
-
-    #Ctrl Alt H                  --  Left Arrow
-    #Ctrl Alt J                  --  Toggle coloring
-    #Ctrl Alt K                  --  Toggle Hex View
-
-    #Alt <                       -- Lower case word/selection
+    Ctrl Alt H                  --  Left Arrow
+    Ctrl Alt J                  --  Toggle coloring
+    Ctrl Alt K                  --  Toggle Hex View
+    Ctrl Alt L                  --  Lowercase word
 
     F1                           -- Help
     F2                           -- Dev Help
@@ -185,30 +154,73 @@ particular key's execution path, and replicate functionality.
     F11                          -- Toggle full Screen
     F12                          -- Cursor Locator
     Shift-F12                    -- Reveal tabs and spaces and 80 column marker
-    Ctrl-F12                     -- Reveal Hex view
+    Ctrl F12                     -- Reveal Hex view
+
+Context dependent key assignments:
+
+    Alt X                       -- Exit dialog
+    ESC                         -- Exit dialog (cancel)
+    ENTER                       -- Exit dialog (accept)
+
+ Find / Replace context:
+
+    Alt S                       -- Case Insensitive search
+    Alt R                       -- Regular expression search
+    Alt A                       -- All buffer search
+
+ Find / Replace results context:
+
+    Alt S                       -- Change currently Selected
+    Alt O                       -- Change One (rescans buffer)
+    Alt A                       -- Change All
+    Alt Tab                     -- Navigate between search / main windows
+    Arrow Up/Down               -- Next / prev match
+    ENTER                       -- Change selection
+
+  Mouse actions:
+
+    Left Click                  -- Positon caret (text cursor)
+    Right Click                 -- Call up right click menu
+    Right Click (on spell)      -- Call up spell correction list
+    Click - Hold - Drag (L-R)   -- Select
+    Click - Hold - Drag  (U-D)  -- Column Select
+    Double Click                -- Select Word
+
+Notes:
+
+    *       Alt Arrow   Goto begin / end of current word. Word delimited with
+                        alpha_num + punctuation
+    **      Ctrl Q      Quit program, no save, but files are backed up in
+                        (~/.pyedpro/data) '*.sav'
+    ***     Ctrl R      Reverse words around the middle. (a = b becomes b = a)
+                        Useful for turining assignments.
+    ****    F9          Only Comments and strings are checked, otherwise all
+                        text is checked
+    *****   Alt 0       Alt - 1 .. 9 brings back the focus to current buffer
+
 
 </in></in></in></l></f>\
 </j></w>  \
 <f><l>\
-<b><xl>Context dependent key assignments:</xl></b>
+Context dependent key assignments:
 <in><in><in>\
 
-    Alt-X                -- Exit dialog
+    Alt X                -- Exit dialog
     ESC                  -- Exit dialog (cancel)
     ENTER                -- Exit dialog (accept)
 </in>
  Find / Replace context:
 <in>
-    Alt-S                -- Case Insensitive search
-    Alt-R                -- Regular expression search
-    Alt-A                -- All buffer search
+    Alt S                -- Case Insensitive search
+    Alt R                -- Regular expression search
+    Alt A                -- All buffer search
 </in>
  Find / Replace results context:
 <in>
-    Alt-S                -- Change currently Selected
-    Alt-O                -- Change One
-    Alt-A                -- Change All
-    Alt-Tab              -- Navigate between search / main windows
+    Alt S                -- Change currently Selected
+    Alt O                -- Change One
+    Alt A                -- Change All
+    Alt Tab              -- Navigate between search / main windows
     Arrow Up/Down          -- Next / prev match
     ENTER                -- Change selection
 </in>
@@ -225,20 +237,23 @@ particular key's execution path, and replicate functionality.
 </in></in></in></l></f>\
 Notes:
 <in>
-  *  Alt-Arrow  Goto begin / end of current word. Word delimited with \
+  *  Alt Arrow  Goto begin / end of current word. Word delimited with \
 alpha_num + punctuation
- **  Ctrl-Q       Quit program, no save, but files are backed up in \
+ **  Ctrl Q       Quit program, no save, but files are backed up in \
  (~/pyedpro/data) '*.sav'
-***  Ctrl-R      Reverse words around the middle.(a = b becomes b = a)
+***  Ctrl R      Reverse words around the middle.(a = b becomes b = a)
 **** F9          Only Comments and strings are checked
 </in>
 <w>
 Unrecognized key is inserted verbatim into the buffer, and a message \
 is printed on the controlling terminal. \
 If no action is listed, that key is unassigned. Most dialogs can be dismissed \
-with the Esc key or the Alt-X key combination.
+with the Esc key or the Alt X key combination.
 </w>
-<c>Press ESC or Alt-X to dismiss this window.</c>
+<c>Press ESC or Alt X to dismiss this window.</c>
+
+
+
 
 
 
