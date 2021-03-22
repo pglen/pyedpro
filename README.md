@@ -24,7 +24,10 @@ curve of new keystrokes.  If you want an editor  that works the
 same way in all your workspaces, PyEdPro is the one.
 
 ### New:
-  Added drag / drop spurce / target. New keystroke combo for keyboards
+
+    Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
+
+  Added drag / drop source / target. New keystroke combo for keyboards
  without home / pgup etc ...
 
   Implemented html preview. Just right click on the file body, an select the
