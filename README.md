@@ -55,40 +55,43 @@ simple, as it marks only --del --ins points. Again, its simplicity yields benefi
 that are surprizing. For instance; hand merging small changes become more visual. And
 yes, it is no substitute for a real diff.
 
-  The diff buffer is read only. To refresh the diff, select
+ The diff buffer is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
 same right click menu, by selecting 'Stop Diffing'. The diff algorythm is crude, but
 the simplicity has its advantages. Speed and predictibility.
 
-   PyEdPro.py has macro recording/play, search/replace, one click function navigation,
+  PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion
  ... and a lot more.
 
    The recorded macros, undo / redo information / editing session detail persists
  after the editor is closed.
 
-    The spell checker can check code comments. The parsing of the code is
+ The spell checker can check code comments. The parsing of the code is
 rudimentary,  comments and strings are spell checked. (Press F9) The code is filtered
 out for Python and  'C', which assures most derivative languages have correct
 code spell code check. The whole file can be checked in text spell mode.
 (Shift-F9) The spell checker is executed on live text. (while typing)
 
-   Syntax highliting. Again, a simpler parser for speed. Succeeds in its mission with
+  Syntax highliting. Again, a simpler parser for speed. Succeeds in its mission with
 giving great visual without speed impact.
 
-   PyEdPro is fast, it is extendable, as python lends itself to easy extending. The
+  PyEdPro is fast, it is extendable, as python lends itself to easy extending. The
 editor has a table driven key mapping. One can easily edit the key map in
 keyhand.py, and the key actions in acthand.py
 
-  If you encounter blank screen after start, cairo is not installed. The terminal interface
+ If you encounter blank screen after start, cairo is not installed. The terminal interface
 will complain, but if you start from the GUI, you can see the message in the
 log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install cairo'.
 
  The default key map resembles gedit / wed / etp / brief. Full ASCII;
- Any fixed font can be configured.
+ Any (fixed) font can be configured. No arrangements in the program for variable pitch fonts.
 
   See KEYS file for the list of keyboard shortcuts or press F3 in the
 editor or look at the file in pyedlib/KEYS.
+
+ If you highlite a word, and press F2, devhelp will open with the string highlited. Naturally,
+devhelp needs to be installed.
 
   On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
@@ -112,7 +115,7 @@ convention dictates.
   Developer's note: in order to make PyEdPro multi platform, we save
 the configuration info into a SQLite database in the ~/.PyEdPro directory.
 
-     (~/ stands for the user's home directory)
+(~/ stands for the user's home directory)
 
  Contributors are welcome.
 
