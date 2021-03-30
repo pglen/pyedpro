@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# Build new installation
+
 rm -rf build dist pyedpro.spec
 
 #for aa in ../pycommon/*.py; do
@@ -8,12 +12,12 @@ rm -rf build dist pyedpro.spec
 #done
 
 pyinstaller pyedpro.py -p pyedlib -p ../pycommon \
-	--hidden-import=cairo  \
-        --add-data="pedlib/data;pedlib/data"      \
-	--add-data="pedlib/images;pedlib/images" 
+    --hidden-import=cairo  \
+    --add-data="pedlib/data;pedlib/data"      \
+    --add-data="pedlib/images;pedlib/images"
 
-        #--add-data=".:."
-        #--onefile
+    #--add-data=".:."
+    #--onefile
 
 
 
