@@ -1,5 +1,7 @@
 ## PyEdPro Key Assignments
 
+# Note: this is no up-to-date ... see KEYS in pedlib
+
    This is a list of default key assignments for PyEdPro. The keys are assigned
 in keyhand.py and the actions are implemented in acthand.py. Regular keys are
 added to the buffer. To implement a new feature follow a particular key's
