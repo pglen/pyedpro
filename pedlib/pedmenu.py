@@ -102,9 +102,9 @@ rclick_menu2 = (
 def create_action_group(self):
     # GtkActionEntry
     if sys.version_info[0] < 3:
-        verx = "_Help2"
+        verx = "_Help"
     else:
-        verx = "_Help3"
+        verx = "_Help"
 
     entries = (
       ( "FileMenu", None, "_File" ),                # name, stock id, label
