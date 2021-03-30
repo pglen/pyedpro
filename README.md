@@ -25,6 +25,7 @@ same way in all your workspaces, PyEdPro is the one.
 
 ### New:
 
+    Tue 30.Mar.2021 -- added windows installation executable
     Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
 
   Added drag / drop source / target. New keystroke combo for keyboards
@@ -42,6 +43,8 @@ the way it should be) Right click ... and look for: Filter to M4
 The dropped content is inserted where the editor's caret is. (not where the cursor is)
 The caret is moved to the end of insertion.
 
+ This (above) list is an extract, please see git log for complete history.
+
   Pyedpro now has buffer diff. Right clicking on the file's tab header presents a menu.
 One may select the diff source, the diff destination (or target). When the source and
 target is selected, a diff window slides in from the right. The diff window presents
@@ -51,7 +54,6 @@ position of the cursor on the current buffer. Please note, that this diff is som
 simple, as it marks only --del --ins points. Again, its simplicity yields benefits
 that are surprizing. For instance; hand merging small changes become more visual. And
 yes, it is no substitute for a real diff.
-
 
   The diff buffer is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
