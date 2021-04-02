@@ -174,7 +174,17 @@ def create_action_group(self):
         "Load recent file",
          self.open_recent ),
 
-      ( "Quit", Gtk.STOCK_QUIT,
+      ( "Sessions", Gtk.STOCK_OPEN,
+        "_Recent Session ", "",
+        "Load recent session list",
+         self.activate_action ),
+
+      ( "Recent Sessions", Gtk.STOCK_OPEN,
+        "Recent _Sessions", "",
+        "Load recent sessions ",
+         self.open_recent_sess ),
+
+     ( "Quit", Gtk.STOCK_QUIT,
         "_Quit  (No Save)", "<control>Q",
         "Quit program, abandon files",
          self.activate_quit ),

@@ -77,8 +77,8 @@ from gi.repository import Gtk
 
 #print("domain", gettext.textdomain)
 
-VERSION = 2.0
-BUILDDATE = "Mon 29.Mar.2021"
+VERSION = 2.01
+BUILDDATE = "Thu 01.Apr.2021"
 PROGNAME  = "PyEdPro"
 
 SHOW_TIMING = 0

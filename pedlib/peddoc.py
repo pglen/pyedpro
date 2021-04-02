@@ -1937,8 +1937,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         try:
             writefile(xfile, self.text, "\n")
         except:
-            sss = "Cannot create backup file" + xfile + sys.exc_info()
-            print(sss)
+            print("Cannot create backup file" + xfile + sys.exc_info())
 
     def prompt_save(self, askname = True):
 
@@ -2411,7 +2410,6 @@ def run_async_time(win):
         except:
             print("Exception in c func handler", sys.exc_info())
             pass
-
 
     try:
         win.mained.update_treestore(sumw)

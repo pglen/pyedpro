@@ -48,7 +48,6 @@ notebook3 = None;  notebook4 = None
 
 hidden = 0
 savearr = []
-openhist = []
 
 # -----------------------------------------------------------------------
 
@@ -57,14 +56,20 @@ def add_page(page):
     notebook.append_page(page)
     notebook.set_tab_detachable(page, True)
 
-class openhistory():
+# ------------------------------------------------------------------------
+# FIFO for freq strings
 
-    def __init__(self):
-        global openhist
+class itemhistory():
+
+    def __init__(self, fname):
+
+        self.fname = fname
+        self.histarr = []
+
         try:
-            fh = open(pedconfig.conf.history, "rb")
+            fh = open(self.fname, "rb")
             try:
-                openhist = pickle.load(fh)
+                self.histarr = pickle.load(fh)
             except:
                 #print("Cannot open history file.", sys.exc_info())
                 pass
@@ -73,37 +78,36 @@ class openhistory():
             #print("Cannot load history data", sys.exc_info())
             pass
 
-        openhist.sort(reverse=True)
+        self.histarr.sort(reverse=True)
         #self.dump()
 
     def add(self, fname):
-        global openhist
+        #global openhist
         got = False
-        for aa in openhist:
+        for aa in self.histarr:
             if aa[2] == fname:
                 aa[1] += 1
                 aa[0] = time.time()
                 got = True
 
         if not got:
-          openhist.append([time.time(), 1, fname]);
+          self.histarr.append([time.time(), 1, fname]);
 
-        openhist.sort(reverse=True)
-        if len(openhist) > 12:
-            openhist = openhist[:-2]
+        self.histarr.sort(reverse=True)
+        if len(self.histarr) > 12:
+            self.histarr = self.histarr[:-2]
 
     def gettops(self):
         pass
 
     def dump(self):
-        for aa in openhist:
+        for aa in self.histarr:
             print(aa)
 
     def save(self):
-        global openhist
         try:
-            fh = open(pedconfig.conf.history, "wb")
-            pickle.dump(openhist, fh)
+            fh = open(self.fname, "wb")
+            pickle.dump(self.histarr, fh)
             fh.close()
         except:
             #print("Cannot save history file", sys.exc_info())
@@ -184,7 +188,10 @@ class EdMainWindow():
         self.alttime = 0
         self.old_x = 0
         self.old_y = 0
-        self.oh = openhistory()
+
+        #global openhist, sesshist
+        self.oh = itemhistory(pedconfig.conf.history)
+        self.os = itemhistory(pedconfig.conf.sessions)
 
         pedconfig.conf.acth = acthand.ActHand()
         pedconfig.conf.keyh = keyhand.KeyHand()
@@ -650,33 +657,54 @@ class EdMainWindow():
         #warnings.simplefilter("default")
         self.openfile(strx);
 
+    def open_recent_sess(self, action):
+        if pedconfig.conf.pgdebug > 0:
+            print("open recent sess", action)
+        #warnings.simplefilter("ignore")
+        strx = action.get_name()
+        #print(strx)
+        #warnings.simplefilter("default")
+        self.opensess(strx);
+
+    def opensess(self, strx):
+        #print("opensess", strx)
+        sesslist = []
+        fh = open(strx, "rb")
+        try:
+            sesslist = pickle.load(fh)
+        except:
+            print("Cannot load sess list", sys.exc_info())
+            fh.close()
+            return
+        fh.close()
+        for fff in str.split(sesslist, "\n"):
+            #print ("Session opening file:", "'" + fff + "'")
+            pedconfig.conf.pedwin.openfile(fff)
+            usleep(30)
+
     # --------------------------------------------------------------------
     # Add MRU
 
     def add_mru(self, merge, merge_id, action_group):
 
-        '''for cnt in range(6):
-            ss = "/sess_%d" % cnt
-            fname = pedconfig.conf.sql.get(ss)
-            if fname != "":
-                sname = os.path.basename(fname)
-                #print("Adding", sname);
-                #Gtk.Action(name, label, tooltip, stock_id)
-                ac = Gtk.Action(fname, fname, fname, None)
-                ac.connect('activate', self.open_recent)
-                action_group.add_action(ac)
-                merge.add_ui(merge_id, "/MenuBar/FileMenu/Recent/Recent Files/",
-                    fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
-         '''
-
-        global openhist
-        for aa in openhist:
+        for aa in self.oh.histarr:
             if aa[2]:
+                #print(".oh", aa)
                 fname = aa[2]
                 ac = Gtk.Action(fname, fname, fname, None)
                 ac.connect('activate', self.open_recent)
                 action_group.add_action(ac)
                 merge.add_ui(merge_id, "/MenuBar/FileMenu/Recent/Recent Files/",
+                    fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+
+        for aa in self.os.histarr:
+            if aa[2]:
+                #print(".os", aa)
+                fname = aa[2]
+                ac = Gtk.Action(fname, fname, fname, None)
+                ac.connect('activate', self.open_recent_sess)
+                action_group.add_action(ac)
+                merge.add_ui(merge_id, "/MenuBar/FileMenu/Sessions/Recent Sessions/",
                     fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
 
     def area_winstate(self, arg1, arg2):
@@ -1702,7 +1730,12 @@ def     OnExit(arg, prompt = True):
     try:
         pedconfig.conf.pedwin.oh.save()
     except:
-        print("Cannot save history.", sys.exc_info())
+        print("Cannot save file history.", sys.exc_info())
+
+    try:
+        pedconfig.conf.pedwin.os.save()
+    except:
+        print("Cannot save session history.", sys.exc_info())
 
     # Save UI related data
     pos = mained.hpaned.get_position()
