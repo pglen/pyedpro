@@ -36,6 +36,10 @@ ui_info = \
           <placeholder action='Recent Files'/>
           <separator/>
       </menu>
+      <menu action='Sessions'>
+          <placeholder action='Recent Sessions'/>
+          <separator/>
+      </menu>
       <separator/>
       <menuitem action='Quit'/>
       <menuitem action='Exit'/>

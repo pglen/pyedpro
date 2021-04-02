@@ -13,6 +13,8 @@ import stat
 import traceback
 import subprocess
 
+#mained = None
+
 if sys.version_info.major < 3:
     pass
 else:
@@ -703,6 +705,8 @@ def done_sess_fc(win, resp, fc):
                 fh = open(fname, "wb")
                 pickle.dump(fc.sesslist, fh)
                 fh.close()
+                pedconfig.conf.pedwin.os.add(fname)
+
         except:
             print("Cannot save session file", sys.exc_info())
     else:
@@ -757,6 +761,8 @@ def done_sess2_fc(win, resp, fc):
                 except:
                     pass
                 fh.close()
+                pedconfig.conf.pedwin.os.add(fname)
+
         except:
             print("Cannot load session file", sys.exc_info())
             pedync.message("Cannot load session file")
