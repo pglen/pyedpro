@@ -766,7 +766,25 @@ class ActHand:
     def ctrl_alt_f(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - F")
-        self2.mained.update_statusbar("C-A-F Key pressed.")
+        self2.mained.update_statusbar("C-A 'F' Key pressed.")
+        # Fill till column
+        if  self2.shift:
+            #self2.mained.update_statusbar("C-A-S 'F' Key pressed.")
+            self2.mained.update_statusbar("Promt for fill to column")
+            ttt = prompt_for_text(self2, "Enter column to fill to", str(self2.text_fillcol))
+            if ttt:
+                self2.text_fillcol = int(ttt);
+        else:
+            xidx = self2.caret[0] + self2.xpos;
+            #print("Filling from", xidx, "to", self2.text_fillcol)
+            if xidx < self2.text_fillcol:
+                for aa in range(self2.text_fillcol - xidx):
+                    event = Gdk.EventKey()
+                    event.string  = " "
+                    event.keyval = ord(" ")
+                    self.add_key(self2, event)
+            else:
+                self2.mained.update_statusbar("Past filling point already.")
 
     def ctrl_alt_t(self, self2):
         if pedconfig.conf.pgdebug > 9:

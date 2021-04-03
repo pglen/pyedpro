@@ -170,6 +170,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.COCOLOR    = COCOLOR
         self.STCOLOR    = STCOLOR
         self.drag = False
+        self.text_fillcol = 40
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
