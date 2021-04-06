@@ -38,6 +38,7 @@ class conf():
     sql_data = os.path.expanduser("~/.pyedpro/sql_data")
     history  = os.path.expanduser("~/.pyedpro/history")
     sessions = os.path.expanduser("~/.pyedpro/sessions")
+    orig_dir = os.getcwd()
 
     sql = None
     config_file = "defaults"

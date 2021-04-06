@@ -537,6 +537,7 @@ class EdMainWindow():
         self.mywin.add(bbox)
         self.mywin.show_all()
 
+
         # Set the signal handler for 1s tick
         #signal.signal(signal.SIGALRM, handler_tick)
         #signal.alarm(1)
@@ -544,9 +545,6 @@ class EdMainWindow():
         # Show newly created buffers:
         #self.mywin.show_all()
 
-        GLib.timeout_add(100, loader_tick, self)
-        # We use gobj instead of SIGALRM, so it is more multi platform
-        GLib.timeout_add(1000, handler_tick)
 
         pedfind.load_find_history(False)
 
@@ -555,6 +553,10 @@ class EdMainWindow():
         # Add to accounting:
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
+
+        # We use gobj instead of SIGALRM, so it is more multi platform
+        GLib.timeout_add(1000, handler_tick)
+        GLib.timeout_add(500, loader_tick, self)
 
     def menu_open(self, arg, arg2):
         print("menu_open", arg, arg2)
@@ -1613,6 +1615,16 @@ class EdMainWindow():
 # -------------------------------------------------------------------
     def openfile(self, fnamex):
 
+        # Empty line from sess load
+        if not fnamex:
+            return
+
+        # Any indication it is there?
+        if not os.path.isfile(fnamex):
+            print("Cannot open file:", "'" + fnamex + "'")
+            self.update_statusbar("Cannot open file '{0:s}'".format(fnamex))
+            return
+
         # Is it already loaded? ... activate
         nn = notebook.get_n_pages()
         fname2 = os.path.realpath(fnamex)
@@ -1815,19 +1827,33 @@ def     OnExit(arg, prompt = True):
 
 def  loader_tick(self2):
 
+    global notebook, hidden
+
     try:
         #print( 'Signal handler called with signal')
         #print( pedconfig.conf.idle, pedconfig.conf.syncidle)
-        global notebook, hidden
         #print ("exec init handler")
 
         # ----------------------------------------------------------------
         # Read in buffers
 
+        seen = []
+
         cnt = 0
         for aa in self2.names:
-            aaa = os.path.realpath(aa)
+            #aaa = os.path.realpath(aa)
+
+            # Nmes are relative to original path, not the changed load
+            aaa = pedconfig.conf.orig_dir + os.sep + aa
+            if aaa in seen:
+                continue
+            seen.append(aaa)
             #print( "loading file: ", aaa)
+            if not os.path.isfile(aaa):
+
+                print( "No such file on load: ", aaa)
+                continue
+
             vpaned = edPane()
             ret = vpaned.area.loadfile(aaa)
             if not ret:
@@ -1842,6 +1868,7 @@ def  loader_tick(self2):
             cnt += 1
             add_page(vpaned)
             vpaned.area.set_tablabel()
+            usleep(100)
 
         if cnt == 0:
             if pedconfig.conf.verbose:
@@ -1854,7 +1881,7 @@ def  loader_tick(self2):
                 fff = pedconfig.conf.sql.get_str(ss)
 
                 if pedconfig.conf.verbose:
-                    print("Loading file:", fff)
+                    print("Loading (initial) file:", fff)
 
                 vpaned = edPane()
                 ret = vpaned.area.loadfile(fff)
@@ -1896,13 +1923,15 @@ def  loader_tick(self2):
                 break
     except:
         print("Exception in load handler", sys.exc_info())
+        put_exception("Load handler")
         pass
 
 # ------------------------------------------------------------------------
 
 #def handler_tick(signum, frame):
 def handler_tick():
-    global savearr
+
+    global savearr, notebook
 
     #print( "handler_tick")
     try:
