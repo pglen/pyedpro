@@ -85,7 +85,7 @@ def main(strarr):
 
     Gtk.main()
 
-def help(): // diff
+def help(): #// diff
 
     print()
     print(PROGNAME, _("Version: "), pyedlib.pedconfig.conf.version)
