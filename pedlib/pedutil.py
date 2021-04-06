@@ -124,7 +124,8 @@ def findinfile(nnn, ffff, nocase = False):
                     #print("bin", ccc, ord(ccc) )
                     cnt += 1
         except:
-            print("except",  sys.exc_info())
+            #print("except in search",  sys.exc_info())
+            pass
 
         if cnt > 3:
             #print ("Not a text file:", ffff)

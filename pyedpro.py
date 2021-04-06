@@ -69,7 +69,7 @@ import pedlib.pedconfig as pedconfig
 import pedlib.pedwin as pedwin
 import pedlib.pedsql as pedsql
 import pedlib.pedlog as pedlog
-
+import pedlib.pedutil as pedutil
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -88,7 +88,7 @@ USE_STDOUT = 0
 
 # ------------------------------------------------------------------------
 
-def main(strarr):
+def main(projname, strarr):
 
     ''' Rotate around this axis '''
 
@@ -106,6 +106,15 @@ def main(strarr):
     # Create log window
     pedlog.create_logwin()
 
+    if projname:
+        mainwin.opensess(projname)
+
+    #if strarr:
+    #    print("opening files", strarr)
+    #    for aa in strarr:
+    #        if os.path.isfile(aa):
+    #            mainwin.openfile(aa)
+
     Gtk.main()
 
 def xversion():
@@ -120,6 +129,7 @@ def xhelp():
     print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
     print(_("Option(s):"))
     print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
+    print(_("            -j pname  - Load project (saved session)"))
     print(_("            -v        - Verbose (to stdout and log)"))
     print(_("            -f        - Start Full screen"))
     print(_("            -c        - Dump Config"))
@@ -157,18 +167,21 @@ if __name__ == '__main__':
     opts = []; args = []
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?fvVxctok",
-                        ["debug=", "help", "help", "verbose", "version"])
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?vVj:fxctok",
+                        ["debug=", "help", "help", "verbose", "version", "project="])
+
     except getopt.GetoptError as err:
         print(_("Invalid option(s) on command line:"), err)
         sys.exit(1)
 
     #print ("opts", opts, "args", args)
+    #sys.exit(0)
 
     pedconfig.conf.version = VERSION
     pedconfig.conf.build_date = BUILDDATE
     pedconfig.conf.progname = PROGNAME
 
+    pname = ""
     # Outdated parsing ... for now, leave it as is
     for aa in opts:
         #print("opt", aa[0])
@@ -178,6 +191,24 @@ if __name__ == '__main__':
                 print( PROGNAME, _("Running at debug level:"),  pedconfig.conf.pgdebug)
             except:
                 pedconfig.conf.pgdebug = 0
+
+        if aa[0] == "-j" or aa[0] == "--project":
+            rrr = False
+            try:
+                if pedconfig.conf.verbose:
+                    print( PROGNAME, "Loading sess/project", aa[1])
+                pname = pedconfig.conf.sess_data + os.sep + aa[1]
+                if not os.path.isfile(pname):
+                    pname = pedconfig.conf.sess_data + os.sep + aa[1] + ".sess"
+                    if not os.path.isfile(pname):
+                        rrr = True
+            except:
+                print("Exception on loading project", sys.exc_info())
+                #pedutil.put_exception("load proj")
+
+            if rrr:
+                print( PROGNAME, "Error on loading project", pname)
+                sys.exit(1)
 
         if aa[0] == "-h" or  aa[0] == "--help" or aa[0] == "-?":
             xhelp()
@@ -262,8 +293,8 @@ if __name__ == '__main__':
 
     # Uncomment this for buffered output
     if pedconfig.conf.verbose:
-        print("Started", PROGNAME)
+        print("Started", PROGNAME, "in", pedconfig.conf.orig_dir)
 
-    main(args[0:])
+    main(pname, args[0:])
 
 # EOF

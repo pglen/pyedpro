@@ -1817,6 +1817,20 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def loadfile(self, filename, create = False):
 
+        # Is it already loaded? ... activate
+        nn = self.notebook.get_n_pages()
+        fname2 = os.path.realpath(filename)
+        for aa in range(nn):
+            vcurr = self.notebook.get_nth_page(aa)
+            if vcurr.area.fname == fname2:
+                if pedconfig.conf.verbose:
+                    print("Already open '"+ fname2 + "'")
+                self.mained.update_statusbar("Already open, activating '{0:s}'".format(fname2))
+                vcurr = self.notebook.set_current_page(aa)
+                vcurr = self.notebook.get_nth_page(aa)
+                self.mained.mywin.set_focus(vcurr.vbox.area)
+                return
+
         self.mained.oh.add(filename)
 
         self.fname = filename
