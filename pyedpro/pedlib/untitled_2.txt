@@ -1,0 +1,26 @@
+gi.require_version("Gtk", "3.0")
+strhist = [] #strhist.append("aa")
+def find(self, self2, replace = False):
+def find_keypress(area, event):
+def find_show(self, self2):
+def find_show_file(self, self2):
+def area_destroy(win2, self):
+def src_line2(self, self2, line, cnt):
+def     tree_sel_row(xtree, self, self2):
+def     tree_sel2(xtree, self, self2, par1, par2, par3):
+def     tree_sel_row2(xtree, self, self2):
+def area_focus(area, event, self, self2):
+def area_key(area, event, self):
+def area_key2(area, event, self, win2):
+def start_tree(self, win2):
+def create_tree(self, win2, match, text = None):
+def update_treestore(self, win2, text, was):
+def  cp_all(butt, self, self2, win2, iter = None):
+def chg_one(butt, self, self2, win2, iter = None):
+def chg_all(butt, self, self2, win2):
+def chg_sel(butt, self, self2, win2):
+def wclose(butt,self):
+def wprev(butt,self):
+def wnext(butt,self):
+
+
