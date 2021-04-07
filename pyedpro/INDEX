@@ -1,0 +1,16 @@
+                            INDEX
+
+FEATURES                    Descrition of main features
+HISTORY                     ChangeLog
+INDEX                       This file
+INSTALL                     Install instructions
+install.py                  Installer
+Makefile                    Project Make File (not updated)
+pack.sh                     Pack project
+panglib                     The help viewer library
+pangview.py                 The help viewer script
+pyedpro.py                  Main editor script
+pyedlib                     Main editor library
+README                      General project info
+
+
