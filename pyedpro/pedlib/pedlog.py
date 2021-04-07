@@ -95,8 +95,6 @@ def  save_log():
 def load_log():
     pass
 
-iconfile = "pyedpro_sub.png"
-
 # A quick window to display what is in accum
 
 class   LogWin():
@@ -129,9 +127,9 @@ class   LogWin():
 
     def show_log(self):
         try:
-            win2.set_icon_from_file(get_img_path(iconfile))
+            win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
         except:
-            print( "Cannot load log icon:", iconfile)
+            print( "Cannot load log icon:", "pyedpro_sub.png")
 
         self.win2.show_all()
 
