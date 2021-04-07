@@ -293,6 +293,13 @@ same way in all your workspaces, PyEdPro is the one.</p>
 
 <h3>New:</h3>
 
+<pre><code>Tue 30.Mar.2021 -- added windows installation executable
+Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
+</code></pre>
+
+<p>Added drag / drop source / target. New keystroke combo for keyboards
+ without home / pgup etc ...</p>
+
 <p>Implemented html preview. Just right click on the file body, an select the
 corresponding menu item.
 Implemented markdown preview. Right click ...
@@ -304,6 +311,8 @@ the way it should be) Right click ... and look for: Filter to M4</p>
 <p>Added drag and drop. Accepts file name from file manager, and accepts clipboard text.
 The dropped content is inserted where the editor's caret is. (not where the cursor is)
 The caret is moved to the end of insertion.</p>
+
+<p>This (above) list is an extract, please see git log for complete history.</p>
 
 <p>Pyedpro now has buffer diff. Right clicking on the file's tab header presents a menu.
 One may select the diff source, the diff destination (or target). When the source and
@@ -327,10 +336,8 @@ auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggest
 <p>The recorded macros, undo / redo information / editing session detail persists
  after the editor is closed.</p>
 
-<pre><code>The spell checker can check code comments. The parsing of the code is
-</code></pre>
-
-<p>rudimentary,  comments and strings are spell checked. (Press F9) The code is filtered
+<p>The spell checker can check code comments. The parsing of the code is
+rudimentary,  comments and strings are spell checked. (Press F9) The code is filtered
 out for Python and  'C', which assures most derivative languages have correct
 code spell code check. The whole file can be checked in text spell mode.
 (Shift-F9) The spell checker is executed on live text. (while typing)</p>
@@ -347,10 +354,13 @@ will complain, but if you start from the GUI, you can see the message in the
 log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install cairo'.</p>
 
 <p>The default key map resembles gedit / wed / etp / brief. Full ASCII;
- Any fixed font can be configured.</p>
+ Any (fixed) font can be configured. No arrangements in the program for variable pitch fonts.</p>
 
 <p>See KEYS file for the list of keyboard shortcuts or press F3 in the
 editor or look at the file in pyedlib/KEYS.</p>
+
+<p>If you highlite a word, and press F2, devhelp will open with the string highlited. Naturally,
+devhelp needs to be installed.</p>
 
 <p>On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
@@ -374,8 +384,7 @@ convention dictates.</p>
 <p>Developer's note: in order to make PyEdPro multi platform, we save
 the configuration info into a SQLite database in the ~/.PyEdPro directory.</p>
 
-<pre><code> (~/ stands for the user's home directory)
-</code></pre>
+<p>(~/ stands for the user's home directory)</p>
 
 <p>Contributors are welcome.</p>
 
@@ -386,11 +395,11 @@ the configuration info into a SQLite database in the ~/.PyEdPro directory.</p>
 
 <p>Screen from a regular session, note the function list on the left:</p>
 
-<p><img src="image.png" alt="Screen Shot" /></p>
+<p><img src="https://github.com/pglen/pyedpro/blob/master/image.png" alt="Screen Shot" /></p>
 
 <p>Screen from Ubuntu:</p>
 
-<p><img src="pyedpro_ubuntu.png" alt="Screen Shot" /></p>
+<p><img src="https://github.com/pglen/pyedpro/blob/master/pyedpro_ubuntu.png" alt="Screen Shot" /></p>
 
 <p>License:    Open Source, FreeWare</p>
 

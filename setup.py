@@ -1,12 +1,4 @@
-#!/usr/bin/env python3
-
-# Here we imported the 'setup' module which allows us to install Python
-# scripts to the local system beside performing some other tasks, you can find the
-# documentation here: https://docs.python.org/2/distutils/apiref.html
-
-import os, sys, fnmatch
-
-from setuptools import setup
+import setuptools
 
 descx = '''PyEdPro is modern multi-platform editor. Simple, powerful,
 configurable, extendable. Goodies like macro recording / playback, spell check,
@@ -36,23 +28,54 @@ classx = [
           'Topic :: Software Development :: Editor',
         ]
 
-setup(name = "pyedpro.py",      # Name of the program.
-      version = "1.9",          # Version of the program.
-      description = "Easy-to-use advanced editor in python",
-      long_description = descx,
-      classifiers = classx,
-      author = "Peter Glen",
-      author_email = "peterglen99@gmail.com",
-      license='GPLv3',            # The license of the program.
-      url="https://github.com/pglen/pyedpro.git",
-      scripts = ['pyedpro.py', 'pangview.py'],
-      packages=['pedlib', 'panglib', 'pycommon'],
-      package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../pycommon'},
-      package_data = {'pedlib': ['data/*', 'images/*']},
-      data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pedlib/images/pyedpro.png',
-                           'pedlib/images/pedicon.png' ]),
-                        ('/usr/share/applications', ['pyedpro.desktop'])],
-      #include_package_data=True
-      )
+inclu = ["*", "pedlib/", "panglib", "pyedpro.py", "pangview.py",
+            "image.png", "pyedpro_ubuntu.png"]
 
-# EOF
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="pyedpro",
+    version="2.1.3",
+    author="Peter Glen",
+    author_email="peterglen99@gmail.com",
+    description="High power editor in python.",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/pglen/pyedpro",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    include_package_data=True,
+
+    packages=setuptools.find_packages(include=inclu),
+    #packages=['pedlib', 'panglib', 'pycommon'],
+    #scripts = ['pyedpro.py', 'pangview.py'],
+
+    package_dir = {'pedlib': 'pyedpro/pedlib', 'panglib': 'pyedpro/panglib', 'pycommon': '../pycommon',
+                    'pedlib/data' : 'pyedpro/pedlib/data', },
+
+    package_data = {'':
+                        ['pyedpro/pedlib/data/KEYS',    'pyedpro/pedlib/images/pyedpro.png',
+                        'pyedpro/pedlib/data/KEYS.TXT', 'pyedpro/pedlib/images/pyedpro_sub.png',
+                         'pyedpro/pedlib/images/pedicon.png', 'image.png',
+                         'pyedpro_ubuntu.png'
+                        ]
+                    },
+
+    data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pyedpro/pedlib/images/pyedpro.png',
+                       'pyedpro/pedlib/images/pedicon.png', 'pyedpro/pedlib/images/pyedpro_sub.png' ]),
+                            ('/usr/share/applications', ['pyedpro/pyedpro.desktop']),
+
+                    #("pedlib/data",  ["pyedpro/pedlib/data/KEYS", "pyedpro/pedlib/data/KEYS.TXT",
+                    #          "pyedpro/pedlib/data/QHELP", "pyedpro/pedlib/data/spell.txt"]),
+                   ],
+
+    python_requires='>=3',
+    entry_points='''
+        [console_scripts]
+        pyedpro=pyedpro.pyedpro:mainstart
+    ''',
+)

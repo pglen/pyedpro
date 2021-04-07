@@ -125,11 +125,13 @@ The author,
 
 Screen from a regular session, note the function list on the left:
 
-![Screen Shot](image.png)
+![Screen Shot] (http://github.com/pglen/pyedpro/raw/master/image.png
 
 Screen from Ubuntu:
 
-![Screen Shot](pyedpro_ubuntu.png)
+![Screen Shot] (https://raw.githubusercontent.com/pglen/pyedpro/master/pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
+
+
 
