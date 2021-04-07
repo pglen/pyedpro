@@ -196,10 +196,13 @@ def get_exec_path(fname):
 def get_pangview_path():
 
     fname = "pangview.py"
-    pname = get_exec_path(".." +  os.sep +  ".." + os.sep + fname)
-    if not os.path.isfile(pname):
-        pname = fname
+    exec_dir = os.path.dirname(__file__)
+    pname = exec_dir + os.sep + ".." +  os.sep + fname
 
+    #if not os.path.isfile(pname):
+    #    pname = fname
+
+    print("Pangview path", pname)
     return pname
 
 # ------------------------------------------------------------------------
@@ -212,7 +215,7 @@ def launch_pangview(docx):
     if pedconfig.conf.verbose:
         print("launching pangview:", pname, "with", docx)
     try:
-        ret = subprocess.Popen([pname,  docx])
+        ret = subprocess.Popen(["python", pname,  docx])
 
     except:
         print("except on pang",  sys.exc_info())

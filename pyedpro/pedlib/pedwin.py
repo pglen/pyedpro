@@ -241,9 +241,9 @@ class EdMainWindow():
             self.mywin.set_icon_from_file(get_img_path("pyedpro.png"))
         except:
             try:
-                self.mywin.set_icon_from_file("pyedpro.png")
+                self.mywin.set_icon_from_file("images/pyedpro.png")
             except:
-                print("Canot load icon.")
+                print("Canot load main icon.")
 
         merge = Gtk.UIManager()
         #merge.connect("pre-activate", self.menu_open)

@@ -89,19 +89,19 @@ import pedwin
 import pedlog
 import pedutil
 
-#import pedlib.pedconfig as pedconfig
-#import pedlib.pedwin as pedwin
-#import pedlib.pedsql as pedsql
-#import pedlib.pedlog as pedlog
-#import pedlib.pedutil as pedutil
-
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
 #print("domain", gettext.textdomain)
 
-VERSION  = "2.1.0"
+#try:
+#    from pkg_resources import resource_filename
+#    print (os.path.abspath(resource_filename(__name__.data, 'pedicon.png')) )
+#except:
+#    print(sys.exc_info())
+
+VERSION  = "2.1.1"
 BUILDDATE = "Wed 07.Apr.2021"
 PROGNAME  = "PyEdPro"
 
