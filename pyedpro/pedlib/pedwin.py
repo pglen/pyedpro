@@ -252,7 +252,10 @@ class EdMainWindow():
 
         ag = create_action_group(self)
         merge.insert_action_group(ag, 0)
-        self.mywin.add_accel_group(merge.get_accel_group())
+        accel = merge.get_accel_group()
+        #accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
+        accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK)
+        self.mywin.add_accel_group(accel)
 
         try:
             mergeid = merge.add_ui_from_string(ui_info)
@@ -1279,6 +1282,7 @@ class EdMainWindow():
             self.newfile()
 
         if strx == "Open":
+            print("open frm menu")
             self.open()
 
         if strx == "Save":

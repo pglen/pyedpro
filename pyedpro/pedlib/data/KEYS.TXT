@@ -37,12 +37,15 @@ table driven. Relevant files: acthand.py and keyhand.py
     Ctrl A                      -- Select All text in buffer
     Ctrl-Shift A                -- Goto beginning of line
     Ctrl B                      -- Select word (till spaces)
+    Ctrl-Shift B                -- HTML bold
     Ctrl C                      -- Copy selection to Clipboard
+    Ctrl-Shift C                -- Append selection to Clipboard
     Ctrl D                      -- Delete (trim) spaces from end of line
     Ctrl-Shift D                -- Insert date string at cursor location
     Ctrl E                      -- Capitalize (emphasize) word
     Ctrl-Shift E                -- Goto end of line
     Ctrl F                      -- Find in file or all buffers
+    Ctrl-Shift F                -- Fill in HTML <tr> <td>
     Ctrl G                      -- Goto next match
     Shift-Ctrl G                -- Goto previous match
     Ctrl H                      -- Cursor left  (like in vi)
@@ -81,6 +84,7 @@ table driven. Relevant files: acthand.py and keyhand.py
     Ctrl Home                   -- Go to beginning of file
     Ctrl End                    -- Go end of file
     Ctrl Space                  -- Enable / disable keyboard
+    Ctrl-Shift Space            -- Add HTML space
 
     Ctrl 0                      -- Switch to clipboard 0 (OS Clipboard)
     Ctrl 1                      -- Switch to clipboard 1

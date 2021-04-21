@@ -125,7 +125,7 @@ def create_action_group(self):
         self.activate_action ),
 
       ( "Open", Gtk.STOCK_OPEN,
-        "_Open","<control>O",
+        "_Open", "<control>O",
         "Open a file",
         self.activate_action ),
 
@@ -304,7 +304,7 @@ def create_action_group(self):
         "Save macro to file",
          self.activate_action ),
 
-      ( "Loadmacro", Gtk.STOCK_OPEN,
+      ( "Loadmacro", Gtk.STOCK_APPLY,
         "Load macro", None,
         "Load macro from file",
          self.activate_action ),

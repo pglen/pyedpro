@@ -659,40 +659,6 @@ class ActHand:
     def ctrl_0(self, self2):
         self.ctrl_num(self2, 0)
 
-    def ctrl_a(self, self2):
-        if pedconfig.conf.pgdebug > 9:
-            print ("CTRL -- A")
-
-        if self2.shift:
-            xidx = self2.caret[0] + self2.xpos;
-            yidx = self2.caret[1] + self2.ypos
-            line = self2.text[yidx]
-            self2.gotoxy(0, yidx)
-            self2.mained.update_statusbar("Goto beginning of line.")
-        else:
-            self2.xsel = 0; self2.ysel = 0
-            self2.ysel2 = len(self2.text)
-            self2.xsel2 = self2.maxlinelen
-            self2.set_caret(self2.maxlinelen,  len(self2.text))
-            self2.invalidate()
-
-    def ctrl_b(self, self2):
-        if pedconfig.conf.pgdebug > 9:
-            print ("CTRL -- B")
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        line = self2.text[yidx]
-        bb, ee = selword(line, xidx)
-        if bb != ee:
-            self2.xsel = bb; self2.xsel2 =  ee
-            self2.ysel = self2.ysel2 = yidx
-            self2.gotoxy(self2.xsel2, self2.ysel)
-        else:
-            self2.mained.update_statusbar("Please navigate to word.")
-
-        self2.invalidate()
-        #self2.set_changed(True)
 
     # --------------------------------------------------------------------
     # Not many ctrl - alt handlers yet (may conflict with Gnome/OS shortcuts)
@@ -819,8 +785,48 @@ class ActHand:
             print("No TTS", sys.exc_info())
             self2.mained.update_statusbar("No TTS installed")
 
-
      # --------------------------------------------------------------------
+
+    def ctrl_a(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL -- A")
+
+        if self2.shift:
+            xidx = self2.caret[0] + self2.xpos;
+            yidx = self2.caret[1] + self2.ypos
+            line = self2.text[yidx]
+            self2.gotoxy(0, yidx)
+            self2.mained.update_statusbar("Goto beginning of line.")
+        else:
+            self2.xsel = 0; self2.ysel = 0
+            self2.ysel2 = len(self2.text)
+            self2.xsel2 = self2.maxlinelen
+            self2.set_caret(self2.maxlinelen,  len(self2.text))
+            self2.invalidate()
+
+    def ctrl_b(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL -- B")
+
+        if self2.shift:
+            sss = self._getsel(self2)
+            #print("sel", sss)
+            self.add_str(self2, "<b>" + sss + "</b>")
+
+        else:
+            xidx = self2.caret[0] + self2.xpos;
+            yidx = self2.caret[1] + self2.ypos
+            line = self2.text[yidx]
+            bb, ee = selword(line, xidx)
+            if bb != ee:
+                self2.xsel = bb; self2.xsel2 =  ee
+                self2.ysel = self2.ysel2 = yidx
+                self2.gotoxy(self2.xsel2, self2.ysel)
+            else:
+                self2.mained.update_statusbar("Please navigate to word.")
+
+        self2.invalidate()
+        #self2.set_changed(True)
 
     def ctrl_c(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -842,42 +848,21 @@ class ActHand:
             self.clips[self.currclip] = self2.text[yidx]'''
             return
 
-        # Normalize
-        xssel = min(self2.xsel, self2.xsel2)
-        xesel = max(self2.xsel, self2.xsel2)
-        yssel = min(self2.ysel, self2.ysel2)
-        yesel = max(self2.ysel, self2.ysel2)
-
-        cnt = yssel; cnt2 = 0; cumm = ""
-        while True:
-            if cnt > yesel: break
-            self.pad_list(self2, cnt)
-            line = self2.text[cnt]
-            if self2.colsel:
-                frag = line[xssel:xesel]
-            else :                                  # startsel - endsel
-                if cnt == yssel and cnt == yesel:   # sel on the same line
-                    frag = line[xssel:xesel]
-                elif cnt == yssel:                  # start line
-                    frag = line[xssel:]
-                elif cnt == yesel:                  # end line
-                    frag = line[:xesel]
-                else:
-                    frag = line[:]
-
-            if cnt2: frag = "\n" + frag
-            cumm += frag
-            cnt += 1; cnt2 += 1
-
+        cumm = self._getsel(self2)
         #print ("clip:", cumm)
-        #clip = Gtk.Clipboard()
+        clip = Gtk.Clipboard()
         disp2 = Gdk.Display()
         disp = disp2.get_default()
         clip = Gtk.Clipboard.get_default(disp)
 
         if self.currclip == 0:
             if self2.shift:
-                self2.mained.update_statusbar("Clipboard append only works on clip 1 - 7")
+                self2.mained.update_statusbar("Clipboard appended.")
+                def xclip_cb(clip, ctext, cummx):
+                    cummx = ctext + cummx
+                    clip.set_text(cummx, len(cummx))
+                clip.request_text(xclip_cb, cumm)
+
             else:
                 self2.mained.update_statusbar("Clipboard copied.")
                 clip.set_text(cumm, len(cumm))
@@ -950,8 +935,10 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - F")
 
-        #pedfind.find(self, self2)
-        self2.find(self);
+        if self2.shift:
+            self.add_str(self2, "<tr><td>")
+        else:
+            self2.find(self);
 
     def ctrl_h(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -1028,6 +1015,9 @@ class ActHand:
                     "Autocorrect is on with %d enties." % len(acorr))
             else:
                 self2.mained.update_statusbar("Autocorrect is off.")
+
+    def ctrl_o(self, self2):
+        print ("CTRL - O", self2.shift)
 
     def ctrl_p(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -1418,12 +1408,14 @@ class ActHand:
         pedundo.undo(self2, self)
 
     def ctrl_space(self, self2):
-        self2.nokey = True
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - SP")
 
-        self2.mained.update_statusbar("Keyboard disabled.")
-
+        if self2.shift:
+            self.add_str(self2, "&nbsp; ")
+        else:
+            self2.nokey = True
+            self2.mained.update_statusbar("Keyboard disabled.")
 
     def alt_b(self, self2):
         if pedconfig.conf.pgdebug > 9:
