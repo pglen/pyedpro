@@ -25,18 +25,6 @@ import pedcolor
 import pedfont
 import pedundo
 
-#import pedlib.pedconfig as pedconfig
-#import pedlib.pedlog as    pedlog
-#import pedlib.pedsql as    pedsql
-#import pedlib.pedspell as  pedspell
-#import pedlib.pedcolor as  pedcolor
-#import pedlib.pedfont  as  pedfont
-#import pedlib.pedundo  as  pedundo
-
-#import pedlib.pedcal   as  pedcal
-#import pedlib.pednotes as  pednotes
-#import pedlib.pedoline as  pedoline
-
 # Grabbed modifier defines from GTK
 #  ... Turns out Gtk.gdk 2.6+ defines these (above) constants as ...
 #      Gtk.gdk.*_MASK
@@ -173,6 +161,8 @@ class KeyHand:
             [Gdk.KEY_L, self.acth.ctrl_l],
             [Gdk.KEY_m, self.acth.ctrl_m],
             [Gdk.KEY_M, self.acth.ctrl_m],
+            [Gdk.KEY_o, self.acth.ctrl_o],
+            [Gdk.KEY_O, self.acth.ctrl_o],
             [Gdk.KEY_p, self.acth.ctrl_p],
             [Gdk.KEY_P, self.acth.ctrl_p],
             [Gdk.KEY_g, self.acth.ctrl_g],
@@ -326,6 +316,8 @@ class KeyHand:
 
     # Main entry point for handling keys:
     def handle_key(self, self2, area, event):
+
+        #print ("KEY:",   event.keyval  )
 
         if pedconfig.conf.show_keys:
             if pedconfig.conf.pgdebug > 3:
