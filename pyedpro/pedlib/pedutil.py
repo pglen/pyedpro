@@ -170,11 +170,9 @@ def  writefile(strx, buff, sep = "\n"):
 def get_img_path(fname):
 
     img_dir = os.path.dirname(__file__)
-    img_path = os.path.join(img_dir, "images", fname)
-
+    img_path = os.path.join(img_dir, "images/", fname)
     if pedconfig.conf.verbose:
         print( "img_path", img_path)
-
     return img_path
 
 # Expand file name to file path in the exec dir:

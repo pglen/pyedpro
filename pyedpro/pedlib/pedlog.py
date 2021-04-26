@@ -108,6 +108,11 @@ class   LogWin():
 
         tit = "pyedpro:log"
         self.win2.set_title(tit)
+        try:
+            self.win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
+        except:
+            print( "Cannot load log icon:", "pyedpro_sub.png", sys.exc_info())
+
         self.win2.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
         self.win2.connect("key-press-event", self._area_key, self.win2)
@@ -126,11 +131,6 @@ class   LogWin():
         print("close", win)
 
     def show_log(self):
-        try:
-            win2.set_icon_from_file(get_img_path("pyedpro_sub.png"))
-        except:
-            print( "Cannot load log icon:", "pyedpro_sub.png")
-
         self.win2.show_all()
 
     # Turn close into minimze
@@ -199,6 +199,9 @@ def show_logwin():
 def create_logwin():
     global logwin
     logwin = LogWin()
+
+
+logwin = LogWin()
 
 
 

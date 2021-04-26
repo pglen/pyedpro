@@ -316,6 +316,8 @@ def mainstart(name = "", args = "", oldpath = ""):
     sys.stdout = pedlog.fake_stdout(sys.stdout)
     sys.stderr = pedlog.fake_stdout(sys.stdout)
 
+    #print("pyedpro started", sys.argv)
+
     # Uncomment this for buffered output
     if pedconfig.conf.verbose:
         print("Started", PROGNAME, "in",

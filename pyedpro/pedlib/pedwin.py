@@ -499,8 +499,8 @@ class EdMainWindow():
         self.headbar.set_show_close_button(True)
 
         button = Gtk.Button()
-        button.connect("pressed", self.xmail)
-        button.set_tooltip_text("You may configure whatever you want ...")
+        button.connect("pressed", self.doall)
+        button.set_tooltip_text("Will execute ./cycle.sh in current directory")
 
         icon = Gio.ThemedIcon(name="mail-send-receive-symbolic")
         image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
@@ -555,9 +555,7 @@ class EdMainWindow():
         # Show newly created buffers:
         #self.mywin.show_all()
 
-
         pedfind.load_find_history(False)
-
         self.update_statusbar("Initial")
 
         # Add to accounting:
@@ -589,9 +587,26 @@ class EdMainWindow():
         else:
             self.mbar.hide()
 
-    def xmail(self, butt):
+    def doall(self, butt):
         #pedync.message("\n" + "Under construction" + "\n")
-        self.update_statusbar("Under construction, will prepare mail.")
+        ccc =  "cycle.sh"
+        self.update_statusbar("Executing " + ccc)
+        comline2 = ["bash", ccc, ]
+        if not os.path.isfile(ccc):
+            print("Cannot execute %s" % str(comline2), "no such file")
+            self.update_statusbar("Cannot execute: '" + ccc + "' no such file" )
+            return
+        try:
+            ret = subprocess.Popen(comline2, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+        except:
+            print("Cannot execute %s" % str(comline2), sys.exc_info())
+            self.update_statusbar("Cannot execute: " + ccc + " " + str(sys.exc_info()[1]) )
+        try:
+            outs, errs = ret.communicate()
+        except:
+            print("Cannot communicate with %s" % str(comline), sys.exc_info())
+            return
+        print(outs, errs)
 
     def bleft(self, butt):
         #print(butt)
@@ -1282,7 +1297,7 @@ class EdMainWindow():
             self.newfile()
 
         if strx == "Open":
-            print("open frm menu")
+            #print("open frm menu")
             self.open()
 
         if strx == "Save":
