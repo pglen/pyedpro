@@ -166,8 +166,10 @@ table driven. Relevant files: acthand.py and keyhand.py
     Ctrl Alt C                  --  Comment out line, and jump down below
     Ctrl Alt D                  --  Display terminal here
     Ctrl Alt E                  --  Execute last command
-    Ctrl Alt F                  --  ????
     Ctrl Alt Shift E            --  Execute last command, force prompt
+    Ctrl Alt F                  --  Fill to column
+    Ctrl Alt Shift F            --  Prompt for fill column
+    Ctrl Alt G                  --  Go execute cycle.sh (shortcut for header cycle)
 
     Ctrl Alt T                  --  Execute terminal here
         ...

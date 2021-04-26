@@ -160,8 +160,10 @@ def message(strx, title = None):
     #print("called: message()", strx)
 
     icon = Gtk.STOCK_INFO
-    dialog = Gtk.MessageDialog(None, None,
-                   Gtk.MessageType.INFO, Gtk.ButtonsType.CLOSE, strx)
+    dialog = Gtk.MessageDialog(buttons=Gtk.ButtonsType.CLOSE,
+                               message_type=Gtk.MessageType.INFO)
+
+    dialog.props.text = strx
 
     dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 

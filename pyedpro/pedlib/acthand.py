@@ -728,7 +728,8 @@ class ActHand:
     def ctrl_alt_f(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - F")
-        self2.mained.update_statusbar("C-A 'F' Key pressed.")
+
+        self2.mained.update_statusbar("Filling to column.")
         # Fill till column
         if  self2.shift:
             #self2.mained.update_statusbar("C-A-S 'F' Key pressed.")
@@ -747,6 +748,14 @@ class ActHand:
                     self.add_key(self2, event)
             else:
                 self2.mained.update_statusbar("Past filling point already.")
+
+    def ctrl_alt_g(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - ALT - G")
+        self2.mained.update_statusbar("Execute cycle")
+        if  self2.shift:
+            pass
+        self2.mained.doall(None)
 
     def ctrl_alt_t(self, self2):
         if pedconfig.conf.pgdebug > 9:

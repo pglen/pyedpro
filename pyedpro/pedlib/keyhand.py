@@ -226,6 +226,8 @@ class KeyHand:
             [Gdk.KEY_E, self.acth.ctrl_alt_e],
             [Gdk.KEY_f, self.acth.ctrl_alt_f],
             [Gdk.KEY_F, self.acth.ctrl_alt_f],
+            [Gdk.KEY_g, self.acth.ctrl_alt_g],
+            [Gdk.KEY_G, self.acth.ctrl_alt_g],
             [Gdk.KEY_h, self.acth.ctrl_alt_h],
             [Gdk.KEY_H, self.acth.ctrl_alt_h],
             [Gdk.KEY_j, self.acth.ctrl_alt_j],
