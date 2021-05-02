@@ -3,7 +3,7 @@
 from __future__ import absolute_import, print_function
 
 import signal, os, time, sys, subprocess, platform
-import ctypes, datetime, sqlite3, warnings, uuid
+import ctypes, datetime, sqlite3, warnings, uuid, copy
 
 #from six.moves import range
 
@@ -36,7 +36,8 @@ class pgnotes(Gtk.VBox):
         Gtk.VBox.__init__(self)
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#444444"))
-        self.prevsel = None;  self.prevkey = None;
+        #self.prevsel = None;  self.prevkey = None;
+
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
         self.data_dir = os.path.expanduser("~/.pyednotes")
@@ -47,6 +48,8 @@ class pgnotes(Gtk.VBox):
             print("Cannot make notes data dir")
 
         try:
+            if pedconfig.conf.verbose:
+                print(self.data_dir + os.sep + "peddata.sql")
             self.sql = notesql(self.data_dir + os.sep + "peddata.sql")
         except:
             print("Cannot make notes database")
@@ -77,7 +80,7 @@ class pgnotes(Gtk.VBox):
         #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#668822"))
         self.pack_start(hbox3, 0, 0, 2)
 
-        self.treeview2 = pgsimp.SimpleTree(("Header", "Subject", "Description"), skipedit=-1)
+        self.treeview2 = pgsimp.SimpleTree(("Header", "Subject", "Description"), skipedit=0)
         self.treeview2.setcallb(self.treesel)
         self.treeview2.setCHcallb(self.treechange)
 
@@ -158,17 +161,25 @@ class pgnotes(Gtk.VBox):
                 self.treeview2.append(aa[2:5])
 
     def newitem(self, arg):
+        self.savetext()
+        rrr = HeadDialog("New Item %d" % self.cnt, None)
+        ret = rrr.run()
+        if ret != Gtk.ResponseType.OK:
+            rrr.destroy()
+            return
+        ttt = rrr.entry.get_text()
+        rrr.destroy()
+        itemx = (ttt, "", "")
         self.cnt += 1
-        itemx = ("New Item %d" % self.cnt, "", "")
+
         self.treeview2.append(itemx)
         self.treeview2.sel_last()
-
         self.edview.set_text("")
-
         #usleep(10)
         key = str(uuid.uuid4())
         self.sql.put(key, itemx[0], itemx[1], itemx[2])
-
+        self.lastsel = None
+        self._assurelast()
 
     def delitem(self, arg):
         #print ("delitem", self.lastkey, self.lastsel)
@@ -212,12 +223,41 @@ class pgnotes(Gtk.VBox):
             #print("aa", aa)
             self.treeview2.append(aa[2:5])
 
-    def savetext(self, txt):
-        if not self.prevkey:
+    def _assurelast(self):
+        if not self.lastsel:
+            sel = self.treeview2.get_selection()
+            if not sel:
+                treeview2.sel_last()
+            sel = self.treeview2.get_selection()
+            xmodel, xiter = sel.get_selected()
+            if xiter:
+                args = []
+                for aa in range(1):
+                    xstr = xmodel.get_value(xiter, aa)
+                    if xstr:
+                        args.append(xstr)
+                self.treesel(args)
+
+    def savetext(self):
+        if not self.edview.get_modified():
             return
-        print("savetext", self.prevkey, self.prevsel, "--",  txt)
-        self.sql.putdata(self.prevkey,  txt, "", "")
-        pedconfig.conf.pedwin.update_statusbar("Saved note '%s'" % self.prevsel);
+        txt = self.edview.get_text()
+        self._assurelast()
+        self._save(self.lastkey, self.lastsel, txt);
+
+    def _save(self, keyx, valx, txt):
+        #print("saving text", keyx, valx, "--",  txt)
+        try:
+            oldtext = self.sql.getdata(keyx)
+            #print("oldtext", oldtext)
+            if oldtext:
+                self.sql.putlog(keyx, oldtext[0], oldtext[1], "")
+        except:
+            print("except:", sys.exc_info())
+
+        self.sql.putdata(keyx,  txt, "", "")
+
+        pedconfig.conf.pedwin.update_statusbar("Saved note '%s'" % keyx);
 
     # --------------------------------------------------------------------
 
@@ -238,22 +278,21 @@ class pgnotes(Gtk.VBox):
 
     def treesel(self, args):
         # Old entry
-        #print("old", self.prevsel)
-        #print("treesel", args)
+
+        #print("lastsel", self.lastsel)
+        #print("newsel", args)
+        #print("lastkey", self.lastkey)
 
         if self.edview.get_modified():
-            self.savetext(self.edview.get_text())
+            self.savetext()
 
         ddd = self.sql.gethead(args[0])
         if ddd:
-            self.prevkey =  self.lastkey
-            self.prevsel =  self.lastsel
-
-            self.lastsel = args[0][:]
+            self.lastsel = args[0]
             self.lastkey = ddd[1]
+
             strx = self.sql.getdata(self.lastkey)
-            if strx:
-                self.edview.set_text(strx[0])
+            self.edview.set_text(strx[0])
 
     def load(self):
         self.lastsel = None; self.lastkey = None
@@ -309,6 +348,19 @@ class notesql():
         except:
             print("Cannot insert sql data", sys.exc_info())
             self.errstr = "Cannot insert sql data" + str(sys.exc_info())
+
+        try:
+            self.c.execute("create table if not exists logs \
+             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
+            self.c.execute("create index if not exists klog on logs (key)")
+            self.c.execute("create index if not exists plog on logs (pri)")
+            self.c.execute("create table if not exists logdata \
+             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
+            self.c.execute("create index if not exists klogdata on logdata (key)")
+            self.c.execute("create index if not exists plogdata on logdata (pri)")
+        except:
+            print("Cannot create log table ", sys.exc_info())
+            self.errstr = "Cannot create log table " + str(sys.exc_info())
 
         finally:
             # We close the cursor, we are done with it
@@ -371,9 +423,7 @@ class notesql():
         finally:
             #c.close
             pass
-
         return rr
-
 
     def   getdata(self, kkk):
         try:
@@ -394,7 +444,7 @@ class notesql():
         if rr:
             return (rr[2], rr[3], rr[4])
         else:
-            return None
+            return ("",)
 
     # --------------------------------------------------------------------
     # Return False if cannot put data
@@ -481,6 +531,48 @@ class notesql():
         return ret
 
     # --------------------------------------------------------------------
+    # Return False if cannot put data
+
+    def   putlog(self, key, val, val2, val3):
+
+        #got_clock = time.clock()
+
+        ret = True
+        try:
+            #c = self.conn.cursor()
+            if os.name == "nt":
+                self.c.execute("select * from logdata where key == ?", (key,))
+            else:
+                self.c.execute("select * from logdata indexed by klogdata where key = ?", (key,))
+            rr = self.c.fetchall()
+            if rr == []:
+                #print "inserting"
+                self.c.execute("insert into logdata (key, val, val2, val3) \
+                    values (?, ?, ?, ?)", (key, val, val2, val3))
+            else:
+                #print "updating"
+                if os.name == "nt":
+                    self.c.execute("update logdata \
+                                set val = ? val2 = ?, val3 = ? where key = ?", \
+                                      (val, val2, val3, key))
+                else:
+                    self.c.execute("update logdata indexed by klogdata \
+                                set val = ?, val2 = ?, val3 = ? where key = ?",\
+                                     (val, val2, val3, key))
+            self.conn.commit()
+        except:
+            print("Cannot put sql log data", sys.exc_info())
+            self.errstr = "Cannot put sql log data" + str(sys.exc_info())
+            ret = False
+        finally:
+            #c.close
+            pass
+
+        #self.take += time.clock() - got_clock
+
+        return ret
+
+    # --------------------------------------------------------------------
     # Get All
 
     def   getall(self):
@@ -526,7 +618,6 @@ class notesql():
         finally:
             #c.close
             pass
-
         return rr
 
     def   rmonedata(self, key):
@@ -543,7 +634,6 @@ class notesql():
         finally:
             #c.close
             pass
-
         return rr
 
 # --------------------------------------------------------------------
@@ -583,7 +673,6 @@ class notesql():
         else:
             return None
 
-
 class SearchDialog(Gtk.Dialog):
     def __init__(self, parent):
         Gtk.Dialog.__init__(
@@ -603,9 +692,37 @@ class SearchDialog(Gtk.Dialog):
 
         self.entry = Gtk.Entry()
         box.add(self.entry)
-
         self.show_all()
 
+
+class HeadDialog(Gtk.Dialog):
+    def __init__(self, initstr, parent):
+        Gtk.Dialog.__init__(
+            self, title="Name for Note", transient_for=parent, modal=True,
+        )
+        self.add_buttons(
+            Gtk.STOCK_OK,
+            Gtk.ResponseType.OK,
+            Gtk.STOCK_CANCEL,
+            Gtk.ResponseType.CANCEL,
+        )
+        self.set_default_response(Gtk.ResponseType.OK)
+
+        box = self.get_content_area()
+        label = Gtk.Label(label="        ")
+        box.add(label)
+
+        self.entry = Gtk.Entry()
+        self.entry.set_text(initstr)
+        self.entry.set_activates_default(True)
+
+        self.hbox = Gtk.HBox()
+        self.hbox.pack_start(Gtk.Label("   Note Header:  "), 0, 0, 0)
+        self.hbox.pack_start(self.entry, 1, 1, 0)
+        self.hbox.pack_start(Gtk.Label("                 "), 0, 0, 0)
+
+        box.add(self.hbox)
+        self.show_all()
 
 # EOF
 
