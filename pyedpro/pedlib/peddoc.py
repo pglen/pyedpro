@@ -284,33 +284,45 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         Gdk.drag_status(context, Gdk.DragAction.COPY, time)
         return True
 
-    def on_drag_drop(self, widget, context, x, y, time):
+    def on_drag_drop(self, widget, context, xx, yy, time):
+        #print("xy", xx // self.cxx , yy // self.cyy);
+        self.set_caret(self.xpos + xx // self.cxx, self.ypos + yy // self.cyy)
         widget.drag_get_data(context, context.list_targets()[-1], time)
 
     # Insert text at current point
     def inserttext(self, xtext):
 
-        newtxt = xtext.split("\n")
+        newtxt = xtext.split("\n") + []
         ycoord = self.ypos + self.caret[1]
         #ycoord = self.ypos + y
 
+        xidx = self.caret[0] + self.xpos;
+        yidx = self.caret[1] + self.ypos
+
         tmptext = self.text[:ycoord]
-        tmptext += newtxt
+        self.undoarr.append((xidx, yidx, pedundo.NOOP, ""))
+        for aa in newtxt:
+            self.undoarr.append((xidx, yidx, pedundo.ADDED  \
+                + pedundo.CONTFLAG, aa))
+            yidx += 1
+            tmptext.append(aa)
         tmptext += self.text[ycoord:]
         self.text = tmptext
+
         self.changed = True
         self.set_caret(self.xpos + self.caret[0],
                     self.ypos + self.caret[1] + len(newtxt))
 
         mlen = self.calc_maxline()
+
         # Set up scroll bars
         self.set_maxlinelen(mlen, False)
-        self.set_maxlines(len(self.text), False)
+        #self.set_maxlines(len(self.text), False)
         self.invalidate()
 
     # Drag and drop here
     def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
-        print("Received data:", data, data.get_data_type(), x, y, info)
+        #print("Received data:", data, data.get_data_type(), x, y, info)
         if info == TARGET_ENTRY_TEXT:
             if str(data.get_data_type()) == "text/plain":
                 xtext = data.get_text()
