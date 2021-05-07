@@ -8,7 +8,7 @@
 # compare. For example ' len(' is  unlikely to appear in any  context
 # but in it's intended  place. Note that '=len(xx)' is not highlited but
 # '= len(xx)' is. Add  strings  that match your coding  style or your
-# language. It is feasble to have a set of keywords that cover
+# language. It is feasible to have a set of keywords that cover
 # multiple languages. (like # (hash) for bash, perl, python ...)
 #
 # Also note that coloring too much distracts from readability, so configure
@@ -22,7 +22,7 @@ keywords =  ("def ", "import ", "from ", "for ", "while ", " len(",
             "True", " False", "True;", "False;",
             "global ", "else:", "continue", "None")
 
-# Keywords for class releted enrties:
+# Keywords for class related enrties:
 clwords =  "class ", " self.", "try:", "except", "finally"
 
 # Keywords for summary extraction: (left side window)
