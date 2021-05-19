@@ -22,7 +22,7 @@ from    pedutil import *
 from    pedync import *
 
 sys.path.append('..' + os.sep + "pycommon")
-sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
 
 from pggui import *
 from pgsimp import *
@@ -110,6 +110,8 @@ class pgnotes(Gtk.VBox):
         mysize = myfd.get_size() / Pango.SCALE
         self.fd.set_size((mysize + 2) * Pango.SCALE)
         self.edview.textview.modify_font(self.fd)
+
+        self.deftags = self.edview.textbuffer.get_tag_table()
 
         self.pack_start(Gtk.Label("Font formatting is not preserved yet."), 0, 0, 0)
         frame4 = Gtk.Frame();
@@ -238,12 +240,69 @@ class pgnotes(Gtk.VBox):
                         args.append(xstr)
                 self.treesel(args)
 
+    def ddd(self, arg, arg2):
+        #print(arg)
+        self.printtag(arg, arg2)
+
+    def printtag(self, arg, arg2):
+        for aa in arg.props:
+            for bb in arg2.props:
+                try:
+                    # same tag?
+                    if aa.name == bb.name:
+                        #print(aa, bb)
+                        if arg.get_property(aa.name) != arg2.get_property(bb.name):
+                            print("    ", aa.name, "old:", arg.get_property(aa.name),
+                                    "  new:", arg2.get_property(bb.name))
+                except:
+                    pass
+                    #print("cannot get:", aa.name)
+
+    def difftags(self, arg):
+        self.deftags.foreach(self.ddd, arg)
+
     def savetext(self):
         if not self.edview.get_modified():
             return
         txt = self.edview.get_text()
         self._assurelast()
         self._save(self.lastkey, self.lastsel, txt);
+
+        #all = self.edview.get_all()
+        #print("serialize", self.edview.textbuffer.get_deserialize_formats())
+        #print("str", self.edview.serial_str())
+        #print("serialize", self.edview.textbuffer.get_deserialize_formats())
+
+        vv = self.edview.textbuffer
+        startt = vv.get_start_iter(); endd = vv.get_end_iter()
+        while True:
+            prev = startt.copy()
+            nextok = startt.forward_line()
+            ttt = vv.get_text(prev, startt, False)
+            prevc = prev.copy()
+            while True:
+                sss = prevc.get_toggled_tags(True)
+                if sss:
+                    print("tags on toggle", sss)
+                    for cc in sss:
+                        print("cc", cc.get_property("name"))
+                    print("pos", prevc.get_line(), prevc.get_line_offset())
+                beg = prevc.copy()
+                nextokc = prevc.forward_char()
+                if not nextokc:
+                    break
+                if startt == prevc:
+                    break
+                chh = vv.get_text(beg, prevc, False)
+                print(chh, end="")
+
+            #print("tags", prev.get_tags())
+            #print("line:", ttt, end="")
+            if not nextok:
+                break
+
+        #print("tags:", self.edview.textbuffer.get_tags())
+
 
     def _save(self, keyx, valx, txt):
         #print("saving text", keyx, valx, "--",  txt)

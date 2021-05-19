@@ -1217,7 +1217,7 @@ class EdMainWindow():
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if flag:
             vcurr.area.saveas()
-            self.mywin.set_title("pyedpro: " + vcurr.area.fname)
+            #self.mywin.set_title("pyedpro: " + vcurr.area.fname)
         else:
             vcurr.area.save()
 
