@@ -2132,6 +2132,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 else:
                     self.fname = fname
                     self.writeout()
+
+                pedconfig.conf.pedwin.mywin.set_title("pyedpro: " + self.fname)
+
         win.destroy()
 
     def overwrite_done(self, win, resp, fname, win2):
