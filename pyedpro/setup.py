@@ -35,10 +35,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyedpro",
-    version="2.0.4",
+    version="2.2.0",
     author="Peter Glen",
     author_email="peterglen99@gmail.com",
-    description="High power editor in python.",
+    description="Advanced editor in python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pglen/pyedpro",
@@ -51,7 +51,7 @@ setuptools.setup(
     packages=setuptools.find_packages(include=inclu),
     #packages=['pedlib', 'panglib', 'pycommon'],
     scripts = ['pyedpro.py', 'pangview.py'],
-    package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../pycommon'},
+    package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../../pycommon'},
     package_data = {'pedlib': ['data/*', 'images/*']},
     data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pedlib/images/pyedpro.png',
                        'pedlib/images/pedicon.png' ]),

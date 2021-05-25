@@ -67,9 +67,21 @@ basedir = os.path.dirname(base)
 #print("file", os.path.dirname(base))
 os.chdir(basedir)
 
+#modbase = ""
+#for aa in sys.path:
+#    if "pyedpro-" in aa:
+#        #print("aa", aa)
+#        modbase = aa
+
 sys.path.append(basedir + os.sep + "panglib")
 sys.path.append(basedir + os.sep + "pedlib")
 sys.path.append(basedir + os.sep + "pycommon")
+
+# Also add pyedpro's EGG module dependencies
+
+#sys.path.append(modbase + os.sep + "panglib")
+#sys.path.append(modbase + os.sep + "pedlib")
+#sys.path.append(modbase + os.sep + "pycommon")
 
 #print(sys.path)
 
@@ -102,8 +114,8 @@ from gi.repository import Gtk
 #except:
 #    print(sys.exc_info())
 
-VERSION  = "2.1.1"
-BUILDDATE = "Wed 07.Apr.2021"
+VERSION  = "2.2.0"
+BUILDDATE = "Tue 25.May.2021"
 PROGNAME  = "PyEdPro"
 
 # ------------------------------------------------------------------------
