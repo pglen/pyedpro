@@ -27,6 +27,7 @@ from    pedcolor import *
 from    pedtdlg import *
 from    pedobjs import *
 from    pedutil import *
+from    pedofd import *
 
 sys.path.append('..' + os.sep + "pycommon")
 from pggui import *
@@ -198,6 +199,7 @@ class Canvas(Gtk.DrawingArea):
         self.hair =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
         self.curve =  Gdk.Cursor(Gdk.CursorType.TARGET)
         self.pencil =  Gdk.Cursor(Gdk.CursorType.PENCIL)
+        self.fname = "untitled.ped"
 
     def area_key(self, area, event):
         print ("area_key", event.keyval)
@@ -217,10 +219,11 @@ class Canvas(Gtk.DrawingArea):
 
         return True
 
-
-    '''def show_status(self, strx):
+    '''
+    def show_status(self, strx):
         if self.statusbar:
             self.statusbar.set_text(strx)
+
     '''
 
     def area_motion(self, area, event):
@@ -467,10 +470,59 @@ class Canvas(Gtk.DrawingArea):
                 else:
                     mmm = ("Main Menu", "Dump Objects", "Add Rectangle",
                                 "Add Rombus", "Add Circle", "Add Text", "Add Line",
-                                    "Save Objects", "Load Objects", "-", "Clear Canvas", "-", "Export")
+                                    "Save Objects", "Load Objects", "-", "Clear Canvas", "-",
+                                        "Export",  "-", "Open", "-", "Save", "Save As")
                     Menu(mmm, self.menu_action3, event)
             else:
                 print("??? click", event.button)
+
+    def writeout(self):
+        print( "writeout", self.fname)
+        sum = []
+        for aa in self.coll:
+            sum.append(aa.dump())
+        ff = open(self.fname, "wb")
+        pickle.dump(sum, ff)
+        ff.close()
+
+    def done_fc(self, win, resp):
+        #print( "done_fc", win, resp)
+        if resp == Gtk.ResponseType.OK:
+            fname = win.get_filename()
+            if not fname:
+                print("Must have filename")
+            else:
+                if os.path.isfile(fname):
+                    resp = pedync.yes_no_cancel("Overwrite File Prompt",
+                                "Overwrite existing file?\n '%s'" % fname, False)
+                    print("resp", resp)
+                    if resp == Gtk.ResponseType.YES:
+                        self.fname = fname
+                        self.writeout()
+                        self.mained.update_statusbar("Saved under new filename '%s'" % fname)
+                    else:
+                        self.mained.update_statusbar("No new file name supplied, cancelled 'Save As'")
+                else:
+                    self.fname = fname
+                    self.writeout()
+                    pass
+                pedconfig.conf.pedwin.mywin.set_title("pyedpro: " + self.fname)
+
+        win.destroy()
+
+    def file_dlg(self, resp):
+        #print "File dialog"
+        if resp == Gtk.ResponseType.YES:
+            but =   "Cancel", Gtk.ResponseType.CANCEL,   \
+                            "Save File", Gtk.ResponseType.OK
+            fc = Gtk.FileChooserDialog("Save file as ... ", None,
+                    Gtk.FileChooserAction.SAVE, but)
+            #fc.set_do_overwrite_confirmation(True)
+            fc.set_current_name(os.path.basename(self.fname))
+            fc.set_current_folder(os.path.dirname(self.fname))
+            fc.set_default_response(Gtk.ResponseType.OK)
+            fc.connect("response", self.done_fc)
+            fc.run()
 
     def menu_ccc(self, item, num):
         print ("Connect", item, num)
@@ -600,6 +652,9 @@ class Canvas(Gtk.DrawingArea):
 
 
     def menu_action3(self, item, num):
+
+        #print("menu action ", item, num)
+
         if num == 1:
             for aa in self.coll:
                 print(aa.dump())
@@ -690,6 +745,23 @@ class Canvas(Gtk.DrawingArea):
             self.draw_event(self, cr)
             pixbuf = Gdk.pixbuf_get_from_surface(cr.get_target(), 0, 0, rect.width, rect.height)
             pixbuf.savev("buff.png", "png", [None], [])
+
+        if num == 12:
+            print("Export")
+
+        if num == 14:
+            print("Open")
+
+        if num == 16:
+            #print("Save")
+            if self.fname == "untitled.ped":
+                fff = self.file_dlg(Gtk.ResponseType.YES)
+            else:
+                self.writeout()
+
+        if num == 17:
+            #print("Save As")
+            fff = self.file_dlg(Gtk.ResponseType.YES)
 
     def show_objects(self):
         for aa in self.coll:

@@ -487,8 +487,29 @@ class EdMainWindow():
         #self.hpane2.pack1(self.statusbar, 1, 0)
 
         bbox = Gtk.VBox()
-        bbox.pack_start(self.mbar, 0,0, 0)
-        bbox.pack_start(self.tbar, 0,0, 0)
+        nbox = Gtk.HBox()
+
+        obox = Gtk.VBox()
+        obox.pack_start(self.mbar, 0, 0, 0)
+        obox.pack_start(self.tbar, 0, 0, 0)
+        nbox.pack_start(obox, 0, 0, 0)
+
+        obox2 = Gtk.VBox()
+        self.newbox = Gtk.HBox()
+        obox2.pack_start(self.newbox, 1, 1, 0)
+        for aa in range(8):
+            butt = Gtk.Button("FuncA %d " % (aa + 1))
+            butt.connect("pressed", self.buttA, aa + 1)
+            self.newbox.pack_start(butt, 1, 1, 0)
+        self.newbox2 = Gtk.HBox()
+        obox2.pack_start(self.newbox2, 1, 1, 0)
+        for aa in range(8):
+            butt = Gtk.Button("FuncB %d " % (aa + 1))
+            butt.connect("pressed", self.buttB, aa + 1)
+            self.newbox2.pack_start(butt, 1, 1, 0)
+
+        nbox.pack_start(obox2, 1, 1, 0)
+        bbox.pack_start(nbox, 0, 0, 0)
         bbox.pack_start(self.hpaned3, 1, 1, 0)
         bbox.pack_start(self.hpane2, 0,0, 0)
 
@@ -565,6 +586,14 @@ class EdMainWindow():
         # We use gobj instead of SIGALRM, so it is more multi platform
         GLib.timeout_add(1000, handler_tick)
         GLib.timeout_add(500, loader_tick, self)
+
+    def buttA(self, arg1, arg2):
+        print("buttA", arg2)
+        self.update_statusbar("ButtA pressed, num {0:d}".format(arg2))
+
+    def buttB(self, arg1, arg2):
+        print("buttB", arg2)
+        self.update_statusbar("Buttb pressed, num {0:d}".format(arg2))
 
     def menu_open(self, arg, arg2):
         print("menu_open", arg, arg2)
