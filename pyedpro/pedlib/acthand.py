@@ -2157,5 +2157,6 @@ class ActHand:
                     self2.text[cnt] = "    " + self2.text[cnt]
                     cnt += 1
             self2.invalidate()
+            self2.set_changed(True)
 
 # EOF
