@@ -48,16 +48,19 @@ def canv_colsel(oldcol, title):
     return col2float(color)
 
 #class ToolBox(Gtk.Toolbar):
-class ToolBox(Gtk.Window):
+#class ToolBox(Gtk.Window):
+class ToolBox(Gtk.VBox):
 
     def __init__(self, callb, parent):
-        Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
+        #Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
+        #Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
         #Gtk.Toolbar.__init__(self)
+        super(ToolBox, self).__init__()
 
         #self.set_size_request(10, 10)
         #self.set_default_size(10, 10)
         #self.set_keep_above(True)
-        self.set_decorated(False)
+        #self.set_decorated(False)
 
         self.drag = False
         self.dragpos = (0, 0)
@@ -116,7 +119,6 @@ class ToolBox(Gtk.Window):
         self.show_all()
         '''
 
-
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
         if self.drag:
@@ -169,9 +171,11 @@ class ToolBox(Gtk.Window):
         self.show_all()
 
 class Canvas(Gtk.DrawingArea):
-    def __init__(self, statbox = None):
+
+    def __init__(self, parent, statbox = None):
         Gtk.DrawingArea.__init__(self)
         self.statbox = statbox
+        self.parewin = parent
         self.set_can_focus(True)
         self.set_events(Gdk.EventMask.ALL_EVENTS_MASK)
 
@@ -697,33 +701,13 @@ class Canvas(Gtk.DrawingArea):
         if num == 8:
             fff = "outline.pickle"
             #print("Loading:", fff)
-            ff = open(fff, "rb")
-            sum2  = pickle.load(ff)
-            ff.close()
-            print(sum2)
-
-            for aa in sum2:
-                obj = None
-                rectx = Rectangle(aa[5])
-                if aa[2] == "Rect":
-                    obj = self.add_rect(rectx, aa[1], aa[7], aa[6])
-                if aa[2] == "Circ":
-                    obj = self.add_circle(rectx, aa[1], aa[7], aa[6])
-                if aa[2] == "Text":
-                    obj = self.add_text(rectx, aa[1], aa[7], aa[6])
-                if aa[2] == "Romb":
-                    obj = self.add_romb(rectx, aa[1], aa[7], aa[6])
-
-                if obj:
-                    obj.id = aa[0]
-                    obj.zorder = int(aa[3])
-                    obj.groupid = int(aa[4])
-                    obj.other  = list(aa[8])
+            self.readfile(fff)
 
         if num == 9:
             pass
 
         if num == 10:
+            # Clear canvas
             self.coll = []
             self.queue_draw()
 
@@ -750,7 +734,23 @@ class Canvas(Gtk.DrawingArea):
             print("Export")
 
         if num == 14:
-            print("Open")
+            #print("Open")
+            filter =  Gtk.FileFilter.new()
+            filter.add_pattern("*.ped"); filter.set_name("PED files (*.ped)")
+            filter2 =  Gtk.FileFilter.new()
+            filter2.add_pattern("*.*"); filter2.set_name("ALL files (*.*)")
+            filters = (filter2, filter)
+            ofn = OpenFname(self.parewin.get_toplevel(), filters)
+            fff = ofn.run()
+            if not fff.fc_code:
+                return
+            print("Open filename", fff.fname)
+
+            # Clear canvas
+            self.coll = []
+            self.queue_draw()
+
+            self.readfile(fff.fname)
 
         if num == 16:
             #print("Save")
@@ -766,6 +766,30 @@ class Canvas(Gtk.DrawingArea):
     def show_objects(self):
         for aa in self.coll:
             print ("GUI Object", aa)
+
+    def readfile(self, fname):
+        ff = open(fname, "rb")
+        sum2  = pickle.load(ff)
+        ff.close()
+        #print(sum2)
+
+        for aa in sum2:
+            obj = None
+            rectx = Rectangle(aa[5])
+            if aa[2] == "Rect":
+                obj = self.add_rect(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == "Circ":
+                obj = self.add_circle(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == "Text":
+                obj = self.add_text(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == "Romb":
+                obj = self.add_romb(rectx, aa[1], aa[7], aa[6])
+
+            if obj:
+                obj.id = aa[0]
+                obj.zorder = int(aa[3])
+                obj.groupid = int(aa[4])
+                obj.other  = list(aa[8])
 
     # Add rectangle to collection of objects
     def add_rect(self, coord, text, crf, crb = "#ffffff", border = 2, fill = False):
