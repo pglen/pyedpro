@@ -12,6 +12,7 @@ import random
 import stat
 import traceback
 import subprocess
+import warnings
 
 #mained = None
 
@@ -1289,5 +1290,68 @@ def prompt_for_text(self2, message, fill):
         gotxt = ""
 
     return gotxt
+
+# ------------------------------------------------------------------------
+# Traditional (blocking) open file
+
+class OpenFname():
+
+    def __init__(self, mywin, filters = None):
+        self.fc_done = False
+        self.fc_code = 0
+        self.fname = ""
+
+        warnings.simplefilter("ignore")
+        but =   "Cancel", Gtk.ButtonsType.CANCEL,\
+         "Open File", Gtk.ButtonsType.OK
+        self.fc = Gtk.FileChooserDialog("Open file", mywin, \
+             Gtk.FileChooserAction.OPEN  \
+            #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
+            , but)
+        warnings.simplefilter("default")
+
+        if filters:
+            for aa in filters:
+                self.fc.add_filter(aa)
+
+        self.fc.set_default_response(Gtk.ButtonsType.OK)
+        self.fc.set_current_folder(os.getcwd())
+
+        self.fc.connect("response", self._done_openfname)
+        #self.fc.connect("current-folder-changed", self.folder_ch )
+        #self.fc.set_current_name(self.fname)
+
+    def run(self):
+        try:
+            self.fc.run()
+        except:
+            self.fc_done = True
+
+        while True:
+            if self.fc_done:
+                break
+            #time.sleep(.3)
+            usleep(400)
+        return self
+
+    def _done_openfname(self, win, resp):
+        #print "done_openfname", win, resp
+        if resp == Gtk.ButtonsType.OK:
+            fname = self.fc.get_filename()
+            if not fname:
+                #print "Must have filename"
+                #self.update_statusbar("No filename specified")
+                pass
+            elif os.path.isdir(fname):
+                #self.update_statusbar("Changed to %s" % fname)
+                os.chdir(fname)
+                self.fc.set_current_folder(fname)
+                return
+            else:
+                #self.openfile(fname)
+                self.fname = fname
+                self.fc_code = True
+        win.destroy()
+        self.fc_done = True
 
 # EOF

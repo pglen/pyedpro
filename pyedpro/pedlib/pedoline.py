@@ -83,9 +83,10 @@ class pgoline(Gtk.VBox):
 
         #self.vbox = Gtk.VBox()
         self.pack_start(xSpacer(), 0, 0, 0)
-        self.toolbox = ToolBox(self.toolcb, pedconfig.conf.pedwin)
+        #self.toolbox = ToolBox(self.toolcb, pedconfig.conf.pedwin)
+        self.toolbox = ToolBox(self.toolcb, self.get_toplevel())
         #self.pack_start(self.toolbox, 0, 0, 2)
-        self.canvas = Canvas(self.statbox)
+        self.canvas = Canvas(self, self.statbox)
 
         for aa in range(10):
             rstr = randstr(6)

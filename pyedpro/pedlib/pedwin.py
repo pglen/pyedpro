@@ -416,7 +416,7 @@ class EdMainWindow():
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
         except:
-            print("Cannot load outline tab.")
+            print("Cannot load outline tab.", sys.exc_info())
 
         try:
             notebook2.append_page(pedweb.pgweb())
@@ -1222,6 +1222,12 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(nn-1)
             self.mywin.set_focus(vcurr.vbox.area)
 
+    def makefilter(self, mask, name):
+        filter =  Gtk.FileFilter.new()
+        filter.add_pattern(mask)
+        filter.set_name(name)
+        return filter
+
     # Traditional open file
     def open(self):
 
@@ -1233,6 +1239,19 @@ class EdMainWindow():
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
         warnings.simplefilter("default")
+
+        filters = []
+        filters.append(self.makefilter("*.*", "All files (*.*)"))
+        filters.append(self.makefilter("*.py", "Python files (*.py)"))
+        filters.append(self.makefilter("*.c", "'C' source files (*.c)"))
+        filters.append(self.makefilter("*.h", "'H' source files (*.h)"))
+        filters.append(self.makefilter("*.txt", "Text files (*.txt)"))
+        filters.append(self.makefilter("*.md", "Markup files (*.md)"))
+        filters.append(self.makefilter("*.ped", "PED files (*.ped)"))
+
+        if filters:
+            for aa in filters:
+                fc.add_filter(aa)
 
         fc.set_default_response(Gtk.ButtonsType.OK)
         fc.set_current_folder(os.getcwd())
