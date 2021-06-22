@@ -17,7 +17,6 @@ from gi.repository import Gdk
 from gi.repository import GLib
 from gi.repository import Gio
 
-
 import pedconfig
 import peddoc
 import pedync
@@ -498,14 +497,18 @@ class EdMainWindow():
         self.newbox = Gtk.HBox()
         obox2.pack_start(self.newbox, 1, 1, 0)
         for aa in range(8):
-            butt = Gtk.Button("FuncA %d " % (aa + 1))
-            butt.connect("pressed", self.buttA, aa + 1)
+            #butt = Gtk.Button("FuncA %d " % (aa + 1))
+            butt = RCLButt("FuncA %d " % (aa + 1), self.rcl, self.rcl2, ttip = "Action Button")
+            butt.ord = 1; butt.id = aa;
+            #butt.connect("pressed", self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
         self.newbox2 = Gtk.HBox()
         obox2.pack_start(self.newbox2, 1, 1, 0)
         for aa in range(8):
-            butt = Gtk.Button("FuncB %d " % (aa + 1))
-            butt.connect("pressed", self.buttB, aa + 1)
+            #butt = Gtk.Button("FuncB %d " % (aa + 1))
+            butt = RCLButt("Funcb %d " % (aa + 1), self.rcl, self.rcl2)
+            butt.ord = 2; butt.id = aa;
+            #butt.connect("pressed", self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
 
         nbox.pack_start(obox2, 1, 1, 0)
@@ -586,6 +589,19 @@ class EdMainWindow():
         # We use gobj instead of SIGALRM, so it is more multi platform
         GLib.timeout_add(1000, handler_tick)
         GLib.timeout_add(500, loader_tick, self)
+
+    def rcl(self, arg1, arg2):
+        print("rcl", arg2)
+
+    def rcl2(self, arg1, arg2):
+        #print("rcl2", arg2)
+        print("label", "'" + arg1.get_label() + "'", arg1.ord, arg1.id)
+
+        menu = MenuButt(("Execute", "Configure", "Face"), self.submenu_click)
+        menu.area_rbutton(arg1, arg2)
+
+    def submenu_click(self, arg1, arg2):
+        print("submenu_click", arg1, arg2)
 
     def buttA(self, arg1, arg2):
         print("buttA", arg2)

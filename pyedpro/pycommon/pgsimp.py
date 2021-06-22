@@ -579,16 +579,11 @@ class TextViewWin(Gtk.VBox):
         txt = self.textbuffer.get_text(startt, endd, False)
         return txt
 
-    def serial_str(self):
-        startt = self.textbuffer.get_start_iter()
-        endd = self.textbuffer.get_end_iter()
-        sss = self.textbuffer.serialize(self.textbuffer, "", startt, endd)
-        return sss
-
-    '''def get_tag_table(self):
-        tags = self.textbuffer.get_tag_table()
-        return tags
-    '''
+    def get_all(self):
+        print("Get_all called")
+        startt = self.buffer.get_start_iter()
+        endd = self.buffer.get_end_iter()
+        return self.buffer.get_text(startt, endd, True)
 
     def  get_modified(self):
         return self.textbuffer.get_modified()
@@ -611,7 +606,6 @@ class TextViewWin(Gtk.VBox):
             self.textbuffer.remove_tag(self.tag_bold, start, end)
             self.textbuffer.remove_tag(self.tag_italic, start, end)
             self.textbuffer.remove_tag(self.tag_underline, start, end)
-            self.textbuffer.set_modified(True)
 
     def on_button_clicked(self, widget, tag):
         bounds = self.textbuffer.get_selection_bounds()
@@ -619,7 +613,6 @@ class TextViewWin(Gtk.VBox):
             start, end = bounds
             #print("Apply Tag", tag, start, end)
             self.textbuffer.apply_tag(tag, start, end)
-            self.textbuffer.set_modified(True)
 
     def on_clear_clicked(self, widget):
         start = self.textbuffer.get_start_iter()
