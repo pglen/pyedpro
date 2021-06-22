@@ -13,6 +13,10 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Pango
 
+gi.require_version('PangoCairo', '1.0')
+from gi.repository import PangoCairo
+
+
 realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
 sys.path.append(realinc)
 
@@ -332,18 +336,28 @@ class MenuButt(Gtk.DrawingArea):
         pass
         #print("keypress mb", event.type, event.string);
 
+    def _make_menu(self):
+        self.grab_focus()
+        self.menu3 = Gtk.Menu()
+        cnt = 0
+        for aa in self.menarr:
+            self.menu3.append(self._create_menuitem(aa, self.menu_fired, cnt))
+            cnt = cnt + 1
+
+    def area_rbutton(self, area, event):
+        #print("rmenu butt ", event.type, event.button);
+        if  event.type == Gdk.EventType.BUTTON_RELEASE:
+            if event.button == 3:
+                #print( "Left Click at x=", event.x, "y=", event.y)
+                self._make_menu()
+                self.menu3.popup(None, None, None, None, event.button, event.time)
+
     def area_button(self, area, event):
         #print("menu butt ", event.type, event.button);
         if  event.type == Gdk.EventType.BUTTON_PRESS:
             if event.button == 1:
                 #print( "Left Click at x=", event.x, "y=", event.y)
-                self.grab_focus()
-                self.menu3 = Gtk.Menu()
-                cnt = 0
-                for aa in self.menarr:
-                    self.menu3.append(self._create_menuitem(aa, self.menu_fired, cnt))
-                    cnt = cnt + 1
-
+                self._make_menu()
                 self.menu3.popup(None, None, None, None, event.button, event.time)
 
     def menu_fired(self, menu, menutext, arg):
@@ -1214,6 +1228,67 @@ class Rectangle():
 
     def __str__(self):
         return "R: x=%d y=%d w=%d h=%d" % (self.x, self.y, self.w, self.h)
+
+# Right click button
+
+class RCLButt(Gtk.Button):
+
+    def __init__(self, labelx, callme = None, rcallme = None, space = 2, ttip = None):
+        #super().__init__(self)
+        GObject.GObject.__init__(self)
+        self.rcallme = rcallme
+        self.callme  = callme
+        self.set_label(" " * space + labelx + " " * space)
+        self.set_use_underline (True)
+
+        if ttip:
+            self.set_tooltip_text(ttip)
+
+        #col = Gdk.RGBA(); col.parse("#ccffcc")
+        #self.modify_bg(Gtk.StateFlags.NORMAL, Gdk.Color(1000, 10000, 1))
+        #style = self.get_style_context())
+
+        self.connect("clicked", self.clicked)
+        self.connect("button-press-event", self.pressed)
+        self.connect("button-release-event", self.pressed)
+        self.connect("draw", self.draw)
+
+    def draw(self, area, cr):
+        #print("button", area, cr)
+        rect = self.get_allocation()
+        col = (.2, .7, .7)
+        cr.set_source_rgb(col[0], col[1], col[2])
+        cr.rectangle(0, 0, rect.width, rect.height)
+        cr.fill()
+        layout = self.create_pango_layout("Button Here ... LONG")
+        xxx, yyy = layout.get_pixel_size()
+        xx = rect.width / 2 - xxx/2
+        yy = rect.height / 2 - yyy/2
+        cr.set_source_rgb(0, 0, 0)
+        cr.move_to(xx, yy)
+        PangoCairo.show_layout(cr, layout)
+        #return True
+
+    def  pressed(self, arg1, event):
+        #print("pressed", arg1, event)
+        if  event.type == Gdk.EventType.BUTTON_RELEASE:
+            if event.button == 1:
+                if self.callme:
+                    self.callme(arg1, event)
+
+            if event.button == 3:
+                if self.rcallme:
+                    self.rcallme(arg1, event)
+
+        else:
+            # Unknown button action
+            pass
+
+    def clicked(self, arg1):
+        pass
+        #print("clicked", arg1)
+        #if self.callme:
+        #    self.callme(arg1)
 
 # ------------------------------------------------------------------------
 # Highlite test items
