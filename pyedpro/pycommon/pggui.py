@@ -363,7 +363,7 @@ class MenuButt(Gtk.DrawingArea):
     def menu_fired(self, menu, menutext, arg):
         #print ("menu item fired:", menutext, arg)
         if self.callb:
-            self.callb(menutext, arg)
+            self.callb(self, menutext, arg)
 
     def _draw_line(self, cr, xx, yy, xx2, yy2):
         cr.move_to(xx, yy)
@@ -1274,11 +1274,11 @@ class RCLButt(Gtk.Button):
         if  event.type == Gdk.EventType.BUTTON_RELEASE:
             if event.button == 1:
                 if self.callme:
-                    self.callme(arg1, event)
+                    self.callme(self, arg1, event)
 
             if event.button == 3:
                 if self.rcallme:
-                    self.rcallme(arg1, event)
+                    self.rcallme(self, arg1, event)
 
         else:
             # Unknown button action
