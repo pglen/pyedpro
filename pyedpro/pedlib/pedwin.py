@@ -28,6 +28,7 @@ import pedfont
 import pedcolor
 import pedfind
 import pedweb
+import peddlg
 
 sys.path.append('..' + os.sep + "pycommon")
 
@@ -498,7 +499,11 @@ class EdMainWindow():
         obox2.pack_start(self.newbox, 1, 1, 0)
         for aa in range(8):
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
-            butt = RCLButt("FuncA %d " % (aa + 1), self.rcl, self.rcl2, ttip = "Action Button")
+            head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
+            if not head:
+                head =  "FuncA %d " % (aa + 1)
+            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Action Button")
+
             butt.ord = 1; butt.id = aa;
             #butt.connect("pressed", self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
@@ -506,7 +511,7 @@ class EdMainWindow():
         obox2.pack_start(self.newbox2, 1, 1, 0)
         for aa in range(8):
             #butt = Gtk.Button("FuncB %d " % (aa + 1))
-            butt = RCLButt("Funcb %d " % (aa + 1), self.rcl, self.rcl2)
+            butt = RCLButt("FuncB %d " % (aa + 1), self.rcl, self.rcl2)
             butt.ord = 2; butt.id = aa;
             #butt.connect("pressed", self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
@@ -575,7 +580,6 @@ class EdMainWindow():
         # Set the signal handler for 1s tick
         #signal.signal(signal.SIGALRM, handler_tick)
         #signal.alarm(1)
-
         # Show newly created buffers:
         #self.mywin.show_all()
 
@@ -590,25 +594,51 @@ class EdMainWindow():
         GLib.timeout_add(1000, handler_tick)
         GLib.timeout_add(500, loader_tick, self)
 
-    def rcl(self, arg1, arg2):
+    def rcl(self, butt, arg1, arg2):
         print("rcl", arg2)
+        #print("rcl", butt.ord, butt.id)
+        pass
 
-    def rcl2(self, arg1, arg2):
+    def rcl2(self, butt, arg1, arg2):
         #print("rcl2", arg2)
-        print("label", "'" + arg1.get_label() + "'", arg1.ord, arg1.id)
-
+        #print("label", "'" + arg1.get_label() + "'", arg1.ord, arg1.id)
         menu = MenuButt(("Execute", "Configure", "Face"), self.submenu_click)
         menu.area_rbutton(arg1, arg2)
+        menu.ord = arg1.ord; menu.id = arg1.id
 
-    def submenu_click(self, arg1, arg2):
-        print("submenu_click", arg1, arg2)
+    def submenu_click(self, menu, arg1, arg2):
+        #print("submenu_click", menu.ord, menu.id, arg1, arg2)
+        #pedconfig.conf.sql.put("xx", xx)
+        if arg2 == 0:
+            #print("submenu_click exec", menu.ord, menu.id, arg1, arg2)
+            text = pedconfig.conf.sql.get("val%d%d" % (menu.ord, menu.id))
+            #print("Execute", text)
+            vcurr2 = notebook2.get_nth_page(notebook2.get_current_page())
+            if vcurr2:
+                #pedconfig.conf.keyh.acth.add_str(vcurr2.area, text)
+                self.update_statusbar("Pasted from macro %d%d" % (menu.ord, menu.id))
+
+        if arg2 == 1:
+            #print("submenu_click config", menu.ord, menu.id, arg1, arg2)
+            head = pedconfig.conf.sql.get("mac%d%d" % (menu.ord, menu.id))
+            if not head:
+                abarr = "AAB"
+                head = "Func %s%d" % (abarr[menu.ord], menu.id)
+            clip = pedconfig.conf.sql.get("val%d%d" % (menu.ord, menu.id))
+            if not clip:
+                clip = "None"
+
+            filled = peddlg.config_dlg("Edit Executable Entry", head, clip)
+            if filled[0]:
+                pedconfig.conf.sql.put("mac%d%d" % (menu.ord, menu.id), filled[0])
+                pedconfig.conf.sql.put("val%d%d" % (menu.ord, menu.id), filled[1])
 
     def buttA(self, arg1, arg2):
-        print("buttA", arg2)
+        print("buttA", arg1, arg2)
         self.update_statusbar("ButtA pressed, num {0:d}".format(arg2))
 
     def buttB(self, arg1, arg2):
-        print("buttB", arg2)
+        print("buttB", arg1, arg2)
         self.update_statusbar("Buttb pressed, num {0:d}".format(arg2))
 
     def menu_open(self, arg, arg2):

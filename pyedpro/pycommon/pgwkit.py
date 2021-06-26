@@ -24,7 +24,7 @@ try:
     from gi.repository import WebKit2
 
     #print(WebKit2)
-    print("Webkit ver", WebKit2.get_major_version(), WebKit2.get_minor_version(), WebKit2.get_micro_version())
+    #print("Webkit ver", WebKit2.get_major_version(), WebKit2.get_minor_version(), WebKit2.get_micro_version())
 
 except:
     # Define a blank one  -- too complex to work
