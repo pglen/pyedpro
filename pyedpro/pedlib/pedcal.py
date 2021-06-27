@@ -45,7 +45,7 @@ class pgcal(Gtk.VBox):
             print("Cannot make calendar database")
 
         self.pack_start(xSpacer(), 0, 0, 0)
-        self.lsel = LetterNumberSel(self.letterfilter)
+        self.lsel = LetterNumberSel(self.letterfilter, font="Mono 12")
         self.pack_start(self.lsel, 0, 0, 2)
 
         self.cal = Gtk.Calendar()

@@ -218,7 +218,7 @@ class   SimpleEdit(Gtk.TextView):
 
 class   SimpleSel(Gtk.Label):
 
-    def __init__(self, text = " ", callb = None):
+    def __init__(self, text = " ", callb = None, font="Mono 13"):
         self.text = text
         self.callb = callb
         self.axx = self.text.find("[All]")
@@ -227,7 +227,7 @@ class   SimpleSel(Gtk.Label):
         self.set_has_window(True)
         self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
         self.connect("button-press-event", self.area_button)
-        self.modify_font(Pango.FontDescription("Mono 13"))
+        self.modify_font(Pango.FontDescription(font))
         self.lastsel = "All"
 
     def area_button(self, but, event):
@@ -266,7 +266,7 @@ class   SimpleSel(Gtk.Label):
 
 class   NumberSel(Gtk.Label):
 
-    def __init__(self, text = " ", callb = None):
+    def __init__(self, text = " ", callb = None, font="Mono 13"):
         self.text = text
         self.callb = callb
         self.axx = self.text.find("[All]")
@@ -274,7 +274,7 @@ class   NumberSel(Gtk.Label):
         self.set_has_window(True)
         self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
         self.connect("button-press-event", self.area_button)
-        self.override_font(Pango.FontDescription("Mono 15"))
+        self.override_font(Pango.FontDescription(font))
         self.lastsel = "All"
 
     def area_button(self, but, event):
@@ -324,7 +324,7 @@ class   NumberSel(Gtk.Label):
 
 class   LetterNumberSel(Gtk.VBox):
 
-    def __init__(self, callb = None):
+    def __init__(self, callb = None, font="Mono 13"):
 
         Gtk.VBox.__init__(self)
         self.callb = callb
@@ -332,14 +332,14 @@ class   LetterNumberSel(Gtk.VBox):
         strx = "abcdefghijklmnopqrstuvwxyz"
         hbox3a = Gtk.HBox()
         hbox3a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
-        self.simsel = SimpleSel(strx, self.letter)
+        self.simsel = SimpleSel(strx, self.letter, font)
         hbox3a.pack_start(self.simsel, 0, 0, 0)
         hbox3a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         strn = "1234567890!@#$^&*_+ [All]"
         hbox3b = Gtk.HBox()
         hbox3b.pack_start(Gtk.Label(label=" "), 1, 1, 0)
-        self.simsel2 = SimpleSel(strn, self.letter)
+        self.simsel2 = SimpleSel(strn, self.letter, font)
         hbox3b.pack_start(self.simsel2, 0, 0, 0)
         hbox3b.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 

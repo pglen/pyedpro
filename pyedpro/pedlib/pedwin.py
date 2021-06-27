@@ -399,6 +399,7 @@ class EdMainWindow():
             notebook2.append_page(pedcal.pgcal())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Calendar"))
+            pass
         except:
             print("Cannot load auxiliary cal tab.")
 
@@ -406,6 +407,7 @@ class EdMainWindow():
             notebook2.append_page(pednotes.pgnotes())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
+            pass
         except:
             print("Cannot load auxiliary notes tab")
             print(sys.exc_info())
@@ -415,6 +417,7 @@ class EdMainWindow():
             notebook2.append_page(pedoline.pgoline())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
+            pass
         except:
             print("Cannot load outline tab.", sys.exc_info())
 
@@ -422,6 +425,7 @@ class EdMainWindow():
             notebook2.append_page(pedweb.pgweb())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Web"))
+            pass
         except:
             print("Cannot load auxiliary web tab.")
             if pedconfig.conf.verbose:

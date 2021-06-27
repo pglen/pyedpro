@@ -59,7 +59,7 @@ class pgnotes(Gtk.VBox):
         #hbox = Gtk.HBox()
         self.pack_start(Gtk.Label(""), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        self.lsel = pgsimp.LetterNumberSel(self.letterfilter)
+        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font="Mono 12")
         self.lsel.set_tooltip_text("Filter entries by letter / number")
         self.pack_start(self.lsel, 0, 0, 2)
 
