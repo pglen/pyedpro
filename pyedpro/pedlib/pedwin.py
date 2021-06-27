@@ -501,8 +501,8 @@ class EdMainWindow():
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
             if not head:
-                head =  "FuncA %d " % (aa + 1)
-            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Action Button")
+                head =  "FuncA%d" % (aa + 1)
+            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Action Button", space=1)
 
             butt.ord = 1; butt.id = aa;
             #butt.connect("pressed", self.buttA, aa + 1)
@@ -511,7 +511,7 @@ class EdMainWindow():
         obox2.pack_start(self.newbox2, 1, 1, 0)
         for aa in range(8):
             #butt = Gtk.Button("FuncB %d " % (aa + 1))
-            butt = RCLButt("FuncB %d " % (aa + 1), self.rcl, self.rcl2)
+            butt = RCLButt("FuncB%d" % (aa + 1), self.rcl, self.rcl2, space=1)
             butt.ord = 2; butt.id = aa;
             #butt.connect("pressed", self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
