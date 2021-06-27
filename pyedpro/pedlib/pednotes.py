@@ -122,27 +122,29 @@ class pgnotes(Gtk.VBox):
         self.pack_start(vpaned, 1, 1, 2)
 
         hbox13 = Gtk.HBox()
-        hbox13.pack_start(Gtk.Label("  "), 1, 1, 0)
+        hbox13.pack_start(Gtk.Label(" "), 1, 1, 0)
 
         butt3 = Gtk.Button.new_with_mnemonic("New")
         butt3.connect("pressed", self.newitem)
-        hbox13.pack_start(butt3, 0, 0, 0)
-        hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13.pack_start(butt3, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
         butt11 = Gtk.Button.new_with_mnemonic("Del")
         butt11.connect("pressed", self.delitem)
-        hbox13.pack_start(butt11, 0, 0, 0)
-        hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13.pack_start(butt11, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt12 = Gtk.Button.new_with_mnemonic("Export")
+        butt12 = Gtk.Button.new_with_mnemonic("Exp")
         butt12.connect("pressed", self.export)
-        hbox13.pack_start(butt12, 0, 0, 0)
-        hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13.pack_start(butt12, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt14 = Gtk.Button.new_with_mnemonic("Export Data")
+        butt14 = Gtk.Button.new_with_mnemonic("ExpData")
         butt14.connect("pressed", self.exportd)
-        hbox13.pack_start(butt14, 0, 0, 0)
-        hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13.pack_start(butt14, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label(" "), 0, 0, 0)
+
+        hbox13.pack_start(Gtk.Label(" "), 1, 1, 0)
 
         #butt22 = Gtk.Button.new_with_mnemonic("Save")
         #butt22.connect("pressed", self.save)
