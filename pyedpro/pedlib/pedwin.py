@@ -393,12 +393,12 @@ class EdMainWindow():
 
         notebook2.append_page(vpaned)
         ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
-        self.notebook2.set_tab_label(ppp, self.make_label("Editor"))
+        self.notebook2.set_tab_label(ppp, self.make_label("Funcs"))
 
         try:
             notebook2.append_page(pedcal.pgcal())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
-            self.notebook2.set_tab_label(ppp, self.make_label("Calendar"))
+            self.notebook2.set_tab_label(ppp, self.make_label("Cal"))
             pass
         except:
             print("Cannot load auxiliary cal tab.")
@@ -416,7 +416,7 @@ class EdMainWindow():
         try:
             notebook2.append_page(pedoline.pgoline())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
-            self.notebook2.set_tab_label(ppp, self.make_label("Outline"))
+            self.notebook2.set_tab_label(ppp, self.make_label("Draw"))
             pass
         except:
             print("Cannot load outline tab.", sys.exc_info())
