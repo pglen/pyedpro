@@ -505,7 +505,7 @@ class EdMainWindow():
         self.newbox = Gtk.HBox()
         obox2.pack_start(self.newbox, 1, 1, 0)
 
-        self.buttarr = []
+        self.buttarr = []               # So later we can change labels
         for aa in range(8):
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
@@ -608,29 +608,26 @@ class EdMainWindow():
         GLib.timeout_add(500, loader_tick, self)
 
     def rcl(self, butt, arg1, arg2):
-        #print("rcl", arg2)
-        print("rcl", butt.ord, butt.id)
+        #print("rcl label", but.get_label(), butt.ord, butt.id)
         head = pedconfig.conf.sql.get("mac%d%d" % (butt.ord, butt.id))
         value = pedconfig.conf.sql.get("val%d%d" % (butt.ord, butt.id))
         if not value:
+            self.update_statusbar("No data on button action '%d.%d'" % (butt.ord, butt.id))
             return
-        #print(head, value)
-        self.update_statusbar("Pasted from button action '%s'" % head)
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
-        if vcurr2:
-            clip = Gtk.Clipboard()
-            disp2 = Gdk.Display()
-            disp = disp2.get_default()
-            clip = Gtk.Clipboard.get_default(disp)
-            clip.set_text(value, len(value))
-            pedconfig.conf.keyh.acth.ctrl_v(vcurr2.area)
-            self.mywin.set_focus(vcurr2.vbox.area)
-        pass
+        if not vcurr2:
+            self.update_statusbar("Cannot paste from button action '%s'" % head)
+            return
+        disp = Gdk.Display().get_default()
+        clip = Gtk.Clipboard.get_default(disp)
+        clip.set_text(value, len(value))
+        pedconfig.conf.keyh.acth.ctrl_v(vcurr2.area)
+        self.mywin.set_focus(vcurr2.vbox.area)
+        self.update_statusbar("Pasted from button action '%s'" % head)
 
     def rcl2(self, butt, arg1, arg2):
-        #print("rcl2", arg2)
-        #print("label", "'" + arg1.get_label() + "'", arg1.ord, arg1.id)
+        #print("rcl2 label", "'" + arg1.get_label() + "'", arg1.ord, arg1.id)
         menu = MenuButt(("Action", "Configure", "Face"), self.submenu_click)
         menu.area_rbutton(arg1, arg2)
         menu.ord = arg1.ord; menu.id = arg1.id
@@ -639,6 +636,7 @@ class EdMainWindow():
         print("submenu_click", menu.ord, menu.id, arg1, arg2)
         #pedconfig.conf.sql.put("xx", xx)
         if arg2 == 0:
+            # Call the action -- note menu contains button coordinates
             self.rcl(menu, arg1, arg2)
 
         if arg2 == 1:
@@ -661,15 +659,17 @@ class EdMainWindow():
                         aa.set_label(filled[0])
 
     def buttA(self, arg1, arg2):
-        print("buttA", arg1, arg2)
+        #print("buttA", arg1, arg2)
         self.update_statusbar("ButtA pressed, num {0:d}".format(arg2))
 
     def buttB(self, arg1, arg2):
-        print("buttB", arg1, arg2)
+        #print("buttB", arg1, arg2)
         self.update_statusbar("Buttb pressed, num {0:d}".format(arg2))
 
     def menu_open(self, arg, arg2):
-        print("menu_open", arg, arg2)
+        #print("menu_open", arg, arg2)
+        #self.update_statusbar("Menu open num {0:d}".format(arg2))
+        pass
 
     def focus_out2(self, book, obj):
         #print("nb2 focus out", obj)

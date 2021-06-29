@@ -859,9 +859,7 @@ class ActHand:
 
         cumm = self._getsel(self2)
         #print ("clip:", cumm)
-        clip = Gtk.Clipboard()
-        disp2 = Gdk.Display()
-        disp = disp2.get_default()
+        disp = Gdk.Display().get_default()
         clip = Gtk.Clipboard.get_default(disp)
 
         if self.currclip == 0:
