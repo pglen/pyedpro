@@ -225,6 +225,9 @@ class EdMainWindow():
             ww = pedconfig.conf.sql.get_int("ww")
             hh = pedconfig.conf.sql.get_int("hh")
 
+            if pedconfig.conf.verbose:
+                print("load coords", xx, yy, ww, hh)
+
             if ww == 0 or hh == 0:
                 self.mywin.set_position(Gtk.WindowPosition.CENTER)
                 self.mywin.set_default_size(7*www/8, 5*hhh/8)
@@ -501,22 +504,28 @@ class EdMainWindow():
         obox2 = Gtk.VBox()
         self.newbox = Gtk.HBox()
         obox2.pack_start(self.newbox, 1, 1, 0)
+
+        self.buttarr = []
         for aa in range(8):
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
             if not head:
                 head =  "FuncA%d" % (aa + 1)
-            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Action Button", space=1)
-
+            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Action Button %d" % (aa+1), space=1)
             butt.ord = 1; butt.id = aa;
+            self.buttarr.append(butt)
             #butt.connect("pressed", self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
         self.newbox2 = Gtk.HBox()
         obox2.pack_start(self.newbox2, 1, 1, 0)
         for aa in range(8):
             #butt = Gtk.Button("FuncB %d " % (aa + 1))
-            butt = RCLButt("FuncB%d" % (aa + 1), self.rcl, self.rcl2, space=1)
+            head = pedconfig.conf.sql.get("mac%d%d" % (2, aa))
+            if not head:
+                head =  "FuncB%d" % (aa + 1)
+            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Lower Action Button %d" % (aa+1), space=1)
             butt.ord = 2; butt.id = aa;
+            self.buttarr.append(butt)
             #butt.connect("pressed", self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
 
@@ -599,28 +608,38 @@ class EdMainWindow():
         GLib.timeout_add(500, loader_tick, self)
 
     def rcl(self, butt, arg1, arg2):
-        print("rcl", arg2)
-        #print("rcl", butt.ord, butt.id)
+        #print("rcl", arg2)
+        print("rcl", butt.ord, butt.id)
+        head = pedconfig.conf.sql.get("mac%d%d" % (butt.ord, butt.id))
+        value = pedconfig.conf.sql.get("val%d%d" % (butt.ord, butt.id))
+        if not value:
+            return
+        #print(head, value)
+        self.update_statusbar("Pasted from button action '%s'" % head)
+        nn2 = notebook.get_current_page()
+        vcurr2 = notebook.get_nth_page(nn2)
+        if vcurr2:
+            clip = Gtk.Clipboard()
+            disp2 = Gdk.Display()
+            disp = disp2.get_default()
+            clip = Gtk.Clipboard.get_default(disp)
+            clip.set_text(value, len(value))
+            pedconfig.conf.keyh.acth.ctrl_v(vcurr2.area)
+            self.mywin.set_focus(vcurr2.vbox.area)
         pass
 
     def rcl2(self, butt, arg1, arg2):
         #print("rcl2", arg2)
         #print("label", "'" + arg1.get_label() + "'", arg1.ord, arg1.id)
-        menu = MenuButt(("Execute", "Configure", "Face"), self.submenu_click)
+        menu = MenuButt(("Action", "Configure", "Face"), self.submenu_click)
         menu.area_rbutton(arg1, arg2)
         menu.ord = arg1.ord; menu.id = arg1.id
 
     def submenu_click(self, menu, arg1, arg2):
-        #print("submenu_click", menu.ord, menu.id, arg1, arg2)
+        print("submenu_click", menu.ord, menu.id, arg1, arg2)
         #pedconfig.conf.sql.put("xx", xx)
         if arg2 == 0:
-            #print("submenu_click exec", menu.ord, menu.id, arg1, arg2)
-            text = pedconfig.conf.sql.get("val%d%d" % (menu.ord, menu.id))
-            #print("Execute", text)
-            vcurr2 = notebook2.get_nth_page(notebook2.get_current_page())
-            if vcurr2:
-                #pedconfig.conf.keyh.acth.add_str(vcurr2.area, text)
-                self.update_statusbar("Pasted from macro %d%d" % (menu.ord, menu.id))
+            self.rcl(menu, arg1, arg2)
 
         if arg2 == 1:
             #print("submenu_click config", menu.ord, menu.id, arg1, arg2)
@@ -632,10 +651,14 @@ class EdMainWindow():
             if not clip:
                 clip = "None"
 
-            filled = peddlg.config_dlg("Edit Executable Entry", head, clip)
+            filled = peddlg.config_dlg("Edit Macro Entry", head, clip)
             if filled[0]:
                 pedconfig.conf.sql.put("mac%d%d" % (menu.ord, menu.id), filled[0])
                 pedconfig.conf.sql.put("val%d%d" % (menu.ord, menu.id), filled[1])
+                # Also fill in header
+                for aa in self.buttarr:
+                    if aa.ord == menu.ord and aa.id == menu.id:
+                        aa.set_label(filled[0])
 
     def buttA(self, arg1, arg2):
         print("buttA", arg1, arg2)
@@ -695,15 +718,13 @@ class EdMainWindow():
         #print(butt)
         self.nextwin()
 
-    def menu_click(self, item, arg):
-        #print("menu_click", item, arg)
-        if "pen" in item:
+    def menu_click(self, item, arg1, arg2):
+        #print("menu_click", item, arg1, arg2)
+        if "pen" in arg1:
             self.open()
-
-        if "lose" in item:
+        if "lose" in arg1:
             self.close_document()
-
-        if "xit" in item:
+        if "xit" in arg1:
             self.activate_exit()
 
     def on_drag_begin(self, widget, context):
@@ -1337,7 +1358,6 @@ class EdMainWindow():
         if vcurr2:
              pedconfig.conf.keyh.acth.ctrl_alt_r(vcurr2.area)
 
-
     def paste(self):
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
@@ -1901,6 +1921,9 @@ def     OnExit(arg, prompt = True):
 
         pedconfig.conf.sql.put("ww", ww)
         pedconfig.conf.sql.put("hh", hh)
+
+        if pedconfig.conf.verbose:
+            print("Save coord", xx, yy, ww, hh)
 
     # Save current doc to config memory:
     vcurr = notebook.get_nth_page(notebook.get_current_page())
