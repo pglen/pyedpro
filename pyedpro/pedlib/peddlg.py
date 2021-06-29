@@ -75,9 +75,12 @@ def  config_dlg(title, head, clip, parent = None):
     #entry2.set_text(clip)
 
     tview = Gtk.TextView();
-    tview.set_size_request(200, 200)
     #tview.set_buffer(Gtk.TextBuffer(clip))
     tview.get_buffer().set_text(clip)
+
+    scroll = Gtk.ScrolledWindow()
+    scroll.set_size_request(300, 400)
+    scroll.add(tview)
 
     dialog.vbox.pack_start(label4, 0, 0, 0)
 
@@ -95,9 +98,10 @@ def  config_dlg(title, head, clip, parent = None):
     spacer(dialog.vbox)
 
     hbox3 = Gtk.HBox()
-    hbox3.pack_start(Gtk.Label("    "), 0, 0, 0)
+    hbox3.pack_start(Gtk.Label("   "), 0, 0, 0)
     #hbox3.pack_start(entry2, True, True, 0)
-    hbox3.pack_start(tview, True, True, 0)
+    #hbox3.pack_start(tview, True, True, 0)
+    hbox3.pack_start(scroll, True, True, 0)
     hbox3.pack_start(Gtk.Label("   "), 0, 0, 0)
     dialog.vbox.pack_start(hbox3, 0, 0, 0)
     spacer(dialog.vbox)
@@ -108,7 +112,7 @@ def  config_dlg(title, head, clip, parent = None):
     #dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
     #dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
 
-    dialog.vbox.pack_start(label5, 0, 0, 0)
+    #dialog.vbox.pack_start(label5, 0, 0, 0)
 
     hbox = Gtk.HBox()
     hbox.pack_start(label1, 0, 0, 0)
@@ -118,8 +122,7 @@ def  config_dlg(title, head, clip, parent = None):
     #hbox.pack_start(label3, 0, 0, 0)
 
     #dialog.vbox.pack_start(hbox, 0, 0, 0)
-
-    dialog.vbox.pack_start(label8, 0, 0, 0)
+    #dialog.vbox.pack_start(label8, 0, 0, 0)
 
     label30 = Gtk.Label("   ");  label31 = Gtk.Label("   ")
     label32 = Gtk.Label("   ");  label33 = Gtk.Label("   ")
@@ -134,7 +137,7 @@ def  config_dlg(title, head, clip, parent = None):
     #hbox4.pack_start(dialog.checkbox4, 0, 0, 0)
     #hbox4.pack_start(label32, 0, 0, 0);
     #dialog.vbox.pack_start(hbox4, 0, 0, 0)
-    dialog.vbox.pack_start(label33, 0, 0, 0)
+    #dialog.vbox.pack_start(label33, 0, 0, 0)
 
     #dialog.connect("key-press-event", _keypress)
 
@@ -163,6 +166,7 @@ def     spacer(vbox, txt = "   "):
     hbox.pack_start(Gtk.Label(" " + txt + " "), 0, 0, 0)
     vbox.pack_start(hbox, 0, 0, 0)
     return hbox
+
 
 
 
