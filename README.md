@@ -123,13 +123,18 @@ The author,
 
       Peter Glen
 
+Screen from a regular session, including clip buttons)
+
+![Screen Shot] (screen.png)
+
 Screen from a regular session, note the function list on the left:
 
-![Screen Shot] (http://github.com/pglen/pyedpro/raw/master/image.png
+![Screen Shot] (http://github.com/pglen/pyedpro/raw/master/image.png)
 
 Screen from Ubuntu:
 
 ![Screen Shot] (https://raw.githubusercontent.com/pglen/pyedpro/master/pyedpro_ubuntu.png)
+
 
 License:    Open Source, FreeWare
 
