@@ -115,7 +115,7 @@ convention dictates.
   Developer's note: in order to make PyEdPro multi platform, we save
 the configuration info into a SQLite database in the ~/.PyEdPro directory.
 
-(~/ stands for the user's home directory)
+(~/ user's home directory)
 
  Contributors are welcome.
 
@@ -123,18 +123,13 @@ The author,
 
       Peter Glen
 
-Screen from a regular session, including clip buttons)
+Screen from a regular session, including clip buttons ...
 
-![Screen Shot](screen.png)
+![Screen Shot Ubuntu](screen.png)
 
-Screen from a regular session, note the function list on the left:
+Screen from an older session, note the function list on the left:
 
 ![Screen Shot More](image.png)
-
-Screen from Ubuntu:
-
-![Screen Shot](pyedpro_ubuntu.png)
-
 
 License:    Open Source, FreeWare
 
