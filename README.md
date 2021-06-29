@@ -125,15 +125,15 @@ The author,
 
 Screen from a regular session, including clip buttons)
 
-![Screen Shot] (screen.png)
+![Screen Shot](screen.png)
 
 Screen from a regular session, note the function list on the left:
 
-![Screen Shot] (http://github.com/pglen/pyedpro/raw/master/image.png)
+![Screen Shot More](image.png)
 
 Screen from Ubuntu:
 
-![Screen Shot] (https://raw.githubusercontent.com/pglen/pyedpro/master/pyedpro_ubuntu.png)
+![Screen Shot](pyedpro_ubuntu.png)
 
 
 License:    Open Source, FreeWare
