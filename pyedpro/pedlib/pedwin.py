@@ -645,7 +645,7 @@ class EdMainWindow():
         menu.ord = arg1.ord; menu.id = arg1.id
 
     def submenu_click(self, menu, arg1, arg2):
-        print("submenu_click", menu.ord, menu.id, arg1, arg2)
+        #print("submenu_click", menu.ord, menu.id, arg1, arg2)
         #pedconfig.conf.sql.put("xx", xx)
         if arg2 == 0:
             # Call the action -- note menu contains button coordinates
