@@ -55,8 +55,7 @@ def  config_dlg(title, head, clip, parent = None):
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     #dialog.set_transient_for(self2.mained.mywin)
     dialog.set_position(Gtk.WindowPosition.CENTER)
-
-    dialog.set_size_request(500, 400)
+    dialog.set_size_request(800, 600)
 
     '''try:
         dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
@@ -84,6 +83,7 @@ def  config_dlg(title, head, clip, parent = None):
     tview.get_buffer().set_text(clip)
 
     scroll = Gtk.ScrolledWindow()
+    scroll.set_size_request(500, 400)
     scroll.add(tview)
 
     dialog.vbox.pack_start(label4, 0, 0, 0)
@@ -98,7 +98,8 @@ def  config_dlg(title, head, clip, parent = None):
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
     spacer(dialog.vbox)
 
-    spacer(dialog.vbox, "Clipboard Contents:")
+    dialog.vbox.pack_start(Gtk.Label.new("Macros expanded: %DATE% %TIME% %FILE%"), 1, 1, 2)
+    spacer(dialog.vbox, "Pasted Contents:")
     spacer(dialog.vbox)
 
     hbox3 = Gtk.HBox()
