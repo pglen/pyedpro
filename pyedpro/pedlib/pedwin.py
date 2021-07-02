@@ -10,6 +10,7 @@ import warnings
 import stat
 import collections
 import platform
+import datetime
 
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -619,6 +620,17 @@ class EdMainWindow():
         if not vcurr2:
             self.update_statusbar("Cannot paste from button action '%s'" % head)
             return
+
+        # Patch in variables
+        dt = datetime.datetime(1990, 1, 1);
+        dt2 = dt.now()
+        strx2 =  dt2.strftime("%a %d.%b.%Y")
+        value = value.replace("%DATE%", strx2)
+
+        strx3 =  dt2.strftime("%H:%M:%S")
+        value = value.replace("%TIME%", strx3)
+        value = value.replace("%FILE%", os.path.basename(vcurr2.area.fname))
+
         disp = Gdk.Display().get_default()
         clip = Gtk.Clipboard.get_default(disp)
         clip.set_text(value, len(value))

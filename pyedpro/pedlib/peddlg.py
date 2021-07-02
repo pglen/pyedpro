@@ -13,6 +13,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
+from gi.repository import Pango
 
 def  _keypress(area, event):
     #print( arg1, arg2)
@@ -55,6 +56,8 @@ def  config_dlg(title, head, clip, parent = None):
     #dialog.set_transient_for(self2.mained.mywin)
     dialog.set_position(Gtk.WindowPosition.CENTER)
 
+    dialog.set_size_request(500, 400)
+
     '''try:
         dialog.set_icon_from_file(get_img_path("pyedpro_sub.png"))
     except:
@@ -75,11 +78,12 @@ def  config_dlg(title, head, clip, parent = None):
     #entry2.set_text(clip)
 
     tview = Gtk.TextView();
+    tview.modify_font(Pango.FontDescription("Mono 13"))
+
     #tview.set_buffer(Gtk.TextBuffer(clip))
     tview.get_buffer().set_text(clip)
 
     scroll = Gtk.ScrolledWindow()
-    scroll.set_size_request(300, 400)
     scroll.add(tview)
 
     dialog.vbox.pack_start(label4, 0, 0, 0)
@@ -106,21 +110,13 @@ def  config_dlg(title, head, clip, parent = None):
     dialog.vbox.pack_start(hbox3, 0, 0, 0)
     spacer(dialog.vbox)
 
-    #dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
-    #dialog.checkbox2 = Gtk.CheckButton.new_with_mnemonic("Case In_sensitive")
-
-    #dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
-    #dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
-
-    #dialog.vbox.pack_start(label5, 0, 0, 0)
-
     hbox = Gtk.HBox()
     hbox.pack_start(label1, 0, 0, 0)
+
     #hbox.pack_start(dialog.checkbox, 0, 0, 0)
     #hbox.pack_start(label2, 0, 0, 0)
     #hbox.pack_start(dialog.checkbox2, 0, 0, 0)
     #hbox.pack_start(label3, 0, 0, 0)
-
     #dialog.vbox.pack_start(hbox, 0, 0, 0)
     #dialog.vbox.pack_start(label8, 0, 0, 0)
 
