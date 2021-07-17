@@ -24,6 +24,7 @@ import pedspell
 import pedcolor
 import pedfont
 import pedundo
+import pedplug
 
 # Grabbed modifier defines from GTK
 #  ... Turns out Gtk.gdk 2.6+ defines these (above) constants as ...
@@ -320,6 +321,8 @@ class KeyHand:
     def handle_key(self, self2, area, event):
 
         #print ("KEY:",   event.keyval  )
+
+        pedplug.keypress(event)
 
         if pedconfig.conf.show_keys:
             if pedconfig.conf.pgdebug > 3:

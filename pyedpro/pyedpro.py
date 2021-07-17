@@ -101,6 +101,7 @@ pedconfig.conf.keyh = keyhand.KeyHand(pedconfig.conf.acth)
 import pedwin
 import pedlog
 import pedutil
+import pedplug
 
 import gi
 gi.require_version("Gtk", "3.0")
@@ -340,6 +341,9 @@ def mainstart(name = "", args = "", oldpath = ""):
     main(pname, args[0:])
 
 if __name__ == '__main__':
+
+    # Init plugins
+    pedplug.load_plugins()
     mainstart("", [], "")
 
 # EOF

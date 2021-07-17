@@ -1641,11 +1641,21 @@ class ActHand:
     def f1(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("F1")
-        self2.mained.update_statusbar("Opening KEYS help file ...")
-        kk = get_exec_path("KEYS")
-        if pedconfig.conf.verbose:
-            print("Pang open", kk)
-        launch_pangview(kk)
+        if self2.shift:
+            sss = self._getsel(self2)
+            self2.mained.update_statusbar("Opening DEVDOCS help file ...")
+            try:
+                #print("sss", sss)
+                ret = subprocess.Popen(["devdocs", "-s", sss,])
+            except:
+                pedync.message("\n   Cannot launch devhelp   \n\n"
+                               "              (Please install)")
+        else:
+            self2.mained.update_statusbar("Opening KEYS help file ...")
+            kk = get_exec_path("KEYS")
+            if pedconfig.conf.verbose:
+                print("Pang open", kk)
+            launch_pangview(kk)
 
     def f2(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -1661,7 +1671,8 @@ class ActHand:
                 except:
                     pedync.message("\n   Cannot launch devhelp   \n\n"
                                    "              (Please install)")
-
+        elif self2.ctrl:
+            pass
         else:
             if platform.system().find("Win") >= 0:
                 pedync.message("\n   This feature is Linux only   \n\n"
@@ -1672,6 +1683,7 @@ class ActHand:
                 try:
                     #print("sss", sss)
                     ret = subprocess.Popen(["devhelp", "-s", sss,])
+                    #ret = subprocess.Popen(["devdocs", "-s", sss,])
                 except:
                     pedync.message("\n   Cannot launch devhelp   \n\n"
                                    "              (Please install)")
