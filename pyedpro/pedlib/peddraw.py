@@ -18,6 +18,7 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 import pedconfig
+import pedplug
 
 from keywords import *
 from pedutil import *
@@ -60,8 +61,6 @@ class peddraw(object):
         cr.line_to(xx2, yy2)
         cr.stroke()
         cr.set_source_rgba(*list(self.self2.fgcolor))
-
-
 
     # --------------------------------------------------------------------
     # Draw caret
@@ -269,6 +268,8 @@ class peddraw(object):
         if not self.colflag:
             return
 
+        pedplug.syntax(self, cr)
+
         # Paint syntax colors
         xx = 0; yy = 0;
         cnt = int(self.ypos)
@@ -383,6 +384,8 @@ class peddraw(object):
     # Paint main text
     def draw_maintext(self, cr):
 
+        pedplug.display(self, cr)
+
         xx = 0; yy = 0;
         cnt = int(self.ypos)
         while cnt <  self.xlen:
@@ -404,39 +407,3 @@ class peddraw(object):
 
 
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

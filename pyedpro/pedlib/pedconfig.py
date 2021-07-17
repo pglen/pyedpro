@@ -44,6 +44,7 @@ class Conf():
         self.orig_dir = os.getcwd()
 
         # Where things are stored (backups, orgs, macros, logs, temp, tts)
+        # Add _dir suffix for pyedpro to create it
         self.config_dir = os.path.expanduser("~/.pyedpro")
         self.macro_dir = os.path.expanduser("~/.pyedpro/macros")
         self.data_dir = os.path.expanduser("~/.pyedpro/data")
@@ -51,12 +52,12 @@ class Conf():
         self.sess_data = os.path.expanduser("~/.pyedpro/sess")
         self.temp_dir = os.path.expanduser("~/.pyedpro/tmp")
         self.tts_dir = os.path.expanduser("~/.pyedpro/tts")
+        self.plugins_dir = os.path.expanduser("~/.pyedpro/plugins")
 
+        # The files
         self.sql_data = os.path.expanduser("~/.pyedpro/sql_data")
         self.history  = os.path.expanduser("~/.pyedpro/history")
         self.sessions = os.path.expanduser("~/.pyedpro/sessions")
-
-        #self.sql = None
 
         self.config_file = "defaults"
 
@@ -87,13 +88,15 @@ def ensure_dirs(conf):
     if conf.pgdebug > 5:
         print("ensure_dirs: ")
 
-    softmake(conf.config_dir)
-    softmake(conf.macro_dir)
-    softmake(conf.data_dir)
-    softmake(conf.log_dir)
-    softmake(conf.sess_data)
-    softmake(conf.temp_dir)
-    softmake(conf.tts_dir)
+    # Automate it
+    for aa in conf.__dict__:
+        zz = conf.__dict__[aa]
+        if type(zz) == str:
+            if "_dir" in aa:
+                if ".pyedpro" in zz:
+                    if conf.pgdebug > 5:
+                        print("making dir entry", zz)
+                    softmake(zz)
 
 class Unbuffered(object):
    def __init__(self, stream):

@@ -31,6 +31,7 @@ import  pedundo
 import  pedmisc
 import  pedtask
 import  pedfind
+import  pedplug
 
 #import pedlib.pedconfig as pedconfig
 #import pedlib.peddraw as  peddraw
@@ -659,6 +660,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         cr.rectangle( 0, 0, self.www, self.hhh)
         cr.fill()
 
+        pedplug.predraw(self, cr)
+
         # Pre set for drawing
         #cr.set_source_rgba(*list(fg_color))
         # Paint prescribed color
@@ -667,6 +670,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         cr.move_to(0, 0)
         self.layout = PangoCairo.create_layout(cr)
         self.layout.set_font_description(self.fd)
+
 
         self.draw_maintext(cr)
 
