@@ -338,12 +338,16 @@ def mainstart(name = "", args = "", oldpath = ""):
                     pedconfig.conf.orig_dir, "from",
                         pedconfig.conf.orig_path)
 
+    # Init plugins
+    try:
+        pedplug.load_plugins()
+    except:
+        print("Cannot load plugins")
+
     main(pname, args[0:])
 
 if __name__ == '__main__':
 
-    # Init plugins
-    pedplug.load_plugins()
     mainstart("", [], "")
 
 # EOF
