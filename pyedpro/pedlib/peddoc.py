@@ -1712,6 +1712,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.start_htmlwin(self.fname)
         elif ttt == 23:
             self.start_htmlstr()
+        elif ttt == 24:
+            self.start_external(["caja", "."],
+                                        ["explorer", ""])
         else:
             print("peddoc: Invalid menu item selected")
 

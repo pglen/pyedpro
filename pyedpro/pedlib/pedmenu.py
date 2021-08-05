@@ -77,6 +77,8 @@ rclick_menu = (
             ( _("_Paste"),         "<control>V",    rclick_action, 9, None ),
             ( "",               None,               None, 10, "<Separator>" ),
             ( _("Terminal Here"),  None,            rclick_action, 14, None ),
+            ( "",               None,               None, 10, "<Separator>" ),
+            ( _("File Manager Here"),  None,        rclick_action, 24, None ),
             ( _("Exec current"),  None,             rclick_action, 17, None ),
             ( _("Start libre office"),  None,       rclick_action, 18, None ),
             ( _("New pyedpro"),   None,             rclick_action, 15, None ),

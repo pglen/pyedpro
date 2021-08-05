@@ -115,8 +115,8 @@ from gi.repository import Gtk
 #except:
 #    print(sys.exc_info())
 
-VERSION  = "2.2.0"
-BUILDDATE = "Tue 25.May.2021"
+VERSION  = "2.4.0"
+BUILDDATE = "Thu 05.Aug.2021"
 PROGNAME  = "PyEdPro"
 
 # ------------------------------------------------------------------------
