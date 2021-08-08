@@ -348,6 +348,7 @@ def mainstart(name = "", args = "", oldpath = ""):
 
 if __name__ == '__main__':
 
+    #print("main")
     mainstart("", [], "")
 
 # EOF
