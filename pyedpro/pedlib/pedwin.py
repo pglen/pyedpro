@@ -600,7 +600,7 @@ class EdMainWindow():
         #self.mywin.show_all()
 
         pedfind.load_find_history(False)
-        self.update_statusbar("Initial")
+        self.update_statusbar("Initial", True)
 
         # Add to accounting:
         self.start_time = time.time()
@@ -674,11 +674,11 @@ class EdMainWindow():
 
     def buttA(self, arg1, arg2):
         #print("buttA", arg1, arg2)
-        self.update_statusbar("ButtA pressed, num {0:d}".format(arg2))
+        self.update_statusbar("ButtA pressed, num {0:d}".format(arg2), False)
 
     def buttB(self, arg1, arg2):
         #print("buttB", arg1, arg2)
-        self.update_statusbar("Buttb pressed, num {0:d}".format(arg2))
+        self.update_statusbar("ButtB pressed, num {0:d}".format(arg2), False)
 
     def menu_open(self, arg, arg2):
         #print("menu_open", arg, arg2)
@@ -809,6 +809,8 @@ class EdMainWindow():
 
     def opensess(self, strx):
         #print("opensess", strx)
+        pedlog.log("Opening session", strx, time.ctime(None))
+
         self.sess_label.set_text(os.path.basename(strx))
 
         sesslist = []
@@ -1213,7 +1215,7 @@ class EdMainWindow():
         self.mywin.set_title("pyedpro: " + vcurr.area.fname)
         self.mywin.set_focus(vcurr.vbox.area)
         fname = os.path.basename(vcurr.area.fname)
-        self.update_statusbar("Switched to '{1:s}'".format(num, fname))
+        self.update_statusbar("Switched to '{1:s}'".format(num, fname), True)
 
     def  note_page_cb(self, tabx, child, num):
         pass
@@ -1802,7 +1804,7 @@ class EdMainWindow():
         if pedconfig.conf.verbose:
             print("Opening '"+ fname2 + "'")
 
-        self.update_statusbar("Opening file '{0:s}'".format(fname2))
+        self.update_statusbar("Opening file '{0:s}'".format(fname2), True)
         vpaned = edPane()
         ret = vpaned.area.loadfile(fname2)
         if not ret:
@@ -1872,16 +1874,18 @@ class EdMainWindow():
     def status_lang(self, atg1, arf2):
         print("Lang pressed")
 
-    def update_statusbar(self, strx):
+    def update_statusbar(self, strx, nolog = False):
         # Clear any previous message, underflow is allowed
         #self.statusbar.pop(0)
         if not strx:
-            self.update_statusbar("Idle")
+            self.update_statusbar("Idle", True)
             return
 
         #self.statusbar.push(0, strx)
         self.statuscount = STATUSCOUNT
         self.slab.set_text(strx)
+        if not nolog:
+            pedlog.log(strx)
 
     def update_resize_grip(self, widget, event):
         #print "update state", event, event.changed_mask
@@ -2158,7 +2162,7 @@ def handler_tick():
         if pedconfig.conf.pedwin.statuscount:
             pedconfig.conf.pedwin.statuscount -= 1
             if pedconfig.conf.pedwin.statuscount == 0:
-                pedconfig.conf.pedwin.update_statusbar("Idle.");
+                pedconfig.conf.pedwin.update_statusbar("Idle.", True);
                 pedconfig.conf.pedwin.statuscount = 0
 
     except:

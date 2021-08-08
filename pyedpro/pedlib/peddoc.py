@@ -1645,7 +1645,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         stringx = stringx.strip()
         clip.set_text(stringx, len(stringx))
         strs = "Copied to clipboard '{0:s}'".format(stringx)
-        self.mained.update_statusbar(strs)
+        self.mained.update_statusbar(strs, True)
 
     def menuitem_response(self, widget, stringx, arg):
         #print( "menuitem response '%s'" % stringx)
@@ -2368,7 +2368,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 for sss in mmm:
                     self.accum.append(sss)
             if cnt % 100 == 0:
-                self.mained.update_statusbar("Searching at %d" % cnt)
+                self.mained.update_statusbar("Searching at %d" % cnt, True)
                 usleep(1)
             cnt += 1
         return was, cnt2
