@@ -198,11 +198,16 @@ def show_logwin():
 
 def create_logwin():
     global logwin
-    logwin = LogWin()
+    if not logwin:
+        logwin = LogWin()
 
+def log(*strx):
+    sumstr = ""
+    for aa in strx:
+        sumstr += str(aa) + " "
+    sumstr += "\n"
+    logwin.append_logwin(sumstr)
 
 logwin = LogWin()
-
-
 
 # EOF

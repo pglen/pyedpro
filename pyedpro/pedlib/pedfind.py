@@ -408,7 +408,7 @@ def find_show(self, self2):
                     self.dialog.checkbox.get_active())
 
     update_treestore(self, win2, self2.accum, was)
-    self2.mained.update_statusbar("Found %d matches." % cnt2)
+    self2.mained.update_statusbar("Found %d matches." % cnt2, True)
 
     pedconfig.conf.sql.put("src", self.srctxt)
     pedconfig.conf.sql.put("regex", self.dialog.checkbox.get_active())
@@ -582,7 +582,7 @@ def     find_show_file(self, self2, casex):
     update_treestore(self, win2, ddd3, 0)
 
     self2.mained.update_statusbar("Found %d matching files total of %d matches."
-                                        % (matches, len(ddd3)))
+                                        % (matches, len(ddd3)), True)
 
     pedconfig.conf.sql.put("src", self.srctxt)
     pedconfig.conf.sql.put("regex", self.dialog.checkbox.get_active())
@@ -987,7 +987,7 @@ def  cp_all(butt, self, self2, win2, iter = None):
     clip = Gtk.Clipboard.get_default(disp)
     clip.set_text(cumm, len(cumm))
 
-    self2.mained.update_statusbar("Copied hits to clipboard.")
+    self2.mained.update_statusbar("Copied hits to clipboard.", True)
     win2.destroy()
 
 # -------------------------------------------------------------------------

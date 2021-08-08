@@ -15,6 +15,7 @@ import os
 import sys
 import getopt
 import signal
+import time
 
 # ------------------------------------------------------------------------
 # This is an open source text editor. Written on python. The motivation for
@@ -116,7 +117,7 @@ from gi.repository import Gtk
 #    print(sys.exc_info())
 
 VERSION  = "2.4.0"
-BUILDDATE = "Thu 05.Aug.2021"
+BUILDDATE = "Sun 08.Aug.2021"
 PROGNAME  = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -135,9 +136,6 @@ def main(projname, strarr):
     signal.signal(signal.SIGTERM, terminate)
     mainwin = pedwin.EdMainWindow(None, None, strarr)
     pedconfig.conf.pedwin = mainwin
-
-    # Create log window
-    pedlog.create_logwin()
 
     if projname:
         mainwin.opensess(projname)
@@ -327,9 +325,6 @@ def mainstart(name = "", args = "", oldpath = ""):
     else:
         pedwin.hidden = False   # Take action, hide
 
-    sys.stdout = pedlog.fake_stdout(sys.stdout)
-    sys.stderr = pedlog.fake_stdout(sys.stdout)
-
     #print("pyedpro started", sys.argv)
 
     # Uncomment this for buffered output
@@ -346,7 +341,16 @@ def mainstart(name = "", args = "", oldpath = ""):
 
     main(pname, args[0:])
 
+# ------------------------------------------------------------------------
+
 if __name__ == '__main__':
+
+    # Create log window
+    sys.stdout = pedlog.fake_stdout(sys.stdout)
+    sys.stderr = pedlog.fake_stdout(sys.stdout)
+
+    pedlog.create_logwin()
+    pedlog.log("Started PyEdPro", time.ctime(None))
 
     #print("main")
     mainstart("", [], "")
