@@ -571,8 +571,7 @@ class EdMainWindow():
         button.connect("pressed", self.mmm)
         button.set_tooltip_text("Show / Hide menu")
         box.add(button)
-        box.add(Gtk.Label(" "))
-        box.add(Gtk.Label(" "))
+        box.add(Gtk.Label("   "))
 
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE))
@@ -586,6 +585,9 @@ class EdMainWindow():
         box.add(button)
 
         self.headbar.pack_start(box)
+        self.sess_label =  Gtk.Label("initial.sess")
+        self.headbar.pack_start(self.sess_label)
+
         self.mywin.set_titlebar(self.headbar)
 
         self.mywin.add(bbox)
@@ -807,6 +809,8 @@ class EdMainWindow():
 
     def opensess(self, strx):
         #print("opensess", strx)
+        self.sess_label.set_text(os.path.basename(strx))
+
         sesslist = []
         fh = open(strx, "rb")
         try:

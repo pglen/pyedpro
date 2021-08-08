@@ -753,17 +753,9 @@ def done_sess2_fc(win, resp, fc):
         try:
             fname = win.get_filename()
             if not fname:
-                print("Must have filename")
+                print("Must have filename.")
             else:
-                #print("Loading session file under:", fname)
-                fh = open(fname, "rb")
-                try:
-                    sesslist = pickle.load(fh)
-                except:
-                    pass
-                fh.close()
-                pedconfig.conf.pedwin.os.add(fname)
-
+                pedconfig.conf.pedwin.opensess(fname)
         except:
             print("Cannot load session file", sys.exc_info())
             pedync.message("Cannot load session file")
@@ -773,13 +765,6 @@ def done_sess2_fc(win, resp, fc):
 
     win.destroy()
 
-    for fff in str.split(sesslist, "\n"):
-        #print ("Session opening file:", "'" + fff + "'")
-        pedconfig.conf.pedwin.openfile(fff)
-        usleep(30)
-
-    # Back to original dir
-    #os.chdir(os.path.dirname(fc.old))
 
 # Load session from file in the config dir
 
