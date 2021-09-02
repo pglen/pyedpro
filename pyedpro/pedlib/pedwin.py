@@ -485,9 +485,9 @@ class EdMainWindow():
         self.slab2 = Gtk.Label(" status2  ")
         self.hpane2 = Gtk.HPaned()        #; self.hpane2.set_border_width(5)
 
-        self.hpane2.pack1(shbox, 1, 1)
-        self.hpane2.pack2(self.slab2, 1, 1)
-        self.hpane2.set_position(self.get_width() - 320)
+        self.hpane2.pack1(shbox, 0, 0)
+        self.hpane2.pack2(self.slab2, 0, 0)
+        #self.hpane2.set_position(self.get_width() - self.get_width()/3)
 
         #self.hpane2.pack2(self.statusbar2, 0, 0)
         #shbox.pack_start(slab, False, 0, 0)
@@ -1771,7 +1771,7 @@ class EdMainWindow():
             self.update_statusbar("Started terminal '%s'" % exename)
 
     def status_hist(self, arg1, arg2):
-        print("Hello event status")
+        print("hist pressed")
         pass
 
 # -------------------------------------------------------------------
@@ -1852,7 +1852,7 @@ class EdMainWindow():
             dialog.show()
 
     # This is the line count / pos status bar
-    def update_statusbar2(self, xx = 0, yy = 0, ins = 0, tlen = 0, clip = 0, caps = 0, scr = 0):
+    def update_statusbar2(self, xx = 0, yy = 0, ins=0, tlen=0, clip=0, caps=0, scr=0, colsel=0):
         # Always update line / col
         if ins: str2 = "INS"
         else: str2 ="OVR"
@@ -1864,8 +1864,11 @@ class EdMainWindow():
         if scr: str4 = "SCR"
         else: str4 ="scr"
 
-        strx2 = "Ln {0:d} Col {1:d} Tot {3:d}  {2:s} {5:s} {6:s} Clip: {4:d}".\
-                                format(int(yy+1), int(xx+1), str2, tlen, clip, str3, str4)
+        if colsel: str5 = "COL"
+        else: str5 ="ROW"
+
+        strx2 = "  Ln {0:d} Col {1:d} Tot {3:d}  {2:s} {5:s} {6:s} Clip: {4:d} {7:s}  ".\
+                                format(int(yy+1), int(xx+1), str2, tlen, clip, str3, str4, str5)
 
         #self.statusbar2.pop(0)
         #self.statusbar2.push(0, strx2)

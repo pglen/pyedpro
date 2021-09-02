@@ -242,7 +242,7 @@ Notes:
     **      Ctrl-Q      Quit program, no save, but files are backed up in
                         (~/.pyedpro/data) '*.sav'
     ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
-                        Useful for turining assignments.
+                        Cursor on word one. Useful for turning (reversing) assignments.
     ****    F9          Only Comments and strings are checked, otherwise all
                         text is checked
     *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer

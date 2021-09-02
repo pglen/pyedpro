@@ -1105,7 +1105,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     def update_bar2(self):
         clip = pedconfig.conf.keyh.acth.currclip
         self.mained.update_statusbar2(self.caret[0] + self.xpos, \
-                self.caret[1] + self.ypos, self.insert, len(self.text), clip, self.caps, self.scr)
+                self.caret[1] + self.ypos, self.insert, len(self.text), clip,
+                    self.caps, self.scr, self.colsel)
 
     def clearsel(self):
         old = self.xsel
