@@ -29,6 +29,7 @@ class peddraw(object):
 
     def __init__(self, self2):
         self.self2 = self2
+        self.utf8_decoder = codecs.getincrementaldecoder('utf8')()
 
     # Underline with red wiggle
     def draw_wiggle(self, gcr, xx, yy, xx2, yy2):
@@ -147,13 +148,18 @@ class peddraw(object):
             text2 = text.replace("\r", "a ")
 
         #utf8_decoder = codecs.getincrementaldecoder('utf8')()
-        '''try:
-            codecs.decode(text2)
-            print ("string is UTF-8, length %d bytes" % len(string))
+        try:
+            if type(text2) != str:
+                text2 = codecs.decode(text2)
+                #print ("string is UTF-8, length %d bytes" % len(text2))
+            else:
+                pass
+                #print ("string is text, length %d bytes" % len(text2))
+
         except UnicodeError:
             print ("string is not UTF-8")
-            return xx, yy
-        '''
+            #return xx, yy
+
         #text2 = kill_non_ascii(text2)
 
         '''bbb = is_ascii(text2)
