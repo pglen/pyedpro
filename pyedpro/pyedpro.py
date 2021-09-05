@@ -114,8 +114,6 @@ def tracer(frame, event, arg):
         print(event, frame.f_code.co_filename, frame.f_lineno)
     return tracer
 
-sys.settrace(tracer)
-
 #print("domain", gettext.textdomain)
 
 #try:
@@ -176,6 +174,7 @@ def xhelp():
     print(_("            -V        - Show version"))
     print(_("            -x        - Clear (eXtinguish) config (will prompt)"))
     print(_("            -k        - Show Keys Presses"))
+    print(_("            -t        - Set tracer ON (lots of output)"))
     print(_("            -h        - Help"))
     print()
     sys.exit(1)
@@ -212,7 +211,7 @@ def mainstart(name = "", args = "", oldpath = ""):
     opts = []; args = []
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?vVj:fxctok",
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?vVj:fxctokt",
                         ["debug=", "help", "help", "verbose", "version", "project="])
 
     except getopt.GetoptError as err:
@@ -275,7 +274,9 @@ def mainstart(name = "", args = "", oldpath = ""):
             USE_STDOUT = True
         if aa[0] == "-k":
             pedconfig.conf.show_keys = True
-            #print("Showing keys")
+        if aa[0] == "-t":
+            print("Tracing ON")
+            sys.settrace(tracer)
 
     if pedconfig.conf.pgdebug > 0:
         print("Running '{}'".format(os.path.abspath(sys.argv[0])) )

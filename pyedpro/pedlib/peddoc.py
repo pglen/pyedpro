@@ -1330,7 +1330,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.fired = 1
         #GLib.timeout_add(300, self.keytime)
         # The actual key handler
-        self.keyh.handle_key(self, area, event)
+        try:
+            self.keyh.handle_key(self, area, event)
+        except:
+            print("Key handler died", sys.exc_info())
 
         #if event.type == Gdk.KEY_RELEASE:
         #    self.source_id = GObject.idle_add(self.idle_callback)
