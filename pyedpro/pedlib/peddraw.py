@@ -195,7 +195,8 @@ class peddraw(object):
         gc.move_to(x, y)
         PangoCairo.show_layout(gc, self.layout)
 
-        self.draw_line(gc, x+2, y+yy-5, x+xx-2, y+yy+5)
+        # Debug output, help on visuals
+        #self.draw_line(gc, x+2, y+yy-5, x+xx-2, y+yy+5)
 
         if self.scol:
             gc.set_source_rgba(0, 0, 0)

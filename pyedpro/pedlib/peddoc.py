@@ -456,7 +456,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.pangolayout.set_font_description(self.fd)
 
         # Get Pango steps
-        self.cxx, self.cyy = self.pangolayout.get_pixel_size()
+        #self.cxx, self.cyy = self.pangolayout.get_pixel_size()
+        (pr, lr) = self.pangolayout.get_pixel_extents()
+        self.cxx = lr.width; self.cyy = lr.height
 
         # Get Pango tabs
         self.tabarr = Pango.TabArray(80, False)
