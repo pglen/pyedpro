@@ -169,8 +169,9 @@ class peddraw(object):
         #xx /=  Pango.SCALE;
         #yy /=  Pango.SCALE;
 
-        (pr, lr) = self.layout.get_pixel_extents()
-        xx = lr.width; yy = lr.height
+        #(pr, lr) = self.layout.get_pixel_extents()
+        (pr, lr) = self.layout.get_extents()
+        xx = lr.width / Pango.SCALE; yy = lr.height / Pango.SCALE;
 
         #offs = self.xpos * self.cxx
         offs = 0
