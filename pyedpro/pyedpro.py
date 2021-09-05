@@ -106,6 +106,9 @@ import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
+import faulthandler
+faulthandler.enable()
+
 def tracer(frame, event, arg):
     if event != "line" and event != "return":
         print(event, frame.f_code.co_filename, frame.f_lineno)
