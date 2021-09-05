@@ -445,9 +445,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         else:
             self.carcolor = pedcolor.str2float(ccc)
 
-    def printrect(self, ttt,  rrr):
-        print("rect", ttt, rrr.x / Pango.SCALE, rrr.y /Pango.SCALE,
-                rrr.width / Pango.SCALE, rrr.height / Pango.SCALE)
+    #def printrect(self, ttt,  rrr):
+    #    print("rect", ttt, rrr.x / Pango.SCALE, rrr.y /Pango.SCALE,
+    #            rrr.width / Pango.SCALE, rrr.height / Pango.SCALE)
 
     def setfont(self, fam, size):
 
@@ -462,8 +462,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         # Get Pango steps
         #self.cxx, self.cyy = self.pangolayout.get_pixel_size()
         (pr, lr) = self.pangolayout.get_extents()
-        self.printrect("pix", pr)
-        self.printrect("log", lr)
+        #self.printrect("pix", pr)
+        #self.printrect("log", lr)
 
         self.cxx = lr.width / Pango.SCALE; self.cyy = lr.height / Pango.SCALE
 
