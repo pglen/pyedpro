@@ -1210,7 +1210,7 @@ class ActHand:
 
     # Paste clipboard
     def clip_cb(self, clip, text, self2, boundary = True ):
-        #print ("Clipboard: '" + text + "'", self2.caret[1], self2.ypos)
+        print ("Clipboard: '" + text + "'", self2.caret[1], self2.ypos)
 
         try:
             if type(text) != str:
