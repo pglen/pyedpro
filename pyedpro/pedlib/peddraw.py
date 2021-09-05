@@ -165,9 +165,12 @@ class peddraw(object):
         self.layout.set_text(text2, len(text2))
 
         #xx, yy = self.layout.get_pixel_size()
-        xx, yy = self.layout.get_size()
-        xx /=  Pango.SCALE;
-        yy /=  Pango.SCALE;
+        #xx, yy = self.layout.get_size()
+        #xx /=  Pango.SCALE;
+        #yy /=  Pango.SCALE;
+
+        (pr, lr) = self.layout.get_pixel_extents()
+        xx = lr.width; yy = lr.height
 
         #offs = self.xpos * self.cxx
         offs = 0
