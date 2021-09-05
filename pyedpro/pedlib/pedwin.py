@@ -297,7 +297,7 @@ class EdMainWindow():
 
         # Create note for the main window, give access to it for all
         notebook = Gtk.Notebook(); self.notebook = notebook
-        notebook.set_size_request(10,10)
+        notebook.size_allocate(Gdk.Rectangle(0, 0, 10,10))
 
         #notebook.popup_enable()
         notebook.set_scrollable(True)
@@ -323,7 +323,7 @@ class EdMainWindow():
 
         # This is the right notebook
         notebook3 = Gtk.Notebook(); self.notebook3 = notebook3
-        notebook3.set_size_request(10,10)
+        notebook3.size_allocate(Gdk.Rectangle(0, 0, 10,10))
 
         notebook3.set_scrollable(True)
         self.diffpane = edPane()
@@ -337,7 +337,7 @@ class EdMainWindow():
 
         # This is the left notebook
         notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
-        notebook2.set_size_request(10,10)
+        notebook2.size_allocate(Gdk.Rectangle(0, 0, 10,10))
 
         #notebook2.popup_enable()
         notebook2.set_scrollable(True)
