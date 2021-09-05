@@ -51,15 +51,6 @@ notebook3 = None;  notebook4 = None
 hidden = 0
 savearr = []
 
-def async_updates():
-
-    Gdk.threads_init()
-    while(1):
-        time.sleep(1)
-        Gdk.threads_enter()
-        #print("calling tick")
-        handler_tick()
-        Gdk.threads_leave()
 
 # -----------------------------------------------------------------------
 
@@ -200,8 +191,7 @@ class EdMainWindow():
         self.alttime = 0
         self.old_x = 0
         self.old_y = 0
-
-        #global openhist, sesshist
+        self.lastfile = ""
         self.oh = itemhistory(pedconfig.conf.history)
         self.os = itemhistory(pedconfig.conf.sessions)
 
@@ -2030,6 +2020,8 @@ def  initial_load(self2):
 
     global notebook, hidden
 
+    #self2 =  pedconfig.conf.pedwin
+
     try:
         #print( 'Signal handler called with signal')
         #print( pedconfig.conf.idle, pedconfig.conf.syncidle)
@@ -2111,14 +2103,13 @@ def  initial_load(self2):
         self2.mywin.show_all()
 
         # Set last file
-        fff = pedconfig.conf.sql.get_str("curr")
-
+        self2.lastfile = pedconfig.conf.sql.get_str("curr")
         #print( "curr file", fff)
         cc = notebook.get_n_pages()
         for mm in range(cc):
             vcurr = notebook.get_nth_page(mm)
-            if vcurr.area.fname == fff:
-                #print( "found buff", fff)
+            if vcurr.area.fname == self2.lastfile:
+                #print( "found buff, initial show", self2.lastfile)
                 notebook.set_current_page(mm)
                 self2.mywin.set_focus(vcurr.vbox.area)
                 break
@@ -2129,12 +2120,26 @@ def  initial_load(self2):
 
 # ------------------------------------------------------------------------
 
-#def handler_tick(signum, frame):
 def handler_tick():
 
     global savearr, notebook
 
     #print( "handler_tick")
+
+    # Update lastfile's func list
+    mw = pedconfig.conf.pedwin
+    if mw.lastfile:
+        cc = notebook.get_n_pages()
+        for mm in range(cc):
+            vcurr = notebook.get_nth_page(mm)
+            if vcurr.area.fname == mw.lastfile:
+                #print( "found buff, initial show", mw.lastfile)
+                notebook.set_current_page(mm)
+                mw.mywin.set_focus(vcurr.vbox.area)
+                usleep(10)
+                vcurr.vbox.area.doidle =  True
+                break
+        mw.lastfile = ""
 
     try:
         for bb in savearr:
@@ -2146,7 +2151,7 @@ def handler_tick():
     try:
         #print( 'Signal handler called with signal')
         #print( pedconfig.conf.idle, pedconfig.conf.syncidle)
-        global notebook, hidden
+        global hidden
 
         if not hidden:
             hidden = True
@@ -2205,5 +2210,16 @@ def handler_tick():
         print("Exception in timer handler", sys.exc_info())
 
     #print( "handler_tick done")
+
+def async_updates():
+
+    Gdk.threads_init()
+
+    while(1):
+        time.sleep(1)
+        Gdk.threads_enter()
+        #print("calling tick")
+        handler_tick()
+        Gdk.threads_leave()
 
 # EOF
