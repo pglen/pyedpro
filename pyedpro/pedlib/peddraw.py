@@ -146,16 +146,14 @@ class peddraw(object):
             #text2 = text[self.xpos:].replace("\r", " ")
             text2 = text.replace("\r", "a ")
 
-        xx, yy = self.layout.get_pixel_size()
-
         #utf8_decoder = codecs.getincrementaldecoder('utf8')()
         '''try:
             codecs.decode(text2)
             print ("string is UTF-8, length %d bytes" % len(string))
         except UnicodeError:
             print ("string is not UTF-8")
-            return xx, yy'''
-
+            return xx, yy
+        '''
         #text2 = kill_non_ascii(text2)
 
         '''bbb = is_ascii(text2)
@@ -166,7 +164,10 @@ class peddraw(object):
 
         self.layout.set_text(text2, len(text2))
 
-        xx, yy = self.layout.get_pixel_size()
+        #xx, yy = self.layout.get_pixel_size()
+        xx, yy = self.layout.get_size()
+        xx /=  Pango.SCALE;
+        yy /=  Pango.SCALE;
 
         #offs = self.xpos * self.cxx
         offs = 0
