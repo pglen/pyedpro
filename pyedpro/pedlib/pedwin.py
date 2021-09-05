@@ -297,6 +297,8 @@ class EdMainWindow():
 
         # Create note for the main window, give access to it for all
         notebook = Gtk.Notebook(); self.notebook = notebook
+        notebook.set_size_request(10,10)
+
         #notebook.popup_enable()
         notebook.set_scrollable(True)
         # test
@@ -321,6 +323,8 @@ class EdMainWindow():
 
         # This is the right notebook
         notebook3 = Gtk.Notebook(); self.notebook3 = notebook3
+        notebook3.set_size_request(10,10)
+
         notebook3.set_scrollable(True)
         self.diffpane = edPane()
         self.diffpane.area.readonly = True
@@ -333,6 +337,8 @@ class EdMainWindow():
 
         # This is the left notebook
         notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
+        notebook2.set_size_request(10,10)
+
         #notebook2.popup_enable()
         notebook2.set_scrollable(True)
         notebook2.connect("switch-page", self.note_swpage_cb2)
