@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 '''
-This is an open source text editor. Written on python. The motivation for
+This is an open source text editor. Written in python. The motivation for
 this project was to create a modern multi-platform editor. Simple,
 powerful, configurable, extendable. To run this module without
 installation put the supporting files in the 'pedlib'
@@ -16,12 +16,9 @@ import sys
 import getopt
 import signal
 import time
+import platform
 
 # ------------------------------------------------------------------------
-# This is an open source text editor. Written on python. The motivation for
-# this project was to create a modern multi-platform editor.
-# Simple, powerful, configurable, extendable.
-#
 # This project is a successor of pyedit.py
 #
 # Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
@@ -45,6 +42,7 @@ import time
 
 # History:  (incomplete list)
 #
+# Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
 # jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
 # Jul/xx/2018       Update README, KEYS.TXT
 # Jun/xx/2018       Log Files for time accounting.
@@ -116,9 +114,9 @@ from gi.repository import Gtk
 #except:
 #    print(sys.exc_info())
 
-VERSION  = "2.4.0"
-BUILDDATE = "Sun 08.Aug.2021"
-PROGNAME  = "PyEdPro"
+VERSION     = "2.5.0"
+BUILDDATE   = "Sun 05.Sep.2021"
+PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
 
@@ -349,6 +347,7 @@ if __name__ == '__main__':
     sys.stdout = pedlog.fake_stdout(sys.stdout)
     sys.stderr = pedlog.fake_stdout(sys.stdout)
 
+    print("PyEdPro running on", platform.system())
     pedlog.create_logwin()
     pedlog.log("Started PyEdPro", time.ctime(None))
 

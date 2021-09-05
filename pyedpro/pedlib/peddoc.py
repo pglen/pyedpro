@@ -9,6 +9,7 @@ import pickle
 import re
 import platform
 import subprocess
+import threading
 
 import gi;  gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -32,17 +33,6 @@ import  pedmisc
 import  pedtask
 import  pedfind
 import  pedplug
-
-#import pedlib.pedconfig as pedconfig
-#import pedlib.peddraw as  peddraw
-#import pedlib.pedxtnd as  pedxtnd
-#import pedlib.pedync   as  pedync
-#import pedlib.pedspell as  pedspell
-#import pedlib.pedcolor as  pedcolor
-#import pedlib.pedmenu  as  pedmenu
-#import pedlib.pedundo  as  pedundo
-#import pedlib.pedmisc  as  pedmisc
-#import pedlib.pedtask  as  pedtask
 
 from pedutil import *
 from keywords import *
@@ -91,6 +81,28 @@ CARCOLOR = "#4455dd"
 
 DRAGTRESH = 3                   # This many pixels for drag highlight
 
+def async_updates(args):
+
+    Gdk.threads_init()
+    while(1):
+        time.sleep(.3)
+        Gdk.threads_enter()
+        #print("calling keyhandler tick", args.fname)
+        try:
+            if args.fired:
+                args.keytime()
+        except:
+            print("Exception in async_updates", sys.exc_info())
+
+        if args.doidle:
+            try:
+                run_async_time(args)
+                args.doidle = 0
+            except:
+                print("Exception in run_async_time", sys.exc_info())
+
+        Gdk.threads_leave()
+
 # ------------------------------------------------------------------------
 # We create a custom class for display, as we want a text editor that
 # can take thousands of lines.
@@ -121,6 +133,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.oldsearch = ""
         self.oldgoto = ""
         self.oldrep = ""
+        self.doidle = 0
         self.xsel = -1; self.ysel = -1
         self.xsel2 = -1; self.ysel2 = -1
         self.mx = -1; self.my = -1
@@ -190,10 +203,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.set_can_focus(True)
         peddraw.peddraw.__init__(self, self)
 
+        self.thread = threading.Thread(target=async_updates, args=(self,))
+        self.thread.daemon = True
+        self.thread.start()
+
         # Our font
         fsize  =  pedconfig.conf.sql.get_int("fsize")
         fname  =  pedconfig.conf.sql.get_str("fname")
-        if fsize == 0: fsize = 14
+        if fsize == 0: fsize = 20
         if fname == "": fname = "Monospace"
 
         self.setfont(fname, fsize)
@@ -432,7 +449,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         self.fd = Pango.FontDescription()
         self.fd.set_family(fam)
-        self.fd.set_size(size * Pango.SCALE)
+        # Will not wotk right on the MAC if simple set_size used
+        self.fd.set_absolute_size(size * Pango.SCALE)
 
         self.pangolayout = self.create_pango_layout("a")
         self.pangolayout.set_font_description(self.fd)
@@ -476,6 +494,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.vadj.set_page_increment(15)
         self.vadj.set_page_size(25)
 
+    '''
     # Do Tasks  when the system is idle
     def idle_callback(self):
         #print( "Idle callback")
@@ -502,6 +521,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             run_async_time(self)
         except:
             print("Exception in async handler", sys.exc_info())
+    '''
 
     def locate(self, xstr):
         #print( "locate '" + xstr +"'")
@@ -744,7 +764,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                                  self.ypos + yyy )
 
                 self.fired += 1
-                GLib.timeout_add(300, self.keytime)
+                #GLib.timeout_add(300, self.keytime)
 
             if event.button == 3:
                 #print( "Right Click at x=", event.x, "y=", event.y)
@@ -1015,8 +1035,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                #goject.timeout_add(
-                GLib.timeout_add(300, self.keytime)
+                #go##ject.timeout_add(
+                #GLib.timeout_add(300, self.keytime)
 
         if yy - self.ypos < self.vscgap and self.ypos:
             #print( "Scroll from caret up")
@@ -1027,7 +1047,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                GLib.timeout_add(300, self.keytime)
+                #GLib.timeout_add(300, self.keytime)
 
         yy -= self.ypos
         if self.ypos < 0: self.ypos = 0
@@ -1116,8 +1136,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.invalidate()
 
     def keytime(self):
-
-        #print( "keytime raw", time.time(), self.fired)
+        #print( "keytime raw", time.ctime(), self.fired)
         if self.fired ==  1:
             #print( "keytime", time.time(), self.fired)
             pedspell.spell(self, self.spellmode)
@@ -1298,8 +1317,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.syncidle = pedconfig.conf.SYNCIDLE_TIMEOUT
 
         # Maintain a count of events, only fire only fire on the last one
-        self.fired += 1
-        GLib.timeout_add(300, self.keytime)
+        #self.fired += 1
+        self.fired = 1
+        #GLib.timeout_add(300, self.keytime)
         # The actual key handler
         self.keyh.handle_key(self, area, event)
 
@@ -1343,7 +1363,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Force new spell check
         self.fired += 1
-        GLib.timeout_add(300, self.keytime)
+        #GLib.timeout_add(300, self.keytime)
 
     def popspell(self, widget, event, xstr):
         # Create a new menu-item with a name...
@@ -1662,7 +1682,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.keyh.acth.clip_cb(None, stringx, self, False)
 
         self.fired += 1
-        GLib.timeout_add(300, self.keytime)
+        #GLib.timeout_add(300, self.keytime)
 
     def activate_action(self, action):
         dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,

@@ -25,6 +25,7 @@ same way in all your workspaces, PyEdPro is the one.
 
 ### New:
 
+    Sun 05.Sep.2021 -- made it function on the Mac M1 laptop
     Tue 30.Mar.2021 -- added windows installation executable
     Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
 
@@ -132,6 +133,4 @@ Screen from Ubuntu:
 ![Screen Shot] (https://raw.githubusercontent.com/pglen/pyedpro/master/pyedpro_ubuntu.png)
 
 License:    Open Source, FreeWare
-
-
 
