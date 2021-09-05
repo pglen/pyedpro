@@ -1211,6 +1211,19 @@ class ActHand:
     # Paste clipboard
     def clip_cb(self, clip, text, self2, boundary = True ):
         #print ("Clipboard: '" + text + "'", self2.caret[1], self2.ypos)
+
+        try:
+            if type(text) != str:
+                text = codecs.decode(text)
+                #print ("string is UTF-8, length %d bytes" % len(text2))
+            else:
+                pass
+                #print ("string is text, length %d bytes" % len(text2))
+
+        except UnicodeError:
+            print ("string is not UTF-8")
+            #return xx, yy
+
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
 
