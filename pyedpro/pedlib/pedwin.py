@@ -11,6 +11,7 @@ import stat
 import collections
 import platform
 import datetime
+import threading
 
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -49,6 +50,16 @@ notebook3 = None;  notebook4 = None
 
 hidden = 0
 savearr = []
+
+def async_updates():
+
+    Gdk.threads_init()
+    while(1):
+        time.sleep(1)
+        Gdk.threads_enter()
+        #print("calling tick")
+        handler_tick()
+        Gdk.threads_leave()
 
 # -----------------------------------------------------------------------
 
@@ -125,7 +136,7 @@ class edPane(Gtk.VPaned):
     def __init__(self, buff = [], focus = False):
 
         pos = pedconfig.conf.sql.get_int("vpaned")
-        if pos == 0: pos = 120
+        if pos == 0: pos = 50
 
         Gtk.VPaned.__init__(self)
         self.set_border_width(3)
@@ -196,6 +207,8 @@ class EdMainWindow():
 
         register_stock_icons()
 
+        #Gdk.threads_init()
+
         global mained
         mained = self
 
@@ -231,8 +244,10 @@ class EdMainWindow():
 
             if ww == 0 or hh == 0:
                 self.mywin.set_position(Gtk.WindowPosition.CENTER)
+                if www / hhh > 2:
+                    www = hhh
                 self.mywin.set_default_size(7*www/8, 5*hhh/8)
-                self.mywin.move(www / 32, hhh / 10)
+                #self.mywin.move(www / 32, hhh / 10)
             else:
                 self.mywin.set_default_size(ww, hh)
                 self.mywin.move(xx, yy)
@@ -393,6 +408,7 @@ class EdMainWindow():
         vpaned.add(frame3)
 
         vpaned.set_position(self.get_height() - 340)
+        #vpaned.set_position(10)
         #self.hpaned.add(vpaned)
 
         notebook2.append_page(vpaned)
@@ -450,6 +466,7 @@ class EdMainWindow():
         self.hpaned3.pack2(notebook3)
         self.hpaned3.set_position(self.get_width() - 10)
         vpaned.set_position(self.get_height() - 340)
+        #vpaned.set_position(20)
 
         # Create statusbars
         #self.statusbar = Gtk.Statusbar()
@@ -605,10 +622,15 @@ class EdMainWindow():
         # Add to accounting:
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
+        #GLib.timeout_add(1000, handler_tick)
+        #GLib.timeout_add(500, initial_load, self)
+        #threading.Timer(1, self.timer_func).start()
 
-        # We use gobj instead of SIGALRM, so it is more multi platform
-        GLib.timeout_add(1000, handler_tick)
-        GLib.timeout_add(500, loader_tick, self)
+        initial_load(self)
+
+        self.thread = threading.Thread(target=async_updates)
+        self.thread.daemon = True
+        self.thread.start()
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
@@ -1187,6 +1209,7 @@ class EdMainWindow():
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
             self.mywin.set_focus(vcurr.vbox.area)
+            vcurr.vbox.area.doidle = 1
 
     def note_enter_notify(self, win):
         pass
@@ -1906,6 +1929,8 @@ def     OnExit(arg, prompt = True):
 
     arg.set_title("Exiting ...")
 
+    #self.thread.stop()
+
     try:
         pedconfig.conf.pedwin.oh.save()
     except:
@@ -1995,7 +2020,7 @@ def     OnExit(arg, prompt = True):
 
     #print( "OnExit called \"" + arg.get_title() + "\"")
 
-def  loader_tick(self2):
+def  initial_load(self2):
 
     global notebook, hidden
 
@@ -2104,6 +2129,7 @@ def handler_tick():
     global savearr, notebook
 
     #print( "handler_tick")
+
     try:
         for bb in savearr:
             print("SAVE", bb)
@@ -2118,7 +2144,6 @@ def handler_tick():
 
         if not hidden:
             hidden = True
-
             if os.name == "nt":
                 try:
                     #a = input('Input value here:')
@@ -2140,8 +2165,9 @@ def handler_tick():
                 vcurr = notebook.get_nth_page(notebook.get_current_page())
                 # Rescue to save:
                 if vcurr:
-                    vcurr.area.source_id = \
-                        GLib.idle_add(vcurr.area.idle_callback)
+                    vcurr.area.doidle = 1
+                    #vcurr.area.source_id = \
+                    #    GLib.idle_add(vcurr.area.idle_callback)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -2149,8 +2175,9 @@ def handler_tick():
                 vcurr = notebook.get_nth_page(notebook.get_current_page())
                 if vcurr:
                     #pedspell.spell(vcurr.area)
-                    vcurr.area.source_id2 = \
-                    GLib.idle_add(vcurr.area.idle_callback2)
+                    #vcurr.area.source_id2 = \
+                    #GLib.idle_add(vcurr.area.idle_callback2)
+
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text
                         vcurr.area2.fname = vcurr.area.fname
@@ -2171,9 +2198,6 @@ def handler_tick():
     except:
         print("Exception in timer handler", sys.exc_info())
 
-    try:
-        GLib.timeout_add(1000, handler_tick)
-    except:
-        print("Exception in setting timer handler", sys.exc_info())
+    #print( "handler_tick done")
 
 # EOF
