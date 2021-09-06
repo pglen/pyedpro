@@ -624,9 +624,9 @@ class EdMainWindow():
 
         initial_load(self)
 
-        self.thread = threading.Thread(target=async_updates)
-        self.thread.daemon = True
-        self.thread.start()
+        #self.thread = threading.Thread(target=async_updates)
+        #self.thread.daemon = True
+        #self.thread.start()
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
@@ -1924,6 +1924,8 @@ class EdMainWindow():
 def     OnExit(arg, prompt = True):
 
     exiting = True
+    # Test
+    Gtk.main_quit()
 
     arg.set_title("Exiting ...")
 
@@ -2225,11 +2227,17 @@ def async_updates():
     Gdk.threads_init()
 
     while(1):
+        if exiting:
+            break
+
         time.sleep(1)
-        if not exiting:
-            Gdk.threads_enter()
-            #print("calling tick")
-            handler_tick()
-            Gdk.threads_leave()
+
+        if exiting:
+            break
+
+        Gdk.threads_enter()
+        #print("calling tick")
+        handler_tick()
+        Gdk.threads_leave()
 
 # EOF
