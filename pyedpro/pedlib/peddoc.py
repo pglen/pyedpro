@@ -84,20 +84,26 @@ DRAGTRESH = 3                   # This many pixels for drag highlight
 def async_updates(args):
 
     #Gdk.threads_init()
+    time.sleep(.5)
 
     while(1):
         time.sleep(.5)
+        #continue;
 
-        if args.stopthread:
-            print("Exiting thread for ", args.fname)
-            break
+        #if args.stopthread:
+        #    #print("Exiting thread for ", args.fname)
+        #    break
+
+        # No update in not shown
+        if not arg.focus:
+            continue
 
         #print("calling keyhandler tick", args.fname)
         try:
             if args.fired:
-                Gdk.threads_enter()
-                args.keytime()
-                Gdk.threads_leave()
+                #Gdk.threads_enter()
+                #args.keytime()
+                #Gdk.threads_leave()
                 pass
         except:
             print("Exception in async_updates", sys.exc_info())
@@ -105,9 +111,9 @@ def async_updates(args):
         if args.doidle:
             try:
                 args.doidle = 0
-                Gdk.threads_enter()
-                run_async_time(args)
-                Gdk.threads_leave()
+                #Gdk.threads_enter()
+                #run_async_time(args)
+                #Gdk.threads_leave()
             except:
                 print("Exception in run_async_time", sys.exc_info())
 
@@ -206,16 +212,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.drag = False
         self.text_fillcol = 40
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
-        self.stopthread = False
+        #self.stopthread = False
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
         self.set_can_focus(True)
         peddraw.peddraw.__init__(self, self)
-
-        self.thread = threading.Thread(target=async_updates, args=(self,))
-        self.thread.daemon = True
-        self.thread.start()
 
         # Our font
         fsize  =  pedconfig.conf.sql.get_int("fsize")
@@ -275,9 +277,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect("drag-data-get", self.on_drag_data_get)
         self.connect("destroy", self.destroy_cb)
 
+        #self.thread = threading.Thread(target=async_updates, args=(self,))
+        #self.thread.daemon = True
+        #self.thread.start()
+
     def destroy_cb(self, arg):
         #print("dest", arg)
-        self.stopthread = True
+        #self.stopthread = True
+        pass
 
     def on_drag_data_get(self, widget, drag_context, data, info, time):
         #print("Drag data get entry")
@@ -518,35 +525,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.vadj.set_page_increment(15)
         self.vadj.set_page_size(25)
 
-    '''
-    # Do Tasks  when the system is idle
-    def idle_callback(self):
-        #print( "Idle callback")
-        GLib.source_remove(self.source_id)
-        try:
-            if self.changed:
-                hhh = hash_name(self.fname) + ".sav"
-                xfile = pedconfig.conf.data_dir + "/" + hhh
-                err = writefile(xfile, self.text, "\n")
-                if err[0]:
-                    strx = "Backed up file '{0:s}'".format(xfile)
-                else:
-                    strx = "Cannot back up file '{0:s}' {1:s}".format(xfile, err[1])
-
-                self.mained.update_statusbar(strx)
-        except:
-            print("Exception in idle handler", sys.exc_info())
-
-    # Do Tasks2 when the system is idle
-    def idle_callback2(self):
-        #print( "Idle callback2")
-        GLib.source_remove(self.source_id2)
-        try:
-            run_async_time(self)
-        except:
-            print("Exception in async handler", sys.exc_info())
-    '''
-
     def locate(self, xstr):
         #print( "locate '" + xstr +"'")
         cnt = 0; cnt2 = 0; idx = 0; found = 0
@@ -572,7 +550,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     def focus_in_cb(self, widget, event):
         #print ("focus_in_cb", self.fname)
         self.focus = True
-
         try:
             os.chdir(os.path.dirname(self.fname))
             xstat = os.stat(self.fname)
@@ -597,7 +574,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.update_bar2()
         self.needscan = True
         self.do_chores()
-        self.fired += 1
+        #self.fired = 3
 
     def grab_focus_cb(self, widget):
         #print( "grab_focus_cb", widget)
@@ -789,7 +766,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                                  self.ypos + yyy )
 
                 self.fired += 1
-                #GLib.timeout_add(300, self.keytime)
+                GLib.timeout_add(300, keytime, self, 0)
+                #self.mained.threads.submit_job(keytime, self, None)
 
             if event.button == 3:
                 #print( "Right Click at x=", event.x, "y=", event.y)
@@ -1060,8 +1038,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                #go##ject.timeout_add(
-                #GLib.timeout_add(300, self.keytime)
+                GLib.timeout_add(300, keytime, self, 0)
+                #self.mained.threads.submit_job(keytime, self, None)
 
         if yy - self.ypos < self.vscgap and self.ypos:
             #print( "Scroll from caret up")
@@ -1072,7 +1050,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                #GLib.timeout_add(300, self.keytime)
+                GLib.timeout_add(300, keytime, self, 0)
+                #self.mained.threads.submit_job(keytime, self, None)
 
         yy -= self.ypos
         if self.ypos < 0: self.ypos = 0
@@ -1160,68 +1139,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if old != -1:
             self.invalidate()
 
-    def keytime(self):
-        #print( "keytime raw", time.ctime(), self.fired)
-        if self.fired ==  1:
-            #print( "keytime", time.time(), self.fired)
-            pedspell.spell(self, self.spellmode)
-            self.walk_func()
-        self.fired -= 1
-
-        # Track this buffer
-        #if self.diffmode == 2:
-        #    self.mained.diffpane.area.xpos = self.xpos
-        #    self.mained.diffpane.area.ypos = self.ypos
-        #    self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
-        #                                                self.ypos + self.caret[1], True)
-
-        # Track pane buffer back to diff components
-        if self.diffpane:
-            got_src = 0; got_targ = 0
-            src = ""; targ = ""
-            srctxt = [] ;  targtxt = []
-            dst_tab = None ; src_tab = None
-
-            # See if diff complete, put it in motion
-            nn = self.notebook.get_n_pages(); cnt = 0
-            while True:
-                if cnt >= nn: break
-                ppp = self.notebook.get_nth_page(cnt)
-                if ppp.area.diffmode == 1:
-                    got_src = True
-                    src = os.path.basename(ppp.area.fname)
-                    srctxt = ppp.area.text
-                    src_tab = ppp
-                elif ppp.area.diffmode == 2:
-                    got_targ = True
-                    targ = os.path.basename(ppp.area.fname)
-                    targtxt = ppp.area.text
-                    dst_tab = ppp
-
-                cnt += 1
-
-            yyy = self.ypos +  self.caret[1]
-            zzz = self.ypos +  self.caret[1]
-            txt = ""
-            for aa in range( self.ypos + self.caret[1]):
-                try:
-                    txt = self.text[aa]
-                except:
-                    pass
-                if txt[:8] == " --del--":
-                    yyy -= 1
-
-                if txt[:8] == " --ins--":
-                    zzz -= 1
-
-            if got_targ:
-                dst_tab.area.xpos = self.xpos
-                dst_tab.area.ypos = self.ypos
-                dst_tab.area.set_caret(self.xpos + self.caret[0], yyy, True)
-            if got_src:
-                src_tab.area.xpos = self.xpos
-                src_tab.area.ypos = self.ypos
-                src_tab.area.set_caret(self.xpos + self.caret[0], zzz, True)
 
     def walk_func(self):
         #print( "walk func")
@@ -1343,8 +1260,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Maintain a count of events, only fire only fire on the last one
         #self.fired += 1
-        self.fired = 1
-        #GLib.timeout_add(300, self.keytime)
+        GLib.timeout_add(300, keytime, self, 0)
+
+        #if not self.fired:
+        #    self.mained.threads.submit_job(keytime, self, None)
+
         # The actual key handler
         try:
             self.keyh.handle_key(self, area, event)
@@ -1391,7 +1311,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Force new spell check
         self.fired += 1
-        #GLib.timeout_add(300, self.keytime)
+        GLib.timeout_add(300, keytime, self, 0)
+        #self.mained.threads.submit_job(keytime, self, None)
 
     def popspell(self, widget, event, xstr):
         # Create a new menu-item with a name...
@@ -1710,7 +1631,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.keyh.acth.clip_cb(None, stringx, self, False)
 
         self.fired += 1
-        #GLib.timeout_add(300, self.keytime)
+        GLib.timeout_add(300, keytime, self, 0)
+        #self.mained.threads.submit_job(keytime, self, None)
 
     def activate_action(self, action):
         dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
@@ -1877,7 +1799,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def closedoc(self, noprompt = False):
 
-        self.stopthread = True
+        #self.stopthread = True
 
         strx = "Closing '{0:s}'".format(self.fname)
         if pedconfig.conf.verbose:
@@ -2429,13 +2351,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 # ------------------------------------------------------------------------
 # Run this on an idle callback so the user can work while this is going
 
-def run_async_time(win):
+def run_async_time(win, arg):
 
     global last_scanned
 
-    #print( "run_async_time enter")
+    #print( "run_async_time enter", win.fname)
 
     if  last_scanned == win:
+        #print("Not rescanning", win.fname)
         return
 
     last_scanned = win
@@ -2522,5 +2445,101 @@ def run_async_time(win):
         # This is 'normal', ignore it
         print("run_async_time", sys.exc_info())
         pass
+
+def keytime(self, arg):
+
+    #print( "keytime raw", time.ctime(), self.fired)
+
+    if self.fired ==  1:
+        #print( "keytime", time.time(), self.fired)
+        pedspell.spell(self, self.spellmode)
+        self.walk_func()
+
+    if self.fired:
+        self.fired -= 1
+
+    # Track this buffer
+    #if self.diffmode == 2:
+    #    self.mained.diffpane.area.xpos = self.xpos
+    #    self.mained.diffpane.area.ypos = self.ypos
+    #    self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
+    #                                                self.ypos + self.caret[1], True)
+
+    # Track pane buffer back to diff components
+    if self.diffpane:
+        got_src = 0; got_targ = 0
+        src = ""; targ = ""
+        srctxt = [] ;  targtxt = []
+        dst_tab = None ; src_tab = None
+
+        # See if diff complete, put it in motion
+        nn = self.notebook.get_n_pages(); cnt = 0
+        while True:
+            if cnt >= nn: break
+            ppp = self.notebook.get_nth_page(cnt)
+            if ppp.area.diffmode == 1:
+                got_src = True
+                src = os.path.basename(ppp.area.fname)
+                srctxt = ppp.area.text
+                src_tab = ppp
+            elif ppp.area.diffmode == 2:
+                got_targ = True
+                targ = os.path.basename(ppp.area.fname)
+                targtxt = ppp.area.text
+                dst_tab = ppp
+
+            cnt += 1
+
+        yyy = self.ypos +  self.caret[1]
+        zzz = self.ypos +  self.caret[1]
+        txt = ""
+        for aa in range( self.ypos + self.caret[1]):
+            try:
+                txt = self.text[aa]
+            except:
+                pass
+            if txt[:8] == " --del--":
+                yyy -= 1
+
+            if txt[:8] == " --ins--":
+                zzz -= 1
+
+        if got_targ:
+            dst_tab.area.xpos = self.xpos
+            dst_tab.area.ypos = self.ypos
+            dst_tab.area.set_caret(self.xpos + self.caret[0], yyy, True)
+        if got_src:
+            src_tab.area.xpos = self.xpos
+            src_tab.area.ypos = self.ypos
+            src_tab.area.set_caret(self.xpos + self.caret[0], zzz, True)
+
+# Do Tasks  when the system is idle
+def idle_callback(self, arg):
+    #print( "Idle callback")
+    GLib.source_remove(self.source_id)
+    try:
+        # Mon 06.Sep.2021 always save
+        if 1: #self.changed:
+            hhh = hash_name(self.fname) + ".sav"
+            xfile = pedconfig.conf.data_dir + "/" + hhh
+            err = writefile(xfile, self.text, "\n")
+            if err[0]:
+                strx = "Backed up file '{0:s}'".format(xfile)
+            else:
+                strx = "Cannot back up file '{0:s}' {1:s}".format(xfile, err[1])
+
+            self.mained.update_statusbar(strx)
+    except:
+        print("Exception in idle handler", sys.exc_info())
+
+# Do Tasks2 when the system is idle
+
+def idle_callback2(self, arg):
+    #print( "Idle callback2")
+    GLib.source_remove(self.source_id2)
+    try:
+        run_async_time(self, None)
+    except:
+        print("Exception in async handler", sys.exc_info())
 
 # EOF
