@@ -197,6 +197,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.STCOLOR    = STCOLOR
         self.drag = False
         self.text_fillcol = 40
+        self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)

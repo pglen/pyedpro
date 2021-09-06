@@ -844,35 +844,16 @@ class ActHand:
         if self2.xsel == -1 or  self2.ysel == -1:
             #self2.mained.update_statusbar("Nothing selected, copying line.")
             self2.mained.update_statusbar("Nothing selected, refuse to copy.")
-
-            '''disp2 = Gdk.Display()
-            disp = disp2.get_default()
-            clip = Gtk.Clipboard.get_default(disp)
-
-            xidx = self2.caret[0] + self2.xpos;
-            yidx = self2.caret[1] + self2.ypos
-            if self.currclip == 0:
-                #print ("set clip:",  self2.text[yidx])
-                clip.set_text(self2.text[yidx], len(self2.text[yidx]))
-            self.clips[self.currclip] = self2.text[yidx]'''
             return
 
         cumm = self._getsel(self2)
-        #print ("clip:", cumm)
-        disp = Gdk.Display().get_default()
-        clip = Gtk.Clipboard.get_default(disp)
-
         if self.currclip == 0:
             if self2.shift:
                 self2.mained.update_statusbar("Clipboard appended.")
-                def xclip_cb(clip, ctext, cummx):
-                    cummx = ctext + cummx
-                    clip.set_text(cummx, len(cummx))
-                clip.request_text(xclip_cb, cumm)
 
             else:
                 self2.mained.update_statusbar("Clipboard copied.")
-                clip.set_text(cumm, len(cumm))
+                self2.clipboard.set_text(cumm, len(cumm))
         else:
             if self2.shift:
                 self2.mained.update_statusbar("Clipboard %d appended." % self.currclip)
@@ -880,6 +861,11 @@ class ActHand:
             else:
                 self2.mained.update_statusbar("Clipboard %d copied." % self.currclip)
                 self.clips[self.currclip] = cumm
+
+    def xclip_cb(self, self2, ctext, cummx):
+        cummx = ctext + cummx
+        self2.clipboard.set_text(cummx, len(cummx))
+        self2.clipboard.request_text(self.xclip_cb, cumm)
 
     def ctrl_d(self, self2):
         if self2.shift:
@@ -1177,12 +1163,12 @@ class ActHand:
             print ("CTRL - V")
 
         #clip = Gtk.Clipboard()
-        disp2 = Gdk.Display()
-        disp = disp2.get_default()
-        clip = Gtk.Clipboard.get_default(disp)
+        #disp2 = Gdk.Display()
+        #disp = disp2.get_default()
+        #clip = Gtk.Clipboard.get_default(disp)
 
         if self.currclip == 0:
-            clip.request_text(self.clip_cb, self2)
+            self2.clipboard.request_text(self.clip_cb, self2)
         else:
             self.clip_cb(clip, self.clips[self.currclip],
                 self2)
@@ -1403,12 +1389,12 @@ class ActHand:
         # We use this for deleting as well, so fake clip op
         if not fake:
             #clip = Gtk.Clipboard()
-            disp2 = Gdk.Display()
-            disp = disp2.get_default()
-            clip = Gtk.Clipboard.get_default(disp)
+            #disp2 = Gdk.Display()
+            #disp = disp2.get_default()
+            #clip = Gtk.Clipboard.get_default(disp)
 
             if self.currclip == 0:
-                clip.set_text(cumm, len(cumm))
+                self2.clipboard.set_text(cumm, len(cumm))
             self.clips[self.currclip] = cumm
 
         self2.invalidate()
