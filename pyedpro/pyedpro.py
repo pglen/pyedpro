@@ -102,9 +102,12 @@ import pedlog
 import pedutil
 import pedplug
 
-import gi
-gi.require_version("Gtk", "3.0")
+import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import Gio
 
 import faulthandler
 faulthandler.enable()
@@ -128,31 +131,37 @@ PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
 
-def main(projname, strarr):
+class MainPyed(Gtk.Application):
 
-    ''' Rotate around this axis '''
+    def __init__(self, projname, strarr):
+        super(MainPyed, self).__init__(application_id="pyedpro.py",
+                                    flags=Gio.ApplicationFlags.FLAGS_NONE)
 
-    if pedconfig.conf.verbose:
-        print(PROGNAME, "running on", "'" + os.name + "'", \
-            "GTK", Gtk._version, "PyGtk", \
-               "%d.%d.%d" % (Gtk.get_major_version(), \
-                    Gtk.get_minor_version(), \
-                        Gtk.get_micro_version()))
+        self.projname = projname
+        self.strarr = strarr
 
-    signal.signal(signal.SIGTERM, terminate)
-    mainwin = pedwin.EdMainWindow(None, None, strarr)
-    pedconfig.conf.pedwin = mainwin
+    def do_activate(self):
+        if pedconfig.conf.verbose:
+            print(PROGNAME, "running on", "'" + os.name + "'", \
+                "GTK", Gtk._version, "PyGtk", \
+                   "%d.%d.%d" % (Gtk.get_major_version(), \
+                        Gtk.get_minor_version(), \
+                            Gtk.get_micro_version()))
 
-    if projname:
-        mainwin.opensess(projname)
+        signal.signal(signal.SIGTERM, terminate)
+        mainwin = pedwin.EdMainWindow(None, None, self.strarr)
+        self.add_window(mainwin.mywin)
+        pedconfig.conf.pedwin = mainwin
 
-    #if strarr:
-    #    print("opening files", strarr)
-    #    for aa in strarr:
-    #        if os.path.isfile(aa):
-    #            mainwin.openfile(aa)
+        if self.projname:
+            mainwin.opensess(self.projname)
 
-    Gtk.main()
+        #if strarr:
+        #    print("opening files", strarr)
+        #    for aa in strarr:
+        #        if os.path.isfile(aa):
+        #            mainwin.openfile(aa)
+        #Gtk.main()
 
 def xversion():
     ''' Offer version number '''
@@ -348,7 +357,9 @@ def mainstart(name = "", args = "", oldpath = ""):
     except:
         print("Cannot load plugins")
 
-    main(pname, args[0:])
+    #main(pname, args[0:])
+    app = MainPyed(pname, args[0:])
+    app.run()
 
 # ------------------------------------------------------------------------
 

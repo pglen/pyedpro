@@ -1926,11 +1926,7 @@ def     OnExit(arg, prompt = True):
     exiting = True
 
     print("Exit called")
-    usleep(300)
-
-    # Test
-    Gtk.main_quit()
-    usleep(300)
+    arg.destroy()
     return
 
     arg.set_title("Exiting ...")
