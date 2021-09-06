@@ -148,7 +148,7 @@ class MainPyed(Gtk.Application):
                         Gtk.get_minor_version(), \
                             Gtk.get_micro_version()))
 
-        signal.signal(signal.SIGTERM, terminate)
+        #signal.signal(signal.SIGTERM, terminate)
         mainwin = pedwin.EdMainWindow(None, None, self.strarr)
         self.add_window(mainwin.mywin)
         pedconfig.conf.pedwin = mainwin

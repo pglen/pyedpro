@@ -624,9 +624,9 @@ class EdMainWindow():
 
         initial_load(self)
 
-        #self.thread = threading.Thread(target=async_updates)
-        #self.thread.daemon = True
-        #self.thread.start()
+        self.thread = threading.Thread(target=async_updates)
+        self.thread.daemon = True
+        self.thread.start()
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
@@ -1925,13 +1925,14 @@ def     OnExit(arg, prompt = True):
 
     exiting = True
 
+    arg.set_title("Exiting ...")
+
     print("Exit called")
+    #arg.thread.stop()
+    usleep(300)
     arg.destroy()
     return
 
-    arg.set_title("Exiting ...")
-
-    #self.thread.stop()
 
     try:
         pedconfig.conf.pedwin.oh.save()
