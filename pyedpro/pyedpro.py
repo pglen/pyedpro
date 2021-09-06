@@ -173,6 +173,7 @@ def mainx(projname, strarr):
                         Gtk.get_micro_version()))
 
     signal.signal(signal.SIGTERM, terminate)
+
     mainwin = pedwin.EdMainWindow(None, None, strarr)
     pedconfig.conf.pedwin = mainwin
 
@@ -396,6 +397,7 @@ if __name__ == '__main__':
     sys.stderr = pedlog.fake_stdout(sys.stdout)
 
     print("PyEdPro running on", platform.system())
+
     pedlog.create_logwin()
     pedlog.log("Started PyEdPro", time.ctime(None))
 

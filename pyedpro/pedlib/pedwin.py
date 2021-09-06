@@ -181,6 +181,11 @@ class EdMainWindow():
 
     def __init__(self, fname, parent, names):
 
+        if "Darwin" in platform.system():
+            self.mac = True
+        else:
+            self.mac  = False
+
         self.full = False
         self.fcount = 0
         self.statuscount = 0
@@ -622,8 +627,10 @@ class EdMainWindow():
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
 
-        GLib.timeout_add(500, initial_load, self, 0)
-        GLib.timeout_add(1000, handler_tick, self, 0)
+        if not self.mac:
+            GLib.timeout_add(500, initial_load, self, 0)
+            GLib.timeout_add(1000, handler_tick, self, 0)
+
         #threading.Timer(1, self.timer_func).start()
         #initial_load(self, None)
 
@@ -2197,10 +2204,9 @@ def handler_tick(arg, arg2):
                 # Rescue to save:
                 if vcurr:
                     vcurr.area.doidle = 1
-                    vcurr.area.source_id = \
-                        GLib.idle_add(peddoc.idle_callback, vcurr.area, 0)
-                    #mw.threads.submit_job  \
-                    #        (peddoc.idle_callback, vcurr.area, None)
+                    if not mw.mac:
+                        vcurr.area.source_id = \
+                            GLib.idle_add(peddoc.idle_callback, vcurr.area, 0)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -2208,8 +2214,9 @@ def handler_tick(arg, arg2):
                 vcurr = notebook.get_nth_page(notebook.get_current_page())
                 if vcurr:
                     #pedspell.spell(vcurr.area)
-                    vcurr.area.source_id2 = \
-                    GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
+                    if not mw.mac:
+                        vcurr.area.source_id2 = \
+                            GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
 
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text
