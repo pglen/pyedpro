@@ -204,9 +204,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.set_can_focus(True)
         peddraw.peddraw.__init__(self, self)
 
-        self.thread = threading.Thread(target=async_updates, args=(self,))
-        self.thread.daemon = True
-        self.thread.start()
+        #self.thread = threading.Thread(target=async_updates, args=(self,))
+        #self.thread.daemon = True
+        #self.thread.start()
 
         # Our font
         fsize  =  pedconfig.conf.sql.get_int("fsize")
