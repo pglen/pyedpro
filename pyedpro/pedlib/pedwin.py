@@ -1931,9 +1931,9 @@ def     OnExit(arg, arg2, prompt = True):
         return
     exiting = True
     arg.set_title("Exiting ...")
-    print("Exit called")
+    #print("Exit called")
     arg2.stopthread = True
-    usleep(500)
+    usleep(300)
 
     try:
         pedconfig.conf.pedwin.oh.save()
@@ -2019,13 +2019,13 @@ def     OnExit(arg, arg2, prompt = True):
     # Add to accounting:
     timesheet("Ended pyedpro", mained.start_time, time.time())
 
+    #print( "OnExit called \"" + arg.get_title() + "\"")
+
+    # Exit here
     arg.destroy()
     return
 
-    # Exit here
     #Gtk.main_quit()
-
-    #print( "OnExit called \"" + arg.get_title() + "\"")
 
 def  initial_load(self2):
 
