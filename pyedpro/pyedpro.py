@@ -139,7 +139,7 @@ def main(projname, strarr):
                     Gtk.get_minor_version(), \
                         Gtk.get_micro_version()))
 
-    signal.signal(signal.SIGTERM, terminate)
+    #signal.signal(signal.SIGTERM, terminate)
     mainwin = pedwin.EdMainWindow(None, None, strarr)
     pedconfig.conf.pedwin = mainwin
 
