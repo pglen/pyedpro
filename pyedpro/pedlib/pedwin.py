@@ -350,7 +350,7 @@ class EdMainWindow():
 
         self.mywin.connect("window_state_event", self.update_resize_grip)
         #self.mywin.connect("destroy", OnExit)
-        self.mywin.connect("unmap", OnExit)
+        self.mywin.connect("unmap", OnExit, self)
 
         self.mywin.connect("key-press-event", self.area_key)
         self.mywin.connect("key-release-event", self.area_key)
@@ -624,6 +624,7 @@ class EdMainWindow():
 
         initial_load(self)
 
+        self.stopthread = False
         self.thread = threading.Thread(target=async_updates)
         self.thread.daemon = True
         self.thread.start()
@@ -1850,11 +1851,11 @@ class EdMainWindow():
 
     def activate_exit(self, action = None):
         #print "activate_exit called"
-        OnExit(self.mywin)
+        OnExit(self.mywin, self)
 
     def activate_quit(self, action):
         #print "activate_quit called"
-        OnExit(self.mywin, False)
+        OnExit(self.mywin, self, False)
 
     def activate_radio_action(self, action, current):
         active = current.get_active()
@@ -1921,18 +1922,18 @@ class EdMainWindow():
         '''
 # ------------------------------------------------------------------------
 
-def     OnExit(arg, prompt = True):
+def     OnExit(arg, arg2, prompt = True):
 
+    global exiting
+
+    # Nope, done here
+    if exiting:
+        return
     exiting = True
-
     arg.set_title("Exiting ...")
-
     print("Exit called")
-    #arg.thread.stop()
-    usleep(300)
-    arg.destroy()
-    return
-
+    arg2.stopthread = True
+    usleep(500)
 
     try:
         pedconfig.conf.pedwin.oh.save()
@@ -2018,8 +2019,11 @@ def     OnExit(arg, prompt = True):
     # Add to accounting:
     timesheet("Ended pyedpro", mained.start_time, time.time())
 
+    arg.destroy()
+    return
+
     # Exit here
-    Gtk.main_quit()
+    #Gtk.main_quit()
 
     #print( "OnExit called \"" + arg.get_title() + "\"")
 
