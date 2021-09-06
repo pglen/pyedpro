@@ -83,25 +83,33 @@ DRAGTRESH = 3                   # This many pixels for drag highlight
 
 def async_updates(args):
 
-    Gdk.threads_init()
+    #Gdk.threads_init()
+
     while(1):
-        time.sleep(.3)
-        Gdk.threads_enter()
+        time.sleep(.5)
+
+        if args.stopthread:
+            print("Exiting thread for ", args.fname)
+            break
+
         #print("calling keyhandler tick", args.fname)
         try:
             if args.fired:
+                Gdk.threads_enter()
                 args.keytime()
+                Gdk.threads_leave()
+                pass
         except:
             print("Exception in async_updates", sys.exc_info())
 
         if args.doidle:
             try:
-                run_async_time(args)
                 args.doidle = 0
+                Gdk.threads_enter()
+                run_async_time(args)
+                Gdk.threads_leave()
             except:
                 print("Exception in run_async_time", sys.exc_info())
-
-        Gdk.threads_leave()
 
 # ------------------------------------------------------------------------
 # We create a custom class for display, as we want a text editor that
@@ -198,15 +206,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.drag = False
         self.text_fillcol = 40
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+        self.stopthread = False
 
         # Parent widget
         Gtk.DrawingArea.__init__(self)
         self.set_can_focus(True)
         peddraw.peddraw.__init__(self, self)
 
-        #self.thread = threading.Thread(target=async_updates, args=(self,))
-        #self.thread.daemon = True
-        #self.thread.start()
+        self.thread = threading.Thread(target=async_updates, args=(self,))
+        self.thread.daemon = True
+        self.thread.start()
 
         # Our font
         fsize  =  pedconfig.conf.sql.get_int("fsize")
@@ -264,6 +273,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect('drag-drop', self.on_drag_drop)
         self.connect("drag-data-received", self.on_drag_data_received)
         self.connect("drag-data-get", self.on_drag_data_get)
+        self.connect("destroy", self.destroy_cb)
+
+    def destroy_cb(self, arg):
+        #print("dest", arg)
+        self.stopthread = True
 
     def on_drag_data_get(self, widget, drag_context, data, info, time):
         #print("Drag data get entry")
@@ -556,7 +570,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.focus = False
 
     def focus_in_cb(self, widget, event):
-        #print ("focus_in_cb")
+        #print ("focus_in_cb", self.fname)
         self.focus = True
 
         try:
@@ -583,6 +597,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.update_bar2()
         self.needscan = True
         self.do_chores()
+        self.fired += 1
 
     def grab_focus_cb(self, widget):
         #print( "grab_focus_cb", widget)
@@ -1861,6 +1876,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.invalidate()
 
     def closedoc(self, noprompt = False):
+
+        self.stopthread = True
+
         strx = "Closing '{0:s}'".format(self.fname)
         if pedconfig.conf.verbose:
             print("Closing doc:", strx)
