@@ -628,8 +628,12 @@ class EdMainWindow():
         timesheet("Started pyedpro", self.start_time, 0)
 
         if not self.mac:
-            GLib.timeout_add(500, initial_load, self, 0)
             GLib.timeout_add(1000, handler_tick, self, 0)
+
+        if not self.mac:
+            GLib.timeout_add(500, initial_load, self, 0)
+        else:
+            initial_load(self, 0)
 
         #threading.Timer(1, self.timer_func).start()
         #initial_load(self, None)
