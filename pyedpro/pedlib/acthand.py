@@ -61,6 +61,9 @@ import  pedundo
 import  pedtts
 import  pedmisc
 import  pedbuffs
+import  codecs
+
+#import  pyperclip # dead end
 
 from keywords import *
 from pedutil import *
@@ -1168,7 +1171,10 @@ class ActHand:
         #clip = Gtk.Clipboard.get_default(disp)
 
         if self.currclip == 0:
-            self2.clipboard.request_text(self.clip_cb, self2)
+            #self2.clipboard.request_text(self.clip_cb, self2)
+            ttt = self2.clipboard.wait_for_text()
+            print("got paste", ttt)
+            self.clip_cb(None, ttt,  self2)
         else:
             self.clip_cb(clip, self.clips[self.currclip],
                 self2)
@@ -1196,9 +1202,9 @@ class ActHand:
 
     # Paste clipboard
     def clip_cb(self, clip, text, self2, boundary = True ):
-        print ("Clipboard: '" + text + "'", self2.caret[1], self2.ypos)
 
-        return;
+        if pedconfig.conf.verbose:
+            print ("Clipboard: '" + text + "'", self2.caret[1], self2.ypos)
 
         try:
             if type(text) != str:
