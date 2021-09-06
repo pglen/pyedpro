@@ -766,7 +766,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                                  self.ypos + yyy )
 
                 self.fired += 1
-                GLib.timeout_add(300, keytime, self, 0)
+                if not self.mained.mac:
+                    GLib.timeout_add(300, keytime, self, 0)
                 #self.mained.threads.submit_job(keytime, self, None)
 
             if event.button == 3:
@@ -1038,7 +1039,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                GLib.timeout_add(300, keytime, self, 0)
+                if not self.mained.mac:
+                    GLib.timeout_add(300, keytime, self, 0)
                 #self.mained.threads.submit_job(keytime, self, None)
 
         if yy - self.ypos < self.vscgap and self.ypos:
@@ -1050,7 +1052,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                GLib.timeout_add(300, keytime, self, 0)
+                if not self.mained.mac:
+                    GLib.timeout_add(300, keytime, self, 0)
                 #self.mained.threads.submit_job(keytime, self, None)
 
         yy -= self.ypos
@@ -1260,7 +1263,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Maintain a count of events, only fire only fire on the last one
         #self.fired += 1
-        GLib.timeout_add(300, keytime, self, 0)
+        if not self.mained.mac:
+            GLib.timeout_add(300, keytime, self, 0)
 
         #if not self.fired:
         #    self.mained.threads.submit_job(keytime, self, None)
@@ -1311,7 +1315,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Force new spell check
         self.fired += 1
-        GLib.timeout_add(300, keytime, self, 0)
+        if not self.mained.mac:
+            GLib.timeout_add(300, keytime, self, 0)
         #self.mained.threads.submit_job(keytime, self, None)
 
     def popspell(self, widget, event, xstr):
@@ -1631,7 +1636,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.keyh.acth.clip_cb(None, stringx, self, False)
 
         self.fired += 1
-        GLib.timeout_add(300, keytime, self, 0)
+        if not self.mained.mac:
+            GLib.timeout_add(300, keytime, self, 0)
         #self.mained.threads.submit_job(keytime, self, None)
 
     def activate_action(self, action):
