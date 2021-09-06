@@ -1924,6 +1924,10 @@ class EdMainWindow():
 def     OnExit(arg, prompt = True):
 
     exiting = True
+
+    print("Exit called")
+    usleep(300)
+
     # Test
     Gtk.main_quit()
 

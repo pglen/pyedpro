@@ -2269,7 +2269,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         butt = Gtk.Button();  butt.add(image)
         butt.set_focus_on_click(False)
         butt.set_relief( Gtk.ReliefStyle.NONE)
-        rc = butt.get_modifier_style()
+        #rc = butt.get_modifier_style()
         #rc.xthickness = 1; rc.ythickness = 1
         #butt.modify_style(rc)
 
