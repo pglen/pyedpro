@@ -81,7 +81,7 @@ CARCOLOR = "#4455dd"
 
 DRAGTRESH = 3                   # This many pixels for drag highlight
 
-def async_updates(args):
+def  async_updates(args):
 
     #Gdk.threads_init()
     time.sleep(.5)
@@ -1315,7 +1315,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Force new spell check
         self.fired += 1
-        if not self.mained.mac:
+        if not self.mac:
             GLib.timeout_add(300, keytime, self, 0)
         #self.mained.threads.submit_job(keytime, self, None)
 
@@ -1636,7 +1636,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.keyh.acth.clip_cb(None, stringx, self, False)
 
         self.fired += 1
-        if not self.mained.mac:
+        if not self.mac:
             GLib.timeout_add(300, keytime, self, 0)
         #self.mained.threads.submit_job(keytime, self, None)
 
@@ -1692,6 +1692,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         elif ttt == 24:
             self.start_external(["caja", "."],
                                         ["explorer", ""])
+        elif ttt == 25:
+            global last_scanned
+            last_scanned = ""
+            run_async_time(self, 0)
         else:
             print("peddoc: Invalid menu item selected")
 
@@ -2174,6 +2178,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 self._setlabel(ppp)
                 break
             cnt += 1
+            #usleep(10)
 
     # Gdk.EventButton
     def doclabel_callb(self, widg, event):
@@ -2188,12 +2193,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if  self.changed:
             str2 = "* " + ss + "  "
         else:
-            str2 = "" + ss + "  "
+            str2 = "  " + ss + "  "
 
         if  self.readonly:
             str3 = "ro " + str2
         else:
-            str3 = "" + str2
+            str3 = "  " + str2
 
         if  self.diffmode == 1:
             str4 = "Diff/Source: " + str3
@@ -2222,11 +2227,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         butt.connect("clicked", self.close_button)
         butt.set_tooltip_text("Close '%s'" % os.path.basename(self.fname))
         hbox = Gtk.HBox()
-
         hbox.pack_start(eb, 0, 0, 0)
         hbox.pack_start(butt, 0, 0, 0)
-        hbox.show_all()
         self.notebook.set_tab_label(ppp, hbox)
+        hbox.show_all()
+        #usleep(10)
+        #print("Setting tablabel", str4)
 
     def close_button(self, arg1):
         #print( "close_button", arg1)

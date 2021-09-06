@@ -68,6 +68,8 @@ def rclick_quit(self, arg):
 rclick_menu = (
 	        ( _("_New"),           "<control>N",    rclick_action, 1, None ),
             ( "",               None,               None, 2, "<Separator>" ),
+            ( _("_Rescan"),          None,          rclick_action, 25, None ),
+            ( "",               None,               None, 2, "<Separator>" ),
             ( _("_Open"),          "<control>O",    rclick_action, 3, None ),
             ( _("_Save"),          "<control>S",    rclick_action, 4, None ),
             ( _("Save_As"),        None,            rclick_action, 5, None ),
