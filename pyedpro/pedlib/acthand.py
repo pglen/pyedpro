@@ -868,7 +868,9 @@ class ActHand:
     def xclip_cb(self, self2, ctext, cummx):
         cummx = ctext + cummx
         self2.clipboard.set_text(cummx, len(cummx))
-        self2.clipboard.request_text(self.xclip_cb, cumm)
+        #self2.clipboard.request_text(self.xclip_cb, cumm)
+        ttt = self2.clipboard.wait_for_text()
+        self.clip_cb(none, ttt, self2)
 
     def ctrl_d(self, self2):
         if self2.shift:
@@ -1171,13 +1173,13 @@ class ActHand:
         #clip = Gtk.Clipboard.get_default(disp)
 
         if self.currclip == 0:
+            # Blew up on the Mac
             #self2.clipboard.request_text(self.clip_cb, self2)
             ttt = self2.clipboard.wait_for_text()
-            print("got paste", ttt)
+            #print("got paste", ttt)
             self.clip_cb(None, ttt,  self2)
         else:
-            self.clip_cb(clip, self.clips[self.currclip],
-                self2)
+            self.clip_cb(clip, self.clips[self.currclip], self2)
 
     # Pad line list to accomodate insert
     # We group this operation into change (no undo needed)
