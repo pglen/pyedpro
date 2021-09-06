@@ -1198,6 +1198,8 @@ class ActHand:
     def clip_cb(self, clip, text, self2, boundary = True ):
         print ("Clipboard: '" + text + "'", self2.caret[1], self2.ypos)
 
+        return;
+
         try:
             if type(text) != str:
                 text = codecs.decode(text)
