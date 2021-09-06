@@ -1923,6 +1923,8 @@ class EdMainWindow():
 
 def     OnExit(arg, prompt = True):
 
+    exiting = True
+
     arg.set_title("Exiting ...")
 
     #self.thread.stop()
@@ -2118,11 +2120,16 @@ def  initial_load(self2):
         put_exception("Load handler")
         pass
 
+exiting = False
+
 # ------------------------------------------------------------------------
 
 def handler_tick():
 
-    global savearr, notebook
+    global savearr, notebook, exiting
+
+    if exiting:
+        return
 
     #print( "handler_tick")
 
@@ -2213,13 +2220,16 @@ def handler_tick():
 
 def async_updates():
 
+    global exiting
+
     Gdk.threads_init()
 
     while(1):
         time.sleep(1)
-        Gdk.threads_enter()
-        #print("calling tick")
-        handler_tick()
-        Gdk.threads_leave()
+        if not exiting:
+            Gdk.threads_enter()
+            #print("calling tick")
+            handler_tick()
+            Gdk.threads_leave()
 
 # EOF
