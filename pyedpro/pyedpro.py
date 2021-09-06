@@ -161,7 +161,32 @@ class MainPyed(Gtk.Application):
         #    for aa in strarr:
         #        if os.path.isfile(aa):
         #            mainwin.openfile(aa)
-        #Gtk.main()
+
+
+def mainx(projname, strarr):
+
+    if pedconfig.conf.verbose:
+        print(PROGNAME, "running on", "'" + os.name + "'", \
+            "GTK", Gtk._version, "PyGtk", \
+               "%d.%d.%d" % (Gtk.get_major_version(), \
+                    Gtk.get_minor_version(), \
+                        Gtk.get_micro_version()))
+
+    signal.signal(signal.SIGTERM, terminate)
+    mainwin = pedwin.EdMainWindow(None, None, strarr)
+    pedconfig.conf.pedwin = mainwin
+
+    if projname:
+        mainwin.opensess(projname)
+
+    #if strarr:
+    #    print("opening files", strarr)
+    #    for aa in strarr:
+    #        if os.path.isfile(aa):
+    #            mainwin.openfile(aa)
+
+    Gtk.main()
+
 
 def xversion():
     ''' Offer version number '''
@@ -357,9 +382,10 @@ def mainstart(name = "", args = "", oldpath = ""):
     except:
         print("Cannot load plugins")
 
-    #main(pname, args[0:])
-    app = MainPyed(pname, args[0:])
-    app.run()
+    mainx(pname, args[0:])
+
+    #app = MainPyed(pname, args[0:])
+    #app.run()
 
 # ------------------------------------------------------------------------
 

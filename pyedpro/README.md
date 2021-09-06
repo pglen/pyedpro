@@ -46,6 +46,13 @@ The caret is moved to the end of insertion.
 
  This (above) list is an extract, please see git log for complete history.
 
+ Pyedpro now is working good on the Mac. I installed homebrew, and got it to work. It
+was not a trivial excersize, as the Mac pygobject did not do half of the stuff as the
+Linux version did. No async anything, segmentation faults everywhere. (which python
+is not suppose to have) So added new async subsystem with threads, and cleaned out
+a lot of parts. The font rendering was messed up, but got fixed by replacing pango's
+get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues]
+
   Pyedpro now has buffer diff. Right clicking on the file's tab header presents a menu.
 One may select the diff source, the diff destination (or target). When the source and
 target is selected, a diff window slides in from the right. The diff window presents
@@ -131,6 +138,11 @@ Screen from a regular session, note the function list on the left:
 Screen from Ubuntu:
 
 ![Screen Shot] (https://raw.githubusercontent.com/pglen/pyedpro/master/pyedpro_ubuntu.png)
+
+Screen from Mac:
+
+![Screen Shot] (https://raw.githubusercontent.com/pglen/pyedpro/master/screen_shot_mac.png)
+
 
 License:    Open Source, FreeWare
 

@@ -2154,6 +2154,7 @@ class ActHand:
                     self.add_key(self2, event)
                     spaces -= 1
             self2.invalidate()
+            self2.set_changed(True)
         else:
             # Indent, normalize
             yssel = min(self2.ysel, self2.ysel2)

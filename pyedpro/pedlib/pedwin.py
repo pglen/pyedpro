@@ -31,6 +31,7 @@ import pedcolor
 import pedfind
 import pedweb
 import peddlg
+import pedthread
 
 sys.path.append('..' + os.sep + "pycommon")
 
@@ -282,6 +283,8 @@ class EdMainWindow():
         #    print("menu", aa, aa.get_label())
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
+
+        self.threads = pedthread.PedThread()
 
         global notebook, notebook2, notebook3
 
@@ -618,16 +621,17 @@ class EdMainWindow():
         # Add to accounting:
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
-        #GLib.timeout_add(1000, handler_tick)
-        #GLib.timeout_add(500, initial_load, self)
+
+        GLib.timeout_add(500, initial_load, self, 0)
+        GLib.timeout_add(1000, handler_tick, self, 0)
         #threading.Timer(1, self.timer_func).start()
+        #initial_load(self, None)
 
-        initial_load(self)
-
-        self.stopthread = False
-        self.thread = threading.Thread(target=async_updates)
-        self.thread.daemon = True
-        self.thread.start()
+        # Test it
+        #def ppp(arg, arg2):
+        #    print("submitted", arg, arg2)
+        #self.threads.submit_job(ppp, "hello", "again")
+        #self.threads.submit_regular(1, handler_tick, None, None)
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
@@ -1708,6 +1712,7 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         self.mywin.set_focus(vcurr2.vbox.area)
+        vcurr2.vbox.area.fire = 1
         #self.mywin.show_all()
 
     def  prevwin(self):
@@ -2023,11 +2028,10 @@ def     OnExit(arg, arg2, prompt = True):
 
     # Exit here
     arg.destroy()
-    return
+    #return
+    Gtk.main_quit()
 
-    #Gtk.main_quit()
-
-def  initial_load(self2):
+def  initial_load(self2, arg):
 
     global notebook, hidden
 
@@ -2133,14 +2137,14 @@ exiting = False
 
 # ------------------------------------------------------------------------
 
-def handler_tick():
+def handler_tick(arg, arg2):
 
     global savearr, notebook, exiting
 
     if exiting:
         return
 
-    #print( "handler_tick")
+    #print( "handler_tick", time.ctime())
 
     # Update lastfile's func list
     mw = pedconfig.conf.pedwin
@@ -2153,7 +2157,7 @@ def handler_tick():
                 notebook.set_current_page(mm)
                 mw.mywin.set_focus(vcurr.vbox.area)
                 usleep(10)
-                vcurr.vbox.area.doidle =  True
+                vcurr.vbox.area.doidle =  1
                 break
         mw.lastfile = ""
 
@@ -2193,8 +2197,10 @@ def handler_tick():
                 # Rescue to save:
                 if vcurr:
                     vcurr.area.doidle = 1
-                    #vcurr.area.source_id = \
-                    #    GLib.idle_add(vcurr.area.idle_callback)
+                    vcurr.area.source_id = \
+                        GLib.idle_add(peddoc.idle_callback, vcurr.area, 0)
+                    #mw.threads.submit_job  \
+                    #        (peddoc.idle_callback, vcurr.area, None)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -2202,8 +2208,8 @@ def handler_tick():
                 vcurr = notebook.get_nth_page(notebook.get_current_page())
                 if vcurr:
                     #pedspell.spell(vcurr.area)
-                    #vcurr.area.source_id2 = \
-                    #GLib.idle_add(vcurr.area.idle_callback2)
+                    vcurr.area.source_id2 = \
+                    GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
 
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text
@@ -2225,26 +2231,7 @@ def handler_tick():
     except:
         print("Exception in timer handler", sys.exc_info())
 
+    GLib.timeout_add(1000, handler_tick, arg, arg2)
     #print( "handler_tick done")
-
-def async_updates():
-
-    global exiting
-
-    Gdk.threads_init()
-
-    while(1):
-        if exiting:
-            break
-
-        time.sleep(1)
-
-        if exiting:
-            break
-
-        Gdk.threads_enter()
-        #print("calling tick")
-        handler_tick()
-        Gdk.threads_leave()
 
 # EOF
