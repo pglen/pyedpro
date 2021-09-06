@@ -16,6 +16,7 @@ that I use every day.
         Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
         Windows (Native) plus MSYS2, Mingw,
         Raspberry PI 3, Raspberry PI 4, ...
+        Mac ** Some functions are disabled
 
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
 and the Raspberry-Pi. It behaves consistently on all these platforms,
@@ -23,8 +24,18 @@ it is an absolute joy to edit in a different platform without the learning
 curve of new keystrokes.  If you want an editor  that works the
 same way in all your workspaces, PyEdPro is the one.
 
+ Pyedpro now is working good on the Mac. I installed homebrew, and got it to work. It
+was not a trivial excersize, as the Mac pygobject did not do half of the stuff as the
+Linux version did. No asyncronous  anything, segmentation faults everywhere. (which python
+is not suppose to have) So added new async subsystem with threads, and cleaned out
+a lot of parts. The font rendering was messed up, but got fixed by replacing pango's
+get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues]
+Some asyn functions like the function updater is disabled, but it can be done
+manually. (right click on doc -> rescan)
+
 ### New:
 
+    [ Sun 05.Sep.2021 -- made it function on the Mac M1 laptop ]
     Tue 30.Mar.2021 -- added windows installation executable
     Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
 
@@ -130,6 +141,10 @@ Screen from a regular session, including clip buttons ...
 Screen from an older session, note the function list on the left:
 
 ![Screen Shot More](image.png)
+
+Screen from Mac:
+
+![Screen Shot](screen_shot_mac.png)
 
 License:    Open Source, FreeWare
 
