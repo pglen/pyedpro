@@ -1930,6 +1930,8 @@ def     OnExit(arg, prompt = True):
 
     # Test
     Gtk.main_quit()
+    usleep(300)
+    return
 
     arg.set_title("Exiting ...")
 
