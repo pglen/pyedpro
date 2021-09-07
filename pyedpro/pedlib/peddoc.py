@@ -81,42 +81,6 @@ CARCOLOR = "#4455dd"
 
 DRAGTRESH = 3                   # This many pixels for drag highlight
 
-def  async_updates(args):
-
-    #Gdk.threads_init()
-    time.sleep(.5)
-
-    while(1):
-        time.sleep(.5)
-        #continue;
-
-        #if args.stopthread:
-        #    #print("Exiting thread for ", args.fname)
-        #    break
-
-        # No update in not shown
-        if not arg.focus:
-            continue
-
-        #print("calling keyhandler tick", args.fname)
-        try:
-            if args.fired:
-                #Gdk.threads_enter()
-                #args.keytime()
-                #Gdk.threads_leave()
-                pass
-        except:
-            print("Exception in async_updates", sys.exc_info())
-
-        if args.doidle:
-            try:
-                args.doidle = 0
-                #Gdk.threads_enter()
-                #run_async_time(args)
-                #Gdk.threads_leave()
-            except:
-                print("Exception in run_async_time", sys.exc_info())
-
 # ------------------------------------------------------------------------
 # We create a custom class for display, as we want a text editor that
 # can take thousands of lines.
@@ -277,9 +241,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect("drag-data-get", self.on_drag_data_get)
         self.connect("destroy", self.destroy_cb)
 
-        #self.thread = threading.Thread(target=async_updates, args=(self,))
-        #self.thread.daemon = True
-        #self.thread.start()
+    def run_keytime(self):
+        #if not self.mained.mac:
+        #    GLib.timeout_add(300, keytime, self, 0)
+        pass
 
     def destroy_cb(self, arg):
         #print("dest", arg)
@@ -766,8 +731,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                                  self.ypos + yyy )
 
                 self.fired += 1
-                if not self.mained.mac:
-                    GLib.timeout_add(300, keytime, self, 0)
+                self.run_keytime()
                 #self.mained.threads.submit_job(keytime, self, None)
 
             if event.button == 3:
@@ -1039,8 +1003,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                if not self.mained.mac:
-                    GLib.timeout_add(300, keytime, self, 0)
+                self.run_keytime()
                 #self.mained.threads.submit_job(keytime, self, None)
 
         if yy - self.ypos < self.vscgap and self.ypos:
@@ -1052,8 +1015,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 need_inval = True
                 # Force new spell check
                 self.fired += 1
-                if not self.mained.mac:
-                    GLib.timeout_add(300, keytime, self, 0)
+                self.run_keytime()
                 #self.mained.threads.submit_job(keytime, self, None)
 
         yy -= self.ypos
@@ -1263,8 +1225,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Maintain a count of events, only fire only fire on the last one
         #self.fired += 1
-        if not self.mained.mac:
-            GLib.timeout_add(300, keytime, self, 0)
+        self.run_keytime()
 
         #if not self.fired:
         #    self.mained.threads.submit_job(keytime, self, None)
@@ -1315,8 +1276,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Force new spell check
         self.fired += 1
-        if not self.mained.mac:
-            GLib.timeout_add(300, keytime, self, 0)
+        self.run_keytime()
         #self.mained.threads.submit_job(keytime, self, None)
 
     def popspell(self, widget, event, xstr):
@@ -1636,8 +1596,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.keyh.acth.clip_cb(None, stringx, self, False)
 
         self.fired += 1
-        if not self.mained.mac:
-            GLib.timeout_add(300, keytime, self, 0)
+        self.run_keytime()
         #self.mained.threads.submit_job(keytime, self, None)
 
     def activate_action(self, action):
@@ -1761,7 +1720,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         strx = ""
         if not self.changed:
             strx = "File is not modified."
-            #self.mained.update_statusbar(strx)
+            self.mained.update_statusbar(strx)
             return
 
         # Is this file named 'untitled'?
@@ -1954,16 +1913,21 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     # Create org backup
     def saveorg(self):
         hhh = hash_name(self.fname) + ".org"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         if not os.path.isfile(xfile):
             err =  writefile(xfile, self.text, "\n")
             if not err[0]:
                 print("Cannot create (org) backup file", xfile, sys.exc_info())
+            # Make a log entry
+            logfile = pedconfig.conf.log_dir + os.sep + "backup.log"
+            xentry = "Org " + time.ctime() + " " + \
+                self.fname + " " + os.path.basename(xfile)
+            writefile(logfile, (xentry, ""), "\n", "a+")
 
    # Create backup
     def savebackup(self):
         hhh = hash_name(self.fname) + ".bak"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             writefile(xfile, self.text, "\n")
         except:
@@ -2043,17 +2007,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.undoarr = []; self.redoarr = []
         # Remove file
         hhh = hash_name(self.fname) + ".udo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         fh = open(xfile, "w")
         fh.close()
         hhh = hash_name(self.fname) + ".rdo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         fh = open(xfile, "w")
         fh.close()
 
     def saveundo(self):
         hhh = hash_name(self.fname) + ".udo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "wb")
             pickle.dump(self.undoarr, fh)
@@ -2064,7 +2028,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
 
         hhh = hash_name(self.fname) + ".rdo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "wb")
             pickle.dump(self.redoarr, fh)
@@ -2074,7 +2038,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def loadundo(self):
         hhh = hash_name(self.fname) + ".udo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "rb")
             try:
@@ -2089,7 +2053,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.initial_undo_size = len(self.undoarr)
 
         hhh = hash_name(self.fname) + ".rdo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "rb")
             try:
@@ -2170,6 +2134,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def set_tablabel(self):
         # Find me in tabs
+        #print("Setting tablabels")
         nn = self.notebook.get_n_pages(); cnt = 0
         while True:
             if cnt >= nn: break
@@ -2188,6 +2153,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.poprclick3(event)
 
     def _setlabel(self, ppp):
+
         # Set label to tab
         ss = shortenstr(os.path.basename(self.fname), 24)
         if  self.changed:
@@ -2229,8 +2195,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         hbox = Gtk.HBox()
         hbox.pack_start(eb, 0, 0, 0)
         hbox.pack_start(butt, 0, 0, 0)
-        self.notebook.set_tab_label(ppp, hbox)
         hbox.show_all()
+        self.notebook.set_tab_label(ppp, hbox)
+        hbox.queue_draw()
+
         #usleep(10)
         #print("Setting tablabel", str4)
 
@@ -2461,6 +2429,7 @@ def run_async_time(win, arg):
 def keytime(self, arg):
 
     #print( "keytime raw", time.ctime(), self.fired)
+    #return
 
     if self.fired ==  1:
         #print( "keytime", time.time(), self.fired)
@@ -2527,16 +2496,21 @@ def keytime(self, arg):
 
 # Do Tasks  when the system is idle
 def idle_callback(self, arg):
-    #print( "Idle callback")
+    #print( "Idle callback", self.fname)
     GLib.source_remove(self.source_id)
     try:
         # Mon 06.Sep.2021 always save
-        if 1: #self.changed:
+        if self.changed:
             hhh = hash_name(self.fname) + ".sav"
-            xfile = pedconfig.conf.data_dir + "/" + hhh
+            xfile = pedconfig.conf.data_dir + os.sep + hhh
             err = writefile(xfile, self.text, "\n")
             if err[0]:
                 strx = "Backed up file '{0:s}'".format(xfile)
+                # Make a log entry
+                logfile = pedconfig.conf.log_dir + os.sep + "backup.log"
+                xentry = "Sav " + time.ctime() + " " + \
+                    self.fname + " " + os.path.basename(xfile) + "\n"
+                writefile(logfile, (xentry, ""), "\n", "a+")
             else:
                 strx = "Cannot back up file '{0:s}' {1:s}".format(xfile, err[1])
 
@@ -2547,7 +2521,7 @@ def idle_callback(self, arg):
 # Do Tasks2 when the system is idle
 
 def idle_callback2(self, arg):
-    #print( "Idle callback2")
+    #print( "Idle callback2", arg)
     GLib.source_remove(self.source_id2)
     try:
         run_async_time(self, None)

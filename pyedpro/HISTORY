@@ -1,7 +1,18 @@
                               HISTORY
 
- This is a non exhaustive list of changes in the PyEdPro project. Git has
- a more complete list of logs.
+    This is a non exhaustive list of changes in the PyEdPro project. Git has a more complete
+list of logs.
+
+    Sun 05.Sep.2021 -- made it function on the Mac M1 laptop
+    Pyedpro now is working good on the Mac. I installed homebrew, and got it to work. It
+    was not a trivial exercise, as the Mac pygobject did not do half of the stuff as the
+    Linux version did. No asynchronous  anything, segmentation faults everywhere. (which python
+    is not suppose to have) So added new async subsystem with threads, and cleaned out
+    a lot of parts. The font rendering was messed up, but got fixed by replacing pango's
+    get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues]
+    Some asyn functions like the function updater is disabled, but it can be done
+    manually. (right click on doc -> rescan)
+    NOT RECOMMENDED
 
     Thu Tue 08.Sep.2020   (version 1.4)
     F2 key starts devhelp, and puts you into a search with the
@@ -202,12 +213,3 @@ v034:
 v042:
 
   Moved to pyedpro, version number restarted at 043.
-
-
-
-
-
-
-
-
-

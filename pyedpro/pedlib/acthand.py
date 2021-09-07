@@ -1938,7 +1938,8 @@ class ActHand:
 
     def add_key(self, self2, event):
 
-        #print("add_key: '%s'" % event.string)
+        if pedconfig.conf.pgdebug > 9:
+            print("add_key: '%s'" % event.string)
 
         # CR / LF still haunts us, ignore CR
         if event.keyval == Gdk.KEY_Return:

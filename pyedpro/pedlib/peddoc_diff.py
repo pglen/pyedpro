@@ -362,7 +362,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         try:
             if self.changed:
                 hhh = hash_name(self.fname) + ".sav"
-                xfile = pedconfig.conf.data_dir + "/" + hhh
+                xfile = pedconfig.conf.data_dir + os.sep + hhh
                 err = writefile(xfile, self.text, "\n")
                 if err[0]:
                     strx = "Backed up file '{0:s}'".format(xfile)
@@ -1676,7 +1676,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
     # Create org backup
     def saveorg(self):
         hhh = hash_name(self.fname) + ".org"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         if not os.path.isfile(xfile):
             err =  writefile(xfile, self.text, "\n")
             if not err[0]:
@@ -1685,7 +1685,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
    # Create backup
     def savebackup(self):
         hhh = hash_name(self.fname) + ".bak"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             writefile(xfile, self.text, "\n")
         except:
@@ -1765,17 +1765,17 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.undoarr = []; self.redoarr = []
         # Remove file
         hhh = hash_name(self.fname) + ".udo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         fh = open(xfile, "w")
         fh.close()
         hhh = hash_name(self.fname) + ".rdo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         fh = open(xfile, "w")
         fh.close()
 
     def saveundo(self):
         hhh = hash_name(self.fname) + ".udo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "wb")
             pickle.dump(self.undoarr, fh)
@@ -1786,7 +1786,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
 
         hhh = hash_name(self.fname) + ".rdo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "wb")
             pickle.dump(self.redoarr, fh)
@@ -1796,7 +1796,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
 
     def loadundo(self):
         hhh = hash_name(self.fname) + ".udo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "rb")
             try:
@@ -1811,7 +1811,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
         self.initial_undo_size = len(self.undoarr)
 
         hhh = hash_name(self.fname) + ".rdo"
-        xfile = pedconfig.conf.data_dir + "/" + hhh
+        xfile = pedconfig.conf.data_dir + os.sep + hhh
         try:
             fh = open(xfile, "rb")
             try:

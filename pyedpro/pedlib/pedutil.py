@@ -147,21 +147,21 @@ def findinfile(nnn, ffff, nocase = False):
 # ------------------------------------------------------------------------
 # Propagate exceptions to higher level
 
-def  writefile(strx, buff, sep = "\n"):
+def  writefile(strx, buff, sep = "\n", mode = "w"):
     #print ("writefile", strx, sep)
     ret = True, ""
     if strx != "":
         try:
-            f = open(strx, "w")
+            fp = open(strx, mode)
             cnt = 0; sepx = ""
             for aa in buff:
                 if cnt:
                     sepx = sep
-                f.write(sepx + aa.rstrip())
+                fp.write(sepx + aa.rstrip())
                 cnt += 1
-
-            f.close()
+            fp.close()
         except:
+            fp.close()
             ret = False, sys.exc_info()[1]
             pass
     return ret
@@ -1126,7 +1126,7 @@ def isfile(fname):
 # Append to log
 def logentry(kind, startt, fname):
     logfname = "account.txt"
-    logfile = pedconfig.conf.log_dir + "/" + logfname
+    logfile = pedconfig.conf.log_dir + os.sep + logfname
     try:
         fp = open(logfile, "a+")
     except:
@@ -1150,7 +1150,7 @@ def logentry(kind, startt, fname):
 def timesheet(kind, startt, endd):
 
     logfname = "timesheet.txt"
-    logfile = pedconfig.conf.log_dir + "/" + logfname
+    logfile = pedconfig.conf.log_dir + os.sep + logfname
     try:
         fp = open(logfile, "a+")
     except:
