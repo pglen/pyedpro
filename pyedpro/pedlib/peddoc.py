@@ -1315,7 +1315,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Force new spell check
         self.fired += 1
-        if not self.mac:
+        if not self.mained.mac:
             GLib.timeout_add(300, keytime, self, 0)
         #self.mained.threads.submit_job(keytime, self, None)
 
@@ -1636,7 +1636,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.keyh.acth.clip_cb(None, stringx, self, False)
 
         self.fired += 1
-        if not self.mac:
+        if not self.mained.mac:
             GLib.timeout_add(300, keytime, self, 0)
         #self.mained.threads.submit_job(keytime, self, None)
 

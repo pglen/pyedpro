@@ -47,7 +47,7 @@ The caret is moved to the end of insertion.
  This (above) list is an extract, please see git log for complete history.
 
  Pyedpro now is working good on the Mac. I installed homebrew, and got it to work. It
-was not a trivial excersize, as the Mac pygobject did not do half of the stuff as the
+was not a trivial exercise as the Mac pygobject did not do half of the stuff as the
 Linux version did. No async anything, segmentation faults everywhere. (which python
 is not suppose to have) So added new async subsystem with threads, and cleaned out
 a lot of parts. The font rendering was messed up, but got fixed by replacing pango's
@@ -65,8 +65,8 @@ yes, it is no substitute for a real diff.
 
  The diff buffer is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
-same right click menu, by selecting 'Stop Diffing'. The diff algorythm is crude, but
-the simplicity has its advantages. Speed and predictibility.
+same right click menu, by selecting 'Stop Diffing'. The diff algorithm is crude, but
+the simplicity has its advantages. Speed and predictability.
 
   PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion
@@ -81,7 +81,7 @@ out for Python and  'C', which assures most derivative languages have correct
 code spell code check. The whole file can be checked in text spell mode.
 (Shift-F9) The spell checker is executed on live text. (while typing)
 
-  Syntax highliting. Again, a simpler parser for speed. Succeeds in its mission with
+  Syntax highlighting. Again, a simpler parser for speed. Succeeds in its mission with
 giving great visual without speed impact.
 
   PyEdPro is fast, it is extendable, as python lends itself to easy extending. The
@@ -98,7 +98,7 @@ log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install ca
   See KEYS file for the list of keyboard shortcuts or press F3 in the
 editor or look at the file in pyedlib/KEYS.
 
- If you highlite a word, and press F2, devhelp will open with the string highlited. Naturally,
+ If you highlight a word, and press F2, devhelp will open with the string highlighted. Naturally,
 devhelp needs to be installed.
 
   On initial start, PyEdPro shows a left pane and a top pane. The left pane
