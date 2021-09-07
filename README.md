@@ -25,8 +25,8 @@ curve of new keystrokes.  If you want an editor  that works the
 same way in all your workspaces, PyEdPro is the one.
 
  Pyedpro now is working good on the Mac. I installed homebrew, and got it to work. It
-was not a trivial excersize, as the Mac pygobject did not do half of the stuff as the
-Linux version did. No asyncronous  anything, segmentation faults everywhere. (which python
+was not a trivial exercise, as the Mac pygobject did not do half of the stuff as the
+Linux version did. No asynchronous  anything, segmentation faults everywhere. (which python
 is not suppose to have) So added new async subsystem with threads, and cleaned out
 a lot of parts. The font rendering was messed up, but got fixed by replacing pango's
 get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues]
@@ -68,8 +68,8 @@ yes, it is no substitute for a real diff.
 
  The diff buffer is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
-same right click menu, by selecting 'Stop Diffing'. The diff algorythm is crude, but
-the simplicity has its advantages. Speed and predictibility.
+same right click menu, by selecting 'Stop Diffing'. The diff algorithm is crude, but
+the simplicity has its advantages. Speed and predictability.
 
   PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion

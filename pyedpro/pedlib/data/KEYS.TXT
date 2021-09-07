@@ -189,7 +189,7 @@ table driven. Relevant files: acthand.py and keyhand.py
 
 
     F1                           -- Help
-    F2                           -- Dev Help
+    F2                           -- Call up local DevHelp (must be installed)
     F3                           -- Key assignments Help
     F4                           -- Animate macro
     F5                           -- Previous Match

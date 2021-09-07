@@ -32,6 +32,7 @@ import pedfind
 import pedweb
 import peddlg
 import pedthread
+import pedspell
 
 sys.path.append('..' + os.sep + "pycommon")
 
@@ -2217,8 +2218,8 @@ def handler_tick(arg, arg2):
             if pedconfig.conf.syncidle == 0:
                 vcurr = notebook.get_nth_page(notebook.get_current_page())
                 if vcurr:
-                    #pedspell.spell(vcurr.area)
                     if not mw.mac:
+                        #pedspell.spell(vcurr.area)
                         vcurr.area.source_id2 = \
                             GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
 
