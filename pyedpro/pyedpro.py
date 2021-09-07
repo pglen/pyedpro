@@ -163,7 +163,7 @@ class MainPyed(Gtk.Application):
         #            mainwin.openfile(aa)
 
 
-def mainx(projname, strarr):
+def run_main(projname, strarr):
 
     if pedconfig.conf.verbose:
         print(PROGNAME, "running on", "'" + os.name + "'", \
@@ -188,6 +188,10 @@ def mainx(projname, strarr):
 
     Gtk.main()
 
+    #while True:
+    #    ret = Gtk.main_iteration()
+    #    if not ret:
+    #        break
 
 def xversion():
     ''' Offer version number '''
@@ -383,7 +387,7 @@ def mainstart(name = "", args = "", oldpath = ""):
     except:
         print("Cannot load plugins")
 
-    mainx(pname, args[0:])
+    run_main(pname, args[0:])
 
     #app = MainPyed(pname, args[0:])
     #app.run()
@@ -401,7 +405,7 @@ if __name__ == '__main__':
     pedlog.create_logwin()
     pedlog.log("Started PyEdPro", time.ctime(None))
 
-    #print("main")
+    #print("in main")
     mainstart("", [], "")
 
 # EOF

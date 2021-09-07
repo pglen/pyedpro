@@ -11,7 +11,6 @@ import stat
 import collections
 import platform
 import datetime
-import threading
 
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -295,8 +294,8 @@ class EdMainWindow():
         global notebook, notebook2, notebook3
 
         # Create note for the main window, give access to it for all
-        notebook = Gtk.Notebook(); self.notebook = notebook
-        notebook.size_allocate(Gdk.Rectangle(0, 0, 10,10))
+        notebook = Gtk.Notebook.new(); self.notebook = notebook
+        #notebook.size_allocate(Gdk.Rectangle(0, 0, 10,10))
 
         #notebook.popup_enable()
         notebook.set_scrollable(True)
@@ -321,8 +320,8 @@ class EdMainWindow():
         #notebook.connect_after("drag-data-received", self.on_drag_data_received)
 
         # This is the right notebook
-        notebook3 = Gtk.Notebook(); self.notebook3 = notebook3
-        notebook3.size_allocate(Gdk.Rectangle(0, 0, 10,10))
+        notebook3 = Gtk.Notebook.new(); self.notebook3 = notebook3
+        #notebook3.size_allocate(Gdk.Rectangle(0, 0, 10,10))
 
         notebook3.set_scrollable(True)
         self.diffpane = edPane()
@@ -335,8 +334,8 @@ class EdMainWindow():
         self.notebook3.set_tab_label(ppp, self.make_label(" Diff "))
 
         # This is the left notebook
-        notebook2 = Gtk.Notebook(); self.notebook2 = notebook2
-        notebook2.size_allocate(Gdk.Rectangle(0, 0, 10,10))
+        notebook2 = Gtk.Notebook.new(); self.notebook2 = notebook2
+        #notebook2.size_allocate(Gdk.Rectangle(0, 0, 100,100))
 
         #notebook2.popup_enable()
         notebook2.set_scrollable(True)
@@ -466,14 +465,13 @@ class EdMainWindow():
         #notebook.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
         self.hpaned3 = Gtk.HPaned(); self.hpaned3.set_border_width(2)
-        self.hpaned3.add(self.hpaned)
+        self.hpaned3.set_position(20)
 
+        self.hpaned3.add(self.hpaned)
         self.hpaned3.pack2(notebook3)
         self.hpaned3.set_position(self.get_width() - 10)
-        vpaned.set_position(self.get_height() - 340)
-        #vpaned.set_position(20)
 
-        # Create statusbars
+        # Create statusbars (obsolete)
         #self.statusbar = Gtk.Statusbar()
         #self.statusbar2 = Gtk.Statusbar()
         #self.statusbar2.set_spacing(0)
@@ -483,6 +481,9 @@ class EdMainWindow():
         self.slab = Gtk.Label(" status  ")
         self.slab.set_xalign(Gtk.Align.START)
         self.slab.set_yalign(Gtk.Align.START)
+
+        #self.slab.override_background_color(
+        #            Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, .5) )
 
         shbox = Gtk.HBox()
         shbox.pack_start(slabs, 0, 0, 0)
@@ -502,24 +503,27 @@ class EdMainWindow():
         eb2 = Gtk.EventBox(); eb2.add(label2)
         eb2.connect_after("button-press-event", self.status_lang)
         eb2.set_above_child(True)
+
         shbox.pack_end(eb2, 0, 0, 0)
 
+        #shbox.override_background_color(
+        #            Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, 1) )
+
         self.slab2 = Gtk.Label(" status2  ")
-        self.hpane2 = Gtk.HPaned()        #; self.hpane2.set_border_width(5)
 
-        self.hpane2.pack1(shbox, 0, 0)
-        self.hpane2.pack2(self.slab2, 0, 0)
-        #self.hpane2.set_position(self.get_width() - self.get_width()/3)
+        #self.hpaned2 = Gtk.HPaned(); self.hpaned2.set_border_width(5)
+        #self.hpaned2.set_position(20)
+        #self.hpaned2.pack1(shbox, 0, 0)
+        #self.hpaned2.pack2(self.slab2, 0, 0)
 
-        #self.hpane2.pack2(self.statusbar2, 0, 0)
-        #shbox.pack_start(slab, False, 0, 0)
-        #shbox.pack_start(self.statusbar, False, 0, 0)
-        #self.hpane2.pack1(self.statusbar, 1, 0)
+        self.hbox3 = Gtk.HBox()
+        self.hbox3.pack_start(shbox, 1, 1, 2)
+        self.hbox3.pack_start(self.slab2, 0, 0, 2)
 
         bbox = Gtk.VBox()
         nbox = Gtk.HBox()
-
         obox = Gtk.VBox()
+
         obox.pack_start(self.mbar, 0, 0, 0)
         obox.pack_start(self.tbar, 0, 0, 0)
         nbox.pack_start(obox, 0, 0, 0)
@@ -555,9 +559,12 @@ class EdMainWindow():
         nbox.pack_start(obox2, 1, 1, 0)
         bbox.pack_start(nbox, 0, 0, 0)
         bbox.pack_start(self.hpaned3, 1, 1, 0)
-        bbox.pack_start(self.hpane2, 0,0, 0)
 
-        #self.hpane2.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
+        # Buttom statubar
+        #bbox.pack_start(self.hpaned2, 0, 0, 0)
+        bbox.pack_start(self.hbox3, 0, 0, 0)
+
+        #self.hpaned2.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
         self.headbar = Gtk.HeaderBar()
         self.headbar.set_decoration_layout("icon,menu:minimize,maximize,close")
@@ -612,9 +619,6 @@ class EdMainWindow():
 
         self.mywin.set_titlebar(self.headbar)
 
-        self.mywin.add(bbox)
-        self.mywin.show_all()
-
         # Set the signal handler for 1s tick
         #signal.signal(signal.SIGALRM, handler_tick)
         #signal.alarm(1)
@@ -630,11 +634,17 @@ class EdMainWindow():
 
         if not self.mac:
             GLib.timeout_add(1000, handler_tick, self, 0)
+            pass
 
         if not self.mac:
             GLib.timeout_add(500, initial_load, self, 0)
+            #initial_load(self, 0)
+            pass
         else:
             initial_load(self, 0)
+
+        self.mywin.add(bbox)
+        self.mywin.show_all()
 
         #threading.Timer(1, self.timer_func).start()
         #initial_load(self, None)
@@ -1214,7 +1224,8 @@ class EdMainWindow():
 
     def area_size(self, win, rect):
         #print(  "area size", rect)
-        self.hpane2.set_position(self.get_width() - 280)
+        #self.hpaned2.set_position(self.get_width() - 280)
+        pass
 
     def  note_focus_in(self, win, act):
         pass
@@ -1356,14 +1367,14 @@ class EdMainWindow():
     # Traditional open file
     def open(self):
 
-        warnings.simplefilter("ignore")
+        #warnings.simplefilter("ignore")
         but =   "Cancel", Gtk.ButtonsType.CANCEL,\
          "Open File", Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog("Open file", self.mywin, \
              Gtk.FileChooserAction.OPEN  \
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
-        warnings.simplefilter("default")
+        #warnings.simplefilter("default")
 
         filters = []
         filters.append(self.makefilter("*.*", "All files (*.*)"))
@@ -1430,9 +1441,9 @@ class EdMainWindow():
         #dialog.connect ("response", lambda d, r: d.destroy())
         #dialog.show()
 
-        warnings.simplefilter("ignore")
+        #warnings.simplefilter("ignore")
         strx = action.get_name()
-        warnings.simplefilter("default")
+        #warnings.simplefilter("default")
 
         #print ("activate_action", strx)
 
@@ -2021,7 +2032,7 @@ def     OnExit(arg, arg2, prompt = True):
             else:
                 # Rescue to temporary:
                 hhh = hash_name(ppp.area.fname) + ".rescue"
-                xfile = pedconfig.conf.config_dir + "/" + hhh
+                xfile = pedconfig.conf.config_dir + os.sep + hhh
                 if pedconfig.conf.verbose:
                     print("Rescuing", xfile)
                 writefile(xfile, ppp.area.text, "\n")

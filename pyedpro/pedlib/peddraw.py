@@ -51,12 +51,12 @@ class peddraw(object):
         gcr.stroke()
 
     def draw_line2(self, cr, xx, yy, xx2, yy2):
-        #print "draw line", xx, yy
+        #print( "draw line", xx, yy)
         cr.move_to(xx, yy)
         cr.line_to(xx2, yy2)
 
     def draw_line(self, cr, xx, yy, xx2, yy2):
-        #print "draw line", xx, yy
+        #print( "draw line", xx, yy)
         cr.set_source_rgba(*list(self.self2.carcolor))
         cr.move_to(xx, yy)
         cr.line_to(xx2, yy2)
@@ -71,8 +71,8 @@ class peddraw(object):
         gcx.set_line_width(1)
         gcx.set_source_rgba(*list(self.self2.cocolor))
 
-        #print "drawing caret", self.caret[0], self.caret[1], \
-        #        self.caret[0] * self.cxx, self.caret[1] * self. cyy
+        #print( "drawing caret", self.caret[0], self.caret[1], \
+        #        self.caret[0] * self.cxx, self.caret[1] * self. cyy)
 
         try:
             line = self.text[self.ypos + self.caret[1]]
@@ -121,7 +121,8 @@ class peddraw(object):
     # This is a response to the draw event request
 
     def draw_text(self, gc, x, y, text, fg_col = None, bg_col = None):
-    	#print "draw_text, ",  self.xpos
+
+        #print( "draw_text, ",  self.xpos, x, y)
 
         if self.hex:
             text2 = ""
@@ -187,12 +188,12 @@ class peddraw(object):
             # The hard way ....
             #rc = self.layout.get_extents().logical_rect
             #rc = self.layout.get_extents().ink_rect
-            #print "rc", rc.x, rc.y, rc.width / Pango.SCALE, \
-            #            rc.height   / Pango.SCALE
+            #print( "rc", rc.x, rc.y, rc.width / Pango.SCALE, \
+            #            rc.height   / Pango.SCALE  )
             #gc.rectangle(x, y, rc.width / Pango.SCALE, \
             #            rc.height / Pango.SCALE)
             gc.rectangle(x - offs, y, xx , yy)
-            #print self.xpos, x, y, xx, yy
+            #print( self.xpos, x, y, xx, yy)
             gc.fill()
 
         if fg_col:
@@ -409,7 +410,7 @@ class peddraw(object):
             else:
                text3 = untab_str(self.text[cnt], self.tabstop)
 
-            #print "'" + text3 + "'"
+            #print( "'" + text3 + "'")
             text4 = text3[self.xpos:]
             dx, dy = self.draw_text(cr, xx, yy, text4)
             cnt += 1
