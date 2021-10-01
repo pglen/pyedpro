@@ -1224,7 +1224,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         pedconfig.conf.syncidle = pedconfig.conf.SYNCIDLE_TIMEOUT
 
         # Maintain a count of events, only fire only fire on the last one
-        #self.fired += 1
+        self.fired += 1
         self.run_keytime()
 
         #if not self.fired:

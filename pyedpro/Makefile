@@ -48,9 +48,14 @@ clean:
 echo:
 	@echo Echoing: ${CHECK}
 
+# Auto Checkin
+ifeq ("$(AUTOCHECK)","")
+AUTOCHECK=autocheck
+endif
+
 git:
 	git add .
-	git commit -m autocheck
+	git commit -m "$(AUTOCHECK)"
 	git push
 
 # End of Makefile
