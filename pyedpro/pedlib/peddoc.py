@@ -242,8 +242,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect("destroy", self.destroy_cb)
 
     def run_keytime(self):
-        #if not self.mained.mac:
-        #    GLib.timeout_add(300, keytime, self, 0)
+        if not self.mained.mac:
+            GLib.timeout_add(300, keytime, self, 0)
         pass
 
     def destroy_cb(self, arg):
