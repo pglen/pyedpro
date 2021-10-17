@@ -683,14 +683,16 @@ class EdMainWindow():
 
         Gdk.threads_enter()
         if pedconfig.conf.verbose:
-            print("Callback from thread")
+            print("Callback from thread", self.rescnt)
+        self.rescnt += 1
 
         #self.mywin.emit("my-custom-signal", event)
         #event.set()
         #event = threading.Event()
         #result = []
         Gdk.threads_leave()
-        GLib.timeout_add(1000, self.ThredCallback) #, event, result)
+        #GLib.timeout_add(1000, self.ThredCallback) #, event, result)
+        return True
 
     def threadevent(self, win, event):
         pass
