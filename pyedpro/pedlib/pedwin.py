@@ -186,6 +186,8 @@ class EdMainWindow():
 
     def __init__(self, fname, parent, names):
 
+        #Gdk.threads_init()
+
         if "Darwin" in platform.system():
             self.mac = True
         else:
@@ -652,11 +654,14 @@ class EdMainWindow():
         self.mywin.add(bbox)
         self.mywin.show_all()
 
-        GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
-                       (GObject.TYPE_PYOBJECT,))
-        self.mywin.connect("my-custom-signal", self.threadevent)
+        #GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
+        #               (GObject.TYPE_PYOBJECT,))
+        #self.mywin.connect("my-custom-signal", self.threadevent)
+        #threading.Thread(target=self.ThredMine, daemon=True).start()
 
-        threading.Thread(target=self.ThredMine, daemon=True).start()
+        event = threading.Event()
+        result = []
+        GLib.timeout_add(1000, self.ThredCallback, event, result)
 
     def ThredMine(self):
         cnt = 0
@@ -664,7 +669,8 @@ class EdMainWindow():
             event = threading.Event()
             result = []
             Gdk.threads_enter()
-            GObject.idle_add(self.ThredCallback, event, cnt)
+            #GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, self.ThredCallback, event, cnt)
+            #GLib.idle_add(self.ThredCallback, event, cnt)
             event.wait()
             Gdk.threads_leave()
             cnt += 1
@@ -672,15 +678,24 @@ class EdMainWindow():
             time.sleep(1)
 
     def ThredCallback(self, event, cnt):
-        #print("Callback", event, cnt)
+
+        #print("Callback", currentThread().getName())
+
+        Gdk.threads_enter()
+
         if pedconfig.conf.verbose:
-            print("Callback from thread", event)
-        self.mywin.emit("my-custom-signal", event)
-        event.set()
+            print("Callback from thread", event, cnt)
+        #self.mywin.emit("my-custom-signal", event)
+        #event.set()
+        event = threading.Event()
+        result = []
+        Gdk.threads_leave()
+        GLib.timeout_add(1000, self.ThredCallback, event, result)
 
     def threadevent(self, win, event):
-        if pedconfig.conf.verbose:
-            print("Thread Event", win, event)
+        pass
+        #if pedconfig.conf.verbose:
+        #    print("Thread Event", win, event)
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
