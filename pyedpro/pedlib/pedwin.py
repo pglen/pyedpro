@@ -652,9 +652,9 @@ class EdMainWindow():
         self.mywin.add(bbox)
         self.mywin.show_all()
 
-        #GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
-        #               (GObject.TYPE_PYOBJECT,))
-        #self.mywin.connect("my-custom-signal", self.ThredCallback)
+        GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
+                       (GObject.TYPE_PYOBJECT,))
+        self.mywin.connect("my-custom-signal", self.threadevent)
 
         threading.Thread(target=self.ThredMine, daemon=True).start()
 
@@ -663,17 +663,23 @@ class EdMainWindow():
         while(1):
             event = threading.Event()
             result = []
-            GLib.idle_add(self.ThredCallback, event, cnt)
+            GObject.idle_add(self.ThredCallback, event, cnt)
             event.wait()
             cnt += 1
             #usleep(1000)
             time.sleep(1)
 
     def ThredCallback(self, event, cnt):
-        #self.rescnt += 1
+        #print("Callback", event, cnt)
         if pedconfig.conf.verbose:
-            print("Callback from thread", cnt)
+            print("Callback from thread", event)
+
+        self.mywin.emit("my-custom-signal", event)
         event.set()
+
+    def threadevent(self, win, event):
+        if pedconfig.conf.verbose:
+            print("Thread Event", win, event)
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
