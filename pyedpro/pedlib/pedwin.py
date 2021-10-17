@@ -54,7 +54,7 @@ notebook3 = None;  notebook4 = None
 hidden = 0
 savearr = []
 
-#GObject.threads_init()
+GObject.threads_init()
 
 # -----------------------------------------------------------------------
 
@@ -661,7 +661,7 @@ class EdMainWindow():
 
         event = threading.Event()
         result = []
-        GLib.timeout_add(1000, self.ThredCallback, event, result)
+        GLib.timeout_add(1000, self.ThredCallback) #, event, result)
 
     def ThredMine(self):
         cnt = 0
@@ -677,20 +677,20 @@ class EdMainWindow():
             #usleep(1000)
             time.sleep(1)
 
-    def ThredCallback(self, event, cnt):
+    def ThredCallback(self): #, event, cnt):
 
         #print("Callback", currentThread().getName())
 
         Gdk.threads_enter()
-
         if pedconfig.conf.verbose:
-            print("Callback from thread", event, cnt)
+            print("Callback from thread")
+
         #self.mywin.emit("my-custom-signal", event)
         #event.set()
-        event = threading.Event()
-        result = []
+        #event = threading.Event()
+        #result = []
         Gdk.threads_leave()
-        GLib.timeout_add(1000, self.ThredCallback, event, result)
+        GLib.timeout_add(1000, self.ThredCallback) #, event, result)
 
     def threadevent(self, win, event):
         pass
