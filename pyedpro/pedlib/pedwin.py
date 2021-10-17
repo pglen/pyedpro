@@ -658,7 +658,8 @@ class EdMainWindow():
     def ThredMine(self):
         while(1):
             GLib.idle_add(self.ThredCallback)
-            time.sleep(1)
+            #time.sleep(1)
+            usleep(1000)
 
         #threading.Timer(1, self.timer_func).start()
         #initial_load(self, None)
