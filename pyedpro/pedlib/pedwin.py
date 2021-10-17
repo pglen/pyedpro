@@ -18,6 +18,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GLib
 from gi.repository import Gio
+from gi.repository import GObject
 
 import pedconfig
 import peddoc
@@ -53,6 +54,7 @@ notebook3 = None;  notebook4 = None
 hidden = 0
 savearr = []
 
+#GObject.threads_init()
 
 # -----------------------------------------------------------------------
 
@@ -189,6 +191,7 @@ class EdMainWindow():
         else:
             self.mac  = False
 
+        self.rescnt = 0
         self.full = False
         self.fcount = 0
         self.statuscount = 0
@@ -292,7 +295,7 @@ class EdMainWindow():
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
-        self.threads = pedthread.PedThread()
+        #self.threads = pedthread.PedThread()
 
         global notebook, notebook2, notebook3
 
@@ -656,22 +659,19 @@ class EdMainWindow():
         threading.Thread(target=self.ThredMine, daemon=True).start()
 
     def ThredMine(self):
+        cnt = 0
         while(1):
-            GLib.idle_add(self.ThredCallback)
-            #time.sleep(1)
+            event = threading.Event()
+            result = []
+            GLib.idle_add(self.ThredCallback, event, cnt)
+            event.wait()
             usleep(1000)
 
-        #threading.Timer(1, self.timer_func).start()
-        #initial_load(self, None)
-        # Test it
-        #def ppp(arg, arg2):
-        #    print("submitted", arg, arg2)
-        #self.threads.submit_job(ppp, "hello", "again")
-        #self.threads.submit_regular(1, handler_tick, None, None)
-
-    def ThredCallback(arg):
+    def ThredCallback(self, event, cnt):
+        #self.rescnt += 1
         if pedconfig.conf.verbose:
-            print("Callback from thread")
+            print("Callback from thread", cnt)
+        event.set()
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
