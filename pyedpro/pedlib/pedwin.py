@@ -11,6 +11,7 @@ import stat
 import collections
 import platform
 import datetime
+import threading
 
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -177,7 +178,9 @@ class edwin(Gtk.VBox):
 # ------------------------------------------------------------------------
 #  Define Application Main Window claass
 
+
 class EdMainWindow():
+
 
     def __init__(self, fname, parent, names):
 
@@ -646,14 +649,28 @@ class EdMainWindow():
         self.mywin.add(bbox)
         self.mywin.show_all()
 
+        #GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
+        #               (GObject.TYPE_PYOBJECT,))
+        #self.mywin.connect("my-custom-signal", self.ThredCallback)
+
+        threading.Thread(target=self.ThredMine, daemon=True).start()
+
+    def ThredMine(self):
+        while(1):
+            GLib.idle_add(self.ThredCallback)
+            time.sleep(1)
+
         #threading.Timer(1, self.timer_func).start()
         #initial_load(self, None)
-
         # Test it
         #def ppp(arg, arg2):
         #    print("submitted", arg, arg2)
         #self.threads.submit_job(ppp, "hello", "again")
         #self.threads.submit_regular(1, handler_tick, None, None)
+
+    def ThredCallback(arg):
+        if pedconfig.conf.verbose:
+            print("Callback from thread")
 
     def rcl(self, butt, arg1, arg2):
         #print("rcl label", but.get_label(), butt.ord, butt.id)
@@ -2157,6 +2174,8 @@ def  initial_load(self2, arg):
         pass
 
 exiting = False
+
+
 
 # ------------------------------------------------------------------------
 

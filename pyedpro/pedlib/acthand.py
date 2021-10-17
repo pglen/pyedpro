@@ -1657,7 +1657,7 @@ class ActHand:
                 #print("sss", sss)
                 ret = subprocess.Popen(["devdocs", "-s", sss,])
             except:
-                pedync.message("\n   Cannot launch devhelp   \n\n"
+                pedync.message("\n   Cannot launch devdocs   \n\n"
                                "              (Please install)")
         else:
             self2.mained.update_statusbar("Opening KEYS help file ...")
@@ -1669,18 +1669,22 @@ class ActHand:
     def f2(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("F2")
+
         if self2.shift:
             if platform.system().find("Win") >= 0:
                 pedync.message("\n   This feature is Linux only   \n\n"
                                    "              ()")
             else:
-                self2.mained.update_statusbar("Opening help file ...")
+                sss = self._getsel(self2)
+                self2.mained.update_statusbar("Opening devhelp file ...")
                 try:
-                    ret = subprocess.Popen(["gnome-help",])
+                    ret = subprocess.Popen(["devhelp", "-s", sss,])
+                    #ret = subprocess.Popen(["gnome-help",])
                 except:
                     pedync.message("\n   Cannot launch devhelp   \n\n"
                                    "              (Please install)")
         elif self2.ctrl:
+            # System uses it
             pass
         else:
             if platform.system().find("Win") >= 0:
@@ -1691,8 +1695,9 @@ class ActHand:
                 self2.mained.update_statusbar("Opening DEV help file ...")
                 try:
                     #print("sss", sss)
-                    ret = subprocess.Popen(["devhelp", "-s", sss,])
+                    ret = subprocess.Popen(["zeal", sss,])
                     #ret = subprocess.Popen(["devdocs", "-s", sss,])
+
                 except:
                     pedync.message("\n   Cannot launch devhelp   \n\n"
                                    "              (Please install)")

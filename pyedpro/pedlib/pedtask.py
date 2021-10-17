@@ -133,7 +133,7 @@ class pedtask():
         try:
             xfname = os.path.dirname(__file__) + os.sep + "webwin.py"
             #print("xfname", )
-            comline3 = ["python", xfname, newfname,]
+            comline3 = ["python", xfname, "-d", newfname,]
             try:
                 ret = subprocess.Popen(comline3)
             except:

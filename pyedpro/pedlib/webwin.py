@@ -15,11 +15,16 @@ import webview
 if __name__ == '__main__':
 
     if len(sys.argv) < 2:
-        print("Usage: webwin.py filename")
+        print("Usage: webwin.py [-d] filename")
         sys.exit(0)
 
     is_text = False
     #print("argv", sys.argv);
+    delmode = 0
+
+    if sys.argv[1] == "-d":
+        delmode = 1
+        sys.argv = sys.argv[1:]
 
     newfname = sys.argv[1]
     if not os.path.isfile(newfname):
@@ -41,3 +46,7 @@ if __name__ == '__main__':
     except:
         print("Cannot start HTML Win %s" % str(newfname), sys.exc_info())
 
+    print("Ended webview delmode", delmode)
+
+    if delmode:
+        os.remove(newfname)
