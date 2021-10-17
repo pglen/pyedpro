@@ -665,7 +665,9 @@ class EdMainWindow():
             result = []
             GLib.idle_add(self.ThredCallback, event, cnt)
             event.wait()
-            usleep(1000)
+            cnt += 1
+            #usleep(1000)
+            time.sleep(1)
 
     def ThredCallback(self, event, cnt):
         #self.rescnt += 1
