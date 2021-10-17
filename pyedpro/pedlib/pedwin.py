@@ -663,8 +663,10 @@ class EdMainWindow():
         while(1):
             event = threading.Event()
             result = []
+            Gdk.threads_enter()
             GObject.idle_add(self.ThredCallback, event, cnt)
             event.wait()
+            Gdk.threads_leave()
             cnt += 1
             #usleep(1000)
             time.sleep(1)
@@ -673,7 +675,6 @@ class EdMainWindow():
         #print("Callback", event, cnt)
         if pedconfig.conf.verbose:
             print("Callback from thread", event)
-
         self.mywin.emit("my-custom-signal", event)
         event.set()
 
