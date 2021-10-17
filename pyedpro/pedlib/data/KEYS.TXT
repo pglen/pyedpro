@@ -64,7 +64,7 @@ table driven. Relevant files: acthand.py and keyhand.py
     Ctrl R                      -- Reverse (swap) three words. Cursor on W1 ***
     Ctrl-Shift R                -- Review M4 macro file
     Ctrl S                      -- Save current file
-    Ctrl T                      -- Transpose two words (taush)
+    Ctrl T                      -- Transpose (swap) two words (taush)
     Ctrl-Shift T                -- Add Time/Date in document
     Ctrl U                      -- Upper case word / selection
     Shift-Ctrl U                -- Lower case word / selection
