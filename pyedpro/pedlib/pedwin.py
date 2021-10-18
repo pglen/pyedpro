@@ -2258,7 +2258,7 @@ def handler_tick(arg, arg2):
                 # Rescue to save:
                 if vcurr:
                     vcurr.area.doidle = 1
-                    if 1: #not mw.mac:
+                    if not mw.mac:
                         vcurr.area.source_id = \
                             GLib.idle_add(peddoc.idle_callback, vcurr.area, 0)
 
@@ -2267,7 +2267,7 @@ def handler_tick(arg, arg2):
             if pedconfig.conf.syncidle == 0:
                 vcurr = notebook.get_nth_page(notebook.get_current_page())
                 if vcurr:
-                    if 1: #not mw.mac:
+                    if not mw.mac:
                         #pedspell.spell(vcurr.area)
                         vcurr.area.source_id2 = \
                             GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
