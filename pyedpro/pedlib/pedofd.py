@@ -141,7 +141,7 @@ def ofd(fname = None, self2 = None):
             if not iter:
                 break
 
-    #print ("response", response, "result", res  )
+    print ("response", response, "result", res  )
     dialog.destroy()
     return res
 
