@@ -142,7 +142,7 @@ def ofd(fname = None, self2 = None):
                 break
 
     print ("response", response, "result", res  )
-    #dialog.destroy()
+    dialog.destroy()
     return res
 
 def butt_this(butt, dialog):

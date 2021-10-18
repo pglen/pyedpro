@@ -1549,10 +1549,10 @@ class ActHand:
 
         # Simplified open
         fnames = pedofd.ofd("", self2)
-        print("openfile fnames", fnames)
+        #print("openfile fnames", fnames)
         for fff in fnames:
             #print("Open", (fff))
-            #self2.mained.openfile(fff)
+            self2.mained.openfile(fff)
             pass
 
     def alt_q(self, self2):
