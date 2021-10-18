@@ -183,10 +183,11 @@ class edwin(Gtk.VBox):
 
 class EdMainWindow():
 
-
     def __init__(self, fname, parent, names):
 
         #Gdk.threads_init()
+
+        pedconfig.conf.pedwin = self
 
         if "Darwin" in platform.system():
             self.mac = True
