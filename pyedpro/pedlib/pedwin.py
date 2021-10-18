@@ -640,6 +640,9 @@ class EdMainWindow():
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
 
+        self.mywin.add(bbox)
+        self.mywin.show_all()
+
         if 1: #not self.mac:
             GLib.timeout_add(1000, handler_tick, self, 0)
             pass
@@ -650,9 +653,6 @@ class EdMainWindow():
             pass
         else:
             initial_load(self, 0)
-
-        self.mywin.add(bbox)
-        self.mywin.show_all()
 
         # Tried it ... NO
         #GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
