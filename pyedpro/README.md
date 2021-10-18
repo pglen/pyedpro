@@ -25,6 +25,7 @@ same way in all your workspaces, PyEdPro is the one.
 
 ### New:
 
+    Sun 17.Oct.2021 -- made async calls (one level) function on MAC
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop
     Tue 30.Mar.2021 -- added windows installation executable
     Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
@@ -46,7 +47,7 @@ The caret is moved to the end of insertion.
 
  This (above) list is an extract, please see git log for complete history.
 
- Pyedpro now is working good on the Mac. I installed homebrew, and got it to work. It
+ Pyedpro now is working good(ish) on the Mac. I installed homebrew, and got it to work. It
 was not a trivial exercise as the Mac pygobject did not do half of the stuff as the
 Linux version did. No async anything, segmentation faults everywhere. (which python
 is not suppose to have) So added new async subsystem with threads, and cleaned out
