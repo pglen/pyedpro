@@ -640,7 +640,7 @@ class EdMainWindow():
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
 
-        if not self.mac:
+        if 1: #not self.mac:
             GLib.timeout_add(1000, handler_tick, self, 0)
             pass
 
@@ -2202,8 +2202,6 @@ def  initial_load(self2, arg):
 
 exiting = False
 
-
-
 # ------------------------------------------------------------------------
 
 def handler_tick(arg, arg2):
@@ -2300,7 +2298,8 @@ def handler_tick(arg, arg2):
     except:
         print("Exception in timer handler", sys.exc_info())
 
-    GLib.timeout_add(1000, handler_tick, arg, arg2)
+    #GLib.timeout_add(1000, handler_tick, arg, arg2)
     #print( "handler_tick done")
+    return True
 
 # EOF
