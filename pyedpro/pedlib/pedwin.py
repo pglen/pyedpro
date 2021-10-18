@@ -648,7 +648,7 @@ class EdMainWindow():
             GLib.timeout_add(1000, handler_tick, self, 0)
             pass
 
-        if 1: #not self.mac:
+        if not self.mac:
             GLib.timeout_add(500, initial_load, self, 0)
             #initial_load(self, 0)
             pass
