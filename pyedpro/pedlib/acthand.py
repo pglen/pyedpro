@@ -1552,7 +1552,8 @@ class ActHand:
         print("openfile fnames", fnames)
         for fff in fnames:
             #print("Open", (fff))
-            self2.mained.openfile(fff)
+            #self2.mained.openfile(fff)
+            pass
 
     def alt_q(self, self2):
         if pedconfig.conf.pgdebug > 9:
