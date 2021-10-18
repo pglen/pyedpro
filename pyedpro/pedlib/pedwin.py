@@ -54,7 +54,7 @@ notebook3 = None;  notebook4 = None
 hidden = 0
 savearr = []
 
-GObject.threads_init()
+#GObject.threads_init()
 
 # -----------------------------------------------------------------------
 
@@ -654,14 +654,12 @@ class EdMainWindow():
         self.mywin.add(bbox)
         self.mywin.show_all()
 
+        # Tried it ... NO
         #GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
         #               (GObject.TYPE_PYOBJECT,))
         #self.mywin.connect("my-custom-signal", self.threadevent)
         #threading.Thread(target=self.ThredMine, daemon=True).start()
-
-        event = threading.Event()
-        result = []
-        GLib.timeout_add(1000, self.ThredCallback) #, event, result)
+        #GLib.timeout_add(1000, self.ThredCallback)
 
     def ThredMine(self):
         cnt = 0
@@ -669,7 +667,6 @@ class EdMainWindow():
             event = threading.Event()
             result = []
             Gdk.threads_enter()
-            #GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, self.ThredCallback, event, cnt)
             #GLib.idle_add(self.ThredCallback, event, cnt)
             event.wait()
             Gdk.threads_leave()
@@ -679,19 +676,16 @@ class EdMainWindow():
 
     def ThredCallback(self): #, event, cnt):
 
-        #print("Callback", currentThread().getName())
-
-        Gdk.threads_enter()
-        if pedconfig.conf.verbose:
-            print("Callback from thread", self.rescnt)
+        #Gdk.threads_enter()
+        #if pedconfig.conf.verbose:
+        #    print("Callback from thread", self.rescnt)
         self.rescnt += 1
 
         #self.mywin.emit("my-custom-signal", event)
         #event.set()
         #event = threading.Event()
         #result = []
-        Gdk.threads_leave()
-        #GLib.timeout_add(1000, self.ThredCallback) #, event, result)
+        #Gdk.threads_leave()
         return True
 
     def threadevent(self, win, event):
@@ -2298,6 +2292,7 @@ def handler_tick(arg, arg2):
     except:
         print("Exception in timer handler", sys.exc_info())
 
+    # This GPFs in mac ... we return TRUE instead
     #GLib.timeout_add(1000, handler_tick, arg, arg2)
     #print( "handler_tick done")
     return True
