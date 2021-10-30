@@ -20,7 +20,7 @@ keywords =  ("def ", "import ", "from ", "for ", "while ", " len(",
             " any(", " all(", " min(", " max(",  " map(", " print ",
             " open(", " in ", " break ", "[]", "()", "{}", " pass", "pass ",
             "True", " False", "True;", "False;",
-            "global ", "else:", "continue", "None")
+            "true", "false", "global ", "else:", "continue", "None")
 
 # Keywords for class related enrties:
 clwords =  "class ", " self.", "try:", "except", "finally"

@@ -341,6 +341,8 @@ class peddraw(object):
             ccc = line.find("#");
             if ccc < 0:
                 ccc = line.find("//");
+            if ccc < 0:
+                ccc = line.find(";");
 
             # Quotes before?
             cccc = line.find('"')

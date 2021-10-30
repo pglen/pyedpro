@@ -67,7 +67,8 @@ class Conf():
         self.recarr = []
 
         # Which extensions are colored
-        self.color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp", ".php", ".f", ".y", ".pc")
+        self.color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp",
+                                 ".php", ".f", ".y", ".pc", ".asm", ".inc")
 
 # ------------------------------------------------------------------------
 
