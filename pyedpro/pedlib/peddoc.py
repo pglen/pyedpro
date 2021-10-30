@@ -1297,10 +1297,37 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.menu2.append(self.create_menuitem("No Matches", None))
         else:
             for aa, bb in arr:
-                self.menu2.append(self.create_menuitem(bb, self.menuitem_response))
+                self.menu2.append(self.create_menuitem
+                        (bb, self.menuitem_response))
 
         self.menu2.popup(None, None, None, None, event.button, event.time)
         #self.mained.update_statusbar("Done menu popup.")
+
+    def set_sidetab(self, arg1, arg2, arg3):
+        # reset all
+        print("set_sidetab", arg1, arg2, arg3)
+        www = self.mained.get_width()
+        if arg3 == 0:
+            if self.mained.hpaned3.get_position() > www - 20:
+                self.mained.hpaned3.set_position(www - www / 3)
+            self.mained.update_statusbar("Sidetab buffer switched on.")
+            self.mained.diffpane.area.loadbuff(self.text)
+            usleep(100)
+            self.gotoxy(self.xpos + self.caret[0], self.ypos + self.caret[1])
+            self.mained.diffpane.area.xpos = self.xpos
+            self.mained.diffpane.area.ypos = self.ypos
+            self.mained.diffpane.area.gotoxy(
+                         self.xpos + self.caret[0], self.ypos + self.caret[1])
+            usleep(10)
+            self.mained.diffpane.area.invalidate()
+            pppp = self.notebook3.get_nth_page(0)
+            self.notebook3.set_tab_label(pppp,
+                            self.mained.make_label(
+                                os.path.basename( "ro " + self.fname)))
+        else:
+            self.mained.hpaned3.set_position(www - 10)
+            self.mained.update_statusbar("Sidetab buffer switched off.")
+            pass
 
     def set_diffs(self, arg1, arg2, arg3):
         # reset all
@@ -1532,6 +1559,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.menu3.append(self.create_menuitem("Re-Diff Buffers",  self.re_diff, 0))
 
         self.menu3.append(self.create_menuitem("Stop Diffing",  self.set_diffs, 0))
+        self.menu3.append(self.create_menuitem("- - - - - - - - - - - - - - - ",  None, 0))
+        self.menu3.append(self.create_menuitem("Show Buffer in Sidetab",  self.set_sidetab, 0))
+        self.menu3.append(self.create_menuitem("Hide Sidetab",  self.set_sidetab, 1))
 
         #mi = self.create_menuitem("-------------", None)
         #mi.set_sensitive(False); self.menu3.append(mi)
@@ -2386,7 +2416,7 @@ def run_async_time(win, arg):
         except:
             print("Exception in func extraction handler", sys.exc_info())
             pass
-    elif ".s" in lname:
+    elif ".s" in lname or ".asm" in lname:
         try:
             regex = re.compile(Skeywords)
             for line in win.text:
