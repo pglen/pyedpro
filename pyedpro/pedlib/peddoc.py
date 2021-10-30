@@ -1305,13 +1305,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def set_sidetab(self, arg1, arg2, arg3):
         # reset all
-        print("set_sidetab", arg1, arg2, arg3)
+        #print("set_sidetab", arg1, arg2, arg3)
         www = self.mained.get_width()
         if arg3 == 0:
             if self.mained.hpaned3.get_position() > www - 20:
                 self.mained.hpaned3.set_position(www - www / 3)
             self.mained.update_statusbar("Sidetab buffer switched on.")
             self.mained.diffpane.area.loadbuff(self.text)
+            self.mained.diffpane.area.fname = self.fname
             usleep(100)
             self.gotoxy(self.xpos + self.caret[0], self.ypos + self.caret[1])
             self.mained.diffpane.area.xpos = self.xpos
@@ -1321,9 +1322,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             usleep(10)
             self.mained.diffpane.area.invalidate()
             pppp = self.notebook3.get_nth_page(0)
-            self.notebook3.set_tab_label(pppp,
-                            self.mained.make_label(
-                                os.path.basename( "ro " + self.fname)))
+            lab = self.mained.make_label("ro " + os.path.basename(self.fname))
+            lab.set_tooltip_text(self.fname)
+            self.notebook3.set_tab_label(pppp, lab)
         else:
             self.mained.hpaned3.set_position(www - 10)
             self.mained.update_statusbar("Sidetab buffer switched off.")
