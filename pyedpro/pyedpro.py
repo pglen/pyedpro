@@ -92,7 +92,6 @@ pedconfig.conf = pedconfig.Conf()
 import keyhand
 import acthand
 import pedsql
-pedconfig.conf.sql = pedsql.pedsql(pedconfig.conf.sql_data)
 
 pedconfig.conf.acth = acthand.ActHand()
 pedconfig.conf.keyh = keyhand.KeyHand(pedconfig.conf.acth)
@@ -334,6 +333,8 @@ def mainstart(name = "", args = "", oldpath = ""):
         sys.exit(1)
 
     pedconfig.ensure_dirs(pedconfig.conf)
+
+    pedconfig.conf.sql = pedsql.pedsql(pedconfig.conf.sql_data)
 
     if pedconfig.conf.verbose:
         print(_("Data stored in "), pedconfig.conf.config_dir)
