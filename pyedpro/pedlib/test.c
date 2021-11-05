@@ -97,16 +97,18 @@
 /// see: qcan_main.c line 202
 ///
 
-extern const uint8_t ulp_main_bin_start[] asm("_binary_ulp_main_bin_start");
-extern const uint8_t ulp_main_bin_end[]   asm("_binary_ulp_main_bin_end");
+#if 0
+#extern const uint8_t ulp_main_bin_start[] asm("_binary_ulp_main_bin_start");
+#extern const uint8_t ulp_main_bin_end[]   asm("_binary_ulp_main_bin_end");
+#endif
 
-static void init_ulp_program();
-static void update_pulse_count();
-
-//! User settable parameters
-
-#define   HUMIDITY_COUNT   10               //!< How many secs between humidity meas.
-#define   TEMP_COUNT       8                //!< How many secs between temp meas.
+//static void init_ulp_program();
+//static void update_pulse_count();
+//
+////! User settable parameters
+//
+//#define   HUMIDITY_COUNT   10               //!< How many secs between humidity meas.
+//#define   TEMP_COUNT       8                //!< How many secs between temp meas.
 #define   BATT_COUNT       12               //!< How many secs between batt meas.
 
 #define   BAD_LIM         2 * 60            //!<  Bad clock retry limit

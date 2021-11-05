@@ -14,6 +14,7 @@
  * https://en.wikipedia.org/wiki/I%C2%B2C#Example_of_bit-banging_the_I.C2.B2C_master_protocol
  */
 
+%if 0
 .bss
 i2c_started:
 	.long 0  // Hello highlight
@@ -22,13 +23,14 @@ i2c_didInit:
 	.long 0
 
 .text
+%endif
 
-.global i2c_start_cond
-.global i2c_stop_cond
-.global i2c_write_bit
-.global i2c_read_bit
-.global i2c_write_byte
-.global i2c_read_byte
+;.global i2c_start_cond
+;.global i2c_stop_cond
+;.global i2c_write_bit
+;.global i2c_read_bit
+;.global i2c_write_byte
+;.global i2c_read_byte
 
 .macro I2C_delay
 	wait 10 // 38 // minimal 4.7us
