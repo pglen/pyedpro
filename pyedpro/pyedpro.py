@@ -124,8 +124,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "2.5.0"
-BUILDDATE   = "Mon 06.Sep.2021"
+VERSION     = "2.5.1"
+BUILDDATE   = "Thu 04.Nov.2021"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

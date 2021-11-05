@@ -533,7 +533,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             # Update stat info
             self.stat = xstat
         except:
-            #pedutil.put_exception("cmp mtime")
+            #put_exception("cmp mtime")
             pass
 
         self.update_bar2()
@@ -682,8 +682,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         self.lastevent = event
 
-        if pedconfig.conf.pgdebug > 5:
-            print( "Button press  ", self, event.type, " x=", event.x, " y=", event.y)
+        #if pedconfig.conf.pgdebug > 5:
+        #    print( "Button press  ", self, event.type, " x=", event.x, " y=", event.y)
 
         event.x = int(event.x)
         event.y = int(event.y)
@@ -1235,6 +1235,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.keyh.handle_key(self, area, event)
         except:
             print("Key handler died at key", event.keyval, sys.exc_info())
+            put_exception("key handler")
 
         #if event.type == Gdk.KEY_RELEASE:
         #    self.source_id = GObject.idle_add(self.idle_callback)
@@ -1313,6 +1314,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.mained.update_statusbar("Sidetab buffer switched on.")
             self.mained.diffpane.area.loadbuff(self.text)
             self.mained.diffpane.area.fname = self.fname
+            self.mained.diffpane.area.readonly = True
+
             usleep(100)
             self.gotoxy(self.xpos + self.caret[0], self.ypos + self.caret[1])
             self.mained.diffpane.area.xpos = self.xpos
@@ -2055,7 +2058,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             fh.close()
         except:
             print("Cannot save undo file", sys.exc_info())
-            pedutil.put_exception("undo")
+            put_exception("undo")
 
 
         hhh = hash_name(self.fname) + ".rdo"

@@ -71,6 +71,7 @@ from pedgoto import *
 from pedcanv import *
 
 lastcmd = ""
+rostr = "This buffer is read only."
 
 # ------------------------------------------------------------------------
 # Action handler. Called from key handler.
@@ -294,6 +295,11 @@ class ActHand:
     #       o  signaling for rescan
 
     def ret(self, self2):
+
+        if self2.readonly:
+            self2.mained.update_statusbar(rostr)
+            return
+
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
         self.pad_list(self2, yidx)
@@ -329,6 +335,11 @@ class ActHand:
         self2.invalidate()
 
     def delete(self, self2):
+
+        if self2.readonly:
+            self2.mained.update_statusbar(rostr)
+            return
+
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
 
@@ -366,6 +377,10 @@ class ActHand:
     # --------------------------------------------------------------------
 
     def bs(self, self2):
+
+        if self2.readonly:
+            self2.mained.update_statusbar(rostr)
+            return
 
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
@@ -670,6 +685,7 @@ class ActHand:
     def ctrl_alt_a(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - A")
+
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
         line = self2.text[yidx]
@@ -696,19 +712,36 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - C")
 
-        self.ctrl_c(self2)
         extx = os.path.splitext(self2.fname)[1]
-        # This will catch all 'C' varieties, else py assumed
-        if extx[1] == "c" or extx[1] == "h":
-            strx  = "#if 0\n"
-            strx2 = "#endif\n"
-        else:
-            strx  = "''' "
-            strx2 = "''' "
+        #print("extx", extx)
 
-        self.add_str(self2, strx)
-        self.ctrl_v(self2)
-        self.add_str(self2, strx2)
+        cumm = self._getsel(self2)
+        strx = ""
+        if cumm:
+            self.ctrl_c(self2)
+            # This will catch all known varieties, else .py assumed
+            if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
+                strx  = "#if 0\n"
+                strx2 = "#endif\n"
+            elif extx == ".asm" or extx == ".inc" or extx == ".S":
+                strx  = "%if 0\n"
+                strx2 = "%endif\n"
+            else:
+                strx  = "''' "
+                strx2 = "''' "
+
+            self.add_str(self2, strx)
+            if strx2 != "":
+                self.ctrl_v(self2)
+            self.add_str(self2, strx2)
+        else:
+            if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
+                strx  = "//"
+            elif extx == ".asm" or extx == ".inc" or extx == ".S":
+                strx  = ";"
+            else:
+                strx  = "#"
+            self.add_str(self2, strx)
 
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
@@ -1167,6 +1200,10 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - V")
 
+        if self2.readonly:
+            self2.mained.update_statusbar(rostr)
+            return
+
         #clip = Gtk.Clipboard()
         #disp2 = Gdk.Display()
         #disp = disp2.get_default()
@@ -1303,6 +1340,10 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - X")
 
+        if self2.readonly:
+            self2.mained.update_statusbar(rostr)
+            return
+
         self.cut(self2)
 
     def cut(self, self2, fake = False, boundary = True):
@@ -1415,12 +1456,19 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - Y")
 
+        if self2.readonly:
+            self2.mained.update_statusbar(rostr)
+            return
+
         pedundo.redo(self2, self)
 
     def ctrl_z(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - Z")
 
+        if self2.readonly:
+            self2.mained.update_statusbar(rostr)
+            return
         pedundo.undo(self2, self)
 
     def ctrl_space(self, self2):
