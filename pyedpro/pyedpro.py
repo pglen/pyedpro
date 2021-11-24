@@ -61,6 +61,9 @@ gettext.textdomain('pyedpro')
 _ = gettext.gettext
 #locale.setlocale(locale.LC_ALL, '')
 
+orgbase = os.getcwd()
+#print("cwd", orgbase)
+
 base    = os.path.realpath(__file__)
 basedir = os.path.dirname(base)
 #print("file", os.path.dirname(base))
@@ -95,6 +98,7 @@ import pedsql
 
 pedconfig.conf.acth = acthand.ActHand()
 pedconfig.conf.keyh = keyhand.KeyHand(pedconfig.conf.acth)
+pedconfig.conf.orig_path = orgbase
 
 import pedwin
 import pedlog
@@ -124,8 +128,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "2.5.1"
-BUILDDATE   = "Thu 04.Nov.2021"
+VERSION     = "2.5.2"
+BUILDDATE   = "Thu 18.Nov.2021"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -173,7 +177,7 @@ def run_main(projname, strarr):
 
     signal.signal(signal.SIGTERM, terminate)
 
-    mainwin = pedwin.EdMainWindow(None, None, strarr)
+    mainwin = pedwin.EdMainWindow(None, None, strarr, orgbase)
     pedconfig.conf.pedwin = mainwin
 
     if projname:

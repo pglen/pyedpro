@@ -98,7 +98,7 @@ def  config_dlg(title, head, clip, parent = None):
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
     spacer(dialog.vbox)
 
-    dialog.vbox.pack_start(Gtk.Label.new("Macros expanded: %DATE% %TIME% %FILE%"), 1, 1, 2)
+    dialog.vbox.pack_start(Gtk.Label.new("Macros expanded: %PROJECT%, %DATE% %TIME% %FILE%"), 1, 1, 2)
     spacer(dialog.vbox, "Pasted Contents:")
     spacer(dialog.vbox)
 
