@@ -183,7 +183,7 @@ class edwin(Gtk.VBox):
 
 class EdMainWindow():
 
-    def __init__(self, fname, parent, names):
+    def __init__(self, fname, parent, names, orgdir):
 
         #Gdk.threads_init()
 
@@ -194,6 +194,7 @@ class EdMainWindow():
         else:
             self.mac  = False
 
+        self.orgdir = orgdir
         self.rescnt = 0
         self.full = False
         self.fcount = 0
@@ -209,6 +210,7 @@ class EdMainWindow():
         self.lastfile = ""
         self.oh = itemhistory(pedconfig.conf.history)
         self.os = itemhistory(pedconfig.conf.sessions)
+        self.sess = "initial.sess"
 
         register_stock_icons()
 
@@ -622,8 +624,13 @@ class EdMainWindow():
         button.connect("pressed", self.bright)
         box.add(button)
 
+        # See if session is remembred
+        oldsess = pedconfig.conf.sql.get("sess")
+        if oldsess:
+            self.sess = oldsess
+
         self.headbar.pack_start(box)
-        self.sess_label =  Gtk.Label("initial.sess")
+        self.sess_label =  Gtk.Label(self.sess)
         self.headbar.pack_start(self.sess_label)
 
         self.mywin.set_titlebar(self.headbar)
@@ -716,6 +723,8 @@ class EdMainWindow():
         strx3 =  dt2.strftime("%H:%M:%S")
         value = value.replace("%TIME%", strx3)
         value = value.replace("%FILE%", os.path.basename(vcurr2.area.fname))
+
+        value = value.replace("%PROJECT%", self.sess)
 
         disp = Gdk.Display().get_default()
         clip = Gtk.Clipboard.get_default(disp)
@@ -893,9 +902,10 @@ class EdMainWindow():
 
     def opensess(self, strx):
         #print("opensess", strx)
-        pedlog.log("Opening session", strx, time.ctime(None))
 
-        self.sess_label.set_text(os.path.basename(strx))
+        pedlog.log("Opening session", strx, time.ctime(None))
+        pedconfig.conf.pedwin.sess = os.path.basename(strx)
+        self.sess_label.set_text(pedconfig.conf.pedwin.sess)
 
         sesslist = []
         fh = open(strx, "rb")
@@ -1861,7 +1871,8 @@ class EdMainWindow():
         print("hist pressed")
         pass
 
-# -------------------------------------------------------------------
+    # -------------------------------------------------------------------
+
     def openfile(self, fnamex):
 
         # Empty line from sess load
@@ -2043,6 +2054,8 @@ def     OnExit(arg, arg2, prompt = True):
 
         if pedconfig.conf.verbose:
             print("Save coord", xx, yy, ww, hh)
+
+    pedconfig.conf.sql.put("sess", mained.sess)
 
     # Save current doc to config memory:
     vcurr = notebook.get_nth_page(notebook.get_current_page())
