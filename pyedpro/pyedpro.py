@@ -405,7 +405,7 @@ if __name__ == '__main__':
     sys.stdout = pedlog.fake_stdout(sys.stdout)
     sys.stderr = pedlog.fake_stdout(sys.stdout)
 
-    print("PyEdPro running on", platform.system())
+    #print("PyEdPro running on", platform.system())
 
     pedlog.create_logwin()
     pedlog.log("Started PyEdPro", time.ctime(None))

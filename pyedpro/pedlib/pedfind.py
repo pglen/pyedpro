@@ -102,8 +102,8 @@ def find(self, self2, replace = False):
     hbox2.pack_start(entry, True, True, 0)
     hbox2.pack_start(label7, 0, 0, 0)
 
-    dialog.vbox.pack_start(Gtk.Label("Alt Left / Alt Right -> History"), 0, 0 , 4)
-    dialog.vbox.pack_start(Gtk.Label("Alt 1-CFunc Alt 2-PyDef Alt 3-AsmLab Alt 4-Default"), 0, 0, 4)
+    dialog.vbox.pack_start(Gtk.Label("Alt_Left / Alt_Right -> History Left/Right"), 0, 0 , 4)
+    dialog.vbox.pack_start(Gtk.Label("Alt_1->'C'Func Alt_2->PyDef Alt_3->AsmLab Alt_4->Def."), 0, 0, 4)
 
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
     dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
@@ -123,11 +123,13 @@ def find(self, self2, replace = False):
 
     label30 = Gtk.Label("   ");  label31 = Gtk.Label("   ")
     label32 = Gtk.Label("   ");  label33 = Gtk.Label("   ")
-    label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ")
+    #label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ")
 
     dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic("Search _All Buffers")
-    dialog.checkbox4 = Gtk.CheckButton.new_with_mnemonic("Search All _Files")
+    dialog.checkbox4 = Gtk.CheckButton.new_with_mnemonic("Search _Files")
+    dialog.checkbox4.set_tooltip_text("Search files in current dir")
     dialog.checkbox5 = Gtk.CheckButton.new_with_mnemonic("Search _Extended")
+    dialog.checkbox5.set_tooltip_text("Recurse into one level of subdir")
 
     dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
     dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
