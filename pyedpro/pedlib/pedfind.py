@@ -538,42 +538,58 @@ def     find_show_file(self, self2, casex):
     win2.add(vbox)
 
     ddd = []; ddd3 = []
-    filter = [".pyc", ".exe", ".obj", ".o", ".elf", ".bin" ]
+    # What not to search
+    filter = [".pyc", ".exe", ".obj", ".o", ".elf", ".bin", ".jpg",
+                    ".png", ".svg", ".old", ".pickle",  ]
     ddd2 = os.listdir(".")
     for aa in ddd2:
         # Filter the obvious candidates:
         extx = os.path.splitext(aa)[1]
         if not extx in filter :
             ddd.append(aa)
-    ddd2 = []
 
+    flist = []
     matches = 0
     for filename in ddd:
         if filename[0] == ".":
             continue
         if os.path.isfile(filename):
-            filestat = os.stat(filename)
-            #print("stat", filestat)
+            flist.append(filename)
+        elif os.path.isdir(filename):
+            #print("Dir: ", filename)
+            ddd4 = os.listdir(filename)
+            for bb in ddd4:
+                nnn = filename + os.sep + bb
+                if os.path.isfile(nnn):
+                    # Filter the obvious candidates:
+                    extx = os.path.splitext(nnn)[1]
+                    if not extx in filter:
+                        flist.append(nnn)
+        else:
+            print("Skipped searching: ", filename)
+            pass
 
-            if filestat.st_size < 100000:
-                #print("Seaching: ", filename)
-                rrr = findinfile(self.srctxt, filename, casex)
-                if rrr:
-                    matches += 1
-                    #print ("found: rrr", rrr)
-                    #ddd3.append(rrr)
-                    matchfiles.append(filename)
-                    ddd3.append("%s matches %s times" % (filename, len(rrr)) )
-                    # Limit finds:
-                    lim = 5
-                    for aa in rrr:
-                        ddd3.append("         %s" % aa)
-                        if lim == 0:
-                            break
-                        lim = lim - 1
-            else:
-                #print("Skipped searching: ", filename)
-                pass
+    #print("flist", flist)
+
+    for filename in flist:
+        filestat = os.stat(filename)
+        #print("stat", filestat)
+        if filestat.st_size < 100000:
+            #print("Seaching: ", filename)
+            rrr = findinfile(self.srctxt, filename, casex)
+            if rrr:
+                matches += 1
+                #print ("found: rrr", rrr)
+                #ddd3.append(rrr)
+                matchfiles.append(filename)
+                ddd3.append("%s matches %s times" % (filename, len(rrr)) )
+                # Limit finds:
+                lim = 5
+                for aa in rrr:
+                    ddd3.append("         %s" % aa)
+                    if lim == 0:
+                        break
+                    lim = lim - 1
 
     # ---------------------------------------------------------------------
     #was, cnt2 = self2.search(self.srctxt, self.regex, self.dialog.checkbox2.get_active(),
