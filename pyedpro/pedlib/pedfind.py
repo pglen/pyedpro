@@ -127,6 +127,7 @@ def find(self, self2, replace = False):
 
     dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic("Search _All Buffers")
     dialog.checkbox4 = Gtk.CheckButton.new_with_mnemonic("Search All _Files")
+    dialog.checkbox5 = Gtk.CheckButton.new_with_mnemonic("Search _Extended")
 
     dialog.checkbox.set_active(pedconfig.conf.sql.get_int("regex"))
     dialog.checkbox2.set_active(pedconfig.conf.sql.get_int("nocase"))
@@ -138,6 +139,7 @@ def find(self, self2, replace = False):
     hbox4.pack_start(dialog.checkbox3, 0, 0, 0)
     hbox4.pack_start(label31, 0, 0, 0);
     hbox4.pack_start(dialog.checkbox4, 0, 0, 0)
+    hbox4.pack_start(dialog.checkbox5, 0, 0, 0)
     hbox4.pack_start(label32, 0, 0, 0);
     dialog.vbox.pack_start(hbox4, 0, 0, 0)
     dialog.vbox.pack_start(label33, 0, 0, 0)
@@ -177,11 +179,11 @@ def find(self, self2, replace = False):
     if response != Gtk.ResponseType.ACCEPT:
         return
 
-    if  dialog.checkbox4.get_active():
+    if  dialog.checkbox4.get_active() or dialog.checkbox5.get_active():
         #print("Searching all files")
         #dialog.checkbox2.set_active(False)      # Force case sensitive
         dialog.checkbox3.set_active(False)       # Force one
-        find_show_file(self, self2, dialog.checkbox2.get_active() )
+        find_show_file(self, self2, dialog )
 
     elif dialog.checkbox3.get_active():
         nn = self2.mained.notebook.get_n_pages();
@@ -437,11 +439,14 @@ def find_show(self, self2):
 
 # ------------------------------------------------------------------------
 
-def     find_show_file(self, self2, casex):
+def     find_show_file(self, self2, dialog):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
     global matchfiles
+
+    casex = dialog.checkbox2.get_active()
+    recurse = dialog.checkbox5.get_active()
 
     matchfiles = []
     warnings.simplefilter("ignore")
@@ -556,15 +561,16 @@ def     find_show_file(self, self2, casex):
         if os.path.isfile(filename):
             flist.append(filename)
         elif os.path.isdir(filename):
-            #print("Dir: ", filename)
-            ddd4 = os.listdir(filename)
-            for bb in ddd4:
-                nnn = filename + os.sep + bb
-                if os.path.isfile(nnn):
-                    # Filter the obvious candidates:
-                    extx = os.path.splitext(nnn)[1]
-                    if not extx in filter:
-                        flist.append(nnn)
+            if recurse:
+                #print("Dir: ", filename)
+                ddd4 = os.listdir(filename)
+                for bb in ddd4:
+                    nnn = filename + os.sep + bb
+                    if os.path.isfile(nnn):
+                        # Filter the obvious candidates:
+                        extx = os.path.splitext(nnn)[1]
+                        if not extx in filter:
+                            flist.append(nnn)
         else:
             print("Skipped searching: ", filename)
             pass
