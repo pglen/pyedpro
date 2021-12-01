@@ -102,8 +102,8 @@ def find(self, self2, replace = False):
     hbox2.pack_start(entry, True, True, 0)
     hbox2.pack_start(label7, 0, 0, 0)
 
-    dialog.vbox.pack_start(Gtk.Label("Alt Keys: Left/Right -> History"), 0, 0 , 4)
-    dialog.vbox.pack_start(Gtk.Label("1-CFunc 2-PyDef 3-AsmLab 4-Default"), 0, 0, 4)
+    dialog.vbox.pack_start(Gtk.Label("Alt Left / Alt Right -> History"), 0, 0 , 4)
+    dialog.vbox.pack_start(Gtk.Label("Alt 1-CFunc Alt 2-PyDef Alt 3-AsmLab Alt 4-Default"), 0, 0, 4)
 
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
     dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
