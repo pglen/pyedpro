@@ -367,6 +367,8 @@ class EdMainWindow():
         #notebook.connect("create-window", self.note_create_cb)
         #notebook.connect("enter-notify-event", self.note_enter_notify)
 
+        notebook.connect("button-press-event", self.note_button)
+
         self.mywin.connect("window_state_event", self.update_resize_grip)
         #self.mywin.connect("destroy", OnExit)
         self.mywin.connect("unmap", OnExit, self)
@@ -668,6 +670,10 @@ class EdMainWindow():
         #self.mywin.connect("my-custom-signal", self.threadevent)
         #threading.Thread(target=self.ThredMine, daemon=True).start()
         #GLib.timeout_add(1000, self.ThredCallback)
+
+    def note_button(self, arg1, arg2):
+        #print("note_button", arg1, arg2)
+        pass
 
     def ThredMine(self):
         cnt = 0
