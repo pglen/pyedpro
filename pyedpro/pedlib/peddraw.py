@@ -330,6 +330,8 @@ class peddraw(object):
         if not self.colflag:
             return
 
+        #print("ext=", self.ext)
+
         xx = 0; yy = 0; ln = 0;
         cnt = int(self.ypos)
         while cnt <  self.xlen:
@@ -338,11 +340,14 @@ class peddraw(object):
 
             # Comments: # or // and "
             # This gives us PY comments, C comments and C defines
+
             ccc = line.find("#");
             if ccc < 0:
                 ccc = line.find("//");
+
             if ccc < 0:
-                ccc = line.find(";");
+                if self.ext == ".asm":
+                    ccc = line.find(";");
 
             # Quotes before?
             cccc = line.find('"')

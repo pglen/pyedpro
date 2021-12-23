@@ -1842,6 +1842,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.mained.oh.add(filename)
 
         self.fname = filename
+        self.ext = os.path.splitext(self.fname)[1].lower()
+
         try:
             self.stat = os.stat(self.fname)
         except:
@@ -2114,12 +2116,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                     print("resp", resp)
                     if resp == Gtk.ResponseType.YES:
                         self.fname = fname
+                        self.ext = os.path.splitext(self.fname)[1].lower()
                         self.writeout()
                         self.mained.update_statusbar("Saved under new filename '%s'" % fname)
                     else:
                         self.mained.update_statusbar("No new file name supplied, cancelled 'Save As'")
                 else:
                     self.fname = fname
+                    self.ext = os.path.splitext(self.fname)[1].lower()
                     self.writeout()
 
                 pedconfig.conf.pedwin.mywin.set_title("pyedpro: " + self.fname)
@@ -2130,6 +2134,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         #print( "overwrite done", resp)
         if resp == Gtk.ResponseType.YES:
             self.fname = fname
+            self.ext = os.path.splitext(self.fname)[1].lower()
             self.writeout()
             self.set_nocol()
             win2.destroy()
