@@ -1742,14 +1742,14 @@ class ActHand:
                                    "              ()")
             else:
                 sss = self._getsel(self2)
-                self2.mained.update_statusbar("Opening DEV help file ...")
+                self2.mained.update_statusbar("Opening DEV (zeal) help file ...")
                 try:
                     #print("sss", sss)
                     ret = subprocess.Popen(["zeal", sss,])
                     #ret = subprocess.Popen(["devdocs", "-s", sss,])
 
                 except:
-                    pedync.message("\n   Cannot launch devhelp   \n\n"
+                    pedync.message("\n   Cannot launch zeal \n\n"
                                    "              (Please install)")
 
     def f3(self, self2):
