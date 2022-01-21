@@ -92,7 +92,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         # Save params
         self.mained = mained
         self.readonly = readonly
-
+        self.ext = ""
         # Gather globals
         self.keyh = pedconfig.conf.keyh
         self.acth = pedconfig.conf.acth
@@ -1869,6 +1869,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             #pedync.message("\n   Cannot open / read file:  \n\n"
             #                  "      %s" % self.fname)
 
+            print(errr)
             self.mained.update_statusbar(errr)
             usleep(10)
             return False
