@@ -217,9 +217,20 @@ def populate(dialog):
     ddd2.sort()
     ddd = []
 
+    # List ignored extensions here
+    extno = [".pyc", ".o" ".lo", ".lst", ".png", ".jpg", ]
+
     for aa in ddd2:
         ext = os.path.splitext(aa)[1]
-        if ext != ".pyc" and ext != ".o" and ext != ".lo":
+        flaf = 0
+        # Ignore many ext
+        for bb in extno:
+            #print("bb", bb, ext)
+            if ext == bb:
+                flaf = 1
+                break
+
+        if not flaf:
             ddd.append(aa)
 
     for filename in ddd:
