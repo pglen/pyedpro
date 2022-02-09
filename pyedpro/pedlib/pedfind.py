@@ -547,7 +547,7 @@ def     find_show_file(self, self2, dialog):
     ddd = []; ddd3 = []
     # What not to search
     filter = [".pyc", ".exe", ".obj", ".o", ".elf", ".bin", ".jpg",
-                    ".png", ".svg", ".old", ".pickle",  ]
+                    ".png", ".svg", ".old", ".pickle", ".lst", ]
     ddd2 = os.listdir(".")
     for aa in ddd2:
         # Filter the obvious candidates:
