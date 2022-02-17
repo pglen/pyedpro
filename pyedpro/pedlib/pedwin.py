@@ -1317,7 +1317,10 @@ class EdMainWindow():
         self.mywin.set_title("pyedpro: " + vcurr.area.fname)
         self.mywin.set_focus(vcurr.vbox.area)
         fname = os.path.basename(vcurr.area.fname)
-        self.update_statusbar("Switched to '{1:s}'".format(num, fname), True)
+        hhh = hash_name(fname)
+        backx = vcurr.area.currback
+        self.update_statusbar("Switched to '{1:s}'   {2:s}_{3:d} "
+                                    .format(num, fname, hhh, backx ), True)
 
     def  note_page_cb(self, tabx, child, num):
         pass

@@ -1963,12 +1963,31 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
    # Create backup
     def savebackup(self):
-        hhh = hash_name(self.fname) + ".bak"
-        xfile = pedconfig.conf.data_dir + os.sep + hhh
+
+        hhh = hash_name(self.fname)
+        self.startxxx  =  pedconfig.conf.sql.get_int(hhh + "/xx")
+        self.currback  =  pedconfig.conf.sql.get_int(hhh + "/bak")
+
+        # Increment and wrap backup
+        self.currback += 1
+        if self.currback >= 9:
+            self.currback = 1
+
+        pedconfig.conf.sql.put(hhh + "/bak", self.currback)
+
         try:
-            writefile(xfile, self.text, "\n")
+            xfile = pedconfig.conf.data_dir + os.sep + hhh + "_" + str(self.currback) + ".bak"
+            if pedconfig.conf.verbose:
+                print("Saving backup: ", xfile)
+
+
+            try:
+                writefile(xfile, self.text, "\n")
+            except:
+                print("Cannot create backup file " + xfile, sys.exc_info())
         except:
-            print("Cannot create backup file" + xfile + sys.exc_info())
+            print("Cannot back up ", sys.exc_info())
+
 
     def prompt_save(self, askname = True):
 
@@ -2541,7 +2560,7 @@ def idle_callback(self, arg):
     try:
         # Mon 06.Sep.2021 always save
         if self.changed:
-            hhh = hash_name(self.fname) + ".sav"
+            hhh = hash_name(self.fname) + "_" + str(self.currback) + ".sav"
             xfile = pedconfig.conf.data_dir + os.sep + hhh
             err = writefile(xfile, self.text, "\n")
             if err[0]:
