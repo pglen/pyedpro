@@ -97,6 +97,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.keyh = pedconfig.conf.keyh
         self.acth = pedconfig.conf.acth
 
+        self.second = False
+
         # Init vars
         self.xpos = 0; self.ypos = 0
         self.changed = False
@@ -1825,6 +1827,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def loadfile(self, filename, create = False):
 
+        if not self.second:
+            if pedconfig.conf.verbose:
+                print("Loading file", filename)
+
         # Is it already loaded? ... activate
         nn = self.notebook.get_n_pages()
         fname2 = os.path.realpath(filename)
@@ -1839,7 +1845,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 self.mained.mywin.set_focus(vcurr.vbox.area)
                 return
 
-        self.mained.oh.add(filename)
+        if not self.second:
+            self.mained.oh.add(filename)
 
         self.fname = filename
         self.ext = os.path.splitext(self.fname)[1].lower()
@@ -1881,13 +1888,24 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.set_maxlinelen(mlen, False)
         self.set_maxlines(len(self.text), False)
 
-        self.loadundo()
-        self.saveorg()
-        self.savebackup()
-        self.loadparms()
+        # Increment and wrap backup
+        if not self.second:
+            hhh = hash_name(self.fname)
+            self.currback  =  pedconfig.conf.sql.get_int(hhh + "/bak")
+            self.currback += 1
+            if self.currback >= 9:
+                self.currback = 1
+            pedconfig.conf.sql.put(hhh + "/bak", self.currback)
 
-        # Add to accounting:
-        logentry("Opened File", self.start_time, self.fname)
+        # File and backup related
+        if not self.second:
+            self.loadundo()
+            self.loadparms()
+            self.saveorg()
+            self.savebackup()
+
+            # Add to accounting:
+            logentry("Opened File", self.start_time, self.fname)
 
         # Propagate main wndow ref
         pedmenu.mained = self.mained
@@ -1966,14 +1984,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         hhh = hash_name(self.fname)
         self.startxxx  =  pedconfig.conf.sql.get_int(hhh + "/xx")
-        self.currback  =  pedconfig.conf.sql.get_int(hhh + "/bak")
-
-        # Increment and wrap backup
-        self.currback += 1
-        if self.currback >= 9:
-            self.currback = 1
-
-        pedconfig.conf.sql.put(hhh + "/bak", self.currback)
 
         try:
             xfile = pedconfig.conf.data_dir + os.sep + hhh + "_" + str(self.currback) + ".bak"
