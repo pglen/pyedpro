@@ -146,6 +146,7 @@ class edPane(Gtk.VPaned):
         # Shortcuts to access the editor windows
         self.area  = self.vbox.area
         self.area2 = self.vbox2.area
+        self.area2.second = True
 
 # -----------------------------------------------------------------------
 # Create main document widget with scroll bars
