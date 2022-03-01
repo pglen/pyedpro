@@ -1887,6 +1887,7 @@ class EdMainWindow():
 
         # Empty line from sess load
         if not fnamex:
+            print("Empty file passed")
             return
 
         # Any indication it is there?

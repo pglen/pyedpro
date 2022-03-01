@@ -15,7 +15,8 @@ pyinstaller pyedpro.py -p pyedlib -p ../pycommon    \
     --hidden-import=cairo                           \
     --hidden-import=sqlite3                         \
     --add-data="pedlib/data:pedlib/data"            \
-    --add-data="pedlib/images:pedlib/images"
+    --add-data="pedlib/images:pedlib/images"	\
+#    --onedir
 
     #--add-data=".:."
     #--onefile
