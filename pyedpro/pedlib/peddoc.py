@@ -1924,6 +1924,19 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         # Color ON?
         self.set_nocol()
 
+        # Are most of them read only?
+        if not self.second:
+            ro = 0
+            nn = self.notebook.get_n_pages()
+            for aa in range(nn):
+                vcurr = self.notebook.get_nth_page(aa)
+                #print("listing",  vcurr.area.fname, vcurr.area.readonly)
+                if vcurr.area.readonly:
+                    ro += 1
+            #print("nn", nn, "ro count", ro)
+            if ro > nn // 2:
+                self.readonly = True
+
         return True
 
     def loadbuff(self, arrx):
