@@ -547,7 +547,7 @@ class EdMainWindow():
         obox2.pack_start(self.newbox, 1, 1, 0)
 
         self.buttarr = []               # So later we can change labels
-        for aa in range(8):
+        for aa in range(12):
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
             if not head:
@@ -559,7 +559,7 @@ class EdMainWindow():
             self.newbox.pack_start(butt, 1, 1, 0)
         self.newbox2 = Gtk.HBox()
         obox2.pack_start(self.newbox2, 1, 1, 0)
-        for aa in range(8):
+        for aa in range(12):
             #butt = Gtk.Button("FuncB %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (2, aa))
             if not head:
@@ -1887,7 +1887,7 @@ class EdMainWindow():
 
         # Empty line from sess load
         if not fnamex:
-            print("Empty file passed")
+            #print("Empty file name passed")
             return
 
         # Any indication it is there?
