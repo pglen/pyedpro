@@ -124,6 +124,11 @@ class pgnotes(Gtk.VBox):
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(" "), 1, 1, 0)
 
+        butt3 = Gtk.Button.new_with_mnemonic("Search")
+        butt3.connect("pressed", self.search)
+        hbox13.pack_start(butt3, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
         butt3 = Gtk.Button.new_with_mnemonic("New")
         butt3.connect("pressed", self.newitem)
         hbox13.pack_start(butt3, 0, 0, 2)
@@ -134,14 +139,14 @@ class pgnotes(Gtk.VBox):
         hbox13.pack_start(butt11, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt12 = Gtk.Button.new_with_mnemonic("Exp")
+        butt12 = Gtk.Button.new_with_mnemonic("Export")
         butt12.connect("pressed", self.export)
         hbox13.pack_start(butt12, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt14 = Gtk.Button.new_with_mnemonic("ExpData")
-        butt14.connect("pressed", self.exportd)
-        hbox13.pack_start(butt14, 0, 0, 2)
+        #butt14 = Gtk.Button.new_with_mnemonic("ExpData")
+        #butt14.connect("pressed", self.exportd)
+        #hbox13.pack_start(butt14, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label(" "), 0, 0, 0)
 
         hbox13.pack_start(Gtk.Label(" "), 1, 1, 0)
@@ -155,6 +160,7 @@ class pgnotes(Gtk.VBox):
         self.load()
 
     def  letterfilter(self, letter):
+        self.savetext()
         #print("letterfilter", letter)
         if letter == "All":
             self.load()
@@ -163,6 +169,22 @@ class pgnotes(Gtk.VBox):
             self.treeview2.clear()
             for aa in aaa:
                 self.treeview2.append(aa[2:5])
+
+    def search(self, arg):
+        print("search pressed", arg)
+        self.savetext()
+        self.treeview2.clear()
+        try:
+            datax = self.sql.getall()
+            for aa in datax:
+                #print(aa)
+                ddd = self.sql.getdata(aa[1])
+                #print("ddd", ddd)
+                if "time" in ddd[0]:
+                    #print("    ", ddd)
+                    self.treeview2.append(aa[2:5])
+        except:
+            print("exc in search ", sys.exc_info())
 
     def newitem(self, arg):
         self.savetext()
@@ -201,16 +223,36 @@ class pgnotes(Gtk.VBox):
             self.treeview2.sel_last()
 
     def export(self, arg):
-        print ("export")
+
+        base = "peddata";  cnt = 0; fff = ""
+        while True:
+            fff =  "%s%s%s_%d.bak" % (self.data_dir, os.sep, base, cnt)
+            #print("trying:", fff)
+            if not os.path.isfile(fff):
+                break
+            cnt += 1
+
+        try:
+            fp = open(fff, "wt")
+        except:
+            print("Cannot backup notes data", sys.exc_info());
+            pedconfig.conf.pedwin.update_statusbar("Cannot export notes")
+            return
+
         datax = self.sql.getall()
         for aa in datax:
-            print(aa)
-
-    def exportd(self, arg):
-        #print ("export data")
-        datay = self.sql.getalldata()
-        for bb in datay:
-            print(bb)
+            #print(aa)
+            ddd = self.sql.getdata(aa[1])
+            #print("ddd", ddd)
+            try:
+               fp.write("\n ------------------------------------------------------------------\n")
+               fp.write(str(aa))
+               fp.write("\n ------------------------------------------------------------------\n")
+               fp.write(str(ddd[0]) + "\n")
+            except:
+                print("exc in export ", ddd, sys.exc_info())
+        fp.close()
+        pedconfig.conf.pedwin.update_statusbar("Exported notes to %s" % os.path.basename(fff))
 
     def save(self, arg):
         print ("save unimplemented")

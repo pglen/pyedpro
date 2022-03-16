@@ -2003,7 +2003,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             if pedconfig.conf.verbose:
                 print("Saving backup: ", xfile)
 
-
             try:
                 writefile(xfile, self.text, "\n")
             except:
@@ -2059,18 +2058,35 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if pedconfig.conf.verbose:
             print("Saving '"+ self.fname + "'")
 
-        wasfile = os.access(self.fname, os.R_OK)
-        err = writefile(self.fname, self.text, "\n")
-        if err[0]:
-            self.set_changed(False)
+        #wasread = os.access(self.fname, os.R_OK)
+        #if not wasread:
+        #    print("Cannot read '%s'" % self.fname,  sys.exc_info())
+        #    self.mained.update_statusbar("Cannot read '%s'" % self.fname)
+        #    return
 
-        if not wasfile:
-            # Change access/ownership to group write
-            try:
-                ostat = os.stat(self.fname)
-                os.chmod(self.fname, ostat.st_mode | stat.S_IWGRP)
-            except:
-                print("Cannot change group write on '%s'" % self.fname,  sys.exc_info())
+        waswrite = os.access(self.fname, os.W_OK)
+        if not waswrite:
+            print("Cannot write '%s'" % self.fname,  sys.exc_info())
+            self.mained.update_statusbar("Cannot write '%s'" % self.fname)
+            self.savebackup()
+
+            pedync.message("\n   Cannot Save file:  \n\n"
+                              "      '%s'" % self.fname)
+            return (False, "Read only or Inaccessible file")
+
+        err = writefile(self.fname, self.text, "\n")
+        #print("err writefile", err)
+        if not err[0]:
+            print("Cannot write '%s'" % self.fname,  sys.exc_info())
+            return
+
+        self.set_changed(False)
+        # Change access/ownership to group write
+        try:
+            ostat = os.stat(self.fname)
+            os.chmod(self.fname, ostat.st_mode | stat.S_IWGRP)
+        except:
+            print("Cannot change group write on '%s'" % self.fname,  sys.exc_info())
 
         self.saveundo();  self.saveparms(); self.set_tablabel()
 
