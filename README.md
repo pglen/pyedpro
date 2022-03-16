@@ -36,6 +36,7 @@ the time, stopped all Mac M1 related efforts.
 
 ### New:
 
+    Wed 16.Mar.2022 -- dialog for read only file, export notes lots of others
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - No more mac support
     Tue 30.Mar.2021 -- added windows installation executable
