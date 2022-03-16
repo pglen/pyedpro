@@ -161,8 +161,11 @@ def  writefile(strx, buff, sep = "\n", mode = "w"):
                 cnt += 1
             fp.close()
         except:
-            fp.close()
             ret = False, sys.exc_info()[1]
+            try:
+                fp.close()
+            except:
+                pass
             pass
     return ret
 

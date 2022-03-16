@@ -1317,8 +1317,8 @@ class EdMainWindow():
         vcurr = tabx.get_nth_page(num)
         self.mywin.set_title("pyedpro: " + vcurr.area.fname)
         self.mywin.set_focus(vcurr.vbox.area)
+        hhh = hash_name(vcurr.area.fname)
         fname = os.path.basename(vcurr.area.fname)
-        hhh = hash_name(fname)
         backx = vcurr.area.currback
         self.update_statusbar("Switched to '{1:s}'   {2:s}_{3:d} "
                                     .format(num, fname, hhh, backx ), True)
