@@ -2058,21 +2058,22 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if pedconfig.conf.verbose:
             print("Saving '"+ self.fname + "'")
 
-        #wasread = os.access(self.fname, os.R_OK)
-        #if not wasread:
-        #    print("Cannot read '%s'" % self.fname,  sys.exc_info())
-        #    self.mained.update_statusbar("Cannot read '%s'" % self.fname)
-        #    return
+        if os.access(self.fname, os.F_OK):
+            #wasread = os.access(self.fname, os.R_OK)
+            #if not wasread:
+            #    print("Cannot read '%s'" % self.fname,  sys.exc_info())
+            #    self.mained.update_statusbar("Cannot read '%s'" % self.fname)
+            #    return
 
-        waswrite = os.access(self.fname, os.W_OK)
-        if not waswrite:
-            print("Cannot write '%s'" % self.fname,  sys.exc_info())
-            self.mained.update_statusbar("Cannot write '%s'" % self.fname)
-            self.savebackup()
+            waswrite = os.access(self.fname, os.W_OK)
+            if not waswrite:
+                print("Cannot write '%s'" % self.fname,  sys.exc_info())
+                self.mained.update_statusbar("Cannot write '%s'" % self.fname)
+                self.savebackup()
 
-            pedync.message("\n   Cannot Save file:  \n\n"
-                              "      '%s'" % self.fname)
-            return (False, "Read only or Inaccessible file")
+                pedync.message("\n   Cannot Save file:  \n\n"
+                                  "      '%s'" % self.fname)
+                return (False, "Read only or Inaccessible file")
 
         err = writefile(self.fname, self.text, "\n")
         #print("err writefile", err)
