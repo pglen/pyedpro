@@ -1342,4 +1342,17 @@ class OpenFname():
         win.destroy()
         self.fc_done = True
 
+
+# Arbitrary string to number
+
+def atoi(strx):
+    rtr=0
+    for cc in strx:
+        occ = ord(cc)
+        if occ < ord('0') or occ > ord('9'):
+            break
+        rtr = rtr*10 + (occ - ord('0'))
+
+    return rtr
+
 # EOF
