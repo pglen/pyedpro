@@ -2134,43 +2134,88 @@ class ActHand:
         gotodlg(self2)
 
     def alt_y(self, self2):
+
         if pedconfig.conf.pgdebug > 9:
             print ("ALT- Y -- Compile")
 
-        writefile("tmp", self2.text, "\n")
-        try:
-           py_compile.compile('tmp', doraise = True)
-        except py_compile.PyCompileError as msg:
+        tempfile = "tmp"
+        writefile(tempfile, self2.text, "\n")
 
-            self2.mained.update_statusbar("Syntax error.")
+        #print("Checking file", self2.ext)
 
-            if sys.version_info.major < 3:
+        if self2.ext == ".php":
+            #print("Checking PHP file")
+            try:
+                comline = ["php", "-l", tempfile,]
                 try:
-                    ln  = msg[2][1][1]; col = msg[2][1][2]
-                    mmm = "\n" + msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
-                    self2.gotoxy(col - 1, ln - 1)
-                    pedync.message("    " + mmm + "    ", msg[1])
+                    ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
                 except:
-                    pedync.message(" " + str(msg) + "  ", "Syntax Error")
-                    #print("line", msg);
-                    pass
+                    print("Cannot check %s" % str(comline), sys.exc_info())
+                    pedync.message("\n   Cannot check %s \n\n"  % str(comline) +
+                               str(sys.exc_info()) )
+                    return
+                try:
+                    outs, errs = ret.communicate()
+                except:
+                    print("Cannot communicate with %s" % str(comline), sys.exc_info())
+                    return
+
+            except:
+                print("Cannot execute %s" % str(comline), sys.exc_info())
+                pass
+
+            #print("outs", outs, "errs", errs)
+
+            if errs == b"":
+                pedync.message("\n  PHP Syntax OK   \n")
+                self2.mained.update_statusbar("Syntax OK.")
             else:
-                    print("Error on compile: '", msg.args, "'")
-                    zzz = str(msg.args[2]).split("(")
-                    sss = zzz[1].split()[2].replace(")", "")
-                    #print ("sss", sss)
-                    self2.gotoxy(10, int(sss) - 1)
-                    pedync.message("    " + str(msg) + "    ")
+                serr = str(errs)
+                idx = serr.find("line ")
+                if idx:
+                    #print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
+                    self2.gotoxy(10, atoi(serr[idx + 5:]) - 1)
 
-        except:
-            print(sys.exc_info())
+                print("Error on compile: '", serr, "'")
+                pedync.message("    " + serr + "    ")
+
+
+        elif self2.ext == ".py":
+            try:
+               py_compile.compile('tmp', doraise = True)
+            except py_compile.PyCompileError as msg:
+
+                self2.mained.update_statusbar("Syntax error.")
+
+                if sys.version_info.major < 3:
+                    try:
+                        ln  = msg[2][1][1]; col = msg[2][1][2]
+                        mmm = "\n" + msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
+                        self2.gotoxy(col - 1, ln - 1)
+                        pedync.message("    " + mmm + "    ", msg[1])
+                    except:
+                        pedync.message(" " + str(msg) + "  ", "Syntax Error")
+                        #print("line", msg);
+                        pass
+                else:
+                        print("Error on compile: '", msg.args, "'")
+                        zzz = str(msg.args[2]).split("(")
+                        sss = zzz[1].split()[2].replace(")", "")
+                        #print ("sss", sss)
+                        self2.gotoxy(10, int(sss) - 1)
+                        pedync.message("    " + str(msg) + "    ")
+
+            except:
+                print(sys.exc_info())
+            else:
+                pedync.message("\n  PY Syntax OK   \n")
+                self2.mained.update_statusbar("Syntax OK.")
+            finally:
+                pass
         else:
-            pedync.message("\n  Syntax OK   \n")
-            self2.mained.update_statusbar("Syntax OK.")
-        finally:
-            os.remove("tmp")
+            self2.mained.update_statusbar("No Syntax check for this kind of file.")
 
-            #print ("com", sys.exc_info())
+        os.remove(tempfile)
 
     # --------------------------------------------------------------
     # Tab handle is awkward. The regular key tab will insert
