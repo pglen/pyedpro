@@ -313,9 +313,7 @@ class EdMainWindow():
         notebook.set_scrollable(True)
         # test
         #notebook.append_page(edPane([]))
-
         #notebook.drag_dest_set(0, [], 0)
-
         #notebook.drag_dest_set(Gtk.DestDefaults.HIGHLIGHT | Gtk.DestDefaults.DROP
         #                 | Gtk.DestDefaults.MOTION,
         #                 [Gtk.TargetEntry.new('GTK_NOTEBOOK_TAB',
@@ -2141,14 +2139,22 @@ def  initial_load(self2, arg):
         cnt = 0
         for aa in self2.names:
 
-            # Comline ames are relative to original path, not the changed load
+            # Comline names are relative to original path, not the changed load
             #aaa = os.path.realpath(aa)
             #aaa = pedconfig.conf.orig_dir + os.sep + aa
-            aaa = pedconfig.conf.orig_path + os.sep + aa
+
+            # Absolute path?
+            if aa[0] == os.sep:
+                aaa = aa
+            else:
+                aaa = pedconfig.conf.orig_path + os.sep + aa
             if aaa in seen:
                 continue
+
             seen.append(aaa)
-            #print( "loading file: ", aaa)
+            if pedconfig.conf.verbose:
+                print( "loading file: ", aaa)
+
             if not os.path.isfile(aaa):
                 print( "No such file on load: ", aaa)
                 continue

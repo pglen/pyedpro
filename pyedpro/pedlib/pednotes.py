@@ -124,7 +124,7 @@ class pgnotes(Gtk.VBox):
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(" "), 1, 1, 0)
 
-        butt3 = Gtk.Button.new_with_mnemonic("Search")
+        butt3 = Gtk.Button.new_with_mnemonic("Search Text")
         butt3.connect("pressed", self.search)
         hbox13.pack_start(butt3, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
@@ -171,20 +171,23 @@ class pgnotes(Gtk.VBox):
                 self.treeview2.append(aa[2:5])
 
     def search(self, arg):
-        print("search pressed", arg)
         self.savetext()
-        self.treeview2.clear()
-        try:
-            datax = self.sql.getall()
-            for aa in datax:
-                #print(aa)
-                ddd = self.sql.getdata(aa[1])
-                #print("ddd", ddd)
-                if "time" in ddd[0]:
-                    #print("    ", ddd)
-                    self.treeview2.append(aa[2:5])
-        except:
-            print("exc in search ", sys.exc_info())
+        dlg = SearchDialog()
+        ret = dlg.run()
+        if ret != Gtk.ResponseType.OK:
+            dlg.destroy()
+            return
+        txt = dlg.entry.get_text()
+        dlg.destroy()
+        #print("Searching for:", txt)
+
+        textbuffer  =  self.edview.textview.get_buffer()
+        start_iter  =  textbuffer.get_start_iter()
+        found       =  start_iter.forward_search(txt, Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
+        if found:
+           match_start,match_end = found #add this line to get match_start and match_end#try:
+           textbuffer.select_range(match_start,match_end)#    datax = self.sql.getall()
+           self.edview.textview.scroll_to_iter(match_start, 0, False, 0, 0)
 
     def newitem(self, arg):
         self.savetext()
@@ -777,9 +780,10 @@ class notesql():
             return None
 
 class SearchDialog(Gtk.Dialog):
-    def __init__(self, parent):
+
+    def __init__(self, parent = None):
         Gtk.Dialog.__init__(
-            self, title="Search", transient_for=parent, modal=True,
+            self, title=" Search ", transient_for=parent, modal=True,
         )
         self.add_buttons(
             Gtk.STOCK_FIND,
@@ -787,19 +791,28 @@ class SearchDialog(Gtk.Dialog):
             Gtk.STOCK_CANCEL,
             Gtk.ResponseType.CANCEL,
         )
-
+        self.set_default_response(Gtk.ResponseType.OK)
         box = self.get_content_area()
 
-        label = Gtk.Label(label="Insert text you want to search for:")
+        #label = Gtk.Label(label="  Enter text you want to search for:  ")
+        label = Gtk.Label(label="   ")
         box.add(label)
 
+        self.hbox = Gtk.HBox()
+        self.hbox.pack_start(Gtk.Label("   Search for:  "), 0, 0, 0)
         self.entry = Gtk.Entry()
-        box.add(self.entry)
+        self.entry.set_activates_default(True)
+        self.hbox.pack_start(self.entry, 1, 1, 0)
+        self.hbox.pack_start(Gtk.Label("            "), 0, 0, 0)
+
+        box.add(self.hbox)
+
+        #box.add(self.entry)
         self.show_all()
 
 
 class HeadDialog(Gtk.Dialog):
-    def __init__(self, initstr, parent):
+    def __init__(self, initstr, parent = None):
         Gtk.Dialog.__init__(
             self, title="Name for Note", transient_for=parent, modal=True,
         )

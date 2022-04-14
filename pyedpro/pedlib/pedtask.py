@@ -56,7 +56,7 @@ class pedtask():
             pedync.message("\n   Cannot launch %s \n\n"  % str(linprog) +
                                      str(sys.exc_info()))
 
-    def start_edit(self):
+    def start_edit(self, filex):
 
         old = os.getcwd()
         fdir = os.path.dirname(os.path.realpath(__file__))
@@ -65,21 +65,23 @@ class pedtask():
         #print("mydir:", mydir)
         os.chdir(mydir)
         myscript = os.path.realpath(os.path.join(mydir, 'pyedpro.py'))
-        #print("myscript:", myscript)
+        if pedconfig.conf.verbose:
+            print("myscript:", myscript, "filex:", filex)
 
         ret = 0
         try:
             if platform.system().find("Win") >= 0:
-                print("No exe function on windows. (TODO)")
+                print("No exec function on windows. (TODO)")
+                pedync.message("\n   No exec function on windows. \n\n")
             else:
                 # Stumble until editor found
-                ret = subprocess.Popen(["python3", myscript])
+                ret = subprocess.Popen(["python3", myscript, filex])
                 if ret.returncode:
-                    ret = subprocess.Popen(["python", myscript])
+                    ret = subprocess.Popen(["python", myscript, filex])
                     if not ret.returncode:
                         raise OSError
         except:
-            print("Cannot launch editor instance", sys.exc_info())
+            print("Cannot launch new editor instance", sys.exc_info())
             pedync.message("\n   Cannot launch new editor instance \n\n")
 
         # Back to original dir

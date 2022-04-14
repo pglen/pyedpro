@@ -1666,7 +1666,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         elif ttt == 14:
              pedconfig.conf.pedwin.start_term()
         elif ttt == 15:
-            self.start_edit()
+            self.start_edit(self.fname)
         elif ttt == 16:
             self.mained.tts()
         elif ttt == 17:
