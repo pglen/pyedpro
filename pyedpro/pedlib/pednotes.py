@@ -98,6 +98,7 @@ class pgnotes(Gtk.VBox):
 
         self.edview = pgsimp.TextViewWin()
         #self.edview.callb = self.savetext
+        self.edview.findcall = self.search, self
 
         self.edview.textview.set_margin_left(2)
         self.edview.textview.set_margin_right(2)
@@ -113,7 +114,7 @@ class pgnotes(Gtk.VBox):
 
         self.deftags = self.edview.textbuffer.get_tag_table()
 
-        self.pack_start(Gtk.Label("Font formatting is not preserved yet."), 0, 0, 0)
+        self.pack_start(Gtk.Label(label="Font formatting is not preserved yet."), 0, 0, 0)
         frame4 = Gtk.Frame();
         frame4.set_border_width(3)
         frame4.add(self.edview)
@@ -122,11 +123,15 @@ class pgnotes(Gtk.VBox):
         self.pack_start(vpaned, 1, 1, 2)
 
         hbox13 = Gtk.HBox()
-        hbox13.pack_start(Gtk.Label(" "), 1, 1, 0)
+        hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        butt3 = Gtk.Button.new_with_mnemonic("Search Text")
+        butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
         butt3.connect("pressed", self.search)
         hbox13.pack_start(butt3, 0, 0, 2)
+
+        butt3a = Gtk.Button.new_with_mnemonic("Search All")
+        butt3a.connect("pressed", self.searchall)
+        hbox13.pack_start(butt3a, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
         butt3 = Gtk.Button.new_with_mnemonic("New")
@@ -149,7 +154,7 @@ class pgnotes(Gtk.VBox):
         #hbox13.pack_start(butt14, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label(" "), 0, 0, 0)
 
-        hbox13.pack_start(Gtk.Label(" "), 1, 1, 0)
+        hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         #butt22 = Gtk.Button.new_with_mnemonic("Save")
         #butt22.connect("pressed", self.save)
@@ -170,9 +175,32 @@ class pgnotes(Gtk.VBox):
             for aa in aaa:
                 self.treeview2.append(aa[2:5])
 
-    def search(self, arg):
+    def searchall(self, arg):
         self.savetext()
         dlg = SearchDialog()
+        ret = dlg.run()
+        if ret != Gtk.ResponseType.OK:
+            dlg.destroy()
+            return
+        txt = dlg.entry.get_text()
+        dlg.destroy()
+        self.treeview2.clear()
+        try:
+            datax = self.sql.getall()
+            for aa in datax:
+                #print(aa)
+                ddd = self.sql.getdata(aa[1])
+                #print("ddd", ddd)
+                if txt in ddd[0]:
+                    #print("    ", ddd)
+                    self.treeview2.append(aa[2:5])
+                    continue
+        except:
+            print("exc in search ", sys.exc_info())
+
+    def search(self, arg):
+        self.savetext()
+        dlg = SearchDialog() #self.edview.textview)
         ret = dlg.run()
         if ret != Gtk.ResponseType.OK:
             dlg.destroy()
@@ -799,11 +827,11 @@ class SearchDialog(Gtk.Dialog):
         box.add(label)
 
         self.hbox = Gtk.HBox()
-        self.hbox.pack_start(Gtk.Label("   Search for:  "), 0, 0, 0)
+        self.hbox.pack_start(Gtk.Label(label="   Search for:  "), 0, 0, 0)
         self.entry = Gtk.Entry()
         self.entry.set_activates_default(True)
         self.hbox.pack_start(self.entry, 1, 1, 0)
-        self.hbox.pack_start(Gtk.Label("            "), 0, 0, 0)
+        self.hbox.pack_start(Gtk.Label(label="            "), 0, 0, 0)
 
         box.add(self.hbox)
 
@@ -833,9 +861,9 @@ class HeadDialog(Gtk.Dialog):
         self.entry.set_activates_default(True)
 
         self.hbox = Gtk.HBox()
-        self.hbox.pack_start(Gtk.Label("   Note Header:  "), 0, 0, 0)
+        self.hbox.pack_start(Gtk.Label(label="   Note Header:  "), 0, 0, 0)
         self.hbox.pack_start(self.entry, 1, 1, 0)
-        self.hbox.pack_start(Gtk.Label("                 "), 0, 0, 0)
+        self.hbox.pack_start(Gtk.Label(label="                 "), 0, 0, 0)
 
         box.add(self.hbox)
         self.show_all()

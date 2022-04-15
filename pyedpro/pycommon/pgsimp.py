@@ -232,13 +232,12 @@ class   SimpleSel(Gtk.Label):
 
     def area_button(self, but, event):
 
-        #print("width =", self.get_allocation().width)
-        #print("click", event.x, event.y)
-        prop = event.x / float(self.get_allocation().width)
         idx = int(prop * len(self.text))
+        #print("width =", self.get_allocation().width)
         #print("idx", idx)
+        #print("click", event.x, event.y)
         if self.text[idx] == " ":
-            idx -= 1
+             prop = event.x / float(self.get_allocation().width)
         try:
             # See of it is all
             if self.axx >= 0:
@@ -400,6 +399,7 @@ class TextViewWin(Gtk.VBox):
 
     def __init__(self):
         Gtk.VBox.__init__(self)
+
         self.callb = None
         self.grid = Gtk.Grid()
         self.add(self.grid)
@@ -412,9 +412,27 @@ class TextViewWin(Gtk.VBox):
         myfd = pg.get_font_description()
         self.mysize = myfd.get_size() / Pango.SCALE
         self.myfam = myfd.get_family()
+        self.textview.connect("key-press-event", self.area_key)
+        #self.connect("button-press-event", self.area_button)
+        #self.textview.connect("focus-out-event", self.focus_out)
+        self.findcall = None;
+
+    def area_key(self, widget, event):
+        #print("TextViewWin keypress", event.string, event.keyval)
+        if event.state & Gdk.ModifierType.CONTROL_MASK:
+            if event.keyval == 102:
+                #print("control find")
+                if self.findcall:
+                    # Call with object argument
+                    self.findcall[0](self.findcall[1])
 
     '''
-        #self.textview.connect("focus-out-event", self.focus_out)
+    def area_button(self, but, event):
+        print("TextViewWin click", event.x, event.y)
+        pass
+    '''
+
+    '''
     def focus_out(self, arg1, arg2):
         print("Focus out")
     '''
@@ -532,6 +550,9 @@ class TextViewWin(Gtk.VBox):
 
         self.textview = Gtk.TextView()
         self.textbuffer = self.textview.get_buffer()
+        #self.textview.set_has_window(True)
+
+        #self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
         scrolledwindow.add(self.textview)
 
@@ -632,15 +653,20 @@ class TextViewWin(Gtk.VBox):
         self.textview.set_justification(justification)
 
     def on_search_clicked(self, widget):
-        dialog = SearchDialog(None)
-        response = dialog.run()
-        if response == Gtk.ResponseType.OK:
-            cursor_mark = self.textbuffer.get_insert()
-            start = self.textbuffer.get_iter_at_mark(cursor_mark)
-            if start.get_offset() == self.textbuffer.get_char_count():
-                start = self.textbuffer.get_start_iter()
 
-            self.search_and_mark(dialog.entry.get_text(), start)
+        if self.findcall:
+            # Call with object argument
+            self.findcall[0](self.findcall[1])
+
+        #dialog = SearchDialog(None)
+        #response = dialog.run()
+        #if response == Gtk.ResponseType.OK:
+        #    cursor_mark = self.textbuffer.get_insert()
+        #    start = self.textbuffer.get_iter_at_mark(cursor_mark)
+        #    if start.get_offset() == self.textbuffer.get_char_count():
+        #        start = self.textbuffer.get_start_iter()
+        #
+        #    self.search_and_mark(dialog.entry.get_text(), start)
 
         dialog.destroy()
 
