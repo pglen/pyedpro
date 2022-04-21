@@ -11,7 +11,8 @@ AppDir/
 .Python
 build/
 develop-eggs/
-#dist/
+dist/
+*.whl
 downloads/
 eggs/
 .eggs/
