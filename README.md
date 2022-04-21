@@ -137,6 +137,10 @@ The author,
 
       Peter Glen
 
+Latest screen shot, showing new features
+
+![Screen Shot](latest.png)
+
 Screen from a regular session, including clip buttons ...
 
 ![Screen Shot Ubuntu](screen.png)
@@ -148,6 +152,30 @@ Screen from an older session, note the function list on the left:
 Screen from Mac:
 
 ![Screen Shot](screen_shot_mac.png)
+
+## Project stats:
+
+        Project name
+            pyedpro
+        Generated
+            2022-04-21 13:40:49 (in 3 seconds)
+        Generator
+            GitStats (version 55c5c28), git version 2.32.0, gnuplot 5.4 patchlevel 1
+        Report Period
+            2018-09-16 00:29:10 to 2022-04-15 10:31:49
+        Age
+            1308 days, 166 active days (12.69%)
+        Total Files
+            220
+        Total Lines of Code
+            476774 (1454450 added, 977676 removed)
+        Total Commits
+            347 (average 2.1 commits per active day, 0.3 per all days)
+        Authors
+            7 (average 49.6 commits per author)
+
+
+![Stats](commits_by_year_month.png)
 
 License:    Open Source, FreeWare
 
