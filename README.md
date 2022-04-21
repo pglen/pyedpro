@@ -24,7 +24,7 @@ it is an absolute joy to edit in a different platform without the learning
 curve of new keystrokes.  If you want an editor  that works the same way in
 all your workspaces, PyEdPro is the one.
 
- Pyedpro now is working good on the Mac. I installed homebrew, and got it to fire up. It
+ PyEdPro now is working good on the Mac. I installed homebrew, and got it to fire up. It
 was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the
 Linux version did. No asynchronous  anything, segmentation faults everywhere. (which python
 is not suppose to have)
@@ -61,17 +61,18 @@ The caret is moved to the end of insertion.
 
  This (above) list is an extract, please see git log for complete history.
 
-  Pyedpro now has buffer diff. Right clicking on the file's tab header presents a menu.
+  PyEdPro now has buffer diff. Right clicking on the file's tab header presents a menu.
 One may select the diff source, the diff destination (or target). When the source and
 target is selected, a diff window slides in from the right. The diff window presents
-th diff of the two buffers, relative to 'target'. The three buffers navigate in sync,
-one may inspect them. The sync is somewhat intelligent by guessing the correct
-position of the cursor on the current buffer. Please note, that this diff is somewhat
-simple, as it marks only --del --ins points. Again, its simplicity yields benefits
-that are surprizing. For instance; hand merging small changes become more visual. And
-yes, it is no substitute for a real diff.
+the diff of the two buffers, relative to 'target'. The three buffers navigate in sync,
+one may inspect them and edit the source and the target. The position sync is somewhat
+intelligent by guessing the correct position of the cursor on the current buffer.
+One can re-diff the buffers by right clicking on the tab header, and select re-diff.
+Please note, that this diff is somewhat simple, as it marks only --del --ins points.
+Again, its simplicity yields benefits that are surprizing. For instance; hand
+merging small changes become more visual. And yes, it is no substitute for a real diff.
 
- The diff buffer is read only. To refresh the diff, select
+ The diff buffer (greyed) is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
 same right click menu, by selecting 'Stop Diffing'. The diff algorithm is crude, but
 the simplicity has its advantages. Speed and predictability.
@@ -81,16 +82,17 @@ auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggest
  ... and a lot more.
 
    The recorded macros, undo / redo information / editing session detail persists
- after the editor is closed.
+ (and reloaded) after the editor is closed.
 
- The spell checker can check code comments. The parsing of the code is
+ The spell checker can check text, code and code comments. The parsing of the code is
 rudimentary,  comments and strings are spell checked. (Press F9) The code is filtered
 out for Python and  'C', which assures most derivative languages have correct
-code spell code check. The whole file can be checked in text spell mode.
-(Shift-F9) The spell checker is executed on live text. (while typing)
+code spell code check. (.sh .php .cpp) The whole file can be checked in full text
+spell mode. Press (Shift-F9) The spell checker is executed on live text. (while typing) The
+re scan period is set to 300 millisec, an optimum between resource usage and real time feel.
 
-  Syntax highliting. Again, a simpler parser for speed. Succeeds in its mission with
-giving great visual without speed impact.
+  Syntax highlighting. Again, a simpler parser for speed. Succeeds in its mission with
+giving great visual candy effect without speed impact.
 
   PyEdPro is fast, it is extendable, as python lends itself to easy extending. The
 editor has a table driven key mapping. One can easily edit the key map in
@@ -103,14 +105,14 @@ log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install ca
  The default key map resembles gedit / wed / etp / brief. Full ASCII;
  Any (fixed) font can be configured. No arrangements in the program for variable pitch fonts.
 
-  See KEYS file for the list of keyboard shortcuts or press F3 in the
-editor or look at the file in pyedlib/KEYS.
+  See KEYS file for the list of keyboard shortcuts or press F1 in the
+editor or look at the file in pyedlib/KEYS. This file is also called up when the main menu
+ Help -> 'KeyHelp In Doc' is called up.
 
-If you highlight a word, and press F2, Zeal will open with the item searched and
- highlighted. Shift F2 will open Devhelp. This is what I use to see the API of PyGobj.
-F1 will call up the pyedpro help screen. Shift F1 will open DevDocs.  Naturally,
-Devdocs/Devhelp/Zeal etc . needs to be installed for this to function.
-
+  If you highlight a word, and press F2, Zeal will open with the item searched and
+highlighted. Shift F2 will do the same with Devhelp. This is what I use to see the API of PyGobj.
+F1 will call up the PyEdPro's help screen. Shift-F1 will open DevDocs. Naturally,
+Devdocs/Devhelp/Zeal need to be installed for these to function.
 
   On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
@@ -121,8 +123,18 @@ the left pane) The first file window's settings are saved for the next startup.
   PyEdPro remembers a lot about the editing session. Loaded files, cursor positions,
 fonts, font size, colors, search strings, goto numbers, undo / redo info,
 window positions ... and more.
- This is all stored in the directory ~/.PyEdPro. You may safely delete that
+
+ This is all stored in the ~/.PyEdPro directory. You may safely delete that
 directory to start PyEdPro with no memory of what has been done.
+
+ PyEdPro also keeps a stack of original files in the ~/PyEdPro/data directory. The file
+ path is treated as a name hash, so it is a flat list. For example this file is known to the
+PyEdPro hash function as '754ad753_. Under this hash name there are a multitude of items.
+The original file, the numbered backups (from _1 to _9, circular) the undo file,
+redo file, the auto save (.sav) file, the backup file ).bak) from this session start
+... and more.
+The way to find the file's hash is to switch buffers and the current buffer's hash
+is displayed on the status line.
 
   Starting PyEdPro with no command line arguments will put you back to the
 previous session, exactly where you left off.
@@ -142,7 +154,7 @@ The author,
 
       Peter Glen
 
-Latest screen shot, showing new features
+Latest screen shot, showing DIFF and other new features
 
 ![Screen Shot of DIFF](diffscr.png)
 
@@ -161,7 +173,7 @@ Screen from Mac:
 ## Project stats:
 
         Project name
-            pyedpro
+            PyEdPro
         Generated
             2022-04-21 13:40:49 (in 3 seconds)
         Generator
