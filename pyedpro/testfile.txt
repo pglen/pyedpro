@@ -1,0 +1,37 @@
+
+s// test file
+
+"string" with test // comment
+	tabbed "string" with test // comment
+"string2" with test #// comment
+# comment with "string"
+# comment with  	 and tab "string"
+
+line with space end   ccee  ccc
+
+######################################
+# target
+######################################
+TARGET = test_5
+
+1234 1234
+       d
+undo that
+
+redo that
+
+qqqqq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
