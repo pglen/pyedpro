@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedlib_1_1parser" kind="namespace" language="Python">
+    <compoundname>pyedlib::parser</compoundname>
+    <innerclass refid="classpyedlib_1_1parser_1_1Parse" prot="public">pyedlib::parser::Parse</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedlib_1_1parser_1a872b1f642519445bb8812e16e82096c5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::parser._gl_cnt</definition>
+        <argsstring></argsstring>
+        <name>_gl_cnt</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="24" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1parser_1a49ebf112f9fef656925927cf66b4666e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedlib::parser._show_default_action</definition>
+        <argsstring></argsstring>
+        <name>_show_default_action</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="33" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1parser_1aa95c4caaaeecd92dba15852b20e3c42c" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedlib::parser.ANYSTATE</definition>
+        <argsstring></argsstring>
+        <name>ANYSTATE</name>
+        <initializer>=  [-2, &quot;anystate&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="37" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1parser_1a6c05e74537310248b53ed0e43d8b0046" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedlib::parser.REDUCE</definition>
+        <argsstring></argsstring>
+        <name>REDUCE</name>
+        <initializer>=  [-1, &quot;reduce&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="38" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1parser_1a38699dbd408b6d3280e0317cc1d41fcf" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedlib::parser.IGNORE</definition>
+        <argsstring></argsstring>
+        <name>IGNORE</name>
+        <initializer>=  [<ref refid="namespacepyedlib_1_1parser_1add867a7cdf9d18d188633cf6c6621ad8" kindref="member">unique</ref>(), &quot;ignore&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="39" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1parser_1afc650f2fbadb57a9b75aba64b6f85141" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedlib::parser.INIT</definition>
+        <argsstring></argsstring>
+        <name>INIT</name>
+        <initializer>=  [<ref refid="namespacepyedlib_1_1parser_1add867a7cdf9d18d188633cf6c6621ad8" kindref="member">unique</ref>(), &quot;init&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="40" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedlib_1_1parser_1add867a7cdf9d18d188633cf6c6621ad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.parser.unique</definition>
+        <argsstring>()</argsstring>
+        <name>unique</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="25" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" bodystart="25" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/parser.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="webkit__test_8py" kind="file" language="Python">
+    <compoundname>webkit_test.py</compoundname>
+    <innernamespace refid="namespacewebkit__test">webkit_test</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacewebkit__test" refkind="compound"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gi</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">gi.require_version(</highlight><highlight class="stringliteral">&apos;Gtk&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;3.0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">gi.require_version(</highlight><highlight class="stringliteral">&apos;WebKit2&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;4.0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Gtk,<sp/>WebKit2</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">window<sp/>=<sp/>Gtk.Window()</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">window.set_default_size(800,<sp/>600)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">window.connect(</highlight><highlight class="stringliteral">&quot;destroy&quot;</highlight><highlight class="normal">,<sp/>Gtk.main_quit)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">vbox<sp/>=<sp/>Gtk.VBox()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">scrolled_window<sp/>=<sp/>Gtk.ScrolledWindow()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">webview<sp/>=<sp/>WebKit2.WebView()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">webview.load_uri(</highlight><highlight class="stringliteral">&quot;https://google.cl&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">scrolled_window.add(webview)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">vbox.pack_start(Gtk.Label(</highlight><highlight class="stringliteral">&quot;Hello&quot;</highlight><highlight class="normal">),<sp/>0,<sp/>0,<sp/>0)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">vbox.pack_start(Gtk.Label(</highlight><highlight class="stringliteral">&quot;Hello2&quot;</highlight><highlight class="normal">),<sp/>0,<sp/>0,<sp/>0)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">vbox.pack_start(scrolled_window,<sp/>1,<sp/>1,<sp/>0)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">window.add(vbox)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">window.show_all()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">Gtk.main()</highlight></codeline>
+    </programlisting>
+    <location file="pyedpro/study/webkit_test.py"/>
+  </compounddef>
+</doxygen>

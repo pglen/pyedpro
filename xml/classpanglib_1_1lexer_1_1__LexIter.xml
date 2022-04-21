@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpanglib_1_1lexer_1_1__LexIter" kind="class" language="Python" prot="public">
+    <compoundname>panglib::lexer::_LexIter</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpanglib_1_1lexer_1_1__LexIter_1a14a747d64e324c681f4708584acdc848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.lexer._LexIter.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/lexer.py" line="10" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/lexer.py" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1lexer_1_1__LexIter_1acbbe3066d5e9fefa4e7a80a7f74d553c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.lexer._LexIter.lexiter</definition>
+        <argsstring>(self, pos, tokens, strx)</argsstring>
+        <name>lexiter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <param>
+          <type>tokens</type>
+          <defname>tokens</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/lexer.py" line="13" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/lexer.py" bodystart="13" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/lexer.py" line="8" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/lexer.py" bodystart="8" bodyend="25"/>
+    <listofallmembers>
+      <member refid="classpanglib_1_1lexer_1_1__LexIter_1a14a747d64e324c681f4708584acdc848" prot="public" virt="non-virtual"><scope>panglib::lexer::_LexIter</scope><name>__init__</name></member>
+      <member refid="classpanglib_1_1lexer_1_1__LexIter_1acbbe3066d5e9fefa4e7a80a7f74d553c" prot="public" virt="non-virtual"><scope>panglib::lexer::_LexIter</scope><name>lexiter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

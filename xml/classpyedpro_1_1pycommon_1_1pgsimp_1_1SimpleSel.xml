@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pgsimp::SimpleSel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Label</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a0473713bd4dd7c6e0147a43d462c47da" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.SimpleSel::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="222" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a6803558e97edab7b28b92cc4a0dbd270" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.SimpleSel::callb</definition>
+        <argsstring></argsstring>
+        <name>callb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="223" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1aa8bdc1159c2c55deb689ac348571282c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.SimpleSel::axx</definition>
+        <argsstring></argsstring>
+        <name>axx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="224" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1ac85909f8b9fd7edb29e060d1c5f9ff9b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.SimpleSel::lastsel</definition>
+        <argsstring></argsstring>
+        <name>lastsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="231" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a3a4dce23941063387f1f16edfa94e272" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.SimpleSel::newtext</definition>
+        <argsstring></argsstring>
+        <name>newtext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="247" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a77344a636680379f88e90fae18ed23a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgsimp.SimpleSel.__init__</definition>
+        <argsstring>(self, text=&quot; &quot;, callb=None, font=&quot;Mono 13&quot;)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a0473713bd4dd7c6e0147a43d462c47da" kindref="member">text</ref></type>
+          <defname>text</defname>
+          <defval>&quot; &quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a6803558e97edab7b28b92cc4a0dbd270" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>font</type>
+          <defname>font</defname>
+          <defval>&quot;Mono 13&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="221" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="221" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1af9e18c08b23abd5a1cdd0432f29d2f8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgsimp.SimpleSel.area_button</definition>
+        <argsstring>(self, but, event)</argsstring>
+        <name>area_button</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>but</type>
+          <defname>but</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="233" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="233" bodyend="265"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pgsimp.SimpleSel</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Label</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pgsimp.SimpleSel</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Label</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pgsimp.py" line="219" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="219" bodyend="266"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a77344a636680379f88e90fae18ed23a0" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::SimpleSel</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1af9e18c08b23abd5a1cdd0432f29d2f8d" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::SimpleSel</scope><name>area_button</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1aa8bdc1159c2c55deb689ac348571282c" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::SimpleSel</scope><name>axx</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a6803558e97edab7b28b92cc4a0dbd270" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::SimpleSel</scope><name>callb</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1ac85909f8b9fd7edb29e060d1c5f9ff9b" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::SimpleSel</scope><name>lastsel</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a3a4dce23941063387f1f16edfa94e272" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::SimpleSel</scope><name>newtext</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleSel_1a0473713bd4dd7c6e0147a43d462c47da" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::SimpleSel</scope><name>text</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

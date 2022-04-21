@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pedlib::pednotes::HeadDialog</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Dialog</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog_1acddfd059ab6e999c900358545062261d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pednotes.HeadDialog::entry</definition>
+        <argsstring></argsstring>
+        <name>entry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pednotes.py" line="859" column="1" bodyfile="pyedpro/pedlib/pednotes.py" bodystart="859" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog_1aaf290b71a60b2c293c743244b66a8201" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pednotes.HeadDialog::hbox</definition>
+        <argsstring></argsstring>
+        <name>hbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pednotes.py" line="863" column="1" bodyfile="pyedpro/pedlib/pednotes.py" bodystart="863" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog_1a085ac4e8c5fbfa6acd6ab4ff888e929d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pednotes.HeadDialog.__init__</definition>
+        <argsstring>(self, initstr, parent=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>initstr</type>
+          <defname>initstr</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pednotes.py" line="843" column="1" bodyfile="pyedpro/pedlib/pednotes.py" bodystart="843" bodyend="873"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk::Dialog</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pedlib.pednotes.HeadDialog</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk::Dialog</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pedlib.pednotes.HeadDialog</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pedlib/pednotes.py" line="842" column="1" bodyfile="pyedpro/pedlib/pednotes.py" bodystart="842" bodyend="873"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog_1a085ac4e8c5fbfa6acd6ab4ff888e929d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pednotes::HeadDialog</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog_1acddfd059ab6e999c900358545062261d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pednotes::HeadDialog</scope><name>entry</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog_1aaf290b71a60b2c293c743244b66a8201" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pednotes::HeadDialog</scope><name>hbox</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

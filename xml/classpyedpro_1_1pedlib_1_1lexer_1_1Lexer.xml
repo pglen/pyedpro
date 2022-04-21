@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pedlib_1_1lexer_1_1Lexer" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pedlib::lexer::Lexer</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1lexer_1_1Lexer_1a108a685cadfc8c4bf7fc660fbd8f4e4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.lexer.Lexer.__init__</definition>
+        <argsstring>(self, data, stack, tokens)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>stack</type>
+          <defname>stack</defname>
+        </param>
+        <param>
+          <type>tokens</type>
+          <defname>tokens</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/lexer.py" line="29" column="1" bodyfile="pyedpro/pedlib/lexer.py" bodystart="29" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/lexer.py" line="27" column="1" bodyfile="pyedpro/pedlib/lexer.py" bodystart="27" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pedlib_1_1lexer_1_1Lexer_1a108a685cadfc8c4bf7fc660fbd8f4e4d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::lexer::Lexer</scope><name>__init__</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1testimport" kind="namespace" language="Python">
+    <compoundname>pyedpro::testimport</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1testimport_1a3ae64d4cc8759008c97098a198d61f86" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::testimport.base</definition>
+        <argsstring></argsstring>
+        <name>base</name>
+        <initializer>=  os.path.realpath(__file__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/testimport.py" line="7" column="1" bodyfile="pyedpro/testimport.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/testimport.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

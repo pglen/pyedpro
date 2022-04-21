@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::RadioGroup</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Frame</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1af53b091a50af9a45b11d0620c78f17cc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.RadioGroup::buttons</definition>
+        <argsstring></argsstring>
+        <name>buttons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="740" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="740" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a5bc15498ae20fc5fd3f1f47092b141fe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.RadioGroup::callme</definition>
+        <argsstring></argsstring>
+        <name>callme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="741" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="741" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1ad10d2fe80e22b3051fe4ee032d939efd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.RadioGroup::radio</definition>
+        <argsstring></argsstring>
+        <name>radio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="748" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="748" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1acaf4c0662f57039e4afd8cabcd790aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.__init__</definition>
+        <argsstring>(self, rad_arr, call_me)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rad_arr</type>
+          <defname>rad_arr</defname>
+        </param>
+        <param>
+          <type>call_me</type>
+          <defname>call_me</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="737" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="737" bodyend="759"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a355d20f09ba16e662d0450cde355b392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.radio_toggle</definition>
+        <argsstring>(self, button, idx)</argsstring>
+        <name>radio_toggle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>button</type>
+          <defname>button</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="760" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="760" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a7eb6b44659a14eff28414e8974f18889" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.set_tooltip</definition>
+        <argsstring>(self, idx, strx)</argsstring>
+        <name>set_tooltip</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="765" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="765" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a6f651ee4246f694cb96bcd2cbacbc8d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.set_entry</definition>
+        <argsstring>(self, idx, strx)</argsstring>
+        <name>set_entry</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="770" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="770" bodyend="774"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1aad0d379fda28bf01a754b2ba8332f4f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.set_sensitive</definition>
+        <argsstring>(self, idx, valx)</argsstring>
+        <name>set_sensitive</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <param>
+          <type>valx</type>
+          <defname>valx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="775" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="775" bodyend="779"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1ad0eb41413bd2b0cf0c0b3a42a4a9392d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.get_size</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_size</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="780" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="780" bodyend="782"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a67f4b086ec68d019ceb2241ed8b0c604" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.set_check</definition>
+        <argsstring>(self, idx, valx)</argsstring>
+        <name>set_check</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <param>
+          <type>valx</type>
+          <defname>valx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="783" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="783" bodyend="788"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a8cc5c821f08b9bab7af04e4059e2df76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.get_check</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_check</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="789" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="789" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a9861171ad4ab702c6d722466c2f4dd86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.RadioGroup.get_text</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="798" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="798" bodyend="807"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.RadioGroup</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Frame</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.RadioGroup</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Frame</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="735" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="735" bodyend="808"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1acaf4c0662f57039e4afd8cabcd790aab" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1af53b091a50af9a45b11d0620c78f17cc" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>buttons</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a5bc15498ae20fc5fd3f1f47092b141fe" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>callme</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a8cc5c821f08b9bab7af04e4059e2df76" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>get_check</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1ad0eb41413bd2b0cf0c0b3a42a4a9392d" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>get_size</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a9861171ad4ab702c6d722466c2f4dd86" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>get_text</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1ad10d2fe80e22b3051fe4ee032d939efd" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>radio</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a355d20f09ba16e662d0450cde355b392" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>radio_toggle</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a67f4b086ec68d019ceb2241ed8b0c604" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>set_check</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a6f651ee4246f694cb96bcd2cbacbc8d0" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>set_entry</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1aad0d379fda28bf01a754b2ba8332f4f3" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>set_sensitive</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1a7eb6b44659a14eff28414e8974f18889" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::RadioGroup</scope><name>set_tooltip</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/><sp/><sp/>PyEdPro<sp/>README</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Python<sp/>editor.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Welcome<sp/>to<sp/>PyEdPro.<sp/>This<sp/>is<sp/>modern<sp/>multi-platform<sp/>editor.<sp/>Simple,<sp/>powerful,</highlight></codeline>
+<codeline><highlight class="normal">configurable,<sp/>extendable.<sp/>Goodies<sp/>like<sp/>macro<sp/>recording<sp/>/<sp/>playback,<sp/>spell<sp/>check,</highlight></codeline>
+<codeline><highlight class="normal">column<sp/>select,<sp/>multiple<sp/>clipboards,<sp/>unlimited<sp/>undo<sp/>...<sp/>makes<sp/>it<sp/>an<sp/>editor</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>I<sp/>use<sp/>every<sp/>day.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>This<sp/>project<sp/>is<sp/>a<sp/>successor<sp/>of<sp/>pyedit,<sp/>after<sp/>porting<sp/>it<sp/>to<sp/>GTK3.<sp/>PyEdPro</highlight></codeline>
+<codeline><highlight class="normal"><sp/>will<sp/>run<sp/>anywhere<sp/>PyGObject<sp/>can<sp/>run.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Working<sp/>and<sp/>tested<sp/>platforms<sp/>currently<sp/>are:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Win<sp/>7<sp/>..<sp/>Win<sp/>10<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Centos<sp/>6<sp/>..<sp/>7<sp/>Ubuntu<sp/>14<sp/>...<sp/>16<sp/>...<sp/><sp/>20.x<sp/>(should<sp/>run<sp/>on<sp/>any<sp/>linux<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Windows<sp/>(Native)<sp/>plus<sp/>MSYS2,<sp/>Mingw,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Raspberry<sp/>PI<sp/>3,<sp/>Raspberry<sp/>PI<sp/>4,<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mac<sp/>**<sp/>Some<sp/>functions<sp/>are<sp/>disabled<sp/>-<sp/>in<sp/>particular<sp/>async<sp/>processing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>I<sp/>mainly<sp/>run<sp/>it<sp/>on<sp/>Ubuntu,<sp/>and<sp/>in<sp/>Win32<sp/>/<sp/>MSYS2,<sp/>some<sp/>Fedora,<sp/>Windows<sp/>10,</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>the<sp/>Raspberry-Pi.<sp/>It<sp/>behaves<sp/>consistently<sp/>on<sp/>all<sp/>these<sp/>platforms,</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>is<sp/>an<sp/>absolute<sp/>joy<sp/>to<sp/>edit<sp/>in<sp/>a<sp/>different<sp/>platform<sp/>without<sp/>the<sp/>learning</highlight></codeline>
+<codeline><highlight class="normal">curve<sp/>of<sp/>new<sp/>keystrokes.<sp/><sp/>If<sp/>you<sp/>want<sp/>an<sp/>editor<sp/><sp/>that<sp/>works<sp/>the<sp/>same<sp/>way<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">all<sp/>your<sp/>workspaces,<sp/>PyEdPro<sp/>is<sp/>the<sp/>one.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>PyEdPro<sp/>now<sp/>is<sp/>working<sp/>good<sp/>on<sp/>the<sp/>Mac.<sp/>I<sp/>installed<sp/>homebrew,<sp/>and<sp/>got<sp/>it<sp/>to<sp/>fire<sp/>up.<sp/>It</highlight></codeline>
+<codeline><highlight class="normal">was<sp/>not<sp/>a<sp/>trivial<sp/>exercise,<sp/>as<sp/>the<sp/>Mac<sp/>PygGOject<sp/>did<sp/>not<sp/>do<sp/>half<sp/>of<sp/>the<sp/>stuff<sp/>as<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">Linux<sp/>version<sp/>did.<sp/>No<sp/>asynchronous<sp/><sp/>anything,<sp/>segmentation<sp/>faults<sp/>everywhere.<sp/>(which<sp/>python</highlight></codeline>
+<codeline><highlight class="normal">is<sp/>not<sp/>suppose<sp/>to<sp/>have)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>The<sp/>font<sp/>rendering<sp/>was<sp/>messed<sp/>up,<sp/>but<sp/>got<sp/>fixed<sp/>by<sp/>replacing<sp/>Pango&apos;s</highlight></codeline>
+<codeline><highlight class="normal">get_pixel_size()<sp/>with<sp/>get_size()<sp/>/<sp/>PANGO_UNIT.<sp/>[Suspect<sp/>int<sp/>vs<sp/>float<sp/>accuracy<sp/>issues]</highlight></codeline>
+<codeline><highlight class="normal">Some<sp/>asyn<sp/>functions<sp/>like<sp/>the<sp/>function<sp/>updater<sp/>is<sp/>disabled,<sp/>but<sp/>it<sp/>can<sp/>be<sp/>done</highlight></codeline>
+<codeline><highlight class="normal">manually.<sp/>(right<sp/>click<sp/>on<sp/>doc<sp/>-&gt;<sp/>rescan)<sp/>All<sp/>in<sp/>all<sp/>the<sp/>Mac&apos;s<sp/>PyGobject<sp/>is<sp/>not<sp/>worth</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>time,<sp/>stopped<sp/>all<sp/>Mac<sp/>M1<sp/>related<sp/>efforts.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>New:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>(this<sp/>is<sp/>extracted,<sp/>use<sp/>git<sp/>log<sp/>for<sp/>up-to-date<sp/>information)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Thu<sp/>21.Apr.2022<sp/>--<sp/>release<sp/>issued</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Wed<sp/>16.Mar.2022<sp/>--<sp/>dialog<sp/>for<sp/>read<sp/>only<sp/>file,<sp/>export<sp/>notes<sp/>lots<sp/>of<sp/>others</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Wed<sp/>01.Dec.2021<sp/>--<sp/>on<sp/>search,<sp/>descending<sp/>one<sp/>dir<sp/>level<sp/>with<sp/>Ext.<sp/>Search</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Sun<sp/>05.Sep.2021<sp/>--<sp/>made<sp/>it<sp/>function<sp/>on<sp/>the<sp/>Mac<sp/>M1<sp/>laptop<sp/><sp/>-<sp/>No<sp/>more<sp/>mac<sp/>support</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Tue<sp/>30.Mar.2021<sp/>--<sp/>added<sp/>windows<sp/>installation<sp/>executable</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Mon<sp/>22.Mar.2021<sp/>--<sp/>added<sp/>single<sp/>file<sp/>(packed)<sp/>executable.<sp/>Just<sp/>download<sp/>and<sp/>run.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Partial<sp/>list,<sp/>some<sp/>highlights;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Added<sp/>drag<sp/>/<sp/>drop<sp/>source<sp/>/<sp/>target.<sp/>New<sp/>keystroke<sp/>combo<sp/>for<sp/>keyboards</highlight></codeline>
+<codeline><highlight class="normal"><sp/>without<sp/>home<sp/>/<sp/>pgup<sp/>etc<sp/>...<sp/>Implemented<sp/>html<sp/>preview.<sp/>Just<sp/>right<sp/>click<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>file<sp/>body,<sp/>an<sp/>select<sp/>the<sp/>corresponding<sp/>menu<sp/>item.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Implemented<sp/>markdown<sp/>preview.<sp/>Right<sp/>click<sp/>...<sp/>menu</highlight></codeline>
+<codeline><highlight class="normal">Implemented<sp/>M4<sp/>preview.<sp/>The<sp/>files<sp/>are<sp/>pulled<sp/>in<sp/>from<sp/>the<sp/>current<sp/>directory,</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>expanded<sp/>with<sp/>the<sp/>m4<sp/>macro<sp/>processor.<sp/>The<sp/>results<sp/>than<sp/>are<sp/>previewed</highlight></codeline>
+<codeline><highlight class="normal">in<sp/>an<sp/>html<sp/>window.<sp/>(Yes,<sp/>head<sp/>and<sp/>footer<sp/>are<sp/>now<sp/>one<sp/>file<sp/>for<sp/>the<sp/>whole<sp/>site,</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>way<sp/>it<sp/>should<sp/>be)<sp/>Right<sp/>click<sp/>...<sp/>and<sp/>look<sp/>for:<sp/>Filter<sp/>to<sp/>M4</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Added<sp/>drag<sp/>and<sp/>drop.<sp/>Accepts<sp/>file<sp/>name<sp/>from<sp/>file<sp/>manager,<sp/>and<sp/>accepts<sp/>clipboard<sp/>text.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>dropped<sp/>content<sp/>is<sp/>inserted<sp/>where<sp/>the<sp/>editor&apos;s<sp/>caret<sp/>is.<sp/>(not<sp/>where<sp/>the<sp/>cursor<sp/>is)</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>caret<sp/>is<sp/>moved<sp/>to<sp/>the<sp/>end<sp/>of<sp/>insertion.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>This<sp/>(above)<sp/>list<sp/>is<sp/>an<sp/>extract,<sp/>please<sp/>see<sp/>git<sp/>log<sp/>for<sp/>complete<sp/>history.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>PyEdPro<sp/>now<sp/>has<sp/>buffer<sp/>diff.<sp/>Right<sp/>clicking<sp/>on<sp/>the<sp/>file&apos;s<sp/>tab<sp/>header<sp/>presents<sp/>a<sp/>menu.</highlight></codeline>
+<codeline><highlight class="normal">One<sp/>may<sp/>select<sp/>the<sp/>diff<sp/>source,<sp/>the<sp/>diff<sp/>destination<sp/>(or<sp/>target).<sp/>When<sp/>the<sp/>source<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">target<sp/>is<sp/>selected,<sp/>a<sp/>diff<sp/>window<sp/>slides<sp/>in<sp/>from<sp/>the<sp/>right.<sp/>The<sp/>diff<sp/>window<sp/>presents</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>diff<sp/>of<sp/>the<sp/>two<sp/>buffers,<sp/>relative<sp/>to<sp/>&apos;target&apos;.<sp/>The<sp/>three<sp/>buffers<sp/>navigate<sp/>in<sp/>sync,</highlight></codeline>
+<codeline><highlight class="normal">one<sp/>may<sp/>inspect<sp/>them<sp/>and<sp/>edit<sp/>the<sp/>source<sp/>and<sp/>the<sp/>target.<sp/>The<sp/>position<sp/>sync<sp/>is<sp/>somewhat</highlight></codeline>
+<codeline><highlight class="normal">intelligent<sp/>by<sp/>guessing<sp/>the<sp/>correct<sp/>position<sp/>of<sp/>the<sp/>cursor<sp/>on<sp/>the<sp/>current<sp/>buffer.</highlight></codeline>
+<codeline><highlight class="normal">One<sp/>can<sp/>re-diff<sp/>the<sp/>buffers<sp/>by<sp/>right<sp/>clicking<sp/>on<sp/>the<sp/>tab<sp/>header,<sp/>and<sp/>select<sp/>re-diff.</highlight></codeline>
+<codeline><highlight class="normal">Please<sp/>note,<sp/>that<sp/>this<sp/>diff<sp/>is<sp/>somewhat<sp/>simple,<sp/>as<sp/>it<sp/>marks<sp/>only<sp/>--del<sp/>--ins<sp/>points.</highlight></codeline>
+<codeline><highlight class="normal">Again,<sp/>its<sp/>simplicity<sp/>yields<sp/>benefits<sp/>that<sp/>are<sp/>surprizing.<sp/>For<sp/>instance;<sp/>hand</highlight></codeline>
+<codeline><highlight class="normal">merging<sp/>small<sp/>changes<sp/>become<sp/>more<sp/>visual.<sp/>And<sp/>yes,<sp/>it<sp/>is<sp/>no<sp/>substitute<sp/>for<sp/>a<sp/>real<sp/>diff.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>The<sp/>diff<sp/>buffer<sp/>(greyed)<sp/>is<sp/>read<sp/>only.<sp/>To<sp/>refresh<sp/>the<sp/>diff,<sp/>select</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>the<sp/>tab&apos;s<sp/>right<sp/>click<sp/>menu<sp/>&apos;Re-diff<sp/>buffers&apos;.<sp/>The<sp/>diff-ing<sp/>can<sp/>be<sp/>stopped<sp/>from<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">same<sp/>right<sp/>click<sp/>menu,<sp/>by<sp/>selecting<sp/>&apos;Stop<sp/>Diffing&apos;.<sp/>The<sp/>diff<sp/>algorithm<sp/>is<sp/>crude,<sp/>but</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>simplicity<sp/>has<sp/>its<sp/>advantages.<sp/>Speed<sp/>and<sp/>predictability.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>PyEdPro.py<sp/>has<sp/>macro<sp/>recording/play,<sp/>search/replace,<sp/>one<sp/>click<sp/>function<sp/>navigation,</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>backup,<sp/>undo/redo,<sp/>auto<sp/>complete,<sp/>auto<sp/>correct,<sp/>syntax<sp/>check,<sp/>spell<sp/>suggestion</highlight></codeline>
+<codeline><highlight class="normal"><sp/>...<sp/>and<sp/>a<sp/>lot<sp/>more.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>The<sp/>recorded<sp/>macros,<sp/>undo<sp/>/<sp/>redo<sp/>information<sp/>/<sp/>editing<sp/>session<sp/>detail<sp/>persists</highlight></codeline>
+<codeline><highlight class="normal"><sp/>(and<sp/>reloaded)<sp/>after<sp/>the<sp/>editor<sp/>is<sp/>closed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>The<sp/>spell<sp/>checker<sp/>can<sp/>check<sp/>text,<sp/>code<sp/>and<sp/>code<sp/>comments.<sp/>The<sp/>parsing<sp/>of<sp/>the<sp/>code<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">rudimentary,<sp/><sp/>comments<sp/>and<sp/>strings<sp/>are<sp/>spell<sp/>checked.<sp/>(Press<sp/>F9)<sp/>The<sp/>code<sp/>is<sp/>filtered</highlight></codeline>
+<codeline><highlight class="normal">out<sp/>for<sp/>Python<sp/>and<sp/><sp/>&apos;C&apos;,<sp/>which<sp/>assures<sp/>most<sp/>derivative<sp/>languages<sp/>have<sp/>correct</highlight></codeline>
+<codeline><highlight class="normal">code<sp/>spell<sp/>code<sp/>check.<sp/>(.sh<sp/>.php<sp/>.cpp)<sp/>The<sp/>whole<sp/>file<sp/>can<sp/>be<sp/>checked<sp/>in<sp/>full<sp/>text</highlight></codeline>
+<codeline><highlight class="normal">spell<sp/>mode.<sp/>Press<sp/>(Shift-F9)<sp/>The<sp/>spell<sp/>checker<sp/>is<sp/>executed<sp/>on<sp/>live<sp/>text.<sp/>(while<sp/>typing)<sp/>The</highlight></codeline>
+<codeline><highlight class="normal">re<sp/>scan<sp/>period<sp/>is<sp/>set<sp/>to<sp/>300<sp/>millisec,<sp/>an<sp/>optimum<sp/>between<sp/>resource<sp/>usage<sp/>and<sp/>real<sp/>time<sp/>feel.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Syntax<sp/>highlighting.<sp/>Again,<sp/>a<sp/>simpler<sp/>parser<sp/>for<sp/>speed.<sp/>Succeeds<sp/>in<sp/>its<sp/>mission<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">giving<sp/>great<sp/>visual<sp/>candy<sp/>effect<sp/>without<sp/>speed<sp/>impact.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>PyEdPro<sp/>is<sp/>fast,<sp/>it<sp/>is<sp/>extendable,<sp/>as<sp/>python<sp/>lends<sp/>itself<sp/>to<sp/>easy<sp/>extending.<sp/>The</highlight></codeline>
+<codeline><highlight class="normal">editor<sp/>has<sp/>a<sp/>table<sp/>driven<sp/>key<sp/>mapping.<sp/>One<sp/>can<sp/>easily<sp/>edit<sp/>the<sp/>key<sp/>map<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">keyhand.py,<sp/>and<sp/>the<sp/>key<sp/>actions<sp/>in<sp/>acthand.py</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>If<sp/>you<sp/>encounter<sp/>blank<sp/>screen<sp/>after<sp/>start,<sp/>cairo<sp/>is<sp/>not<sp/>installed.<sp/>The<sp/>terminal<sp/>interface</highlight></codeline>
+<codeline><highlight class="normal">will<sp/>complain,<sp/>but<sp/>if<sp/>you<sp/>start<sp/>from<sp/>the<sp/>GUI,<sp/>you<sp/>can<sp/>see<sp/>the<sp/>message<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">log<sp/>window.<sp/>(Menu-&gt;Windows-&gt;Show_Log)<sp/>To<sp/>install<sp/>cairo<sp/>type<sp/>&apos;sudo<sp/>apt<sp/>install<sp/>cairo&apos;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>The<sp/>default<sp/>key<sp/>map<sp/>resembles<sp/>gedit<sp/>/<sp/>wed<sp/>/<sp/>etp<sp/>/<sp/>brief.<sp/>Full<sp/>ASCII;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>Any<sp/>(fixed)<sp/>font<sp/>can<sp/>be<sp/>configured.<sp/>No<sp/>arrangements<sp/>in<sp/>the<sp/>program<sp/>for<sp/>variable<sp/>pitch<sp/>fonts.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>See<sp/>KEYS<sp/>file<sp/>for<sp/>the<sp/>list<sp/>of<sp/>keyboard<sp/>shortcuts<sp/>or<sp/>press<sp/>F1<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">editor<sp/>or<sp/>look<sp/>at<sp/>the<sp/>file<sp/>in<sp/>pyedlib/KEYS.<sp/>This<sp/>file<sp/>is<sp/>also<sp/>called<sp/>up<sp/>when<sp/>the<sp/>main<sp/>menu</highlight></codeline>
+<codeline><highlight class="normal"><sp/>Help<sp/>-&gt;<sp/>&apos;KeyHelp<sp/>In<sp/>Doc&apos;<sp/>is<sp/>called<sp/>up.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>If<sp/>you<sp/>highlight<sp/>a<sp/>word,<sp/>and<sp/>press<sp/>F2,<sp/>Zeal<sp/>will<sp/>open<sp/>with<sp/>the<sp/>item<sp/>searched<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">highlighted.<sp/>Shift<sp/>F2<sp/>will<sp/>do<sp/>the<sp/>same<sp/>with<sp/>Devhelp.<sp/>This<sp/>is<sp/>what<sp/>I<sp/>use<sp/>to<sp/>see<sp/>the<sp/>API<sp/>of<sp/>PyGobj.</highlight></codeline>
+<codeline><highlight class="normal">F1<sp/>will<sp/>call<sp/>up<sp/>the<sp/>PyEdPro&apos;s<sp/>help<sp/>screen.<sp/>Shift-F1<sp/>will<sp/>open<sp/>DevDocs.<sp/>Naturally,</highlight></codeline>
+<codeline><highlight class="normal">Devdocs/Devhelp/Zeal<sp/>need<sp/>to<sp/>be<sp/>installed<sp/>for<sp/>these<sp/>to<sp/>function.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>On<sp/>initial<sp/>start,<sp/>PyEdPro<sp/>shows<sp/>a<sp/>left<sp/>pane<sp/>and<sp/>a<sp/>top<sp/>pane.<sp/>The<sp/>left<sp/>pane</highlight></codeline>
+<codeline><highlight class="normal">is<sp/>for<sp/>function<sp/>summary<sp/>and<sp/>the<sp/>top<sp/>pane<sp/>is<sp/>for<sp/>double<sp/>view<sp/>of<sp/>the<sp/>same<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">(to<sp/>see<sp/>the<sp/>caller<sp/>and<sp/>the<sp/>callee<sp/>at<sp/>once)<sp/>These<sp/>panes<sp/>can<sp/>be<sp/>hidden<sp/>with<sp/>the<sp/>mouse<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">dragging<sp/>on<sp/>their<sp/>handle,<sp/>or<sp/>by<sp/>the<sp/>key<sp/>combination<sp/>Alt-Q<sp/>(Shift-Alt-Q<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>left<sp/>pane)<sp/>The<sp/>first<sp/>file<sp/>window&apos;s<sp/>settings<sp/>are<sp/>saved<sp/>for<sp/>the<sp/>next<sp/>startup.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>PyEdPro<sp/>remembers<sp/>a<sp/>lot<sp/>about<sp/>the<sp/>editing<sp/>session.<sp/>Loaded<sp/>files,<sp/>cursor<sp/>positions,</highlight></codeline>
+<codeline><highlight class="normal">fonts,<sp/>font<sp/>size,<sp/>colors,<sp/>search<sp/>strings,<sp/>goto<sp/>numbers,<sp/>undo<sp/>/<sp/>redo<sp/>info,</highlight></codeline>
+<codeline><highlight class="normal">window<sp/>positions<sp/>...<sp/>and<sp/>more.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>This<sp/>is<sp/>all<sp/>stored<sp/>in<sp/>the<sp/>~/.PyEdPro<sp/>directory.<sp/>You<sp/>may<sp/>safely<sp/>delete<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">directory<sp/>to<sp/>start<sp/>PyEdPro<sp/>with<sp/>no<sp/>memory<sp/>of<sp/>what<sp/>has<sp/>been<sp/>done.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>PyEdPro<sp/>also<sp/>keeps<sp/>a<sp/>stack<sp/>of<sp/>original<sp/>files<sp/>in<sp/>the<sp/>~/PyEdPro/data<sp/>directory.<sp/>The<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/>path<sp/>is<sp/>treated<sp/>as<sp/>a<sp/>name<sp/>hash,<sp/>so<sp/>it<sp/>is<sp/>a<sp/>flat<sp/>list.<sp/>For<sp/>example<sp/>this<sp/>file<sp/>is<sp/>known<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">PyEdPro<sp/>hash<sp/>function<sp/>as<sp/>&apos;754ad753_.<sp/>Under<sp/>this<sp/>hash<sp/>name<sp/>there<sp/>are<sp/>a<sp/>multitude<sp/>of<sp/>items.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>original<sp/>file,<sp/>the<sp/>numbered<sp/>backups<sp/>(from<sp/>_1<sp/>to<sp/>_9,<sp/>circular)<sp/>the<sp/>undo<sp/>file,</highlight></codeline>
+<codeline><highlight class="normal">redo<sp/>file,<sp/>the<sp/>auto<sp/>save<sp/>(.sav)<sp/>file,<sp/>the<sp/>backup<sp/>file<sp/>).bak)<sp/>from<sp/>this<sp/>session<sp/>start</highlight></codeline>
+<codeline><highlight class="normal">...<sp/>and<sp/>more.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>way<sp/>to<sp/>find<sp/>the<sp/>file&apos;s<sp/>hash<sp/>is<sp/>to<sp/>switch<sp/>buffers<sp/>and<sp/>the<sp/>current<sp/>buffer&apos;s<sp/>hash</highlight></codeline>
+<codeline><highlight class="normal">is<sp/>displayed<sp/>on<sp/>the<sp/>status<sp/>line.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Starting<sp/>PyEdPro<sp/>with<sp/>no<sp/>command<sp/>line<sp/>arguments<sp/>will<sp/>put<sp/>you<sp/>back<sp/>to<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">previous<sp/>session,<sp/>exactly<sp/>where<sp/>you<sp/>left<sp/>off.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>The<sp/>editor<sp/>will<sp/>work<sp/>on<sp/>all<sp/>PyGobject<sp/>platforms,<sp/>and<sp/>can<sp/>open<sp/>UNIX<sp/>and<sp/>Windows<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">transparently.<sp/>It<sp/>will<sp/>save<sp/>the<sp/>file<sp/>as<sp/>the<sp/>current<sp/>platform&apos;s<sp/>native<sp/>CRLF</highlight></codeline>
+<codeline><highlight class="normal">convention<sp/>dictates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Developer&apos;s<sp/>note:<sp/>in<sp/>order<sp/>to<sp/>make<sp/>PyEdPro<sp/>multi<sp/>platform,<sp/>we<sp/>save</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>configuration<sp/>info<sp/>into<sp/>a<sp/>SQLite<sp/>database<sp/>in<sp/>the<sp/>~/.PyEdPro<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">(~/<sp/>user&apos;s<sp/>home<sp/>directory)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Contributors<sp/>are<sp/>welcome.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>author,</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Peter<sp/>Glen</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Latest<sp/>screen<sp/>shot,<sp/>showing<sp/>DIFF<sp/>and<sp/>other<sp/>new<sp/>features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Screen<sp/>Shot<sp/>of<sp/>DIFF](diffscr.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Screen<sp/>from<sp/>a<sp/>regular<sp/>session,<sp/>including<sp/>clip<sp/>buttons<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Screen<sp/>Shot<sp/>Ubuntu](screen.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Screen<sp/>from<sp/>an<sp/>older<sp/>session,<sp/>note<sp/>the<sp/>function<sp/>list<sp/>on<sp/>the<sp/>left:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Screen<sp/>Shot<sp/>More](image.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Screen<sp/>from<sp/>Mac:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Screen<sp/>Shot](screen_shot_mac.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Project<sp/>stats:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Project<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PyEdPro</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Generated</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2022-04-21<sp/>13:40:49<sp/>(in<sp/>3<sp/>seconds)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Generator</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GitStats<sp/>(version<sp/>55c5c28),<sp/>git<sp/>version<sp/>2.32.0,<sp/>gnuplot<sp/>5.4<sp/>patchlevel<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Report<sp/>Period</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2018-09-16<sp/>00:29:10<sp/>to<sp/>2022-04-15<sp/>10:31:49</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Age</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1308<sp/>days,<sp/>166<sp/>active<sp/>days<sp/>(12.69%)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Total<sp/>Files</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>220</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Total<sp/>Lines<sp/>of<sp/>Code</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>476774<sp/>(1454450<sp/>added,<sp/>977676<sp/>removed)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Total<sp/>Commits</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>347<sp/>(average<sp/>2.1<sp/>commits<sp/>per<sp/>active<sp/>day,<sp/>0.3<sp/>per<sp/>all<sp/>days)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Authors</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/>(average<sp/>49.6<sp/>commits<sp/>per<sp/>author)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Stats](commits_by_year_month.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">License:<sp/><sp/><sp/><sp/>Open<sp/>Source,<sp/>FreeWare</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

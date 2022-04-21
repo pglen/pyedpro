@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacecairo-knockout" kind="namespace" language="Python">
+    <compoundname>cairo-knockout</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecairo-knockout_1a0f9f93a160d5b2d99455e7ba6d77bdcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-knockout.oval_path</definition>
+        <argsstring>(ctx, xc, yc, xr, yr)</argsstring>
+        <name>oval_path</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <param>
+          <type>xc</type>
+          <defname>xc</defname>
+        </param>
+        <param>
+          <type>yc</type>
+          <defname>yc</defname>
+        </param>
+        <param>
+          <type>xr</type>
+          <defname>xr</defname>
+        </param>
+        <param>
+          <type>yr</type>
+          <defname>yr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-knockout.py" line="14" column="1" bodyfile="pyedpro/study/cairo-knockout.py" bodystart="14" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-knockout_1ae55632526b6bbcb284b8b7c25b62c21b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-knockout.fill_checks</definition>
+        <argsstring>(ctx, x, y, width, height)</argsstring>
+        <name>fill_checks</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <param>
+          <type>width</type>
+          <defname>width</defname>
+        </param>
+        <param>
+          <type>height</type>
+          <defname>height</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-knockout.py" line="26" column="1" bodyfile="pyedpro/study/cairo-knockout.py" bodystart="26" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-knockout_1a37e5ac7ffa115af4b2c83fbcc869d8df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-knockout.draw_3circles</definition>
+        <argsstring>(ctx, xc, yc, radius, alpha)</argsstring>
+        <name>draw_3circles</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <param>
+          <type>xc</type>
+          <defname>xc</defname>
+        </param>
+        <param>
+          <type>yc</type>
+          <defname>yc</defname>
+        </param>
+        <param>
+          <type>radius</type>
+          <defname>radius</defname>
+        </param>
+        <param>
+          <type>alpha</type>
+          <defname>alpha</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-knockout.py" line="43" column="1" bodyfile="pyedpro/study/cairo-knockout.py" bodystart="43" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-knockout_1a631fc1ab41c562a3ee630753a2eb19c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-knockout.draw</definition>
+        <argsstring>(ctx, width, height)</argsstring>
+        <name>draw</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <param>
+          <type>width</type>
+          <defname>width</defname>
+        </param>
+        <param>
+          <type>height</type>
+          <defname>height</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-knockout.py" line="68" column="1" bodyfile="pyedpro/study/cairo-knockout.py" bodystart="68" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-knockout_1a237eb8294a6d1bd59c39314a535e9386" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-knockout.draw_event</definition>
+        <argsstring>(drawingarea, ctx)</argsstring>
+        <name>draw_event</name>
+        <param>
+          <type>drawingarea</type>
+          <defname>drawingarea</defname>
+        </param>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-knockout.py" line="111" column="1" bodyfile="pyedpro/study/cairo-knockout.py" bodystart="111" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-knockout_1abeba96aa7d2a3c83ae085d2c02b7c581" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-knockout.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-knockout.py" line="117" column="1" bodyfile="pyedpro/study/cairo-knockout.py" bodystart="117" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/study/cairo-knockout.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

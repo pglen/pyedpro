@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::MenuButt</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.DrawingArea</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aaccca05bb2c6b948699139ff0f21de14" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.MenuButt::border</definition>
+        <argsstring></argsstring>
+        <name>border</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="312" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aa729018656cb312fadda1828e4ab3645" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.MenuButt::callb</definition>
+        <argsstring></argsstring>
+        <name>callb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="313" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a791ca024ddac1f04f1ccddf6e30e1de3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.MenuButt::menarr</definition>
+        <argsstring></argsstring>
+        <name>menarr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="314" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a9c3a8d4682293789a60cd4b6c759b83b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.MenuButt::pointer</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="322" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a697a8c6153a423fc7ac232fdbc2dd7a7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.MenuButt::menu3</definition>
+        <argsstring></argsstring>
+        <name>menu3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="341" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aa5c56caae914389475c0d45803e7351b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt.__init__</definition>
+        <argsstring>(self, menarr, callb, tooltip=&quot;Menu&quot;, size=20, border=2)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a791ca024ddac1f04f1ccddf6e30e1de3" kindref="member">menarr</ref></type>
+          <defname>menarr</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aa729018656cb312fadda1828e4ab3645" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+        </param>
+        <param>
+          <type>tooltip</type>
+          <defname>tooltip</defname>
+          <defval>&quot;Menu&quot;</defval>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+          <defval>20</defval>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aaccca05bb2c6b948699139ff0f21de14" kindref="member">border</ref></type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="307" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="307" bodyend="323"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1ab4f53bcd61b9bf107f436984d24c827a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt.area_key</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="335" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="335" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a677ff30d147b4a5b19e8df3fc7eab718" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt.area_rbutton</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_rbutton</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="347" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="347" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a599e62a8519558bfbbfa61a676725992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt.area_button</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_button</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="355" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="355" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1ad9e717adf81599873dc20b48caeac857" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt.menu_fired</definition>
+        <argsstring>(self, menu, menutext, arg)</argsstring>
+        <name>menu_fired</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>menu</type>
+          <defname>menu</defname>
+        </param>
+        <param>
+          <type>menutext</type>
+          <defname>menutext</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="363" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="363" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a167d7635d6dab1a115b40eb5ca2885f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt.draw</definition>
+        <argsstring>(self, area, cr)</argsstring>
+        <name>draw</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="373" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="373" bodyend="391"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a9485e97262dbd8ba18a3ce5e950488ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt._create_menuitem</definition>
+        <argsstring>(self, string, action, arg=None)</argsstring>
+        <name>_create_menuitem</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>action</type>
+          <defname>action</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="324" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="324" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a1782f188ed63c471fbf24ff6c6d6c589" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt._make_menu</definition>
+        <argsstring>(self)</argsstring>
+        <name>_make_menu</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="339" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="339" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a83ca783c9ced8a9d5a36adebb892d448" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.MenuButt._draw_line</definition>
+        <argsstring>(self, cr, xx, yy, xx2, yy2)</argsstring>
+        <name>_draw_line</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>xx2</type>
+          <defname>xx2</defname>
+        </param>
+        <param>
+          <type>yy2</type>
+          <defname>yy2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="368" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="368" bodyend="372"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.MenuButt</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.DrawingArea</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.MenuButt</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.DrawingArea</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="305" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="305" bodyend="392"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aa5c56caae914389475c0d45803e7351b" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a9485e97262dbd8ba18a3ce5e950488ff" prot="private" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>_create_menuitem</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a83ca783c9ced8a9d5a36adebb892d448" prot="private" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>_draw_line</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a1782f188ed63c471fbf24ff6c6d6c589" prot="private" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>_make_menu</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a599e62a8519558bfbbfa61a676725992" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>area_button</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1ab4f53bcd61b9bf107f436984d24c827a" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>area_key</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a677ff30d147b4a5b19e8df3fc7eab718" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>area_rbutton</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aaccca05bb2c6b948699139ff0f21de14" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>border</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1aa729018656cb312fadda1828e4ab3645" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>callb</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a167d7635d6dab1a115b40eb5ca2885f8" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>draw</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a791ca024ddac1f04f1ccddf6e30e1de3" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>menarr</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a697a8c6153a423fc7ac232fdbc2dd7a7" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>menu3</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1ad9e717adf81599873dc20b48caeac857" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>menu_fired</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt_1a9c3a8d4682293789a60cd4b6c759b83b" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::MenuButt</scope><name>pointer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

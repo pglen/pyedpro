@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="keybind_8py" kind="file" language="Python">
+    <compoundname>keybind.py</compoundname>
+    <innernamespace refid="namespacepyedpro_1_1keybind">pyedpro::keybind</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacepyedpro_1_1keybind" refkind="compound"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gi</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">gi.require_version(</highlight><highlight class="stringliteral">&apos;Gtk&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;3.0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">gi.require_version(</highlight><highlight class="stringliteral">&apos;Keybinder&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;3.0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Gtk</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Keybinder</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepyedpro_1_1keybind_1ad1c9491fc93c72fdaa410767213b4913" kindref="member">callback</ref>(keystr,<sp/>user_data):</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;Handling&quot;</highlight><highlight class="normal">,<sp/>user_data)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;Event<sp/>time:&quot;</highlight><highlight class="normal">,<sp/>Keybinder.get_current_event_time())</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>Gtk.main_quit()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>keystr<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&lt;Ctrl&gt;&lt;Alt&gt;M&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Keybinder.init()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>Keybinder.bind(keystr,<sp/>callback,<sp/></highlight><highlight class="stringliteral">&quot;keystring<sp/>%s<sp/>(user<sp/>data)&quot;</highlight><highlight class="normal"><sp/>%<sp/>keystr)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>(</highlight><highlight class="stringliteral">&quot;Press&quot;</highlight><highlight class="normal">,<sp/>keystr,<sp/></highlight><highlight class="stringliteral">&quot;to<sp/>handle<sp/>keybinding<sp/>and<sp/>quit&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>Gtk.main()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="pyedpro/keybind.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1keybind" kind="namespace" language="Python">
+    <compoundname>pyedpro::keybind</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1keybind_1adda88fbfdb2b0f801030977f7f8101f6" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::keybind.keystr</definition>
+        <argsstring></argsstring>
+        <name>keystr</name>
+        <initializer>=  &quot;&lt;Ctrl&gt;&lt;Alt&gt;M&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/keybind.py" line="14" column="1" bodyfile="pyedpro/keybind.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1keybind_1ad1c9491fc93c72fdaa410767213b4913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.keybind.callback</definition>
+        <argsstring>(keystr, user_data)</argsstring>
+        <name>callback</name>
+        <param>
+          <type><ref refid="namespacepyedpro_1_1keybind_1adda88fbfdb2b0f801030977f7f8101f6" kindref="member">keystr</ref></type>
+          <defname>keystr</defname>
+        </param>
+        <param>
+          <type>user_data</type>
+          <defname>user_data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/keybind.py" line="8" column="1" bodyfile="pyedpro/keybind.py" bodystart="8" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/keybind.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

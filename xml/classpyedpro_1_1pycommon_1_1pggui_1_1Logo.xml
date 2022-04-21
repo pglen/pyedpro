@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1Logo" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::Logo</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1a08ad17139abea9a3cf896ffaebe1151e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.Logo::logolab</definition>
+        <argsstring></argsstring>
+        <name>logolab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="447" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1a724d54c0c562be8cdf7b35f35580ca02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Logo.__init__</definition>
+        <argsstring>(self, labelx, tooltip=None, callme=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>labelx</type>
+          <defname>labelx</defname>
+        </param>
+        <param>
+          <type>tooltip</type>
+          <defname>tooltip</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>callme</type>
+          <defname>callme</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="443" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="443" bodyend="463"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1aca8c1088a8183015808319361cea1b99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Logo.forallcallb</definition>
+        <argsstring>(self, arg1)</argsstring>
+        <name>forallcallb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>arg1</type>
+          <defname>arg1</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="464" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="464" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1a91226d645809647eb97addb8ff26f499" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Logo.hide</definition>
+        <argsstring>(self)</argsstring>
+        <name>hide</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="468" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="468" bodyend="475"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.Logo</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1Logo"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.Logo</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1Logo"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="441" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="441" bodyend="476"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1a724d54c0c562be8cdf7b35f35580ca02" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Logo</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1aca8c1088a8183015808319361cea1b99" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Logo</scope><name>forallcallb</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1a91226d645809647eb97addb8ff26f499" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Logo</scope><name>hide</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Logo_1a08ad17139abea9a3cf896ffaebe1151e" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Logo</scope><name>logolab</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1Unbuffered" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::Unbuffered</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1Unbuffered_1acc50c860eef985aa71185cafa4bad70c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.Unbuffered::stream</definition>
+        <argsstring></argsstring>
+        <name>stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="111" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1Unbuffered_1a990e2431fed78a4315adae2b5c817c7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.Unbuffered.__init__</definition>
+        <argsstring>(self, stream)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1Unbuffered_1acc50c860eef985aa71185cafa4bad70c" kindref="member">stream</ref></type>
+          <defname>stream</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="110" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="110" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1Unbuffered_1a851da8f21f80db2594bd858ba3a68356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.Unbuffered.write</definition>
+        <argsstring>(self, data)</argsstring>
+        <name>write</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="113" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1Unbuffered_1a43980fc37294a798e9b114abb410bccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.Unbuffered.writelines</definition>
+        <argsstring>(self, datas)</argsstring>
+        <name>writelines</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>datas</type>
+          <defname>datas</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="117" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1Unbuffered_1a927030e155b1d50c15e0f10a0eebfd02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.Unbuffered.__getattr__</definition>
+        <argsstring>(self, attr)</argsstring>
+        <name>__getattr__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>attr</type>
+          <defname>attr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="121" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="121" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.Unbuffered</label>
+        <link refid="classpyedpro_1_1Unbuffered"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.Unbuffered</label>
+        <link refid="classpyedpro_1_1Unbuffered"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="109" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="109" bodyend="124"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1Unbuffered_1a927030e155b1d50c15e0f10a0eebfd02" prot="public" virt="non-virtual"><scope>pyedpro::Unbuffered</scope><name>__getattr__</name></member>
+      <member refid="classpyedpro_1_1Unbuffered_1a990e2431fed78a4315adae2b5c817c7c" prot="public" virt="non-virtual"><scope>pyedpro::Unbuffered</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1Unbuffered_1acc50c860eef985aa71185cafa4bad70c" prot="public" virt="non-virtual"><scope>pyedpro::Unbuffered</scope><name>stream</name></member>
+      <member refid="classpyedpro_1_1Unbuffered_1a851da8f21f80db2594bd858ba3a68356" prot="public" virt="non-virtual"><scope>pyedpro::Unbuffered</scope><name>write</name></member>
+      <member refid="classpyedpro_1_1Unbuffered_1a43980fc37294a798e9b114abb410bccc" prot="public" virt="non-virtual"><scope>pyedpro::Unbuffered</scope><name>writelines</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

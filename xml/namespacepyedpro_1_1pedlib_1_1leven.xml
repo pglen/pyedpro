@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1leven" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::leven</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1leven_1a190077a3d156d72113b88ba40b1e2ce3" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::pedlib::leven.darr</definition>
+        <argsstring></argsstring>
+        <name>darr</name>
+        <initializer>=  [];</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/leven.py" line="9" column="1" bodyfile="pyedpro/pedlib/leven.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1leven_1a31f88e3d59faaa8feef5a25bee615ec9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro::pedlib::leven.MXDIM</definition>
+        <argsstring></argsstring>
+        <name>MXDIM</name>
+        <initializer>=    36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/leven.py" line="10" column="1" bodyfile="pyedpro/pedlib/leven.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1leven_1a0133e68b7521b9b16cd29b41f8076508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.leven.Minimum</definition>
+        <argsstring>(a, b, c)</argsstring>
+        <name>Minimum</name>
+        <param>
+          <type>a</type>
+          <defname>a</defname>
+        </param>
+        <param>
+          <type>b</type>
+          <defname>b</defname>
+        </param>
+        <param>
+          <type>c</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/leven.py" line="16" column="1" bodyfile="pyedpro/pedlib/leven.py" bodystart="16" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1leven_1a92b289623669c8cbf03a098cbc4bc06a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.leven.show_mx</definition>
+        <argsstring>(darr)</argsstring>
+        <name>show_mx</name>
+        <param>
+          <type><ref refid="namespacepyedpro_1_1pedlib_1_1leven_1a190077a3d156d72113b88ba40b1e2ce3" kindref="member">darr</ref></type>
+          <defname>darr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/leven.py" line="30" column="1" bodyfile="pyedpro/pedlib/leven.py" bodystart="30" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1leven_1a0e59013170cfa3d6fe1b11bb56e53e6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.leven.create_mx</definition>
+        <argsstring>()</argsstring>
+        <name>create_mx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/leven.py" line="45" column="1" bodyfile="pyedpro/pedlib/leven.py" bodystart="45" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1leven_1a5dbb18206bf2e2c7bf7860170676d553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.leven.Distance</definition>
+        <argsstring>(s, t)</argsstring>
+        <name>Distance</name>
+        <param>
+          <type>s</type>
+          <defname>s</defname>
+        </param>
+        <param>
+          <type>t</type>
+          <defname>t</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/leven.py" line="60" column="1" bodyfile="pyedpro/pedlib/leven.py" bodystart="60" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/leven.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1Spacer" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::Spacer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Label</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Spacer_1a3ac7f9c450b183df85c1dd8307678dc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Spacer.__init__</definition>
+        <argsstring>(self, sp=1, title=None, left=False, bottom=False, test=False)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>sp</type>
+          <defname>sp</defname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>left</type>
+          <defname>left</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>bottom</type>
+          <defname>bottom</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>test</type>
+          <defname>test</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="663" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="663" bodyend="696"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.Spacer</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1Spacer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Label</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.Spacer</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1Spacer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Label</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="659" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="659" bodyend="697"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Spacer_1a3ac7f9c450b183df85c1dd8307678dc7" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Spacer</scope><name>__init__</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

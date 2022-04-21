@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pgbox::xVBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a818f287342a7da55c6fead2d2d84cd9c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgbox.xVBox::pad</definition>
+        <argsstring></argsstring>
+        <name>pad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="482" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="482" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a952983d788cb98fd081dd52e24463f80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.xVBox.__init__</definition>
+        <argsstring>(self, col=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="480" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="480" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a295adf9272156aa8ccbdc493a3e77392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.xVBox.set_padding</definition>
+        <argsstring>(self, pad)</argsstring>
+        <name>set_padding</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a818f287342a7da55c6fead2d2d84cd9c" kindref="member">pad</ref></type>
+          <defname>pad</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="488" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="488" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a0976d0f94101987929132b7b3e44ab4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.xVBox.pack</definition>
+        <argsstring>(self, obj, expand=False, pad=0)</argsstring>
+        <name>pack</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>obj</type>
+          <defname>obj</defname>
+        </param>
+        <param>
+          <type>expand</type>
+          <defname>expand</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a818f287342a7da55c6fead2d2d84cd9c" kindref="member">pad</ref></type>
+          <defname>pad</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="491" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="491" bodyend="495"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pgbox.xVBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pgbox.xVBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pgbox.py" line="478" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="478" bodyend="496"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a952983d788cb98fd081dd52e24463f80" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::xVBox</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a0976d0f94101987929132b7b3e44ab4c" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::xVBox</scope><name>pack</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a818f287342a7da55c6fead2d2d84cd9c" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::xVBox</scope><name>pad</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox_1a295adf9272156aa8ccbdc493a3e77392" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::xVBox</scope><name>set_padding</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

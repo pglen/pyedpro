@@ -1,0 +1,3324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedlib_1_1peddoc_1_1pedDoc" kind="class" language="Python" prot="public">
+    <compoundname>pyedlib::peddoc::pedDoc</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.DrawingArea</basecompoundref>
+    <basecompoundref refid="classpyedlib_1_1peddraw_1_1peddraw" prot="public" virt="non-virtual">pyedlib.peddraw.peddraw</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a79fc49e1c9dd9a8ac6e9a69043abaa84" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::appwin</definition>
+        <argsstring></argsstring>
+        <name>appwin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="73" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ac5846edd4124d70a4a914e5f8c250d7c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::readonly</definition>
+        <argsstring></argsstring>
+        <name>readonly</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="74" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9bdc1d866d9d461e7bb3fbc462b0d2d6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::keyh</definition>
+        <argsstring></argsstring>
+        <name>keyh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="77" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a40c9e78a3e5d86d0e4c0e64aa884c821" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::xpos</definition>
+        <argsstring></argsstring>
+        <name>xpos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="80" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a5015d0dc6c3c8a1fd6e367986d0977b4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::ypos</definition>
+        <argsstring></argsstring>
+        <name>ypos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="80" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9b210eb6affb91db333f0214290130fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::changed</definition>
+        <argsstring></argsstring>
+        <name>changed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="81" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a849f28a74bafc1d780dc88a28b81b32c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::src_changed</definition>
+        <argsstring></argsstring>
+        <name>src_changed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="82" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a908d832eed8677c42e5510e13adcd66a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::needscan</definition>
+        <argsstring></argsstring>
+        <name>needscan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="83" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a116c44fefde14387af6cab04d02a206a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::record</definition>
+        <argsstring></argsstring>
+        <name>record</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="84" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a89d19dcf4b28d2b0e97bff2f26f22ee7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::recarr</definition>
+        <argsstring></argsstring>
+        <name>recarr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="85" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a411a76e4e29743d370d988e1fc84df95" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::undoarr</definition>
+        <argsstring></argsstring>
+        <name>undoarr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="86" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aec9b63be2a95007fd287d6805f2c3994" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::redoarr</definition>
+        <argsstring></argsstring>
+        <name>redoarr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="87" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1af73cd323e153507a18e325da3ee6160d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::queue</definition>
+        <argsstring></argsstring>
+        <name>queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="88" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a52c6d80cc16b975876828eba386a4f30" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::colsel</definition>
+        <argsstring></argsstring>
+        <name>colsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="89" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9b7257f90992228e5651bb12e9f902e0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::oldsearch</definition>
+        <argsstring></argsstring>
+        <name>oldsearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="90" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a6f9695b1658b0abe478c5245aedfc7ad" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::oldgoto</definition>
+        <argsstring></argsstring>
+        <name>oldgoto</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="91" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0798fa1d9c3b736949c940b0ac7feb23" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::oldrep</definition>
+        <argsstring></argsstring>
+        <name>oldrep</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="92" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0b7cdcde98320a4009b1269a38570a00" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::xsel</definition>
+        <argsstring></argsstring>
+        <name>xsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="93" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a343e2903caced8e17bd301752a831bce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::ysel</definition>
+        <argsstring></argsstring>
+        <name>ysel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="93" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3ebc0fe7408c577eda7f3740b6267828" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::xsel2</definition>
+        <argsstring></argsstring>
+        <name>xsel2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="94" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a820132ed3ef786045836535573793fdd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::ysel2</definition>
+        <argsstring></argsstring>
+        <name>ysel2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="94" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ab3db3d482323ab3055d88c2be6cfc3db" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::mx</definition>
+        <argsstring></argsstring>
+        <name>mx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="95" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a23eb3f6cb18b03810eb20e184b94127f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::my</definition>
+        <argsstring></argsstring>
+        <name>my</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="95" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aac4bce8c460934a7df8175ac4fac5e27" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::caret</definition>
+        <argsstring></argsstring>
+        <name>caret</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="96" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a84d178d2516c0fd3112d56447ecf5fe6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::focus</definition>
+        <argsstring></argsstring>
+        <name>focus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="97" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a57eaeb63c5784c98a2b9aa8c56427127" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::insert</definition>
+        <argsstring></argsstring>
+        <name>insert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="98" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a8a29e9480305979abe082b43c891fa79" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::startxxx</definition>
+        <argsstring></argsstring>
+        <name>startxxx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="99" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3a163c700f59268c63e9433f1a9fd56a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::startyyy</definition>
+        <argsstring></argsstring>
+        <name>startyyy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="99" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a04aa2da171cf3caa5b64fe7d359b1185" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::hex</definition>
+        <argsstring></argsstring>
+        <name>hex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="100" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a5cdd370f1fcd42480d90a7a8a8b777f2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::colflag</definition>
+        <argsstring></argsstring>
+        <name>colflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="101" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a79b6c1719e25747ce34da273bebfb139" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::acorr</definition>
+        <argsstring></argsstring>
+        <name>acorr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="102" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1af2874c1a5ef9eb2c206e1ebd3da8a9e2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::scol</definition>
+        <argsstring></argsstring>
+        <name>scol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="103" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a5783beab622fb98703c94ffc3b3949c9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::accum</definition>
+        <argsstring></argsstring>
+        <name>accum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="104" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a6fee72b204109f0e649e0385e51912b2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::tokens</definition>
+        <argsstring></argsstring>
+        <name>tokens</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="105" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a894292fd08b860127d14700b7c265fec" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::ularr</definition>
+        <argsstring></argsstring>
+        <name>ularr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="106" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ac799537a7f979273148ac0ccae830cc2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::bigcaret</definition>
+        <argsstring></argsstring>
+        <name>bigcaret</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="107" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3decb25b28a1bf44506b081e942c4248" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::stab</definition>
+        <argsstring></argsstring>
+        <name>stab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="108" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a87194654d6bc82b008f32750d2ffe6f3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::honeshot</definition>
+        <argsstring></argsstring>
+        <name>honeshot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="109" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aad246e23bf6dedc47f3e4bd8e975e736" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::initial_undo_size</definition>
+        <argsstring></argsstring>
+        <name>initial_undo_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="110" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa27700bda988023496d79098f37ca25c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::initial_redo_size</definition>
+        <argsstring></argsstring>
+        <name>initial_redo_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="111" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1addac5a4c43f1a0c753034d2d5f3c8cc4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::spell</definition>
+        <argsstring></argsstring>
+        <name>spell</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="112" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9bffef17c2113fe2f6309d3d57f1c3fe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::spellmode</definition>
+        <argsstring></argsstring>
+        <name>spellmode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="113" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aca774dec94d59ed485bd10d9f8a1a09e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::start_time</definition>
+        <argsstring></argsstring>
+        <name>start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="114" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a116e6de3e6cc189d847c2eb3af8ad6ec" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::shift</definition>
+        <argsstring></argsstring>
+        <name>shift</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="115" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a90d87a47ec3ee851411fa95713a60c9c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::vscgap</definition>
+        <argsstring></argsstring>
+        <name>vscgap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="117" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa9c904add3fc2e6cba30bbf93387bf82" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::hscgap</definition>
+        <argsstring></argsstring>
+        <name>hscgap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="118" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a5ee65abe4bd4369cdf01e34b1e8083ca" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::pgup</definition>
+        <argsstring></argsstring>
+        <name>pgup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="119" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa9c8b89f00aab357e1e8f08f5ef8769b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::tabstop</definition>
+        <argsstring></argsstring>
+        <name>tabstop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="120" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ad71d088a54484eb083ef0652d66c7b6f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="122" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3991d11dbb7e48bb8c4b768373ed39fc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::maxlinelen</definition>
+        <argsstring></argsstring>
+        <name>maxlinelen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="123" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa2410d188e36b7afc428aab108406b37" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::maxlines</definition>
+        <argsstring></argsstring>
+        <name>maxlines</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="124" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a445cf6b720cf8426bb20906b4ea69184" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::fired</definition>
+        <argsstring></argsstring>
+        <name>fired</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="125" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ae876f5021ddbbe9b57fb8ac00f3f1e38" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::countup</definition>
+        <argsstring></argsstring>
+        <name>countup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="126" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1af88caa90a3b9d337871f8b38d92ed220" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::nokey</definition>
+        <argsstring></argsstring>
+        <name>nokey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="127" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a1b587fd81b4033fa2832df793f3816a3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::newword</definition>
+        <argsstring></argsstring>
+        <name>newword</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="128" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a19ae01dd54e376cd4d90e88beb0115dc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::scrtab</definition>
+        <argsstring></argsstring>
+        <name>scrtab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="129" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a2a671f5a51beabe28fb1374f6e100185" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::stat</definition>
+        <argsstring></argsstring>
+        <name>stat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="130" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1abf0bd009c0292e4a4743e9ddfa41260d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::sep</definition>
+        <argsstring></argsstring>
+        <name>sep</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="131" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a4775c1ac9de77a00a2ba4ac9519292f1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::tts</definition>
+        <argsstring></argsstring>
+        <name>tts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="132" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a098edf048a9f232ed5ce179a7fa19b5a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::hadj</definition>
+        <argsstring></argsstring>
+        <name>hadj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="152" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ab59797b13457c5c46f8ffe6ccbcce3be" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::vadj</definition>
+        <argsstring></argsstring>
+        <name>vadj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="154" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a57baa016b65cae704799adb9f8a7c136" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::vscroll</definition>
+        <argsstring></argsstring>
+        <name>vscroll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="157" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aedda0095755e88e53d959fd25a57c734" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::hscroll</definition>
+        <argsstring></argsstring>
+        <name>hscroll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="158" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a67b0572852dfb9bde1ae7cebedf05326" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::fgcolor</definition>
+        <argsstring></argsstring>
+        <name>fgcolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="194" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1af1f16311f60ae370326fa1a75a621bd8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::rbgcolor</definition>
+        <argsstring></argsstring>
+        <name>rbgcolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="201" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a7d7a934cef107d72aa61dfef0ccec5b4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::cbgcolor</definition>
+        <argsstring></argsstring>
+        <name>cbgcolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="208" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a5956cf5e733445550f758da6295e0e13" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::kwcolor</definition>
+        <argsstring></argsstring>
+        <name>kwcolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="215" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aaf591775c068c5eba765a5e88b178de8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::clcolor</definition>
+        <argsstring></argsstring>
+        <name>clcolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="222" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a64d7828a03b56308d6a7bb5a29da0b35" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::cocolor</definition>
+        <argsstring></argsstring>
+        <name>cocolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="228" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1af0fd88508e9ddef060f53fb938ab61ff" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::stcolor</definition>
+        <argsstring></argsstring>
+        <name>stcolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="234" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9e6cae96d803f146c4eedb4bdff0cb63" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::fd</definition>
+        <argsstring></argsstring>
+        <name>fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="241" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa055052815cd47a3c974c6148b43d302" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::pangolayout</definition>
+        <argsstring></argsstring>
+        <name>pangolayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="245" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ad7c4a39d2a4f2c6e0f65029730a20ee0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::cyy</definition>
+        <argsstring></argsstring>
+        <name>cyy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="249" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a42a7722026e556aee9331785040e493a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::tabarr</definition>
+        <argsstring></argsstring>
+        <name>tabarr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="252" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a53801941e742f52e7148a08d1c0a7692" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::oneshot</definition>
+        <argsstring></argsstring>
+        <name>oneshot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="266" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0852aa1c4a634edaf280529fdb124bbf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::hhh</definition>
+        <argsstring></argsstring>
+        <name>hhh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="438" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="438" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a8e13386d207af3d2af733cc92ed5a49c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::www</definition>
+        <argsstring></argsstring>
+        <name>www</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="438" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="438" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1ab88912ff0d5f95747edac90d6de5c847" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::xlen</definition>
+        <argsstring></argsstring>
+        <name>xlen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="439" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1af98b56dfb9036cb673a7dc4795776a74" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::layout</definition>
+        <argsstring></argsstring>
+        <name>layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="453" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="453" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aacd3acaff40fbbb9eab9dfab1aa3aaaf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::spellstr</definition>
+        <argsstring></argsstring>
+        <name>spellstr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="537" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="537" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9212a3fcf409d51712e4fcc39a28ab2a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::menu2</definition>
+        <argsstring></argsstring>
+        <name>menu2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="999" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="999" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a89bd6f6a7c8b7eb84eb922d79a209c76" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::menu</definition>
+        <argsstring></argsstring>
+        <name>menu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1134" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a899eadd2541a39ee4eb9bdd11ec5612c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::fname</definition>
+        <argsstring></argsstring>
+        <name>fname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1239" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aeb26436a8c262c7e1711857a5a3ed96a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::srctxt</definition>
+        <argsstring></argsstring>
+        <name>srctxt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1673" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1673" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1a7066ccac9bb549529f25d4afe2179ec9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::regex</definition>
+        <argsstring></argsstring>
+        <name>regex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1673" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1673" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa782c58513af0d43621435ca8f36ec2e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::boolcase</definition>
+        <argsstring></argsstring>
+        <name>boolcase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1674" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1674" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa72e9b46105809250ef069db3dcb2fec" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.peddoc.pedDoc::boolregex</definition>
+        <argsstring></argsstring>
+        <name>boolregex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1674" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1674" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a7f9c1568b215a040cedfe34a59c7b293" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.__init__</definition>
+        <argsstring>(self, buff, appwin, readonly=False)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>buff</type>
+          <defname>buff</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedlib_1_1peddoc_1_1pedDoc_1a79fc49e1c9dd9a8ac6e9a69043abaa84" kindref="member">appwin</ref></type>
+          <defname>appwin</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedlib_1_1peddoc_1_1pedDoc_1ac5846edd4124d70a4a914e5f8c250d7c" kindref="member">readonly</ref></type>
+          <defname>readonly</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="70" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="70" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa134d34f6c0846844fda78c84977425f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.setcol</definition>
+        <argsstring>(self)</argsstring>
+        <name>setcol</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="191" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="191" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0b2e32f1365d53276cd5082d2e5a71f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.setfont</definition>
+        <argsstring>(self, fam, size)</argsstring>
+        <name>setfont</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>fam</type>
+          <defname>fam</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="239" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="239" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a7c3666ffc9f98684c93bf3c98bb8307d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.set_maxlinelen</definition>
+        <argsstring>(self, mlen=-1, ignore=True)</argsstring>
+        <name>set_maxlinelen</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>mlen</type>
+          <defname>mlen</defname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>ignore</type>
+          <defname>ignore</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="263" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="263" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa0327a24e428f5dae598eb5fcf5bfa13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.set_maxlines</definition>
+        <argsstring>(self, lines=0, ignore=True)</argsstring>
+        <name>set_maxlines</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>lines</type>
+          <defname>lines</defname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>ignore</type>
+          <defname>ignore</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="276" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="276" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1abd981519ca8c9eb6b71c7816a3c72784" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.idle_callback</definition>
+        <argsstring>(self)</argsstring>
+        <name>idle_callback</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="288" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="288" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ab69860a6e9733ebea1fd66a80d379982" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.idle_callback2</definition>
+        <argsstring>(self)</argsstring>
+        <name>idle_callback2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="306" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="306" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a6212e454e7bc38c729a8dd9b76208876" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.locate</definition>
+        <argsstring>(self, xstr)</argsstring>
+        <name>locate</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="314" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="314" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1adaa059e927274a8447abcc4fb4c2b477" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.focus_out_cb</definition>
+        <argsstring>(self, widget, event)</argsstring>
+        <name>focus_out_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="332" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="332" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a813f5ae3d693667a90dc2dace5c8063b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.focus_in_cb</definition>
+        <argsstring>(self, widget, event)</argsstring>
+        <name>focus_in_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="336" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="336" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aef439e3c99fe5dd6180cf5477ee061dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.grab_focus_cb</definition>
+        <argsstring>(self, widget)</argsstring>
+        <name>grab_focus_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="364" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="364" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a35a39922e0645649f6d9f2b961ea4f80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.area_enter</definition>
+        <argsstring>(self, widget, event)</argsstring>
+        <name>area_enter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="368" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="368" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a8e58c7cb5bd351062518b2c95b1b1b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.area_leave</definition>
+        <argsstring>(self, widget, event)</argsstring>
+        <name>area_leave</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="372" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="372" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aaa8f7128ba11c1d599f7b81a1dbab8eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.scroll_event</definition>
+        <argsstring>(self, widget, event)</argsstring>
+        <name>scroll_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="376" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="376" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ab227e68704e282dcc1f5297c6d6b0554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.hscroll_cb</definition>
+        <argsstring>(self, widget)</argsstring>
+        <name>hscroll_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="399" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="399" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9db6016ab87c07a703eb078005907e04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.vscroll_cb</definition>
+        <argsstring>(self, widget)</argsstring>
+        <name>vscroll_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="410" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="410" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a021531b68a25b8c37dbbcaf8de5539df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.size_request</definition>
+        <argsstring>(self, widget, req)</argsstring>
+        <name>size_request</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="420" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="420" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a5ab228def96675236eb9133361b4322b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.size_alloc</definition>
+        <argsstring>(self, widget, req)</argsstring>
+        <name>size_alloc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="424" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="424" bodyend="427"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1af71031d17950a182e757f9ab4125adfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.configure_event</definition>
+        <argsstring>(self, widget, event)</argsstring>
+        <name>configure_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="428" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="428" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a8c27259e8113945ea3fbfe61f82e2e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.draw_event</definition>
+        <argsstring>(self, pdoc, cr)</argsstring>
+        <name>draw_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pdoc</type>
+          <defname>pdoc</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="436" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="436" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a61a49156dfb2434b0dcc12ea36bdc867" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.idle_queue</definition>
+        <argsstring>(func)</argsstring>
+        <name>idle_queue</name>
+        <param>
+          <type>func</type>
+          <defname>func</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="471" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="471" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1acdde079d63f5eddd88a87b7713140e06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.area_button</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_button</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="475" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="475" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3a0809ee97d15f96d5c18f8a01e0a279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.intersect</definition>
+        <argsstring>(self, xx, yy, xx2, yy2, event)</argsstring>
+        <name>intersect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>xx2</type>
+          <defname>xx2</defname>
+        </param>
+        <param>
+          <type>yy2</type>
+          <defname>yy2</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="588" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="588" bodyend="596"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a4446e384f64825109ce60a723c8cba78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.normsel</definition>
+        <argsstring>(self)</argsstring>
+        <name>normsel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="598" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="598" bodyend="606"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a8841c6fdc0374be6b7a2ca44af22d207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.pix2xpos</definition>
+        <argsstring>(self, xx)</argsstring>
+        <name>pix2xpos</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="607" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="607" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a03b529b7479c1b8f0aca6252f2333659" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.pix2ypos</definition>
+        <argsstring>(self, yy)</argsstring>
+        <name>pix2ypos</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="610" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="610" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0ed95bc4248dd6801fd34882ed7b5fe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.pix2pos</definition>
+        <argsstring>(self, xx, yy)</argsstring>
+        <name>pix2pos</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="613" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="613" bodyend="615"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ae6102a4d9086ab1aa3e360c487b078ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.area_motion</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_motion</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="616" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="616" bodyend="663"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ada9a4d73cd501bd8af95996f33015b3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.gotoxy</definition>
+        <argsstring>(self, xx, yy, sel=None, mid=False)</argsstring>
+        <name>gotoxy</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>sel</type>
+          <defname>sel</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>mid</type>
+          <defname>mid</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="664" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="664" bodyend="684"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ae0cc56f3d44fbe7ac726f95d2233a30b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.set_caret_middle</definition>
+        <argsstring>(self, xx, yy, sel=None, quart=2)</argsstring>
+        <name>set_caret_middle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>sel</type>
+          <defname>sel</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>quart</type>
+          <defname>quart</defname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="688" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="688" bodyend="705"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a364f2e320d03fe1d8d0ef89d720432a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.get_height_char</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_height_char</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="707" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="707" bodyend="709"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a1cc2a26b5286fa2b8dd91ad1bf80ce2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.get_width_char</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_width_char</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="710" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="710" bodyend="712"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1adea0a65eeea11d081dcab4b674ea81c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.set_caret</definition>
+        <argsstring>(self, xx, yy)</argsstring>
+        <name>set_caret</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="720" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="720" bodyend="829"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3feb3720571ecafad8d840fd3e2d1d96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.update_bar2</definition>
+        <argsstring>(self)</argsstring>
+        <name>update_bar2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="830" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="830" bodyend="834"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a4bd7e171a9ba239c4d52f6c3ba4d44ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.clearsel</definition>
+        <argsstring>(self)</argsstring>
+        <name>clearsel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="835" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="835" bodyend="841"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9abf936e10bacd0235dc067c8eb83a9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.keytime</definition>
+        <argsstring>(self)</argsstring>
+        <name>keytime</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="842" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="842" bodyend="849"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a1542d51173ab2c1010f423a855db8bd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.walk_func</definition>
+        <argsstring>(self)</argsstring>
+        <name>walk_func</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="850" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="850" bodyend="940"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1afb63cfb3031eae316578e3ae6e7b417e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.area_key</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="942" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="942" bodyend="961"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a486dc8b327a23913aef565beddaa4266" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.inval_line</definition>
+        <argsstring>(self)</argsstring>
+        <name>inval_line</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="962" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="962" bodyend="971"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ad0bcc94d8e140af6b816d7f88e212413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.invalidate</definition>
+        <argsstring>(self, rect=None)</argsstring>
+        <name>invalidate</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="972" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="972" bodyend="979"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ac350259d99cf7439264ee5ee56668d78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.area_focus</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_focus</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="980" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="980" bodyend="983"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a6313e657c99685f5d6892473cd68dd65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.addict</definition>
+        <argsstring>(self, widget, string, arg)</argsstring>
+        <name>addict</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="985" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="985" bodyend="996"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a034f8e6f7b45c7975a2b9c94652a33ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.popspell</definition>
+        <argsstring>(self, widget, event, xstr)</argsstring>
+        <name>popspell</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="997" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="997" bodyend="1019"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a51aa57711817725af794f73b6f6b2e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.poprclick</definition>
+        <argsstring>(self, widget, event)</argsstring>
+        <name>poprclick</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1020" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1020" bodyend="1024"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ae8406709bcccf18d5d7a0570ea64b53b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.menuitem_response</definition>
+        <argsstring>(self, widget, stringx, arg)</argsstring>
+        <name>menuitem_response</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>stringx</type>
+          <defname>stringx</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1025" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1025" bodyend="1040"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0989bab63493e73ff4d68c1bdbb58b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.activate_action</definition>
+        <argsstring>(self, action)</argsstring>
+        <name>activate_action</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>action</type>
+          <defname>action</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1041" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1041" bodyend="1048"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3b945a522b894c0bc8b4233d25e7ea1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.rclick_action</definition>
+        <argsstring>(self, action, sss, ttt)</argsstring>
+        <name>rclick_action</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>action</type>
+          <defname>action</defname>
+        </param>
+        <param>
+          <type>sss</type>
+          <defname>sss</defname>
+        </param>
+        <param>
+          <type>ttt</type>
+          <defname>ttt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1049" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1049" bodyend="1082"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a39240bd86b8edcc5d06e81323da3e1fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.start_term</definition>
+        <argsstring>(self)</argsstring>
+        <name>start_term</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1083" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1083" bodyend="1098"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a268779368a9fc504acbdd18297d33834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.start_edit</definition>
+        <argsstring>(self)</argsstring>
+        <name>start_edit</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1099" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1099" bodyend="1119"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a08143eb957e0bf70f34b6a089332ded1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.create_menuitem</definition>
+        <argsstring>(self, string, action, arg=None)</argsstring>
+        <name>create_menuitem</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>action</type>
+          <defname>action</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1120" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1120" bodyend="1131"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a713e1bbdb3e3941ac27e00b8b9726d2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.build_menu</definition>
+        <argsstring>(self, window, items)</argsstring>
+        <name>build_menu</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>window</type>
+          <defname>window</defname>
+        </param>
+        <param>
+          <type>items</type>
+          <defname>items</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1132" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1132" bodyend="1155"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1acfdfd94aa1f4f37706fab9ae34983a2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.get_size</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_size</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1156" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1156" bodyend="1159"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ac2f3af493e5882b1faaae936471b2394" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.get_height</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_height</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1160" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1160" bodyend="1163"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ab389a88c1be3399d396586688eaf93ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.get_width</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_width</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1164" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1164" bodyend="1167"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1af35346b99462b072798dfc9ec8064ce0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.save</definition>
+        <argsstring>(self)</argsstring>
+        <name>save</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1168" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1168" bodyend="1194"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a801f7d21cf411e8cf1b501ee0f2229d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.saveas</definition>
+        <argsstring>(self)</argsstring>
+        <name>saveas</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1195" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1195" bodyend="1197"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a873121f4b3dc811072844987a7055a6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.coloring</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>coloring</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1198" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1198" bodyend="1201"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1abb47ce00d1a9e893f7304d395a705ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.showcol</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>showcol</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1202" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1202" bodyend="1205"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a62edd9d949168f2ccca4900d8712993e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.hexview</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>hexview</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1206" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1206" bodyend="1209"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa6fdd7e963ddabd213d51685edaf23c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.flash</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>flash</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1210" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1210" bodyend="1213"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1abeefbc02e32eeee80bb7925db991d089" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.showtab</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>showtab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1214" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1214" bodyend="1218"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a9a581541a6ddf0372039ed46e2ea76d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.closedoc</definition>
+        <argsstring>(self, noprompt=False)</argsstring>
+        <name>closedoc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>noprompt</type>
+          <defname>noprompt</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1219" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1219" bodyend="1234"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a58d7668e34b10a626cf5196a34580264" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.loadfile</definition>
+        <argsstring>(self, filename, create=False)</argsstring>
+        <name>loadfile</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>filename</type>
+          <defname>filename</defname>
+        </param>
+        <param>
+          <type>create</type>
+          <defname>create</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1238" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1238" bodyend="1302"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a3da2be945461a23fd8bbfb7520df43d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.calc_maxline</definition>
+        <argsstring>(self)</argsstring>
+        <name>calc_maxline</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1303" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1303" bodyend="1311"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a35c0864ca4baf85fe216715afa8b1d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.loadparms</definition>
+        <argsstring>(self)</argsstring>
+        <name>loadparms</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1313" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1313" bodyend="1320"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ae6f1a49b4b48e1afdc0e654cdf81ff1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.saveparms</definition>
+        <argsstring>(self)</argsstring>
+        <name>saveparms</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1322" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1322" bodyend="1332"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a1e678d591715b854077407acd78347e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.saveorg</definition>
+        <argsstring>(self)</argsstring>
+        <name>saveorg</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1334" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1334" bodyend="1341"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a07bde6cb661c0cedf3d96468d1d36ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.savebackup</definition>
+        <argsstring>(self)</argsstring>
+        <name>savebackup</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1343" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1343" bodyend="1351"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a558eb4ccd4e8cebbd24a40b2a088636e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.prompt_save</definition>
+        <argsstring>(self, askname=True)</argsstring>
+        <name>prompt_save</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>askname</type>
+          <defname>askname</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1352" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1352" bodyend="1375"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a6aa5a0704cb6d1e7a8b6c0dce33644bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.file_dlg</definition>
+        <argsstring>(self, resp)</argsstring>
+        <name>file_dlg</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1376" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1376" bodyend="1390"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa90e74217151346ea54f388fa2d9c53f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.writeout</definition>
+        <argsstring>(self)</argsstring>
+        <name>writeout</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1391" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1391" bodyend="1409"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0357066a57c84226c2bf23c1405e4f44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.delundo</definition>
+        <argsstring>(self)</argsstring>
+        <name>delundo</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1410" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1410" bodyend="1421"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a29fddbfc12f62ad90ef3383608c4a0aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.saveundo</definition>
+        <argsstring>(self)</argsstring>
+        <name>saveundo</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1422" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1422" bodyend="1442"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a73be0fc8a16234ea116814678bfffc26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.loadundo</definition>
+        <argsstring>(self)</argsstring>
+        <name>loadundo</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1443" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1443" bodyend="1473"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1abc4f8ccb17cbd0843cb5ca571fcc747b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.done_fc</definition>
+        <argsstring>(self, win, resp)</argsstring>
+        <name>done_fc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1474" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1474" bodyend="1493"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1abdad00d23d0ebc2f56833eebbeb57d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.overwrite_done</definition>
+        <argsstring>(self, win, resp, fname, win2)</argsstring>
+        <name>overwrite_done</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedlib_1_1peddoc_1_1pedDoc_1a899eadd2541a39ee4eb9bdd11ec5612c" kindref="member">fname</ref></type>
+          <defname>fname</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1494" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1494" bodyend="1502"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aef90f057023f9bfa113552825e87f3d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.set_nocol</definition>
+        <argsstring>(self)</argsstring>
+        <name>set_nocol</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1506" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1506" bodyend="1515"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1abdd8f7980f22e01deec7d6218631d19d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.do_chores</definition>
+        <argsstring>(self)</argsstring>
+        <name>do_chores</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1516" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1516" bodyend="1528"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a08b15b91a8973222d7ff168b8dba45d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.set_changed</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>set_changed</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1529" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1529" bodyend="1536"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a62c07e98c98524b83f7e6d5e7de2d3df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.set_tablabel</definition>
+        <argsstring>(self)</argsstring>
+        <name>set_tablabel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1537" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1537" bodyend="1547"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ab8ccdc3530c48993a9102185a9851190" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.close_button</definition>
+        <argsstring>(self, arg1)</argsstring>
+        <name>close_button</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>arg1</type>
+          <defname>arg1</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1577" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1577" bodyend="1581"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a86501398306fb9cc798d38298f6d29bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.savemacro</definition>
+        <argsstring>(self)</argsstring>
+        <name>savemacro</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1583" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1583" bodyend="1603"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a51f6979616bdd97ad478e34f0a3b8cc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.done_mac_fc</definition>
+        <argsstring>(self, win, resp, old)</argsstring>
+        <name>done_mac_fc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <param>
+          <type>old</type>
+          <defname>old</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1604" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1604" bodyend="1621"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a0110f20effb073d16d8746eb7d96543e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.loadmacro</definition>
+        <argsstring>(self)</argsstring>
+        <name>loadmacro</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1622" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1622" bodyend="1641"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1ae3aeb503f01c38659f6fab6dfa384ab2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.done_mac_open_fc</definition>
+        <argsstring>(self, win, resp, old)</argsstring>
+        <name>done_mac_open_fc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <param>
+          <type>old</type>
+          <defname>old</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1642" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1642" bodyend="1660"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a72d17cb3703cbdf12108c100a53977d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.search_again</definition>
+        <argsstring>(self)</argsstring>
+        <name>search_again</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1662" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1662" bodyend="1668"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1a49067e73746f6dece9be5a98ffe2a183" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc.search</definition>
+        <argsstring>(self, srctxt, regex, boolcase, boolregex)</argsstring>
+        <name>search</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedlib_1_1peddoc_1_1pedDoc_1aeb26436a8c262c7e1711857a5a3ed96a" kindref="member">srctxt</ref></type>
+          <defname>srctxt</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedlib_1_1peddoc_1_1pedDoc_1a7066ccac9bb549529f25d4afe2179ec9" kindref="member">regex</ref></type>
+          <defname>regex</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa782c58513af0d43621435ca8f36ec2e" kindref="member">boolcase</ref></type>
+          <defname>boolcase</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa72e9b46105809250ef069db3dcb2fec" kindref="member">boolregex</ref></type>
+          <defname>boolregex</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1670" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1670" bodyend="1699"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpyedlib_1_1peddoc_1_1pedDoc_1aa268ecfa4435b95a7a5107022ff51a98" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.pedDoc._setlabel</definition>
+        <argsstring>(self, ppp)</argsstring>
+        <name>_setlabel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ppp</type>
+          <defname>ppp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1548" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1548" bodyend="1576"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk::DrawingArea</label>
+      </node>
+      <node id="3">
+        <label>pyedlib.peddraw.peddraw</label>
+        <link refid="classpyedlib_1_1peddraw_1_1peddraw"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>pyedlib.peddoc.pedDoc</label>
+        <link refid="classpyedlib_1_1peddoc_1_1pedDoc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk::DrawingArea</label>
+      </node>
+      <node id="3">
+        <label>pyedlib.peddraw.peddraw</label>
+        <link refid="classpyedlib_1_1peddraw_1_1peddraw"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>object</label>
+      </node>
+      <node id="1">
+        <label>pyedlib.peddoc.pedDoc</label>
+        <link refid="classpyedlib_1_1peddoc_1_1pedDoc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="68" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="68" bodyend="1700"/>
+    <listofallmembers>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a7f9c1568b215a040cedfe34a59c7b293" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>__init__</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a04f3601eadd1df15e0f0637522b14a5b" prot="public" virt="non-virtual" ambiguityscope="pyedlib::peddraw::peddraw."><scope>pyedlib::peddoc::pedDoc</scope><name>__init__</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa268ecfa4435b95a7a5107022ff51a98" prot="private" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>_setlabel</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a5783beab622fb98703c94ffc3b3949c9" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>accum</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a79b6c1719e25747ce34da273bebfb139" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>acorr</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0989bab63493e73ff4d68c1bdbb58b84" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>activate_action</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a6313e657c99685f5d6892473cd68dd65" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>addict</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a79fc49e1c9dd9a8ac6e9a69043abaa84" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>appwin</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1acdde079d63f5eddd88a87b7713140e06" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>area_button</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a35a39922e0645649f6d9f2b961ea4f80" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>area_enter</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ac350259d99cf7439264ee5ee56668d78" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>area_focus</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1afb63cfb3031eae316578e3ae6e7b417e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>area_key</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a8e58c7cb5bd351062518b2c95b1b1b88" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>area_leave</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ae6102a4d9086ab1aa3e360c487b078ea" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>area_motion</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ac799537a7f979273148ac0ccae830cc2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>bigcaret</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa782c58513af0d43621435ca8f36ec2e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>boolcase</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa72e9b46105809250ef069db3dcb2fec" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>boolregex</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a713e1bbdb3e3941ac27e00b8b9726d2e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>build_menu</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3da2be945461a23fd8bbfb7520df43d0" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>calc_maxline</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aac4bce8c460934a7df8175ac4fac5e27" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>caret</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a7d7a934cef107d72aa61dfef0ccec5b4" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>cbgcolor</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9b210eb6affb91db333f0214290130fb" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>changed</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aaf591775c068c5eba765a5e88b178de8" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>clcolor</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a4bd7e171a9ba239c4d52f6c3ba4d44ef" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>clearsel</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ab8ccdc3530c48993a9102185a9851190" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>close_button</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9a581541a6ddf0372039ed46e2ea76d8" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>closedoc</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a64d7828a03b56308d6a7bb5a29da0b35" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>cocolor</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a5cdd370f1fcd42480d90a7a8a8b777f2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>colflag</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a873121f4b3dc811072844987a7055a6c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>coloring</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a52c6d80cc16b975876828eba386a4f30" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>colsel</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af71031d17950a182e757f9ab4125adfc" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>configure_event</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ae876f5021ddbbe9b57fb8ac00f3f1e38" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>countup</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a08143eb957e0bf70f34b6a089332ded1" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>create_menuitem</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ad7c4a39d2a4f2c6e0f65029730a20ee0" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>cyy</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0357066a57c84226c2bf23c1405e4f44" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>delundo</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1abdd8f7980f22e01deec7d6218631d19d" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>do_chores</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1abc4f8ccb17cbd0843cb5ca571fcc747b" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>done_fc</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a51f6979616bdd97ad478e34f0a3b8cc2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>done_mac_fc</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ae3aeb503f01c38659f6fab6dfa384ab2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>done_mac_open_fc</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a9842d1c306823dbddeed9b722844d3d7" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_caret</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a8f7220b1e0eefc4bfc82884ae7e8f154" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_comments</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a8c27259e8113945ea3fbfe61f82e2e08" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_event</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1af7edafbec52111065d0abc71f4aac077" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_line</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a700ac02ce89341c5db95e38b7ef6b846" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_line2</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a06fc925571223ca62f55ed3e474335e3" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_maintext</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a39530fda5292d8152627c6b488ea73d4" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_selection</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a4658dd14866921baa75b465d1fd9115a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_spellerr</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a887a69d96c2548d5abb4c6cdf9bb6212" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_syntax</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a2fcfcc8b0ffc8d5c454f5a510fa7da80" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_text</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a95414563346277f0d4688ed8b9214d48" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>draw_wiggle</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9e6cae96d803f146c4eedb4bdff0cb63" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>fd</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a67b0572852dfb9bde1ae7cebedf05326" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>fgcolor</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a6aa5a0704cb6d1e7a8b6c0dce33644bb" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>file_dlg</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a445cf6b720cf8426bb20906b4ea69184" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>fired</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa6fdd7e963ddabd213d51685edaf23c4" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>flash</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a899eadd2541a39ee4eb9bdd11ec5612c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>fname</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a84d178d2516c0fd3112d56447ecf5fe6" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>focus</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a813f5ae3d693667a90dc2dace5c8063b" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>focus_in_cb</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1adaa059e927274a8447abcc4fb4c2b477" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>focus_out_cb</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ac2f3af493e5882b1faaae936471b2394" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>get_height</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a364f2e320d03fe1d8d0ef89d720432a7" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>get_height_char</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1acfdfd94aa1f4f37706fab9ae34983a2c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>get_size</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ab389a88c1be3399d396586688eaf93ad" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>get_width</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a1cc2a26b5286fa2b8dd91ad1bf80ce2d" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>get_width_char</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ada9a4d73cd501bd8af95996f33015b3c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>gotoxy</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aef439e3c99fe5dd6180cf5477ee061dd" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>grab_focus_cb</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a098edf048a9f232ed5ce179a7fa19b5a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>hadj</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a04aa2da171cf3caa5b64fe7d359b1185" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>hex</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a62edd9d949168f2ccca4900d8712993e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>hexview</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0852aa1c4a634edaf280529fdb124bbf" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>hhh</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a87194654d6bc82b008f32750d2ffe6f3" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>honeshot</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa9c904add3fc2e6cba30bbf93387bf82" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>hscgap</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aedda0095755e88e53d959fd25a57c734" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>hscroll</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ab227e68704e282dcc1f5297c6d6b0554" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>hscroll_cb</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1abd981519ca8c9eb6b71c7816a3c72784" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>idle_callback</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ab69860a6e9733ebea1fd66a80d379982" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>idle_callback2</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a61a49156dfb2434b0dcc12ea36bdc867" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>idle_queue</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa27700bda988023496d79098f37ca25c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>initial_redo_size</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aad246e23bf6dedc47f3e4bd8e975e736" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>initial_undo_size</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a57eaeb63c5784c98a2b9aa8c56427127" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>insert</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3a0809ee97d15f96d5c18f8a01e0a279" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>intersect</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a486dc8b327a23913aef565beddaa4266" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>inval_line</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ad0bcc94d8e140af6b816d7f88e212413" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>invalidate</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9bdc1d866d9d461e7bb3fbc462b0d2d6" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>keyh</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9abf936e10bacd0235dc067c8eb83a9e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>keytime</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a5956cf5e733445550f758da6295e0e13" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>kwcolor</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af98b56dfb9036cb673a7dc4795776a74" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>layout</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a58d7668e34b10a626cf5196a34580264" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>loadfile</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0110f20effb073d16d8746eb7d96543e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>loadmacro</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a35c0864ca4baf85fe216715afa8b1d03" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>loadparms</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a73be0fc8a16234ea116814678bfffc26" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>loadundo</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a6212e454e7bc38c729a8dd9b76208876" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>locate</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3991d11dbb7e48bb8c4b768373ed39fc" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>maxlinelen</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa2410d188e36b7afc428aab108406b37" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>maxlines</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a89bd6f6a7c8b7eb84eb922d79a209c76" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>menu</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9212a3fcf409d51712e4fcc39a28ab2a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>menu2</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ae8406709bcccf18d5d7a0570ea64b53b" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>menuitem_response</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ab3db3d482323ab3055d88c2be6cfc3db" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>mx</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a23eb3f6cb18b03810eb20e184b94127f" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>my</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a908d832eed8677c42e5510e13adcd66a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>needscan</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a1b587fd81b4033fa2832df793f3816a3" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>newword</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af88caa90a3b9d337871f8b38d92ed220" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>nokey</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a4446e384f64825109ce60a723c8cba78" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>normsel</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a6f9695b1658b0abe478c5245aedfc7ad" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>oldgoto</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0798fa1d9c3b736949c940b0ac7feb23" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>oldrep</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9b7257f90992228e5651bb12e9f902e0" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>oldsearch</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a53801941e742f52e7148a08d1c0a7692" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>oneshot</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1abdad00d23d0ebc2f56833eebbeb57d1c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>overwrite_done</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa055052815cd47a3c974c6148b43d302" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>pangolayout</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a5ee65abe4bd4369cdf01e34b1e8083ca" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>pgup</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0ed95bc4248dd6801fd34882ed7b5fe0" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>pix2pos</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a8841c6fdc0374be6b7a2ca44af22d207" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>pix2xpos</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a03b529b7479c1b8f0aca6252f2333659" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>pix2ypos</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a51aa57711817725af794f73b6f6b2e64" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>poprclick</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a034f8e6f7b45c7975a2b9c94652a33ca" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>popspell</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a558eb4ccd4e8cebbd24a40b2a088636e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>prompt_save</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af73cd323e153507a18e325da3ee6160d" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>queue</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af1f16311f60ae370326fa1a75a621bd8" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>rbgcolor</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3b945a522b894c0bc8b4233d25e7ea1a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>rclick_action</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ac5846edd4124d70a4a914e5f8c250d7c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>readonly</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a89d19dcf4b28d2b0e97bff2f26f22ee7" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>recarr</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a116c44fefde14387af6cab04d02a206a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>record</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aec9b63be2a95007fd287d6805f2c3994" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>redoarr</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a7066ccac9bb549529f25d4afe2179ec9" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>regex</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af35346b99462b072798dfc9ec8064ce0" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>save</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a801f7d21cf411e8cf1b501ee0f2229d3" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>saveas</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a07bde6cb661c0cedf3d96468d1d36ef2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>savebackup</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a86501398306fb9cc798d38298f6d29bf" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>savemacro</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a1e678d591715b854077407acd78347e9" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>saveorg</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ae6f1a49b4b48e1afdc0e654cdf81ff1a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>saveparms</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a29fddbfc12f62ad90ef3383608c4a0aa" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>saveundo</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af2874c1a5ef9eb2c206e1ebd3da8a9e2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>scol</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aaa8f7128ba11c1d599f7b81a1dbab8eb" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>scroll_event</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a19ae01dd54e376cd4d90e88beb0115dc" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>scrtab</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a49067e73746f6dece9be5a98ffe2a183" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>search</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a72d17cb3703cbdf12108c100a53977d2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>search_again</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1abf0bd009c0292e4a4743e9ddfa41260d" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>sep</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1adea0a65eeea11d081dcab4b674ea81c1" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>set_caret</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ae0cc56f3d44fbe7ac726f95d2233a30b" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>set_caret_middle</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a08b15b91a8973222d7ff168b8dba45d2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>set_changed</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a7c3666ffc9f98684c93bf3c98bb8307d" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>set_maxlinelen</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa0327a24e428f5dae598eb5fcf5bfa13" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>set_maxlines</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aef90f057023f9bfa113552825e87f3d7" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>set_nocol</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a62c07e98c98524b83f7e6d5e7de2d3df" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>set_tablabel</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa134d34f6c0846844fda78c84977425f" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>setcol</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0b2e32f1365d53276cd5082d2e5a71f7" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>setfont</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a116e6de3e6cc189d847c2eb3af8ad6ec" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>shift</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1abb47ce00d1a9e893f7304d395a705ba4" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>showcol</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1abeefbc02e32eeee80bb7925db991d089" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>showtab</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a5ab228def96675236eb9133361b4322b" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>size_alloc</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a021531b68a25b8c37dbbcaf8de5539df" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>size_request</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1addac5a4c43f1a0c753034d2d5f3c8cc4" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>spell</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9bffef17c2113fe2f6309d3d57f1c3fe" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>spellmode</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aacd3acaff40fbbb9eab9dfab1aa3aaaf" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>spellstr</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a849f28a74bafc1d780dc88a28b81b32c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>src_changed</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aeb26436a8c262c7e1711857a5a3ed96a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>srctxt</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3decb25b28a1bf44506b081e942c4248" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>stab</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a268779368a9fc504acbdd18297d33834" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>start_edit</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a39240bd86b8edcc5d06e81323da3e1fb" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>start_term</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aca774dec94d59ed485bd10d9f8a1a09e" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>start_time</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a8a29e9480305979abe082b43c891fa79" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>startxxx</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3a163c700f59268c63e9433f1a9fd56a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>startyyy</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a2a671f5a51beabe28fb1374f6e100185" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>stat</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1af0fd88508e9ddef060f53fb938ab61ff" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>stcolor</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a42a7722026e556aee9331785040e493a" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>tabarr</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa9c8b89f00aab357e1e8f08f5ef8769b" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>tabstop</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ad71d088a54484eb083ef0652d66c7b6f" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>text</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a6fee72b204109f0e649e0385e51912b2" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>tokens</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a4775c1ac9de77a00a2ba4ac9519292f1" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>tts</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a894292fd08b860127d14700b7c265fec" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>ularr</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a411a76e4e29743d370d988e1fc84df95" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>undoarr</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3feb3720571ecafad8d840fd3e2d1d96" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>update_bar2</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ab59797b13457c5c46f8ffe6ccbcce3be" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>vadj</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a90d87a47ec3ee851411fa95713a60c9c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>vscgap</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a57baa016b65cae704799adb9f8a7c136" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>vscroll</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a9db6016ab87c07a703eb078005907e04" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>vscroll_cb</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a1542d51173ab2c1010f423a855db8bd8" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>walk_func</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1aa90e74217151346ea54f388fa2d9c53f" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>writeout</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a8e13386d207af3d2af733cc92ed5a49c" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>www</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1ab88912ff0d5f95747edac90d6de5c847" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>xlen</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a40c9e78a3e5d86d0e4c0e64aa884c821" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>xpos</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a0b7cdcde98320a4009b1269a38570a00" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>xsel</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a3ebc0fe7408c577eda7f3740b6267828" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>xsel2</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a5015d0dc6c3c8a1fd6e367986d0977b4" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>ypos</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a343e2903caced8e17bd301752a831bce" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>ysel</name></member>
+      <member refid="classpyedlib_1_1peddoc_1_1pedDoc_1a820132ed3ef786045836535573793fdd" prot="public" virt="non-virtual"><scope>pyedlib::peddoc::pedDoc</scope><name>ysel2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

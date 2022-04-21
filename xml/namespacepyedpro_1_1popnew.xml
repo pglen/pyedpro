@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1popnew" kind="namespace" language="Python">
+    <compoundname>pyedpro::popnew</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1popnew_1ac8af4c2307fcf77ed2ee01fa88fae146" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::popnew.dbfile</definition>
+        <argsstring></argsstring>
+        <name>dbfile</name>
+        <initializer>=  os.path.expanduser(&quot;~/history.sql&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="14" column="1" bodyfile="pyedpro/popnew.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1popnew_1a7a3f6f22293be23f13d2227ca12d3bbf" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::popnew.version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <initializer>=  &quot;0.00&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="19" column="1" bodyfile="pyedpro/popnew.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1popnew_1abcfb985873d416c8e05e74364b6025c0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::popnew.optarr</definition>
+        <argsstring></argsstring>
+        <name>optarr</name>
+        <initializer>=  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="44" column="1" bodyfile="pyedpro/popnew.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1popnew_1a051d8b69f2207e95b176b9d4ef4b10bc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::popnew.conf</definition>
+        <argsstring></argsstring>
+        <name>conf</name>
+        <initializer>=  Config(<ref refid="namespacepyedpro_1_1popnew_1abcfb985873d416c8e05e74364b6025c0" kindref="member">optarr</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="55" column="1" bodyfile="pyedpro/popnew.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1popnew_1a2d047a9983efc258b4ea937c6b0f08f6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::popnew.args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <initializer>=  conf.comline(sys.argv[1:])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="60" column="1" bodyfile="pyedpro/popnew.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1popnew_1a1bd7946a9bd179fe7c1e9c6b00dec1a9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::popnew.ddd</definition>
+        <argsstring></argsstring>
+        <name>ddd</name>
+        <initializer>=  popsql.popsql(<ref refid="namespacepyedpro_1_1popnew_1ac8af4c2307fcf77ed2ee01fa88fae146" kindref="member">dbfile</ref>).getall()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="64" column="1" bodyfile="pyedpro/popnew.py" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1popnew_1a16f00ffa85330b6bcd1b146ab58d4918" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::popnew.mw</definition>
+        <argsstring></argsstring>
+        <name>mw</name>
+        <initializer>=  MainWin()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="73" column="1" bodyfile="pyedpro/popnew.py" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1popnew_1a1870d555452ab5c3867799be3221d46b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.popnew.phelp</definition>
+        <argsstring>()</argsstring>
+        <name>phelp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="23" column="1" bodyfile="pyedpro/popnew.py" bodystart="23" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1popnew_1a554588c57dc70b2a0070f00aecc24e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.popnew.pversion</definition>
+        <argsstring>()</argsstring>
+        <name>pversion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/popnew.py" line="39" column="1" bodyfile="pyedpro/popnew.py" bodystart="39" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/popnew.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

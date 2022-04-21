@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacecairo-demo" kind="namespace" language="Python">
+    <compoundname>cairo-demo</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacecairo-demo_1a949e8cf8188044647172ce765de76622" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cairo-demo.SIZE</definition>
+        <argsstring></argsstring>
+        <name>SIZE</name>
+        <initializer>=  30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="10" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecairo-demo_1a9bef74e5b7a6daeb605e53bb51d32b15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.triangle</definition>
+        <argsstring>(ctx)</argsstring>
+        <name>triangle</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="13" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="13" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1a87c8bf4c97071f9c31756f39a7da7274" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.square</definition>
+        <argsstring>(ctx)</argsstring>
+        <name>square</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="20" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="20" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1a9de380ede18f790ba2720ebce1ec5f31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.bowtie</definition>
+        <argsstring>(ctx)</argsstring>
+        <name>bowtie</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="28" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="28" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1a0355f9d0e092aa871adf979149f42f09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.inf</definition>
+        <argsstring>(ctx)</argsstring>
+        <name>inf</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="36" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="36" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1a6713c20ba2bb9577b18e62f95836b00b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.draw_shapes</definition>
+        <argsstring>(ctx, x, y, fill)</argsstring>
+        <name>draw_shapes</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="45" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="45" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1a4a38c8793532cc085f52285d755c6569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.fill_shapes</definition>
+        <argsstring>(ctx, x, y)</argsstring>
+        <name>fill_shapes</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="83" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1ac952e029b9a4385612af9716cb50d95a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.stroke_shapes</definition>
+        <argsstring>(ctx, x, y)</argsstring>
+        <name>stroke_shapes</name>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="87" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1abd29ce6ab80c0fdd5bf094b15bea2c60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.draw</definition>
+        <argsstring>(da, ctx)</argsstring>
+        <name>draw</name>
+        <param>
+          <type>da</type>
+          <defname>da</defname>
+        </param>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="91" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="91" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecairo-demo_1ac5f6cc935676e13cc562094d82af89e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cairo-demo.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/cairo-demo.py" line="118" column="1" bodyfile="pyedpro/study/cairo-demo.py" bodystart="118" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/study/cairo-demo.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

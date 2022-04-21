@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedlib_1_1pedync" kind="namespace" language="Python">
+    <compoundname>pyedlib::pedync</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedlib_1_1pedync_1adf14e5076a3875a4f999f75020d0d686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedync.yes_no_cancel</definition>
+        <argsstring>(title, message, cancel=True)</argsstring>
+        <name>yes_no_cancel</name>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedlib_1_1pedync_1ab70496190bc03eb1144617035537c888" kindref="member">message</ref></type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>cancel</type>
+          <defname>cancel</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" line="22" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" bodystart="22" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedync_1a01526e179e11cb27ae64b2a7439f2b01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedync.yn_key</definition>
+        <argsstring>(win, event, cancel)</argsstring>
+        <name>yn_key</name>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>cancel</type>
+          <defname>cancel</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" line="73" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" bodystart="73" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedync_1ade25e63a8a9ed06bbf15828dd301065d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedync.about</definition>
+        <argsstring>(self2)</argsstring>
+        <name>about</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" line="93" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" bodystart="93" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedync_1a8a770a08344f400ce64fdcdc48072892" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedync.about_key</definition>
+        <argsstring>(win, event)</argsstring>
+        <name>about_key</name>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" line="143" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" bodystart="143" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedync_1ab70496190bc03eb1144617035537c888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedync.message</definition>
+        <argsstring>(strx, title=None)</argsstring>
+        <name>message</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" line="153" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" bodystart="153" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedync.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1webwin" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::webwin</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1webwin_1aede02e0009bda4316b343ea948f072e8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro::pedlib::webwin::is_text</definition>
+        <argsstring></argsstring>
+        <name>is_text</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/webwin.py" line="21" column="1" bodyfile="pyedpro/pedlib/webwin.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1webwin_1a9d91c887191177542f72ea7a96c68bf5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro::pedlib::webwin::delmode</definition>
+        <argsstring></argsstring>
+        <name>delmode</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/webwin.py" line="23" column="1" bodyfile="pyedpro/pedlib/webwin.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1webwin_1a9ffaf697da9e8d0cc0e9dcadcd3ac559" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::webwin.argv</definition>
+        <argsstring></argsstring>
+        <name>argv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/webwin.py" line="27" column="1" bodyfile="pyedpro/pedlib/webwin.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1webwin_1a4a6b797b09c801014164f11a73a65e6a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>string pyedpro::pedlib::webwin::newfname</definition>
+        <argsstring></argsstring>
+        <name>newfname</name>
+        <initializer>=  sys.argv[1]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/webwin.py" line="29" column="1" bodyfile="pyedpro/pedlib/webwin.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1webwin_1a7b3d141280a4fa739e009a9b0a391312" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::webwin.html</definition>
+        <argsstring></argsstring>
+        <name>html</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/webwin.py" line="40" column="1" bodyfile="pyedpro/pedlib/webwin.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/webwin.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

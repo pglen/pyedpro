@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pycommon_1_1pypacker" kind="namespace" language="Python">
+    <compoundname>pyedpro::pycommon::pypacker</compoundname>
+    <innerclass refid="classpyedpro_1_1pycommon_1_1pypacker_1_1InvalidType" prot="public">pyedpro::pycommon::pypacker::InvalidType</innerclass>
+    <innerclass refid="classpyedpro_1_1pycommon_1_1pypacker_1_1packbin" prot="public">pyedpro::pycommon::pypacker::packbin</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1pypacker_1ad20c6857d4f69ba5c31d0aecc134a280" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pycommon::pypacker.__doc__</definition>
+        <argsstring></argsstring>
+        <name>__doc__</name>
+        <initializer>=    \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pypacker.py" line="12" column="1" bodyfile="pyedpro/pycommon/pypacker.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1pypacker_1a93d054ec753c013494be71aa3ee633b9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro::pycommon::pypacker.pgdebug</definition>
+        <argsstring></argsstring>
+        <name>pgdebug</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pypacker.py" line="46" column="1" bodyfile="pyedpro/pycommon/pypacker.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1pypacker_1a96c924dab9acdb5b485309a3d9de9d2f" prot="private" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple pyedpro::pycommon::pypacker.__all__</definition>
+        <argsstring></argsstring>
+        <name>__all__</name>
+        <initializer>=  (&quot;autotype&quot;, &quot;<ref refid="classpyedpro_1_1pycommon_1_1pypacker_1_1packbin_1a3f03a0b90d28da4ecc84878c95cd696c" kindref="member">packbin.encode_data</ref>&quot;, &quot;decode_data&quot;,
+                &quot;wrap_data&quot;, &quot;unwrap_data&quot;, &quot;<ref refid="namespacepyedpro_1a133ac32c6f035baba078946b976d3f55" kindref="member">verbose</ref>&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pypacker.py" line="48" column="1" bodyfile="pyedpro/pycommon/pypacker.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pycommon/pypacker.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

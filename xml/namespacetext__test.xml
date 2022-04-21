@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetext__test" kind="namespace" language="Python">
+    <compoundname>text_test</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacetext__test_1a39aed05f4ad7d7a31e12c13ab1d359fc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>text_test.win</definition>
+        <argsstring></argsstring>
+        <name>win</name>
+        <initializer>=  Gtk.Window()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/text_test.py" line="31" column="1" bodyfile="pyedpro/study/text_test.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacetext__test_1af4ce31eb3ddd35fbb34d34fc0b3191f5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>text_test.drawingarea</definition>
+        <argsstring></argsstring>
+        <name>drawingarea</name>
+        <initializer>=  Gtk.DrawingArea()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/text_test.py" line="34" column="1" bodyfile="pyedpro/study/text_test.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacetext__test_1a71127a45e13903a485c22749a03aee35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def text_test.draw_event</definition>
+        <argsstring>(widget, ctx)</argsstring>
+        <name>draw_event</name>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>ctx</type>
+          <defname>ctx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/text_test.py" line="7" column="1" bodyfile="pyedpro/study/text_test.py" bodystart="7" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/study/text_test.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

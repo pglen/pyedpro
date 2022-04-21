@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1parser" kind="namespace" language="Python">
+    <compoundname>pyedpro::parser</compoundname>
+    <innerclass refid="classpyedpro_1_1parser_1_1Parse" prot="public">pyedpro::parser::Parse</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1parser_1afca7daf56b461576f2fbb4a6f0bc2ee5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro::parser._gl_cnt</definition>
+        <argsstring></argsstring>
+        <name>_gl_cnt</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/parser.py" line="22" column="1" bodyfile="pyedpro/parser.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1parser_1a1d90d8148ca0275c09a3a4b1e774c7e1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro::parser._show_default_action</definition>
+        <argsstring></argsstring>
+        <name>_show_default_action</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/parser.py" line="31" column="1" bodyfile="pyedpro/parser.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1parser_1ab70c6da6f52fbf6a39236ceb1369e0e9" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::parser.ANYSTATE</definition>
+        <argsstring></argsstring>
+        <name>ANYSTATE</name>
+        <initializer>=  [-2, &quot;anystate&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/parser.py" line="35" column="1" bodyfile="pyedpro/parser.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1parser_1aa329f8efcb3b71d3c500d410d38c3dc9" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::parser.REDUCE</definition>
+        <argsstring></argsstring>
+        <name>REDUCE</name>
+        <initializer>=  [-1, &quot;reduce&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/parser.py" line="36" column="1" bodyfile="pyedpro/parser.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1parser_1a8a2def501f81916974ab05a737f48b68" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::parser.IGNORE</definition>
+        <argsstring></argsstring>
+        <name>IGNORE</name>
+        <initializer>=  [<ref refid="namespacepyedpro_1_1parser_1a4cb9d204563b0923e30aca8009235f26" kindref="member">unique</ref>(), &quot;ignore&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/parser.py" line="37" column="1" bodyfile="pyedpro/parser.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1parser_1a834b3ab43383a19dce4b8abf1184f80e" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::parser.INIT</definition>
+        <argsstring></argsstring>
+        <name>INIT</name>
+        <initializer>=  [<ref refid="namespacepyedpro_1_1parser_1a4cb9d204563b0923e30aca8009235f26" kindref="member">unique</ref>(), &quot;init&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/parser.py" line="38" column="1" bodyfile="pyedpro/parser.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1parser_1a4cb9d204563b0923e30aca8009235f26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.parser.unique</definition>
+        <argsstring>()</argsstring>
+        <name>unique</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/parser.py" line="23" column="1" bodyfile="pyedpro/parser.py" bodystart="23" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/parser.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

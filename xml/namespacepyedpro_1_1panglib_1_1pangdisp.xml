@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1panglib_1_1pangdisp" kind="namespace" language="Python">
+    <compoundname>pyedpro::panglib::pangdisp</compoundname>
+    <innerclass refid="classpyedpro_1_1panglib_1_1pangdisp_1_1PangoView" prot="public">pyedpro::panglib::pangdisp::PangoView</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1panglib_1_1pangdisp_1ac7a3592975d920f1067917e45c8dbe3e" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::panglib::pangdisp.xpm_data</definition>
+        <argsstring></argsstring>
+        <name>xpm_data</name>
+        <initializer>=  [
+&quot;16 16 3 1&quot;,
+&quot;       c None&quot;,
+&quot;.      c #000000000000&quot;,
+&quot;X      c #FFFFFFFFFFFF&quot;,
+&quot;                &quot;,
+&quot;   ......       &quot;,
+&quot;   .XXX.X.      &quot;,
+&quot;   .XXX.XX.     &quot;,
+&quot;   .XXX.XXX.    &quot;,
+&quot;   .XXX.....    &quot;,
+&quot;   ..XXXXX..    &quot;,
+&quot;   .X.XXX.X.    &quot;,
+&quot;   .XX.X.XX.    &quot;,
+&quot;   .XXX.XXX.    &quot;,
+&quot;   .XX.X.XX.    &quot;,
+&quot;   .X.XXX.X.    &quot;,
+&quot;   ..XXXXX..    &quot;,
+&quot;   .........    &quot;,
+&quot;                &quot;,
+&quot;                &quot;
+]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/panglib/pangdisp.py" line="16" column="1" bodyfile="pyedpro/panglib/pangdisp.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1panglib_1_1pangdisp_1a38634d538ad87af321903ef248eb6b63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.panglib.pangdisp.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/panglib/pangdisp.py" line="426" column="1" bodyfile="pyedpro/panglib/pangdisp.py" bodystart="426" bodyend="429"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/panglib/pangdisp.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

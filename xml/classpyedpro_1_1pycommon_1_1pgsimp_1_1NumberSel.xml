@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pgsimp::NumberSel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Label</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1afc3f7d51baa45389cba4673914f04f99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.NumberSel::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="269" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a7d93880c15c65e8af840fa54d453ebb3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.NumberSel::callb</definition>
+        <argsstring></argsstring>
+        <name>callb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="270" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a3e72c39236c25bdbc61ff165e65e095a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.NumberSel::axx</definition>
+        <argsstring></argsstring>
+        <name>axx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="271" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1aa11987c88ccfdbb4f3a197872f855f32" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.NumberSel::lastsel</definition>
+        <argsstring></argsstring>
+        <name>lastsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="277" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1ab6c6058d43fb7cea84fe60c7b25f515b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgsimp.NumberSel::newtext</definition>
+        <argsstring></argsstring>
+        <name>newtext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="302" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a57fe5ab8447a76367533334380d2f04e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgsimp.NumberSel.__init__</definition>
+        <argsstring>(self, text=&quot; &quot;, callb=None, font=&quot;Mono 13&quot;)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1afc3f7d51baa45389cba4673914f04f99" kindref="member">text</ref></type>
+          <defname>text</defname>
+          <defval>&quot; &quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a7d93880c15c65e8af840fa54d453ebb3" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>font</type>
+          <defname>font</defname>
+          <defval>&quot;Mono 13&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="268" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="268" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a77077cb5176cb67bdd38690bfc02859c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgsimp.NumberSel.area_button</definition>
+        <argsstring>(self, but, event)</argsstring>
+        <name>area_button</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>but</type>
+          <defname>but</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgsimp.py" line="279" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="279" bodyend="323"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk.Label</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pgsimp.NumberSel</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk.Label</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pgsimp.NumberSel</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pgsimp.py" line="266" column="1" bodyfile="pyedpro/pycommon/pgsimp.py" bodystart="266" bodyend="324"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a57fe5ab8447a76367533334380d2f04e" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::NumberSel</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a77077cb5176cb67bdd38690bfc02859c" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::NumberSel</scope><name>area_button</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a3e72c39236c25bdbc61ff165e65e095a" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::NumberSel</scope><name>axx</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1a7d93880c15c65e8af840fa54d453ebb3" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::NumberSel</scope><name>callb</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1aa11987c88ccfdbb4f3a197872f855f32" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::NumberSel</scope><name>lastsel</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1ab6c6058d43fb7cea84fe60c7b25f515b" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::NumberSel</scope><name>newtext</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel_1afc3f7d51baa45389cba4673914f04f99" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgsimp::NumberSel</scope><name>text</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

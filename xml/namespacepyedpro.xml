@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro" kind="namespace" language="Python">
+    <compoundname>pyedpro</compoundname>
+    <innerclass refid="classpyedpro_1_1Unbuffered" prot="public">pyedpro::Unbuffered</innerclass>
+    <innernamespace refid="namespacepyedpro_1_1____main____">pyedpro::__main__</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1cursors">pyedpro::cursors</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1filter">pyedpro::filter</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1install">pyedpro::install</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1keybind">pyedpro::keybind</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1lexer">pyedpro::lexer</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1panglib">pyedpro::panglib</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pangview">pyedpro::pangview</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1parser">pyedpro::parser</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib">pyedpro::pedlib</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1popnew">pyedpro::popnew</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pycommon">pyedpro::pycommon</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pyedpro">pyedpro::pyedpro</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1setup">pyedpro::setup</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1setup3">pyedpro::setup3</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1stack">pyedpro::stack</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1testapp">pyedpro::testapp</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1testgi">pyedpro::testgi</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1testimport">pyedpro::testimport</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1testmenu">pyedpro::testmenu</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1testnb">pyedpro::testnb</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1trace">pyedpro::trace</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1utils">pyedpro::utils</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1a6d29427b9ae8438d54ec145a3e7edc9d" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro._</definition>
+        <argsstring></argsstring>
+        <name>_</name>
+        <initializer>=  gettext.gettext</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="52" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a446fc3c56b1d207a6ab0051426b1a016" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float pyedpro.VERSION</definition>
+        <argsstring></argsstring>
+        <name>VERSION</name>
+        <initializer>=  1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="56" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a9f4d4c69760d1469fb396d440311ff5e" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro.BUILDDATE</definition>
+        <argsstring></argsstring>
+        <name>BUILDDATE</name>
+        <initializer>=  &quot;Jan-09-2019&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="57" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a53b60e19496b156e877d15f8c45923d3" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro.PROGNAME</definition>
+        <argsstring></argsstring>
+        <name>PROGNAME</name>
+        <initializer>=  &quot;PyEdPro&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="58" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1ad3cd6d3f2548a6dd8b7154db6658becc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.mainwin</definition>
+        <argsstring></argsstring>
+        <name>mainwin</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="68" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1afed1191be043daefb02d3de2ade08a84" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>pyedpro.show_timing</definition>
+        <argsstring></argsstring>
+        <name>show_timing</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="69" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a267860307ee6dab65e2d4187a67fed70" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>pyedpro.show_config</definition>
+        <argsstring></argsstring>
+        <name>show_config</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="70" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1af5f68243b60f2918ebb9725d578d498d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>pyedpro.clear_config</definition>
+        <argsstring></argsstring>
+        <name>clear_config</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="71" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a48e2d853734c3ed565eb6155d174e539" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>pyedpro.use_stdout</definition>
+        <argsstring></argsstring>
+        <name>use_stdout</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="72" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1ac148b8fdaa4708f13b328aef87d35109" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>pyedpro.opts</definition>
+        <argsstring></argsstring>
+        <name>opts</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="141" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a5009c406676c0856670424f04b147c47" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="143" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a4e16442998c1598789f0fd5265b6b504" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="150" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a789e76345533513ddeb60b2424404f59" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.build_date</definition>
+        <argsstring></argsstring>
+        <name>build_date</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="151" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a1b1cf9cc03a274eca929c4c6415a721c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.progname</definition>
+        <argsstring></argsstring>
+        <name>progname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="152" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1abcca664cd4c53416a5c6c3db19d6f0f6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pgdebug</definition>
+        <argsstring></argsstring>
+        <name>pgdebug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="157" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a9c0c450d366a51838e4e7d72f3dfc8c8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.full_screen</definition>
+        <argsstring></argsstring>
+        <name>full_screen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="166" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a133ac32c6f035baba078946b976d3f55" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="167" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1adbc510afbc02fadb9a82c8b8d4ae8bb7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.sql</definition>
+        <argsstring></argsstring>
+        <name>sql</name>
+        <initializer>=  <ref refid="classpyedlib_1_1pedsql_1_1pedsql" kindref="compound">pyedlib.pedsql.pedsql</ref>(<ref refid="classpyedlib_1_1pedconfig_1_1conf_1a1467d3f28c2d3d8facfe9887dc9a4f18" kindref="member">pyedlib.pedconfig.conf.sql_data</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="191" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1ac4287a16b3625eba9ed68627c570c34d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.keyh</definition>
+        <argsstring></argsstring>
+        <name>keyh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="195" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1ace88c95f2e9b2e2b625a2fd9c0d5ddaa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.mydir</definition>
+        <argsstring></argsstring>
+        <name>mydir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="196" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1af7b6fa8a4ea281319a40678cd101baf6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.aa</definition>
+        <argsstring></argsstring>
+        <name>aa</name>
+        <initializer>=  sys.stdin.readline()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="202" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1ae2a71157b0e6f0e9b2fdd8e7e9493d49" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="204" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1aa8682dd29e82bc113e41318d3d39e4d1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.ss</definition>
+        <argsstring></argsstring>
+        <name>ss</name>
+        <initializer>=  sql.getall();</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="212" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a60560ffae258eefc36bf2805ee616310" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.hidden</definition>
+        <argsstring></argsstring>
+        <name>hidden</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="222" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a83258d5fd6b591d12f9c465810cd1ca4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.stdout</definition>
+        <argsstring></argsstring>
+        <name>stdout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="223" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a1d1ad96c36404bcc096b839751b68190" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.stderr</definition>
+        <argsstring></argsstring>
+        <name>stderr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="224" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1ad736187883161f8c319d3438803812c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.main</definition>
+        <argsstring>(strarr)</argsstring>
+        <name>main</name>
+        <param>
+          <type>strarr</type>
+          <defname>strarr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="76" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="76" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1a2124e0921ece2fb52b9c3b77c06dc55d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.help</definition>
+        <argsstring>()</argsstring>
+        <name>help</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="91" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="91" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1a07c3f80902b86fe3e314bf269ccbbff4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.terminate</definition>
+        <argsstring>(arg1, arg2)</argsstring>
+        <name>terminate</name>
+        <param>
+          <type>arg1</type>
+          <defname>arg1</defname>
+        </param>
+        <param>
+          <type>arg2</type>
+          <defname>arg2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="124" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="124" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

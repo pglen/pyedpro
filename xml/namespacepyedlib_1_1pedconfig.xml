@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedlib_1_1pedconfig" kind="namespace" language="Python">
+    <compoundname>pyedlib::pedconfig</compoundname>
+    <innerclass refid="classpyedlib_1_1pedconfig_1_1conf" prot="public">pyedlib::pedconfig::conf</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedlib_1_1pedconfig_1abf11619fa96ba403a8ba61f93406a73d" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::pedconfig.config_reg</definition>
+        <argsstring></argsstring>
+        <name>config_reg</name>
+        <initializer>=  &quot;/apps/pyedpro&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedconfig.py" line="12" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedconfig.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedlib_1_1pedconfig_1ad13818dab0c15cb5d14fc13c648f6ab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedconfig.softmake</definition>
+        <argsstring>(ddd)</argsstring>
+        <name>softmake</name>
+        <param>
+          <type>ddd</type>
+          <defname>ddd</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedconfig.py" line="55" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedconfig.py" bodystart="55" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedconfig_1aeefebe8bb9b8b105d4c34261cb4b075e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedconfig.ensure_dirs</definition>
+        <argsstring>(conf)</argsstring>
+        <name>ensure_dirs</name>
+        <param>
+          <type><ref refid="classpyedlib_1_1pedconfig_1_1conf" kindref="compound">conf</ref></type>
+          <defname>conf</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedconfig.py" line="67" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedconfig.py" bodystart="67" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedconfig.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pedlib::pedsql::pedsql</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1aa4799a853706639dd42b7f5a172a77a4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedsql.pedsql::conn</definition>
+        <argsstring></argsstring>
+        <name>conn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="16" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a9dce2236ad886bd868ae1aea3b867702" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedsql.pedsql::c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="21" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a84b56d45ead545b2301bbf19966d6886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedsql.pedsql.__init__</definition>
+        <argsstring>(self, file)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="11" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="11" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a1be37a99486c24859fd9f2fbb0c9da78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedsql.pedsql.get</definition>
+        <argsstring>(self, kkk)</argsstring>
+        <name>get</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>kkk</type>
+          <defname>kkk</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="41" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="41" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1adc1aa2fbe690ead8dfac0be775e0d268" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedsql.pedsql.get_int</definition>
+        <argsstring>(self, kkk)</argsstring>
+        <name>get_int</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>kkk</type>
+          <defname>kkk</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="63" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="63" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a0436d80a5db3d87fbe2c98e99b5e42cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedsql.pedsql.get_str</definition>
+        <argsstring>(self, kkk)</argsstring>
+        <name>get_str</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>kkk</type>
+          <defname>kkk</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="73" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="73" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1ad9da4b73568998798d7b36d5c1833677" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedsql.pedsql.put</definition>
+        <argsstring>(self, key, val)</argsstring>
+        <name>put</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="83" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="83" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1ab2f3a4fa552093f50fe941a011c08ea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedsql.pedsql.getall</definition>
+        <argsstring>(self)</argsstring>
+        <name>getall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="123" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="123" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a1fbb7369f93b6224f6f8e620ecb79a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedsql.pedsql.rmall</definition>
+        <argsstring>(self)</argsstring>
+        <name>rmall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedsql.py" line="138" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="138" bodyend="174"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/pedsql.py" line="9" column="1" bodyfile="pyedpro/pedlib/pedsql.py" bodystart="9" bodyend="174"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a84b56d45ead545b2301bbf19966d6886" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a9dce2236ad886bd868ae1aea3b867702" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>c</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1aa4799a853706639dd42b7f5a172a77a4" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>conn</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a1be37a99486c24859fd9f2fbb0c9da78" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>get</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1adc1aa2fbe690ead8dfac0be775e0d268" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>get_int</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a0436d80a5db3d87fbe2c98e99b5e42cd" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>get_str</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1ab2f3a4fa552093f50fe941a011c08ea3" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>getall</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1ad9da4b73568998798d7b36d5c1833677" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>put</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedsql_1_1pedsql_1a1fbb7369f93b6224f6f8e620ecb79a8e" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedsql::pedsql</scope><name>rmall</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::ScrollListBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Frame</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a549cda845f9575076391d8e1347857d6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.ScrollListBox::listbox</definition>
+        <argsstring></argsstring>
+        <name>listbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="938" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="938" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a40b25c9222bc0db7a18fbc713bb8ece8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.ScrollListBox::autoscroll</definition>
+        <argsstring></argsstring>
+        <name>autoscroll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="944" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="944" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1ab1ba4ac50617dfe6b7ce8787be7edbf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ScrollListBox.__init__</definition>
+        <argsstring>(self, limit=-1, colname=&apos;&apos;, callme=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>limit</type>
+          <defname>limit</defname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>colname</type>
+          <defname>colname</defname>
+          <defval>&apos;&apos;</defval>
+        </param>
+        <param>
+          <type>callme</type>
+          <defname>callme</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="936" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="936" bodyend="945"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1ae2adbb0fee7b8dfc4c6aa3fdb2c71a44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ScrollListBox.append_end</definition>
+        <argsstring>(self, strx)</argsstring>
+        <name>append_end</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="948" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="948" bodyend="957"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a1c8b7d6fdfc9be92b27a42a83eac9168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ScrollListBox.clear</definition>
+        <argsstring>(self)</argsstring>
+        <name>clear</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="958" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="958" bodyend="960"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a7995bab95753b679c730775bd9a267fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ScrollListBox.select</definition>
+        <argsstring>(self, num)</argsstring>
+        <name>select</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="961" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="961" bodyend="965"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk.Frame</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.ScrollListBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk.Frame</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.ScrollListBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="934" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="934" bodyend="966"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1ab1ba4ac50617dfe6b7ce8787be7edbf7" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ScrollListBox</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1ae2adbb0fee7b8dfc4c6aa3fdb2c71a44" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ScrollListBox</scope><name>append_end</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a40b25c9222bc0db7a18fbc713bb8ece8" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ScrollListBox</scope><name>autoscroll</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a1c8b7d6fdfc9be92b27a42a83eac9168" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ScrollListBox</scope><name>clear</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a549cda845f9575076391d8e1347857d6" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ScrollListBox</scope><name>listbox</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a7995bab95753b679c730775bd9a267fc" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ScrollListBox</scope><name>select</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

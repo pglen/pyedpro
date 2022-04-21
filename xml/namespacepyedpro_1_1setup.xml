@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1setup" kind="namespace" language="Python">
+    <compoundname>pyedpro::setup</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a6b32a02d6ef73fde13f3a8b0e2b44802" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::setup.descx</definition>
+        <argsstring></argsstring>
+        <name>descx</name>
+        <initializer>=  &apos;&apos;&apos;PyEdPro is modern multi-platform editor. Simple, powerful,
+configurable, extendable. Goodies like macro recording / playback, spell check,
+column select, multiple clipboards, unlimited undo ...
+   PyEdPro.py has macro recording/play, search/replace, one click function navigation,
+auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion
+ ... and a lot more.
+   The recorded macros, the undo / redo information the editing session details persist
+ after the editor is closed.
+    The spell checker can check code comments. The parsing of the code is
+rudimentary, comments and strings are spell checked. (Press F9 or Shit-F9) The code is filtered
+out for Python and  &apos;C&apos;. The spell checker is executed on live text. (while typing)
+&apos;&apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="3" column="1" bodyfile="pyedpro/setup.py" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a90e17cd5f62f785022ab9cf5a0fdddf4" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::setup.classx</definition>
+        <argsstring></argsstring>
+        <name>classx</name>
+        <initializer>=  [
+          &apos;Development Status :: Mature&apos;,
+          &apos;Environment :: GUI&apos;,
+          &apos;Intended Audience :: End Users/Desktop&apos;,
+          &apos;Intended Audience :: Developers&apos;,
+          &apos;Intended Audience :: System Administrators&apos;,
+          &apos;License :: OSI Approved :: Python Software Foundation License&apos;,
+          &apos;Operating System :: MacOS :: MacOS X&apos;,
+          &apos;Operating System :: Microsoft :: Windows&apos;,
+          &apos;Operating System :: POSIX&apos;,
+          &apos;Programming Language :: Python&apos;,
+          &apos;Topic :: Editors&apos;,
+          &apos;Topic :: Software Development :: Editor&apos;,
+        ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="16" column="1" bodyfile="pyedpro/setup.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a2ed231d3c9983ce5420eb8448a53b886" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::setup.inclu</definition>
+        <argsstring></argsstring>
+        <name>inclu</name>
+        <initializer>=  [&quot;*&quot;, &quot;pedlib/&quot;, &quot;panglib&quot;, &quot;pyedpro.py&quot;, &quot;pangview.py&quot;,]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="31" column="1" bodyfile="pyedpro/setup.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a47aae6dfc3a80eb70b2f7bdb4ff708c0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.encoding</definition>
+        <argsstring></argsstring>
+        <name>encoding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="33" column="1" bodyfile="pyedpro/setup.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1adc766136d77b978f0a548f3b8c29255d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.long_description</definition>
+        <argsstring></argsstring>
+        <name>long_description</name>
+        <initializer>=  fh.read()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="34" column="1" bodyfile="pyedpro/setup.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a1855c88342c764e907ad71b10b86476e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="37" column="1" bodyfile="pyedpro/setup.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1adc4eba3dd3f5bf90094b72d6979e55b7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="38" column="1" bodyfile="pyedpro/setup.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1ae5757f6c2814bf889e0270405d39cb26" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.author</definition>
+        <argsstring></argsstring>
+        <name>author</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="39" column="1" bodyfile="pyedpro/setup.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1afc80bfc25254a371a29b115f2125ffe2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.author_email</definition>
+        <argsstring></argsstring>
+        <name>author_email</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="40" column="1" bodyfile="pyedpro/setup.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1ac8fbe2670229279f0ef0ab081c34785f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="41" column="1" bodyfile="pyedpro/setup.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a7faa0211c40f865f5decaea547e0a1c7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.long_description_content_type</definition>
+        <argsstring></argsstring>
+        <name>long_description_content_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="43" column="1" bodyfile="pyedpro/setup.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a8f31e3a2e074e34ad522c0ac3dc6428a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="44" column="1" bodyfile="pyedpro/setup.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1aca7c0f81be66dc4feaf6358be86de999" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.classifiers</definition>
+        <argsstring></argsstring>
+        <name>classifiers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="45" column="1" bodyfile="pyedpro/setup.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a9c57713b6333ce0adef46d1929909cb4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.packages</definition>
+        <argsstring></argsstring>
+        <name>packages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="51" column="1" bodyfile="pyedpro/setup.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a72236d22a0e182d37e118df8243be358" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.scripts</definition>
+        <argsstring></argsstring>
+        <name>scripts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="53" column="1" bodyfile="pyedpro/setup.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a58260da5cf03b14ec87cc6da6f361b28" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.package_dir</definition>
+        <argsstring></argsstring>
+        <name>package_dir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="54" column="1" bodyfile="pyedpro/setup.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1ac6fd4f1af27cb2d1fc5bcf87f9b0da91" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.package_data</definition>
+        <argsstring></argsstring>
+        <name>package_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="55" column="1" bodyfile="pyedpro/setup.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1aec61dfef5d69626399d9633eec2a9989" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.data_files</definition>
+        <argsstring></argsstring>
+        <name>data_files</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="56" column="1" bodyfile="pyedpro/setup.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a7211577c3c33985686e6bdc9aedb61b5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.python_requires</definition>
+        <argsstring></argsstring>
+        <name>python_requires</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="60" column="1" bodyfile="pyedpro/setup.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/setup.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedlib_1_1pedwin_1_1edwin" kind="class" language="Python" prot="public">
+    <compoundname>pyedlib::pedwin::edwin</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedlib_1_1pedwin_1_1edwin_1a57d33cf5f83b09d054eb85aded90fcc0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.pedwin.edwin::area</definition>
+        <argsstring></argsstring>
+        <name>area</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="71" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedlib_1_1pedwin_1_1edwin_1a3e675301791226dc7ba7310e110a181c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedwin.edwin.__init__</definition>
+        <argsstring>(self, buff, readonly=False)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>buff</type>
+          <defname>buff</defname>
+        </param>
+        <param>
+          <type>readonly</type>
+          <defname>readonly</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="64" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="64" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk::VBox</label>
+      </node>
+      <node id="1">
+        <label>pyedlib.pedwin.edwin</label>
+        <link refid="classpyedlib_1_1pedwin_1_1edwin"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk::VBox</label>
+      </node>
+      <node id="1">
+        <label>pyedlib.pedwin.edwin</label>
+        <link refid="classpyedlib_1_1pedwin_1_1edwin"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="62" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="62" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classpyedlib_1_1pedwin_1_1edwin_1a3e675301791226dc7ba7310e110a181c" prot="public" virt="non-virtual"><scope>pyedlib::pedwin::edwin</scope><name>__init__</name></member>
+      <member refid="classpyedlib_1_1pedwin_1_1edwin_1a57d33cf5f83b09d054eb85aded90fcc0" prot="public" virt="non-virtual"><scope>pyedlib::pedwin::edwin</scope><name>area</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

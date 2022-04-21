@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_6d0dbc010fe36665ab0e81188b9adfd2" kind="dir">
+    <compoundname>pyedpro/pedlib</compoundname>
+    <innerdir refid="dir_848704658c740d1eb8f037af4fd9aa36">pyedpro/pedlib/data</innerdir>
+    <innerfile refid="pedlib_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="pedlib_2acthand_8py">acthand.py</innerfile>
+    <innerfile refid="importer_8py">importer.py</innerfile>
+    <innerfile refid="pedlib_2keyhand_8py">keyhand.py</innerfile>
+    <innerfile refid="pedlib_2keywords_8py">keywords.py</innerfile>
+    <innerfile refid="pedlib_2leven_8py">leven.py</innerfile>
+    <innerfile refid="pedlib_2lexer_8py">lexer.py</innerfile>
+    <innerfile refid="pedlib_2parser_8py">parser.py</innerfile>
+    <innerfile refid="pedlib_2pedbuffs_8py">pedbuffs.py</innerfile>
+    <innerfile refid="pedcal_8py">pedcal.py</innerfile>
+    <innerfile refid="pedcanv_8py">pedcanv.py</innerfile>
+    <innerfile refid="pedlib_2pedcolor_8py">pedcolor.py</innerfile>
+    <innerfile refid="pedlib_2pedconfig_8py">pedconfig.py</innerfile>
+    <innerfile refid="peddlg_8py">peddlg.py</innerfile>
+    <innerfile refid="pedlib_2peddoc_8py">peddoc.py</innerfile>
+    <innerfile refid="peddoc__diff_8py">peddoc_diff.py</innerfile>
+    <innerfile refid="pedlib_2peddraw_8py">peddraw.py</innerfile>
+    <innerfile refid="pedlib_2pedfind_8py">pedfind.py</innerfile>
+    <innerfile refid="pedlib_2pedfont_8py">pedfont.py</innerfile>
+    <innerfile refid="pedlib_2pedgoto_8py">pedgoto.py</innerfile>
+    <innerfile refid="pedlcmd_8py">pedlcmd.py</innerfile>
+    <innerfile refid="pedlog_8py">pedlog.py</innerfile>
+    <innerfile refid="pedlib_2pedmenu_8py">pedmenu.py</innerfile>
+    <innerfile refid="pedmisc_8py">pedmisc.py</innerfile>
+    <innerfile refid="pednotes_8py">pednotes.py</innerfile>
+    <innerfile refid="pedobjs_8py">pedobjs.py</innerfile>
+    <innerfile refid="pedlib_2pedofd_8py">pedofd.py</innerfile>
+    <innerfile refid="pedoline_8py">pedoline.py</innerfile>
+    <innerfile refid="pedplug_8py">pedplug.py</innerfile>
+    <innerfile refid="pedlib_2pedspell_8py">pedspell.py</innerfile>
+    <innerfile refid="pedlib_2pedsql_8py">pedsql.py</innerfile>
+    <innerfile refid="pedstruct_8py">pedstruct.py</innerfile>
+    <innerfile refid="pedtask_8py">pedtask.py</innerfile>
+    <innerfile refid="pedtdlg_8py">pedtdlg.py</innerfile>
+    <innerfile refid="pedthread_8py">pedthread.py</innerfile>
+    <innerfile refid="pedlib_2pedtts_8py">pedtts.py</innerfile>
+    <innerfile refid="pedlib_2pedui_8py">pedui.py</innerfile>
+    <innerfile refid="pedlib_2pedundo_8py">pedundo.py</innerfile>
+    <innerfile refid="pedlib_2pedutil_8py">pedutil.py</innerfile>
+    <innerfile refid="pedweb_8py">pedweb.py</innerfile>
+    <innerfile refid="pedlib_2pedwin_8py">pedwin.py</innerfile>
+    <innerfile refid="pedxtnd_8py">pedxtnd.py</innerfile>
+    <innerfile refid="pedlib_2pedync_8py">pedync.py</innerfile>
+    <innerfile refid="pedlib_2stack_8py">stack.py</innerfile>
+    <innerfile refid="pedlib_2test_8c">test.c</innerfile>
+    <innerfile refid="pedlib_2test_8php">test.php</innerfile>
+    <innerfile refid="pedlib_2test_8py">test.py</innerfile>
+    <innerfile refid="testdiff_8py">testdiff.py</innerfile>
+    <innerfile refid="webwin_8py">webwin.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/"/>
+  </compounddef>
+</doxygen>

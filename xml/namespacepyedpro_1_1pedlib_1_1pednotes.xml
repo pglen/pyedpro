@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1pednotes" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::pednotes</compoundname>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pednotes_1_1pgnotes" prot="public">pyedpro::pedlib::pednotes::pgnotes</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pednotes_1_1notesql" prot="public">pyedpro::pedlib::pednotes::notesql</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pednotes_1_1SearchDialog" prot="public">pyedpro::pedlib::pednotes::SearchDialog</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pednotes_1_1HeadDialog" prot="public">pyedpro::pedlib::pednotes::HeadDialog</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/pednotes.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
