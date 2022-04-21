@@ -18,7 +18,7 @@ that I use every day.
         Raspberry PI 3, Raspberry PI 4, ...
         Mac ** Some functions are disabled - in particular async processing
 
-[See GitHub Pages](https://pglen.github.io/pyedpro/html/)
+[See Doxygen generated Documentation on GitHub Pages](https://pglen.github.io/pyedpro/html/)
 
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
 and the Raspberry-Pi. It behaves consistently on all these platforms,
