@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::ComboBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.ComboBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1a29d9307bd777f29fa688465aa431ffc6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.ComboBox::store</definition>
+        <argsstring></argsstring>
+        <name>store</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="970" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="970" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1ac221ddeca6db61479eb4fdbce43ecc75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ComboBox.__init__</definition>
+        <argsstring>(self, init_cont=[], callme=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>init_cont</type>
+          <defname>init_cont</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>callme</type>
+          <defname>callme</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="968" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="968" bodyend="998"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1a12e7679414a8ffdba0b9beeabd169b71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ComboBox.combo_changed</definition>
+        <argsstring>(self, combo)</argsstring>
+        <name>combo_changed</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>combo</type>
+          <defname>combo</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="999" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="999" bodyend="1015"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1adeb96c4dbf79f585fcd1750dc09beeb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ComboBox.delall</definition>
+        <argsstring>(self)</argsstring>
+        <name>delall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1016" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1016" bodyend="1030"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1ada976463b9de42e25aabbcd857244f5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ComboBox.sel_text</definition>
+        <argsstring>(self, txt)</argsstring>
+        <name>sel_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>txt</type>
+          <defname>txt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1032" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1032" bodyend="1052"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1aff84c24d0faadb85d6224f2bd3e43941" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.ComboBox.sel_first</definition>
+        <argsstring>(self)</argsstring>
+        <name>sel_first</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1053" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1053" bodyend="1057"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.ComboBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.ComboBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.ComboBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.ComboBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="966" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="966" bodyend="1058"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1ac221ddeca6db61479eb4fdbce43ecc75" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ComboBox</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1a12e7679414a8ffdba0b9beeabd169b71" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ComboBox</scope><name>combo_changed</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1adeb96c4dbf79f585fcd1750dc09beeb7" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ComboBox</scope><name>delall</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1aff84c24d0faadb85d6224f2bd3e43941" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ComboBox</scope><name>sel_first</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1ada976463b9de42e25aabbcd857244f5a" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ComboBox</scope><name>sel_text</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox_1a29d9307bd777f29fa688465aa431ffc6" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::ComboBox</scope><name>store</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

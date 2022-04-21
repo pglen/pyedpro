@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::Rectangle</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1af5ef65d62304190d402708ae384a9a6b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.Rectangle::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1068" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1068" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a7aee0821597fc13057ad9763a5d23066" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.Rectangle::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1070" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1070" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a02cf884806421cb1611c41997a06e616" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.Rectangle::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1073" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1073" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a3b29c0278631c8a778699df35ee8bdc2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.Rectangle::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1076" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1076" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1ac122ebfceb3d1be1bd034fa7b227dfd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.__init__</definition>
+        <argsstring>(self, *rrr)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>rrr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1061" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1061" bodyend="1089"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a7511394a1f512b6662195d1e3fa11e77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.resize</definition>
+        <argsstring>(self, ww, hh=0)</argsstring>
+        <name>resize</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ww</type>
+          <defname>ww</defname>
+        </param>
+        <param>
+          <type>hh</type>
+          <defname>hh</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1091" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1091" bodyend="1100"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1ab249e2eb265da9fe954741d37ff502ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.copy</definition>
+        <argsstring>(self)</argsstring>
+        <name>copy</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1101" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1101" bodyend="1133"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a59e1ff514ad4f8d7ae9f18a11069fbd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.norm</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>norm</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1136" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1136" bodyend="1145"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a662019326919eaf6d9efeda6256b344f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.intersect</definition>
+        <argsstring>(self, rect2)</argsstring>
+        <name>intersect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect2</type>
+          <defname>rect2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1155" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1155" bodyend="1179"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a20cb68231ef1636d8eb107d4ca3d7c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.contain</definition>
+        <argsstring>(self, rect2)</argsstring>
+        <name>contain</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect2</type>
+          <defname>rect2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1181" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1181" bodyend="1193"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1af283ac9b20fff2825808212b117fbe64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.__getitem__</definition>
+        <argsstring>(self, key)</argsstring>
+        <name>__getitem__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1195" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1195" bodyend="1206"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a152500b89fec50671dc7a34a9af96bdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.dump</definition>
+        <argsstring>(self)</argsstring>
+        <name>dump</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1207" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1207" bodyend="1209"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a3e97b3464e31c18ad67468dce7d0f319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Rectangle.__str__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__str__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="1229" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1229" bodyend="1233"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pycommon/pggui.py" line="1058" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1058" bodyend="1234"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1af283ac9b20fff2825808212b117fbe64" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>__getitem__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1ac122ebfceb3d1be1bd034fa7b227dfd4" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a3e97b3464e31c18ad67468dce7d0f319" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>__str__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a20cb68231ef1636d8eb107d4ca3d7c19" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>contain</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1ab249e2eb265da9fe954741d37ff502ce" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>copy</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a152500b89fec50671dc7a34a9af96bdc" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>dump</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a3b29c0278631c8a778699df35ee8bdc2" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>h</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a662019326919eaf6d9efeda6256b344f" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>intersect</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a59e1ff514ad4f8d7ae9f18a11069fbd4" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>norm</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a7511394a1f512b6662195d1e3fa11e77" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>resize</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a02cf884806421cb1611c41997a06e616" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>w</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1af5ef65d62304190d402708ae384a9a6b" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>x</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle_1a7aee0821597fc13057ad9763a5d23066" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Rectangle</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

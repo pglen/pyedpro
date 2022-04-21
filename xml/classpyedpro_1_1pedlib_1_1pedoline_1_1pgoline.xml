@@ -1,0 +1,562 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pedlib::pedoline::pgoline</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a408cac4bf9f1095b6fce6a3e4d622c32" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedoline.pgoline::init</definition>
+        <argsstring></argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="62" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a8e17ea760e56d7eac3696136aed70d0d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedoline.pgoline::lastsel</definition>
+        <argsstring></argsstring>
+        <name>lastsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="68" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ac75ac6c444ce2154faebc482ed7a0451" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedoline.pgoline::data_dir</definition>
+        <argsstring></argsstring>
+        <name>data_dir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="74" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a209d90be1cf772a9647ed609ef0a5777" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedoline.pgoline::statbox</definition>
+        <argsstring></argsstring>
+        <name>statbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="81" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a40372e1c7f478f4ad01b4deac5fe6e43" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedoline.pgoline::toolbox</definition>
+        <argsstring></argsstring>
+        <name>toolbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="87" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ae51fbc820c31bee0f6fd3ed3f875deb0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedoline.pgoline::canvas</definition>
+        <argsstring></argsstring>
+        <name>canvas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="89" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a5615caa6f7d9660599065eb5045556b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="58" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="58" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aaa015f36f75b523538bbf5c43e610290" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.config_event</definition>
+        <argsstring>(self, win, event)</argsstring>
+        <name>config_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="131" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="131" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aab00401013b0a54d17117f8091155523" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.toolcb</definition>
+        <argsstring>(self, butt, num)</argsstring>
+        <name>toolcb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="134" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="134" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ad8e7c68ff67cd630d81523d9acef2ffb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.focus_out</definition>
+        <argsstring>(self)</argsstring>
+        <name>focus_out</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="137" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a5af421ff485445a77c438f69e5f314ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.focus_in</definition>
+        <argsstring>(self)</argsstring>
+        <name>focus_in</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="140" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="140" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ada99056bbba0e6cd84738f9ce4b8086c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.switched</definition>
+        <argsstring>(self, pageto)</argsstring>
+        <name>switched</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pageto</type>
+          <defname>pageto</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="143" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="143" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a16029e161c97a8026a7d147a901a7a13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.motion_event</definition>
+        <argsstring>(self, win, event)</argsstring>
+        <name>motion_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="151" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="151" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1af637061ebeb453c29010725098257142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.all_event</definition>
+        <argsstring>(self, win, event)</argsstring>
+        <name>all_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="158" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a903c06cae13e5e10870625e1f9c6b47e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.letterfilter</definition>
+        <argsstring>(self, letter)</argsstring>
+        <name>letterfilter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>letter</type>
+          <defname>letter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="162" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="162" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a98e12239137bc348598858743fda78b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.main_callb</definition>
+        <argsstring>(self, text, arg)</argsstring>
+        <name>main_callb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="174" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="174" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aff2871f2b314c6ab8204efeebd98e49b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.newitem</definition>
+        <argsstring>(self, arg, num)</argsstring>
+        <name>newitem</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="184" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="184" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a779ff6753a100ad1b30453c49bbcc585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.find</definition>
+        <argsstring>(self, arg)</argsstring>
+        <name>find</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="190" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="190" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a2e6ea61a2f6139cba8f81dd59a9846e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.savetext</definition>
+        <argsstring>(self, txt)</argsstring>
+        <name>savetext</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>txt</type>
+          <defname>txt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="198" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="198" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1adec496761abb9f883cd843e09cecf0e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.treechange</definition>
+        <argsstring>(self, args)</argsstring>
+        <name>treechange</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedpro_1a5009c406676c0856670424f04b147c47" kindref="member">args</ref></type>
+          <defname>args</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="205" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="205" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aabad8d7c4dc455ec0bc05a9f2c3b425b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.treesel</definition>
+        <argsstring>(self, args)</argsstring>
+        <name>treesel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedpro_1a5009c406676c0856670424f04b147c47" kindref="member">args</ref></type>
+          <defname>args</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="214" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="214" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1af5b555dd9f4b805e355d5954433d4360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.today</definition>
+        <argsstring>(self, butt, cal)</argsstring>
+        <name>today</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>cal</type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="224" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="224" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a541d3010e25cea0e601ceeca31b07b9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.demand</definition>
+        <argsstring>(self, butt, cal)</argsstring>
+        <name>demand</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>cal</type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="230" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a3cb74aeca9d7efce6eff4b133994d763" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.daysel</definition>
+        <argsstring>(self, cal)</argsstring>
+        <name>daysel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cal</type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="234" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="234" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a28701e75f857c2835253478e495e4714" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedoline.pgoline.dayseldouble</definition>
+        <argsstring>(self, cal)</argsstring>
+        <name>dayseldouble</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cal</type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedoline.py" line="253" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="253" bodyend="258"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pedlib.pedoline.pgoline</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pedlib.pedoline.pgoline</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pedlib/pedoline.py" line="56" column="1" bodyfile="pyedpro/pedlib/pedoline.py" bodystart="56" bodyend="259"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a5615caa6f7d9660599065eb5045556b5" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1af637061ebeb453c29010725098257142" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>all_event</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ae51fbc820c31bee0f6fd3ed3f875deb0" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>canvas</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aaa015f36f75b523538bbf5c43e610290" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>config_event</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ac75ac6c444ce2154faebc482ed7a0451" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>data_dir</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a3cb74aeca9d7efce6eff4b133994d763" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>daysel</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a28701e75f857c2835253478e495e4714" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>dayseldouble</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a541d3010e25cea0e601ceeca31b07b9a" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>demand</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a779ff6753a100ad1b30453c49bbcc585" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>find</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a5af421ff485445a77c438f69e5f314ed" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>focus_in</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ad8e7c68ff67cd630d81523d9acef2ffb" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>focus_out</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a408cac4bf9f1095b6fce6a3e4d622c32" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>init</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a8e17ea760e56d7eac3696136aed70d0d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>lastsel</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a903c06cae13e5e10870625e1f9c6b47e" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>letterfilter</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a98e12239137bc348598858743fda78b3" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>main_callb</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a16029e161c97a8026a7d147a901a7a13" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>motion_event</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aff2871f2b314c6ab8204efeebd98e49b" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>newitem</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a2e6ea61a2f6139cba8f81dd59a9846e0" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>savetext</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a209d90be1cf772a9647ed609ef0a5777" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>statbox</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1ada99056bbba0e6cd84738f9ce4b8086c" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>switched</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1af5b555dd9f4b805e355d5954433d4360" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>today</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1a40372e1c7f478f4ad01b4deac5fe6e43" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>toolbox</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aab00401013b0a54d17117f8091155523" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>toolcb</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1adec496761abb9f883cd843e09cecf0e0" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>treechange</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline_1aabad8d7c4dc455ec0bc05a9f2c3b425b" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedoline::pgoline</scope><name>treesel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

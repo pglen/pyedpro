@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pycommon_1_1testpacker2" kind="namespace" language="Python">
+    <compoundname>pyedpro::pycommon::testpacker2</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1a3b79ffe28a2fde92434064684fe497f0" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::pycommon::testpacker2.xorg</definition>
+        <argsstring></argsstring>
+        <name>xorg</name>
+        <initializer>=  [&quot;val1&quot;, &quot;val2&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="19" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1af049f742329e5c9a375a1883fddf512a" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple pyedpro::pycommon::testpacker2.yorg</definition>
+        <argsstring></argsstring>
+        <name>yorg</name>
+        <initializer>=  (&quot;str1&quot;, &quot;2&quot;, &quot;3&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="20" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1a05a0d216ba2d5754cd6a9514920e4633" prot="public" static="no" mutable="no">
+        <type>dictionary</type>
+        <definition>dictionary pyedpro::pycommon::testpacker2.zorg</definition>
+        <argsstring></argsstring>
+        <name>zorg</name>
+        <initializer>=  { &quot;key1&quot; : &quot;111&quot;, &apos;key2&apos; : 222, &quot;arr&quot;: xorg }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="21" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1abd897b3a14cb7ba4a8b3d3501da07b55" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pycommon::testpacker2.pb</definition>
+        <argsstring></argsstring>
+        <name>pb</name>
+        <initializer>=  <ref refid="classpyedpro_1_1pycommon_1_1pypacker_1_1packbin" kindref="compound">pypacker.packbin</ref>();</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="23" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1af57fbc89a8fe3225cea63bef4d25a462" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pycommon::testpacker2.verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="24" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1a1aabebb9c4d4d7e0c0f1a331db372d91" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::pycommon::testpacker2.sorg_var</definition>
+        <argsstring></argsstring>
+        <name>sorg_var</name>
+        <initializer>=  [ 334, &quot;subx&quot;, &apos;x&apos;, <ref refid="namespacepyedpro_1_1pycommon_1_1testpacker2_1a3b79ffe28a2fde92434064684fe497f0" kindref="member">xorg</ref>, <ref refid="namespacepyedpro_1_1pycommon_1_1testpacker2_1af049f742329e5c9a375a1883fddf512a" kindref="member">yorg</ref>]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="31" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1a876f1d128f638e88acabfd1b9a6d78a7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pycommon::testpacker2.eee_var</definition>
+        <argsstring></argsstring>
+        <name>eee_var</name>
+        <initializer>=  pb.encode_data(&quot;&quot;, *<ref refid="namespacepyedpro_1_1pycommon_1_1testpacker2_1a1aabebb9c4d4d7e0c0f1a331db372d91" kindref="member">sorg_var</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="38" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pycommon_1_1testpacker2_1aef5079437c852b646c5581496a9ee8cd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pycommon::testpacker2.fff_var</definition>
+        <argsstring></argsstring>
+        <name>fff_var</name>
+        <initializer>=  pb.decode_data(<ref refid="namespacepyedpro_1_1pycommon_1_1testpacker2_1a876f1d128f638e88acabfd1b9a6d78a7" kindref="member">eee_var</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/testpacker2.py" line="42" column="1" bodyfile="pyedpro/pycommon/testpacker2.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pycommon/testpacker2.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

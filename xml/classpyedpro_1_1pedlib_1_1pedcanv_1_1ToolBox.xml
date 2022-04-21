@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pedlib::pedcanv::ToolBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a5ce3500cba4b584e534f2f170d1809f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::drag</definition>
+        <argsstring></argsstring>
+        <name>drag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="65" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ae676ea56fa63ba49a89daee06e99bbde" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::dragpos</definition>
+        <argsstring></argsstring>
+        <name>dragpos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="66" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a7d792a5da33d54936bf585233319b36a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::callb</definition>
+        <argsstring></argsstring>
+        <name>callb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="67" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1abe69d8e85afddb5dec5aaa81f15387c4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::opacity</definition>
+        <argsstring></argsstring>
+        <name>opacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="68" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1acd9c9e8fdc950d15340124a492dd524d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::labelm</definition>
+        <argsstring></argsstring>
+        <name>labelm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="76" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a1a756e7b395858a2af9292ffaa0df8f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::labelx</definition>
+        <argsstring></argsstring>
+        <name>labelx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="77" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ad89c6da5e8a8803753b8efe46d4135f1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::toolt</definition>
+        <argsstring></argsstring>
+        <name>toolt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="78" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a03dbae2ad8138689faf3d0fe83957e7c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::hboxt</definition>
+        <argsstring></argsstring>
+        <name>hboxt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="80" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ae498a7b79939a3c9842bea3e68663b91" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::hbox</definition>
+        <argsstring></argsstring>
+        <name>hbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="85" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ac28f28e8f2bf4455ffd737a16ff33d85" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::hbox2</definition>
+        <argsstring></argsstring>
+        <name>hbox2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="99" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a039f47a5895c698ea81461d14a6bf759" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcanv.ToolBox::parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="166" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a083e734d1400851612dd314b93f9d6af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcanv.ToolBox.__init__</definition>
+        <argsstring>(self, callb, parent)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a7d792a5da33d54936bf585233319b36a" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a039f47a5895c698ea81461d14a6bf759" kindref="member">parent</ref></type>
+          <defname>parent</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="54" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="54" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a6bd789eaa65464cfc7bb3a08561f222d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcanv.ToolBox.area_motion</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_motion</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="122" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="122" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a4225d68acbe1a77b19cda88d6cc7dfd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcanv.ToolBox.area_button_rel</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_button_rel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="131" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="131" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a838fd3df3a144467e48a83f553805960" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcanv.ToolBox.area_button</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_button</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="134" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="134" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ac51a4e329a6820a91d86104f931093ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcanv.ToolBox.show_box</definition>
+        <argsstring>(self, parent)</argsstring>
+        <name>show_box</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a039f47a5895c698ea81461d14a6bf759" kindref="member">parent</ref></type>
+          <defname>parent</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcanv.py" line="165" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="165" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pedlib.pedcanv.ToolBox</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pedlib.pedcanv.ToolBox</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pedlib/pedcanv.py" line="52" column="1" bodyfile="pyedpro/pedlib/pedcanv.py" bodystart="52" bodyend="173"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a083e734d1400851612dd314b93f9d6af" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a838fd3df3a144467e48a83f553805960" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>area_button</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a4225d68acbe1a77b19cda88d6cc7dfd5" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>area_button_rel</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a6bd789eaa65464cfc7bb3a08561f222d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>area_motion</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a7d792a5da33d54936bf585233319b36a" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>callb</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a5ce3500cba4b584e534f2f170d1809f9" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>drag</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ae676ea56fa63ba49a89daee06e99bbde" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>dragpos</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ae498a7b79939a3c9842bea3e68663b91" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>hbox</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ac28f28e8f2bf4455ffd737a16ff33d85" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>hbox2</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a03dbae2ad8138689faf3d0fe83957e7c" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>hboxt</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1acd9c9e8fdc950d15340124a492dd524d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>labelm</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a1a756e7b395858a2af9292ffaa0df8f9" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>labelx</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1abe69d8e85afddb5dec5aaa81f15387c4" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>opacity</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1a039f47a5895c698ea81461d14a6bf759" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>parent</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ac51a4e329a6820a91d86104f931093ea" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>show_box</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox_1ad89c6da5e8a8803753b8efe46d4135f1" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcanv::ToolBox</scope><name>toolt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

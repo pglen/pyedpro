@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::CairoHelper</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a25c8c1f7c66ca5be15cc8e3ea393de16" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.CairoHelper::cr</definition>
+        <argsstring></argsstring>
+        <name>cr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="57" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a5be5f0d76929f220b4f14723908c25b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.CairoHelper.__init__</definition>
+        <argsstring>(self, cr)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a25c8c1f7c66ca5be15cc8e3ea393de16" kindref="member">cr</ref></type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="56" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1abf9a309a804736ce083515a5c0721f0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.CairoHelper.set_source_rgb</definition>
+        <argsstring>(self, col)</argsstring>
+        <name>set_source_rgb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="59" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a956c1f01f35327d6ec42493409ae50ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.CairoHelper.rectangle</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>rectangle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="62" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a62975d675bd51317ed6e75ba2ab580b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.CairoHelper.romb</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>romb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="74" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="74" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a892723a0f7257a84639cf799c3c0dc5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.CairoHelper.circle</definition>
+        <argsstring>(self, xx, yy, size)</argsstring>
+        <name>circle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="86" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a469d4662a89013b22f4aa0131183b398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.CairoHelper.tri</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>tri</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="95" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="95" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a2a7127b9a881ccba02143c42fa7f586e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.CairoHelper.tri2</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>tri2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="111" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="111" bodyend="119"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pycommon/pggui.py" line="54" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="54" bodyend="120"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a5be5f0d76929f220b4f14723908c25b1" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a892723a0f7257a84639cf799c3c0dc5a" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>circle</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a25c8c1f7c66ca5be15cc8e3ea393de16" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>cr</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a956c1f01f35327d6ec42493409ae50ee" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>rectangle</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a62975d675bd51317ed6e75ba2ab580b5" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>romb</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1abf9a309a804736ce083515a5c0721f0b" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>set_source_rgb</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a469d4662a89013b22f4aa0131183b398" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>tri</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a2a7127b9a881ccba02143c42fa7f586e" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::CairoHelper</scope><name>tri2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

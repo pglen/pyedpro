@@ -1,0 +1,823 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpanglib_1_1pangdisp_1_1PangoView" kind="class" language="Python" prot="public">
+    <compoundname>panglib::pangdisp::PangoView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Window</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a53eace7d996fbebe187ae2e99889d7db" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool panglib.pangdisp.PangoView::hovering_over_link</definition>
+        <argsstring></argsstring>
+        <name>hovering_over_link</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="41" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1adc33b42631b84a84fb563fc89407b625" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool panglib.pangdisp.PangoView::waiting</definition>
+        <argsstring></argsstring>
+        <name>waiting</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="42" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a8c29b020de011c917653266b913d9e98" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::hand_cursor</definition>
+        <argsstring></argsstring>
+        <name>hand_cursor</name>
+        <initializer>=  Gdk.Cursor(Gdk.CursorType.HAND2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="44" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1afae6ff119af162afaf9d6669d1617c12" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::regular_cursor</definition>
+        <argsstring></argsstring>
+        <name>regular_cursor</name>
+        <initializer>=  Gdk.Cursor(Gdk.CursorType.XTERM)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="45" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1ad3fcd9b5d009ec95ad5e9b89153dfc3b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::wait_cursor</definition>
+        <argsstring></argsstring>
+        <name>wait_cursor</name>
+        <initializer>=  Gdk.Cursor(Gdk.CursorType.WATCH)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="46" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1abe04246164f3aa1a7d78374ec2698a69" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::callback</definition>
+        <argsstring></argsstring>
+        <name>callback</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="47" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1aeff46840bf1a1a5888e02d8e7d0cb748" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::bscallback</definition>
+        <argsstring></argsstring>
+        <name>bscallback</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="48" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a6c391ab3a314d9579c1eaed41cc1a871" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::view</definition>
+        <argsstring></argsstring>
+        <name>view</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="111" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a5e931079dfac74acb224f1d9377816d5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::buffer_1</definition>
+        <argsstring></argsstring>
+        <name>buffer_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="113" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1ae4936275bf71f1b7793f1968a72cc527" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::buffer_2</definition>
+        <argsstring></argsstring>
+        <name>buffer_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="122" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1ae5ec890fefb97b3bbef50e4cab28b225" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::hpaned</definition>
+        <argsstring></argsstring>
+        <name>hpaned</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="136" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a701d0b8e07977b41c89cfc611e7998e3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::iter</definition>
+        <argsstring></argsstring>
+        <name>iter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="139" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a9a03e5601262f1ffe9636f9526895d57" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::iter2</definition>
+        <argsstring></argsstring>
+        <name>iter2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="140" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a17ccaf9af76718c8d4b5cb7c10718781" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::waiting</definition>
+        <argsstring></argsstring>
+        <name>waiting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="156" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1pangdisp_1_1PangoView_1a1cec04db98962998d81ec517218b8533" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.pangdisp.PangoView::hovering_over_link</definition>
+        <argsstring></argsstring>
+        <name>hovering_over_link</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="417" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="417" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a6413985f49a9e64012ecabdfeeabdbc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.__init__</definition>
+        <argsstring>(self, pvg, parent=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pvg</type>
+          <defname>pvg</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="51" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="51" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a21aa6d6c58361ba4431ac2f0ed1913b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.set_pane_position</definition>
+        <argsstring>(self, pos)</argsstring>
+        <name>set_pane_position</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="146" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="146" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a9c1d8a7c16482e8aee3866c8ed859b0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.set_fullscreen</definition>
+        <argsstring>(self)</argsstring>
+        <name>set_fullscreen</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="149" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="149" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1ac8543dcb8d9967217529756fee6529c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.showcur</definition>
+        <argsstring>(self, flag)</argsstring>
+        <name>showcur</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="154" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="154" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a494821185d2537dda3075134ac6d4fd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.clear</definition>
+        <argsstring>(self, flag=False)</argsstring>
+        <name>clear</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="166" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="166" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a6876c2c42035e0e1aae09044b2a9735e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.add_pixbuf</definition>
+        <argsstring>(self, pixbuf, flag=False)</argsstring>
+        <name>add_pixbuf</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pixbuf</type>
+          <defname>pixbuf</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="174" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="174" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a8dcfc42bec8281d1f72eaa365a06ddec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.add_broken</definition>
+        <argsstring>(self, flag=False)</argsstring>
+        <name>add_broken</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="181" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="181" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a286bf93aee2ad80e982368ff0bd42f84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.add_text</definition>
+        <argsstring>(self, text, flag=False)</argsstring>
+        <name>add_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="189" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="189" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a35996cf4fdf8a85ae50ceae383f4b15b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.add_text_tag</definition>
+        <argsstring>(self, text, tags, flag=False)</argsstring>
+        <name>add_text_tag</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>tags</type>
+          <defname>tags</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="196" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="196" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a625e9ab9ed141bbd3b1230f1b92fac0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.add_text_xtag</definition>
+        <argsstring>(self, text, tags, flag=False)</argsstring>
+        <name>add_text_xtag</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>tags</type>
+          <defname>tags</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="203" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="203" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a0d1a5fea936328c48a4e56bf15118fa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.key_press_event</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>key_press_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="218" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="218" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a551df0cd575738ae87347ec51023db58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.event_after</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>event_after</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="242" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="242" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a2525123c8e5539455fc254028bf86943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.follow_if_link</definition>
+        <argsstring>(self, text_view, iter)</argsstring>
+        <name>follow_if_link</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type><ref refid="classpanglib_1_1pangdisp_1_1PangoView_1a701d0b8e07977b41c89cfc611e7998e3" kindref="member">iter</ref></type>
+          <defname>iter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> Looks at all tags covering the position of iter in the text view,
+    and if one of them is a link, follow it by showing the page identified
+    by the data attached to it.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="266" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="266" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1ab9f801e5b27ef5735cebf5146101e731" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.set_cursor_if_appropriate</definition>
+        <argsstring>(self, text_view, x, y)</argsstring>
+        <name>set_cursor_if_appropriate</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>hovering = False
+buffer = text_view.get_buffer()
+#iter = text_view.get_iter_at_location(x, y)
+iter = text_view.get_iter_at_position(x, y)
+tags = iter.get_tags()
+for tag in tags:
+    page = tag.get_data(&quot;link&quot;)
+    #if page != 0:
+    if page != None:
+        hovering = True
+        break
+
+if hovering != self.hovering_over_link:
+    self.hovering_over_link = hovering
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="291" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="291" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1ad1560a3cd0d3d1d5ab4dbc20f2bb5c98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.motion_notify_event</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>motion_notify_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="323" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="323" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a5b248768e6d0926eab9f68e0a2202a0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.visibility_notify_event</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>visibility_notify_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="333" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="333" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1af43356696d0801996291bb8aa46deeaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.key_press_event2</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>key_press_event2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="340" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="340" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1aa525460792de1464503be1084946dd3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.event_after2</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>event_after2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="364" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="364" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1af9d7b7a1ac2074fac82c785fe5cac1c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.visibility_notify_event2</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>visibility_notify_event2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="388" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="388" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1ac52ce01b0fcbe9c8e9287ac0dbef3862" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.motion_notify_event2</definition>
+        <argsstring>(self, text_view, event)</argsstring>
+        <name>motion_notify_event2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="396" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="396" bodyend="402"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1pangdisp_1_1PangoView_1a3ccd36dd40131a4a5b04830b360a5ea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.PangoView.set_cursor_if_appropriate2</definition>
+        <argsstring>(self, text_view, x, y)</argsstring>
+        <name>set_cursor_if_appropriate2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>text_view</type>
+          <defname>text_view</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="403" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="403" bodyend="425"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>panglib.pangdisp.PangoView</label>
+        <link refid="classpanglib_1_1pangdisp_1_1PangoView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk::Window</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>panglib.pangdisp.PangoView</label>
+        <link refid="classpanglib_1_1pangdisp_1_1PangoView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk::Window</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="39" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="39" bodyend="426"/>
+    <listofallmembers>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a6413985f49a9e64012ecabdfeeabdbc1" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>__init__</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a8dcfc42bec8281d1f72eaa365a06ddec" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>add_broken</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a6876c2c42035e0e1aae09044b2a9735e" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>add_pixbuf</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a286bf93aee2ad80e982368ff0bd42f84" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>add_text</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a35996cf4fdf8a85ae50ceae383f4b15b" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>add_text_tag</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a625e9ab9ed141bbd3b1230f1b92fac0c" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>add_text_xtag</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1aeff46840bf1a1a5888e02d8e7d0cb748" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>bscallback</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a5e931079dfac74acb224f1d9377816d5" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>buffer_1</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1ae4936275bf71f1b7793f1968a72cc527" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>buffer_2</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1abe04246164f3aa1a7d78374ec2698a69" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>callback</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a494821185d2537dda3075134ac6d4fd2" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>clear</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a551df0cd575738ae87347ec51023db58" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>event_after</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1aa525460792de1464503be1084946dd3d" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>event_after2</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a2525123c8e5539455fc254028bf86943" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>follow_if_link</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a8c29b020de011c917653266b913d9e98" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>hand_cursor</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a53eace7d996fbebe187ae2e99889d7db" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>hovering_over_link</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a1cec04db98962998d81ec517218b8533" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>hovering_over_link</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1ae5ec890fefb97b3bbef50e4cab28b225" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>hpaned</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a701d0b8e07977b41c89cfc611e7998e3" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>iter</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a9a03e5601262f1ffe9636f9526895d57" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>iter2</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a0d1a5fea936328c48a4e56bf15118fa2" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>key_press_event</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1af43356696d0801996291bb8aa46deeaa" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>key_press_event2</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1ad1560a3cd0d3d1d5ab4dbc20f2bb5c98" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>motion_notify_event</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1ac52ce01b0fcbe9c8e9287ac0dbef3862" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>motion_notify_event2</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1afae6ff119af162afaf9d6669d1617c12" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>regular_cursor</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1ab9f801e5b27ef5735cebf5146101e731" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>set_cursor_if_appropriate</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a3ccd36dd40131a4a5b04830b360a5ea0" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>set_cursor_if_appropriate2</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a9c1d8a7c16482e8aee3866c8ed859b0c" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>set_fullscreen</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a21aa6d6c58361ba4431ac2f0ed1913b9" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>set_pane_position</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1ac8543dcb8d9967217529756fee6529c7" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>showcur</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a6c391ab3a314d9579c1eaed41cc1a871" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>view</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a5b248768e6d0926eab9f68e0a2202a0e" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>visibility_notify_event</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1af9d7b7a1ac2074fac82c785fe5cac1c5" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>visibility_notify_event2</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1ad3fcd9b5d009ec95ad5e9b89153dfc3b" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>wait_cursor</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1adc33b42631b84a84fb563fc89407b625" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>waiting</name></member>
+      <member refid="classpanglib_1_1pangdisp_1_1PangoView_1a17ccaf9af76718c8d4b5cb7c10718781" prot="public" virt="non-virtual"><scope>panglib::pangdisp::PangoView</scope><name>waiting</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

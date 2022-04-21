@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::Lights</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Frame</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a27cc28940bbd3295d8f95244ed60a48a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.Lights::box_arr</definition>
+        <argsstring></argsstring>
+        <name>box_arr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="888" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="888" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a219d454c200df2e291db939f9f93130f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Lights.__init__</definition>
+        <argsstring>(self, col_arr, size=6, call_me=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col_arr</type>
+          <defname>col_arr</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+          <defval>6</defval>
+        </param>
+        <param>
+          <type>call_me</type>
+          <defname>call_me</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="885" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="885" bodyend="899"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a7e4f79f4be07d598bf32a19e36e6659a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Lights.set_color</definition>
+        <argsstring>(self, idx, col)</argsstring>
+        <name>set_color</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="900" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="900" bodyend="904"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a6f2ebd5efe3bc42cd31763f391063b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Lights.set_colors</definition>
+        <argsstring>(self, colarr)</argsstring>
+        <name>set_colors</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>colarr</type>
+          <defname>colarr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="905" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="905" bodyend="909"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1af0a372fa0027bf4b55e76cae3d0aebbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Lights.set_tooltip</definition>
+        <argsstring>(self, idx, strx)</argsstring>
+        <name>set_tooltip</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="910" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="910" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a030d26fe35d25b1aca5efe3b8b283c89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Lights.set_tooltips</definition>
+        <argsstring>(self, strarr)</argsstring>
+        <name>set_tooltips</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>strarr</type>
+          <defname>strarr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="915" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="915" bodyend="918"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1af7f2ea088b98eed55b15a04ac040a6b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Lights.get_size</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_size</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="919" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="919" bodyend="921"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a6248a898d1ca7e547caf0933b471b8e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.Lights.colbox</definition>
+        <argsstring>(self, col, size)</argsstring>
+        <name>colbox</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="922" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="922" bodyend="933"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk::Frame</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.Lights</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk::Frame</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.Lights</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="883" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="883" bodyend="934"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a219d454c200df2e291db939f9f93130f" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a27cc28940bbd3295d8f95244ed60a48a" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>box_arr</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a6248a898d1ca7e547caf0933b471b8e8" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>colbox</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1af7f2ea088b98eed55b15a04ac040a6b3" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>get_size</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a7e4f79f4be07d598bf32a19e36e6659a" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>set_color</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a6f2ebd5efe3bc42cd31763f391063b50" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>set_colors</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1af0a372fa0027bf4b55e76cae3d0aebbb" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>set_tooltip</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Lights_1a030d26fe35d25b1aca5efe3b8b283c89" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::Lights</scope><name>set_tooltips</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

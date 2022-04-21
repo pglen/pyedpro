@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedlib_1_1pedwin" kind="namespace" language="Python">
+    <compoundname>pyedlib::pedwin</compoundname>
+    <innerclass refid="classpyedlib_1_1pedwin_1_1edPane" prot="public">pyedlib::pedwin::edPane</innerclass>
+    <innerclass refid="classpyedlib_1_1pedwin_1_1edwin" prot="public">pyedlib::pedwin::edwin</innerclass>
+    <innerclass refid="classpyedlib_1_1pedwin_1_1EdMainWindow" prot="public">pyedlib::pedwin::EdMainWindow</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedlib_1_1pedwin_1ada7489c4ecff9c8ef85e9e58b667b2e8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::pedwin.STATUSCOUNT</definition>
+        <argsstring></argsstring>
+        <name>STATUSCOUNT</name>
+        <initializer>=  5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="27" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1pedwin_1a71e10785549cf24f941d075804215b3a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib::pedwin.treestore</definition>
+        <argsstring></argsstring>
+        <name>treestore</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="29" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1pedwin_1abce914ea68df5925858f056cfb6cccd4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib::pedwin.treestore2</definition>
+        <argsstring></argsstring>
+        <name>treestore2</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="30" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1pedwin_1a69f10994c23c2dde949d3943bb1e013b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib::pedwin.notebook</definition>
+        <argsstring></argsstring>
+        <name>notebook</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="31" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1pedwin_1acc00244e517b9512d60d194ae50415ef" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::pedwin.hidden</definition>
+        <argsstring></argsstring>
+        <name>hidden</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="33" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedlib_1_1pedwin_1a1e6b53472c2f5a457ecf925c2b2da0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedwin.OnExit</definition>
+        <argsstring>(arg, prompt=True)</argsstring>
+        <name>OnExit</name>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <param>
+          <type>prompt</type>
+          <defname>prompt</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="1217" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="1217" bodyend="1292"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedwin_1a3c187bf54f7480259738d4151f94c536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedwin.loader_tick</definition>
+        <argsstring>(self2)</argsstring>
+        <name>loader_tick</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="1293" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="1293" bodyend="1380"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedwin_1adbed17ac527fa99c5905ef2b1dc80942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedwin.handler_tick</definition>
+        <argsstring>()</argsstring>
+        <name>handler_tick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="1381" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" bodystart="1381" bodyend="1496"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedwin.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

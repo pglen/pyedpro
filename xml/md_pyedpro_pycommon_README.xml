@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="md_pyedpro_pycommon_README" kind="page">
+    <compoundname>md_pyedpro_pycommon_README</compoundname>
+    <title>py Common</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="md_pyedpro_pycommon_README_1autotoc_md3">
+<title>Common GUI routines (and classes) for python PyGobject (Gtk) development.</title>
+<para>Just a sampler of what is in there (pasted from code, in no particular order):</para>
+<para><itemizedlist>
+<listitem><para>class CairoHelper(): class TextTable(Gtk.Table): class TextRow(Gtk.HBox): class RadioGroup(Gtk.Frame):</para>
+</listitem></itemizedlist>
+</para>
+<para>class Led(Gtk.DrawingArea): class SeparatorMenuItem(Gtk.SeparatorMenuItem): class Menu(): class MenuButt(Gtk.DrawingArea): class Lights(Gtk.Frame): *class WideButt(Gtk.Button): class ScrollListBox(Gtk.Frame): class TextRow(Gtk.HBox): class RadioGroup(Gtk.Frame):<itemizedlist>
+<listitem><para>class Led(Gtk.DrawingArea): class Lights(Gtk.Frame): class FrameTextView(Gtk.TextView): class Label(Gtk.Label):</para>
+</listitem><listitem><para>class Logo(Gtk.VBox): class xSpacer(Gtk.HBox): class ScrollListBox(Gtk.Frame): class ListBox(Gtk.TreeView):</para>
+</listitem></itemizedlist>
+</para>
+<para>... and a lot more ...</para>
+<para>These classes act as a simplification of the PyGtk (PyGobject) classes.</para>
+<para>For instance the Label takes a constructor, and feeds the arguments as one would expect. Like this: <verbatim>   def __init__(self, textm = &quot;&quot;, widget = None, tooltip=None, font = None):
+</verbatim> The defaults are set to a reasonable value, and the named argument can be set on one line. This makes the code look compact and maintainable.</para>
+<para>See descendent projects for examples. (pyedpro; pycal; pggui; ...)</para>
+<para>Peter Glen </para>
+</sect1>
+    </detaileddescription>
+    <location file="pyedpro/pycommon/README.md"/>
+  </compounddef>
+</doxygen>

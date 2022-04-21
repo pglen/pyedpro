@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1pedstruct" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::pedstruct</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedstruct_1a8193d5fd42a7b26b80c252f1bed300d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedstruct.suggest</definition>
+        <argsstring>(self2, strx)</argsstring>
+        <name>suggest</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedstruct.py" line="18" column="1" bodyfile="pyedpro/pedlib/pedstruct.py" bodystart="18" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/pedstruct.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

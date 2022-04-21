@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1stack_1_1Stack" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::stack::Stack</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1stack_1_1Stack_1a2c3d25420309d679510b6530be0e9704" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.stack.Stack::_store</definition>
+        <argsstring></argsstring>
+        <name>_store</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="6" column="1" bodyfile="pyedpro/stack.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1stack_1_1Stack_1a400c8a8e1f33a332d5c8160c1e9d4ebc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.stack.Stack::cnt</definition>
+        <argsstring></argsstring>
+        <name>cnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="14" column="1" bodyfile="pyedpro/stack.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1stack_1_1Stack_1aac125fb90672c33670ba50cf7dcae8d2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.stack.Stack::gcnt</definition>
+        <argsstring></argsstring>
+        <name>gcnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="49" column="1" bodyfile="pyedpro/stack.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1ad4381a663f37ac0a223ed6bd4d6783bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="5" column="1" bodyfile="pyedpro/stack.py" bodystart="5" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1abff925d849002c8bb48f695eff884da7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.push</definition>
+        <argsstring>(self, item)</argsstring>
+        <name>push</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="9" column="1" bodyfile="pyedpro/stack.py" bodystart="9" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1a18459e9842c459c4f60c37156c36df64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.last</definition>
+        <argsstring>(self)</argsstring>
+        <name>last</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="16" column="1" bodyfile="pyedpro/stack.py" bodystart="16" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1a847ca51f823bad5f2496b5e344d2ee6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.first</definition>
+        <argsstring>(self)</argsstring>
+        <name>first</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="22" column="1" bodyfile="pyedpro/stack.py" bodystart="22" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1ac7141468852e6bf9bd974f638f9c503e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.pop</definition>
+        <argsstring>(self)</argsstring>
+        <name>pop</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="28" column="1" bodyfile="pyedpro/stack.py" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1a5ac684956752ece65a39c66a7e0b613c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.get</definition>
+        <argsstring>(self)</argsstring>
+        <name>get</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="33" column="1" bodyfile="pyedpro/stack.py" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1a69410b936b1ff4fe72e1f0874cdd7914" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.pop2</definition>
+        <argsstring>(self)</argsstring>
+        <name>pop2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="39" column="1" bodyfile="pyedpro/stack.py" bodystart="39" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1a1c09692d10d9dfdd37fcd7b8efb9cf2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.get2</definition>
+        <argsstring>(self)</argsstring>
+        <name>get2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="46" column="1" bodyfile="pyedpro/stack.py" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1a5822e50d32303eae98fb593df49fe42f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.reset</definition>
+        <argsstring>(self)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="53" column="1" bodyfile="pyedpro/stack.py" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1ac513f15c2755b06466c4ae2b212fbbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.stacklen</definition>
+        <argsstring>(self)</argsstring>
+        <name>stacklen</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="57" column="1" bodyfile="pyedpro/stack.py" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1a4f814c968540af674beb19aa4ff738ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.dump</definition>
+        <argsstring>(self)</argsstring>
+        <name>dump</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="60" column="1" bodyfile="pyedpro/stack.py" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1stack_1_1Stack_1aaa2cfc5db7fc727b56935f60a0832192" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.stack.Stack.show</definition>
+        <argsstring>(self)</argsstring>
+        <name>show</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/stack.py" line="65" column="1" bodyfile="pyedpro/stack.py" bodystart="65" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/stack.py" line="3" column="1" bodyfile="pyedpro/stack.py" bodystart="3" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1ad4381a663f37ac0a223ed6bd4d6783bb" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a2c3d25420309d679510b6530be0e9704" prot="private" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>_store</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a400c8a8e1f33a332d5c8160c1e9d4ebc" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>cnt</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a4f814c968540af674beb19aa4ff738ef" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>dump</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a847ca51f823bad5f2496b5e344d2ee6d" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>first</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1aac125fb90672c33670ba50cf7dcae8d2" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>gcnt</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a5ac684956752ece65a39c66a7e0b613c" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>get</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a1c09692d10d9dfdd37fcd7b8efb9cf2e" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>get2</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a18459e9842c459c4f60c37156c36df64" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>last</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1ac7141468852e6bf9bd974f638f9c503e" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>pop</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a69410b936b1ff4fe72e1f0874cdd7914" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>pop2</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1abff925d849002c8bb48f695eff884da7" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>push</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1a5822e50d32303eae98fb593df49fe42f" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>reset</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1aaa2cfc5db7fc727b56935f60a0832192" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>show</name></member>
+      <member refid="classpyedpro_1_1stack_1_1Stack_1ac513f15c2755b06466c4ae2b212fbbb3" prot="public" virt="non-virtual"><scope>pyedpro::stack::Stack</scope><name>stacklen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

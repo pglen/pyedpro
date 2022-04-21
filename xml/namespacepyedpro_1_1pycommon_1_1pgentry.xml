@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pycommon_1_1pgentry" kind="namespace" language="Python">
+    <compoundname>pyedpro::pycommon::pgentry</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pycommon_1_1pgentry_1ab3c144dcbf579af679a33baab8a7de0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgentry.entryquad</definition>
+        <argsstring>(arr, vbox, entry1, entry2)</argsstring>
+        <name>entryquad</name>
+        <param>
+          <type>arr</type>
+          <defname>arr</defname>
+        </param>
+        <param>
+          <type>vbox</type>
+          <defname>vbox</defname>
+        </param>
+        <param>
+          <type>entry1</type>
+          <defname>entry1</defname>
+        </param>
+        <param>
+          <type>entry2</type>
+          <defname>entry2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgentry.py" line="18" column="1" bodyfile="pyedpro/pycommon/pgentry.py" bodystart="18" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pycommon_1_1pgentry_1a29193cd0339f40a422d1f33e6345635c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgentry.entrypair</definition>
+        <argsstring>(vbox, labtext, labname, tip, defval=None)</argsstring>
+        <name>entrypair</name>
+        <param>
+          <type>vbox</type>
+          <defname>vbox</defname>
+        </param>
+        <param>
+          <type>labtext</type>
+          <defname>labtext</defname>
+        </param>
+        <param>
+          <type>labname</type>
+          <defname>labname</defname>
+        </param>
+        <param>
+          <type>tip</type>
+          <defname>tip</defname>
+        </param>
+        <param>
+          <type>defval</type>
+          <defname>defval</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgentry.py" line="60" column="1" bodyfile="pyedpro/pycommon/pgentry.py" bodystart="60" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pycommon_1_1pgentry_1a0d2bf9807e1bc5def077fe55ced21c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgentry.textviewpair</definition>
+        <argsstring>(arr, vbox, labtext, labname, tip, defval=None, expand=False)</argsstring>
+        <name>textviewpair</name>
+        <param>
+          <type>arr</type>
+          <defname>arr</defname>
+        </param>
+        <param>
+          <type>vbox</type>
+          <defname>vbox</defname>
+        </param>
+        <param>
+          <type>labtext</type>
+          <defname>labtext</defname>
+        </param>
+        <param>
+          <type>labname</type>
+          <defname>labname</defname>
+        </param>
+        <param>
+          <type>tip</type>
+          <defname>tip</defname>
+        </param>
+        <param>
+          <type>defval</type>
+          <defname>defval</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>expand</type>
+          <defname>expand</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgentry.py" line="88" column="1" bodyfile="pyedpro/pycommon/pgentry.py" bodystart="88" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pycommon_1_1pgentry_1acbf517005e772f38928cf000268a7d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgentry.scrolledtext</definition>
+        <argsstring>(arr, name, body=None)</argsstring>
+        <name>scrolledtext</name>
+        <param>
+          <type>arr</type>
+          <defname>arr</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>body</type>
+          <defname>body</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgentry.py" line="116" column="1" bodyfile="pyedpro/pycommon/pgentry.py" bodystart="116" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pycommon_1_1pgentry_1a5d641a6fd8192e31842143e4af0f788c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgentry.imgbutt</definition>
+        <argsstring>(imgfile, txt, func, win)</argsstring>
+        <name>imgbutt</name>
+        <param>
+          <type>imgfile</type>
+          <defname>imgfile</defname>
+        </param>
+        <param>
+          <type>txt</type>
+          <defname>txt</defname>
+        </param>
+        <param>
+          <type>func</type>
+          <defname>func</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgentry.py" line="133" column="1" bodyfile="pyedpro/pycommon/pgentry.py" bodystart="133" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pycommon_1_1pgentry_1aea0e372203d589034df421a37120cf61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgentry.spacer</definition>
+        <argsstring>(hbox, xstr=&quot;    &quot;, expand=False)</argsstring>
+        <name>spacer</name>
+        <param>
+          <type>hbox</type>
+          <defname>hbox</defname>
+        </param>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+          <defval>&quot;    &quot;</defval>
+        </param>
+        <param>
+          <type>expand</type>
+          <defname>expand</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgentry.py" line="157" column="1" bodyfile="pyedpro/pycommon/pgentry.py" bodystart="157" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pycommon_1_1pgentry_1aef5adf9543cc5617605a87dbcfdd8962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgentry.vspacer</definition>
+        <argsstring>(vbox, xstr=&quot;     &quot;, expand=False)</argsstring>
+        <name>vspacer</name>
+        <param>
+          <type>vbox</type>
+          <defname>vbox</defname>
+        </param>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+          <defval>&quot;     &quot;</defval>
+        </param>
+        <param>
+          <type>expand</type>
+          <defname>expand</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgentry.py" line="161" column="1" bodyfile="pyedpro/pycommon/pgentry.py" bodystart="161" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pycommon/pgentry.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1lexer" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::lexer</compoundname>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1lexer_1_1__LexIter" prot="public">pyedpro::pedlib::lexer::_LexIter</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1lexer_1_1Lexer" prot="public">pyedpro::pedlib::lexer::Lexer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/lexer.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

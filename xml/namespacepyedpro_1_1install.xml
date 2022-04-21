@@ -1,0 +1,395 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1install" kind="namespace" language="Python">
+    <compoundname>pyedpro::install</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ac825ff9b6bec5fb6c153d37cfb34000b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro::install::depfailed</definition>
+        <argsstring></argsstring>
+        <name>depfailed</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="15" column="1" bodyfile="pyedpro/install.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a47309c6ca5a44cbf98b4212edf07f2a7" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro::install::install</definition>
+        <argsstring></argsstring>
+        <name>install</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="16" column="1" bodyfile="pyedpro/install.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ae0677925a795a849b6c9b74d60bebeb2" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.PROJNAME</definition>
+        <argsstring></argsstring>
+        <name>PROJNAME</name>
+        <initializer>=  &quot;pyedpro&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="18" column="1" bodyfile="pyedpro/install.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a664fd128619e2a8308b66fef2318cfcd" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.PROJLIB</definition>
+        <argsstring></argsstring>
+        <name>PROJLIB</name>
+        <initializer>=  &quot;pyedlib&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="19" column="1" bodyfile="pyedpro/install.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a38b4a18b90c7cd9be90879b10f070367" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.PROJLIB_I</definition>
+        <argsstring></argsstring>
+        <name>PROJLIB_I</name>
+        <initializer>=  &quot;pyedlib/images&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="20" column="1" bodyfile="pyedpro/install.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ace576f5d3b7f871af20fce94604516de" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.PROJLIB_D</definition>
+        <argsstring></argsstring>
+        <name>PROJLIB_D</name>
+        <initializer>=  &quot;pyedlib/data&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="21" column="1" bodyfile="pyedpro/install.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1aa59f031097ec37f06a044b78405cc7c3" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.PROJLIB2</definition>
+        <argsstring></argsstring>
+        <name>PROJLIB2</name>
+        <initializer>=  &quot;panglib&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="22" column="1" bodyfile="pyedpro/install.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ad70008110b93d53b086123bc749dbc54" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.PROGNAME</definition>
+        <argsstring></argsstring>
+        <name>PROGNAME</name>
+        <initializer>=  &quot;&apos;&quot; + <ref refid="namespacepyedpro_1_1install_1ae0677925a795a849b6c9b74d60bebeb2" kindref="member">PROJNAME</ref>+ &quot;.py&apos;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="23" column="1" bodyfile="pyedpro/install.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a3836284fe6f46710e9e371d8a4787057" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.home</definition>
+        <argsstring></argsstring>
+        <name>home</name>
+        <initializer>=  os.environ[&apos;HOME&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="55" column="1" bodyfile="pyedpro/install.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a543878a6935449080316721a04489ca9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.user</definition>
+        <argsstring></argsstring>
+        <name>user</name>
+        <initializer>=  os.environ[&apos;USER&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="56" column="1" bodyfile="pyedpro/install.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1abd3bdbc86ac1d70cda6b6791dc048e4d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.stream</definition>
+        <argsstring></argsstring>
+        <name>stream</name>
+        <initializer>=  stream.read()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="60" column="1" bodyfile="pyedpro/install.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a0484155ab074f83431e6be3ed288a122" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.shared</definition>
+        <argsstring></argsstring>
+        <name>shared</name>
+        <initializer>=   &quot;/usr/share&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="98" column="1" bodyfile="pyedpro/install.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1af24edb0eb74deb74ddfd390ee1889701" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.xshared</definition>
+        <argsstring></argsstring>
+        <name>xshared</name>
+        <initializer>=  &quot;/usr/share&quot; + &quot;/&quot; + PROJNAME</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="99" column="1" bodyfile="pyedpro/install.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ade28b3517356dc28e4e7773749113c34" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install.bindir</definition>
+        <argsstring></argsstring>
+        <name>bindir</name>
+        <initializer>=  &quot;/usr/local/bin&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="100" column="1" bodyfile="pyedpro/install.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ad4a9cde962bb834748ed0e06e4393302" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.pylib</definition>
+        <argsstring></argsstring>
+        <name>pylib</name>
+        <initializer>=  distutils.sysconfig.get_python_lib()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="102" column="1" bodyfile="pyedpro/install.py" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1af83a68f41e00e9c56cb58b9ff94ef00d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.filelist</definition>
+        <argsstring></argsstring>
+        <name>filelist</name>
+        <initializer>=  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="111" column="1" bodyfile="pyedpro/install.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a30e3422b529ef15d67b168b0dfc9f1d6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.dirlist</definition>
+        <argsstring></argsstring>
+        <name>dirlist</name>
+        <initializer>=  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="118" column="1" bodyfile="pyedpro/install.py" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1acdc009adb9ad80c4b8a1059c7aa231ec" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install::targ</definition>
+        <argsstring></argsstring>
+        <name>targ</name>
+        <initializer>=  <ref refid="namespacepyedpro_1_1install_1a9fa6f1d64a5bcd74cfc16b82860eb2b6" kindref="member">dest</ref> + &quot;/&quot; + <ref refid="namespacepyedpro_1_1install_1a771600ef8a9d9de14c41bdab76a47e22" kindref="member">source</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="138" column="1" bodyfile="pyedpro/install.py" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ac6d3f155e8ba0ae9390859865d63773c" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::install::spp</definition>
+        <argsstring></argsstring>
+        <name>spp</name>
+        <initializer>=  &quot; &quot; * (16 - len(<ref refid="namespacepyedpro_1_1install_1a771600ef8a9d9de14c41bdab76a47e22" kindref="member">source</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="147" column="1" bodyfile="pyedpro/install.py" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a5b927a23e7f29ee069998926d2263eab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <initializer>=  stream.read()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="152" column="1" bodyfile="pyedpro/install.py" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a771600ef8a9d9de14c41bdab76a47e22" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="194" column="1" bodyfile="pyedpro/install.py" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a9fa6f1d64a5bcd74cfc16b82860eb2b6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.dest</definition>
+        <argsstring></argsstring>
+        <name>dest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="194" column="1" bodyfile="pyedpro/install.py" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1ae232ad0fba6e3168e56629fb56ba9808" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.exe</definition>
+        <argsstring></argsstring>
+        <name>exe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="194" column="1" bodyfile="pyedpro/install.py" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1install_1a6383bb8bd6ebe890cf44d6f9c50837eb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::install.rrr</definition>
+        <argsstring></argsstring>
+        <name>rrr</name>
+        <initializer>=  <ref refid="namespacepyedpro_1_1install_1a9fa6f1d64a5bcd74cfc16b82860eb2b6" kindref="member">dest</ref> + os.sep + <ref refid="namespacepyedpro_1_1install_1a771600ef8a9d9de14c41bdab76a47e22" kindref="member">source</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="196" column="1" bodyfile="pyedpro/install.py" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1install_1adf4c730eac9e4b8b7268ae142e037584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.install.isdir</definition>
+        <argsstring>(fname)</argsstring>
+        <name>isdir</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="33" column="1" bodyfile="pyedpro/install.py" bodystart="33" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1install_1a1a91db201d0c36503a45941f2b328bf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.install.softmkdir</definition>
+        <argsstring>(dirx)</argsstring>
+        <name>softmkdir</name>
+        <param>
+          <type>dirx</type>
+          <defname>dirx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="46" column="1" bodyfile="pyedpro/install.py" bodystart="46" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1install_1a8665d559d07d6e8629fd3a65ac17a0b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.install.check_dep</definition>
+        <argsstring>()</argsstring>
+        <name>check_dep</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/install.py" line="68" column="1" bodyfile="pyedpro/install.py" bodystart="68" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/install.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

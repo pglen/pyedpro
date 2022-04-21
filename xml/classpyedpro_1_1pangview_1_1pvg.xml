@@ -1,0 +1,1155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pangview_1_1pvg" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pangview::pvg</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a8405c15293f05eb3ac2e6e0f71743f91" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro.pangview.pvg::buf</definition>
+        <argsstring></argsstring>
+        <name>buf</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="75" column="1" bodyfile="pyedpro/pangview.py" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a864371bde29f2be122a4b3fc2061dcd7" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro.pangview.pvg::pgdebug</definition>
+        <argsstring></argsstring>
+        <name>pgdebug</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="76" column="1" bodyfile="pyedpro/pangview.py" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a62eb98dd2e95466f8f8ca6df5a353cc1" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::lstack</definition>
+        <argsstring></argsstring>
+        <name>lstack</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="77" column="1" bodyfile="pyedpro/pangview.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aa36651c898dd9abb687d98222f58cd9f" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro.pangview.pvg::got_clock</definition>
+        <argsstring></argsstring>
+        <name>got_clock</name>
+        <initializer>=  &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="78" column="1" bodyfile="pyedpro/pangview.py" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a3a9ccaa7e4111364c6e7763b24229150" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro.pangview.pvg::xfull_screen</definition>
+        <argsstring></argsstring>
+        <name>xfull_screen</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="79" column="1" bodyfile="pyedpro/pangview.py" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a76a956f1c0f96b2e4bb0388e41e3ac5a" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro.pangview.pvg::emit</definition>
+        <argsstring></argsstring>
+        <name>emit</name>
+        <initializer>=  -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="80" column="1" bodyfile="pyedpro/pangview.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aba98b82e76c5769758c255f8d7b7a0be" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::tokdef</definition>
+        <argsstring></argsstring>
+        <name>tokdef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="97" column="1" bodyfile="pyedpro/pangview.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a766de9c6610f00ca9079258dfa247d2a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::tokens</definition>
+        <argsstring></argsstring>
+        <name>tokens</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="197" column="1" bodyfile="pyedpro/pangview.py" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aec37bc9b9e1d8da738e267fa9fe4ef18" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::IGNORE</definition>
+        <argsstring></argsstring>
+        <name>IGNORE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="299" column="1" bodyfile="pyedpro/pangview.py" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ad54498289fdb224d578aff0979de1b5e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::INIT</definition>
+        <argsstring></argsstring>
+        <name>INIT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="300" column="1" bodyfile="pyedpro/pangview.py" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ad95be4155e90343362207836364c1a22" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::SPAN</definition>
+        <argsstring></argsstring>
+        <name>SPAN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="301" column="1" bodyfile="pyedpro/pangview.py" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a22161b8fc1c32dddc1ae8b6588272919" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::SPANTXT</definition>
+        <argsstring></argsstring>
+        <name>SPANTXT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="302" column="1" bodyfile="pyedpro/pangview.py" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a6502adcd682db8d7c5ed20f9fd8cfc88" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::IDENT</definition>
+        <argsstring></argsstring>
+        <name>IDENT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="303" column="1" bodyfile="pyedpro/pangview.py" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a9c855dc7186fa650cadb7dcac40908d1" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::KEY</definition>
+        <argsstring></argsstring>
+        <name>KEY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="304" column="1" bodyfile="pyedpro/pangview.py" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a46ed5bc1aa9eac83cff0c018c48f952a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::VAL</definition>
+        <argsstring></argsstring>
+        <name>VAL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="305" column="1" bodyfile="pyedpro/pangview.py" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aec95fdbd50e855f66d7950be29a359eb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EQ</definition>
+        <argsstring></argsstring>
+        <name>EQ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="306" column="1" bodyfile="pyedpro/pangview.py" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ac37b4b682a08b47870109ec21f508617" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::KEYVAL</definition>
+        <argsstring></argsstring>
+        <name>KEYVAL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="307" column="1" bodyfile="pyedpro/pangview.py" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a26492c3534dbcbd27688b0d64ce2da2f" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ITALIC</definition>
+        <argsstring></argsstring>
+        <name>ITALIC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="308" column="1" bodyfile="pyedpro/pangview.py" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ae4f20064c299d54f960cee417dc4c9fd" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EITALIC</definition>
+        <argsstring></argsstring>
+        <name>EITALIC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="309" column="1" bodyfile="pyedpro/pangview.py" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ad78f75254ebe5aa0ea8d0876da2d2b64" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::BOLD</definition>
+        <argsstring></argsstring>
+        <name>BOLD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="310" column="1" bodyfile="pyedpro/pangview.py" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a627a3d180a69898d8af663a952f28e0d" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EBOLD</definition>
+        <argsstring></argsstring>
+        <name>EBOLD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="311" column="1" bodyfile="pyedpro/pangview.py" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a3227970d6a8fc46cb8e648661333ad32" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ITBOLD</definition>
+        <argsstring></argsstring>
+        <name>ITBOLD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="312" column="1" bodyfile="pyedpro/pangview.py" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a0d53107b4f2b46fcc9c59a4417de7286" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EITBOLD</definition>
+        <argsstring></argsstring>
+        <name>EITBOLD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="313" column="1" bodyfile="pyedpro/pangview.py" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aad94547bc9eb38c701fc130e0a80ff22" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::UL</definition>
+        <argsstring></argsstring>
+        <name>UL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="314" column="1" bodyfile="pyedpro/pangview.py" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a9b6f202f04b4dbed3e674a2a195be52d" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EUL</definition>
+        <argsstring></argsstring>
+        <name>EUL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="315" column="1" bodyfile="pyedpro/pangview.py" bodystart="315" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a49a40bdfe853561fd099301755c67ade" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::DUL</definition>
+        <argsstring></argsstring>
+        <name>DUL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="316" column="1" bodyfile="pyedpro/pangview.py" bodystart="316" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a8524cf5c6f78f77ddb714e7c8ed18812" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EDUL</definition>
+        <argsstring></argsstring>
+        <name>EDUL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="317" column="1" bodyfile="pyedpro/pangview.py" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a0bc235a46e114dc1d742130cb1b63c12" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::RED</definition>
+        <argsstring></argsstring>
+        <name>RED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="318" column="1" bodyfile="pyedpro/pangview.py" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ac9948c2c6bc1449ce9fb2efed8d61a8e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ERED</definition>
+        <argsstring></argsstring>
+        <name>ERED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="319" column="1" bodyfile="pyedpro/pangview.py" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ae52d6e070c942c899723dc51656dac56" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::BGRED</definition>
+        <argsstring></argsstring>
+        <name>BGRED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="320" column="1" bodyfile="pyedpro/pangview.py" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a46df55cc2d1b0db072fe15730a84c4a2" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EBGRED</definition>
+        <argsstring></argsstring>
+        <name>EBGRED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="321" column="1" bodyfile="pyedpro/pangview.py" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1af66a30a4c2d7c8f143d163368cd15e0e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::GREEN</definition>
+        <argsstring></argsstring>
+        <name>GREEN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="322" column="1" bodyfile="pyedpro/pangview.py" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1acaa9f000b39d836f7d18c6ed3e5da9f5" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EGREEN</definition>
+        <argsstring></argsstring>
+        <name>EGREEN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="323" column="1" bodyfile="pyedpro/pangview.py" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a13d948ae4fb6f331f1174c5765e41c76" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::BGGREEN</definition>
+        <argsstring></argsstring>
+        <name>BGGREEN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="324" column="1" bodyfile="pyedpro/pangview.py" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1acc60815def188ccd005264fe922de119" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EBGGREEN</definition>
+        <argsstring></argsstring>
+        <name>EBGGREEN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="325" column="1" bodyfile="pyedpro/pangview.py" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a660de1f18eb004ddd21d1fc73230f466" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::BLUE</definition>
+        <argsstring></argsstring>
+        <name>BLUE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="326" column="1" bodyfile="pyedpro/pangview.py" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1abd909e93d7e5c5925db82794692c60cf" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EBLUE</definition>
+        <argsstring></argsstring>
+        <name>EBLUE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="327" column="1" bodyfile="pyedpro/pangview.py" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ad5fe0cdbb803edef5b65913880d890e2" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::BGBLUE</definition>
+        <argsstring></argsstring>
+        <name>BGBLUE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="328" column="1" bodyfile="pyedpro/pangview.py" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a12ec40ce1a936ad5d56351dbba59b540" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EBGBLUE</definition>
+        <argsstring></argsstring>
+        <name>EBGBLUE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="329" column="1" bodyfile="pyedpro/pangview.py" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ad00f8f63cbcd72e8ba14a71282d592dc" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::STRIKE</definition>
+        <argsstring></argsstring>
+        <name>STRIKE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="330" column="1" bodyfile="pyedpro/pangview.py" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a387a35568cb9ab83f6e1fe345ddbae89" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ESTRIKE</definition>
+        <argsstring></argsstring>
+        <name>ESTRIKE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="331" column="1" bodyfile="pyedpro/pangview.py" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ac29a14c6b4f56e709ce6b7e12bbd1495" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::LARGE</definition>
+        <argsstring></argsstring>
+        <name>LARGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="332" column="1" bodyfile="pyedpro/pangview.py" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a11f867deb3dc15079bc1871f3220f17a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ELARGE</definition>
+        <argsstring></argsstring>
+        <name>ELARGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="333" column="1" bodyfile="pyedpro/pangview.py" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a3f7667ecaa7762ed0fc3d8940e0a1134" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::XLARGE</definition>
+        <argsstring></argsstring>
+        <name>XLARGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="334" column="1" bodyfile="pyedpro/pangview.py" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a2dd3c0f656b880421c508de0214a2eae" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EXLARGE</definition>
+        <argsstring></argsstring>
+        <name>EXLARGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="335" column="1" bodyfile="pyedpro/pangview.py" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aa302640d1629999484cadf89cbc76a88" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::XXLARGE</definition>
+        <argsstring></argsstring>
+        <name>XXLARGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="336" column="1" bodyfile="pyedpro/pangview.py" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a44d0e88f30d6bd683fa19cbdf767f6b7" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EXXLARGE</definition>
+        <argsstring></argsstring>
+        <name>EXXLARGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="337" column="1" bodyfile="pyedpro/pangview.py" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a623231bc290904398e3c09c22c94a248" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::SMALL</definition>
+        <argsstring></argsstring>
+        <name>SMALL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="338" column="1" bodyfile="pyedpro/pangview.py" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a2b0bf6052ace3d7140f440983a3f836e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ESMALL</definition>
+        <argsstring></argsstring>
+        <name>ESMALL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="339" column="1" bodyfile="pyedpro/pangview.py" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a0e9614ba3dffffa424cce3ae467f3282" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::XSMALL</definition>
+        <argsstring></argsstring>
+        <name>XSMALL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="340" column="1" bodyfile="pyedpro/pangview.py" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a881e5441d1eed23da3e85e309b9d7300" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EXSMALL</definition>
+        <argsstring></argsstring>
+        <name>EXSMALL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="341" column="1" bodyfile="pyedpro/pangview.py" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a657df9dc613336bc1041aea650720131" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::CENT</definition>
+        <argsstring></argsstring>
+        <name>CENT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="342" column="1" bodyfile="pyedpro/pangview.py" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a23fb698263553e32798ced77bf69e08b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ECENT</definition>
+        <argsstring></argsstring>
+        <name>ECENT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="343" column="1" bodyfile="pyedpro/pangview.py" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1acdb6e532b50bc0232fd1bd3169adf8eb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::RIGHT</definition>
+        <argsstring></argsstring>
+        <name>RIGHT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="344" column="1" bodyfile="pyedpro/pangview.py" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a4fa47446a8df37ed34f188debd532082" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ERIGHT</definition>
+        <argsstring></argsstring>
+        <name>ERIGHT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="345" column="1" bodyfile="pyedpro/pangview.py" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ad3709be9a489d0a1b1b4fba52a8a341b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::WRAP</definition>
+        <argsstring></argsstring>
+        <name>WRAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="346" column="1" bodyfile="pyedpro/pangview.py" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ad8a38a5cc07b06f340b102cc1293df3f" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EWRAP</definition>
+        <argsstring></argsstring>
+        <name>EWRAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="347" column="1" bodyfile="pyedpro/pangview.py" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a059b5fbc260e3addbbec1c69f798a885" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::LINK</definition>
+        <argsstring></argsstring>
+        <name>LINK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="348" column="1" bodyfile="pyedpro/pangview.py" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a7f5ea1bf2ff8990c0176f5400d597a6a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ELINK</definition>
+        <argsstring></argsstring>
+        <name>ELINK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="349" column="1" bodyfile="pyedpro/pangview.py" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a1a0165ae04609bac3e4337936f1839a5" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::IMAGE</definition>
+        <argsstring></argsstring>
+        <name>IMAGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="350" column="1" bodyfile="pyedpro/pangview.py" bodystart="350" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a38afdc9e360a01a492f2a89e3367aa05" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EIMAGE</definition>
+        <argsstring></argsstring>
+        <name>EIMAGE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="351" column="1" bodyfile="pyedpro/pangview.py" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a6e37a8512b4342325633519156020908" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::SUB</definition>
+        <argsstring></argsstring>
+        <name>SUB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="352" column="1" bodyfile="pyedpro/pangview.py" bodystart="352" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a1d0b2ede7519f6a2076a89eb6c0f7d90" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ESUB</definition>
+        <argsstring></argsstring>
+        <name>ESUB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="353" column="1" bodyfile="pyedpro/pangview.py" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a22348f02749a1807417d987cb8f4ec9b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::SUP</definition>
+        <argsstring></argsstring>
+        <name>SUP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="354" column="1" bodyfile="pyedpro/pangview.py" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aac8a048db823862da9dd66a43907560c" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ESUP</definition>
+        <argsstring></argsstring>
+        <name>ESUP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="355" column="1" bodyfile="pyedpro/pangview.py" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a9739e2b17b2618ecd0a7b43986871eb1" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::FILL</definition>
+        <argsstring></argsstring>
+        <name>FILL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="356" column="1" bodyfile="pyedpro/pangview.py" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a9da1a34e4e1f43ab68718fc2b6b90de5" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EFILL</definition>
+        <argsstring></argsstring>
+        <name>EFILL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="357" column="1" bodyfile="pyedpro/pangview.py" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1af0ada4ad202dfe0386108b0f7cde017b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::FIXED</definition>
+        <argsstring></argsstring>
+        <name>FIXED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="358" column="1" bodyfile="pyedpro/pangview.py" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a6ec654c3e98628083bfd15e7dbb75bf8" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EFIXED</definition>
+        <argsstring></argsstring>
+        <name>EFIXED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="359" column="1" bodyfile="pyedpro/pangview.py" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1aa3d765db765799b571e5840550ebe4b5" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::INDENT</definition>
+        <argsstring></argsstring>
+        <name>INDENT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="360" column="1" bodyfile="pyedpro/pangview.py" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a9caa497238de5466e22493771b6b9741" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EINDENT</definition>
+        <argsstring></argsstring>
+        <name>EINDENT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="361" column="1" bodyfile="pyedpro/pangview.py" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a9e131c037722e92f2bcd8d99f8bf41d1" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::MARGIN</definition>
+        <argsstring></argsstring>
+        <name>MARGIN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="362" column="1" bodyfile="pyedpro/pangview.py" bodystart="362" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a77ab2c84eb82f9325d1537865419dcdb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EMARGIN</definition>
+        <argsstring></argsstring>
+        <name>EMARGIN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="363" column="1" bodyfile="pyedpro/pangview.py" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1ab9208a4526afbbe533a41d81689a654d" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::LMARGIN</definition>
+        <argsstring></argsstring>
+        <name>LMARGIN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="364" column="1" bodyfile="pyedpro/pangview.py" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a470418b961eacac1abbff3ba165afcc9" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ELMARGIN</definition>
+        <argsstring></argsstring>
+        <name>ELMARGIN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="365" column="1" bodyfile="pyedpro/pangview.py" bodystart="365" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a5b741b66681aee64c15a71625ab3e45a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::HID</definition>
+        <argsstring></argsstring>
+        <name>HID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="366" column="1" bodyfile="pyedpro/pangview.py" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a9121b69d3266a8f40fa57f09a61d39d9" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::EIHID</definition>
+        <argsstring></argsstring>
+        <name>EIHID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="367" column="1" bodyfile="pyedpro/pangview.py" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a983f7750c6c0f7a215cdfb9b2e008248" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::NCOL</definition>
+        <argsstring></argsstring>
+        <name>NCOL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="368" column="1" bodyfile="pyedpro/pangview.py" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a0e1c9c508ee9e8329a80163ead7a512f" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ENCOL</definition>
+        <argsstring></argsstring>
+        <name>ENCOL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="369" column="1" bodyfile="pyedpro/pangview.py" bodystart="369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a99db8f307e2ffcd727f1c0b46a59208b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::NBGCOL</definition>
+        <argsstring></argsstring>
+        <name>NBGCOL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="370" column="1" bodyfile="pyedpro/pangview.py" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1pvg_1a4f9ae6ffd435c690ec4d51ec1433995e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.pvg::ENBNCOL</definition>
+        <argsstring></argsstring>
+        <name>ENBNCOL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="371" column="1" bodyfile="pyedpro/pangview.py" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pangview.py" line="73" column="1" bodyfile="pyedpro/pangview.py" bodystart="73" bodyend="378"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ad5fe0cdbb803edef5b65913880d890e2" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>BGBLUE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a13d948ae4fb6f331f1174c5765e41c76" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>BGGREEN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ae52d6e070c942c899723dc51656dac56" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>BGRED</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a660de1f18eb004ddd21d1fc73230f466" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>BLUE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ad78f75254ebe5aa0ea8d0876da2d2b64" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>BOLD</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a8405c15293f05eb3ac2e6e0f71743f91" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>buf</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a657df9dc613336bc1041aea650720131" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>CENT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a49a40bdfe853561fd099301755c67ade" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>DUL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a12ec40ce1a936ad5d56351dbba59b540" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EBGBLUE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1acc60815def188ccd005264fe922de119" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EBGGREEN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a46df55cc2d1b0db072fe15730a84c4a2" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EBGRED</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1abd909e93d7e5c5925db82794692c60cf" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EBLUE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a627a3d180a69898d8af663a952f28e0d" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EBOLD</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a23fb698263553e32798ced77bf69e08b" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ECENT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a8524cf5c6f78f77ddb714e7c8ed18812" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EDUL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a9da1a34e4e1f43ab68718fc2b6b90de5" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EFILL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a6ec654c3e98628083bfd15e7dbb75bf8" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EFIXED</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1acaa9f000b39d836f7d18c6ed3e5da9f5" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EGREEN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a9121b69d3266a8f40fa57f09a61d39d9" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EIHID</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a38afdc9e360a01a492f2a89e3367aa05" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EIMAGE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a9caa497238de5466e22493771b6b9741" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EINDENT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ae4f20064c299d54f960cee417dc4c9fd" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EITALIC</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a0d53107b4f2b46fcc9c59a4417de7286" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EITBOLD</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a11f867deb3dc15079bc1871f3220f17a" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ELARGE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a7f5ea1bf2ff8990c0176f5400d597a6a" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ELINK</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a470418b961eacac1abbff3ba165afcc9" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ELMARGIN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a77ab2c84eb82f9325d1537865419dcdb" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EMARGIN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a76a956f1c0f96b2e4bb0388e41e3ac5a" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>emit</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a4f9ae6ffd435c690ec4d51ec1433995e" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ENBNCOL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a0e1c9c508ee9e8329a80163ead7a512f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ENCOL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aec95fdbd50e855f66d7950be29a359eb" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EQ</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ac9948c2c6bc1449ce9fb2efed8d61a8e" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ERED</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a4fa47446a8df37ed34f188debd532082" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ERIGHT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a2b0bf6052ace3d7140f440983a3f836e" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ESMALL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a387a35568cb9ab83f6e1fe345ddbae89" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ESTRIKE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a1d0b2ede7519f6a2076a89eb6c0f7d90" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ESUB</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aac8a048db823862da9dd66a43907560c" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ESUP</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a9b6f202f04b4dbed3e674a2a195be52d" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EUL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ad8a38a5cc07b06f340b102cc1293df3f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EWRAP</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a2dd3c0f656b880421c508de0214a2eae" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EXLARGE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a881e5441d1eed23da3e85e309b9d7300" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EXSMALL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a44d0e88f30d6bd683fa19cbdf767f6b7" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>EXXLARGE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a9739e2b17b2618ecd0a7b43986871eb1" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>FILL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1af0ada4ad202dfe0386108b0f7cde017b" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>FIXED</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aa36651c898dd9abb687d98222f58cd9f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>got_clock</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1af66a30a4c2d7c8f143d163368cd15e0e" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>GREEN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a5b741b66681aee64c15a71625ab3e45a" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>HID</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a6502adcd682db8d7c5ed20f9fd8cfc88" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>IDENT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aec37bc9b9e1d8da738e267fa9fe4ef18" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>IGNORE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a1a0165ae04609bac3e4337936f1839a5" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>IMAGE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aa3d765db765799b571e5840550ebe4b5" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>INDENT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ad54498289fdb224d578aff0979de1b5e" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>INIT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a26492c3534dbcbd27688b0d64ce2da2f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ITALIC</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a3227970d6a8fc46cb8e648661333ad32" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>ITBOLD</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a9c855dc7186fa650cadb7dcac40908d1" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>KEY</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ac37b4b682a08b47870109ec21f508617" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>KEYVAL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ac29a14c6b4f56e709ce6b7e12bbd1495" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>LARGE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a059b5fbc260e3addbbec1c69f798a885" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>LINK</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ab9208a4526afbbe533a41d81689a654d" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>LMARGIN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a62eb98dd2e95466f8f8ca6df5a353cc1" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>lstack</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a9e131c037722e92f2bcd8d99f8bf41d1" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>MARGIN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a99db8f307e2ffcd727f1c0b46a59208b" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>NBGCOL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a983f7750c6c0f7a215cdfb9b2e008248" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>NCOL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a864371bde29f2be122a4b3fc2061dcd7" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>pgdebug</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a0bc235a46e114dc1d742130cb1b63c12" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>RED</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1acdb6e532b50bc0232fd1bd3169adf8eb" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>RIGHT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a623231bc290904398e3c09c22c94a248" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>SMALL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ad95be4155e90343362207836364c1a22" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>SPAN</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a22161b8fc1c32dddc1ae8b6588272919" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>SPANTXT</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ad00f8f63cbcd72e8ba14a71282d592dc" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>STRIKE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a6e37a8512b4342325633519156020908" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>SUB</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a22348f02749a1807417d987cb8f4ec9b" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>SUP</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aba98b82e76c5769758c255f8d7b7a0be" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>tokdef</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a766de9c6610f00ca9079258dfa247d2a" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>tokens</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aad94547bc9eb38c701fc130e0a80ff22" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>UL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a46ed5bc1aa9eac83cff0c018c48f952a" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>VAL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1ad3709be9a489d0a1b1b4fba52a8a341b" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>WRAP</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a3a9ccaa7e4111364c6e7763b24229150" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>xfull_screen</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a3f7667ecaa7762ed0fc3d8940e0a1134" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>XLARGE</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1a0e9614ba3dffffa424cce3ae467f3282" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>XSMALL</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1pvg_1aa302640d1629999484cadf89cbc76a88" prot="public" virt="non-virtual"><scope>pyedpro::pangview::pvg</scope><name>XXLARGE</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

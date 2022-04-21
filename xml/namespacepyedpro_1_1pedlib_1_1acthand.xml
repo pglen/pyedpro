@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1acthand" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::acthand</compoundname>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1acthand_1_1ActHand" prot="public">pyedpro::pedlib::acthand::ActHand</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1acthand_1a5a2eb073e309178e9a2f186be2ea0831" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::pedlib::acthand.lastcmd</definition>
+        <argsstring></argsstring>
+        <name>lastcmd</name>
+        <initializer>=  &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/acthand.py" line="73" column="1" bodyfile="pyedpro/pedlib/acthand.py" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1acthand_1a5b61a402d3e1d671f7e8936f041ab3a5" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::pedlib::acthand.rostr</definition>
+        <argsstring></argsstring>
+        <name>rostr</name>
+        <initializer>=  &quot;This buffer is read only.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/acthand.py" line="74" column="1" bodyfile="pyedpro/pedlib/acthand.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/acthand.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

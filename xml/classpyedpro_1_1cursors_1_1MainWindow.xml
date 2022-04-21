@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1cursors_1_1MainWindow" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::cursors::MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Window</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1cursors_1_1MainWindow_1a5290957301df5d106b06a656cb41a37a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.cursors.MainWindow.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/cursors.py" line="132" column="1" bodyfile="pyedpro/cursors.py" bodystart="132" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1cursors_1_1MainWindow_1a33827106e95cebf0e2da96c6ab29a7d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.cursors.MainWindow.exit_app</definition>
+        <argsstring>(self, parm)</argsstring>
+        <name>exit_app</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>parm</type>
+          <defname>parm</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/cursors.py" line="155" column="1" bodyfile="pyedpro/cursors.py" bodystart="155" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk.Window</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.cursors.MainWindow</label>
+        <link refid="classpyedpro_1_1cursors_1_1MainWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk.Window</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.cursors.MainWindow</label>
+        <link refid="classpyedpro_1_1cursors_1_1MainWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/cursors.py" line="130" column="1" bodyfile="pyedpro/cursors.py" bodystart="130" bodyend="161"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1cursors_1_1MainWindow_1a5290957301df5d106b06a656cb41a37a" prot="public" virt="non-virtual"><scope>pyedpro::cursors::MainWindow</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1cursors_1_1MainWindow_1a33827106e95cebf0e2da96c6ab29a7d7" prot="public" virt="non-virtual"><scope>pyedpro::cursors::MainWindow</scope><name>exit_app</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

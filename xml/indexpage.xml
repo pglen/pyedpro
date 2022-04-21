@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Pyedit Pro</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect2 id="index_1autotoc_md4">
+<title>Welcome to PyEdPro.</title>
+<para>This is modern multi-platform editor. Simple, powerful, configurable, extendable. Goodies like macro recording / playback, spell check, column select, multiple clipboards, unlimited undo ... makes it an editor that I use every day.</para>
+<para>This is an open source text editor. Written in python. The motivation for this project was to create a modern multi-platform editor. Simple, powerful, configurable, extendable. To run this module without installation put the supporting files in the &apos;pedlib&apos; subdirectory under the main file&apos;s direcory.</para>
+<para>(like &apos;cp -a * to_target&apos;)</para>
+<para>This project is a successor of pyedit, after porting it to GTK3. PyEdPro will run anywhere PyGObject can run.</para>
+<para>Working and tested platforms currently are: <verbatim>  Win 7 .. Win 10 ...
+  Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
+  Windows (Native) plus MSYS2, Mingw,
+  Raspberry PI 3, Raspberry PI 4, ...
+  Mac ** Some functions are disabled - in particular async processing
+</verbatim> I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, and the Raspberry-Pi. It behaves consistently on all these platforms, it is an absolute joy to edit in a different platform without the learning curve of new keystrokes. If you want an editor that works the same way in all your workspaces, PyEdPro is the one. </para>
+</sect2>
+    </detaileddescription>
+    <location file="pyedpro/pyedpro.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pedlib::pedcal::pgcal</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ab92834024f626b8232f9f414988babcc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::lastsel</definition>
+        <argsstring></argsstring>
+        <name>lastsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="33" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ad9cc388a762ec229b5646041cbccf262" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::data_dir</definition>
+        <argsstring></argsstring>
+        <name>data_dir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="35" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1aff32f0b2613575ef4b0a873f4a761755" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::sql</definition>
+        <argsstring></argsstring>
+        <name>sql</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="43" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a43cd22023e2d2cc6df06c121993f734f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::lsel</definition>
+        <argsstring></argsstring>
+        <name>lsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="48" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1afefa5cb0eb6c1f7c8a1630a39aeb8984" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::cal</definition>
+        <argsstring></argsstring>
+        <name>cal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="51" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a682a0e1a6e40ec6d53e8bc5691825ccb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::edit</definition>
+        <argsstring></argsstring>
+        <name>edit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="77" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a0888f155bd837ec359fc955d62d9f16b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::treeview2</definition>
+        <argsstring></argsstring>
+        <name>treeview2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="88" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a730328b922608ec432f65bd316beb615" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedcal.pgcal::edview</definition>
+        <argsstring></argsstring>
+        <name>edview</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="97" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a67797e4efdacd89d1048b46ae5e09d49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="28" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="28" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ae22059945ba78b2f345987101cf6e52f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.letterfilter</definition>
+        <argsstring>(self, letter)</argsstring>
+        <name>letterfilter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>letter</type>
+          <defname>letter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="106" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="106" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a900f967b591fb99b1b24e2ba86914c4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.find</definition>
+        <argsstring>(self, arg)</argsstring>
+        <name>find</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="125" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="125" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a0feb72c59174f67f7067b54485aa9332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.savetext</definition>
+        <argsstring>(self, txt)</argsstring>
+        <name>savetext</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>txt</type>
+          <defname>txt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="133" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="133" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ae8fa1fd2ce08bd4cd6fd5920d3b60223" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.treechange</definition>
+        <argsstring>(self, args)</argsstring>
+        <name>treechange</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedpro_1a5009c406676c0856670424f04b147c47" kindref="member">args</ref></type>
+          <defname>args</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="140" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="140" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a185788f308828f82bdf675acf3ec71cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.treesel</definition>
+        <argsstring>(self, args)</argsstring>
+        <name>treesel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedpro_1a5009c406676c0856670424f04b147c47" kindref="member">args</ref></type>
+          <defname>args</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="148" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="148" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ada83f8c0e301f1c5f0c77ffe8973f80a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.today</definition>
+        <argsstring>(self, butt, cal)</argsstring>
+        <name>today</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1afefa5cb0eb6c1f7c8a1630a39aeb8984" kindref="member">cal</ref></type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="158" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="158" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1aece7604f23eb701c99051f35236af9c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.demand</definition>
+        <argsstring>(self, butt, cal)</argsstring>
+        <name>demand</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1afefa5cb0eb6c1f7c8a1630a39aeb8984" kindref="member">cal</ref></type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="164" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="164" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ac7f26bd1f9bd9c4f43b3935f642210a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.daysel</definition>
+        <argsstring>(self, cal)</argsstring>
+        <name>daysel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1afefa5cb0eb6c1f7c8a1630a39aeb8984" kindref="member">cal</ref></type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="168" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="168" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ae0b4bca95f9a6ff27a42ee825a40c188" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedcal.pgcal.dayseldouble</definition>
+        <argsstring>(self, cal)</argsstring>
+        <name>dayseldouble</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1afefa5cb0eb6c1f7c8a1630a39aeb8984" kindref="member">cal</ref></type>
+          <defname>cal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedcal.py" line="187" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="187" bodyend="192"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedpro.pedlib.pedcal.pgcal</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedpro.pedlib.pedcal.pgcal</label>
+        <link refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pedlib/pedcal.py" line="26" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="26" bodyend="193"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a67797e4efdacd89d1048b46ae5e09d49" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1afefa5cb0eb6c1f7c8a1630a39aeb8984" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>cal</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ad9cc388a762ec229b5646041cbccf262" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>data_dir</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ac7f26bd1f9bd9c4f43b3935f642210a0" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>daysel</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ae0b4bca95f9a6ff27a42ee825a40c188" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>dayseldouble</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1aece7604f23eb701c99051f35236af9c0" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>demand</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a682a0e1a6e40ec6d53e8bc5691825ccb" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>edit</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a730328b922608ec432f65bd316beb615" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>edview</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a900f967b591fb99b1b24e2ba86914c4c" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>find</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ab92834024f626b8232f9f414988babcc" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>lastsel</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ae22059945ba78b2f345987101cf6e52f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>letterfilter</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a43cd22023e2d2cc6df06c121993f734f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>lsel</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a0feb72c59174f67f7067b54485aa9332" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>savetext</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1aff32f0b2613575ef4b0a873f4a761755" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>sql</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ada83f8c0e301f1c5f0c77ffe8973f80a" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>today</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1ae8fa1fd2ce08bd4cd6fd5920d3b60223" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>treechange</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a185788f308828f82bdf675acf3ec71cf" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>treesel</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal_1a0888f155bd837ec359fc955d62d9f16b" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::pgcal</scope><name>treeview2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

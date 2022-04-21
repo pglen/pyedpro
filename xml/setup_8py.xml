@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="setup_8py" kind="file" language="Python">
+    <compoundname>setup.py</compoundname>
+    <innernamespace refid="namespacesetup">setup</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacesetup" refkind="compound"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>setuptools</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">descx<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;PyEdPro<sp/>is<sp/>modern<sp/>multi-platform<sp/>editor.<sp/>Simple,<sp/>powerful,</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">configurable,<sp/>extendable.<sp/>Goodies<sp/>like<sp/>macro<sp/>recording<sp/>/<sp/>playback,<sp/>spell<sp/>check,</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">column<sp/>select,<sp/>multiple<sp/>clipboards,<sp/>unlimited<sp/>undo<sp/>...</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/><sp/><sp/>PyEdPro.py<sp/>has<sp/>macro<sp/>recording/play,<sp/>search/replace,<sp/>one<sp/>click<sp/>function<sp/>navigation,</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">auto<sp/>backup,<sp/>undo/redo,<sp/>auto<sp/>complete,<sp/>auto<sp/>correct,<sp/>syntax<sp/>check,<sp/>spell<sp/>suggestion</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral"><sp/>...<sp/>and<sp/>a<sp/>lot<sp/>more.</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral"><sp/><sp/><sp/>The<sp/>recorded<sp/>macros,<sp/>the<sp/>undo<sp/>/<sp/>redo<sp/>information<sp/>the<sp/>editing<sp/>session<sp/>details<sp/>persist</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral"><sp/>after<sp/>the<sp/>editor<sp/>is<sp/>closed.</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>The<sp/>spell<sp/>checker<sp/>can<sp/>check<sp/>code<sp/>comments.<sp/>The<sp/>parsing<sp/>of<sp/>the<sp/>code<sp/>is</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">rudimentary,<sp/>comments<sp/>and<sp/>strings<sp/>are<sp/>spell<sp/>checked.<sp/>(Press<sp/>F9<sp/>or<sp/>Shit-F9)<sp/>The<sp/>code<sp/>is<sp/>filtered</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">out<sp/>for<sp/>Python<sp/>and<sp/><sp/>&apos;C&apos;.<sp/>The<sp/>spell<sp/>checker<sp/>is<sp/>executed<sp/>on<sp/>live<sp/>text.<sp/>(while<sp/>typing)</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">classx<sp/>=<sp/>[</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Development<sp/>Status<sp/>::<sp/>Mature&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Environment<sp/>::<sp/>GUI&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Intended<sp/>Audience<sp/>::<sp/>End<sp/>Users/Desktop&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Intended<sp/>Audience<sp/>::<sp/>Developers&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Intended<sp/>Audience<sp/>::<sp/>System<sp/>Administrators&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;License<sp/>::<sp/>OSI<sp/>Approved<sp/>::<sp/>Python<sp/>Software<sp/>Foundation<sp/>License&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Operating<sp/>System<sp/>::<sp/>MacOS<sp/>::<sp/>MacOS<sp/>X&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Operating<sp/>System<sp/>::<sp/>Microsoft<sp/>::<sp/>Windows&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Operating<sp/>System<sp/>::<sp/>POSIX&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Programming<sp/>Language<sp/>::<sp/>Python&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Topic<sp/>::<sp/>Editors&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;Topic<sp/>::<sp/>Software<sp/>Development<sp/>::<sp/>Editor&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">inclu<sp/>=<sp/>[</highlight><highlight class="stringliteral">&quot;*&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pedlib/&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;panglib&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pyedpro.py&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pangview.py&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;image.png&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;pyedpro_ubuntu.png&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">with</highlight><highlight class="normal"><sp/>open(</highlight><highlight class="stringliteral">&quot;README.md&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">,<sp/>encoding=</highlight><highlight class="stringliteral">&quot;utf-8&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>fh:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>long_description<sp/>=<sp/>fh.read()</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">setuptools.setup(</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>name=</highlight><highlight class="stringliteral">&quot;pyedpro&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>version=</highlight><highlight class="stringliteral">&quot;2.9.0&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>author=</highlight><highlight class="stringliteral">&quot;Peter<sp/>Glen&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>author_email=</highlight><highlight class="stringliteral">&quot;peterglen99@gmail.com&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>description=</highlight><highlight class="stringliteral">&quot;High<sp/>power<sp/>editor<sp/>in<sp/>python.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>long_description=long_description,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>long_description_content_type=</highlight><highlight class="stringliteral">&quot;text/markdown&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>url=</highlight><highlight class="stringliteral">&quot;https://github.com/pglen/pyedpro&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>classifiers=[</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Programming<sp/>Language<sp/>::<sp/>Python<sp/>::<sp/>3&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;License<sp/>::<sp/>OSI<sp/>Approved<sp/>::<sp/>MIT<sp/>License&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Operating<sp/>System<sp/>::<sp/>OS<sp/>Independent&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>],</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>include_package_data=</highlight><highlight class="keyword">True</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>packages=setuptools.find_packages(include=inclu),</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#packages=[&apos;pedlib&apos;,<sp/>&apos;panglib&apos;,<sp/>&apos;pycommon&apos;],</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#scripts<sp/>=<sp/>[&apos;pyedpro.py&apos;,<sp/>&apos;pangview.py&apos;],</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>package_dir<sp/>=<sp/>{</highlight><highlight class="stringliteral">&apos;pedlib&apos;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;panglib&apos;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&apos;pyedpro/panglib&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;pycommon&apos;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&apos;../pycommon&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;pedlib/data&apos;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/data&apos;</highlight><highlight class="normal">,<sp/>},</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>package_data<sp/>=<sp/>{</highlight><highlight class="stringliteral">&apos;&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[</highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/data/KEYS&apos;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/images/pyedpro.png&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/data/KEYS.TXT&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/images/pyedpro_sub.png&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/images/pedicon.png&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;image.png&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;pyedpro_ubuntu.png&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>data_files<sp/>=<sp/><sp/>[(</highlight><highlight class="stringliteral">&apos;/usr/share/icons/hicolor/96x96/apps/&apos;</highlight><highlight class="normal">,<sp/>[</highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/images/pyedpro.png&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/images/pedicon.png&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;pyedpro/pedlib/images/pyedpro_sub.png&apos;</highlight><highlight class="normal"><sp/>]),</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="stringliteral">&apos;/usr/share/applications&apos;</highlight><highlight class="normal">,<sp/>[</highlight><highlight class="stringliteral">&apos;pyedpro/pyedpro.desktop&apos;</highlight><highlight class="normal">]),</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#(&quot;pedlib/data&quot;,<sp/><sp/>[&quot;pyedpro/pedlib/data/KEYS&quot;,<sp/>&quot;pyedpro/pedlib/data/KEYS.TXT&quot;,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;pyedpro/pedlib/data/QHELP&quot;,<sp/>&quot;pyedpro/pedlib/data/spell.txt&quot;]),</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>],</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>python_requires=</highlight><highlight class="stringliteral">&apos;&gt;=3&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>entry_points=</highlight><highlight class="stringliteral">&apos;&apos;&apos;</highlight></codeline>
+<codeline lineno="78"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[console_scripts]</highlight></codeline>
+<codeline lineno="79"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedpro=pyedpro.pyedpro:mainstart</highlight></codeline>
+<codeline lineno="80"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">)</highlight></codeline>
+    </programlisting>
+    <location file="setup.py"/>
+  </compounddef>
+</doxygen>

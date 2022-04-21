@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib</compoundname>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1acthand">pyedpro::pedlib::acthand</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1data">pyedpro::pedlib::data</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1importer">pyedpro::pedlib::importer</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1keyhand">pyedpro::pedlib::keyhand</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1keywords">pyedpro::pedlib::keywords</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1leven">pyedpro::pedlib::leven</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1lexer">pyedpro::pedlib::lexer</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1parser">pyedpro::pedlib::parser</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedbuffs">pyedpro::pedlib::pedbuffs</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedcal">pyedpro::pedlib::pedcal</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedcanv">pyedpro::pedlib::pedcanv</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedcolor">pyedpro::pedlib::pedcolor</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedconfig">pyedpro::pedlib::pedconfig</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1peddlg">pyedpro::pedlib::peddlg</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1peddoc">pyedpro::pedlib::peddoc</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1peddoc__diff">pyedpro::pedlib::peddoc_diff</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1peddraw">pyedpro::pedlib::peddraw</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedfind">pyedpro::pedlib::pedfind</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedfont">pyedpro::pedlib::pedfont</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedgoto">pyedpro::pedlib::pedgoto</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedlcmd">pyedpro::pedlib::pedlcmd</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedlog">pyedpro::pedlib::pedlog</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedmenu">pyedpro::pedlib::pedmenu</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedmisc">pyedpro::pedlib::pedmisc</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pednotes">pyedpro::pedlib::pednotes</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedobjs">pyedpro::pedlib::pedobjs</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedofd">pyedpro::pedlib::pedofd</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedoline">pyedpro::pedlib::pedoline</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedplug">pyedpro::pedlib::pedplug</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedspell">pyedpro::pedlib::pedspell</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedsql">pyedpro::pedlib::pedsql</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedstruct">pyedpro::pedlib::pedstruct</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedtask">pyedpro::pedlib::pedtask</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedtdlg">pyedpro::pedlib::pedtdlg</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedthread">pyedpro::pedlib::pedthread</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedtts">pyedpro::pedlib::pedtts</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedui">pyedpro::pedlib::pedui</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedundo">pyedpro::pedlib::pedundo</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedutil">pyedpro::pedlib::pedutil</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedweb">pyedpro::pedlib::pedweb</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedwin">pyedpro::pedlib::pedwin</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedxtnd">pyedpro::pedlib::pedxtnd</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedync">pyedpro::pedlib::pedync</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1stack">pyedpro::pedlib::stack</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1test">pyedpro::pedlib::test</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1testdiff">pyedpro::pedlib::testdiff</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1webwin">pyedpro::pedlib::webwin</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

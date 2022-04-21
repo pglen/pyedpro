@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpanglib_1_1stack_1_1Stack" kind="class" language="Python" prot="public">
+    <compoundname>panglib::stack::Stack</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpanglib_1_1stack_1_1Stack_1a4d7e4a4046a0a879471385825b51672e" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.stack.Stack::_store</definition>
+        <argsstring></argsstring>
+        <name>_store</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="6" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpanglib_1_1stack_1_1Stack_1acdc11fea4bbe64243ee911a5295cc8e3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.stack.Stack::cnt</definition>
+        <argsstring></argsstring>
+        <name>cnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="14" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1stack_1_1Stack_1a32b2d5fdadc83b92e8edd17ecde15b0a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.stack.Stack::gcnt</definition>
+        <argsstring></argsstring>
+        <name>gcnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="49" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1aefaee56741ca75bc02866876682a9362" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="5" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="5" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1a9d518365b58044c1af2d768c5ed9e8fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.push</definition>
+        <argsstring>(self, item)</argsstring>
+        <name>push</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="9" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="9" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1a7f73333ad086ef079e2e3be710909441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.last</definition>
+        <argsstring>(self)</argsstring>
+        <name>last</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="16" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="16" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1aa29491dd7f8888410a743a4a49939614" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.first</definition>
+        <argsstring>(self)</argsstring>
+        <name>first</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="22" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="22" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1a094500a27c4166df028aad216853e1ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.pop</definition>
+        <argsstring>(self)</argsstring>
+        <name>pop</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="28" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="28" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1a392ccb122e6c9442aa0cc6bb61a73b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.get</definition>
+        <argsstring>(self)</argsstring>
+        <name>get</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="33" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="33" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1ad62a95840cf0921193b62e0d95295334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.pop2</definition>
+        <argsstring>(self)</argsstring>
+        <name>pop2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="39" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="39" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1ad26226a71bdff641ef81d7e7532a1b68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.get2</definition>
+        <argsstring>(self)</argsstring>
+        <name>get2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="46" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1a96d72cd8349f58e2ffe91c3cf1fad9d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.reset</definition>
+        <argsstring>(self)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="53" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1af67f5a3e33f8d824fa54485146279465" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.stacklen</definition>
+        <argsstring>(self)</argsstring>
+        <name>stacklen</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="57" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1ab1b57ea5269e3c253563b547241d5518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.dump</definition>
+        <argsstring>(self)</argsstring>
+        <name>dump</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="60" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1stack_1_1Stack_1a27cc900f28d9f38c6b231c431f67f20d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.stack.Stack.show</definition>
+        <argsstring>(self)</argsstring>
+        <name>show</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="65" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="65" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" line="3" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/stack.py" bodystart="3" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classpanglib_1_1stack_1_1Stack_1aefaee56741ca75bc02866876682a9362" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>__init__</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a4d7e4a4046a0a879471385825b51672e" prot="private" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>_store</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1acdc11fea4bbe64243ee911a5295cc8e3" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>cnt</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1ab1b57ea5269e3c253563b547241d5518" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>dump</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1aa29491dd7f8888410a743a4a49939614" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>first</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a32b2d5fdadc83b92e8edd17ecde15b0a" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>gcnt</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a392ccb122e6c9442aa0cc6bb61a73b64" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>get</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1ad26226a71bdff641ef81d7e7532a1b68" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>get2</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a7f73333ad086ef079e2e3be710909441" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>last</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a094500a27c4166df028aad216853e1ad" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>pop</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1ad62a95840cf0921193b62e0d95295334" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>pop2</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a9d518365b58044c1af2d768c5ed9e8fd" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>push</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a96d72cd8349f58e2ffe91c3cf1fad9d7" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>reset</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1a27cc900f28d9f38c6b231c431f67f20d" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>show</name></member>
+      <member refid="classpanglib_1_1stack_1_1Stack_1af67f5a3e33f8d824fa54485146279465" prot="public" virt="non-virtual"><scope>panglib::stack::Stack</scope><name>stacklen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

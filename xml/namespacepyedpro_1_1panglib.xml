@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1panglib" kind="namespace" language="Python">
+    <compoundname>pyedpro::panglib</compoundname>
+    <innernamespace refid="namespacepyedpro_1_1panglib_1_1lexer">pyedpro::panglib::lexer</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1panglib_1_1pangdisp">pyedpro::panglib::pangdisp</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1panglib_1_1pangfunc">pyedpro::panglib::pangfunc</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1panglib_1_1parser">pyedpro::panglib::parser</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1panglib_1_1stack">pyedpro::panglib::stack</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1panglib_1_1utils">pyedpro::panglib::utils</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/panglib/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

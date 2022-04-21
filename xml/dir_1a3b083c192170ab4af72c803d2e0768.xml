@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_1a3b083c192170ab4af72c803d2e0768" kind="dir">
+    <compoundname>pyedpro/debian/pyedpro.py/usr</compoundname>
+    <innerdir refid="dir_eef2b6da5ed92473db32caa65aea4e2d">pyedpro/debian/pyedpro.py/usr/bin</innerdir>
+    <innerdir refid="dir_4c52c31764f6fb4688f41608a6cae4c3">pyedpro/debian/pyedpro.py/usr/lib</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/"/>
+  </compounddef>
+</doxygen>

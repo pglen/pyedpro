@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1pedspell" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::pedspell</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedspell_1a399bb27de3824427a35a576cd1d0e6d1" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::pedlib::pedspell.index2</definition>
+        <argsstring></argsstring>
+        <name>index2</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="20" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedspell_1ad63d581a0ce0e5537a8e37498ddbe31b" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::pedlib::pedspell.userdic</definition>
+        <argsstring></argsstring>
+        <name>userdic</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="21" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedspell_1a6176b7d6b0a9eeae67f1e79e11f92f90" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::pedlib::pedspell.punctuation</definition>
+        <argsstring></argsstring>
+        <name>punctuation</name>
+        <initializer>=  &quot; ,./&lt;&gt;?;\&apos;:[]\{}|=-`!@#$%^&amp;*()_+\&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="25" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedspell_1a40d91d3333fe66b622286b4e6af0cb92" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedspell.document</definition>
+        <argsstring></argsstring>
+        <name>document</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="50" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1a7f2eb29343d4777570537454afc8b20e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.spell</definition>
+        <argsstring>(self2, allflag=False)</argsstring>
+        <name>spell</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>allflag</type>
+          <defname>allflag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="52" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="52" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1ad0707495c51f85f9267d7813fb4eebbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.spell_line</definition>
+        <argsstring>(line, beg, end)</argsstring>
+        <name>spell_line</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <param>
+          <type>beg</type>
+          <defname>beg</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedpro_1ae2a71157b0e6f0e9b2fdd8e7e9493d49" kindref="member">end</ref></type>
+          <defname>end</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="152" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="152" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1a3ecb4b5b6171e55d852d096b19618f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.spell_word</definition>
+        <argsstring>(word)</argsstring>
+        <name>spell_word</name>
+        <param>
+          <type>word</type>
+          <defname>word</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="183" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="183" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1adf5896b6c55eaea0e4d723abb476badc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.spell_user</definition>
+        <argsstring>(word)</argsstring>
+        <name>spell_user</name>
+        <param>
+          <type>word</type>
+          <defname>word</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="227" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="227" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1ac5af57acde9a463d98e44e2a0aed58c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.append_user_dict</definition>
+        <argsstring>(self2, arg)</argsstring>
+        <name>append_user_dict</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="254" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="254" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1adbb1eea672a72714db9a31557a1a2caf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.load_user_dict</definition>
+        <argsstring>()</argsstring>
+        <name>load_user_dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="282" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="282" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1a3436931c9025b3ad336148a9b02305b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.build_index</definition>
+        <argsstring>()</argsstring>
+        <name>build_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="320" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="320" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedspell_1a1e339d3bf132e2e382fbb0d8ad853295" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedspell.suggest</definition>
+        <argsstring>(self2, xstr)</argsstring>
+        <name>suggest</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedspell.py" line="371" column="1" bodyfile="pyedpro/pedlib/pedspell.py" bodystart="371" bodyend="420"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/pedspell.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

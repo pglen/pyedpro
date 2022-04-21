@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtest_1_1ActHand" kind="class" language="Python" prot="public">
+    <compoundname>test::ActHand</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtest_1_1ActHand_1a76aaf3f230d63904933c42bf7bfdb45e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>test.ActHand::was_home</definition>
+        <argsstring></argsstring>
+        <name>was_home</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="34" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_1_1ActHand_1ad691329867edd656fbb76dbc24634830" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>test.ActHand::was_end</definition>
+        <argsstring></argsstring>
+        <name>was_end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="35" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_1_1ActHand_1a0656deed3f99b951b1cf8ebe59c7fb47" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>test.ActHand::clips</definition>
+        <argsstring></argsstring>
+        <name>clips</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="37" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_1_1ActHand_1ac5c7f7d838adc6b856a53e0eb42729cc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>test.ActHand::currclip</definition>
+        <argsstring></argsstring>
+        <name>currclip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="40" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtest_1_1ActHand_1ade400f8961345b181d1ccd5910b275af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def test.ActHand.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="33" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="33" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classtest_1_1ActHand_1ae65096b53f6cee1d3bf9fc76ce55e066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def test.ActHand.ctrl_tab</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_tab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="44" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="44" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classtest_1_1ActHand_1a1fe49d0b0995d6084f26ba7a7b90b8c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def test.ActHand.up</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>up</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="51" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="51" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" line="31" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data/test.py" bodystart="31" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classtest_1_1ActHand_1ade400f8961345b181d1ccd5910b275af" prot="public" virt="non-virtual"><scope>test::ActHand</scope><name>__init__</name></member>
+      <member refid="classtest_1_1ActHand_1a0656deed3f99b951b1cf8ebe59c7fb47" prot="public" virt="non-virtual"><scope>test::ActHand</scope><name>clips</name></member>
+      <member refid="classtest_1_1ActHand_1ae65096b53f6cee1d3bf9fc76ce55e066" prot="public" virt="non-virtual"><scope>test::ActHand</scope><name>ctrl_tab</name></member>
+      <member refid="classtest_1_1ActHand_1ac5c7f7d838adc6b856a53e0eb42729cc" prot="public" virt="non-virtual"><scope>test::ActHand</scope><name>currclip</name></member>
+      <member refid="classtest_1_1ActHand_1a1fe49d0b0995d6084f26ba7a7b90b8c8" prot="public" virt="non-virtual"><scope>test::ActHand</scope><name>up</name></member>
+      <member refid="classtest_1_1ActHand_1ad691329867edd656fbb76dbc24634830" prot="public" virt="non-virtual"><scope>test::ActHand</scope><name>was_end</name></member>
+      <member refid="classtest_1_1ActHand_1a76aaf3f230d63904933c42bf7bfdb45e" prot="public" virt="non-virtual"><scope>test::ActHand</scope><name>was_home</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pggui::FrameTextView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.TextView</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1a7d98fc4e08232d1c3a4a1bf20f493c68" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.FrameTextView::scroll</definition>
+        <argsstring></argsstring>
+        <name>scroll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="407" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="407" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1aae43ff8926c41f31646443cb78e31347" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pggui.FrameTextView::frame</definition>
+        <argsstring></argsstring>
+        <name>frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="410" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="410" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1ac082621a826b00c27bae77d55e100664" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.FrameTextView.__init__</definition>
+        <argsstring>(self, callme=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>callme</type>
+          <defname>callme</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="404" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="404" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1ab57ca60f442aa2e611132317f05852a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pggui.FrameTextView.append</definition>
+        <argsstring>(self, strx)</argsstring>
+        <name>append</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pggui.py" line="421" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="421" bodyend="429"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk::TextView</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.FrameTextView</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk::TextView</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pggui.FrameTextView</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pggui.py" line="402" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="402" bodyend="430"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1ac082621a826b00c27bae77d55e100664" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::FrameTextView</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1ab57ca60f442aa2e611132317f05852a2" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::FrameTextView</scope><name>append</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1aae43ff8926c41f31646443cb78e31347" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::FrameTextView</scope><name>frame</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1a7d98fc4e08232d1c3a4a1bf20f493c68" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pggui::FrameTextView</scope><name>scroll</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

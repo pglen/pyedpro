@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedlib_1_1peddoc" kind="namespace" language="Python">
+    <compoundname>pyedlib::peddoc</compoundname>
+    <innerclass refid="classpyedlib_1_1peddoc_1_1pedDoc" prot="public">pyedlib::peddoc::pedDoc</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1aded46baf3c26cabed7996e23cffa850c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::peddoc.VSCROLLGAP</definition>
+        <argsstring></argsstring>
+        <name>VSCROLLGAP</name>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="26" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a412f88acce5d1b24e412d4191096ab6d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::peddoc.HSCROLLGAP</definition>
+        <argsstring></argsstring>
+        <name>HSCROLLGAP</name>
+        <initializer>=  4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="27" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1afeca30881438442030433f3c6294afae" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::peddoc.PAGEUP</definition>
+        <argsstring></argsstring>
+        <name>PAGEUP</name>
+        <initializer>=  20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="28" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a4b2894ab7d29483af8a9d62beb8df59d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::peddoc.TABSTOP</definition>
+        <argsstring></argsstring>
+        <name>TABSTOP</name>
+        <initializer>=  4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="36" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a519f884239caa2c0ced67f9246d243c9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib::peddoc.last_scanned</definition>
+        <argsstring></argsstring>
+        <name>last_scanned</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="47" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a1b78fb417f87e7286c29ca2fc6cb11db" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.FGCOLOR</definition>
+        <argsstring></argsstring>
+        <name>FGCOLOR</name>
+        <initializer>=  &quot;#000000&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="51" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a0cde6c5159a9f3b1ff53233b632954dc" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.BGCOLOR</definition>
+        <argsstring></argsstring>
+        <name>BGCOLOR</name>
+        <initializer>=  &quot;#fefefe&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="52" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a83f3e4ef9620f0cc1818409ab4e59bba" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.RBGCOLOR</definition>
+        <argsstring></argsstring>
+        <name>RBGCOLOR</name>
+        <initializer>=  &quot;#aaaaff&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="53" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a9e2de957c83d946b86b574186b27a21f" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.CBGCOLOR</definition>
+        <argsstring></argsstring>
+        <name>CBGCOLOR</name>
+        <initializer>=  &quot;#ff8888&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="54" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a0398a8ab7d9511edd12d078c10459a8f" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.KWCOLOR</definition>
+        <argsstring></argsstring>
+        <name>KWCOLOR</name>
+        <initializer>=  &quot;#88aaff&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="55" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1ad90162b9b859c3775ca3a9b504c5bee5" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.CLCOLOR</definition>
+        <argsstring></argsstring>
+        <name>CLCOLOR</name>
+        <initializer>=  &quot;#880000&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="56" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a04023219de9b03c3f96cbc7934057c9f" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.COCOLOR</definition>
+        <argsstring></argsstring>
+        <name>COCOLOR</name>
+        <initializer>=  &quot;#4444ff&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="57" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1ad28f3ecdf37331b53d048b86c83ae4de" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedlib::peddoc.STCOLOR</definition>
+        <argsstring></argsstring>
+        <name>STCOLOR</name>
+        <initializer>=  &quot;#ee44ee&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="58" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedlib_1_1peddoc_1a59961ca094394924395b37c40b4ed3b4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedlib::peddoc.DRAGTRESH</definition>
+        <argsstring></argsstring>
+        <name>DRAGTRESH</name>
+        <initializer>=  3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="62" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedlib_1_1peddoc_1a211bdc3845fcad92b5f04b60ea97bc9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddoc.run_async_time</definition>
+        <argsstring>(win)</argsstring>
+        <name>run_async_time</name>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1700" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" bodystart="1700" bodyend="1864"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddoc.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

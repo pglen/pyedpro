@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedlib_1_1pedtts_1_1tts" kind="class" language="Python" prot="public">
+    <compoundname>pyedlib::pedtts::tts</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedlib_1_1pedtts_1_1tts_1aa990cdbd427c4c9bee27af88901b1142" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.pedtts.tts::stopspeak</definition>
+        <argsstring></argsstring>
+        <name>stopspeak</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="55" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1pedtts_1_1tts_1a6105d2224c73d8b97d6d247e2033f045" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.pedtts.tts::haltspeak</definition>
+        <argsstring></argsstring>
+        <name>haltspeak</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="56" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1pedtts_1_1tts_1a71c19127db326c7fbc772a3b983ecdb9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.pedtts.tts::speech_pid</definition>
+        <argsstring></argsstring>
+        <name>speech_pid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="57" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedlib_1_1pedtts_1_1tts_1a8fef415940afbf60f1f473355a252cb8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib.pedtts.tts::prog_set_text</definition>
+        <argsstring></argsstring>
+        <name>prog_set_text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="58" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1af92cfd5db632df8def0bedda4d5340fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts.__init__</definition>
+        <argsstring>(self, prog=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>prog</type>
+          <defname>prog</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="54" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="54" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1a9d8bb135cb022b9793acf5adf491148c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts.check_speak2</definition>
+        <argsstring>(self, ss, opt)</argsstring>
+        <name>check_speak2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ss</type>
+          <defname>ss</defname>
+        </param>
+        <param>
+          <type>opt</type>
+          <defname>opt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="88" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="88" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1a483312cb1076365b70ea23743cbd948f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts.wait_done</definition>
+        <argsstring>(self)</argsstring>
+        <name>wait_done</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="96" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="96" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1a8999413ac70fd8fdbf16d22e2ea98318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts.check_speak</definition>
+        <argsstring>(self)</argsstring>
+        <name>check_speak</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="110" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="110" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1ac959806a44ace6217995d5f05b5729e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts.read_tts</definition>
+        <argsstring>(self, self2, butt=None)</argsstring>
+        <name>read_tts</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="123" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="123" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1ae40a896a0379bed6b99aaf83d103bf0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts.stop_tts2</definition>
+        <argsstring>(self, ss, opt)</argsstring>
+        <name>stop_tts2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ss</type>
+          <defname>ss</defname>
+        </param>
+        <param>
+          <type>opt</type>
+          <defname>opt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="218" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="218" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1a6a984b9c2293f35a5123da122e02ed33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts.stop_tts</definition>
+        <argsstring>(self)</argsstring>
+        <name>stop_tts</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="229" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="229" bodyend="245"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpyedlib_1_1pedtts_1_1tts_1a81f4fca2f3d09a50de7b2aadd2c11604" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedtts.tts._speak</definition>
+        <argsstring>(self, cstr)</argsstring>
+        <name>_speak</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cstr</type>
+          <defname>cstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="63" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="63" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" line="52" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedtts.py" bodystart="52" bodyend="245"/>
+    <listofallmembers>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1af92cfd5db632df8def0bedda4d5340fb" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>__init__</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a81f4fca2f3d09a50de7b2aadd2c11604" prot="private" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>_speak</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a8999413ac70fd8fdbf16d22e2ea98318" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>check_speak</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a9d8bb135cb022b9793acf5adf491148c" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>check_speak2</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a6105d2224c73d8b97d6d247e2033f045" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>haltspeak</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a8fef415940afbf60f1f473355a252cb8" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>prog_set_text</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1ac959806a44ace6217995d5f05b5729e4" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>read_tts</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a71c19127db326c7fbc772a3b983ecdb9" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>speech_pid</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a6a984b9c2293f35a5123da122e02ed33" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>stop_tts</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1ae40a896a0379bed6b99aaf83d103bf0f" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>stop_tts2</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1aa990cdbd427c4c9bee27af88901b1142" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>stopspeak</name></member>
+      <member refid="classpyedlib_1_1pedtts_1_1tts_1a483312cb1076365b70ea23743cbd948f" prot="public" virt="non-virtual"><scope>pyedlib::pedtts::tts</scope><name>wait_done</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

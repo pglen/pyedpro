@@ -1,0 +1,543 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pangview_1_1TextState" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pangview::TextState</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a5c3cec30a11ed3d3bcf73b191d40bf2a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::font</definition>
+        <argsstring></argsstring>
+        <name>font</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="423" column="1" bodyfile="pyedpro/pangview.py" bodystart="423" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1adfc73c564f2b288af3406e6bbfeedeed" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::bold</definition>
+        <argsstring></argsstring>
+        <name>bold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="424" column="1" bodyfile="pyedpro/pangview.py" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a3a388fc97f6f551d155c1c6b53852c2f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::itbold</definition>
+        <argsstring></argsstring>
+        <name>itbold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="424" column="1" bodyfile="pyedpro/pangview.py" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a95456f0ce485330df9c6abac7174d752" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::italic</definition>
+        <argsstring></argsstring>
+        <name>italic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="424" column="1" bodyfile="pyedpro/pangview.py" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a5b3d761cf0b88be19b034cc7fa9bcc91" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::ul</definition>
+        <argsstring></argsstring>
+        <name>ul</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="425" column="1" bodyfile="pyedpro/pangview.py" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a1d80c71e5e17ce814a8f971aa9e27ef4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::dul</definition>
+        <argsstring></argsstring>
+        <name>dul</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="425" column="1" bodyfile="pyedpro/pangview.py" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a1e1c09131c185464284b288efd548913" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::red</definition>
+        <argsstring></argsstring>
+        <name>red</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="426" column="1" bodyfile="pyedpro/pangview.py" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1ade586165355f737950967fddabe87ee2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::blue</definition>
+        <argsstring></argsstring>
+        <name>blue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="426" column="1" bodyfile="pyedpro/pangview.py" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a05773e4a15c4b64dc86af6035f662b00" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::green</definition>
+        <argsstring></argsstring>
+        <name>green</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="426" column="1" bodyfile="pyedpro/pangview.py" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a6e65c3218053a5bbb486fc6bf4d01445" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::bgred</definition>
+        <argsstring></argsstring>
+        <name>bgred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="427" column="1" bodyfile="pyedpro/pangview.py" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a1051fc492bc70a91b8fbffbc17797868" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::bgblue</definition>
+        <argsstring></argsstring>
+        <name>bgblue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="427" column="1" bodyfile="pyedpro/pangview.py" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a0a32ef917965b7fba7f9ab65d4c18a3d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::bggreen</definition>
+        <argsstring></argsstring>
+        <name>bggreen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="427" column="1" bodyfile="pyedpro/pangview.py" bodystart="427" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a3eb87a047068bfc5062911c7fde26ee2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::strike</definition>
+        <argsstring></argsstring>
+        <name>strike</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="428" column="1" bodyfile="pyedpro/pangview.py" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a5a0c14822510e15ea7a608c8c4925bfd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::large</definition>
+        <argsstring></argsstring>
+        <name>large</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="428" column="1" bodyfile="pyedpro/pangview.py" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a44015846b58d3c4d4089e020d248d14d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::small</definition>
+        <argsstring></argsstring>
+        <name>small</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="428" column="1" bodyfile="pyedpro/pangview.py" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1af52b4020f8eb1c8961d46a5ce46a5f9d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::xsmall</definition>
+        <argsstring></argsstring>
+        <name>xsmall</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="428" column="1" bodyfile="pyedpro/pangview.py" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a40c871572acba7683cb3f0038eed195b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::xlarge</definition>
+        <argsstring></argsstring>
+        <name>xlarge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="429" column="1" bodyfile="pyedpro/pangview.py" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1aafa0ec04e3402551067d6501eb4583c6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::xxlarge</definition>
+        <argsstring></argsstring>
+        <name>xxlarge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="429" column="1" bodyfile="pyedpro/pangview.py" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1ac271f9b97cd87e629609f9a525823899" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::center</definition>
+        <argsstring></argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="429" column="1" bodyfile="pyedpro/pangview.py" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1afb73fb25b57996a41ad1068a1d12b0d6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::wrap</definition>
+        <argsstring></argsstring>
+        <name>wrap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="430" column="1" bodyfile="pyedpro/pangview.py" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a3933540ac32a9e303032193a2d8ac7a2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::hidden</definition>
+        <argsstring></argsstring>
+        <name>hidden</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="430" column="1" bodyfile="pyedpro/pangview.py" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a2a9390626fbdc4c4f4102af8bb248134" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="430" column="1" bodyfile="pyedpro/pangview.py" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a00cdc001556aea37e44bf54e42f08ee5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="430" column="1" bodyfile="pyedpro/pangview.py" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a29ced037c6bb09a2d2dcee49f2a2767f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::indent</definition>
+        <argsstring></argsstring>
+        <name>indent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="431" column="1" bodyfile="pyedpro/pangview.py" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1aa00ebc63acc0a662b988033ed38fd51c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::margin</definition>
+        <argsstring></argsstring>
+        <name>margin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="431" column="1" bodyfile="pyedpro/pangview.py" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a42e87ed862358e6f528afd704f399596" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="431" column="1" bodyfile="pyedpro/pangview.py" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a6ec89cdd497c37480bbbf86f7fbe030f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::fixed</definition>
+        <argsstring></argsstring>
+        <name>fixed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="432" column="1" bodyfile="pyedpro/pangview.py" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1adf45615d55a9dd75b298fbee8263b092" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::bgcolor</definition>
+        <argsstring></argsstring>
+        <name>bgcolor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="432" column="1" bodyfile="pyedpro/pangview.py" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a9f323bb3d11ff706421ee0d52dcc91c3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::sub</definition>
+        <argsstring></argsstring>
+        <name>sub</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="433" column="1" bodyfile="pyedpro/pangview.py" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1abdb94a96d3463d01b40073fed13cb25f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::sup</definition>
+        <argsstring></argsstring>
+        <name>sup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="433" column="1" bodyfile="pyedpro/pangview.py" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a2cd362c41f573cb5a54a38e9bb15f83f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::image</definition>
+        <argsstring></argsstring>
+        <name>image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="433" column="1" bodyfile="pyedpro/pangview.py" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a38be6f9b3b391f67b47c22c5caea40c4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::link</definition>
+        <argsstring></argsstring>
+        <name>link</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="433" column="1" bodyfile="pyedpro/pangview.py" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a0b412fb1b27f1c8921c7c47695c7bdce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::lmargin</definition>
+        <argsstring></argsstring>
+        <name>lmargin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="433" column="1" bodyfile="pyedpro/pangview.py" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a0d6e7699ae43c7384e5b0fee6218b186" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::fill</definition>
+        <argsstring></argsstring>
+        <name>fill</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="434" column="1" bodyfile="pyedpro/pangview.py" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pangview_1_1TextState_1a25f5ee0cba957e7fe7a50497ac2ccfd9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pangview.TextState::tab</definition>
+        <argsstring></argsstring>
+        <name>tab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="434" column="1" bodyfile="pyedpro/pangview.py" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pangview_1_1TextState_1ad78d2008170b7db5cbc70b86a9847022" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pangview.TextState.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="421" column="1" bodyfile="pyedpro/pangview.py" bodystart="421" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pangview_1_1TextState_1a8b1105714c53d805e9a139305b0604fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pangview.TextState.clear</definition>
+        <argsstring>(self)</argsstring>
+        <name>clear</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="436" column="1" bodyfile="pyedpro/pangview.py" bodystart="436" bodyend="453"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pangview.py" line="419" column="1" bodyfile="pyedpro/pangview.py" bodystart="419" bodyend="454"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1ad78d2008170b7db5cbc70b86a9847022" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a1051fc492bc70a91b8fbffbc17797868" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>bgblue</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1adf45615d55a9dd75b298fbee8263b092" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>bgcolor</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a0a32ef917965b7fba7f9ab65d4c18a3d" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>bggreen</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a6e65c3218053a5bbb486fc6bf4d01445" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>bgred</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1ade586165355f737950967fddabe87ee2" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>blue</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1adfc73c564f2b288af3406e6bbfeedeed" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>bold</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1ac271f9b97cd87e629609f9a525823899" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>center</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a8b1105714c53d805e9a139305b0604fa" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>clear</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a2a9390626fbdc4c4f4102af8bb248134" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>color</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a1d80c71e5e17ce814a8f971aa9e27ef4" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>dul</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a0d6e7699ae43c7384e5b0fee6218b186" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>fill</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a6ec89cdd497c37480bbbf86f7fbe030f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>fixed</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a5c3cec30a11ed3d3bcf73b191d40bf2a" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>font</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a05773e4a15c4b64dc86af6035f662b00" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>green</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a3933540ac32a9e303032193a2d8ac7a2" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>hidden</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a2cd362c41f573cb5a54a38e9bb15f83f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>image</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a29ced037c6bb09a2d2dcee49f2a2767f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>indent</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a95456f0ce485330df9c6abac7174d752" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>italic</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a3a388fc97f6f551d155c1c6b53852c2f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>itbold</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a5a0c14822510e15ea7a608c8c4925bfd" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>large</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a38be6f9b3b391f67b47c22c5caea40c4" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>link</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a0b412fb1b27f1c8921c7c47695c7bdce" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>lmargin</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1aa00ebc63acc0a662b988033ed38fd51c" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>margin</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a1e1c09131c185464284b288efd548913" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>red</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a00cdc001556aea37e44bf54e42f08ee5" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>right</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a42e87ed862358e6f528afd704f399596" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>size</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a44015846b58d3c4d4089e020d248d14d" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>small</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a3eb87a047068bfc5062911c7fde26ee2" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>strike</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a9f323bb3d11ff706421ee0d52dcc91c3" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>sub</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1abdb94a96d3463d01b40073fed13cb25f" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>sup</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a25f5ee0cba957e7fe7a50497ac2ccfd9" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>tab</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a5b3d761cf0b88be19b034cc7fa9bcc91" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>ul</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1afb73fb25b57996a41ad1068a1d12b0d6" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>wrap</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1a40c871572acba7683cb3f0038eed195b" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>xlarge</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1af52b4020f8eb1c8961d46a5ce46a5f9d" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>xsmall</name></member>
+      <member refid="classpyedpro_1_1pangview_1_1TextState_1aafa0ec04e3402551067d6501eb4583c6" prot="public" virt="non-virtual"><scope>pyedpro::pangview::TextState</scope><name>xxlarge</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

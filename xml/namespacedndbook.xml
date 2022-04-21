@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacedndbook" kind="namespace" language="Python">
+    <compoundname>dndbook</compoundname>
+    <innerclass refid="classdndbook_1_1GUI" prot="public">dndbook::GUI</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacedndbook_1a55dc656e530dca34ff103374d57da014" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dndbook.app</definition>
+        <argsstring></argsstring>
+        <name>app</name>
+        <initializer>=  <ref refid="classdndbook_1_1GUI" kindref="compound">GUI</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/dndbook.py" line="57" column="1" bodyfile="pyedpro/study/dndbook.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/study/dndbook.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

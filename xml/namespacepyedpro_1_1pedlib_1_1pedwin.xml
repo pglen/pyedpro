@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1pedwin" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::pedwin</compoundname>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pedwin_1_1itemhistory" prot="public">pyedpro::pedlib::pedwin::itemhistory</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pedwin_1_1edPane" prot="public">pyedpro::pedlib::pedwin::edPane</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pedwin_1_1edwin" prot="public">pyedpro::pedlib::pedwin::edwin</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow" prot="public">pyedpro::pedlib::pedwin::EdMainWindow</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedwin_1a1e667ef0f439b4481141a3c9f43bcd30" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro::pedlib::pedwin.STATUSCOUNT</definition>
+        <argsstring></argsstring>
+        <name>STATUSCOUNT</name>
+        <initializer>=  5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="48" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedwin_1a38e805a493deac0d6d90959440ab04d1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedwin.treestore</definition>
+        <argsstring></argsstring>
+        <name>treestore</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="50" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedwin_1a2b9e67bcd6f6f5cbf4f0f890edbab6e2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedwin.notebook</definition>
+        <argsstring></argsstring>
+        <name>notebook</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="51" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedwin_1a4739903fed761df6a63f7b148fa65ccf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedwin.notebook3</definition>
+        <argsstring></argsstring>
+        <name>notebook3</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="52" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedwin_1ade6ff292698adffb7e3694c780831ca1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro::pedlib::pedwin.hidden</definition>
+        <argsstring></argsstring>
+        <name>hidden</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="54" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedwin_1ae8d4689e96a0871599c3e156d13d3f55" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::pedlib::pedwin.savearr</definition>
+        <argsstring></argsstring>
+        <name>savearr</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="55" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedwin_1aeb06cda8e8a46f3c3e8186e77a85be0c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro::pedlib::pedwin.exiting</definition>
+        <argsstring></argsstring>
+        <name>exiting</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="2233" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2233" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedwin_1acb179468751c7c03b38aea0d1c84e81c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedwin.add_page</definition>
+        <argsstring>(page)</argsstring>
+        <name>add_page</name>
+        <param>
+          <type>page</type>
+          <defname>page</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="61" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="61" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedwin_1a5768056b0081522f1128d3f720e878ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedwin.OnExit</definition>
+        <argsstring>(arg, arg2, prompt=True)</argsstring>
+        <name>OnExit</name>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <param>
+          <type>arg2</type>
+          <defname>arg2</defname>
+        </param>
+        <param>
+          <type>prompt</type>
+          <defname>prompt</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="2012" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2012" bodyend="2117"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedwin_1abd5e75761d5ca94dc0e7572829d42ec5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedwin.initial_load</definition>
+        <argsstring>(self2, arg)</argsstring>
+        <name>initial_load</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="2118" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2118" bodyend="2232"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedwin_1acf73f38beecdda5185f9b5bb27093383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedwin.handler_tick</definition>
+        <argsstring>(arg, arg2)</argsstring>
+        <name>handler_tick</name>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <param>
+          <type>arg2</type>
+          <defname>arg2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="2237" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2237" bodyend="2337"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/pedwin.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox" kind="class" language="Python" prot="public">
+    <compoundname>pyedpro::pycommon::pgbox::ListBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.TreeView</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1ab7f41fdeffc6afdc0186be962e88d4e4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgbox.ListBox::limit</definition>
+        <argsstring></argsstring>
+        <name>limit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="245" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1af7f9ebbeb2b97b6fbb1a2c372f9fda71" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgbox.ListBox::treestore</definition>
+        <argsstring></argsstring>
+        <name>treestore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="246" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a85aec820f36b7137f4804510801b9ec9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pycommon.pgbox.ListBox::callb</definition>
+        <argsstring></argsstring>
+        <name>callb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="262" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1abc8869d14edcf3a30469dc461a6f7325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.__init__</definition>
+        <argsstring>(self, limit=-1, colname=&apos;&apos;)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1ab7f41fdeffc6afdc0186be962e88d4e4" kindref="member">limit</ref></type>
+          <defname>limit</defname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>colname</type>
+          <defname>colname</defname>
+          <defval>&apos;&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="243" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="243" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a6eb24d0ee92f74573c95b61580176b97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.tree_sel</definition>
+        <argsstring>(self, xtree, xiter, xpath)</argsstring>
+        <name>tree_sel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type>xiter</type>
+          <defname>xiter</defname>
+        </param>
+        <param>
+          <type>xpath</type>
+          <defname>xpath</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="265" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="265" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a8569cd390aba1818a542354858178148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.set_callback</definition>
+        <argsstring>(self, funcx)</argsstring>
+        <name>set_callback</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>funcx</type>
+          <defname>funcx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="276" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="276" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a777009a807fdf672530a01e68ae33cd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.clear</definition>
+        <argsstring>(self)</argsstring>
+        <name>clear</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="280" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="280" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1ac614064c595a3ce68ff5820a89a6128a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.select</definition>
+        <argsstring>(self, idx)</argsstring>
+        <name>select</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="296" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="296" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1ad9783889aab9788e4a77d13cd4d018c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.get_size</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_size</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="312" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="312" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a5f24dcf5e88ee9ef4b27d1c892ae1523" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.get_item</definition>
+        <argsstring>(self, idx)</argsstring>
+        <name>get_item</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="325" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="325" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a902eaa3add0facee12d3e01f7d6a6a5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.append</definition>
+        <argsstring>(self, strx)</argsstring>
+        <name>append</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="341" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="341" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1af22e785eb7c5624a37725b81388c8289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.get_text</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="358" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="358" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a30368bed955a43439cf5fd076e134e95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pycommon.pgbox.ListBox.get_curridx</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_curridx</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pycommon/pgbox.py" line="365" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="365" bodyend="382"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk::TreeView</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pgbox.ListBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk::TreeView</label>
+      </node>
+      <node id="1">
+        <label>pyedpro.pycommon.pgbox.ListBox</label>
+        <link refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/pycommon/pgbox.py" line="241" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="241" bodyend="383"/>
+    <listofallmembers>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1abc8869d14edcf3a30469dc461a6f7325" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a902eaa3add0facee12d3e01f7d6a6a5d" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>append</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a85aec820f36b7137f4804510801b9ec9" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>callb</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a777009a807fdf672530a01e68ae33cd3" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>clear</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a30368bed955a43439cf5fd076e134e95" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>get_curridx</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a5f24dcf5e88ee9ef4b27d1c892ae1523" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>get_item</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1ad9783889aab9788e4a77d13cd4d018c2" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>get_size</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1af22e785eb7c5624a37725b81388c8289" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>get_text</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1ab7f41fdeffc6afdc0186be962e88d4e4" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>limit</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1ac614064c595a3ce68ff5820a89a6128a" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>select</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a8569cd390aba1818a542354858178148" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>set_callback</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1a6eb24d0ee92f74573c95b61580176b97" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>tree_sel</name></member>
+      <member refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox_1af7f9ebbeb2b97b6fbb1a2c372f9fda71" prot="public" virt="non-virtual"><scope>pyedpro::pycommon::pgbox::ListBox</scope><name>treestore</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

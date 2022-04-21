@@ -1,0 +1,1279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1pedutil" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::pedutil</compoundname>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pedutil_1_1OpenFname" prot="public">pyedpro::pedlib::pedutil::OpenFname</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ac80b9cc9418725d3d16eb4f7cf9d4ff3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedutil.clock</definition>
+        <argsstring></argsstring>
+        <name>clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="24" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1afea222dc7b1ba643f1704b9fe1c567a4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedutil.TARGET_ENTRY_TEXT</definition>
+        <argsstring></argsstring>
+        <name>TARGET_ENTRY_TEXT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="35" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1af1be3ed5ab2916a69856ee339525db74" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedutil.TARGET_ENTRY_PIXBUF</definition>
+        <argsstring></argsstring>
+        <name>TARGET_ENTRY_PIXBUF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="35" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1af760921341df5798446dbe4d1a6636ce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedutil.COLUMN_TEXT</definition>
+        <argsstring></argsstring>
+        <name>COLUMN_TEXT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="36" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a78e9f34b0626ab008d8457cb8c0b3f1e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedutil.COLUMN_PIXBUF</definition>
+        <argsstring></argsstring>
+        <name>COLUMN_PIXBUF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="36" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1aaa4f4132c159b9bc98c83dc0380fb335" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::pedlib::pedutil.allcr</definition>
+        <argsstring></argsstring>
+        <name>allcr</name>
+        <initializer>=     &quot; &quot; + &quot;\r&quot; + &quot;\n&quot; + \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="871" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="871" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ad268074f1821d3078f1e8fe82cdd7d8b" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::pedlib::pedutil.allstr</definition>
+        <argsstring></argsstring>
+        <name>allstr</name>
+        <initializer>=     &quot; &quot; + \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="876" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="876" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a028ca9784a88dc6f19c86d0ca797bbf9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedutil.allasc</definition>
+        <argsstring></argsstring>
+        <name>allasc</name>
+        <initializer>=       string.ascii_lowercase +  string.ascii_uppercase +  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="880" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="880" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1aeba8bbe6fa46839fa9871015a42d5989" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedutil.alllett</definition>
+        <argsstring></argsstring>
+        <name>alllett</name>
+        <initializer>=       string.ascii_lowercase +  string.ascii_uppercase</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="883" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="883" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedutil_1adf11460479bc9d77d27c595935e7641b" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pyedpro::pedlib::pedutil.xtab</definition>
+        <argsstring></argsstring>
+        <name>xtab</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1015" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1015" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a5e0e09b54b7052c31e4f5bb996c4cfce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.cut_lead_space</definition>
+        <argsstring>(xstr, divi=2)</argsstring>
+        <name>cut_lead_space</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <param>
+          <type>divi</type>
+          <defname>divi</defname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="40" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="40" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a5591f93d744e128440622898dce0178a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.readfile</definition>
+        <argsstring>(strx, sep=None)</argsstring>
+        <name>readfile</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>sep</type>
+          <defname>sep</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="59" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="59" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1adc2128023ac657c24ef5f39404f3b727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.findinfile</definition>
+        <argsstring>(nnn, ffff, nocase=False)</argsstring>
+        <name>findinfile</name>
+        <param>
+          <type>nnn</type>
+          <defname>nnn</defname>
+        </param>
+        <param>
+          <type>ffff</type>
+          <defname>ffff</defname>
+        </param>
+        <param>
+          <type>nocase</type>
+          <defname>nocase</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="110" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="110" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a0e834905262c346b4bcb41d4496bb748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.writefile</definition>
+        <argsstring>(strx, buff, sep=&quot;\n&quot;, mode=&quot;w&quot;)</argsstring>
+        <name>writefile</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>buff</type>
+          <defname>buff</defname>
+        </param>
+        <param>
+          <type>sep</type>
+          <defname>sep</defname>
+          <defval>&quot;\n&quot;</defval>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+          <defval>&quot;w&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="150" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="150" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a0e808d0fe0c4c00f8193aa5464636e89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.get_img_path</definition>
+        <argsstring>(fname)</argsstring>
+        <name>get_img_path</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="174" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="174" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a7a493f4835eee1ab1ce65ff6a9c3b1a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.get_exec_path</definition>
+        <argsstring>(fname)</argsstring>
+        <name>get_exec_path</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="185" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="185" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1aa7ccfe748c9a14584c371ab59556b550" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.get_pangview_path</definition>
+        <argsstring>()</argsstring>
+        <name>get_pangview_path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="198" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="198" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1af1c4cde5b368fe46b176a688bb3d26fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.launch_pangview</definition>
+        <argsstring>(docx)</argsstring>
+        <name>launch_pangview</name>
+        <param>
+          <type>docx</type>
+          <defname>docx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="212" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="212" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a74580780988d2d1018ae9735da97ba04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.register_stock_icons</definition>
+        <argsstring>()</argsstring>
+        <name>register_stock_icons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> This function registers our custom toolbar icons, so they
+    can be themed.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="232" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="232" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ae1a5c94c93ce86ea313fb6867d598c19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.genstr</definition>
+        <argsstring>(strx, num)</argsstring>
+        <name>genstr</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="277" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="277" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a60da73efaad05b20d0190a6bf7beec30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.cntleadchar</definition>
+        <argsstring>(strx, chh)</argsstring>
+        <name>cntleadchar</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>chh</type>
+          <defname>chh</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="283" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="283" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a0b63f1cdca50230b6be911d2173b7fc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.nextchar</definition>
+        <argsstring>(strx, xchar, start)</argsstring>
+        <name>nextchar</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xchar</type>
+          <defname>xchar</defname>
+        </param>
+        <param>
+          <type>start</type>
+          <defname>start</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="294" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="294" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1adb24722c488908cb60187074f540fc02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.xnextchar</definition>
+        <argsstring>(strx, xchar, start)</argsstring>
+        <name>xnextchar</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xchar</type>
+          <defname>xchar</defname>
+        </param>
+        <param>
+          <type>start</type>
+          <defname>start</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="304" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="304" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ab7d0d8ed2dbc3a8b918c9eb30703eb5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.xnextchar2</definition>
+        <argsstring>(strx, xchar, start)</argsstring>
+        <name>xnextchar2</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xchar</type>
+          <defname>xchar</defname>
+        </param>
+        <param>
+          <type>start</type>
+          <defname>start</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="315" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="315" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ae6e0d5df600e5f4c24a13cac6387b5eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.prevchar</definition>
+        <argsstring>(strx, xchar, start)</argsstring>
+        <name>prevchar</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xchar</type>
+          <defname>xchar</defname>
+        </param>
+        <param>
+          <type>start</type>
+          <defname>start</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="326" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="326" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a9520efd940a9ff38fe20a99036da94b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.xprevchar</definition>
+        <argsstring>(strx, xchar, start)</argsstring>
+        <name>xprevchar</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xchar</type>
+          <defname>xchar</defname>
+        </param>
+        <param>
+          <type>start</type>
+          <defname>start</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="337" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="337" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a1aeec98fdc65767e6b712b6f3ea980f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.shortenstr</definition>
+        <argsstring>(xstr, xlen)</argsstring>
+        <name>shortenstr</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <param>
+          <type>xlen</type>
+          <defname>xlen</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="348" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="348" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a3db228e07040dd7b7d357a473f010d47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.handle_keys</definition>
+        <argsstring>(host, event)</argsstring>
+        <name>handle_keys</name>
+        <param>
+          <type>host</type>
+          <defname>host</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="359" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="359" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a9eb7e1096e8392ed1cbfb7a5ab68079a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.usleep</definition>
+        <argsstring>(msec)</argsstring>
+        <name>usleep</name>
+        <param>
+          <type>msec</type>
+          <defname>msec</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="398" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="398" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a9fab618476811702cec02fb208477246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.hash_name</definition>
+        <argsstring>(strx)</argsstring>
+        <name>hash_name</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="418" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="418" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a797e57b2c7c8782d4741ee490745b35d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.untab_str</definition>
+        <argsstring>(strx, tabstop=4)</argsstring>
+        <name>untab_str</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>tabstop</type>
+          <defname>tabstop</defname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="431" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="431" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a734840f554f6fa8339705a9e1c955c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.calc_tabs</definition>
+        <argsstring>(strx, till, tabstop=4)</argsstring>
+        <name>calc_tabs</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>till</type>
+          <defname>till</defname>
+        </param>
+        <param>
+          <type>tabstop</type>
+          <defname>tabstop</defname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="452" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="452" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a6985c7d21398ba3baf1c57aea17d0952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.calc_tabs2</definition>
+        <argsstring>(strx, till, tabstop=4)</argsstring>
+        <name>calc_tabs2</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>till</type>
+          <defname>till</defname>
+        </param>
+        <param>
+          <type>tabstop</type>
+          <defname>tabstop</defname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="466" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="466" bodyend="488"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a3cc1ecb9df4aef28299d1b2079ca461a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.decalc_tabs</definition>
+        <argsstring>(strx, pos, tabstop=4)</argsstring>
+        <name>decalc_tabs</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <param>
+          <type>tabstop</type>
+          <defname>tabstop</defname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="489" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="489" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a453f4992336150eb13c4572b4929296d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.rmlspace</definition>
+        <argsstring>(strx, num)</argsstring>
+        <name>rmlspace</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="505" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="505" bodyend="516"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a15fb303c9860af1ec59c61a6e163b41b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.selword</definition>
+        <argsstring>(strx, xidx)</argsstring>
+        <name>selword</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xidx</type>
+          <defname>xidx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="517" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="517" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a09eea9cf97631f05bce1a7686b0cf5ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.selasci</definition>
+        <argsstring>(strx, xidx, additional=None)</argsstring>
+        <name>selasci</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xidx</type>
+          <defname>xidx</defname>
+        </param>
+        <param>
+          <type>additional</type>
+          <defname>additional</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="551" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="551" bodyend="587"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1af4857f28ca2dd0393d905c6a723b80c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.selasci2</definition>
+        <argsstring>(strx, xidx, addi=&quot;&quot;)</argsstring>
+        <name>selasci2</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>xidx</type>
+          <defname>xidx</defname>
+        </param>
+        <param>
+          <type>addi</type>
+          <defname>addi</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="588" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="588" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a5b161463320558ed76d638c171e28774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.src_line</definition>
+        <argsstring>(line, cnt, srctxt, regex, boolcase, boolregex)</argsstring>
+        <name>src_line</name>
+        <param>
+          <type>line</type>
+          <defname>line</defname>
+        </param>
+        <param>
+          <type>cnt</type>
+          <defname>cnt</defname>
+        </param>
+        <param>
+          <type>srctxt</type>
+          <defname>srctxt</defname>
+        </param>
+        <param>
+          <type>regex</type>
+          <defname>regex</defname>
+        </param>
+        <param>
+          <type>boolcase</type>
+          <defname>boolcase</defname>
+        </param>
+        <param>
+          <type>boolregex</type>
+          <defname>boolregex</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="646" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="646" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1af6e5c150280b54778468f6e7517fce06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.done_sess_fc</definition>
+        <argsstring>(win, resp, fc)</argsstring>
+        <name>done_sess_fc</name>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <param>
+          <type>fc</type>
+          <defname>fc</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="698" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="698" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ac3265d227af398c0907b01f877f6dadf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.save_sess</definition>
+        <argsstring>(sesslist)</argsstring>
+        <name>save_sess</name>
+        <param>
+          <type>sesslist</type>
+          <defname>sesslist</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="726" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="726" bodyend="747"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a93e13cf76d6be9cafcd2f80d4cb4ab4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.done_sess2_fc</definition>
+        <argsstring>(win, resp, fc)</argsstring>
+        <name>done_sess2_fc</name>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <param>
+          <type>fc</type>
+          <defname>fc</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="748" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="748" bodyend="773"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ab19a9ba0dd1676a0300d2b4982ee37f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.load_sess</definition>
+        <argsstring>()</argsstring>
+        <name>load_sess</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="774" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="774" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a2ab547310665d9c1516d575fe77ecc45" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil._done_fcd</definition>
+        <argsstring>(win, resp, fc)</argsstring>
+        <name>_done_fcd</name>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <param>
+          <type>fc</type>
+          <defname>fc</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="798" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="798" bodyend="815"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a64a6c18a9c90b9db77706da62fe3b110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.getfilename</definition>
+        <argsstring>(title=&quot;Open File&quot;, save=False, oktext=&quot;OK&quot;, filter=[], parent=None)</argsstring>
+        <name>getfilename</name>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+          <defval>&quot;Open File&quot;</defval>
+        </param>
+        <param>
+          <type>save</type>
+          <defname>save</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>oktext</type>
+          <defname>oktext</defname>
+          <defval>&quot;OK&quot;</defval>
+        </param>
+        <param>
+          <type>filter</type>
+          <defname>filter</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="816" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="816" bodyend="856"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ae280a9fe3a33d7bfd7f3641ff709e41a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.ampmstr</definition>
+        <argsstring>(bb)</argsstring>
+        <name>ampmstr</name>
+        <param>
+          <type>bb</type>
+          <defname>bb</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="857" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="857" bodyend="870"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a55d30ab46f9e56085ee243766d50f4bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.randstr</definition>
+        <argsstring>(lenx)</argsstring>
+        <name>randstr</name>
+        <param>
+          <type>lenx</type>
+          <defname>lenx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="888" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="888" bodyend="897"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1aa7feccc0e6e56200e72c190dfddce86f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.randasc</definition>
+        <argsstring>(lenx)</argsstring>
+        <name>randasc</name>
+        <param>
+          <type>lenx</type>
+          <defname>lenx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="898" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="898" bodyend="907"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a07b70604a098dd1faeb367f98d608c11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.randlett</definition>
+        <argsstring>(lenx)</argsstring>
+        <name>randlett</name>
+        <param>
+          <type>lenx</type>
+          <defname>lenx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="908" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="908" bodyend="920"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a7eac954858c701000f2321d4af55a1a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.oct2int</definition>
+        <argsstring>(strx)</argsstring>
+        <name>oct2int</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="921" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="921" bodyend="933"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1aeb467175c6db4733de1495ac905fd4ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.uni</definition>
+        <argsstring>(xtab)</argsstring>
+        <name>uni</name>
+        <param>
+          <type><ref refid="namespacepyedpro_1_1pedlib_1_1pedutil_1adf11460479bc9d77d27c595935e7641b" kindref="member">xtab</ref></type>
+          <defname>xtab</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="934" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="934" bodyend="976"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1aa5192c72245640274f3b3db6da0e1386" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.is_ascii</definition>
+        <argsstring>(strx)</argsstring>
+        <name>is_ascii</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="977" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="977" bodyend="993"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a3ae2259224a0c4d61ba60ffbb0a9f2c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.kill_non_ascii</definition>
+        <argsstring>(strx)</argsstring>
+        <name>kill_non_ascii</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="994" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="994" bodyend="1014"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a1858f0bc497dbe05ed39bdc90235d8db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.unescape</definition>
+        <argsstring>(strx)</argsstring>
+        <name>unescape</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1017" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1017" bodyend="1104"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a0835194d83bd02bcc07a63d72987efb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.isTrue</definition>
+        <argsstring>(strx)</argsstring>
+        <name>isTrue</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1105" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1105" bodyend="1117"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1abf687e98369d1830d20871c61f5972d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.isfile</definition>
+        <argsstring>(fname)</argsstring>
+        <name>isfile</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1118" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1118" bodyend="1129"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a4f65111c6ffb49aff5492d43aa191dbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.logentry</definition>
+        <argsstring>(kind, startt, fname)</argsstring>
+        <name>logentry</name>
+        <param>
+          <type>kind</type>
+          <defname>kind</defname>
+        </param>
+        <param>
+          <type>startt</type>
+          <defname>startt</defname>
+        </param>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1130" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1130" bodyend="1152"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1af05638fd001573d0271186314e93298b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.timesheet</definition>
+        <argsstring>(kind, startt, endd)</argsstring>
+        <name>timesheet</name>
+        <param>
+          <type>kind</type>
+          <defname>kind</defname>
+        </param>
+        <param>
+          <type>startt</type>
+          <defname>startt</defname>
+        </param>
+        <param>
+          <type>endd</type>
+          <defname>endd</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1153" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1153" bodyend="1177"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a5b067e15cbde31ba2cf3943e31d244a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.put_debug</definition>
+        <argsstring>(xstr)</argsstring>
+        <name>put_debug</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1178" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1178" bodyend="1191"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a4c18c98f77645a678f596ccfeebdbe00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.put_exception</definition>
+        <argsstring>(xstr)</argsstring>
+        <name>put_exception</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1192" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1192" bodyend="1210"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ac1fc591ce564016f42c8af866d76c1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.put_exception2</definition>
+        <argsstring>(xstr)</argsstring>
+        <name>put_exception2</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1211" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1211" bodyend="1230"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1ac4cffb6021011c18c7a9a74cc37e7c00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.prompt_for_text</definition>
+        <argsstring>(self2, message, fill)</argsstring>
+        <name>prompt_for_text</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1231" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1231" bodyend="1284"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedutil_1a2c96a5fe1e9f58ecaad93b158f51f567" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedutil.atoi</definition>
+        <argsstring>(strx)</argsstring>
+        <name>atoi</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedutil.py" line="1348" column="1" bodyfile="pyedpro/pedlib/pedutil.py" bodystart="1348" bodyend="1358"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/pedutil.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpanglib_1_1parser_1_1Parse" kind="class" language="Python" prot="public">
+    <compoundname>panglib::parser::Parse</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpanglib_1_1parser_1_1Parse_1ae6232455826e22d838d8fd9ee8821db2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.parser.Parse::fstack</definition>
+        <argsstring></argsstring>
+        <name>fstack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="51" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1parser_1_1Parse_1a9c63580f7c137c5c8835d1859360ee48" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.parser.Parse::fsm</definition>
+        <argsstring></argsstring>
+        <name>fsm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="52" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1parser_1_1Parse_1a65a65cd8a83798e5f0bcd7e32b8f6b5a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.parser.Parse::contflag</definition>
+        <argsstring></argsstring>
+        <name>contflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="52" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1parser_1_1Parse_1a06fc475620270caaddef80ffa8da5c52" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.parser.Parse::pvg</definition>
+        <argsstring></argsstring>
+        <name>pvg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="53" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1parser_1_1Parse_1ad35b878d90998cfcf0dfe50be112ee26" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.parser.Parse::pardict</definition>
+        <argsstring></argsstring>
+        <name>pardict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="54" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1parser_1_1Parse_1a846ce519795b5ae5ee4bebfa4f7691c2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.parser.Parse::strx</definition>
+        <argsstring></argsstring>
+        <name>strx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="101" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpanglib_1_1parser_1_1Parse_1af2e0e2e63c27d61bb9f923a3834058b9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>panglib.parser.Parse::stry</definition>
+        <argsstring></argsstring>
+        <name>stry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="139" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpanglib_1_1parser_1_1Parse_1a7e62f7170650c9572bdfd3b06849acaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.parser.Parse.__init__</definition>
+        <argsstring>(self, data, xstack, pvg=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>xstack</type>
+          <defname>xstack</defname>
+        </param>
+        <param>
+          <type><ref refid="classpanglib_1_1parser_1_1Parse_1a06fc475620270caaddef80ffa8da5c52" kindref="member">pvg</ref></type>
+          <defname>pvg</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="49" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="49" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1parser_1_1Parse_1af7e4808cb109aeae7f778b7972c40731" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.parser.Parse.add_class</definition>
+        <argsstring>(self, dd, pt)</argsstring>
+        <name>add_class</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dd</type>
+          <defname>dd</defname>
+        </param>
+        <param>
+          <type>pt</type>
+          <defname>pt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="90" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1parser_1_1Parse_1ad68f26ca92a272ac22e177fd5d7026db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.parser.Parse.parse_item2</definition>
+        <argsstring>(self, data, tt)</argsstring>
+        <name>parse_item2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>tt</type>
+          <defname>tt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="97" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="97" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classpanglib_1_1parser_1_1Parse_1aae6934af9ad107404d15f30c6d055eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.parser.Parse.popstate</definition>
+        <argsstring>(self)</argsstring>
+        <name>popstate</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="138" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="138" bodyend="140"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="47" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="47" bodyend="141"/>
+    <listofallmembers>
+      <member refid="classpanglib_1_1parser_1_1Parse_1a7e62f7170650c9572bdfd3b06849acaf" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>__init__</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1af7e4808cb109aeae7f778b7972c40731" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>add_class</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1a65a65cd8a83798e5f0bcd7e32b8f6b5a" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>contflag</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1a9c63580f7c137c5c8835d1859360ee48" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>fsm</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1ae6232455826e22d838d8fd9ee8821db2" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>fstack</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1ad35b878d90998cfcf0dfe50be112ee26" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>pardict</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1ad68f26ca92a272ac22e177fd5d7026db" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>parse_item2</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1aae6934af9ad107404d15f30c6d055eaf" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>popstate</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1a06fc475620270caaddef80ffa8da5c52" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>pvg</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1a846ce519795b5ae5ee4bebfa4f7691c2" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>strx</name></member>
+      <member refid="classpanglib_1_1parser_1_1Parse_1af2e0e2e63c27d61bb9f923a3834058b9" prot="public" virt="non-virtual"><scope>panglib::parser::Parse</scope><name>stry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

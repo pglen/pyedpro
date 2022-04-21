@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1pedconfig" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::pedconfig</compoundname>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf" prot="public">pyedpro::pedlib::pedconfig::Conf</innerclass>
+    <innerclass refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Unbuffered" prot="public">pyedpro::pedlib::pedconfig::Unbuffered</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedconfig_1adbff5c57cf02d952d85d03b0c637f0db" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pyedpro::pedlib::pedconfig.config_reg</definition>
+        <argsstring></argsstring>
+        <name>config_reg</name>
+        <initializer>=  &quot;/apps/pyedpro&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedconfig.py" line="12" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedconfig_1af61c35ed62412c6305238ff1f1277315" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pyedpro::pedlib::pedconfig.inited</definition>
+        <argsstring></argsstring>
+        <name>inited</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedconfig.py" line="14" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1pedconfig_1aff73d7c0a442d637537c3d6fa3f795e7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::pedlib::pedconfig.conf</definition>
+        <argsstring></argsstring>
+        <name>conf</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedconfig.py" line="15" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedconfig_1a441e3f9bebc5967be6d65ef0467a37ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedconfig.softmake</definition>
+        <argsstring>(ddd)</argsstring>
+        <name>softmake</name>
+        <param>
+          <type>ddd</type>
+          <defname>ddd</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedconfig.py" line="75" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="75" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedconfig_1afdb225bb7cecf9b4f8b06274ab49f8ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedconfig.ensure_dirs</definition>
+        <argsstring>(conf)</argsstring>
+        <name>ensure_dirs</name>
+        <param>
+          <type><ref refid="namespacepyedpro_1_1pedlib_1_1pedconfig_1aff73d7c0a442d637537c3d6fa3f795e7" kindref="member">conf</ref></type>
+          <defname>conf</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedconfig.py" line="87" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="87" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/pedconfig.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

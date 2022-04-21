@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedlib_1_1pedbuffs" kind="namespace" language="Python">
+    <compoundname>pyedlib::pedbuffs</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedlib_1_1pedbuffs_1accea661a6f7374601506902703818ce2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedlib::pedbuffs.dialog</definition>
+        <argsstring></argsstring>
+        <name>dialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="34" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedlib_1_1pedbuffs_1a15222d617f9dcdfa78a352a2a2dd4d90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedbuffs.buffers</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>buffers</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="21" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" bodystart="21" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedbuffs_1af5a9a386eaa6e23d85dcd4188df46511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedbuffs.area_key</definition>
+        <argsstring>(area, event, dialog)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedlib_1_1pedbuffs_1accea661a6f7374601506902703818ce2" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="98" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" bodystart="98" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedbuffs_1a058129e8ee6e5267bfe1d1515c837e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedbuffs.tree_sel_row</definition>
+        <argsstring>(xtree, dialog, self2)</argsstring>
+        <name>tree_sel_row</name>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedlib_1_1pedbuffs_1accea661a6f7374601506902703818ce2" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="126" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" bodystart="126" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedbuffs_1a48bb6eece8667b1a800b1c7fc8fad1fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedbuffs.start_tree</definition>
+        <argsstring>(self, win2)</argsstring>
+        <name>start_tree</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="138" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" bodystart="138" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedbuffs_1a48a770d67fcaee684e7688b42eb3fd1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedbuffs.create_tree</definition>
+        <argsstring>(self, win2, match=False, text=None)</argsstring>
+        <name>create_tree</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>match</type>
+          <defname>match</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="156" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" bodystart="156" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedlib_1_1pedbuffs_1a552f0d3270131d9090d044156159f063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.pedbuffs.update_treestore</definition>
+        <argsstring>(self, win2, text, was)</argsstring>
+        <name>update_treestore</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>was</type>
+          <defname>was</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="183" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" bodystart="183" bodyend="270"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/pedbuffs.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

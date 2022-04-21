@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepangview" kind="namespace" language="Python">
+    <compoundname>pangview</compoundname>
+    <innerclass refid="classpangview_1_1pvg" prot="public">pangview::pvg</innerclass>
+    <innerclass refid="classpangview_1_1TextState" prot="public">pangview::TextState</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepangview_1aed4b7f39dae69a3289bc5f5d98168cb8" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pangview.STATECOL</definition>
+        <argsstring></argsstring>
+        <name>STATECOL</name>
+        <initializer>=  [parser.RED, parser.GREEN, parser.BLUE]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="374" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1ac2b7b7d7e396c7feee04928b09dd2125" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pangview.STATEFMT</definition>
+        <argsstring></argsstring>
+        <name>STATEFMT</name>
+        <initializer>=  [parser.INIT,  parser.BOLD, parser.ITALIC, parser.RED,
+            parser.GREEN, parser.BLUE, parser.BGRED, parser.BGGREEN,
+            parser.BGBLUE, parser.UL, parser.DUL, parser.STRIKE,
+            parser.SMALL, parser.NCOL, parser.NBGCOL, parser.XSMALL,
+            parser.LARGE, parser.XLARGE, parser.XXLARGE,
+            parser.SUB, parser.SUP, parser.LINK, parser.CENT,
+            parser.RIGHT, parser.WRAP, parser.FILL, parser.INDENT,
+            parser.SPANTXT, parser.FIXED, parser.MARGIN, parser.LMARGIN ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="381" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1ac8f3db851e4eb5e45e6daeb433bdbd19" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.mainview</definition>
+        <argsstring></argsstring>
+        <name>mainview</name>
+        <initializer>=  pangdisp.PangoView(<ref refid="classpangview_1_1pvg" kindref="compound">pvg</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="391" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a695f150cd0a18a389e5f52ee06f7ce1d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pangview._cummulate</definition>
+        <argsstring></argsstring>
+        <name>_cummulate</name>
+        <initializer>=  &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="395" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1afcf48319f5a865766e1ff8e041eefb43" prot="public" static="no" mutable="no">
+        <type>def</type>
+        <definition>def pangview.TXTCLASS</definition>
+        <argsstring></argsstring>
+        <name>TXTCLASS</name>
+        <initializer>=  <ref refid="namespacepangview_1a14fde283f8308d65070694e5424fe0c3" kindref="member">pl</ref>(&quot;ident&quot;), pl(&quot;eq&quot;), pl(&quot;lt&quot;), pl(&quot;str&quot;), pl(&quot;str2&quot;), \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="450" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="450" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a26d66ad189fdd73d8d9b5069a0863e5f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.ts</definition>
+        <argsstring></argsstring>
+        <name>ts</name>
+        <initializer>=  <ref refid="classpangview_1_1TextState" kindref="compound">TextState</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="454" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="454" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1ae5e5871315f1e72304ba5b7949d5c70f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.cb</definition>
+        <argsstring></argsstring>
+        <name>cb</name>
+        <initializer>=  pangfunc.CallBack(<ref refid="namespacepangview_1a26d66ad189fdd73d8d9b5069a0863e5f" kindref="member">ts</ref>, <ref refid="namespacepangview_1ac8f3db851e4eb5e45e6daeb433bdbd19" kindref="member">mainview</ref>, <ref refid="namespacepangview_1a463ca1351641e1884c6a92ffccf2b936" kindref="member">emit</ref>, <ref refid="classpangview_1_1pvg" kindref="compound">pvg</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="455" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="455" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1aefbe297cb13dd2c30c20caa47334d585" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.parsetable</definition>
+        <argsstring></argsstring>
+        <name>parsetable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="482" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="482" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a0852df9da3352f187c0f36785ddc0e78" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>pangview.opts</definition>
+        <argsstring></argsstring>
+        <name>opts</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="786" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="786" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a7514795d1df84a3391650c0bab7d254f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="788" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="788" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1adc548a4201c8dc7f9b1e33917272e1b6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.pgdebug</definition>
+        <argsstring></argsstring>
+        <name>pgdebug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="798" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="798" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a65730e481d3f82cce3abc9389122d94e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.second</definition>
+        <argsstring></argsstring>
+        <name>second</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="803" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="803" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a32091b47c6172a4b8603ad38469ef1ec" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.pane_pos</definition>
+        <argsstring></argsstring>
+        <name>pane_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="808" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="808" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1ad8b44b436637ab3023b4e61f36cf1448" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="815" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="815" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1af9e1c2313ccd0e18a4794006bdcdb580" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.show_lexer</definition>
+        <argsstring></argsstring>
+        <name>show_lexer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="816" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="816" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a057735887637332ccde8a54e56811649" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.full_screen</definition>
+        <argsstring></argsstring>
+        <name>full_screen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="817" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="817" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a537b20e54cf71f0d8f2ac344008a015c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.xfull_screen</definition>
+        <argsstring></argsstring>
+        <name>xfull_screen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="818" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="818" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1ab58ce5516f7ec44cf220a9648c50715a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.show_timing</definition>
+        <argsstring></argsstring>
+        <name>show_timing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="819" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="819" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a463ca1351641e1884c6a92ffccf2b936" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.emit</definition>
+        <argsstring></argsstring>
+        <name>emit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="820" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="820" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a5c9ff49ff424e38ab74b84a40b7a5ab4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.show_parse</definition>
+        <argsstring></argsstring>
+        <name>show_parse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="821" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="821" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1aac508b675ee286c322ae6be2df4114d7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.show_state</definition>
+        <argsstring></argsstring>
+        <name>show_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="822" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="822" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.strx</definition>
+        <argsstring></argsstring>
+        <name>strx</name>
+        <initializer>=  <ref refid="namespacepangview_1a7514795d1df84a3391650c0bab7d254f" kindref="member">args</ref>[0]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="825" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="825" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a774574f1f1c44e6e8ace889e068af713" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.lstack</definition>
+        <argsstring></argsstring>
+        <name>lstack</name>
+        <initializer>=  stack.Stack()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="829" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="829" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a9eba707f14ea57ecf4fdff7132f52823" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.fullpath</definition>
+        <argsstring></argsstring>
+        <name>fullpath</name>
+        <initializer>=  os.path.abspath(<ref refid="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" kindref="member">strx</ref>);</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="830" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="830" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1ab8f50b174c663bb7b5e01621bbe49b0e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.docroot</definition>
+        <argsstring></argsstring>
+        <name>docroot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="831" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="831" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a197d172e6de4f12a3789d511b184450b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.callback</definition>
+        <argsstring></argsstring>
+        <name>callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="838" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="838" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1a46fad97cb526ea2d6aa9bbd600b7bcdb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.bscallback</definition>
+        <argsstring></argsstring>
+        <name>bscallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="839" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="839" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepangview_1abb4dd60b84381cbe190d1a88835d579f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pangview.flag</definition>
+        <argsstring></argsstring>
+        <name>flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="846" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="846" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepangview_1af30516ae886beaf6dca11d2bb77d86ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.parse_lookup</definition>
+        <argsstring>(strx)</argsstring>
+        <name>parse_lookup</name>
+        <param>
+          <type><ref refid="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" kindref="member">strx</ref></type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="50" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1a14fde283f8308d65070694e5424fe0c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.pl</definition>
+        <argsstring>(strx)</argsstring>
+        <name>pl</name>
+        <param>
+          <type><ref refid="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" kindref="member">strx</ref></type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="63" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1a13aa3409f8f39c398170c8c4ceff8d26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.emit</definition>
+        <argsstring>(strx)</argsstring>
+        <name>emit</name>
+        <param>
+          <type><ref refid="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" kindref="member">strx</ref></type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="397" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="397" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1a56f179e1940a3e77ef525fdbb1113072" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.show_emit</definition>
+        <argsstring>()</argsstring>
+        <name>show_emit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="401" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="401" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1ab3d1a110f51601d0cddf66530a02e61c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="653" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="653" bodyend="659"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1a0d6fa238cda1800ec321df728dc68247" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.bslink</definition>
+        <argsstring>()</argsstring>
+        <name>bslink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="660" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="660" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1ad4f7fb1d15c05d432249fa5cc73da24d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.link</definition>
+        <argsstring>(strx)</argsstring>
+        <name>link</name>
+        <param>
+          <type><ref refid="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" kindref="member">strx</ref></type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="676" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="676" bodyend="690"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1a8bbe436c5f98df9096220c6eaefcd227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.message_dialog</definition>
+        <argsstring>(title, strx)</argsstring>
+        <name>message_dialog</name>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" kindref="member">strx</ref></type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="691" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="691" bodyend="701"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1ab697c5062b5ff8f58a749eb31eff9771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.showfile</definition>
+        <argsstring>(strx)</argsstring>
+        <name>showfile</name>
+        <param>
+          <type><ref refid="namespacepangview_1acc8530c958440923300e0e9fe4ff2841" kindref="member">strx</ref></type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="702" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="702" bodyend="757"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepangview_1a69a8099a31171cc5d1390befeba68195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pangview.help</definition>
+        <argsstring>()</argsstring>
+        <name>help</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="758" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="758" bodyend="781"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

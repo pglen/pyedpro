@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classdndbook_1_1GUI" kind="class" language="Python" prot="public">
+    <compoundname>dndbook::GUI</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classdndbook_1_1GUI_1a1e7abfc2f214f8a83b201b203814f0d8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dndbook.GUI::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/dndbook.py" line="10" column="1" bodyfile="pyedpro/study/dndbook.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdndbook_1_1GUI_1ac7bbd13fa35e5adea21396a5ecee9a63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def dndbook.GUI.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/dndbook.py" line="8" column="1" bodyfile="pyedpro/study/dndbook.py" bodystart="8" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classdndbook_1_1GUI_1adcdee117fa85e1cb45c52e4d8f64f82e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def dndbook.GUI.notebook_create_window</definition>
+        <argsstring>(self, notebook, widget, x, y)</argsstring>
+        <name>notebook_create_window</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>notebook</type>
+          <defname>notebook</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/dndbook.py" line="24" column="1" bodyfile="pyedpro/study/dndbook.py" bodystart="24" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classdndbook_1_1GUI_1a84fadcd2defd87ded11f1d3655eb24a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def dndbook.GUI.notebook_page_removed</definition>
+        <argsstring>(self, notebook, child, page, window)</argsstring>
+        <name>notebook_page_removed</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>notebook</type>
+          <defname>notebook</defname>
+        </param>
+        <param>
+          <type>child</type>
+          <defname>child</defname>
+        </param>
+        <param>
+          <type>page</type>
+          <defname>page</defname>
+        </param>
+        <param>
+          <type><ref refid="classdndbook_1_1GUI_1a1e7abfc2f214f8a83b201b203814f0d8" kindref="member">window</ref></type>
+          <defname>window</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/dndbook.py" line="39" column="1" bodyfile="pyedpro/study/dndbook.py" bodystart="39" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classdndbook_1_1GUI_1aa8e2cec9080b27f8fd2cdb1791deae71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def dndbook.GUI.sub_window_destroyed</definition>
+        <argsstring>(self, window, cur_notebook, dest_notebook)</argsstring>
+        <name>sub_window_destroyed</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classdndbook_1_1GUI_1a1e7abfc2f214f8a83b201b203814f0d8" kindref="member">window</ref></type>
+          <defname>window</defname>
+        </param>
+        <param>
+          <type>cur_notebook</type>
+          <defname>cur_notebook</defname>
+        </param>
+        <param>
+          <type>dest_notebook</type>
+          <defname>dest_notebook</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/study/dndbook.py" line="47" column="1" bodyfile="pyedpro/study/dndbook.py" bodystart="47" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/study/dndbook.py" line="7" column="1" bodyfile="pyedpro/study/dndbook.py" bodystart="7" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classdndbook_1_1GUI_1ac7bbd13fa35e5adea21396a5ecee9a63" prot="public" virt="non-virtual"><scope>dndbook::GUI</scope><name>__init__</name></member>
+      <member refid="classdndbook_1_1GUI_1adcdee117fa85e1cb45c52e4d8f64f82e" prot="public" virt="non-virtual"><scope>dndbook::GUI</scope><name>notebook_create_window</name></member>
+      <member refid="classdndbook_1_1GUI_1a84fadcd2defd87ded11f1d3655eb24a2" prot="public" virt="non-virtual"><scope>dndbook::GUI</scope><name>notebook_page_removed</name></member>
+      <member refid="classdndbook_1_1GUI_1aa8e2cec9080b27f8fd2cdb1791deae71" prot="public" virt="non-virtual"><scope>dndbook::GUI</scope><name>sub_window_destroyed</name></member>
+      <member refid="classdndbook_1_1GUI_1a1e7abfc2f214f8a83b201b203814f0d8" prot="public" virt="non-virtual"><scope>dndbook::GUI</scope><name>window</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

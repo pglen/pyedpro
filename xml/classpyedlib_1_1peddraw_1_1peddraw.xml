@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpyedlib_1_1peddraw_1_1peddraw" kind="class" language="Python" prot="public">
+    <compoundname>pyedlib::peddraw::peddraw</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+    <derivedcompoundref refid="classpyedlib_1_1peddoc_1_1pedDoc" prot="public" virt="non-virtual">pyedlib.peddoc.pedDoc</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a04f3601eadd1df15e0f0637522b14a5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="31" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a95414563346277f0d4688ed8b9214d48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_wiggle</definition>
+        <argsstring>(self, gcr, xx, yy, xx2, yy2)</argsstring>
+        <name>draw_wiggle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>gcr</type>
+          <defname>gcr</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>xx2</type>
+          <defname>xx2</defname>
+        </param>
+        <param>
+          <type>yy2</type>
+          <defname>yy2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="35" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="35" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a700ac02ce89341c5db95e38b7ef6b846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_line2</definition>
+        <argsstring>(self, cr, xx, yy, xx2, yy2)</argsstring>
+        <name>draw_line2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>xx2</type>
+          <defname>xx2</defname>
+        </param>
+        <param>
+          <type>yy2</type>
+          <defname>yy2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="53" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1af7edafbec52111065d0abc71f4aac077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_line</definition>
+        <argsstring>(self, cr, xx, yy, xx2, yy2)</argsstring>
+        <name>draw_line</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>xx2</type>
+          <defname>xx2</defname>
+        </param>
+        <param>
+          <type>yy2</type>
+          <defname>yy2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="58" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="58" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a9842d1c306823dbddeed9b722844d3d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_caret</definition>
+        <argsstring>(self, gcx)</argsstring>
+        <name>draw_caret</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>gcx</type>
+          <defname>gcx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="67" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="67" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a2fcfcc8b0ffc8d5c454f5a510fa7da80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_text</definition>
+        <argsstring>(self, gc, x, y, text, fg_col=None, bg_col=None)</argsstring>
+        <name>draw_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>gc</type>
+          <defname>gc</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>fg_col</type>
+          <defname>fg_col</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>bg_col</type>
+          <defname>bg_col</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="121" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="121" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a39530fda5292d8152627c6b488ea73d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_selection</definition>
+        <argsstring>(self, gc)</argsstring>
+        <name>draw_selection</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>gc</type>
+          <defname>gc</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="204" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="204" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a887a69d96c2548d5abb4c6cdf9bb6212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_syntax</definition>
+        <argsstring>(self, cr)</argsstring>
+        <name>draw_syntax</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="265" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="265" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a8f7220b1e0eefc4bfc82884ae7e8f154" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_comments</definition>
+        <argsstring>(self, cr)</argsstring>
+        <name>draw_comments</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="310" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="310" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a4658dd14866921baa75b465d1fd9115a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_spellerr</definition>
+        <argsstring>(self, cr)</argsstring>
+        <name>draw_spellerr</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="369" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="369" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="classpyedlib_1_1peddraw_1_1peddraw_1a06fc925571223ca62f55ed3e474335e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedlib.peddraw.peddraw.draw_maintext</definition>
+        <argsstring>(self, cr)</argsstring>
+        <name>draw_maintext</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="382" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="382" bodyend="439"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pyedlib.peddraw.peddraw</label>
+        <link refid="classpyedlib_1_1peddraw_1_1peddraw"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>object</label>
+      </node>
+      <node id="3">
+        <label>pyedlib.peddoc.pedDoc</label>
+        <link refid="classpyedlib_1_1peddoc_1_1pedDoc"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pyedlib.peddraw.peddraw</label>
+        <link refid="classpyedlib_1_1peddraw_1_1peddraw"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" line="29" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/peddraw.py" bodystart="29" bodyend="439"/>
+    <listofallmembers>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a04f3601eadd1df15e0f0637522b14a5b" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>__init__</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a9842d1c306823dbddeed9b722844d3d7" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_caret</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a8f7220b1e0eefc4bfc82884ae7e8f154" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_comments</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1af7edafbec52111065d0abc71f4aac077" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_line</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a700ac02ce89341c5db95e38b7ef6b846" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_line2</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a06fc925571223ca62f55ed3e474335e3" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_maintext</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a39530fda5292d8152627c6b488ea73d4" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_selection</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a4658dd14866921baa75b465d1fd9115a" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_spellerr</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a887a69d96c2548d5abb4c6cdf9bb6212" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_syntax</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a2fcfcc8b0ffc8d5c454f5a510fa7da80" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_text</name></member>
+      <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a95414563346277f0d4688ed8b9214d48" prot="public" virt="non-virtual"><scope>pyedlib::peddraw::peddraw</scope><name>draw_wiggle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

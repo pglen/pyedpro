@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepanglib_1_1pangdisp" kind="namespace" language="Python">
+    <compoundname>panglib::pangdisp</compoundname>
+    <innerclass refid="classpanglib_1_1pangdisp_1_1PangoView" prot="public">panglib::pangdisp::PangoView</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepanglib_1_1pangdisp_1a576e81b3b98158b8d29e55b0fc5c6a96" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list panglib::pangdisp.xpm_data</definition>
+        <argsstring></argsstring>
+        <name>xpm_data</name>
+        <initializer>=  [
+&quot;16 16 3 1&quot;,
+&quot;       c None&quot;,
+&quot;.      c #000000000000&quot;,
+&quot;X      c #FFFFFFFFFFFF&quot;,
+&quot;                &quot;,
+&quot;   ......       &quot;,
+&quot;   .XXX.X.      &quot;,
+&quot;   .XXX.XX.     &quot;,
+&quot;   .XXX.XXX.    &quot;,
+&quot;   .XXX.....    &quot;,
+&quot;   ..XXXXX..    &quot;,
+&quot;   .X.XXX.X.    &quot;,
+&quot;   .XX.X.XX.    &quot;,
+&quot;   .XXX.XXX.    &quot;,
+&quot;   .XX.X.XX.    &quot;,
+&quot;   .X.XXX.X.    &quot;,
+&quot;   ..XXXXX..    &quot;,
+&quot;   .........    &quot;,
+&quot;                &quot;,
+&quot;                &quot;
+]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="16" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepanglib_1_1pangdisp_1a732a687dc15a0c9045e72ca4c0053adf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def panglib.pangdisp.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="426" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" bodystart="426" bodyend="429"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangdisp.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
