@@ -34,20 +34,22 @@ Some asyn functions like the function updater is disabled, but it can be done
 manually. (right click on doc -> rescan) All in all the Mac's PyGobject is not worth
 the time, stopped all Mac M1 related efforts.
 
-### New:
+### New:     (this is extracted, use git log for up-to-date information)
 
+    Thu 21.Apr.2022 -- release issued
     Wed 16.Mar.2022 -- dialog for read only file, export notes lots of others
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - No more mac support
     Tue 30.Mar.2021 -- added windows installation executable
     Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
 
-Added drag / drop source / target. New keystroke combo for keyboards
- without home / pgup etc ...
+Partial list, some highlights;
 
-Implemented html preview. Just right click on the file body, an select the
-corresponding menu item.
-Implemented markdown preview. Right click ...
+Added drag / drop source / target. New keystroke combo for keyboards
+ without home / pgup etc ... Implemented html preview. Just right click on
+the file body, an select the corresponding menu item.
+
+Implemented markdown preview. Right click ... menu
 Implemented M4 preview. The files are pulled in from the current directory,
 and expanded with the m4 macro processor. The results than are previewed
 in an html window. (Yes, head and footer are now one file for the whole site,
@@ -104,14 +106,17 @@ log window. (Menu->Windows->Show_Log) To install cairo type 'sudo apt install ca
   See KEYS file for the list of keyboard shortcuts or press F3 in the
 editor or look at the file in pyedlib/KEYS.
 
- If you highlite a word, and press F2, devhelp will open with the string highlited. Naturally,
-devhelp needs to be installed.
+If you highlight a word, and press F2, Zeal will open with the item searched and
+ highlighted. Shift F2 will open Devhelp. This is what I use to see the API of PyGobj.
+F1 will call up the pyedpro help screen. Shift F1 will open DevDocs.  Naturally,
+Devdocs/Devhelp/Zeal etc . needs to be installed for this to function.
+
 
   On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
-(to see the caller and the callee) These panes can be hidden with the mouse by
+(to see the caller and the callee at once) These panes can be hidden with the mouse by
 dragging on their handle, or by the key combination Alt-Q (Shift-Alt-Q for
-the left pane)
+the left pane) The first file window's settings are saved for the next startup.
 
   PyEdPro remembers a lot about the editing session. Loaded files, cursor positions,
 fonts, font size, colors, search strings, goto numbers, undo / redo info,
