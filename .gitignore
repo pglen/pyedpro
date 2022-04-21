@@ -12,7 +12,7 @@ AppDir/
 build/
 develop-eggs/
 dist/
-*.whl
+#*.whl
 downloads/
 eggs/
 .eggs/
