@@ -2143,7 +2143,7 @@ class ActHand:
 
         #print("Checking file", self2.ext)
 
-        if self2.ext == ".php":
+        if self2.ext == ".php" or  self2.ext == ".inc":
             #print("Checking PHP file")
             try:
                 comline = ["php", "-l", tempfile,]

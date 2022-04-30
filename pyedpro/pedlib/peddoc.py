@@ -1106,6 +1106,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if old != -1:
             self.invalidate()
 
+    # This is fooled by non extension items
+    def is_c_like(self):
+        exts = [ ".js",  ".c",  ".h",  ".php", ".js"]
+        for aa in exts:
+            if aa in self.fname:
+                return True
+        return False
 
     def walk_func(self):
         #print( "walk func")
@@ -1115,8 +1122,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             sline = self.caret[1] + int(self.ypos)
             sline = max(sline, 0); sline = min(sline, len(self.text))
             #print( "Start point", sline, self.text[sline])
+
             # Walk back to last function
-            if ".c" in self.fname or ".h" in self.fname or ".php" in self.fname:
+            if is_c_like():
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(ckeywords)
