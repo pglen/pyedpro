@@ -2,8 +2,8 @@ var searchData=
 [
   ['pangdisp_2epy_0',['pangdisp.py',['../panglib_2pangdisp_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2pangdisp_8py.html',1,'(Global Namespace)']]],
   ['pangfunc_2epy_1',['pangfunc.py',['../panglib_2pangfunc_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2pangfunc_8py.html',1,'(Global Namespace)']]],
-  ['pangview_2epy_2',['pangview.py',['../pangview_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2bin_2pangview_8py.html',1,'(Global Namespace)']]],
-  ['parser_2epy_3',['parser.py',['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2parser_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2parser_8py.html',1,'(Global Namespace)'],['../panglib_2parser_8py.html',1,'(Global Namespace)'],['../parser_8py.html',1,'(Global Namespace)'],['../pedlib_2parser_8py.html',1,'(Global Namespace)']]],
+  ['pangview_2epy_2',['pangview.py',['../debian_2pyedpro_8py_2usr_2bin_2pangview_8py.html',1,'(Global Namespace)'],['../pangview_8py.html',1,'(Global Namespace)']]],
+  ['parser_2epy_3',['parser.py',['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2parser_8py.html',1,'(Global Namespace)'],['../panglib_2parser_8py.html',1,'(Global Namespace)'],['../parser_8py.html',1,'(Global Namespace)'],['../pedlib_2parser_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2parser_8py.html',1,'(Global Namespace)']]],
   ['pedbuffs_2epy_4',['pedbuffs.py',['../pedlib_2pedbuffs_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2pedbuffs_8py.html',1,'(Global Namespace)']]],
   ['pedcal_2epy_5',['pedcal.py',['../pedcal_8py.html',1,'']]],
   ['pedcanv_2epy_6',['pedcanv.py',['../pedcanv_8py.html',1,'']]],
