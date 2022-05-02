@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['acthand_2epy_0',['acthand.py',['../debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2acthand_8py.html',1,'(Global Namespace)'],['../pedlib_2acthand_8py.html',1,'(Global Namespace)']]]
+  ['acthand_2epy_0',['acthand.py',['../acthand_8py.html',1,'']]]
 ];

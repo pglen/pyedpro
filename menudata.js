@@ -189,14 +189,14 @@ var menudata={children:[
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"$",url:"globals.html#index__24"},
-{text:"a",url:"globals_a.html#index_a"},
-{text:"b",url:"globals_b.html#index_b"},
-{text:"g",url:"globals_g.html#index_g"},
-{text:"h",url:"globals_h.html#index_h"},
-{text:"t",url:"globals_t.html#index_t"}]},
+{text:"a",url:"globals.html#index_a"},
+{text:"b",url:"globals.html#index_b"},
+{text:"g",url:"globals.html#index_g"},
+{text:"h",url:"globals.html#index_h"},
+{text:"t",url:"globals.html#index_t"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html",children:[
 {text:"$",url:"globals_vars.html#index__24"},
-{text:"b",url:"globals_vars_b.html#index_b"},
-{text:"g",url:"globals_vars_g.html#index_g"}]},
+{text:"b",url:"globals_vars.html#index_b"},
+{text:"g",url:"globals_vars.html#index_g"}]},
 {text:"Macros",url:"globals_defs.html"}]}]}]}
