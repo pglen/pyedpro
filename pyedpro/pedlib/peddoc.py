@@ -1124,7 +1124,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             #print( "Start point", sline, self.text[sline])
 
             # Walk back to last function
-            if is_c_like():
+            if self.is_c_like():
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(ckeywords)

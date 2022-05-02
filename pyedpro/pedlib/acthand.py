@@ -2212,6 +2212,48 @@ class ActHand:
                 self2.mained.update_statusbar("Syntax OK.")
             finally:
                 pass
+
+        elif self2.ext == ".js":
+
+            tempfile2 = "tmp.js"
+            os.rename(tempfile, tempfile2)
+            tempfile = tempfile2
+
+            print("Checking JS file")
+            try:
+                comline = ["node", "--check", tempfile2,]
+                try:
+                    ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+                except:
+                    print("Cannot check %s" % str(comline), sys.exc_info())
+                    pedync.message("\n   Cannot check %s \n\n"  % str(comline) +
+                               str(sys.exc_info()) )
+                    return
+                try:
+                    outs, errs = ret.communicate()
+                except:
+                    print("Cannot communicate with %s" % str(comline), sys.exc_info())
+                    return
+
+            except:
+                print("Cannot execute %s" % str(comline), sys.exc_info())
+                pass
+
+            #print("outs", outs, "errs", errs)
+
+            if errs == b"":
+                pedync.message("\n  JS Syntax OK   \n")
+                self2.mained.update_statusbar("Syntax OK.")
+            else:
+                serr = str(errs)
+                idx = serr.find("line ")
+                if idx:
+                    #print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
+                    self2.gotoxy(10, atoi(serr[idx + 5:]) - 1)
+
+                print("Error on compile: '", serr, "'")
+                pedync.message("    " + serr + "    ")
+
         else:
             self2.mained.update_statusbar("No Syntax check for this kind of file.")
 
