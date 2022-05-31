@@ -27,7 +27,7 @@ var searchData=
   ['letternumbersel_24',['LetterNumberSel',['../classpyedpro_1_1pycommon_1_1pgsimp_1_1LetterNumberSel.html',1,'pyedpro::pycommon::pgsimp']]],
   ['leven_2epy_25',['leven.py',['../leven_8py.html',1,'']]],
   ['lexer_26',['Lexer',['../classpyedpro_1_1lexer_1_1Lexer.html',1,'pyedpro.lexer.Lexer'],['../classpyedpro_1_1panglib_1_1lexer_1_1Lexer.html',1,'pyedpro.panglib.lexer.Lexer'],['../classpyedpro_1_1pedlib_1_1lexer_1_1Lexer.html',1,'pyedpro.pedlib.lexer.Lexer']]],
-  ['lexer_2epy_27',['lexer.py',['../lexer_8py.html',1,'(Global Namespace)'],['../panglib_2lexer_8py.html',1,'(Global Namespace)'],['../pedlib_2lexer_8py.html',1,'(Global Namespace)']]],
+  ['lexer_2epy_27',['lexer.py',['../lexer_8py.html',1,'(Global Namespace)'],['../pedlib_2lexer_8py.html',1,'(Global Namespace)'],['../panglib_2lexer_8py.html',1,'(Global Namespace)']]],
   ['lexiter_28',['lexiter',['../classpyedpro_1_1pedlib_1_1lexer_1_1__LexIter.html#a7b97744fb15f57ab2d840efaf8442ea5',1,'pyedpro.pedlib.lexer._LexIter.lexiter()'],['../classpyedpro_1_1panglib_1_1lexer_1_1__LexIter.html#ab05ef8ab0b68b35e9c771b517ca12df0',1,'pyedpro.panglib.lexer._LexIter.lexiter()'],['../classpyedpro_1_1lexer_1_1__LexIter.html#abc01b12281f1e33ac486467342cc60f4',1,'pyedpro.lexer._LexIter.lexiter()']]],
   ['lights_29',['Lights',['../classpyedpro_1_1pycommon_1_1pggui_1_1Lights.html',1,'pyedpro::pycommon::pggui']]],
   ['limit_30',['limit',['../classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox.html#ab7f41fdeffc6afdc0186be962e88d4e4',1,'pyedpro.pycommon.pgbox.ListBox.limit()'],['../classpyedpro_1_1pycommon_1_1pggui_1_1ListBox.html#ab265a6d22e388189d15d5487e7a515ce',1,'pyedpro.pycommon.pggui.ListBox.limit()']]],

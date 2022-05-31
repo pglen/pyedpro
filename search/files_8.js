@@ -47,6 +47,6 @@ var searchData=
   ['pgwkit_2epy_44',['pgwkit.py',['../pgwkit_8py.html',1,'']]],
   ['png_5fview_2epy_45',['png_view.py',['../png__view_8py.html',1,'']]],
   ['popnew_2epy_46',['popnew.py',['../popnew_8py.html',1,'']]],
-  ['pyedpro_2epy_47',['pyedpro.py',['../debian_2pyedpro_8py_2usr_2bin_2pyedpro_8py.html',1,'(Global Namespace)'],['../pyedpro_8py.html',1,'(Global Namespace)']]],
+  ['pyedpro_2epy_47',['pyedpro.py',['../pyedpro_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2bin_2pyedpro_8py.html',1,'(Global Namespace)']]],
   ['pypacker_2epy_48',['pypacker.py',['../pypacker_8py.html',1,'']]]
 ];
