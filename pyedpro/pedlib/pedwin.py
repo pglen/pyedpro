@@ -2121,11 +2121,15 @@ def  initial_load(self2, arg):
 
     #self2 =  pedconfig.conf.pedwin
 
-    if os.getuid() == 0:
-        ret = pedync.yes_no_cancel("Root user detected", "This program was not meant to run as root.\n"
-                                "\nPress Yes to run anyway, No to quit.", False)
-        if ret == Gtk.ResponseType.NO:
-            sys.exit()
+    try:
+        if os.getuid() == 0:
+            ret = pedync.yes_no_cancel("Root user detected", "This program was not meant to run as root.\n"
+                                    "\nPress Yes to run anyway, No to quit.", False)
+            if ret == Gtk.ResponseType.NO:
+                sys.exit()
+    except:
+        pass
+
     try:
         #print( 'Signal handler called with signal')
         #print( pedconfig.conf.idle, pedconfig.conf.syncidle)
