@@ -2,8 +2,8 @@ var searchData=
 [
   ['pangdisp_2epy_0',['pangdisp.py',['../pangdisp_8py.html',1,'']]],
   ['pangfunc_2epy_1',['pangfunc.py',['../pangfunc_8py.html',1,'']]],
-  ['pangview_2epy_2',['pangview.py',['../debian_2pyedpro_8py_2usr_2bin_2pangview_8py.html',1,'(Global Namespace)'],['../pangview_8py.html',1,'(Global Namespace)']]],
-  ['parser_2epy_3',['parser.py',['../parser_8py.html',1,'(Global Namespace)'],['../pedlib_2parser_8py.html',1,'(Global Namespace)'],['../panglib_2parser_8py.html',1,'(Global Namespace)']]],
+  ['pangview_2epy_2',['pangview.py',['../pangview_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2bin_2pangview_8py.html',1,'(Global Namespace)']]],
+  ['parser_2epy_3',['parser.py',['../panglib_2parser_8py.html',1,'(Global Namespace)'],['../parser_8py.html',1,'(Global Namespace)'],['../pedlib_2parser_8py.html',1,'(Global Namespace)']]],
   ['pedbuffs_2epy_4',['pedbuffs.py',['../pedbuffs_8py.html',1,'']]],
   ['pedcal_2epy_5',['pedcal.py',['../pedcal_8py.html',1,'']]],
   ['pedcanv_2epy_6',['pedcanv.py',['../pedcanv_8py.html',1,'']]],
@@ -45,8 +45,9 @@ var searchData=
   ['pgsimp_2epy_42',['pgsimp.py',['../pgsimp_8py.html',1,'']]],
   ['pgutils_2epy_43',['pgutils.py',['../pgutils_8py.html',1,'']]],
   ['pgwkit_2epy_44',['pgwkit.py',['../pgwkit_8py.html',1,'']]],
-  ['png_5fview_2epy_45',['png_view.py',['../png__view_8py.html',1,'']]],
-  ['popnew_2epy_46',['popnew.py',['../popnew_8py.html',1,'']]],
-  ['pyedpro_2epy_47',['pyedpro.py',['../pyedpro_8py.html',1,'(Global Namespace)'],['../debian_2pyedpro_8py_2usr_2bin_2pyedpro_8py.html',1,'(Global Namespace)']]],
-  ['pypacker_2epy_48',['pypacker.py',['../pypacker_8py.html',1,'']]]
+  ['phy_2epy_45',['phy.py',['../phy_8py.html',1,'']]],
+  ['png_5fview_2epy_46',['png_view.py',['../png__view_8py.html',1,'']]],
+  ['popnew_2epy_47',['popnew.py',['../popnew_8py.html',1,'']]],
+  ['pyedpro_2epy_48',['pyedpro.py',['../debian_2pyedpro_8py_2usr_2bin_2pyedpro_8py.html',1,'(Global Namespace)'],['../pyedpro_8py.html',1,'(Global Namespace)']]],
+  ['pypacker_2epy_49',['pypacker.py',['../pypacker_8py.html',1,'']]]
 ];

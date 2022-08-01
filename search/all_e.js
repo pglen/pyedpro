@@ -2,8 +2,8 @@ var searchData=
 [
   ['name_0',['name',['../namespacesetup.html#ab3a7a0638d76a01367c5bc3cc699447f',1,'setup.name()'],['../namespacepyedpro_1_1setup3.html#aa18dae21336ff848f729deffb9d46990',1,'pyedpro.setup3.name()'],['../namespacepyedpro_1_1setup.html#a1855c88342c764e907ad71b10b86476e',1,'pyedpro.setup.name()']]],
   ['names_1',['names',['../classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow.html#a2cb66284d1a283de2514902f3bffe30e',1,'pyedpro::pedlib::pedwin::EdMainWindow']]],
-  ['nbgcol_2',['Nbgcol',['../classpyedpro_1_1panglib_1_1pangfunc_1_1CallBack.html#a3b4b280a8e8dde24ff6e108dbc3c2bf2',1,'pyedpro::panglib::pangfunc::CallBack']]],
-  ['nbgcol_3',['NBGCOL',['../classpangview_1_1pvg.html#a072ad792a7f80e0b1c1a9fd3961c01ca',1,'pangview.pvg.NBGCOL()'],['../classpyedpro_1_1pangview_1_1pvg.html#a99db8f307e2ffcd727f1c0b46a59208b',1,'pyedpro.pangview.pvg.NBGCOL()']]],
+  ['nbgcol_2',['NBGCOL',['../classpangview_1_1pvg.html#a072ad792a7f80e0b1c1a9fd3961c01ca',1,'pangview.pvg.NBGCOL()'],['../classpyedpro_1_1pangview_1_1pvg.html#a99db8f307e2ffcd727f1c0b46a59208b',1,'pyedpro.pangview.pvg.NBGCOL()']]],
+  ['nbgcol_3',['Nbgcol',['../classpyedpro_1_1panglib_1_1pangfunc_1_1CallBack.html#a3b4b280a8e8dde24ff6e108dbc3c2bf2',1,'pyedpro::panglib::pangfunc::CallBack']]],
   ['ncol_4',['Ncol',['../classpyedpro_1_1panglib_1_1pangfunc_1_1CallBack.html#a1f5a76683813823a51d6d9fa791b7b04',1,'pyedpro::panglib::pangfunc::CallBack']]],
   ['ncol_5',['NCOL',['../classpangview_1_1pvg.html#ab6b17d66d7000a2d0beb7f6f166b9a2d',1,'pangview.pvg.NCOL()'],['../classpyedpro_1_1pangview_1_1pvg.html#a983f7750c6c0f7a215cdfb9b2e008248',1,'pyedpro.pangview.pvg.NCOL()']]],
   ['ncol2_6',['Ncol2',['../classpyedpro_1_1panglib_1_1pangfunc_1_1CallBack.html#a246b44ff576ccd7a0f8ca5ca122078bd',1,'pyedpro::panglib::pangfunc::CallBack']]],

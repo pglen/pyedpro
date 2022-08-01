@@ -2,7 +2,7 @@ var searchData=
 [
   ['test_2ec_0',['test.c',['../test_8c.html',1,'(Global Namespace)'],['../data_2test_8c.html',1,'(Global Namespace)']]],
   ['test_2ephp_1',['test.php',['../pedlib_2test_8php.html',1,'(Global Namespace)'],['../test_8php.html',1,'(Global Namespace)']]],
-  ['test_2epy_2',['test.py',['../pedlib_2data_2test_8py.html',1,'(Global Namespace)'],['../pedlib_2test_8py.html',1,'(Global Namespace)'],['../study_2test_8py.html',1,'(Global Namespace)']]],
+  ['test_2epy_2',['test.py',['../pedlib_2test_8py.html',1,'(Global Namespace)'],['../study_2test_8py.html',1,'(Global Namespace)'],['../pedlib_2data_2test_8py.html',1,'(Global Namespace)']]],
   ['testapp_2epy_3',['testapp.py',['../testapp_8py.html',1,'']]],
   ['testdiff_2epy_4',['testdiff.py',['../testdiff_8py.html',1,'']]],
   ['testgi_2epy_5',['testgi.py',['../testgi_8py.html',1,'']]],
