@@ -240,6 +240,19 @@ class KeyHand:
 
             [Gdk.KEY_r, self.acth.ctrl_alt_r],
             [Gdk.KEY_R, self.acth.ctrl_alt_r],
+            [Gdk.KEY_v, self.acth.ctrl_alt_v],
+            [Gdk.KEY_V, self.acth.ctrl_alt_v],
+
+            [Gdk.KEY_1, self.acth.ctrl_alt_num],
+            [Gdk.KEY_2, self.acth.ctrl_alt_num],
+            [Gdk.KEY_3, self.acth.ctrl_alt_num],
+            [Gdk.KEY_4, self.acth.ctrl_alt_num],
+            [Gdk.KEY_5, self.acth.ctrl_alt_num],
+            [Gdk.KEY_6, self.acth.ctrl_alt_num],
+            [Gdk.KEY_7, self.acth.ctrl_alt_num],
+            [Gdk.KEY_8, self.acth.ctrl_alt_num],
+            [Gdk.KEY_9, self.acth.ctrl_alt_num],
+            [Gdk.KEY_0, self.acth.ctrl_alt_num],
         ]
 
         # Separate keytab on alt for easy customization.
@@ -558,6 +571,7 @@ class KeyHand:
             for kk, func in xtab:
                 if event.keyval == kk:
                     gotkey = True
+                    self2.lastkey = kk
                     func(self2)
                     break
             # No key assignment found, assume char
@@ -590,4 +604,3 @@ class KeyHand:
         return ret
 
 # EOF
-

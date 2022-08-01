@@ -65,7 +65,7 @@ last_scanned = None
 # Colors for the text, configure the defaults here
 
 FGCOLOR     = "#000000"
-FGCOLORRO   = "#222222"
+FGCOLORRO   = "#888888"
 RFGCOLOR    = "#fefefe"
 BGCOLOR     = "#fefefe"
 RBGCOLOR    = "#aaaaff"
@@ -74,6 +74,7 @@ KWCOLOR     = "#88aaff"
 CLCOLOR     = "#880000"
 COCOLOR     = "#4444ff"
 STCOLOR     = "#ee44ee"
+STRIPCOLOR  = "#eeeeee"
 
 CARCOLOR = "#4455dd"
 
@@ -97,8 +98,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.keyh = pedconfig.conf.keyh
         self.acth = pedconfig.conf.acth
 
+        self.lastkey = ' '
         self.second = False
-
+        self.strip = 50
         # Init vars
         self.xpos = 0; self.ypos = 0
         self.changed = False
@@ -175,6 +177,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.CLCOLOR    = CLCOLOR
         self.COCOLOR    = COCOLOR
         self.STCOLOR    = STCOLOR
+        self.STRIPCOLOR = STRIPCOLOR
+
         self.drag = False
         self.text_fillcol = 40
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
@@ -382,6 +386,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.fgcolor  = pedcolor.str2float(ccc)
         #print( "fgcol", self.fgcolor, ccc)
 
+        ccc = pedconfig.conf.sql.get_str("fgcolorro")
+        if ccc == "":
+            self.fgcolorro  = pedcolor.str2float(FGCOLORRO)
+        else:
+            self.fgcolorro  = pedcolor.str2float(ccc)
+        #print( "fgcolro", self.fgcolorro, ccc)
+
         ccc = pedconfig.conf.sql.get_str("rbgcolor")
         if ccc == "":
             self.rbgcolor = pedcolor.str2float(RBGCOLOR)
@@ -402,6 +413,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         else:
             self.cbgcolor = pedcolor.str2float(ccc)
         #print( "cbgcolor", self.cbgcolor, ccc)
+
+        self.stripcolor = pedcolor.str2float(STRIPCOLOR)
 
         ccc = pedconfig.conf.sql.get_str("kwcolor")
         if ccc == "":
@@ -467,6 +480,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         '''if ts != None:
             al, self.tabstop = ts.get_tab(1)
         self.tabstop /= self.cxx * Pango.SCALE'''
+
+        # Also set stip offset
+        self.strip = 4 * self.cxx + 8
 
     def  set_maxlinelen(self, mlen = -1, ignore = True):
         if mlen == -1: self.calc_maxline()
@@ -649,6 +665,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         cr.rectangle( 0, 0, self.www, self.hhh)
         cr.fill()
 
+        cr.set_source_rgba(*list(self.stripcolor))
+        cr.rectangle( 0, 0, self.strip - 2, self.hhh)
+        cr.fill()
+
         pedplug.predraw(self, cr)
 
         # Pre set for drawing
@@ -687,7 +707,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         #if pedconfig.conf.pgdebug > 5:
         #    print( "Button press  ", self, event.type, " x=", event.x, " y=", event.y)
 
-        event.x = int(event.x)
+        event.x = int(event.x) - self.strip
         event.y = int(event.y)
 
         if  event.type == Gdk.EventType.BUTTON_PRESS:
@@ -859,7 +879,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.xsel2 = xesel;  self.ysel2 = yesel
 
     def pix2xpos(self, xx):
-        return int(self.xpos + xx / self.cxx)
+        return int(self.xpos + (xx-self.strip) / self.cxx)
 
     def pix2ypos(self, yy):
         return int(self.ypos + yy / self.cyy)
@@ -925,7 +945,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     def gotoxy(self, xx, yy, sel = None, mid = False):
 
         #print ("gotoxy", xx, yy)
-
+        #xx +=  30
         # Contain
         ylen = len(self.text)
         xx2 = max(xx, 0);  yy2 = max(yy, 0)
@@ -1116,6 +1136,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def walk_func(self):
         #print( "walk func")
+
         # ts2 ---------------------------------------------------
         sumw2 = []
         if self.text:
@@ -2457,9 +2478,11 @@ def run_async_time(win, arg):
     if not win.text:
         return
 
+    #print("lname", lname[-2:])
+
     # Added flex and yacc
-    if ".c" in lname or ".h" in lname or ".y" in lname or ".f" in lname or \
-        ".php" in lname:
+    if ".c" in lname[-2:] or ".h" in lname[-2:] or ".y" \
+        in lname[-2:] or ".f" in lname[-2:] or ".php" in lname[:-4]:
         try:
             regex = re.compile(ckeywords)
             for line in win.text:
@@ -2471,7 +2494,7 @@ def run_async_time(win, arg):
             print("Exception in c func handler", sys.exc_info())
             pass
 
-    elif ".py" in lname:
+    elif ".py" in lname[-3:]:
         try:
             regex = re.compile(pykeywords2)
             for line in win.text:
@@ -2482,7 +2505,19 @@ def run_async_time(win, arg):
         except:
             print("Exception in py func handler", sys.exc_info())
             pass
-    elif ".bas" in lname:
+    elif ".html" in lname[-5:]:
+        print("html file")
+        try:
+            regex = re.compile(htmlkeywords)
+            for line in win.text:
+                res = regex.search(line)
+                if res:
+                    #print( res, res.start(), res.end())
+                    sumw.append(line)
+        except:
+            print("Exception in py func handler", sys.exc_info())
+            pass
+    elif ".bas" in lname[-4:]:
         try:
             regex = re.compile(basekeywords)
             for line in win.text:
@@ -2493,7 +2528,7 @@ def run_async_time(win, arg):
         except:
             print("Exception in func extraction handler", sys.exc_info())
             pass
-    elif ".s" in lname or ".asm" in lname:
+    elif ".s" in lname[-2:] or ".asm" in lname[-4:]:
         try:
             regex = re.compile(Skeywords)
             for line in win.text:
@@ -2504,7 +2539,7 @@ def run_async_time(win, arg):
         except:
             print("Exception in func extraction handler", sys.exc_info())
             pass
-    elif ".txt" in lname:
+    elif ".txt" in lname[-4:]:
         pass
     else:            # Default to 'C' like syntax
         try:

@@ -2016,6 +2016,7 @@ def     OnExit(arg, arg2, prompt = True):
     # Nope, done here
     if exiting:
         return
+
     exiting = True
     arg.set_title("Exiting ...")
     #print("Exit called")
