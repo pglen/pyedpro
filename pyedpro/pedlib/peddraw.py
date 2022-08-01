@@ -36,6 +36,9 @@ class peddraw(object):
 
         gcr.set_line_width(1)
 
+        xx += self.strip
+        xx2 += self.strip
+
         # The  wiggle took too much processing power .... just a line
         #self.draw_line(gcr, xx, yy, xx2, yy2)
 
@@ -86,6 +89,8 @@ class peddraw(object):
 
         ch = 3 * self.cyy / 3; cw = 3 * self.cxx / 4
 
+        xx +=  self.strip
+
         # Order: Top, left right, buttom
         if self.focus:
             # Flash cursor
@@ -123,7 +128,7 @@ class peddraw(object):
     def draw_text(self, gc, x, y, text, fg_col = None, bg_col = None):
 
         #print( "draw_text, ",  self.xpos, x, y)
-
+        x +=  self.strip
         if self.hex:
             text2 = ""
             for aa in text:
@@ -419,7 +424,10 @@ class peddraw(object):
 
             #print( "'" + text3 + "'")
             text4 = text3[self.xpos:]
-            dx, dy = self.draw_text(cr, xx, yy, text4)
+            dx, dy = self.draw_text(cr, xx, yy, text4, self.fgcolor)
+
+            self.draw_text(cr, -self.strip + 2, yy, "%d" % cnt, self.fgcolorro)
+
             cnt += 1
             #yy += dy
             yy += self.cyy

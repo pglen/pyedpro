@@ -716,7 +716,7 @@ class ActHand:
         #print("extx", extx)
 
         cumm = self._getsel(self2)
-        strx = ""
+        strx = ""; strx2 = ""
         if cumm:
             self.ctrl_c(self2)
             # This will catch all known varieties, else .py assumed
@@ -726,19 +726,25 @@ class ActHand:
             elif extx == ".asm" or extx == ".inc" or extx == ".S":
                 strx  = "%if 0\n"
                 strx2 = "%endif\n"
+            elif extx == ".htm" or extx == ".html":
+                print("html comment")
+                strx  = "<!-- "
+                strx2 = " -->"
             else:
                 strx  = "''' "
                 strx2 = "''' "
 
             self.add_str(self2, strx)
-            if strx2 != "":
-                self.ctrl_v(self2)
+            #if strx2 != "":
+            self.ctrl_v(self2)
             self.add_str(self2, strx2)
         else:
             if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
                 strx  = "//"
             elif extx == ".asm" or extx == ".inc" or extx == ".S":
                 strx  = ";"
+            elif extx == ".htm" or extx == ".html":
+                strx  = "<!--  -->"
             else:
                 strx  = "#"
             self.add_str(self2, strx)
@@ -749,6 +755,11 @@ class ActHand:
         self2.set_caret(xidx, yidx)
         self2.mained.update_statusbar("Selection commented out.")
         self2.invalidate()
+
+    def ctrl_alt_num(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - ALT - NUM", self2.lastkey)
+
 
     #// Start termnal
     def ctrl_alt_d(self, self2):
@@ -830,7 +841,11 @@ class ActHand:
             print("No TTS", sys.exc_info())
             self2.mained.update_statusbar("No TTS installed")
 
-     # --------------------------------------------------------------------
+    def ctrl_alt_v(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - ALT - V ")
+
+    # --------------------------------------------------------------------
 
     def ctrl_a(self, self2):
         if pedconfig.conf.pgdebug > 9:

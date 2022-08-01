@@ -20,17 +20,19 @@ keywords =  ("def ", "import ", "from ", "for ", "while ", " len(",
             " any(", " all(", " min(", " max(",  " map(", " print ",
             " open(", " in ", " break ", "[]", "()", "{}", " pass", "pass ",
             "True", " False", "True;", "False;",
-            "true", "false", "global ", "else:", "continue", "None")
+            "true", "false", "global ", "else:", "continue", "None", "<tr ", "<tr>",
+            "<td ", "<td>" )
 
 # Keywords for class related enrties:
-clwords =  "class ", " self.", "try:", "except", "finally"
+clwords =  "class ", " self.", "try:", "except", "finally", "table ", "/table",
 
 # Keywords for summary extraction: (left side window)
 pykeywords = "class ", "def ", "TODO "
 basekeywords = "(sub )|(SUB )"
 Skeywords = "(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)"
-pykeywords2 = "(class )|(def )|(TODO )|(__main__)"
+pykeywords2 = "(class )|(def )|(TODO )|(__main__)|(_mac_)"
 sumkeywords = "class ", "def ", "TODO "
+htmlkeywords = "(\{ .* \})"
 
 ckeywords =  "^[_a-zA-Z].*\(.*\)"
 localkwords = "(int .*)|(char .*)|(for)|(while)|(if)|(return)"
