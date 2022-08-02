@@ -218,6 +218,11 @@ def create_action_group(self):
         "Undo last Edit",
          self.activate_action ),
 
+       ( "TogStrip", Gtk.STOCK_UNDO,
+        "_Toggle Line No. Strip  ", "",
+        "Toggle line number stip",
+         self.activate_action ),
+
       ( "Redo", Gtk.STOCK_REDO,
         "_Redo  \t\tCtrl-Y", "",
         "Redo last Undo",

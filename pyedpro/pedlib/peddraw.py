@@ -426,7 +426,8 @@ class peddraw(object):
             text4 = text3[self.xpos:]
             dx, dy = self.draw_text(cr, xx, yy, text4, self.fgcolor)
 
-            self.draw_text(cr, -self.strip + 2, yy, "%d" % cnt, self.fgcolorro)
+            if self.strip:
+                self.draw_text(cr, -self.strip + 2, yy, "%d" % cnt, self.fgcolorro)
 
             cnt += 1
             #yy += dy
