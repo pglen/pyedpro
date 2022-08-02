@@ -24,8 +24,8 @@ var searchData=
   ['is_5ftext_21',['is_text',['../namespacepyedpro_1_1pedlib_1_1webwin.html#aede02e0009bda4316b343ea948f072e8',1,'pyedpro::pedlib::webwin']]],
   ['italic_22',['ITALIC',['../classpyedpro_1_1pangview_1_1pvg.html#a26492c3534dbcbd27688b0d64ce2da2f',1,'pyedpro.pangview.pvg.ITALIC()'],['../classpangview_1_1pvg.html#aa015ffb22a970f0a1fb575144a38402c',1,'pangview.pvg.ITALIC()']]],
   ['italic_23',['italic',['../classpyedpro_1_1pangview_1_1TextState.html#a95456f0ce485330df9c6abac7174d752',1,'pyedpro.pangview.TextState.italic()'],['../classpangview_1_1TextState.html#afc79460ff90ba5d8a3de36370f92927b',1,'pangview.TextState.italic()']]],
-  ['itbold_24',['ITBOLD',['../classpyedpro_1_1pangview_1_1pvg.html#a3227970d6a8fc46cb8e648661333ad32',1,'pyedpro.pangview.pvg.ITBOLD()'],['../classpangview_1_1pvg.html#a19561008feba6576fb7f2d460bfaecc6',1,'pangview.pvg.ITBOLD()']]],
-  ['itbold_25',['itbold',['../classpyedpro_1_1pangview_1_1TextState.html#a3a388fc97f6f551d155c1c6b53852c2f',1,'pyedpro.pangview.TextState.itbold()'],['../classpangview_1_1TextState.html#a018173707c20cfd7bf9fe4a5b21639ea',1,'pangview.TextState.itbold()']]],
+  ['itbold_24',['itbold',['../classpyedpro_1_1pangview_1_1TextState.html#a3a388fc97f6f551d155c1c6b53852c2f',1,'pyedpro.pangview.TextState.itbold()'],['../classpangview_1_1TextState.html#a018173707c20cfd7bf9fe4a5b21639ea',1,'pangview.TextState.itbold()']]],
+  ['itbold_25',['ITBOLD',['../classpyedpro_1_1pangview_1_1pvg.html#a3227970d6a8fc46cb8e648661333ad32',1,'pyedpro.pangview.pvg.ITBOLD()'],['../classpangview_1_1pvg.html#a19561008feba6576fb7f2d460bfaecc6',1,'pangview.pvg.ITBOLD()']]],
   ['iter_26',['iter',['../classpyedpro_1_1panglib_1_1pangdisp_1_1PangoView.html#ab82f226f850eca34f79a5e6ceba4f5c3',1,'pyedpro::panglib::pangdisp::PangoView']]],
   ['iter2_27',['iter2',['../classpyedpro_1_1panglib_1_1pangdisp_1_1PangoView.html#aa5bc07f7fecb58ff6bc99d57fbb9adb5',1,'pyedpro::panglib::pangdisp::PangoView']]]
 ];
