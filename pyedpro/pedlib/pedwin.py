@@ -187,6 +187,7 @@ class EdMainWindow():
     def __init__(self, fname, parent, names, orgdir):
 
         #Gdk.threads_init()
+        self.togstrip = True
 
         pedconfig.conf.pedwin = self
 
@@ -1637,6 +1638,16 @@ class EdMainWindow():
                     ppp.area.invalidate()
                 cnt += 1
             self.update_statusbar("Stopped diffing.")
+
+        if strx == "TogStrip":
+            self.togstrip = not self.togstrip
+            print("Toggle strip", self.togstrip)
+            vcurr = notebook.get_nth_page(notebook.get_current_page())
+            if self.togstrip:
+                vcurr.area.strip = 50
+            else:
+                vcurr.area.strip = 0
+            vcurr.area.invalidate()
 
         if strx == "Animate":
             nn2 = notebook.get_current_page()

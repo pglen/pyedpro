@@ -63,6 +63,7 @@ ui_info = \
       <menuitem action='MakeRW'/>
       <separator/>
       <menuitem action='StopDiff'/>
+      <menuitem action='TogStrip'/>
     </menu>
 
     <menu action='NavMenu'>
