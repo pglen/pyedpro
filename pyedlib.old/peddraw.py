@@ -7,6 +7,7 @@ from __future__ import absolute_import
 import signal, os, time, sys, codecs
 
 import gi
+#from six.moves import range
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -17,27 +18,23 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedconfig
-import pedplug
+from . import pedconfig
 
-from keywords import *
-from pedutil import *
+from .keywords import *
+from .pedutil import *
+from .utils import *
 
 BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
 
 class peddraw(object):
 
-    def __init__(self, self2):
-        self.self2 = self2
-        self.utf8_decoder = codecs.getincrementaldecoder('utf8')()
+    def __init__(self):
+        return self
 
     # Underline with red wiggle
     def draw_wiggle(self, gcr, xx, yy, xx2, yy2):
 
         gcr.set_line_width(1)
-
-        xx += self.strip
-        xx2 += self.strip
 
         # The  wiggle took too much processing power .... just a line
         #self.draw_line(gcr, xx, yy, xx2, yy2)
@@ -54,17 +51,15 @@ class peddraw(object):
         gcr.stroke()
 
     def draw_line2(self, cr, xx, yy, xx2, yy2):
-        #print( "draw line", xx, yy)
+        #print "draw line", xx, yy
         cr.move_to(xx, yy)
         cr.line_to(xx2, yy2)
 
     def draw_line(self, cr, xx, yy, xx2, yy2):
-        #print( "draw line", xx, yy)
-        cr.set_source_rgba(*list(self.self2.carcolor))
+        #print "draw line", xx, yy
         cr.move_to(xx, yy)
         cr.line_to(xx2, yy2)
         cr.stroke()
-        cr.set_source_rgba(*list(self.self2.fgcolor))
 
     # --------------------------------------------------------------------
     # Draw caret
@@ -72,10 +67,10 @@ class peddraw(object):
     def draw_caret(self, gcx):
 
         gcx.set_line_width(1)
-        gcx.set_source_rgba(*list(self.self2.cocolor))
+        gcx.set_source_rgba(0, 0, 5)
 
-        #print( "drawing caret", self.caret[0], self.caret[1], \
-        #        self.caret[0] * self.cxx, self.caret[1] * self. cyy)
+        #print "drawing caret", self.caret[0], self.caret[1], \
+        #        self.caret[0] * self.cxx, self.caret[1] * self. cyy
 
         try:
             line = self.text[self.ypos + self.caret[1]]
@@ -88,8 +83,6 @@ class peddraw(object):
         yy = self.caret[1] * self.cyy
 
         ch = 3 * self.cyy / 3; cw = 3 * self.cxx / 4
-
-        xx +=  self.strip
 
         # Order: Top, left right, buttom
         if self.focus:
@@ -125,59 +118,44 @@ class peddraw(object):
     # --------------------------------------------------------------------
     # This is a response to the draw event request
 
-    def draw_text(self, gc, x, y, text, fg_col = None, bg_col = None, esc = None):
+    def draw_text(self, gc, x, y, text, fg_col = None, bg_col = None):
+        #print "draw_text, ",  self.xpos
 
-        #print( "draw_text",  self.xpos, self.ypos, self.caret, x/self.cxx, y/self.cyy)
-
-        x +=  self.strip                # Leave space on thre front
-        if y/self.cyy == self.caret[1]:
-            #print( "draw_text: '%s' len=%d x=%d y=%d" % (text, len(text), x, y) )
-            #print( "draw_text: len=%d x=%d y=%d" % (len(text), x, y) )
-            pass
-
-        if not esc:
-            if self.hex:
-                text2 = ""
-                for aa in text:
-                    tmp = "%02x " % ord(aa)
-                    text2 += tmp
-                text2 = text2[self.xpos * 3:]
-                #print("text2", text2)
-
-            elif self.stab:
-                text2 = "";  cnt = 0;
-                for aa in text:
-                    if aa == " ":  text2 += "_"
-                    elif aa == "\t":
-                        spaces = self.tabstop - (cnt % self.tabstop)
-                        cnt += spaces - 1
-                        for bb in range(spaces):
-                            text2 += "o"
-                    else:
-                        text2 += aa
-                    cnt += 1
-                #text2 = text2[self.xpos:]
-                #self.layout.set_text(ppp, len(ppp))
-            else:
-                text2 = text.replace("\r", "a ")
+        if self.hex:
+            text2 = ""
+            for aa in text:
+                tmp = "%02x " % ord(aa)
+                text2 += tmp
+            text2 = text2[self.xpos * 3:]
+        elif self.stab:
+            text2 = "";  cnt = 0;
+            for aa in text:
+                if aa == " ":  text2 += "_"
+                elif aa == "\t":
+                    spaces = self.tabstop - (cnt % self.tabstop)
+                    cnt += spaces - 1
+                    for bb in range(spaces):
+                        text2 += "o"
+                else:
+                    text2 += aa
+                cnt += 1
+            #text2 = text2[self.xpos:]
+            #self.layout.set_text(ppp, len(ppp))
         else:
             #text2 = text[self.xpos:].replace("\r", " ")
-            text2 = text.replace("\r", "a ")
+            text2 = text.replace("\r", " ")
+
+        xx, yy = self.layout.get_pixel_size()
 
         #utf8_decoder = codecs.getincrementaldecoder('utf8')()
-        try:
-            if type(text2) != str:
-                text2 = codecs.decode(text2)
-                #print ("string is UTF-8, length %d bytes" % len(text2))
-            else:
-                pass
-                #print ("string is text, length %d bytes" % len(text2))
-
+        '''try:
+            codecs.decode(text2)
+            print ("string is UTF-8, length %d bytes" % len(string))
         except UnicodeError:
             print ("string is not UTF-8")
-            #return xx, yy
+            return xx, yy'''
 
-        #text2 = kill_non_ascii(text2)
+        text2 = kill_non_ascii(text2)
 
         '''bbb = is_ascii(text2)
         if bbb > 0:
@@ -187,14 +165,7 @@ class peddraw(object):
 
         self.layout.set_text(text2, len(text2))
 
-        #xx, yy = self.layout.get_pixel_size()
-        #xx, yy = self.layout.get_size()
-        #xx /=  Pango.SCALE;
-        #yy /=  Pango.SCALE;
-
-        #(pr, lr) = self.layout.get_pixel_extents()
-        (pr, lr) = self.layout.get_extents()
-        xx = lr.width / Pango.SCALE; yy = lr.height / Pango.SCALE;
+        xx, yy = self.layout.get_pixel_size()
 
         #offs = self.xpos * self.cxx
         offs = 0
@@ -204,12 +175,12 @@ class peddraw(object):
             # The hard way ....
             #rc = self.layout.get_extents().logical_rect
             #rc = self.layout.get_extents().ink_rect
-            #print( "rc", rc.x, rc.y, rc.width / Pango.SCALE, \
-            #            rc.height   / Pango.SCALE  )
+            #print "rc", rc.x, rc.y, rc.width / Pango.SCALE, \
+            #            rc.height   / Pango.SCALE
             #gc.rectangle(x, y, rc.width / Pango.SCALE, \
             #            rc.height / Pango.SCALE)
             gc.rectangle(x - offs, y, xx , yy)
-            #print( self.xpos, x, y, xx, yy)
+            #print self.xpos, x, y, xx, yy
             gc.fill()
 
         if fg_col:
@@ -219,14 +190,11 @@ class peddraw(object):
         gc.move_to(x, y)
         PangoCairo.show_layout(gc, self.layout)
 
-        # Debug output, help on visuals
-        #self.draw_line(gc, x+2, y+yy-5, x+xx-2, y+yy+5)
-
         if self.scol:
             gc.set_source_rgba(0, 0, 0)
             pos = BOUNDLINE - self.xpos
             self.draw_line(gc, pos * self.cxx, \
-                     0, pos * self.cxx, self.hhh, )
+                     0, pos * self.cxx, self.hhh)
 
         return xx, yy
 
@@ -299,8 +267,6 @@ class peddraw(object):
         if not self.colflag:
             return
 
-        pedplug.syntax(self, cr)
-
         # Paint syntax colors
         xx = 0; yy = 0;
         cnt = int(self.ypos)
@@ -346,8 +312,6 @@ class peddraw(object):
         if not self.colflag:
             return
 
-        #print("ext=", self.ext)
-
         xx = 0; yy = 0; ln = 0;
         cnt = int(self.ypos)
         while cnt <  self.xlen:
@@ -356,14 +320,9 @@ class peddraw(object):
 
             # Comments: # or // and "
             # This gives us PY comments, C comments and C defines
-
             ccc = line.find("#");
             if ccc < 0:
                 ccc = line.find("//");
-
-            if ccc < 0:
-                if self.ext == ".asm":
-                    ccc = line.find(";");
 
             # Quotes before?
             cccc = line.find('"')
@@ -422,8 +381,6 @@ class peddraw(object):
     # Paint main text
     def draw_maintext(self, cr):
 
-        pedplug.display(self, cr)
-
         xx = 0; yy = 0;
         cnt = int(self.ypos)
         while cnt <  self.xlen:
@@ -433,19 +390,49 @@ class peddraw(object):
             else:
                text3 = untab_str(self.text[cnt], self.tabstop)
 
-            #print( "'" + text3 + "'")
+            #print "'" + text3 + "'"
             text4 = text3[self.xpos:]
-            dx, dy = self.draw_text(cr, xx, yy, text4, self.fgcolor)
-
-            if self.strip:
-                self.draw_text(cr, -self.strip + 2, yy, "%d" % cnt, self.fgcolorro, esc=True)
-
+            dx, dy = self.draw_text(cr, xx, yy, text4)
             cnt += 1
-            #yy += dy
-            yy += self.cyy
-
+            yy += dy
             if yy > self.hhh:
                 break
 
 
 # EOF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

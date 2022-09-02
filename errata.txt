@@ -1,0 +1,6 @@
+Pyedpro errata
+abcdefg
+On ctrl-upper invalidate whole line
+Tab still not syntax highlighting right
+ 
+
