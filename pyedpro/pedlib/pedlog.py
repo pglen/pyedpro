@@ -15,8 +15,8 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-import pedconfig
-from pedutil import *
+from pedlib import pedconfig
+from pedlib.pedutil import *
 
 # Adjust to taste. Estimated memory usage is 50 * MAX_LOG bytes
 # Fills up slowly, so not a big issue. Delete ~/.pyedit/pylog.txt if

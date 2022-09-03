@@ -69,7 +69,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
 # So it is universally found
-sys.path.append(os.path.abspath(__file__))
+#sys.path.append(os.path.abspath(__file__))
 
 import pedlib.pedconfig as pedconfig
 import pedlib.pedlog as pedlog

@@ -13,8 +13,8 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Pango
 
-import pedconfig
-from   pedutil import *
+from pedlib import pedconfig
+from pedlib.pedutil import *
 
 # I had to do this, as the standard font dialog does not have a mono filter.
 # Also, we do not need mono italic etc so the dialog is simpler.

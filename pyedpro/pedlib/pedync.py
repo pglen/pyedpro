@@ -15,7 +15,7 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
-import pedconfig
+from pedlib import pedconfig
 
 # ------------------------------------------------------------------------
 

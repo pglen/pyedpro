@@ -17,17 +17,17 @@ from gi.repository import cairo
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedconfig
+from pedlib import pedconfig
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
-from    pedcolor import *
-from    pedtdlg import *
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedutil import *
+from    pedlib.pedcolor import *
+from    pedlib.pedtdlg import *
 
-sys.path.append('..' + os.sep + "pycommon")
-from pggui import *
+#sys.path.append('..' + os.sep + "pycommon")
+from pycommon.pggui import *
 
 RECT = 1
 TEXT = 2

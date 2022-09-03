@@ -14,13 +14,13 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedconfig
+from pedlib import pedconfig
 
-from pedcanv import *
+from pedlib.pedcanv import *
 
-sys.path.append('..' + os.sep + "pycommon")
-from pggui import *
-from pgsimp import *
+#sys.path.append('..' + os.sep + "pycommon")
+from pycommon.pggui import *
+from pycommon.pgsimp import *
 
 random.seed()
 

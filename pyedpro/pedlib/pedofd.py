@@ -15,12 +15,12 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
-import pedconfig
+from pedlib import pedconfig
 
-sys.path.append('..')
-sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..')
+#sys.path.append('..' + os.sep + "pycommon")
 
-from pggui import *
+from pycommon.pggui import *
 
 def ofd(fname = None, self2 = None):
 

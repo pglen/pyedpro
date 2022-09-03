@@ -105,10 +105,10 @@ _ = gettext.gettext
 orgbase = os.getcwd()
 #print("cwd", orgbase)
 
-base    = os.path.realpath(__file__)
-basedir = os.path.dirname(base)
+#base    = os.path.realpath(__file__)
+#basedir = os.path.dirname(base)
 #print("file", os.path.dirname(base))
-os.chdir(basedir)
+#os.chdir(basedir)
 
 #modbase = ""
 #for aa in sys.path:
@@ -116,9 +116,9 @@ os.chdir(basedir)
 #        #print("aa", aa)
 #        modbase = aa
 
-sys.path.append(basedir + os.sep + "panglib")
-sys.path.append(basedir + os.sep + "pedlib")
-sys.path.append(basedir + os.sep + "pycommon")
+#sys.path.append(basedir + os.sep + "panglib")
+#sys.path.append(basedir + os.sep + "pedlib")
+#sys.path.append(basedir + os.sep + "pycommon")
 
 # Also add pyedpro's EGG module dependencies
 
@@ -126,25 +126,29 @@ sys.path.append(basedir + os.sep + "pycommon")
 #sys.path.append(modbase + os.sep + "pedlib")
 #sys.path.append(modbase + os.sep + "pycommon")
 
+#sys.path.append("panglib")
+#sys.path.append("pedlib")
+#sys.path.append("pycommon")
+
 #print(sys.path)
 
-import pedconfig
+from pedlib import pedconfig
 
 # Commit global crap here
 pedconfig.conf = pedconfig.Conf()
 
-import keyhand
-import acthand
-import pedsql
+from pedlib import keyhand
+from pedlib import acthand
+from pedlib import pedsql
 
 pedconfig.conf.acth = acthand.ActHand()
 pedconfig.conf.keyh = keyhand.KeyHand(pedconfig.conf.acth)
 pedconfig.conf.orig_path = orgbase
 
-import pedwin
-import pedlog
-import pedutil
-import pedplug
+from pedlib import pedwin
+from pedlib import pedlog
+from pedlib import pedutil
+from pedlib import pedplug
 
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -451,7 +455,8 @@ if __name__ == '__main__':
     pedlog.create_logwin()
     pedlog.log("Started PyEdPro", time.ctime(None))
 
-    #print("in main")
+    print("in main", sys.argv[0])
+    print("sys.path", sys.path)
     mainstart("", [], "")
 
 # EOF

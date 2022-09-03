@@ -14,17 +14,16 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-sys.path.append('..')
+#sys.path.append('..')
 
-import pedconfig
-import pedconfig
-import pedlog
-import pedsql
-import pedspell
-import pedcolor
-import pedfont
-import pedundo
-import pedplug
+from pedlib import pedconfig
+from pedlib import pedlog
+from pedlib import pedsql
+from pedlib import pedspell
+from pedlib import pedcolor
+from pedlib import pedfont
+from pedlib import pedundo
+from pedlib import pedplug
 
 # Grabbed modifier defines from GTK
 #  ... Turns out Gtk.gdk 2.6+ defines these (above) constants as ...

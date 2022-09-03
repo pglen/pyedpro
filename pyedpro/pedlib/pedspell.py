@@ -12,10 +12,9 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import GObject
 
-import pedconfig
-import leven
-
-from    pedutil import *
+from pedlib import pedconfig
+from pedlib import leven
+from pedlib.pedutil import *
 
 index2 = []; index3 = []; index4 = []
 userdic = []

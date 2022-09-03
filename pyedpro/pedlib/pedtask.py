@@ -20,18 +20,18 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import  pedconfig
-import peddraw
-import pedxtnd
-import  pedync
-import  pedspell
-import  pedcolor
-import  pedmenu
-import  pedundo
-import  pedmisc
+from pedlib import  pedconfig
+from pedlib import peddraw
+from pedlib import pedxtnd
+from pedlib import  pedync
+from pedlib import  pedspell
+from pedlib import  pedcolor
+from pedlib import  pedmenu
+from pedlib import  pedundo
+from pedlib import  pedmisc
 
-from pedutil import *
-from keywords import *
+from pedlib.pedutil import *
+from pedlib.keywords import *
 
 class pedtask():
     def __init__(self):
