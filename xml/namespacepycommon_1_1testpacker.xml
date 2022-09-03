@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepycommon_1_1testpacker" kind="namespace" language="Python">
+    <compoundname>pycommon::testpacker</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a177d008d20b372b22ec3a9fe645eb24d" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pycommon::testpacker::rrr</definition>
+        <argsstring></argsstring>
+        <name>rrr</name>
+        <initializer>=   &quot;mTQdnL51eKnblQflLGSMvnMKDG4XjhKa9Mbgm5ZY9YLd&quot; \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="18" column="1" bodyfile="pycommon/testpacker.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1ac70addc8d60f42dcbe83fd41fb9a6f08" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.pb</definition>
+        <argsstring></argsstring>
+        <name>pb</name>
+        <initializer>=  <ref refid="classpycommon_1_1pypacker_1_1packbin" kindref="compound">pypacker.packbin</ref>();</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="21" column="1" bodyfile="pycommon/testpacker.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a59d79fc35f4e6131b1ca3d13e509afb6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="22" column="1" bodyfile="pycommon/testpacker.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a533a037c3e200867c2a3120a61402817" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.bindat</definition>
+        <argsstring></argsstring>
+        <name>bindat</name>
+        <initializer>=  base64.b64decode(<ref refid="namespacepycommon_1_1testpacker_1a177d008d20b372b22ec3a9fe645eb24d" kindref="member">rrr</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="27" column="1" bodyfile="pycommon/testpacker.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a05351617190e64b42ffb527b6861a036" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pycommon::testpacker::org</definition>
+        <argsstring></argsstring>
+        <name>org</name>
+        <initializer>=  [ 33, &quot;sub&quot;, &apos;d&apos;, &quot;longer str here with \&apos; and \&quot; all crap&quot;,  33, 33333333.2,
+                {&quot;test&quot;: 1111, &quot;test2&quot;: 1112, }, bindat ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="29" column="1" bodyfile="pycommon/testpacker.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a019c2cb80b8d0ef7187effe586a7fb68" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.eeenc</definition>
+        <argsstring></argsstring>
+        <name>eeenc</name>
+        <initializer>=  pb.encode_data(&quot;&quot;, *<ref refid="namespacepycommon_1_1testpacker_1a05351617190e64b42ffb527b6861a036" kindref="member">org</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="35" column="1" bodyfile="pycommon/testpacker.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a3e8cdb19bcca743447a57f3dac5e2c25" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.dddec</definition>
+        <argsstring></argsstring>
+        <name>dddec</name>
+        <initializer>=  pb.decode_data(<ref refid="namespacepycommon_1_1testpacker_1a019c2cb80b8d0ef7187effe586a7fb68" kindref="member">eeenc</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="39" column="1" bodyfile="pycommon/testpacker.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a65d12f6aa06d057148d94a5d33366ec8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.eee</definition>
+        <argsstring></argsstring>
+        <name>eee</name>
+        <initializer>=  pb.encode_data(&quot;&quot;, *<ref refid="namespacepycommon_1_1testpacker_1a05351617190e64b42ffb527b6861a036" kindref="member">org</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="55" column="1" bodyfile="pycommon/testpacker.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a945f4daad398e4d1e0583b3dd19ba15d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.ddd</definition>
+        <argsstring></argsstring>
+        <name>ddd</name>
+        <initializer>=  pb.decode_data(<ref refid="namespacepycommon_1_1testpacker_1a65d12f6aa06d057148d94a5d33366ec8" kindref="member">eee</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="59" column="1" bodyfile="pycommon/testpacker.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1ae0140a9318819f7cdd2b755e6c295289" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pycommon::testpacker::org2</definition>
+        <argsstring></argsstring>
+        <name>org2</name>
+        <initializer>=  [ 22, 444, &quot;data&quot;, 123.456, &apos;a&apos;, <ref refid="namespacepycommon_1_1testpacker_1a65d12f6aa06d057148d94a5d33366ec8" kindref="member">eee</ref>]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="70" column="1" bodyfile="pycommon/testpacker.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a2a93cd9339651413f24eebe40a2e6a3c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.eee2</definition>
+        <argsstring></argsstring>
+        <name>eee2</name>
+        <initializer>=  pb.encode_data(&quot;ilsfcx&quot;, *org2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="73" column="1" bodyfile="pycommon/testpacker.py" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a58ee2217521967c22d7193965de5e9f8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.ddd2</definition>
+        <argsstring></argsstring>
+        <name>ddd2</name>
+        <initializer>=  pb.decode_data(<ref refid="namespacepycommon_1_1testpacker_1a2a93cd9339651413f24eebe40a2e6a3c" kindref="member">eee2</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="75" column="1" bodyfile="pycommon/testpacker.py" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1ac680b7a9b7ddc4139ef475c1a3bd90b1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.fff</definition>
+        <argsstring></argsstring>
+        <name>fff</name>
+        <initializer>=  zlib.compress(<ref refid="namespacepycommon_1_1testpacker_1a65d12f6aa06d057148d94a5d33366ec8" kindref="member">eee</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="88" column="1" bodyfile="pycommon/testpacker.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a232c786ebbf5b57fff0890609d5f9cd2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.hhh</definition>
+        <argsstring></argsstring>
+        <name>hhh</name>
+        <initializer>=  zlib.decompress(<ref refid="namespacepycommon_1_1testpacker_1ac680b7a9b7ddc4139ef475c1a3bd90b1" kindref="member">fff</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="92" column="1" bodyfile="pycommon/testpacker.py" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1a7f61c0ef2931e416c4bbc5430f5e13da" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.ddd3</definition>
+        <argsstring></argsstring>
+        <name>ddd3</name>
+        <initializer>=  pb.decode_data(<ref refid="namespacepycommon_1_1testpacker_1a2a93cd9339651413f24eebe40a2e6a3c" kindref="member">eee2</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="99" column="1" bodyfile="pycommon/testpacker.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker_1afc26c25c4cd3cd0ff564b4a919df5f9f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker.ggg</definition>
+        <argsstring></argsstring>
+        <name>ggg</name>
+        <initializer>=  pb.decode_data(<ref refid="namespacepycommon_1_1testpacker_1a7f61c0ef2931e416c4bbc5430f5e13da" kindref="member">ddd3</ref>[5])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker.py" line="101" column="1" bodyfile="pycommon/testpacker.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/testpacker.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

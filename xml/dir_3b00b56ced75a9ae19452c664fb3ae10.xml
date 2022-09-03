@@ -3,7 +3,7 @@
   <compounddef id="dir_3b00b56ced75a9ae19452c664fb3ae10" kind="dir">
     <compoundname>pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data</compoundname>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c">test.c</innerfile>
-    <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8py">test.py</innerfile>
+    <innerfile refid="pyedpro_2debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8py">test.py</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

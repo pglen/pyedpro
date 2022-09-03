@@ -52,7 +52,7 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Gtk::VBox</label>
+        <label>Gtk.VBox</label>
       </node>
       <node id="1">
         <label>pyedlib.pedwin.edwin</label>
@@ -63,7 +63,7 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Gtk::VBox</label>
+        <label>Gtk.VBox</label>
       </node>
       <node id="1">
         <label>pyedlib.pedwin.edwin</label>

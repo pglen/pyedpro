@@ -397,14 +397,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedconfig.py" line="19" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="19" bodyend="74"/>
+        <location file="pyedpro/pedlib/pedconfig.py" line="19" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="19" bodyend="75"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/pedlib/pedconfig.py" line="17" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="17" bodyend="75"/>
+    <location file="pyedpro/pedlib/pedconfig.py" line="17" column="1" bodyfile="pyedpro/pedlib/pedconfig.py" bodystart="17" bodyend="76"/>
     <listofallmembers>
       <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1a4a71981ddd554e5f24f3d488a38bd858" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedconfig::Conf</scope><name>__init__</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1a08054d2822a67cb512d8be3f2bd87d68" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedconfig::Conf</scope><name>color_on</name></member>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_60c6cfd7545d64a036de900869892daa" kind="dir">
+    <compoundname>pyedpro/build/lib/pycommon</compoundname>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2pgbox_8py">pgbox.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2pgentry_8py">pgentry.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2pggui_8py">pggui.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2pgsimp_8py">pgsimp.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2pgutils_8py">pgutils.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2pgwkit_8py">pgwkit.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2pypacker_8py">pypacker.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2sutil_8py">sutil.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2testpacker_8py">testpacker.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2testpacker2_8py">testpacker2.py</innerfile>
+    <innerfile refid="pyedpro_2build_2lib_2pycommon_2testpacker3_8py">testpacker3.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pycommon/"/>
+  </compounddef>
+</doxygen>

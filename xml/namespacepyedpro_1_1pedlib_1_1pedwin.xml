@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="2233" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2233" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="2249" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2249" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="2012" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2012" bodyend="2117"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="2023" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2023" bodyend="2129"/>
       </memberdef>
       <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedwin_1abd5e75761d5ca94dc0e7572829d42ec5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="2118" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2118" bodyend="2232"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="2130" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2130" bodyend="2248"/>
       </memberdef>
       <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedwin_1acf73f38beecdda5185f9b5bb27093383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -190,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="2237" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2237" bodyend="2337"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="2253" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2253" bodyend="2353"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

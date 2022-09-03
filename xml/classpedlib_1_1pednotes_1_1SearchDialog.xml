@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1pednotes_1_1SearchDialog" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::pednotes::SearchDialog</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Dialog</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1pednotes_1_1SearchDialog_1a540adf6cee4ef77218dc93eae6988c79" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pednotes.SearchDialog::hbox</definition>
+        <argsstring></argsstring>
+        <name>hbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pednotes.py" line="829" column="1" bodyfile="pyedpro/build/lib/pedlib/pednotes.py" bodystart="829" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pednotes_1_1SearchDialog_1ac35babb3068745508872c94add6fc0fa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pednotes.SearchDialog::entry</definition>
+        <argsstring></argsstring>
+        <name>entry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pednotes.py" line="831" column="1" bodyfile="pyedpro/build/lib/pedlib/pednotes.py" bodystart="831" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1pednotes_1_1SearchDialog_1a74e871062074702395ee3936f7b28897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pednotes.SearchDialog.__init__</definition>
+        <argsstring>(self, parent=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pednotes.py" line="812" column="1" bodyfile="pyedpro/build/lib/pedlib/pednotes.py" bodystart="812" bodyend="841"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pedlib.pednotes.SearchDialog</label>
+        <link refid="classpedlib_1_1pednotes_1_1SearchDialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Dialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pedlib.pednotes.SearchDialog</label>
+        <link refid="classpedlib_1_1pednotes_1_1SearchDialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Dialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/build/lib/pedlib/pednotes.py" line="810" column="1" bodyfile="pyedpro/build/lib/pedlib/pednotes.py" bodystart="810" bodyend="842"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1pednotes_1_1SearchDialog_1a74e871062074702395ee3936f7b28897" prot="public" virt="non-virtual"><scope>pedlib::pednotes::SearchDialog</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1pednotes_1_1SearchDialog_1ac35babb3068745508872c94add6fc0fa" prot="public" virt="non-virtual"><scope>pedlib::pednotes::SearchDialog</scope><name>entry</name></member>
+      <member refid="classpedlib_1_1pednotes_1_1SearchDialog_1a540adf6cee4ef77218dc93eae6988c79" prot="public" virt="non-virtual"><scope>pedlib::pednotes::SearchDialog</scope><name>hbox</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

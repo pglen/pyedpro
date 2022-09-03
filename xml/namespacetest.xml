@@ -4,9 +4,9 @@
     <compoundname>test</compoundname>
     <innerclass refid="classtest_1_1ActHand" prot="public">test::ActHand</innerclass>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacetest_1a7c8ae0078af9a358b48495f06bc0a9f3" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacetest_1a090983825763bb4e9430940ff03dd7c7" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string test.installerdir</definition>
+        <definition>string test::installerdir</definition>
         <argsstring></argsstring>
         <name>installerdir</name>
         <initializer>=  sys.argv[0][:sys.argv[0].rfind(&quot;/&quot;)] + &quot;/&quot;</initializer>
@@ -32,9 +32,9 @@
         </inbodydescription>
         <location file="pyedpro/study/test.py" line="10" column="1" bodyfile="pyedpro/study/test.py" bodystart="10" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacetest_1a15e5f3967926d699a2808df4092d6552" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacetest_1a90a773af3cdd37dab03adb09e25911c3" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string test.PROJNAME</definition>
+        <definition>string test::PROJNAME</definition>
         <argsstring></argsstring>
         <name>PROJNAME</name>
         <initializer>=  &quot;PyEdPro&quot;</initializer>
@@ -46,9 +46,9 @@
         </inbodydescription>
         <location file="pyedpro/study/test.py" line="12" column="1" bodyfile="pyedpro/study/test.py" bodystart="12" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacetest_1a437a4ceed659df1c754debd4e29ace76" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacetest_1a2867a076581f184aa346bf14d1256468" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string test.PROJLIB</definition>
+        <definition>string test::PROJLIB</definition>
         <argsstring></argsstring>
         <name>PROJLIB</name>
         <initializer>=  &quot;pyedlib&quot;</initializer>
@@ -60,9 +60,9 @@
         </inbodydescription>
         <location file="pyedpro/study/test.py" line="13" column="1" bodyfile="pyedpro/study/test.py" bodystart="13" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacetest_1a6a85f3c6184f84044779e07d907257b4" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacetest_1ace4d1fdd6df5beaf38d3a37709c091e8" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string test.PROJLIB2</definition>
+        <definition>string test::PROJLIB2</definition>
         <argsstring></argsstring>
         <name>PROJLIB2</name>
         <initializer>=  &quot;panglib&quot;</initializer>
@@ -130,9 +130,9 @@
         </inbodydescription>
         <location file="pyedpro/study/test.py" line="88" column="1" bodyfile="pyedpro/study/test.py" bodystart="88" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacetest_1a06b9071406ed518d6715588fd46d0364" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacetest_1a26e87432ae8ba4b4752e96b2cf4e7229" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string test.shared</definition>
+        <definition>string test::shared</definition>
         <argsstring></argsstring>
         <name>shared</name>
         <initializer>=  &quot;/usr/share&quot; + &quot;/&quot; + PROJNAME</initializer>
@@ -144,9 +144,9 @@
         </inbodydescription>
         <location file="pyedpro/study/test.py" line="101" column="1" bodyfile="pyedpro/study/test.py" bodystart="101" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacetest_1af124789eaa51e58a714ee28a55feb264" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacetest_1a9252394386f36df565818854185d3235" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string test.bindir</definition>
+        <definition>string test::bindir</definition>
         <argsstring></argsstring>
         <name>bindir</name>
         <initializer>=  &quot;/usr/bin&quot;</initializer>
@@ -202,9 +202,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacetest_1a5bdc66d76175c3eb97b8230037fb5e8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacetest_1aba6294fc4a941cbf6aeac46cc612fc5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def test.isdir</definition>
+        <definition>def test::isdir</definition>
         <argsstring>(fname)</argsstring>
         <name>isdir</name>
         <param>
@@ -219,9 +219,9 @@
         </inbodydescription>
         <location file="pyedpro/study/test.py" line="19" column="1" bodyfile="pyedpro/study/test.py" bodystart="19" bodyend="31"/>
       </memberdef>
-      <memberdef kind="function" id="namespacetest_1a5fe5af139f959b6123d3e1ff95a9aaf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacetest_1a7bf3774a526e8be726c33c97ac898d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def test.softmkdir</definition>
+        <definition>def test::softmkdir</definition>
         <argsstring>(dirx)</argsstring>
         <name>softmkdir</name>
         <param>

@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1keyhand_1_1KeyHand" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::keyhand::KeyHand</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1a13fa15fe5e0fa553979694d30524db79" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int pedlib.keyhand.KeyHand::ctrl</definition>
+        <argsstring></argsstring>
+        <name>ctrl</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="63" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1a61d104d1080a7951972054a2388aee50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::acth</definition>
+        <argsstring></argsstring>
+        <name>acth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="68" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1ae40468e45789c1ed615d447857879932" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::reg_keytab</definition>
+        <argsstring></argsstring>
+        <name>reg_keytab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="71" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1ad8c2d26b9b0491f0090e3fad93febe01" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::ctrl_keytab</definition>
+        <argsstring></argsstring>
+        <name>ctrl_keytab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="117" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1ada238a9fdd576efe88a3c2cdd831dd74" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::right_alt_keytab</definition>
+        <argsstring></argsstring>
+        <name>right_alt_keytab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="199" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1aff9ff99f8a2024bf0a299e980db03aff" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::ctrl_alt_keytab</definition>
+        <argsstring></argsstring>
+        <name>ctrl_alt_keytab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="215" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1abf801ffb2cb026f208413eea590896c8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::alt_keytab</definition>
+        <argsstring></argsstring>
+        <name>alt_keytab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="259" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1a198b86a062849473fc9bd51e987515fb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::ctrl</definition>
+        <argsstring></argsstring>
+        <name>ctrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="329" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1a207993b1986ca7b1aa9852bd8932cd37" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::alt</definition>
+        <argsstring></argsstring>
+        <name>alt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="329" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1aafbbb5dd33bc00e0e96246290613a5ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::shift</definition>
+        <argsstring></argsstring>
+        <name>shift</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="329" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1a843bd9e98d8d80de5207d45578615b4a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::ralt</definition>
+        <argsstring></argsstring>
+        <name>ralt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="330" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1a7f270377629f99f1e61c0a9b9e00cf08" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::lalt</definition>
+        <argsstring></argsstring>
+        <name>lalt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="330" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1keyhand_1_1KeyHand_1a51961b07187b3bd5c3504bd2cd40ccc3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.keyhand.KeyHand::state2</definition>
+        <argsstring></argsstring>
+        <name>state2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="345" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1afd6121d4c386bff997ed184a73cdac65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.__init__</definition>
+        <argsstring>(self, acth)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1keyhand_1_1KeyHand_1a61d104d1080a7951972054a2388aee50" kindref="member">acth</ref></type>
+          <defname>acth</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="65" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="65" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1a9760f9635ccb8d36bd9f807f136bc75d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.reset</definition>
+        <argsstring>(self)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="328" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="328" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1a2c9678af2b1fc56ddde49fe7f2fb6505" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_key</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="333" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="333" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1aa49b188ac3256f18fc92c6ea0636a7ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_key2</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_key2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="349" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="349" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1ab6a2c6f1dcb404e241f8e681d0c2680c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_modifiers</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_modifiers</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="425" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="425" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1a061b71eba142454875867c287f4bd79b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_right_alt_key</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_right_alt_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="510" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="510" bodyend="514"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1ac550f472b4cf0ea2d87c3b7bfb0cc524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_ctrl_alt_key</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_ctrl_alt_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="518" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="518" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1a72c8601b64ee05930d6d5b9a8d1518b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_ctrl_key</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_ctrl_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="524" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="524" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1aa16883f18acedfbdbe78fb2a59d92f56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_reg_key</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_reg_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="530" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="530" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1ac8a26e4d1d384a200e6393e9b47374a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand.handle_alt_key</definition>
+        <argsstring>(self, self2, area, event)</argsstring>
+        <name>handle_alt_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="543" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="543" bodyend="563"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpedlib_1_1keyhand_1_1KeyHand_1ac0b1704762f6a2d1fc1986cb13a77235" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.keyhand.KeyHand._handle_key</definition>
+        <argsstring>(self, self2, area, event, xtab)</argsstring>
+        <name>_handle_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>xtab</type>
+          <defname>xtab</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keyhand.py" line="565" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="565" bodyend="606"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/keyhand.py" line="61" column="1" bodyfile="pyedpro/build/lib/pedlib/keyhand.py" bodystart="61" bodyend="606"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1afd6121d4c386bff997ed184a73cdac65" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1ac0b1704762f6a2d1fc1986cb13a77235" prot="private" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>_handle_key</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a61d104d1080a7951972054a2388aee50" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>acth</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a207993b1986ca7b1aa9852bd8932cd37" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>alt</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1abf801ffb2cb026f208413eea590896c8" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>alt_keytab</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a13fa15fe5e0fa553979694d30524db79" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>ctrl</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a198b86a062849473fc9bd51e987515fb" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>ctrl</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1aff9ff99f8a2024bf0a299e980db03aff" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>ctrl_alt_keytab</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1ad8c2d26b9b0491f0090e3fad93febe01" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>ctrl_keytab</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1ac8a26e4d1d384a200e6393e9b47374a4" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_alt_key</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1ac550f472b4cf0ea2d87c3b7bfb0cc524" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_ctrl_alt_key</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a72c8601b64ee05930d6d5b9a8d1518b7" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_ctrl_key</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a2c9678af2b1fc56ddde49fe7f2fb6505" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_key</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1aa49b188ac3256f18fc92c6ea0636a7ab" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_key2</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1ab6a2c6f1dcb404e241f8e681d0c2680c" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_modifiers</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1aa16883f18acedfbdbe78fb2a59d92f56" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_reg_key</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a061b71eba142454875867c287f4bd79b" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>handle_right_alt_key</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a7f270377629f99f1e61c0a9b9e00cf08" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>lalt</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a843bd9e98d8d80de5207d45578615b4a" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>ralt</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1ae40468e45789c1ed615d447857879932" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>reg_keytab</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a9760f9635ccb8d36bd9f807f136bc75d" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>reset</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1ada238a9fdd576efe88a3c2cdd831dd74" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>right_alt_keytab</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1aafbbb5dd33bc00e0e96246290613a5ba" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>shift</name></member>
+      <member refid="classpedlib_1_1keyhand_1_1KeyHand_1a51961b07187b3bd5c3504bd2cd40ccc3" prot="public" virt="non-virtual"><scope>pedlib::keyhand::KeyHand</scope><name>state2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

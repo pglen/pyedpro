@@ -1,0 +1,836 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepycommon_1_1pgutils" kind="namespace" language="Python">
+    <compoundname>pycommon::pgutils</compoundname>
+    <innerclass refid="classpycommon_1_1pgutils_1_1Config" prot="public">pycommon::pgutils::Config</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1a8af8750662584b980409bd37828571d1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::pgutils.clock</definition>
+        <argsstring></argsstring>
+        <name>clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="14" column="1" bodyfile="pycommon/pgutils.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1a40b8fda843eba563b4b6a3cf69c62c46" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pycommon::pgutils::allcr</definition>
+        <argsstring></argsstring>
+        <name>allcr</name>
+        <initializer>=     &quot; &quot; + &quot;\r&quot; + &quot;\n&quot; + \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="26" column="1" bodyfile="pycommon/pgutils.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1a61e66e175415b832fe9bbdca0029ad4d" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pycommon::pgutils::allstr</definition>
+        <argsstring></argsstring>
+        <name>allstr</name>
+        <initializer>=     &quot; &quot; + \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="31" column="1" bodyfile="pycommon/pgutils.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1aa562a4bb77799edd7f602d8f7260c5f0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::pgutils.allasc</definition>
+        <argsstring></argsstring>
+        <name>allasc</name>
+        <initializer>=       string.ascii_lowercase +  string.ascii_uppercase +  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="35" column="1" bodyfile="pycommon/pgutils.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1a8688047fafbc65806785f523aa771982" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::pgutils.alllett</definition>
+        <argsstring></argsstring>
+        <name>alllett</name>
+        <initializer>=       string.ascii_lowercase +  string.ascii_uppercase</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="38" column="1" bodyfile="pycommon/pgutils.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1aff4596450dbad27afac9919344410137" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pycommon::pgutils::testmode</definition>
+        <argsstring></argsstring>
+        <name>testmode</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="41" column="1" bodyfile="pycommon/pgutils.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1a108c60ed0a98a691ca1e1d486e9f77ea" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::pgutils.start_time</definition>
+        <argsstring></argsstring>
+        <name>start_time</name>
+        <initializer>=  time.clock()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="361" column="1" bodyfile="pycommon/pgutils.py" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pgutils_1a5c1c33879f0148f9623399e18f363217" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pycommon::pgutils::xtab</definition>
+        <argsstring></argsstring>
+        <name>xtab</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="550" column="1" bodyfile="pycommon/pgutils.py" bodystart="550" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1ab22c89b7bc3c2f09f6ac49c797d9d1d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::usleep</definition>
+        <argsstring>(msec)</argsstring>
+        <name>usleep</name>
+        <param>
+          <type>msec</type>
+          <defname>msec</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="60" column="1" bodyfile="pycommon/pgutils.py" bodystart="60" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1af6498c92ed45779f18b146a52f04f9e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::message</definition>
+        <argsstring>(strx, title=&quot;Dialog&quot;, parent=None)</argsstring>
+        <name>message</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+          <defval>&quot;Dialog&quot;</defval>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="79" column="1" bodyfile="pycommon/pgutils.py" bodystart="79" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1ae45c999e5e33f39e67d543c1e7cd0156" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::yes_no</definition>
+        <argsstring>(message, title=&quot;Question&quot;, parent=None)</argsstring>
+        <name>yes_no</name>
+        <param>
+          <type><ref refid="namespacepycommon_1_1pgutils_1af6498c92ed45779f18b146a52f04f9e2" kindref="member">message</ref></type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+          <defval>&quot;Question&quot;</defval>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="101" column="1" bodyfile="pycommon/pgutils.py" bodystart="101" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1af79559372e5093b0f2a798446bcecdf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::yes_no_cancel</definition>
+        <argsstring>(message, title=&quot;Question&quot;, cancel=True, parent=None)</argsstring>
+        <name>yes_no_cancel</name>
+        <param>
+          <type><ref refid="namespacepycommon_1_1pgutils_1af6498c92ed45779f18b146a52f04f9e2" kindref="member">message</ref></type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+          <defval>&quot;Question&quot;</defval>
+        </param>
+        <param>
+          <type>cancel</type>
+          <defname>cancel</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="133" column="1" bodyfile="pycommon/pgutils.py" bodystart="133" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a3b4a1c393a2f1cdd4818845ed0a01383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::yn_key</definition>
+        <argsstring>(win, event, cancel)</argsstring>
+        <name>yn_key</name>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>cancel</type>
+          <defname>cancel</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="185" column="1" bodyfile="pycommon/pgutils.py" bodystart="185" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1ac7dc4924e30bf8d1275c1a960196612a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::respath</definition>
+        <argsstring>(fname)</argsstring>
+        <name>respath</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="203" column="1" bodyfile="pycommon/pgutils.py" bodystart="203" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1aeb91d48f08cf5f86f726dfbac0fc3b3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::randcol</definition>
+        <argsstring>()</argsstring>
+        <name>randcol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="218" column="1" bodyfile="pycommon/pgutils.py" bodystart="218" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a6b9197815f967a1e2c20310066caa7b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::str2col</definition>
+        <argsstring>(strx)</argsstring>
+        <name>str2col</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="224" column="1" bodyfile="pycommon/pgutils.py" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a5434fb1325e26648e963acc73d56fd11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::str2float</definition>
+        <argsstring>(col)</argsstring>
+        <name>str2float</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="228" column="1" bodyfile="pycommon/pgutils.py" bodystart="228" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a1fcf107d00323081a7be589a89c7ed9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::float2col</definition>
+        <argsstring>(col)</argsstring>
+        <name>float2col</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="233" column="1" bodyfile="pycommon/pgutils.py" bodystart="233" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1aea5e558b9f9ffa7795c1f42c28a97152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::float2str</definition>
+        <argsstring>(col)</argsstring>
+        <name>float2str</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="239" column="1" bodyfile="pycommon/pgutils.py" bodystart="239" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a48ede0c625655a4a8ab826ac7f347625" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::col2float</definition>
+        <argsstring>(col)</argsstring>
+        <name>col2float</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="247" column="1" bodyfile="pycommon/pgutils.py" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a24f088681ddb46f7dc644efb643877e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::rgb2str</definition>
+        <argsstring>(icol)</argsstring>
+        <name>rgb2str</name>
+        <param>
+          <type>icol</type>
+          <defname>icol</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="253" column="1" bodyfile="pycommon/pgutils.py" bodystart="253" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a590e085befd0ed1172adf0c1864f0679" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::col2str</definition>
+        <argsstring>(icol)</argsstring>
+        <name>col2str</name>
+        <param>
+          <type>icol</type>
+          <defname>icol</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="258" column="1" bodyfile="pycommon/pgutils.py" bodystart="258" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a29dde52def5f0cfbe7ad7dc2b3d83d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::rgb2col</definition>
+        <argsstring>(icol)</argsstring>
+        <name>rgb2col</name>
+        <param>
+          <type>icol</type>
+          <defname>icol</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="263" column="1" bodyfile="pycommon/pgutils.py" bodystart="263" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a010adff1d4c73afba6d3bec64f8d802c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::put_debug</definition>
+        <argsstring>(xstr)</argsstring>
+        <name>put_debug</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="271" column="1" bodyfile="pycommon/pgutils.py" bodystart="271" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a8c91d137f54f0ce59fd4c47e3c4c1ad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::put_exception</definition>
+        <argsstring>(xstr)</argsstring>
+        <name>put_exception</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="284" column="1" bodyfile="pycommon/pgutils.py" bodystart="284" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a46b777683a3f9572c10803c436856619" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::decode_bits</definition>
+        <argsstring>(numx)</argsstring>
+        <name>decode_bits</name>
+        <param>
+          <type>numx</type>
+          <defname>numx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="303" column="1" bodyfile="pycommon/pgutils.py" bodystart="303" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1adc53b69a0ca9198d2081f8e13da5dc80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::randcolstr</definition>
+        <argsstring>(start=0, endd=255)</argsstring>
+        <name>randcolstr</name>
+        <param>
+          <type>start</type>
+          <defname>start</defname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>endd</type>
+          <defname>endd</defname>
+          <defval>255</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="317" column="1" bodyfile="pycommon/pgutils.py" bodystart="317" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1ad3dd2e4fa2f616239b47eb6269dfea68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::clean_str</definition>
+        <argsstring>(strx)</argsstring>
+        <name>clean_str</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="327" column="1" bodyfile="pycommon/pgutils.py" bodystart="327" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1aa6a038344538941fb0efe61a888ec51c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::clean_str2</definition>
+        <argsstring>(strx)</argsstring>
+        <name>clean_str2</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="341" column="1" bodyfile="pycommon/pgutils.py" bodystart="341" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a2f53a34fb4d475a36ebed08c2c680951" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::get_time</definition>
+        <argsstring>()</argsstring>
+        <name>get_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="363" column="1" bodyfile="pycommon/pgutils.py" bodystart="363" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a2e71f2cefd1701e834463edc293159bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::get_realtime</definition>
+        <argsstring>()</argsstring>
+        <name>get_realtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="371" column="1" bodyfile="pycommon/pgutils.py" bodystart="371" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a6e4c890df7e9cdd17cc62c78e6e04fd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::randstr</definition>
+        <argsstring>(lenx)</argsstring>
+        <name>randstr</name>
+        <param>
+          <type>lenx</type>
+          <defname>lenx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="424" column="1" bodyfile="pycommon/pgutils.py" bodystart="424" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a98235d889a3cb6ed73544548ec936c93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::randasc</definition>
+        <argsstring>(lenx)</argsstring>
+        <name>randasc</name>
+        <param>
+          <type>lenx</type>
+          <defname>lenx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="434" column="1" bodyfile="pycommon/pgutils.py" bodystart="434" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a4eea9a1d2850158b87a3e3fbfeae0097" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::randlett</definition>
+        <argsstring>(lenx)</argsstring>
+        <name>randlett</name>
+        <param>
+          <type>lenx</type>
+          <defname>lenx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="444" column="1" bodyfile="pycommon/pgutils.py" bodystart="444" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a4901a3e1def5b7e2eb993ff221356081" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::oct2int</definition>
+        <argsstring>(strx)</argsstring>
+        <name>oct2int</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="457" column="1" bodyfile="pycommon/pgutils.py" bodystart="457" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1ac2c65a13b43bdeb212608af356ddc7fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::uni</definition>
+        <argsstring>(xtab)</argsstring>
+        <name>uni</name>
+        <param>
+          <type><ref refid="namespacepycommon_1_1pgutils_1a5c1c33879f0148f9623399e18f363217" kindref="member">xtab</ref></type>
+          <defname>xtab</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="470" column="1" bodyfile="pycommon/pgutils.py" bodystart="470" bodyend="511"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a95fdc90839ff38cf92ddd0196c3e820b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::is_ascii</definition>
+        <argsstring>(strx)</argsstring>
+        <name>is_ascii</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="512" column="1" bodyfile="pycommon/pgutils.py" bodystart="512" bodyend="528"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a60a7175389db10527aeff01c34f7cea4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::kill_non_ascii</definition>
+        <argsstring>(strx)</argsstring>
+        <name>kill_non_ascii</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="529" column="1" bodyfile="pycommon/pgutils.py" bodystart="529" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1ae5bca10c6aad8ff9b88cb391ecee8954" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::unescape</definition>
+        <argsstring>(strx)</argsstring>
+        <name>unescape</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="552" column="1" bodyfile="pycommon/pgutils.py" bodystart="552" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a42c56a35e3fc91e81ee9bb0df3577f58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::isTrue</definition>
+        <argsstring>(strx)</argsstring>
+        <name>isTrue</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="640" column="1" bodyfile="pycommon/pgutils.py" bodystart="640" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a0b524e4c1cbe4afe4d38892414b1d3c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::isfile</definition>
+        <argsstring>(fname)</argsstring>
+        <name>isfile</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="653" column="1" bodyfile="pycommon/pgutils.py" bodystart="653" bodyend="715"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a48b1376c99fe5191df8bd93e8dd5da37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::put_exception2</definition>
+        <argsstring>(xstr)</argsstring>
+        <name>put_exception2</name>
+        <param>
+          <type>xstr</type>
+          <defname>xstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="716" column="1" bodyfile="pycommon/pgutils.py" bodystart="716" bodyend="737"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a7719462e1f57b9f204373cb4039a5bff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::hash_name</definition>
+        <argsstring>(strx)</argsstring>
+        <name>hash_name</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="738" column="1" bodyfile="pycommon/pgutils.py" bodystart="738" bodyend="750"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1abbeca8a14ac7b74e38e91c0f31038935" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::untab_str</definition>
+        <argsstring>(strx, tabstop=4)</argsstring>
+        <name>untab_str</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>tabstop</type>
+          <defname>tabstop</defname>
+          <defval>4</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="751" column="1" bodyfile="pycommon/pgutils.py" bodystart="751" bodyend="773"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a219c0d21fd92aa9c46fd4ffcc10b25b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::ampmstr</definition>
+        <argsstring>(bb)</argsstring>
+        <name>ampmstr</name>
+        <param>
+          <type>bb</type>
+          <defname>bb</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="774" column="1" bodyfile="pycommon/pgutils.py" bodystart="774" bodyend="789"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1ada66a94570d9f63ff1355f584115955c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::register_stock_icons</definition>
+        <argsstring>()</argsstring>
+        <name>register_stock_icons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> This function registers our custom toolbar icons, so they
+    can be themed.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="790" column="1" bodyfile="pycommon/pgutils.py" bodystart="790" bodyend="831"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepycommon_1_1pgutils_1a5e36c654201702a569ef98cddff78029" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon::pgutils::readfile</definition>
+        <argsstring>(strx, sep=None)</argsstring>
+        <name>readfile</name>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <param>
+          <type>sep</type>
+          <defname>sep</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgutils.py" line="838" column="1" bodyfile="pycommon/pgutils.py" bodystart="838" bodyend="889"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/pgutils.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -3089,7 +3089,7 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Gtk::DrawingArea</label>
+        <label>Gtk.DrawingArea</label>
       </node>
       <node id="3">
         <label>pyedlib.peddraw.peddraw</label>
@@ -3111,7 +3111,7 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Gtk::DrawingArea</label>
+        <label>Gtk.DrawingArea</label>
       </node>
       <node id="3">
         <label>pyedlib.peddraw.peddraw</label>

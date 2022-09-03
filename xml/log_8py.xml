@@ -98,7 +98,7 @@
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>win2<sp/>=<sp/>Gtk.Window()</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>win2.set_icon_from_file(<ref refid="namespacepyedlib_1_1pedutil_1adf0833cdaf9948091c4327f0339fd924" kindref="member">get_img_path</ref>(</highlight><highlight class="stringliteral">&quot;pyedpro_sub.png&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>win2.set_icon_from_file(<ref refid="namespacepedlib_1_1pedutil_1a4fe4772dfe4ec29226dd44ff435d3304" kindref="member">get_img_path</ref>(</highlight><highlight class="stringliteral">&quot;pyedpro_sub.png&quot;</highlight><highlight class="normal">))</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(<sp/></highlight><highlight class="stringliteral">&quot;Cannot<sp/>load<sp/>log<sp/>icon&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>

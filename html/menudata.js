@@ -199,4 +199,7 @@ var menudata={children:[
 {text:"$",url:"globals_vars.html#index__24"},
 {text:"b",url:"globals_vars_b.html#index_b"},
 {text:"g",url:"globals_vars_g.html#index_g"}]},
-{text:"Macros",url:"globals_defs.html"}]}]}]}
+{text:"Macros",url:"globals_defs.html",children:[
+{text:"b",url:"globals_defs.html#index_b"},
+{text:"h",url:"globals_defs.html#index_h"},
+{text:"t",url:"globals_defs.html#index_t"}]}]}]}]}

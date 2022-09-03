@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pgsimp_1_1MinSel" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pgsimp::MinSel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1MinSel_1a010c92d3c426e2680864f7a7fe3abba1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgsimp.MinSel::callb</definition>
+        <argsstring></argsstring>
+        <name>callb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="381" column="1" bodyfile="pycommon/pgsimp.py" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1MinSel_1ad46f873e41ac723c33270a85caeea8cd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgsimp.MinSel::simsel</definition>
+        <argsstring></argsstring>
+        <name>simsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="386" column="1" bodyfile="pycommon/pgsimp.py" bodystart="386" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1MinSel_1a26f9ef789482788885e89d6ef60a2886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.MinSel.__init__</definition>
+        <argsstring>(self, callb=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pgsimp_1_1MinSel_1a010c92d3c426e2680864f7a7fe3abba1" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="378" column="1" bodyfile="pycommon/pgsimp.py" bodystart="378" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1MinSel_1a22980748823c0be5030cb03e6abb3f22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.MinSel.letter</definition>
+        <argsstring>(self, letter)</argsstring>
+        <name>letter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>letter</type>
+          <defname>letter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="392" column="1" bodyfile="pycommon/pgsimp.py" bodystart="392" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1MinSel_1a26f9ef789482788885e89d6ef60a2886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.MinSel.__init__</definition>
+        <argsstring>(self, callb=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pgsimp_1_1MinSel_1a010c92d3c426e2680864f7a7fe3abba1" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="377" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="377" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1MinSel_1a22980748823c0be5030cb03e6abb3f22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.MinSel.letter</definition>
+        <argsstring>(self, letter)</argsstring>
+        <name>letter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>letter</type>
+          <defname>letter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="391" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="391" bodyend="397"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pgsimp.MinSel</label>
+        <link refid="classpycommon_1_1pgsimp_1_1MinSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pgsimp.MinSel</label>
+        <link refid="classpycommon_1_1pgsimp_1_1MinSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pycommon/pgsimp.py" line="376" column="1" bodyfile="pycommon/pgsimp.py" bodystart="376" bodyend="399"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a26f9ef789482788885e89d6ef60a2886" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::MinSel</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a26f9ef789482788885e89d6ef60a2886" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::MinSel</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a010c92d3c426e2680864f7a7fe3abba1" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::MinSel</scope><name>callb</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a22980748823c0be5030cb03e6abb3f22" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::MinSel</scope><name>letter</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a22980748823c0be5030cb03e6abb3f22" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::MinSel</scope><name>letter</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1MinSel_1ad46f873e41ac723c33270a85caeea8cd" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::MinSel</scope><name>simsel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

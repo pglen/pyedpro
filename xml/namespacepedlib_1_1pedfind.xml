@@ -1,0 +1,723 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedfind" kind="namespace" language="Python">
+    <compoundname>pedlib::pedfind</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1ae1f17828a9be2d59a2be14eb2361b608" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pedlib::pedfind.strhist</definition>
+        <argsstring></argsstring>
+        <name>strhist</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="20" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1a4fc74c93625153db2559f30006a24cff" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pedlib::pedfind.stridx</definition>
+        <argsstring></argsstring>
+        <name>stridx</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="21" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1a6af2efb5184057eb817b9f5917f2312e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedfind.dialog</definition>
+        <argsstring></argsstring>
+        <name>dialog</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="22" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1a31cf0cc5caa4a6519709d25d77527aeb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedfind.reptxt</definition>
+        <argsstring></argsstring>
+        <name>reptxt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="30" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1aa1436783408d47987f59bb7bc3483ad9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedfind.srctxt</definition>
+        <argsstring></argsstring>
+        <name>srctxt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="166" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1a557fb31602d2f1beaf12cf7214d91d15" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedfind.xnum</definition>
+        <argsstring></argsstring>
+        <name>xnum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="196" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1a6b7d4d6c464309029faabe98c0e6dc05" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedfind.regex</definition>
+        <argsstring></argsstring>
+        <name>regex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="300" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfind_1a3a51308a8e64ec9499cdbfb2406c55e9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedfind.alt</definition>
+        <argsstring></argsstring>
+        <name>alt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="821" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="821" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1aa9a5e2f04dc9d2c12d810e2d89868eef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.find</definition>
+        <argsstring>(self, self2, replace=False)</argsstring>
+        <name>find</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>replace</type>
+          <defname>replace</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="26" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="26" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a659aa953810a0bfdfa45a1af817f2d7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.load_find_history</definition>
+        <argsstring>(flag)</argsstring>
+        <name>load_find_history</name>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="206" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="206" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1aa126ae048cdb93741e77d2c3f86f3c18" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.__find_keypress</definition>
+        <argsstring>(area, event)</argsstring>
+        <name>__find_keypress</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="228" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="228" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a057faf4ce7bb4dd7d8def96bfbaea86c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.find_show</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>find_show</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="295" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="295" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1aa4cbaeaef2dff5fea1d5e5f77e4be6cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.find_show_file</definition>
+        <argsstring>(self, self2, dialog)</argsstring>
+        <name>find_show_file</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepedlib_1_1pedfind_1a6af2efb5184057eb817b9f5917f2312e" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="444" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="444" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1aa666f1b0d1ba5f81b5dfad9cf579b148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.loadfiles</definition>
+        <argsstring>(butt, tree)</argsstring>
+        <name>loadfiles</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>tree</type>
+          <defname>tree</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="624" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="624" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1adeaa7e0cbefd390af5620ad80ada3963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.area_destroy</definition>
+        <argsstring>(win2, self)</argsstring>
+        <name>area_destroy</name>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim># What a mess ... getting window coordinates. Fulile attempts below
+oldxx, oldyy = win2.get_position()
+oldww, oldhh = win2.get_size()
+#print &quot;old save coord&quot;, oldxx, oldyy, oldww, oldhh
+
+xx,yy,ww,hh = win2.get_allocation()
+#print &quot;save alloc&quot;, xx, yy, ww, hh
+
+aa,bb,cc,dd,ee = Gtk.gdk.Window.get_geometry(win2.window)
+#print &quot;save geom&quot;,aa,bb,cc,dd</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="633" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="633" bodyend="714"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a56e958ddd79346ec3d0770eadc5436ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.tree_sel_row</definition>
+        <argsstring>(xtree, self, self2)</argsstring>
+        <name>tree_sel_row</name>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="715" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="715" bodyend="744"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a3cce68764bd4be374c15e54a934b5c37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.tree_sel2</definition>
+        <argsstring>(xtree, self, self2, par1, par2, par3)</argsstring>
+        <name>tree_sel2</name>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>par1</type>
+          <defname>par1</defname>
+        </param>
+        <param>
+          <type>par2</type>
+          <defname>par2</defname>
+        </param>
+        <param>
+          <type>par3</type>
+          <defname>par3</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="745" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="745" bodyend="761"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a47328dd33f2a2f5d32b21cb78c6ab273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.tree_sel_row2</definition>
+        <argsstring>(xtree, self, self2)</argsstring>
+        <name>tree_sel_row2</name>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="762" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="762" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1aa186a4d6182807b19e56556a03e23e52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.area_focus</definition>
+        <argsstring>(area, event, self, self2)</argsstring>
+        <name>area_focus</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="793" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="793" bodyend="804"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1ac084feec91f1b7880cc906fd449d73ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.area_key</definition>
+        <argsstring>(area, event, self)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="805" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="805" bodyend="840"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a91fd12930658df21835520dbe5266a53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.area_key2</definition>
+        <argsstring>(area, event, self, win2)</argsstring>
+        <name>area_key2</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="841" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="841" bodyend="906"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1afbe92c2f23ddc3646c73bcce74e27eef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.start_tree</definition>
+        <argsstring>(self, win2)</argsstring>
+        <name>start_tree</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="907" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="907" bodyend="924"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a7e70dc7e7e6d2891da30910ce7f285ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.create_tree</definition>
+        <argsstring>(self, win2, match, text=None)</argsstring>
+        <name>create_tree</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>match</type>
+          <defname>match</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="925" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="925" bodyend="951"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a79f696eb40987900a2f06ba37aec12b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.update_treestore</definition>
+        <argsstring>(self, win2, text, was)</argsstring>
+        <name>update_treestore</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>was</type>
+          <defname>was</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="952" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="952" bodyend="989"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a823cf5f1e85745d6eae752398beb5019" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.cp_all</definition>
+        <argsstring>(butt, self, self2, win2, iter=None)</argsstring>
+        <name>cp_all</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>iter</type>
+          <defname>iter</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="990" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="990" bodyend="1019"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a860214331145a579dea8e16b0e762ce6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.chg_one</definition>
+        <argsstring>(butt, self, self2, win2, iter=None)</argsstring>
+        <name>chg_one</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>iter</type>
+          <defname>iter</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="1020" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="1020" bodyend="1070"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a8344bd6eb401ff4d5883862d61e2ea97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.chg_all</definition>
+        <argsstring>(butt, self, self2, win2)</argsstring>
+        <name>chg_all</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="1071" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="1071" bodyend="1074"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a6cb4ce74a87491e7f772784cd5108620" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.chg_sel</definition>
+        <argsstring>(butt, self, self2, win2)</argsstring>
+        <name>chg_sel</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="1075" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="1075" bodyend="1097"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1afd3ae9241183a896aa315a47d8a246a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.wclose</definition>
+        <argsstring>(butt, self)</argsstring>
+        <name>wclose</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="1098" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="1098" bodyend="1101"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1ace93b1cad5966149777b635b6b3ea6b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.wprev</definition>
+        <argsstring>(butt, self)</argsstring>
+        <name>wprev</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="1102" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="1102" bodyend="1105"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfind_1a2263523cd10b77c13192f08ba3db6d23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfind.wnext</definition>
+        <argsstring>(butt, self)</argsstring>
+        <name>wnext</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfind.py" line="1106" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfind.py" bodystart="1106" bodyend="1111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedfind.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -3,6 +3,19 @@
   <compounddef id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow" kind="class" language="Python" prot="public">
     <compoundname>pyedpro::pedlib::pedwin::EdMainWindow</compoundname>
       <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1afd23057f1bf8fa282b623ffe2025cd3d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.pedwin.EdMainWindow::togstrip</definition>
+        <argsstring></argsstring>
+        <name>togstrip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedwin.py" line="190" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="190" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a7286c2644e5d0c6a149675606c65aa05" prot="public" static="no" mutable="no">
         <type></type>
         <definition>pyedpro.pedlib.pedwin.EdMainWindow::mac</definition>
@@ -14,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="194" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="194" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="195" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="195" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a56ef816ba303d5039e4ae9129bf984c9" prot="public" static="no" mutable="no">
         <type></type>
@@ -27,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="198" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="198" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="199" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aa703cbeac0439dcc75d35f9166fefe6d" prot="public" static="no" mutable="no">
         <type></type>
@@ -40,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="199" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="199" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="200" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="200" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a9bab3a4385ae206ea311cc8ac1b6d1ea" prot="public" static="no" mutable="no">
         <type></type>
@@ -53,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="200" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="200" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="201" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="201" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ae1ef5fee7953ed2d32e74c07b5b6a17c" prot="public" static="no" mutable="no">
         <type></type>
@@ -66,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="201" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="201" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="202" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="202" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ad80c2f00caf42ff75960f883f246fad6" prot="public" static="no" mutable="no">
         <type></type>
@@ -79,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="202" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="202" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="203" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="203" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a797bb82c33b36bed8352fd0b7185fb2b" prot="public" static="no" mutable="no">
         <type></type>
@@ -92,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="203" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="203" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="204" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="204" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aefee762fff829e9b541ac9dd7a2b36b0" prot="public" static="no" mutable="no">
         <type></type>
@@ -105,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="204" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="204" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="205" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="205" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2cb66284d1a283de2514902f3bffe30e" prot="public" static="no" mutable="no">
         <type></type>
@@ -118,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="205" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="205" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="206" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="206" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a9db0c9527fbc67d3a8bad517d41218ae" prot="public" static="no" mutable="no">
         <type></type>
@@ -131,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="206" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="206" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="207" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="207" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1af858c06173e64e0b04fcf920e25d919d" prot="public" static="no" mutable="no">
         <type></type>
@@ -144,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="207" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="207" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="208" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="208" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1afac5d5aef3fb231247de7abeacb408d1" prot="public" static="no" mutable="no">
         <type></type>
@@ -157,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="208" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="208" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="209" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1accb25c5e3af4111173a5b80ed1ab38c4" prot="public" static="no" mutable="no">
         <type></type>
@@ -170,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="209" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="209" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="210" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="210" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a7fd20ccbba55808d79487edc6eb092cd" prot="public" static="no" mutable="no">
         <type></type>
@@ -183,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="210" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="210" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="211" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="211" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a7a6c3feb4365f2c6c44cb3b7ab132600" prot="public" static="no" mutable="no">
         <type></type>
@@ -196,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="211" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="211" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="212" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="212" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1af1ecfbf6933b9f87b7f745ee03496b25" prot="public" static="no" mutable="no">
         <type></type>
@@ -209,7 +222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="212" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="212" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="213" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="213" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a41bee56876a43806bf7558509b74f9c1" prot="public" static="no" mutable="no">
         <type></type>
@@ -222,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="213" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="213" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="214" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="214" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a7054badda92d22a0caf5af58ed244dc2" prot="public" static="no" mutable="no">
         <type></type>
@@ -235,7 +248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="214" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="214" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="215" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="215" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aaaf7045c31dc8610099936c8cc65f10b" prot="public" static="no" mutable="no">
         <type></type>
@@ -248,7 +261,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="239" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="239" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="240" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="240" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a71d8010fe177e46f6366a644bc706551" prot="public" static="no" mutable="no">
         <type></type>
@@ -261,7 +274,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="295" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="295" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="296" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="296" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a53ed95d08f340138541afae57aef4b42" prot="public" static="no" mutable="no">
         <type></type>
@@ -274,7 +287,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="309" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="309" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="310" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="310" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a9341106efa21e9abda6b95c37613e9d2" prot="public" static="no" mutable="no">
         <type></type>
@@ -287,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="333" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="333" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="334" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="334" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a14f45708ad1e9b6522dd30f49c40636c" prot="public" static="no" mutable="no">
         <type></type>
@@ -300,7 +313,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="337" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="337" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="338" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="338" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aa06c50865138b8e490256f836e3a500a" prot="public" static="no" mutable="no">
         <type></type>
@@ -313,7 +326,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="347" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="347" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="348" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="348" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2a5fad5858155547a7d78d6885cd4e78" prot="public" static="no" mutable="no">
         <type></type>
@@ -326,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="391" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="391" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="392" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="392" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a64cab2ad7907b4604a08d7e30430b3b3" prot="public" static="no" mutable="no">
         <type></type>
@@ -339,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="395" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="395" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="396" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="396" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ad6b15c5617c2a7214139218e7a782dd2" prot="public" static="no" mutable="no">
         <type></type>
@@ -352,7 +365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="405" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="405" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="406" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="406" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a4dd8a0ead0c7e3a801818ac8136bb674" prot="public" static="no" mutable="no">
         <type></type>
@@ -365,7 +378,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="412" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="412" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="413" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="413" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aa988ec298912b373ca4db572d018c4a8" prot="public" static="no" mutable="no">
         <type></type>
@@ -378,7 +391,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="470" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="470" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="471" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="471" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a16c4b5fa90eb7f11de9af369619acb7d" prot="public" static="no" mutable="no">
         <type></type>
@@ -391,7 +404,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="479" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="479" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="480" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="480" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a95c09499b1ef4a0c3909150c83e7c3d7" prot="public" static="no" mutable="no">
         <type></type>
@@ -404,7 +417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="493" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="493" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="494" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="494" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a0903e23bc48c628a9186545a929ad2b6" prot="public" static="no" mutable="no">
         <type></type>
@@ -417,7 +430,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="524" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="524" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="525" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="525" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a0eec800fc6f08f673e06e6bc46eb4268" prot="public" static="no" mutable="no">
         <type></type>
@@ -430,7 +443,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="531" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="531" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="532" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="532" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2178b24c062a80d7b783b31fe6d8cc29" prot="public" static="no" mutable="no">
         <type></type>
@@ -443,7 +456,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="544" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="544" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="545" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="545" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a8289d703f212ecfe85f489d700c0d112" prot="public" static="no" mutable="no">
         <type></type>
@@ -456,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="547" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="547" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="548" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="548" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aec698135b199d4c632c69fc6b8f91548" prot="public" static="no" mutable="no">
         <type></type>
@@ -469,7 +482,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="558" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="558" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="559" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="559" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a12776aa28676bea6229e13a523f9b744" prot="public" static="no" mutable="no">
         <type></type>
@@ -482,7 +495,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="581" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="581" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="582" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="582" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a54342ce3e452bdc2c1b1bb142d8d6a94" prot="public" static="no" mutable="no">
         <type></type>
@@ -495,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="595" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="595" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="596" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="596" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab0fedfd56d701910b8bcabcbad559dcf" prot="public" static="no" mutable="no">
         <type></type>
@@ -508,7 +521,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="634" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="634" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="635" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="635" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a652b07665b6849ae509518ade5d2b8d0" prot="public" static="no" mutable="no">
         <type></type>
@@ -521,7 +534,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="649" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="649" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="650" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="650" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -556,7 +569,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="187" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="187" bodyend="672"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="187" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="187" bodyend="673"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1af16078b74db2cdd929f15658e453163b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -581,7 +594,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="673" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="673" bodyend="676"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="674" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="674" bodyend="677"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1afa728c4e9bf05776191c0b518115be4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -598,7 +611,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="677" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="677" bodyend="689"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="678" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="678" bodyend="690"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab946ece5f5c16887866701ae5a52529e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -615,7 +628,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="690" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="690" bodyend="703"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="691" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="691" bodyend="704"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a62f7a07f2c1b7207a6b00843b3e1a7d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -640,7 +653,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="704" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="704" bodyend="708"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="705" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="705" bodyend="709"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a138cc2f70db10e632d4143beb031ff06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -669,7 +682,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="709" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="709" bodyend="740"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="710" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="710" bodyend="741"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a389e5da8c6fddfbd9c6721924b9453a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -698,7 +711,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="741" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="741" bodyend="746"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="742" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="742" bodyend="747"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aea2b4aa97d26ccc64dfe06738133ab8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -727,7 +740,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="747" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="747" bodyend="772"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="748" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="748" bodyend="773"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab553e168d12da4215e92ae26f8c0db31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -752,7 +765,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="773" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="773" bodyend="776"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="774" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="774" bodyend="777"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2dd27f9c53a7ac22069f3512baf3dd84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -777,7 +790,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="777" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="777" bodyend="780"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="778" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="778" bodyend="781"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a71f98c32b0d17da7c672f705bcb57652" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -802,7 +815,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="781" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="781" bodyend="785"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="782" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="782" bodyend="786"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ac3aea45fef85566f8375f8edbe890ab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -827,7 +840,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="786" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="786" bodyend="789"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="787" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="787" bodyend="790"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a761babd2278a521d57fbc2d2ff57895c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -848,7 +861,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="790" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="790" bodyend="796"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="791" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="791" bodyend="797"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a89a809cfbf4c279879c19ce38843b5a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -869,7 +882,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="797" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="797" bodyend="803"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="798" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="798" bodyend="804"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a7779179ab34cd25e1416ee1b70e6bfca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -890,7 +903,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="804" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="804" bodyend="824"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="805" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="805" bodyend="825"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a9c4b500b3c947b15317b34a66fb5f1ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -911,7 +924,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="825" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="825" bodyend="828"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="826" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="826" bodyend="829"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aade4940d7840e4882b1aa51d9df9678e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -932,7 +945,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="829" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="829" bodyend="832"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="830" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="830" bodyend="833"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1af30148a5965b413a132617a52275041a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -961,7 +974,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="833" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="833" bodyend="841"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="834" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="834" bodyend="842"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a4e0adfdcd92fa74bc7149df587adff9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -986,7 +999,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="842" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="842" bodyend="846"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="843" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="843" bodyend="847"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aec7ca0424f0ff98e5393aa40e4fb8b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1023,7 +1036,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="847" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="847" bodyend="851"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="848" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="848" bodyend="852"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1acce01f43e5f9b09129d09e73abe61d3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1060,7 +1073,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="852" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="852" bodyend="856"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="853" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="853" bodyend="857"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a27068bcadf39ee6229b8a84b85bd0a27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1105,7 +1118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="857" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="857" bodyend="871"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="858" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="858" bodyend="872"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a5e89446a48af2e53fbcc2e43f4502680" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1134,7 +1147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="874" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="874" bodyend="877"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="875" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="875" bodyend="878"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a8d196b77d4405d09f1ecd12a046670db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1155,7 +1168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="878" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="878" bodyend="888"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="879" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="879" bodyend="889"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a611a19fcef5454fe402bebe18522d8be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1176,7 +1189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="889" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="889" bodyend="898"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="890" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="890" bodyend="899"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2a23b6f83caf3d4622a284da190f81cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1197,7 +1210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="899" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="899" bodyend="907"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="900" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="900" bodyend="908"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a7c2eb90d9dab7216258622790694532a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1218,7 +1231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="908" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="908" bodyend="928"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="909" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="909" bodyend="929"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a0bca836b584b3079301eceb403ac40f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1247,7 +1260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="932" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="932" bodyend="953"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="933" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="933" bodyend="954"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a5dbddcc8d5e170d3bbfcc8f2028d28a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1272,7 +1285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="954" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="954" bodyend="958"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="955" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="955" bodyend="959"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ac8a0b711a72e61d52aa1cd40a7145486" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1297,7 +1310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="959" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="959" bodyend="964"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="960" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="960" bodyend="965"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a75b3a78c0a0cd26d25e0fb23832c0c66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1322,7 +1335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="965" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="965" bodyend="968"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="966" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="966" bodyend="969"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab0382502751b0f5cf18f0887a8c4ec5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1343,7 +1356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="969" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="969" bodyend="978"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="970" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="970" bodyend="979"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ad5ff837216f83322c78bc5dea397ab1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1364,7 +1377,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="979" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="979" bodyend="988"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="980" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="980" bodyend="989"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a0786928d7b6ff1fd5947c57596de403e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1393,7 +1406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="989" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="989" bodyend="1001"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="990" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="990" bodyend="1002"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a9de731e81c8cbe2246fc5d3aa51f64d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1422,7 +1435,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1002" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1002" bodyend="1014"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1003" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1003" bodyend="1015"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a62d92929928a674f36d5659626768599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1447,7 +1460,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1016" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1016" bodyend="1071"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1017" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1017" bodyend="1072"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1adebbfa92030b2d9d174a150f98894bdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1464,7 +1477,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1072" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1072" bodyend="1075"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1073" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1073" bodyend="1076"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a19c582a1093155113bfeb56c43b54bbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1481,7 +1494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1076" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1076" bodyend="1079"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1077" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1077" bodyend="1080"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2932d13b76b96f4ed861cccf1ab85878" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1498,7 +1511,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1080" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1080" bodyend="1085"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1081" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1081" bodyend="1086"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a27de1deb60af435aec68eee69e52c1f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1515,7 +1528,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1086" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1086" bodyend="1108"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1087" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1087" bodyend="1109"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aca07e856d9b3eb2c43014ccf95455736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1537,7 +1550,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1110" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1110" bodyend="1135"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1111" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1111" bodyend="1136"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a494f0d9d97ca07f267df11c25ae65655" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1559,7 +1572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1137" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1137" bodyend="1162"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1138" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1138" bodyend="1163"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2f6c6913bd5b341c9c14aba52ddf1748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1580,7 +1593,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1164" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1164" bodyend="1191"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1165" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1165" bodyend="1192"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a5f1793f84ab2cb9e79bbca7556b5f0b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1601,7 +1614,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1193" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1193" bodyend="1219"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1194" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1194" bodyend="1220"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a7edb37794fc2d72310aa5cd5bbc8e9eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1626,7 +1639,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1223" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1223" bodyend="1226"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1224" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1224" bodyend="1227"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aff43d85409148887e713a21bec2b3a03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1651,7 +1664,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1227" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1227" bodyend="1230"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1228" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1228" bodyend="1231"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a659dcbddf3c9d21d266ac3636175e8a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1676,7 +1689,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1231" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1231" bodyend="1234"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1232" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1232" bodyend="1235"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aa2ef3a2bfac00365408df0b55f957088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1701,7 +1714,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1235" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1235" bodyend="1238"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1236" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1236" bodyend="1239"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a2f46b615e50f7eb32377a593b7174e43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1726,7 +1739,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1239" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1239" bodyend="1260"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1240" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1240" bodyend="1261"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a43c329f72873c9e3530b901b1dd337f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1751,7 +1764,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1261" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1261" bodyend="1278"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1262" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1262" bodyend="1279"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ae9b089a324fe97dd677b19edd240d688" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1776,7 +1789,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1279" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1279" bodyend="1283"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1280" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1280" bodyend="1284"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a732e482a48e5d33c6d0b360fef4dc44c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1801,7 +1814,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1284" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1284" bodyend="1291"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1285" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1285" bodyend="1292"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aadcf75dd8427fd731c6bcbe8fa231e5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1822,7 +1835,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1292" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1292" bodyend="1295"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1293" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1293" bodyend="1296"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a1ae92d6f2ebe5e97571afdd81fb30079" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1843,7 +1856,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1296" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1296" bodyend="1301"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1297" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1297" bodyend="1302"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a6457c476a1835aad664537e48c650b16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1872,7 +1885,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1302" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1302" bodyend="1312"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1303" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1303" bodyend="1313"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aa2a9be2a49402d096376782d189e3c66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1901,7 +1914,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1313" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1313" bodyend="1323"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1314" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1314" bodyend="1324"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ac86acf5632bf3d309652e1364b462c65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1930,7 +1943,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1324" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1324" bodyend="1327"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1325" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1325" bodyend="1328"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a85c83259abe37355d5199d84dde40f77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1955,7 +1968,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1328" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1328" bodyend="1333"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1329" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1329" bodyend="1334"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ad4dd00c252e7d4de17e28ed5b09c164a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1988,7 +2001,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1334" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1334" bodyend="1337"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1335" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1335" bodyend="1338"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab0760ad41c48a538ffe0a26e150c77d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2009,7 +2022,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1339" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1339" bodyend="1345"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1340" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1340" bodyend="1346"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a46491f46b5d69e9170cd61f5b547f598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2030,7 +2043,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1347" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1347" bodyend="1355"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1348" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1348" bodyend="1356"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a9d87605d3f61a2f42ede2f731c6f1859" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2051,7 +2064,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1356" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1356" bodyend="1360"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1357" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1357" bodyend="1361"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1af9197b0df6c9aa59ade1ca60d44c0086" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2072,7 +2085,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1361" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1361" bodyend="1364"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1362" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1362" bodyend="1365"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a6b9be1f23981fd346aab971eaeeb7b6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2094,7 +2107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1365" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1365" bodyend="1417"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1366" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1366" bodyend="1418"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a084040ba10db8fba69eb679241edb575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2119,7 +2132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1418" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1418" bodyend="1423"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1419" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1419" bodyend="1424"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a8201ada7fcf515ecc78c4c1773afee2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2136,7 +2149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1425" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1425" bodyend="1456"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1426" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1426" bodyend="1457"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a65e648f87e8b87f38e0e8b2815965284" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2158,7 +2171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1457" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1457" bodyend="1464"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1458" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1458" bodyend="1465"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a4d50b9cb56b4d3634bafaaee78bde5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2175,7 +2188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1465" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1465" bodyend="1470"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1466" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1466" bodyend="1471"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a67276d4a166430b4ae3c023dcb72e9d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2192,7 +2205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1471" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1471" bodyend="1476"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1472" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1472" bodyend="1477"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a005b91dc0632730581a6ec0f68ca9205" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2209,7 +2222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1477" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1477" bodyend="1482"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1478" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1478" bodyend="1483"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a4b0d83a9201a2cca3519251246366ae0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2226,7 +2239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1483" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1483" bodyend="1488"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1484" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1484" bodyend="1489"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1afae9bce1f816a50b93517d7ca646dab8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2247,7 +2260,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1492" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1492" bodyend="1724"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1493" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1493" bodyend="1735"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1adefa18784c05984a64df8b560acd8c11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2264,7 +2277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1725" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1725" bodyend="1733"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1736" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1736" bodyend="1744"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a26af4fd2111edc9edb146fcc80a03764" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2286,7 +2299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1734" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1734" bodyend="1762"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1745" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1745" bodyend="1773"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aa56d0b2bddbee905c2e58e961971e691" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2303,7 +2316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1763" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1763" bodyend="1772"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1774" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1774" bodyend="1783"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1af865e0362cf6a96b4d427e8dd735f136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2320,7 +2333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1773" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1773" bodyend="1782"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1784" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1784" bodyend="1793"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a6f7fbb512de9df489e9dab18572071b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2337,7 +2350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1783" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1783" bodyend="1797"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1794" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1794" bodyend="1808"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aad185c4aae834df03afbcf2e078a996a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2354,7 +2367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1798" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1798" bodyend="1811"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1809" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1809" bodyend="1822"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a37d65a237766a5e0f8624499048e9cdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2375,7 +2388,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1812" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1812" bodyend="1816"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1823" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1823" bodyend="1827"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1aac4edc130db3acd8e7a134f06c2902bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2400,7 +2413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1817" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1817" bodyend="1833"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1828" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1828" bodyend="1844"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1abdb4ffdccf83db132acb21c5beb6a787" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2417,7 +2430,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1834" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1834" bodyend="1846"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1845" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1845" bodyend="1857"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a342633093797b9ec39499135cccc9ae1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2434,7 +2447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1847" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1847" bodyend="1877"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1858" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1858" bodyend="1888"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a58820d37bea638bff9b8f2b6e3dfd4d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2459,7 +2472,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1878" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1878" bodyend="1881"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1889" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1889" bodyend="1892"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ae464759453f6f79fc835aefa236ac3db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2480,7 +2493,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1884" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1884" bodyend="1938"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1895" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1895" bodyend="1949"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ad5a9eea56ffe97eac593b5b002fe5666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2502,7 +2515,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1939" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1939" bodyend="1942"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1950" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1950" bodyend="1953"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a92140997f6180420f7a8183b4a4b76a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2523,7 +2536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1943" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1943" bodyend="1946"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1954" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1954" bodyend="1957"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a40608bb5e396469b71a1548eefcc54cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2548,7 +2561,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1947" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1947" bodyend="1960"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1958" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1958" bodyend="1971"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1acdd4677843563021afe8562bd204717b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2605,7 +2618,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1962" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1962" bodyend="1983"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1973" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1973" bodyend="1994"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ae0289c99e112c8eec7bc76e5c62dc8a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2630,7 +2643,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1984" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1984" bodyend="1986"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1995" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1995" bodyend="1997"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a8b23db90204c51957fcf3f4bdc126d71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2656,7 +2669,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="1987" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1987" bodyend="1999"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="1998" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="1998" bodyend="2010"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab0fe63747d755c465a301d9dbadd7348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2681,14 +2694,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedwin.py" line="2000" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2000" bodyend="2011"/>
+        <location file="pyedpro/pedlib/pedwin.py" line="2011" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="2011" bodyend="2022"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/pedlib/pedwin.py" line="185" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="185" bodyend="2012"/>
+    <location file="pyedpro/pedlib/pedwin.py" line="185" column="1" bodyfile="pyedpro/pedlib/pedwin.py" bodystart="185" bodyend="2023"/>
     <listofallmembers>
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ac100959146e7c3edadfcf770d0882c4b" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>__init__</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1af9197b0df6c9aa59ade1ca60d44c0086" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>activate_about</name></member>
@@ -2807,6 +2820,7 @@
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a62f7a07f2c1b7207a6b00843b3e1a7d1" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>threadevent</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab946ece5f5c16887866701ae5a52529e" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>ThredCallback</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1afa728c4e9bf05776191c0b518115be4e" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>ThredMine</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1afd23057f1bf8fa282b623ffe2025cd3d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>togstrip</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a0786928d7b6ff1fd5947c57596de403e" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>tree_sel</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1a9de731e81c8cbe2246fc5d3aa51f64d6" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>tree_sel2</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow_1ab0382502751b0f5cf18f0887a8c4ec5b" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedwin::EdMainWindow</scope><name>tree_sel_row</name></member>

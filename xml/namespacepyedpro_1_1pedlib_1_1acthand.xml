@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/acthand.py" line="73" column="1" bodyfile="pyedpro/pedlib/acthand.py" bodystart="73" bodyend="-1"/>
+        <location file="pyedpro/pedlib/acthand.py" line="72" column="1" bodyfile="pyedpro/pedlib/acthand.py" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1acthand_1a5b61a402d3e1d671f7e8936f041ab3a5" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/acthand.py" line="74" column="1" bodyfile="pyedpro/pedlib/acthand.py" bodystart="74" bodyend="-1"/>
+        <location file="pyedpro/pedlib/acthand.py" line="73" column="1" bodyfile="pyedpro/pedlib/acthand.py" bodystart="73" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

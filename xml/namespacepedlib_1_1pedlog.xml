@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedlog" kind="namespace" language="Python">
+    <compoundname>pedlib::pedlog</compoundname>
+    <innerclass refid="classpedlib_1_1pedlog_1_1fake__stdout" prot="public">pedlib::pedlog::fake_stdout</innerclass>
+    <innerclass refid="classpedlib_1_1pedlog_1_1LogWin" prot="public">pedlib::pedlog::LogWin</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedlog_1a809134b5498b7d38ae71b450b4fa2427" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pedlib::pedlog.MAX_LOG</definition>
+        <argsstring></argsstring>
+        <name>MAX_LOG</name>
+        <initializer>=  2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="25" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedlog_1ae91a7fc14286d89ef0b0a88c1885b900" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedlog.logwin</definition>
+        <argsstring></argsstring>
+        <name>logwin</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="30" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedlog_1a1718beb30143278f7fb3f51b36f7dd49" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedlog.old_stdout</definition>
+        <argsstring></argsstring>
+        <name>old_stdout</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="31" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedlog_1a8c5ad169b5efebaca3c6f89c926d3939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.save_log</definition>
+        <argsstring>()</argsstring>
+        <name>save_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="92" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="92" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedlog_1a2e64410b8d3bbaabe30ee888bf2aaa93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.load_log</definition>
+        <argsstring>()</argsstring>
+        <name>load_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="95" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="95" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedlog_1a555cef36a05ac830ad36311eddc06519" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.show_logwin</definition>
+        <argsstring>()</argsstring>
+        <name>show_logwin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="195" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedlog_1a060d5dc9861a5cae3b087a0a3602dacc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.create_logwin</definition>
+        <argsstring>()</argsstring>
+        <name>create_logwin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="199" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="199" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedlog_1a32469729b4f65bdb9ff6420745e553c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.log</definition>
+        <argsstring>(*strx)</argsstring>
+        <name>log</name>
+        <param>
+          <type>*</type>
+          <declname>strx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="204" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="204" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedlog.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

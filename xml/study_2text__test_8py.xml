@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="study_2text__test_8py" kind="file" language="Python">
+    <compoundname>text_test.py</compoundname>
+    <innernamespace refid="namespacetext__test">text_test</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gi</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">gi.require_version(</highlight><highlight class="stringliteral">&quot;Gtk&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;3.0&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Gtk</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetext__test_1ae0905663f58173c7879fa0074215358c" kindref="member">draw_event</ref>(widget,<sp/>ctx):</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#ctx.set_line_width(6)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#ctx.set_tolerance(.1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.select_font_face(</highlight><highlight class="stringliteral">&apos;sans-serif&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.set_font_size(48)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>(x,<sp/>y,<sp/>width,<sp/>height,<sp/>dx,<sp/>dy)<sp/>=<sp/>ctx.text_extents(</highlight><highlight class="stringliteral">&apos;Hello<sp/>World&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.translate(50,<sp/>50)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;ctx.new_path()</highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ctx.move_to(x<sp/>-<sp/>10,<sp/>y<sp/>-<sp/>10)</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ctx.rel_line_to(width<sp/>+<sp/>20,<sp/>0)</highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ctx.rel_line_to(0,<sp/>height<sp/>+<sp/>20)</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ctx.rel_line_to(-(width<sp/>+<sp/>20),<sp/>0)</highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ctx.close_path()</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ctx.set_source_rgb(0,<sp/>0,<sp/>1)</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ctx.stroke()&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.move_to(0,<sp/>0)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.set_source_rgb(0,<sp/>0,<sp/>0)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>ctx.show_text(</highlight><highlight class="stringliteral">&apos;Hello<sp/>World&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">win<sp/>=<sp/>Gtk.Window()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">win.connect(</highlight><highlight class="stringliteral">&apos;destroy&apos;</highlight><highlight class="normal">,<sp/>Gtk.main_quit)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">drawingarea<sp/>=<sp/>Gtk.DrawingArea()</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">win.add(drawingarea)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">drawingarea.connect(</highlight><highlight class="stringliteral">&apos;draw&apos;</highlight><highlight class="normal">,<sp/>draw_event)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">drawingarea.set_size_request(400,<sp/>150)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">win.show_all()</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">Gtk.main()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="study/text_test.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedmenu" kind="namespace" language="Python">
+    <compoundname>pedlib::pedmenu</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedmenu_1a5fcce5846c14c110f72a45f860fd45d2" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedmenu._</definition>
+        <argsstring></argsstring>
+        <name>_</name>
+        <initializer>=  gettext.gettext</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="13" column="1" bodyfile="pyedpro/build/lib/pedlib/pedmenu.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedmenu_1a476f50dc362a1b68e37edfb464f634b5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedmenu.mained</definition>
+        <argsstring></argsstring>
+        <name>mained</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="31" column="1" bodyfile="pyedpro/build/lib/pedlib/pedmenu.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedmenu_1af11cea5c21a1beedd91e450c6c5dd5d4" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple pedlib::pedmenu.rclick_menu</definition>
+        <argsstring></argsstring>
+        <name>rclick_menu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="68" column="1" bodyfile="pyedpro/build/lib/pedlib/pedmenu.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedmenu_1aaa16a7fd95ab1ff335a6b806b10b2f3d" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple pedlib::pedmenu.rclick_menu2</definition>
+        <argsstring></argsstring>
+        <name>rclick_menu2</name>
+        <initializer>=  (
+            ( _(&quot;Terminal Here&quot;),  None,            <ref refid="namespacepedlib_1_1pedmenu_1a4ed618dcae28f8c61ccbbb47b9c30d9d" kindref="member">rclick_action</ref>, 14, None ),
+            ( _(&quot;Exec current&quot;),  None,             <ref refid="namespacepedlib_1_1pedmenu_1a4ed618dcae28f8c61ccbbb47b9c30d9d" kindref="member">rclick_action</ref>, 17, None ),
+            )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="101" column="1" bodyfile="pyedpro/build/lib/pedlib/pedmenu.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedmenu_1a4ed618dcae28f8c61ccbbb47b9c30d9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedmenu.rclick_action</definition>
+        <argsstring>(self, arg)</argsstring>
+        <name>rclick_action</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="36" column="1" bodyfile="pyedpro/build/lib/pedlib/pedmenu.py" bodystart="36" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedmenu_1a3fc13893bb61310264fc788ed7b91b3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedmenu.rclick_quit</definition>
+        <argsstring>(self, arg)</argsstring>
+        <name>rclick_quit</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="64" column="1" bodyfile="pyedpro/build/lib/pedlib/pedmenu.py" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedmenu_1ad76f4a717609eca808616fa40c82afc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedmenu.create_action_group</definition>
+        <argsstring>(self)</argsstring>
+        <name>create_action_group</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="106" column="1" bodyfile="pyedpro/build/lib/pedlib/pedmenu.py" bodystart="106" bodyend="427"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedmenu.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

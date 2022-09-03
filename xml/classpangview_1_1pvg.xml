@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="71" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="71" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="75" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a2fef98c7d1aa195fd482c48d00c381ad" prot="public" static="yes" mutable="no">
         <type>bool</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="72" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="72" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="76" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aabb6752011703c4dd4ea5677c8354d3b" prot="public" static="yes" mutable="no">
         <type></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="73" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="73" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="77" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ac5acc59bfcbd8db1da796e8cf447727c" prot="public" static="yes" mutable="no">
         <type>int</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="74" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="74" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="78" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="78" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a0d7b7723efe055ab0d48ecca9489b65b" prot="public" static="yes" mutable="no">
         <type>bool</type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="75" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="75" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="79" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1afa7918ff9bbe9b25819d5ff60e7eec82" prot="public" static="yes" mutable="no">
         <type>bool</type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="76" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="76" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="80" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ac44a39b4f0cce9b32c86e55807ef84d2" prot="public" static="yes" mutable="no">
         <type></type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="93" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="93" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="97" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a566cb981be450e834c6de69bd97f1d54" prot="public" static="yes" mutable="no">
         <type></type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="193" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="193" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="197" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="197" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a2dd815912fd37048fde474d9d3245ca0" prot="public" static="yes" mutable="no">
         <type></type>
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="295" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="295" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="299" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="299" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aabf3ebccf631c9d3b7056d75ca7360fd" prot="public" static="yes" mutable="no">
         <type></type>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="296" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="296" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="300" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="300" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a6186a6c8556e14925352e888caae08af" prot="public" static="yes" mutable="no">
         <type></type>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="297" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="297" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="301" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="301" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a70da80fd5e6d623a16c7ba2a98bfa89c" prot="public" static="yes" mutable="no">
         <type></type>
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="298" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="298" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="302" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="302" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a017a1797d0a31983663924b4bdca6e3d" prot="public" static="yes" mutable="no">
         <type></type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="299" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="299" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="303" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="303" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a4a910b59b9d28475382a348ee5f5c20b" prot="public" static="yes" mutable="no">
         <type></type>
@@ -189,7 +189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="300" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="300" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="304" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="304" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1acedc2a38badcbbc1b8dc3ba8198140ac" prot="public" static="yes" mutable="no">
         <type></type>
@@ -202,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="301" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="301" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="305" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="305" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ab4fd72032d215d1102998c7a9b1f9d28" prot="public" static="yes" mutable="no">
         <type></type>
@@ -215,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="302" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="302" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="306" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="306" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a04ca60164b1924dba97ccd101c65f56c" prot="public" static="yes" mutable="no">
         <type></type>
@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="303" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="303" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="307" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="307" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aa015ffb22a970f0a1fb575144a38402c" prot="public" static="yes" mutable="no">
         <type></type>
@@ -241,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="304" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="304" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="308" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="308" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a5639eb6784e84d2c846618b1d901cf43" prot="public" static="yes" mutable="no">
         <type></type>
@@ -254,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="305" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="305" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="309" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="309" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ae2e6256009cd2356044a1ab29526b136" prot="public" static="yes" mutable="no">
         <type></type>
@@ -267,7 +267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="306" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="306" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="310" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="310" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a7c71b3fb6d4ac750a7c5097eacbf1257" prot="public" static="yes" mutable="no">
         <type></type>
@@ -280,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="307" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="307" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="311" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="311" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a19561008feba6576fb7f2d460bfaecc6" prot="public" static="yes" mutable="no">
         <type></type>
@@ -293,7 +293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="308" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="308" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="312" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="312" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a90f38c5628f7c81dcde184cedb547bf2" prot="public" static="yes" mutable="no">
         <type></type>
@@ -306,7 +306,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="309" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="309" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="313" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="313" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a150ad78400509bb6cf9c7927261c66ed" prot="public" static="yes" mutable="no">
         <type></type>
@@ -319,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="310" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="310" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="314" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="314" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a45d9e57ddc5f1578b4993b47518ecf2d" prot="public" static="yes" mutable="no">
         <type></type>
@@ -332,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="311" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="311" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="315" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="315" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a2b090fefb6c2a3d980b45f3ea7117af0" prot="public" static="yes" mutable="no">
         <type></type>
@@ -345,7 +345,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="312" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="312" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="316" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="316" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a3c8d7bd8406f9b08f12c72ad6cb26e18" prot="public" static="yes" mutable="no">
         <type></type>
@@ -358,7 +358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="313" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="313" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="317" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="317" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ada490bf8f586d39bd1b646fe9e1983fd" prot="public" static="yes" mutable="no">
         <type></type>
@@ -371,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="314" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="314" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="318" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="318" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a4353d79725b4f2a881e57326ca691294" prot="public" static="yes" mutable="no">
         <type></type>
@@ -384,7 +384,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="315" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="315" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="319" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="319" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aeae8f9c5a7b9a316519e6447c161639f" prot="public" static="yes" mutable="no">
         <type></type>
@@ -397,7 +397,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="316" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="316" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="320" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="320" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ae748e4a741439ae1bc6b034c15a3f1f0" prot="public" static="yes" mutable="no">
         <type></type>
@@ -410,7 +410,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="317" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="317" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="321" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="321" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a5affeca527b2031f283b5db41b61daa0" prot="public" static="yes" mutable="no">
         <type></type>
@@ -423,7 +423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="318" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="318" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="322" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="322" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a6f26ddef15f0daafe84cb10af6cdf52c" prot="public" static="yes" mutable="no">
         <type></type>
@@ -436,7 +436,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="319" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="319" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="323" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="323" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a23aa00a0413b632f19f488c6ce3f6daf" prot="public" static="yes" mutable="no">
         <type></type>
@@ -449,7 +449,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="320" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="320" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="324" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="324" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a671e878ebfbba821ca387f2ad3a1b3cc" prot="public" static="yes" mutable="no">
         <type></type>
@@ -462,7 +462,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="321" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="321" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="325" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="325" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a7ecde3139961ea7d40dbae18ae753a01" prot="public" static="yes" mutable="no">
         <type></type>
@@ -475,7 +475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="322" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="322" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="326" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="326" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a8293d45ebca9d890f79d5bfe15b6b07b" prot="public" static="yes" mutable="no">
         <type></type>
@@ -488,7 +488,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="323" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="323" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="327" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="327" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aeb5c6b84d792156f70457743202274f7" prot="public" static="yes" mutable="no">
         <type></type>
@@ -501,7 +501,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="324" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="324" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="328" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="328" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ad9cddaa0f1ee2bd7d66021d73030ef37" prot="public" static="yes" mutable="no">
         <type></type>
@@ -514,7 +514,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="325" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="325" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="329" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="329" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a348f36827df6096f41dd34470b696a24" prot="public" static="yes" mutable="no">
         <type></type>
@@ -527,7 +527,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="326" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="326" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="330" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="330" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a84885a5f4272cd75cf22d0b2ce54c18b" prot="public" static="yes" mutable="no">
         <type></type>
@@ -540,7 +540,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="327" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="327" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="331" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="331" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a4833322572a7ef8ef161710abffdc470" prot="public" static="yes" mutable="no">
         <type></type>
@@ -553,7 +553,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="328" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="328" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="332" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="332" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ab132b68980433bf29365acf7df710f30" prot="public" static="yes" mutable="no">
         <type></type>
@@ -566,7 +566,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="329" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="329" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="333" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="333" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a19b665a387b67acf7d8422c0fe13141e" prot="public" static="yes" mutable="no">
         <type></type>
@@ -579,7 +579,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="330" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="330" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="334" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="334" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a1fefc1791f401e81359b3e2f5142e8e7" prot="public" static="yes" mutable="no">
         <type></type>
@@ -592,7 +592,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="331" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="331" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="335" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="335" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a42779cd64f40528a443b55d6f7383579" prot="public" static="yes" mutable="no">
         <type></type>
@@ -605,7 +605,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="332" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="332" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="336" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="336" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a9d1e94ea9ce6941d22222dc34f514110" prot="public" static="yes" mutable="no">
         <type></type>
@@ -618,7 +618,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="333" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="333" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="337" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="337" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a8c17a2ac3d94ae57e8350a90e831c342" prot="public" static="yes" mutable="no">
         <type></type>
@@ -631,7 +631,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="334" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="334" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="338" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="338" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ae0d59bf4907baa17747cea95fb31154c" prot="public" static="yes" mutable="no">
         <type></type>
@@ -644,7 +644,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="335" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="335" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="339" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="339" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aacc7ab5312f521493c4485bda2f25630" prot="public" static="yes" mutable="no">
         <type></type>
@@ -657,7 +657,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="336" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="336" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="340" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="340" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aa802a0cf1ead122eabc02ac9abc4c3bc" prot="public" static="yes" mutable="no">
         <type></type>
@@ -670,7 +670,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="337" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="337" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="341" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="341" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aaa52914bbeb61dc6940320cfe25ddef4" prot="public" static="yes" mutable="no">
         <type></type>
@@ -683,7 +683,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="338" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="338" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="342" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="342" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ab3a17b86bd5bc5065cb2a80db41ab18e" prot="public" static="yes" mutable="no">
         <type></type>
@@ -696,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="339" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="339" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="343" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="343" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a8981236c983b2b72044fb6998d3469d7" prot="public" static="yes" mutable="no">
         <type></type>
@@ -709,7 +709,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="340" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="340" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="344" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="344" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ac916ccdf0bd94d409bfa9c0dab996abe" prot="public" static="yes" mutable="no">
         <type></type>
@@ -722,7 +722,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="341" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="341" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="345" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="345" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a31c0ce935880c9b7cedc60a2e4852953" prot="public" static="yes" mutable="no">
         <type></type>
@@ -735,7 +735,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="342" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="342" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="346" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="346" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ae3b4073c84a258c4b7324975bad7fabc" prot="public" static="yes" mutable="no">
         <type></type>
@@ -748,7 +748,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="343" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="343" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="347" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="347" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a86a8eb435760dc41ee848ef9044eb7e1" prot="public" static="yes" mutable="no">
         <type></type>
@@ -761,7 +761,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="344" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="344" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="348" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="348" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ab260f95f18b70127f4f70a75fa7c1fa7" prot="public" static="yes" mutable="no">
         <type></type>
@@ -774,7 +774,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="345" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="345" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="349" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="349" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ab2024498c933c8cdea83eed11d162158" prot="public" static="yes" mutable="no">
         <type></type>
@@ -787,7 +787,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="346" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="346" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="350" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="350" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aa2bf037de3ceecf58a9b277a236fad8f" prot="public" static="yes" mutable="no">
         <type></type>
@@ -800,7 +800,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="347" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="347" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="351" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="351" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1af735f9b3cdcf4e526c438e9f9c3462b1" prot="public" static="yes" mutable="no">
         <type></type>
@@ -813,7 +813,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="348" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="348" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="352" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="352" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a0c5662deed01b5ae8dee81c8dd91db28" prot="public" static="yes" mutable="no">
         <type></type>
@@ -826,7 +826,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="349" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="349" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="353" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="353" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a96d8d85519dc3e13f87ad7bca786f9af" prot="public" static="yes" mutable="no">
         <type></type>
@@ -839,7 +839,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="350" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="350" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="354" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="354" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a3907dce348ebc182bb6ff2c292dbb2ef" prot="public" static="yes" mutable="no">
         <type></type>
@@ -852,7 +852,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="351" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="351" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="355" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="355" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1adcfb19890c6e9442efac90cd081edbf9" prot="public" static="yes" mutable="no">
         <type></type>
@@ -865,7 +865,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="352" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="352" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="356" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="356" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a69bb7cefeecf377e897d6cf69b4613f2" prot="public" static="yes" mutable="no">
         <type></type>
@@ -878,7 +878,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="353" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="353" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="357" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="357" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ab16fe44c39b3fb421dc60cb48ead5f17" prot="public" static="yes" mutable="no">
         <type></type>
@@ -891,7 +891,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="354" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="354" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="358" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="358" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a8ec4eeb68c05307c5b37c09586a3b22f" prot="public" static="yes" mutable="no">
         <type></type>
@@ -904,7 +904,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="355" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="355" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="359" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="359" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aef5e00ce35366b13c4c59a4c472e8357" prot="public" static="yes" mutable="no">
         <type></type>
@@ -917,7 +917,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="356" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="356" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="360" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="360" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a3798ae7769486508f40a0fa7a6c2ccd4" prot="public" static="yes" mutable="no">
         <type></type>
@@ -930,7 +930,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="357" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="357" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="361" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="361" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a0fcf7c87bd3cc529830d1001269baea3" prot="public" static="yes" mutable="no">
         <type></type>
@@ -943,7 +943,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="358" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="358" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="362" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="362" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ae2614a43991440373b55b212f00eb4e5" prot="public" static="yes" mutable="no">
         <type></type>
@@ -956,7 +956,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="359" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="359" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="363" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="363" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aed1b8bcdce525946fdd02bbbe1f62abb" prot="public" static="yes" mutable="no">
         <type></type>
@@ -969,7 +969,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="360" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="360" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="364" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="364" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a640d52a1816d98b638df5000c6c07031" prot="public" static="yes" mutable="no">
         <type></type>
@@ -982,7 +982,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="361" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="361" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="365" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="365" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1aa572abe460c2f475d7ccace443862461" prot="public" static="yes" mutable="no">
         <type></type>
@@ -995,7 +995,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="362" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="362" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="366" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="366" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a5cd29649420ab5b20dc66c4503682e01" prot="public" static="yes" mutable="no">
         <type></type>
@@ -1008,7 +1008,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="363" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="363" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="367" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="367" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ab6b17d66d7000a2d0beb7f6f166b9a2d" prot="public" static="yes" mutable="no">
         <type></type>
@@ -1021,7 +1021,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="364" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="364" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="368" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="368" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1ad65aa336049ceb51574b015e6b77ae04" prot="public" static="yes" mutable="no">
         <type></type>
@@ -1034,7 +1034,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="365" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="365" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="369" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="369" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a072ad792a7f80e0b1c1a9fd3961c01ca" prot="public" static="yes" mutable="no">
         <type></type>
@@ -1047,7 +1047,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="366" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="366" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="370" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="370" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpangview_1_1pvg_1a3a5359e19340fbff8b4f9fa3628d67aa" prot="public" static="yes" mutable="no">
         <type></type>
@@ -1060,14 +1060,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="367" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="367" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pangview.py" line="371" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="371" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" line="69" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pangview.py" bodystart="69" bodyend="374"/>
+    <location file="pyedpro/build/scripts-3.10/pangview.py" line="73" column="1" bodyfile="pyedpro/build/scripts-3.10/pangview.py" bodystart="73" bodyend="378"/>
     <listofallmembers>
       <member refid="classpangview_1_1pvg_1aeb5c6b84d792156f70457743202274f7" prot="public" virt="non-virtual"><scope>pangview::pvg</scope><name>BGBLUE</name></member>
       <member refid="classpangview_1_1pvg_1a23aa00a0413b632f19f488c6ce3f6daf" prot="public" virt="non-virtual"><scope>pangview::pvg</scope><name>BGGREEN</name></member>

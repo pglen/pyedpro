@@ -132,7 +132,7 @@
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classpyedpro_1_1Unbuffered_1a927030e155b1d50c15e0f10a0eebfd02" kindref="member">__getattr__</ref>(self,<sp/>attr):</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>getattr(self.<ref refid="classpyedpro_1_1Unbuffered_1acc50c860eef985aa71185cafa4bad70c" kindref="member">stream</ref>stream,<sp/>attr)</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepyedpro_1a07c3f80902b86fe3e314bf269ccbbff4" kindref="member">terminate</ref>(arg1,<sp/>arg2):</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepyedpro_1ac783b5a036006d9dee7eab42b863be04" kindref="member">terminate</ref>(arg1,<sp/>arg2):</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>if(pyedlib.pedconfig.conf.verbose):</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Terminating<sp/>pydepro.py,<sp/>saving<sp/>files<sp/>to<sp/>~/pydepro&quot;</highlight><highlight class="normal">))</highlight></codeline>

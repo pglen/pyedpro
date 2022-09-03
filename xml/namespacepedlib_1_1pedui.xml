@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedui" kind="namespace" language="Python">
+    <compoundname>pedlib::pedui</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedui_1ab95773e04b7e22be80fb29ccdebcce38" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedui.ui_info</definition>
+        <argsstring></argsstring>
+        <name>ui_info</name>
+        <initializer>=  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedui.py" line="20" column="1" bodyfile="pyedpro/build/lib/pedlib/pedui.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedui.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

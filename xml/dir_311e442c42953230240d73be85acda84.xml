@@ -3,7 +3,7 @@
   <compounddef id="dir_311e442c42953230240d73be85acda84" kind="dir">
     <compoundname>pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib</compoundname>
     <innerdir refid="dir_3b00b56ced75a9ae19452c664fb3ae10">pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data</innerdir>
-    <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="pyedpro_2debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2____init_____8py">__init__.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2acthand_8py">acthand.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2keyhand_8py">keyhand.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2keywords_8py">keywords.py</innerfile>
@@ -30,7 +30,7 @@
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2pedwin_8py">pedwin.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2pedync_8py">pedync.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2stack_8py">stack.py</innerfile>
-    <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2test_8py">test.py</innerfile>
+    <innerfile refid="pyedpro_2debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2test_8py">test.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2utils_8py">utils.py</innerfile>
     <briefdescription>
     </briefdescription>

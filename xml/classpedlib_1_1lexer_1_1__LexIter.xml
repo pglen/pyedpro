@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1lexer_1_1__LexIter" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::lexer::_LexIter</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1lexer_1_1__LexIter_1afab8294ca44abf45a483fb13bb142c57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.lexer._LexIter.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/lexer.py" line="12" column="1" bodyfile="pyedpro/build/lib/pedlib/lexer.py" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1lexer_1_1__LexIter_1afb6b34e8f9a82a93f352af4bef0aa3e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.lexer._LexIter.lexiter</definition>
+        <argsstring>(self, pos, tokens, strx)</argsstring>
+        <name>lexiter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <param>
+          <type>tokens</type>
+          <defname>tokens</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/lexer.py" line="15" column="1" bodyfile="pyedpro/build/lib/pedlib/lexer.py" bodystart="15" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/lexer.py" line="10" column="1" bodyfile="pyedpro/build/lib/pedlib/lexer.py" bodystart="10" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1lexer_1_1__LexIter_1afab8294ca44abf45a483fb13bb142c57" prot="public" virt="non-virtual"><scope>pedlib::lexer::_LexIter</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1lexer_1_1__LexIter_1afb6b34e8f9a82a93f352af4bef0aa3e5" prot="public" virt="non-virtual"><scope>pedlib::lexer::_LexIter</scope><name>lexiter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

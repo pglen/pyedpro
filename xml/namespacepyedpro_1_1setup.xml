@@ -55,12 +55,13 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </inbodydescription>
         <location file="pyedpro/setup.py" line="16" column="1" bodyfile="pyedpro/setup.py" bodystart="16" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a2ed231d3c9983ce5420eb8448a53b886" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1afb39798657ff50f1438407ebe3c48c67" prot="public" static="no" mutable="no">
         <type>list</type>
-        <definition>list pyedpro::setup.inclu</definition>
+        <definition>list pyedpro::setup.includex</definition>
         <argsstring></argsstring>
-        <name>inclu</name>
-        <initializer>=  [&quot;*&quot;, &quot;pedlib/&quot;, &quot;panglib&quot;, &quot;pyedpro.py&quot;, &quot;pangview.py&quot;,]</initializer>
+        <name>includex</name>
+        <initializer>=  [&quot;*&quot;, &quot;pedlib/&quot;, &quot;panglib&quot;, &quot;pedlib/images&quot;,
+            &quot;image.png&quot;, &quot;pyedpro_ubuntu.png&quot;]</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -80,7 +81,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="33" column="1" bodyfile="pyedpro/setup.py" bodystart="33" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="34" column="1" bodyfile="pyedpro/setup.py" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1adc766136d77b978f0a548f3b8c29255d" prot="public" static="no" mutable="no">
         <type></type>
@@ -94,7 +95,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="34" column="1" bodyfile="pyedpro/setup.py" bodystart="34" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="35" column="1" bodyfile="pyedpro/setup.py" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a1855c88342c764e907ad71b10b86476e" prot="public" static="no" mutable="no">
         <type></type>
@@ -107,7 +108,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="37" column="1" bodyfile="pyedpro/setup.py" bodystart="37" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="38" column="1" bodyfile="pyedpro/setup.py" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1adc4eba3dd3f5bf90094b72d6979e55b7" prot="public" static="no" mutable="no">
         <type></type>
@@ -120,7 +121,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="38" column="1" bodyfile="pyedpro/setup.py" bodystart="38" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="39" column="1" bodyfile="pyedpro/setup.py" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1ae5757f6c2814bf889e0270405d39cb26" prot="public" static="no" mutable="no">
         <type></type>
@@ -133,7 +134,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="39" column="1" bodyfile="pyedpro/setup.py" bodystart="39" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="40" column="1" bodyfile="pyedpro/setup.py" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1afc80bfc25254a371a29b115f2125ffe2" prot="public" static="no" mutable="no">
         <type></type>
@@ -146,7 +147,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="40" column="1" bodyfile="pyedpro/setup.py" bodystart="40" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="41" column="1" bodyfile="pyedpro/setup.py" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1ac8fbe2670229279f0ef0ab081c34785f" prot="public" static="no" mutable="no">
         <type></type>
@@ -159,7 +160,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="41" column="1" bodyfile="pyedpro/setup.py" bodystart="41" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="42" column="1" bodyfile="pyedpro/setup.py" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a7faa0211c40f865f5decaea547e0a1c7" prot="public" static="no" mutable="no">
         <type></type>
@@ -172,7 +173,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="43" column="1" bodyfile="pyedpro/setup.py" bodystart="43" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="44" column="1" bodyfile="pyedpro/setup.py" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a8f31e3a2e074e34ad522c0ac3dc6428a" prot="public" static="no" mutable="no">
         <type></type>
@@ -185,7 +186,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="44" column="1" bodyfile="pyedpro/setup.py" bodystart="44" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="45" column="1" bodyfile="pyedpro/setup.py" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1aca7c0f81be66dc4feaf6358be86de999" prot="public" static="no" mutable="no">
         <type></type>
@@ -198,7 +199,20 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="45" column="1" bodyfile="pyedpro/setup.py" bodystart="45" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="46" column="1" bodyfile="pyedpro/setup.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a75671d467af3ffd34d7acfb8ade96d8e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.include_package_data</definition>
+        <argsstring></argsstring>
+        <name>include_package_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="51" column="1" bodyfile="pyedpro/setup.py" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a9c57713b6333ce0adef46d1929909cb4" prot="public" static="no" mutable="no">
         <type></type>
@@ -211,7 +225,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="51" column="1" bodyfile="pyedpro/setup.py" bodystart="51" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="52" column="1" bodyfile="pyedpro/setup.py" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a72236d22a0e182d37e118df8243be358" prot="public" static="no" mutable="no">
         <type></type>
@@ -224,7 +238,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="53" column="1" bodyfile="pyedpro/setup.py" bodystart="53" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="56" column="1" bodyfile="pyedpro/setup.py" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a58260da5cf03b14ec87cc6da6f361b28" prot="public" static="no" mutable="no">
         <type></type>
@@ -237,20 +251,20 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="54" column="1" bodyfile="pyedpro/setup.py" bodystart="54" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="58" column="1" bodyfile="pyedpro/setup.py" bodystart="58" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1ac6fd4f1af27cb2d1fc5bcf87f9b0da91" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a6a0663dfe1b3f255ad9c1c9ba49b3787" prot="public" static="no" mutable="no">
         <type></type>
-        <definition>pyedpro::setup.package_data</definition>
+        <definition>pyedpro::setup.package_py</definition>
         <argsstring></argsstring>
-        <name>package_data</name>
+        <name>package_py</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="55" column="1" bodyfile="pyedpro/setup.py" bodystart="55" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="63" column="1" bodyfile="pyedpro/setup.py" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1aec61dfef5d69626399d9633eec2a9989" prot="public" static="no" mutable="no">
         <type></type>
@@ -263,7 +277,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="56" column="1" bodyfile="pyedpro/setup.py" bodystart="56" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="77" column="1" bodyfile="pyedpro/setup.py" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a7211577c3c33985686e6bdc9aedb61b5" prot="public" static="no" mutable="no">
         <type></type>
@@ -276,7 +290,20 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="60" column="1" bodyfile="pyedpro/setup.py" bodystart="60" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="87" column="1" bodyfile="pyedpro/setup.py" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1_1setup_1aeed13ca5ec1161457dc0d0c20522c434" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro::setup.entry_points</definition>
+        <argsstring></argsstring>
+        <name>entry_points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/setup.py" line="88" column="1" bodyfile="pyedpro/setup.py" bodystart="88" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

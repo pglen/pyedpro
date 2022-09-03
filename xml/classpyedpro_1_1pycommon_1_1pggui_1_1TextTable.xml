@@ -70,7 +70,7 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Gtk::Table</label>
+        <label>Gtk.Table</label>
       </node>
       <node id="1">
         <label>pyedpro.pycommon.pggui.TextTable</label>
@@ -81,7 +81,7 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Gtk::Table</label>
+        <label>Gtk.Table</label>
       </node>
       <node id="1">
         <label>pyedpro.pycommon.pggui.TextTable</label>

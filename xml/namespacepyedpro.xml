@@ -2,9 +2,8 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="namespacepyedpro" kind="namespace" language="Python">
     <compoundname>pyedpro</compoundname>
+    <innerclass refid="classpyedpro_1_1MainPyed" prot="public">pyedpro::MainPyed</innerclass>
     <innerclass refid="classpyedpro_1_1Unbuffered" prot="public">pyedpro::Unbuffered</innerclass>
-    <innernamespace refid="namespacepyedpro_1_1____main____">pyedpro::__main__</innernamespace>
-    <innernamespace refid="namespacepyedpro_1_1cursors">pyedpro::cursors</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1filter">pyedpro::filter</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1install">pyedpro::install</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1keybind">pyedpro::keybind</innernamespace>
@@ -13,11 +12,11 @@
     <innernamespace refid="namespacepyedpro_1_1pangview">pyedpro::pangview</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1parser">pyedpro::parser</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pedlib">pyedpro::pedlib</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1phy">pyedpro::phy</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1popnew">pyedpro::popnew</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pycommon">pyedpro::pycommon</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pyedpro">pyedpro::pyedpro</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1setup">pyedpro::setup</innernamespace>
-    <innernamespace refid="namespacepyedpro_1_1setup3">pyedpro::setup3</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1stack">pyedpro::stack</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1testapp">pyedpro::testapp</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1testgi">pyedpro::testgi</innernamespace>
@@ -39,39 +38,105 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="52" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="52" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="102" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="102" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1a446fc3c56b1d207a6ab0051426b1a016" prot="public" static="no" mutable="no">
-        <type>float</type>
-        <definition>float pyedpro.VERSION</definition>
+      <memberdef kind="variable" id="namespacepyedpro_1a216593a9f1b93f467e5bcf773f728a3c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.orgbase</definition>
+        <argsstring></argsstring>
+        <name>orgbase</name>
+        <initializer>=  os.getcwd()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="105" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a9268b5e8cc56f6bafb491560f71bd8d5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.conf</definition>
+        <argsstring></argsstring>
+        <name>conf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="139" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a0b6e6e03c124186298a6860030606c4e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.acth</definition>
+        <argsstring></argsstring>
+        <name>acth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="145" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1ac4287a16b3625eba9ed68627c570c34d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.keyh</definition>
+        <argsstring></argsstring>
+        <name>keyh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="146" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a719f4fecfe3f5bee81a1360d56246c8b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.orig_path</definition>
+        <argsstring></argsstring>
+        <name>orig_path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="147" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a53700a9162020976a9027ab05cc0dc79" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>float pyedpro::VERSION</definition>
         <argsstring></argsstring>
         <name>VERSION</name>
-        <initializer>=  1.0</initializer>
+        <initializer>=  &quot;2.9.1&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="56" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="56" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="177" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="177" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1a9f4d4c69760d1469fb396d440311ff5e" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepyedpro_1af3662f0a8013bfb39470517ad61e51e4" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string pyedpro.BUILDDATE</definition>
+        <definition>string pyedpro::BUILDDATE</definition>
         <argsstring></argsstring>
         <name>BUILDDATE</name>
-        <initializer>=  &quot;Jan-09-2019&quot;</initializer>
+        <initializer>=  &quot;Fri 02.Sep.2022&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="57" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="57" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="178" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="178" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1a53b60e19496b156e877d15f8c45923d3" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepyedpro_1a9df7e458a69a1f5dc371b32af4fe58b3" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string pyedpro.PROGNAME</definition>
+        <definition>string pyedpro::PROGNAME</definition>
         <argsstring></argsstring>
         <name>PROGNAME</name>
         <initializer>=  &quot;PyEdPro&quot;</initializer>
@@ -81,7 +146,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="58" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="58" bodyend="-1"/>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="179" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a83258d5fd6b591d12f9c465810cd1ca4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.stdout</definition>
+        <argsstring></argsstring>
+        <name>stdout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="457" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepyedpro_1a1d1ad96c36404bcc096b839751b68190" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.stderr</definition>
+        <argsstring></argsstring>
+        <name>stderr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="458" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="458" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1ad3cd6d3f2548a6dd8b7154db6658becc" prot="public" static="no" mutable="no">
         <type></type>
@@ -272,19 +363,6 @@
         </inbodydescription>
         <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="191" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="191" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1ac4287a16b3625eba9ed68627c570c34d" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro.keyh</definition>
-        <argsstring></argsstring>
-        <name>keyh</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="195" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="195" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1ace88c95f2e9b2e2b625a2fd9c0d5ddaa" prot="public" static="no" mutable="no">
         <type></type>
         <definition>pyedpro.mydir</definition>
@@ -352,34 +430,125 @@
         </inbodydescription>
         <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="222" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="222" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1a83258d5fd6b591d12f9c465810cd1ca4" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro.stdout</definition>
-        <argsstring></argsstring>
-        <name>stdout</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="223" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="223" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1a1d1ad96c36404bcc096b839751b68190" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro.stderr</definition>
-        <argsstring></argsstring>
-        <name>stderr</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" line="224" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/bin/pyedpro.py" bodystart="224" bodyend="-1"/>
-      </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1a4579ba27859de033d9f76927e28373f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.tracer</definition>
+        <argsstring>(frame, event, arg)</argsstring>
+        <name>tracer</name>
+        <param>
+          <type>frame</type>
+          <defname>frame</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>arg</type>
+          <defname>arg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="164" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="164" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1a5facc1135e1af9666dcedcb728e482de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.run_main</definition>
+        <argsstring>(projname, strarr)</argsstring>
+        <name>run_main</name>
+        <param>
+          <type>projname</type>
+          <defname>projname</defname>
+        </param>
+        <param>
+          <type>strarr</type>
+          <defname>strarr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="217" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="217" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1a5d0ca23edcf44eaebb829f8a58f02fc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.xversion</definition>
+        <argsstring>()</argsstring>
+        <name>xversion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> Offer version number </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="247" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="247" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1a4db1962e95e775ad8ca30e4fef15f242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.xhelp</definition>
+        <argsstring>()</argsstring>
+        <name>xhelp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> Offer Help </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="252" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="252" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1ac783b5a036006d9dee7eab42b863be04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.terminate</definition>
+        <argsstring>()</argsstring>
+        <name>terminate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> Termination Handler</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="275" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="275" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1a77f061937ce29b17f527c9a26ec93adb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.mainstart</definition>
+        <argsstring>(name=&quot;&quot;, args=&quot;&quot;, oldpath=&quot;&quot;)</argsstring>
+        <name>mainstart</name>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type><ref refid="namespacepyedpro_1a5009c406676c0856670424f04b147c47" kindref="member">args</ref></type>
+          <defname>args</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>oldpath</type>
+          <defname>oldpath</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim> Main Entry Point for the editor </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/scripts-3.10/pyedpro.py" line="287" column="1" bodyfile="pyedpro/build/scripts-3.10/pyedpro.py" bodystart="287" bodyend="453"/>
+      </memberdef>
       <memberdef kind="function" id="namespacepyedpro_1ad736187883161f8c319d3438803812c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pyedpro.main</definition>

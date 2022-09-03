@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedcanv" kind="namespace" language="Python">
+    <compoundname>pedlib::pedcanv</compoundname>
+    <innerclass refid="classpedlib_1_1pedcanv_1_1ToolBox" prot="public">pedlib::pedcanv::ToolBox</innerclass>
+    <innerclass refid="classpedlib_1_1pedcanv_1_1Canvas" prot="public">pedlib::pedcanv::Canvas</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedcanv_1a038766f1c0fd72bc74a3a7674dcde81c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pedlib::pedcanv.canv_testmode</definition>
+        <argsstring></argsstring>
+        <name>canv_testmode</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="35" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedcanv_1a0a03180df6ab25e3e79e1f331373d341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.canv_colsel</definition>
+        <argsstring>(oldcol, title)</argsstring>
+        <name>canv_colsel</name>
+        <param>
+          <type>oldcol</type>
+          <defname>oldcol</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="37" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="37" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcanv_1a2e88bca0ac3aff4370a5775bc14144be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.set_canv_testmode</definition>
+        <argsstring>(flag)</argsstring>
+        <name>set_canv_testmode</name>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="901" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="901" bodyend="905"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

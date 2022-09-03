@@ -6,7 +6,7 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<sect2 id="index_1autotoc_md4">
+<sect2 id="index_1autotoc_md0">
 <title>Welcome to PyEdPro.</title>
 <para>This is modern multi-platform editor. Simple, powerful, configurable, extendable. Goodies like macro recording / playback, spell check, column select, multiple clipboards, unlimited undo ... makes it an editor that I use every day.</para>
 <para>This is an open source text editor. Written in python. The motivation for this project was to create a modern multi-platform editor. Simple, powerful, configurable, extendable. To run this module without installation put the supporting files in the &apos;pedlib&apos; subdirectory under the main file&apos;s direcory.</para>
@@ -33,6 +33,6 @@
 <para>ASCII text editor, requires pyGtk. (pygobject) See pygtk-dependencies for easy install of dependencies. See also the INSTALL file. </para>
 </sect2>
     </detaileddescription>
-    <location file="pyedpro/pyedpro.py"/>
+    <location file="pyedpro/build/scripts-3.10/pyedpro.py"/>
   </compounddef>
 </doxygen>

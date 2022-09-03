@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedgoto" kind="namespace" language="Python">
+    <compoundname>pedlib::pedgoto</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedgoto_1a0f043eac5d5b649e84748084474451b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedgoto.gotodlg</definition>
+        <argsstring>(self2)</argsstring>
+        <name>gotodlg</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedgoto.py" line="18" column="1" bodyfile="pyedpro/build/lib/pedlib/pedgoto.py" bodystart="18" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedgoto_1a1e636512d2c892e793fcc53e79d712c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedgoto.area_key</definition>
+        <argsstring>(dialog, event)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>dialog</type>
+          <defname>dialog</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedgoto.py" line="111" column="1" bodyfile="pyedpro/build/lib/pedlib/pedgoto.py" bodystart="111" bodyend="163"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedgoto.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

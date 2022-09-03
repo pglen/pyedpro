@@ -3804,7 +3804,7 @@
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a5ec782cb8f18a68d4918d5bd6044587f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_selection</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a06a860d13a733f4a67b9fea16c37e638" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_spellerr</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a79668442fe5f92d81eca38e7f9f2fb49" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_syntax</name></member>
-      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1aa90520068a78447eea1f9ab505b1d43c" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_text</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ae60d3393b2a6fae2b579507fc4fc53ab" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_text</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a9d5a9fec3bb399f148f2bb2eadd75925" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_wiggle</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a97f76c94e59e4a4c3542ade98146db5d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>ext</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a1fd683bb9cb311709b33035686080643" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>fd</name></member>

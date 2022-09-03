@@ -191,7 +191,7 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Gtk::Frame</label>
+        <label>Gtk.Frame</label>
       </node>
       <node id="1">
         <label>pyedpro.pycommon.pggui.Lights</label>
@@ -202,7 +202,7 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Gtk::Frame</label>
+        <label>Gtk.Frame</label>
       </node>
       <node id="1">
         <label>pyedpro.pycommon.pggui.Lights</label>

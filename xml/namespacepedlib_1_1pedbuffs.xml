@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedbuffs" kind="namespace" language="Python">
+    <compoundname>pedlib::pedbuffs</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedbuffs_1a524e951baa2aa6ee0f11c577941898a3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedbuffs.dialog</definition>
+        <argsstring></argsstring>
+        <name>dialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="35" column="1" bodyfile="pyedpro/build/lib/pedlib/pedbuffs.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedbuffs_1ad65953917cf92056f1fba732f9932c45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedbuffs.buffers</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>buffers</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="22" column="1" bodyfile="pyedpro/build/lib/pedlib/pedbuffs.py" bodystart="22" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedbuffs_1a35c3d2ec83c9e4aa20baa72b9a8e9195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedbuffs.area_key</definition>
+        <argsstring>(area, event, dialog)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepedlib_1_1pedbuffs_1a524e951baa2aa6ee0f11c577941898a3" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="99" column="1" bodyfile="pyedpro/build/lib/pedlib/pedbuffs.py" bodystart="99" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedbuffs_1a15768aab8897fc8aa3981f00fa694844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedbuffs.tree_sel_row</definition>
+        <argsstring>(xtree, dialog, self2)</argsstring>
+        <name>tree_sel_row</name>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepedlib_1_1pedbuffs_1a524e951baa2aa6ee0f11c577941898a3" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="127" column="1" bodyfile="pyedpro/build/lib/pedlib/pedbuffs.py" bodystart="127" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedbuffs_1aa14fac4e147e54a6aaefcbf20dda5f92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedbuffs.start_tree</definition>
+        <argsstring>(self, win2)</argsstring>
+        <name>start_tree</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="139" column="1" bodyfile="pyedpro/build/lib/pedlib/pedbuffs.py" bodystart="139" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedbuffs_1ab2b58348ff945ca00a1a7027f70cff27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedbuffs.create_tree</definition>
+        <argsstring>(self, win2, match=False, text=None)</argsstring>
+        <name>create_tree</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>match</type>
+          <defname>match</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="157" column="1" bodyfile="pyedpro/build/lib/pedlib/pedbuffs.py" bodystart="157" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedbuffs_1a56dec22b0c082c08e04c0fab3ac217f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedbuffs.update_treestore</definition>
+        <argsstring>(self, win2, text, was)</argsstring>
+        <name>update_treestore</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win2</type>
+          <defname>win2</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>was</type>
+          <defname>was</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="184" column="1" bodyfile="pyedpro/build/lib/pedlib/pedbuffs.py" bodystart="184" bodyend="273"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedbuffs.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepycommon_1_1pypacker" kind="namespace" language="Python">
+    <compoundname>pycommon::pypacker</compoundname>
+    <innerclass refid="classpycommon_1_1pypacker_1_1InvalidType" prot="public">pycommon::pypacker::InvalidType</innerclass>
+    <innerclass refid="classpycommon_1_1pypacker_1_1packbin" prot="public">pycommon::pypacker::packbin</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepycommon_1_1pypacker_1a87de14a2ff50f47fd366945d2d9e6351" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::pypacker.__doc__</definition>
+        <argsstring></argsstring>
+        <name>__doc__</name>
+        <initializer>=    \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pypacker.py" line="12" column="1" bodyfile="pycommon/pypacker.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pypacker_1abc6b84a9e6b1cd02090c45a628c94808" prot="private" static="no" mutable="no">
+        <type>list</type>
+        <definition>tuple pycommon::pypacker::__all__</definition>
+        <argsstring></argsstring>
+        <name>__all__</name>
+        <initializer>=  [ &quot;packbin&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pypacker.py" line="46" column="1" bodyfile="pycommon/pypacker.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pypacker_1ab90b033a13de2365284986757e406520" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pycommon::pypacker::pgdebug</definition>
+        <argsstring></argsstring>
+        <name>pgdebug</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pypacker.py" line="51" column="1" bodyfile="pycommon/pypacker.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/pypacker.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

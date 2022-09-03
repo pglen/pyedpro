@@ -6,7 +6,7 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<sect1 id="md_pyedpro_pycommon_README_1autotoc_md3">
+<sect1 id="md_pyedpro_pycommon_README_1autotoc_md4">
 <title>Common GUI routines (and classes) for python PyGobject (Gtk) development.</title>
 <para>Just a sampler of what is in there (pasted from code, in no particular order):</para>
 <para><itemizedlist>

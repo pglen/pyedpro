@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceinstall" kind="namespace" language="Python">
+    <compoundname>install</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceinstall_1a27645fe8b65d564a6b2fa36097134f76" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install.installerdir</definition>
+        <argsstring></argsstring>
+        <name>installerdir</name>
+        <initializer>=  sys.argv[0][:sys.argv[0].rfind(&quot;/&quot;)] + &quot;/&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="8" column="1" bodyfile="install.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a58480f9d7ed7dc3df44ff7399faf6b9b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool install::depfailed</definition>
+        <argsstring></argsstring>
+        <name>depfailed</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="10" column="1" bodyfile="install.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a73555da0ac6523c0e93f930ebf6bbbe8" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install.PROJNAME</definition>
+        <argsstring></argsstring>
+        <name>PROJNAME</name>
+        <initializer>=  &quot;pyedpro&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="12" column="1" bodyfile="install.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a8d937148066016ed1a5ca8d574d83d18" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install.PROJLIB</definition>
+        <argsstring></argsstring>
+        <name>PROJLIB</name>
+        <initializer>=  &quot;pyedlib&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="13" column="1" bodyfile="install.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a657fb6cbace7861c8557eb24a3321b76" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install.PROJLIB2</definition>
+        <argsstring></argsstring>
+        <name>PROJLIB2</name>
+        <initializer>=  &quot;panglib&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="14" column="1" bodyfile="install.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a2ea38aa530ed365464fcda8f4ef840c9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>install.path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <initializer>=  os.environ[&apos;HOME&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="42" column="1" bodyfile="install.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a8d823481bd1496cc9b851e2dd556f0dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>install.user</definition>
+        <argsstring></argsstring>
+        <name>user</name>
+        <initializer>=  os.environ[&apos;USER&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="43" column="1" bodyfile="install.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a1b96413b6d09332e2b8d81114f0fa130" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>install.prefix</definition>
+        <argsstring></argsstring>
+        <name>prefix</name>
+        <initializer>=  sys.prefix</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="86" column="1" bodyfile="install.py" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a8a7ab72aa864689389493523e5536ae4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>install.pylib</definition>
+        <argsstring></argsstring>
+        <name>pylib</name>
+        <initializer>=  distutils.sysconfig.get_python_lib()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="91" column="1" bodyfile="install.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a12f8b8e2a4ff50e080f93a5364e3dac5" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install.shared</definition>
+        <argsstring></argsstring>
+        <name>shared</name>
+        <initializer>=   &quot;/usr/share&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="104" column="1" bodyfile="install.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a1afc814f11711dc73fdea47503a33b86" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install.xshared</definition>
+        <argsstring></argsstring>
+        <name>xshared</name>
+        <initializer>=  &quot;/usr/share&quot; + &quot;/&quot; + PROJNAME</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="105" column="1" bodyfile="install.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1af6f31fa895b479aaac321811d54b76a7" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install.bindir</definition>
+        <argsstring></argsstring>
+        <name>bindir</name>
+        <initializer>=  &quot;/usr/bin&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="106" column="1" bodyfile="install.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1aa40b49bb5b4683be5beec4914842d15d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>install.filelist</definition>
+        <argsstring></argsstring>
+        <name>filelist</name>
+        <initializer>=  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="112" column="1" bodyfile="install.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1ad10f3001add46c434f5cc709e2b783de" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>install.dirlist</definition>
+        <argsstring></argsstring>
+        <name>dirlist</name>
+        <initializer>=  \</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="119" column="1" bodyfile="install.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceinstall_1a8d622feac15daa221585d6535cd90365" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string install::targ</definition>
+        <argsstring></argsstring>
+        <name>targ</name>
+        <initializer>=  dest + &quot;/&quot; + source</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="129" column="1" bodyfile="install.py" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceinstall_1ae620445b7b85ecf466c9f44dcd591f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def install.isdir</definition>
+        <argsstring>(fname)</argsstring>
+        <name>isdir</name>
+        <param>
+          <type>fname</type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="19" column="1" bodyfile="install.py" bodystart="19" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceinstall_1acc4cc0fc9418b30816aa5535dad18c1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def install.softmkdir</definition>
+        <argsstring>(dirx)</argsstring>
+        <name>softmkdir</name>
+        <param>
+          <type>dirx</type>
+          <defname>dirx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="install.py" line="32" column="1" bodyfile="install.py" bodystart="32" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="install.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pyedpro.py" line="184" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="184" bodyend="-1"/>
+        <location file="pyedpro/pyedpro.py" line="189" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="189" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pyedpro_1_1MainPyed_1a8b1ba4d441b24ef6875452d89197b6dd" prot="public" static="no" mutable="no">
         <type></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pyedpro.py" line="185" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="185" bodyend="-1"/>
+        <location file="pyedpro/pyedpro.py" line="190" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="190" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pyedpro.py" line="180" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="180" bodyend="186"/>
+        <location file="pyedpro/pyedpro.py" line="185" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="185" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pyedpro_1_1MainPyed_1a61203811eb6392185a08be44b11a6fbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pyedpro.py" line="187" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="187" bodyend="209"/>
+        <location file="pyedpro/pyedpro.py" line="192" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="192" bodyend="216"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -87,7 +87,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>Gtk::Application</label>
+        <label>Gtk.Application</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -98,10 +98,10 @@
         </childnode>
       </node>
       <node id="2">
-        <label>Gtk::Application</label>
+        <label>Gtk.Application</label>
       </node>
     </collaborationgraph>
-    <location file="pyedpro/pyedpro.py" line="178" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="178" bodyend="210"/>
+    <location file="pyedpro/pyedpro.py" line="183" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="183" bodyend="217"/>
     <listofallmembers>
       <member refid="classpyedpro_1_1pyedpro_1_1MainPyed_1a85bed642896da066670251e56a5f1f00" prot="public" virt="non-virtual"><scope>pyedpro::pyedpro::MainPyed</scope><name>__init__</name></member>
       <member refid="classpyedpro_1_1pyedpro_1_1MainPyed_1a61203811eb6392185a08be44b11a6fbc" prot="public" virt="non-virtual"><scope>pyedpro::pyedpro::MainPyed</scope><name>do_activate</name></member>

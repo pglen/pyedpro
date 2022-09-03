@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1plug_1_1SocketDialogWindow" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::plug::SocketDialogWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Window</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1plug_1_1SocketDialogWindow_1a0e16214e5f8c6407142448f16ecdc38f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.plug.SocketDialogWindow.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/plug.py" line="11" column="1" bodyfile="pycommon/plug.py" bodystart="11" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1plug_1_1SocketDialogWindow_1adbdd9cab84f4137b4cde2d7e66af33a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.plug.SocketDialogWindow.on_info_clicked</definition>
+        <argsstring>(self, widget)</argsstring>
+        <name>on_info_clicked</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>widget</type>
+          <defname>widget</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/plug.py" line="19" column="1" bodyfile="pycommon/plug.py" bodystart="19" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk.Window</label>
+      </node>
+      <node id="1">
+        <label>pycommon.plug.SocketDialogWindow</label>
+        <link refid="classpycommon_1_1plug_1_1SocketDialogWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk.Window</label>
+      </node>
+      <node id="1">
+        <label>pycommon.plug.SocketDialogWindow</label>
+        <link refid="classpycommon_1_1plug_1_1SocketDialogWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pycommon/plug.py" line="10" column="1" bodyfile="pycommon/plug.py" bodystart="10" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1plug_1_1SocketDialogWindow_1a0e16214e5f8c6407142448f16ecdc38f" prot="public" virt="non-virtual"><scope>pycommon::plug::SocketDialogWindow</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1plug_1_1SocketDialogWindow_1adbdd9cab84f4137b4cde2d7e66af33a8" prot="public" virt="non-virtual"><scope>pycommon::plug::SocketDialogWindow</scope><name>on_info_clicked</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

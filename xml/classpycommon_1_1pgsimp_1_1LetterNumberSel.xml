@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pgsimp_1_1LetterNumberSel" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pgsimp::LetterNumberSel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aa8144ec3e6996a36ed54672ee71538bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgsimp.LetterNumberSel::callb</definition>
+        <argsstring></argsstring>
+        <name>callb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="330" column="1" bodyfile="pycommon/pgsimp.py" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a1858d7f19a1715639dd6b205d8068684" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgsimp.LetterNumberSel::simsel</definition>
+        <argsstring></argsstring>
+        <name>simsel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="335" column="1" bodyfile="pycommon/pgsimp.py" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a4a4ffcdf4cb6360ae6b7069421643be4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgsimp.LetterNumberSel::simsel2</definition>
+        <argsstring></argsstring>
+        <name>simsel2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="342" column="1" bodyfile="pycommon/pgsimp.py" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a71b210d07069d5cf6aee305a907f1c22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.LetterNumberSel.__init__</definition>
+        <argsstring>(self, callb=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aa8144ec3e6996a36ed54672ee71538bb" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="327" column="1" bodyfile="pycommon/pgsimp.py" bodystart="327" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a064b99392be9f7e7b5d2b55d2409030a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.LetterNumberSel.letter</definition>
+        <argsstring>(self, letter)</argsstring>
+        <name>letter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>letter</type>
+          <defname>letter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgsimp.py" line="350" column="1" bodyfile="pycommon/pgsimp.py" bodystart="350" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aed43ddf50b202e24cf7d6c1f3e621e6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.LetterNumberSel.__init__</definition>
+        <argsstring>(self, callb=None, font=&quot;Mono 13&quot;)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aa8144ec3e6996a36ed54672ee71538bb" kindref="member">callb</ref></type>
+          <defname>callb</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>font</type>
+          <defname>font</defname>
+          <defval>&quot;Mono 13&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="326" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="326" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a064b99392be9f7e7b5d2b55d2409030a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgsimp.LetterNumberSel.letter</definition>
+        <argsstring>(self, letter)</argsstring>
+        <name>letter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>letter</type>
+          <defname>letter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="349" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="349" bodyend="353"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pycommon.pgsimp.LetterNumberSel</label>
+        <link refid="classpycommon_1_1pgsimp_1_1LetterNumberSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pycommon.pgsimp.LetterNumberSel</label>
+        <link refid="classpycommon_1_1pgsimp_1_1LetterNumberSel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.VBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pycommon/pgsimp.py" line="325" column="1" bodyfile="pycommon/pgsimp.py" bodystart="325" bodyend="355"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a71b210d07069d5cf6aee305a907f1c22" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::LetterNumberSel</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aed43ddf50b202e24cf7d6c1f3e621e6c" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::LetterNumberSel</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aa8144ec3e6996a36ed54672ee71538bb" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::LetterNumberSel</scope><name>callb</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a064b99392be9f7e7b5d2b55d2409030a" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::LetterNumberSel</scope><name>letter</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a064b99392be9f7e7b5d2b55d2409030a" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::LetterNumberSel</scope><name>letter</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a1858d7f19a1715639dd6b205d8068684" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::LetterNumberSel</scope><name>simsel</name></member>
+      <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a4a4ffcdf4cb6360ae6b7069421643be4" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::LetterNumberSel</scope><name>simsel2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
