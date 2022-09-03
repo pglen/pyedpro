@@ -1,6 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,63,88,88"/>
-<area shape="rect" id="node2" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="136,5,343,31"/>
-<area shape="rect" id="node3" href="$classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="138,55,341,95"/>
-<area shape="rect" id="node4" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="138,119,341,159"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,129,88,155"/>
+<area shape="rect" id="node2" href="$classpycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="160,5,319,31"/>
+<area shape="rect" id="node3" href="$classpycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="144,55,335,80"/>
+<area shape="rect" id="node4" href="$classpycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="140,104,339,129"/>
+<area shape="rect" id="node5" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="136,153,343,179"/>
+<area shape="rect" id="node6" href="$classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="138,203,341,243"/>
+<area shape="rect" id="node7" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="138,267,341,307"/>
 </map>

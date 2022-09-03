@@ -1,6 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,55,107,80"/>
-<area shape="rect" id="node2" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox.html" title=" " alt="" coords="155,5,372,31"/>
-<area shape="rect" id="node3" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ListBox.html" title=" " alt="" coords="156,55,371,80"/>
-<area shape="rect" id="node4" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleTree.html" title=" " alt="" coords="173,105,354,145"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,129,107,155"/>
+<area shape="rect" id="node2" href="$classpycommon_1_1pgbox_1_1ListBox.html" title=" " alt="" coords="179,5,348,31"/>
+<area shape="rect" id="node3" href="$classpycommon_1_1pggui_1_1ListBox.html" title=" " alt="" coords="180,55,347,80"/>
+<area shape="rect" id="node4" href="$classpycommon_1_1pgsimp_1_1SimpleTree.html" title=" " alt="" coords="164,104,363,129"/>
+<area shape="rect" id="node5" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1ListBox.html" title=" " alt="" coords="155,153,372,179"/>
+<area shape="rect" id="node6" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ListBox.html" title=" " alt="" coords="156,203,371,228"/>
+<area shape="rect" id="node7" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleTree.html" title=" " alt="" coords="173,253,354,293"/>
 </map>
