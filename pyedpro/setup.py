@@ -28,7 +28,7 @@ classx = [
           'Topic :: Software Development :: Editor',
         ]
 
-includex = ["*", "pedlib/", "panglib",
+includex = ["*", "pedlib/", "panglib", "pedlib/images",
             "image.png", "pyedpro_ubuntu.png"]
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -57,6 +57,7 @@ setuptools.setup(
 
     package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib',
                     'pycommon': 'pycommon',
+                    'pedlib/images': 'pedlib/images',
                     'pedlib/data' : 'pedlib/data', },
 
     package_py = {

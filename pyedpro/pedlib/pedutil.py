@@ -186,7 +186,6 @@ def get_exec_path(fname):
 
     #exec_dir = os.path.dirname(pedconfig.conf.mydir)
     exec_dir = os.path.dirname(__file__)
-
     exec_path2 = os.path.join(exec_dir, "data")
     exec_path = os.path.join(exec_path2, fname)
 
@@ -200,11 +199,12 @@ def get_pangview_path():
     fname = "pangview.py"
     exec_dir = os.path.dirname(__file__)
     pname = exec_dir + os.sep + ".." +  os.sep + fname
+    if not os.path.isfile(pname):
+        pname = fname
 
-    #if not os.path.isfile(pname):
-    #    pname = fname
+    if pedconfig.conf.verbose:
+        print("Pangview path", pname)
 
-    print("Pangview path", pname)
     return pname
 
 # ------------------------------------------------------------------------
