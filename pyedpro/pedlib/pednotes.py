@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from __future__ import absolute_import, print_function
+#from __future__ import absolute_import, print_function
 
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings, uuid, copy
@@ -13,19 +13,19 @@ from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Pango
 
-import pedconfig
+from pedlib import pedconfig
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
-from    pedync import *
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedutil import *
+from    pedlib.pedync import *
 
-sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pycommon")
 #sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
 
-from pggui import *
-from pgsimp import *
+from pycommon.pggui import *
+from pycommon.pgsimp import *
 
 # ------------------------------------------------------------------------
 

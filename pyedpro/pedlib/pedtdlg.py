@@ -9,7 +9,7 @@ from gi.repository import Gtk
 
 import warnings
 
-import pedconfig
+from pedlib import pedconfig
 
 def textdlg(oldtext = "", parent = None):
 

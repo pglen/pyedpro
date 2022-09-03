@@ -16,8 +16,8 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedconfig
-import pedlcmd
+from pedlib import pedconfig
+from pedlib import pedlcmd
 
 def exec_test(self2, testx):
 

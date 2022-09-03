@@ -10,16 +10,17 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
-import pedconfig
+from pedlib import pedconfig
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedutil import *
 
-sys.path.append('..' + os.sep + "pycommon")
-from pggui import *
-from pgsimp import *
+#sys.path.append('..' + os.sep + "pycommon")
+
+from pycommon.pggui import *
+from pycommon.pgsimp import *
 
 # ------------------------------------------------------------------------
 

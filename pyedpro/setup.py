@@ -28,17 +28,18 @@ classx = [
           'Topic :: Software Development :: Editor',
         ]
 
-inclu = ["*", "pedlib/", "panglib", "pyedpro.py", "pangview.py",]
+includex = ["*", "pedlib/", "panglib",
+            "image.png", "pyedpro_ubuntu.png"]
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="pyedpro",
-    version="2.2.0",
+    version="2.9.1",
     author="Peter Glen",
     author_email="peterglen99@gmail.com",
-    description="Advanced editor in python.",
+    description="High power editor in python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pglen/pyedpro",
@@ -47,20 +48,44 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    include_package_data=True,
+    packages=setuptools.find_packages(include=includex),
+    #packages=setuptools.find_packages('pedlib, pedlib/data, panglib, pycommon'),
 
-    packages=setuptools.find_packages(include=inclu),
-    #packages=['pedlib', 'panglib', 'pycommon'],
+    #str(['pedlib', 'panglib', 'pycommon'])),
     scripts = ['pyedpro.py', 'pangview.py'],
-    package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib', 'pycommon': '../../pycommon'},
-    package_data = {'pedlib': ['data/*', 'images/*']},
-    data_files =  [('/usr/share/icons/hicolor/96x96/apps/', ['pedlib/images/pyedpro.png',
-                       'pedlib/images/pedicon.png' ]),
-                    ('/usr/share/applications', ['pyedpro.desktop'])],
+
+    package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib',
+                    'pycommon': 'pycommon',
+                    'pedlib/data' : 'pedlib/data', },
+
+    package_py = {
+    #"data":
+    #                [
+    #                'pedlib/data/KEYS',
+    #                'pedlib/data/KEYS.TXT',
+    #                ],
+                    '':
+                        ['pedlib/images/pyedpro.png',
+                         'pedlib/images/pyedpro_sub.png',
+                         'pedlib/images/pedicon.png', 'image.png',
+                         'pyedpro_ubuntu.png'
+                        ]
+                    },
+
+    data_files =  [('/usr/share/icons/hicolor/96x96/apps/',
+                        ['pedlib/images/pyedpro.png',
+                            'pedlib/images/pedicon.png',
+                            'pedlib/images/pyedpro_sub.png' ]),
+                            ('/usr/share/applications', ['pyedpro.desktop']),
+
+                   # ("data",  ["pedlib/data/KEYS", "pedlib/data/KEYS.TXT",
+                   #           "pedlib/data/QHELP", "pedlib/data/spell.txt"]),
+                   ],
 
     python_requires='>=3',
-    #entry_points='''
-    #    [console_scripts]
-    #    pyedpro=pyedpro:mainstart
-    #''',
+    entry_points='''
+        [console_scripts]
+        pyedpro=pyedpro.pyedpro:mainstart
+    ''',
 )
-

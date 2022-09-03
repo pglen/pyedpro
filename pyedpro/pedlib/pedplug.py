@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from __future__ import absolute_import, print_function
+#from __future__ import absolute_import, print_function
 
 import os
 import time
@@ -19,28 +19,28 @@ from gi.repository import Gdk
 from gi.repository import GLib
 from gi.repository import Gio
 
-import pedconfig
-import peddoc
-import pedync
-import pedlog
-import pedcal
-import pednotes
-import pedoline
-import pedfont
-import pedcolor
-import pedfind
-import pedweb
-import peddlg
+from pedlib import pedconfig
+from pedlib import peddoc
+from pedlib import pedync
+from pedlib import pedlog
+from pedlib import pedcal
+from pedlib import pednotes
+from pedlib import pedoline
+from pedlib import pedfont
+from pedlib import pedcolor
+from pedlib import pedfind
+from pedlib import pedweb
+from pedlib import peddlg
 
-sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pycommon")
 
-from pggui import *
-from pgsimp import *
+from pycommon.pggui import *
+from pycommon.pgsimp import *
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedutil import *
 
 plugin_list = []
 

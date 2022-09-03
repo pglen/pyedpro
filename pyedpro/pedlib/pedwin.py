@@ -20,30 +20,30 @@ from gi.repository import GLib
 from gi.repository import Gio
 from gi.repository import GObject
 
-import pedconfig
-import peddoc
-import pedync
-import pedlog
-import pedcal
-import pednotes
-import pedoline
-import pedfont
-import pedcolor
-import pedfind
-import pedweb
-import peddlg
-import pedthread
-import pedspell
+from pedlib import pedconfig
+from pedlib import peddoc
+from pedlib import pedync
+from pedlib import pedlog
+from pedlib import pedcal
+from pedlib import pednotes
+from pedlib import pedoline
+from pedlib import pedfont
+from pedlib import pedcolor
+from pedlib import pedfind
+from pedlib import pedweb
+from pedlib import peddlg
+from pedlib import pedthread
+from pedlib import pedspell
 
-sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pycommon")
 
-from pggui import *
-from pgsimp import *
+from pycommon.pggui import *
+from pycommon.pgsimp import *
 
 # Into our name space
-from    pedmenu import *
-from    pedui import *
-from    pedutil import *
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedutil import *
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 

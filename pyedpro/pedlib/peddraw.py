@@ -17,11 +17,11 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import pedconfig
-import pedplug
+from pedlib import pedconfig
+from pedlib import pedplug
 
-from keywords import *
-from pedutil import *
+from pedlib.keywords import *
+from pedlib.pedutil import *
 
 BOUNDLINE   = 80            # Boundary line for col 80 (the F12 func)
 

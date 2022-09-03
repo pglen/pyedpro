@@ -17,7 +17,7 @@ help:
 	@echo "	 make install  -- Install PyEdPro (unofficial structure)"
 	@echo "	 make setup    -- Run the setup.py script as install "
 	@echo "	 make pack     -- package PyEdPro "
-	@echo "	 make remove   -- remove (all) traces of pyedpro from the system "
+	@echo "	 make remove   -- remove (all) traces of pyedpro from the system
 	@echo
 
 # OLD install; use setup.py
@@ -47,7 +47,6 @@ clean:
 
 echo:
 	@echo Echoing: ${CHECK}
-
 
 # Auto Checkin
 ifeq ("$(AUTOCHECK)","")

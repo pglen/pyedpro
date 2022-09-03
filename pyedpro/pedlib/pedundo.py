@@ -23,7 +23,7 @@
 
 #from __future__ import print_function
 
-import pedconfig
+from pedlib import pedconfig
 
 # Op codes:
 (NOOP, MODIFIED, ADDED, DELETED) = list(range(4))

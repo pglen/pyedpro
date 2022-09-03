@@ -13,9 +13,9 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-import  pedconfig
-import  pedundo
-from    pedutil import *
+from pedlib import  pedconfig
+from pedlib import  pedundo
+from pedlib.pedutil import *
 
 strhist = [] #strhist.append("aa")
 stridx = 0

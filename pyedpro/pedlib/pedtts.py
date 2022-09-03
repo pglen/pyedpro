@@ -13,9 +13,9 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Pango
 
-import  pedconfig
+from pedlib import  pedconfig
 
-from pedutil import *
+from pedlib.pedutil import *
 
 # Set this to non zero if you want festival to speak
 USE_FESTIVAL = 1

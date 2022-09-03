@@ -14,8 +14,8 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GObject
 
-import pedconfig
-from pedutil import *
+from pedlib import pedconfig
+from pedlib.pedutil import *
 
 # -------------------------------------------------------------------------
 

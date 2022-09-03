@@ -32,7 +32,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import string, subprocess, os, platform, datetime, sys
+import string, subprocess, os, platform, datetime, sys, codecs
 
 try:
     import cups
@@ -47,28 +47,27 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-sys.path.append('..' + os.sep + "pycommon")
-sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
 
-import  pedconfig
-import  pedofd
-import  pedync
-import  pedspell
-import  pedcolor
-import  pedlog
-import  pedfont
-import  pedundo
-import  pedtts
-import  pedmisc
-import  pedbuffs
-import  codecs
+from pedlib import  pedconfig
+from pedlib import  pedofd
+from pedlib import  pedync
+from pedlib import  pedspell
+from pedlib import  pedcolor
+from pedlib import  pedlog
+from pedlib import  pedfont
+from pedlib import  pedundo
+from pedlib import  pedtts
+from pedlib import  pedmisc
+from pedlib import  pedbuffs
 
 #import  pyperclip # dead end
 
-from keywords import *
-from pedutil import *
-from pedgoto import *
-from pedcanv import *
+from pedlib.keywords import *
+from pedlib.pedutil import *
+from pedlib.pedgoto import *
+from pedlib.pedcanv import *
 
 lastcmd = ""
 rostr = "This buffer is read only."
