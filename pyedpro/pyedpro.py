@@ -133,6 +133,7 @@ orgbase = os.getcwd()
 #print(sys.path)
 
 from pedlib import pedconfig
+from pedlib import pedync
 
 # Commit global crap here
 pedconfig.conf = pedconfig.Conf()
@@ -203,6 +204,8 @@ class MainPyed(Gtk.Application):
 
         if self.projname:
             mainwin.opensess(self.projname)
+
+        #pedync.message("\n   Start?.   \n\n")
 
         #if strarr:
         #    print("opening files", strarr)
@@ -381,6 +384,10 @@ def mainstart(name = "", args = "", oldpath = ""):
         print(_("Cannot access config dir:"), pedconfig.conf.config_dir)
         sys.exit(1)
 
+
+    if pedconfig.conf.verbose:
+        print("sys.path", sys.path)
+
     pedconfig.ensure_dirs(pedconfig.conf)
 
     pedconfig.conf.sql = pedsql.pedsql(pedconfig.conf.sql_data)
@@ -455,8 +462,7 @@ if __name__ == '__main__':
     pedlog.create_logwin()
     pedlog.log("Started PyEdPro", time.ctime(None))
 
-    print("in main", sys.argv[0])
-    print("sys.path", sys.path)
+    #print("in main", sys.argv[0])
     mainstart("", [], "")
 
 # EOF
