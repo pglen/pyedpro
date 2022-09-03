@@ -12,6 +12,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/__init__.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/panglib/__init__.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_f757df27d202301e09aa377172ee3c69" kind="dir">
+    <compoundname>pyedpro/build/scripts-3.10</compoundname>
+    <innerfile refid="build_2scripts-3_810_2pangview_8py">pangview.py</innerfile>
+    <innerfile refid="build_2scripts-3_810_2pyedpro_8py">pyedpro.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/scripts-3.10/"/>
+  </compounddef>
+</doxygen>

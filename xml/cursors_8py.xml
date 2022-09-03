@@ -2,14 +2,14 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="cursors_8py" kind="file" language="Python">
     <compoundname>cursors.py</compoundname>
-    <innerclass refid="classpyedpro_1_1cursors_1_1MainWindow" prot="public">pyedpro::cursors::MainWindow</innerclass>
-    <innernamespace refid="namespacepyedpro_1_1cursors">pyedpro::cursors</innernamespace>
+    <innerclass refid="classcursors_1_1MainWindow" prot="public">cursors::MainWindow</innerclass>
+    <innernamespace refid="namespacecursors">cursors</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1" refid="namespacepyedpro_1_1cursors" refkind="compound"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="1" refid="namespacecursors" refkind="compound"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gi</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
@@ -138,13 +138,13 @@
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;zoom-out&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="128"><highlight class="normal">)</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130" refid="classpyedpro_1_1cursors_1_1MainWindow" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpyedpro_1_1cursors_1_1MainWindow" kindref="compound">MainWindow</ref>(Gtk.Window):</highlight></codeline>
+<codeline lineno="130" refid="classcursors_1_1MainWindow" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcursors_1_1MainWindow" kindref="compound">MainWindow</ref>(Gtk.Window):</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classpyedpro_1_1cursors_1_1MainWindow_1a5290957301df5d106b06a656cb41a37a" kindref="member">__init__</ref>(self):</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(Gtk.Window,<sp/>self).<ref refid="classpyedpro_1_1cursors_1_1MainWindow_1a5290957301df5d106b06a656cb41a37a" kindref="member">__init__</ref>()</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcursors_1_1MainWindow_1a53a4fc4ac2ae5cf2ed9c6a7f04898e6d" kindref="member">__init__</ref>(self):</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(Gtk.Window,<sp/>self).<ref refid="classcursors_1_1MainWindow_1a53a4fc4ac2ae5cf2ed9c6a7f04898e6d" kindref="member">__init__</ref>()</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.set_size_request(200,<sp/>200)</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vbox<sp/>=<sp/>Gtk.FlowBox()</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.connect(</highlight><highlight class="stringliteral">&quot;unmap&quot;</highlight><highlight class="normal">,<sp/>self.<ref refid="classpyedpro_1_1cursors_1_1MainWindow_1a33827106e95cebf0e2da96c6ab29a7d7" kindref="member">exit_app</ref>exit_app)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.connect(</highlight><highlight class="stringliteral">&quot;unmap&quot;</highlight><highlight class="normal">,<sp/>self.<ref refid="classcursors_1_1MainWindow_1af7b84d7ea62eb8d4a5c746cd4d84d8f7" kindref="member">exit_app</ref>exit_app)</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;for<sp/>aa<sp/>in<sp/>range(len(curarr)):</highlight></codeline>
 <codeline lineno="138"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>curarr[aa].get_image():</highlight></codeline>
 <codeline lineno="139"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>image<sp/>=<sp/>Gtk.Image.new_from_pixbuf(curarr[aa].get_image())</highlight></codeline>
@@ -163,7 +163,7 @@
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.add(vbox)</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.show_all()</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classpyedpro_1_1cursors_1_1MainWindow_1a33827106e95cebf0e2da96c6ab29a7d7" kindref="member">exit_app</ref>(self,<sp/>parm):</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcursors_1_1MainWindow_1af7b84d7ea62eb8d4a5c746cd4d84d8f7" kindref="member">exit_app</ref>(self,<sp/>parm):</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gtk.main_quit()</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"></highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>
@@ -171,10 +171,10 @@
 <codeline lineno="160"><highlight class="normal"></highlight></codeline>
 <codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>mw<sp/>=<sp/><ref refid="classpyedpro_1_1cursors_1_1MainWindow" kindref="compound">MainWindow</ref>()</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>mw<sp/>=<sp/><ref refid="classcursors_1_1MainWindow" kindref="compound">MainWindow</ref>()</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>Gtk.main()</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="pyedpro/cursors.py"/>
+    <location file="study/cursors.py"/>
   </compounddef>
 </doxygen>

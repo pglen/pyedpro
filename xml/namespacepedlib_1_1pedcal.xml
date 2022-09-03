@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedcal" kind="namespace" language="Python">
+    <compoundname>pedlib::pedcal</compoundname>
+    <innerclass refid="classpedlib_1_1pedcal_1_1pgcal" prot="public">pedlib::pedcal::pgcal</innerclass>
+    <innerclass refid="classpedlib_1_1pedcal_1_1calsql" prot="public">pedlib::pedcal::calsql</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedcal.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

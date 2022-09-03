@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1pedobjs_1_1RectObj" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::pedobjs::RectObj</compoundname>
+    <basecompoundref refid="classpedlib_1_1pedobjs_1_1DrawObj" prot="public" virt="non-virtual">pedlib.pedobjs.DrawObj</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1pedobjs_1_1RectObj_1a3b491e582f1a4796d8020424a18a7c2e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedobjs.RectObj::mx</definition>
+        <argsstring></argsstring>
+        <name>mx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="146" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedobjs_1_1RectObj_1a72727388a13569db6a570c73e2dfa2e6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedobjs.RectObj::rsize</definition>
+        <argsstring></argsstring>
+        <name>rsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="147" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedobjs_1_1RectObj_1a495f8e809c13ce33a72d0a3a27deaf0e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedobjs.RectObj::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="148" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1pedobjs_1_1RectObj_1a366a3c435acd1edebf67bd28171c4602" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedobjs.RectObj.__init__</definition>
+        <argsstring>(self, rect, text, col1, col2, border, fill)</argsstring>
+        <name>__init__</name>
+        <reimplements refid="classpedlib_1_1pedobjs_1_1DrawObj_1a276b0345504f7ec67bdcbff513594536">__init__</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedobjs_1_1DrawObj_1ac02961fbd3f55228a779a28f8056ce45" kindref="member">rect</ref></type>
+          <defname>rect</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedobjs_1_1DrawObj_1a098fc39bb1411640b38cac5a25f722c3" kindref="member">text</ref></type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedobjs_1_1DrawObj_1a1a73c8df23c536e25d9167348eb0f9b2" kindref="member">col1</ref></type>
+          <defname>col1</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedobjs_1_1DrawObj_1a5c5d976f72819672b811e8058b07b752" kindref="member">col2</ref></type>
+          <defname>col2</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedobjs_1_1DrawObj_1a022184ccfcbec226c4358e0b007120d9" kindref="member">border</ref></type>
+          <defname>border</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedobjs_1_1DrawObj_1a388eafb07e16645e98156e984be661a7" kindref="member">fill</ref></type>
+          <defname>fill</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="143" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="143" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedobjs_1_1RectObj_1ab8c220405b280305f44a3b327beb08cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedobjs.RectObj.draw</definition>
+        <argsstring>(self, cr, self2)</argsstring>
+        <name>draw</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="150" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="150" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedobjs_1_1RectObj_1a83fd86f0c2ea5a3070ad9a61f7d42ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedobjs.RectObj.hittest</definition>
+        <argsstring>(self, rectx)</argsstring>
+        <name>hittest</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rectx</type>
+          <defname>rectx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="180" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="180" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedobjs_1_1RectObj_1aa743689ba484bbcd30353f7fe918b3f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedobjs.RectObj.center</definition>
+        <argsstring>(self)</argsstring>
+        <name>center</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="193" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="193" bodyend="198"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>pedlib.pedobjs.DrawObj</label>
+        <link refid="classpedlib_1_1pedobjs_1_1DrawObj"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>pedlib.pedobjs.RectObj</label>
+        <link refid="classpedlib_1_1pedobjs_1_1RectObj"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>pedlib.pedobjs.DrawObj</label>
+        <link refid="classpedlib_1_1pedobjs_1_1DrawObj"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>pedlib.pedobjs.RectObj</label>
+        <link refid="classpedlib_1_1pedobjs_1_1RectObj"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/build/lib/pedlib/pedobjs.py" line="141" column="1" bodyfile="pyedpro/build/lib/pedlib/pedobjs.py" bodystart="141" bodyend="199"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1pedobjs_1_1RectObj_1a366a3c435acd1edebf67bd28171c4602" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a46dd0fb440fb29629f72efc800f743ca" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>__str__</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a022184ccfcbec226c4358e0b007120d9" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>border</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1RectObj_1aa743689ba484bbcd30353f7fe918b3f4" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>center</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a1a73c8df23c536e25d9167348eb0f9b2" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>col1</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a5c5d976f72819672b811e8058b07b752" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>col2</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a5052175cee5a3a375502cf2e676fcbdd" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>corners</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1RectObj_1ab8c220405b280305f44a3b327beb08cf" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>draw</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1ac486e51134ac6c8176c5a6dfb82191e4" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>dump</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1ac057842940e6a6dff52cb78d52de37df" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>expand_size</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a388eafb07e16645e98156e984be661a7" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>fill</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a4f5b6886d29cb65661523cc9b33a57ba" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>groupid</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1ab1d2ac525414a0947c49994bfd466cf2" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>hitmarker</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1RectObj_1a83fd86f0c2ea5a3070ad9a61f7d42ce4" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>hittest</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1acfb40692bf934d03295ae9a69a2ced59" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>id</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a18c97c97f3c1dff858211656450c683d" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>mouse</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1RectObj_1a3b491e582f1a4796d8020424a18a7c2e" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>mx</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1ad15b06ab6db26d2bc5e811586b68724d" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>orgdrag</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a438ca853bb6daba1b9c067e964409cd0" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>other</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1ac16fecabb565683d8d141c8aead2640e" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>pgroupid</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1ac02961fbd3f55228a779a28f8056ce45" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>rect</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1RectObj_1a72727388a13569db6a570c73e2dfa2e6" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>rsize</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1ab9f90a20b720513369467d6015f15968" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>selected</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a098fc39bb1411640b38cac5a25f722c3" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>text</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1RectObj_1a495f8e809c13ce33a72d0a3a27deaf0e" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>type</name></member>
+      <member refid="classpedlib_1_1pedobjs_1_1DrawObj_1a7845639c4b519b2bb2bf576cbdd07c73" prot="public" virt="non-virtual"><scope>pedlib::pedobjs::RectObj</scope><name>zorder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

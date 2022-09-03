@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedgoto.py" line="16" column="1" bodyfile="pyedpro/pedlib/pedgoto.py" bodystart="16" bodyend="108"/>
+        <location file="pyedpro/pedlib/pedgoto.py" line="18" column="1" bodyfile="pyedpro/pedlib/pedgoto.py" bodystart="18" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedgoto_1a08b1193170e66a573fefda5fe3dd760f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedgoto.py" line="109" column="1" bodyfile="pyedpro/pedlib/pedgoto.py" bodystart="109" bodyend="161"/>
+        <location file="pyedpro/pedlib/pedgoto.py" line="111" column="1" bodyfile="pyedpro/pedlib/pedgoto.py" bodystart="111" bodyend="163"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

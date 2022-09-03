@@ -33,7 +33,7 @@
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">#from<sp/>__future__<sp/>import<sp/>print_function</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pedconfig</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>pedlib<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pedconfig</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Op<sp/>codes:</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal">(NOOP,<sp/>MODIFIED,<sp/>ADDED,<sp/>DELETED)<sp/>=<sp/>list(range(4))</highlight></codeline>

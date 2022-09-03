@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pggui_1_1CairoHelper" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pggui::CairoHelper</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpycommon_1_1pggui_1_1CairoHelper_1a8e9fa790187aeab097e55abcfb960d18" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pggui.CairoHelper::cr</definition>
+        <argsstring></argsstring>
+        <name>cr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="57" column="1" bodyfile="pycommon/pggui.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a738db6e0fffa14cfa36ed5acd7642c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.__init__</definition>
+        <argsstring>(self, cr)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1CairoHelper_1a8e9fa790187aeab097e55abcfb960d18" kindref="member">cr</ref></type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="56" column="1" bodyfile="pycommon/pggui.py" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1af58a4215e49fc4b3a39a6718b1a47dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.set_source_rgb</definition>
+        <argsstring>(self, col)</argsstring>
+        <name>set_source_rgb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="59" column="1" bodyfile="pycommon/pggui.py" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a19561d5d8382a52a011fc8d78b59eecd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.rectangle</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>rectangle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="62" column="1" bodyfile="pycommon/pggui.py" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a9c37afffac1ea36fe34e1a5a0924212b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.romb</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>romb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="74" column="1" bodyfile="pycommon/pggui.py" bodystart="74" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1aaa085b0ce37654aabb689afc5c7cd89b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.circle</definition>
+        <argsstring>(self, xx, yy, size)</argsstring>
+        <name>circle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="86" column="1" bodyfile="pycommon/pggui.py" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1ae2516190027479bb2784f6d4824f0c9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.tri</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>tri</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="95" column="1" bodyfile="pycommon/pggui.py" bodystart="95" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a700444aa75e917e490800167ef44eba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.tri2</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>tri2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="111" column="1" bodyfile="pycommon/pggui.py" bodystart="111" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a738db6e0fffa14cfa36ed5acd7642c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.__init__</definition>
+        <argsstring>(self, cr)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1CairoHelper_1a8e9fa790187aeab097e55abcfb960d18" kindref="member">cr</ref></type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="56" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1af58a4215e49fc4b3a39a6718b1a47dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.set_source_rgb</definition>
+        <argsstring>(self, col)</argsstring>
+        <name>set_source_rgb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="59" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a19561d5d8382a52a011fc8d78b59eecd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.rectangle</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>rectangle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="62" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a9c37afffac1ea36fe34e1a5a0924212b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.romb</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>romb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="74" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="74" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1aaa085b0ce37654aabb689afc5c7cd89b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.circle</definition>
+        <argsstring>(self, xx, yy, size)</argsstring>
+        <name>circle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>xx</type>
+          <defname>xx</defname>
+        </param>
+        <param>
+          <type>yy</type>
+          <defname>yy</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="86" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1ae2516190027479bb2784f6d4824f0c9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.tri</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>tri</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="95" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="95" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1CairoHelper_1a700444aa75e917e490800167ef44eba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.CairoHelper.tri2</definition>
+        <argsstring>(self, rect)</argsstring>
+        <name>tri2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="111" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="111" bodyend="119"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/pggui.py" line="54" column="1" bodyfile="pycommon/pggui.py" bodystart="54" bodyend="120"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a738db6e0fffa14cfa36ed5acd7642c8f" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a738db6e0fffa14cfa36ed5acd7642c8f" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1aaa085b0ce37654aabb689afc5c7cd89b" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>circle</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1aaa085b0ce37654aabb689afc5c7cd89b" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>circle</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a8e9fa790187aeab097e55abcfb960d18" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>cr</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a19561d5d8382a52a011fc8d78b59eecd" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>rectangle</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a19561d5d8382a52a011fc8d78b59eecd" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>rectangle</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a9c37afffac1ea36fe34e1a5a0924212b" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>romb</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a9c37afffac1ea36fe34e1a5a0924212b" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>romb</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1af58a4215e49fc4b3a39a6718b1a47dfb" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>set_source_rgb</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1af58a4215e49fc4b3a39a6718b1a47dfb" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>set_source_rgb</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1ae2516190027479bb2784f6d4824f0c9c" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>tri</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1ae2516190027479bb2784f6d4824f0c9c" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>tri</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a700444aa75e917e490800167ef44eba3" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>tri2</name></member>
+      <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a700444aa75e917e490800167ef44eba3" prot="public" virt="non-virtual"><scope>pycommon::pggui::CairoHelper</scope><name>tri2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

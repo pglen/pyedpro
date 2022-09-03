@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1keywords" kind="namespace" language="Python">
+    <compoundname>pedlib::keywords</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1af5bbeeeec38ca284035070b63ce798ee" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple pedlib::keywords.keywords</definition>
+        <argsstring></argsstring>
+        <name>keywords</name>
+        <initializer>=   (&quot;def &quot;, &quot;import &quot;, &quot;from &quot;, &quot;for &quot;, &quot;while &quot;, &quot; len(&quot;,
+            &quot;return &quot;, &quot;range(&quot;, &quot;if &quot;, &quot;elif &quot;, &quot;not &quot;, &quot; abs(&quot;,
+            &quot; any(&quot;, &quot; all(&quot;, &quot; min(&quot;, &quot; max(&quot;,  &quot; map(&quot;, &quot; print &quot;,
+            &quot; open(&quot;, &quot; in &quot;, &quot; break &quot;, &quot;[]&quot;, &quot;()&quot;, &quot;{}&quot;, &quot; pass&quot;, &quot;pass &quot;,
+            &quot;True&quot;, &quot; False&quot;, &quot;True;&quot;, &quot;False;&quot;,
+            &quot;true&quot;, &quot;false&quot;, &quot;global &quot;, &quot;else:&quot;, &quot;continue&quot;, &quot;None&quot;, &quot;&lt;tr &quot;, &quot;&lt;tr&gt;&quot;,
+            &quot;&lt;td &quot;, &quot;&lt;td&gt;&quot; )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="18" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1a01bb6b6c371da158e96d68b49680f177" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.clwords</definition>
+        <argsstring></argsstring>
+        <name>clwords</name>
+        <initializer>=   &quot;class &quot;, &quot; self.&quot;, &quot;try:&quot;, &quot;except&quot;, &quot;finally&quot;, &quot;table &quot;, &quot;/table&quot;,</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="27" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1a6a9da4fe8d3e717e1647522b675b2fc0" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.pykeywords</definition>
+        <argsstring></argsstring>
+        <name>pykeywords</name>
+        <initializer>=  &quot;class &quot;, &quot;def &quot;, &quot;TODO &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="30" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1af949022538fadde82badf7c2d9223fc0" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.basekeywords</definition>
+        <argsstring></argsstring>
+        <name>basekeywords</name>
+        <initializer>=  &quot;(sub )|(SUB )&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="31" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1ad36b20d54e49b0f5fde874fe6c6adf7e" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.Skeywords</definition>
+        <argsstring></argsstring>
+        <name>Skeywords</name>
+        <initializer>=  &quot;(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="32" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1ae850a7791154bddc67e13615d72fb75a" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.pykeywords2</definition>
+        <argsstring></argsstring>
+        <name>pykeywords2</name>
+        <initializer>=  &quot;(class )|(def )|(TODO )|(__main__)|(_mac_)&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="33" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1ade928173690f5710be7cab8078755af9" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.sumkeywords</definition>
+        <argsstring></argsstring>
+        <name>sumkeywords</name>
+        <initializer>=  &quot;class &quot;, &quot;def &quot;, &quot;TODO &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="34" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1a5335aa333fecb63951f828bd6e971f3e" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.htmlkeywords</definition>
+        <argsstring></argsstring>
+        <name>htmlkeywords</name>
+        <initializer>=  &quot;(\{ .* \})&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="35" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1ac3f07bf9442c23beb362d46bfcd2614d" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.ckeywords</definition>
+        <argsstring></argsstring>
+        <name>ckeywords</name>
+        <initializer>=   &quot;^[_a-zA-Z].*\(.*\)&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="37" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1a60b8a9d71dec924e954bc31824cddc23" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.localkwords</definition>
+        <argsstring></argsstring>
+        <name>localkwords</name>
+        <initializer>=  &quot;(int .*)|(char .*)|(for)|(while)|(if)|(return)&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="38" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1a94b14102ffad734bb7f42f53353d0e5f" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string pedlib::keywords.localpywords</definition>
+        <argsstring></argsstring>
+        <name>localpywords</name>
+        <initializer>=  &quot;(for )|(while )|(return )|(import )|(def )&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="39" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1keywords_1ae329c6789223075f35a6f6ced2810ca2" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pedlib::keywords.acorr</definition>
+        <argsstring></argsstring>
+        <name>acorr</name>
+        <initializer>=  [   ( &quot;else&quot;,   &quot;else: &quot;                 ),
+            ( &quot;whi&quot;,    &quot;while &quot;                ),
+            ( &quot;Tr&quot;,     &quot;True &quot;                 ),
+            ( &quot;Fa&quot;,     &quot;False &quot;                ),
+            ( &quot;bre&quot;,     &quot;break&quot;                 ),
+
+            # One can do unconventional things here:
+
+            ( &quot;Fn&quot;,     &quot;def funcname():  &quot;     ),
+        ]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/keywords.py" line="50" column="1" bodyfile="pyedpro/build/lib/pedlib/keywords.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/keywords.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

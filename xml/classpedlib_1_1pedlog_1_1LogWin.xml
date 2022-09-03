@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1pedlog_1_1LogWin" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::pedlog::LogWin</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1pedlog_1_1LogWin_1aa0d8b03eadcfe118f3a3032eb0efbc59" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedlog.LogWin::win2</definition>
+        <argsstring></argsstring>
+        <name>win2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="104" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedlog_1_1LogWin_1ae9ee6b19e596884a46f0f0f8e2f35d94" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedlog.LogWin::scroll</definition>
+        <argsstring></argsstring>
+        <name>scroll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="126" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1a16cf18d4820efa6771b047c78e3b0d1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="103" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="103" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1a95a6be08c610c5c7176442bb17c7d066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin.closewin</definition>
+        <argsstring>(self, win)</argsstring>
+        <name>closewin</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="130" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="130" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1a93beec1d1344bf8b2a5171b1f6fe82aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin.show_log</definition>
+        <argsstring>(self)</argsstring>
+        <name>show_log</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="133" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="133" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1a0e6c25e7f43b1d22246aba69c81c154a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin.append_logwin</definition>
+        <argsstring>(self, strx)</argsstring>
+        <name>append_logwin</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="149" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="149" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1af92a5ef1b898cac0cb18750197c4b18e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin._area_delete</definition>
+        <argsstring>(self, area, event, dialog)</argsstring>
+        <name>_area_delete</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>dialog</type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="137" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="137" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1a2124e1854442cb24033b0d4058ee1467" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin._area_destroy</definition>
+        <argsstring>(self, area, event, dialog)</argsstring>
+        <name>_area_destroy</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>dialog</type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="142" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1a32b48c085da6d1c2b91080d28e5bba24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin._area_focus</definition>
+        <argsstring>(self, area, event, dialog)</argsstring>
+        <name>_area_focus</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>dialog</type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="146" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="146" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedlog_1_1LogWin_1a22ee9cb66793833fef4291c8a2b32265" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedlog.LogWin._area_key</definition>
+        <argsstring>(self, area, event, dialog)</argsstring>
+        <name>_area_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>dialog</type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedlog.py" line="169" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="169" bodyend="194"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedlog.py" line="100" column="1" bodyfile="pyedpro/build/lib/pedlib/pedlog.py" bodystart="100" bodyend="195"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1a16cf18d4820efa6771b047c78e3b0d1b" prot="public" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1af92a5ef1b898cac0cb18750197c4b18e" prot="private" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>_area_delete</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1a2124e1854442cb24033b0d4058ee1467" prot="private" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>_area_destroy</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1a32b48c085da6d1c2b91080d28e5bba24" prot="private" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>_area_focus</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1a22ee9cb66793833fef4291c8a2b32265" prot="private" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>_area_key</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1a0e6c25e7f43b1d22246aba69c81c154a" prot="public" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>append_logwin</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1a95a6be08c610c5c7176442bb17c7d066" prot="public" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>closewin</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1ae9ee6b19e596884a46f0f0f8e2f35d94" prot="public" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>scroll</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1a93beec1d1344bf8b2a5171b1f6fe82aa" prot="public" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>show_log</name></member>
+      <member refid="classpedlib_1_1pedlog_1_1LogWin_1aa0d8b03eadcfe118f3a3032eb0efbc59" prot="public" virt="non-virtual"><scope>pedlib::pedlog::LogWin</scope><name>win2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

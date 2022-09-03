@@ -150,25 +150,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>Gtk::Button</label>
-      </node>
       <node id="1">
         <label>pyedpro.pycommon.pggui.RCLButt</label>
         <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1RCLButt"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Button</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>Gtk::Button</label>
-      </node>
       <node id="1">
         <label>pyedpro.pycommon.pggui.RCLButt</label>
         <link refid="classpyedpro_1_1pycommon_1_1pggui_1_1RCLButt"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.Button</label>
       </node>
     </collaborationgraph>
     <location file="pyedpro/pycommon/pggui.py" line="1234" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="1234" bodyend="1296"/>

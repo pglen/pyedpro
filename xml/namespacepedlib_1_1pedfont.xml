@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedfont" kind="namespace" language="Python">
+    <compoundname>pedlib::pedfont</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedfont_1a11b433159131bc7d692b2fceb7ec779c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedfont.dialog</definition>
+        <argsstring></argsstring>
+        <name>dialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="42" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1a3beb245928ec1f5bbac1860c68993df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.selfont</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>selfont</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="24" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="24" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1a0d49d8507dd2536afe6325392885fd23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.tree_sel_row</definition>
+        <argsstring>(xtree, dialog, self2)</argsstring>
+        <name>tree_sel_row</name>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepedlib_1_1pedfont_1a11b433159131bc7d692b2fceb7ec779c" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="167" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="167" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1ade8a629c7642076efd36786f2570e8c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.tree_sel_row3</definition>
+        <argsstring>(xtree, dialog, self2)</argsstring>
+        <name>tree_sel_row3</name>
+        <param>
+          <type>xtree</type>
+          <defname>xtree</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepedlib_1_1pedfont_1a11b433159131bc7d692b2fceb7ec779c" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="180" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="180" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1aa943fd9d0d0b844426d41eaa1d94e96a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.create_tree</definition>
+        <argsstring>(self)</argsstring>
+        <name>create_tree</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="196" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="196" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1af1fbb4bce84a9e05e246505d4c6c6cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.update_treestore</definition>
+        <argsstring>(self, tree, text, was)</argsstring>
+        <name>update_treestore</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tree</type>
+          <defname>tree</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>was</type>
+          <defname>was</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="221" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="221" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1a8ac55c15002287bbca6cc8cdedc00712" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.update_treestore2</definition>
+        <argsstring>(self, tree, text, was)</argsstring>
+        <name>update_treestore2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tree</type>
+          <defname>tree</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>was</type>
+          <defname>was</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="256" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="256" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1a422aba2c32c06c7cf7a5165800186699" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.add_sizes</definition>
+        <argsstring>(sizes)</argsstring>
+        <name>add_sizes</name>
+        <param>
+          <type>sizes</type>
+          <defname>sizes</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="292" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="292" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedfont_1af488066a3c53f99afd46e1e87dccc9b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedfont.area_key</definition>
+        <argsstring>(area, event, dialog)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepedlib_1_1pedfont_1a11b433159131bc7d692b2fceb7ec779c" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedfont.py" line="301" column="1" bodyfile="pyedpro/build/lib/pedlib/pedfont.py" bodystart="301" bodyend="336"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedfont.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

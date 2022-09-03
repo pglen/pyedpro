@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedundo" kind="namespace" language="Python">
+    <compoundname>pedlib::pedundo</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedundo_1ac9a708a7c380d1f63a0db162e8402ecd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedundo.NOOP</definition>
+        <argsstring></argsstring>
+        <name>NOOP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="29" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedundo_1a16ca16db13c527e35d182cff25a45113" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedundo.MODIFIED</definition>
+        <argsstring></argsstring>
+        <name>MODIFIED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="29" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedundo_1a1874c68cf55b2c43f453853fe0e4a0d5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedundo.ADDED</definition>
+        <argsstring></argsstring>
+        <name>ADDED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="29" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedundo_1a4560a6f43fbad7654c1cb2d25c536569" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedundo.DELETED</definition>
+        <argsstring></argsstring>
+        <name>DELETED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="29" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedundo_1a5ef484f297095aa642c2d9252df99b09" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pedlib::pedundo.CONTFLAG</definition>
+        <argsstring></argsstring>
+        <name>CONTFLAG</name>
+        <initializer>=  0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="33" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedundo_1a177a728b80e60c4461ba7fd18adcd61e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pedlib::pedundo.CONTMASK</definition>
+        <argsstring></argsstring>
+        <name>CONTMASK</name>
+        <initializer>=  <ref refid="namespacepedlib_1_1pedundo_1a5ef484f297095aa642c2d9252df99b09" kindref="member">CONTFLAG</ref> - 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="34" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedundo_1afe74f4d06012e596adb627dd5e944fe7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pedlib::pedundo.MAX_UNDO</definition>
+        <argsstring></argsstring>
+        <name>MAX_UNDO</name>
+        <initializer>=  10000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="47" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedundo_1a1ec7d3aaed15e4df4468c505230769f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedundo.limit_undo</definition>
+        <argsstring>(self2)</argsstring>
+        <name>limit_undo</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="52" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="52" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedundo_1af02729306ec76073bd9287a6adb422b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedundo.undo</definition>
+        <argsstring>(self2, keyh)</argsstring>
+        <name>undo</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>keyh</type>
+          <defname>keyh</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="82" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="82" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedundo_1aa9797bfbde3f4ac3f3c1af63343a33af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedundo.redo</definition>
+        <argsstring>(self2, keyh)</argsstring>
+        <name>redo</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>keyh</type>
+          <defname>keyh</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedundo.py" line="140" column="1" bodyfile="pyedpro/build/lib/pedlib/pedundo.py" bodystart="140" bodyend="218"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedundo.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -260,7 +260,7 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Gtk::TreeView</label>
+        <label>Gtk.TreeView</label>
       </node>
       <node id="1">
         <label>pyedpro.pycommon.pgbox.ListBox</label>
@@ -271,7 +271,7 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Gtk::TreeView</label>
+        <label>Gtk.TreeView</label>
       </node>
       <node id="1">
         <label>pyedpro.pycommon.pgbox.ListBox</label>

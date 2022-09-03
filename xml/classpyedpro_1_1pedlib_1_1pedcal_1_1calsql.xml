@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="198" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="198" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="199" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1ace8af8fc9a6873a584618ee38b09c51e" prot="public" static="no" mutable="no">
         <type></type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="201" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="201" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="202" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="202" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1a6c95746f1cb073df1f9840d5c5f44558" prot="public" static="no" mutable="no">
         <type></type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="206" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="206" bodyend="-1"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="207" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="207" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="195" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="195" bodyend="228"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="196" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="196" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1a0d37ee836af551aae301263e78851111" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -84,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="232" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="232" bodyend="252"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="233" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="233" bodyend="253"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1a2f2153e1b841d93413228fb0ab9e025f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="253" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="253" bodyend="274"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="254" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="254" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1a520353512cc1f8c99363f8518def1d74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -138,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="278" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="278" bodyend="316"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="279" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="279" bodyend="317"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1aef27b5a74aa87a81bc2bf196280e9b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="320" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="320" bodyend="358"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="321" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="321" bodyend="359"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1aabcf78a1e5dd0917a3e89cb96676a926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="362" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="362" bodyend="380"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="363" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="363" bodyend="381"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1a9560a43df04504277170d6aad2bba3a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -215,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="384" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="384" bodyend="400"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="385" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="385" bodyend="401"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1a2f47cbb7cb9c3eac2f03d62c2fc57180" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -232,14 +232,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedcal.py" line="401" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="401" bodyend="420"/>
+        <location file="pyedpro/pedlib/pedcal.py" line="402" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="402" bodyend="421"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/pedlib/pedcal.py" line="193" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="193" bodyend="420"/>
+    <location file="pyedpro/pedlib/pedcal.py" line="194" column="1" bodyfile="pyedpro/pedlib/pedcal.py" bodystart="194" bodyend="421"/>
     <listofallmembers>
       <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1ab5d1a05fb4872c98f741a39fe0e8b46f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::calsql</scope><name>__init__</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1pedcal_1_1calsql_1a6c95746f1cb073df1f9840d5c5f44558" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::pedcal::calsql</scope><name>c</name></member>

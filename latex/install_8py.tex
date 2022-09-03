@@ -1,67 +1,47 @@
-\hypertarget{install_8py}{}\doxysection{pyedpro/install.py File Reference}
-\label{install_8py}\index{pyedpro/install.py@{pyedpro/install.py}}
+\hypertarget{install_8py}{}\doxysection{install.\+py File Reference}
+\label{install_8py}\index{install.py@{install.py}}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespacepyedpro_1_1install}{pyedpro.\+install}}
+ \mbox{\hyperlink{namespaceinstall}{install}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{namespacepyedpro_1_1install_adf4c730eac9e4b8b7268ae142e037584}{pyedpro.\+install.\+isdir}} (fname)
+def \mbox{\hyperlink{namespaceinstall_ae620445b7b85ecf466c9f44dcd591f55}{install.\+isdir}} (fname)
 \item 
-def \mbox{\hyperlink{namespacepyedpro_1_1install_a1a91db201d0c36503a45941f2b328bf9}{pyedpro.\+install.\+softmkdir}} (dirx)
-\item 
-def \mbox{\hyperlink{namespacepyedpro_1_1install_a8665d559d07d6e8629fd3a65ac17a0b4}{pyedpro.\+install.\+check\+\_\+dep}} ()
+def \mbox{\hyperlink{namespaceinstall_acc4cc0fc9418b30816aa5535dad18c1d}{install.\+softmkdir}} (dirx)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespacepyedpro_1_1install_ac825ff9b6bec5fb6c153d37cfb34000b}{pyedpro.\+install.\+depfailed}} = False
+string \mbox{\hyperlink{namespaceinstall_a27645fe8b65d564a6b2fa36097134f76}{install.\+installerdir}} = sys.\+argv\mbox{[}0\mbox{]}\mbox{[}\+:sys.\+argv\mbox{[}0\mbox{]}.rfind(\char`\"{}/\char`\"{})\mbox{]} + \char`\"{}/\char`\"{}
 \item 
-bool \mbox{\hyperlink{namespacepyedpro_1_1install_a47309c6ca5a44cbf98b4212edf07f2a7}{pyedpro.\+install.\+install}} = True
+bool \mbox{\hyperlink{namespaceinstall_a58480f9d7ed7dc3df44ff7399faf6b9b}{install.\+depfailed}} = False
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_ae0677925a795a849b6c9b74d60bebeb2}{pyedpro.\+install.\+PROJNAME}} = \char`\"{}pyedpro\char`\"{}
+string \mbox{\hyperlink{namespaceinstall_a73555da0ac6523c0e93f930ebf6bbbe8}{install.\+PROJNAME}} = \char`\"{}pyedpro\char`\"{}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_a664fd128619e2a8308b66fef2318cfcd}{pyedpro.\+install.\+PROJLIB}} = \char`\"{}pyedlib\char`\"{}
+string \mbox{\hyperlink{namespaceinstall_a8d937148066016ed1a5ca8d574d83d18}{install.\+PROJLIB}} = \char`\"{}pyedlib\char`\"{}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_a38b4a18b90c7cd9be90879b10f070367}{pyedpro.\+install.\+PROJLIB\+\_\+I}} = \char`\"{}pyedlib/images\char`\"{}
+string \mbox{\hyperlink{namespaceinstall_a657fb6cbace7861c8557eb24a3321b76}{install.\+PROJLIB2}} = \char`\"{}panglib\char`\"{}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_ace576f5d3b7f871af20fce94604516de}{pyedpro.\+install.\+PROJLIB\+\_\+D}} = \char`\"{}pyedlib/data\char`\"{}
+\mbox{\hyperlink{namespaceinstall_a2ea38aa530ed365464fcda8f4ef840c9}{install.\+path}} = os.\+environ\mbox{[}\textquotesingle{}HOME\textquotesingle{}\mbox{]}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_aa59f031097ec37f06a044b78405cc7c3}{pyedpro.\+install.\+PROJLIB2}} = \char`\"{}panglib\char`\"{}
+\mbox{\hyperlink{namespaceinstall_a8d823481bd1496cc9b851e2dd556f0dd}{install.\+user}} = os.\+environ\mbox{[}\textquotesingle{}USER\textquotesingle{}\mbox{]}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_ad70008110b93d53b086123bc749dbc54}{pyedpro.\+install.\+PROGNAME}} = \char`\"{}\textquotesingle{}\char`\"{} + PROJNAME+ \char`\"{}.py\textquotesingle{}\char`\"{}
+\mbox{\hyperlink{namespaceinstall_a1b96413b6d09332e2b8d81114f0fa130}{install.\+prefix}} = sys.\+prefix
 \item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_a3836284fe6f46710e9e371d8a4787057}{pyedpro.\+install.\+home}} = os.\+environ\mbox{[}\textquotesingle{}HOME\textquotesingle{}\mbox{]}
+\mbox{\hyperlink{namespaceinstall_a8a7ab72aa864689389493523e5536ae4}{install.\+pylib}} = distutils.\+sysconfig.\+get\+\_\+python\+\_\+lib()
 \item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_a543878a6935449080316721a04489ca9}{pyedpro.\+install.\+user}} = os.\+environ\mbox{[}\textquotesingle{}USER\textquotesingle{}\mbox{]}
+string \mbox{\hyperlink{namespaceinstall_a12f8b8e2a4ff50e080f93a5364e3dac5}{install.\+shared}} = \char`\"{}/usr/share\char`\"{}
 \item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_abd3bdbc86ac1d70cda6b6791dc048e4d}{pyedpro.\+install.\+stream}} = stream.\+read()
+string \mbox{\hyperlink{namespaceinstall_a1afc814f11711dc73fdea47503a33b86}{install.\+xshared}} = \char`\"{}/usr/share\char`\"{} + \char`\"{}/\char`\"{} + PROJNAME
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_a0484155ab074f83431e6be3ed288a122}{pyedpro.\+install.\+shared}} = \char`\"{}/usr/share\char`\"{}
+string \mbox{\hyperlink{namespaceinstall_af6f31fa895b479aaac321811d54b76a7}{install.\+bindir}} = \char`\"{}/usr/bin\char`\"{}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_af24edb0eb74deb74ddfd390ee1889701}{pyedpro.\+install.\+xshared}} = \char`\"{}/usr/share\char`\"{} + \char`\"{}/\char`\"{} + PROJNAME
+\mbox{\hyperlink{namespaceinstall_aa40b49bb5b4683be5beec4914842d15d}{install.\+filelist}} = \textbackslash{}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_ade28b3517356dc28e4e7773749113c34}{pyedpro.\+install.\+bindir}} = \char`\"{}/usr/local/bin\char`\"{}
+\mbox{\hyperlink{namespaceinstall_ad10f3001add46c434f5cc709e2b783de}{install.\+dirlist}} = \textbackslash{}
 \item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_ad4a9cde962bb834748ed0e06e4393302}{pyedpro.\+install.\+pylib}} = distutils.\+sysconfig.\+get\+\_\+python\+\_\+lib()
-\item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_af83a68f41e00e9c56cb58b9ff94ef00d}{pyedpro.\+install.\+filelist}} = \textbackslash{}
-\item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_a30e3422b529ef15d67b168b0dfc9f1d6}{pyedpro.\+install.\+dirlist}} = \textbackslash{}
-\item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_acdc009adb9ad80c4b8a1059c7aa231ec}{pyedpro.\+install.\+targ}} = dest + \char`\"{}/\char`\"{} + source
-\item 
-string \mbox{\hyperlink{namespacepyedpro_1_1install_ac6d3f155e8ba0ae9390859865d63773c}{pyedpro.\+install.\+spp}} = \char`\"{} \char`\"{} $\ast$ (16 -\/ len(source))
-\item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_a5b927a23e7f29ee069998926d2263eab}{pyedpro.\+install.\+output}} = stream.\+read()
-\item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_a771600ef8a9d9de14c41bdab76a47e22}{pyedpro.\+install.\+source}}
-\item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_a9fa6f1d64a5bcd74cfc16b82860eb2b6}{pyedpro.\+install.\+dest}}
-\item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_ae232ad0fba6e3168e56629fb56ba9808}{pyedpro.\+install.\+exe}}
-\item 
-\mbox{\hyperlink{namespacepyedpro_1_1install_a6383bb8bd6ebe890cf44d6f9c50837eb}{pyedpro.\+install.\+rrr}} = dest + os.\+sep + source
+string \mbox{\hyperlink{namespaceinstall_a8d622feac15daa221585d6535cd90365}{install.\+targ}} = dest + \char`\"{}/\char`\"{} + source
 \end{DoxyCompactItemize}

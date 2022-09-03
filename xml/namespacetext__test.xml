@@ -33,9 +33,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacetext__test_1a71127a45e13903a485c22749a03aee35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacetext__test_1ae0905663f58173c7879fa0074215358c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def text_test.draw_event</definition>
+        <definition>def text_test::draw_event</definition>
         <argsstring>(widget, ctx)</argsstring>
         <name>draw_event</name>
         <param>

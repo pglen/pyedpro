@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_1d9268e297df574d22fb07c77628e9a0" kind="dir">
+    <compoundname>study</compoundname>
+    <innerfile refid="study_2cairo-demo_8py">cairo-demo.py</innerfile>
+    <innerfile refid="study_2cairo-knockout_8py">cairo-knockout.py</innerfile>
+    <innerfile refid="cursors_8py">cursors.py</innerfile>
+    <innerfile refid="study_2png__view_8py">png_view.py</innerfile>
+    <innerfile refid="study_2test_8py">test.py</innerfile>
+    <innerfile refid="study_2testgtk_8py">testgtk.py</innerfile>
+    <innerfile refid="study_2text__test_8py">text_test.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="study/"/>
+  </compounddef>
+</doxygen>

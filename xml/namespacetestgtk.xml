@@ -3,9 +3,9 @@
   <compounddef id="namespacetestgtk" kind="namespace" language="Python">
     <compoundname>testgtk</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacetestgtk_1abe0d3bb97dd022ed25a64ec4058efa9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacetestgtk_1a2ce91ee68d6b96b03ec3607a56348273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def testgtk.domod</definition>
+        <definition>def testgtk::domod</definition>
         <argsstring>(mmm)</argsstring>
         <name>domod</name>
         <param>

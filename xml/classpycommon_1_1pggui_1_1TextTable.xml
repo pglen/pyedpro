@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pggui_1_1TextTable" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pggui::TextTable</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Table</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.Table</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpycommon_1_1pggui_1_1TextTable_1afaa51c53441e57ac0c4c10a67c67d22d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pggui.TextTable::texts</definition>
+        <argsstring></argsstring>
+        <name>texts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="124" column="1" bodyfile="pycommon/pggui.py" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpycommon_1_1pggui_1_1TextTable_1a71ca0a9888035c68f7018e16a298ae9c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pggui.TextTable::main</definition>
+        <argsstring></argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="126" column="1" bodyfile="pycommon/pggui.py" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextTable_1a21a7b4cb67d70ff6f7149710a5c4751a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.TextTable.__init__</definition>
+        <argsstring>(self, confarr, main=None, textwidth=24)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>confarr</type>
+          <defname>confarr</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1TextTable_1a71ca0a9888035c68f7018e16a298ae9c" kindref="member">main</ref></type>
+          <defname>main</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>textwidth</type>
+          <defname>textwidth</defname>
+          <defval>24</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="122" column="1" bodyfile="pycommon/pggui.py" bodystart="122" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextTable_1a21a7b4cb67d70ff6f7149710a5c4751a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.TextTable.__init__</definition>
+        <argsstring>(self, confarr, main=None, textwidth=24)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>confarr</type>
+          <defname>confarr</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1TextTable_1a71ca0a9888035c68f7018e16a298ae9c" kindref="member">main</ref></type>
+          <defname>main</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>textwidth</type>
+          <defname>textwidth</defname>
+          <defval>24</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="122" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="122" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Gtk.Table</label>
+      </node>
+      <node id="2">
+        <label>Gtk::Table</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pggui.TextTable</label>
+        <link refid="classpycommon_1_1pggui_1_1TextTable"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Gtk.Table</label>
+      </node>
+      <node id="2">
+        <label>Gtk::Table</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pggui.TextTable</label>
+        <link refid="classpycommon_1_1pggui_1_1TextTable"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pycommon/pggui.py" line="120" column="1" bodyfile="pycommon/pggui.py" bodystart="120" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pggui_1_1TextTable_1a21a7b4cb67d70ff6f7149710a5c4751a" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextTable</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pggui_1_1TextTable_1a21a7b4cb67d70ff6f7149710a5c4751a" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextTable</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pggui_1_1TextTable_1a71ca0a9888035c68f7018e16a298ae9c" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextTable</scope><name>main</name></member>
+      <member refid="classpycommon_1_1pggui_1_1TextTable_1afaa51c53441e57ac0c4c10a67c67d22d" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextTable</scope><name>texts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

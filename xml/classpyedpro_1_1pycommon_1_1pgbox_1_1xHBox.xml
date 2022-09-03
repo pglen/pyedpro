@@ -106,7 +106,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>Gtk::HBox</label>
+        <label>Gtk.HBox</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -117,7 +117,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>Gtk::HBox</label>
+        <label>Gtk.HBox</label>
       </node>
     </collaborationgraph>
     <location file="pyedpro/pycommon/pgbox.py" line="496" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="496" bodyend="518"/>

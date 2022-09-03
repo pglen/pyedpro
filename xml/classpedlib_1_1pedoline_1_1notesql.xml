@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1pedoline_1_1notesql" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::pedoline::notesql</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1pedoline_1_1notesql_1ac8bd8b398ed67f9d7510b289c339ecaa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedoline.notesql::errstr</definition>
+        <argsstring></argsstring>
+        <name>errstr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="264" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedoline_1_1notesql_1a7dad08d47f5d3ed6dbd6e9f1406309de" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedoline.notesql::conn</definition>
+        <argsstring></argsstring>
+        <name>conn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="267" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedoline_1_1notesql_1a5d6a847edd4ba81950b5cc3f46eaa415" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedoline.notesql::c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="272" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1a9af09c744b2efeab80ddc87e0a5f4b91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.__init__</definition>
+        <argsstring>(self, file)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="261" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="261" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1af40ad4156779cb640fa75841f2d5c09f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.get</definition>
+        <argsstring>(self, kkk)</argsstring>
+        <name>get</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>kkk</type>
+          <defname>kkk</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="298" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="298" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1ab792b69ef09295655634ded0febc753b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.getdata</definition>
+        <argsstring>(self, kkk)</argsstring>
+        <name>getdata</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>kkk</type>
+          <defname>kkk</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="319" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="319" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1a1b19f99d8ac6ad4a0c5d717a9e40e76d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.put</definition>
+        <argsstring>(self, key, val, val2, val3)</argsstring>
+        <name>put</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <param>
+          <type>val2</type>
+          <defname>val2</defname>
+        </param>
+        <param>
+          <type>val3</type>
+          <defname>val3</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="344" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="344" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1a2e6e8820a1d678ab7e7c7b9d8440634c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.putdata</definition>
+        <argsstring>(self, key, val, val2, val3)</argsstring>
+        <name>putdata</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <param>
+          <type>val2</type>
+          <defname>val2</defname>
+        </param>
+        <param>
+          <type>val3</type>
+          <defname>val3</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="386" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="386" bodyend="424"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1a2300e8e3ac3f16bf549d15ea6dd8448b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.getall</definition>
+        <argsstring>(self, strx=&quot;&quot;, limit=100)</argsstring>
+        <name>getall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>limit</type>
+          <defname>limit</defname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="428" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="428" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1a6ec12eede7d11b897f00b013468c6c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.rmall</definition>
+        <argsstring>(self)</argsstring>
+        <name>rmall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="449" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="449" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedoline_1_1notesql_1af3959a84ce343485a6c9bdcb5e486f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedoline.notesql.rmalldata</definition>
+        <argsstring>(self)</argsstring>
+        <name>rmalldata</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedoline.py" line="466" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="466" bodyend="484"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedoline.py" line="259" column="1" bodyfile="pyedpro/build/lib/pedlib/pedoline.py" bodystart="259" bodyend="484"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1a9af09c744b2efeab80ddc87e0a5f4b91" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1a5d6a847edd4ba81950b5cc3f46eaa415" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>c</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1a7dad08d47f5d3ed6dbd6e9f1406309de" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>conn</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1ac8bd8b398ed67f9d7510b289c339ecaa" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>errstr</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1af40ad4156779cb640fa75841f2d5c09f" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>get</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1a2300e8e3ac3f16bf549d15ea6dd8448b" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>getall</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1ab792b69ef09295655634ded0febc753b" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>getdata</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1a1b19f99d8ac6ad4a0c5d717a9e40e76d" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>put</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1a2e6e8820a1d678ab7e7c7b9d8440634c" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>putdata</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1a6ec12eede7d11b897f00b013468c6c2f" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>rmall</name></member>
+      <member refid="classpedlib_1_1pedoline_1_1notesql_1af3959a84ce343485a6c9bdcb5e486f88" prot="public" virt="non-virtual"><scope>pedlib::pedoline::notesql</scope><name>rmalldata</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

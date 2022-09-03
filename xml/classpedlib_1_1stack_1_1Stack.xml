@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1stack_1_1Stack" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::stack::Stack</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1stack_1_1Stack_1add7f2d488c4be5ca1e598c0ef022a47f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.stack.Stack::_store</definition>
+        <argsstring></argsstring>
+        <name>_store</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="7" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1stack_1_1Stack_1af2f9bc6cb1745f6de674772fc9cb3da6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.stack.Stack::cnt</definition>
+        <argsstring></argsstring>
+        <name>cnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="15" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1stack_1_1Stack_1a79f6f8325cb24f5f352573ddd11d1dd5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.stack.Stack::gcnt</definition>
+        <argsstring></argsstring>
+        <name>gcnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="50" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a1d1adccf1389b38225889b3b33ad1850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="6" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a73f4593d697ca6757f8050b91369d802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.push</definition>
+        <argsstring>(self, item)</argsstring>
+        <name>push</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="10" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="10" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1adc40ef4beff7f6470541d4b53f7c462a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.last</definition>
+        <argsstring>(self)</argsstring>
+        <name>last</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="17" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="17" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a331731f7e88553868fe851041371339a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.first</definition>
+        <argsstring>(self)</argsstring>
+        <name>first</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="23" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1ae97bcadefb1cf3abefbe3d64d2128b01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.pop</definition>
+        <argsstring>(self)</argsstring>
+        <name>pop</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="29" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a64e1ee4af93a9af2a347e5b9e53d17d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.get</definition>
+        <argsstring>(self)</argsstring>
+        <name>get</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="34" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a5714529f3569071e6fe81f13b765b2d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.pop2</definition>
+        <argsstring>(self)</argsstring>
+        <name>pop2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="40" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="40" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a4162d4e2d4b82efe48fbe490091b66d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.get2</definition>
+        <argsstring>(self)</argsstring>
+        <name>get2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="47" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a14cc7de2ee1c1d4ba3becf75818f8db4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.reset</definition>
+        <argsstring>(self)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="54" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1aaee60bd232e95bb93784aa65bd111216" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.stacklen</definition>
+        <argsstring>(self)</argsstring>
+        <name>stacklen</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="58" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1acbb29e6d969c84c610a15468c6184480" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.dump</definition>
+        <argsstring>(self)</argsstring>
+        <name>dump</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="61" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="61" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1stack_1_1Stack_1a370c0acf92b6adde4403151752aac8fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.stack.Stack.show</definition>
+        <argsstring>(self)</argsstring>
+        <name>show</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/stack.py" line="66" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="66" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/stack.py" line="4" column="1" bodyfile="pyedpro/build/lib/pedlib/stack.py" bodystart="4" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a1d1adccf1389b38225889b3b33ad1850" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1add7f2d488c4be5ca1e598c0ef022a47f" prot="private" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>_store</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1af2f9bc6cb1745f6de674772fc9cb3da6" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>cnt</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1acbb29e6d969c84c610a15468c6184480" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>dump</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a331731f7e88553868fe851041371339a" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>first</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a79f6f8325cb24f5f352573ddd11d1dd5" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>gcnt</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a64e1ee4af93a9af2a347e5b9e53d17d8" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>get</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a4162d4e2d4b82efe48fbe490091b66d3" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>get2</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1adc40ef4beff7f6470541d4b53f7c462a" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>last</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1ae97bcadefb1cf3abefbe3d64d2128b01" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>pop</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a5714529f3569071e6fe81f13b765b2d9" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>pop2</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a73f4593d697ca6757f8050b91369d802" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>push</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a14cc7de2ee1c1d4ba3becf75818f8db4" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>reset</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1a370c0acf92b6adde4403151752aac8fb" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>show</name></member>
+      <member refid="classpedlib_1_1stack_1_1Stack_1aaee60bd232e95bb93784aa65bd111216" prot="public" virt="non-virtual"><scope>pedlib::stack::Stack</scope><name>stacklen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

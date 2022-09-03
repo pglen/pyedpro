@@ -2,30 +2,29 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="dir_524d812febc07498f144248741747188" kind="dir">
     <compoundname>pyedpro</compoundname>
+    <innerdir refid="dir_be22757c01fb1b706499a977a2447c8f">pyedpro/build</innerdir>
     <innerdir refid="dir_eb94263a274f758c549c584c3403e478">pyedpro/debian</innerdir>
     <innerdir refid="dir_1eee7b9c6fa4d40906be3e8eab5e0287">pyedpro/panglib</innerdir>
     <innerdir refid="dir_6d0dbc010fe36665ab0e81188b9adfd2">pyedpro/pedlib</innerdir>
     <innerdir refid="dir_4b5851cf2c895d7724ecf52dda076fe9">pyedpro/pycommon</innerdir>
     <innerdir refid="dir_f28ddfe65ccbaf9a27af56442eab41e4">pyedpro/study</innerdir>
-    <innerfile refid="____init_____8py">__init__.py</innerfile>
-    <innerfile refid="____main_____8py">__main__.py</innerfile>
-    <innerfile refid="cursors_8py">cursors.py</innerfile>
+    <innerfile refid="pyedpro_2____init_____8py">__init__.py</innerfile>
     <innerfile refid="filter_8py">filter.py</innerfile>
-    <innerfile refid="install_8py">install.py</innerfile>
+    <innerfile refid="pyedpro_2install_8py">install.py</innerfile>
     <innerfile refid="keybind_8py">keybind.py</innerfile>
     <innerfile refid="lexer_8py">lexer.py</innerfile>
     <innerfile refid="pangview_8py">pangview.py</innerfile>
     <innerfile refid="parser_8py">parser.py</innerfile>
+    <innerfile refid="phy_8py">phy.py</innerfile>
     <innerfile refid="popnew_8py">popnew.py</innerfile>
     <innerfile refid="pyedpro_8py">pyedpro.py</innerfile>
-    <innerfile refid="pyedpro_2setup_8py">setup.py</innerfile>
-    <innerfile refid="setup3_8py">setup3.py</innerfile>
+    <innerfile refid="setup_8py">setup.py</innerfile>
     <innerfile refid="stack_8py">stack.py</innerfile>
     <innerfile refid="test_8php">test.php</innerfile>
     <innerfile refid="testapp_8py">testapp.py</innerfile>
     <innerfile refid="testgi_8py">testgi.py</innerfile>
     <innerfile refid="testimport_8py">testimport.py</innerfile>
-    <innerfile refid="testmenu_8py">testmenu.py</innerfile>
+    <innerfile refid="pyedpro_2testmenu_8py">testmenu.py</innerfile>
     <innerfile refid="testnb_8py">testnb.py</innerfile>
     <innerfile refid="trace_8py">trace.py</innerfile>
     <innerfile refid="utils_8py">utils.py</innerfile>

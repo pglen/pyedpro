@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pgbox_1_1Rectangle" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pgbox::Rectangle</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpycommon_1_1pgbox_1_1Rectangle_1a36b7684e6df880abe0c064dbf8d0ea1c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgbox.Rectangle::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="34" column="1" bodyfile="pycommon/pgbox.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpycommon_1_1pgbox_1_1Rectangle_1abf6349e39a121e769c6344c4fea08932" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgbox.Rectangle::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="36" column="1" bodyfile="pycommon/pgbox.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpycommon_1_1pgbox_1_1Rectangle_1a17af5fa289fa836bbdddad3bd19eeeb4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgbox.Rectangle::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="39" column="1" bodyfile="pycommon/pgbox.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpycommon_1_1pgbox_1_1Rectangle_1aaac7e6a9114243777c13225fdd08dc3f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgbox.Rectangle::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="42" column="1" bodyfile="pycommon/pgbox.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a4a7d662ad064132a99637b8a0dabaf62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.__init__</definition>
+        <argsstring>(self, *rrr)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>rrr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="27" column="1" bodyfile="pycommon/pgbox.py" bodystart="27" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ad2d7de5692fdabf81472e3811ac009f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.resize</definition>
+        <argsstring>(self, ww, hh=0)</argsstring>
+        <name>resize</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ww</type>
+          <defname>ww</defname>
+        </param>
+        <param>
+          <type>hh</type>
+          <defname>hh</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="57" column="1" bodyfile="pycommon/pgbox.py" bodystart="57" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a8483e805e5d8bd50bf157ac36df80875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.copy</definition>
+        <argsstring>(self)</argsstring>
+        <name>copy</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="67" column="1" bodyfile="pycommon/pgbox.py" bodystart="67" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ac113599ff241d25856c8869efe805210" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.intersect</definition>
+        <argsstring>(self, rect2)</argsstring>
+        <name>intersect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect2</type>
+          <defname>rect2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="109" column="1" bodyfile="pycommon/pgbox.py" bodystart="109" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a758fbdb2f2c5091b9b687358495f6bfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.contain</definition>
+        <argsstring>(self, rect2)</argsstring>
+        <name>contain</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect2</type>
+          <defname>rect2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="133" column="1" bodyfile="pycommon/pgbox.py" bodystart="133" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ad5a59f082c071f11cb079c94ad7ec48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.__getitem__</definition>
+        <argsstring>(self, key)</argsstring>
+        <name>__getitem__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="147" column="1" bodyfile="pycommon/pgbox.py" bodystart="147" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ae2a45c90bef784ef254b5021818efd5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.dump</definition>
+        <argsstring>(self)</argsstring>
+        <name>dump</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="159" column="1" bodyfile="pycommon/pgbox.py" bodystart="159" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a8f587342002e3e418c9f3e3f8e58d717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.__str__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__str__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="181" column="1" bodyfile="pycommon/pgbox.py" bodystart="181" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a4a7d662ad064132a99637b8a0dabaf62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.__init__</definition>
+        <argsstring>(self, *rrr)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>rrr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="27" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="27" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ad2d7de5692fdabf81472e3811ac009f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.resize</definition>
+        <argsstring>(self, ww, hh=0)</argsstring>
+        <name>resize</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ww</type>
+          <defname>ww</defname>
+        </param>
+        <param>
+          <type>hh</type>
+          <defname>hh</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="57" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="57" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a8483e805e5d8bd50bf157ac36df80875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.copy</definition>
+        <argsstring>(self)</argsstring>
+        <name>copy</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="67" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="67" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ac113599ff241d25856c8869efe805210" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.intersect</definition>
+        <argsstring>(self, rect2)</argsstring>
+        <name>intersect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect2</type>
+          <defname>rect2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="109" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="109" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a758fbdb2f2c5091b9b687358495f6bfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.contain</definition>
+        <argsstring>(self, rect2)</argsstring>
+        <name>contain</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rect2</type>
+          <defname>rect2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="133" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="133" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ad5a59f082c071f11cb079c94ad7ec48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.__getitem__</definition>
+        <argsstring>(self, key)</argsstring>
+        <name>__getitem__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="147" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="147" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1ae2a45c90bef784ef254b5021818efd5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.dump</definition>
+        <argsstring>(self)</argsstring>
+        <name>dump</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="159" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="159" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1Rectangle_1a8f587342002e3e418c9f3e3f8e58d717" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.Rectangle.__str__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__str__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="181" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="181" bodyend="186"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/pgbox.py" line="24" column="1" bodyfile="pycommon/pgbox.py" bodystart="24" bodyend="187"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ad5a59f082c071f11cb079c94ad7ec48b" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>__getitem__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ad5a59f082c071f11cb079c94ad7ec48b" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>__getitem__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a4a7d662ad064132a99637b8a0dabaf62" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a4a7d662ad064132a99637b8a0dabaf62" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a8f587342002e3e418c9f3e3f8e58d717" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>__str__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a8f587342002e3e418c9f3e3f8e58d717" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>__str__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a758fbdb2f2c5091b9b687358495f6bfc" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>contain</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a758fbdb2f2c5091b9b687358495f6bfc" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>contain</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a8483e805e5d8bd50bf157ac36df80875" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>copy</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a8483e805e5d8bd50bf157ac36df80875" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>copy</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ae2a45c90bef784ef254b5021818efd5c" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>dump</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ae2a45c90bef784ef254b5021818efd5c" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>dump</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1aaac7e6a9114243777c13225fdd08dc3f" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>h</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ac113599ff241d25856c8869efe805210" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>intersect</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ac113599ff241d25856c8869efe805210" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>intersect</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ad2d7de5692fdabf81472e3811ac009f6" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>resize</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ad2d7de5692fdabf81472e3811ac009f6" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>resize</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a17af5fa289fa836bbdddad3bd19eeeb4" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>w</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a36b7684e6df880abe0c064dbf8d0ea1c" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>x</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1Rectangle_1abf6349e39a121e769c6344c4fea08932" prot="public" virt="non-virtual"><scope>pycommon::pgbox::Rectangle</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -4,9 +4,9 @@
     <compoundname>panglib::pangfunc</compoundname>
     <innerclass refid="classpanglib_1_1pangfunc_1_1CallBack" prot="public">panglib::pangfunc::CallBack</innerclass>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacepanglib_1_1pangfunc_1a40718e6cd2575f92c644033b5cdd8aa3" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1pangfunc_1a3ea77e4802b42a0a7e5f9b61dae938c8" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string panglib::pangfunc.old_stresc</definition>
+        <definition>string panglib::pangfunc::old_stresc</definition>
         <argsstring></argsstring>
         <name>old_stresc</name>
         <initializer>=  &quot;&quot;</initializer>
@@ -16,11 +16,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" line="20" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" bodystart="20" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/pangfunc.py" line="20" column="1" bodyfile="pyedpro/build/lib/panglib/pangfunc.py" bodystart="20" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepanglib_1_1pangfunc_1a0afd380dbdfcdb537144f24c2e4bbcd8" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1pangfunc_1adb9c8f9a0a105a30c56eb0c408d089dc" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string panglib::pangfunc.accum</definition>
+        <definition>string panglib::pangfunc::accum</definition>
         <argsstring></argsstring>
         <name>accum</name>
         <initializer>=  &quot;&quot;</initializer>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" line="21" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" bodystart="21" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/pangfunc.py" line="21" column="1" bodyfile="pyedpro/build/lib/panglib/pangfunc.py" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepanglib_1_1pangfunc_1a6f989312efc92becae686b16bb5080ea" prot="public" static="no" mutable="no">
         <type></type>
@@ -44,13 +44,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" line="22" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" bodystart="22" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/pangfunc.py" line="22" column="1" bodyfile="pyedpro/build/lib/panglib/pangfunc.py" bodystart="22" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacepanglib_1_1pangfunc_1a11b76431aad91cd9042c939b7f4a305a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepanglib_1_1pangfunc_1adbc5e73f0272b5d10489d45f5857798b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def panglib.pangfunc.chkstate</definition>
+        <definition>def panglib::pangfunc::chkstate</definition>
         <argsstring>(obj_1, obj_2)</argsstring>
         <name>chkstate</name>
         <param>
@@ -67,13 +67,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" line="31" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" bodystart="31" bodyend="53"/>
+        <location file="pyedpro/build/lib/panglib/pangfunc.py" line="31" column="1" bodyfile="pyedpro/build/lib/panglib/pangfunc.py" bodystart="31" bodyend="53"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/pangfunc.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/panglib/pangfunc.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

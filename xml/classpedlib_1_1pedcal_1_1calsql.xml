@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1pedcal_1_1calsql" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::pedcal::calsql</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1pedcal_1_1calsql_1abd93580edf1c3ccb611cadedffc76fb3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcal.calsql::errstr</definition>
+        <argsstring></argsstring>
+        <name>errstr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="199" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcal_1_1calsql_1ae0b75faf6fe116c9c7af21862e380d32" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcal.calsql::conn</definition>
+        <argsstring></argsstring>
+        <name>conn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="202" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcal_1_1calsql_1a4c2b852e55bfb2b52bc1f2129ae14a65" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcal.calsql::c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="207" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1a8f8e4c3f00371cc594482776e14d329d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.__init__</definition>
+        <argsstring>(self, file)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="196" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="196" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1acf837c0724be37821235d535ed703997" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.get</definition>
+        <argsstring>(self, kkk)</argsstring>
+        <name>get</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>kkk</type>
+          <defname>kkk</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="233" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="233" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1a2d989b79eef1509ed57e42e68732450a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.getdata</definition>
+        <argsstring>(self, kkk)</argsstring>
+        <name>getdata</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>kkk</type>
+          <defname>kkk</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="254" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="254" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1a2ca48fb92c3fe4bf321299f06c1fc538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.put</definition>
+        <argsstring>(self, key, val, val2, val3)</argsstring>
+        <name>put</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <param>
+          <type>val2</type>
+          <defname>val2</defname>
+        </param>
+        <param>
+          <type>val3</type>
+          <defname>val3</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="279" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="279" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1a2430df51f58792fb7a6a2a9723cbeeb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.putdata</definition>
+        <argsstring>(self, key, val, val2, val3)</argsstring>
+        <name>putdata</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <param>
+          <type>val2</type>
+          <defname>val2</defname>
+        </param>
+        <param>
+          <type>val3</type>
+          <defname>val3</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="321" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="321" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1abf9a225c59334a6a356dca5e00f6f259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.getall</definition>
+        <argsstring>(self, strx=&quot;&quot;, limit=1000)</argsstring>
+        <name>getall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>limit</type>
+          <defname>limit</defname>
+          <defval>1000</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="363" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="363" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1a164b6a5e31795dbd8e6e76e470baabb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.rmall</definition>
+        <argsstring>(self)</argsstring>
+        <name>rmall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="385" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="385" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcal_1_1calsql_1ae03357b56b05bd2472f422d4669b7d51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcal.calsql.rmalldata</definition>
+        <argsstring>(self)</argsstring>
+        <name>rmalldata</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcal.py" line="402" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="402" bodyend="421"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedcal.py" line="194" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcal.py" bodystart="194" bodyend="421"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1a8f8e4c3f00371cc594482776e14d329d" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1a4c2b852e55bfb2b52bc1f2129ae14a65" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>c</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1ae0b75faf6fe116c9c7af21862e380d32" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>conn</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1abd93580edf1c3ccb611cadedffc76fb3" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>errstr</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1acf837c0724be37821235d535ed703997" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>get</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1abf9a225c59334a6a356dca5e00f6f259" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>getall</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1a2d989b79eef1509ed57e42e68732450a" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>getdata</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1a2ca48fb92c3fe4bf321299f06c1fc538" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>put</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1a2430df51f58792fb7a6a2a9723cbeeb3" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>putdata</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1a164b6a5e31795dbd8e6e76e470baabb8" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>rmall</name></member>
+      <member refid="classpedlib_1_1pedcal_1_1calsql_1ae03357b56b05bd2472f422d4669b7d51" prot="public" virt="non-virtual"><scope>pedlib::pedcal::calsql</scope><name>rmalldata</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

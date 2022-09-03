@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepycommon" kind="namespace" language="Python">
+    <compoundname>pycommon</compoundname>
+    <innernamespace refid="namespacepycommon_1_1htmledit">pycommon::htmledit</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1pgbox">pycommon::pgbox</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1pgentry">pycommon::pgentry</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1pggui">pycommon::pggui</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1pgsimp">pycommon::pgsimp</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1pgutils">pycommon::pgutils</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1pgwkit">pycommon::pgwkit</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1plug">pycommon::plug</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1pypacker">pycommon::pypacker</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1sutil">pycommon::sutil</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1testpacker">pycommon::testpacker</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1testpacker2">pycommon::testpacker2</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1testpacker3">pycommon::testpacker3</innernamespace>
+    <innernamespace refid="namespacepycommon_1_1testpacker4">pycommon::testpacker4</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

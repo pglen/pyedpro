@@ -3,10 +3,6 @@
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespacepyedpro_1_1____main____}{\+\_\+\+\_\+main\+\_\+\+\_\+}}
-\item 
- \mbox{\hyperlink{namespacepyedpro_1_1cursors}{cursors}}
-\item 
  \mbox{\hyperlink{namespacepyedpro_1_1filter}{filter}}
 \item 
  \mbox{\hyperlink{namespacepyedpro_1_1install}{install}}
@@ -23,6 +19,8 @@
 \item 
  \mbox{\hyperlink{namespacepyedpro_1_1pedlib}{pedlib}}
 \item 
+ \mbox{\hyperlink{namespacepyedpro_1_1phy}{phy}}
+\item 
  \mbox{\hyperlink{namespacepyedpro_1_1popnew}{popnew}}
 \item 
  \mbox{\hyperlink{namespacepyedpro_1_1pycommon}{pycommon}}
@@ -30,8 +28,6 @@
  \mbox{\hyperlink{namespacepyedpro_1_1pyedpro}{pyedpro}}
 \item 
  \mbox{\hyperlink{namespacepyedpro_1_1setup}{setup}}
-\item 
- \mbox{\hyperlink{namespacepyedpro_1_1setup3}{setup3}}
 \item 
  \mbox{\hyperlink{namespacepyedpro_1_1stack}{stack}}
 \item 
@@ -52,10 +48,24 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classpyedpro_1_1MainPyed}{Main\+Pyed}}
+\item 
 class \mbox{\hyperlink{classpyedpro_1_1Unbuffered}{Unbuffered}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepyedpro_a4579ba27859de033d9f76927e28373f0}{tracer}} (frame, event, arg)
+\item 
+def \mbox{\hyperlink{namespacepyedpro_a5facc1135e1af9666dcedcb728e482de}{run\+\_\+main}} (projname, strarr)
+\item 
+def \mbox{\hyperlink{namespacepyedpro_a5d0ca23edcf44eaebb829f8a58f02fc1}{xversion}} ()
+\item 
+def \mbox{\hyperlink{namespacepyedpro_a4db1962e95e775ad8ca30e4fef15f242}{xhelp}} ()
+\item 
+def \mbox{\hyperlink{namespacepyedpro_ac783b5a036006d9dee7eab42b863be04}{terminate}} ()
+\item 
+def \mbox{\hyperlink{namespacepyedpro_a77f061937ce29b17f527c9a26ec93adb}{mainstart}} (name=\char`\"{}\char`\"{}, \mbox{\hyperlink{namespacepyedpro_a5009c406676c0856670424f04b147c47}{args}}=\char`\"{}\char`\"{}, oldpath=\char`\"{}\char`\"{})
 \item 
 def \mbox{\hyperlink{namespacepyedpro_ad736187883161f8c319d3438803812c2}{main}} (strarr)
 \item 
@@ -66,11 +76,25 @@ def \mbox{\hyperlink{namespacepyedpro_a07c3f80902b86fe3e314bf269ccbbff4}{termina
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-float \mbox{\hyperlink{namespacepyedpro_a446fc3c56b1d207a6ab0051426b1a016}{VERSION}} = 1.\+0
+\mbox{\hyperlink{namespacepyedpro_a216593a9f1b93f467e5bcf773f728a3c}{orgbase}} = os.\+getcwd()
 \item 
-string \mbox{\hyperlink{namespacepyedpro_a9f4d4c69760d1469fb396d440311ff5e}{BUILDDATE}} = \char`\"{}Jan-\/09-\/2019\char`\"{}
+\mbox{\hyperlink{namespacepyedpro_a9268b5e8cc56f6bafb491560f71bd8d5}{conf}}
 \item 
-string \mbox{\hyperlink{namespacepyedpro_a53b60e19496b156e877d15f8c45923d3}{PROGNAME}} = \char`\"{}Py\+Ed\+Pro\char`\"{}
+\mbox{\hyperlink{namespacepyedpro_a0b6e6e03c124186298a6860030606c4e}{acth}}
+\item 
+\mbox{\hyperlink{namespacepyedpro_ac4287a16b3625eba9ed68627c570c34d}{keyh}}
+\item 
+\mbox{\hyperlink{namespacepyedpro_a719f4fecfe3f5bee81a1360d56246c8b}{orig\+\_\+path}}
+\item 
+string \mbox{\hyperlink{namespacepyedpro_a53700a9162020976a9027ab05cc0dc79}{VERSION}} = \char`\"{}2.\+9.\+1\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacepyedpro_af3662f0a8013bfb39470517ad61e51e4}{BUILDDATE}} = \char`\"{}Fri 02.Sep.\+2022\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacepyedpro_a9df7e458a69a1f5dc371b32af4fe58b3}{PROGNAME}} = \char`\"{}Py\+Ed\+Pro\char`\"{}
+\item 
+\mbox{\hyperlink{namespacepyedpro_a83258d5fd6b591d12f9c465810cd1ca4}{stdout}}
+\item 
+\mbox{\hyperlink{namespacepyedpro_a1d1ad96c36404bcc096b839751b68190}{stderr}}
 \item 
 \mbox{\hyperlink{namespacepyedpro_ad3cd6d3f2548a6dd8b7154db6658becc}{mainwin}} = None
 \item 
@@ -100,8 +124,6 @@ list \mbox{\hyperlink{namespacepyedpro_ac148b8fdaa4708f13b328aef87d35109}{opts}}
 \item 
 \mbox{\hyperlink{namespacepyedpro_adbc510afbc02fadb9a82c8b8d4ae8bb7}{sql}} = \mbox{\hyperlink{classpyedlib_1_1pedsql_1_1pedsql}{pyedlib.\+pedsql.\+pedsql}}(\mbox{\hyperlink{classpyedlib_1_1pedconfig_1_1conf_a1467d3f28c2d3d8facfe9887dc9a4f18}{pyedlib.\+pedconfig.\+conf.\+sql\+\_\+data}})
 \item 
-\mbox{\hyperlink{namespacepyedpro_ac4287a16b3625eba9ed68627c570c34d}{keyh}}
-\item 
 \mbox{\hyperlink{namespacepyedpro_ace88c95f2e9b2e2b625a2fd9c0d5ddaa}{mydir}}
 \item 
 \mbox{\hyperlink{namespacepyedpro_af7b6fa8a4ea281319a40678cd101baf6}{aa}} = sys.\+stdin.\+readline()
@@ -111,10 +133,6 @@ list \mbox{\hyperlink{namespacepyedpro_ac148b8fdaa4708f13b328aef87d35109}{opts}}
 \mbox{\hyperlink{namespacepyedpro_aa8682dd29e82bc113e41318d3d39e4d1}{ss}} = sql.\+getall();
 \item 
 \mbox{\hyperlink{namespacepyedpro_a60560ffae258eefc36bf2805ee616310}{hidden}}
-\item 
-\mbox{\hyperlink{namespacepyedpro_a83258d5fd6b591d12f9c465810cd1ca4}{stdout}}
-\item 
-\mbox{\hyperlink{namespacepyedpro_a1d1ad96c36404bcc096b839751b68190}{stderr}}
 \end{DoxyCompactItemize}
 
 
@@ -131,13 +149,53 @@ list \mbox{\hyperlink{namespacepyedpro_ac148b8fdaa4708f13b328aef87d35109}{opts}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily def pyedpro.\+main (\begin{DoxyParamCaption}\item[{}]{strarr }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespacepyedpro_a07c3f80902b86fe3e314bf269ccbbff4}\label{namespacepyedpro_a07c3f80902b86fe3e314bf269ccbbff4}} 
+\mbox{\Hypertarget{namespacepyedpro_a77f061937ce29b17f527c9a26ec93adb}\label{namespacepyedpro_a77f061937ce29b17f527c9a26ec93adb}} 
+\index{pyedpro@{pyedpro}!mainstart@{mainstart}}
+\index{mainstart@{mainstart}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{mainstart()}{mainstart()}}
+{\footnotesize\ttfamily def pyedpro.\+mainstart (\begin{DoxyParamCaption}\item[{}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{args = {\ttfamily \char`\"{}\char`\"{}},  }\item[{}]{oldpath = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Main Entry Point for the editor \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepyedpro_a5facc1135e1af9666dcedcb728e482de}\label{namespacepyedpro_a5facc1135e1af9666dcedcb728e482de}} 
+\index{pyedpro@{pyedpro}!run\_main@{run\_main}}
+\index{run\_main@{run\_main}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{run\_main()}{run\_main()}}
+{\footnotesize\ttfamily def pyedpro.\+run\+\_\+main (\begin{DoxyParamCaption}\item[{}]{projname,  }\item[{}]{strarr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacepyedpro_ac783b5a036006d9dee7eab42b863be04}\label{namespacepyedpro_ac783b5a036006d9dee7eab42b863be04}} 
 \index{pyedpro@{pyedpro}!terminate@{terminate}}
 \index{terminate@{terminate}!pyedpro@{pyedpro}}
-\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily def pyedpro.\+terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Termination Handler\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepyedpro_a07c3f80902b86fe3e314bf269ccbbff4}\label{namespacepyedpro_a07c3f80902b86fe3e314bf269ccbbff4}} 
+\index{pyedpro@{pyedpro}!terminate@{terminate}}
+\index{terminate@{terminate}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily def pyedpro.\+terminate (\begin{DoxyParamCaption}\item[{}]{arg1,  }\item[{}]{arg2 }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{namespacepyedpro_a4579ba27859de033d9f76927e28373f0}\label{namespacepyedpro_a4579ba27859de033d9f76927e28373f0}} 
+\index{pyedpro@{pyedpro}!tracer@{tracer}}
+\index{tracer@{tracer}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{tracer()}{tracer()}}
+{\footnotesize\ttfamily def pyedpro.\+tracer (\begin{DoxyParamCaption}\item[{}]{frame,  }\item[{}]{event,  }\item[{}]{arg }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{namespacepyedpro_a4db1962e95e775ad8ca30e4fef15f242}\label{namespacepyedpro_a4db1962e95e775ad8ca30e4fef15f242}} 
+\index{pyedpro@{pyedpro}!xhelp@{xhelp}}
+\index{xhelp@{xhelp}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{xhelp()}{xhelp()}}
+{\footnotesize\ttfamily def pyedpro.\+xhelp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Offer Help \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacepyedpro_a5d0ca23edcf44eaebb829f8a58f02fc1}\label{namespacepyedpro_a5d0ca23edcf44eaebb829f8a58f02fc1}} 
+\index{pyedpro@{pyedpro}!xversion@{xversion}}
+\index{xversion@{xversion}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{xversion()}{xversion()}}
+{\footnotesize\ttfamily def pyedpro.\+xversion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Offer version number \end{DoxyVerb}
+ 
 
 \doxysubsection{Variable Documentation}
 \mbox{\Hypertarget{namespacepyedpro_af7b6fa8a4ea281319a40678cd101baf6}\label{namespacepyedpro_af7b6fa8a4ea281319a40678cd101baf6}} 
@@ -145,6 +203,12 @@ list \mbox{\hyperlink{namespacepyedpro_ac148b8fdaa4708f13b328aef87d35109}{opts}}
 \index{aa@{aa}!pyedpro@{pyedpro}}
 \doxysubsubsection{\texorpdfstring{aa}{aa}}
 {\footnotesize\ttfamily pyedpro.\+aa = sys.\+stdin.\+readline()}
+
+\mbox{\Hypertarget{namespacepyedpro_a0b6e6e03c124186298a6860030606c4e}\label{namespacepyedpro_a0b6e6e03c124186298a6860030606c4e}} 
+\index{pyedpro@{pyedpro}!acth@{acth}}
+\index{acth@{acth}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{acth}{acth}}
+{\footnotesize\ttfamily pyedpro.\+acth}
 
 \mbox{\Hypertarget{namespacepyedpro_a5009c406676c0856670424f04b147c47}\label{namespacepyedpro_a5009c406676c0856670424f04b147c47}} 
 \index{pyedpro@{pyedpro}!args@{args}}
@@ -158,17 +222,23 @@ list \mbox{\hyperlink{namespacepyedpro_ac148b8fdaa4708f13b328aef87d35109}{opts}}
 \doxysubsubsection{\texorpdfstring{build\_date}{build\_date}}
 {\footnotesize\ttfamily pyedpro.\+build\+\_\+date}
 
-\mbox{\Hypertarget{namespacepyedpro_a9f4d4c69760d1469fb396d440311ff5e}\label{namespacepyedpro_a9f4d4c69760d1469fb396d440311ff5e}} 
+\mbox{\Hypertarget{namespacepyedpro_af3662f0a8013bfb39470517ad61e51e4}\label{namespacepyedpro_af3662f0a8013bfb39470517ad61e51e4}} 
 \index{pyedpro@{pyedpro}!BUILDDATE@{BUILDDATE}}
 \index{BUILDDATE@{BUILDDATE}!pyedpro@{pyedpro}}
 \doxysubsubsection{\texorpdfstring{BUILDDATE}{BUILDDATE}}
-{\footnotesize\ttfamily string pyedpro.\+BUILDDATE = \char`\"{}Jan-\/09-\/2019\char`\"{}}
+{\footnotesize\ttfamily string pyedpro.\+BUILDDATE = \char`\"{}Fri 02.Sep.\+2022\char`\"{}}
 
 \mbox{\Hypertarget{namespacepyedpro_af5f68243b60f2918ebb9725d578d498d}\label{namespacepyedpro_af5f68243b60f2918ebb9725d578d498d}} 
 \index{pyedpro@{pyedpro}!clear\_config@{clear\_config}}
 \index{clear\_config@{clear\_config}!pyedpro@{pyedpro}}
 \doxysubsubsection{\texorpdfstring{clear\_config}{clear\_config}}
 {\footnotesize\ttfamily pyedpro.\+clear\+\_\+config = 0}
+
+\mbox{\Hypertarget{namespacepyedpro_a9268b5e8cc56f6bafb491560f71bd8d5}\label{namespacepyedpro_a9268b5e8cc56f6bafb491560f71bd8d5}} 
+\index{pyedpro@{pyedpro}!conf@{conf}}
+\index{conf@{conf}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{conf}{conf}}
+{\footnotesize\ttfamily pyedpro.\+conf}
 
 \mbox{\Hypertarget{namespacepyedpro_ae2a71157b0e6f0e9b2fdd8e7e9493d49}\label{namespacepyedpro_ae2a71157b0e6f0e9b2fdd8e7e9493d49}} 
 \index{pyedpro@{pyedpro}!end@{end}}
@@ -212,13 +282,25 @@ list \mbox{\hyperlink{namespacepyedpro_ac148b8fdaa4708f13b328aef87d35109}{opts}}
 \doxysubsubsection{\texorpdfstring{opts}{opts}}
 {\footnotesize\ttfamily pyedpro.\+opts = \mbox{[}$\,$\mbox{]}}
 
+\mbox{\Hypertarget{namespacepyedpro_a216593a9f1b93f467e5bcf773f728a3c}\label{namespacepyedpro_a216593a9f1b93f467e5bcf773f728a3c}} 
+\index{pyedpro@{pyedpro}!orgbase@{orgbase}}
+\index{orgbase@{orgbase}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{orgbase}{orgbase}}
+{\footnotesize\ttfamily pyedpro.\+orgbase = os.\+getcwd()}
+
+\mbox{\Hypertarget{namespacepyedpro_a719f4fecfe3f5bee81a1360d56246c8b}\label{namespacepyedpro_a719f4fecfe3f5bee81a1360d56246c8b}} 
+\index{pyedpro@{pyedpro}!orig\_path@{orig\_path}}
+\index{orig\_path@{orig\_path}!pyedpro@{pyedpro}}
+\doxysubsubsection{\texorpdfstring{orig\_path}{orig\_path}}
+{\footnotesize\ttfamily pyedpro.\+orig\+\_\+path}
+
 \mbox{\Hypertarget{namespacepyedpro_abcca664cd4c53416a5c6c3db19d6f0f6}\label{namespacepyedpro_abcca664cd4c53416a5c6c3db19d6f0f6}} 
 \index{pyedpro@{pyedpro}!pgdebug@{pgdebug}}
 \index{pgdebug@{pgdebug}!pyedpro@{pyedpro}}
 \doxysubsubsection{\texorpdfstring{pgdebug}{pgdebug}}
 {\footnotesize\ttfamily pyedpro.\+pgdebug}
 
-\mbox{\Hypertarget{namespacepyedpro_a53b60e19496b156e877d15f8c45923d3}\label{namespacepyedpro_a53b60e19496b156e877d15f8c45923d3}} 
+\mbox{\Hypertarget{namespacepyedpro_a9df7e458a69a1f5dc371b32af4fe58b3}\label{namespacepyedpro_a9df7e458a69a1f5dc371b32af4fe58b3}} 
 \index{pyedpro@{pyedpro}!PROGNAME@{PROGNAME}}
 \index{PROGNAME@{PROGNAME}!pyedpro@{pyedpro}}
 \doxysubsubsection{\texorpdfstring{PROGNAME}{PROGNAME}}
@@ -278,11 +360,11 @@ list \mbox{\hyperlink{namespacepyedpro_ac148b8fdaa4708f13b328aef87d35109}{opts}}
 \doxysubsubsection{\texorpdfstring{verbose}{verbose}}
 {\footnotesize\ttfamily pyedpro.\+verbose}
 
-\mbox{\Hypertarget{namespacepyedpro_a446fc3c56b1d207a6ab0051426b1a016}\label{namespacepyedpro_a446fc3c56b1d207a6ab0051426b1a016}} 
+\mbox{\Hypertarget{namespacepyedpro_a53700a9162020976a9027ab05cc0dc79}\label{namespacepyedpro_a53700a9162020976a9027ab05cc0dc79}} 
 \index{pyedpro@{pyedpro}!VERSION@{VERSION}}
 \index{VERSION@{VERSION}!pyedpro@{pyedpro}}
 \doxysubsubsection{\texorpdfstring{VERSION}{VERSION}}
-{\footnotesize\ttfamily float pyedpro.\+VERSION = 1.\+0}
+{\footnotesize\ttfamily float pyedpro.\+VERSION = \char`\"{}2.\+9.\+1\char`\"{}}
 
 \mbox{\Hypertarget{namespacepyedpro_a4e16442998c1598789f0fd5265b6b504}\label{namespacepyedpro_a4e16442998c1598789f0fd5265b6b504}} 
 \index{pyedpro@{pyedpro}!version@{version}}

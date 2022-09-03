@@ -27,6 +27,8 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Raspberry<sp/>PI<sp/>3,<sp/>Raspberry<sp/>PI<sp/>4,<sp/>...</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Mac<sp/>**<sp/>Some<sp/>functions<sp/>are<sp/>disabled<sp/>-<sp/>in<sp/>particular<sp/>async<sp/>processing</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">[See<sp/>Doxygen<sp/>generated<sp/>Documentation<sp/>on<sp/>GitHub<sp/>Pages](https://pglen.github.io/pyedpro/html/)</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>I<sp/>mainly<sp/>run<sp/>it<sp/>on<sp/>Ubuntu,<sp/>and<sp/>in<sp/>Win32<sp/>/<sp/>MSYS2,<sp/>some<sp/>Fedora,<sp/>Windows<sp/>10,</highlight></codeline>
 <codeline><highlight class="normal">and<sp/>the<sp/>Raspberry-Pi.<sp/>It<sp/>behaves<sp/>consistently<sp/>on<sp/>all<sp/>these<sp/>platforms,</highlight></codeline>
 <codeline><highlight class="normal">it<sp/>is<sp/>an<sp/>absolute<sp/>joy<sp/>to<sp/>edit<sp/>in<sp/>a<sp/>different<sp/>platform<sp/>without<sp/>the<sp/>learning</highlight></codeline>
@@ -210,6 +212,6 @@
 <codeline></codeline>
 <codeline></codeline>
     </programlisting>
-    <location file="README.md"/>
+    <location file="pyedpro/README.md"/>
   </compounddef>
 </doxygen>

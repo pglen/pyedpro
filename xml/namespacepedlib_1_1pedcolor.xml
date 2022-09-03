@@ -1,0 +1,599 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepedlib_1_1pedcolor" kind="namespace" language="Python">
+    <compoundname>pedlib::pedcolor</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepedlib_1_1pedcolor_1a77be10a7fb1d45a7d218bc4d9f370a29" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pedlib::pedcolor.ev_arr</definition>
+        <argsstring></argsstring>
+        <name>ev_arr</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="19" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepedlib_1_1pedcolor_1af21b0a0a307ec32766c9511195512a8e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib::pedcolor.dialog</definition>
+        <argsstring></argsstring>
+        <name>dialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="237" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a1eb576bd9db4d8f6d2b5f31a7590f998" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.str2float</definition>
+        <argsstring>(col)</argsstring>
+        <name>str2float</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="24" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="24" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a1c3d0a0e2ec8b39d4956800d89f2361d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.float2col</definition>
+        <argsstring>(col)</argsstring>
+        <name>float2col</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="29" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="29" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a568c5e08e5a52fdd398eb50ab59b7d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.float2rgba</definition>
+        <argsstring>(col)</argsstring>
+        <name>float2rgba</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="35" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="35" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1af19c619464b8262628f57ef6a3802168" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.float2str</definition>
+        <argsstring>(col)</argsstring>
+        <name>float2str</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="41" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="41" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1abf67673e0374268d43b8d8fbf3bf7ca5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col2float</definition>
+        <argsstring>(col)</argsstring>
+        <name>col2float</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="49" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="49" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1abf23dd4088e17759bfd975b9432382a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.rgb2str</definition>
+        <argsstring>(icol)</argsstring>
+        <name>rgb2str</name>
+        <param>
+          <type>icol</type>
+          <defname>icol</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="55" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="55" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1ac3d67c51124b24a644e0a945ea592323" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col2str</definition>
+        <argsstring>(icol)</argsstring>
+        <name>col2str</name>
+        <param>
+          <type>icol</type>
+          <defname>icol</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="60" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a0f4ec5e0b9276cbb31c70c66e8839158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.rgb2col</definition>
+        <argsstring>(icol)</argsstring>
+        <name>rgb2col</name>
+        <param>
+          <type>icol</type>
+          <defname>icol</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="65" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="65" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a3fb0c160c80734f19b16eb29ebacb56b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.colbox</definition>
+        <argsstring>(col)</argsstring>
+        <name>colbox</name>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="75" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="75" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a5bfb9d0ec730974d02895b251c129974" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_line</definition>
+        <argsstring>(tit, col, callb, self2)</argsstring>
+        <name>col_line</name>
+        <param>
+          <type>tit</type>
+          <defname>tit</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+        </param>
+        <param>
+          <type>callb</type>
+          <defname>callb</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="90" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="90" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a71b75b8b2076328631fe2cc67f17d946" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.colsel</definition>
+        <argsstring>(ev, title)</argsstring>
+        <name>colsel</name>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="111" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="111" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1ab5446e8190b9c8452930f094b964b7a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_one</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_one</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="126" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="126" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1ac48018c3902fbe764faf86a1f76246a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_onebg</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_onebg</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="136" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="136" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a77b4b7dc6ff34f527b6333c67618ec7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_two</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_two</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="147" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="147" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a6a075888a588a38bfdb9e13fa27efb80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_three</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_three</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="157" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="157" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a3609110c64c389b53b40d63e7c0f08f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_four</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_four</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="167" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="167" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a76366773a0d2521e3a532d943ec70649" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_five</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_five</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="177" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="177" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1af7662e28b2ce5879bab84cec2765bb8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_six</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_six</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="187" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="187" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1abf66087457cd167d85e734898cdd411d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.col_seven</definition>
+        <argsstring>(butt, title, ev, self2)</argsstring>
+        <name>col_seven</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>title</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>ev</type>
+          <defname>ev</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="197" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="197" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1af9531c4f952571e3330537d50816b932" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.colordlg</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>colordlg</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="209" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="209" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1ad4c181c6e6d645d10f08dcf481a626de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.save_all</definition>
+        <argsstring>(self2)</argsstring>
+        <name>save_all</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="297" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="297" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1ab3f06bb37751a6ec7ab8b1175733f8d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.def_col</definition>
+        <argsstring>(butt, self2)</argsstring>
+        <name>def_col</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="308" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="308" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1a3c00d7e59acbf164d9df01f75d916abb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.dark_col</definition>
+        <argsstring>(butt, self2)</argsstring>
+        <name>dark_col</name>
+        <param>
+          <type>butt</type>
+          <defname>butt</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="327" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="327" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1ab3e42e8cd91481e48c8eafc824d72df6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.area_key</definition>
+        <argsstring>(area, event, dialog)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacepedlib_1_1pedcolor_1af21b0a0a307ec32766c9511195512a8e" kindref="member">dialog</ref></type>
+          <defname>dialog</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="346" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="346" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepedlib_1_1pedcolor_1aa491fb423d661c9143f0c8ea613a150a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcolor.printcols</definition>
+        <argsstring>(self2)</argsstring>
+        <name>printcols</name>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="373" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcolor.py" bodystart="373" bodyend="389"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/pedcolor.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

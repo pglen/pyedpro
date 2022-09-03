@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="dir_1eee7b9c6fa4d40906be3e8eab5e0287" kind="dir">
     <compoundname>pyedpro/panglib</compoundname>
-    <innerfile refid="panglib_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="pyedpro_2panglib_2____init_____8py">__init__.py</innerfile>
     <innerfile refid="panglib_2lexer_8py">lexer.py</innerfile>
     <innerfile refid="panglib_2pangdisp_8py">pangdisp.py</innerfile>
     <innerfile refid="panglib_2pangfunc_8py">pangfunc.py</innerfile>

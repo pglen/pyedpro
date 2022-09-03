@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pggui_1_1xHBox" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pggui::xHBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpycommon_1_1pggui_1_1xHBox_1ad50e6c2339e803331dd8e16bf9d3f4be" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pggui.xHBox::pad</definition>
+        <argsstring></argsstring>
+        <name>pad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="719" column="1" bodyfile="pycommon/pggui.py" bodystart="719" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xHBox_1a91aef960198aa8c89f9365254b917d02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xHBox.__init__</definition>
+        <argsstring>(self, col=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="717" column="1" bodyfile="pycommon/pggui.py" bodystart="717" bodyend="724"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xHBox_1a3fdb1d9c0a6d12581833f45385c67af9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xHBox.set_padding</definition>
+        <argsstring>(self, pad)</argsstring>
+        <name>set_padding</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1xHBox_1ad50e6c2339e803331dd8e16bf9d3f4be" kindref="member">pad</ref></type>
+          <defname>pad</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="725" column="1" bodyfile="pycommon/pggui.py" bodystart="725" bodyend="727"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xHBox_1a387ae8d2b7302abc947397680b86851f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xHBox.pack</definition>
+        <argsstring>(self, obj, expand=False, pad=0)</argsstring>
+        <name>pack</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>obj</type>
+          <defname>obj</defname>
+        </param>
+        <param>
+          <type>expand</type>
+          <defname>expand</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1xHBox_1ad50e6c2339e803331dd8e16bf9d3f4be" kindref="member">pad</ref></type>
+          <defname>pad</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="728" column="1" bodyfile="pycommon/pggui.py" bodystart="728" bodyend="734"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xHBox_1a91aef960198aa8c89f9365254b917d02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xHBox.__init__</definition>
+        <argsstring>(self, col=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>col</type>
+          <defname>col</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="717" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="717" bodyend="724"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xHBox_1a3fdb1d9c0a6d12581833f45385c67af9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xHBox.set_padding</definition>
+        <argsstring>(self, pad)</argsstring>
+        <name>set_padding</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1xHBox_1ad50e6c2339e803331dd8e16bf9d3f4be" kindref="member">pad</ref></type>
+          <defname>pad</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="725" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="725" bodyend="727"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xHBox_1a387ae8d2b7302abc947397680b86851f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xHBox.pack</definition>
+        <argsstring>(self, obj, expand=False, pad=0)</argsstring>
+        <name>pack</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>obj</type>
+          <defname>obj</defname>
+        </param>
+        <param>
+          <type>expand</type>
+          <defname>expand</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type><ref refid="classpycommon_1_1pggui_1_1xHBox_1ad50e6c2339e803331dd8e16bf9d3f4be" kindref="member">pad</ref></type>
+          <defname>pad</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="728" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="728" bodyend="734"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk.HBox</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pggui.xHBox</label>
+        <link refid="classpycommon_1_1pggui_1_1xHBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk.HBox</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pggui.xHBox</label>
+        <link refid="classpycommon_1_1pggui_1_1xHBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pycommon/pggui.py" line="715" column="1" bodyfile="pycommon/pggui.py" bodystart="715" bodyend="735"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pggui_1_1xHBox_1a91aef960198aa8c89f9365254b917d02" prot="public" virt="non-virtual"><scope>pycommon::pggui::xHBox</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pggui_1_1xHBox_1a91aef960198aa8c89f9365254b917d02" prot="public" virt="non-virtual"><scope>pycommon::pggui::xHBox</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pggui_1_1xHBox_1a387ae8d2b7302abc947397680b86851f" prot="public" virt="non-virtual"><scope>pycommon::pggui::xHBox</scope><name>pack</name></member>
+      <member refid="classpycommon_1_1pggui_1_1xHBox_1a387ae8d2b7302abc947397680b86851f" prot="public" virt="non-virtual"><scope>pycommon::pggui::xHBox</scope><name>pack</name></member>
+      <member refid="classpycommon_1_1pggui_1_1xHBox_1ad50e6c2339e803331dd8e16bf9d3f4be" prot="public" virt="non-virtual"><scope>pycommon::pggui::xHBox</scope><name>pad</name></member>
+      <member refid="classpycommon_1_1pggui_1_1xHBox_1a3fdb1d9c0a6d12581833f45385c67af9" prot="public" virt="non-virtual"><scope>pycommon::pggui::xHBox</scope><name>set_padding</name></member>
+      <member refid="classpycommon_1_1pggui_1_1xHBox_1a3fdb1d9c0a6d12581833f45385c67af9" prot="public" virt="non-virtual"><scope>pycommon::pggui::xHBox</scope><name>set_padding</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -32,6 +32,19 @@
         </inbodydescription>
         <location file="pyedpro/pedlib/peddraw.py" line="32" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="32" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab4c75354eb9c0679a31d246878dbd356" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pyedpro.pedlib.peddraw.peddraw::cyy</definition>
+        <argsstring></argsstring>
+        <name>cyy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/peddraw.py" line="133" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="133" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a97f76c94e59e4a4c3542ade98146db5d" prot="public" static="no" mutable="no">
         <type></type>
         <definition>pyedpro.pedlib.peddraw.peddraw::ext</definition>
@@ -43,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="349" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="349" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="365" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="365" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -103,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="35" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="35" bodyend="52"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="35" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="35" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a578ad1ce1eefe190d52a867844a90a76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -140,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="53" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="53" bodyend="57"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="56" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="56" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab5b3de0eed78aa1d03ab5efb7e843ac2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -177,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="58" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="58" bodyend="65"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="61" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="61" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a9f90bca1becf0c9b0bcb3809704b1322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -198,12 +211,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="69" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="69" bodyend="119"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="72" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="72" bodyend="124"/>
       </memberdef>
-      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1aa90520068a78447eea1f9ab505b1d43c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ae60d3393b2a6fae2b579507fc4fc53ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pyedpro.pedlib.peddraw.peddraw.draw_text</definition>
-        <argsstring>(self, gc, x, y, text, fg_col=None, bg_col=None)</argsstring>
+        <argsstring>(self, gc, x, y, text, fg_col=None, bg_col=None, esc=None)</argsstring>
         <name>draw_text</name>
         <param>
           <type>self</type>
@@ -235,13 +248,18 @@
           <defname>bg_col</defname>
           <defval>None</defval>
         </param>
+        <param>
+          <type>esc</type>
+          <defname>esc</defname>
+          <defval>None</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="123" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="123" bodyend="216"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="128" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="128" bodyend="232"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a5ec782cb8f18a68d4918d5bd6044587f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -262,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="220" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="220" bodyend="277"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="236" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="236" bodyend="293"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a79668442fe5f92d81eca38e7f9f2fb49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -283,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="281" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="281" bodyend="323"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="297" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="297" bodyend="339"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a946574a93097d6222b7476c60558e087" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -304,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="328" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="328" bodyend="392"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="344" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="344" bodyend="408"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a06a860d13a733f4a67b9fea16c37e638" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -325,7 +343,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="394" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="394" bodyend="405"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="410" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="410" bodyend="421"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a33718985d4b41358eda8c31c6c930627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -346,7 +364,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddraw.py" line="407" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="407" bodyend="431"/>
+        <location file="pyedpro/pedlib/peddraw.py" line="423" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="423" bodyend="451"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -387,9 +405,10 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="pyedpro/pedlib/peddraw.py" line="28" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="28" bodyend="431"/>
+    <location file="pyedpro/pedlib/peddraw.py" line="28" column="1" bodyfile="pyedpro/pedlib/peddraw.py" bodystart="28" bodyend="451"/>
     <listofallmembers>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ae4977f68dbff2f6fbcbec19653bdde8c" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>__init__</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab4c75354eb9c0679a31d246878dbd356" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>cyy</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a9f90bca1becf0c9b0bcb3809704b1322" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_caret</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a946574a93097d6222b7476c60558e087" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_comments</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab5b3de0eed78aa1d03ab5efb7e843ac2" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_line</name></member>
@@ -398,7 +417,7 @@
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a5ec782cb8f18a68d4918d5bd6044587f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_selection</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a06a860d13a733f4a67b9fea16c37e638" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_spellerr</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a79668442fe5f92d81eca38e7f9f2fb49" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_syntax</name></member>
-      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1aa90520068a78447eea1f9ab505b1d43c" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_text</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ae60d3393b2a6fae2b579507fc4fc53ab" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_text</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a9d5a9fec3bb399f148f2bb2eadd75925" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>draw_wiggle</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a97f76c94e59e4a4c3542ade98146db5d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>ext</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1aec490d35f677a5e88f07a63c9609e24f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddraw::peddraw</scope><name>self2</name></member>

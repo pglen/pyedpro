@@ -4,9 +4,9 @@
     <compoundname>panglib::parser</compoundname>
     <innerclass refid="classpanglib_1_1parser_1_1Parse" prot="public">panglib::parser::Parse</innerclass>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a658c9291599faab4d7f44804bb6c3706" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a01b7298ae47071de10093ef4e598855b" prot="private" static="no" mutable="no">
         <type>int</type>
-        <definition>int panglib::parser._gl_cnt</definition>
+        <definition>int panglib::parser::_gl_cnt</definition>
         <argsstring></argsstring>
         <name>_gl_cnt</name>
         <initializer>=  0</initializer>
@@ -16,11 +16,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="22" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="22" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/parser.py" line="22" column="1" bodyfile="pyedpro/build/lib/panglib/parser.py" bodystart="22" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepanglib_1_1parser_1ada1082e19a89f370f565bd224a392188" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a577c8fc8d776ae2bc89b888e622bbace" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool panglib::parser._show_default_action</definition>
+        <definition>bool panglib::parser::_show_default_action</definition>
         <argsstring></argsstring>
         <name>_show_default_action</name>
         <initializer>=  False</initializer>
@@ -30,11 +30,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="31" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="31" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/parser.py" line="31" column="1" bodyfile="pyedpro/build/lib/panglib/parser.py" bodystart="31" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepanglib_1_1parser_1ae10a4e2537c7373b8962c0e93af75819" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a04125df3e54fc11adee498feee5684ed" prot="public" static="no" mutable="no">
         <type>list</type>
-        <definition>list panglib::parser.ANYSTATE</definition>
+        <definition>list panglib::parser::ANYSTATE</definition>
         <argsstring></argsstring>
         <name>ANYSTATE</name>
         <initializer>=  [-2, &quot;anystate&quot;]</initializer>
@@ -44,11 +44,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="35" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="35" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/parser.py" line="35" column="1" bodyfile="pyedpro/build/lib/panglib/parser.py" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a12c1fcb9407967fef69a25808dde24e4" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a411cb561a85a206b4e4fb3af163c1389" prot="public" static="no" mutable="no">
         <type>list</type>
-        <definition>list panglib::parser.REDUCE</definition>
+        <definition>list panglib::parser::REDUCE</definition>
         <argsstring></argsstring>
         <name>REDUCE</name>
         <initializer>=  [-1, &quot;reduce&quot;]</initializer>
@@ -58,41 +58,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="36" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="36" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/parser.py" line="36" column="1" bodyfile="pyedpro/build/lib/panglib/parser.py" bodystart="36" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a0b331312dcda2d972be55b4cbecbc7a1" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a3fb601271bb62256500b253e9f19c769" prot="public" static="no" mutable="no">
         <type>list</type>
-        <definition>list panglib::parser.IGNORE</definition>
+        <definition>list panglib::parser::IGNORE</definition>
         <argsstring></argsstring>
         <name>IGNORE</name>
-        <initializer>=  [<ref refid="namespacepanglib_1_1parser_1aa15ea8bdea9d7f9e1aa3d62881223a8d" kindref="member">unique</ref>(), &quot;ignore&quot;]</initializer>
+        <initializer>=  [<ref refid="namespacepanglib_1_1parser_1a2b2dc9d7a6d568de1537e8314c73057f" kindref="member">unique</ref>(), &quot;ignore&quot;]</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="37" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="37" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/parser.py" line="37" column="1" bodyfile="pyedpro/build/lib/panglib/parser.py" bodystart="37" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a882de0628816687bb51fc7ece7b6e41d" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1parser_1a7406ba41f8441a92afd45a689e38c73d" prot="public" static="no" mutable="no">
         <type>list</type>
-        <definition>list panglib::parser.INIT</definition>
+        <definition>list panglib::parser::INIT</definition>
         <argsstring></argsstring>
         <name>INIT</name>
-        <initializer>=  [<ref refid="namespacepanglib_1_1parser_1aa15ea8bdea9d7f9e1aa3d62881223a8d" kindref="member">unique</ref>(), &quot;init&quot;]</initializer>
+        <initializer>=  [<ref refid="namespacepanglib_1_1parser_1a2b2dc9d7a6d568de1537e8314c73057f" kindref="member">unique</ref>(), &quot;init&quot;]</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="38" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="38" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/parser.py" line="38" column="1" bodyfile="pyedpro/build/lib/panglib/parser.py" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacepanglib_1_1parser_1aa15ea8bdea9d7f9e1aa3d62881223a8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepanglib_1_1parser_1a2b2dc9d7a6d568de1537e8314c73057f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def panglib.parser.unique</definition>
+        <definition>def panglib::parser::unique</definition>
         <argsstring>()</argsstring>
         <name>unique</name>
         <briefdescription>
@@ -101,13 +101,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="23" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" bodystart="23" bodyend="30"/>
+        <location file="pyedpro/build/lib/panglib/parser.py" line="23" column="1" bodyfile="pyedpro/build/lib/panglib/parser.py" bodystart="23" bodyend="30"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/parser.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/panglib/parser.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

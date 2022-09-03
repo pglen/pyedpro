@@ -3,9 +3,9 @@
   <compounddef id="namespacepanglib_1_1utils" kind="namespace" language="Python">
     <compoundname>panglib::utils</compoundname>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacepanglib_1_1utils_1a2e18040a0cbd694a6b73f919c88f2fa4" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepanglib_1_1utils_1a3d3df076decbb6af7bc3d3b3291feeee" prot="public" static="no" mutable="no">
         <type>list</type>
-        <definition>list panglib::utils.xtab</definition>
+        <definition>list panglib::utils::xtab</definition>
         <argsstring></argsstring>
         <name>xtab</name>
         <initializer>=  0</initializer>
@@ -15,13 +15,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" line="62" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" bodystart="62" bodyend="-1"/>
+        <location file="pyedpro/build/lib/panglib/utils.py" line="62" column="1" bodyfile="pyedpro/build/lib/panglib/utils.py" bodystart="62" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacepanglib_1_1utils_1a20717f1cb2cef2a7403c1fce78b28305" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepanglib_1_1utils_1acb6e6c47eb8087a485bcbea6a146eaf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def panglib.utils.oct2int</definition>
+        <definition>def panglib::utils::oct2int</definition>
         <argsstring>(strx)</argsstring>
         <name>oct2int</name>
         <param>
@@ -34,15 +34,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" line="8" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" bodystart="8" bodyend="20"/>
+        <location file="pyedpro/build/lib/panglib/utils.py" line="8" column="1" bodyfile="pyedpro/build/lib/panglib/utils.py" bodystart="8" bodyend="20"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepanglib_1_1utils_1a19045d440f545496c8dfaecd63301679" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepanglib_1_1utils_1a8b0705100afd148e0e45bbee6fce420f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def panglib.utils.uni</definition>
+        <definition>def panglib::utils::uni</definition>
         <argsstring>(xtab)</argsstring>
         <name>uni</name>
         <param>
-          <type><ref refid="namespacepanglib_1_1utils_1a2e18040a0cbd694a6b73f919c88f2fa4" kindref="member">xtab</ref></type>
+          <type><ref refid="namespacepanglib_1_1utils_1a3d3df076decbb6af7bc3d3b3291feeee" kindref="member">xtab</ref></type>
           <defname>xtab</defname>
         </param>
         <briefdescription>
@@ -51,11 +51,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" line="21" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" bodystart="21" bodyend="61"/>
+        <location file="pyedpro/build/lib/panglib/utils.py" line="21" column="1" bodyfile="pyedpro/build/lib/panglib/utils.py" bodystart="21" bodyend="61"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepanglib_1_1utils_1a7f77420be9495224d7b19166b345e440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepanglib_1_1utils_1aab8f835a24b0a3e5d7d8be92cc4e65b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def panglib.utils.unescape</definition>
+        <definition>def panglib::utils::unescape</definition>
         <argsstring>(strx)</argsstring>
         <name>unescape</name>
         <param>
@@ -68,11 +68,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" line="64" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" bodystart="64" bodyend="150"/>
+        <location file="pyedpro/build/lib/panglib/utils.py" line="64" column="1" bodyfile="pyedpro/build/lib/panglib/utils.py" bodystart="64" bodyend="150"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepanglib_1_1utils_1ad79a4ae974621a2115c338a8bc4fa582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepanglib_1_1utils_1a3dd666b492bd8f0136a2e78c68fdf060" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def panglib.utils.isTrue</definition>
+        <definition>def panglib::utils::isTrue</definition>
         <argsstring>(strx)</argsstring>
         <name>isTrue</name>
         <param>
@@ -85,11 +85,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" line="151" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" bodystart="151" bodyend="163"/>
+        <location file="pyedpro/build/lib/panglib/utils.py" line="151" column="1" bodyfile="pyedpro/build/lib/panglib/utils.py" bodystart="151" bodyend="163"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepanglib_1_1utils_1a6f582cc93d1dd56ed9648996a40d5591" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepanglib_1_1utils_1aa6100fdfb1396e1e3655026ce98e1141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def panglib.utils.isfile</definition>
+        <definition>def panglib::utils::isfile</definition>
         <argsstring>(fname)</argsstring>
         <name>isfile</name>
         <param>
@@ -102,13 +102,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" line="164" column="1" bodyfile="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" bodystart="164" bodyend="177"/>
+        <location file="pyedpro/build/lib/panglib/utils.py" line="164" column="1" bodyfile="pyedpro/build/lib/panglib/utils.py" bodystart="164" bodyend="177"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib/utils.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/panglib/utils.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

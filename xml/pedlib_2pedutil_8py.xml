@@ -40,8 +40,8 @@
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Gdk</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GObject</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pedconfig</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pedync</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>pedlib<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pedconfig</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>pedlib<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>pedync</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal">(TARGET_ENTRY_TEXT,<sp/>TARGET_ENTRY_PIXBUF)<sp/>=<sp/>range(2)</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">(COLUMN_TEXT,<sp/>COLUMN_PIXBUF)<sp/>=<sp/>range(2)</highlight></codeline>
@@ -197,25 +197,25 @@
 <codeline lineno="186"><highlight class="normal"></highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#exec_dir<sp/>=<sp/>os.path.dirname(pedconfig.conf.mydir)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>exec_dir<sp/>=<sp/>os.path.dirname(__file__)</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>exec_path2<sp/>=<sp/>os.path.join(exec_dir,<sp/></highlight><highlight class="stringliteral">&quot;data&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>exec_path<sp/>=<sp/>os.path.join(exec_path2,<sp/>fname)</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pedconfig.conf.verbose:</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(<sp/>exec_path)</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exec_path</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepyedpro_1_1pedlib_1_1pedutil_1aa7ccfe748c9a14584c371ab59556b550" kindref="member">get_pangview_path</ref>():</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>fname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pangview.py&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>exec_dir<sp/>=<sp/>os.path.dirname(__file__)</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>pname<sp/>=<sp/>exec_dir<sp/>+<sp/>os.sep<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;..&quot;</highlight><highlight class="normal"><sp/>+<sp/><sp/>os.sep<sp/>+<sp/>fname</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"></highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#if<sp/>not<sp/>os.path.isfile(pname):</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>pname<sp/>=<sp/>fname</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="206"><highlight class="normal"></highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Pangview<sp/>path&quot;</highlight><highlight class="normal">,<sp/>pname)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>exec_path2<sp/>=<sp/>os.path.join(exec_dir,<sp/></highlight><highlight class="stringliteral">&quot;data&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>exec_path<sp/>=<sp/>os.path.join(exec_path2,<sp/>fname)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pedconfig.conf.verbose:</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(<sp/>exec_path)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exec_path</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepyedpro_1_1pedlib_1_1pedutil_1aa7ccfe748c9a14584c371ab59556b550" kindref="member">get_pangview_path</ref>():</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>fname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pangview.py&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>exec_dir<sp/>=<sp/>os.path.dirname(__file__)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>pname<sp/>=<sp/>exec_dir<sp/>+<sp/>os.sep<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;..&quot;</highlight><highlight class="normal"><sp/>+<sp/><sp/>os.sep<sp/>+<sp/>fname</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>os.path.isfile(pname):</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pname<sp/>=<sp/>fname</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pedconfig.conf.verbose:</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Pangview<sp/>path&quot;</highlight><highlight class="normal">,<sp/>pname)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pname</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"></highlight></codeline>
 <codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">#<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
@@ -662,7 +662,7 @@
 <codeline lineno="651"><highlight class="normal"></highlight></codeline>
 <codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>boolcase:</highlight></codeline>
-<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>=<sp/>line.lower().<ref refid="namespacepyedlib_1_1pedfind_1a9a5375c698f13c42b71230e84f3c55d8" kindref="member">find</ref>(srctxt.lower(),<sp/>idx)</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>=<sp/>line.lower().<ref refid="namespacepedlib_1_1pedfind_1aa9a5e2f04dc9d2c12d810e2d89868eef" kindref="member">find</ref>(srctxt.lower(),<sp/>idx)</highlight></codeline>
 <codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx2<sp/>=<sp/>idx</highlight></codeline>
 <codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>boolregex:</highlight></codeline>
 <codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line2<sp/>=<sp/>line[idx:]</highlight></codeline>

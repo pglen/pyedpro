@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="pycommon_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>py<sp/>Common</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Common<sp/>GUI<sp/>routines<sp/>(and<sp/>classes)<sp/>for<sp/>python<sp/>PyGobject<sp/>(Gtk)<sp/>development.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>Just<sp/>a<sp/>sampler<sp/>of<sp/>what<sp/>is<sp/>in<sp/>there<sp/>(pasted<sp/>from<sp/>code,<sp/>in<sp/>no<sp/>particular<sp/>order):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>class<sp/>CairoHelper():</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>TextTable(Gtk.Table):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>TextRow(Gtk.HBox):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>RadioGroup(Gtk.Frame):</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>class<sp/>Led(Gtk.DrawingArea):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>SeparatorMenuItem(Gtk.SeparatorMenuItem):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>Menu():</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>MenuButt(Gtk.DrawingArea):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>Lights(Gtk.Frame):</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*class<sp/>WideButt(Gtk.Button):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>ScrollListBox(Gtk.Frame):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>TextRow(Gtk.HBox):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>RadioGroup(Gtk.Frame):</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>class<sp/>Led(Gtk.DrawingArea):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>Lights(Gtk.Frame):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>FrameTextView(Gtk.TextView):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>Label(Gtk.Label):</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>class<sp/>Logo(Gtk.VBox):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>xSpacer(Gtk.HBox):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>ScrollListBox(Gtk.Frame):</highlight></codeline>
+<codeline><highlight class="normal">class<sp/>ListBox(Gtk.TreeView):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>...<sp/>and<sp/>a<sp/>lot<sp/>more<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>These<sp/>classes<sp/>act<sp/>as<sp/>a<sp/>simplification<sp/>of<sp/>the<sp/>PyGtk<sp/>(PyGobject)<sp/>classes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>For<sp/>instance<sp/>the<sp/>Label<sp/>takes<sp/>a<sp/>constructor,<sp/>and<sp/>feeds<sp/>the<sp/>arguments<sp/>as</highlight></codeline>
+<codeline><highlight class="normal"><sp/>one<sp/>would<sp/>expect.<sp/>Like<sp/>this:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>def<sp/>__init__(self,<sp/>textm<sp/>=<sp/>&quot;&quot;,<sp/>widget<sp/>=<sp/>None,<sp/>tooltip=None,<sp/>font<sp/>=<sp/>None):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>The<sp/>defaults<sp/>are<sp/>set<sp/>to<sp/>a<sp/>reasonable<sp/>value,<sp/>and<sp/>the<sp/>named<sp/>argument<sp/>can<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">set<sp/>on<sp/>one<sp/>line.<sp/>This<sp/>makes<sp/>the<sp/>code<sp/>look<sp/>compact<sp/>and<sp/>maintainable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>See<sp/>descendent<sp/>projects<sp/>for<sp/>examples.<sp/>(pyedpro;<sp/>pycal;<sp/>pggui;<sp/>...)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Peter<sp/>Glen</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="pyedpro/pycommon/README.md"/>
+  </compounddef>
+</doxygen>

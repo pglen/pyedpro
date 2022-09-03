@@ -163,7 +163,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>Gtk::EventBox</label>
+        <label>Gtk.EventBox</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -174,7 +174,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>Gtk::EventBox</label>
+        <label>Gtk.EventBox</label>
       </node>
     </collaborationgraph>
     <location file="pyedpro/pycommon/pggui.py" line="223" column="1" bodyfile="pyedpro/pycommon/pggui.py" bodystart="223" bodyend="263"/>

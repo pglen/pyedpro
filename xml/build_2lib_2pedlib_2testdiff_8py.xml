@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="build_2lib_2pedlib_2testdiff_8py" kind="file" language="Python">
+    <compoundname>testdiff.py</compoundname>
+    <innernamespace refid="namespacepedlib_1_1testdiff">pedlib::testdiff</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacepedlib_1_1testdiff" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#<sp/>!!!!!<sp/>TEST<sp/>FILE<sp/>!!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#<sp/>This<sp/>is<sp/>used<sp/>when<sp/>testing<sp/>the<sp/>editor.<sp/>(like<sp/>undo<sp/>redo<sp/>tests)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>diff<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">#<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#<sp/>This<sp/>is<sp/>open<sp/>source<sp/>text<sp/>editor.<sp/>Written<sp/>on<sp/>python.<sp/>The<sp/>motivation<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#<sp/>this<sp/>project<sp/>was<sp/>to<sp/>create<sp/>a<sp/>modern<sp/>mufti-platform<sp/>editor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Simple,<sp/>powerful,<sp/>configurable,<sp/>extendable.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">#<sp/>This<sp/>project<sp/>is<sp/>a<sp/>successor<sp/>of<sp/>pyedit.py</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Pyedpro<sp/>functions<sp/>well<sp/>on<sp/>Linux<sp/>/<sp/>Windows<sp/>/<sp/>Mac<sp/>/<sp/>Raspberry<sp/>PI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Pyedpro<sp/>has:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>macro<sp/>recording/play,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>search/replace,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>functional<sp/>navigation,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>comment/string<sp/>spell<sp/>check,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>auto<sp/>backup,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>persistent<sp/>undo/redo,<sp/><sp/>(undo<sp/>beyond<sp/>last<sp/>save)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>auto<sp/>complete,<sp/>auto<sp/>correct,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">#<sp/><sp/><sp/><sp/>o<sp/><sp/>...<sp/>and<sp/>a<sp/>lot<sp/>more.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">#<sp/>It<sp/>is<sp/>fast,<sp/>it<sp/>is<sp/>extendable.<sp/>The<sp/>editor<sp/>has<sp/>a<sp/>table<sp/>driven<sp/>key<sp/>mapping.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">#<sp/>One<sp/>can<sp/>easily<sp/>edit<sp/>the<sp/>key<sp/>map<sp/>in<sp/>keyhand.py,<sp/>and<sp/>the<sp/>key<sp/>actions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">#<sp/>in<sp/>acthand.py<sp/>The<sp/>default<sp/>key<sp/>map<sp/>resembles<sp/>gedit<sp/>/<sp/>wed<sp/>/<sp/>etp<sp/>/<sp/>brief</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">#<sp/>History:<sp/><sp/>(recent<sp/>first,<sp/>incomplete<sp/>list)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">#<sp/>jul/19/2018<sp/><sp/><sp/>Coloring<sp/>for<sp/>spell<sp/>check,<sp/>Trigger<sp/>by<sp/>scroll,<sp/>more<sp/>dominant<sp/>color</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Jul/xx/2018<sp/><sp/><sp/>Update<sp/>README,<sp/>KEYS.TXT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Jun/xx/2018<sp/><sp/><sp/>Log<sp/>Files<sp/>for<sp/>time<sp/>accounting.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Jun/08/2020<sp/><sp/><sp/>Menu<sp/>control<sp/>/<sp/>Headerbar<sp/>/<sp/>Version<sp/>update</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">#<sp/>ASCII<sp/>test<sp/>editor,<sp/>requires<sp/>pyGtk.<sp/>(pygobject)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">#<sp/>See<sp/>pygtk-dependencied<sp/>for<sp/>easy<sp/>access<sp/>to<sp/>dependencies.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>absolute_import</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os,<sp/>sys,<sp/>getopt,<sp/>signal</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>traceback,<sp/>gettext,<sp/>locale</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">#locale.setlocale(locale.LC_ALL,<sp/>&apos;&apos;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gettext</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">gettext.bindtextdomain(</highlight><highlight class="stringliteral">&apos;pyedpro&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;./locale/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">gettext.textdomain(</highlight><highlight class="stringliteral">&apos;pyedpro&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">_<sp/>=<sp/>gettext.gettext</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">#print(&quot;domain&quot;,<sp/>gettext.textdomain)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">VERSION<sp/>=<sp/>1.4</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">BUILDDATE<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Mon<sp/>08.Jun.2020&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">PROGNAME<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;PyEdPro&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">12345678</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gi</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">gi.require_version(</highlight><highlight class="stringliteral">&quot;Gtk&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;3.0&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Gtk</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">#<sp/>So<sp/>it<sp/>is<sp/>universally<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">#sys.path.append(os.path.abspath(__file__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacepedlib_1_1pedconfig" kindref="compound">pedlib.pedconfig</ref><sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>pedconfig</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacepedlib_1_1pedlog" kindref="compound">pedlib.pedlog</ref><sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>pedlog</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacepedlib_1_1pedync" kindref="compound">pedlib.pedync</ref><sp/><sp/><sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/><sp/>pedync</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepedlib_1_1testdiff_1a4d4d1d250138d71ef1b54b8a990040f3" kindref="member">main</ref>(strarr):</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>mainwin<sp/>=<sp/><ref refid="classpyedlib_1_1pedwin_1_1EdMainWindow" kindref="compound">pyedlib.pedwin.EdMainWindow</ref>(</highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,<sp/>strarr)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.pedwin<sp/>=<sp/>mainwin</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>log<sp/>window</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedlog.create_logwin()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>Gtk.main()</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepedlib_1_1testdiff_1ad61681f073332437c23d2dace4945215" kindref="member">help</ref>():<sp/></highlight><highlight class="comment">#//<sp/>diff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>print()</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>print(PROGNAME,<sp/>_(</highlight><highlight class="stringliteral">&quot;Version:<sp/>&quot;</highlight><highlight class="normal">),<sp/>pyedlib.pedconfig.conf.version)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Usage:<sp/>&quot;</highlight><highlight class="normal">)<sp/>+<sp/>PROGNAME<sp/>+<sp/>_(</highlight><highlight class="stringliteral">&quot;<sp/>[options]<sp/>[[filename]<sp/>...<sp/>[filename]]&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Option(s):&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-d<sp/>level<sp/><sp/>-<sp/>Debug<sp/>level<sp/>1-10<sp/>(0<sp/>silent;<sp/>1<sp/>some;<sp/>10<sp/>lots)&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-v<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Verbose<sp/>(to<sp/>stdout<sp/>and<sp/>log)&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-f<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Start<sp/>Full<sp/>screen&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Dump<sp/>Config&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-o<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Use<sp/>real<sp/>stdout<sp/>(for<sp/>debug<sp/>strings)&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-V<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Show<sp/>version&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-x<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Clear<sp/>(eXtinguish)<sp/>config<sp/>(will<sp/>prompt)&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Help&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>print()</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="comment">#<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepedlib_1_1testdiff_1a814888c698eb89ab059b5df17922a686" kindref="member">terminate</ref>(arg1,<sp/>arg2):</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>if(pyedlib.pedconfig.conf.verbose):</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Terminating<sp/>pydepro.py,<sp/>saving<sp/>files<sp/>to<sp/>~/pydepro&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Save<sp/>all</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.pedwin.activate_quit(</highlight><highlight class="keywordtype">None</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#return<sp/>signal.SIG_IGN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">#<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Start<sp/>of<sp/>program:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Redirect<sp/>stdout<sp/>to<sp/>a<sp/>fork<sp/>to<sp/>real<sp/>stdout<sp/>and<sp/>log.<sp/>This<sp/>way<sp/>messages<sp/>can</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>be<sp/>seen<sp/>even<sp/>if<sp/>pydepro<sp/>is<sp/>started<sp/>without<sp/>a<sp/>terminal<sp/>(from<sp/>the<sp/>GUI)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>opts<sp/>=<sp/>[];<sp/>args<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>opts,<sp/>args<sp/>=<sp/>getopt.getopt(sys.argv[1:],<sp/></highlight><highlight class="stringliteral">&quot;d:h?fvxctVo&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal"><sp/>getopt.GetoptError<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>err:</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>option(s)<sp/>on<sp/>command<sp/>line:&quot;</highlight><highlight class="normal">),<sp/>err)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.exit(1)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#print<sp/>&quot;opts&quot;,<sp/>opts,<sp/>&quot;args&quot;,<sp/>args</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.version<sp/>=<sp/>VERSION</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.build_date<sp/>=<sp/>BUILDDATE</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.progname<sp/>=<sp/>PROGNAME</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>aa<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>opts:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-d&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.pgdebug<sp/>=<sp/>int(aa[1])</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(<sp/>PROGNAME,<sp/>_(</highlight><highlight class="stringliteral">&quot;Running<sp/>at<sp/>debug<sp/>level&quot;</highlight><highlight class="normal">),<sp/><sp/>pyedlib.pedconfig.conf.pgdebug)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.pgdebug<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-h&quot;</highlight><highlight class="normal">:<sp/><ref refid="namespacepedlib_1_1testdiff_1ad61681f073332437c23d2dace4945215" kindref="member">help</ref>();<sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-?&quot;</highlight><highlight class="normal">:<sp/><ref refid="namespacepedlib_1_1testdiff_1ad61681f073332437c23d2dace4945215" kindref="member">help</ref>();<sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-V&quot;</highlight><highlight class="normal">:<sp/>print(</highlight><highlight class="stringliteral">&quot;Version&quot;</highlight><highlight class="normal">,<sp/>pyedlib.pedconfig.conf.version);<sp/>\</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-f&quot;</highlight><highlight class="normal">:<sp/>pyedlib.pedconfig.conf.full_screen<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-v&quot;</highlight><highlight class="normal">:<sp/>pyedlib.pedconfig.conf.verbose<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-x&quot;</highlight><highlight class="normal">:<sp/>clear_config<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-c&quot;</highlight><highlight class="normal">:<sp/>show_config<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-t&quot;</highlight><highlight class="normal">:<sp/>show_timing<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-o&quot;</highlight><highlight class="normal">:<sp/>use_stdout<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>aa<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>opts:</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-d&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.pgdebug<sp/>=<sp/>int(aa[1])</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(<sp/>PROGNAME,<sp/>_(</highlight><highlight class="stringliteral">&quot;Running<sp/>at<sp/>debug<sp/>level&quot;</highlight><highlight class="normal">),<sp/><sp/>pyedlib.pedconfig.conf.pgdebug)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.pgdebug<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-h&quot;</highlight><highlight class="normal">:<sp/><ref refid="namespacepedlib_1_1testdiff_1ad61681f073332437c23d2dace4945215" kindref="member">help</ref>();<sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-?&quot;</highlight><highlight class="normal">:<sp/><ref refid="namespacepedlib_1_1testdiff_1ad61681f073332437c23d2dace4945215" kindref="member">help</ref>();<sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-V&quot;</highlight><highlight class="normal">:<sp/>print(</highlight><highlight class="stringliteral">&quot;Version&quot;</highlight><highlight class="normal">,<sp/>pyedlib.pedconfig.conf.version);<sp/>\</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-f&quot;</highlight><highlight class="normal">:<sp/>pyedlib.pedconfig.conf.full_screen<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-v&quot;</highlight><highlight class="normal">:<sp/>pyedlib.pedconfig.conf.verbose<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-x&quot;</highlight><highlight class="normal">:<sp/>clear_config<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-c&quot;</highlight><highlight class="normal">:<sp/>show_config<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-t&quot;</highlight><highlight class="normal">:<sp/>show_timing<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-o&quot;</highlight><highlight class="normal">:<sp/>use_stdout<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>os.path.isdir(pyedlib.pedconfig.conf.config_dir):</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if(pyedlib.pedconfig.conf.verbose):</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;making&quot;</highlight><highlight class="normal">,<sp/>pyedlib.pedconfig.con.config_dir)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkdir(pyedlib.pedconfig.conf.config_dir)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:<sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Let<sp/>the<sp/>user<sp/>know<sp/>if<sp/>it<sp/>needs<sp/>fixin&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>os.path.isdir(pyedlib.pedconfig.conf.config_dir):</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>access<sp/>config<sp/>dir:&quot;</highlight><highlight class="normal">),<sp/>pyedlib.pedconfig.conf.config_dir)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.exit(1)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepyedlib_1_1pedconfig_1aeefebe8bb9b8b105d4c34261cb4b075e" kindref="member">pyedlib.pedconfig.ensure_dirs</ref>(<ref refid="classpyedlib_1_1pedconfig_1_1conf" kindref="compound">pyedlib.pedconfig.conf</ref>)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>if(pyedlib.pedconfig.conf.verbose):</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Data<sp/>stored<sp/>in<sp/>&quot;</highlight><highlight class="normal">),<sp/>pyedlib.pedconfig.conf.config_dir)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>sqlite<sp/>to<sp/>load<sp/>/<sp/>save<sp/>preferences<sp/>&amp;<sp/>other<sp/>info</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>sql<sp/>=<sp/><ref refid="classpyedlib_1_1pedsql_1_1pedsql" kindref="compound">pyedlib.pedsql.pedsql</ref>(pyedlib.pedconfig.conf.sql_data)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>pedconfig<sp/>for<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.sql<sp/>=<sp/>sql</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.keyh<sp/>=<sp/><ref refid="classpyedlib_1_1keyhand_1_1KeyHand" kindref="compound">pyedlib.keyhand.KeyHand</ref>()</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.mydir<sp/>=<sp/>os.path.abspath(__file__)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>To<sp/>clear<sp/>all<sp/>config<sp/>vars</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>clear_config:</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Are<sp/>you<sp/>sure<sp/>you<sp/>want<sp/>to<sp/>clear<sp/>config<sp/>?<sp/>(y/n)&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.stdout.flush()</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>aa<sp/>=<sp/>sys.stdin.readline()</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>aa[0]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(_(</highlight><highlight class="stringliteral">&quot;Removing<sp/>configuration<sp/>...<sp/>&quot;</highlight><highlight class="normal">),<sp/>end=</highlight><highlight class="stringliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sql.rmall()</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;OK&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.exit(0)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>To<sp/>check<sp/>all<sp/>config<sp/>vars</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>show_config:</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Dumping<sp/>configuration:&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ss<sp/>=<sp/>sql.getall();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>aa<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>ss:</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(aa)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sys.exit(0)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Uncomment<sp/>this<sp/>for<sp/>silent<sp/>stdout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>use_stdout<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>pyedlib.pedconfig.conf.pgdebug<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>\</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedlib.pedconfig.conf.verbose:</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Do<sp/>not<sp/>hide<sp/>console</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#print(&quot;Using<sp/>real<sp/>stdout&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedlib.pedwin.hidden<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Already<sp/>hidden<sp/>no<sp/>hide</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pyedlib.pedwin.hidden<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Take<sp/>action,<sp/>hide</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>sys.stdout<sp/>=<sp/>pyedlib.pedlog.fake_stdout(sys.stdout)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>sys.stderr<sp/>=<sp/>pyedlib.pedlog.fake_stdout(sys.stdout)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Uncomment<sp/>this<sp/>for<sp/>buffered<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pyedlib.pedconfig.conf.verbose:</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Started&quot;</highlight><highlight class="normal">,<sp/>PROGNAME)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepedlib_1_1testdiff_1a4d4d1d250138d71ef1b54b8a990040f3" kindref="member">main</ref>(args[0:])</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="comment">#<sp/>EOF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="pyedpro/build/lib/pedlib/testdiff.py"/>
+  </compounddef>
+</doxygen>

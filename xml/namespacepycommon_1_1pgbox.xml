@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepycommon_1_1pgbox" kind="namespace" language="Python">
+    <compoundname>pycommon::pgbox</compoundname>
+    <innerclass refid="classpycommon_1_1pgbox_1_1Rectangle" prot="public">pycommon::pgbox::Rectangle</innerclass>
+    <innerclass refid="classpycommon_1_1pgbox_1_1xSpacer" prot="public">pycommon::pgbox::xSpacer</innerclass>
+    <innerclass refid="classpycommon_1_1pgbox_1_1Spacer" prot="public">pycommon::pgbox::Spacer</innerclass>
+    <innerclass refid="classpycommon_1_1pgbox_1_1ListBox" prot="public">pycommon::pgbox::ListBox</innerclass>
+    <innerclass refid="classpycommon_1_1pgbox_1_1ComboBox" prot="public">pycommon::pgbox::ComboBox</innerclass>
+    <innerclass refid="classpycommon_1_1pgbox_1_1xVBox" prot="public">pycommon::pgbox::xVBox</innerclass>
+    <innerclass refid="classpycommon_1_1pgbox_1_1xHBox" prot="public">pycommon::pgbox::xHBox</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepycommon_1_1pgbox_1a135f878a3c93970aec21ca647d67c328" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool pycommon::pgbox::box_testmode</definition>
+        <argsstring></argsstring>
+        <name>box_testmode</name>
+        <initializer>=  False</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="20" column="1" bodyfile="pycommon/pgbox.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/pgbox.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

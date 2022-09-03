@@ -1,3 +1,10 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classdndbook_1_1GUI.html" title=" " alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,165,100,192"/>
+<area shape="rect" id="node2" href="$classcursors_1_1MainWindow.html" title=" " alt="" coords="183,5,327,32"/>
+<area shape="rect" id="node3" href="$classpanglib_1_1pangdisp_1_1PangoView.html" title=" " alt="" coords="160,56,349,83"/>
+<area shape="rect" id="node4" href="$classpycommon_1_1htmledit_1_1HtmlEditor.html" title=" " alt="" coords="153,107,356,133"/>
+<area shape="rect" id="node5" href="$classpycommon_1_1plug_1_1SocketDialogWindow.html" title=" " alt="" coords="157,158,353,199"/>
+<area shape="rect" id="node6" href="$classpyedpro_1_1panglib_1_1pangdisp_1_1PangoView.html" title=" " alt="" coords="168,223,341,265"/>
+<area shape="rect" id="node7" href="$classpyedpro_1_1testmenu_1_1MenuExampleWindow.html" title=" " alt="" coords="148,289,361,330"/>
+<area shape="rect" id="node8" href="$classtestmenu_1_1MenuExampleWindow.html" title=" " alt="" coords="149,355,360,381"/>
 </map>

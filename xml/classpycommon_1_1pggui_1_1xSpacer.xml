@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pggui_1_1xSpacer" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pggui::xSpacer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xSpacer_1a41a9a586821afe547206f459cc68741d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xSpacer.__init__</definition>
+        <argsstring>(self, sp=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>sp</type>
+          <defname>sp</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pggui.py" line="646" column="1" bodyfile="pycommon/pggui.py" bodystart="646" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pggui_1_1xSpacer_1a41a9a586821afe547206f459cc68741d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pggui.xSpacer.__init__</definition>
+        <argsstring>(self, sp=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>sp</type>
+          <defname>sp</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="646" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="646" bodyend="658"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pycommon.pggui.xSpacer</label>
+        <link refid="classpycommon_1_1pggui_1_1xSpacer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.HBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pycommon.pggui.xSpacer</label>
+        <link refid="classpycommon_1_1pggui_1_1xSpacer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.HBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="pycommon/pggui.py" line="644" column="1" bodyfile="pycommon/pggui.py" bodystart="644" bodyend="659"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pggui_1_1xSpacer_1a41a9a586821afe547206f459cc68741d" prot="public" virt="non-virtual"><scope>pycommon::pggui::xSpacer</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pggui_1_1xSpacer_1a41a9a586821afe547206f459cc68741d" prot="public" virt="non-virtual"><scope>pycommon::pggui::xSpacer</scope><name>__init__</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

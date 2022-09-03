@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="dir_98776aa6ff91906a12ef4e8057974c72" kind="dir">
     <compoundname>pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib</compoundname>
-    <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="pyedpro_2debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2____init_____8py">__init__.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2lexer_8py">lexer.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2pangdisp_8py">pangdisp.py</innerfile>
     <innerfile refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2pangfunc_8py">pangfunc.py</innerfile>

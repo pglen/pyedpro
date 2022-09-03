@@ -1,0 +1,2456 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1acthand_1_1ActHand" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::acthand::ActHand</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1acthand_1_1ActHand_1ae23bc56af7006ab19d7cf665b98a0694" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.acthand.ActHand::was_home</definition>
+        <argsstring></argsstring>
+        <name>was_home</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="83" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1acthand_1_1ActHand_1a55635b1704f988f929637bacad9e2bbe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.acthand.ActHand::was_end</definition>
+        <argsstring></argsstring>
+        <name>was_end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="84" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1acthand_1_1ActHand_1a99805d7c987abba47ad81e3326a3ebc2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.acthand.ActHand::clips</definition>
+        <argsstring></argsstring>
+        <name>clips</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="86" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1acthand_1_1ActHand_1a77cf4043f1322d74f0c92e63ddfb0feb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.acthand.ActHand::currclip</definition>
+        <argsstring></argsstring>
+        <name>currclip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="89" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9f00b99ae56361d17bcc8d359266941e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="82" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="82" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ae647419afe107dc36bc4b0b57eb94311" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_tab</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_tab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="124" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="124" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aaac0ffbe52180123eb1a334205f07d71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.up</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>up</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="133" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="133" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a779c694e96eee0d40120a1676b7379a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.down</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>down</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="160" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="160" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ae09a3e4ad33eb876eec80c13eddeaf40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.left</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>left</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="188" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="188" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a1e400d54bb485abafeef494cb4f76fba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.right</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>right</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="241" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="241" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3b723a20b40116ab5986a1b9be9e5736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ret</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ret</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="296" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="296" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a55767d10ecb796a773ada2392b3104c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.delete</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>delete</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="336" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="336" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a4ec75e4e8a27aa16784e811a49986274" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.bs</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>bs</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="378" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="378" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1acb3e724daee13cc6eca123079751cae6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.pgup</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>pgup</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="421" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="421" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1af336e0387ce1e8a955a96f03c3846125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.pgdn</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>pgdn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="455" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="455" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3a990e21e04f85c778d5d76fc5908482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.top</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>top</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="489" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="489" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a236e7fac949467abe5900163666924d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.home</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>home</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="495" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="495" bodyend="533"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a7132fb326fc825a0c73ac18a72c1d8e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.bottom</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>bottom</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="534" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="534" bodyend="545"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3e99455ffda3d4f61fdf0aca49e46a42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.end</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>end</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="548" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="548" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a7f834856fa6bc458189b6bdb737e04a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.esc</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>esc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="615" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="615" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a4896b34bfd225c0deab86bf9166e56ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ins</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ins</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="624" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="624" bodyend="632"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a486fd0d362f98187b8f4e93cbdf778cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_num</definition>
+        <argsstring>(self, self2, num)</argsstring>
+        <name>ctrl_num</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="633" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="633" bodyend="644"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1adf61d3689bfa06316e46ff0cca43be70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_1</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_1</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="645" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="645" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ae8b36f977335c939ac2fbb260c79c072" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_2</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="648" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="648" bodyend="650"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ac996dd98b4513eb604df8ae79e9ebec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_3</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_3</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="651" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="651" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9326088a60743ef37a35ac06d15709dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_4</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_4</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="654" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="654" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a5d4b9d07fd3d4a761371c88174525b57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_5</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_5</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="657" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="657" bodyend="659"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3caf104b76c4b5c1ec957d6a120aafa6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_6</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_6</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="660" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="660" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aee85446e2dbf2c1c16760bfff7c82b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_7</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_7</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="663" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="663" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a2d7f6e7ebacf64b8ed15861fe1324b9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_8</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_8</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="666" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="666" bodyend="668"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a83f6bf1b245827a03b8ce89142627f1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_9</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_9</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="670" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="670" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a1de5d72c19d064bea9d11a2a564226e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_0</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_0</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="676" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="676" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1af0aa7271d830a9fc6c6dd1d20edd7bcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_a</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_a</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="684" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="684" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ac7568e5f76ba15376ada04741de7ab03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_b</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_b</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="704" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="704" bodyend="708"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1acbf41c8dee66149d0ef37935ad597a80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_c</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_c</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="710" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="710" bodyend="757"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aa9fdfebc6553365c5267f3567e67a544" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_num</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_num</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="758" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="758" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a699ae2dae3ff0bed54101e0bd036381f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_d</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_d</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="764" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="764" bodyend="768"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ad7e196756a35b78a9347e48dce97fa60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_e</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_e</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="769" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="769" bodyend="773"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a69d32ab74db14669b064b9c0eb91cafa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_f</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_f</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="774" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="774" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ae9d8f127d3f548d714ebc1561b80a1f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_g</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_g</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="798" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="798" bodyend="805"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a79a7c0d04b452fa949d2a51c82d98726" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_t</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_t</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="806" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="806" bodyend="810"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ad01a60a491b106d325dcb725a90f1076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_h</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_h</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="811" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="811" bodyend="816"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a2db08b9245024121234fd90566feac8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_j</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_j</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="817" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="817" bodyend="824"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3f411b5c616a705a80c613b48799421a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_k</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_k</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="825" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="825" bodyend="829"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aa13be958418e952ec755d57212788118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_r</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_r</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="830" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="830" bodyend="842"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1acedc9af12cc735649c658d820387f644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_alt_v</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_alt_v</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="843" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="843" bodyend="846"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a1f4ebf37a8bfb5616e8f6168334f6d5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_a</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_a</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="849" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="849" bodyend="865"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1af4425791b3515f1b402fb9b7989c24ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_b</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_b</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="866" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="866" bodyend="889"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a2c79cddf755c410754b287d569743904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_c</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_c</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="890" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="890" bodyend="914"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ad484bab1be2065a2a542cde4752236b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.xclip_cb</definition>
+        <argsstring>(self, self2, ctext, cummx)</argsstring>
+        <name>xclip_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>ctext</type>
+          <defname>ctext</defname>
+        </param>
+        <param>
+          <type>cummx</type>
+          <defname>cummx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="915" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="915" bodyend="921"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3b1212313f9198b32987947dbf005b4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_d</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_d</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="922" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="922" bodyend="949"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a7ab75d070fddc2020be1ed0cbf8b5ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_e</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_e</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="950" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="950" bodyend="973"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a827cc5e4a90f3c79fd16c8c5eeb24322" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_f</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_f</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="974" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="974" bodyend="978"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3baf00ba9b1b48cb7b58ec32beb23916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_f</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_f</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="979" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="979" bodyend="987"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9607ee5c5c2108b81f6bb04ace5c8fe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_h</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_h</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="988" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="988" bodyend="995"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ad05a3575f574c23ace2a2f2301d014f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_g</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_g</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="996" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="996" bodyend="1006"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a46c22ec7021ffb82b05c0a7c01381fc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_i</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_i</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1007" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1007" bodyend="1023"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1afa5a4a1eb0c47424e47cb6bd95a75f7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_j</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_j</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1024" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1024" bodyend="1031"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aa84600068d9ab1aa8c94f1d84e58d221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_k</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_k</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1032" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1032" bodyend="1040"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a11b44b4a66f01f2e0489f825943f5a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_l</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_l</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1041" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1041" bodyend="1048"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ab4391883132cdb70e32f9f89020e173c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_m</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_m</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1049" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1049" bodyend="1063"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a945e7fa7c7abe02e34abc6ee7484b031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_o</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_o</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1064" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1064" bodyend="1066"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1af091a6adfff6039d4aeb3779690a9855" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_p</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_p</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1067" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1067" bodyend="1094"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a2c47437e23a16cf1919ac352309fc4a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_r</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_r</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1095" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1095" bodyend="1136"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a84309cedb1051d811b8d816066f672be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_t</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_t</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1139" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1139" bodyend="1173"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ad21f98cb6380b181a5c231df096e13a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_u</definition>
+        <argsstring>(self, self2, lowit=False)</argsstring>
+        <name>ctrl_u</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>lowit</type>
+          <defname>lowit</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1175" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1175" bodyend="1212"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1adb0173c39e1f3f72a4f7f1213a2f96b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_v</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_v</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1213" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1213" bodyend="1234"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a83def43177f68e1eef24f745e261bf23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.pad_list</definition>
+        <argsstring>(self, self2, yidx)</argsstring>
+        <name>pad_list</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>yidx</type>
+          <defname>yidx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1237" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1237" bodyend="1247"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a92b2e24129c86318f6b08d7c2b0ebb0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.pad_line</definition>
+        <argsstring>(self, self2, xidx, yidx)</argsstring>
+        <name>pad_line</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>xidx</type>
+          <defname>xidx</defname>
+        </param>
+        <param>
+          <type>yidx</type>
+          <defname>yidx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1249" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1249" bodyend="1255"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a6a4de2bbd1b303045c285b90ed4d9327" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.clip_cb</definition>
+        <argsstring>(self, clip, text, self2, boundary=True)</argsstring>
+        <name>clip_cb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>clip</type>
+          <defname>clip</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>boundary</type>
+          <defname>boundary</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1257" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1257" bodyend="1349"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ae8601dee5f9d215fd81617cecfeb8aef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_x</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_x</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1353" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1353" bodyend="1362"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3c5c40e103aa56af8dbdb2e1c04e3162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.cut</definition>
+        <argsstring>(self, self2, fake=False, boundary=True)</argsstring>
+        <name>cut</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>fake</type>
+          <defname>fake</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>boundary</type>
+          <defname>boundary</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1363" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1363" bodyend="1468"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ad19156fd56e8b1fac5698ec103ff0c04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_y</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_y</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1469" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1469" bodyend="1478"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a3e2a7f7e757e64b2c271a89b6d3d0db4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_z</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_z</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1479" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1479" bodyend="1487"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9fc4dcfa2a7c3a92c216b47272c56b76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.ctrl_space</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>ctrl_space</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1488" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1488" bodyend="1497"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a474a212ddfb1cbdeddbc47f42f4a88c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_b</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_b</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1498" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1498" bodyend="1503"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a551f501c30a9a222059100e4fdc47895" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_c</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_c</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1504" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1504" bodyend="1514"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a438ca948c2f0218d99598f8cb1528924" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_d</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_d</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1515" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1515" bodyend="1540"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a88a0ef6547825dccc67c7fc7e9bc0f17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_i</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_i</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1541" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1541" bodyend="1563"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9c877ae5f8da0072d4831112a8e6aeea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_j</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_j</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1564" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1564" bodyend="1584"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aefdfad19db599a66740619462ef97ef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_k</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_k</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1585" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1585" bodyend="1596"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9b2161b06a2ca0ae44b7fbd7cda7fbca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_l</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_l</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1597" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1597" bodyend="1606"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a7e1974e0e4d3b055317bd8a7a7863eda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_o</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_o</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1607" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1607" bodyend="1619"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a94487d14235b618240ad14baa591b0b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_q</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_q</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1620" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1620" bodyend="1630"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ac207b107216003212427afc5facbf511" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_s</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_s</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1631" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1631" bodyend="1637"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1afa3643c0afaa3b958b234bbd643ce8e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_t</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_t</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1638" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1638" bodyend="1644"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a8e643a2e30cd23d2dc903ccf857a08df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_v</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_v</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1645" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1645" bodyend="1654"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a0e299a599222289c56b638a819c1013a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_w</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_w</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1655" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1655" bodyend="1660"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a099d0b562c622ad24734ed7a157096ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_z</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_z</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1661" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1661" bodyend="1713"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a2d22238a03196e5f9d1397934706fa60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f1</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f1</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1714" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1714" bodyend="1732"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ade62e7f451620d67c0d340c75863e3a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f2</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1733" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1733" bodyend="1768"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a777382024732e1ca8010c7816e8dad22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f3</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f3</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1769" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1769" bodyend="1777"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a492aaaec0217a0605136d80f288315e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f4</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f4</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1778" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1778" bodyend="1789"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aab38c0c4d3bb88fb6ecf8dfa1d1908a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f5</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f5</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1790" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1790" bodyend="1827"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a8bd0a261375bcf6f47fb641e824efbc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f6</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f6</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1828" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1828" bodyend="1863"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a6902488152c248aa9018f84d53cd09e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f7</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f7</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1864" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1864" bodyend="1886"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ae301188b52baeabf36d7ac2e5c7e51c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.play</definition>
+        <argsstring>(self, self2, anim=False)</argsstring>
+        <name>play</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>anim</type>
+          <defname>anim</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1889" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1889" bodyend="1939"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ac05c37604ae14e3e9c373b611c04f6ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f8</definition>
+        <argsstring>(self, self2, anim=False)</argsstring>
+        <name>f8</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>anim</type>
+          <defname>anim</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1940" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1940" bodyend="1945"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a2138c0e3eb75f39b122fed747f97b843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f9</definition>
+        <argsstring>(self, self2, flag=False)</argsstring>
+        <name>f9</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1946" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1946" bodyend="1963"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a4096da6784d7d075ef6c65488c0cef84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f10</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f10</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1965" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1965" bodyend="1972"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1ac422e93382357cecba1ebf4522800c8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f11</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f11</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1973" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1973" bodyend="1983"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1aad27a9d2980c63b7234a4a64c2f7bc85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.f12</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>f12</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1984" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1984" bodyend="1989"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a30092d8624d49a8e6a23aff23e58d962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.add_str</definition>
+        <argsstring>(self, self2, strx)</argsstring>
+        <name>add_str</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>strx</type>
+          <defname>strx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="1993" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="1993" bodyend="2004"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9dce778297f91354a63840d7ae9a5542" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.add_key</definition>
+        <argsstring>(self, self2, event)</argsstring>
+        <name>add_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="2008" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="2008" bodyend="2140"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a2602657dbf8f32d5c4fb8981140566de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_a</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_a</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="2141" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="2141" bodyend="2146"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a4ab0354e71d5d1da1e9a577f10998328" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_g</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_g</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="2147" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="2147" bodyend="2149"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a907f6030994b3d54dd4e79e913bac6b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.alt_y</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>alt_y</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="2150" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="2150" bodyend="2275"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a17f8980c0a76646aa6e11e3632dde876" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand.tab</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>tab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="2281" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="2281" bodyend="2340"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classpedlib_1_1acthand_1_1ActHand_1a9ca46bbd9abcacd7b21f6d41dd826b28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.acthand.ActHand._getsel</definition>
+        <argsstring>(self, self2)</argsstring>
+        <name>_getsel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>self2</type>
+          <defname>self2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/acthand.py" line="91" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="91" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/acthand.py" line="80" column="1" bodyfile="pyedpro/build/lib/pedlib/acthand.py" bodystart="80" bodyend="2340"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9f00b99ae56361d17bcc8d359266941e" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9ca46bbd9abcacd7b21f6d41dd826b28" prot="private" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>_getsel</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9dce778297f91354a63840d7ae9a5542" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>add_key</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a30092d8624d49a8e6a23aff23e58d962" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>add_str</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a2602657dbf8f32d5c4fb8981140566de" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_a</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a474a212ddfb1cbdeddbc47f42f4a88c1" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_b</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a551f501c30a9a222059100e4fdc47895" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_c</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a438ca948c2f0218d99598f8cb1528924" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_d</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a827cc5e4a90f3c79fd16c8c5eeb24322" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_f</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a4ab0354e71d5d1da1e9a577f10998328" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_g</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a88a0ef6547825dccc67c7fc7e9bc0f17" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_i</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9c877ae5f8da0072d4831112a8e6aeea" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_j</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aefdfad19db599a66740619462ef97ef9" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_k</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9b2161b06a2ca0ae44b7fbd7cda7fbca" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_l</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a7e1974e0e4d3b055317bd8a7a7863eda" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_o</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a94487d14235b618240ad14baa591b0b3" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_q</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ac207b107216003212427afc5facbf511" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_s</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1afa3643c0afaa3b958b234bbd643ce8e9" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_t</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a8e643a2e30cd23d2dc903ccf857a08df" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_v</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a0e299a599222289c56b638a819c1013a" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_w</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a907f6030994b3d54dd4e79e913bac6b2" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_y</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a099d0b562c622ad24734ed7a157096ae" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>alt_z</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a7132fb326fc825a0c73ac18a72c1d8e0" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>bottom</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a4ec75e4e8a27aa16784e811a49986274" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>bs</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a6a4de2bbd1b303045c285b90ed4d9327" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>clip_cb</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a99805d7c987abba47ad81e3326a3ebc2" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>clips</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a1de5d72c19d064bea9d11a2a564226e1" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_0</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1adf61d3689bfa06316e46ff0cca43be70" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_1</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ae8b36f977335c939ac2fbb260c79c072" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_2</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ac996dd98b4513eb604df8ae79e9ebec6" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_3</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9326088a60743ef37a35ac06d15709dc" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_4</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a5d4b9d07fd3d4a761371c88174525b57" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_5</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3caf104b76c4b5c1ec957d6a120aafa6" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_6</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aee85446e2dbf2c1c16760bfff7c82b61" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_7</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a2d7f6e7ebacf64b8ed15861fe1324b9a" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_8</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a83f6bf1b245827a03b8ce89142627f1a" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_9</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a1f4ebf37a8bfb5616e8f6168334f6d5b" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_a</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1af0aa7271d830a9fc6c6dd1d20edd7bcb" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_a</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ac7568e5f76ba15376ada04741de7ab03" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_b</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1acbf41c8dee66149d0ef37935ad597a80" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_c</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a699ae2dae3ff0bed54101e0bd036381f" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_d</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ad7e196756a35b78a9347e48dce97fa60" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_e</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a69d32ab74db14669b064b9c0eb91cafa" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_f</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ae9d8f127d3f548d714ebc1561b80a1f5" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_g</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ad01a60a491b106d325dcb725a90f1076" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_h</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a2db08b9245024121234fd90566feac8e" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_j</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3f411b5c616a705a80c613b48799421a" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_k</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aa9fdfebc6553365c5267f3567e67a544" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_num</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aa13be958418e952ec755d57212788118" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_r</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a79a7c0d04b452fa949d2a51c82d98726" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_t</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1acedc9af12cc735649c658d820387f644" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_alt_v</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1af4425791b3515f1b402fb9b7989c24ce" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_b</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a2c79cddf755c410754b287d569743904" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_c</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3b1212313f9198b32987947dbf005b4f" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_d</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a7ab75d070fddc2020be1ed0cbf8b5ac5" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_e</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3baf00ba9b1b48cb7b58ec32beb23916" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_f</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ad05a3575f574c23ace2a2f2301d014f9" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_g</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9607ee5c5c2108b81f6bb04ace5c8fe9" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_h</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a46c22ec7021ffb82b05c0a7c01381fc0" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_i</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1afa5a4a1eb0c47424e47cb6bd95a75f7f" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_j</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aa84600068d9ab1aa8c94f1d84e58d221" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_k</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a11b44b4a66f01f2e0489f825943f5a98" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_l</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ab4391883132cdb70e32f9f89020e173c" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_m</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a486fd0d362f98187b8f4e93cbdf778cc" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_num</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a945e7fa7c7abe02e34abc6ee7484b031" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_o</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1af091a6adfff6039d4aeb3779690a9855" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_p</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a2c47437e23a16cf1919ac352309fc4a7" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_r</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a9fc4dcfa2a7c3a92c216b47272c56b76" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_space</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a84309cedb1051d811b8d816066f672be" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_t</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ae647419afe107dc36bc4b0b57eb94311" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_tab</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ad21f98cb6380b181a5c231df096e13a2" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_u</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1adb0173c39e1f3f72a4f7f1213a2f96b2" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_v</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ae8601dee5f9d215fd81617cecfeb8aef" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_x</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ad19156fd56e8b1fac5698ec103ff0c04" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_y</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3e2a7f7e757e64b2c271a89b6d3d0db4" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ctrl_z</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a77cf4043f1322d74f0c92e63ddfb0feb" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>currclip</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3c5c40e103aa56af8dbdb2e1c04e3162" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>cut</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a55767d10ecb796a773ada2392b3104c4" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>delete</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a779c694e96eee0d40120a1676b7379a3" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>down</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3e99455ffda3d4f61fdf0aca49e46a42" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>end</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a7f834856fa6bc458189b6bdb737e04a1" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>esc</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a2d22238a03196e5f9d1397934706fa60" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f1</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a4096da6784d7d075ef6c65488c0cef84" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f10</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ac422e93382357cecba1ebf4522800c8a" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f11</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aad27a9d2980c63b7234a4a64c2f7bc85" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f12</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ade62e7f451620d67c0d340c75863e3a7" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f2</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a777382024732e1ca8010c7816e8dad22" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f3</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a492aaaec0217a0605136d80f288315e3" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f4</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aab38c0c4d3bb88fb6ecf8dfa1d1908a7" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f5</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a8bd0a261375bcf6f47fb641e824efbc8" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f6</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a6902488152c248aa9018f84d53cd09e4" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f7</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ac05c37604ae14e3e9c373b611c04f6ca" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f8</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a2138c0e3eb75f39b122fed747f97b843" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>f9</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a236e7fac949467abe5900163666924d3" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>home</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a4896b34bfd225c0deab86bf9166e56ee" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ins</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ae09a3e4ad33eb876eec80c13eddeaf40" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>left</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a92b2e24129c86318f6b08d7c2b0ebb0c" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>pad_line</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a83def43177f68e1eef24f745e261bf23" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>pad_list</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1af336e0387ce1e8a955a96f03c3846125" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>pgdn</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1acb3e724daee13cc6eca123079751cae6" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>pgup</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ae301188b52baeabf36d7ac2e5c7e51c0" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>play</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3b723a20b40116ab5986a1b9be9e5736" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>ret</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a1e400d54bb485abafeef494cb4f76fba" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>right</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a17f8980c0a76646aa6e11e3632dde876" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>tab</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a3a990e21e04f85c778d5d76fc5908482" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>top</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1aaac0ffbe52180123eb1a334205f07d71" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>up</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1a55635b1704f988f929637bacad9e2bbe" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>was_end</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ae23bc56af7006ab19d7cf665b98a0694" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>was_home</name></member>
+      <member refid="classpedlib_1_1acthand_1_1ActHand_1ad484bab1be2065a2a542cde4752236b1" prot="public" virt="non-virtual"><scope>pedlib::acthand::ActHand</scope><name>xclip_cb</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -46,7 +46,7 @@
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>dialog.set_transient_for(self2.mained.mywin)</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog.set_icon_from_file(<ref refid="namespacepyedlib_1_1pedutil_1adf0833cdaf9948091c4327f0339fd924" kindref="member">get_img_path</ref>(</highlight><highlight class="stringliteral">&quot;pyedpro_sub.png&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog.set_icon_from_file(<ref refid="namespacepedlib_1_1pedutil_1a4fe4772dfe4ec29226dd44ff435d3304" kindref="member">get_img_path</ref>(</highlight><highlight class="stringliteral">&quot;pyedpro_sub.png&quot;</highlight><highlight class="normal">))</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>set<sp/>icon<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>__file__)</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>

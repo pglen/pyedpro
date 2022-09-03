@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="plug_8py" kind="file" language="Python">
+    <compoundname>plug.py</compoundname>
+    <innerclass refid="classpycommon_1_1plug_1_1SocketDialogWindow" prot="public">pycommon::plug::SocketDialogWindow</innerclass>
+    <innernamespace refid="namespacepycommon_1_1plug">pycommon::plug</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacepycommon_1_1plug" refkind="compound"><highlight class="comment">#!/bin/python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#<sp/>-*-<sp/>utf:8<sp/>-*-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>gi</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">gi.require_version(</highlight><highlight class="stringliteral">&apos;Gtk&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;3.0&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>gi.repository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Gtk</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">socket_id<sp/>=<sp/>sys.argv[1]</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">plug<sp/>=<sp/>Gtk.Plug.new(int(socket_id))</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">plug.connect(</highlight><highlight class="stringliteral">&apos;destroy&apos;</highlight><highlight class="normal">,<sp/>Gtk.main_quit)</highlight></codeline>
+<codeline lineno="10" refid="classpycommon_1_1plug_1_1SocketDialogWindow" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpycommon_1_1plug_1_1SocketDialogWindow" kindref="compound">SocketDialogWindow</ref>(Gtk.Window):</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classpycommon_1_1plug_1_1SocketDialogWindow_1a0e16214e5f8c6407142448f16ecdc38f" kindref="member">__init__</ref>(self):</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>box<sp/>=<sp/>Gtk.Box(spacing=6)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>button1<sp/>=<sp/>Gtk.Button(label=</highlight><highlight class="stringliteral">&quot;Information&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>button1.connect(</highlight><highlight class="stringliteral">&quot;clicked&quot;</highlight><highlight class="normal">,<sp/>self.<ref refid="classpycommon_1_1plug_1_1SocketDialogWindow_1adbdd9cab84f4137b4cde2d7e66af33a8" kindref="member">on_info_clicked</ref>on_info_clicked)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>box.add(button1)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plug.add(box)<sp/></highlight><highlight class="comment">#<sp/>box<sp/>widget<sp/>added<sp/>to<sp/>python<sp/>plug</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plug.show_all()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classpycommon_1_1plug_1_1SocketDialogWindow_1adbdd9cab84f4137b4cde2d7e66af33a8" kindref="member">on_info_clicked</ref>(self,<sp/>widget):</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog<sp/>=<sp/>Gtk.MessageDialog(</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>transient_for=self,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags=0,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>message_type=Gtk.MessageType.INFO,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buttons=Gtk.ButtonsType.OK,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text=</highlight><highlight class="stringliteral">&quot;Info<sp/>about<sp/>Python<sp/>Sample<sp/>Plugin&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog.format_secondary_text(</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Copyright<sp/>\xc2\xa9<sp/>2006-2019<sp/>Xfce<sp/>development<sp/>team\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog.run()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;INFO<sp/>dialog<sp/>closed&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dialog.destroy()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="classpycommon_1_1plug_1_1SocketDialogWindow" kindref="compound">SocketDialogWindow</ref>()</highlight></codeline>
+    </programlisting>
+    <location file="pycommon/plug.py"/>
+  </compounddef>
+</doxygen>

@@ -128,25 +128,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="2">
-        <label>Gtk::ComboBox</label>
-      </node>
       <node id="1">
         <label>pyedpro.pycommon.pgbox.ComboBox</label>
         <link refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ComboBox"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.ComboBox</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="2">
-        <label>Gtk::ComboBox</label>
-      </node>
       <node id="1">
         <label>pyedpro.pycommon.pgbox.ComboBox</label>
         <link refid="classpyedpro_1_1pycommon_1_1pgbox_1_1ComboBox"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk.ComboBox</label>
       </node>
     </collaborationgraph>
     <location file="pyedpro/pycommon/pgbox.py" line="383" column="1" bodyfile="pyedpro/pycommon/pgbox.py" bodystart="383" bodyend="478"/>

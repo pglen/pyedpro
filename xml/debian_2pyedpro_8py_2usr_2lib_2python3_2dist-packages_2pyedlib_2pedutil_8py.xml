@@ -621,7 +621,7 @@
 <codeline lineno="611"><highlight class="normal"></highlight></codeline>
 <codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>boolcase:</highlight></codeline>
-<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>=<sp/>line.lower().<ref refid="namespacepyedlib_1_1pedfind_1a9a5375c698f13c42b71230e84f3c55d8" kindref="member">find</ref>(srctxt.lower(),<sp/>idx)</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>=<sp/>line.lower().<ref refid="namespacepedlib_1_1pedfind_1aa9a5e2f04dc9d2c12d810e2d89868eef" kindref="member">find</ref>(srctxt.lower(),<sp/>idx)</highlight></codeline>
 <codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>idx2<sp/>=<sp/>idx</highlight></codeline>
 <codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>boolregex:</highlight></codeline>
 <codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line2<sp/>=<sp/>line[idx:]</highlight></codeline>

@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpycommon_1_1pgbox_1_1ComboBox" kind="class" language="Python" prot="public">
+    <compoundname>pycommon::pgbox::ComboBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.ComboBox</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.ComboBox</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpycommon_1_1pgbox_1_1ComboBox_1adf26eb98653c2d5e5d1dcc969cc5d78b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon.pgbox.ComboBox::store</definition>
+        <argsstring></argsstring>
+        <name>store</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="387" column="1" bodyfile="pycommon/pgbox.py" bodystart="387" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1ab8f519eb99712b7bb5e2b879c214bf6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.__init__</definition>
+        <argsstring>(self, init_cont=[], callme=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>init_cont</type>
+          <defname>init_cont</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>callme</type>
+          <defname>callme</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="385" column="1" bodyfile="pycommon/pgbox.py" bodystart="385" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1a6369d6f3e61ab31b0e723bf20ea86c38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.combo_changed</definition>
+        <argsstring>(self, combo)</argsstring>
+        <name>combo_changed</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>combo</type>
+          <defname>combo</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="416" column="1" bodyfile="pycommon/pgbox.py" bodystart="416" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1ae3a242c6eb442d686e455f2b86477803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.delall</definition>
+        <argsstring>(self)</argsstring>
+        <name>delall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="433" column="1" bodyfile="pycommon/pgbox.py" bodystart="433" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1a63135f2fb33a8441beecd91a1204548b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.sel_text</definition>
+        <argsstring>(self, txt)</argsstring>
+        <name>sel_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>txt</type>
+          <defname>txt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="449" column="1" bodyfile="pycommon/pgbox.py" bodystart="449" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1a4829de7ad90794e408d279795d478b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.sel_first</definition>
+        <argsstring>(self)</argsstring>
+        <name>sel_first</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/pgbox.py" line="470" column="1" bodyfile="pycommon/pgbox.py" bodystart="470" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1ab8f519eb99712b7bb5e2b879c214bf6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.__init__</definition>
+        <argsstring>(self, init_cont=[], callme=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>init_cont</type>
+          <defname>init_cont</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>callme</type>
+          <defname>callme</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="385" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="385" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1a6369d6f3e61ab31b0e723bf20ea86c38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.combo_changed</definition>
+        <argsstring>(self, combo)</argsstring>
+        <name>combo_changed</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>combo</type>
+          <defname>combo</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="416" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="416" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1ae3a242c6eb442d686e455f2b86477803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.delall</definition>
+        <argsstring>(self)</argsstring>
+        <name>delall</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="433" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="433" bodyend="447"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1a63135f2fb33a8441beecd91a1204548b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.sel_text</definition>
+        <argsstring>(self, txt)</argsstring>
+        <name>sel_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>txt</type>
+          <defname>txt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="449" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="449" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1ComboBox_1a4829de7ad90794e408d279795d478b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pycommon.pgbox.ComboBox.sel_first</definition>
+        <argsstring>(self)</argsstring>
+        <name>sel_first</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="470" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="470" bodyend="477"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Gtk::ComboBox</label>
+      </node>
+      <node id="3">
+        <label>Gtk.ComboBox</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pgbox.ComboBox</label>
+        <link refid="classpycommon_1_1pgbox_1_1ComboBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Gtk::ComboBox</label>
+      </node>
+      <node id="3">
+        <label>Gtk.ComboBox</label>
+      </node>
+      <node id="1">
+        <label>pycommon.pgbox.ComboBox</label>
+        <link refid="classpycommon_1_1pgbox_1_1ComboBox"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="pycommon/pgbox.py" line="383" column="1" bodyfile="pycommon/pgbox.py" bodystart="383" bodyend="478"/>
+    <listofallmembers>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1ab8f519eb99712b7bb5e2b879c214bf6f" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1ab8f519eb99712b7bb5e2b879c214bf6f" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>__init__</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a6369d6f3e61ab31b0e723bf20ea86c38" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>combo_changed</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a6369d6f3e61ab31b0e723bf20ea86c38" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>combo_changed</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1ae3a242c6eb442d686e455f2b86477803" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>delall</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1ae3a242c6eb442d686e455f2b86477803" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>delall</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a4829de7ad90794e408d279795d478b64" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>sel_first</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a4829de7ad90794e408d279795d478b64" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>sel_first</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a63135f2fb33a8441beecd91a1204548b" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>sel_text</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a63135f2fb33a8441beecd91a1204548b" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>sel_text</name></member>
+      <member refid="classpycommon_1_1pgbox_1_1ComboBox_1adf26eb98653c2d5e5d1dcc969cc5d78b" prot="public" virt="non-virtual"><scope>pycommon::pgbox::ComboBox</scope><name>store</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

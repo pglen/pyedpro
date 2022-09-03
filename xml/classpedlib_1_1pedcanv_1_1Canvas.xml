@@ -1,0 +1,1103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classpedlib_1_1pedcanv_1_1Canvas" kind="class" language="Python" prot="public">
+    <compoundname>pedlib::pedcanv::Canvas</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Gtk.DrawingArea</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a348a5f80bb7da4ed40d798d6d24bf985" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::statbox</definition>
+        <argsstring></argsstring>
+        <name>statbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="177" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a7315eb8cba2f24a95df579fa9a24a34b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::parewin</definition>
+        <argsstring></argsstring>
+        <name>parewin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="178" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a41cdd7f52d94cc9c2b6701c7c74255c0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::coll</definition>
+        <argsstring></argsstring>
+        <name>coll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="189" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1af1b5c7c1510bf9ffa03a9f58fab00de5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::cnt</definition>
+        <argsstring></argsstring>
+        <name>cnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="190" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a391a22e4fd39a0b2399e1146d3c4eee5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::drag</definition>
+        <argsstring></argsstring>
+        <name>drag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="191" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a799db6a156a661254a05ec10f886b515" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::curl</definition>
+        <argsstring></argsstring>
+        <name>curl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="192" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1ab084b414962fd3b35348081f22243802" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::resize</definition>
+        <argsstring></argsstring>
+        <name>resize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="193" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a9e0165b392f2461002ffc872eb01a4f9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::dragcoord</definition>
+        <argsstring></argsstring>
+        <name>dragcoord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="194" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a5509ac68b37387a12b53d3b57f5f2f77" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::size2</definition>
+        <argsstring></argsstring>
+        <name>size2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="195" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1ad63be516f037214fd35b8f245821f5d5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::noop_down</definition>
+        <argsstring></argsstring>
+        <name>noop_down</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="196" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a161dd74f7ee61dace223ab190fbdd705" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::drawline</definition>
+        <argsstring></argsstring>
+        <name>drawline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="197" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a2253182cad3ebee2d74c17954f27698c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::stroke</definition>
+        <argsstring></argsstring>
+        <name>stroke</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="198" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1af48015501863e3127a91d355c82c7a0e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::hand</definition>
+        <argsstring></argsstring>
+        <name>hand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="199" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a597e16b98104004db77f5847b00acdab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::arrow</definition>
+        <argsstring></argsstring>
+        <name>arrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="200" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a9bdd197e755cdfb414754217e4168c5a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::sizing</definition>
+        <argsstring></argsstring>
+        <name>sizing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="201" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a6f18d5945a17f158a6bd42d3f13c2fb9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::cross</definition>
+        <argsstring></argsstring>
+        <name>cross</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="202" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a90ab8f7d7be55fd752947f86dd89c776" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::hair</definition>
+        <argsstring></argsstring>
+        <name>hair</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="203" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a5d0ce0e1fbc0244e3f008f017fde1b42" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::curve</definition>
+        <argsstring></argsstring>
+        <name>curve</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="204" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a1b2d53cd2665841573a420df20658d52" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::pencil</definition>
+        <argsstring></argsstring>
+        <name>pencil</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="205" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a8e2b7eeb7e979f4a4b70d73736a5987e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::fname</definition>
+        <argsstring></argsstring>
+        <name>fname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="206" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1aeb5ef6a878e989dc23b56e78fcea3bd0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::mouse</definition>
+        <argsstring></argsstring>
+        <name>mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="318" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a7a5a758b9c3ca19f957f226d808cc298" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::layout</definition>
+        <argsstring></argsstring>
+        <name>layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="853" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="853" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a2319c092e789ed8579edbfb4af8917bf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="854" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="854" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1aa9072a182aab434e97d2184eecc0d67f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::cr</definition>
+        <argsstring></argsstring>
+        <name>cr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="855" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="855" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedcanv_1_1Canvas_1a07c539cb900439cbfd47ed1ac6d41531" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedcanv.Canvas::crh</definition>
+        <argsstring></argsstring>
+        <name>crh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="856" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="856" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1acc5ca821975b742befa3d2404c5f9364" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.__init__</definition>
+        <argsstring>(self, parent, statbox=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedcanv_1_1Canvas_1a348a5f80bb7da4ed40d798d6d24bf985" kindref="member">statbox</ref></type>
+          <defname>statbox</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="175" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="175" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a2003248444da791076e6823c93882b5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.area_key</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_key</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="208" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="208" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a2c392af75257877c368fde402273ce26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.area_motion</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_motion</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="233" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="233" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a77b171a0715a4e269507bd2e0e4381e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.area_button</definition>
+        <argsstring>(self, area, event)</argsstring>
+        <name>area_button</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>area</type>
+          <defname>area</defname>
+        </param>
+        <param>
+          <type>event</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="314" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="314" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1aeee1a5874edeaef4e60b07c22fe1cd0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.writeout</definition>
+        <argsstring>(self)</argsstring>
+        <name>writeout</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="483" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="483" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1ac6cbaf32fbfb0c90bb947aedba2b2ae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.done_fc</definition>
+        <argsstring>(self, win, resp)</argsstring>
+        <name>done_fc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>win</type>
+          <defname>win</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="492" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="492" bodyend="516"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1abdb9a0908e882023589f17ef6fcb418a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.file_dlg</definition>
+        <argsstring>(self, resp)</argsstring>
+        <name>file_dlg</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>resp</type>
+          <defname>resp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="517" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="517" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1aca6aecad30b08f443be921ead7ddbd77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.menu_ccc</definition>
+        <argsstring>(self, item, num)</argsstring>
+        <name>menu_ccc</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="531" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="531" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a73cfea22300f8c345cac3227588ea212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.menu_zzz</definition>
+        <argsstring>(self, item, num)</argsstring>
+        <name>menu_zzz</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="559" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="559" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a876a3b42e558aa0763e5883e162fc4b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.menu_sss</definition>
+        <argsstring>(self, item, num)</argsstring>
+        <name>menu_sss</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="580" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="580" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1adcc8bd22f0769b81873984694aaba9f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.menu_action</definition>
+        <argsstring>(self, item, num)</argsstring>
+        <name>menu_action</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="583" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="583" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a2e22b4a7f84e83e8b45d997761e7c4f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.menu_action2</definition>
+        <argsstring>(self, item, num)</argsstring>
+        <name>menu_action2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="611" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="611" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a93d0db84c746baf5e44cee31fd93ad5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.menu_action3</definition>
+        <argsstring>(self, item, num)</argsstring>
+        <name>menu_action3</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>item</type>
+          <defname>item</defname>
+        </param>
+        <param>
+          <type>num</type>
+          <defname>num</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="658" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="658" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1acaa58d10c5fbfcf908836bc6ba77d463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.show_objects</definition>
+        <argsstring>(self)</argsstring>
+        <name>show_objects</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="766" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="766" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a168789c7329ec4a065303983a58e65be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.readfile</definition>
+        <argsstring>(self, fname)</argsstring>
+        <name>readfile</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedcanv_1_1Canvas_1a8e2b7eeb7e979f4a4b70d73736a5987e" kindref="member">fname</ref></type>
+          <defname>fname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="770" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="770" bodyend="793"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1ae266e132348cc23060a0c699a1a2ba84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.add_rect</definition>
+        <argsstring>(self, coord, text, crf, crb=&quot;#ffffff&quot;, border=2, fill=False)</argsstring>
+        <name>add_rect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>coord</type>
+          <defname>coord</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>crf</type>
+          <defname>crf</defname>
+        </param>
+        <param>
+          <type>crb</type>
+          <defname>crb</defname>
+          <defval>&quot;#ffffff&quot;</defval>
+        </param>
+        <param>
+          <type>border</type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="795" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="795" bodyend="801"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1ae613e93186bcf1514428d43c5a9c8a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.add_line</definition>
+        <argsstring>(self, coord, text, crf, crb=&quot;#ffffff&quot;, border=2, fill=False)</argsstring>
+        <name>add_line</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>coord</type>
+          <defname>coord</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>crf</type>
+          <defname>crf</defname>
+        </param>
+        <param>
+          <type>crb</type>
+          <defname>crb</defname>
+          <defval>&quot;#ffffff&quot;</defval>
+        </param>
+        <param>
+          <type>border</type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="802" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="802" bodyend="808"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a1a9b5010da31564f1b91a197eea67dfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.add_curve</definition>
+        <argsstring>(self, coord, text, crf, crb=&quot;#ffffff&quot;, border=2, fill=False)</argsstring>
+        <name>add_curve</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>coord</type>
+          <defname>coord</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>crf</type>
+          <defname>crf</defname>
+        </param>
+        <param>
+          <type>crb</type>
+          <defname>crb</defname>
+          <defval>&quot;#ffffff&quot;</defval>
+        </param>
+        <param>
+          <type>border</type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="809" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="809" bodyend="815"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1ab06ab16f43385d72616dd331f7e506e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.add_text</definition>
+        <argsstring>(self, coord, text, crf, crb=&quot;#ffffff&quot;, border=2, fill=False)</argsstring>
+        <name>add_text</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>coord</type>
+          <defname>coord</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>crf</type>
+          <defname>crf</defname>
+        </param>
+        <param>
+          <type>crb</type>
+          <defname>crb</defname>
+          <defval>&quot;#ffffff&quot;</defval>
+        </param>
+        <param>
+          <type>border</type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="816" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="816" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a5716f299318a93bf09e0f0d4a20f7bd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.add_circle</definition>
+        <argsstring>(self, coord, text, crf, crb=&quot;#ffffff&quot;, border=2, fill=False)</argsstring>
+        <name>add_circle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>coord</type>
+          <defname>coord</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>crf</type>
+          <defname>crf</defname>
+        </param>
+        <param>
+          <type>crb</type>
+          <defname>crb</defname>
+          <defval>&quot;#ffffff&quot;</defval>
+        </param>
+        <param>
+          <type>border</type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="824" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="824" bodyend="830"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a892790554057d4efd6486496fdadd03f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.add_stroke</definition>
+        <argsstring>(self, coord, text, crf, crb=&quot;#ffffff&quot;, border=2, fill=False, arr=[])</argsstring>
+        <name>add_stroke</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>coord</type>
+          <defname>coord</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>crf</type>
+          <defname>crf</defname>
+        </param>
+        <param>
+          <type>crb</type>
+          <defname>crb</defname>
+          <defval>&quot;#ffffff&quot;</defval>
+        </param>
+        <param>
+          <type>border</type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>arr</type>
+          <defname>arr</defname>
+          <defval>[]</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="831" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="831" bodyend="837"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a4338b958e00cc167db9af9c95f05b8e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.add_romb</definition>
+        <argsstring>(self, coord, text, crf, crb=&quot;#ffffff&quot;, border=2, fill=False)</argsstring>
+        <name>add_romb</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>coord</type>
+          <defname>coord</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+        </param>
+        <param>
+          <type>crf</type>
+          <defname>crf</defname>
+        </param>
+        <param>
+          <type>crb</type>
+          <defname>crb</defname>
+          <defval>&quot;#ffffff&quot;</defval>
+        </param>
+        <param>
+          <type>border</type>
+          <defname>border</defname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>fill</type>
+          <defname>fill</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="838" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="838" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="classpedlib_1_1pedcanv_1_1Canvas_1a0b6b064e86c9f831c42f0e48d2d7bb5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pedlib.pedcanv.Canvas.draw_event</definition>
+        <argsstring>(self, doc, cr)</argsstring>
+        <name>draw_event</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>doc</type>
+          <defname>doc</defname>
+        </param>
+        <param>
+          <type><ref refid="classpedlib_1_1pedcanv_1_1Canvas_1aa9072a182aab434e97d2184eecc0d67f" kindref="member">cr</ref></type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="845" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="845" bodyend="900"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>pedlib.pedcanv.Canvas</label>
+        <link refid="classpedlib_1_1pedcanv_1_1Canvas"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk::DrawingArea</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>pedlib.pedcanv.Canvas</label>
+        <link refid="classpedlib_1_1pedcanv_1_1Canvas"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Gtk::DrawingArea</label>
+      </node>
+    </collaborationgraph>
+    <location file="pyedpro/build/lib/pedlib/pedcanv.py" line="173" column="1" bodyfile="pyedpro/build/lib/pedlib/pedcanv.py" bodystart="173" bodyend="901"/>
+    <listofallmembers>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1acc5ca821975b742befa3d2404c5f9364" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>__init__</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a5716f299318a93bf09e0f0d4a20f7bd9" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>add_circle</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a1a9b5010da31564f1b91a197eea67dfa" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>add_curve</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1ae613e93186bcf1514428d43c5a9c8a45" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>add_line</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1ae266e132348cc23060a0c699a1a2ba84" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>add_rect</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a4338b958e00cc167db9af9c95f05b8e7" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>add_romb</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a892790554057d4efd6486496fdadd03f" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>add_stroke</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1ab06ab16f43385d72616dd331f7e506e1" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>add_text</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a77b171a0715a4e269507bd2e0e4381e5" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>area_button</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a2003248444da791076e6823c93882b5c" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>area_key</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a2c392af75257877c368fde402273ce26" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>area_motion</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a597e16b98104004db77f5847b00acdab" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>arrow</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1af1b5c7c1510bf9ffa03a9f58fab00de5" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>cnt</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a41cdd7f52d94cc9c2b6701c7c74255c0" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>coll</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1aa9072a182aab434e97d2184eecc0d67f" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>cr</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a07c539cb900439cbfd47ed1ac6d41531" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>crh</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a6f18d5945a17f158a6bd42d3f13c2fb9" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>cross</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a799db6a156a661254a05ec10f886b515" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>curl</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a5d0ce0e1fbc0244e3f008f017fde1b42" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>curve</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1ac6cbaf32fbfb0c90bb947aedba2b2ae9" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>done_fc</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a391a22e4fd39a0b2399e1146d3c4eee5" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>drag</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a9e0165b392f2461002ffc872eb01a4f9" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>dragcoord</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a0b6b064e86c9f831c42f0e48d2d7bb5a" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>draw_event</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a161dd74f7ee61dace223ab190fbdd705" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>drawline</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1abdb9a0908e882023589f17ef6fcb418a" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>file_dlg</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a8e2b7eeb7e979f4a4b70d73736a5987e" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>fname</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a90ab8f7d7be55fd752947f86dd89c776" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>hair</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1af48015501863e3127a91d355c82c7a0e" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>hand</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a7a5a758b9c3ca19f957f226d808cc298" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>layout</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1adcc8bd22f0769b81873984694aaba9f3" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>menu_action</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a2e22b4a7f84e83e8b45d997761e7c4f1" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>menu_action2</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a93d0db84c746baf5e44cee31fd93ad5f" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>menu_action3</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1aca6aecad30b08f443be921ead7ddbd77" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>menu_ccc</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a876a3b42e558aa0763e5883e162fc4b0" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>menu_sss</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a73cfea22300f8c345cac3227588ea212" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>menu_zzz</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1aeb5ef6a878e989dc23b56e78fcea3bd0" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>mouse</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1ad63be516f037214fd35b8f245821f5d5" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>noop_down</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a7315eb8cba2f24a95df579fa9a24a34b" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>parewin</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a1b2d53cd2665841573a420df20658d52" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>pencil</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a168789c7329ec4a065303983a58e65be" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>readfile</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a2319c092e789ed8579edbfb4af8917bf" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>rect</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1ab084b414962fd3b35348081f22243802" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>resize</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1acaa58d10c5fbfcf908836bc6ba77d463" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>show_objects</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a5509ac68b37387a12b53d3b57f5f2f77" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>size2</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a9bdd197e755cdfb414754217e4168c5a" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>sizing</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a348a5f80bb7da4ed40d798d6d24bf985" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>statbox</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1a2253182cad3ebee2d74c17954f27698c" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>stroke</name></member>
+      <member refid="classpedlib_1_1pedcanv_1_1Canvas_1aeee1a5874edeaef4e60b07c22fe1cd0b" prot="public" virt="non-virtual"><scope>pedlib::pedcanv::Canvas</scope><name>writeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepycommon_1_1testpacker2" kind="namespace" language="Python">
+    <compoundname>pycommon::testpacker2</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1a790327f8eafa31e1a7739038623a0392" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pycommon::testpacker2::xorg</definition>
+        <argsstring></argsstring>
+        <name>xorg</name>
+        <initializer>=  [&quot;val1&quot;, &quot;val2&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="18" column="1" bodyfile="pycommon/testpacker2.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1a9a5e7bc1a99be8cd3ec6bd55eb241f9f" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple pycommon::testpacker2::yorg</definition>
+        <argsstring></argsstring>
+        <name>yorg</name>
+        <initializer>=  (&quot;str1&quot;, &quot;2&quot;, &quot;3&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="19" column="1" bodyfile="pycommon/testpacker2.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1a7f6085490ae6f09bf2c678d8f282667a" prot="public" static="no" mutable="no">
+        <type>dictionary</type>
+        <definition>dictionary pycommon::testpacker2::zorg</definition>
+        <argsstring></argsstring>
+        <name>zorg</name>
+        <initializer>=  { &quot;key1&quot; : &quot;111&quot;, &apos;key2&apos; : 222, &quot;arr&quot;: xorg }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="20" column="1" bodyfile="pycommon/testpacker2.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1aa06456d031eabfd82bdb24b5819fdd62" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker2.pb</definition>
+        <argsstring></argsstring>
+        <name>pb</name>
+        <initializer>=  <ref refid="classpycommon_1_1pypacker_1_1packbin" kindref="compound">pypacker.packbin</ref>();</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="22" column="1" bodyfile="pycommon/testpacker2.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1a4f56a22cb736524248357175d8bb9566" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker2.verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="23" column="1" bodyfile="pycommon/testpacker2.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1aa8761e68493fcfcba0e4c362dbb777b2" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list pycommon::testpacker2::sorg_var</definition>
+        <argsstring></argsstring>
+        <name>sorg_var</name>
+        <initializer>=  [ &quot;begin&quot;, 334, &quot;subx&quot;, &apos;x&apos;, <ref refid="namespacepycommon_1_1testpacker2_1a790327f8eafa31e1a7739038623a0392" kindref="member">xorg</ref>, <ref refid="namespacepycommon_1_1testpacker2_1a9a5e7bc1a99be8cd3ec6bd55eb241f9f" kindref="member">yorg</ref>, <ref refid="namespacepycommon_1_1testpacker2_1a7f6085490ae6f09bf2c678d8f282667a" kindref="member">zorg</ref>, &quot;end&quot;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="31" column="1" bodyfile="pycommon/testpacker2.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1af0cf4801e0ba345bec74a8428892f278" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker2.eee_var</definition>
+        <argsstring></argsstring>
+        <name>eee_var</name>
+        <initializer>=  pb.encode_data(&quot;&quot;, *<ref refid="namespacepycommon_1_1testpacker2_1aa8761e68493fcfcba0e4c362dbb777b2" kindref="member">sorg_var</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="37" column="1" bodyfile="pycommon/testpacker2.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1testpacker2_1ae562fb23eb5941ac107164bf025d85ae" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pycommon::testpacker2.fff_var</definition>
+        <argsstring></argsstring>
+        <name>fff_var</name>
+        <initializer>=  pb.decode_data(<ref refid="namespacepycommon_1_1testpacker2_1af0cf4801e0ba345bec74a8428892f278" kindref="member">eee_var</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pycommon/testpacker2.py" line="41" column="1" bodyfile="pycommon/testpacker2.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pycommon/testpacker2.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
