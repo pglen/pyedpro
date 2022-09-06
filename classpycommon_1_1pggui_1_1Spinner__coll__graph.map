@@ -1,4 +1,5 @@
 <map id="pycommon.pggui.Spinner" name="pycommon.pggui.Spinner">
-<area shape="rect" id="node1" title=" " alt="" coords="5,79,172,104"/>
-<area shape="rect" id="node2" title=" " alt="" coords="32,5,145,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="46,80,215,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="145,5,255,32"/>
 </map>

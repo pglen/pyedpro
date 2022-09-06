@@ -8,7 +8,7 @@ var searchData=
   ['newitem_5',['newitem',['../classpyedpro_1_1pedlib_1_1pednotes_1_1pgnotes.html#a8b78cfa84a81fe3f5d04072d9967a166',1,'pyedpro.pedlib.pednotes.pgnotes.newitem()'],['../classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline.html#aff2871f2b314c6ab8204efeebd98e49b',1,'pyedpro.pedlib.pedoline.pgoline.newitem()']]],
   ['nextchar_6',['nextchar',['../namespacepyedpro_1_1pedlib_1_1pedutil.html#a0b63f1cdca50230b6be911d2173b7fc3',1,'pyedpro::pedlib::pedutil']]],
   ['nextwin_7',['nextwin',['../classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow.html#a6f7fbb512de9df489e9dab18572071b5',1,'pyedpro::pedlib::pedwin::EdMainWindow']]],
-  ['norm_8',['norm',['../classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle.html#a59e1ff514ad4f8d7ae9f18a11069fbd4',1,'pyedpro.pycommon.pggui.Rectangle.norm()'],['../classpycommon_1_1pggui_1_1Rectangle.html#a47f141641beeff79751612b3b1550a1a',1,'pycommon.pggui.Rectangle.norm()']]],
+  ['norm_8',['norm',['../classpyedpro_1_1pycommon_1_1pggui_1_1Rectangle.html#a59e1ff514ad4f8d7ae9f18a11069fbd4',1,'pyedpro::pycommon::pggui::Rectangle']]],
   ['normsel_9',['normsel',['../classpyedpro_1_1pedlib_1_1peddoc_1_1pedDoc.html#a94f64575c3fd239a16132823ff98c7fc',1,'pyedpro.pedlib.peddoc.pedDoc.normsel()'],['../classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html#a58aff0259f61c51cafdc7f93dae353e7',1,'pyedpro.pedlib.peddoc_diff.pedDoc.normsel()']]],
   ['note_5fbutton_10',['note_button',['../classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow.html#af16078b74db2cdd929f15658e453163b',1,'pyedpro::pedlib::pedwin::EdMainWindow']]],
   ['note_5fcreate_5fcb_11',['note_create_cb',['../classpyedpro_1_1pedlib_1_1pedwin_1_1EdMainWindow.html#ad4dd00c252e7d4de17e28ed5b09c164a',1,'pyedpro::pedlib::pedwin::EdMainWindow']]],

@@ -1,26 +1,23 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="164,129,284,155"/>
-<area shape="rect" id="node2" href="$classpycommon_1_1pggui_1_1Led.html" title=" " alt="" coords="427,153,571,179"/>
-<area shape="rect" id="node3" href="$classpycommon_1_1pggui_1_1MenuButt.html" title=" " alt="" coords="409,203,588,228"/>
-<area shape="rect" id="node4" href="$classpyedpro_1_1pedlib_1_1pedcanv_1_1Canvas.html" title=" " alt="" coords="397,5,600,31"/>
-<area shape="rect" id="node5" href="$classpyedpro_1_1pedlib_1_1peddoc_1_1pedDoc.html" title=" " alt="" coords="401,317,597,343"/>
-<area shape="rect" id="node6" href="$classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html" title=" " alt="" coords="424,253,573,293"/>
-<area shape="rect" id="node7" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Led.html" title=" " alt="" coords="403,55,595,80"/>
-<area shape="rect" id="node8" href="$classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt.html" title=" " alt="" coords="385,104,612,129"/>
-<area shape="rect" id="node9" title=" " alt="" coords="5,343,63,368"/>
-<area shape="rect" id="node10" href="$classpycommon_1_1sutil_1_1Unbuffered.html" title=" " alt="" coords="135,540,313,565"/>
-<area shape="rect" id="node11" href="$classpyedpro_1_1Unbuffered.html" title=" " alt="" coords="157,179,291,204"/>
-<area shape="rect" id="node12" href="$classpyedpro_1_1pedlib_1_1pedconfig_1_1Unbuffered.html" title=" " alt="" coords="141,229,307,269"/>
-<area shape="rect" id="node13" href="$classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw.html" title=" " alt="" coords="120,293,328,319"/>
-<area shape="rect" id="node14" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1DrawObj.html" title=" " alt="" coords="121,491,327,516"/>
-<area shape="rect" id="node22" href="$classpyedpro_1_1pedlib_1_1pedxtnd_1_1pedxtnd.html" title=" " alt="" coords="124,343,324,368"/>
-<area shape="rect" id="node23" href="$classpyedpro_1_1pycommon_1_1sutil_1_1Unbuffered.html" title=" " alt="" coords="111,441,337,467"/>
-<area shape="rect" id="node15" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1CircObj.html" title=" " alt="" coords="399,367,598,392"/>
-<area shape="rect" id="node16" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1CurveObj.html" title=" " alt="" coords="394,416,603,441"/>
-<area shape="rect" id="node17" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1LineObj.html" title=" " alt="" coords="399,465,599,491"/>
-<area shape="rect" id="node18" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1RectObj.html" title=" " alt="" coords="397,515,600,540"/>
-<area shape="rect" id="node19" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1RombObj.html" title=" " alt="" coords="394,564,603,589"/>
-<area shape="rect" id="node20" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1StrokeObj.html" title=" " alt="" coords="392,613,605,639"/>
-<area shape="rect" id="node21" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1TextObj.html" title=" " alt="" coords="399,663,599,688"/>
-<area shape="rect" id="node24" href="$classpyedpro_1_1pedlib_1_1pedtask_1_1pedtask.html" title=" " alt="" coords="123,392,325,417"/>
+<area shape="rect" id="node1" title=" " alt="" coords="164,84,284,109"/>
+<area shape="rect" id="node2" href="$classpyedpro_1_1pedlib_1_1pedcanv_1_1Canvas.html" title=" " alt="" coords="397,5,600,31"/>
+<area shape="rect" id="node3" href="$classpyedpro_1_1pedlib_1_1peddoc_1_1pedDoc.html" title=" " alt="" coords="401,153,597,179"/>
+<area shape="rect" id="node4" href="$classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html" title=" " alt="" coords="424,203,573,243"/>
+<area shape="rect" id="node5" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Led.html" title=" " alt="" coords="403,55,595,80"/>
+<area shape="rect" id="node6" href="$classpyedpro_1_1pycommon_1_1pggui_1_1MenuButt.html" title=" " alt="" coords="385,104,612,129"/>
+<area shape="rect" id="node7" title=" " alt="" coords="5,311,63,336"/>
+<area shape="rect" id="node8" href="$classpyedpro_1_1Unbuffered.html" title=" " alt="" coords="157,281,291,307"/>
+<area shape="rect" id="node9" href="$classpyedpro_1_1pedlib_1_1pedconfig_1_1Unbuffered.html" title=" " alt="" coords="141,331,307,371"/>
+<area shape="rect" id="node10" href="$classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw.html" title=" " alt="" coords="120,232,328,257"/>
+<area shape="rect" id="node11" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1DrawObj.html" title=" " alt="" coords="121,396,327,421"/>
+<area shape="rect" id="node19" href="$classpyedpro_1_1pedlib_1_1pedxtnd_1_1pedxtnd.html" title=" " alt="" coords="124,133,324,159"/>
+<area shape="rect" id="node20" href="$classpyedpro_1_1pycommon_1_1sutil_1_1Unbuffered.html" title=" " alt="" coords="111,445,337,471"/>
+<area shape="rect" id="node12" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1CircObj.html" title=" " alt="" coords="399,268,598,293"/>
+<area shape="rect" id="node13" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1CurveObj.html" title=" " alt="" coords="394,317,603,343"/>
+<area shape="rect" id="node14" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1LineObj.html" title=" " alt="" coords="399,367,599,392"/>
+<area shape="rect" id="node15" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1RectObj.html" title=" " alt="" coords="397,416,600,441"/>
+<area shape="rect" id="node16" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1RombObj.html" title=" " alt="" coords="394,465,603,491"/>
+<area shape="rect" id="node17" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1StrokeObj.html" title=" " alt="" coords="392,515,605,540"/>
+<area shape="rect" id="node18" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1TextObj.html" title=" " alt="" coords="399,564,599,589"/>
+<area shape="rect" id="node21" href="$classpyedpro_1_1pedlib_1_1pedtask_1_1pedtask.html" title=" " alt="" coords="123,183,325,208"/>
 </map>

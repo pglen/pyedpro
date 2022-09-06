@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['packbin_0',['packbin',['../classpycommon_1_1pypacker_1_1packbin.html',1,'pycommon.pypacker.packbin'],['../classpyedpro_1_1pycommon_1_1pypacker_1_1packbin.html',1,'pyedpro.pycommon.pypacker.packbin']]],
+  ['packbin_0',['packbin',['../classpyedpro_1_1pycommon_1_1pypacker_1_1packbin.html',1,'pyedpro::pycommon::pypacker']]],
   ['pangoview_1',['PangoView',['../classpyedpro_1_1panglib_1_1pangdisp_1_1PangoView.html',1,'pyedpro::panglib::pangdisp']]],
   ['parse_2',['Parse',['../classpyedpro_1_1panglib_1_1parser_1_1Parse.html',1,'pyedpro.panglib.parser.Parse'],['../classpyedpro_1_1parser_1_1Parse.html',1,'pyedpro.parser.Parse'],['../classpyedpro_1_1pedlib_1_1parser_1_1Parse.html',1,'pyedpro.pedlib.parser.Parse']]],
   ['peddoc_3',['pedDoc',['../classpyedpro_1_1pedlib_1_1peddoc_1_1pedDoc.html',1,'pyedpro.pedlib.peddoc.pedDoc'],['../classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html',1,'pyedpro.pedlib.peddoc_diff.pedDoc']]],
@@ -13,6 +13,6 @@ var searchData=
   ['pgnotes_10',['pgnotes',['../classpyedpro_1_1pedlib_1_1pednotes_1_1pgnotes.html',1,'pyedpro::pedlib::pednotes']]],
   ['pgoline_11',['pgoline',['../classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline.html',1,'pyedpro::pedlib::pedoline']]],
   ['pgweb_12',['pgweb',['../classpyedpro_1_1pedlib_1_1pedweb_1_1pgweb.html',1,'pyedpro::pedlib::pedweb']]],
-  ['pgwebw_13',['pgwebw',['../classpycommon_1_1pgwkit_1_1pgwebw.html',1,'pycommon.pgwkit.pgwebw'],['../classpyedpro_1_1pycommon_1_1pgwkit_1_1pgwebw.html',1,'pyedpro.pycommon.pgwkit.pgwebw']]],
+  ['pgwebw_13',['pgwebw',['../classpyedpro_1_1pycommon_1_1pgwkit_1_1pgwebw.html',1,'pyedpro::pycommon::pgwkit']]],
   ['pvg_14',['pvg',['../classpangview_1_1pvg.html',1,'pangview.pvg'],['../classpyedpro_1_1pangview_1_1pvg.html',1,'pyedpro.pangview.pvg']]]
 ];
