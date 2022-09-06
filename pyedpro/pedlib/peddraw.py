@@ -125,14 +125,21 @@ class peddraw(object):
     # --------------------------------------------------------------------
     # This is a response to the draw event request
 
-    def draw_text(self, gc, x, y, text, fg_col = None, bg_col = None, esc = None):
+    def _draw_text(self, gc, x, y, text, fg_col = None, bg_col = None, esc = None):
 
-        #print( "draw_text",  self.xpos, self.ypos, self.caret, x/self.cxx, y/self.cyy)
+        #print( "_draw_text",  self.xpos, self.ypos, self.caret, x/self.cxx, y/self.cyy)
 
-        x +=  self.strip                # Leave space on thre front
+        #x = int(x)
+        ## if below zero, shift
+        #if not esc:
+        #    if x < 0:
+        #        text = text[-x:]
+        #        x = 0
+
+        x +=  self.strip                # Leave space on the front
         if y/self.cyy == self.caret[1]:
-            #print( "draw_text: '%s' len=%d x=%d y=%d" % (text, len(text), x, y) )
-            #print( "draw_text: len=%d x=%d y=%d" % (len(text), x, y) )
+            #print( "_draw_text: '%s' len=%d x=%d y=%d" % (text, len(text), x, y) )
+            #print( "_draw_text: len=%d x=%d y=%d" % (len(text), x, y) )
             pass
 
         if not esc:
@@ -258,8 +265,9 @@ class peddraw(object):
             while cnt <  self.xlen:
                 if cnt >= yssel and cnt <= yesel:
 
+                    #line2 = self.text[cnt][self.xpos:]
                     line2 = self.text[cnt]
-                    line  = untab_str(self.text[cnt])
+                    line  = untab_str(line2)
 
                     xssel2 = calc_tabs(line2, xssel, self.tabstop)
                     xesel2 = calc_tabs(line2, xesel, self.tabstop)
@@ -281,14 +289,34 @@ class peddraw(object):
                             frag = line[:]
 
                     #dss = draw_start #-= self.xpos
-                    dss = calc_tabs(line2, draw_start, self.tabstop)
-                    dss -= self.xpos
-                    self.draw_text(gc, dss * self.cxx, yy, \
+                    dss = calc_tabs(line2, draw_start, self.tabstop) - self.xpos
+                    if dss < 0:
+                          frag = frag[-dss:]
+                          dss = 0
+                    self._draw_text(gc, dss * self.cxx, yy, \
                                       frag, self.fgcolor, bgcol)
-
                 cnt = cnt + 1
                 yy += self.cyy
                 if yy > self.hhh:
+                    break
+
+    def _syntax(self, cr, keyw, xx, yy):
+        line =  untab_str(self.text[xx])
+        for kw in keyw:
+            ff = 0          # SOL
+            while True:
+                ff = line.find(kw, ff)
+                if ff >= 0:
+                    line3 = line[ff:ff+len(kw)]
+                    ff2 = calc_tabs(line, ff, self.tabstop) - self.xpos
+                    if ff2 < 0:
+                        line3 = line3[-ff2:]
+                        ff2 = 0
+                    self._draw_text(cr, ff2 * self.cxx, yy, line3,
+                                self.kwcolor, None)
+                    ff += len(kw)
+                    #break
+                else:
                     break
 
     # --------------------------------------------------------------------
@@ -298,8 +326,50 @@ class peddraw(object):
 
         if not self.colflag:
             return
+        try:
+            pedplug.syntax(self, cr)
+        except:
+            print("plugin failed", sys.exc_info())
 
-        pedplug.syntax(self, cr)
+        # Paint syntax colors
+        yy = 0;  xx = int(self.ypos)
+        while xx <  self.xlen:
+            self._syntax(cr, keywords, xx, yy)
+            xx = xx + 1
+            yy += self.cyy
+            if yy > self.hhh:
+                break
+
+    def draw_clsyntax(self, cr):
+
+        if not self.colflag:
+            return
+        try:
+            pedplug.clsyntax(self, cr)
+        except:
+            print("plugin failed", sys.exc_info())
+
+        # Paint syntax colors
+        yy = 0;  xx = int(self.ypos)
+        while xx <  self.xlen:
+            self._syntax(cr, clwords, xx, yy)
+            xx = xx + 1
+            yy += self.cyy
+            if yy > self.hhh:
+                break
+
+    # --------------------------------------------------------------------
+    # Color keywords. Very primitive coloring, a compromise for speed
+
+    def draw_clsyntax2(self, cr):
+
+        if not self.colflag:
+            return
+
+        try:
+            pedplug.clsyntax(self, cr)
+        except:
+            print("plugin failed", sys.exc_info())
 
         # Paint syntax colors
         xx = 0; yy = 0;
@@ -307,36 +377,27 @@ class peddraw(object):
         while cnt <  self.xlen:
             #line = self.text[cnt]
             line =  untab_str(self.text[cnt])
-            for kw in keywords:
-                ff = 0          # SOL
-                while True:
-                    ff = line.find(kw, ff)
-                    if ff >= 0:
-                        ff2 = calc_tabs(line, ff, self.tabstop) - self.xpos
-                        self.draw_text(cr, ff2 * self.cxx, yy, line[ff:ff+len(kw)],
-                            self.kwcolor, None)
-                        ff += len(kw)
-                        #break
-                    else:
-                        break
-
             for kw in clwords:
                 cc = 0      # SOL
                 while True:
                     cc = line.find(kw, cc)
                     if cc >= 0:
+                        line3 = line[cc:cc+len(kw)]
                         cc2 = calc_tabs(line, cc, self.tabstop) - self.xpos
-                        self.draw_text(cr, cc2 * self.cxx, yy, line[cc:cc+len(kw)],
-                            self.clcolor, None)
+                        if cc2 < 0:
+                            line3 = line3[-cc2:]
+                            cc2 = 0
+                        self._draw_text(cr, cc2 * self.cxx, yy, line3,
+                                          self.clcolor, None)
                         cc += len(kw)
                     else:
                         break
-
             cnt = cnt + 1
             yy += self.cyy
             if yy > self.hhh:
                 break
 
+    # --------------------------------------------------------------------
     # Draw comments. Most files have # comments, so draw it
     # In C and C++ we draw the // comments, Luckily
     # preprocessor has hash, default to drawing it as before.
@@ -351,29 +412,29 @@ class peddraw(object):
         xx = 0; yy = 0; ln = 0;
         cnt = int(self.ypos)
         while cnt <  self.xlen:
-            #line = self.text[cnt]
-            line =  untab_str(self.text[cnt])  #.replace("\r", " ")
+            line =  untab_str(self.text[cnt])
 
             # Comments: # or // and "
-            # This gives us PY comments, C comments and C defines
+            # This gives us PY comments, C comments and ASM comments
 
-            ccc = line.find("#");
-            if ccc < 0:
+            if self.ext == ".c" or self.ext == ".cpp":
                 ccc = line.find("//");
-
-            if ccc < 0:
-                if self.ext == ".asm":
-                    ccc = line.find(";");
+            elif self.ext == ".asm" or self.ext == ".inc":
+                ccc = line.find(";");
+            else:
+                ccc = line.find("#");
 
             # Quotes before?
             cccc = line.find('"')
 
-            # If hash does not preceed quote:
+            # If hash does preceed quote:
             if ccc >= 0 and (cccc > ccc or cccc == -1):
-                ccc2 = calc_tabs(line, ccc, self.tabstop)
-                ccc2 -= self.xpos
-                line2 = line[ccc:]
-                self.draw_text(cr, ccc2 * self.cxx, yy,
+                line2 = line[ccc:]  #+self.xpos:]
+                ff2 = calc_tabs(line, ccc, self.tabstop) - self.xpos
+                if ff2 < 0:
+                    line2 = line2[-ff2:]
+                    ff2 = 0
+                self._draw_text(cr, ff2 * self.cxx, yy,
                                     line2, self.cocolor, None)
             else:
                 qqq = 0
@@ -394,7 +455,7 @@ class peddraw(object):
                             qqq2 = calc_tabs(line, qqq, self.tabstop)
                             line2 = line[qqq:qqqq]
                             line3 = line2[self.xpos:]
-                            self.draw_text(cr, qqq2 * self.cxx,
+                            self._draw_text(cr, qqq2 * self.cxx,
                                          yy, line3, self.stcolor, None)
                             qqq = qqqq + 1
                         else:
@@ -406,7 +467,9 @@ class peddraw(object):
             if yy > self.hhh:
                 break
 
+    # --------------------------------------------------------------------
     # Underline spelling errors
+
     def draw_spellerr(self, cr):
         cr.set_source_rgba(255, 0, 0)
         yyy = self.ypos + self.get_height() / self.cyy
@@ -415,14 +478,22 @@ class peddraw(object):
             if ybb >= self.ypos and ybb < yyy:
                 ybb -= self.ypos;
                 xaa -= self.xpos; lcc -= self.xpos;
+                if xaa < 0:
+                    xaa = 0
+
                 self.draw_wiggle(cr,
                      xaa * self.cxx, ybb * self.cyy + self.cyy,
                             lcc * self.cxx, ybb * self.cyy + self.cyy)
 
+    # --------------------------------------------------------------------
     # Paint main text
+
     def draw_maintext(self, cr):
 
-        pedplug.display(self, cr)
+        try:
+            pedplug.display(self, cr)
+        except:
+            print("plugin failed", sys.exc_info())
 
         xx = 0; yy = 0;
         cnt = int(self.ypos)
@@ -434,11 +505,15 @@ class peddraw(object):
                text3 = untab_str(self.text[cnt], self.tabstop)
 
             #print( "'" + text3 + "'")
+            # + int(self.strip // self.cxx
             text4 = text3[self.xpos:]
-            dx, dy = self.draw_text(cr, xx, yy, text4, self.fgcolor)
 
+            # draw main
+            dx, dy = self._draw_text(cr, xx, yy, text4, self.fgcolor)
+
+            # Draw numeric left
             if self.strip:
-                self.draw_text(cr, -self.strip + 2, yy, "%d" % cnt, self.fgcolorro, esc=True)
+                self._draw_text(cr, -self.strip + 2, yy, "%d" % cnt, self.fgcolorro, esc=True)
 
             cnt += 1
             #yy += dy
@@ -446,6 +521,5 @@ class peddraw(object):
 
             if yy > self.hhh:
                 break
-
 
 # EOF

@@ -36,7 +36,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyedpro",
-    version="2.9.1",
+    version="2.9.4",
     author="Peter Glen",
     author_email="peterglen99@gmail.com",
     description="High power editor in python.",
@@ -55,17 +55,16 @@ setuptools.setup(
     #str(['pedlib', 'panglib', 'pycommon'])),
     scripts = ['pyedpro.py', 'pangview.py'],
 
-    package_dir = {'pedlib': 'pedlib', 'panglib': 'panglib',
-                    'pycommon': 'pycommon',
+    package_dir = {
+                    'pedlib': 'pedlib',
                     'pedlib/images': 'pedlib/images',
-                    'pedlib/data' : 'pedlib/data', },
+                    'pedlib/plugins': 'pedlib/plugins',
+                    'pedlib/data' : 'pedlib/data',
+                    'pycommon': 'pycommon',
+                    'panglib': 'panglib',
+                   },
 
     package_py = {
-    #"data":
-    #                [
-    #                'pedlib/data/KEYS',
-    #                'pedlib/data/KEYS.TXT',
-    #                ],
                     '':
                         ['pedlib/images/pyedpro.png',
                          'pedlib/images/pyedpro_sub.png',
@@ -79,14 +78,14 @@ setuptools.setup(
                             'pedlib/images/pedicon.png',
                             'pedlib/images/pyedpro_sub.png' ]),
                             ('/usr/share/applications', ['pyedpro.desktop']),
-
-                   # ("data",  ["pedlib/data/KEYS", "pedlib/data/KEYS.TXT",
-                   #           "pedlib/data/QHELP", "pedlib/data/spell.txt"]),
                    ],
 
     python_requires='>=3',
-    entry_points='''
-        [console_scripts]
-        pyedpro=pyedpro.pyedpro:mainstart
-    ''',
+    entry_points={
+        'console_scripts': [ "pyedpro=pyedpro:mainfunc",
+            "pangview=pangview:mainfunc",
+            ],
+    },
 )
+
+# EOF

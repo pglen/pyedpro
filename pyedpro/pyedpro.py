@@ -174,7 +174,7 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "2.9.1"
+VERSION     = "2.9.4"
 BUILDDATE   = "Fri 02.Sep.2022"
 PROGNAME    = "PyEdPro"
 
@@ -437,12 +437,11 @@ def mainstart(name = "", args = "", oldpath = ""):
         print("Started", PROGNAME, "in",
                     pedconfig.conf.orig_dir, "from",
                         pedconfig.conf.orig_path)
-
     # Init plugins
     try:
         pedplug.load_plugins()
     except:
-        print("Cannot load plugins")
+        print("Cannot load plugins", sys.exc_info())
 
     run_main(pname, args[0:])
 
@@ -451,7 +450,7 @@ def mainstart(name = "", args = "", oldpath = ""):
 
 # ------------------------------------------------------------------------
 
-if __name__ == '__main__':
+def mainfunc():
 
     # Create log window
     sys.stdout = pedlog.fake_stdout(sys.stdout)
@@ -464,5 +463,10 @@ if __name__ == '__main__':
 
     #print("in main", sys.argv[0])
     mainstart("", [], "")
+
+# Setup needed it for scripts
+
+if __name__ == '__main__':
+    mainfunc()
 
 # EOF

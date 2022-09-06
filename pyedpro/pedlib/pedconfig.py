@@ -52,7 +52,12 @@ class Conf():
         self.sess_data = os.path.expanduser("~/.pyedpro/sess")
         self.temp_dir = os.path.expanduser("~/.pyedpro/tmp")
         self.tts_dir = os.path.expanduser("~/.pyedpro/tts")
-        self.plugins_dir = os.path.expanduser("~/.pyedpro/plugins")
+        self.plugins_dir  = os.path.expanduser("~/.pyedpro/plugins")
+
+        # Set parent as module include path
+        current = os.path.dirname(os.path.realpath(__file__))
+        self.plugins_dir2 = os.path.expanduser(current + "/plugins")
+        #print("plugins_dir2", self.plugins_dir2)
 
         # The files
         self.sql_data = os.path.expanduser("~/.pyedpro/sql_data")

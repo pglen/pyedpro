@@ -555,6 +555,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw):
             # Do the text drawing in stages ...
             self.draw_selection(cr)
             self.draw_syntax(cr)
+            self.draw_clsyntax(cr)
             self.draw_comments(cr)
             self.draw_spellerr(cr)
 

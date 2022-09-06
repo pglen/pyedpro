@@ -7,7 +7,7 @@ configurable, extendable. Goodies like macro recording / playback, spell check,
 column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
- This project is a successor of pyedit, after porting it to GTK3. PyEdPro
+   This project is a successor of pyedit, after porting it to GTK3. PyEdPro
  will run anywhere PyGObject can run.
 
   Working and tested platforms currently are:
@@ -20,6 +20,8 @@ that I use every day.
 
 [See Doxygen generated Documentation on GitHub Pages](https://pglen.github.io/pyedpro/html/)
 
+### Platforms
+
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
 and the Raspberry-Pi. It behaves consistently on all these platforms,
 it is an absolute joy to edit in a different platform without the learning
@@ -30,20 +32,25 @@ all your workspaces, PyEdPro is the one.
 was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the
 Linux version did. No asynchronous  anything, segmentation faults everywhere. (which python
 is not suppose to have)
-  The font rendering was messed up, but got fixed by replacing Pango's
+  The font rendering was messed up, but I got fixed by replacing Pango's
 get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues]
-Some asyn functions like the function updater is disabled, but it can be done
-manually. (right click on doc -> rescan) All in all the Mac's PyGobject is not worth
-the time, stopped all Mac M1 related efforts.
+  Some async functions like the function updater is disabled, but it can be done
+manually. (right click on doc -> rescan) All in all the Mac's PyGobject is not a great
+subsystem, hopefully time will be kind here.
+
+** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing
+as Glib the timer functions bombed. Great hardware - bad PyGobject support. However
+if an editor with familiar key op is needed -- most of it works with no destructive errors.
 
 ### New:
 
   (this is extracted, use git log for up-to-date information)
 
+    Sat 03.Sep.2022 -- pubilshed on pip
     Thu 21.Apr.2022 -- release issued
-    Wed 16.Mar.2022 -- dialog for read only file, export notes lots of others
+    Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
-    Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - No more mac support
+    Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
     Tue 30.Mar.2021 -- added windows installation executable
     Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
 
@@ -54,7 +61,7 @@ Added drag / drop source / target. New keystroke combo for keyboards
 the file body, an select the corresponding menu item.
 
 Implemented markdown preview. Right click ... menu
-Implemented M4 preview. The files are pulled in from the current directory,
+Implemented M4 preview. The files are pulled in from the current directory (of the macro),
 and expanded with the m4 macro processor. The results than are previewed
 in an html window. (Yes, head and footer are now one file for the whole site,
 the way it should be) Right click ... and look for: Filter to M4
@@ -63,7 +70,7 @@ the way it should be) Right click ... and look for: Filter to M4
 The dropped content is inserted where the editor's caret is. (not where the cursor is)
 The caret is moved to the end of insertion.
 
- This (above) list is an extract, please see git log for complete history.
+ This (above / below) list is an extract, please see git log for complete history.
 
   PyEdPro now has buffer diff. Right clicking on the file's tab header presents a menu.
 One may select the diff source, the diff destination (or target). When the source and
@@ -76,7 +83,7 @@ Please note, that this diff is somewhat simple, as it marks only --del --ins poi
 Again, its simplicity yields benefits that are surprizing. For instance; hand
 merging small changes become more visual. And yes, it is no substitute for a real diff.
 
- The diff buffer (greyed) is read only. To refresh the diff, select
+ The diff buffer (grayed) is read only. To refresh the diff, select
 from the tab's right click menu 'Re-diff buffers'. The diff-ing can be stopped from the
 same right click menu, by selecting 'Stop Diffing'. The diff algorithm is crude, but
 the simplicity has its advantages. Speed and predictability.
@@ -120,8 +127,8 @@ Devdocs/Devhelp/Zeal need to be installed for these to function.
 
   On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
-(to see the caller and the callee at once) These panes can be hidden with the mouse by
-dragging on their handle, or by the key combination Alt-Q (Shift-Alt-Q for
+(to see the caller and the called [function] at once) These panes can be hidden with
+the mouse by dragging on their handle, or by the key combination Alt-Q (Shift-Alt-Q for
 the left pane) The first file window's settings are saved for the next startup.
 
   PyEdPro remembers a lot about the editing session. Loaded files, cursor positions,
@@ -141,14 +148,15 @@ The way to find the file's hash is to switch buffers and the current buffer's ha
 is displayed on the status line.
 
   Starting PyEdPro with no command line arguments will put you back to the
-previous session, exactly where you left off.
+previous session, exactly where you left off. Files, positions undo-s and all.
 
  The editor will work on all PyGobject platforms, and can open UNIX and Windows files
 transparently. It will save the file as the current platform's native CRLF
-convention dictates.
+convention dictates. CRLF setting can also be forced.
 
   Developer's note: in order to make PyEdPro multi platform, we save
 the configuration info into a SQLite database in the ~/.PyEdPro directory.
+SqliteBrowser may be a tool to see what is going on.
 
 (~/ user's home directory)
 
@@ -200,5 +208,4 @@ Screen from Mac:
 
 License:    Open Source, FreeWare
 
-
-
+// EOF
