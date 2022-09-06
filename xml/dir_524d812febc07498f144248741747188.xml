@@ -8,7 +8,7 @@
     <innerdir refid="dir_6d0dbc010fe36665ab0e81188b9adfd2">pyedpro/pedlib</innerdir>
     <innerdir refid="dir_4b5851cf2c895d7724ecf52dda076fe9">pyedpro/pycommon</innerdir>
     <innerdir refid="dir_f28ddfe65ccbaf9a27af56442eab41e4">pyedpro/study</innerdir>
-    <innerfile refid="pyedpro_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="____init_____8py">__init__.py</innerfile>
     <innerfile refid="filter_8py">filter.py</innerfile>
     <innerfile refid="pyedpro_2install_8py">install.py</innerfile>
     <innerfile refid="keybind_8py">keybind.py</innerfile>

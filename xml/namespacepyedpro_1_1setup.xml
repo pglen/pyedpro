@@ -264,7 +264,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="63" column="1" bodyfile="pyedpro/setup.py" bodystart="63" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="67" column="1" bodyfile="pyedpro/setup.py" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1aec61dfef5d69626399d9633eec2a9989" prot="public" static="no" mutable="no">
         <type></type>
@@ -277,7 +277,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="77" column="1" bodyfile="pyedpro/setup.py" bodystart="77" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="76" column="1" bodyfile="pyedpro/setup.py" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1a7211577c3c33985686e6bdc9aedb61b5" prot="public" static="no" mutable="no">
         <type></type>
@@ -290,7 +290,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="87" column="1" bodyfile="pyedpro/setup.py" bodystart="87" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="83" column="1" bodyfile="pyedpro/setup.py" bodystart="83" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacepyedpro_1_1setup_1aeed13ca5ec1161457dc0d0c20522c434" prot="public" static="no" mutable="no">
         <type></type>
@@ -303,7 +303,7 @@ out for Python and  &apos;C&apos;. The spell checker is executed on live text. (
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/setup.py" line="88" column="1" bodyfile="pyedpro/setup.py" bodystart="88" bodyend="-1"/>
+        <location file="pyedpro/setup.py" line="84" column="1" bodyfile="pyedpro/setup.py" bodystart="84" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -1,0 +1,14 @@
+deb http://archive.ubuntu.com/ubuntu hirsute main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu hirsute-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu hirsute-updates main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ jammy main restricted universe
+deb http://us.archive.ubuntu.com/ubuntu/ jammy multiverse
+deb http://security.ubuntu.com/ubuntu/ jammy-security universe multiverse restricted main
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-updates universe main restricted multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ jammy-backports universe main restricted multiverse
+deb https://ppa.launchpadcontent.net/obsproject/obs-studio/ubuntu/ jammy main
+deb [signed-by=/usr/share/keyrings/neo4j.gpg] https://debian.neo4j.com stable 4.1
+deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main
+deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main
+deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main
+deb https://ppa.launchpadcontent.net/peterglen/ppa/ubuntu/ jammy main

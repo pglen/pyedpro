@@ -6,7 +6,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pggui.py" line="816" column="1" bodyfile="pycommon/pggui.py" bodystart="816" bodyend="819"/>
+    <location file="pyedpro/build/lib/pycommon/pggui.py" line="816" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="816" bodyend="819"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

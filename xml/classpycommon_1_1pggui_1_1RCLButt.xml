@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pggui_1_1RCLButt" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pggui::RCLButt</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.Button</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.Button</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1RCLButt_1a66164bfea533c26d546b5f3e830144dc" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="1239" column="1" bodyfile="pycommon/pggui.py" bodystart="1239" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="1239" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="1239" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1RCLButt_1a2cea669dc022cf223d9661cbc4c78611" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,122 +28,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="1240" column="1" bodyfile="pycommon/pggui.py" bodystart="1240" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="1240" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="1240" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1RCLButt_1ab760d6fc83f1f4f1c2c6a33da39aad8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.RCLButt.__init__</definition>
-        <argsstring>(self, labelx, callme=None, rcallme=None, space=2, ttip=None)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>labelx</type>
-          <defname>labelx</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pggui_1_1RCLButt_1a2cea669dc022cf223d9661cbc4c78611" kindref="member">callme</ref></type>
-          <defname>callme</defname>
-          <defval>None</defval>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pggui_1_1RCLButt_1a66164bfea533c26d546b5f3e830144dc" kindref="member">rcallme</ref></type>
-          <defname>rcallme</defname>
-          <defval>None</defval>
-        </param>
-        <param>
-          <type>space</type>
-          <defname>space</defname>
-          <defval>2</defval>
-        </param>
-        <param>
-          <type>ttip</type>
-          <defname>ttip</defname>
-          <defval>None</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="1236" column="1" bodyfile="pycommon/pggui.py" bodystart="1236" bodyend="1255"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1RCLButt_1a0c960cb31e3bedcd65b57ff1b7c0a68c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.RCLButt.draw</definition>
-        <argsstring>(self, area, cr)</argsstring>
-        <name>draw</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>area</type>
-          <defname>area</defname>
-        </param>
-        <param>
-          <type>cr</type>
-          <defname>cr</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="1256" column="1" bodyfile="pycommon/pggui.py" bodystart="1256" bodyend="1271"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1RCLButt_1ab122670bfbbfa93d7c760c04d754818b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.RCLButt.pressed</definition>
-        <argsstring>(self, arg1, event)</argsstring>
-        <name>pressed</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>arg1</type>
-          <defname>arg1</defname>
-        </param>
-        <param>
-          <type>event</type>
-          <defname>event</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="1272" column="1" bodyfile="pycommon/pggui.py" bodystart="1272" bodyend="1286"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1RCLButt_1a49898a4ddfa7a4a2f957b9bdc18cf888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.RCLButt.clicked</definition>
-        <argsstring>(self, arg1)</argsstring>
-        <name>clicked</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>arg1</type>
-          <defname>arg1</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="1287" column="1" bodyfile="pycommon/pggui.py" bodystart="1287" bodyend="1295"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pggui_1_1RCLButt_1ab760d6fc83f1f4f1c2c6a33da39aad8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pggui.RCLButt.__init__</definition>
@@ -266,15 +153,10 @@
       <node id="2">
         <label>Gtk::Button</label>
       </node>
-      <node id="3">
-        <label>Gtk.Button</label>
-      </node>
       <node id="1">
         <label>pycommon.pggui.RCLButt</label>
         <link refid="classpycommon_1_1pggui_1_1RCLButt"/>
         <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
@@ -282,28 +164,19 @@
       <node id="2">
         <label>Gtk::Button</label>
       </node>
-      <node id="3">
-        <label>Gtk.Button</label>
-      </node>
       <node id="1">
         <label>pycommon.pggui.RCLButt</label>
         <link refid="classpycommon_1_1pggui_1_1RCLButt"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pggui.py" line="1234" column="1" bodyfile="pycommon/pggui.py" bodystart="1234" bodyend="1296"/>
+    <location file="pyedpro/build/lib/pycommon/pggui.py" line="1234" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="1234" bodyend="1296"/>
     <listofallmembers>
-      <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab760d6fc83f1f4f1c2c6a33da39aad8d" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab760d6fc83f1f4f1c2c6a33da39aad8d" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pggui_1_1RCLButt_1a2cea669dc022cf223d9661cbc4c78611" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>callme</name></member>
       <member refid="classpycommon_1_1pggui_1_1RCLButt_1a49898a4ddfa7a4a2f957b9bdc18cf888" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>clicked</name></member>
-      <member refid="classpycommon_1_1pggui_1_1RCLButt_1a49898a4ddfa7a4a2f957b9bdc18cf888" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>clicked</name></member>
       <member refid="classpycommon_1_1pggui_1_1RCLButt_1a0c960cb31e3bedcd65b57ff1b7c0a68c" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>draw</name></member>
-      <member refid="classpycommon_1_1pggui_1_1RCLButt_1a0c960cb31e3bedcd65b57ff1b7c0a68c" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>draw</name></member>
-      <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab122670bfbbfa93d7c760c04d754818b" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>pressed</name></member>
       <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab122670bfbbfa93d7c760c04d754818b" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>pressed</name></member>
       <member refid="classpycommon_1_1pggui_1_1RCLButt_1a66164bfea533c26d546b5f3e830144dc" prot="public" virt="non-virtual"><scope>pycommon::pggui::RCLButt</scope><name>rcallme</name></member>
     </listofallmembers>

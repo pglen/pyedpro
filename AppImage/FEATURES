@@ -1,0 +1,41 @@
+                          List of Special Features and News
+
+   o PyEdPro runs wherever pyGObject is available. (Linux, Mac, Win, Rpi)
+   o Fast and clean enough for really large files
+   o Easily customizable
+   o Macro Record / Play
+   o Comfortable key presets for Linux / Windows / Mac users
+   o Multi window Editing
+   o Regex and multi file search / replace
+   o User Interface remembers last settings, last files, last edit point
+   o Interactive status bar to let you know what is happening
+   o Spell check, code spell check, text spell check
+   o Spell suggestion  (right click)
+   o Code parsing, function window, lo-val vars window
+   o Accounting functions. Time of open / close file is logged.
+   o Syntax coloring (primitive coloring for speed)
+   o Configurable
+   o Easy to extend, as it is written in Python
+   o Undo / Redo that survives app restart
+   o Long line wrapper for quick conversion
+   o Directory keyword search, loading files by keyword
+   o Diff function with source -> target and diff window
+   o In editor terminal start function
+   o Execute arbitrary programs with hot key (configurable)
+   o Interactive status line with timeout (always tells what has happened)
+   o Lots lots more ...
+
+ News:
+
+    Added directory search file load. Loads all matching files. The global buffer
+  search / replace will operate on those files. Invaluable for project wide
+  variable name changes, with active undo on every change.
+
+    Added directory search. Looks for strings and displays a summary of matches
+  in the current directory. Selecting a file will load it. Most useful for
+  development.
+
+   Extended PyEdPro to create a work log. It now saves a work log and timestamps
+  of file open / close / write operations. Also session start, session exit.
+
+// EOF

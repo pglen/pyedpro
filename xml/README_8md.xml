@@ -16,7 +16,7 @@
 <codeline><highlight class="normal">column<sp/>select,<sp/>multiple<sp/>clipboards,<sp/>unlimited<sp/>undo<sp/>...<sp/>makes<sp/>it<sp/>an<sp/>editor</highlight></codeline>
 <codeline><highlight class="normal">that<sp/>I<sp/>use<sp/>every<sp/>day.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/>This<sp/>project<sp/>is<sp/>a<sp/>successor<sp/>of<sp/>pyedit,<sp/>after<sp/>porting<sp/>it<sp/>to<sp/>GTK3.<sp/>PyEdPro</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>This<sp/>project<sp/>is<sp/>a<sp/>successor<sp/>of<sp/>pyedit,<sp/>after<sp/>porting<sp/>it<sp/>to<sp/>GTK3.<sp/>PyEdPro</highlight></codeline>
 <codeline><highlight class="normal"><sp/>will<sp/>run<sp/>anywhere<sp/>PyGObject<sp/>can<sp/>run.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>Working<sp/>and<sp/>tested<sp/>platforms<sp/>currently<sp/>are:</highlight></codeline>
@@ -29,6 +29,8 @@
 <codeline></codeline>
 <codeline><highlight class="normal">[See<sp/>Doxygen<sp/>generated<sp/>Documentation<sp/>on<sp/>GitHub<sp/>Pages](https://pglen.github.io/pyedpro/html/)</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Platforms</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>I<sp/>mainly<sp/>run<sp/>it<sp/>on<sp/>Ubuntu,<sp/>and<sp/>in<sp/>Win32<sp/>/<sp/>MSYS2,<sp/>some<sp/>Fedora,<sp/>Windows<sp/>10,</highlight></codeline>
 <codeline><highlight class="normal">and<sp/>the<sp/>Raspberry-Pi.<sp/>It<sp/>behaves<sp/>consistently<sp/>on<sp/>all<sp/>these<sp/>platforms,</highlight></codeline>
 <codeline><highlight class="normal">it<sp/>is<sp/>an<sp/>absolute<sp/>joy<sp/>to<sp/>edit<sp/>in<sp/>a<sp/>different<sp/>platform<sp/>without<sp/>the<sp/>learning</highlight></codeline>
@@ -39,20 +41,25 @@
 <codeline><highlight class="normal">was<sp/>not<sp/>a<sp/>trivial<sp/>exercise,<sp/>as<sp/>the<sp/>Mac<sp/>PygGOject<sp/>did<sp/>not<sp/>do<sp/>half<sp/>of<sp/>the<sp/>stuff<sp/>as<sp/>the</highlight></codeline>
 <codeline><highlight class="normal">Linux<sp/>version<sp/>did.<sp/>No<sp/>asynchronous<sp/><sp/>anything,<sp/>segmentation<sp/>faults<sp/>everywhere.<sp/>(which<sp/>python</highlight></codeline>
 <codeline><highlight class="normal">is<sp/>not<sp/>suppose<sp/>to<sp/>have)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>The<sp/>font<sp/>rendering<sp/>was<sp/>messed<sp/>up,<sp/>but<sp/>got<sp/>fixed<sp/>by<sp/>replacing<sp/>Pango&apos;s</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>The<sp/>font<sp/>rendering<sp/>was<sp/>messed<sp/>up,<sp/>but<sp/>I<sp/>got<sp/>fixed<sp/>by<sp/>replacing<sp/>Pango&apos;s</highlight></codeline>
 <codeline><highlight class="normal">get_pixel_size()<sp/>with<sp/>get_size()<sp/>/<sp/>PANGO_UNIT.<sp/>[Suspect<sp/>int<sp/>vs<sp/>float<sp/>accuracy<sp/>issues]</highlight></codeline>
-<codeline><highlight class="normal">Some<sp/>asyn<sp/>functions<sp/>like<sp/>the<sp/>function<sp/>updater<sp/>is<sp/>disabled,<sp/>but<sp/>it<sp/>can<sp/>be<sp/>done</highlight></codeline>
-<codeline><highlight class="normal">manually.<sp/>(right<sp/>click<sp/>on<sp/>doc<sp/>-&gt;<sp/>rescan)<sp/>All<sp/>in<sp/>all<sp/>the<sp/>Mac&apos;s<sp/>PyGobject<sp/>is<sp/>not<sp/>worth</highlight></codeline>
-<codeline><highlight class="normal">the<sp/>time,<sp/>stopped<sp/>all<sp/>Mac<sp/>M1<sp/>related<sp/>efforts.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Some<sp/>async<sp/>functions<sp/>like<sp/>the<sp/>function<sp/>updater<sp/>is<sp/>disabled,<sp/>but<sp/>it<sp/>can<sp/>be<sp/>done</highlight></codeline>
+<codeline><highlight class="normal">manually.<sp/>(right<sp/>click<sp/>on<sp/>doc<sp/>-&gt;<sp/>rescan)<sp/>All<sp/>in<sp/>all<sp/>the<sp/>Mac&apos;s<sp/>PyGobject<sp/>is<sp/>not<sp/>a<sp/>great</highlight></codeline>
+<codeline><highlight class="normal">subsystem,<sp/>hopefully<sp/>time<sp/>will<sp/>be<sp/>kind<sp/>here.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**<sp/>tried<sp/>the<sp/>M1<sp/>...<sp/>Sun<sp/>03.Apr.2022<sp/>most<sp/>of<sp/>it<sp/>worked;<sp/>no<sp/>async<sp/>processing</highlight></codeline>
+<codeline><highlight class="normal">as<sp/>Glib<sp/>the<sp/>timer<sp/>functions<sp/>bombed.<sp/>Great<sp/>hardware<sp/>-<sp/>bad<sp/>PyGobject<sp/>support.<sp/>However</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>an<sp/>editor<sp/>with<sp/>familiar<sp/>key<sp/>op<sp/>is<sp/>needed<sp/>--<sp/>most<sp/>of<sp/>it<sp/>works<sp/>with<sp/>no<sp/>destructive<sp/>errors.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">###<sp/>New:</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>(this<sp/>is<sp/>extracted,<sp/>use<sp/>git<sp/>log<sp/>for<sp/>up-to-date<sp/>information)</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Sat<sp/>03.Sep.2022<sp/>--<sp/>pubilshed<sp/>on<sp/>pip</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Thu<sp/>21.Apr.2022<sp/>--<sp/>release<sp/>issued</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Wed<sp/>16.Mar.2022<sp/>--<sp/>dialog<sp/>for<sp/>read<sp/>only<sp/>file,<sp/>export<sp/>notes<sp/>lots<sp/>of<sp/>others</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Wed<sp/>16.Mar.2022<sp/>--<sp/>dialog<sp/>for<sp/>read<sp/>only<sp/>file,<sp/>export<sp/>notes<sp/>...<sp/>lots<sp/>of<sp/>other<sp/>stuff</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Wed<sp/>01.Dec.2021<sp/>--<sp/>on<sp/>search,<sp/>descending<sp/>one<sp/>dir<sp/>level<sp/>with<sp/>Ext.<sp/>Search</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Sun<sp/>05.Sep.2021<sp/>--<sp/>made<sp/>it<sp/>function<sp/>on<sp/>the<sp/>Mac<sp/>M1<sp/>laptop<sp/><sp/>-<sp/>No<sp/>more<sp/>mac<sp/>support</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Sun<sp/>05.Sep.2021<sp/>--<sp/>made<sp/>it<sp/>function<sp/>on<sp/>the<sp/>Mac<sp/>M1<sp/>laptop<sp/><sp/>-<sp/>!@#$$%</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Tue<sp/>30.Mar.2021<sp/>--<sp/>added<sp/>windows<sp/>installation<sp/>executable</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Mon<sp/>22.Mar.2021<sp/>--<sp/>added<sp/>single<sp/>file<sp/>(packed)<sp/>executable.<sp/>Just<sp/>download<sp/>and<sp/>run.</highlight></codeline>
 <codeline></codeline>
@@ -63,7 +70,7 @@
 <codeline><highlight class="normal">the<sp/>file<sp/>body,<sp/>an<sp/>select<sp/>the<sp/>corresponding<sp/>menu<sp/>item.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Implemented<sp/>markdown<sp/>preview.<sp/>Right<sp/>click<sp/>...<sp/>menu</highlight></codeline>
-<codeline><highlight class="normal">Implemented<sp/>M4<sp/>preview.<sp/>The<sp/>files<sp/>are<sp/>pulled<sp/>in<sp/>from<sp/>the<sp/>current<sp/>directory,</highlight></codeline>
+<codeline><highlight class="normal">Implemented<sp/>M4<sp/>preview.<sp/>The<sp/>files<sp/>are<sp/>pulled<sp/>in<sp/>from<sp/>the<sp/>current<sp/>directory<sp/>(of<sp/>the<sp/>macro),</highlight></codeline>
 <codeline><highlight class="normal">and<sp/>expanded<sp/>with<sp/>the<sp/>m4<sp/>macro<sp/>processor.<sp/>The<sp/>results<sp/>than<sp/>are<sp/>previewed</highlight></codeline>
 <codeline><highlight class="normal">in<sp/>an<sp/>html<sp/>window.<sp/>(Yes,<sp/>head<sp/>and<sp/>footer<sp/>are<sp/>now<sp/>one<sp/>file<sp/>for<sp/>the<sp/>whole<sp/>site,</highlight></codeline>
 <codeline><highlight class="normal">the<sp/>way<sp/>it<sp/>should<sp/>be)<sp/>Right<sp/>click<sp/>...<sp/>and<sp/>look<sp/>for:<sp/>Filter<sp/>to<sp/>M4</highlight></codeline>
@@ -72,7 +79,7 @@
 <codeline><highlight class="normal">The<sp/>dropped<sp/>content<sp/>is<sp/>inserted<sp/>where<sp/>the<sp/>editor&apos;s<sp/>caret<sp/>is.<sp/>(not<sp/>where<sp/>the<sp/>cursor<sp/>is)</highlight></codeline>
 <codeline><highlight class="normal">The<sp/>caret<sp/>is<sp/>moved<sp/>to<sp/>the<sp/>end<sp/>of<sp/>insertion.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/>This<sp/>(above)<sp/>list<sp/>is<sp/>an<sp/>extract,<sp/>please<sp/>see<sp/>git<sp/>log<sp/>for<sp/>complete<sp/>history.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>This<sp/>(above<sp/>/<sp/>below)<sp/>list<sp/>is<sp/>an<sp/>extract,<sp/>please<sp/>see<sp/>git<sp/>log<sp/>for<sp/>complete<sp/>history.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>PyEdPro<sp/>now<sp/>has<sp/>buffer<sp/>diff.<sp/>Right<sp/>clicking<sp/>on<sp/>the<sp/>file&apos;s<sp/>tab<sp/>header<sp/>presents<sp/>a<sp/>menu.</highlight></codeline>
 <codeline><highlight class="normal">One<sp/>may<sp/>select<sp/>the<sp/>diff<sp/>source,<sp/>the<sp/>diff<sp/>destination<sp/>(or<sp/>target).<sp/>When<sp/>the<sp/>source<sp/>and</highlight></codeline>
@@ -85,7 +92,7 @@
 <codeline><highlight class="normal">Again,<sp/>its<sp/>simplicity<sp/>yields<sp/>benefits<sp/>that<sp/>are<sp/>surprizing.<sp/>For<sp/>instance;<sp/>hand</highlight></codeline>
 <codeline><highlight class="normal">merging<sp/>small<sp/>changes<sp/>become<sp/>more<sp/>visual.<sp/>And<sp/>yes,<sp/>it<sp/>is<sp/>no<sp/>substitute<sp/>for<sp/>a<sp/>real<sp/>diff.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/>The<sp/>diff<sp/>buffer<sp/>(greyed)<sp/>is<sp/>read<sp/>only.<sp/>To<sp/>refresh<sp/>the<sp/>diff,<sp/>select</highlight></codeline>
+<codeline><highlight class="normal"><sp/>The<sp/>diff<sp/>buffer<sp/>(grayed)<sp/>is<sp/>read<sp/>only.<sp/>To<sp/>refresh<sp/>the<sp/>diff,<sp/>select</highlight></codeline>
 <codeline><highlight class="normal">from<sp/>the<sp/>tab&apos;s<sp/>right<sp/>click<sp/>menu<sp/>&apos;Re-diff<sp/>buffers&apos;.<sp/>The<sp/>diff-ing<sp/>can<sp/>be<sp/>stopped<sp/>from<sp/>the</highlight></codeline>
 <codeline><highlight class="normal">same<sp/>right<sp/>click<sp/>menu,<sp/>by<sp/>selecting<sp/>&apos;Stop<sp/>Diffing&apos;.<sp/>The<sp/>diff<sp/>algorithm<sp/>is<sp/>crude,<sp/>but</highlight></codeline>
 <codeline><highlight class="normal">the<sp/>simplicity<sp/>has<sp/>its<sp/>advantages.<sp/>Speed<sp/>and<sp/>predictability.</highlight></codeline>
@@ -129,8 +136,8 @@
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>On<sp/>initial<sp/>start,<sp/>PyEdPro<sp/>shows<sp/>a<sp/>left<sp/>pane<sp/>and<sp/>a<sp/>top<sp/>pane.<sp/>The<sp/>left<sp/>pane</highlight></codeline>
 <codeline><highlight class="normal">is<sp/>for<sp/>function<sp/>summary<sp/>and<sp/>the<sp/>top<sp/>pane<sp/>is<sp/>for<sp/>double<sp/>view<sp/>of<sp/>the<sp/>same<sp/>file.</highlight></codeline>
-<codeline><highlight class="normal">(to<sp/>see<sp/>the<sp/>caller<sp/>and<sp/>the<sp/>callee<sp/>at<sp/>once)<sp/>These<sp/>panes<sp/>can<sp/>be<sp/>hidden<sp/>with<sp/>the<sp/>mouse<sp/>by</highlight></codeline>
-<codeline><highlight class="normal">dragging<sp/>on<sp/>their<sp/>handle,<sp/>or<sp/>by<sp/>the<sp/>key<sp/>combination<sp/>Alt-Q<sp/>(Shift-Alt-Q<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">(to<sp/>see<sp/>the<sp/>caller<sp/>and<sp/>the<sp/>called<sp/>[function]<sp/>at<sp/>once)<sp/>These<sp/>panes<sp/>can<sp/>be<sp/>hidden<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>mouse<sp/>by<sp/>dragging<sp/>on<sp/>their<sp/>handle,<sp/>or<sp/>by<sp/>the<sp/>key<sp/>combination<sp/>Alt-Q<sp/>(Shift-Alt-Q<sp/>for</highlight></codeline>
 <codeline><highlight class="normal">the<sp/>left<sp/>pane)<sp/>The<sp/>first<sp/>file<sp/>window&apos;s<sp/>settings<sp/>are<sp/>saved<sp/>for<sp/>the<sp/>next<sp/>startup.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>PyEdPro<sp/>remembers<sp/>a<sp/>lot<sp/>about<sp/>the<sp/>editing<sp/>session.<sp/>Loaded<sp/>files,<sp/>cursor<sp/>positions,</highlight></codeline>
@@ -150,14 +157,15 @@
 <codeline><highlight class="normal">is<sp/>displayed<sp/>on<sp/>the<sp/>status<sp/>line.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>Starting<sp/>PyEdPro<sp/>with<sp/>no<sp/>command<sp/>line<sp/>arguments<sp/>will<sp/>put<sp/>you<sp/>back<sp/>to<sp/>the</highlight></codeline>
-<codeline><highlight class="normal">previous<sp/>session,<sp/>exactly<sp/>where<sp/>you<sp/>left<sp/>off.</highlight></codeline>
+<codeline><highlight class="normal">previous<sp/>session,<sp/>exactly<sp/>where<sp/>you<sp/>left<sp/>off.<sp/>Files,<sp/>positions<sp/>undo-s<sp/>and<sp/>all.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/>The<sp/>editor<sp/>will<sp/>work<sp/>on<sp/>all<sp/>PyGobject<sp/>platforms,<sp/>and<sp/>can<sp/>open<sp/>UNIX<sp/>and<sp/>Windows<sp/>files</highlight></codeline>
 <codeline><highlight class="normal">transparently.<sp/>It<sp/>will<sp/>save<sp/>the<sp/>file<sp/>as<sp/>the<sp/>current<sp/>platform&apos;s<sp/>native<sp/>CRLF</highlight></codeline>
-<codeline><highlight class="normal">convention<sp/>dictates.</highlight></codeline>
+<codeline><highlight class="normal">convention<sp/>dictates.<sp/>CRLF<sp/>setting<sp/>can<sp/>also<sp/>be<sp/>forced.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/>Developer&apos;s<sp/>note:<sp/>in<sp/>order<sp/>to<sp/>make<sp/>PyEdPro<sp/>multi<sp/>platform,<sp/>we<sp/>save</highlight></codeline>
 <codeline><highlight class="normal">the<sp/>configuration<sp/>info<sp/>into<sp/>a<sp/>SQLite<sp/>database<sp/>in<sp/>the<sp/>~/.PyEdPro<sp/>directory.</highlight></codeline>
+<codeline><highlight class="normal">SqliteBrowser<sp/>may<sp/>be<sp/>a<sp/>tool<sp/>to<sp/>see<sp/>what<sp/>is<sp/>going<sp/>on.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">(~/<sp/>user&apos;s<sp/>home<sp/>directory)</highlight></codeline>
 <codeline></codeline>
@@ -209,8 +217,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">License:<sp/><sp/><sp/><sp/>Open<sp/>Source,<sp/>FreeWare</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>EOF</highlight></codeline>
     </programlisting>
     <location file="pyedpro/README.md"/>
   </compounddef>

@@ -1277,7 +1277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="634" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="634" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="635" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="635" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ac885f4eddccb1a5d0a393d241679ff14" prot="public" static="no" mutable="no">
         <type></type>
@@ -1290,7 +1290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1147" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1147" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1148" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a92e8ad8daa5a8c0dd968416349769ed6" prot="public" static="no" mutable="no">
         <type></type>
@@ -1303,7 +1303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1282" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1282" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1283" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1283" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af9e77257f3223e3e3b47f7593b3770ff" prot="public" static="no" mutable="no">
         <type></type>
@@ -1316,7 +1316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1474" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1474" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1475" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1475" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af7e081d06358dbfe296130374cf986df" prot="public" static="no" mutable="no">
         <type></type>
@@ -1329,7 +1329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1582" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1582" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1583" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1583" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ab6c4a806ebb837cb8c0e23a4c90b9f68" prot="public" static="no" mutable="no">
         <type></type>
@@ -1342,7 +1342,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2051" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2051" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2052" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2052" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aa2734cb7e73bfdd8bb8e3658823491a3" prot="public" static="no" mutable="no">
         <type></type>
@@ -1355,7 +1355,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2051" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2051" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2052" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2052" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aec4a6c1134e4e3b166096dba9e3e788d" prot="public" static="no" mutable="no">
         <type></type>
@@ -1368,7 +1368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2052" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2052" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2053" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2053" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ac77bd585ed6ad36471bb54972f14c58a" prot="public" static="no" mutable="no">
         <type></type>
@@ -1381,7 +1381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2052" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2052" bodyend="-1"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2053" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2053" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -1971,7 +1971,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="518" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="518" bodyend="566"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="518" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="518" bodyend="567"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a145402605012aa0c25f06233f1e03478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -1988,7 +1988,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="567" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="567" bodyend="570"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="568" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="568" bodyend="571"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af1a46c3129deae3250e1525cc3c423ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2013,7 +2013,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="571" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="571" bodyend="708"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="572" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="572" bodyend="709"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af56eda4ca5676531078d37044120b0f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2050,7 +2050,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="710" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="710" bodyend="718"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="711" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="711" bodyend="719"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a58aff0259f61c51cafdc7f93dae353e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2067,7 +2067,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="720" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="720" bodyend="728"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="721" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="721" bodyend="729"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a3ea6a70cfc2c7d609e8d95d5d77001e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2088,7 +2088,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="729" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="729" bodyend="731"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="730" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="730" bodyend="732"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a975fedb9296a10676c3fbaf51681e132" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2109,7 +2109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="732" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="732" bodyend="734"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="733" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="733" bodyend="735"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a69205201a9341024e7f860453fa4a195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2134,7 +2134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="735" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="735" bodyend="737"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="736" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="736" bodyend="738"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1abc5ef7073b844b0c69ce6aac7acf970f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2159,7 +2159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="738" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="738" bodyend="785"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="739" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="739" bodyend="786"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ad52859c4e97347ca5f287d405d71f3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2194,7 +2194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="786" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="786" bodyend="806"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="787" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="787" bodyend="807"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ac41eb84b4dcf90008655376b816aca9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2229,7 +2229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="810" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="810" bodyend="827"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="811" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="811" bodyend="828"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a2edfeaa638f44c7722d8823fa210959f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2246,7 +2246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="829" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="829" bodyend="831"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="830" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="830" bodyend="832"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a7cfc0a059f54a7fadaf1c3273e20b408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2263,7 +2263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="832" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="832" bodyend="834"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="833" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="833" bodyend="835"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a5c6267b4dc83abbbfed570fdc0aeeacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2288,7 +2288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="842" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="842" bodyend="951"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="843" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="843" bodyend="952"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1abb5e1e37038fa69e2bf1665c697952da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2305,7 +2305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="952" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="952" bodyend="956"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="953" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="953" bodyend="957"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a5f2e02c69dd1d8261e6ed1fd93e38c7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2322,7 +2322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="957" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="957" bodyend="963"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="958" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="958" bodyend="964"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a58b32d721b1b1c482f2705346972a2b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2339,7 +2339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="964" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="964" bodyend="978"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="965" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="965" bodyend="979"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a4f2f62e9e91d656954c952a468a6090b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2356,7 +2356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="979" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="979" bodyend="1088"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="980" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="980" bodyend="1089"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aec4851ad74c4a04fc4621e25c5cb280e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2381,7 +2381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1090" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1090" bodyend="1109"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1091" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1091" bodyend="1110"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a8eaf357e71dc8631390f501b9fd8f7e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2398,7 +2398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1110" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1110" bodyend="1119"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1111" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1111" bodyend="1120"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a1bbb6b98e5ee220c763f3bbd3995d4bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2420,7 +2420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1120" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1120" bodyend="1127"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1121" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1121" bodyend="1128"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ad8bdcc80027fd03c7bfa6cf3cc92ac10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2445,7 +2445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1128" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1128" bodyend="1131"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1129" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1129" bodyend="1132"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1afcea803bb4bcf142c280931c1b53a628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2474,7 +2474,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1133" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1133" bodyend="1144"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1134" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1134" bodyend="1145"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ac3e35f85470d1b85200848d76bac5698" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2503,7 +2503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1145" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1145" bodyend="1167"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1146" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1146" bodyend="1168"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a4f22316d61fdd6414cd1b01dd822de77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2532,7 +2532,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1168" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1168" bodyend="1222"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1169" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1169" bodyend="1223"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a6c461be6adca2ae5731042f6fabf9af1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2557,7 +2557,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1223" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1223" bodyend="1239"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1224" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1224" bodyend="1240"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a9541e6104dd27a6be615c0754a81278c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2582,7 +2582,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1240" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1240" bodyend="1248"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1241" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1241" bodyend="1249"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ae5a0848142fbb84d78f6f1d09e464758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2603,7 +2603,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1249" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1249" bodyend="1254"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1250" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1250" bodyend="1255"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a02bca36f4dc6460ffd5d57a6411db54a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2624,7 +2624,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1255" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1255" bodyend="1290"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1256" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1256" bodyend="1291"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a2c645e15bef266aa616c9ee16c53e141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2653,7 +2653,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1291" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1291" bodyend="1308"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1292" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1292" bodyend="1309"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aeb65f1c96f53421959864a2767e09f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2678,7 +2678,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1309" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1309" bodyend="1317"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1310" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1310" bodyend="1318"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a6da0380c26aaf244ca23df3d94bb5f87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2707,7 +2707,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1318" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1318" bodyend="1328"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1319" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1319" bodyend="1329"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a1add8192d402367a268b78cea03fd367" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2736,7 +2736,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1329" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1329" bodyend="1344"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1330" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1330" bodyend="1345"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a7a37bc22e7373aa7562b01317f231765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2757,7 +2757,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1345" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1345" bodyend="1352"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1346" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1346" bodyend="1353"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aa9c4d150002016ab917d49ebb43f7869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2786,7 +2786,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1353" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1353" bodyend="1386"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1354" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1354" bodyend="1387"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ad044141441160765d499f5515993d854" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2803,7 +2803,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1387" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1387" bodyend="1392"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1388" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1388" bodyend="1393"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ae09c497ee71568ce2df063fa86d1d4a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2820,7 +2820,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1393" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1393" bodyend="1413"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1394" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1394" bodyend="1414"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aaf3fc6cf65ba3f0b5215496ecf04da57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2845,7 +2845,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1415" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1415" bodyend="1430"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1416" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1416" bodyend="1431"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af83746dc70a215dae62ea3534bb4f9ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2862,7 +2862,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1431" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1431" bodyend="1459"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1432" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1432" bodyend="1460"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ad654ade0bfc30764e9132c4e40b910af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2892,7 +2892,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1460" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1460" bodyend="1471"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1461" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1461" bodyend="1472"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a2e6f97f3235362870f6ea9469f62804e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2917,7 +2917,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1472" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1472" bodyend="1495"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1473" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1473" bodyend="1496"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ad088ecf6e097361293ae30fd931cc677" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2934,7 +2934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1496" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1496" bodyend="1499"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1497" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1497" bodyend="1500"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1afabc62350b0ca9388b46c30bf4edb3d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2951,7 +2951,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1500" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1500" bodyend="1503"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1501" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1501" bodyend="1504"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a5f92f2a3692bad805e5146d59e12fad9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2968,7 +2968,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1504" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1504" bodyend="1507"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1505" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1505" bodyend="1508"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1adf1034fbc2046b6fe35df7b21311ecfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -2985,7 +2985,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1508" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1508" bodyend="1537"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1509" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1509" bodyend="1538"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a0b05cab1bd47682cc0cb58fd8a812caa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3002,7 +3002,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1538" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1538" bodyend="1540"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1539" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1539" bodyend="1541"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a6fe05277d9b7fdf90d725b3cc289cf4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3023,7 +3023,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1541" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1541" bodyend="1544"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1542" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1542" bodyend="1545"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af990992db1329f0085946d3a58028493" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3044,7 +3044,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1545" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1545" bodyend="1548"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1546" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1546" bodyend="1549"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a3fa8745ed8d2746c737cbaa70e198179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3065,7 +3065,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1549" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1549" bodyend="1552"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1550" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1550" bodyend="1553"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1afa71c444f63a31e4c9ce44c1b2bbfff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3086,7 +3086,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1553" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1553" bodyend="1556"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1554" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1554" bodyend="1557"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a8cf430719809ccfc43fc4711c3d9725a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3107,7 +3107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1557" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1557" bodyend="1561"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1558" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1558" bodyend="1562"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a4ca83e624f0b1fc2778e3c149aabc42c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3129,7 +3129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1562" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1562" bodyend="1577"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1563" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1563" bodyend="1578"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a494dd0c747f863f72e8227aa862c6994" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3155,7 +3155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1581" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1581" bodyend="1645"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1582" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1582" bodyend="1646"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ab41626ab2401c849156afa246315f441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3172,7 +3172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1646" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1646" bodyend="1654"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1647" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1647" bodyend="1655"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a63045eef7e4300e5c03ada647ebf5433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3189,7 +3189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1656" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1656" bodyend="1663"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1657" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1657" bodyend="1664"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1acd02ac51e9e56e3da8996ad976741d19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3206,7 +3206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1665" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1665" bodyend="1675"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1666" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1666" bodyend="1676"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aac8f9c7b54a751a72b91533d733120db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3223,7 +3223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1677" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1677" bodyend="1684"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1678" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1678" bodyend="1685"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af23db5b2c1a4cfe247f260e77a320242" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3240,7 +3240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1686" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1686" bodyend="1694"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1687" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1687" bodyend="1695"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1abda51b4e273c149f1cae4dcaac4740c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3262,7 +3262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1695" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1695" bodyend="1718"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1696" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1696" bodyend="1719"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ade7db50c990cb83f590cb40812d3ee61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3283,7 +3283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1719" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1719" bodyend="1733"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1720" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1720" bodyend="1734"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aba35fb924fca20b93a4df2ea0611858e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3300,7 +3300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1736" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1736" bodyend="1763"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1737" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1737" bodyend="1764"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a701e38276f06e45811435d01ee11ac46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3317,7 +3317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1764" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1764" bodyend="1775"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1765" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1765" bodyend="1776"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a4322cb5009fbe0a5325d453ab323b8c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3334,7 +3334,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1776" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1776" bodyend="1796"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1777" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1777" bodyend="1797"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ad6244acdf7a4483893c74813c5b8877a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3351,7 +3351,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1797" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1797" bodyend="1827"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1798" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1798" bodyend="1828"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ab660ee907ddc5c42941e44e1a8b08786" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3376,7 +3376,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1828" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1828" bodyend="1847"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1829" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1829" bodyend="1848"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1aa9d43ce1d0c086ba653ec49a8ce7f40e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3409,7 +3409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1848" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1848" bodyend="1856"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1849" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1849" bodyend="1857"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a0c92a4235d0ec75b18a139d3796b9de1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3426,7 +3426,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1860" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1860" bodyend="1869"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1861" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1861" bodyend="1870"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a74eb034def22c43d157307184b62ca27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3443,7 +3443,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1870" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1870" bodyend="1882"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1871" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1871" bodyend="1883"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a7e0f4ede58056bfb16bf583839290a5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3464,7 +3464,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1883" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1883" bodyend="1890"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1884" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1884" bodyend="1891"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a568b355c2796d606c2972a823efdb1b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3481,7 +3481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1891" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1891" bodyend="1901"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1892" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1892" bodyend="1902"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a3361c7221c4a414cb0369adaade5ca63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3506,7 +3506,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1903" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1903" bodyend="1908"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1904" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1904" bodyend="1909"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1adfab7a81bed2c62974279b9d28d0f5da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3527,7 +3527,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1955" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1955" bodyend="1959"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1956" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1956" bodyend="1960"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af68ddb71b1ebffcfeb5b151c0adf4a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3544,7 +3544,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1961" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1961" bodyend="1981"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1962" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1962" bodyend="1982"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a7ac4dd3247e9dd5e6b29fbb6853ed589" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3573,7 +3573,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1982" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1982" bodyend="1999"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1983" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1983" bodyend="2000"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a6a8638ae787b81f391a5c8fcd8e53ad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3590,7 +3590,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2000" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2000" bodyend="2019"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2001" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2001" bodyend="2020"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a67666dc453f6dabee3f35d3863a5562d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3619,7 +3619,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2020" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2020" bodyend="2038"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2021" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2021" bodyend="2039"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ad52cbafb6f11bcf2c61b64fcbbac98a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3636,7 +3636,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2040" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2040" bodyend="2046"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2041" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2041" bodyend="2047"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a491e9e452f706b48cee708e632be2cc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -3669,7 +3669,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="2048" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2048" bodyend="2079"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="2049" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="2049" bodyend="2080"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -3692,7 +3692,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/peddoc_diff.py" line="1909" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1909" bodyend="1954"/>
+        <location file="pyedpro/pedlib/peddoc_diff.py" line="1910" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="1910" bodyend="1955"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -3743,7 +3743,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="pyedpro/pedlib/peddoc_diff.py" line="83" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="83" bodyend="2080"/>
+    <location file="pyedpro/pedlib/peddoc_diff.py" line="83" column="1" bodyfile="pyedpro/pedlib/peddoc_diff.py" bodystart="83" bodyend="2081"/>
     <listofallmembers>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a5bd1b06dc4257bc4be3d5fff99eb2067" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>__init__</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ae4977f68dbff2f6fbcbec19653bdde8c" prot="public" virt="non-virtual" ambiguityscope="pyedpro::pedlib::peddraw::peddraw."><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>__init__</name></member>
@@ -3773,8 +3773,8 @@
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1af05c4ae4642e2bda55d8260f0d1c5b05" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>CBGCOLOR</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a35d362a1e72be2066443d4fe9152bca6" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>cbgcolor</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a1a552a9190e71d44a52f0eb853d38f07" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>changed</name></member>
-      <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ab631eef90315bf88f22c6ee648d4b57f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>CLCOLOR</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a5cefc35a3269dc7bd3fb602487e6c7e7" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>clcolor</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ab631eef90315bf88f22c6ee648d4b57f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>CLCOLOR</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a5f2e02c69dd1d8261e6ed1fd93e38c7e" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>clearsel</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1adfab7a81bed2c62974279b9d28d0f5da" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>close_button</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a4ca83e624f0b1fc2778e3c149aabc42c" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>closedoc</name></member>
@@ -3796,6 +3796,8 @@
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a7ac4dd3247e9dd5e6b29fbb6853ed589" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>done_mac_fc</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a67666dc453f6dabee3f35d3863a5562d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>done_mac_open_fc</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a9f90bca1becf0c9b0bcb3809704b1322" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_caret</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1aaf68baef7567dfea2e4bde7aa789ee61" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_clsyntax</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab0091ac6cba5af07309ef2e193450ce3" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_clsyntax2</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a946574a93097d6222b7476c60558e087" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_comments</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1adc9aebad7e6fd74e0f63650f7ab19ca7" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_event</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab5b3de0eed78aa1d03ab5efb7e843ac2" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_line</name></member>
@@ -3804,12 +3806,11 @@
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a5ec782cb8f18a68d4918d5bd6044587f" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_selection</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a06a860d13a733f4a67b9fea16c37e638" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_spellerr</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a79668442fe5f92d81eca38e7f9f2fb49" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_syntax</name></member>
-      <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ae60d3393b2a6fae2b579507fc4fc53ab" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_text</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a9d5a9fec3bb399f148f2bb2eadd75925" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>draw_wiggle</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a97f76c94e59e4a4c3542ade98146db5d" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>ext</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a1fd683bb9cb311709b33035686080643" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>fd</name></member>
-      <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1acb04da81ab52a6a616a5288ccc9f87d3" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>fgcolor</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a4002fa82b439138cd7e53b52b761eb82" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>FGCOLOR</name></member>
+      <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1acb04da81ab52a6a616a5288ccc9f87d3" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>fgcolor</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1afe40fa9da455f67015744ebe8f3c325e" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>FGCOLORRO</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1ade7db50c990cb83f590cb40812d3ee61" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>file_dlg</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc_1a0b396ce798df670024a68f96686357fe" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::peddoc_diff::pedDoc</scope><name>fired</name></member>

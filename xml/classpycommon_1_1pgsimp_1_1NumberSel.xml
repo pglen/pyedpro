@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pgsimp_1_1NumberSel" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pgsimp::NumberSel</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.Label</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.Label</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1NumberSel_1a0569824b751fb09d1ebbcfa94ba5fd5f" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="270" column="1" bodyfile="pycommon/pgsimp.py" bodystart="270" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="269" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="269" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1NumberSel_1a9da7525f05c60d8cb5ea41edb5721454" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="271" column="1" bodyfile="pycommon/pgsimp.py" bodystart="271" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="270" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="270" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1NumberSel_1afdad8b2d9b6630de7513828486f3c22a" prot="public" static="no" mutable="no">
         <type></type>
@@ -42,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="272" column="1" bodyfile="pycommon/pgsimp.py" bodystart="272" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="271" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="271" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1NumberSel_1ae013d670ef2457c11264772f1a4c97cb" prot="public" static="no" mutable="no">
         <type></type>
@@ -55,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="278" column="1" bodyfile="pycommon/pgsimp.py" bodystart="278" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="277" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="277" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1NumberSel_1a831b60bdeacbca7d2e9bd34b002ecff9" prot="public" static="no" mutable="no">
         <type></type>
@@ -68,62 +67,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="303" column="1" bodyfile="pycommon/pgsimp.py" bodystart="303" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="302" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="302" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1NumberSel_1af71bc41a59c7d1693a8403af728b47cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.NumberSel.__init__</definition>
-        <argsstring>(self, text=&quot; &quot;, callb=None)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pgsimp_1_1NumberSel_1a0569824b751fb09d1ebbcfa94ba5fd5f" kindref="member">text</ref></type>
-          <defname>text</defname>
-          <defval>&quot; &quot;</defval>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pgsimp_1_1NumberSel_1a9da7525f05c60d8cb5ea41edb5721454" kindref="member">callb</ref></type>
-          <defname>callb</defname>
-          <defval>None</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="269" column="1" bodyfile="pycommon/pgsimp.py" bodystart="269" bodyend="279"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1NumberSel_1a67a7c543e72ed2a99f8676c82b02796c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.NumberSel.area_button</definition>
-        <argsstring>(self, but, event)</argsstring>
-        <name>area_button</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>but</type>
-          <defname>but</defname>
-        </param>
-        <param>
-          <type>event</type>
-          <defname>event</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="280" column="1" bodyfile="pycommon/pgsimp.py" bodystart="280" bodyend="324"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1NumberSel_1a6c8a66bfe12db4e1470c6a4088ea258f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pgsimp.NumberSel.__init__</definition>
@@ -195,8 +142,6 @@
         <link refid="classpycommon_1_1pgsimp_1_1NumberSel"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -208,15 +153,11 @@
         <link refid="classpycommon_1_1pgsimp_1_1NumberSel"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pgsimp.py" line="267" column="1" bodyfile="pycommon/pgsimp.py" bodystart="267" bodyend="325"/>
+    <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="266" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="266" bodyend="324"/>
     <listofallmembers>
-      <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1af71bc41a59c7d1693a8403af728b47cb" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::NumberSel</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a6c8a66bfe12db4e1470c6a4088ea258f" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::NumberSel</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a67a7c543e72ed2a99f8676c82b02796c" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::NumberSel</scope><name>area_button</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a67a7c543e72ed2a99f8676c82b02796c" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::NumberSel</scope><name>area_button</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1afdad8b2d9b6630de7513828486f3c22a" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::NumberSel</scope><name>axx</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a9da7525f05c60d8cb5ea41edb5721454" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::NumberSel</scope><name>callb</name></member>

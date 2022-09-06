@@ -1,0 +1,407 @@
+Package: cuda-drivers-fabricmanager-450
+Architecture: amd64
+Version: 450.203.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Source: fabric-manager-450
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16
+Provides: cuda-drivers-fabricmanager
+Depends: nvidia-fabricmanager-450 (= 450.203.03-0ubuntu0.22.04.1)
+Conflicts: cuda-drivers-fabricmanager
+Replaces: cuda-drivers-fabricmanager
+Filename: pool/multiverse/f/fabric-manager-450/cuda-drivers-fabricmanager-450_450.203.03-0ubuntu0.22.04.1_amd64.deb
+Size: 4410
+MD5sum: 71158f3837c9aebf1459bd43853e89e8
+SHA1: 2477fec6973936b5c70380fbf0d71109e269c51f
+SHA256: a616a1dbab93eec07876860790064b06f62a3004e96ed233859c2b52b59b7cc3
+SHA512: 86eac825b9a113eafb897bb96ed466dc06c2a145528b41cd4be657f3f20ff49f46060c5da439aa30df8d6fb7f52cb6cb4361cfb3fd5fbd671324b47c2dbe7182
+Description: Meta-package for FM and Driver
+Description-md5: 6715a1a6e39ab2cdf04d9fe216556c20
+
+Package: cuda-drivers-fabricmanager-460
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Source: fabric-manager-510
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16
+Depends: cuda-drivers-fabricmanager-510
+Filename: pool/multiverse/f/fabric-manager-510/cuda-drivers-fabricmanager-460_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 4336
+MD5sum: f40b1e68e024c59350e3b31f48ad2f1b
+SHA1: ce71e1f872ae32702dd35ab7322c69fe203d3f9b
+SHA256: cd899ca6feded659555fdb6556acda7783d9f75612f32c11f491fee46acd859b
+SHA512: b829ab5bb3b24ae157d69368903900f0f443e2d1f713ff0514aa2cfcc81af7f09c047a41b3cd9faa0b42f2aba0c5e5327d199b596ceeffd0e6fbe4b6dcc2d0ec
+Description: Transitional package for cuda-drivers-fabricmanager-510
+Description-md5: 9eb2a396b56a6795e2a5e70ccb87e231
+
+Package: cuda-drivers-fabricmanager-470
+Architecture: amd64
+Version: 470.141.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Source: fabric-manager-470
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16
+Provides: cuda-drivers-fabricmanager
+Depends: nvidia-fabricmanager-470 (= 470.141.03-0ubuntu0.22.04.1)
+Conflicts: cuda-drivers-fabricmanager
+Replaces: cuda-drivers-fabricmanager
+Filename: pool/multiverse/f/fabric-manager-470/cuda-drivers-fabricmanager-470_470.141.03-0ubuntu0.22.04.1_amd64.deb
+Size: 4414
+MD5sum: 2eafa8608548249d3893a3192b2b28d9
+SHA1: eaf1c73ed9173ed12f3f81222b5ac3d194c03505
+SHA256: ad38eb4a54a55a5a8cb2929bb52a41e5007657baaf7baf1ce1f4fe7c49451497
+SHA512: 533bac19f87ba840e74d9f35de11486105d392c26a662a8753df2d7d55da56cebf9d039008e88efdaaefc83938725dde96ab343fba45b40b7cd44b262c35596f
+Description: Meta-package for FM and Driver
+Description-md5: 6715a1a6e39ab2cdf04d9fe216556c20
+
+Package: cuda-drivers-fabricmanager-510
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Source: fabric-manager-510
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16
+Provides: cuda-drivers-fabricmanager
+Depends: nvidia-fabricmanager-510 (= 510.85.02-0ubuntu0.22.04.1)
+Conflicts: cuda-drivers-fabricmanager
+Replaces: cuda-drivers-fabricmanager
+Filename: pool/multiverse/f/fabric-manager-510/cuda-drivers-fabricmanager-510_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 4408
+MD5sum: b7e88c811e59ed4745e5a400cc723e25
+SHA1: ccfa6600157e4781172cc71a2b541e92d00055ce
+SHA256: 5acc9d3c7d59c0503ab8b1f2eff80e38cdb4a2d2b8eabfc0492b639fdbb04340
+SHA512: 6693533b8b0c2deb4e43ee9209b72d89a023a20f1a3d1d0c4939bbe8ab4312cf38b59cd8477ffc8b756fbe06218c9dc335887a110c39fc1f9d9e07754fb412ab
+Description: Meta-package for FM and Driver
+Description-md5: 6715a1a6e39ab2cdf04d9fe216556c20
+
+Package: libcuda1-384
+Architecture: amd64
+Version: 390.154-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/misc
+Source: nvidia-graphics-drivers-390
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 23
+Depends: nvidia-headless-390
+Filename: pool/multiverse/n/nvidia-graphics-drivers-390/libcuda1-384_390.154-0ubuntu0.22.04.1_amd64.deb
+Size: 6626
+MD5sum: 8212e879374e3b17345fe0ded82df297
+SHA1: 44778e1b4e21a01fa096fe5796638b449d2eeadf
+SHA256: 66932499b8aeaaf722536af7582b1b87adfc69823a8920a6d849dceb57bb82b5
+SHA512: cf332bc534bcc3cc089df624cefb60cae4c474e56a97b61b3920a82d55ebdcbb1889867f37598b2e40e8636f9451080bbdfdfbb58fceb0c88c921c603d8f6954
+Homepage: http://www.nvidia.com
+Description: Transitional package for nvidia-headless-390
+Description-md5: c6dbe40660b5059827bb841b3e8d47a1
+
+Package: libnvidia-nscq-450
+Architecture: amd64
+Version: 450.203.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 1065
+Provides: libnvidia-nscq, nscq-api, nscq1
+Conflicts: libnvidia-nscq
+Replaces: libnvidia-nscq
+Filename: pool/multiverse/libn/libnvidia-nscq-450/libnvidia-nscq-450_450.203.03-0ubuntu0.22.04.1_amd64.deb
+Size: 301344
+MD5sum: 598c1c324bfa1e0b8cec113005d1ef62
+SHA1: b8d5739eae9e1f0710f3b7fd11bb328247a8de7f
+SHA256: 01c84fc551d1cc06839e0972a380c22f3ef963e6791fef20f18c02c1a3a8d6c3
+SHA512: 65d2ee91fade9f3b41b998439c24abc1c7f7b851974ef920105a0034cbaa3fa87ee2f36973a898550558a7d13814f3c238a4338790ced8400d0221dcc510fbf2
+Description: NVSwitch Configuration and Query library
+Description-md5: 06d90fb68ae67655c00815a4db03a64e
+
+Package: libnvidia-nscq-460
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Source: libnvidia-nscq-510
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16
+Depends: libnvidia-nscq-510
+Filename: pool/multiverse/libn/libnvidia-nscq-510/libnvidia-nscq-460_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 4314
+MD5sum: 3b0339e9ca5bdabc98bdfabce0051af6
+SHA1: 5903e69c3dfb1373ceac6a1be60225ae466e83f4
+SHA256: 902ae3174ba6259c9d81d02e6b962973273b821229a26db48f348306ce59766c
+SHA512: 693d7df628be4720248721f447336fd67d6e83bb45cd7ba76e8885a8a412c9f37852c2036f196ae9a2ddb4f8f1cd006c3324e075c8d1c2bbf8b63b0ec26b5e45
+Description: Transitional package for libnvidia-nscq-510
+Description-md5: a5a3ff49e04b212952436176f612dac4
+
+Package: libnvidia-nscq-470
+Architecture: amd64
+Version: 470.141.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 1137
+Provides: libnvidia-nscq, nscq-api, nscq1
+Conflicts: libnvidia-nscq
+Replaces: libnvidia-nscq
+Filename: pool/multiverse/libn/libnvidia-nscq-470/libnvidia-nscq-470_470.141.03-0ubuntu0.22.04.1_amd64.deb
+Size: 316592
+MD5sum: 6b9f23bb74d4b666a2374893f87ec75d
+SHA1: 542f63e1a052328c6b70a93c5ea25ee79ea95830
+SHA256: d6534073c686fa0f1d6177544a342a37cbf29fd83559f0e1938efc26a0f800de
+SHA512: 9d2a1b65d06cdd832e47e580d835a47e9d0b04dd4ebb2513df8d7e0cd9c1106556b7172b8e4c60b9b26b74e52dfcb5e55afadc53824fa48c4bef1df8c3013f67
+Description: NVSwitch Configuration and Query library
+Description-md5: 06d90fb68ae67655c00815a4db03a64e
+
+Package: libnvidia-nscq-510
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 1345
+Provides: libnvidia-nscq, nscq-api, nscq2
+Conflicts: libnvidia-nscq
+Replaces: libnvidia-nscq
+Filename: pool/multiverse/libn/libnvidia-nscq-510/libnvidia-nscq-510_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 358124
+MD5sum: cb43a5341b347cf5ce25105cd060e11a
+SHA1: c043ba154aa0e910cffd6517a1df519daa5f940d
+SHA256: 0d6f1b6224327121195e05a1e3bb3c05d395884c0bca0fed9031e0d77ead9bd1
+SHA512: f477ea712c7e769b69f57575b1918c0a03104f6febcd33a2048c1637c61df96bce8ddc07d787a939511c0353e8ea08254a724357cdcbdda522180a0b3cdf9500
+Description: NVSwitch Configuration and Query library
+Description-md5: 06d90fb68ae67655c00815a4db03a64e
+
+Package: nvidia-fabricmanager-450
+Architecture: amd64
+Version: 450.203.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Source: fabric-manager-450
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 4927
+Provides: nvidia-fabricmanager
+Conflicts: nvidia-fabricmanager
+Replaces: nvidia-fabricmanager
+Filename: pool/multiverse/f/fabric-manager-450/nvidia-fabricmanager-450_450.203.03-0ubuntu0.22.04.1_amd64.deb
+Size: 1089680
+MD5sum: 5ff5d5066716a6714ebbaacb60a7c12e
+SHA1: 12482de0c783152d3f16efd49ed4b2259fa0798e
+SHA256: 96dfe4b2105b768fafdaad0711ccf01ec7e8bf831eebc66d8abd89afa7dc7726
+SHA512: 12faed2afbc445abc7ca3ff2dabac49f76359679914e7ef07a16fe19214bb91ece9924195cefba20eefa50769a93eed0d3173d443fd689cfa02b4f3a9375b101
+Description: Fabric Manager for NVSwitch based systems.
+Description-md5: 3d49e1346de8fc10beaca066b0eb5df0
+
+Package: nvidia-fabricmanager-460
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Source: fabric-manager-510
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16
+Depends: nvidia-fabricmanager-510
+Filename: pool/multiverse/f/fabric-manager-510/nvidia-fabricmanager-460_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 4336
+MD5sum: aaf29d264fa65f79f03af1dc39928a8d
+SHA1: 73b5cb7227d22a4285c8e716c4ffbfc9173df609
+SHA256: 6e942c141eaa587220330a53a82033ae729a3b68bfd4d36c8314acca68559491
+SHA512: c1d4d200555ce5cb53845b64dd4327e54446ce5c96108daa217829c927982b5aada33917f927ea3f13f5388712b3cdfe27a575ca15edb3318856757fb2261968
+Description: Transitional package for nvidia-fabricmanager-#FLAVOUR#
+Description-md5: 127ff08d88ec25e06d9075de2427bd02
+
+Package: nvidia-fabricmanager-470
+Architecture: amd64
+Version: 470.141.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Source: fabric-manager-470
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 5285
+Provides: nvidia-fabricmanager
+Conflicts: nvidia-fabricmanager
+Replaces: nvidia-fabricmanager
+Filename: pool/multiverse/f/fabric-manager-470/nvidia-fabricmanager-470_470.141.03-0ubuntu0.22.04.1_amd64.deb
+Size: 1193176
+MD5sum: c86247467c7dbac69408c487c1cee4f7
+SHA1: 9fd80c63b93bd140a3838d79ca681e867c32552e
+SHA256: a7eed4cc5cb1e5e91886a8b7e9247393a28a2534de86e7da749a779801820539
+SHA512: c98f5ac0cdf5236851a6eca78e06c71f1ec01cf4368c6a1cbe21295483b6602f1c72f1e6bfec247f0fd16726f30a08a36bc366e46a1843b2f2f047da9a5d8cf2
+Description: Fabric Manager for NVSwitch based systems.
+Description-md5: 3d49e1346de8fc10beaca066b0eb5df0
+
+Package: nvidia-fabricmanager-510
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Source: fabric-manager-510
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 7791
+Provides: nvidia-fabricmanager
+Conflicts: nvidia-fabricmanager
+Replaces: nvidia-fabricmanager
+Filename: pool/multiverse/f/fabric-manager-510/nvidia-fabricmanager-510_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 1568524
+MD5sum: 0526ac2afcb77039a9e2ec938295ad6b
+SHA1: 29e130e4f4ec2b436c7d4fed02a21736260d1a5e
+SHA256: ecbe5f3b8603a55f7b0967cfc43acf7fcad339db65aa5e46e0771624df7594c4
+SHA512: 052fb7e73662fff4d57c6dd5b695412ad4646af54756ebca4450b9d04095488b87bd99adad234dc4d7aae26213819425a493335ac0511a6eb6f3bce0f25c2608
+Description: Fabric Manager for NVSwitch based systems.
+Description-md5: 3d49e1346de8fc10beaca066b0eb5df0
+
+Package: nvidia-fabricmanager-dev-450
+Architecture: amd64
+Version: 450.203.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Source: fabric-manager-450
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 1326
+Provides: nvidia-fabricmanager-dev
+Conflicts: nvidia-fabricmanager-dev
+Replaces: nvidia-fabricmanager-dev
+Filename: pool/multiverse/f/fabric-manager-450/nvidia-fabricmanager-dev-450_450.203.03-0ubuntu0.22.04.1_amd64.deb
+Size: 399748
+MD5sum: 9390a592238d3cf035b1aa72218d1b51
+SHA1: 66d18862d60827f3898bb2abbc0c3a177bcc11e0
+SHA256: cb37a0c14202986288226896b0f99139b4f1c2d7fad7c8b91fd0f146cfd8e654
+SHA512: da991cd1662cd83a0417a22af6efede882d2096d3d7e0324503f36ba5ed5ef1440a008e1450f57d0e8f7a1446e0288bb7d1da2714c751a9f28bdc15786d05335
+Description: Fabric Manager API headers and associated library
+Description-md5: 565605cc6a127d423c88c38e5c2f9a26
+
+Package: nvidia-fabricmanager-dev-460
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/devel
+Source: fabric-manager-510
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 16
+Depends: nvidia-fabricmanager-dev-510
+Filename: pool/multiverse/f/fabric-manager-510/nvidia-fabricmanager-dev-460_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 4330
+MD5sum: 3cba78e2f41c0cc33eee2d84176cf3ee
+SHA1: 90d4446993a90b603500708e36af6a9d290209a9
+SHA256: e6d9149432e0e87ab93bf7732cddd34692ba4b827309fc209cf891ad7fce3c36
+SHA512: 7392a218206a7f2d302b09ac1663a4a5aae801575dd7de3ecf7834d517d17d1c48d6093eb3bb7fcfd4c046c3feec7208220089b88bc2aa2f8b2c242d99647f13
+Description: Transitional package for nvidia-fabricmanager-dev-510
+Description-md5: 4c618489bfcef074354d2863174c8037
+
+Package: nvidia-fabricmanager-dev-470
+Architecture: amd64
+Version: 470.141.03-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Source: fabric-manager-470
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 1331
+Provides: nvidia-fabricmanager-dev
+Conflicts: nvidia-fabricmanager-dev
+Replaces: nvidia-fabricmanager-dev
+Filename: pool/multiverse/f/fabric-manager-470/nvidia-fabricmanager-dev-470_470.141.03-0ubuntu0.22.04.1_amd64.deb
+Size: 400592
+MD5sum: 22f55a21d2b5d2dcc2dc4c4d5cce7c92
+SHA1: aca12dc763a5dec7e8d52b4312ad8371bd06df72
+SHA256: ad2ebecf38a37e9646095b6d653c5565b48a954b71fdc3b54633b60a302e25ad
+SHA512: 423a831ebe96a49e7ed0bd57785bb2300f737158d004e8e3e3dc2684b41cd139b6844b23859a8a75b0778764314189ea39d1b427b58e7e05797d827440565ec6
+Description: Fabric Manager API headers and associated library
+Description-md5: 565605cc6a127d423c88c38e5c2f9a26
+
+Package: nvidia-fabricmanager-dev-510
+Architecture: amd64
+Version: 510.85.02-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/libs
+Source: fabric-manager-510
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 1357
+Provides: nvidia-fabricmanager-dev
+Conflicts: nvidia-fabricmanager-dev
+Replaces: nvidia-fabricmanager-dev
+Filename: pool/multiverse/f/fabric-manager-510/nvidia-fabricmanager-dev-510_510.85.02-0ubuntu0.22.04.1_amd64.deb
+Size: 391414
+MD5sum: aec3ecfa852cf4211c1eef705fbb7b81
+SHA1: b31ee5c466c17dbe150e4712a9e89efd2a701a84
+SHA256: 82c75b0961ed4e6d5057b2a9e61766054b32195455720ba2d017731a3bc4ba5f
+SHA512: 92ca26fb07d9c7b56575760fa1a9d2ce290c769c7a1f2733ac93bec81a3d8b72c44bd51d3bac9839d730a514fced73b5e1cb896c8c2c41d0528c73cc100b21f2
+Description: Fabric Manager API headers and associated library
+Description-md5: 565605cc6a127d423c88c38e5c2f9a26
+
+Package: nvidia-libopencl1-384
+Architecture: amd64
+Version: 390.154-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/misc
+Source: nvidia-graphics-drivers-390
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 23
+Depends: nvidia-headless-390
+Filename: pool/multiverse/n/nvidia-graphics-drivers-390/nvidia-libopencl1-384_390.154-0ubuntu0.22.04.1_amd64.deb
+Size: 6636
+MD5sum: 17e44acc875db3f3edc7ed6133ef2573
+SHA1: 490b9ad7d3a15ddfb11b88c93c353cc4526cbaff
+SHA256: 11b43b226d9ad0276111410900d01c867e481844c2a73fa8958381ecbbcafe4b
+SHA512: 974ab93e4f818bbd390a0f042ea9f11adef5a6ad1c6e8946d33520e94b2b09ec754fe75a412d2f5d0e61710f004c009fe4d7e2a46269cdec009140a42218ceb9
+Homepage: http://www.nvidia.com
+Description: Transitional package for nvidia-headless-390
+Description-md5: c6dbe40660b5059827bb841b3e8d47a1
+
+Package: nvidia-opencl-icd-384
+Architecture: amd64
+Version: 390.154-0ubuntu0.22.04.1
+Priority: optional
+Section: multiverse/misc
+Source: nvidia-graphics-drivers-390
+Origin: Ubuntu
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 23
+Depends: nvidia-headless-390
+Filename: pool/multiverse/n/nvidia-graphics-drivers-390/nvidia-opencl-icd-384_390.154-0ubuntu0.22.04.1_amd64.deb
+Size: 6636
+MD5sum: da56f47aa7a8ea288f47b0f92b0a5558
+SHA1: cb3c102a9ec91d4c268657521e263237840549c1
+SHA256: 95a567fb78abd747bcefaa05487fea5c350d35197e036e4fcdcbfc522f11b705
+SHA512: 8588b22703f105d986155ec63273a10659afc6168925a6a57b539ece63c9d2dc0c5c50df19cad48d9df484183abbc55f9d1b55643f9c2bfd7e3db0e7f1d1e9cb
+Homepage: http://www.nvidia.com
+Description: Transitional package for nvidia-headless-390
+Description-md5: c6dbe40660b5059827bb841b3e8d47a1
+

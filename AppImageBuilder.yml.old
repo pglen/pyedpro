@@ -1,0 +1,8 @@
+script: |
+    # remove any existent binaries
+    rm AppDir | true
+
+    # compile and install binaries into AppDir
+    cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+    make install DESTDIR=AppDir
+

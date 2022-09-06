@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_7fea8cc7bd973953de310c6b12e6f32b" kind="dir">
+    <compoundname>pyedpro/build/lib/pedlib/plugins</compoundname>
+    <innerfile refid="build_2lib_2pedlib_2plugins_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="build_2lib_2pedlib_2plugins_2first_8py">first.py</innerfile>
+    <innerfile refid="build_2lib_2pedlib_2plugins_2lower__right_8py">lower_right.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/build/lib/pedlib/plugins/"/>
+  </compounddef>
+</doxygen>

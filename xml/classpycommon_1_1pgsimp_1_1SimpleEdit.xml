@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pgsimp_1_1SimpleEdit" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pgsimp::SimpleEdit</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.TextView</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.TextView</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1ab22b179a19950f9ccebb844a00f1ac44" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="137" column="1" bodyfile="pycommon/pgsimp.py" bodystart="137" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="137" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="137" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a02ad01f31c07c4f6d4a48995ba7d292d" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="143" column="1" bodyfile="pycommon/pgsimp.py" bodystart="143" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="143" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="143" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1ae4b16446a1aa9ebd1698d9576740df89" prot="public" static="no" mutable="no">
         <type></type>
@@ -42,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="144" column="1" bodyfile="pycommon/pgsimp.py" bodystart="144" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="144" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="144" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1aaa2a956bb12c0e03da483f66cb785f49" prot="public" static="no" mutable="no">
         <type></type>
@@ -55,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="145" column="1" bodyfile="pycommon/pgsimp.py" bodystart="145" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="145" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="145" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1aaef8102e8f6f1040aebac76378625843" prot="public" static="no" mutable="no">
         <type></type>
@@ -68,247 +67,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="146" column="1" bodyfile="pycommon/pgsimp.py" bodystart="146" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="146" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="146" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7921e54d03e18599832ab14166bc3e26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.__init__</definition>
-        <argsstring>(self, head=[])</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>head</type>
-          <defname>head</defname>
-          <defval>[]</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="134" column="1" bodyfile="pycommon/pgsimp.py" bodystart="134" bodyend="147"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a92ba7d17dafc18f27f78f03849316d17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.focus_out</definition>
-        <argsstring>(self, win, arg)</argsstring>
-        <name>focus_out</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>win</type>
-          <defname>win</defname>
-        </param>
-        <param>
-          <type>arg</type>
-          <defname>arg</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="148" column="1" bodyfile="pycommon/pgsimp.py" bodystart="148" bodyend="152"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1ac88fed4b2e0a011e20a46362e7971b54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.check_saved</definition>
-        <argsstring>(self)</argsstring>
-        <name>check_saved</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="153" column="1" bodyfile="pycommon/pgsimp.py" bodystart="153" bodyend="162"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1ace2180c8c6c76dac49f911a210bc9e0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.focus_in</definition>
-        <argsstring>(self, win, arg)</argsstring>
-        <name>focus_in</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>win</type>
-          <defname>win</defname>
-        </param>
-        <param>
-          <type>arg</type>
-          <defname>arg</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="163" column="1" bodyfile="pycommon/pgsimp.py" bodystart="163" bodyend="168"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a395ba876bf531acf66b6723445744ac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.unmapx</definition>
-        <argsstring>(self, widget)</argsstring>
-        <name>unmapx</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>widget</type>
-          <defname>widget</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="169" column="1" bodyfile="pycommon/pgsimp.py" bodystart="169" bodyend="172"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1ad59da8ef5db18dfbe74a69756328fd5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.area_key</definition>
-        <argsstring>(self, widget, event)</argsstring>
-        <name>area_key</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>widget</type>
-          <defname>widget</defname>
-        </param>
-        <param>
-          <type>event</type>
-          <defname>event</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="173" column="1" bodyfile="pycommon/pgsimp.py" bodystart="173" bodyend="186"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a471db49e4b5b0ac97633630f640bdf2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.append</definition>
-        <argsstring>(self, strx)</argsstring>
-        <name>append</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>strx</type>
-          <defname>strx</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="187" column="1" bodyfile="pycommon/pgsimp.py" bodystart="187" bodyend="192"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1aade101ae6e03a6ab9efd963331844118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.clear</definition>
-        <argsstring>(self)</argsstring>
-        <name>clear</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="193" column="1" bodyfile="pycommon/pgsimp.py" bodystart="193" bodyend="199"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a84e6299d70fc52792612461aec7dd40f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.setsavecb</definition>
-        <argsstring>(self, callb)</argsstring>
-        <name>setsavecb</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>callb</type>
-          <defname>callb</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="200" column="1" bodyfile="pycommon/pgsimp.py" bodystart="200" bodyend="202"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7ea664d146e6d3b0e284daceaab4ecf2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.get_text</definition>
-        <argsstring>(self)</argsstring>
-        <name>get_text</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="203" column="1" bodyfile="pycommon/pgsimp.py" bodystart="203" bodyend="207"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a1401f1add82d707521742dc665e85798" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleEdit.set_text</definition>
-        <argsstring>(self, txt, eventx=False)</argsstring>
-        <name>set_text</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>txt</type>
-          <defname>txt</defname>
-        </param>
-        <param>
-          <type>eventx</type>
-          <defname>eventx</defname>
-          <defval>False</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="208" column="1" bodyfile="pycommon/pgsimp.py" bodystart="208" bodyend="218"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7921e54d03e18599832ab14166bc3e26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pgsimp.SimpleEdit.__init__</definition>
@@ -557,8 +319,6 @@
         <link refid="classpycommon_1_1pgsimp_1_1SimpleEdit"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.TextView</label>
@@ -570,41 +330,28 @@
         <link refid="classpycommon_1_1pgsimp_1_1SimpleEdit"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.TextView</label>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pgsimp.py" line="132" column="1" bodyfile="pycommon/pgsimp.py" bodystart="132" bodyend="219"/>
+    <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="132" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="132" bodyend="219"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7921e54d03e18599832ab14166bc3e26" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7921e54d03e18599832ab14166bc3e26" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a471db49e4b5b0ac97633630f640bdf2a" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>append</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a471db49e4b5b0ac97633630f640bdf2a" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>append</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ad59da8ef5db18dfbe74a69756328fd5c" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>area_key</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ad59da8ef5db18dfbe74a69756328fd5c" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>area_key</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ab22b179a19950f9ccebb844a00f1ac44" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>buffer</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ac88fed4b2e0a011e20a46362e7971b54" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>check_saved</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ac88fed4b2e0a011e20a46362e7971b54" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>check_saved</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1aade101ae6e03a6ab9efd963331844118" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>clear</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1aade101ae6e03a6ab9efd963331844118" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>clear</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ace2180c8c6c76dac49f911a210bc9e0a" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>focus_in</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ace2180c8c6c76dac49f911a210bc9e0a" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>focus_in</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a92ba7d17dafc18f27f78f03849316d17" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>focus_out</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a92ba7d17dafc18f27f78f03849316d17" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>focus_out</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7ea664d146e6d3b0e284daceaab4ecf2" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>get_text</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7ea664d146e6d3b0e284daceaab4ecf2" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>get_text</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a02ad01f31c07c4f6d4a48995ba7d292d" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>modified</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1aaa2a956bb12c0e03da483f66cb785f49" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>savecb</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a1401f1add82d707521742dc665e85798" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>set_text</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a1401f1add82d707521742dc665e85798" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>set_text</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a84e6299d70fc52792612461aec7dd40f" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>setsavecb</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a84e6299d70fc52792612461aec7dd40f" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>setsavecb</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1aaef8102e8f6f1040aebac76378625843" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>single_line</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ae4b16446a1aa9ebd1698d9576740df89" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>text</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a395ba876bf531acf66b6723445744ac1" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>unmapx</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a395ba876bf531acf66b6723445744ac1" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleEdit</scope><name>unmapx</name></member>
     </listofallmembers>
   </compounddef>

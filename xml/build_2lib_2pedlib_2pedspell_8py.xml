@@ -339,7 +339,7 @@
 <codeline lineno="329"><highlight class="normal"></highlight></codeline>
 <codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>It<sp/>is<sp/>an<sp/>msdos<sp/>file<sp/>(don&apos;t<sp/>ask)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="331"><highlight class="normal"></highlight></codeline>
-<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>index<sp/>=<sp/><ref refid="namespacepycommon_1_1pgutils_1a5e36c654201702a569ef98cddff78029" kindref="member">readfile</ref>(<ref refid="namespacepedlib_1_1pedutil_1a1e6a7e387fe65ad248da3e0a208f8e56" kindref="member">get_exec_path</ref>(</highlight><highlight class="stringliteral">&quot;spell.txt&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>index<sp/>=<sp/><ref refid="namespacepedlib_1_1pedutil_1a0268b6439bdbc0e93d26b779245a77ab" kindref="member">readfile</ref>(<ref refid="namespacepedlib_1_1pedutil_1a1e6a7e387fe65ad248da3e0a208f8e56" kindref="member">get_exec_path</ref>(</highlight><highlight class="stringliteral">&quot;spell.txt&quot;</highlight><highlight class="normal">))</highlight></codeline>
 <codeline lineno="333"><highlight class="normal"></highlight></codeline>
 <codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#print<sp/>(index[0:10])</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#return<sp/><sp/>[]</highlight><highlight class="normal"></highlight></codeline>

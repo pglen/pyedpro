@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pypacker_1_1InvalidType" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pypacker::InvalidType</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Exception</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Exception</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pypacker_1_1InvalidType_1a550e8ecf1fac25a1582c7530b5baf864" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,48 +15,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pypacker.py" line="56" column="1" bodyfile="pycommon/pypacker.py" bodystart="56" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pypacker.py" line="54" column="1" bodyfile="pyedpro/build/lib/pycommon/pypacker.py" bodystart="54" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
-      <memberdef kind="function" id="classpycommon_1_1pypacker_1_1InvalidType_1a1b560c0f3ecd239d7a0875dc9cfe6961" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pypacker.InvalidType._init_</definition>
-        <argsstring>(self, message)</argsstring>
-        <name>_init_</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pypacker_1_1InvalidType_1a550e8ecf1fac25a1582c7530b5baf864" kindref="member">message</ref></type>
-          <defname>message</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pypacker.py" line="55" column="1" bodyfile="pycommon/pypacker.py" bodystart="55" bodyend="57"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pypacker_1_1InvalidType_1adc331603a9eebd5daef5aa3c4aed380d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pypacker.InvalidType._str_</definition>
-        <argsstring>(self)</argsstring>
-        <name>_str_</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pypacker.py" line="58" column="1" bodyfile="pycommon/pypacker.py" bodystart="58" bodyend="62"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pypacker_1_1InvalidType_1a1b560c0f3ecd239d7a0875dc9cfe6961" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pypacker.InvalidType._init_</definition>
@@ -110,8 +71,6 @@
         <link refid="classpycommon_1_1pypacker_1_1InvalidType"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -123,15 +82,11 @@
         <link refid="classpycommon_1_1pypacker_1_1InvalidType"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pypacker.py" line="53" column="1" bodyfile="pycommon/pypacker.py" bodystart="53" bodyend="63"/>
+    <location file="pyedpro/build/lib/pycommon/pypacker.py" line="51" column="1" bodyfile="pyedpro/build/lib/pycommon/pypacker.py" bodystart="51" bodyend="61"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pypacker_1_1InvalidType_1a1b560c0f3ecd239d7a0875dc9cfe6961" prot="private" virt="non-virtual"><scope>pycommon::pypacker::InvalidType</scope><name>_init_</name></member>
-      <member refid="classpycommon_1_1pypacker_1_1InvalidType_1a1b560c0f3ecd239d7a0875dc9cfe6961" prot="private" virt="non-virtual"><scope>pycommon::pypacker::InvalidType</scope><name>_init_</name></member>
-      <member refid="classpycommon_1_1pypacker_1_1InvalidType_1adc331603a9eebd5daef5aa3c4aed380d" prot="private" virt="non-virtual"><scope>pycommon::pypacker::InvalidType</scope><name>_str_</name></member>
       <member refid="classpycommon_1_1pypacker_1_1InvalidType_1adc331603a9eebd5daef5aa3c4aed380d" prot="private" virt="non-virtual"><scope>pycommon::pypacker::InvalidType</scope><name>_str_</name></member>
       <member refid="classpycommon_1_1pypacker_1_1InvalidType_1a550e8ecf1fac25a1582c7530b5baf864" prot="public" virt="non-virtual"><scope>pycommon::pypacker::InvalidType</scope><name>message</name></member>
     </listofallmembers>

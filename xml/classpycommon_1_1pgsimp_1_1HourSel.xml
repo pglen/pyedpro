@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pgsimp_1_1HourSel" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pgsimp::HourSel</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.VBox</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1HourSel_1a187dabd194ad7e1baddc678576f56274" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="360" column="1" bodyfile="pycommon/pgsimp.py" bodystart="360" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="359" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="359" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1HourSel_1a303330c4c421025643818b652a3a2ab4" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,53 +28,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="365" column="1" bodyfile="pycommon/pgsimp.py" bodystart="365" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="364" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="364" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1HourSel_1ab2914f1bdee7ae89f77d1d8070ebb41c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.HourSel.__init__</definition>
-        <argsstring>(self, callb=None)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pgsimp_1_1HourSel_1a187dabd194ad7e1baddc678576f56274" kindref="member">callb</ref></type>
-          <defname>callb</defname>
-          <defval>None</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="357" column="1" bodyfile="pycommon/pgsimp.py" bodystart="357" bodyend="370"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1HourSel_1a17673c52138bcbb4e15ac44d0d28991e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.HourSel.letter</definition>
-        <argsstring>(self, letter)</argsstring>
-        <name>letter</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>letter</type>
-          <defname>letter</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="371" column="1" bodyfile="pycommon/pgsimp.py" bodystart="371" bodyend="375"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1HourSel_1ab2914f1bdee7ae89f77d1d8070ebb41c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pgsimp.HourSel.__init__</definition>
@@ -130,8 +86,6 @@
         <link refid="classpycommon_1_1pgsimp_1_1HourSel"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.VBox</label>
@@ -143,19 +97,15 @@
         <link refid="classpycommon_1_1pgsimp_1_1HourSel"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.VBox</label>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pgsimp.py" line="355" column="1" bodyfile="pycommon/pgsimp.py" bodystart="355" bodyend="376"/>
+    <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="354" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="354" bodyend="375"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pgsimp_1_1HourSel_1ab2914f1bdee7ae89f77d1d8070ebb41c" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::HourSel</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1HourSel_1ab2914f1bdee7ae89f77d1d8070ebb41c" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::HourSel</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1HourSel_1a187dabd194ad7e1baddc678576f56274" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::HourSel</scope><name>callb</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1HourSel_1a17673c52138bcbb4e15ac44d0d28991e" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::HourSel</scope><name>letter</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1HourSel_1a17673c52138bcbb4e15ac44d0d28991e" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::HourSel</scope><name>letter</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1HourSel_1a303330c4c421025643818b652a3a2ab4" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::HourSel</scope><name>simsel</name></member>
     </listofallmembers>

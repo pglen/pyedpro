@@ -1,0 +1,290 @@
+# appimage-builder recipe see https://appimage-builder.readthedocs.io for details
+version: 1
+AppDir:
+  path: /home/peterglen/pgpygtk/pyedpro/AppDir
+  app_info:
+    id: pyedpro
+    name: pyedpro.py
+    icon: /usr/share/icons/hicolor/96x96/apps/pyedpro.png
+    version: latest
+    exec: pyedpro.py
+    exec_args: $@
+  apt:
+    arch:
+    - amd64
+    allow_unauthenticated: true
+    sources:
+    - sourceline: deb http://archive.ubuntu.com/ubuntu hirsute main restricted universe
+        multiverse
+    - sourceline: deb http://archive.ubuntu.com/ubuntu hirsute-security main restricted
+        universe multiverse
+    - sourceline: deb http://archive.ubuntu.com/ubuntu hirsute-updates main restricted
+        universe multiverse
+    - sourceline: deb http://us.archive.ubuntu.com/ubuntu/ jammy main restricted universe
+    - sourceline: deb http://us.archive.ubuntu.com/ubuntu/ jammy multiverse
+    - sourceline: deb http://security.ubuntu.com/ubuntu/ jammy-security universe multiverse
+        restricted main
+    - sourceline: deb http://us.archive.ubuntu.com/ubuntu/ jammy-updates universe
+        main restricted multiverse
+    - sourceline: deb http://us.archive.ubuntu.com/ubuntu/ jammy-backports universe
+        main restricted multiverse
+    - sourceline: deb https://ppa.launchpadcontent.net/obsproject/obs-studio/ubuntu/
+        jammy main
+    - sourceline: deb [signed-by=/usr/share/keyrings/neo4j.gpg] https://debian.neo4j.com
+        stable 4.1
+    - sourceline: deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg]
+        https://packages.element.io/debian/ default main
+    - sourceline: deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main
+    - sourceline: deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg]
+        https://updates.signal.org/desktop/apt xenial main
+    - sourceline: deb https://ppa.launchpadcontent.net/peterglen/ppa/ubuntu/ jammy
+        main
+    include:
+    - adwaita-icon-theme
+    - appmenu-gtk3-module:amd64
+    - dconf-gsettings-backend:amd64
+    - dmz-cursor-theme
+    - elementary-icon-theme
+    - elementary-xfce-icon-theme
+    - fonts-dejavu-core
+    - fonts-ubuntu
+    - gir1.2-gtk-2.0:amd64
+    - gir1.2-webkit2-4.0:amd64
+    - gir1.2-webkit2-4.1:amd64
+    - gnome-icon-theme
+    - greybird-gtk-theme
+    - gvfs:amd64
+    - hicolor-icon-theme
+    - language-pack-gnome-en-base
+    - libbz2-1.0:amd64
+    - libcap2:amd64
+    - libcom-err2:amd64
+    - libdbus-1-3:amd64
+    - libexpat1:amd64
+    - libgpg-error0:amd64
+    - libkeyutils1:amd64
+    - libpcre3:amd64
+    - libpython3.10-stdlib:amd64
+    - librsvg2-common:amd64
+    - libselinux1:amd64
+    - python3-cups:amd64
+    - python3-gi-cairo
+    - python3-matplotlib
+    - python3-repoze.lru
+    - python3-ruamel.yaml
+    - python3-zope.interface
+    - ttf-bitstream-vera
+    - zlib1g:amd64
+  files:
+    include:
+    - /home/peterglen/.local/lib/python3.10/site-packages/_distutils_hack/__pycache__/__init__.cpython-310.pyc
+    - /home/peterglen/.local/lib/python3.10/site-packages/distutils-precedence.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_actdiag-3.0.0-py3.10-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_applehelp-1.0.2-py3.8-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_blockdiag-3.0.0-py3.10-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_devhelp-1.0.2-py3.8-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_htmlhelp-2.0.0-py3.9-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_jsmath-1.0.1-py3.7-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_nwdiag-2.0.0-py3.8-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_qthelp-1.0.3-py3.8-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_seqdiag-3.0.0-py3.10-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_serializinghtml-1.1.5-py3.9-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_svg2pdfconverter-1.2.0-py3.8-nspkg.pth
+    - /home/peterglen/.local/lib/python3.10/site-packages/sphinxcontrib_wavedrom-3.0.4-py3.8-nspkg.pth
+    - /home/peterglen/.local/share/mime//mime.cache
+    - /home/peterglen/.local/share/webkitgtk/storage/salt
+    - /home/peterglen/.pyedcal/caldata.sql
+    - /home/peterglen/.pyednotes/peddata.sql
+    - /home/peterglen/.pyedpro/data/1a79fd39.rdo
+    - /home/peterglen/.pyedpro/data/1a79fd39.udo
+    - /home/peterglen/.pyedpro/data/1a79fd39_7.bak
+    - /home/peterglen/.pyedpro/data/326b9976.rdo
+    - /home/peterglen/.pyedpro/data/326b9976.udo
+    - /home/peterglen/.pyedpro/data/326b9976_3.bak
+    - /home/peterglen/.pyedpro/data/4e512bd9.rdo
+    - /home/peterglen/.pyedpro/data/4e512bd9.udo
+    - /home/peterglen/.pyedpro/data/4e512bd9_1.bak
+    - /home/peterglen/.pyedpro/data/59cf1791.rdo
+    - /home/peterglen/.pyedpro/data/59cf1791.udo
+    - /home/peterglen/.pyedpro/data/59cf1791_1.bak
+    - /home/peterglen/.pyedpro/data/6beff35a.rdo
+    - /home/peterglen/.pyedpro/data/6beff35a.udo
+    - /home/peterglen/.pyedpro/data/6beff35a_4.bak
+    - /home/peterglen/.pyedpro/data/7431f226.rdo
+    - /home/peterglen/.pyedpro/data/7431f226.udo
+    - /home/peterglen/.pyedpro/data/7431f226_7.bak
+    - /home/peterglen/.pyedpro/data/7c49e483.rdo
+    - /home/peterglen/.pyedpro/data/7c49e483.udo
+    - /home/peterglen/.pyedpro/data/7c49e483_6.bak
+    - /home/peterglen/.pyedpro/data/864003be.rdo
+    - /home/peterglen/.pyedpro/data/864003be.udo
+    - /home/peterglen/.pyedpro/data/864003be_1.bak
+    - /home/peterglen/.pyedpro/data/bb0b5eaa.rdo
+    - /home/peterglen/.pyedpro/data/bb0b5eaa.udo
+    - /home/peterglen/.pyedpro/data/bb0b5eaa_3.bak
+    - /home/peterglen/.pyedpro/data/df0d829c.rdo
+    - /home/peterglen/.pyedpro/data/df0d829c.udo
+    - /home/peterglen/.pyedpro/data/df0d829c_3.bak
+    - /home/peterglen/.pyedpro/data/eb242cba.rdo
+    - /home/peterglen/.pyedpro/data/eb242cba.udo
+    - /home/peterglen/.pyedpro/data/eb242cba_3.bak
+    - /home/peterglen/.pyedpro/data/f9e7993f.rdo
+    - /home/peterglen/.pyedpro/data/f9e7993f.udo
+    - /home/peterglen/.pyedpro/data/f9e7993f_1.bak
+    - /home/peterglen/.pyedpro/history
+    - /home/peterglen/.pyedpro/log/account.txt
+    - /home/peterglen/.pyedpro/log/timesheet.txt
+    - /home/peterglen/.pyedpro/plugins/__pycache__/first.cpython-310.pyc
+    - /home/peterglen/.pyedpro/sessions
+    - /home/peterglen/.pyedpro/sql_data
+    - /home/peterglen/pgpygtk/pycommon/pgsimp.py
+    - /home/peterglen/pgpygtk/pyedpro/prepimage.sh
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/AppRun
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/pedlib/peddoc.py
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/pedlib/peddraw.py
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/pedlib/pednotes.py
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/pedlib/pedwin.py
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/pycommon/pgsimp.py
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/pyedpro.desktop
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/pyedpro.py
+    - /home/peterglen/pgpygtk/pyedpro/pyedpro/setup.py
+    - /home/peterglen/pgpygtk/pyvserv/client/pycli_sess.py
+    - /lib/x86_64-linux-gnu/libappmenu-gtk3-parser.so.0
+    - /lib/x86_64-linux-gnu/libcups.so.2
+    - /lib/x86_64-linux-gnu/libdebuginfod.so.1
+    - /lib/x86_64-linux-gnu/libgirepository-1.0.so.1
+    - /lib/x86_64-linux-gnu/librsvg-2.so.2
+    - /lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so.37
+    - /usr/lib/locale/locale-archive
+    - /usr/lib/python3.10/__pycache__/__future__.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/_collections_abc.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/_compat_pickle.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/_sitebuiltins.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/_weakrefset.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/abc.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/ast.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/bisect.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/codecs.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/contextlib.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/copy.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/copyreg.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/datetime.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/dis.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/enum.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/fnmatch.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/functools.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/genericpath.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/getopt.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/gettext.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/glob.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/inspect.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/io.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/keyword.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/linecache.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/locale.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/opcode.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/operator.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/optparse.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/os.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/pickle.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/pkgutil.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/platform.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/posixpath.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/py_compile.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/random.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/re.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/reprlib.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/selectors.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/signal.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/site.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/sitecustomize.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/socket.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/sre_compile.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/sre_constants.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/sre_parse.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/stat.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/string.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/struct.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/subprocess.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/textwrap.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/threading.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/token.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/tokenize.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/traceback.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/types.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/uuid.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/warnings.cpython-310.pyc
+    - /usr/lib/python3.10/__pycache__/weakref.cpython-310.pyc
+    - /usr/lib/python3.10/collections/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3.10/collections/__pycache__/abc.cpython-310.pyc
+    - /usr/lib/python3.10/ctypes/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3.10/ctypes/__pycache__/_endian.cpython-310.pyc
+    - /usr/lib/python3.10/encodings/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3.10/encodings/__pycache__/aliases.cpython-310.pyc
+    - /usr/lib/python3.10/encodings/__pycache__/cp437.cpython-310.pyc
+    - /usr/lib/python3.10/encodings/__pycache__/utf_8.cpython-310.pyc
+    - /usr/lib/python3.10/importlib/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3.10/importlib/__pycache__/_abc.cpython-310.pyc
+    - /usr/lib/python3.10/importlib/__pycache__/machinery.cpython-310.pyc
+    - /usr/lib/python3.10/importlib/__pycache__/util.cpython-310.pyc
+    - /usr/lib/python3.10/sqlite3/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3.10/sqlite3/__pycache__/dbapi2.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/__pycache__/apport_python_hook.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/cairo/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/_constants.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/_error.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/_gtktemplate.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/_option.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/_ossighelper.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/_propertyhelper.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/_signalhelper.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/docstring.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/importer.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/module.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/__pycache__/types.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/GLib.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/GObject.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/Gdk.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/GdkPixbuf.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/Gio.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/Gtk.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/Pango.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/overrides/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/python3/dist-packages/gi/repository/__pycache__/__init__.cpython-310.pyc
+    - /usr/lib/x86_64-linux-gnu/gtk-3.0/3.0.0/immodules.cache
+    - /usr/local/lib/python3.10/dist-packages/easy-install.pth
+    - /usr/local/share/icons/hicolor/icon-theme.cache
+    - /usr/local/share/mime//mime.cache
+    - /usr/share/icons/Adwaita/icon-theme.cache
+    - /usr/share/icons/default/index.theme
+    - /usr/share/icons/elementary-xfce/icon-theme.cache
+    - /usr/share/icons/elementary/icon-theme.cache
+    - /usr/share/icons/gnome/icon-theme.cache
+    - /usr/share/icons/hicolor/icon-theme.cache
+    - /usr/share/mime//mime.cache
+    exclude:
+    - usr/share/man
+    - usr/share/doc/*/README.*
+    - usr/share/doc/*/changelog.*
+    - usr/share/doc/*/NEWS.*
+    - usr/share/doc/*/TODO.*
+  test:
+    fedora-30:
+      image: appimagecrafters/tests-env:fedora-30
+      command: ./AppRun
+    debian-stable:
+      image: appimagecrafters/tests-env:debian-stable
+      command: ./AppRun
+    archlinux-latest:
+      image: appimagecrafters/tests-env:archlinux-latest
+      command: ./AppRun
+    centos-7:
+      image: appimagecrafters/tests-env:centos-7
+      command: ./AppRun
+    ubuntu-xenial:
+      image: appimagecrafters/tests-env:ubuntu-xenial
+      command: ./AppRun
+AppImage:
+  arch: x86_64
+  update-information: guess

@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgutils.py" line="893" column="1" bodyfile="pycommon/pgutils.py" bodystart="893" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgutils.py" line="893" column="1" bodyfile="pyedpro/build/lib/pycommon/pgutils.py" bodystart="893" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgutils_1_1Config_1a1dd8209761e8bd9d776ce56f44301a16" prot="public" static="no" mutable="no">
         <type></type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgutils.py" line="894" column="1" bodyfile="pycommon/pgutils.py" bodystart="894" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgutils.py" line="894" column="1" bodyfile="pyedpro/build/lib/pycommon/pgutils.py" bodystart="894" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgutils_1_1Config_1a47f648bb26c2d05090a56a64cbde4066" prot="public" static="no" mutable="no">
         <type></type>
@@ -40,52 +40,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgutils.py" line="895" column="1" bodyfile="pycommon/pgutils.py" bodystart="895" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgutils.py" line="895" column="1" bodyfile="pyedpro/build/lib/pycommon/pgutils.py" bodystart="895" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pgutils_1_1Config_1a2ef0ac6d78010f9e38bdac35ca7b8be5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgutils.Config.__init__</definition>
-        <argsstring>(self, optarr)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pgutils_1_1Config_1a39a4aab4524cf315f1e3c602960554de" kindref="member">optarr</ref></type>
-          <defname>optarr</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgutils.py" line="892" column="1" bodyfile="pycommon/pgutils.py" bodystart="892" bodyend="896"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgutils_1_1Config_1a94c4bed840b854bc8d7f5bc2faf6c5ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgutils.Config.comline</definition>
-        <argsstring>(self, argv)</argsstring>
-        <name>comline</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>argv</type>
-          <defname>argv</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgutils.py" line="897" column="1" bodyfile="pycommon/pgutils.py" bodystart="897" bodyend="943"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pgutils_1_1Config_1a2ef0ac6d78010f9e38bdac35ca7b8be5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pgutils.Config.__init__</definition>
@@ -133,11 +91,9 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pgutils.py" line="890" column="1" bodyfile="pycommon/pgutils.py" bodystart="890" bodyend="943"/>
+    <location file="pyedpro/build/lib/pycommon/pgutils.py" line="890" column="1" bodyfile="pyedpro/build/lib/pycommon/pgutils.py" bodystart="890" bodyend="943"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pgutils_1_1Config_1a2ef0ac6d78010f9e38bdac35ca7b8be5" prot="public" virt="non-virtual"><scope>pycommon::pgutils::Config</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pgutils_1_1Config_1a2ef0ac6d78010f9e38bdac35ca7b8be5" prot="public" virt="non-virtual"><scope>pycommon::pgutils::Config</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pgutils_1_1Config_1a94c4bed840b854bc8d7f5bc2faf6c5ac" prot="public" virt="non-virtual"><scope>pycommon::pgutils::Config</scope><name>comline</name></member>
       <member refid="classpycommon_1_1pgutils_1_1Config_1a94c4bed840b854bc8d7f5bc2faf6c5ac" prot="public" virt="non-virtual"><scope>pycommon::pgutils::Config</scope><name>comline</name></member>
       <member refid="classpycommon_1_1pgutils_1_1Config_1a47f648bb26c2d05090a56a64cbde4066" prot="public" virt="non-virtual"><scope>pycommon::pgutils::Config</scope><name>debug</name></member>
       <member refid="classpycommon_1_1pgutils_1_1Config_1a39a4aab4524cf315f1e3c602960554de" prot="public" virt="non-virtual"><scope>pycommon::pgutils::Config</scope><name>optarr</name></member>

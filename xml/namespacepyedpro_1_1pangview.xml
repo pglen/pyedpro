@@ -114,7 +114,7 @@
         <definition>pyedpro::pangview.cb</definition>
         <argsstring></argsstring>
         <name>cb</name>
-        <initializer>=  pangfunc.CallBack(<ref refid="namespacepyedpro_1_1pangview_1a46dfbcb386ebc6dd76f56f01c5e8dbff" kindref="member">ts</ref>, <ref refid="namespacepyedpro_1_1pangview_1a146fc5c74eb0554c4c16220cc19dad08" kindref="member">mainview</ref>, <ref refid="namespacepyedpro_1_1pangview_1a8c0003cc339aee481c180196d8cdb30b" kindref="member">emit</ref>, <ref refid="classpyedpro_1_1pangview_1_1pvg" kindref="compound">pvg</ref>)</initializer>
+        <initializer>=  pangfunc.CallBack(<ref refid="namespacepyedpro_1_1pangview_1a46dfbcb386ebc6dd76f56f01c5e8dbff" kindref="member">ts</ref>, <ref refid="namespacepyedpro_1_1pangview_1a146fc5c74eb0554c4c16220cc19dad08" kindref="member">mainview</ref>, <ref refid="namespacepyedpro_1_1pangview_1a6417771c2c7ac1e6f09a54ae25a5a34d" kindref="member">emit</ref>, <ref refid="classpyedpro_1_1pangview_1_1pvg" kindref="compound">pvg</ref>)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -136,270 +136,6 @@
         </inbodydescription>
         <location file="pyedpro/pangview.py" line="486" column="1" bodyfile="pyedpro/pangview.py" bodystart="486" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1afdc4378808ad9f8fc54ed958fb9b8b1e" prot="public" static="no" mutable="no">
-        <type>list</type>
-        <definition>pyedpro::pangview.opts</definition>
-        <argsstring></argsstring>
-        <name>opts</name>
-        <initializer>=  []</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="790" column="1" bodyfile="pyedpro/pangview.py" bodystart="790" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a95e67e3be9539cca1eaff8e56c6ecd39" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.args</definition>
-        <argsstring></argsstring>
-        <name>args</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="792" column="1" bodyfile="pyedpro/pangview.py" bodystart="792" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a2900d30256b1927051756aaf48e03a3c" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.pgdebug</definition>
-        <argsstring></argsstring>
-        <name>pgdebug</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="802" column="1" bodyfile="pyedpro/pangview.py" bodystart="802" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a58ac37900485f37c1dc9b113e53415b9" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.second</definition>
-        <argsstring></argsstring>
-        <name>second</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="807" column="1" bodyfile="pyedpro/pangview.py" bodystart="807" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1aa0d22547780ad0fa60b42b6bb90c7bcd" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.pane_pos</definition>
-        <argsstring></argsstring>
-        <name>pane_pos</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="812" column="1" bodyfile="pyedpro/pangview.py" bodystart="812" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a8ec67120ccf6fbb432f95023c1dc142a" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.verbose</definition>
-        <argsstring></argsstring>
-        <name>verbose</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="819" column="1" bodyfile="pyedpro/pangview.py" bodystart="819" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a147baed58ac50a1e3ed3059d7563891a" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.show_lexer</definition>
-        <argsstring></argsstring>
-        <name>show_lexer</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="820" column="1" bodyfile="pyedpro/pangview.py" bodystart="820" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a947bf0bdfbccf07eee4c968a0ee34dd8" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.full_screen</definition>
-        <argsstring></argsstring>
-        <name>full_screen</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="821" column="1" bodyfile="pyedpro/pangview.py" bodystart="821" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a5fcd3c0006ca49177a314b299b30b328" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.xfull_screen</definition>
-        <argsstring></argsstring>
-        <name>xfull_screen</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="822" column="1" bodyfile="pyedpro/pangview.py" bodystart="822" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a1a80dfb504f4dfafbb114b80fc6575e8" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.show_timing</definition>
-        <argsstring></argsstring>
-        <name>show_timing</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="823" column="1" bodyfile="pyedpro/pangview.py" bodystart="823" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a8c0003cc339aee481c180196d8cdb30b" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.emit</definition>
-        <argsstring></argsstring>
-        <name>emit</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="824" column="1" bodyfile="pyedpro/pangview.py" bodystart="824" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a87602dfc4f76b9772da3fa0361e68f2d" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.show_parse</definition>
-        <argsstring></argsstring>
-        <name>show_parse</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="825" column="1" bodyfile="pyedpro/pangview.py" bodystart="825" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a2fc87e71f381509a63c662ca3c6f505e" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.show_state</definition>
-        <argsstring></argsstring>
-        <name>show_state</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="826" column="1" bodyfile="pyedpro/pangview.py" bodystart="826" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.strx</definition>
-        <argsstring></argsstring>
-        <name>strx</name>
-        <initializer>=  <ref refid="namespacepyedpro_1_1pangview_1a95e67e3be9539cca1eaff8e56c6ecd39" kindref="member">args</ref>[0]</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="829" column="1" bodyfile="pyedpro/pangview.py" bodystart="829" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a03b97ec8db057532caa5f0777a6c7a16" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.lstack</definition>
-        <argsstring></argsstring>
-        <name>lstack</name>
-        <initializer>=  <ref refid="classpyedpro_1_1stack_1_1Stack" kindref="compound">stack.Stack</ref>()</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="833" column="1" bodyfile="pyedpro/pangview.py" bodystart="833" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1ade57051a65882cff2329b33fca2146c4" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.fullpath</definition>
-        <argsstring></argsstring>
-        <name>fullpath</name>
-        <initializer>=  os.path.abspath(<ref refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kindref="member">strx</ref>);</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="834" column="1" bodyfile="pyedpro/pangview.py" bodystart="834" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1aaa0ab99c2eda1503bce77824bd862579" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.docroot</definition>
-        <argsstring></argsstring>
-        <name>docroot</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="835" column="1" bodyfile="pyedpro/pangview.py" bodystart="835" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a327d2c415fabbd7dcd79681bedbc562e" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.callback</definition>
-        <argsstring></argsstring>
-        <name>callback</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="842" column="1" bodyfile="pyedpro/pangview.py" bodystart="842" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1adaede3ff3878f7c15cebe32ee6b6adac" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.bscallback</definition>
-        <argsstring></argsstring>
-        <name>bscallback</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="843" column="1" bodyfile="pyedpro/pangview.py" bodystart="843" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pangview_1a2d2f4079cb30e6641d34ee99c12a2731" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pangview.flag</definition>
-        <argsstring></argsstring>
-        <name>flag</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pangview.py" line="850" column="1" bodyfile="pyedpro/pangview.py" bodystart="850" bodyend="-1"/>
-      </memberdef>
       </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="namespacepyedpro_1_1pangview_1a5a65c0f58ae62175ba2d9146397955b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -408,7 +144,7 @@
         <argsstring>(strx)</argsstring>
         <name>parse_lookup</name>
         <param>
-          <type><ref refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kindref="member">strx</ref></type>
+          <type>strx</type>
           <defname>strx</defname>
         </param>
         <briefdescription>
@@ -425,7 +161,7 @@
         <argsstring>(strx)</argsstring>
         <name>pl</name>
         <param>
-          <type><ref refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kindref="member">strx</ref></type>
+          <type>strx</type>
           <defname>strx</defname>
         </param>
         <briefdescription>
@@ -442,7 +178,7 @@
         <argsstring>(strx)</argsstring>
         <name>emit</name>
         <param>
-          <type><ref refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kindref="member">strx</ref></type>
+          <type>strx</type>
           <defname>strx</defname>
         </param>
         <briefdescription>
@@ -498,7 +234,7 @@
         <argsstring>(strx)</argsstring>
         <name>link</name>
         <param>
-          <type><ref refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kindref="member">strx</ref></type>
+          <type>strx</type>
           <defname>strx</defname>
         </param>
         <briefdescription>
@@ -519,7 +255,7 @@
           <defname>title</defname>
         </param>
         <param>
-          <type><ref refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kindref="member">strx</ref></type>
+          <type>strx</type>
           <defname>strx</defname>
         </param>
         <briefdescription>
@@ -536,7 +272,7 @@
         <argsstring>(strx)</argsstring>
         <name>showfile</name>
         <param>
-          <type><ref refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kindref="member">strx</ref></type>
+          <type>strx</type>
           <defname>strx</defname>
         </param>
         <briefdescription>
@@ -559,6 +295,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="pyedpro/pangview.py" line="762" column="1" bodyfile="pyedpro/pangview.py" bodystart="762" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pangview_1ad5b0353013c4160edff0956c42371ee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pangview.mainfunc</definition>
+        <argsstring>()</argsstring>
+        <name>mainfunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pangview.py" line="786" column="1" bodyfile="pyedpro/pangview.py" bodystart="786" bodyend="859"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

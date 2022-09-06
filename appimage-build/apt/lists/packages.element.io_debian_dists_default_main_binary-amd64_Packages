@@ -1,0 +1,70 @@
+Package: element-desktop
+License: Apache-2.0
+Vendor: support@element.io
+Architecture: amd64
+Maintainer: support@element.io
+Depends: libgtk-3-0, libnotify4, libnss3, libxss1, libxtst6, xdg-utils, libatspi2.0-0, libuuid1, libsecret-1-0
+Recommends: libappindicator3-1, libsqlcipher0
+Replaces: riot-desktop (<< 1.7.0), riot-web (<< 1.7.0)
+Breaks: riot-desktop (<< 1.7.0), riot-web (<< 1.7.0)
+Homepage: https://element.io/
+Priority: extra
+Section: net
+Filename: pool/main/e/element-desktop/element-desktop_1.11.4-1_amd64.deb
+Size: 83396916
+SHA256: 82ceed7d3d0fb7952d6d3a46a30d4d73d570dd5d21803793051b14ab2909f5f4
+SHA1: 30356d2f8e419cbc71af7d9592b8b2d2fe358b51
+MD5sum: 4e7d6594badd1916921630cd15f71dc8
+Description:
+  A feature-rich client for Matrix.org
+Version: 1.11.4-1
+
+Package: element-nightly
+License: Apache-2.0
+Vendor: support@element.io
+Architecture: amd64
+Maintainer: support@element.io
+Depends: libgtk-3-0, libnotify4, libnss3, libxss1, libxtst6, xdg-utils, libatspi2.0-0, libuuid1, libsecret-1-0
+Recommends: libappindicator3-1, libsqlcipher0
+Homepage: https://element.io/
+Priority: extra
+Section: net
+Filename: pool/main/e/element-nightly/element-nightly_2022090501_amd64.deb
+Size: 85872500
+SHA256: b166e95e490debe2ec49684fdff9a773fc60f33c5775f849049e8fac71ce8797
+SHA1: 2d2e6c324556445ab52f40f8e348f9f141b17b8b
+MD5sum: 1e3576eefea8c2872c57acd9d2a30132
+Description:
+ riot.im A feature-rich client for Matrix.org (nightly unstable build).
+Version: 2022090501
+
+Package: riot-desktop
+Version: 1.7.0
+Depends: element-desktop
+Maintainer: packages@element.io
+Architecture: all
+Priority: optional
+Section: oldlibs
+Filename: pool/main/r/riot-desktop/riot-desktop_1.7.0_all.deb
+Size: 740
+SHA256: 239f5d52ae4424ec8f15e2e736847c1f3d91ec841ba9203d0352a96b98fe7a97
+SHA1: 602da459c8b442e09f37fba893ec240340ee8362
+MD5sum: a7807820d1067fe6a8d9fdb455dc91e9
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+
+Package: riot-nightly
+Version: 2020071502
+Depends: element-nightly
+Maintainer: packages@element.io
+Architecture: all
+Priority: optional
+Section: oldlibs
+Filename: pool/main/r/riot-nightly/riot-nightly_2020071502_all.deb
+Size: 748
+SHA256: 3e8628f3d75e326b8da4fc2f8c6dcef0a58c81c55d43cf3951f4a93874d2856a
+SHA1: 93ec93a73684dcd1cbc05af45b68915a0a5e3e33
+MD5sum: f0afec6f2ec21b47907234584e9c0a33
+Description: transitional package
+ This is a transitional package. It can safely be removed.
+

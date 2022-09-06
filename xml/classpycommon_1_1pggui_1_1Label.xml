@@ -3,45 +3,7 @@
   <compounddef id="classpycommon_1_1pggui_1_1Label" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pggui::Label</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.Label</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.Label</basecompoundref>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1Label_1aab669373e0e3865aa3d4782785f9c91b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.Label.__init__</definition>
-        <argsstring>(self, textm=&quot;&quot;, widget=None, tooltip=None, font=None)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>textm</type>
-          <defname>textm</defname>
-          <defval>&quot;&quot;</defval>
-        </param>
-        <param>
-          <type>widget</type>
-          <defname>widget</defname>
-          <defval>None</defval>
-        </param>
-        <param>
-          <type>tooltip</type>
-          <defname>tooltip</defname>
-          <defval>None</defval>
-        </param>
-        <param>
-          <type>font</type>
-          <defname>font</defname>
-          <defval>None</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="431" column="1" bodyfile="pycommon/pggui.py" bodystart="431" bodyend="440"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pggui_1_1Label_1aab669373e0e3865aa3d4782785f9c91b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pggui.Label.__init__</definition>
@@ -93,8 +55,6 @@
         <link refid="classpycommon_1_1pggui_1_1Label"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -106,13 +66,10 @@
         <link refid="classpycommon_1_1pggui_1_1Label"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pggui.py" line="430" column="1" bodyfile="pycommon/pggui.py" bodystart="430" bodyend="441"/>
+    <location file="pyedpro/build/lib/pycommon/pggui.py" line="430" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="430" bodyend="441"/>
     <listofallmembers>
-      <member refid="classpycommon_1_1pggui_1_1Label_1aab669373e0e3865aa3d4782785f9c91b" prot="public" virt="non-virtual"><scope>pycommon::pggui::Label</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pggui_1_1Label_1aab669373e0e3865aa3d4782785f9c91b" prot="public" virt="non-virtual"><scope>pycommon::pggui::Label</scope><name>__init__</name></member>
     </listofallmembers>
   </compounddef>

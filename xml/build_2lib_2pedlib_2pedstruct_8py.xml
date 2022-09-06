@@ -30,7 +30,7 @@
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>arr<sp/>=<sp/>[]</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>xfile<sp/>=<sp/><ref refid="namespacepedlib_1_1pedutil_1a1e6a7e387fe65ad248da3e0a208f8e56" kindref="member">get_exec_path</ref>(</highlight><highlight class="stringliteral">&quot;PyGObject.txt&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>arr2<sp/>=<sp/><ref refid="namespacepycommon_1_1pgutils_1a5e36c654201702a569ef98cddff78029" kindref="member">readfile</ref>(xfile)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>arr2<sp/>=<sp/><ref refid="namespacepedlib_1_1pedutil_1a0268b6439bdbc0e93d26b779245a77ab" kindref="member">readfile</ref>(xfile)</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#print<sp/>(&quot;arr2&quot;,<sp/>arr2[:30])</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>

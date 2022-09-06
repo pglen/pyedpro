@@ -3,9 +3,9 @@
   <compounddef id="namespacepycommon_1_1pgentry" kind="namespace" language="Python">
     <compoundname>pycommon::pgentry</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1abe342096e4f8064cf07e20595d60bb78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1ad5c131454433263070fe2d32c093e2b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgentry::entryquad</definition>
+        <definition>def pycommon.pgentry.entryquad</definition>
         <argsstring>(arr, vbox, entry1, entry2)</argsstring>
         <name>entryquad</name>
         <param>
@@ -30,11 +30,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgentry.py" line="18" column="1" bodyfile="pycommon/pgentry.py" bodystart="18" bodyend="59"/>
+        <location file="pyedpro/build/lib/pycommon/pgentry.py" line="18" column="1" bodyfile="pyedpro/build/lib/pycommon/pgentry.py" bodystart="18" bodyend="59"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a9a2ab3e1e5290949721cdd980d69ea55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a20ff4d07eb72b5a8997d381f47171ed1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgentry::entrypair</definition>
+        <definition>def pycommon.pgentry.entrypair</definition>
         <argsstring>(vbox, labtext, labname, tip, defval=None)</argsstring>
         <name>entrypair</name>
         <param>
@@ -64,11 +64,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgentry.py" line="60" column="1" bodyfile="pycommon/pgentry.py" bodystart="60" bodyend="87"/>
+        <location file="pyedpro/build/lib/pycommon/pgentry.py" line="60" column="1" bodyfile="pyedpro/build/lib/pycommon/pgentry.py" bodystart="60" bodyend="87"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a3dc779a38e428b3af62d0d413be0e09e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a0fe07007446a2178418696d2ec40f7d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgentry::textviewpair</definition>
+        <definition>def pycommon.pgentry.textviewpair</definition>
         <argsstring>(arr, vbox, labtext, labname, tip, defval=None, expand=False)</argsstring>
         <name>textviewpair</name>
         <param>
@@ -107,11 +107,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgentry.py" line="88" column="1" bodyfile="pycommon/pgentry.py" bodystart="88" bodyend="115"/>
+        <location file="pyedpro/build/lib/pycommon/pgentry.py" line="88" column="1" bodyfile="pyedpro/build/lib/pycommon/pgentry.py" bodystart="88" bodyend="115"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1abdbd29bbf53e4c4d42ae0a1d6a6b7ce6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a607163b64ffff64c52b56bcc35a0f9ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgentry::scrolledtext</definition>
+        <definition>def pycommon.pgentry.scrolledtext</definition>
         <argsstring>(arr, name, body=None)</argsstring>
         <name>scrolledtext</name>
         <param>
@@ -133,11 +133,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgentry.py" line="116" column="1" bodyfile="pycommon/pgentry.py" bodystart="116" bodyend="132"/>
+        <location file="pyedpro/build/lib/pycommon/pgentry.py" line="116" column="1" bodyfile="pyedpro/build/lib/pycommon/pgentry.py" bodystart="116" bodyend="132"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a7a6f2be31753f7d4b43a4ba227d303cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a48becb0ef9ae092918c8405b249c0c3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgentry::imgbutt</definition>
+        <definition>def pycommon.pgentry.imgbutt</definition>
         <argsstring>(imgfile, txt, func, win)</argsstring>
         <name>imgbutt</name>
         <param>
@@ -162,11 +162,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgentry.py" line="133" column="1" bodyfile="pycommon/pgentry.py" bodystart="133" bodyend="156"/>
+        <location file="pyedpro/build/lib/pycommon/pgentry.py" line="133" column="1" bodyfile="pyedpro/build/lib/pycommon/pgentry.py" bodystart="133" bodyend="156"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1abae9beff19fdb19c0f99d823d7dcd86e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a0c190d3e02eca89908f829f4b879fcce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgentry::spacer</definition>
+        <definition>def pycommon.pgentry.spacer</definition>
         <argsstring>(hbox, xstr=&quot;    &quot;, expand=False)</argsstring>
         <name>spacer</name>
         <param>
@@ -189,11 +189,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgentry.py" line="157" column="1" bodyfile="pycommon/pgentry.py" bodystart="157" bodyend="160"/>
+        <location file="pyedpro/build/lib/pycommon/pgentry.py" line="157" column="1" bodyfile="pyedpro/build/lib/pycommon/pgentry.py" bodystart="157" bodyend="160"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1ac57949e87a23ffd0d8da03516dbec4cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgentry_1a366754738242759e13ac2ac02df47be3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgentry::vspacer</definition>
+        <definition>def pycommon.pgentry.vspacer</definition>
         <argsstring>(vbox, xstr=&quot;     &quot;, expand=False)</argsstring>
         <name>vspacer</name>
         <param>
@@ -216,13 +216,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgentry.py" line="161" column="1" bodyfile="pycommon/pgentry.py" bodystart="161" bodyend="166"/>
+        <location file="pyedpro/build/lib/pycommon/pgentry.py" line="161" column="1" bodyfile="pyedpro/build/lib/pycommon/pgentry.py" bodystart="161" bodyend="166"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pgentry.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/pycommon/pgentry.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

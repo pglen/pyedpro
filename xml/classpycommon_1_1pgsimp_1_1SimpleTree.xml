@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pgsimp_1_1SimpleTree" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pgsimp::SimpleTree</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.TreeView</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.TreeView</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a105ff8174a376a80854c18f47922affd" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="43" column="1" bodyfile="pycommon/pgsimp.py" bodystart="43" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="43" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleTree_1ad6718de90664a17f192dd5e7229c5698" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="44" column="1" bodyfile="pycommon/pgsimp.py" bodystart="44" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="44" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a6e68d2d495ba7f69cde9c49b0027afc4" prot="public" static="no" mutable="no">
         <type></type>
@@ -42,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="53" column="1" bodyfile="pycommon/pgsimp.py" bodystart="53" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="53" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleTree_1aecbb4c19f36a333e328a8ac83fd89b5e" prot="public" static="no" mutable="no">
         <type></type>
@@ -55,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="57" column="1" bodyfile="pycommon/pgsimp.py" bodystart="57" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="57" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a35046bc1735cbc51935b279d49ce19ca" prot="public" static="no" mutable="no">
         <type></type>
@@ -68,193 +67,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="90" column="1" bodyfile="pycommon/pgsimp.py" bodystart="90" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="90" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="90" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a6cf0e4ca8b019968187f02a7a4ef47a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.__init__</definition>
-        <argsstring>(self, head=[], editx=[], skipedit=0)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>head</type>
-          <defname>head</defname>
-          <defval>[]</defval>
-        </param>
-        <param>
-          <type>editx</type>
-          <defname>editx</defname>
-          <defval>[]</defval>
-        </param>
-        <param>
-          <type>skipedit</type>
-          <defname>skipedit</defname>
-          <defval>0</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="39" column="1" bodyfile="pycommon/pgsimp.py" bodystart="39" bodyend="76"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1aa7a8b895b1a5e658a18cc3f1145cce00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.text_edited</definition>
-        <argsstring>(self, widget, path, text, idx)</argsstring>
-        <name>text_edited</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>widget</type>
-          <defname>widget</defname>
-        </param>
-        <param>
-          <type>path</type>
-          <defname>path</defname>
-        </param>
-        <param>
-          <type>text</type>
-          <defname>text</defname>
-        </param>
-        <param>
-          <type>idx</type>
-          <defname>idx</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="77" column="1" bodyfile="pycommon/pgsimp.py" bodystart="77" bodyend="84"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1ab91144df25b98edaa7b1179b6c97a8be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.selection</definition>
-        <argsstring>(self, xtree)</argsstring>
-        <name>selection</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>xtree</type>
-          <defname>xtree</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="85" column="1" bodyfile="pycommon/pgsimp.py" bodystart="85" bodyend="97"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1ae04bce40d3c198b2e7df445ceb1571d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.setcallb</definition>
-        <argsstring>(self, callb)</argsstring>
-        <name>setcallb</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a105ff8174a376a80854c18f47922affd" kindref="member">callb</ref></type>
-          <defname>callb</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="98" column="1" bodyfile="pycommon/pgsimp.py" bodystart="98" bodyend="100"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a250a91d11a164c0320acbee0916b1048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.setCHcallb</definition>
-        <argsstring>(self, callb)</argsstring>
-        <name>setCHcallb</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a105ff8174a376a80854c18f47922affd" kindref="member">callb</ref></type>
-          <defname>callb</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="101" column="1" bodyfile="pycommon/pgsimp.py" bodystart="101" bodyend="103"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a18bc4508bafac04117312db60794c645" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.append</definition>
-        <argsstring>(self, args)</argsstring>
-        <name>append</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a35046bc1735cbc51935b279d49ce19ca" kindref="member">args</ref></type>
-          <defname>args</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="104" column="1" bodyfile="pycommon/pgsimp.py" bodystart="104" bodyend="107"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1ac8a7b1abde91056eef12bd061246fb45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.sel_last</definition>
-        <argsstring>(self)</argsstring>
-        <name>sel_last</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="108" column="1" bodyfile="pycommon/pgsimp.py" bodystart="108" bodyend="126"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a970f77f196524f690bb4150656be1198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgsimp.SimpleTree.clear</definition>
-        <argsstring>(self)</argsstring>
-        <name>clear</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="127" column="1" bodyfile="pycommon/pgsimp.py" bodystart="127" bodyend="131"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pgsimp_1_1SimpleTree_1a6cf0e4ca8b019968187f02a7a4ef47a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pgsimp.SimpleTree.__init__</definition>
@@ -452,8 +268,6 @@
         <link refid="classpycommon_1_1pgsimp_1_1SimpleTree"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -465,30 +279,20 @@
         <link refid="classpycommon_1_1pgsimp_1_1SimpleTree"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pgsimp.py" line="37" column="1" bodyfile="pycommon/pgsimp.py" bodystart="37" bodyend="132"/>
+    <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="37" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="37" bodyend="132"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a6cf0e4ca8b019968187f02a7a4ef47a3" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a6cf0e4ca8b019968187f02a7a4ef47a3" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a18bc4508bafac04117312db60794c645" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>append</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a18bc4508bafac04117312db60794c645" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>append</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a35046bc1735cbc51935b279d49ce19ca" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>args</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a105ff8174a376a80854c18f47922affd" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>callb</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ad6718de90664a17f192dd5e7229c5698" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>chcallb</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a970f77f196524f690bb4150656be1198" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>clear</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a970f77f196524f690bb4150656be1198" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>clear</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ac8a7b1abde91056eef12bd061246fb45" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>sel_last</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ac8a7b1abde91056eef12bd061246fb45" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>sel_last</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ab91144df25b98edaa7b1179b6c97a8be" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>selection</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ab91144df25b98edaa7b1179b6c97a8be" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>selection</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ae04bce40d3c198b2e7df445ceb1571d9" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>setcallb</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ae04bce40d3c198b2e7df445ceb1571d9" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>setcallb</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a250a91d11a164c0320acbee0916b1048" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>setCHcallb</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a250a91d11a164c0320acbee0916b1048" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>setCHcallb</name></member>
-      <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1aa7a8b895b1a5e658a18cc3f1145cce00" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>text_edited</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1aa7a8b895b1a5e658a18cc3f1145cce00" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>text_edited</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1aecbb4c19f36a333e328a8ac83fd89b5e" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>treestore</name></member>
       <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a6e68d2d495ba7f69cde9c49b0027afc4" prot="public" virt="non-virtual"><scope>pycommon::pgsimp::SimpleTree</scope><name>types</name></member>

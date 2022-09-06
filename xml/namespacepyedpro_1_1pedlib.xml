@@ -45,6 +45,7 @@
     <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedwin">pyedpro::pedlib::pedwin</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedxtnd">pyedpro::pedlib::pedxtnd</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pedlib_1_1pedync">pyedpro::pedlib::pedync</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pedlib_1_1plugins">pyedpro::pedlib::plugins</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pedlib_1_1stack">pyedpro::pedlib::stack</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pedlib_1_1test">pyedpro::pedlib::test</innernamespace>
     <innernamespace refid="namespacepyedpro_1_1pedlib_1_1testdiff">pyedpro::pedlib::testdiff</innernamespace>

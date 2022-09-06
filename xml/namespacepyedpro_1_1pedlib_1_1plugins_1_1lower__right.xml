@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right" kind="namespace" language="Python">
+    <compoundname>pyedpro::pedlib::plugins::lower_right</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1a6e22f6652adeb35321c63256d8f11dee" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int pyedpro::pedlib::plugins::lower_right.verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/plugins/lower_right.py" line="15" column="1" bodyfile="pyedpro/pedlib/plugins/lower_right.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1a5bc33903f551ff894fddc8e45fa3ecb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.plugins.lower_right.display</definition>
+        <argsstring>(disp, cr)</argsstring>
+        <name>display</name>
+        <param>
+          <type>disp</type>
+          <defname>disp</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/plugins/lower_right.py" line="21" column="1" bodyfile="pyedpro/pedlib/plugins/lower_right.py" bodystart="21" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1a89dd7bb2fcfb5573d32ca743b606790a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.plugins.lower_right.keypress</definition>
+        <argsstring>(disp, keyx)</argsstring>
+        <name>keypress</name>
+        <param>
+          <type>disp</type>
+          <defname>disp</defname>
+        </param>
+        <param>
+          <type>keyx</type>
+          <defname>keyx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/plugins/lower_right.py" line="43" column="1" bodyfile="pyedpro/pedlib/plugins/lower_right.py" bodystart="43" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1ad205b09909f5521ce9f89f5bdbb26d84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.plugins.lower_right.init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/plugins/lower_right.py" line="54" column="1" bodyfile="pyedpro/pedlib/plugins/lower_right.py" bodystart="54" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="pyedpro/pedlib/plugins/lower_right.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

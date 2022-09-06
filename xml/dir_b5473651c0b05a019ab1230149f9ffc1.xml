@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="dir_b5473651c0b05a019ab1230149f9ffc1" kind="dir">
     <compoundname>pyedpro/build/lib/pedlib/data</compoundname>
-    <innerfile refid="pyedpro_2build_2lib_2pedlib_2data_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="build_2lib_2pedlib_2data_2____init_____8py">__init__.py</innerfile>
     <innerfile refid="build_2lib_2pedlib_2data_2test_8c">test.c</innerfile>
     <innerfile refid="pyedpro_2build_2lib_2pedlib_2data_2test_8py">test.py</innerfile>
     <briefdescription>

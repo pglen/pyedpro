@@ -17,25 +17,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pypacker.py" line="12" column="1" bodyfile="pycommon/pypacker.py" bodystart="12" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pypacker.py" line="12" column="1" bodyfile="pyedpro/build/lib/pycommon/pypacker.py" bodystart="12" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepycommon_1_1pypacker_1abc6b84a9e6b1cd02090c45a628c94808" prot="private" static="no" mutable="no">
-        <type>list</type>
-        <definition>tuple pycommon::pypacker::__all__</definition>
-        <argsstring></argsstring>
-        <name>__all__</name>
-        <initializer>=  [ &quot;packbin&quot;]</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pypacker.py" line="46" column="1" bodyfile="pycommon/pypacker.py" bodystart="46" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepycommon_1_1pypacker_1ab90b033a13de2365284986757e406520" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepycommon_1_1pypacker_1a577cd68de2a8bb61a1eada263ceeccfd" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int pycommon::pypacker::pgdebug</definition>
+        <definition>int pycommon::pypacker.pgdebug</definition>
         <argsstring></argsstring>
         <name>pgdebug</name>
         <initializer>=  0</initializer>
@@ -45,13 +31,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pypacker.py" line="51" column="1" bodyfile="pycommon/pypacker.py" bodystart="51" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pypacker.py" line="46" column="1" bodyfile="pyedpro/build/lib/pycommon/pypacker.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacepycommon_1_1pypacker_1a48533c7969a59fa0478443a9bf7e2099" prot="private" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple pycommon::pypacker.__all__</definition>
+        <argsstring></argsstring>
+        <name>__all__</name>
+        <initializer>=  (&quot;autotype&quot;, &quot;<ref refid="classpycommon_1_1pypacker_1_1packbin_1a3eaaf64f1fda1fb3582415e541c32c45" kindref="member">packbin.encode_data</ref>&quot;, &quot;decode_data&quot;,
+                &quot;wrap_data&quot;, &quot;unwrap_data&quot;, &quot;verbose&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pycommon/pypacker.py" line="48" column="1" bodyfile="pyedpro/build/lib/pycommon/pypacker.py" bodystart="48" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pypacker.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/pycommon/pypacker.py" line="1" column="1"/>
   </compounddef>
 </doxygen>
