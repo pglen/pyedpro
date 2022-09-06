@@ -963,6 +963,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.xsel = xx2; self.xsel2 = xx2 + sel
             self.ysel = yy2; self.ysel2 = yy2
             self.invalidate()
+        #else:
+        #    self.xsel = xx2; self.xsel2 = xx2
+        #    self.ysel = yy2; self.ysel2 = yy2
 
         if mid:
             self.set_caret_middle(xx, yy)
@@ -2444,25 +2447,53 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         self.accum = []
 
-        curr = self.caret[1] + self.ypos
+        curr  = self.caret[1] + self.ypos
+        currx = self.caret[0] + self.xpos
+
         was = -1; cnt = 0; cnt2 = 0
+        before = 0; after = 0
+        marked = False
 
         for line in self.text:
             # Search one line for multiple matches
             mmm = src_line(line, cnt, srctxt, regex, boolcase, boolregex)
 
+            # Add marker to current lin
+            if cnt == curr:
+                if not marked:
+                    linex =  str(currx) + ":"  + str(cnt) +\
+                         ":" + str(0) + " " +\
+                             "---- current cursor position ----"
+                    self.accum.append(linex)
+                    marked = True
+
+            # Mark the next match for the display
             if cnt > curr and was == -1:
                 was = cnt2
             if  mmm:
-                cnt2 += 1
+                #print("mmm", mmm);
+
+                # Multiple counts may be there
                 for sss in mmm:
+                    cnt2 += 1
+                    # Mark the counters
+                    if cnt <= curr:
+                        before += 1
+                    else:
+                        after += 1
                     self.accum.append(sss)
+
             if cnt % 100 == 0:
-                self.mained.update_statusbar("Searching at %d" % cnt, True)
+                self.mained.update_statusbar(\
+                            "Searching at %d" % cnt, True)
                 usleep(1)
             cnt += 1
-        return was, cnt2
 
+        #if not marked:
+        #    self.accum.append(" ---- current cursor position ---- ")
+        #    marked = True
+
+        return was, cnt2, before, after
 
 # ------------------------------------------------------------------------
 # Run this on an idle callback so the user can work while this is going

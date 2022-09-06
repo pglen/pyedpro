@@ -1810,15 +1810,18 @@ class ActHand:
             except: pass
             #print ("TREE sel", bb)
             # See if match on the same line
-            if int(bb[1]) == yidx:
-                if int(bb[0]) < xidx:
+            try:
+                if int(bb[1]) == yidx:
+                    if int(bb[0]) < xidx:
+                        self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
+                        match = True
+                        break
+                elif int(bb[1]) < yidx:
                     self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
                     match = True
                     break
-            elif int(bb[1]) < yidx:
-                self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
-                match = True
-                break
+            except:
+                pass
 
             cnt -= 1
 

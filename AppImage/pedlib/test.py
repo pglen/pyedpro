@@ -40,7 +40,7 @@ import signal
 #
 # It is fast, it is extendable. The editor has a table driven key mapping.
 # One can easily edit the key map in keyhand.py, and the key actions
-# in acthand.py The default key map resembles gedit / wed / etp / brief
+# in acthand.py The de fault key map resembles gedit / wed / etp / brief
 
 # History:  (recent first, incomplete list)
 #

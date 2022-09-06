@@ -10,6 +10,8 @@ that I use every day.
    This project is a successor of pyedit, after porting it to GTK3. PyEdPro
  will run anywhere PyGObject can run.
 
+  This project's source is at - https://github.com/pglen/pyedpro
+
   Working and tested platforms currently are:
 
         Win 7 .. Win 10 ...

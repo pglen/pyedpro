@@ -106,7 +106,7 @@ def  about(self2):
 
     #"\nRunning PyGObject %d.%d.%d" % GObject.pygobject_version +\
 
-    ddd = os.path.join(os.path.dirname(__file__), "../", "../")
+    ddd = os.path.join(os.path.dirname(__file__), "../")
 
     # GLib.pyglib_version
     vvv = gi.version_info
