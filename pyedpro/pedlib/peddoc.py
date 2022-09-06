@@ -596,6 +596,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def hscroll_cb(self, widget):
         #print( "hscroll_cb", widget.get_value())
+
         # Skip one callback
         if self.honeshot:
             self.honeshot = False; return
@@ -669,7 +670,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         cr.rectangle( 0, 0, self.strip - 2, self.hhh)
         cr.fill()
 
-        pedplug.predraw(self, cr)
+        try:
+            pedplug.predraw(self, cr)
+        except:
+            print("plugin failed", sys.exc_info())
 
         # Pre set for drawing
         #cr.set_source_rgba(*list(fg_color))
@@ -685,10 +689,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         if not self.hex:
             # Do the text drawing in stages ...
-            self.draw_selection(cr)
-            self.draw_syntax(cr)
-            self.draw_comments(cr)
-            self.draw_spellerr(cr)
+            try:
+                self.draw_selection(cr)
+                self.draw_syntax(cr)
+                self.draw_clsyntax(cr)
+                self.draw_comments(cr)
+                self.draw_spellerr(cr)
+            except:
+                print("Failed to draw colors", sys.exc_info())
 
         if self.startxxx != -1:
             self.gotoxy(self.startxxx, self.startyyy)
@@ -885,7 +893,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         return int(self.ypos + yy / self.cyy)
 
     def pix2pos(self, xx, yy):
-        return int(self.xpos + xx / self.cxx), int(self.ypos + yy / self.cyy)
+        return int(self.xpos + (xx-self.strip) / self.cxx), int(self.ypos + yy / self.cyy)
 
     def area_motion(self, area, event):
         #print ("motion event", event.state, event.x, event.y)
@@ -1046,7 +1054,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         # ----------------------------------------------------------------
         # Put it back in view xxx:
 
-        xoff = cww - self.hscgap
+        xoff = cww - self.hscgap - self.strip / self.cxx
         if  xx - self.xpos  > xoff:
             #print( "Scroll from caret right", "xx", xx, "xpos", self.xpos)
             if self.xpos + self.caret[0] < xx:
@@ -1102,7 +1110,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             rect = Gdk.Rectangle(oldx, oldy, self.cxx + self.cxx /2 , self.cyy + 1)
             self.invalidate(rect)
         '''
-        self.invalidate(None)
+        #self.invalidate(None)
 
         # Update scroll bars, prevent them from sending scroll message:
         self.oneshot = True; self.vscroll.set_value(self.ypos)

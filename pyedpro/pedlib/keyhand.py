@@ -334,7 +334,10 @@ class KeyHand:
 
         #print ("KEY:",   event.keyval  )
 
-        pedplug.keypress(event)
+        try:
+            pedplug.keypress(self, event)
+        except:
+            print("plugin failed", sys.exc_info())
 
         if pedconfig.conf.show_keys:
             if pedconfig.conf.pgdebug > 3:

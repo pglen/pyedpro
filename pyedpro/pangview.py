@@ -783,7 +783,7 @@ def help():
 
 # ------------------------------------------------------------------------
 
-if __name__ == "__main__":
+def mainfunc():
 
     import getopt
 
@@ -830,7 +830,9 @@ if __name__ == "__main__":
     except:
         help(); exit(1)
 
+    global lstack
     lstack = stack.Stack()
+
     fullpath = os.path.abspath(strx);
     pvg.docroot = os.path.dirname(fullpath)
 
@@ -855,21 +857,7 @@ if __name__ == "__main__":
 
     main()
 
+if __name__ == "__main__":
+    mainfunc()
+
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
