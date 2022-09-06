@@ -89,7 +89,7 @@
         <definition>string pyedpro::pyedpro.VERSION</definition>
         <argsstring></argsstring>
         <name>VERSION</name>
-        <initializer>=  &quot;2.9.1&quot;</initializer>
+        <initializer>=  &quot;2.9.4&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -125,32 +125,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="pyedpro/pyedpro.py" line="179" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="179" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pyedpro_1a1c9ce5b4394b9c4c6a9f561f27bc8f08" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pyedpro.stdout</definition>
-        <argsstring></argsstring>
-        <name>stdout</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pyedpro.py" line="457" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="457" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="namespacepyedpro_1_1pyedpro_1ad6144066b0ecbdd8802d58feb83018b2" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>pyedpro::pyedpro.stderr</definition>
-        <argsstring></argsstring>
-        <name>stderr</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pyedpro/pyedpro.py" line="458" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="458" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -269,7 +243,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pyedpro.py" line="287" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="287" bodyend="453"/>
+        <location file="pyedpro/pyedpro.py" line="287" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="287" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pyedpro_1ad96c255c01b119eb8ff62b85025018d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pyedpro.mainfunc</definition>
+        <argsstring>()</argsstring>
+        <name>mainfunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pyedpro.py" line="453" column="1" bodyfile="pyedpro/pyedpro.py" bodystart="453" bodyend="468"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

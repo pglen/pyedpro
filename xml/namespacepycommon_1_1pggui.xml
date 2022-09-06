@@ -40,11 +40,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="20" column="1" bodyfile="pycommon/pggui.py" bodystart="20" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="20" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="20" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepycommon_1_1pggui_1a4dfd09a9efdf9f860fdeb885ba273645" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepycommon_1_1pggui_1a80054be6c1cb20cd17621b90ee08ff4b" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string pycommon::pggui::IDXERR</definition>
+        <definition>string pycommon::pggui.IDXERR</definition>
         <argsstring></argsstring>
         <name>IDXERR</name>
         <initializer>=  &quot;Index is larger than the available number of controls.&quot;</initializer>
@@ -54,11 +54,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="26" column="1" bodyfile="pycommon/pggui.py" bodystart="26" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="26" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="26" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespacepycommon_1_1pggui_1a3f7a80d85f59d4356c795f9c56cc3f2a" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepycommon_1_1pggui_1a0dd7b894b41c2ca377094c6f824f992d" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int pycommon::pggui::gui_testmode</definition>
+        <definition>int pycommon::pggui.gui_testmode</definition>
         <argsstring></argsstring>
         <name>gui_testmode</name>
         <initializer>=  0</initializer>
@@ -68,13 +68,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="28" column="1" bodyfile="pycommon/pggui.py" bodystart="28" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="28" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="28" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacepycommon_1_1pggui_1a31ce6c7afd5dd578d05b7f723aa279bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pggui_1abefc7c3cd44a1210cc1f13726bfc7112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pggui::randcol</definition>
+        <definition>def pycommon.pggui.randcol</definition>
         <argsstring>()</argsstring>
         <name>randcol</name>
         <briefdescription>
@@ -83,11 +83,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="30" column="1" bodyfile="pycommon/pggui.py" bodystart="30" bodyend="32"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="30" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="30" bodyend="32"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pggui_1ab88d745f1fddcc5cf27891d693aabca0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pggui_1a8f2d8393985a4a611c7a8bc3c2f84873" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pggui::randcolstr</definition>
+        <definition>def pycommon.pggui.randcolstr</definition>
         <argsstring>(start=0, endd=255)</argsstring>
         <name>randcolstr</name>
         <param>
@@ -106,11 +106,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="33" column="1" bodyfile="pycommon/pggui.py" bodystart="33" bodyend="53"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="33" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="33" bodyend="53"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pggui_1abcb2c0ad1fe6e7b651372e752536d057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pggui_1a5f3c3907ee797b77575722d9a2e4a3e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pggui::set_testmode</definition>
+        <definition>def pycommon.pggui.set_testmode</definition>
         <argsstring>(flag)</argsstring>
         <name>set_testmode</name>
         <param>
@@ -123,11 +123,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="637" column="1" bodyfile="pycommon/pggui.py" bodystart="637" bodyend="643"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="637" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="637" bodyend="643"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepycommon_1_1pggui_1aeae3e4b999fac611d25d388b893b43cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pggui_1ac95d214aef5f501f4b879c05a0215154" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pggui::set_gui_testmode</definition>
+        <definition>def pycommon.pggui.set_gui_testmode</definition>
         <argsstring>(flag)</argsstring>
         <name>set_gui_testmode</name>
         <param>
@@ -140,13 +140,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="1296" column="1" bodyfile="pycommon/pggui.py" bodystart="1296" bodyend="1299"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="1296" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="1296" bodyend="1299"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pggui.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/pycommon/pggui.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

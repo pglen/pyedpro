@@ -1,0 +1,42 @@
+Package: vivaldi-snapshot
+Architecture: amd64
+Version: 5.5.2770.3-1
+Priority: optional
+Section: web
+Maintainer: Vivaldi Package Composer <packager@vivaldi.com>
+Installed-Size: 342387
+Provides: www-browser
+Pre-Depends: dpkg (>= 1.14.0)
+Depends: ca-certificates, fonts-liberation, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.17), libcairo2 (>= 1.6.0), libcups2 (>= 1.6.0), libcurl3-gnutls | libcurl3-nss | libcurl4 | libcurl3, libdbus-1-3 (>= 1.5.12), libdrm2 (>= 2.4.60), libexpat1 (>= 2.0.1), libgbm1 (>= 8.1~0), libglib2.0-0 (>= 2.39.4), libgtk-3-0 (>= 3.9.10) | libgtk-4-1, libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.26), libpango-1.0-0 (>= 1.14.0), libwayland-client0 (>= 1.0.2), libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.4.4-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.4.1), libxrandr2, wget, xdg-utils (>= 1.0.2)
+Recommends: libu2f-udev, libvulkan1
+Filename: pool/main/vivaldi-snapshot_5.5.2770.3-1_amd64.deb
+Size: 97618168
+MD5sum: ea45216a1ef67a92915c714b1c41f4b9
+SHA1: 9fa887ec304bb7bbc51a386bc387808dcf9b972b
+SHA256: 82086d149948a9d5ba46a0b42eedd1f6a9ee785d375bd4e6ca67301d4adc9e9f
+SHA512: 12863ac479a73abfab2e15ab56e79e454366e3d2fce05b876c1a6211f1066b2498ccf92c5118f8937aab52db3c01b8765c605e5ac01983f46337c363ad3329c4
+Homepage: https://vivaldi.com
+Description: Experience the web in a whole new way with Vivaldi.
+ Vivaldi is a browser that has the features you need, a style that fits and values you can stand by. Your browser matters. Take control with Vivaldi.
+
+Package: vivaldi-stable
+Architecture: amd64
+Version: 5.4.2753.47-1
+Priority: optional
+Section: web
+Maintainer: Vivaldi Package Composer <packager@vivaldi.com>
+Installed-Size: 342507
+Provides: www-browser
+Pre-Depends: dpkg (>= 1.14.0)
+Depends: ca-certificates, fonts-liberation, libasound2 (>= 1.0.16), libatk-bridge2.0-0 (>= 2.5.3), libatk1.0-0 (>= 2.2.0), libatspi2.0-0 (>= 2.9.90), libc6 (>= 2.17), libcairo2 (>= 1.6.0), libcups2 (>= 1.6.0), libcurl3-gnutls | libcurl3-nss | libcurl4 | libcurl3, libdbus-1-3 (>= 1.5.12), libdrm2 (>= 2.4.60), libexpat1 (>= 2.0.1), libgbm1 (>= 8.1~0), libglib2.0-0 (>= 2.39.4), libgtk-3-0 (>= 3.9.10) | libgtk-4-1, libnspr4 (>= 2:4.9-2~), libnss3 (>= 2:3.26), libpango-1.0-0 (>= 1.14.0), libwayland-client0 (>= 1.0.2), libx11-6 (>= 2:1.4.99.1), libxcb1 (>= 1.9.2), libxcomposite1 (>= 1:0.4.4-1), libxdamage1 (>= 1:1.1), libxext6, libxfixes3, libxkbcommon0 (>= 0.4.1), libxrandr2, wget, xdg-utils (>= 1.0.2)
+Recommends: libu2f-udev, libvulkan1
+Filename: pool/main/vivaldi-stable_5.4.2753.47-1_amd64.deb
+Size: 97621584
+MD5sum: 45317e815751e0766bebbf49ef58546c
+SHA1: cde9713701e3d7c2f05fd50194f66206b504df39
+SHA256: b9be2446818a9b924734a2c66982604add3025764675a97c49e3bb9a592d25dc
+SHA512: e8a865eb669ad417c70843e39679294a8a0d65e1e3c0fb09df347f6341b4d8af872e233b71ed4ff66bd6195c44b93b34f5633a466e8bee4d4584ac4006cb330e
+Homepage: https://vivaldi.com
+Description: Experience the web in a whole new way with Vivaldi.
+ Vivaldi is a browser that has the features you need, a style that fits and values you can stand by. Your browser matters. Take control with Vivaldi.
+

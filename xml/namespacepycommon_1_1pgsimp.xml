@@ -12,9 +12,9 @@
     <innerclass refid="classpycommon_1_1pgsimp_1_1MinSel" prot="public">pycommon::pgsimp::MinSel</innerclass>
     <innerclass refid="classpycommon_1_1pgsimp_1_1TextViewWin" prot="public">pycommon::pgsimp::TextViewWin</innerclass>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacepycommon_1_1pgsimp_1a6c489abdb820f29de5ad7cb07873ec02" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepycommon_1_1pgsimp_1afba061ed1be01a5ae7833b4fb2e20e24" prot="public" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool pycommon::pgsimp::gui_testmode</definition>
+        <definition>bool pycommon::pgsimp.gui_testmode</definition>
         <argsstring></argsstring>
         <name>gui_testmode</name>
         <initializer>=  False</initializer>
@@ -24,13 +24,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgsimp.py" line="17" column="1" bodyfile="pycommon/pgsimp.py" bodystart="17" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="17" column="1" bodyfile="pyedpro/build/lib/pycommon/pgsimp.py" bodystart="17" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pgsimp.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/pycommon/pgsimp.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

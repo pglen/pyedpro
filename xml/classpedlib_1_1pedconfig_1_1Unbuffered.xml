@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="105" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="105" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="110" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="110" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="104" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="104" bodyend="106"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="109" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="109" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classpedlib_1_1pedconfig_1_1Unbuffered_1a4b11617dc7979dc7bd4d3dd05e88d17d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="107" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="107" bodyend="110"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="112" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="112" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classpedlib_1_1pedconfig_1_1Unbuffered_1a0389e5f7a0c1a7ce31aac5113fd68378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="111" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="111" bodyend="114"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="116" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="116" bodyend="119"/>
       </memberdef>
       <memberdef kind="function" id="classpedlib_1_1pedconfig_1_1Unbuffered_1a73b4023bb12e11e7f36afff654206721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="115" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="115" bodyend="126"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="120" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="120" bodyend="131"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -130,7 +130,7 @@
         <label>object</label>
       </node>
     </collaborationgraph>
-    <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="103" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="103" bodyend="126"/>
+    <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="108" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="108" bodyend="131"/>
     <listofallmembers>
       <member refid="classpedlib_1_1pedconfig_1_1Unbuffered_1a73b4023bb12e11e7f36afff654206721" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Unbuffered</scope><name>__getattr__</name></member>
       <member refid="classpedlib_1_1pedconfig_1_1Unbuffered_1a6d92cad5c4dd5289a35fa9635bcda637" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Unbuffered</scope><name>__init__</name></member>

@@ -10,7 +10,7 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1" refid="namespacepangview" refkind="compound"><highlight class="comment">#!python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1" refid="namespacepangview" refkind="compound"><highlight class="comment">#!/usr/bin/python</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#from<sp/>__future__<sp/>import<sp/>absolute_import</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function</highlight></codeline>
@@ -694,7 +694,7 @@
 <codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>strx<sp/>==<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>strx<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="684"><highlight class="normal"></highlight></codeline>
-<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/><ref refid="namespacepycommon_1_1pgutils_1a0b524e4c1cbe4afe4d38892414b1d3c6" kindref="member">isfile</ref>(strx):</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/><ref refid="namespacepanglib_1_1utils_1aa6100fdfb1396e1e3655026ce98e1141" kindref="member">isfile</ref>(strx):</highlight></codeline>
 <codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.showcur(</highlight><highlight class="keyword">False</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a433138d589f6a85a3476ec63ad8f846e" kindref="member">message_dialog</ref>(</highlight><highlight class="stringliteral">&quot;Missing<sp/>or<sp/>broken<sp/>link&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Cannot<sp/>find<sp/>file<sp/>&apos;%s&apos;&quot;</highlight><highlight class="normal"><sp/>%<sp/>strx<sp/>);</highlight></codeline>
@@ -795,7 +795,7 @@
 <codeline lineno="783"><highlight class="normal"></highlight></codeline>
 <codeline lineno="784"><highlight class="normal"></highlight><highlight class="comment">#<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="785"><highlight class="normal"></highlight></codeline>
-<codeline lineno="786"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="786"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacepangview_1afd9c4f4714ae2239a96368fa26d04204" kindref="member">mainfunc</ref>():</highlight></codeline>
 <codeline lineno="787"><highlight class="normal"></highlight></codeline>
 <codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>getopt</highlight></codeline>
 <codeline lineno="789"><highlight class="normal"></highlight></codeline>
@@ -842,49 +842,37 @@
 <codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="831"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a4f09202290728a5225cc09d618617618" kindref="member">help</ref>();<sp/>exit(1)</highlight></codeline>
 <codeline lineno="832"><highlight class="normal"></highlight></codeline>
-<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/>lstack<sp/>=<sp/>stack.Stack()</highlight></codeline>
-<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/>fullpath<sp/>=<sp/>os.path.abspath(strx);</highlight></codeline>
-<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/>pvg.docroot<sp/>=<sp/>os.path.dirname(fullpath)</highlight></codeline>
-<codeline lineno="836"><highlight class="normal"></highlight></codeline>
-<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pvg.xfull_screen:</highlight></codeline>
-<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.fullscreen()</highlight></codeline>
-<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>pvg.full_screen:</highlight></codeline>
-<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.set_fullscreen()</highlight></codeline>
-<codeline lineno="841"><highlight class="normal"></highlight></codeline>
-<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/>mainview.callback<sp/>=<sp/>link</highlight></codeline>
-<codeline lineno="843"><highlight class="normal"><sp/><sp/><sp/><sp/>mainview.bscallback<sp/>=<sp/>bslink</highlight></codeline>
-<codeline lineno="844"><highlight class="normal"></highlight></codeline>
-<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pvg.second<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pvg.pane_pos<sp/>&gt;=<sp/>0:</highlight></codeline>
-<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.set_pane_position(pvg.pane_pos)</highlight></codeline>
-<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.set_pane_position(250)</highlight></codeline>
-<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvg.flag<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a77468754c11b07eec33063ec41f02d15" kindref="member">showfile</ref>(pvg.second)</highlight></codeline>
-<codeline lineno="852"><highlight class="normal"></highlight></codeline>
-<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/>pvg.flag<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a77468754c11b07eec33063ec41f02d15" kindref="member">showfile</ref>(strx)</highlight></codeline>
-<codeline lineno="855"><highlight class="normal"></highlight></codeline>
-<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a6bb0fb1767377ce1fb0fd2af9e74c5af" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="833"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>lstack</highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/>lstack<sp/>=<sp/>stack.Stack()</highlight></codeline>
+<codeline lineno="835"><highlight class="normal"></highlight></codeline>
+<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/>fullpath<sp/>=<sp/>os.path.abspath(strx);</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/>pvg.docroot<sp/>=<sp/>os.path.dirname(fullpath)</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"></highlight></codeline>
+<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pvg.xfull_screen:</highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.fullscreen()</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>pvg.full_screen:</highlight></codeline>
+<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.set_fullscreen()</highlight></codeline>
+<codeline lineno="843"><highlight class="normal"></highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/>mainview.callback<sp/>=<sp/>link</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/>mainview.bscallback<sp/>=<sp/>bslink</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"></highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pvg.second<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>pvg.pane_pos<sp/>&gt;=<sp/>0:</highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.set_pane_position(pvg.pane_pos)</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mainview.set_pane_position(250)</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pvg.flag<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a77468754c11b07eec33063ec41f02d15" kindref="member">showfile</ref>(pvg.second)</highlight></codeline>
+<codeline lineno="854"><highlight class="normal"></highlight></codeline>
+<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/>pvg.flag<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a77468754c11b07eec33063ec41f02d15" kindref="member">showfile</ref>(strx)</highlight></codeline>
 <codeline lineno="857"><highlight class="normal"></highlight></codeline>
-<codeline lineno="858"><highlight class="normal"></highlight><highlight class="comment">#<sp/>EOF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1a6bb0fb1767377ce1fb0fd2af9e74c5af" kindref="member">main</ref>()</highlight></codeline>
 <codeline lineno="859"><highlight class="normal"></highlight></codeline>
-<codeline lineno="860"><highlight class="normal"></highlight></codeline>
-<codeline lineno="861"><highlight class="normal"></highlight></codeline>
+<codeline lineno="860"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacepangview_1afd9c4f4714ae2239a96368fa26d04204" kindref="member">mainfunc</ref>()</highlight></codeline>
 <codeline lineno="862"><highlight class="normal"></highlight></codeline>
-<codeline lineno="863"><highlight class="normal"></highlight></codeline>
-<codeline lineno="864"><highlight class="normal"></highlight></codeline>
-<codeline lineno="865"><highlight class="normal"></highlight></codeline>
-<codeline lineno="866"><highlight class="normal"></highlight></codeline>
-<codeline lineno="867"><highlight class="normal"></highlight></codeline>
-<codeline lineno="868"><highlight class="normal"></highlight></codeline>
-<codeline lineno="869"><highlight class="normal"></highlight></codeline>
-<codeline lineno="870"><highlight class="normal"></highlight></codeline>
-<codeline lineno="871"><highlight class="normal"></highlight></codeline>
-<codeline lineno="872"><highlight class="normal"></highlight></codeline>
-<codeline lineno="873"><highlight class="normal"></highlight></codeline>
-<codeline lineno="874"><highlight class="normal"></highlight></codeline>
-<codeline lineno="875"><highlight class="normal"></highlight></codeline>
+<codeline lineno="863"><highlight class="normal"></highlight><highlight class="comment">#<sp/>EOF</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="pyedpro/build/scripts-3.10/pangview.py"/>
   </compounddef>

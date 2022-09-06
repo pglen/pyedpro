@@ -1,0 +1,58 @@
+<c><b><xl>Quick Help</xl></b></c>
+
+<c> [ <link name=FEATURES> Special Features </link> ] \
+[ <link name=KEYS> Key Assignments </link> ]</c>
+ 
+<w><j>\
+ This document is quick help for getting started with <b>PyEdPro</b>. When you start \
+the editor, the main window shows with several component windows. Left side \
+contains a function list. Right side contains two editing windows: a \
+read only window on top, and an editable on the bottom. The top can be used as a lookahead, \
+the bottom window is for main editing interaction.
+
+  <l>User Interface:</l>
+
+  All windows are paned, so the editor can be adjusted to have only the main \
+editing window on screen, if so desired. Search windows are popped up as independent \
+windows, and PyEdPro will remember their old positions. PyEdPro will store the list of last edited \
+files, and staring the editor with no command line arguments will place you back \
+to the last session with the last edited file in focus, and last cursor position(s).
+
+  <l>Files:</l>
+
+ The editor creates a full set of additional files including a backup of the original, \
+a backup of the last changes, as well as persistant undo / redo information. \
+All this is placed in the directory ~/.PyEdPro/ (ex: "/home/yourhome/.PyEdPro/)  
+  The files are created as a hashed hex name like 'a2d4f5c3.bak'. The connection to \
+the original file name can be found in the sqlite config data file. \
+(use the -c command line option)/. \
+PyEdPro also saves all of its current files in the ~/.PyEdPro directory with the '.sav' \
+extension when it receives the terminate signal. (in case of unexpected shutdown)
+  
+  <l>Key assignments:</l>
+  
+  PyEdPro contains key assignments that are compatible with most mainstream programs. \
+The basic key assignments work as expected like Ctrl-C copies selection to the  \
+clipboard, Ctrl-V pastes the clipbord into the buffer. PyEdPro contains special features \
+of which no standard key combination exist. We allocated these keys to be compatible with \
+gedit, Brief, Word etc ... if you want to reassign keys, the editor is written in \
+python, it is easy to configure the key assignments. For a list of key assinments \
+can be found <link name=KEYS> here ... </link></c>
+
+  <l>Special Features:</l>
+  
+   One of the main motivations for writing this editor is missing features from others. \
+For example macro recording. Macros can be recorded to do a simple editing task, and \
+with a press of a key, the macro task is repeated at the current cursor position. For example, \
+recording a macro to swap two words, and then searching for a particular word, jumping \
+from match to match, executing the macro at each desired match. (F6 for next match F8 for \
+playing the macro. The uses for this feature is without limitation, and it can make a \
+trained (or imaginative) user to be ten times more productive. Also, PyEdPro features und / redo \
+which persists even after the file is closed. The list of special features can be found \
+<link name=FEATURES> here ... </link>
+
+</w></j>\
+
+<c>Pres ESC to dismiss this window.</c>
+
+

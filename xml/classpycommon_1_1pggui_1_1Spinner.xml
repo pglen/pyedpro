@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pggui_1_1Spinner" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pggui::Spinner</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.SpinButton</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.SpinButton</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1Spinner_1a2a193421ecf92403adf8cc66f26976a5" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,68 +15,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="621" column="1" bodyfile="pycommon/pggui.py" bodystart="621" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="621" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="621" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1Spinner_1a23c85e76108126045da3bddc84a03518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.Spinner.__init__</definition>
-        <argsstring>(self, startx=0, endx=100, defx=0, cb=None)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>startx</type>
-          <defname>startx</defname>
-          <defval>0</defval>
-        </param>
-        <param>
-          <type>endx</type>
-          <defname>endx</defname>
-          <defval>100</defval>
-        </param>
-        <param>
-          <type>defx</type>
-          <defname>defx</defname>
-          <defval>0</defval>
-        </param>
-        <param>
-          <type>cb</type>
-          <defname>cb</defname>
-          <defval>None</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="618" column="1" bodyfile="pycommon/pggui.py" bodystart="618" bodyend="628"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1Spinner_1a2d51057d2367cf2fba5bb7056e48fa7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.Spinner.spinned</definition>
-        <argsstring>(self, spin)</argsstring>
-        <name>spinned</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>spin</type>
-          <defname>spin</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="629" column="1" bodyfile="pycommon/pggui.py" bodystart="629" bodyend="636"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pggui_1_1Spinner_1a23c85e76108126045da3bddc84a03518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pggui.Spinner.__init__</definition>
@@ -147,14 +88,9 @@
         <link refid="classpycommon_1_1pggui_1_1Spinner"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk::SpinButton</label>
-      </node>
-      <node id="3">
-        <label>Gtk.SpinButton</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -163,22 +99,15 @@
         <link refid="classpycommon_1_1pggui_1_1Spinner"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk::SpinButton</label>
       </node>
-      <node id="3">
-        <label>Gtk.SpinButton</label>
-      </node>
     </collaborationgraph>
-    <location file="pycommon/pggui.py" line="616" column="1" bodyfile="pycommon/pggui.py" bodystart="616" bodyend="637"/>
+    <location file="pyedpro/build/lib/pycommon/pggui.py" line="616" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="616" bodyend="637"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pggui_1_1Spinner_1a23c85e76108126045da3bddc84a03518" prot="public" virt="non-virtual"><scope>pycommon::pggui::Spinner</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pggui_1_1Spinner_1a23c85e76108126045da3bddc84a03518" prot="public" virt="non-virtual"><scope>pycommon::pggui::Spinner</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pggui_1_1Spinner_1a2a193421ecf92403adf8cc66f26976a5" prot="public" virt="non-virtual"><scope>pycommon::pggui::Spinner</scope><name>cb_func</name></member>
-      <member refid="classpycommon_1_1pggui_1_1Spinner_1a2d51057d2367cf2fba5bb7056e48fa7a" prot="public" virt="non-virtual"><scope>pycommon::pggui::Spinner</scope><name>spinned</name></member>
       <member refid="classpycommon_1_1pggui_1_1Spinner_1a2d51057d2367cf2fba5bb7056e48fa7a" prot="public" virt="non-virtual"><scope>pycommon::pggui::Spinner</scope><name>spinned</name></member>
     </listofallmembers>
   </compounddef>

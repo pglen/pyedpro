@@ -1100,7 +1100,7 @@
 <codeline lineno="1090"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>iter<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>iters:</highlight></codeline>
 <codeline lineno="1091"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepedlib_1_1pedfind_1a860214331145a579dea8e16b0e762ce6" kindref="member">chg_one</ref>(butt,<sp/>self,<sp/>self2,<sp/>win2,<sp/>iter)</highlight></codeline>
 <codeline lineno="1092"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>cnt2<sp/>%<sp/>10<sp/>==<sp/>0:</highlight></codeline>
-<codeline lineno="1093"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepycommon_1_1pgutils_1ab22c89b7bc3c2f09f6ac49c797d9d1d2" kindref="member">usleep</ref>(1)</highlight></codeline>
+<codeline lineno="1093"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacepedlib_1_1pedutil_1afce9ac6ba52aa03e4ff6d5254233c70f" kindref="member">usleep</ref>(1)</highlight></codeline>
 <codeline lineno="1094"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt2<sp/>+=<sp/>1</highlight></codeline>
 <codeline lineno="1095"><highlight class="normal"><sp/><sp/><sp/><sp/>self2.mained.update_statusbar(</highlight><highlight class="stringliteral">&quot;Changed<sp/>%d<sp/>items&quot;</highlight><highlight class="normal"><sp/>%<sp/>cnt2)</highlight></codeline>
 <codeline lineno="1096"><highlight class="normal"><sp/><sp/><sp/><sp/>win2.destroy()</highlight></codeline>

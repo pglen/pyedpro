@@ -45,6 +45,7 @@
     <innernamespace refid="namespacepedlib_1_1pedwin">pedlib::pedwin</innernamespace>
     <innernamespace refid="namespacepedlib_1_1pedxtnd">pedlib::pedxtnd</innernamespace>
     <innernamespace refid="namespacepedlib_1_1pedync">pedlib::pedync</innernamespace>
+    <innernamespace refid="namespacepedlib_1_1plugins">pedlib::plugins</innernamespace>
     <innernamespace refid="namespacepedlib_1_1stack">pedlib::stack</innernamespace>
     <innernamespace refid="namespacepedlib_1_1test">pedlib::test</innernamespace>
     <innernamespace refid="namespacepedlib_1_1testdiff">pedlib::testdiff</innernamespace>

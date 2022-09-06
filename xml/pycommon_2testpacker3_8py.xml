@@ -2,13 +2,13 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="pycommon_2testpacker3_8py" kind="file" language="Python">
     <compoundname>testpacker3.py</compoundname>
-    <innernamespace refid="namespacepycommon_1_1testpacker3">pycommon::testpacker3</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pycommon_1_1testpacker3">pyedpro::pycommon::testpacker3</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1" refid="namespacepycommon_1_1testpacker3" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1" refid="namespacepyedpro_1_1pycommon_1_1testpacker3" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
@@ -29,7 +29,7 @@
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>xorg<sp/>=<sp/>[</highlight><highlight class="stringliteral">&quot;val1&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val2&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val3&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val4&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val5&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val6&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val7&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val8&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val9&quot;</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="stringliteral">&quot;val10&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;val11&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val12&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val13&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val14&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val15&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val16&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;val17&quot;</highlight><highlight class="normal">]</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>pb<sp/>=<sp/><ref refid="classpycommon_1_1pypacker_1_1packbin" kindref="compound">pypacker.packbin</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>pb<sp/>=<sp/><ref refid="classpyedpro_1_1pycommon_1_1pypacker_1_1packbin" kindref="compound">pypacker.packbin</ref>();</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>pb.verbose<sp/>=<sp/>5</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#print(&quot;pb<sp/>exports&quot;,<sp/>dir(pb))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
@@ -57,6 +57,6 @@
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#sys.exit(0)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="pycommon/testpacker3.py"/>
+    <location file="pyedpro/pycommon/testpacker3.py"/>
   </compounddef>
 </doxygen>

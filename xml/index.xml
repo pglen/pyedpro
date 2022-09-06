@@ -406,13 +406,6 @@
     <member refid="classpycommon_1_1pggui_1_1CairoHelper_1aaa085b0ce37654aabb689afc5c7cd89b" kind="function"><name>circle</name></member>
     <member refid="classpycommon_1_1pggui_1_1CairoHelper_1ae2516190027479bb2784f6d4824f0c9c" kind="function"><name>tri</name></member>
     <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a700444aa75e917e490800167ef44eba3" kind="function"><name>tri2</name></member>
-    <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a738db6e0fffa14cfa36ed5acd7642c8f" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1CairoHelper_1af58a4215e49fc4b3a39a6718b1a47dfb" kind="function"><name>set_source_rgb</name></member>
-    <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a19561d5d8382a52a011fc8d78b59eecd" kind="function"><name>rectangle</name></member>
-    <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a9c37afffac1ea36fe34e1a5a0924212b" kind="function"><name>romb</name></member>
-    <member refid="classpycommon_1_1pggui_1_1CairoHelper_1aaa085b0ce37654aabb689afc5c7cd89b" kind="function"><name>circle</name></member>
-    <member refid="classpycommon_1_1pggui_1_1CairoHelper_1ae2516190027479bb2784f6d4824f0c9c" kind="function"><name>tri</name></member>
-    <member refid="classpycommon_1_1pggui_1_1CairoHelper_1a700444aa75e917e490800167ef44eba3" kind="function"><name>tri2</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper" kind="class"><name>pyedpro::pycommon::pggui::CairoHelper</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1CairoHelper_1a25c8c1f7c66ca5be15cc8e3ea393de16" kind="variable"><name>cr</name></member>
@@ -843,19 +836,9 @@
     <member refid="classpycommon_1_1pgbox_1_1ComboBox_1ae3a242c6eb442d686e455f2b86477803" kind="function"><name>delall</name></member>
     <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a63135f2fb33a8441beecd91a1204548b" kind="function"><name>sel_text</name></member>
     <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a4829de7ad90794e408d279795d478b64" kind="function"><name>sel_first</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ComboBox_1ab8f519eb99712b7bb5e2b879c214bf6f" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a6369d6f3e61ab31b0e723bf20ea86c38" kind="function"><name>combo_changed</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ComboBox_1ae3a242c6eb442d686e455f2b86477803" kind="function"><name>delall</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a63135f2fb33a8441beecd91a1204548b" kind="function"><name>sel_text</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ComboBox_1a4829de7ad90794e408d279795d478b64" kind="function"><name>sel_first</name></member>
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1ComboBox" kind="class"><name>pycommon::pggui::ComboBox</name>
     <member refid="classpycommon_1_1pggui_1_1ComboBox_1a4ed354ba9d954a37e0f57e5ed3a2c22e" kind="variable"><name>store</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ComboBox_1a51db10278d1ec52460f1e50772c986fb" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ComboBox_1a3a06681157f2b838ebcd2cfbd0950344" kind="function"><name>combo_changed</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ComboBox_1a9c400d3ec5527a3e3a89192b0d1bd0df" kind="function"><name>delall</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ComboBox_1ac315883972461e5591956c4c41cb91f3" kind="function"><name>sel_text</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ComboBox_1a0a8f980fca3dad4e7a91a9b4f693e235" kind="function"><name>sel_first</name></member>
     <member refid="classpycommon_1_1pggui_1_1ComboBox_1a51db10278d1ec52460f1e50772c986fb" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1ComboBox_1a3a06681157f2b838ebcd2cfbd0950344" kind="function"><name>combo_changed</name></member>
     <member refid="classpycommon_1_1pggui_1_1ComboBox_1a9c400d3ec5527a3e3a89192b0d1bd0df" kind="function"><name>delall</name></member>
@@ -900,6 +883,7 @@
     <member refid="classpedlib_1_1pedconfig_1_1Conf_1abbb7c078d766e506e4cfd699ff913cac" kind="variable"><name>temp_dir</name></member>
     <member refid="classpedlib_1_1pedconfig_1_1Conf_1aeaa0f697448b44a20651bb23747673c9" kind="variable"><name>tts_dir</name></member>
     <member refid="classpedlib_1_1pedconfig_1_1Conf_1a854fa2aa538864634422cce703fc60c5" kind="variable"><name>plugins_dir</name></member>
+    <member refid="classpedlib_1_1pedconfig_1_1Conf_1a00d17984deb4bb74bdf44d3c6d7a9388" kind="variable"><name>plugins_dir2</name></member>
     <member refid="classpedlib_1_1pedconfig_1_1Conf_1a7ec87be9263f6af4fa23656e76633cc8" kind="variable"><name>sql_data</name></member>
     <member refid="classpedlib_1_1pedconfig_1_1Conf_1add3d80a17ec02ccd27eaec255b9d5882" kind="variable"><name>history</name></member>
     <member refid="classpedlib_1_1pedconfig_1_1Conf_1a17020383fd56fc1a6a86e8e0e5a6a451" kind="variable"><name>sessions</name></member>
@@ -957,6 +941,7 @@
     <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1a59d0056045656c226b4afb3a47634e4c" kind="variable"><name>temp_dir</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1aacc68ae118728741a8a078bc5831ad5e" kind="variable"><name>tts_dir</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1a3bb6885027d5002d0edabd0ed4ed2bac" kind="variable"><name>plugins_dir</name></member>
+    <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1ab5ef1ae9b3ed13eeaf92bd2375fbaaba" kind="variable"><name>plugins_dir2</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1a7de09bc7c64094a1f8c453b3da451009" kind="variable"><name>sql_data</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1a72efe84da8b6705c38b49575fa6c931f" kind="variable"><name>history</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Conf_1a659044aa26d7d6da05d77e5c6f86f466" kind="variable"><name>sessions</name></member>
@@ -971,8 +956,6 @@
     <member refid="classpycommon_1_1pgutils_1_1Config_1a39a4aab4524cf315f1e3c602960554de" kind="variable"><name>optarr</name></member>
     <member refid="classpycommon_1_1pgutils_1_1Config_1a1dd8209761e8bd9d776ce56f44301a16" kind="variable"><name>verbose</name></member>
     <member refid="classpycommon_1_1pgutils_1_1Config_1a47f648bb26c2d05090a56a64cbde4066" kind="variable"><name>debug</name></member>
-    <member refid="classpycommon_1_1pgutils_1_1Config_1a2ef0ac6d78010f9e38bdac35ca7b8be5" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgutils_1_1Config_1a94c4bed840b854bc8d7f5bc2faf6c5ac" kind="function"><name>comline</name></member>
     <member refid="classpycommon_1_1pgutils_1_1Config_1a2ef0ac6d78010f9e38bdac35ca7b8be5" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgutils_1_1Config_1a94c4bed840b854bc8d7f5bc2faf6c5ac" kind="function"><name>comline</name></member>
   </compound>
@@ -1464,8 +1447,6 @@
     <member refid="classpycommon_1_1pggui_1_1FrameTextView_1ac3d8810344beaabc75f6fbc1a5608d25" kind="variable"><name>frame</name></member>
     <member refid="classpycommon_1_1pggui_1_1FrameTextView_1aa859dc7a6d7496f2175e5213289739ef" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1FrameTextView_1a85426922d394ff062dbcbd7aac04a9ec" kind="function"><name>append</name></member>
-    <member refid="classpycommon_1_1pggui_1_1FrameTextView_1aa859dc7a6d7496f2175e5213289739ef" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1FrameTextView_1a85426922d394ff062dbcbd7aac04a9ec" kind="function"><name>append</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView" kind="class"><name>pyedpro::pycommon::pggui::FrameTextView</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView_1a7d98fc4e08232d1c3a4a1bf20f493c68" kind="variable"><name>scroll</name></member>
@@ -1495,8 +1476,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1HourSel_1a303330c4c421025643818b652a3a2ab4" kind="variable"><name>simsel</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1HourSel_1ab2914f1bdee7ae89f77d1d8070ebb41c" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1HourSel_1a17673c52138bcbb4e15ac44d0d28991e" kind="function"><name>letter</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1HourSel_1ab2914f1bdee7ae89f77d1d8070ebb41c" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1HourSel_1a17673c52138bcbb4e15ac44d0d28991e" kind="function"><name>letter</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1HourSel" kind="class"><name>pyedpro::pycommon::pgsimp::HourSel</name>
     <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1HourSel_1a26f1add645dda0b56906a730128853eb" kind="variable"><name>callb</name></member>
@@ -1504,45 +1483,12 @@
     <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1HourSel_1a25f87aa91892a06175b7a7980821706d" kind="function"><name>__init__</name></member>
     <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1HourSel_1a387a9413fbc68d55d130cc71bd35da8a" kind="function"><name>letter</name></member>
   </compound>
-  <compound refid="classpycommon_1_1pgwkit_1_1HtmlEdit" kind="class"><name>pycommon::pgwkit::HtmlEdit</name>
-    <member refid="classpycommon_1_1pgwkit_1_1HtmlEdit_1ac023c41a1ce036592d2dbb3a5e50bf01" kind="variable"><name>_htmlx</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1HtmlEdit_1a4b6ba0b8cb593cd733771e5f74ed0d6f" kind="variable"><name>ui</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1HtmlEdit_1a57ef9bb13d6ea7d1f7876be0ac97b6a4" kind="variable"><name>toolbar1</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1HtmlEdit_1ab83d0c118bb7590e102fc704777eebda" kind="variable"><name>toolbar2</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1HtmlEdit_1ad79f063e859defd991c107619488ebe8" kind="variable"><name>menubar</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1HtmlEdit_1a1a5111d564ca89801c56b027a8309ff7" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1HtmlEdit_1a2b4d8de7d2c705be06b42771b34a511d" kind="function"><name>get_view</name></member>
-  </compound>
-  <compound refid="classpycommon_1_1htmledit_1_1HtmlEditor" kind="class"><name>pycommon::htmledit::HtmlEditor</name>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a92f031244b213eeb70ac3ac064369b07" kind="variable"><name>filename</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a47782d54a24bcbf92834da9aa9a00179" kind="variable"><name>editor</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a6d878baf81c486a9e9662c2682f1f52a" kind="variable"><name>scroll</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a3da47070c901abf886310d76075dcd3d" kind="variable"><name>ui</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a5e3d440bc8669baecbfc50c1d679d274" kind="variable"><name>toolbar1</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1abfa2972b7f9e15d4b6efa19c36381cae" kind="variable"><name>toolbar2</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1ad05db7d720bb4232a31316e1d44caec2" kind="variable"><name>menubar</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1aa77d189415e96708253260acf9c249f7" kind="variable"><name>layout</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1aba755ee9971a3331771b454dfc7d6190" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a57fabd6ace043ea12d78ee0f8f57075c" kind="function"><name>generate_ui</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a23ed9eb6c451e4dff1df68cc33c59a23" kind="function"><name>on_action</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a9892cd3f67a723f3c17fbc717f5af72e" kind="function"><name>on_paste</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a376d938f035294200c5f07d1f54a2366" kind="function"><name>on_new</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1aa1f2e3331359ed1d6da9197dff76725a" kind="function"><name>on_select_font</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1aa4c7c0a341007ced93c893d430fb1e1a" kind="function"><name>on_select_color</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a709d4f4f72eab31e325c10c456d26def" kind="function"><name>on_insert_link</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a96ac2875dcff81ccca9e62538f6ac493" kind="function"><name>on_insert_image</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1abcb7c4fbde10a03977fed75eac11286b" kind="function"><name>on_open</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1a7b435d939775e0acc7ca450009d8a0c0" kind="function"><name>on_save</name></member>
-    <member refid="classpycommon_1_1htmledit_1_1HtmlEditor_1af1572fb6309018e77627eb79d4fd57f5" kind="function"><name>get_html</name></member>
-  </compound>
   <compound refid="classwebview__1_1_1ImageButton" kind="class"><name>webview_1::ImageButton</name>
     <member refid="classwebview__1_1_1ImageButton_1a9ab68b7c03be5d1dfd84e8a69d04c76c" kind="variable"><name>label</name></member>
     <member refid="classwebview__1_1_1ImageButton_1a051664fb9269f9f5fc20e8937888f510" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpycommon_1_1pypacker_1_1InvalidType" kind="class"><name>pycommon::pypacker::InvalidType</name>
     <member refid="classpycommon_1_1pypacker_1_1InvalidType_1a550e8ecf1fac25a1582c7530b5baf864" kind="variable"><name>message</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1InvalidType_1a1b560c0f3ecd239d7a0875dc9cfe6961" kind="function"><name>_init_</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1InvalidType_1adc331603a9eebd5daef5aa3c4aed380d" kind="function"><name>_str_</name></member>
     <member refid="classpycommon_1_1pypacker_1_1InvalidType_1a1b560c0f3ecd239d7a0875dc9cfe6961" kind="function"><name>_init_</name></member>
     <member refid="classpycommon_1_1pypacker_1_1InvalidType_1adc331603a9eebd5daef5aa3c4aed380d" kind="function"><name>_str_</name></member>
   </compound>
@@ -1645,7 +1591,6 @@
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1Label" kind="class"><name>pycommon::pggui::Label</name>
     <member refid="classpycommon_1_1pggui_1_1Label_1aab669373e0e3865aa3d4782785f9c91b" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Label_1aab669373e0e3865aa3d4782785f9c91b" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1Label" kind="class"><name>pyedpro::pycommon::pggui::Label</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Label_1a7a157c54c791e0a82c07caaf57be9e21" kind="function"><name>__init__</name></member>
@@ -1654,10 +1599,6 @@
     <member refid="classpycommon_1_1pggui_1_1LabelButt_1a82e8eab82ed886637c0254c2d67a7628" kind="variable"><name>label</name></member>
     <member refid="classpycommon_1_1pggui_1_1LabelButt_1a86085b5b77de9d2dcf78ed85833d0d7d" kind="variable"><name>curve</name></member>
     <member refid="classpycommon_1_1pggui_1_1LabelButt_1af8fd39e47e8a4f37c083b5d665bfcb8a" kind="variable"><name>arrow</name></member>
-    <member refid="classpycommon_1_1pggui_1_1LabelButt_1a62b0b288464a3bdee9bfaac4c1330228" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1LabelButt_1a1c0736d5fbec210c70c6774116b352be" kind="function"><name>area_motion</name></member>
-    <member refid="classpycommon_1_1pggui_1_1LabelButt_1acb2815301b050365fa2a373991ea56f8" kind="function"><name>area_enter</name></member>
-    <member refid="classpycommon_1_1pggui_1_1LabelButt_1a2ca2d19e6eb4a12b8857ebc6f1d7f528" kind="function"><name>area_leave</name></member>
     <member refid="classpycommon_1_1pggui_1_1LabelButt_1a62b0b288464a3bdee9bfaac4c1330228" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1LabelButt_1a1c0736d5fbec210c70c6774116b352be" kind="function"><name>area_motion</name></member>
     <member refid="classpycommon_1_1pggui_1_1LabelButt_1acb2815301b050365fa2a373991ea56f8" kind="function"><name>area_enter</name></member>
@@ -1678,9 +1619,6 @@
     <member refid="classpycommon_1_1pggui_1_1Led_1ac8fab9560d47aa383394111e0a0799ba" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Led_1acc43a21c0c77b6f582897923d4cda282" kind="function"><name>set_color</name></member>
     <member refid="classpycommon_1_1pggui_1_1Led_1a527d73f38cc457a297084f83136a143a" kind="function"><name>draw</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Led_1ac8fab9560d47aa383394111e0a0799ba" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Led_1acc43a21c0c77b6f582897923d4cda282" kind="function"><name>set_color</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Led_1a527d73f38cc457a297084f83136a143a" kind="function"><name>draw</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1Led" kind="class"><name>pyedpro::pycommon::pggui::Led</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1Led_1a4a56865078fc1b8ab70b08fe9a4ed0e2" kind="variable"><name>border</name></member>
@@ -1693,8 +1631,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aa8144ec3e6996a36ed54672ee71538bb" kind="variable"><name>callb</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a1858d7f19a1715639dd6b205d8068684" kind="variable"><name>simsel</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a4a4ffcdf4cb6360ae6b7069421643be4" kind="variable"><name>simsel2</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a71b210d07069d5cf6aee305a907f1c22" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a064b99392be9f7e7b5d2b55d2409030a" kind="function"><name>letter</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1aed43ddf50b202e24cf7d6c1f3e621e6c" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1LetterNumberSel_1a064b99392be9f7e7b5d2b55d2409030a" kind="function"><name>letter</name></member>
   </compound>
@@ -1726,13 +1662,6 @@
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1Lights" kind="class"><name>pycommon::pggui::Lights</name>
     <member refid="classpycommon_1_1pggui_1_1Lights_1ac88740a17bec670a666a602c105014e0" kind="variable"><name>box_arr</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Lights_1ad11811c935002b9aa6772c88fab91a6e" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Lights_1af4626c46d0c574ebeb6fabb1cc7db778" kind="function"><name>set_color</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Lights_1adb0d621e65dc2e2f28aa714f88cbd28a" kind="function"><name>set_colors</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Lights_1a25694dbd4c9f22f7de8bea2f08e37126" kind="function"><name>set_tooltip</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Lights_1ad41e39a300a9f76c31a0b587810e53f2" kind="function"><name>set_tooltips</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Lights_1aea29b5531a06670424077ef7a006b134" kind="function"><name>get_size</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Lights_1adc24e5fb8ae7eef2010b2e62365657be" kind="function"><name>colbox</name></member>
     <member refid="classpycommon_1_1pggui_1_1Lights_1ad11811c935002b9aa6772c88fab91a6e" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Lights_1af4626c46d0c574ebeb6fabb1cc7db778" kind="function"><name>set_color</name></member>
     <member refid="classpycommon_1_1pggui_1_1Lights_1adb0d621e65dc2e2f28aa714f88cbd28a" kind="function"><name>set_colors</name></member>
@@ -1783,31 +1712,11 @@
     <member refid="classpycommon_1_1pgbox_1_1ListBox_1abef09a169b5a026da4b3724493640dff" kind="function"><name>append</name></member>
     <member refid="classpycommon_1_1pgbox_1_1ListBox_1a92a1872b586e144a67ea388d9bf3eeda" kind="function"><name>get_text</name></member>
     <member refid="classpycommon_1_1pgbox_1_1ListBox_1a1482473e16154b6cdf9492bfe01da570" kind="function"><name>get_curridx</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1a5733a461e3c4da05a916754db79e1659" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1a737881047087898f1c11f808801c9d29" kind="function"><name>tree_sel</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1ab5bbed32953edb9e4a0893429edb3183" kind="function"><name>set_callback</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1ae8e9de33c4359aeac81fe626b92868a7" kind="function"><name>clear</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1a1474694d9da044c0637aafe1fdec30c5" kind="function"><name>select</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1ad667f52363d0636c4df66bb83032a212" kind="function"><name>get_size</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1a73afbf7dc55201446beccdb61ee0d88b" kind="function"><name>get_item</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1abef09a169b5a026da4b3724493640dff" kind="function"><name>append</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1a92a1872b586e144a67ea388d9bf3eeda" kind="function"><name>get_text</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1ListBox_1a1482473e16154b6cdf9492bfe01da570" kind="function"><name>get_curridx</name></member>
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1ListBox" kind="class"><name>pycommon::pggui::ListBox</name>
     <member refid="classpycommon_1_1pggui_1_1ListBox_1a95d904b21ad7e6923c0d657e07462281" kind="variable"><name>limit</name></member>
     <member refid="classpycommon_1_1pggui_1_1ListBox_1a8deb9afa5d8fe3faaf7aa8946b07f34b" kind="variable"><name>treestore</name></member>
     <member refid="classpycommon_1_1pggui_1_1ListBox_1a86b1df9672328e9377738cfabae61b77" kind="variable"><name>callb</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1a44dfc6703901d7d24db9e8bcdc47b47c" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1a34cebb1a2a9c05784d4b767416ee5629" kind="function"><name>tree_sel</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1a5fed2d0d2ee516ad6a9e41c4f155910c" kind="function"><name>set_callback</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1a5c519a785a210c1b0ebe217679d22f8e" kind="function"><name>clear</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1af06bf4434573191269f3162e65da24a4" kind="function"><name>select</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1ae29bb4368b579a0301a73cf1327bdaba" kind="function"><name>get_size</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1aff4346c5395edc8adc722b71793c96b6" kind="function"><name>get_item</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1a55206e28a85e0f1bf3184cbde62aff8b" kind="function"><name>append</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1a1d64fbb2489eae153f06a37b2d7516d2" kind="function"><name>get_text</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ListBox_1a1dae11f4c841abe6c0fc065566a64436" kind="function"><name>get_curridx</name></member>
     <member refid="classpycommon_1_1pggui_1_1ListBox_1a44dfc6703901d7d24db9e8bcdc47b47c" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1ListBox_1a34cebb1a2a9c05784d4b767416ee5629" kind="function"><name>tree_sel</name></member>
     <member refid="classpycommon_1_1pggui_1_1ListBox_1a5fed2d0d2ee516ad6a9e41c4f155910c" kind="function"><name>set_callback</name></member>
@@ -1851,9 +1760,6 @@
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1Logo" kind="class"><name>pycommon::pggui::Logo</name>
     <member refid="classpycommon_1_1pggui_1_1Logo_1a2d3f7f11b54292cbe5aab3a6ed1f6236" kind="variable"><name>logolab</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Logo_1aff2c60be66b63534b96c7347c59297cb" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Logo_1aa7ee14419de7854ad8dd54cf50485f8b" kind="function"><name>forallcallb</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Logo_1a446a409ac7056b7b0b672804f47704ff" kind="function"><name>hide</name></member>
     <member refid="classpycommon_1_1pggui_1_1Logo_1aff2c60be66b63534b96c7347c59297cb" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Logo_1aa7ee14419de7854ad8dd54cf50485f8b" kind="function"><name>forallcallb</name></member>
     <member refid="classpycommon_1_1pggui_1_1Logo_1a446a409ac7056b7b0b672804f47704ff" kind="function"><name>hide</name></member>
@@ -1913,10 +1819,6 @@
     <member refid="classpycommon_1_1pggui_1_1Menu_1a3e5e940baf213bc0eebb4a895ff7de41" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Menu_1a7afd72f862fb6bd224f0731f78baaa4a" kind="function"><name>dummy</name></member>
     <member refid="classpycommon_1_1pggui_1_1Menu_1a36ac4607fa3ed8071feb057c01e771fa" kind="function"><name>menu_fired</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Menu_1a3e5e940baf213bc0eebb4a895ff7de41" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Menu_1a7afd72f862fb6bd224f0731f78baaa4a" kind="function"><name>dummy</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Menu_1a36ac4607fa3ed8071feb057c01e771fa" kind="function"><name>menu_fired</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Menu_1a9d2c01d2e7bbe04c1308a87d825d60e6" kind="function"><name>_create_menuitem</name></member>
     <member refid="classpycommon_1_1pggui_1_1Menu_1a9d2c01d2e7bbe04c1308a87d825d60e6" kind="function"><name>_create_menuitem</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1Menu" kind="class"><name>pyedpro::pycommon::pggui::Menu</name>
@@ -1942,15 +1844,6 @@
     <member refid="classpycommon_1_1pggui_1_1MenuButt_1a8341421a01bdc67ff8d5868bfa34f90a" kind="function"><name>area_button</name></member>
     <member refid="classpycommon_1_1pggui_1_1MenuButt_1a997add79416d7f85cab013e30a6c9865" kind="function"><name>menu_fired</name></member>
     <member refid="classpycommon_1_1pggui_1_1MenuButt_1a1cd5d972c5c6a735684623163f47839c" kind="function"><name>draw</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1adabe6b2455ca5a8f56e37226a5eaf0dc" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1a9ff5edddb2e2447aa3480dbfb54436a8" kind="function"><name>area_key</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1a1623b04a09d76f1d8f679d49efa637f0" kind="function"><name>area_rbutton</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1a8341421a01bdc67ff8d5868bfa34f90a" kind="function"><name>area_button</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1a997add79416d7f85cab013e30a6c9865" kind="function"><name>menu_fired</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1a1cd5d972c5c6a735684623163f47839c" kind="function"><name>draw</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1a9d5aa42959c62e0d3bf63d1c1a83291a" kind="function"><name>_create_menuitem</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1ac04c5e6f85b867fce336d9cac70b4c4c" kind="function"><name>_make_menu</name></member>
-    <member refid="classpycommon_1_1pggui_1_1MenuButt_1aaf7253d0cc1d7e188f956bd13235d314" kind="function"><name>_draw_line</name></member>
     <member refid="classpycommon_1_1pggui_1_1MenuButt_1a9d5aa42959c62e0d3bf63d1c1a83291a" kind="function"><name>_create_menuitem</name></member>
     <member refid="classpycommon_1_1pggui_1_1MenuButt_1ac04c5e6f85b867fce336d9cac70b4c4c" kind="function"><name>_make_menu</name></member>
     <member refid="classpycommon_1_1pggui_1_1MenuButt_1aaf7253d0cc1d7e188f956bd13235d314" kind="function"><name>_draw_line</name></member>
@@ -2002,8 +1895,6 @@
   <compound refid="classpycommon_1_1pgsimp_1_1MinSel" kind="class"><name>pycommon::pgsimp::MinSel</name>
     <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a010c92d3c426e2680864f7a7fe3abba1" kind="variable"><name>callb</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1MinSel_1ad46f873e41ac723c33270a85caeea8cd" kind="variable"><name>simsel</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a26f9ef789482788885e89d6ef60a2886" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a22980748823c0be5030cb03e6abb3f22" kind="function"><name>letter</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a26f9ef789482788885e89d6ef60a2886" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1MinSel_1a22980748823c0be5030cb03e6abb3f22" kind="function"><name>letter</name></member>
   </compound>
@@ -2083,8 +1974,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1afdad8b2d9b6630de7513828486f3c22a" kind="variable"><name>axx</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1ae013d670ef2457c11264772f1a4c97cb" kind="variable"><name>lastsel</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a831b60bdeacbca7d2e9bd34b002ecff9" kind="variable"><name>newtext</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1af71bc41a59c7d1693a8403af728b47cb" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a67a7c543e72ed2a99f8676c82b02796c" kind="function"><name>area_button</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a6c8a66bfe12db4e1470c6a4088ea258f" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1NumberSel_1a67a7c543e72ed2a99f8676c82b02796c" kind="function"><name>area_button</name></member>
   </compound>
@@ -2122,33 +2011,6 @@
     <member refid="classpycommon_1_1pypacker_1_1packbin_1abc1483ba2fd4658718737fda98ae9932" kind="function"><name>autotype</name></member>
     <member refid="classpycommon_1_1pypacker_1_1packbin_1a3eaaf64f1fda1fb3582415e541c32c45" kind="function"><name>encode_data</name></member>
     <member refid="classpycommon_1_1pypacker_1_1packbin_1a2e613c9927b52309ecbcc8361bccfcec" kind="function"><name>decode_data</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a8a5b976f7cfe37c110a00951e1330e18" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1abc1483ba2fd4658718737fda98ae9932" kind="function"><name>autotype</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a3eaaf64f1fda1fb3582415e541c32c45" kind="function"><name>encode_data</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a2e613c9927b52309ecbcc8361bccfcec" kind="function"><name>decode_data</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a08c4518fe7c1b736e08f51bb7956d4ac" kind="function"><name>_got_int</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a880621b541431ddec38802881e939c51" kind="function"><name>_got_long</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1ae6ef199802a5191e9d1fe50eb2406f74" kind="function"><name>_got_float</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a4d6186ae75b41651196015931165faee" kind="function"><name>_got_char</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a9d679c1f44773c9c41fec79ffc9abb38" kind="function"><name>_got_str</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a279848ccc1521ab8e6b53e8f043bd832" kind="function"><name>_got_bin</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1ac8876b4dd8af77864c3fc8eb6b57295b" kind="function"><name>_got_list</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a33b2d41eda98894b627830705eee9f8a" kind="function"><name>_got_tuple</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a593ee497a994ce203955d6ce0c53110e" kind="function"><name>_got_xtend</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1aef33369cdc15254ac92135a2bbcfc0a4" kind="function"><name>_got_dict</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1ac36534c7f9d9b8f714f3736d96681472" kind="function"><name>_found_char</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1af07ccee6215d182879179af5ea5ceb1b" kind="function"><name>_found_int</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1ada9d59b7825dc6b142234ed4ea1a75b2" kind="function"><name>_found_long</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a9fa34d479b8ec30b57ed283954f3cc6d" kind="function"><name>_found_float</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a3bb3b3f34af20d7cceebb0ef75458c21" kind="function"><name>_found_str</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a188ea8b7f2140f9b11eb844e52132436" kind="function"><name>_found_dict</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a73e1dee374137b97d0e34a64b2e61c7b" kind="function"><name>_found_ext</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1acb3d3b344b313769fae31530d3d4c749" kind="function"><name>_found_bin</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1af9c96a7081f65ccee52f57b47ea1586e" kind="function"><name>_found_list</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1aba423afcf00e7b4ee41142c5c7bfc7f0" kind="function"><name>_found_tuple</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a7f355ff60463f7f2cdc238d2c2878120" kind="function"><name>_eval_one</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a12704d361506a5d6e20c47dbdad57541" kind="function"><name>_encode_data</name></member>
-    <member refid="classpycommon_1_1pypacker_1_1packbin_1a2099696e13be6c198a58e2da417f062f" kind="function"><name>_decode_data</name></member>
     <member refid="classpycommon_1_1pypacker_1_1packbin_1a08c4518fe7c1b736e08f51bb7956d4ac" kind="function"><name>_got_int</name></member>
     <member refid="classpycommon_1_1pypacker_1_1packbin_1a880621b541431ddec38802881e939c51" kind="function"><name>_got_long</name></member>
     <member refid="classpycommon_1_1pypacker_1_1packbin_1ae6ef199802a5191e9d1fe50eb2406f74" kind="function"><name>_got_float</name></member>
@@ -3451,12 +3313,15 @@
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1a3703730e8848766f42cfa51e5080c6c8" kind="function"><name>draw_line2</name></member>
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1a1fef7c0425e24c639af01d4e5b0fe064" kind="function"><name>draw_line</name></member>
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1a026728398cf6ce985e5e8280602808f1" kind="function"><name>draw_caret</name></member>
-    <member refid="classpedlib_1_1peddraw_1_1peddraw_1ada3a0935764a4321dbd6b4a61499cdd1" kind="function"><name>draw_text</name></member>
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1abe5b7f2b90495268fc681243e91c8f70" kind="function"><name>draw_selection</name></member>
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1a4aa5cf27f77a232d0b79e48150256102" kind="function"><name>draw_syntax</name></member>
+    <member refid="classpedlib_1_1peddraw_1_1peddraw_1ae01c4449a5751332ae69fa699763eccb" kind="function"><name>draw_clsyntax</name></member>
+    <member refid="classpedlib_1_1peddraw_1_1peddraw_1a1f8952f6d94c09b7bc0159049c557365" kind="function"><name>draw_clsyntax2</name></member>
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1a46244b861906e94f3b158e36a878ab1a" kind="function"><name>draw_comments</name></member>
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1a43075d8b2231ef5350d37694b3d71662" kind="function"><name>draw_spellerr</name></member>
     <member refid="classpedlib_1_1peddraw_1_1peddraw_1ae189bfbb26ddd5853ce1e1ef2b690966" kind="function"><name>draw_maintext</name></member>
+    <member refid="classpedlib_1_1peddraw_1_1peddraw_1ab227a18af0931aa75ca821aab3d66443" kind="function"><name>_draw_text</name></member>
+    <member refid="classpedlib_1_1peddraw_1_1peddraw_1a3ce60452e244ffed75ba73329fd52eb3" kind="function"><name>_syntax</name></member>
   </compound>
   <compound refid="classpyedlib_1_1peddraw_1_1peddraw" kind="class"><name>pyedlib::peddraw::peddraw</name>
     <member refid="classpyedlib_1_1peddraw_1_1peddraw_1a04f3601eadd1df15e0f0637522b14a5b" kind="function"><name>__init__</name></member>
@@ -3481,12 +3346,15 @@
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a578ad1ce1eefe190d52a867844a90a76" kind="function"><name>draw_line2</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab5b3de0eed78aa1d03ab5efb7e843ac2" kind="function"><name>draw_line</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a9f90bca1becf0c9b0bcb3809704b1322" kind="function"><name>draw_caret</name></member>
-    <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ae60d3393b2a6fae2b579507fc4fc53ab" kind="function"><name>draw_text</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a5ec782cb8f18a68d4918d5bd6044587f" kind="function"><name>draw_selection</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a79668442fe5f92d81eca38e7f9f2fb49" kind="function"><name>draw_syntax</name></member>
+    <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1aaf68baef7567dfea2e4bde7aa789ee61" kind="function"><name>draw_clsyntax</name></member>
+    <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1ab0091ac6cba5af07309ef2e193450ce3" kind="function"><name>draw_clsyntax2</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a946574a93097d6222b7476c60558e087" kind="function"><name>draw_comments</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a06a860d13a733f4a67b9fea16c37e638" kind="function"><name>draw_spellerr</name></member>
     <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a33718985d4b41358eda8c31c6c930627" kind="function"><name>draw_maintext</name></member>
+    <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1aa6724e8aeada9f3b6f249be6b28abd47" kind="function"><name>_draw_text</name></member>
+    <member refid="classpyedpro_1_1pedlib_1_1peddraw_1_1peddraw_1a5e959f9d3e7d59a13db9631d46ee3d4e" kind="function"><name>_syntax</name></member>
   </compound>
   <compound refid="classpedlib_1_1pedsql_1_1pedsql" kind="class"><name>pedlib::pedsql::pedsql</name>
     <member refid="classpedlib_1_1pedsql_1_1pedsql_1ab0da2044918a421350e9c6e8aa9e9513" kind="variable"><name>conn</name></member>
@@ -3771,22 +3639,7 @@
   </compound>
   <compound refid="classpycommon_1_1pgwkit_1_1pgwebw" kind="class"><name>pycommon::pgwkit::pgwebw</name>
     <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a924c18b97f63bbd68ee95299470eb1bd" kind="variable"><name>xlink</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a0fdf949290396b52b396b515e9a96c84" kind="variable"><name>editor</name></member>
     <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a7ac966ceb0cd5ff2e82eed5e53ffb2ee" kind="variable"><name>filename</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a2fac81b0d6bf5bc35868e873cc266da5" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a22318e1d8938547873d22da2cd33267b" kind="function"><name>do_ready_to_show</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a26fc5f52fc4d60d3c1b736b8f996b9b3" kind="function"><name>do_load_changed</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1adcc8f0d31a0bbcd1a7cb5591dabcb078" kind="function"><name>do_load_failed</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a195f1568ce5a80ab071654e63eac355a" kind="function"><name>on_action</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a77165f984006357571d9841c8012e73c" kind="function"><name>on_paste</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1aff81da5831dd51210396cdbb6cf6bdfb" kind="function"><name>on_new</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1aa6dd291d0a46d0e88a54168fe3024f6d" kind="function"><name>on_select_font</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a0a21b9d1cd32176adddf7796be9bcd48" kind="function"><name>on_select_color</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a43ad09c0b912fc74c4f55d7898247e4c" kind="function"><name>on_insert_link</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a221db1f48fd2407414b84fcdd187c13a" kind="function"><name>on_insert_image</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1ab656ce585ec8df95a003daf7b0dc985c" kind="function"><name>on_open</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a7f58457b578646cda3f9fef57c9e472c" kind="function"><name>on_save</name></member>
-    <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a121738140ed884a0bba8031841a58734" kind="function"><name>get_html</name></member>
     <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1af9c94e42297f7ddd8dfad746a3384eb2" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a22318e1d8938547873d22da2cd33267b" kind="function"><name>do_ready_to_show</name></member>
     <member refid="classpycommon_1_1pgwkit_1_1pgwebw_1a26fc5f52fc4d60d3c1b736b8f996b9b3" kind="function"><name>do_load_changed</name></member>
@@ -3999,15 +3852,6 @@
     <member refid="classpycommon_1_1pggui_1_1RadioGroup_1a9347443ca678d88faa9d63ca231ba8df" kind="function"><name>set_check</name></member>
     <member refid="classpycommon_1_1pggui_1_1RadioGroup_1ac4faf5833ac2148bbd0485942c9ff2c2" kind="function"><name>get_check</name></member>
     <member refid="classpycommon_1_1pggui_1_1RadioGroup_1a6bbbe772f524d7a12bea81b2bf6e4352" kind="function"><name>get_text</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1adad1cdc6707e9286d7c0673b90952dcc" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1aa66ad642194d2edaa38161d2a88d6418" kind="function"><name>radio_toggle</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1aeef37a207c36669da96420be65e70951" kind="function"><name>set_tooltip</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1a218c7d1f79a3ddc24054c82ff697367e" kind="function"><name>set_entry</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1ab33f487f6cdfb274b5d9427a0be74020" kind="function"><name>set_sensitive</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1a5168f84e7c252f7acc780bc074cb47da" kind="function"><name>get_size</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1a9347443ca678d88faa9d63ca231ba8df" kind="function"><name>set_check</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1ac4faf5833ac2148bbd0485942c9ff2c2" kind="function"><name>get_check</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RadioGroup_1a6bbbe772f524d7a12bea81b2bf6e4352" kind="function"><name>get_text</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup" kind="class"><name>pyedpro::pycommon::pggui::RadioGroup</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup_1af53b091a50af9a45b11d0620c78f17cc" kind="variable"><name>buttons</name></member>
@@ -4026,10 +3870,6 @@
   <compound refid="classpycommon_1_1pggui_1_1RCLButt" kind="class"><name>pycommon::pggui::RCLButt</name>
     <member refid="classpycommon_1_1pggui_1_1RCLButt_1a66164bfea533c26d546b5f3e830144dc" kind="variable"><name>rcallme</name></member>
     <member refid="classpycommon_1_1pggui_1_1RCLButt_1a2cea669dc022cf223d9661cbc4c78611" kind="variable"><name>callme</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab760d6fc83f1f4f1c2c6a33da39aad8d" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RCLButt_1a0c960cb31e3bedcd65b57ff1b7c0a68c" kind="function"><name>draw</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab122670bfbbfa93d7c760c04d754818b" kind="function"><name>pressed</name></member>
-    <member refid="classpycommon_1_1pggui_1_1RCLButt_1a49898a4ddfa7a4a2f957b9bdc18cf888" kind="function"><name>clicked</name></member>
     <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab760d6fc83f1f4f1c2c6a33da39aad8d" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1RCLButt_1a0c960cb31e3bedcd65b57ff1b7c0a68c" kind="function"><name>draw</name></member>
     <member refid="classpycommon_1_1pggui_1_1RCLButt_1ab122670bfbbfa93d7c760c04d754818b" kind="function"><name>pressed</name></member>
@@ -4056,29 +3896,12 @@
     <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ad5a59f082c071f11cb079c94ad7ec48b" kind="function"><name>__getitem__</name></member>
     <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ae2a45c90bef784ef254b5021818efd5c" kind="function"><name>dump</name></member>
     <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a8f587342002e3e418c9f3e3f8e58d717" kind="function"><name>__str__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a4a7d662ad064132a99637b8a0dabaf62" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ad2d7de5692fdabf81472e3811ac009f6" kind="function"><name>resize</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a8483e805e5d8bd50bf157ac36df80875" kind="function"><name>copy</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ac113599ff241d25856c8869efe805210" kind="function"><name>intersect</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a758fbdb2f2c5091b9b687358495f6bfc" kind="function"><name>contain</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ad5a59f082c071f11cb079c94ad7ec48b" kind="function"><name>__getitem__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1ae2a45c90bef784ef254b5021818efd5c" kind="function"><name>dump</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1Rectangle_1a8f587342002e3e418c9f3e3f8e58d717" kind="function"><name>__str__</name></member>
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1Rectangle" kind="class"><name>pycommon::pggui::Rectangle</name>
     <member refid="classpycommon_1_1pggui_1_1Rectangle_1abd275ebee83b2e0864c74de14586569a" kind="variable"><name>x</name></member>
     <member refid="classpycommon_1_1pggui_1_1Rectangle_1a2c7dc245ae730c2924cf7e82523fc8af" kind="variable"><name>y</name></member>
     <member refid="classpycommon_1_1pggui_1_1Rectangle_1aa7192aa1d7a73870f8942a355b1680e8" kind="variable"><name>w</name></member>
     <member refid="classpycommon_1_1pggui_1_1Rectangle_1a5b3f9883fe3b4efab6c6ba3750d69422" kind="variable"><name>h</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1a351431dba69a135ba5e4fe1c59ba8a1b" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1a01ca26fa8c9c8e95b3d6ce249d7a63ea" kind="function"><name>resize</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1a62f54d15daed4703c8457a59429eb05c" kind="function"><name>copy</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1a47f141641beeff79751612b3b1550a1a" kind="function"><name>norm</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1a2ba6633faf59e1323d16dcc333288bf7" kind="function"><name>intersect</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1a40274faadb87aed7b3201036aec9de8b" kind="function"><name>contain</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1a2b7faac331cf71980c1679cf18ae391f" kind="function"><name>__getitem__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1aba349afcd0f662048766154e3fd8665e" kind="function"><name>dump</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Rectangle_1ac9db251fe4eba18481fa9b122cb906c1" kind="function"><name>__str__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Rectangle_1a351431dba69a135ba5e4fe1c59ba8a1b" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Rectangle_1a01ca26fa8c9c8e95b3d6ce249d7a63ea" kind="function"><name>resize</name></member>
     <member refid="classpycommon_1_1pggui_1_1Rectangle_1a62f54d15daed4703c8457a59429eb05c" kind="function"><name>copy</name></member>
@@ -4161,10 +3984,6 @@
     <member refid="classpycommon_1_1pggui_1_1ScrollListBox_1af7ec54e1a8190c3c020a094fa73de72f" kind="function"><name>append_end</name></member>
     <member refid="classpycommon_1_1pggui_1_1ScrollListBox_1a19e4629d51a4f420b8faa9508ae9b518" kind="function"><name>clear</name></member>
     <member refid="classpycommon_1_1pggui_1_1ScrollListBox_1a406be5717138576036b1f85c813dbbec" kind="function"><name>select</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ScrollListBox_1aa59364e30aaa383e132caf8ae03556a2" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ScrollListBox_1af7ec54e1a8190c3c020a094fa73de72f" kind="function"><name>append_end</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ScrollListBox_1a19e4629d51a4f420b8faa9508ae9b518" kind="function"><name>clear</name></member>
-    <member refid="classpycommon_1_1pggui_1_1ScrollListBox_1a406be5717138576036b1f85c813dbbec" kind="function"><name>select</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox" kind="class"><name>pyedpro::pycommon::pggui::ScrollListBox</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox_1a549cda845f9575076391d8e1347857d6" kind="variable"><name>listbox</name></member>
@@ -4186,7 +4005,6 @@
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1SeparatorMenuItem" kind="class"><name>pycommon::pggui::SeparatorMenuItem</name>
     <member refid="classpycommon_1_1pggui_1_1SeparatorMenuItem_1ad701481398ad64df2fdf1fff5ec02526" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1SeparatorMenuItem_1ad701481398ad64df2fdf1fff5ec02526" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1SeparatorMenuItem" kind="class"><name>pyedpro::pycommon::pggui::SeparatorMenuItem</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1SeparatorMenuItem_1aa16995b3c4b5841ff875c0a41feda6da" kind="function"><name>__init__</name></member>
@@ -4197,17 +4015,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ae4b16446a1aa9ebd1698d9576740df89" kind="variable"><name>text</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1aaa2a956bb12c0e03da483f66cb785f49" kind="variable"><name>savecb</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1aaef8102e8f6f1040aebac76378625843" kind="variable"><name>single_line</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7921e54d03e18599832ab14166bc3e26" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a92ba7d17dafc18f27f78f03849316d17" kind="function"><name>focus_out</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ac88fed4b2e0a011e20a46362e7971b54" kind="function"><name>check_saved</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ace2180c8c6c76dac49f911a210bc9e0a" kind="function"><name>focus_in</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a395ba876bf531acf66b6723445744ac1" kind="function"><name>unmapx</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ad59da8ef5db18dfbe74a69756328fd5c" kind="function"><name>area_key</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a471db49e4b5b0ac97633630f640bdf2a" kind="function"><name>append</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1aade101ae6e03a6ab9efd963331844118" kind="function"><name>clear</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a84e6299d70fc52792612461aec7dd40f" kind="function"><name>setsavecb</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7ea664d146e6d3b0e284daceaab4ecf2" kind="function"><name>get_text</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a1401f1add82d707521742dc665e85798" kind="function"><name>set_text</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a7921e54d03e18599832ab14166bc3e26" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1a92ba7d17dafc18f27f78f03849316d17" kind="function"><name>focus_out</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleEdit_1ac88fed4b2e0a011e20a46362e7971b54" kind="function"><name>check_saved</name></member>
@@ -4244,8 +4051,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1SimpleSel_1afa0bc3d6d4681f511dab16dc9ac9b231" kind="variable"><name>axx</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleSel_1a4872a20fb4a42be2ee750a7421298e3b" kind="variable"><name>lastsel</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleSel_1a61a03bb6a7e1cffe6a293701f8fedff4" kind="variable"><name>newtext</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleSel_1ab8587594ad0fc853ccf0803dcf24fe96" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleSel_1a42d41657188f170d295b790684efdd6a" kind="function"><name>area_button</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleSel_1ab7e793d51c86a05aae18a436b564e9b6" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleSel_1a42d41657188f170d295b790684efdd6a" kind="function"><name>area_button</name></member>
   </compound>
@@ -4272,14 +4077,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a18bc4508bafac04117312db60794c645" kind="function"><name>append</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ac8a7b1abde91056eef12bd061246fb45" kind="function"><name>sel_last</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a970f77f196524f690bb4150656be1198" kind="function"><name>clear</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a6cf0e4ca8b019968187f02a7a4ef47a3" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1aa7a8b895b1a5e658a18cc3f1145cce00" kind="function"><name>text_edited</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ab91144df25b98edaa7b1179b6c97a8be" kind="function"><name>selection</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ae04bce40d3c198b2e7df445ceb1571d9" kind="function"><name>setcallb</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a250a91d11a164c0320acbee0916b1048" kind="function"><name>setCHcallb</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a18bc4508bafac04117312db60794c645" kind="function"><name>append</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1ac8a7b1abde91056eef12bd061246fb45" kind="function"><name>sel_last</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1SimpleTree_1a970f77f196524f690bb4150656be1198" kind="function"><name>clear</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleTree" kind="class"><name>pyedpro::pycommon::pgsimp::SimpleTree</name>
     <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleTree_1ad1e2e8ede0405213a7916e89bcc78c20" kind="variable"><name>callb</name></member>
@@ -4296,16 +4093,10 @@
     <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleTree_1ae0e4f59cd52b123dd34b7d9c65f08bc3" kind="function"><name>sel_last</name></member>
     <member refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleTree_1a14a9286162ef62d5ab081e61b9b17b72" kind="function"><name>clear</name></member>
   </compound>
-  <compound refid="classpycommon_1_1plug_1_1SocketDialogWindow" kind="class"><name>pycommon::plug::SocketDialogWindow</name>
-    <member refid="classpycommon_1_1plug_1_1SocketDialogWindow_1a0e16214e5f8c6407142448f16ecdc38f" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1plug_1_1SocketDialogWindow_1adbdd9cab84f4137b4cde2d7e66af33a8" kind="function"><name>on_info_clicked</name></member>
-  </compound>
   <compound refid="classpycommon_1_1pgbox_1_1Spacer" kind="class"><name>pycommon::pgbox::Spacer</name>
-    <member refid="classpycommon_1_1pgbox_1_1Spacer_1a7a6aec2ee728e87f602d246ba56c7b0a" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgbox_1_1Spacer_1a7a6aec2ee728e87f602d246ba56c7b0a" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1Spacer" kind="class"><name>pycommon::pggui::Spacer</name>
-    <member refid="classpycommon_1_1pggui_1_1Spacer_1a3a25e833fbb51d4045b9d5b4694b6a84" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Spacer_1a3a25e833fbb51d4045b9d5b4694b6a84" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pgbox_1_1Spacer" kind="class"><name>pyedpro::pycommon::pgbox::Spacer</name>
@@ -4316,8 +4107,6 @@
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1Spinner" kind="class"><name>pycommon::pggui::Spinner</name>
     <member refid="classpycommon_1_1pggui_1_1Spinner_1a2a193421ecf92403adf8cc66f26976a5" kind="variable"><name>cb_func</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Spinner_1a23c85e76108126045da3bddc84a03518" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1Spinner_1a2d51057d2367cf2fba5bb7056e48fa7a" kind="function"><name>spinned</name></member>
     <member refid="classpycommon_1_1pggui_1_1Spinner_1a23c85e76108126045da3bddc84a03518" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1Spinner_1a2d51057d2367cf2fba5bb7056e48fa7a" kind="function"><name>spinned</name></member>
   </compound>
@@ -4497,13 +4286,6 @@
     <member refid="classpycommon_1_1pggui_1_1TextRow_1a92c2d3853997ab1f11e308116c8e22d0" kind="function"><name>edit_key</name></member>
     <member refid="classpycommon_1_1pggui_1_1TextRow_1a5e4dc6484bee35a228c79e44da0fa1bb" kind="function"><name>get_text</name></member>
     <member refid="classpycommon_1_1pggui_1_1TextRow_1ad10457422f98eea23a093abe8dc4bc54" kind="function"><name>set_text</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextRow_1a33688516a5a552687af0a86f65fd524d" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextRow_1a7dca91a1d293f0b33fb3d339478cd36b" kind="function"><name>edit_done</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextRow_1ab9bbda2f3ca58ea22f359b039a29d8ea" kind="function"><name>edit_key_rel</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextRow_1a647794a82c1f6344c1ac6529294770aa" kind="function"><name>callb</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextRow_1a92c2d3853997ab1f11e308116c8e22d0" kind="function"><name>edit_key</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextRow_1a5e4dc6484bee35a228c79e44da0fa1bb" kind="function"><name>get_text</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextRow_1ad10457422f98eea23a093abe8dc4bc54" kind="function"><name>set_text</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1TextRow" kind="class"><name>pyedpro::pycommon::pggui::TextRow</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1TextRow_1acd9bd73a881c2a2ce34496b9405f5d9b" kind="variable"><name>main</name></member>
@@ -4601,7 +4383,6 @@
     <member refid="classpycommon_1_1pggui_1_1TextTable_1afaa51c53441e57ac0c4c10a67c67d22d" kind="variable"><name>texts</name></member>
     <member refid="classpycommon_1_1pggui_1_1TextTable_1a71ca0a9888035c68f7018e16a298ae9c" kind="variable"><name>main</name></member>
     <member refid="classpycommon_1_1pggui_1_1TextTable_1a21a7b4cb67d70ff6f7149710a5c4751a" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1TextTable_1a21a7b4cb67d70ff6f7149710a5c4751a" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1TextTable" kind="class"><name>pyedpro::pycommon::pggui::TextTable</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1TextTable_1abd6eb97253fb1d6e439acc3404ba7cf5" kind="variable"><name>texts</name></member>
@@ -4614,6 +4395,7 @@
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a2a59f34aed547cd0f064f63a8cfefdc2" kind="variable"><name>fd</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a886630840827d1e5ff691ff26124dd67" kind="variable"><name>mysize</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a7f954d313d681fcc6a78bee83ebe9e05" kind="variable"><name>myfam</name></member>
+    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a5017af797b3d69b897f77179592029d1" kind="variable"><name>findcall</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a3b7a22de2c062d403f18a7fd2f9a013e" kind="variable"><name>textview</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a49e131edae854a0b37e98b05d1eaec91" kind="variable"><name>textbuffer</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a3762329fb6455d560fd69896a6b1b5c4" kind="variable"><name>tag_norm</name></member>
@@ -4621,23 +4403,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1ae94c650d78439be923e0fee027a3fb65" kind="variable"><name>tag_italic</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a9580e6277abb1b8f75c8e6afe845bef4" kind="variable"><name>tag_underline</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1ae3f57a6077b0964e8cf9dff86f170a67" kind="variable"><name>tag_found</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a5017af797b3d69b897f77179592029d1" kind="variable"><name>findcall</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a10110211f018e350f1cfc31f181abdb3" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a673d6a4e56e5d59c37d38bf7335f84f3" kind="function"><name>on_zoom_clicked</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1adf350c5a29e73672054c2a124076aa74" kind="function"><name>on_unzoom_clicked</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1ac1b5c08ef422798c4ff5a149507d961e" kind="function"><name>get_text</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a08930edaa3e33d0ad7c61a3a3a81d17a" kind="function"><name>get_all</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a7d0b555ea76b7e17a01cbbd9e08164e7" kind="function"><name>get_modified</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1af49b6dac0a3aff8c66faf7d47bf00ed1" kind="function"><name>set_text</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a42e93f19db018b9dccf40bd69cd61e04" kind="function"><name>on_rm_clicked</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1adbadb936067eb07d8b0c535c10db284a" kind="function"><name>on_button_clicked</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a36c32de928ca82fb37770b6183734f0c" kind="function"><name>on_clear_clicked</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a50c5183edde2f15bfd0b5267843f4e0e" kind="function"><name>on_editable_toggled</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a138ea583897e2552f8eaa23037bb53ae" kind="function"><name>on_cursor_toggled</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a67c58eaf34e4e9bad0240c3921557de8" kind="function"><name>on_wrap_toggled</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1ac96cb5919fc0354a68ce16359fb317b5" kind="function"><name>on_justify_toggled</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1acdcb37923df4f6afe438e2a01f967022" kind="function"><name>on_search_clicked</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a2bf00e91ca93393086c2d4de5b6d3c1f" kind="function"><name>search_and_mark</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a10110211f018e350f1cfc31f181abdb3" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a4be16803bcd03d74f40e6cbc556d2800" kind="function"><name>area_key</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a673d6a4e56e5d59c37d38bf7335f84f3" kind="function"><name>on_zoom_clicked</name></member>
@@ -4655,9 +4420,6 @@
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1ac96cb5919fc0354a68ce16359fb317b5" kind="function"><name>on_justify_toggled</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1acdcb37923df4f6afe438e2a01f967022" kind="function"><name>on_search_clicked</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a2bf00e91ca93393086c2d4de5b6d3c1f" kind="function"><name>search_and_mark</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1aa20f7f1d3bc81dd932e4439614394ce0" kind="function"><name>_create_toolbar</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1ad495604fc10d70999c63728f01ddd477" kind="function"><name>_create_textview</name></member>
-    <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a6377cc2606b07ebc66aafd0851293be0" kind="function"><name>_create_buttons</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1aa20f7f1d3bc81dd932e4439614394ce0" kind="function"><name>_create_toolbar</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1ad495604fc10d70999c63728f01ddd477" kind="function"><name>_create_textview</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1TextViewWin_1a6377cc2606b07ebc66aafd0851293be0" kind="function"><name>_create_buttons</name></member>
@@ -4788,10 +4550,6 @@
     <member refid="classpycommon_1_1sutil_1_1Unbuffered_1a3feea59c94d7dbd9b8b2e5ea1a85f8e0" kind="function"><name>write</name></member>
     <member refid="classpycommon_1_1sutil_1_1Unbuffered_1afebfa7e9aa171ee680d93aa51463c19d" kind="function"><name>writelines</name></member>
     <member refid="classpycommon_1_1sutil_1_1Unbuffered_1ac02a1afd0cc1689b29d3147919cba985" kind="function"><name>__getattr__</name></member>
-    <member refid="classpycommon_1_1sutil_1_1Unbuffered_1a7f1f8d5f2c71134e1689fb6f29de4cbe" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1sutil_1_1Unbuffered_1a3feea59c94d7dbd9b8b2e5ea1a85f8e0" kind="function"><name>write</name></member>
-    <member refid="classpycommon_1_1sutil_1_1Unbuffered_1afebfa7e9aa171ee680d93aa51463c19d" kind="function"><name>writelines</name></member>
-    <member refid="classpycommon_1_1sutil_1_1Unbuffered_1ac02a1afd0cc1689b29d3147919cba985" kind="function"><name>__getattr__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Unbuffered" kind="class"><name>pyedpro::pedlib::pedconfig::Unbuffered</name>
     <member refid="classpyedpro_1_1pedlib_1_1pedconfig_1_1Unbuffered_1a6e9e76732b40de44eb16ae7fa91949ad" kind="variable"><name>stream</name></member>
@@ -4816,7 +4574,6 @@
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1WideButt" kind="class"><name>pycommon::pggui::WideButt</name>
     <member refid="classpycommon_1_1pggui_1_1WideButt_1a47145abcb123412bde745f3ac9c3171a" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1WideButt_1a47145abcb123412bde745f3ac9c3171a" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pggui_1_1WideButt" kind="class"><name>pyedpro::pycommon::pggui::WideButt</name>
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1WideButt_1a59f60ea105274a7fb54daf588ad12d41" kind="function"><name>__init__</name></member>
@@ -4826,15 +4583,9 @@
     <member refid="classpycommon_1_1pgbox_1_1xHBox_1a31dc07933b17248751c9c978a6957b46" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgbox_1_1xHBox_1a6019098669b46f9111a681d90dee7b17" kind="function"><name>set_padding</name></member>
     <member refid="classpycommon_1_1pgbox_1_1xHBox_1af6f264d5d3fb6315579f591f31a447e0" kind="function"><name>pack</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1xHBox_1a31dc07933b17248751c9c978a6957b46" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1xHBox_1a6019098669b46f9111a681d90dee7b17" kind="function"><name>set_padding</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1xHBox_1af6f264d5d3fb6315579f591f31a447e0" kind="function"><name>pack</name></member>
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1xHBox" kind="class"><name>pycommon::pggui::xHBox</name>
     <member refid="classpycommon_1_1pggui_1_1xHBox_1ad50e6c2339e803331dd8e16bf9d3f4be" kind="variable"><name>pad</name></member>
-    <member refid="classpycommon_1_1pggui_1_1xHBox_1a91aef960198aa8c89f9365254b917d02" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1xHBox_1a3fdb1d9c0a6d12581833f45385c67af9" kind="function"><name>set_padding</name></member>
-    <member refid="classpycommon_1_1pggui_1_1xHBox_1a387ae8d2b7302abc947397680b86851f" kind="function"><name>pack</name></member>
     <member refid="classpycommon_1_1pggui_1_1xHBox_1a91aef960198aa8c89f9365254b917d02" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1xHBox_1a3fdb1d9c0a6d12581833f45385c67af9" kind="function"><name>set_padding</name></member>
     <member refid="classpycommon_1_1pggui_1_1xHBox_1a387ae8d2b7302abc947397680b86851f" kind="function"><name>pack</name></member>
@@ -4853,10 +4604,8 @@
   </compound>
   <compound refid="classpycommon_1_1pgbox_1_1xSpacer" kind="class"><name>pycommon::pgbox::xSpacer</name>
     <member refid="classpycommon_1_1pgbox_1_1xSpacer_1a239fa5960848f1287affe1a6392c0d30" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1xSpacer_1a239fa5960848f1287affe1a6392c0d30" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1xSpacer" kind="class"><name>pycommon::pggui::xSpacer</name>
-    <member refid="classpycommon_1_1pggui_1_1xSpacer_1a41a9a586821afe547206f459cc68741d" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1xSpacer_1a41a9a586821afe547206f459cc68741d" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pgbox_1_1xSpacer" kind="class"><name>pyedpro::pycommon::pgbox::xSpacer</name>
@@ -4870,15 +4619,9 @@
     <member refid="classpycommon_1_1pgbox_1_1xVBox_1a3e68249f71f6f1cbd71af6194f146243" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgbox_1_1xVBox_1ac3c0504a529207cd13aabd0c2641de51" kind="function"><name>set_padding</name></member>
     <member refid="classpycommon_1_1pgbox_1_1xVBox_1ab43b7507f14ed1c1adf3be8d5f8b696b" kind="function"><name>pack</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1xVBox_1a3e68249f71f6f1cbd71af6194f146243" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1xVBox_1ac3c0504a529207cd13aabd0c2641de51" kind="function"><name>set_padding</name></member>
-    <member refid="classpycommon_1_1pgbox_1_1xVBox_1ab43b7507f14ed1c1adf3be8d5f8b696b" kind="function"><name>pack</name></member>
   </compound>
   <compound refid="classpycommon_1_1pggui_1_1xVBox" kind="class"><name>pycommon::pggui::xVBox</name>
     <member refid="classpycommon_1_1pggui_1_1xVBox_1a23fa4bc07ab035d7b04dc550596aaecd" kind="variable"><name>pad</name></member>
-    <member refid="classpycommon_1_1pggui_1_1xVBox_1ae8d16249abd6a170a0d5575795f3d7fe" kind="function"><name>__init__</name></member>
-    <member refid="classpycommon_1_1pggui_1_1xVBox_1aac807c713d71efaf50fe490d98f02f1e" kind="function"><name>set_padding</name></member>
-    <member refid="classpycommon_1_1pggui_1_1xVBox_1a3abda5957fb605004f72c700325f233e" kind="function"><name>pack</name></member>
     <member refid="classpycommon_1_1pggui_1_1xVBox_1ae8d16249abd6a170a0d5575795f3d7fe" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pggui_1_1xVBox_1aac807c713d71efaf50fe490d98f02f1e" kind="function"><name>set_padding</name></member>
     <member refid="classpycommon_1_1pggui_1_1xVBox_1a3abda5957fb605004f72c700325f233e" kind="function"><name>pack</name></member>
@@ -4896,7 +4639,6 @@
     <member refid="classpyedpro_1_1pycommon_1_1pggui_1_1xVBox_1a2d190a6f37df31ae420cac5e80461471" kind="function"><name>pack</name></member>
   </compound>
   <compound refid="classpycommon_1_1pgsimp_1_1zSpacer" kind="class"><name>pycommon::pgsimp::zSpacer</name>
-    <member refid="classpycommon_1_1pgsimp_1_1zSpacer_1ad26ee888fc172ad41565dcf2a314acde" kind="function"><name>__init__</name></member>
     <member refid="classpycommon_1_1pgsimp_1_1zSpacer_1ad26ee888fc172ad41565dcf2a314acde" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="classpyedpro_1_1pycommon_1_1pgsimp_1_1zSpacer" kind="class"><name>pyedpro::pycommon::pgsimp::zSpacer</name>
@@ -5000,7 +4742,7 @@
     <member refid="namespacepangview_1a26d66ad189fdd73d8d9b5069a0863e5f" kind="variable"><name>ts</name></member>
     <member refid="namespacepangview_1ae5e5871315f1e72304ba5b7949d5c70f" kind="variable"><name>cb</name></member>
     <member refid="namespacepangview_1aefbe297cb13dd2c30c20caa47334d585" kind="variable"><name>parsetable</name></member>
-    <member refid="namespacepangview_1adb89ff686a07cc55e09ce0f53e8b69aa" kind="variable"><name>opts</name></member>
+    <member refid="namespacepangview_1a0852df9da3352f187c0f36785ddc0e78" kind="variable"><name>opts</name></member>
     <member refid="namespacepangview_1a7514795d1df84a3391650c0bab7d254f" kind="variable"><name>args</name></member>
     <member refid="namespacepangview_1adc548a4201c8dc7f9b1e33917272e1b6" kind="variable"><name>pgdebug</name></member>
     <member refid="namespacepangview_1a65730e481d3f82cce3abc9389122d94e" kind="variable"><name>second</name></member>
@@ -5030,6 +4772,7 @@
     <member refid="namespacepangview_1a433138d589f6a85a3476ec63ad8f846e" kind="function"><name>message_dialog</name></member>
     <member refid="namespacepangview_1a77468754c11b07eec33063ec41f02d15" kind="function"><name>showfile</name></member>
     <member refid="namespacepangview_1a4f09202290728a5225cc09d618617618" kind="function"><name>help</name></member>
+    <member refid="namespacepangview_1afd9c4f4714ae2239a96368fa26d04204" kind="function"><name>mainfunc</name></member>
   </compound>
   <compound refid="namespacepedgoto" kind="namespace"><name>pedgoto</name>
   </compound>
@@ -5319,9 +5062,10 @@
   <compound refid="namespacepedlib_1_1pedplug" kind="namespace"><name>pedlib::pedplug</name>
     <member refid="namespacepedlib_1_1pedplug_1aac4caadbc6e73d322ca61dbbfe89de70" kind="variable"><name>plugin_list</name></member>
     <member refid="namespacepedlib_1_1pedplug_1a13d4a2ecb8c08406901383b280e6936c" kind="function"><name>load_plugins</name></member>
-    <member refid="namespacepedlib_1_1pedplug_1acc7a707e891c9a7b2913ba0dfd30d947" kind="function"><name>keypress</name></member>
+    <member refid="namespacepedlib_1_1pedplug_1aad79c55f296487ddaa0692a36c93e674" kind="function"><name>keypress</name></member>
     <member refid="namespacepedlib_1_1pedplug_1a316f5e6949ef2f52fee103c5d73605c9" kind="function"><name>display</name></member>
     <member refid="namespacepedlib_1_1pedplug_1aab3af0133983b6c869a8db89fc8e3b6d" kind="function"><name>syntax</name></member>
+    <member refid="namespacepedlib_1_1pedplug_1aa41122b799ff52bab14a9c12b3c8c8d2" kind="function"><name>clsyntax</name></member>
     <member refid="namespacepedlib_1_1pedplug_1a97d05a220bd874d0c6975b38092a72c3" kind="function"><name>predraw</name></member>
   </compound>
   <compound refid="namespacepedlib_1_1pedspell" kind="namespace"><name>pedlib::pedspell</name>
@@ -5460,6 +5204,24 @@
     <member refid="namespacepedlib_1_1pedync_1a993d7c5c8d5317e2412cc5af651840e8" kind="function"><name>about_key</name></member>
     <member refid="namespacepedlib_1_1pedync_1a3d9e941e6c1ba6e568b740b74f005803" kind="function"><name>message</name></member>
   </compound>
+  <compound refid="namespacepedlib_1_1plugins" kind="namespace"><name>pedlib::plugins</name>
+    <member refid="namespacepedlib_1_1plugins_1a9abd3bf54125c7b52def479aefa7d254" kind="function"><name>init</name></member>
+  </compound>
+  <compound refid="namespacepedlib_1_1plugins_1_1first" kind="namespace"><name>pedlib::plugins::first</name>
+    <member refid="namespacepedlib_1_1plugins_1_1first_1a4d5c2aed0cab22b32c777407c012ce6d" kind="variable"><name>verbose</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1first_1a72b8b3ad0139eef1635034654850ec6e" kind="variable"><name>base</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1first_1afc60f8fcd29d5a2fe0f08b9452e59b22" kind="function"><name>init</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1first_1aa83face48b83e65ebe60742908235f79" kind="function"><name>keypress</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1first_1a2350f185d7ec8f80859b750b724633e9" kind="function"><name>display</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1first_1aeb603209d8b7de92d0c16db94c6a0d7c" kind="function"><name>syntax</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1first_1a2328c65a4b340243243a0efccf689449" kind="function"><name>predraw</name></member>
+  </compound>
+  <compound refid="namespacepedlib_1_1plugins_1_1lower__right" kind="namespace"><name>pedlib::plugins::lower_right</name>
+    <member refid="namespacepedlib_1_1plugins_1_1lower__right_1a694d823e97f0a8c4140086884d082733" kind="variable"><name>verbose</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1lower__right_1a741afeff3e62f11fd83f01a6a9a6bc91" kind="function"><name>display</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1lower__right_1a46f332a6e83ff8b912f26305e4d01bbc" kind="function"><name>keypress</name></member>
+    <member refid="namespacepedlib_1_1plugins_1_1lower__right_1a81211fcc70023e031196710780d5aaf6" kind="function"><name>init</name></member>
+  </compound>
   <compound refid="namespacepedlib_1_1stack" kind="namespace"><name>pedlib::stack</name>
   </compound>
   <compound refid="namespacepedlib_1_1test" kind="namespace"><name>pedlib::test</name>
@@ -5548,120 +5310,114 @@
   </compound>
   <compound refid="namespacepycommon" kind="namespace"><name>pycommon</name>
   </compound>
-  <compound refid="namespacepycommon_1_1htmledit" kind="namespace"><name>pycommon::htmledit</name>
-  </compound>
   <compound refid="namespacepycommon_1_1pgbox" kind="namespace"><name>pycommon::pgbox</name>
-    <member refid="namespacepycommon_1_1pgbox_1a135f878a3c93970aec21ca647d67c328" kind="variable"><name>box_testmode</name></member>
+    <member refid="namespacepycommon_1_1pgbox_1a040768f77790f347463404ca2fd6c55f" kind="variable"><name>box_testmode</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1pgentry" kind="namespace"><name>pycommon::pgentry</name>
-    <member refid="namespacepycommon_1_1pgentry_1abe342096e4f8064cf07e20595d60bb78" kind="function"><name>entryquad</name></member>
-    <member refid="namespacepycommon_1_1pgentry_1a9a2ab3e1e5290949721cdd980d69ea55" kind="function"><name>entrypair</name></member>
-    <member refid="namespacepycommon_1_1pgentry_1a3dc779a38e428b3af62d0d413be0e09e" kind="function"><name>textviewpair</name></member>
-    <member refid="namespacepycommon_1_1pgentry_1abdbd29bbf53e4c4d42ae0a1d6a6b7ce6" kind="function"><name>scrolledtext</name></member>
-    <member refid="namespacepycommon_1_1pgentry_1a7a6f2be31753f7d4b43a4ba227d303cf" kind="function"><name>imgbutt</name></member>
-    <member refid="namespacepycommon_1_1pgentry_1abae9beff19fdb19c0f99d823d7dcd86e" kind="function"><name>spacer</name></member>
-    <member refid="namespacepycommon_1_1pgentry_1ac57949e87a23ffd0d8da03516dbec4cc" kind="function"><name>vspacer</name></member>
+    <member refid="namespacepycommon_1_1pgentry_1ad5c131454433263070fe2d32c093e2b3" kind="function"><name>entryquad</name></member>
+    <member refid="namespacepycommon_1_1pgentry_1a20ff4d07eb72b5a8997d381f47171ed1" kind="function"><name>entrypair</name></member>
+    <member refid="namespacepycommon_1_1pgentry_1a0fe07007446a2178418696d2ec40f7d3" kind="function"><name>textviewpair</name></member>
+    <member refid="namespacepycommon_1_1pgentry_1a607163b64ffff64c52b56bcc35a0f9ef" kind="function"><name>scrolledtext</name></member>
+    <member refid="namespacepycommon_1_1pgentry_1a48becb0ef9ae092918c8405b249c0c3e" kind="function"><name>imgbutt</name></member>
+    <member refid="namespacepycommon_1_1pgentry_1a0c190d3e02eca89908f829f4b879fcce" kind="function"><name>spacer</name></member>
+    <member refid="namespacepycommon_1_1pgentry_1a366754738242759e13ac2ac02df47be3" kind="function"><name>vspacer</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1pggui" kind="namespace"><name>pycommon::pggui</name>
     <member refid="namespacepycommon_1_1pggui_1afaa7b503c43251a2519fe305ebd1f3e0" kind="variable"><name>realinc</name></member>
-    <member refid="namespacepycommon_1_1pggui_1a4dfd09a9efdf9f860fdeb885ba273645" kind="variable"><name>IDXERR</name></member>
-    <member refid="namespacepycommon_1_1pggui_1a3f7a80d85f59d4356c795f9c56cc3f2a" kind="variable"><name>gui_testmode</name></member>
-    <member refid="namespacepycommon_1_1pggui_1a31ce6c7afd5dd578d05b7f723aa279bc" kind="function"><name>randcol</name></member>
-    <member refid="namespacepycommon_1_1pggui_1ab88d745f1fddcc5cf27891d693aabca0" kind="function"><name>randcolstr</name></member>
-    <member refid="namespacepycommon_1_1pggui_1abcb2c0ad1fe6e7b651372e752536d057" kind="function"><name>set_testmode</name></member>
-    <member refid="namespacepycommon_1_1pggui_1aeae3e4b999fac611d25d388b893b43cd" kind="function"><name>set_gui_testmode</name></member>
+    <member refid="namespacepycommon_1_1pggui_1a80054be6c1cb20cd17621b90ee08ff4b" kind="variable"><name>IDXERR</name></member>
+    <member refid="namespacepycommon_1_1pggui_1a0dd7b894b41c2ca377094c6f824f992d" kind="variable"><name>gui_testmode</name></member>
+    <member refid="namespacepycommon_1_1pggui_1abefc7c3cd44a1210cc1f13726bfc7112" kind="function"><name>randcol</name></member>
+    <member refid="namespacepycommon_1_1pggui_1a8f2d8393985a4a611c7a8bc3c2f84873" kind="function"><name>randcolstr</name></member>
+    <member refid="namespacepycommon_1_1pggui_1a5f3c3907ee797b77575722d9a2e4a3e7" kind="function"><name>set_testmode</name></member>
+    <member refid="namespacepycommon_1_1pggui_1ac95d214aef5f501f4b879c05a0215154" kind="function"><name>set_gui_testmode</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1pgsimp" kind="namespace"><name>pycommon::pgsimp</name>
-    <member refid="namespacepycommon_1_1pgsimp_1a6c489abdb820f29de5ad7cb07873ec02" kind="variable"><name>gui_testmode</name></member>
+    <member refid="namespacepycommon_1_1pgsimp_1afba061ed1be01a5ae7833b4fb2e20e24" kind="variable"><name>gui_testmode</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1pgutils" kind="namespace"><name>pycommon::pgutils</name>
     <member refid="namespacepycommon_1_1pgutils_1a8af8750662584b980409bd37828571d1" kind="variable"><name>clock</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a40b8fda843eba563b4b6a3cf69c62c46" kind="variable"><name>allcr</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a61e66e175415b832fe9bbdca0029ad4d" kind="variable"><name>allstr</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a4e8a6a481ccf1751c546c3fd46f20c41" kind="variable"><name>allcr</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ab5edb42236b3427eb8afb04bdb2260f6" kind="variable"><name>allstr</name></member>
     <member refid="namespacepycommon_1_1pgutils_1aa562a4bb77799edd7f602d8f7260c5f0" kind="variable"><name>allasc</name></member>
     <member refid="namespacepycommon_1_1pgutils_1a8688047fafbc65806785f523aa771982" kind="variable"><name>alllett</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1aff4596450dbad27afac9919344410137" kind="variable"><name>testmode</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ab87803121cd70ec109cdf9a7052c0c5b" kind="variable"><name>testmode</name></member>
     <member refid="namespacepycommon_1_1pgutils_1a108c60ed0a98a691ca1e1d486e9f77ea" kind="variable"><name>start_time</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a5c1c33879f0148f9623399e18f363217" kind="variable"><name>xtab</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1ab22c89b7bc3c2f09f6ac49c797d9d1d2" kind="function"><name>usleep</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1af6498c92ed45779f18b146a52f04f9e2" kind="function"><name>message</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1ae45c999e5e33f39e67d543c1e7cd0156" kind="function"><name>yes_no</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1af79559372e5093b0f2a798446bcecdf6" kind="function"><name>yes_no_cancel</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a3b4a1c393a2f1cdd4818845ed0a01383" kind="function"><name>yn_key</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1ac7dc4924e30bf8d1275c1a960196612a" kind="function"><name>respath</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1aeb91d48f08cf5f86f726dfbac0fc3b3a" kind="function"><name>randcol</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a6b9197815f967a1e2c20310066caa7b1" kind="function"><name>str2col</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a5434fb1325e26648e963acc73d56fd11" kind="function"><name>str2float</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a1fcf107d00323081a7be589a89c7ed9d" kind="function"><name>float2col</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1aea5e558b9f9ffa7795c1f42c28a97152" kind="function"><name>float2str</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a48ede0c625655a4a8ab826ac7f347625" kind="function"><name>col2float</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a24f088681ddb46f7dc644efb643877e9" kind="function"><name>rgb2str</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a590e085befd0ed1172adf0c1864f0679" kind="function"><name>col2str</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a29dde52def5f0cfbe7ad7dc2b3d83d8f" kind="function"><name>rgb2col</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a010adff1d4c73afba6d3bec64f8d802c" kind="function"><name>put_debug</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a8c91d137f54f0ce59fd4c47e3c4c1ad6" kind="function"><name>put_exception</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a46b777683a3f9572c10803c436856619" kind="function"><name>decode_bits</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1adc53b69a0ca9198d2081f8e13da5dc80" kind="function"><name>randcolstr</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1ad3dd2e4fa2f616239b47eb6269dfea68" kind="function"><name>clean_str</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1aa6a038344538941fb0efe61a888ec51c" kind="function"><name>clean_str2</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a2f53a34fb4d475a36ebed08c2c680951" kind="function"><name>get_time</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a2e71f2cefd1701e834463edc293159bc" kind="function"><name>get_realtime</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a6e4c890df7e9cdd17cc62c78e6e04fd2" kind="function"><name>randstr</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a98235d889a3cb6ed73544548ec936c93" kind="function"><name>randasc</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a4eea9a1d2850158b87a3e3fbfeae0097" kind="function"><name>randlett</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a4901a3e1def5b7e2eb993ff221356081" kind="function"><name>oct2int</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1ac2c65a13b43bdeb212608af356ddc7fd" kind="function"><name>uni</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a95fdc90839ff38cf92ddd0196c3e820b" kind="function"><name>is_ascii</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a60a7175389db10527aeff01c34f7cea4" kind="function"><name>kill_non_ascii</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1ae5bca10c6aad8ff9b88cb391ecee8954" kind="function"><name>unescape</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a42c56a35e3fc91e81ee9bb0df3577f58" kind="function"><name>isTrue</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a0b524e4c1cbe4afe4d38892414b1d3c6" kind="function"><name>isfile</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a48b1376c99fe5191df8bd93e8dd5da37" kind="function"><name>put_exception2</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a7719462e1f57b9f204373cb4039a5bff" kind="function"><name>hash_name</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1abbeca8a14ac7b74e38e91c0f31038935" kind="function"><name>untab_str</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a219c0d21fd92aa9c46fd4ffcc10b25b7" kind="function"><name>ampmstr</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1ada66a94570d9f63ff1355f584115955c" kind="function"><name>register_stock_icons</name></member>
-    <member refid="namespacepycommon_1_1pgutils_1a5e36c654201702a569ef98cddff78029" kind="function"><name>readfile</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a10c4cd7ac47af767306e6632cf5311e7" kind="variable"><name>xtab</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1aae6f6339e362abb1b2b224de2fabc98b" kind="function"><name>usleep</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1aa71dfbca20027409a5bccb5a45832284" kind="function"><name>message</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a81618ea3c687a74fcc6c1a516a88d4bf" kind="function"><name>yes_no</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a46c1c6364eefe69293343f6f734831f5" kind="function"><name>yes_no_cancel</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a7b9dde0059f82fcf90b8a0517930391d" kind="function"><name>yn_key</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a907e9ff69d7cc50d5d2fca8ff955ee40" kind="function"><name>respath</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1af3477fdfaa5343b6ffc9944ee41a994f" kind="function"><name>randcol</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a9692c2b41e0eb8dc2c393c3ec52566be" kind="function"><name>str2col</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a3f8242aa1b1103c94a934300be0ccc70" kind="function"><name>str2float</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1afb55ad98975ea090a9e8ac19de91c7d4" kind="function"><name>float2col</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1afea2d2357bd035195ecbd92dac8a3a71" kind="function"><name>float2str</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1added724e524d8f9ce8081054ee2f2b19" kind="function"><name>col2float</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1aba7852596ce74f7867e7749cf9649ace" kind="function"><name>rgb2str</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a3cdf82db33cc2d951bf924c2e627dae3" kind="function"><name>col2str</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ad92b9f236e28e149adfb92e77d0234b9" kind="function"><name>rgb2col</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ab45b147f50acef5f0922e92d0a69a2ef" kind="function"><name>put_debug</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a3dfeb5745485052ea9cf770db3b56657" kind="function"><name>put_exception</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1aac8e7239928551b0cca42a1f38d52d94" kind="function"><name>decode_bits</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a65ca0de96c359f94690841f921bd8ae0" kind="function"><name>randcolstr</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ae85cd7739b89a3c131307861cd0b7f36" kind="function"><name>clean_str</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ababe2973add153019620bf60201dcf27" kind="function"><name>clean_str2</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ac42c0355a05d35e76b7bee8420bc34e1" kind="function"><name>get_time</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a92658e248891ed85b17be96338873133" kind="function"><name>get_realtime</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a3a3439e2998c6a28b095a935abd02a10" kind="function"><name>randstr</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a93d45fb1348b5314f72d4defb4253829" kind="function"><name>randasc</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a9d500704acd29a5fa6578a8ceb9996e4" kind="function"><name>randlett</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1aaa9afede9161dd6212d7aea3ff5bbe5d" kind="function"><name>oct2int</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1af3eeaef80f9eec24aceb4a9efb545383" kind="function"><name>uni</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1aa0426220e91087a1a340cdd3db7567b8" kind="function"><name>is_ascii</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a42df3d474d540002bcf27479a42ff7ff" kind="function"><name>kill_non_ascii</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a84b3d97eb1d55eee6dd6fed9e4013697" kind="function"><name>unescape</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a703b82ce023c685a2ef2914c5d3574f0" kind="function"><name>isTrue</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1af955a62acd53db78240f4df1fa95cbf1" kind="function"><name>isfile</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1ab7c75b8451ff67c87a47529b7219a99e" kind="function"><name>put_exception2</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a70a3a93e3e5d8a3465d3f99384b1c157" kind="function"><name>hash_name</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a744a3fd72c10ee9e82ae5b7a60d0917b" kind="function"><name>untab_str</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a86702566353a79baa3af5f467ad9acc2" kind="function"><name>ampmstr</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a61c5f15fc53a2f914d5fba665ed49548" kind="function"><name>register_stock_icons</name></member>
+    <member refid="namespacepycommon_1_1pgutils_1a45c22e3210a09f28756c24948a369bdc" kind="function"><name>readfile</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1pgwkit" kind="namespace"><name>pycommon::pgwkit</name>
     <member refid="namespacepycommon_1_1pgwkit_1a6641abedfe9e82412edd9de7a394f847" kind="variable"><name>realinc</name></member>
-    <member refid="namespacepycommon_1_1pgwkit_1aef5f3b6c0d25f797c8b67c2a416fb052" kind="function"><name>generate_ui</name></member>
-  </compound>
-  <compound refid="namespacepycommon_1_1plug" kind="namespace"><name>pycommon::plug</name>
-    <member refid="namespacepycommon_1_1plug_1ab5fe34895239299e9548529ad88383bd" kind="variable"><name>socket_id</name></member>
-    <member refid="namespacepycommon_1_1plug_1a650c34e9ebd35a00dafeb522bddf8f05" kind="variable"><name>plug</name></member>
+    <member refid="namespacepycommon_1_1pgwkit_1a53042379b0ec8de0c172053f69d324f8" kind="function"><name>generate_ui</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1pypacker" kind="namespace"><name>pycommon::pypacker</name>
     <member refid="namespacepycommon_1_1pypacker_1a87de14a2ff50f47fd366945d2d9e6351" kind="variable"><name>__doc__</name></member>
-    <member refid="namespacepycommon_1_1pypacker_1abc6b84a9e6b1cd02090c45a628c94808" kind="variable"><name>__all__</name></member>
-    <member refid="namespacepycommon_1_1pypacker_1ab90b033a13de2365284986757e406520" kind="variable"><name>pgdebug</name></member>
+    <member refid="namespacepycommon_1_1pypacker_1a577cd68de2a8bb61a1eada263ceeccfd" kind="variable"><name>pgdebug</name></member>
+    <member refid="namespacepycommon_1_1pypacker_1a48533c7969a59fa0478443a9bf7e2099" kind="variable"><name>__all__</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1sutil" kind="namespace"><name>pycommon::sutil</name>
     <member refid="namespacepycommon_1_1sutil_1a5103e57b2b5479bf6a46755960fb770d" kind="variable"><name>disp</name></member>
     <member refid="namespacepycommon_1_1sutil_1a7e1b47646ad959f58316bc03a4db1306" kind="variable"><name>scr</name></member>
-    <member refid="namespacepycommon_1_1sutil_1af292d8e2ec29d3ca5337022281d710fc" kind="function"><name>get_screen_wh</name></member>
-    <member refid="namespacepycommon_1_1sutil_1a46d7f8bdc5c277fde2308c0ef02b0431" kind="function"><name>get_screen_xy</name></member>
-    <member refid="namespacepycommon_1_1sutil_1a53dbb571d0a7f9a2169cf0fe8678090a" kind="function"><name>print_exception</name></member>
-    <member refid="namespacepycommon_1_1sutil_1a4be9e9cfc4c34d963c299bdc9fa690cf" kind="function"><name>message</name></member>
-    <member refid="namespacepycommon_1_1sutil_1a41e9f0b93d0966e01ed1ce43a85f6402" kind="function"><name>usleep</name></member>
-    <member refid="namespacepycommon_1_1sutil_1ac6e6e2393666b556dc0593dbe195cbc5" kind="function"><name>tmpname</name></member>
-    <member refid="namespacepycommon_1_1sutil_1a346f4f1fcfa5d3b2825ad52ad2fad372" kind="function"><name>mainloop</name></member>
-    <member refid="namespacepycommon_1_1sutil_1aa938d8986b5f7ddfb788ac89938aff86" kind="function"><name>time_n2s</name></member>
-    <member refid="namespacepycommon_1_1sutil_1a3470c3c1ebf09f18d413bbd1a0a63549" kind="function"><name>time_s2n</name></member>
-    <member refid="namespacepycommon_1_1sutil_1a649c6dff0249e1b30905b088b1064aa9" kind="function"><name>yes_no_cancel</name></member>
-    <member refid="namespacepycommon_1_1sutil_1af9192e2c9b9c81a21094d321c6de15dc" kind="function"><name>yn_key</name></member>
+    <member refid="namespacepycommon_1_1sutil_1aa813c1d4156e03504dec401b70d42710" kind="function"><name>get_screen_wh</name></member>
+    <member refid="namespacepycommon_1_1sutil_1a20d26302b9242bcca15f8a9022409e76" kind="function"><name>get_screen_xy</name></member>
+    <member refid="namespacepycommon_1_1sutil_1a206d07da47bdd97a64b411e7416788d5" kind="function"><name>print_exception</name></member>
+    <member refid="namespacepycommon_1_1sutil_1abebdb8979ca3937a403a8f7e41f95fd3" kind="function"><name>message</name></member>
+    <member refid="namespacepycommon_1_1sutil_1ac15f0a0c20386df3dbd3c2817d291184" kind="function"><name>usleep</name></member>
+    <member refid="namespacepycommon_1_1sutil_1a23480bf27f8c2cba272efbc862e13473" kind="function"><name>tmpname</name></member>
+    <member refid="namespacepycommon_1_1sutil_1af969544cbdf87d6453aab4c74d5b86a8" kind="function"><name>mainloop</name></member>
+    <member refid="namespacepycommon_1_1sutil_1a3bf62655ec410451785a897d48087041" kind="function"><name>time_n2s</name></member>
+    <member refid="namespacepycommon_1_1sutil_1aa982bdbf5d80cc72b0f85a1b2fcefc57" kind="function"><name>time_s2n</name></member>
+    <member refid="namespacepycommon_1_1sutil_1a6b10946662c584361f9d0d7bc15f12bf" kind="function"><name>yes_no_cancel</name></member>
+    <member refid="namespacepycommon_1_1sutil_1a7091cac344266562869097f0148d7877" kind="function"><name>yn_key</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1testpacker" kind="namespace"><name>pycommon::testpacker</name>
-    <member refid="namespacepycommon_1_1testpacker_1a177d008d20b372b22ec3a9fe645eb24d" kind="variable"><name>rrr</name></member>
+    <member refid="namespacepycommon_1_1testpacker_1add70b9c38ffab53556e617f3dbac4eb8" kind="variable"><name>rrr</name></member>
     <member refid="namespacepycommon_1_1testpacker_1ac70addc8d60f42dcbe83fd41fb9a6f08" kind="variable"><name>pb</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a59d79fc35f4e6131b1ca3d13e509afb6" kind="variable"><name>verbose</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a533a037c3e200867c2a3120a61402817" kind="variable"><name>bindat</name></member>
-    <member refid="namespacepycommon_1_1testpacker_1a05351617190e64b42ffb527b6861a036" kind="variable"><name>org</name></member>
+    <member refid="namespacepycommon_1_1testpacker_1a62dd282f57d412482d439d7b15d9ed7c" kind="variable"><name>org</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a019c2cb80b8d0ef7187effe586a7fb68" kind="variable"><name>eeenc</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a3e8cdb19bcca743447a57f3dac5e2c25" kind="variable"><name>dddec</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a65d12f6aa06d057148d94a5d33366ec8" kind="variable"><name>eee</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a945f4daad398e4d1e0583b3dd19ba15d" kind="variable"><name>ddd</name></member>
-    <member refid="namespacepycommon_1_1testpacker_1ae0140a9318819f7cdd2b755e6c295289" kind="variable"><name>org2</name></member>
+    <member refid="namespacepycommon_1_1testpacker_1a96ecb3efad626e1f8b91eaa811fad364" kind="variable"><name>org2</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a2a93cd9339651413f24eebe40a2e6a3c" kind="variable"><name>eee2</name></member>
     <member refid="namespacepycommon_1_1testpacker_1a58ee2217521967c22d7193965de5e9f8" kind="variable"><name>ddd2</name></member>
     <member refid="namespacepycommon_1_1testpacker_1ac680b7a9b7ddc4139ef475c1a3bd90b1" kind="variable"><name>fff</name></member>
@@ -5670,25 +5426,22 @@
     <member refid="namespacepycommon_1_1testpacker_1afc26c25c4cd3cd0ff564b4a919df5f9f" kind="variable"><name>ggg</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1testpacker2" kind="namespace"><name>pycommon::testpacker2</name>
-    <member refid="namespacepycommon_1_1testpacker2_1a790327f8eafa31e1a7739038623a0392" kind="variable"><name>xorg</name></member>
-    <member refid="namespacepycommon_1_1testpacker2_1a9a5e7bc1a99be8cd3ec6bd55eb241f9f" kind="variable"><name>yorg</name></member>
-    <member refid="namespacepycommon_1_1testpacker2_1a7f6085490ae6f09bf2c678d8f282667a" kind="variable"><name>zorg</name></member>
+    <member refid="namespacepycommon_1_1testpacker2_1a633f344ed543faff1759dc9c58593917" kind="variable"><name>xorg</name></member>
+    <member refid="namespacepycommon_1_1testpacker2_1a21c9a9bd8b2d4a2da0f46982b96f7e14" kind="variable"><name>yorg</name></member>
+    <member refid="namespacepycommon_1_1testpacker2_1a5b81074679617161bb73cffefee20d09" kind="variable"><name>zorg</name></member>
     <member refid="namespacepycommon_1_1testpacker2_1aa06456d031eabfd82bdb24b5819fdd62" kind="variable"><name>pb</name></member>
     <member refid="namespacepycommon_1_1testpacker2_1a4f56a22cb736524248357175d8bb9566" kind="variable"><name>verbose</name></member>
-    <member refid="namespacepycommon_1_1testpacker2_1aa8761e68493fcfcba0e4c362dbb777b2" kind="variable"><name>sorg_var</name></member>
+    <member refid="namespacepycommon_1_1testpacker2_1ab7366394eba5716b354b3cc2a98297b6" kind="variable"><name>sorg_var</name></member>
     <member refid="namespacepycommon_1_1testpacker2_1af0cf4801e0ba345bec74a8428892f278" kind="variable"><name>eee_var</name></member>
     <member refid="namespacepycommon_1_1testpacker2_1ae562fb23eb5941ac107164bf025d85ae" kind="variable"><name>fff_var</name></member>
   </compound>
   <compound refid="namespacepycommon_1_1testpacker3" kind="namespace"><name>pycommon::testpacker3</name>
-    <member refid="namespacepycommon_1_1testpacker3_1a60e851eba8d269b1c677bec4632b449c" kind="variable"><name>xorg</name></member>
+    <member refid="namespacepycommon_1_1testpacker3_1afd920e2ffadb170ce8c5cb8ea11f52b5" kind="variable"><name>xorg</name></member>
     <member refid="namespacepycommon_1_1testpacker3_1a3684e44140446e87ea5aec2c36536a9a" kind="variable"><name>pb</name></member>
     <member refid="namespacepycommon_1_1testpacker3_1a01cd25228a27c5a9a4b7019bf163929e" kind="variable"><name>verbose</name></member>
-    <member refid="namespacepycommon_1_1testpacker3_1ad90b400553dd5f48220237705b329949" kind="variable"><name>sorg_var</name></member>
+    <member refid="namespacepycommon_1_1testpacker3_1a21d22148291ddf37fa365dc7d22ba786" kind="variable"><name>sorg_var</name></member>
     <member refid="namespacepycommon_1_1testpacker3_1a2b026d2362aa8e8aac75eb686d86caef" kind="variable"><name>eee_var</name></member>
     <member refid="namespacepycommon_1_1testpacker3_1adbea56539cf4970e7f6a9277fac588ad" kind="variable"><name>fff_var</name></member>
-  </compound>
-  <compound refid="namespacepycommon_1_1testpacker4" kind="namespace"><name>pycommon::testpacker4</name>
-    <member refid="namespacepycommon_1_1testpacker4_1a318e8c5968d5f413d48138a840461955" kind="variable"><name>pp</name></member>
   </compound>
   <compound refid="namespacepyedlib" kind="namespace"><name>pyedlib</name>
   </compound>
@@ -5997,8 +5750,6 @@
     <member refid="namespacepyedpro_1a53700a9162020976a9027ab05cc0dc79" kind="variable"><name>VERSION</name></member>
     <member refid="namespacepyedpro_1af3662f0a8013bfb39470517ad61e51e4" kind="variable"><name>BUILDDATE</name></member>
     <member refid="namespacepyedpro_1a9df7e458a69a1f5dc371b32af4fe58b3" kind="variable"><name>PROGNAME</name></member>
-    <member refid="namespacepyedpro_1a83258d5fd6b591d12f9c465810cd1ca4" kind="variable"><name>stdout</name></member>
-    <member refid="namespacepyedpro_1a1d1ad96c36404bcc096b839751b68190" kind="variable"><name>stderr</name></member>
     <member refid="namespacepyedpro_1ad3cd6d3f2548a6dd8b7154db6658becc" kind="variable"><name>mainwin</name></member>
     <member refid="namespacepyedpro_1afed1191be043daefb02d3de2ade08a84" kind="variable"><name>show_timing</name></member>
     <member refid="namespacepyedpro_1a267860307ee6dab65e2d4187a67fed70" kind="variable"><name>show_config</name></member>
@@ -6018,12 +5769,15 @@
     <member refid="namespacepyedpro_1ae2a71157b0e6f0e9b2fdd8e7e9493d49" kind="variable"><name>end</name></member>
     <member refid="namespacepyedpro_1aa8682dd29e82bc113e41318d3d39e4d1" kind="variable"><name>ss</name></member>
     <member refid="namespacepyedpro_1a60560ffae258eefc36bf2805ee616310" kind="variable"><name>hidden</name></member>
+    <member refid="namespacepyedpro_1a83258d5fd6b591d12f9c465810cd1ca4" kind="variable"><name>stdout</name></member>
+    <member refid="namespacepyedpro_1a1d1ad96c36404bcc096b839751b68190" kind="variable"><name>stderr</name></member>
     <member refid="namespacepyedpro_1a4579ba27859de033d9f76927e28373f0" kind="function"><name>tracer</name></member>
     <member refid="namespacepyedpro_1a5facc1135e1af9666dcedcb728e482de" kind="function"><name>run_main</name></member>
     <member refid="namespacepyedpro_1a5d0ca23edcf44eaebb829f8a58f02fc1" kind="function"><name>xversion</name></member>
     <member refid="namespacepyedpro_1a4db1962e95e775ad8ca30e4fef15f242" kind="function"><name>xhelp</name></member>
     <member refid="namespacepyedpro_1ac783b5a036006d9dee7eab42b863be04" kind="function"><name>terminate</name></member>
     <member refid="namespacepyedpro_1a77f061937ce29b17f527c9a26ec93adb" kind="function"><name>mainstart</name></member>
+    <member refid="namespacepyedpro_1ab73b3f82646c093721668a457055fa8d" kind="function"><name>mainfunc</name></member>
     <member refid="namespacepyedpro_1ad736187883161f8c319d3438803812c2" kind="function"><name>main</name></member>
     <member refid="namespacepyedpro_1a2124e0921ece2fb52b9c3b77c06dc55d" kind="function"><name>help</name></member>
     <member refid="namespacepyedpro_1a07c3f80902b86fe3e314bf269ccbbff4" kind="function"><name>terminate</name></member>
@@ -6110,26 +5864,6 @@
     <member refid="namespacepyedpro_1_1pangview_1a46dfbcb386ebc6dd76f56f01c5e8dbff" kind="variable"><name>ts</name></member>
     <member refid="namespacepyedpro_1_1pangview_1a465636ffd518b09bc403344c403e923e" kind="variable"><name>cb</name></member>
     <member refid="namespacepyedpro_1_1pangview_1a264d7572d703b71062953a9616c08ce0" kind="variable"><name>parsetable</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1afdc4378808ad9f8fc54ed958fb9b8b1e" kind="variable"><name>opts</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a95e67e3be9539cca1eaff8e56c6ecd39" kind="variable"><name>args</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a2900d30256b1927051756aaf48e03a3c" kind="variable"><name>pgdebug</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a58ac37900485f37c1dc9b113e53415b9" kind="variable"><name>second</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1aa0d22547780ad0fa60b42b6bb90c7bcd" kind="variable"><name>pane_pos</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a8ec67120ccf6fbb432f95023c1dc142a" kind="variable"><name>verbose</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a147baed58ac50a1e3ed3059d7563891a" kind="variable"><name>show_lexer</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a947bf0bdfbccf07eee4c968a0ee34dd8" kind="variable"><name>full_screen</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a5fcd3c0006ca49177a314b299b30b328" kind="variable"><name>xfull_screen</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a1a80dfb504f4dfafbb114b80fc6575e8" kind="variable"><name>show_timing</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a8c0003cc339aee481c180196d8cdb30b" kind="variable"><name>emit</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a87602dfc4f76b9772da3fa0361e68f2d" kind="variable"><name>show_parse</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a2fc87e71f381509a63c662ca3c6f505e" kind="variable"><name>show_state</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1ac5b0eb6d43619dbf6777aed5860adfc9" kind="variable"><name>strx</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a03b97ec8db057532caa5f0777a6c7a16" kind="variable"><name>lstack</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1ade57051a65882cff2329b33fca2146c4" kind="variable"><name>fullpath</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1aaa0ab99c2eda1503bce77824bd862579" kind="variable"><name>docroot</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a327d2c415fabbd7dcd79681bedbc562e" kind="variable"><name>callback</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1adaede3ff3878f7c15cebe32ee6b6adac" kind="variable"><name>bscallback</name></member>
-    <member refid="namespacepyedpro_1_1pangview_1a2d2f4079cb30e6641d34ee99c12a2731" kind="variable"><name>flag</name></member>
     <member refid="namespacepyedpro_1_1pangview_1a5a65c0f58ae62175ba2d9146397955b1" kind="function"><name>parse_lookup</name></member>
     <member refid="namespacepyedpro_1_1pangview_1ae96a9c71c20941fb911993d223183c30" kind="function"><name>pl</name></member>
     <member refid="namespacepyedpro_1_1pangview_1a6417771c2c7ac1e6f09a54ae25a5a34d" kind="function"><name>emit</name></member>
@@ -6140,6 +5874,7 @@
     <member refid="namespacepyedpro_1_1pangview_1a7a4f8bc5bfeb2b770ec4f382a0efc08f" kind="function"><name>message_dialog</name></member>
     <member refid="namespacepyedpro_1_1pangview_1a1b6cbda316555273117e6e9caee39969" kind="function"><name>showfile</name></member>
     <member refid="namespacepyedpro_1_1pangview_1ace34afc3cab22a2ec831aadc1775cb50" kind="function"><name>help</name></member>
+    <member refid="namespacepyedpro_1_1pangview_1ad5b0353013c4160edff0956c42371ee1" kind="function"><name>mainfunc</name></member>
   </compound>
   <compound refid="namespacepyedpro_1_1parser" kind="namespace"><name>pyedpro::parser</name>
     <member refid="namespacepyedpro_1_1parser_1afca7daf56b461576f2fbb4a6f0bc2ee5" kind="variable"><name>_gl_cnt</name></member>
@@ -6436,9 +6171,10 @@
   <compound refid="namespacepyedpro_1_1pedlib_1_1pedplug" kind="namespace"><name>pyedpro::pedlib::pedplug</name>
     <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1affdb7d4c29866f7853110a4556743612" kind="variable"><name>plugin_list</name></member>
     <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1a7de22ae05c6e6a7542608bd0a20fef3f" kind="function"><name>load_plugins</name></member>
-    <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1aab898d05d6512018387f18d6a462fc16" kind="function"><name>keypress</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1a5fd9dc0f2b555e7d54d55897dba7410a" kind="function"><name>keypress</name></member>
     <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1a931c3d6638332db4a57043ebd16c4320" kind="function"><name>display</name></member>
     <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1a85619452c27fe369ab2f14ac29547a46" kind="function"><name>syntax</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1a34c5c76fd2f4607557d20e00c1c92448" kind="function"><name>clsyntax</name></member>
     <member refid="namespacepyedpro_1_1pedlib_1_1pedplug_1a344e589b3a75bb197f3497898e862ffe" kind="function"><name>predraw</name></member>
   </compound>
   <compound refid="namespacepyedpro_1_1pedlib_1_1pedspell" kind="namespace"><name>pyedpro::pedlib::pedspell</name>
@@ -6576,6 +6312,24 @@
     <member refid="namespacepyedpro_1_1pedlib_1_1pedync_1afb7358f22fd1a8b256177653be8729a7" kind="function"><name>about</name></member>
     <member refid="namespacepyedpro_1_1pedlib_1_1pedync_1a799ce71ae34552d9604ae9541095a791" kind="function"><name>about_key</name></member>
     <member refid="namespacepyedpro_1_1pedlib_1_1pedync_1a83daad596d4e8453fc536d7e0e736a18" kind="function"><name>message</name></member>
+  </compound>
+  <compound refid="namespacepyedpro_1_1pedlib_1_1plugins" kind="namespace"><name>pyedpro::pedlib::plugins</name>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1ae3e8e197fe2ce4a00527b2944aa3ced5" kind="function"><name>init</name></member>
+  </compound>
+  <compound refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first" kind="namespace"><name>pyedpro::pedlib::plugins::first</name>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first_1a5ad7f3cf73524070bd1996d89f257399" kind="variable"><name>verbose</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first_1ad5ae6b1680f18f161dfc2f44f160633d" kind="variable"><name>base</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first_1a43feb626c86df004a7437bb03e831c22" kind="function"><name>init</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first_1ae0079e372bd7c7add5de1a86c09a42d0" kind="function"><name>keypress</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first_1a52c34caaac70d0c439f4cabdee066ef8" kind="function"><name>display</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first_1abe1e4c1e423531b468b936fff983616e" kind="function"><name>syntax</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1first_1a3777e077094debf588394c539c4a4fa1" kind="function"><name>predraw</name></member>
+  </compound>
+  <compound refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right" kind="namespace"><name>pyedpro::pedlib::plugins::lower_right</name>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1a6e22f6652adeb35321c63256d8f11dee" kind="variable"><name>verbose</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1a5bc33903f551ff894fddc8e45fa3ecb7" kind="function"><name>display</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1a89dd7bb2fcfb5573d32ca743b606790a" kind="function"><name>keypress</name></member>
+    <member refid="namespacepyedpro_1_1pedlib_1_1plugins_1_1lower__right_1ad205b09909f5521ce9f89f5bdbb26d84" kind="function"><name>init</name></member>
   </compound>
   <compound refid="namespacepyedpro_1_1pedlib_1_1stack" kind="namespace"><name>pyedpro::pedlib::stack</name>
   </compound>
@@ -6809,14 +6563,13 @@
     <member refid="namespacepyedpro_1_1pyedpro_1a7534d045e46e8e050640261f0342fce7" kind="variable"><name>VERSION</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1a76dee05937b26d68cd632bbed907d25b" kind="variable"><name>BUILDDATE</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1a5f2e2117d3f1ea3a8a03a120aaaa74db" kind="variable"><name>PROGNAME</name></member>
-    <member refid="namespacepyedpro_1_1pyedpro_1a1c9ce5b4394b9c4c6a9f561f27bc8f08" kind="variable"><name>stdout</name></member>
-    <member refid="namespacepyedpro_1_1pyedpro_1ad6144066b0ecbdd8802d58feb83018b2" kind="variable"><name>stderr</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1ab2ea22a1ec567d2d5883d1ff9efac945" kind="function"><name>tracer</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1adf2defc001b0f5356468abc8c82b3b04" kind="function"><name>run_main</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1abf0bf9537ba6b8588b7a46125af48977" kind="function"><name>xversion</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1a9989ed942733c157933cc25e0cc3c4a5" kind="function"><name>xhelp</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1a1b446f2df21a99ee055168b10657e8d7" kind="function"><name>terminate</name></member>
     <member refid="namespacepyedpro_1_1pyedpro_1a4524667e798aa068921a3d39aa1d8658" kind="function"><name>mainstart</name></member>
+    <member refid="namespacepyedpro_1_1pyedpro_1ad96c255c01b119eb8ff62b85025018d6" kind="function"><name>mainfunc</name></member>
   </compound>
   <compound refid="namespacepyedpro_1_1setup" kind="namespace"><name>pyedpro::setup</name>
     <member refid="namespacepyedpro_1_1setup_1a6b32a02d6ef73fde13f3a8b0e2b44802" kind="variable"><name>descx</name></member>
@@ -6924,101 +6677,31 @@
   </compound>
   <compound refid="pyedpro_2install_8py" kind="file"><name>install.py</name>
   </compound>
+  <compound refid="____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="build_2lib_2panglib_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="build_2lib_2pedlib_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="build_2lib_2pedlib_2data_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="build_2lib_2pedlib_2plugins_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="panglib_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="pedlib_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="pedlib_2data_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
+  <compound refid="pedlib_2plugins_2____init_____8py" kind="file"><name>__init__.py</name>
+  </compound>
   <compound refid="pycommon_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2panglib_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pedlib_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pedlib_2data_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2panglib_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2panglib_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2pedlib_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2pedlib_2data_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2____init_____8py" kind="file"><name>__init__.py</name>
-  </compound>
-  <compound refid="htmledit_8py" kind="file"><name>htmledit.py</name>
-  </compound>
-  <compound refid="pycommon_2pgbox_8py" kind="file"><name>pgbox.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2pgbox_8py" kind="file"><name>pgbox.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2pgbox_8py" kind="file"><name>pgbox.py</name>
-  </compound>
-  <compound refid="pycommon_2pgentry_8py" kind="file"><name>pgentry.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2pgentry_8py" kind="file"><name>pgentry.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2pgentry_8py" kind="file"><name>pgentry.py</name>
-  </compound>
-  <compound refid="pycommon_2pggui_8py" kind="file"><name>pggui.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2pggui_8py" kind="file"><name>pggui.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2pggui_8py" kind="file"><name>pggui.py</name>
-  </compound>
-  <compound refid="pycommon_2pgsimp_8py" kind="file"><name>pgsimp.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2pgsimp_8py" kind="file"><name>pgsimp.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2pgsimp_8py" kind="file"><name>pgsimp.py</name>
-  </compound>
-  <compound refid="pycommon_2pgutils_8py" kind="file"><name>pgutils.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2pgutils_8py" kind="file"><name>pgutils.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2pgutils_8py" kind="file"><name>pgutils.py</name>
-  </compound>
-  <compound refid="pycommon_2pgwkit_8py" kind="file"><name>pgwkit.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2pgwkit_8py" kind="file"><name>pgwkit.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2pgwkit_8py" kind="file"><name>pgwkit.py</name>
-  </compound>
-  <compound refid="plug_8py" kind="file"><name>plug.py</name>
-  </compound>
-  <compound refid="pycommon_2pypacker_8py" kind="file"><name>pypacker.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2pypacker_8py" kind="file"><name>pypacker.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2pypacker_8py" kind="file"><name>pypacker.py</name>
-  </compound>
-  <compound refid="pycommon_2sutil_8py" kind="file"><name>sutil.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2sutil_8py" kind="file"><name>sutil.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2sutil_8py" kind="file"><name>sutil.py</name>
-  </compound>
-  <compound refid="pycommon_2testpacker_8py" kind="file"><name>testpacker.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2testpacker_8py" kind="file"><name>testpacker.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2testpacker_8py" kind="file"><name>testpacker.py</name>
-  </compound>
-  <compound refid="pycommon_2testpacker2_8py" kind="file"><name>testpacker2.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2testpacker2_8py" kind="file"><name>testpacker2.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2testpacker2_8py" kind="file"><name>testpacker2.py</name>
-  </compound>
-  <compound refid="pycommon_2testpacker3_8py" kind="file"><name>testpacker3.py</name>
-  </compound>
-  <compound refid="pyedpro_2build_2lib_2pycommon_2testpacker3_8py" kind="file"><name>testpacker3.py</name>
-  </compound>
-  <compound refid="pyedpro_2pycommon_2testpacker3_8py" kind="file"><name>testpacker3.py</name>
-  </compound>
-  <compound refid="testpacker4_8py" kind="file"><name>testpacker4.py</name>
   </compound>
   <compound refid="build_2lib_2panglib_2lexer_8py" kind="file"><name>lexer.py</name>
   </compound>
@@ -7734,6 +7417,14 @@
   </compound>
   <compound refid="pedlib_2pedync_8py" kind="file"><name>pedync.py</name>
   </compound>
+  <compound refid="build_2lib_2pedlib_2plugins_2first_8py" kind="file"><name>first.py</name>
+  </compound>
+  <compound refid="pedlib_2plugins_2first_8py" kind="file"><name>first.py</name>
+  </compound>
+  <compound refid="build_2lib_2pedlib_2plugins_2lower__right_8py" kind="file"><name>lower_right.py</name>
+  </compound>
+  <compound refid="pedlib_2plugins_2lower__right_8py" kind="file"><name>lower_right.py</name>
+  </compound>
   <compound refid="build_2lib_2pedlib_2testdiff_8py" kind="file"><name>testdiff.py</name>
   </compound>
   <compound refid="pedlib_2testdiff_8py" kind="file"><name>testdiff.py</name>
@@ -7741,6 +7432,50 @@
   <compound refid="build_2lib_2pedlib_2webwin_8py" kind="file"><name>webwin.py</name>
   </compound>
   <compound refid="pedlib_2webwin_8py" kind="file"><name>webwin.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2pgbox_8py" kind="file"><name>pgbox.py</name>
+  </compound>
+  <compound refid="pycommon_2pgbox_8py" kind="file"><name>pgbox.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2pgentry_8py" kind="file"><name>pgentry.py</name>
+  </compound>
+  <compound refid="pycommon_2pgentry_8py" kind="file"><name>pgentry.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2pggui_8py" kind="file"><name>pggui.py</name>
+  </compound>
+  <compound refid="pycommon_2pggui_8py" kind="file"><name>pggui.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2pgsimp_8py" kind="file"><name>pgsimp.py</name>
+  </compound>
+  <compound refid="pycommon_2pgsimp_8py" kind="file"><name>pgsimp.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2pgutils_8py" kind="file"><name>pgutils.py</name>
+  </compound>
+  <compound refid="pycommon_2pgutils_8py" kind="file"><name>pgutils.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2pgwkit_8py" kind="file"><name>pgwkit.py</name>
+  </compound>
+  <compound refid="pycommon_2pgwkit_8py" kind="file"><name>pgwkit.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2pypacker_8py" kind="file"><name>pypacker.py</name>
+  </compound>
+  <compound refid="pycommon_2pypacker_8py" kind="file"><name>pypacker.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2sutil_8py" kind="file"><name>sutil.py</name>
+  </compound>
+  <compound refid="pycommon_2sutil_8py" kind="file"><name>sutil.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2testpacker_8py" kind="file"><name>testpacker.py</name>
+  </compound>
+  <compound refid="pycommon_2testpacker_8py" kind="file"><name>testpacker.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2testpacker2_8py" kind="file"><name>testpacker2.py</name>
+  </compound>
+  <compound refid="pycommon_2testpacker2_8py" kind="file"><name>testpacker2.py</name>
+  </compound>
+  <compound refid="build_2lib_2pycommon_2testpacker3_8py" kind="file"><name>testpacker3.py</name>
+  </compound>
+  <compound refid="pycommon_2testpacker3_8py" kind="file"><name>testpacker3.py</name>
   </compound>
   <compound refid="build_2scripts-3_810_2pangview_8py" kind="file"><name>pangview.py</name>
   </compound>
@@ -7838,9 +7573,9 @@
   </compound>
   <compound refid="dir_be22757c01fb1b706499a977a2447c8f" kind="dir"><name>pyedpro/build</name>
   </compound>
-  <compound refid="dir_b5473651c0b05a019ab1230149f9ffc1" kind="dir"><name>pyedpro/build/lib/pedlib/data</name>
-  </compound>
   <compound refid="dir_3b00b56ced75a9ae19452c664fb3ae10" kind="dir"><name>pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib/data</name>
+  </compound>
+  <compound refid="dir_b5473651c0b05a019ab1230149f9ffc1" kind="dir"><name>pyedpro/build/lib/pedlib/data</name>
   </compound>
   <compound refid="dir_848704658c740d1eb8f037af4fd9aa36" kind="dir"><name>pyedpro/pedlib/data</name>
   </compound>
@@ -7854,19 +7589,21 @@
   </compound>
   <compound refid="dir_9fab5d8bb4b29bb85963c0f69b00b2c7" kind="dir"><name>pyedpro/build/lib/panglib</name>
   </compound>
-  <compound refid="dir_98776aa6ff91906a12ef4e8057974c72" kind="dir"><name>pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib</name>
-  </compound>
   <compound refid="dir_1eee7b9c6fa4d40906be3e8eab5e0287" kind="dir"><name>pyedpro/panglib</name>
   </compound>
-  <compound refid="dir_6bedbe0c93bc93d3631122e53be0ae12" kind="dir"><name>pyedpro/build/lib/pedlib</name>
+  <compound refid="dir_98776aa6ff91906a12ef4e8057974c72" kind="dir"><name>pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/panglib</name>
   </compound>
   <compound refid="dir_6d0dbc010fe36665ab0e81188b9adfd2" kind="dir"><name>pyedpro/pedlib</name>
   </compound>
-  <compound refid="dir_0ff2398e2fb374de9c51034fe3776b03" kind="dir"><name>pycommon</name>
+  <compound refid="dir_6bedbe0c93bc93d3631122e53be0ae12" kind="dir"><name>pyedpro/build/lib/pedlib</name>
   </compound>
-  <compound refid="dir_4b5851cf2c895d7724ecf52dda076fe9" kind="dir"><name>pyedpro/pycommon</name>
+  <compound refid="dir_7fea8cc7bd973953de310c6b12e6f32b" kind="dir"><name>pyedpro/build/lib/pedlib/plugins</name>
+  </compound>
+  <compound refid="dir_7145cc8bdac0b1aca8bc069ba1c1cea4" kind="dir"><name>pyedpro/pedlib/plugins</name>
   </compound>
   <compound refid="dir_60c6cfd7545d64a036de900869892daa" kind="dir"><name>pyedpro/build/lib/pycommon</name>
+  </compound>
+  <compound refid="dir_4b5851cf2c895d7724ecf52dda076fe9" kind="dir"><name>pyedpro/pycommon</name>
   </compound>
   <compound refid="dir_311e442c42953230240d73be85acda84" kind="dir"><name>pyedpro/debian/pyedpro.py/usr/lib/python3/dist-packages/pyedlib</name>
   </compound>

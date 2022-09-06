@@ -3,7 +3,6 @@
   <compounddef id="namespacepycommon_1_1pgwkit" kind="namespace" language="Python">
     <compoundname>pycommon::pgwkit</compoundname>
     <innerclass refid="classpycommon_1_1pgwkit_1_1pgwebw" prot="public">pycommon::pgwkit::pgwebw</innerclass>
-    <innerclass refid="classpycommon_1_1pgwkit_1_1HtmlEdit" prot="public">pycommon::pgwkit::HtmlEdit</innerclass>
       <sectiondef kind="var">
       <memberdef kind="variable" id="namespacepycommon_1_1pgwkit_1a6641abedfe9e82412edd9de7a394f847" prot="public" static="no" mutable="no">
         <type></type>
@@ -17,13 +16,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgwkit.py" line="6" column="1" bodyfile="pycommon/pgwkit.py" bodystart="6" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgwkit.py" line="6" column="1" bodyfile="pyedpro/build/lib/pycommon/pgwkit.py" bodystart="6" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespacepycommon_1_1pgwkit_1aef5f3b6c0d25f797c8b67c2a416fb052" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepycommon_1_1pgwkit_1a53042379b0ec8de0c172053f69d324f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
-        <definition>def pycommon::pgwkit::generate_ui</definition>
+        <definition>def pycommon.pgwkit.generate_ui</definition>
         <argsstring>(self)</argsstring>
         <name>generate_ui</name>
         <param>
@@ -36,13 +35,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgwkit.py" line="201" column="1" bodyfile="pycommon/pgwkit.py" bodystart="201" bodyend="308"/>
+        <location file="pyedpro/build/lib/pycommon/pgwkit.py" line="168" column="1" bodyfile="pyedpro/build/lib/pycommon/pgwkit.py" bodystart="168" bodyend="275"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pgwkit.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/pycommon/pgwkit.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

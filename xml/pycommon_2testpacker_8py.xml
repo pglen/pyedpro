@@ -2,13 +2,13 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
   <compounddef id="pycommon_2testpacker_8py" kind="file" language="Python">
     <compoundname>testpacker.py</compoundname>
-    <innernamespace refid="namespacepycommon_1_1testpacker">pycommon::testpacker</innernamespace>
+    <innernamespace refid="namespacepyedpro_1_1pycommon_1_1testpacker">pyedpro::pycommon::testpacker</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1" refid="namespacepycommon_1_1testpacker" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1" refid="namespacepyedpro_1_1pycommon_1_1testpacker" refkind="compound"><highlight class="comment">#!/usr/bin/env<sp/>python</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>print_function</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
@@ -28,7 +28,7 @@
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>rrr<sp/>=<sp/><sp/></highlight><highlight class="stringliteral">&quot;mTQdnL51eKnblQflLGSMvnMKDG4XjhKa9Mbgm5ZY9YLd&quot;</highlight><highlight class="normal"><sp/>\</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;/SxqZZxwyKc/ZVzCVwMxiJ5X8LdX3X5VVO5zq/VBWQ==&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>pb<sp/>=<sp/><ref refid="classpycommon_1_1pypacker_1_1packbin" kindref="compound">pypacker.packbin</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>pb<sp/>=<sp/><ref refid="classpyedpro_1_1pycommon_1_1pypacker_1_1packbin" kindref="compound">pypacker.packbin</ref>();</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>pb.verbose<sp/>=<sp/>3</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#bindat<sp/>=<sp/>Random.new().read(64)</highlight><highlight class="normal"></highlight></codeline>
@@ -118,6 +118,6 @@
 <codeline lineno="108"><highlight class="normal"></highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">#<sp/>EOF</highlight></codeline>
     </programlisting>
-    <location file="pycommon/testpacker.py"/>
+    <location file="pyedpro/pycommon/testpacker.py"/>
   </compounddef>
 </doxygen>

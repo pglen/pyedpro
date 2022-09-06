@@ -173,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="345" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="345" bodyend="-1"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="348" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="348" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -242,7 +242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="333" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="333" bodyend="347"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="333" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="333" bodyend="350"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1a0cfd02dad70be233e830a34dec853154" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -271,7 +271,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="349" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="349" bodyend="421"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="352" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="352" bodyend="424"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1a08af5105d29cc427f1d212a93375486b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -300,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="425" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="425" bodyend="509"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="428" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="428" bodyend="512"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1a652b5939f0ca0dcd75589467ae6024d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -329,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="510" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="510" bodyend="514"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="513" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="513" bodyend="517"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1a9331cb75677540652fe1df4ce741fa91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -358,7 +358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="518" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="518" bodyend="520"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="521" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="521" bodyend="523"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1a67a5ade784930838414b9f77ccd570bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -387,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="524" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="524" bodyend="526"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="527" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="527" bodyend="529"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1acc6188483b220b0fef9ce9264788242d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -416,7 +416,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="530" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="530" bodyend="539"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="533" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="533" bodyend="542"/>
       </memberdef>
       <memberdef kind="function" id="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1ab8f91878622b4f232307afafb165f761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -445,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="543" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="543" bodyend="563"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="546" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="546" bodyend="566"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -480,14 +480,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/keyhand.py" line="565" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="565" bodyend="606"/>
+        <location file="pyedpro/pedlib/keyhand.py" line="568" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="568" bodyend="609"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/pedlib/keyhand.py" line="61" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="61" bodyend="606"/>
+    <location file="pyedpro/pedlib/keyhand.py" line="61" column="1" bodyfile="pyedpro/pedlib/keyhand.py" bodystart="61" bodyend="609"/>
     <listofallmembers>
       <member refid="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1afc76fe5de7003fbb1566e8c3e0a0cd33" prot="public" virt="non-virtual"><scope>pyedpro::pedlib::keyhand::KeyHand</scope><name>__init__</name></member>
       <member refid="classpyedpro_1_1pedlib_1_1keyhand_1_1KeyHand_1afe8d9676fbdadb54fb3b350a8a7d10ba" prot="private" virt="non-virtual"><scope>pyedpro::pedlib::keyhand::KeyHand</scope><name>_handle_key</name></member>

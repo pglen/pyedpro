@@ -10,9 +10,9 @@
     <innerclass refid="classpycommon_1_1pgbox_1_1xVBox" prot="public">pycommon::pgbox::xVBox</innerclass>
     <innerclass refid="classpycommon_1_1pgbox_1_1xHBox" prot="public">pycommon::pgbox::xHBox</innerclass>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="namespacepycommon_1_1pgbox_1a135f878a3c93970aec21ca647d67c328" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespacepycommon_1_1pgbox_1a040768f77790f347463404ca2fd6c55f" prot="public" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool pycommon::pgbox::box_testmode</definition>
+        <definition>bool pycommon::pgbox.box_testmode</definition>
         <argsstring></argsstring>
         <name>box_testmode</name>
         <initializer>=  False</initializer>
@@ -22,13 +22,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pgbox.py" line="20" column="1" bodyfile="pycommon/pgbox.py" bodystart="20" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pgbox.py" line="20" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pycommon/pgbox.py" line="1" column="1"/>
+    <location file="pyedpro/build/lib/pycommon/pgbox.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

@@ -1,0 +1,550 @@
+Gtk.Bin,
+Gtk.Box,
+Gtk.Button,
+Gtk.ComboBox,
+Gtk.Dialog,
+Gtk.Fixed,
+Gtk.FlowBox,
+Gtk.Grid,
+Gtk.HeaderBar,
+Gtk.IconView,
+Gtk.Layout,
+Gtk.ListBox,
+Gtk.MenuShell,
+Gtk.Notebook,
+Gtk.Paned,
+Gtk.Socket,
+Gtk.Stack,
+Gtk.Table,
+Gtk.TextView,
+Gtk.ToolItemGroup,
+Gtk.ToolPalette,
+Gtk.Toolbar,
+Gtk.TreeView
+
+Gtk.Calendar,
+Gtk.CellView,
+Gtk.Container,
+Gtk.DrawingArea,
+Gtk.Entry,
+Gtk.GLArea,
+Gtk.HSV,
+Gtk.Invisible,
+Gtk.LevelBar,
+Gtk.Misc,
+Gtk.ProgressBar,
+Gtk.Range,
+Gtk.Separator,
+Gtk.Spinner,
+Gtk.Switch
+
+Gtk.Buildable
+
+    add_child (builder, child, type)
+  	construct_child (builder, name)
+  	custom_finished (builder, child, tagname, data)
+  	custom_tag_end (builder, child, tagname, data)
+  	custom_tag_start (builder, child, tagname)
+  	get_internal_child (builder, childname)
+  	get_name ()
+  	parser_finished (builder)
+  	set_buildable_property (builder, name, value)
+  	set_name (name)
+
+
+Gtk.Widget
+    class     bind_template_callback_full (callback_name, callback_symbol)
+    class     bind_template_child_full (name, internal_child, struct_offset)
+    class     find_style_property (property_name)
+    class     get_css_name ()
+    class     get_default_direction ()
+    class     get_default_style ()
+    class     install_style_property (pspec)
+    class     list_style_properties ()
+    class     pop_composite_child ()
+    class     push_composite_child ()
+    class     set_accessible_role (role)
+    class     set_accessible_type (type)
+    class     set_connect_func (connect_func, *connect_data)
+    class     set_css_name (name)
+    class     set_default_direction (dir)
+    class     set_template (template_bytes)
+    class     set_template_from_resource (resource_name)
+          activate ()
+          add_accelerator (accel_signal, accel_group, accel_key, accel_mods, accel_flags)
+          add_device_events (device, events)
+          add_events (events)
+          add_mnemonic_label (label)
+          add_tick_callback (callback, *user_data)
+          can_activate_accel (signal_id)
+          child_focus (direction)
+          child_notify (child_property)
+          class_path ()
+          compute_expand (orientation)
+          create_pango_context ()
+          create_pango_layout (text)
+          destroy ()
+          destroyed (widget_pointer)
+          device_is_shadowed (device)
+          drag_begin (targets, actions, button, event)
+          drag_begin_with_coordinates (targets, actions, button, event, x, y)
+          drag_check_threshold (start_x, start_y, current_x, current_y)
+          drag_dest_add_image_targets ()
+          drag_dest_add_text_targets ()
+          drag_dest_add_uri_targets ()
+          drag_dest_find_target (context, target_list)
+          drag_dest_get_target_list ()
+          drag_dest_get_track_motion ()
+          drag_dest_set (flags, targets, actions)
+          drag_dest_set_proxy (proxy_window, protocol, use_coordinates)
+          drag_dest_set_target_list (target_list)
+          drag_dest_set_track_motion (track_motion)
+          drag_dest_unset ()
+          drag_get_data (context, target, time_)
+          drag_highlight ()
+          drag_source_add_image_targets ()
+          drag_source_add_text_targets ()
+          drag_source_add_uri_targets ()
+          drag_source_get_target_list ()
+          drag_source_set (start_button_mask, targets, actions)
+          drag_source_set_icon_gicon (icon)
+          drag_source_set_icon_name (icon_name)
+          drag_source_set_icon_pixbuf (pixbuf)
+          drag_source_set_icon_stock (stock_id)
+          drag_source_set_target_list (target_list)
+          drag_source_unset ()
+          drag_unhighlight ()
+          draw (cr)
+          ensure_style ()
+          error_bell ()
+          event (event)
+          freeze_child_notify ()
+          get_accessible ()
+          get_action_group (prefix)
+          get_allocated_baseline ()
+          get_allocated_height ()
+          get_allocated_size ()
+          get_allocated_width ()
+          get_allocation ()
+          get_ancestor (widget_type)
+          get_app_paintable ()
+          get_can_default ()
+          get_can_focus ()
+          get_child_requisition ()
+          get_child_visible ()
+          get_clip ()
+          get_clipboard (selection)
+          get_composite_name ()
+          get_device_enabled (device)
+          get_device_events (device)
+          get_direction ()
+          get_display ()
+          get_double_buffered ()
+          get_events ()
+          get_focus_on_click ()
+          get_font_map ()
+          get_font_options ()
+          get_frame_clock ()
+          get_halign ()
+          get_has_tooltip ()
+          get_has_window ()
+          get_hexpand ()
+          get_hexpand_set ()
+          get_mapped ()
+          get_margin_bottom ()
+          get_margin_end ()
+          get_margin_left ()
+          get_margin_right ()
+          get_margin_start ()
+          get_margin_top ()
+          get_modifier_mask (intent)
+          get_modifier_style ()
+          get_name ()
+          get_no_show_all ()
+          get_opacity ()
+          get_pango_context ()
+          get_parent ()
+          get_parent_window ()
+          get_path ()
+          get_pointer ()
+          get_preferred_height ()
+          get_preferred_height_and_baseline_for_width (width)
+          get_preferred_height_for_width (width)
+          get_preferred_size ()
+          get_preferred_width ()
+          get_preferred_width_for_height (height)
+          get_realized ()
+          get_receives_default ()
+          get_request_mode ()
+          get_requisition ()
+          get_root_window ()
+          get_scale_factor ()
+          get_screen ()
+          get_sensitive ()
+          get_settings ()
+          get_size_request ()
+          get_state ()
+          get_state_flags ()
+          get_style ()
+          get_style_context ()
+          get_support_multidevice ()
+          get_template_child (widget_type, name)
+          get_tooltip_markup ()
+          get_tooltip_text ()
+          get_tooltip_window ()
+          get_toplevel ()
+          get_valign ()
+          get_valign_with_baseline ()
+          get_vexpand ()
+          get_vexpand_set ()
+          get_visible ()
+          get_visual ()
+          get_window ()
+          grab_add ()
+          grab_default ()
+          grab_focus ()
+          grab_remove ()
+          has_default ()
+          has_focus ()
+          has_grab ()
+          has_rc_style ()
+          has_screen ()
+          has_visible_focus ()
+          hide ()
+          hide_on_delete ()
+          in_destruction ()
+          init_template ()
+          input_shape_combine_region (region)
+          insert_action_group (name, group)
+          intersect (area)
+          is_ancestor (ancestor)
+          is_composited ()
+          is_drawable ()
+          is_focus ()
+          is_sensitive ()
+          is_toplevel ()
+          is_visible ()
+          keynav_failed (direction)
+          list_accel_closures ()
+          list_action_prefixes ()
+          list_mnemonic_labels ()
+          map ()
+          mnemonic_activate (group_cycling)
+          modify_base (state, color)
+          modify_bg (state, color)
+          modify_cursor (primary, secondary)
+          modify_fg (state, color)
+          modify_font (font_desc)
+          modify_style (style)
+          modify_text (state, color)
+          override_background_color (state, color)
+          override_color (state, color)
+          override_cursor (cursor, secondary_cursor)
+          override_font (font_desc)
+          override_symbolic_color (name, color)
+          path ()
+          queue_allocate ()
+          queue_compute_expand ()
+          queue_draw ()
+          queue_draw_area (x, y, width, height)
+          queue_draw_region (region)
+          queue_resize ()
+          queue_resize_no_redraw ()
+          realize ()
+          region_intersect (region)
+          register_window (window)
+          remove_accelerator (accel_group, accel_key, accel_mods)
+          remove_mnemonic_label (label)
+          remove_tick_callback (id)
+          render_icon (stock_id, size, detail)
+          render_icon_pixbuf (stock_id, size)
+          reparent (new_parent)
+          reset_rc_styles ()
+          reset_style ()
+          send_expose (event)
+          send_focus_change (event)
+          set_accel_path (accel_path, accel_group)
+          set_allocation (allocation)
+          set_app_paintable (app_paintable)
+          set_can_default (can_default)
+          set_can_focus (can_focus)
+          set_child_visible (is_visible)
+          set_clip (clip)
+          set_composite_name (name)
+          set_device_enabled (device, enabled)
+          set_device_events (device, events)
+          set_direction (dir)
+          set_double_buffered (double_buffered)
+          set_events (events)
+          set_focus_on_click (focus_on_click)
+          set_font_map (font_map)
+          set_font_options (options)
+          set_halign (align)
+          set_has_tooltip (has_tooltip)
+          set_has_window (has_window)
+          set_hexpand (expand)
+          set_hexpand_set (set)
+          set_mapped (mapped)
+          set_margin_bottom (margin)
+          set_margin_end (margin)
+          set_margin_left (margin)
+          set_margin_right (margin)
+          set_margin_start (margin)
+          set_margin_top (margin)
+          set_name (name)
+          set_no_show_all (no_show_all)
+          set_opacity (opacity)
+          set_parent (parent)
+          set_parent_window (parent_window)
+          set_realized (realized)
+          set_receives_default (receives_default)
+          set_redraw_on_allocate (redraw_on_allocate)
+          set_sensitive (sensitive)
+          set_size_request (width, height)
+          set_state (state)
+          set_state_flags (flags, clear)
+          set_style (style)
+          set_support_multidevice (support_multidevice)
+          set_tooltip_markup (markup)
+          set_tooltip_text (text)
+          set_tooltip_window (custom_window)
+          set_valign (align)
+          set_vexpand (expand)
+          set_vexpand_set (set)
+          set_visible (visible)
+          set_visual (visual)
+          set_window (window)
+          shape_combine_region (region)
+          show ()
+          show_all ()
+          show_now ()
+          size_allocate (allocation)
+          size_allocate_with_baseline (allocation, baseline)
+          size_request ()
+          style_attach ()
+          style_get_property (property_name, value=None)
+          thaw_child_notify ()
+          translate_coordinates (dest_widget, src_x, src_y)
+          trigger_tooltip_query ()
+          unmap ()
+          unparent ()
+          unrealize ()
+          unregister_window (window)
+          unset_state_flags (flags)
+
+
+Gtk.Container
+
+    class     find_child_property (property_name)
+    class     handle_border_width ()
+    class     install_child_properties (pspecs)
+    class     install_child_property (property_id, pspec)
+    class     list_child_properties ()
+          add (widget)
+          check_resize ()
+          child_get (child, *prop_names)
+          child_get_property (child, property_name, value=None)
+          child_notify (child, child_property)
+          child_notify_by_pspec (child, pspec)
+          child_set (child, **kwargs)
+          child_set_property (child, property_name, value)
+          child_type ()
+          forall (callback, *callback_data)
+          foreach (callback, *callback_data)
+          get_border_width ()
+          get_children ()
+          get_focus_chain ()
+          get_focus_child ()
+          get_focus_hadjustment ()
+          get_focus_vadjustment ()
+          get_path_for_child (child)
+          get_resize_mode ()
+          propagate_draw (child, cr)
+          remove (widget)
+          resize_children ()
+          set_border_width (border_width)
+          set_focus_chain (focusable_widgets)
+          set_focus_child (child)
+          set_focus_hadjustment (adjustment)
+          set_focus_vadjustment (adjustment)
+          set_reallocate_redraws (needs_redraws)
+          set_resize_mode (resize_mode)
+          unset_focus_chain ()
+
+    get_child ()
+
+Gtk.Button
+        class     new ()
+        class     new_from_icon_name (icon_name, size)
+        class     new_from_stock (stock_id)
+        class     new_with_label (label)
+        class     new_with_mnemonic (label)
+              clicked ()
+              enter ()
+              get_alignment ()
+              get_always_show_image ()
+              get_event_window ()
+              get_focus_on_click ()
+              get_image ()
+              get_image_position ()
+              get_label ()
+              get_relief ()
+              get_use_stock ()
+              get_use_underline ()
+              leave ()
+              pressed ()
+              released ()
+              set_alignment (xalign, yalign)
+              set_always_show_image (always_show)
+              set_focus_on_click (focus_on_click)
+              set_image (image)
+              set_image_position (position)
+              set_label (label)
+              set_relief (relief)
+              set_use_stock (use_stock)
+              set_use_underline (use_underline)
+
+Gtk.ToggleButton
+
+    class     new ()
+    class     new_with_label (label)
+    class     new_with_mnemonic (label)
+          get_active ()
+          get_inconsistent ()
+          get_mode ()
+          set_active (is_active)
+          set_inconsistent (setting)
+          set_mode (draw_indicator)
+          toggled ()
+
+Gtk.CheckButton
+    class 	new ()
+    class 	new_with_label (label)
+    class 	new_with_mnemonic (label)
+
+gtk.Box
+gtk.VBox
+    class     new (orientation, spacing)
+      get_baseline_position ()
+      get_center_widget ()
+      get_homogeneous ()
+      get_spacing ()
+      pack_end (child, expand, fill, padding)
+      pack_start (child, expand, fill, padding)
+      query_child_packing (child)
+      reorder_child (child, position)
+      set_baseline_position (position)
+      set_center_widget (widget)
+      set_child_packing (child, expand, fill, padding, pack_type)
+      set_homogeneous (homogeneous)
+      set_spacing (spacing)
+
+
+Gtk.Container
+
+class 	find_child_property (property_name)
+class 	handle_border_width ()
+class 	install_child_properties (pspecs)
+class 	install_child_property (property_id, pspec)
+class 	list_child_properties ()
+  	add (widget)
+  	check_resize ()
+  	child_get (child, *prop_names)
+  	child_get_property (child, property_name, value=None)
+  	child_notify (child, child_property)
+  	child_notify_by_pspec (child, pspec)
+  	child_set (child, **kwargs)
+  	child_set_property (child, property_name, value)
+  	child_type ()
+  	forall (callback, *callback_data)
+  	foreach (callback, *callback_data)
+  	get_border_width ()
+  	get_children ()
+  	get_focus_chain ()
+  	get_focus_child ()
+  	get_focus_hadjustment ()
+  	get_focus_vadjustment ()
+  	get_path_for_child (child)
+  	get_resize_mode ()
+  	propagate_draw (child, cr)
+  	remove (widget)
+  	resize_children ()
+  	set_border_width (border_width)
+  	set_focus_chain (focusable_widgets)
+  	set_focus_child (child)
+  	set_focus_hadjustment (adjustment)
+  	set_focus_vadjustment (adjustment)
+  	set_reallocate_redraws (needs_redraws)
+  	set_resize_mode (resize_mode)
+  	unset_focus_chain ()
+
+accel-closures-changed
+button-press-event
+button-release-event
+can-activate-accel
+child-notify
+composited-changed
+configure-event
+damage-event
+delete-event
+destroy
+destroy-event
+direction-changed
+drag-begin
+drag-data-delete
+drag-data-get
+drag-data-received
+drag-drop
+drag-end
+drag-failed
+drag-leave
+drag-motion
+draw
+enter-notify-event
+event
+event-after
+focus
+focus-in-event
+focus-out-event
+grab-broken-event
+grab-focus
+grab-notify
+hide
+hierarchy-changed
+key-press-event
+key-release-event
+keynav-failed
+leave-notify-event
+map
+map-event
+mnemonic-activate
+motion-notify-event
+move-focus
+parent-set
+popup-menu
+property-notify-event
+proximity-in-event
+proximity-out-event
+query-tooltip
+realize
+screen-changed
+scroll-event
+selection-clear-event
+selection-get
+selection-notify-event
+selection-received
+selection-request-event
+show
+show-help
+size-allocate
+state-changed
+state-flags-changed
+style-set
+style-updated
+touch-event
+unmap
+unmap-event
+unrealize
+visibility-notify-event
+window-state-event
+

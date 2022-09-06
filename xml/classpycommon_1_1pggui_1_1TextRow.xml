@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pggui_1_1TextRow" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pggui::TextRow</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1TextRow_1a59020e7a4124a313c690c139cc23c899" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="148" column="1" bodyfile="pycommon/pggui.py" bodystart="148" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="148" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1TextRow_1aa5c6166eb66c5d0d23d20902cbdc3ee5" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="149" column="1" bodyfile="pycommon/pggui.py" bodystart="149" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="149" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="149" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1TextRow_1a47b8fb08c6ab0efb49f9d35c9dbb8b6c" prot="public" static="no" mutable="no">
         <type></type>
@@ -42,178 +41,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="162" column="1" bodyfile="pycommon/pggui.py" bodystart="162" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="162" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="162" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1a33688516a5a552687af0a86f65fd524d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.TextRow.__init__</definition>
-        <argsstring>(self, labelx, initval, main, align=20)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>labelx</type>
-          <defname>labelx</defname>
-        </param>
-        <param>
-          <type>initval</type>
-          <defname>initval</defname>
-        </param>
-        <param>
-          <type><ref refid="classpycommon_1_1pggui_1_1TextRow_1a59020e7a4124a313c690c139cc23c899" kindref="member">main</ref></type>
-          <defname>main</defname>
-        </param>
-        <param>
-          <type>align</type>
-          <defname>align</defname>
-          <defval>20</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="142" column="1" bodyfile="pycommon/pggui.py" bodystart="142" bodyend="172"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1a7dca91a1d293f0b33fb3d339478cd36b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.TextRow.edit_done</definition>
-        <argsstring>(self, textbox, event)</argsstring>
-        <name>edit_done</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>textbox</type>
-          <defname>textbox</defname>
-        </param>
-        <param>
-          <type>event</type>
-          <defname>event</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="173" column="1" bodyfile="pycommon/pggui.py" bodystart="173" bodyend="176"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1ab9bbda2f3ca58ea22f359b039a29d8ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.TextRow.edit_key_rel</definition>
-        <argsstring>(self, textbox, event)</argsstring>
-        <name>edit_key_rel</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>textbox</type>
-          <defname>textbox</defname>
-        </param>
-        <param>
-          <type>event</type>
-          <defname>event</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="177" column="1" bodyfile="pycommon/pggui.py" bodystart="177" bodyend="196"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1a647794a82c1f6344c1ac6529294770aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.TextRow.callb</definition>
-        <argsstring>(self, arg1)</argsstring>
-        <name>callb</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>arg1</type>
-          <defname>arg1</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="197" column="1" bodyfile="pycommon/pggui.py" bodystart="197" bodyend="200"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1a92c2d3853997ab1f11e308116c8e22d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.TextRow.edit_key</definition>
-        <argsstring>(self, textbox, event)</argsstring>
-        <name>edit_key</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>textbox</type>
-          <defname>textbox</defname>
-        </param>
-        <param>
-          <type>event</type>
-          <defname>event</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="201" column="1" bodyfile="pycommon/pggui.py" bodystart="201" bodyend="215"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1a5e4dc6484bee35a228c79e44da0fa1bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.TextRow.get_text</definition>
-        <argsstring>(self)</argsstring>
-        <name>get_text</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="216" column="1" bodyfile="pycommon/pggui.py" bodystart="216" bodyend="218"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1ad10457422f98eea23a093abe8dc4bc54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.TextRow.set_text</definition>
-        <argsstring>(self, txt)</argsstring>
-        <name>set_text</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>txt</type>
-          <defname>txt</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="219" column="1" bodyfile="pycommon/pggui.py" bodystart="219" bodyend="222"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pggui_1_1TextRow_1a33688516a5a552687af0a86f65fd524d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pggui.TextRow.__init__</definition>
@@ -393,8 +224,6 @@
         <link refid="classpycommon_1_1pggui_1_1TextRow"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.HBox</label>
@@ -406,30 +235,21 @@
         <link refid="classpycommon_1_1pggui_1_1TextRow"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.HBox</label>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pggui.py" line="140" column="1" bodyfile="pycommon/pggui.py" bodystart="140" bodyend="223"/>
+    <location file="pyedpro/build/lib/pycommon/pggui.py" line="140" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="140" bodyend="223"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1a33688516a5a552687af0a86f65fd524d" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pggui_1_1TextRow_1a33688516a5a552687af0a86f65fd524d" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pggui_1_1TextRow_1a647794a82c1f6344c1ac6529294770aa" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>callb</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1a647794a82c1f6344c1ac6529294770aa" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>callb</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1a7dca91a1d293f0b33fb3d339478cd36b" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>edit_done</name></member>
-      <member refid="classpycommon_1_1pggui_1_1TextRow_1a7dca91a1d293f0b33fb3d339478cd36b" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>edit_done</name></member>
-      <member refid="classpycommon_1_1pggui_1_1TextRow_1a92c2d3853997ab1f11e308116c8e22d0" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>edit_key</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1a92c2d3853997ab1f11e308116c8e22d0" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>edit_key</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1ab9bbda2f3ca58ea22f359b039a29d8ea" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>edit_key_rel</name></member>
-      <member refid="classpycommon_1_1pggui_1_1TextRow_1ab9bbda2f3ca58ea22f359b039a29d8ea" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>edit_key_rel</name></member>
-      <member refid="classpycommon_1_1pggui_1_1TextRow_1a5e4dc6484bee35a228c79e44da0fa1bb" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>get_text</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1a5e4dc6484bee35a228c79e44da0fa1bb" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>get_text</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1aa5c6166eb66c5d0d23d20902cbdc3ee5" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>label</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1a59020e7a4124a313c690c139cc23c899" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>main</name></member>
-      <member refid="classpycommon_1_1pggui_1_1TextRow_1ad10457422f98eea23a093abe8dc4bc54" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>set_text</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1ad10457422f98eea23a093abe8dc4bc54" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>set_text</name></member>
       <member refid="classpycommon_1_1pggui_1_1TextRow_1a47b8fb08c6ab0efb49f9d35c9dbb8b6c" prot="public" virt="non-virtual"><scope>pycommon::pggui::TextRow</scope><name>tbox</name></member>
     </listofallmembers>

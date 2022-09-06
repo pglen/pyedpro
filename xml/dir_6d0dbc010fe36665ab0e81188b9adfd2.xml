@@ -3,7 +3,8 @@
   <compounddef id="dir_6d0dbc010fe36665ab0e81188b9adfd2" kind="dir">
     <compoundname>pyedpro/pedlib</compoundname>
     <innerdir refid="dir_848704658c740d1eb8f037af4fd9aa36">pyedpro/pedlib/data</innerdir>
-    <innerfile refid="pyedpro_2pedlib_2____init_____8py">__init__.py</innerfile>
+    <innerdir refid="dir_7145cc8bdac0b1aca8bc069ba1c1cea4">pyedpro/pedlib/plugins</innerdir>
+    <innerfile refid="pedlib_2____init_____8py">__init__.py</innerfile>
     <innerfile refid="pedlib_2acthand_8py">acthand.py</innerfile>
     <innerfile refid="pedlib_2importer_8py">importer.py</innerfile>
     <innerfile refid="pedlib_2keyhand_8py">keyhand.py</innerfile>

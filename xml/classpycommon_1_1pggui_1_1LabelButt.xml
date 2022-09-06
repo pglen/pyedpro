@@ -3,7 +3,6 @@
   <compounddef id="classpycommon_1_1pggui_1_1LabelButt" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pggui::LabelButt</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.EventBox</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.EventBox</basecompoundref>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1LabelButt_1a82e8eab82ed886637c0254c2d67a7628" prot="public" static="no" mutable="no">
         <type></type>
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="228" column="1" bodyfile="pycommon/pggui.py" bodystart="228" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="228" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="228" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1LabelButt_1a86085b5b77de9d2dcf78ed85833d0d7d" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="229" column="1" bodyfile="pycommon/pggui.py" bodystart="229" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="229" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="229" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpycommon_1_1pggui_1_1LabelButt_1af8fd39e47e8a4f37c083b5d665bfcb8a" prot="public" static="no" mutable="no">
         <type></type>
@@ -42,115 +41,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pycommon/pggui.py" line="230" column="1" bodyfile="pycommon/pggui.py" bodystart="230" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pycommon/pggui.py" line="230" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="230" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1LabelButt_1a62b0b288464a3bdee9bfaac4c1330228" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.LabelButt.__init__</definition>
-        <argsstring>(self, front, callb, toolt=&quot;&quot;)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>front</type>
-          <defname>front</defname>
-        </param>
-        <param>
-          <type>callb</type>
-          <defname>callb</defname>
-        </param>
-        <param>
-          <type>toolt</type>
-          <defname>toolt</defname>
-          <defval>&quot;&quot;</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="225" column="1" bodyfile="pycommon/pggui.py" bodystart="225" bodyend="248"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1LabelButt_1a1c0736d5fbec210c70c6774116b352be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.LabelButt.area_motion</definition>
-        <argsstring>(self, arg1, arg2)</argsstring>
-        <name>area_motion</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>arg1</type>
-          <defname>arg1</defname>
-        </param>
-        <param>
-          <type>arg2</type>
-          <defname>arg2</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="249" column="1" bodyfile="pycommon/pggui.py" bodystart="249" bodyend="252"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1LabelButt_1acb2815301b050365fa2a373991ea56f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.LabelButt.area_enter</definition>
-        <argsstring>(self, arg1, arg2)</argsstring>
-        <name>area_enter</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>arg1</type>
-          <defname>arg1</defname>
-        </param>
-        <param>
-          <type>arg2</type>
-          <defname>arg2</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="253" column="1" bodyfile="pycommon/pggui.py" bodystart="253" bodyend="257"/>
-      </memberdef>
-      <memberdef kind="function" id="classpycommon_1_1pggui_1_1LabelButt_1a2ca2d19e6eb4a12b8857ebc6f1d7f528" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pggui.LabelButt.area_leave</definition>
-        <argsstring>(self, arg1, arg2)</argsstring>
-        <name>area_leave</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>arg1</type>
-          <defname>arg1</defname>
-        </param>
-        <param>
-          <type>arg2</type>
-          <defname>arg2</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pggui.py" line="258" column="1" bodyfile="pycommon/pggui.py" bodystart="258" bodyend="262"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pggui_1_1LabelButt_1a62b0b288464a3bdee9bfaac4c1330228" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pggui.LabelButt.__init__</definition>
@@ -267,14 +161,9 @@
         <link refid="classpycommon_1_1pggui_1_1LabelButt"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk::EventBox</label>
-      </node>
-      <node id="3">
-        <label>Gtk.EventBox</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -283,25 +172,16 @@
         <link refid="classpycommon_1_1pggui_1_1LabelButt"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk::EventBox</label>
       </node>
-      <node id="3">
-        <label>Gtk.EventBox</label>
-      </node>
     </collaborationgraph>
-    <location file="pycommon/pggui.py" line="223" column="1" bodyfile="pycommon/pggui.py" bodystart="223" bodyend="263"/>
+    <location file="pyedpro/build/lib/pycommon/pggui.py" line="223" column="1" bodyfile="pyedpro/build/lib/pycommon/pggui.py" bodystart="223" bodyend="263"/>
     <listofallmembers>
       <member refid="classpycommon_1_1pggui_1_1LabelButt_1a62b0b288464a3bdee9bfaac4c1330228" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pggui_1_1LabelButt_1a62b0b288464a3bdee9bfaac4c1330228" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>__init__</name></member>
-      <member refid="classpycommon_1_1pggui_1_1LabelButt_1acb2815301b050365fa2a373991ea56f8" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>area_enter</name></member>
       <member refid="classpycommon_1_1pggui_1_1LabelButt_1acb2815301b050365fa2a373991ea56f8" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>area_enter</name></member>
       <member refid="classpycommon_1_1pggui_1_1LabelButt_1a2ca2d19e6eb4a12b8857ebc6f1d7f528" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>area_leave</name></member>
-      <member refid="classpycommon_1_1pggui_1_1LabelButt_1a2ca2d19e6eb4a12b8857ebc6f1d7f528" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>area_leave</name></member>
-      <member refid="classpycommon_1_1pggui_1_1LabelButt_1a1c0736d5fbec210c70c6774116b352be" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>area_motion</name></member>
       <member refid="classpycommon_1_1pggui_1_1LabelButt_1a1c0736d5fbec210c70c6774116b352be" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>area_motion</name></member>
       <member refid="classpycommon_1_1pggui_1_1LabelButt_1af8fd39e47e8a4f37c083b5d665bfcb8a" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>arrow</name></member>
       <member refid="classpycommon_1_1pggui_1_1LabelButt_1a86085b5b77de9d2dcf78ed85833d0d7d" prot="public" virt="non-virtual"><scope>pycommon::pggui::LabelButt</scope><name>curve</name></member>

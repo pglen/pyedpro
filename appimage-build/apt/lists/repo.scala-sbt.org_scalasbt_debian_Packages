@@ -1,0 +1,1086 @@
+Package: sbt
+Version: 0.12.4-0.1-build-001
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1096
+Depends: curl, java2-runtime, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.12.4.deb
+SHA1: 20bb97e54c6e995aa65b4b5dd749a5aa91a47dc0
+SHA256: cca53de376129f5eb75b16fdec3ca0df8bdd435c4f4ef60665e3304b2e8a5fba
+Size: 985350
+
+Package: sbt
+Version: 0.13.0-0.1-build-001
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1121
+Depends: curl, java2-runtime, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.13.0.deb
+SHA1: d1d4d1e0cb59c4b448613deb7c9949952fa3cf9e
+SHA256: 459037e1fa7c039d631c017ae5ef952566552793e98b50932688ce8cf543fb4f
+Size: 991438
+
+Package: sbt
+Version: 0.13.1-0.1-build-001
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1130
+Depends: curl, java2-runtime, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.13.1.deb
+SHA1: adbb23f784ffdd1c11058f2c66168f7e9df5979f
+SHA256: a879570304a7cc42820a6d4ee6e585e7060e8fe1a5135dd2bfb913d1a810d7cc
+Size: 999300
+
+Package: sbt
+Version: 0.13.11
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1198
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@typesafe.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.11.deb
+SHA1: 1d819443127cac5b9464c4d94f9bc41aaaed1e08
+SHA256: d621902bf188b367b66a3a95ab32e64c6c251956481a059deebe9e1d84699929
+Size: 1034360
+
+Package: sbt
+Version: 0.13.12
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1198
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@typesafe.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.12.deb
+SHA1: 72490353834fd6105fff0df5edae4e7c45c6f21b
+SHA256: 5fe636f6926f2d916a9a9e4b33ee9381469fa61f08e2be13c60660b5643d3f13
+Size: 1034428
+
+Package: sbt
+Version: 0.13.13
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1199
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.13.deb
+SHA1: 7e2f3332938b34e4b58208754b36082e0ac91b1a
+SHA256: 9da3de6bafcd7878d373bb28204d44e88240676fc56090f85c5fd724737d9865
+Size: 1034388
+
+Source: sbt
+Package: sbt
+Version: 0.13.15
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 64767
+Depends: openjdk-8-jdk, bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.15.deb
+SHA1: 2a35c1673a118e6abcae027f73f149e1332c81c5
+SHA256: b92878c1540bde4a4b046188b2b0159c7e60ec96c944d734d33156575f3a39b8
+Size: 66879886
+
+Source: sbt
+Package: sbt
+Version: 0.13.15.2
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 64630
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.15.2.deb
+SHA1: 8150dbde4fbafb32281705df7ef937b5b405b545
+SHA256: 63f8955fd6d735d0c2737c5999d6e8652b26ab69d9e3cb402b01db7fbda5b7f7
+Size: 66725378
+
+Source: sbt
+Package: sbt
+Version: 0.13.15.3
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1206
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.15.3.deb
+SHA1: 95ee2d4527f60e7932a1eb34181d22235565cf92
+SHA256: 0120ec1141de76ead369e2a3bb4c6f1ff324e5e93833fcdc5f33fda9c1752703
+Size: 1250838
+
+Source: sbt
+Package: sbt
+Version: 0.13.16
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1206
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.16.deb
+SHA1: a3d46f24de20cb59d35a65b74fc110bb10371eca
+SHA256: 43fc3e3ccfd32609aaa2d6c5af1dc6d4a2fe2249a4f771d33e9b4012d8b67c9a
+Size: 1250836
+
+Source: sbt
+Package: sbt
+Version: 0.13.17
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1209
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.17.deb
+SHA1: e9214a4659b34c68f79a391c2ac103380e07016d
+SHA256: 6b2ea0092c9bf0bae8f0282677e05592084a7b9e4ae4b4acfc64db1ec071676c
+Size: 1261050
+
+Source: sbt
+Package: sbt
+Version: 0.13.18
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1216
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.18.deb
+SHA1: d9b835385ccd58c6da3c05d4be76243377e0c646
+SHA256: 9cfd2cedc12d7cf9ec7dcdae041ad6faaf0d52931c886b615b3075dc7f013d70
+Size: 1073044
+
+Package: sbt
+Version: 0.13.2
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1171
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.13.2.deb
+SHA1: 9b9779b0e47f0ad0e1038cd5c17a4befc73f4688
+SHA256: 95c24c9f66bb6eb8b0fd42a08782876d8cdc450880108bfc5e67e5df027eaccc
+Size: 1034862
+
+Package: sbt
+Version: 0.13.5
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1171
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.13.5.deb
+SHA1: 7a28ef52fad410d52a91fe38f4a9b93a45b73813
+SHA256: c89d26ae4ce9b2572ae8587cbf887b196727a33e8b6cec2672358fb4c724af70
+Size: 1015398
+
+Package: sbt
+Version: 0.13.6
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1204
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.13.6.deb
+SHA1: 5b4ac58569c9c025d439c42e8c474396978d87f5
+SHA256: 3d3904266baf77264e7bfadbea329a93d78dca3522009cb678f2e6e0f1c50fd2
+Size: 1048204
+
+Package: sbt
+Version: 0.13.7
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1195
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.13.7.deb
+SHA1: e64a4722971a8d9448a0c82afa533abc6e06a698
+SHA256: 7b503a255e75f8678a43258beccef571a1cf751179ee9257fd5fd55b3aa498c5
+Size: 1041408
+
+Package: sbt
+Version: 0.13.8
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1195
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Josh Suereth <joshua.suereth@typesafe.com>
+Description: Simple Build Tool for Scala-driven builds
+ This script provides a native way to run the Simple Build Tool,
+  a build tool for Scala software, also called SBT.
+Filename: sbt-0.13.8.deb
+SHA1: 93de4e96b3ee832b011933940551cb6c060acd59
+SHA256: 7dc8308dc19cf6a8d6553a3800e772421451edafeffa7e03e00b7d4e67366866
+Size: 1041400
+
+Package: sbt
+Version: 0.13.9
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1197
+Depends: java6-runtime-headless, bash (>= 2.05a-11)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@typesafe.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-0.13.9.deb
+SHA1: f5d554a661b0548010231631f9a54a3f29bb9161
+SHA256: 55b849e4e991f9f524ed88fafb1e15db5ad988670654e96b01c50d0c8af55cef
+Size: 1034280
+
+Source: sbt
+Package: sbt
+Version: 1.0.0
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1207
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.0.0.deb
+SHA1: 2fd114042555d9c15756f7a0f5c06b8545f9b3a8
+SHA256: 570b30a9b92c699fa08a44ed52c8f7e9b8692446918e5c3bc40ad5ae4e27c66b
+Size: 1261064
+
+Source: sbt
+Package: sbt
+Version: 1.0.0.1
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1207
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.0.0.1.deb
+SHA1: 914cf5378a4517d81fbb0c27a9e832e125f8bafe
+SHA256: fb4c4eff244e0f558ef47452caa96cf7c5f92fb7306b30c53d99caa01fb53d41
+Size: 1261048
+
+Source: sbt
+Package: sbt
+Version: 1.0.1
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1207
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.0.1.deb
+SHA1: 65fa016d944028592f80ee2611dc26e4aac1a7ed
+SHA256: fda790534b91ed40c05e4f09559e32f473591398533c6cf61340f2cc09cf18e5
+Size: 1261046
+
+Source: sbt
+Package: sbt
+Version: 1.0.2
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1207
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.0.2.deb
+SHA1: a029097add53fa2e60aafc1c3b7523122c2dc69e
+SHA256: d1ce17678848c61e479306bc3bddb76607f9248a5f694ce81088e18b9428f851
+Size: 1261046
+
+Source: sbt
+Package: sbt
+Version: 1.0.3
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1208
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.0.3.deb
+SHA1: 952e47d5777c1ca70e8ecea0f77bb2d8df9d93a7
+SHA256: 33c6800688095f58ea1feb85dc8d7bd485bac76e5c6efd844c1b44889de4d6ec
+Size: 1261050
+
+Source: sbt
+Package: sbt
+Version: 1.0.4
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1211
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.0.4.deb
+SHA1: 54e9f47c4f1d6ad4e72c283bb15a574224d4107f
+SHA256: 4948e7e78fe10b6e8fbac4685e582c7487062db1a01cfd1398e1876ee436b3d6
+Size: 1261048
+
+Source: sbt
+Package: sbt
+Version: 1.1.0
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1211
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.1.0.deb
+SHA1: 2436ad9a88cc4d778401c192562092d78352cc58
+SHA256: 9ff9929348c87205e8178370a9e88b08cfe855e359ec5b7adec1aa0cd488d457
+Size: 1261048
+
+Source: sbt
+Package: sbt
+Version: 1.1.1
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1212
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.1.1.deb
+SHA1: 4b4ea9855fe53a53d98ecd938d937a4895b8debe
+SHA256: 68c76a81a0ed4cd6941a3eb0f688836bdc39afb6e09df1c6d1b23da5daddccee
+Size: 1261046
+
+Source: sbt
+Package: sbt
+Version: 1.1.2
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1215
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.1.2.deb
+SHA1: 43d8a7c44e7ca356d2016c9a8d45439e0b064271
+SHA256: 7857c27c400d2908d647da5821cea1756cc033c19041b56ddd53038b5f7903a7
+Size: 1261048
+
+Source: sbt
+Package: sbt
+Version: 1.1.4
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1270
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.1.4.deb
+SHA1: c4a14789e2a83fd6b0c9c3e4350a28169352d307
+SHA256: 678502ba5c784a0f37820335035637ec5aa87b861ff859ea716de7f3ec8250eb
+Size: 1322486
+
+Source: sbt
+Package: sbt
+Version: 1.1.5
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1270
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.1.5.deb
+SHA1: d28ef1138f2176557a16e890f0498ee46c542eaf
+SHA256: 7a4b35cc4defea54d28cd2bf57337875fc4ae007dece15916c099ec38442677f
+Size: 1322490
+
+Source: sbt
+Package: sbt
+Version: 1.1.6
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1270
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.1.6.deb
+SHA1: 557459078f41eb5f2a897dfe9ec4290e485e5b0b
+SHA256: 803ffa11f9983140d9f885d2f53a3ff26dfd75bfdca0d589281fa86038d56e29
+Size: 1322488
+
+Source: sbt
+Package: sbt
+Version: 1.2.0
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1271
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.2.0.deb
+SHA1: fb7eee1229eaef00966ad8c918acbefff4d2b162
+SHA256: 309277b13dc1e353d78cd0162cd05c525b209ae3387dac18e455bd1372010007
+Size: 1322486
+
+Source: sbt
+Package: sbt
+Version: 1.2.1
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1271
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.2.1.deb
+SHA1: 8cbfcd721e28b82bb47ef322049f4cb2a43edcf7
+SHA256: 2d4403072fc81953337a929c5f0c0d935af830609b290e045cf10406492d1876
+Size: 1322486
+
+Source: sbt
+Package: sbt
+Version: 1.2.3
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1271
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.2.3.deb
+SHA1: a9d1f3071644b8b4660dfd9c6d76b41f8d17bee2
+SHA256: af1559efac5392d0f7d53de6d6d55c60b0fa47a31ed5ae01496c17867b3465bf
+Size: 1322484
+
+Source: sbt
+Package: sbt
+Version: 1.2.4
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1271
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.2.4.deb
+SHA1: e2e19bfc7110ed086e086c1d056d254a474f8f27
+SHA256: f4bf586483711e67e7a2cd3bed06427a2f466b49ec7c81a31c7cbd3388f28e2f
+Size: 1322486
+
+Source: sbt
+Package: sbt
+Version: 1.2.6
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1271
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.2.6.deb
+SHA1: f08f55d0199f048a5498c2a863176a679644ae7d
+SHA256: 39ac2b1de66455dc1eddf79ce5abeda2c98a6cd69f62624b73700288a59c6b80
+Size: 1322486
+
+Source: sbt
+Package: sbt
+Version: 1.2.7
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1272
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.2.7.deb
+SHA1: d5e1006e1f0b66d305c9ef1283c5200078e718b6
+SHA256: 22b94d6b4c80df2f354fe20cf5936bc48b0493ae7db3b9a48368704c4b5c75bd
+Size: 1322488
+
+Source: sbt
+Package: sbt
+Version: 1.2.8
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1272
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.2.8.deb
+SHA1: 78cb0ebef15777b7567e5bbe4c5b59db062c9465
+SHA256: 23aaf484607855cd392154f3947f735ae62031b6fb6ee202bea50f0a5e47134c
+Size: 1126438
+
+Source: sbt
+Package: sbt
+Version: 1.3.0
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1401
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.0.deb
+SHA1: ffe61979581cfa04e83723cff58f218b6d4605d2
+SHA256: f5287b7c5de0329eb6aec225c7927174fed4f3e2d8878954a1ff8f31c7a9f670
+Size: 1232806
+
+Source: sbt
+Package: sbt
+Version: 1.3.1
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1401
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.1.deb
+SHA1: 566f124740092b850c2b4a06a365683a1d2b4a8b
+SHA256: ebbdc92945795378d67007b43c91633608eecb870597dffc2ec426a08d6793b4
+Size: 1232698
+
+Source: sbt
+Package: sbt
+Version: 1.3.10
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.10.deb
+SHA1: 8d6c38353d842380490c0122be8554b21a75b782
+SHA256: 8244933c0f9dbb42a648f441792942fcc78077f7df56f6c99c2736480a8c2ab7
+Size: 1233162
+
+Source: sbt
+Package: sbt
+Version: 1.3.12
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1406
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.12.deb
+SHA1: 288bd4657f98a4d8facd11bb997687c917c240fe
+SHA256: 6c04f0024ef5a85db14bf9e105106dbcec33d0eab3fa0701d5f9e603a9024473
+Size: 1237076
+
+Source: sbt
+Package: sbt
+Version: 1.3.13
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1407
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.13.deb
+SHA1: 9d804cc565fd9874173a0342fd903c3629968e44
+SHA256: 0d561b0b4714e23b9ed76865a20aa61b86ddbb8c19f14806c213135491617d7f
+Size: 1237208
+
+Source: sbt
+Package: sbt
+Version: 1.3.2
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1401
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.2.deb
+SHA1: 9313463fc5e30dcce00ecd04215eaa2f7568d6cc
+SHA256: 64d55835d480f93905fe3f8abf03f515683125f690db6152a8cc89a56ea0ddba
+Size: 1232688
+
+Source: sbt
+Package: sbt
+Version: 1.3.3
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.3.deb
+SHA1: 1c9e7222cd3aa58e036dc619cb293e317becadee
+SHA256: 6eb75445592123efc72dbcd4ce3cea4e9ffa4b47cf5fc5a698e3edbfc71d4dc8
+Size: 1233138
+
+Source: sbt
+Package: sbt
+Version: 1.3.4
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.4.deb
+SHA1: 4bcbb660a3e73346f0c5ff0c4992c470082c79dc
+SHA256: a86d76155894c4cf4301ea0f9f7f9129f674965613e5903de52a1b429f9c6fa9
+Size: 1233080
+
+Source: sbt
+Package: sbt
+Version: 1.3.5
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.5.deb
+SHA1: 94edf8733053f65625d8d19368eb42287dfd4a67
+SHA256: daa82c0cb2180e526ff43534981031f17cc6a67cd692aa6166b680b1b00dc561
+Size: 1233088
+
+Source: sbt
+Package: sbt
+Version: 1.3.6
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.6.deb
+SHA1: 9f86844382f095b81672ea4f82f96e7a39025352
+SHA256: 841e57ba2815dfc34456bee57ca2c902c2147385a9c4d7df6d514278cda69fa4
+Size: 1233128
+
+Source: sbt
+Package: sbt
+Version: 1.3.7
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.7.deb
+SHA1: 2cba279a7613514c0a8075eeddf5d070991d70f0
+SHA256: 571b5d72ba3507c4ff7d90076d47457aa05ff320e46eaf3cfe451ee28eb1cb77
+Size: 1232974
+
+Source: sbt
+Package: sbt
+Version: 1.3.7.1
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.7.1.deb
+SHA1: 032810dfc72d3c45f155c843a3eb355cc16654d4
+SHA256: d1c06642d3950dd41e2b06b7dedc67706226ee9fc961c3545eca15c0c6edff4b
+Size: 1233170
+
+Source: sbt
+Package: sbt
+Version: 1.3.8
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.8.deb
+SHA1: 8726d5e67c4a0dad2470efc1395c587d81a7f81a
+SHA256: f9eb0d064e0061ab5020e0789809c672cdfa83c487362d79d8558d61658eb47b
+Size: 1233160
+
+Source: sbt
+Package: sbt
+Version: 1.3.9
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1403
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.3.9.deb
+SHA1: c0ff12c0f0549c5e03d330017b944b812b338710
+SHA256: 28f6ebb6eafe9e2ab1128d8a62efabe592380baa02f0cf0e33571d90dd7d9a56
+Size: 1233164
+
+Source: sbt
+Package: sbt
+Version: 1.4.0
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 48747
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.0.deb
+SHA1: 7b4c620dcc9049c8693212884ecf7934b6f524b5
+SHA256: 4494defccdfdc51a2c53666b44e8ea4e6223161be7ceb53fdaf66a9f2af96cb7
+Size: 18975964
+
+Source: sbt
+Package: sbt
+Version: 1.4.1
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 48747
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.1.deb
+SHA1: a805d1111c58d5806c4e301c481b39024ee5f853
+SHA256: 69d5ef0859b3b936cad540250cefd5df17b5bf0a9ee73cf9175dc6593e1da4db
+Size: 18976002
+
+Source: sbt
+Package: sbt
+Version: 1.4.2
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1409
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.2.deb
+SHA1: 0ab072cff1aa04adf696d26a52cb4ba174c860ca
+SHA256: 4f8b9bb6c0d1c05f88bfb3322087c036ecea7470eeef309300edbe8c25fa995b
+Size: 1232480
+
+Source: sbt
+Package: sbt
+Version: 1.4.3
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1409
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.3.deb
+SHA1: dde760ba62c63da7f49b0c85fdf97cb84db5246e
+SHA256: 7acb17093c0c936dccb5e3da228d4da8eab563965058c6af2ea74e4061b67c4e
+Size: 1232210
+
+Source: sbt
+Package: sbt
+Version: 1.4.4
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1409
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.4.deb
+SHA1: 9876ecc5517e214c7e194b5c01bc0bde1acb2c02
+SHA256: 4d4d3356bb7c7dc89b303e8a4bd053ee745ebe5daf67c8f009e2554173e1147d
+Size: 1232192
+
+Source: sbt
+Package: sbt
+Version: 1.4.5
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1409
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.5.deb
+SHA1: 2e7100e1809a7fc9b65b4ba474188dc7602c7d45
+SHA256: 9785dc88f9e73552b8f165da3dbc743fc4a76671b97843a4ffefc3bfbe73a114
+Size: 1232218
+
+Source: sbt
+Package: sbt
+Version: 1.4.6
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1410
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.6.deb
+SHA1: 1449b0ab9be0de447214d65446ff51c147ec520a
+SHA256: 65f1817ea151ccf80e4a5c0d561b0efdc02a331944d3f3fea7e9b0b8830e4adc
+Size: 1233676
+
+Source: sbt
+Package: sbt
+Version: 1.4.7
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1411
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.7.deb
+SHA1: 00b99148a774647dde1f6f42b616f3503922094d
+SHA256: defc30eb4635498dbb30eecd582abc147b14817a1ef11dd314b7b7031f6e156b
+Size: 1233698
+
+Source: sbt
+Package: sbt
+Version: 1.4.8
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1411
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.8.deb
+SHA1: dd6f9d80c0e177e25ae7536193cc41216d8568a0
+SHA256: a616a0320c141a4f5731e4af4a8acf145f50514d4c3750a23fbf9007e2958015
+Size: 1233702
+
+Source: sbt
+Package: sbt
+Version: 1.4.9
+Section: java
+Priority: optional
+Architecture: all
+Installed-Size: 1411
+Depends: bash (>= 3.2)
+Recommends: git
+Maintainer: Eugene Yokota <eugene.yokota@lightbend.com>
+Description: sbt, the interactive build tool
+ This script provides a native way to run sbt,
+  a build tool for Scala and more.
+Filename: sbt-1.4.9.deb
+SHA1: d3e4a8d5af69732de549a8477321d926c3d47b4b
+SHA256: d0bbca96063ca14ed9d9c0763fe06ca10dac59200987107397e2a15d9776d8c3
+Size: 1233694
+

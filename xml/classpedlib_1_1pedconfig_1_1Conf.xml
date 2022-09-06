@@ -276,6 +276,19 @@
         </inbodydescription>
         <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="55" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="55" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1a00d17984deb4bb74bdf44d3c6d7a9388" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>pedlib.pedconfig.Conf::plugins_dir2</definition>
+        <argsstring></argsstring>
+        <name>plugins_dir2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="59" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1a7ec87be9263f6af4fa23656e76633cc8" prot="public" static="no" mutable="no">
         <type></type>
         <definition>pedlib.pedconfig.Conf::sql_data</definition>
@@ -287,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="58" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="58" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="63" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1add3d80a17ec02ccd27eaec255b9d5882" prot="public" static="no" mutable="no">
         <type></type>
@@ -300,7 +313,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="59" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="59" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="64" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1a17020383fd56fc1a6a86e8e0e5a6a451" prot="public" static="no" mutable="no">
         <type></type>
@@ -313,7 +326,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="60" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="60" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="65" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1a7c73410e7b003f4c2a34f70776f1a5b5" prot="public" static="no" mutable="no">
         <type></type>
@@ -326,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="62" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="62" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="67" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1a7a48c67c191f20e6be3dee0492f1199a" prot="public" static="no" mutable="no">
         <type></type>
@@ -339,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="65" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="65" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="70" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1acc11930d805987dcdbd8c89b3f0c3ae6" prot="public" static="no" mutable="no">
         <type></type>
@@ -352,7 +365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="66" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="66" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="71" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1a63642fa1f9efaa590bb784f585f5e0ac" prot="public" static="no" mutable="no">
         <type></type>
@@ -365,7 +378,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="67" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="67" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="72" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classpedlib_1_1pedconfig_1_1Conf_1ab362442970618c1ecb563d1a029af6d1" prot="public" static="no" mutable="no">
         <type></type>
@@ -378,7 +391,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="70" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="70" bodyend="-1"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="75" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="75" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -397,14 +410,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="19" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="19" bodyend="75"/>
+        <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="19" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="19" bodyend="80"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="17" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="17" bodyend="76"/>
+    <location file="pyedpro/build/lib/pedlib/pedconfig.py" line="17" column="1" bodyfile="pyedpro/build/lib/pedlib/pedconfig.py" bodystart="17" bodyend="81"/>
     <listofallmembers>
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1ad4292f92e6e33f2dde35d20b720c30f1" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>__init__</name></member>
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1ab362442970618c1ecb563d1a029af6d1" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>color_on</name></member>
@@ -424,6 +437,7 @@
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1a103affe1bbfea619344cd473b014abc1" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>pedwin</name></member>
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1a116678b11d66056691fe939021e7afb9" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>pgdebug</name></member>
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1a854fa2aa538864634422cce703fc60c5" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>plugins_dir</name></member>
+      <member refid="classpedlib_1_1pedconfig_1_1Conf_1a00d17984deb4bb74bdf44d3c6d7a9388" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>plugins_dir2</name></member>
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1a63642fa1f9efaa590bb784f585f5e0ac" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>recarr</name></member>
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1a48382c9ad750e870bb82b9461564e514" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>sess_data</name></member>
       <member refid="classpedlib_1_1pedconfig_1_1Conf_1a17020383fd56fc1a6a86e8e0e5a6a451" prot="public" virt="non-virtual"><scope>pedlib::pedconfig::Conf</scope><name>sessions</name></member>

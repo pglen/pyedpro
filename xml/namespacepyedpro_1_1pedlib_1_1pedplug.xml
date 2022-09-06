@@ -30,13 +30,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedplug.py" line="47" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="47" bodyend="68"/>
+        <location file="pyedpro/pedlib/pedplug.py" line="47" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="47" bodyend="97"/>
       </memberdef>
-      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedplug_1aab898d05d6512018387f18d6a462fc16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedplug_1a5fd9dc0f2b555e7d54d55897dba7410a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pyedpro.pedlib.pedplug.keypress</definition>
-        <argsstring>(keypress=&quot; &quot;)</argsstring>
+        <argsstring>(disp, keypress=&quot; &quot;)</argsstring>
         <name>keypress</name>
+        <param>
+          <type>disp</type>
+          <defname>disp</defname>
+        </param>
         <param>
           <type>keypress</type>
           <defname>keypress</defname>
@@ -48,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedplug.py" line="69" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="69" bodyend="81"/>
+        <location file="pyedpro/pedlib/pedplug.py" line="98" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="98" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedplug_1a931c3d6638332db4a57043ebd16c4320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -69,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedplug.py" line="82" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="82" bodyend="95"/>
+        <location file="pyedpro/pedlib/pedplug.py" line="111" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="111" bodyend="125"/>
       </memberdef>
       <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedplug_1a85619452c27fe369ab2f14ac29547a46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -90,7 +94,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedplug.py" line="96" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="96" bodyend="107"/>
+        <location file="pyedpro/pedlib/pedplug.py" line="126" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="126" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedplug_1a34c5c76fd2f4607557d20e00c1c92448" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def pyedpro.pedlib.pedplug.clsyntax</definition>
+        <argsstring>(disp, cr)</argsstring>
+        <name>clsyntax</name>
+        <param>
+          <type>disp</type>
+          <defname>disp</defname>
+        </param>
+        <param>
+          <type>cr</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="pyedpro/pedlib/pedplug.py" line="138" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="138" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="namespacepyedpro_1_1pedlib_1_1pedplug_1a344e589b3a75bb197f3497898e862ffe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -111,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="pyedpro/pedlib/pedplug.py" line="108" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="108" bodyend="120"/>
+        <location file="pyedpro/pedlib/pedplug.py" line="150" column="1" bodyfile="pyedpro/pedlib/pedplug.py" bodystart="150" bodyend="164"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

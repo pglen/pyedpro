@@ -3,30 +3,7 @@
   <compounddef id="classpycommon_1_1pgbox_1_1xSpacer" kind="class" language="Python" prot="public">
     <compoundname>pycommon::pgbox::xSpacer</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Gtk.HBox</basecompoundref>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classpycommon_1_1pgbox_1_1xSpacer_1a239fa5960848f1287affe1a6392c0d30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>def</type>
-        <definition>def pycommon.pgbox.xSpacer.__init__</definition>
-        <argsstring>(self, sp=None)</argsstring>
-        <name>__init__</name>
-        <param>
-          <type>self</type>
-          <defname>self</defname>
-        </param>
-        <param>
-          <type>sp</type>
-          <defname>sp</defname>
-          <defval>None</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="pycommon/pgbox.py" line="189" column="1" bodyfile="pycommon/pgbox.py" bodystart="189" bodyend="201"/>
-      </memberdef>
       <memberdef kind="function" id="classpycommon_1_1pgbox_1_1xSpacer_1a239fa5960848f1287affe1a6392c0d30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
         <definition>def pycommon.pgbox.xSpacer.__init__</definition>
@@ -60,8 +37,6 @@
         <link refid="classpycommon_1_1pgbox_1_1xSpacer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.HBox</label>
@@ -73,16 +48,13 @@
         <link refid="classpycommon_1_1pgbox_1_1xSpacer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="2">
         <label>Gtk.HBox</label>
       </node>
     </collaborationgraph>
-    <location file="pycommon/pgbox.py" line="187" column="1" bodyfile="pycommon/pgbox.py" bodystart="187" bodyend="202"/>
+    <location file="pyedpro/build/lib/pycommon/pgbox.py" line="187" column="1" bodyfile="pyedpro/build/lib/pycommon/pgbox.py" bodystart="187" bodyend="202"/>
     <listofallmembers>
-      <member refid="classpycommon_1_1pgbox_1_1xSpacer_1a239fa5960848f1287affe1a6392c0d30" prot="public" virt="non-virtual"><scope>pycommon::pgbox::xSpacer</scope><name>__init__</name></member>
       <member refid="classpycommon_1_1pgbox_1_1xSpacer_1a239fa5960848f1287affe1a6392c0d30" prot="public" virt="non-virtual"><scope>pycommon::pgbox::xSpacer</scope><name>__init__</name></member>
     </listofallmembers>
   </compounddef>
