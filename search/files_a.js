@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['setup_2epy_0',['setup.py',['../setup_8py.html',1,'']]],
-  ['stack_2epy_1',['stack.py',['../panglib_2stack_8py.html',1,'(Global Namespace)'],['../pedlib_2stack_8py.html',1,'(Global Namespace)'],['../stack_8py.html',1,'(Global Namespace)']]],
-  ['sutil_2epy_2',['sutil.py',['../sutil_8py.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../AppDir_2pycommon_2README_8md.html',1,'(Global Namespace)'],['../AppDir_2README_8md.html',1,'(Global Namespace)'],['../AppImage_2pycommon_2README_8md.html',1,'(Global Namespace)'],['../AppImage_2README_8md.html',1,'(Global Namespace)'],['../pyedpro_2pycommon_2README_8md.html',1,'(Global Namespace)'],['../pyedpro_2README_8md.html',1,'(Global Namespace)']]]
 ];

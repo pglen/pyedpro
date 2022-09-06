@@ -1,0 +1,11 @@
+<map id="AppDir.pedlib.pedobjs.DrawObj" name="AppDir.pedlib.pedobjs.DrawObj">
+<area shape="rect" id="node1" title=" " alt="" coords="111,153,309,179"/>
+<area shape="rect" id="node3" href="$classAppDir_1_1pedlib_1_1pedobjs_1_1CircObj.html" title=" " alt="" coords="365,5,557,31"/>
+<area shape="rect" id="node4" href="$classAppDir_1_1pedlib_1_1pedobjs_1_1CurveObj.html" title=" " alt="" coords="359,55,562,80"/>
+<area shape="rect" id="node5" href="$classAppDir_1_1pedlib_1_1pedobjs_1_1LineObj.html" title=" " alt="" coords="363,104,558,129"/>
+<area shape="rect" id="node6" href="$classAppDir_1_1pedlib_1_1pedobjs_1_1RectObj.html" title=" " alt="" coords="363,153,559,179"/>
+<area shape="rect" id="node7" href="$classAppDir_1_1pedlib_1_1pedobjs_1_1RombObj.html" title=" " alt="" coords="359,203,562,228"/>
+<area shape="rect" id="node8" href="$classAppDir_1_1pedlib_1_1pedobjs_1_1StrokeObj.html" title=" " alt="" coords="357,252,564,277"/>
+<area shape="rect" id="node9" href="$classAppDir_1_1pedlib_1_1pedobjs_1_1TextObj.html" title=" " alt="" coords="363,301,558,327"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,153,63,179"/>
+</map>

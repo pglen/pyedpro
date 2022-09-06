@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue_0',['queue',['../classpyedpro_1_1pedlib_1_1peddoc_1_1pedDoc.html#a22a12736cf6b94b306e02b8eef745473',1,'pyedpro.pedlib.peddoc.pedDoc.queue()'],['../classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html#a179703a0aa03874e06d7cdc44c1fcf03',1,'pyedpro.pedlib.peddoc_diff.pedDoc.queue()']]]
+  ['queue_0',['queue',['../classAppDir_1_1pedlib_1_1peddoc_1_1pedDoc.html#a0efddafe2d0bd7ec2ea77001a0d4fdd9',1,'AppDir.pedlib.peddoc.pedDoc.queue()'],['../classAppDir_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html#ae6795eac9613b9172df1909650fc7088',1,'AppDir.pedlib.peddoc_diff.pedDoc.queue()'],['../classAppImage_1_1pedlib_1_1peddoc_1_1pedDoc.html#add6f84c840ae64806e64b71ae5d4e933',1,'AppImage.pedlib.peddoc.pedDoc.queue()'],['../classAppImage_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html#a3ca5ae362c29c30e77cd70d34a5d11c9',1,'AppImage.pedlib.peddoc_diff.pedDoc.queue()'],['../classpyedpro_1_1pedlib_1_1peddoc_1_1pedDoc.html#a22a12736cf6b94b306e02b8eef745473',1,'pyedpro.pedlib.peddoc.pedDoc.queue()'],['../classpyedpro_1_1pedlib_1_1peddoc__diff_1_1pedDoc.html#a179703a0aa03874e06d7cdc44c1fcf03',1,'pyedpro.pedlib.peddoc_diff.pedDoc.queue()']]]
 ];

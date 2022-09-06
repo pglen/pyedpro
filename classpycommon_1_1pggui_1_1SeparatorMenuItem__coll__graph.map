@@ -1,5 +1,4 @@
 <map id="pycommon.pggui.SeparatorMenuItem" name="pycommon.pggui.SeparatorMenuItem">
-<area shape="rect" id="node1" title=" " alt="" coords="91,80,272,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,171,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="195,5,357,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,79,184,119"/>
+<area shape="rect" id="node2" title=" " alt="" coords="15,5,175,31"/>
 </map>

@@ -72,7 +72,7 @@ $(function() {
   <div class="headertitle"><div class="title">PyEdPro README </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md6"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md26"></a>
 Python editor.</h1>
 <p >Welcome to PyEdPro. This is modern multi-platform editor. Simple, powerful, configurable, extendable. Goodies like macro recording / playback, spell check, column select, multiple clipboards, unlimited undo ... makes it an editor that I use every day.</p>
 <p >This project is a successor of pyedit, after porting it to GTK3. PyEdPro will run anywhere PyGObject can run.</p>
@@ -82,12 +82,12 @@ Python editor.</h1>
   Raspberry PI 3, Raspberry PI 4, ...
   Mac ** Some functions are disabled - in particular async processing
 </pre><p> <a href="https://pglen.github.io/pyedpro/html/">See Doxygen generated Documentation on GitHub Pages</a></p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Platforms</h2>
 <p >I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, and the Raspberry-Pi. It behaves consistently on all these platforms, it is an absolute joy to edit in a different platform without the learning curve of new keystrokes. If you want an editor that works the same way in all your workspaces, PyEdPro is the one.</p>
 <p >PyEdPro now is working good on the Mac. I installed homebrew, and got it to fire up. It was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the Linux version did. No asynchronous anything, segmentation faults everywhere. (which python is not suppose to have) The font rendering was messed up, but I got fixed by replacing Pango's get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues] Some async functions like the function updater is disabled, but it can be done manually. (right click on doc -&gt; rescan) All in all the Mac's PyGobject is not a great subsystem, hopefully time will be kind here.</p>
 <p >** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing as Glib the timer functions bombed. Great hardware - bad PyGobject support. However if an editor with familiar key op is needed &ndash; most of it works with no destructive errors.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 New:</h2>
 <p >(this is extracted, use git log for up-to-date information)</p>
 <p >Sat 03.Sep.2022 &ndash; pubilshed on pip Thu 21.Apr.2022 &ndash; release issued Wed 16.Mar.2022 &ndash; dialog for read only file, export notes ... lots of other stuff Wed 01.Dec.2021 &ndash; on search, descending one dir level with Ext. Search Sun 05.Sep.2021 &ndash; made it function on the Mac M1 laptop - !#$$% Tue 30.Mar.2021 &ndash; added windows installation executable Mon 22.Mar.2021 &ndash; added single file (packed) executable. Just download and run.</p>
@@ -102,7 +102,7 @@ New:</h2>
 <p >The recorded macros, undo / redo information / editing session detail persists (and reloaded) after the editor is closed.</p>
 <p >The spell checker can check text, code and code comments. The parsing of the code is rudimentary, comments and strings are spell checked. (Press F9) The code is filtered out for Python and 'C', which assures most derivative languages have correct code spell code check. (.sh .php .cpp) The whole file can be checked in full text spell mode. Press (Shift-F9) The spell checker is executed on live text. (while typing) The re scan period is set to 300 millisec, an optimum between resource usage and real time feel.</p>
 <p >Syntax highlighting. Again, a simpler parser for speed. Succeeds in its mission with giving great visual candy effect without speed impact.</p>
-<p >PyEdPro is fast, it is extendable, as python lends itself to easy extending. The editor has a table driven key mapping. One can easily edit the key map in <a class="el" href="keyhand_8py.html">keyhand.py</a>, and the key actions in <a class="el" href="acthand_8py.html">acthand.py</a></p>
+<p >PyEdPro is fast, it is extendable, as python lends itself to easy extending. The editor has a table driven key mapping. One can easily edit the key map in keyhand.py, and the key actions in acthand.py</p>
 <p >If you encounter blank screen after start, cairo is not installed. The terminal interface will complain, but if you start from the GUI, you can see the message in the log window. (Menu-&gt;Windows-&gt;Show_Log) To install cairo type 'sudo apt install cairo'.</p>
 <p >The default key map resembles gedit / wed / etp / brief. Full ASCII; Any (fixed) font can be configured. No arrangements in the program for variable pitch fonts.</p>
 <p >See KEYS file for the list of keyboard shortcuts or press F1 in the editor or look at the file in pyedlib/KEYS. This file is also called up when the main menu Help -&gt; 'KeyHelp In Doc' is called up.</p>
@@ -125,7 +125,7 @@ New:</h2>
 <p ><img src="image.png" alt="Screen Shot More" class="inline"/></p>
 <p >Screen from Mac:</p>
 <p ><img src="screen_shot_mac.png" alt="Screen Shot" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Project stats:</h1>
 <pre class="fragment">    Project name
         PyEdPro
