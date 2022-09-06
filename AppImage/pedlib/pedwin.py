@@ -550,7 +550,7 @@ class EdMainWindow():
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
             if not head:
-                head =  "FuncA%d" % (aa + 1)
+                head =  "B_A%d" % (aa + 1)
             butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Action Button %d" % (aa+1), space=1)
             butt.ord = 1; butt.id = aa;
             self.buttarr.append(butt)
@@ -562,7 +562,7 @@ class EdMainWindow():
             #butt = Gtk.Button("FuncB %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (2, aa))
             if not head:
-                head =  "FuncB%d" % (aa + 1)
+                head =  "B_B%d" % (aa + 1)
             butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Lower Action Button %d" % (aa+1), space=1)
             butt.ord = 2; butt.id = aa;
             self.buttarr.append(butt)
