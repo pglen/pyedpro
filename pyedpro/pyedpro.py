@@ -90,6 +90,7 @@ import platform
  Mon 28.Sep.2020   Reshuffled imports pylint
  Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
  Fri 07.May.2021   Many fixed, installs, new features
+ Tue 06.Sep.2022   Installation, anchor for search ...
 
  ASCII text editor, requires pyGtk. (pygobject)
  See pygtk-dependencies for easy install of dependencies.
@@ -174,8 +175,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "2.9.5"
-BUILDDATE   = "Fri 02.Sep.2022"
+VERSION     = "2.9.6"
+BUILDDATE   = "Tue 06.Sep.2022"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

@@ -292,7 +292,7 @@ def __find_keypress(area, event):
 
 # -------------------------------------------------------------------------
 
-def find_show(self, self2):
+def     find_show(self, self2):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
@@ -408,11 +408,15 @@ def find_show(self, self2):
     win2.add(vbox)
 
     # ---------------------------------------------------------------------
-    was, cnt2 = self2.search(self.srctxt, self.regex, self.dialog.checkbox2.get_active(),
+    # The actual search is done in the document
+
+    was, cnt2, before, after = self2.search(self.srctxt, self.regex,
+                self.dialog.checkbox2.get_active(),
                     self.dialog.checkbox.get_active())
 
     update_treestore(self, win2, self2.accum, was)
-    self2.mained.update_statusbar("Found %d matches." % cnt2, True)
+    self2.mained.update_statusbar("Found %d matches. %d before %d after" \
+                                          % (cnt2, before, after), True)
 
     pedconfig.conf.sql.put("src", self.srctxt)
     pedconfig.conf.sql.put("regex", self.dialog.checkbox.get_active())
@@ -557,6 +561,7 @@ def     find_show_file(self, self2, dialog):
 
     flist = []
     matches = 0
+
     for filename in ddd:
         if filename[0] == ".":
             continue
@@ -587,7 +592,7 @@ def     find_show_file(self, self2, dialog):
             rrr = findinfile(self.srctxt, filename, casex)
             if rrr:
                 matches += 1
-                #print ("found: rrr", rrr)
+                #print ("found: rrr", rrr, )
                 #ddd3.append(rrr)
                 matchfiles.append(filename)
                 ddd3.append("%s matches %s times" % (filename, len(rrr)) )
@@ -737,6 +742,8 @@ def     tree_sel_row(xtree, self, self2):
     # print "TREE sel", bb
 
     try:
+        if int(bb[2]) == 0:
+            bb[2] = 1
         self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
         self2.walk_func()
     except:
@@ -804,7 +811,8 @@ def area_focus(area, event, self, self2):
 
 def area_key(area, event, self):
 
-    #print "area_key", event
+    #print("area_key", event)
+
     # Do key down:
     if  event.type == Gdk.EventType.KEY_PRESS:
         if event.keyval == Gdk.KEY_Escape:
@@ -1038,7 +1046,7 @@ def chg_one(butt, self, self2, win2, iter = None):
             break
 
     if iter == None:
-        self2.mained.update_statusbar("Nothing selected")
+        self2.mained.update_statusbar("Nothing selected.")
         return
 
     if single:
@@ -1047,13 +1055,21 @@ def chg_one(butt, self, self2, win2, iter = None):
     xstr = xmodel.get_value(iter, 0)
     bb = xstr.split(" ")[0].split(":")
 
-    #print "ch_one", bb
-    self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
-    self.cut(self2, True, False)
-    self.clip_cb(None, self.reptxt, self2, False)
+    #print("ch_one", bb)
 
-    newstr = self2.text[int(bb[1])]
-    #print "newstr", newstr
+    try:
+        # Is this a valid entry?
+        pos = int(bb[0])
+        if bb[2] != 0:
+            # Is this a non null replacement?
+            self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
+            self.cut(self2, True, False)
+            self.clip_cb(None, self.reptxt, self2, False)
+            #print ("changed to:", self2.text[int(bb[1])])
+    except:
+        if pedconfig.conf.pgdebug > 1:
+            print("Invalid change line (most likely cursor line)")
+        pass
 
     sel.unselect_all()
 
