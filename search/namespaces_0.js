@@ -5,7 +5,7 @@ var searchData=
   ['appimage_2',['AppImage',['../namespaceAppImage.html',1,'']]],
   ['data_3',['data',['../namespaceAppDir_1_1pedlib_1_1data.html',1,'AppDir.pedlib.data'],['../namespaceAppImage_1_1pedlib_1_1data.html',1,'AppImage.pedlib.data']]],
   ['filter_4',['filter',['../namespaceAppDir_1_1filter.html',1,'AppDir.filter'],['../namespaceAppImage_1_1filter.html',1,'AppImage.filter']]],
-  ['first_5',['first',['../namespaceAppDir_1_1pedlib_1_1plugins_1_1first.html',1,'AppDir.pedlib.plugins.first'],['../namespaceAppImage_1_1pedlib_1_1plugins_1_1first.html',1,'AppImage.pedlib.plugins.first']]],
+  ['first_5',['first',['../namespaceAppDir_1_1pedlib_1_1plugins_1_1first.html',1,'AppDir::pedlib::plugins']]],
   ['importer_6',['importer',['../namespaceAppDir_1_1pedlib_1_1importer.html',1,'AppDir.pedlib.importer'],['../namespaceAppImage_1_1pedlib_1_1importer.html',1,'AppImage.pedlib.importer']]],
   ['install_7',['install',['../namespaceAppDir_1_1install.html',1,'AppDir.install'],['../namespaceAppImage_1_1install.html',1,'AppImage.install']]],
   ['keybind_8',['keybind',['../namespaceAppDir_1_1keybind.html',1,'AppDir.keybind'],['../namespaceAppImage_1_1keybind.html',1,'AppImage.keybind']]],
