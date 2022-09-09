@@ -366,7 +366,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                         self.inserttext(xtext)
                     except:
                         print("Cannot open dragged file.")
-                        self.mained.update_statusbar("Cannot open dragged file. '%s'", xfname)
+                        self.mained.update_statusbar("Cannot open dragged file. '%s'" % xfname)
 
 
         elif info ==  TARGET_ENTRY_PIXBUF:
@@ -2348,9 +2348,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     # --------------------------------------------------------------------
     def savemacro(self):
+
         #print( "Savemacro")
 
+        if not self.recarr:
+            print("Cannot save, nothing recorded yet.")
+            pedync.message("\n   Cannot save macro: nothing recorder yet.  \n\n")
+            return
+
         fname = "untitled.mac"
+        xdir = pedconfig.conf.config_dir + "/macros/"
         xfile = pedconfig.conf.config_dir + "/macros/" + fname
         old = os.getcwd()
         try:
@@ -2358,21 +2365,26 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         except:
             print("No macros directory", sys.exc_info())
 
-        but =   "Cancel", Gtk.ButtonsType.CANCEL, "Save Macro", Gtk.ButtonsType.OK
+        warnings.simplefilter("ignore")
+        buts =   "Cancel", Gtk.ButtonsType.CANCEL, "Save Macro", Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog("Save Macro", None, Gtk.FileChooserAction.SAVE, \
-            but)
+            buts)
 
-        fc.set_current_folder(xfile)
+        fc.set_current_folder(xdir)
         fc.set_current_name(os.path.basename(xfile))
         fc.set_default_response(Gtk.ButtonsType.OK)
         fc.connect("response", self.done_mac_fc, old)
         fc.run()
+        warnings.simplefilter("default")
 
     def done_mac_fc(self, win, resp, old):
         #print(  "done_mac_fc", resp)
         # Back to original dir
         os.chdir(os.path.dirname(old))
         if resp == Gtk.ButtonsType.OK:
+
+            #print("saveing", self.recarr)
+
             try:
                 fname = win.get_filename()
                 if not fname:
@@ -2383,6 +2395,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                     fh.close()
             except:
                 print("Cannot save macro file", sys.exc_info())
+                self.mained.update_statusbar("Cannot save macro: '%s'" \
+                                % os.path.basename(fname))
 
         win.destroy()
 
@@ -2407,10 +2421,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         fc.run()
 
     def done_mac_open_fc(self, win, resp, old):
-        #print(  "done_mac_fc", resp)
 
+        #print(  "done_mac_fc", resp)
         # Back to original dir
         os.chdir(os.path.dirname(old))
+
         if resp == Gtk.ButtonsType.OK:
             try:
                 fname = win.get_filename()
@@ -2420,8 +2435,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                     fh = open(fname, "rb")
                     self.recarr = pickle.load(fh)
                     fh.close()
+                    #print("macro", self.recarr)
+
             except:
                 print("Cannot load macro file", sys.exc_info())
+                self.mained.update_statusbar("Cannot load macro: '%s'" % os.path.basename(fname))
 
         win.destroy()
 

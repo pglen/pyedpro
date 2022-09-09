@@ -1499,11 +1499,12 @@ class EdMainWindow():
         #dialog.connect ("response", lambda d, r: d.destroy())
         #dialog.show()
 
-        #warnings.simplefilter("ignore")
+        warnings.simplefilter("ignore")
         strx = action.get_name()
-        #warnings.simplefilter("default")
+        warnings.simplefilter("default")
 
-        #print ("activate_action", strx)
+        if pedconfig.conf.verbose:
+            print ("activate_action with:", strx)
 
         if strx == "Close All":
             self.closeall()
