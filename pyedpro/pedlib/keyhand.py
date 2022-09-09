@@ -356,9 +356,14 @@ class KeyHand:
                 #print( "avoiding record/play recursion", event)
                 pass
             else:
+                # event.window --- tried to pump keys to other
+                # windows ... nope did not work
+                # However not putting GTK data in the array .. mad the
+                # pickle function work for serializing (saving) macros
+
                 #print( "rec", event, event.type, int(event.type))
                 var = (int(event.type), int(event.keyval), int(event.state),\
-                       event.window, event.string, self.shift, self.ctrl, self.alt)
+                       event.string, self.shift, self.ctrl, self.alt)
                 self2.recarr.append(var)
 
         # Ignore it, the KB calculates it for us. Update status bar though.

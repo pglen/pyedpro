@@ -5,16 +5,15 @@ existing keyboard standards. The keys are assigned in keyhand.py and the
 actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
-Updated:    Fri 26.Feb.2021
-            Key Allocation Documented
-Updated:    Tue 20.Oct.2020
-            Key Allocation Revisions
-Updated:    Fri 17.Apr.2020
-            Cleanup
-Updated:    Sat 26.Sep.2020
-            Added navigation keys for line/file  beginning/end for
-            the purpose on navigating on machines with no home/end key
-            (Chromebook is one of them)
+Updates:
+            Wed 07.Sep.2022     Cleaned spacing / added some key docs
+            Fri 26.Feb.2021     Key allocation better documented
+            Tue 20.Oct.2020     Key allocation Revisions
+            Fri 17.Apr.2020     Cleanup
+            Sat 26.Sep.2020     Added new navigation keys for line / file
+                                beginning / end for the purpose of
+                                navigating on machines with no home key
+                                or no end key (Chromebook being one of them)
 
   To implement a new feature follow a particular key's execution path, and
 replicate functionality. The key actions are easy to follow, as the code is
@@ -49,7 +48,7 @@ table driven. Relevant files: acthand.py and keyhand.py
     Ctrl G                      -- Goto next match
     Shift-Ctrl G                -- Goto previous match
     Ctrl H                      -- Cursor left  (like in vi)
-    Ctrl I                      -- Insert count-up number
+    Ctrl I                      -- Insert count-up / increment number
     Shift-Ctrl I                -- Reset count-up number to zero
     Ctrl J                      -- Down Arrow (like in vi)
     Ctrl K                      -- Up Arrow   (like in vi)
@@ -151,39 +150,39 @@ table driven. Relevant files: acthand.py and keyhand.py
     Alt 8                       -- Switch to buffer 8
     Alt 9                       -- Switch to buffer 9
 
-    Alt F1                      --  Gnome - Menu
-    Alt F2                      --  Gnome - Run App
-    Alt F4                      --  Gnome - Exit program (Use Alt X)
-    Alt F7                      --  Gnome - Move window
-    Alt F8                      --  Gnome - Re-size window
-    Alt F9                      --  Gnome - Minimize window
-    Alt F10                     --  Gnome - Full Screen window
+    Alt F1                      -- Gnome - Menu
+    Alt F2                      -- Gnome - Run App
+    Alt F4                      -- Gnome - Exit program (Use Alt X)
+    Alt F7                      -- Gnome - Move window
+    Alt F8                      -- Gnome - Re-size window
+    Alt F9                      -- Gnome - Minimize window
+    Alt F10                     -- Gnome - Full Screen window
 
     # The OS may override some of these keys ... configure accordingly
 
-    Ctrl Alt A                  --  Cleanse non ascii
-    Ctrl Alt B                  --  ????
-    Ctrl Alt C                  --  Comment out line, and jump down below
-    Ctrl Alt D                  --  Display terminal here
-    Ctrl Alt E                  --  Execute last command
-    Ctrl Alt Shift E            --  Execute last command, force prompt
-    Ctrl Alt F                  --  Fill to column
-    Ctrl Alt Shift F            --  Prompt for fill column
-    Ctrl Alt G                  --  Go execute cycle.sh (shortcut for header cycle)
+    Ctrl Alt A                  -- Cleanse non ascii
+    Ctrl Alt B                  -- ????
+    Ctrl Alt C                  -- Comment out line, and jump down below
+    Ctrl Alt D                  -- Display terminal here
+    Ctrl Alt E                  -- Execute last command
+    Ctrl Alt Shift E            -- Execute last command, force prompt
+    Ctrl Alt F                  -- Fill to column
+    Ctrl Alt Shift F            -- Prompt for fill column
+    Ctrl Alt G                  -- Go execute cycle.sh (shortcut for header cycle)
 
-    Ctrl Alt T                  --  Execute terminal here
+    Ctrl Alt T                  -- Execute terminal here
         ...
 
-    Ctrl Alt H                  --  Find (alias)
-    Ctrl Alt J                  --  Coloring
-    Ctrl Alt K                  --  Hex view
-    Ctrl Alt R                  --  Read file (text to speech)
+    Ctrl Alt H                  -- Find (alias)
+    Ctrl Alt J                  -- Coloring
+    Ctrl Alt K                  -- Hex view
+    Ctrl Alt R                  -- Read file (text to speech)
 
     # More coming ... under construction
 
-    #Ctrl Alt H                  --  Left Arrow
-    #Ctrl Alt J                  --  Toggle coloring
-    #Ctrl Alt K                  --  Toggle Hex View
+    #Ctrl Alt H                  -- Left Arrow
+    #Ctrl Alt J                  -- Toggle coloring
+    #Ctrl Alt K                  -- Toggle Hex View
 
     #Alt <                       -- Lower case word/selection
 

@@ -1910,7 +1910,8 @@ class ActHand:
         idx = 0
         while True:
             if idx >= xlen: break
-            tt, kk, ss, www, sss, \
+            #www,
+            tt, kk, ss, sss, \
               pedconfig.conf.keyh.shift, pedconfig.conf.keyh.ctrl, \
                                 pedconfig.conf.keyh.alt = self2.recarr[idx]
             idx += 1
@@ -1927,7 +1928,7 @@ class ActHand:
             event.type = ttt
             #event.time = time.clock() * 1000
             event.keyval = kk
-            event.window = www
+            #event.window = www
             event.string  = sss
             #print ("play event", event, event.type, event.keyval)
 
