@@ -158,6 +158,7 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GLib
 from gi.repository import Gio
+from gi.repository import GObject
 
 import faulthandler
 faulthandler.enable()
@@ -175,8 +176,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "2.9.6"
-BUILDDATE   = "Tue 06.Sep.2022"
+VERSION     = "2.9.7"
+BUILDDATE   = "Sat 10.Sep.2022"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -186,9 +187,15 @@ class MainPyed(Gtk.Application):
     def __init__(self, projname, strarr):
         super(MainPyed, self).__init__(application_id="pyedpro.py",
                                     flags=Gio.ApplicationFlags.FLAGS_NONE)
-
         self.projname = projname
         self.strarr = strarr
+        self.connect("activate", self.on_activate)
+        #GObject.signal_list_names(Gtk.Application)
+        #print("pyed app", dir(self))
+
+    def on_activate(self, instance):
+        #print("Activated:", instance)
+        pass
 
     def do_activate(self):
         if pedconfig.conf.verbose:
@@ -198,21 +205,13 @@ class MainPyed(Gtk.Application):
                         Gtk.get_minor_version(), \
                             Gtk.get_micro_version()))
 
-        #signal.signal(signal.SIGTERM, terminate)
-        mainwin = pedwin.EdMainWindow(None, None, self.strarr)
+        signal.signal(signal.SIGTERM, terminate)
+        mainwin = pedwin.EdMainWindow(None, None, self.strarr, orgbase)
         self.add_window(mainwin.mywin)
         pedconfig.conf.pedwin = mainwin
 
         if self.projname:
             mainwin.opensess(self.projname)
-
-        #pedync.message("\n   Start?.   \n\n")
-
-        #if strarr:
-        #    print("opening files", strarr)
-        #    for aa in strarr:
-        #        if os.path.isfile(aa):
-        #            mainwin.openfile(aa)
 
 
 def run_main(projname, strarr):
@@ -225,25 +224,12 @@ def run_main(projname, strarr):
                         Gtk.get_micro_version()))
 
     signal.signal(signal.SIGTERM, terminate)
-
     mainwin = pedwin.EdMainWindow(None, None, strarr, orgbase)
     pedconfig.conf.pedwin = mainwin
 
     if projname:
         mainwin.opensess(projname)
-
-    #if strarr:
-    #    print("opening files", strarr)
-    #    for aa in strarr:
-    #        if os.path.isfile(aa):
-    #            mainwin.openfile(aa)
-
     Gtk.main()
-
-    #while True:
-    #    ret = Gtk.main_iteration()
-    #    if not ret:
-    #        break
 
 def xversion():
     ''' Offer version number '''
@@ -385,7 +371,6 @@ def mainstart(name = "", args = "", oldpath = ""):
         print(_("Cannot access config dir:"), pedconfig.conf.config_dir)
         sys.exit(1)
 
-
     if pedconfig.conf.verbose:
         print("sys.path", sys.path)
 
@@ -444,10 +429,10 @@ def mainstart(name = "", args = "", oldpath = ""):
     except:
         print("Cannot load plugins", sys.exc_info())
 
-    run_main(pname, args[0:])
+    #run_main(pname, args[0:])
 
-    #app = MainPyed(pname, args[0:])
-    #app.run()
+    app = MainPyed(pname, args[0:])
+    app.run()
 
 # ------------------------------------------------------------------------
 

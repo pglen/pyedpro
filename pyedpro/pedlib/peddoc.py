@@ -230,8 +230,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect("motion-notify-event", self.area_motion)
         self.connect("button-press-event", self.area_button)
         self.connect("button-release-event", self.area_button)
-        self.connect("key-press-event", self.area_key)
-        self.connect("key-release-event", self.area_key)
+
+        # This was needed ad ALT-a and ALT-b ....
+        # .... misteriousely stopped working;
+        # Now getting key from main window
+        #self.connect("key-press-event", self.area_key)
+        #self.connect("key-release-event", self.area_key)
+
         self.connect("focus", self.area_focus)
         self.connect("configure_event", self.configure_event)
         #self.connect("size-request", self.)
@@ -1260,7 +1265,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     # Call key handler
     def area_key(self, area, event):
 
-        #print ("area_key", event)
+        #print ("peddoc area_key", event.keyval)
+        #return True # TEST
+
         # Restart timer ticks
         pedconfig.conf.idle = pedconfig.conf.IDLE_TIMEOUT
         pedconfig.conf.syncidle = pedconfig.conf.SYNCIDLE_TIMEOUT
@@ -1702,6 +1709,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         elif ttt == 11:
             self.toggle_ro()
         elif ttt == 13:
+            print("menu exit")
             self.mained.activate_exit()
         elif ttt == 14:
              pedconfig.conf.pedwin.start_term()
@@ -1843,24 +1851,22 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.invalidate()
 
     def closedoc(self, noprompt = False):
-
         #self.stopthread = True
-
         strx = "Closing '{0:s}'".format(self.fname)
         if pedconfig.conf.verbose:
             print("Closing doc:", strx)
         self.mained.update_statusbar(strx)
         self.saveparms()
 
-        # Clear treestore(s)
-        self.mained.update_treestore([])
-        self.mained.update_treestore2([])
-
-        # Add to accounting:
-        logentry("Closed File", self.start_time, self.fname)
-        self.mained.oh.add(self.fname)
-
-        return self.prompt_save(noprompt)
+        rrr = self.prompt_save(noprompt)
+        if not rrr:
+            # Clear treestore(s)
+            self.mained.update_treestore([])
+            self.mained.update_treestore2([])
+            # Add to accounting:
+            logentry("Closed File", self.start_time, self.fname)
+            self.mained.oh.add(self.fname)
+        return rrr
 
     # --------------------------------------------------------------------
     # Load file into this buffer, return False on failure

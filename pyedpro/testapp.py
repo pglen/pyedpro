@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 
 import gi
@@ -50,7 +52,6 @@ MENU_XML = """
 </interface>
 """
 
-
 class AppWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
 
@@ -81,9 +82,16 @@ class AppWindow(Gtk.ApplicationWindow):
         lbl_action.connect("change-state", self.on_change_label_state)
         self.add_action(lbl_action)
 
+        self.connect("key-press-event", self.area_key)
+        self.connect("key-release-event", self.area_key)
+
         self.label = Gtk.Label(label=lbl_variant.get_string(), margin=30)
         self.add(self.label)
         self.label.show()
+
+    # Call key handler
+    def area_key(self, area, event):
+        print("pedwin", event.keyval)
 
     def on_change_label_state(self, action, value):
         action.set_state(value)

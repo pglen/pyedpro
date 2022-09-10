@@ -1066,11 +1066,14 @@ class ActHand:
                 self2.mained.update_statusbar("Autocorrect is off.")
 
     def ctrl_o(self, self2):
-        print ("CTRL - O", self2.shift)
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - O", self2.shift)
+        pass
 
     def ctrl_p(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - P")
+        pass
 
         self2.save()
         conn = cups.Connection()
@@ -1213,6 +1216,15 @@ class ActHand:
 
         self2.text[yidx] = line[:cntb] + wlow + line[cnte:]
         self2.inval_line()
+
+    def ctrl_w(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - W")
+
+        if self2.shift:
+            self2.mained.closeall()
+        else:
+            self2.mained.close_document()
 
     def ctrl_v(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -2147,10 +2159,14 @@ class ActHand:
         return True
 
     def super_a(self, self2):
-        print ("SUPER - A")
+        if pedconfig.conf.pgdebug > 9:
+            print ("SUPER - A")
+        self.alt_a(self2)
 
     def super_b(self, self2):
-        print ("SUPER - B")
+        if pedconfig.conf.pgdebug > 9:
+            print ("SUPER - B")
+        self.alt_b(self2)
 
     def alt_a(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -2159,6 +2175,12 @@ class ActHand:
 
     def alt_g(self, self2):
         gotodlg(self2)
+
+    def alt_x(self, self2):
+
+        if pedconfig.conf.pgdebug > 9:
+            print ("ALT- X -- Exit")
+        self2.mained.activate_exit()
 
     def alt_y(self, self2):
 
