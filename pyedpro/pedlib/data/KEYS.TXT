@@ -6,6 +6,7 @@ actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
 Updates:
+            Fri 09.Sep.2022     More docs and ctr-alt entries
             Wed 07.Sep.2022     Cleaned spacing / added some key docs
             Fri 26.Feb.2021     Key allocation better documented
             Tue 20.Oct.2020     Key allocation Revisions
@@ -18,6 +19,13 @@ Updates:
   To implement a new feature follow a particular key's execution path, and
 replicate functionality. The key actions are easy to follow, as the code is
 table driven. Relevant files: acthand.py and keyhand.py
+
+
+ The system shortcut table is executed before the application (pyedpro)
+sees the keystroke. So if the system hogs the key press, the pyedpro shortcut
+will not get a chance to execute. This is particularly prevalent with
+CTRL-ALT- shortcuts. The -k command line option will print every key arriving,
+so this can be traced easily;
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char
@@ -170,7 +178,7 @@ table driven. Relevant files: acthand.py and keyhand.py
     Ctrl Alt Shift F            -- Prompt for fill column
     Ctrl Alt G                  -- Go execute cycle.sh (shortcut for header cycle)
 
-    Ctrl Alt T                  -- Execute terminal here
+    Ctrl Alt T                  -- Execute terminal here (most likely global)
         ...
 
     Ctrl Alt H                  -- Find (alias)
@@ -181,11 +189,10 @@ table driven. Relevant files: acthand.py and keyhand.py
     # More coming ... under construction
 
     #Ctrl Alt H                  -- Left Arrow
-    #Ctrl Alt J                  -- Toggle coloring
-    #Ctrl Alt K                  -- Toggle Hex View
+    Ctrl Alt J                   -- Toggle coloring
+    Ctrl Alt V                  -- Save all buffers
 
     #Alt <                       -- Lower case word/selection
-
 
     F1                           -- Help
     F2                           -- Call up local DevHelp (must be installed)

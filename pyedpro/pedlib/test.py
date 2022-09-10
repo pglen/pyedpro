@@ -44,7 +44,8 @@ import signal
 
 # History:  (recent first, incomplete list)
 #
-# jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
+# jul/19/2018 Coloring for spell check, Trigger by scroll, more dominant
+color
 # Jul/xx/2018       Update README, KEYS.TXT
 # Jun/xx/2018       Log Files for time accounting.
 # Jun/08/2020       Menu control / Headerbar / Version update
@@ -117,15 +118,16 @@ def xhelp():
     ''' Offer Help '''
     print()
     print(PROGNAME, _("Version: "), pedconfig.conf.version)
-    print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
+print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ...
+[filename]]"))
     print(_("Option(s):"))
-    print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
+print(_(" -d level - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
     print(_("            -v        - Verbose (to stdout and log)"))
     print(_("            -f        - Start Full screen"))
     print(_("            -c        - Dump Config"))
     print(_("            -o        - Use real stdout (for debug strings)"))
     print(_("            -V        - Show version"))
-    print(_("            -x        - Clear (eXtinguish) config (will prompt)"))
+print(_(" -x - Clear (eXtinguish) config (will prompt)"))
     print(_("            -k        - Show Keys Presses"))
     print(_("            -h        - Help"))
     print()
@@ -175,7 +177,7 @@ if __name__ == '__main__':
         if aa[0] == "-d" or aa[0] == "--debug":
             try:
                 pedconfig.conf.pgdebug = int(aa[1])
-                print( PROGNAME, _("Running at debug level:"),  pedconfig.conf.pgdebug)
+print( PROGNAME, _("Running at debug level:"), pedconfig.conf.pgdebug)
             except:
                 pedconfig.conf.pgdebug = 0
 
