@@ -112,7 +112,7 @@ class KeyHand:
             ]
 
         # Separate keytab on ctrl for easy customization. May call functions
-# in any other keytabs. (if sensitive to mod key, separate actions result)
+        # in any other keytabs. (if sensitive to mod key, separate actions result)
 
         self.ctrl_keytab = [
             [Gdk.KEY_Tab, self.acth.ctrl_tab],
@@ -175,6 +175,8 @@ class KeyHand:
             [Gdk.KEY_U, self.acth.ctrl_u],
             [Gdk.KEY_v, self.acth.ctrl_v],
             [Gdk.KEY_V, self.acth.ctrl_v],
+            [Gdk.KEY_w, self.acth.ctrl_w],
+            [Gdk.KEY_W, self.acth.ctrl_w],
             [Gdk.KEY_x, self.acth.ctrl_x],
             [Gdk.KEY_X, self.acth.ctrl_x],
             [Gdk.KEY_y, self.acth.ctrl_y],
@@ -328,6 +330,8 @@ class KeyHand:
             [Gdk.KEY_V, self.acth.alt_v],
             [Gdk.KEY_w, self.acth.alt_w],
             [Gdk.KEY_W, self.acth.alt_w],
+            [Gdk.KEY_x, self.acth.alt_x],
+            [Gdk.KEY_X, self.acth.alt_x],
             [Gdk.KEY_z, self.acth.alt_z],
             [Gdk.KEY_Z, self.acth.alt_z],
             #[Gdk.KEY_bracketleft, self.acth.ctrl_u],
@@ -340,6 +344,7 @@ class KeyHand:
         self.super = 0;
         self.ralt = 0; self.lalt = 0;
         self.rctr = 0; self.lctl = 0;
+        self.rshift = 0; self.lshift = 0;
 
     # --------------------------------------------------------------------
     # This is the main entry point for handling keys:
@@ -359,7 +364,6 @@ class KeyHand:
         if pedconfig.conf.show_keys:
             print ("KEY:", event.keyval, hex(event.keyval))
             print ("KEYSTR:", event.state, event.string)
-
         try:
             pedplug.keypress(self, event)
         except:

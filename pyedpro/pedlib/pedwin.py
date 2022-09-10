@@ -34,6 +34,7 @@ from pedlib import pedweb
 from pedlib import peddlg
 from pedlib import pedthread
 from pedlib import pedspell
+from pedlib import pedofd
 
 #sys.path.append('..' + os.sep + "pycommon")
 
@@ -206,7 +207,7 @@ class EdMainWindow():
         self.names = names
         self.show_menu = True
         self.show_tbar = True
-        self.alttime = 0
+        #self.alttime = 0
         self.old_x = 0
         self.old_y = 0
         self.lastfile = ""
@@ -274,18 +275,18 @@ class EdMainWindow():
                 print("Canot load main icon.")
 
         merge = Gtk.UIManager()
-        #merge.connect("pre-activate", self.menu_open)
-        #merge.connect("add_widget", self.menu_open)
+        merge.connect("pre-activate", self.menu_open)
+        merge.connect("add_widget", self.menu_open)
         #self.mywin.set_data("ui-manager", merge)
 
         ag = create_action_group(self)
         merge.insert_action_group(ag, 0)
         accel = merge.get_accel_group()
-        #accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
+        ##accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
         accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.META_MASK)
         accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK)
         self.mywin.add_accel_group(accel)
-
+        #
         try:
             mergeid = merge.add_ui_from_string(ui_info)
         except GLib.GError as msg:
@@ -369,10 +370,9 @@ class EdMainWindow():
         #notebook.connect("enter-notify-event", self.note_enter_notify)
 
         notebook.connect("button-press-event", self.note_button)
-
         self.mywin.connect("window_state_event", self.update_resize_grip)
-        #self.mywin.connect("destroy", OnExit)
-        self.mywin.connect("unmap", OnExit, self)
+        self.mywin.connect("delete-event", OnExit)
+        #self.mywin.connect("unmap", OnExit, self)
 
         self.mywin.connect("key-press-event", self.area_key)
         self.mywin.connect("key-release-event", self.area_key)
@@ -391,8 +391,8 @@ class EdMainWindow():
         #self.mywin.connect("event", self.unmap)
 
         self.tbar = merge.get_widget("/ToolBar")
-        #tbar.set_tooltips(True)
-        #tbar.show()
+        #self.tbar.set_tooltips(True)
+        self.tbar.show()
 
         self.hpaned = Gtk.HPaned(); self.hpaned.set_border_width(2)
 
@@ -1014,10 +1014,13 @@ class EdMainWindow():
             vcurr = notebook.get_nth_page(notebook.get_current_page())
             self.mywin.set_focus(vcurr.vbox.area)
 
-    # Call key handler
+    # --------------------------------------------------------------------
+    # Call the document's key handler after some inspection
+
     def area_key(self, area, event):
 
-        #print("pedwin key", event.keyval)
+        #if pedconfig.conf.verbose:
+            #print("pedwin key", event.keyval, event.state)
 
         if event.keyval ==  Gdk.KEY_F11:
             if event.type == Gdk.EventType.KEY_PRESS:
@@ -1029,28 +1032,28 @@ class EdMainWindow():
                     self.full = True
                 return True
 
-        if event.keyval ==  Gdk.KEY_Alt_L:
-            if event.type == Gdk.EventType.KEY_RELEASE:
-                self.altkey = True
-                #if time.time() - self.alttime > 2:
-                #    self.show_menu = not self.show_menu
-                #print("self.alttime", time.time() - self.alttime)
-                self.alttime = 0
-            else:
-                #print("pedwin ALT key down", event.keyval)
-                self.altkey = False
-                if self.alttime == 0:
-                    self.alttime = time.time()
+        #if event.keyval ==  Gdk.KEY_Alt_L:
+        #    if event.type == Gdk.EventType.KEY_RELEASE:
+        #        self.altkey = True
+        #        #if time.time() - self.alttime > 2:
+        #        #    self.show_menu = not self.show_menu
+        #        #print("self.alttime", time.time() - self.alttime)
+        #        self.alttime = 0
+        #    else:
+        #        #print("pedwin ALT key down", event.keyval)
+        #        self.altkey = False
+        #        if self.alttime == 0:
+        #            self.alttime = time.time()
 
-        #if self.show_menu:
+        #if self.show_menu:       x
         #    self.mbar.show()
         #else:
         #    self.mbar.hide()
 
         # Inspect key press before treeview gets it
         if self.mywin.get_focus() == self.treeview:
+            print("Key for treeview", event.state)
             # Do key down:
-
             if  event.type == Gdk.EventType.KEY_PRESS:
                 if event.keyval == Gdk.KEY_Alt_L or \
                         event.keyval == Gdk.KEY_Alt_R:
@@ -1069,7 +1072,75 @@ class EdMainWindow():
                 if event.keyval == Gdk.KEY_Alt_L or \
                       event.keyval == Gdk.KEY_Alt_R:
                     self.alt = False
-        return None
+
+        # Sad sad; do system shortcuts
+        if event.type == Gdk.EventType.KEY_PRESS:
+            # alt
+            if event.state == Gdk.ModifierType.MOD1_MASK:
+                #print("alt", event.keyval)
+                if event.keyval == ord('o'):
+                    #print("mainwin alt-o")
+                    self.altopen()
+                    return True
+
+            # ctrl-shift
+            elif event.state == \
+                    (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK):
+                #print("control shift", event.keyval)
+                if event.keyval == ord('S'):
+                    #print("save as", event.keyval)
+                    self.save(True)
+                    return True
+
+                if event.keyval == ord('O'):
+                    #print("load session", event.keyval)
+                    load_sess()
+                    return True
+            # ctrl
+            elif event.state == Gdk.ModifierType.CONTROL_MASK:
+                if event.keyval == ord('o'):
+                    #print("open", keyval)
+                    self.open()
+                    return True
+                if event.keyval == ord('s'):
+                    #print("save", event.keyval)
+                    self.save()
+                    return True
+                if event.keyval == ord('n'):
+                    self.newfile()
+                    return True
+
+        # This was needed ad ALT-a and ALT-b ....
+        # .... misteriousely stopped working
+        vcurr = notebook.get_nth_page(notebook.get_current_page())
+        if vcurr:
+            # See which window has focus
+            got = self.mywin.get_focus()
+            if vcurr.vbox.area == got:
+                vcurr.vbox.area.area_key(area, event)
+            elif vcurr.vbox2.area == got:
+                vcurr.vbox2.area.area_key(area, event)
+        else:
+            pass
+            #print("did not send key")  # this is normal
+
+        return True             # Handled it
+        #return None
+
+    # Simplified alt open
+
+    def altopen(self):
+        pare = None
+        vcurr = notebook.get_nth_page(notebook.get_current_page())
+        if vcurr:
+            pare = vcurr.vbox.area
+        #print("pare", pare)
+        fnames = pedofd.ofd("", pare)
+        #print("openfile fnames", fnames)
+        for fff in fnames:
+            #print("Opening"", fff)
+            self.openfile(fff)
+            pass
 
     def get_height(self):
         xx, yy = self.mywin.get_size()
@@ -1228,7 +1299,7 @@ class EdMainWindow():
 
     def area_leave(self, win, act):
         pass
-        #print(  "pedwin area leave", win, act)
+        print(  "pedwin area leave", win, act)
 
     def area_enter(self, win, act):
         pass
@@ -2022,19 +2093,24 @@ class EdMainWindow():
         '''
 # ------------------------------------------------------------------------
 
-def     OnExit(arg, arg2, prompt = True):
+def     OnExit(arg, arg2 = False, prompt = True):
 
     global exiting
+
+    #print("Exiting in OnExit", arg)
 
     # Nope, done here
     if exiting:
         return
-
     exiting = True
+
     arg.set_title("Exiting ...")
     #print("Exit called")
-    arg2.stopthread = True
-    usleep(300)
+    #if arg2:
+    #    arg2.stopthread = True
+
+    # This way the header shows what is happening
+    usleep(400)
 
     try:
         pedconfig.conf.pedwin.oh.save()
@@ -2103,7 +2179,8 @@ def     OnExit(arg, arg2, prompt = True):
             if prompt:
                 # This way all the closing doc functions get called
                 if ppp.area.closedoc():
-                    return
+                    exiting = False
+                    return  True
             else:
                 # Rescue to temporary:
                 hhh = hash_name(ppp.area.fname) + ".rescue"
@@ -2116,17 +2193,16 @@ def     OnExit(arg, arg2, prompt = True):
     if cnt2 != 0:
         pedconfig.conf.sql.put("cnt", cnt2)
 
-    if pedconfig.conf.verbose:
-        print("Exiting")
+    #if pedconfig.conf.verbose:
+    #    print("Exiting")
 
     # Add to accounting:
     timesheet("Ended pyedpro", mained.start_time, time.time())
 
     #print( "OnExit called \"" + arg.get_title() + "\"")
 
-    # Exit here
+    # Exit here, destroy / stop
     arg.destroy()
-    #return
     Gtk.main_quit()
 
 def  initial_load(self2, arg):
@@ -2256,13 +2332,20 @@ def handler_tick(arg, arg2):
 
     global savearr, notebook, exiting
 
+    # No timer while exiting, but keep the timer going
     if exiting:
-        return
+        return True
 
     #print( "handler_tick", time.ctime())
 
     # Update lastfile's func list
     mw = pedconfig.conf.pedwin
+
+    #try:
+    #    print("mw", mw.mywin.get_focus())
+    #except:
+    #    pass
+
     if mw.lastfile:
         cc = notebook.get_n_pages()
         for mm in range(cc):
@@ -2323,6 +2406,7 @@ def handler_tick(arg, arg2):
                 if vcurr:
                     if not mw.mac:
                         #pedspell.spell(vcurr.area)
+                        #print("adding callback2")
                         vcurr.area.source_id2 = \
                             GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
 

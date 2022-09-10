@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-                                                                   aaaa
+
 '''
 This is open source text editor. Written on python. The motivation for
 this project was to create a modern multi-platform editor. Simple,
