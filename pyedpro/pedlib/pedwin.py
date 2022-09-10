@@ -282,7 +282,7 @@ class EdMainWindow():
         merge.insert_action_group(ag, 0)
         accel = merge.get_accel_group()
         #accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
-        accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK)
+        accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.META_MASK)
         accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK)
         self.mywin.add_accel_group(accel)
 
