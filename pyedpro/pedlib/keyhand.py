@@ -112,7 +112,7 @@ class KeyHand:
             ]
 
         # Separate keytab on ctrl for easy customization. May call functions
-        # in any other keytabs. (if sensitive to mod key, separate actions result)
+# in any other keytabs. (if sensitive to mod key, separate actions result)
 
         self.ctrl_keytab = [
             [Gdk.KEY_Tab, self.acth.ctrl_tab],
@@ -329,21 +329,29 @@ class KeyHand:
         self.ctrl = 0; self.alt = 0; self.shift = 0
         self.ralt = 0; self.lalt = 0;
 
-    # Main entry point for handling keys:
+    # --------------------------------------------------------------------
+    # This is the main entry point for handling keys:
+
     def handle_key(self, self2, area, event):
 
         #print ("KEY:",   event.keyval  )
+
+        # Ramp up debug level
+        if pedconfig.conf.pgdebug > 2:
+             print( "key val ",  event.keyval, "key name", event.string)
+        if pedconfig.conf.pgdebug > 3:
+            print( "key event",  event.type)
+        if pedconfig.conf.pgdebug > 4:
+            print( "key state",  event.state)
+
+        if pedconfig.conf.show_keys:
+            print ("KEY:", event.keyval, hex(event.keyval))
+            print ("KEYSTR:", event.state, event.string)
 
         try:
             pedplug.keypress(self, event)
         except:
             print("plugin failed", sys.exc_info())
-
-        if pedconfig.conf.show_keys:
-            if pedconfig.conf.pgdebug > 3:
-                print( "key event",  event.type, event.state)
-            print ("KEY:", event.keyval, hex(event.keyval))
-            print ("KEYSTR:", event.state, event.string)
 
         self.state2 = int(event.state)
         self.handle_key2(self2, area, event)
@@ -550,7 +558,9 @@ class KeyHand:
 
     def handle_alt_key(self, self2, area, event):
         if  event.type == Gdk.EventType.KEY_PRESS:
-            #print( "alt hand", event)
+            if pedconfig.conf.pgdebug > 2:
+                print( "alt hand", event)
+
             if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
                 if pedconfig.conf.pgdebug > 2:
                     print( "Keyhand Alt num", event.keyval - Gdk.KEY_1)

@@ -704,6 +704,8 @@ class ActHand:
     def ctrl_alt_b(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - B")
+
+        pedbuffs.buffers(self, self2)
         self2.mained.update_statusbar("C-A-B key pressed.")
 
     #// Deactivate code:
@@ -843,6 +845,8 @@ class ActHand:
     def ctrl_alt_v(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - V ")
+
+        self2.mained.saveall()
 
     # --------------------------------------------------------------------
 
@@ -1497,7 +1501,7 @@ class ActHand:
 
     def alt_b(self, self2):
         if pedconfig.conf.pgdebug > 9:
-            print ("ALT - B")
+            printb ("ALT - B")
 
         pedbuffs.buffers(self, self2)
 
@@ -2145,7 +2149,6 @@ class ActHand:
     def alt_a(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("ALT - A")
-
         self2.mained.saveall()
 
     def alt_g(self, self2):

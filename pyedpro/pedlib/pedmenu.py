@@ -274,7 +274,7 @@ def create_action_group(self):
          self.activate_action ),
 
       ( "Next", Gtk.STOCK_MEDIA_NEXT,
-        "Next Match \t\tAlt-N F6", "",
+        "Next Match\tAlt-N F6", "",
         "Goto Next match in file",
          self.activate_action ),
 
@@ -284,7 +284,7 @@ def create_action_group(self):
          self.activate_action ),
 
         ( "Begin", Gtk.STOCK_MEDIA_PLAY,
-        "Begin of doc\t\tCtrl-Home", "",
+        "Begin of doc\tCtrl-Home", "",
         "Goto the beginning of document",
          self.activate_action ),
 
@@ -299,7 +299,7 @@ def create_action_group(self):
          self.activate_action ),
 
       ( "Play", Gtk.STOCK_MEDIA_PLAY,
-        "Play Macro       \t\tF8", "",
+        "Play Macro       \t\t\tF8", "",
         "Play macro",
          self.activate_action ),
 
