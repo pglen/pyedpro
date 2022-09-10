@@ -46,8 +46,9 @@ if an editor with familiar key op is needed -- most of it works with no destruct
 
 ### New:
 
-  (this is extracted, use git log for up-to-date information)
+    (this is extracted, use git log for up-to-date information)
 
+    Sat 10.Sep.2022 -- the system shortcuts (ctrl-s ctrl-o) are re-done by hand
     Sat 03.Sep.2022 -- pubilshed on pip
     Thu 21.Apr.2022 -- release issued
     Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
