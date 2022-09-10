@@ -338,8 +338,8 @@ def create_action_group(self):
         "Switch to next window",
          self.activate_action ),
 
-      ( "SaveAll", Gtk.STOCK_SAVE,
-        "Save All   \t\tAlt-A", None,
+      ( "SaveAll", Gtk.STOCK_SAVE_AS,
+        "Save All\t(Alt-A)", None,
         "Save all Buffers",
          self.activate_action ),
 

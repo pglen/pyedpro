@@ -2146,6 +2146,12 @@ class ActHand:
             pass
         return True
 
+    def super_a(self, self2):
+        print ("SUPER - A")
+
+    def super_b(self, self2):
+        print ("SUPER - B")
+
     def alt_a(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("ALT - A")

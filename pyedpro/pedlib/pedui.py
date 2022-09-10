@@ -27,6 +27,7 @@ ui_info = \
       <menuitem action='Close All'/>
       <menuitem action='Save'/>
       <menuitem action='SaveAs'/>
+      <menuitem action='SaveAll'/>
       <separator/>
       <menuitem action='Load Session'/>
       <menuitem action='Save Session'/>

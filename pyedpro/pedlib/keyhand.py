@@ -60,7 +60,7 @@ GDK_MODIFIER_MASK = 0x5c001fff
 
 class KeyHand:
 
-    ctrl = 0; alt = 0; shift = 0
+    #ctrl = 0; alt = 0; shift = 0; super = 0;
 
     def __init__(self, acth):
 
@@ -209,6 +209,16 @@ class KeyHand:
             [Gdk.KEY_KP_Right, self.acth.end],
             ]
 
+        # On my system, the follwing come to super:
+        #       abcgghijklmnoqstuvwxyz
+
+        self.super_keytab = [
+            [Gdk.KEY_a, self.acth.super_a],
+            [Gdk.KEY_A, self.acth.super_a],
+            [Gdk.KEY_b, self.acth.super_b],
+            [Gdk.KEY_B, self.acth.super_b],
+            ]
+
         # Separate keytab on ctrl - alt for easy customization.
         # Do upper and lower for catching shift in the routine
 
@@ -327,7 +337,9 @@ class KeyHand:
     # When we get focus, we start out with no modifier keys
     def reset(self):
         self.ctrl = 0; self.alt = 0; self.shift = 0
+        self.super = 0;
         self.ralt = 0; self.lalt = 0;
+        self.rctr = 0; self.lctl = 0;
 
     # --------------------------------------------------------------------
     # This is the main entry point for handling keys:
@@ -396,10 +408,12 @@ class KeyHand:
             return
 
         ret = self.handle_modifiers(self2, area, event)
+
         # Propagate to document (just for easy access)
         self2.ctrl = self.ctrl
         self2.alt = self.alt
         self2.shift = self.shift
+        self2.super = self.super
         if ret: return
 
         if  event.type == Gdk.EventType.KEY_PRESS:
@@ -432,6 +446,8 @@ class KeyHand:
             self.handle_alt_key(self2, area, event)
         elif self.ctrl:
             self.handle_ctrl_key(self2, area, event)
+        elif self.super:
+            self.handle_super_key(self2, area, event)
         else:
             self.handle_reg_key(self2, area, event)
 
@@ -453,9 +469,30 @@ class KeyHand:
         # Do key down:
         if  event.type == Gdk.EventType.KEY_PRESS:
             if event.keyval == Gdk.KEY_Alt_R:
-                #print( "Alt R down")
+                if pedconfig.conf.pgdebug > 0:
+                    print( "Alt R down")
                 self.ralt = True
                 ret = True
+
+            if event.keyval == Gdk.KEY_Shift_R:
+                if pedconfig.conf.pgdebug > 0:
+                    print( "Shift R down")
+                self.rshift = True
+                ret = True
+
+            if event.keyval == Gdk.KEY_Control_R:
+                if pedconfig.conf.pgdebug > 0:
+                    print( "Control R down")
+                self.rctrl = True
+                ret = True
+
+            if event.keyval == Gdk.KEY_Super_R:
+                if pedconfig.conf.pgdebug > 0:
+                    print( "Super R down")
+                self.rsuper = True
+                ret = True
+
+            # ------------------------------------------------------------
 
             if event.keyval == Gdk.KEY_Alt_L or \
                     event.keyval == Gdk.KEY_Alt_R:
@@ -478,9 +515,30 @@ class KeyHand:
         elif  event.type == Gdk.EventType.KEY_RELEASE:
 
             if event.keyval == Gdk.KEY_Alt_R:
-                #print( "Alt R up")
+                if pedconfig.conf.pgdebug > 1:
+                    print( "Alt R up")
                 self.ralt = False
                 ret = True
+
+            if event.keyval == Gdk.KEY_Shift_R:
+                if pedconfig.conf.pgdebug > 1:
+                    print( "Shift R up")
+                self.rshift = False
+                ret = True
+
+            if event.keyval == Gdk.KEY_Control_R:
+                if pedconfig.conf.pgdebug > 1:
+                    print( "Control R up")
+                self.rctrl = False
+                ret = True
+
+            if event.keyval == Gdk.KEY_Super_R:
+                if pedconfig.conf.pgdebug > 1:
+                    print( "Super R up")
+                self.rsuper = False
+                ret = True
+
+            # ------------------------------------------------------------
 
             if event.keyval == Gdk.KEY_Alt_L or \
                   event.keyval == Gdk.KEY_Alt_R:
@@ -515,6 +573,13 @@ class KeyHand:
         else:
             self.alt = False
 
+        #if event.state & GDK_MOD4_MASK:
+        #if self.state2  & GDK_MOD4_MASK:
+        if self.state2  & GDK_SUPER_MASK:
+            self.super = True
+        else:
+            self.super = False
+
         #if event.state & GDK_CONTROL_MASK:
         if self.state2  & Gdk.ModifierType.CONTROL_MASK:
             self.ctrl = True
@@ -533,6 +598,12 @@ class KeyHand:
 
     def handle_ctrl_alt_key(self, self2, area, event):
         self._handle_key(self2, area, event, self.ctrl_alt_keytab)
+
+    # --------------------------------------------------------------------
+    # Super keytab
+
+    def handle_super_key(self, self2, area, event):
+        self._handle_key(self2, area, event, self.super_keytab)
 
     # --------------------------------------------------------------------
     # Control keytab
