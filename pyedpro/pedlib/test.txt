@@ -22,4 +22,3 @@ curve of new keystrokes.  If you want an editor  that works the
 same way in all your workspaces, PyEdPro is the one.
 
 123#
-   

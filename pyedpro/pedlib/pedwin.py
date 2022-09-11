@@ -215,6 +215,11 @@ class EdMainWindow():
         self.os = itemhistory(pedconfig.conf.sessions)
         self.sess = "initial.sess"
 
+        if pedconfig.conf.keylog_on:
+            self.klfp = open(pedconfig.conf.keylog_file, "at")
+        else:
+            self.klfp = None
+
         register_stock_icons()
 
         #Gdk.threads_init()
@@ -1021,6 +1026,19 @@ class EdMainWindow():
 
         #if pedconfig.conf.verbose:
             #print("pedwin key", event.keyval, event.state)
+
+        if pedconfig.conf.keylog_on:
+            if self.klfp:
+                if event.type == Gdk.EventType.KEY_PRESS:
+                    dt2 = datetime.datetime(1990, 1, 1).now()
+                    strx2 =  dt2.strftime("%d.%b.%Y %H:%M")
+                    fname = "Empty"
+                    vcurr = notebook.get_nth_page(notebook.get_current_page())
+                    if vcurr:
+                        fname = os.path.basename(vcurr.vbox.area.fname)
+                    print(strx2, fname,
+                                event.keyval, "'" + event.string
+                                        + "'", int(event.state), file=self.klfp)
 
         if event.keyval ==  Gdk.KEY_F11:
             if event.type == Gdk.EventType.KEY_PRESS:
@@ -2111,6 +2129,10 @@ def     OnExit(arg, arg2 = False, prompt = True):
 
     # This way the header shows what is happening
     usleep(400)
+
+    # Close log
+    if pedconfig.conf.pedwin.klfp:
+         pedconfig.conf.pedwin.klfp.close()
 
     try:
         pedconfig.conf.pedwin.oh.save()

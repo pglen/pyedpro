@@ -35,6 +35,7 @@ class Conf():
         self.pedwin = None
         self.pgdebug = 0
         self.show_keys = 0
+        self.keylog_on = 0
 
         # Count down variables
         self.idle = 0; self.syncidle = 0;   self.statuscount = 0
@@ -53,6 +54,7 @@ class Conf():
         self.temp_dir = os.path.expanduser("~/.pyedpro/tmp")
         self.tts_dir = os.path.expanduser("~/.pyedpro/tts")
         self.plugins_dir  = os.path.expanduser("~/.pyedpro/plugins")
+        self.keylog_file  = os.path.expanduser("~/.pyedpro/log/keylog.txt")
 
         # Set parent as module include path
         current = os.path.dirname(os.path.realpath(__file__))
