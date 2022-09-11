@@ -5,7 +5,7 @@ This is open source text editor. Written on python. The motivation for
 this project was to create a modern multi-platform editor. Simple,
 powerful, configurable, extendable. To run this module without
 installation put the supporting files in the 'pedlib'
-subdirectory under the main file's direcory. Hello Keylog. 12345678
+subdirectory under the main file's direcory. 12345
 '''
 
 from __future__ import absolute_import
@@ -267,3 +267,4 @@ print( PROGNAME, _("Running at debug level:"), pedconfig.conf.pgdebug)
     main(args[0:])
 
 # EOF
+

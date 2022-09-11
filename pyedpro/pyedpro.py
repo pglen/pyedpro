@@ -250,6 +250,7 @@ def xhelp():
     print(_("            -o        - Use real stdout (for debug strings)"))
     print(_("            -V        - Show version"))
     print(_("            -x        - Clear (eXtinguish) config (will prompt)"))
+    print(_("            -g        - Key log on"))
     print(_("            -k        - Show Keys Presses"))
     print(_("            -t        - Set tracer ON (lots of output)"))
     print(_("            -h        - Help"))
@@ -279,6 +280,7 @@ def mainstart(name = "", args = "", oldpath = ""):
     SHOW_CONFIG = 0
     CLEAR_CONFIG = 0
     USE_STDOUT = 0
+    KEYLOG_ON = 0
 
     #print ("cmd opts", sys.argv, os.getcwd(), sys.path[0])
 
@@ -288,7 +290,7 @@ def mainstart(name = "", args = "", oldpath = ""):
     opts = []; args = []
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?vVj:fxctokt",
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?vVj:fxctoktg",
                         ["debug=", "help", "help", "verbose", "version", "project="])
 
     except getopt.GetoptError as err:
@@ -341,6 +343,9 @@ def mainstart(name = "", args = "", oldpath = ""):
             pedconfig.conf.full_screen = True
         if aa[0] == "-v":
             pedconfig.conf.verbose = True
+        if aa[0] == "-g":
+            KEYLOG_ON = True
+            pedconfig.conf.keylog_on = True
         if aa[0] == "-x":
             CLEAR_CONFIG = True
         if aa[0] == "-c":
