@@ -1138,6 +1138,8 @@ class EdMainWindow():
                 vcurr.vbox.area.area_key(area, event)
             elif vcurr.vbox2.area == got:
                 vcurr.vbox2.area.area_key(area, event)
+            elif self.diffpane.area == got:
+                self.diffpane.area.area_key(area, event)
         else:
             pass
             #print("did not send key")  # this is normal
