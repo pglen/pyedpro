@@ -21,8 +21,8 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 from pedlib import  pedconfig
-from pedlib import peddraw
-from pedlib import pedxtnd
+from pedlib import  peddraw
+from pedlib import  pedxtnd
 from pedlib import  pedync
 from pedlib import  pedspell
 from pedlib import  pedcolor
@@ -56,15 +56,21 @@ class pedtask():
             pedync.message("\n   Cannot launch %s \n\n"  % str(linprog) +
                                      str(sys.exc_info()))
 
+
+    # I could not get it to work stdin stdout hung
+    # removed from menu
+
     def start_edit(self, filex):
 
         old = os.getcwd()
         fdir = os.path.dirname(os.path.realpath(__file__))
         #print("fdir:", fdir)
         mydir = os.path.dirname(os.path.join(fdir, "../"))
-        #print("mydir:", mydir)
+        print("mydir:", mydir)
         os.chdir(mydir)
         myscript = os.path.realpath(os.path.join(mydir, 'pyedpro.py'))
+        mysh = os.path.realpath(os.path.join(fdir, 'run.sh'))
+
         if pedconfig.conf.verbose:
             print("myscript:", myscript, "filex:", filex)
 
@@ -74,18 +80,52 @@ class pedtask():
                 print("No exec function on windows. (TODO)")
                 pedync.message("\n   No exec function on windows. \n\n")
             else:
+                pass
                 # Stumble until editor found
-                ret = subprocess.Popen(["python3", myscript, filex])
+                #ret = subprocess.call(["xfce4-terminal", "-x", mysh,  myscript, filex])
+                #ret = subprocess.Popen(sss, shell=True)
+                #
+
+                #stdinx= os.dup2(0, os.fdopen(0, "r").fileno())
+                #stdoutx=os.dup2(1, os.fdopen(1, "w").fileno())
+                #stderrx=os.dup2(2, os.fdopen(2, "w").fileno())
+                #
+                ret = subprocess.Popen(["python3",  myscript, filex, "&"],
+                            close_fds=True, start_new_session=True, )
+
+                # Restore crap
+                sys.stdin= os.fdopen(0, "r").fileno()
+                sys.stdout=os.fdopen(1, "w").fileno()
+                sys.stderr=os.fdopen(2, "w").fileno()
+
                 if ret.returncode:
                     ret = subprocess.Popen(["python", myscript, filex])
                     if not ret.returncode:
                         raise OSError
+
+                #try:
+                #    pid = os.fork()
+                #except (OSError, e):
+                #    print("cannot fork")
+                #    #sys.exit(1)
+                #if pid == 0:
+                #    ## eventually use os.putenv(..) to set environment variables
+                #    ## os.execv strips of args[0] for the arguments
+                #    try:
+                #        os.execv("/usr/bin/env", ["python", myscript, filex, " &"])
+                #    except:
+                #        print("Cannot exec ", sys.exc_info())
+                ##pid = os.spawnlp(os.P_NOWAIT, myscript, filex, "")
+                ##print("pid", pid)
+
         except:
             print("Cannot launch new editor instance", sys.exc_info())
             pedync.message("\n   Cannot launch new editor instance \n\n")
 
         # Back to original dir
-        os.chdir(os.path.dirname(old))
+        print("Back to original thread.", old)
+        #print("env", os.environ)
+        #os.chdir(os.path.dirname(old))
 
     # --------------------------------------------------------------------
     def start_mdfilter(self):
