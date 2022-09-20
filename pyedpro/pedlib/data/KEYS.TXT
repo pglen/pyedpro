@@ -158,7 +158,7 @@ so this can be traced easily;
     Alt 8                       -- Switch to buffer 8
     Alt 9                       -- Switch to buffer 9
 
-    Alt F1                      -- Gnome - Menu
+    Alt F1                      -- Gnome (system) - Menu
     Alt F2                      -- Gnome - Run App
     Alt F4                      -- Gnome - Exit program (Use Alt X)
     Alt F7                      -- Gnome - Move window
@@ -190,7 +190,10 @@ so this can be traced easily;
 
     #Ctrl Alt H                  -- Left Arrow
     Ctrl Alt J                   -- Toggle coloring
-    Ctrl Alt V                  -- Save all buffers
+    Ctrl Alt V                   -- Save all buffers
+
+    Super - A                    -- Save all buffers
+
 
     #Alt <                       -- Lower case word/selection
 

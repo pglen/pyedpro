@@ -66,6 +66,7 @@ class KeyHand:
 
         #self.acth = pedconfig.conf.acth
         self.acth = acth
+        self.reset()
 
         # Here one can customize the key / function assignments
         self.reg_keytab = [
@@ -211,10 +212,24 @@ class KeyHand:
             [Gdk.KEY_KP_Right, self.acth.end],
             ]
 
-        # On my system, the follwing come to super:
+        # On my system, the following come to super:
         #       abcgghijklmnoqstuvwxyz
 
         self.super_keytab = [
+            [Gdk.KEY_a, self.acth.super_a],
+            [Gdk.KEY_A, self.acth.super_a],
+            [Gdk.KEY_b, self.acth.super_b],
+            [Gdk.KEY_B, self.acth.super_b],
+            ]
+
+        self.super_alt_keytab = [
+            [Gdk.KEY_a, self.acth.super_a],
+            [Gdk.KEY_A, self.acth.super_a],
+            [Gdk.KEY_b, self.acth.super_b],
+            [Gdk.KEY_B, self.acth.super_b],
+            ]
+
+        self.super_ctrl_alt_keytab = [
             [Gdk.KEY_a, self.acth.super_a],
             [Gdk.KEY_A, self.acth.super_a],
             [Gdk.KEY_b, self.acth.super_b],
@@ -340,11 +355,11 @@ class KeyHand:
 
     # When we get focus, we start out with no modifier keys
     def reset(self):
-        self.ctrl = 0; self.alt = 0; self.shift = 0
-        self.super = 0;
-        self.ralt = 0; self.lalt = 0;
-        self.rctr = 0; self.lctl = 0;
-        self.rshift = 0; self.lshift = 0;
+        self.ctrl = False;      self.alt = False; self.shift = False
+        self.super = False;     self.rsuper = False;
+        self.ralt = False;      self.lalt = False;
+        self.rctrl = False;      self.lctrl = False;
+        self.rshift = False;    self.lshift = False;
 
     # --------------------------------------------------------------------
     # This is the main entry point for handling keys:
@@ -382,15 +397,15 @@ class KeyHand:
             else:
                 # event.window --- tried to pump keys to other
                 # windows ... nope did not work
-                # However not putting GTK data in the array .. mad the
-                # pickle function work for serializing (saving) macros
+                # However NOT putting GTK data in the array .. allowed the
+                # pickle function work OK for serializing (saving) macros
 
                 #print( "rec", event, event.type, int(event.type))
                 var = (int(event.type), int(event.keyval), int(event.state),\
                        event.string, self.shift, self.ctrl, self.alt)
                 self2.recarr.append(var)
 
-        # Ignore it, the KB calculates it for us. Update status bar though.
+        # Ignore it, the KB driver calculates it for us. Update status bar though.
         if event.keyval == Gdk.KEY_Caps_Lock:
             if event.type == Gdk.EventType.KEY_PRESS:
                 if self.state2 & Gdk.ModifierType.LOCK_MASK:
@@ -418,7 +433,13 @@ class KeyHand:
         self2.alt = self.alt
         self2.shift = self.shift
         self2.super = self.super
+        self2.rsuper = self.rsuper
+
         if ret: return
+
+        if pedconfig.conf.pgdebug > 4:
+            print("mods", "ctrl ",  self.ctrl, "alt ", self.alt,  "rctrl", self.rctrl)
+            print("    ", "super", self.super, "ralt", self.ralt, "rsuper", self.rsuper)
 
         if  event.type == Gdk.EventType.KEY_PRESS:
             if self2.nokey:
@@ -444,14 +465,18 @@ class KeyHand:
             if ret:
                 return
 
-        if self.ctrl and self.alt:
+        if self.super and self.ctrl and self.alt:
+            self.handle_super_ctrl_alt_key(self2, area, event)
+        elif self.super and self.alt:
+            self.handle_super_alt_key(self2, area, event)
+        elif self.ctrl and self.alt:
             self.handle_ctrl_alt_key(self2, area, event)
+        elif self.super:
+            self.handle_super_key(self2, area, event)
         elif self.alt:
             self.handle_alt_key(self2, area, event)
         elif self.ctrl:
             self.handle_ctrl_key(self2, area, event)
-        elif self.super:
-            self.handle_super_key(self2, area, event)
         else:
             self.handle_reg_key(self2, area, event)
 
@@ -593,7 +618,8 @@ class KeyHand:
         return ret
 
     def handle_right_alt_key(self, self2, area, event):
-        #print("Right alt combo",self.ctrl, self.shift)
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_right_alt_key",self.ctrl, self.shift)
         ret = self._handle_key(self2, area, event, self.right_alt_keytab)
         return ret
 
@@ -601,24 +627,42 @@ class KeyHand:
     # Control Alt keytab
 
     def handle_ctrl_alt_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_ctrl_alt_key")
         self._handle_key(self2, area, event, self.ctrl_alt_keytab)
 
     # --------------------------------------------------------------------
-    # Super keytab
+    # Super keytabs
+
+    def handle_super_alt_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_super_alt_key")
+        self._handle_key(self2, area, event, self.super_alt_keytab)
+
+    def handle_super_ctrl_alt_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_super_ctrl_alt_key")
+        self._handle_key(self2, area, event, self.super_ctrl_alt_keytab)
 
     def handle_super_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_super_key")
         self._handle_key(self2, area, event, self.super_keytab)
 
     # --------------------------------------------------------------------
     # Control keytab
 
     def handle_ctrl_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_ctrl_key")
         self._handle_key(self2, area, event, self.ctrl_keytab)
 
     # --------------------------------------------------------------------
     # Regular keytab
 
     def handle_reg_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_ctrl_key")
         # Handle multi key press counts by resetting if not that key
         if event.type == Gdk.EventType.KEY_PRESS:
             if event.keyval != Gdk.KEY_Home:
@@ -632,6 +676,8 @@ class KeyHand:
     # Alt key
 
     def handle_alt_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 4:
+            print("handle_alt_key")
         if  event.type == Gdk.EventType.KEY_PRESS:
             if pedconfig.conf.pgdebug > 2:
                 print( "alt hand", event)
