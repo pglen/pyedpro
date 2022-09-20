@@ -83,7 +83,7 @@ rclick_menu = (
             ( _("File Manager Here"),  None,        rclick_action, 24, None ),
             ( _("Exec current"),  None,             rclick_action, 17, None ),
             ( _("Start libre office"),  None,       rclick_action, 18, None ),
-#            ( _("File in new pyedpro"),   None,     rclick_action, 15, None ),
+            ( _("File in NEW pyedpro"),   None,     rclick_action, 15, None ),
             ( "",               None,               None, 12, "<Separator>" ),
             ( _("Toggle _RO"),     None,            rclick_action, 11, None ),
             ( "",               None,               None, 12, "<Separator>" ),

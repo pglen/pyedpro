@@ -2251,7 +2251,10 @@ class ActHand:
                         zzz = str(msg.args[2]).split("(")
                         sss = zzz[1].split()[2].replace(")", "")
                         #print ("sss", sss)
-                        self2.gotoxy(10, int(sss) - 1)
+                        try:
+                            self2.gotoxy(10, int(sss) - 1)
+                        except:
+                            pass
                         pedync.message("    " + str(msg) + "    ")
 
             except:

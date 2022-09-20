@@ -57,6 +57,7 @@ class pedtask():
                                      str(sys.exc_info()))
 
 
+    # --------------------------------------------------------------------
     # I could not get it to work stdin stdout hung
     # removed from menu
 
@@ -91,12 +92,14 @@ class pedtask():
                 #stderrx=os.dup2(2, os.fdopen(2, "w").fileno())
                 #
                 ret = subprocess.Popen(["python3",  myscript, filex, "&"],
-                            close_fds=True, start_new_session=True, )
+                            close_fds=True, start_new_session=True,
+                            stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT)
 
                 # Restore crap
-                sys.stdin= os.fdopen(0, "r").fileno()
-                sys.stdout=os.fdopen(1, "w").fileno()
-                sys.stderr=os.fdopen(2, "w").fileno()
+                #sys.stdin= os.fdopen(0, "r").fileno()
+                #sys.stdout=os.fdopen(1, "w").fileno()
+                #sys.stderr=os.fdopen(2, "w").fileno()
 
                 if ret.returncode:
                     ret = subprocess.Popen(["python", myscript, filex])

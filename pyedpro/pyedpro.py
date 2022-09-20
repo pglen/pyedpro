@@ -186,6 +186,7 @@ class MainPyed(Gtk.Application):
 
     def __init__(self, projname, strarr):
         super(MainPyed, self).__init__(application_id="pyedpro.py",
+                                    #flags=Gio.ApplicationFlags.IS_LAUNCHER)
                                     flags=Gio.ApplicationFlags.FLAGS_NONE)
         self.projname = projname
         self.strarr = strarr
@@ -434,10 +435,10 @@ def mainstart(name = "", args = "", oldpath = ""):
     except:
         print("Cannot load plugins", sys.exc_info())
 
-    #run_main(pname, args[0:])
+    run_main(pname, args[0:])
 
-    app = MainPyed(pname, args[0:])
-    app.run()
+    #app = MainPyed(pname, args[0:])
+    #app.run()
 
 # ------------------------------------------------------------------------
 
