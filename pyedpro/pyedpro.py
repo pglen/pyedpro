@@ -59,8 +59,8 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
 
 '''
 
-from __future__ import absolute_import
-from __future__ import print_function
+#from __future__ import absolute_import
+#from __future__ import print_function
 
 import os
 import sys
@@ -176,7 +176,7 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "2.9.7"
+VERSION     = "2.9.8"
 BUILDDATE   = "Sat 10.Sep.2022"
 PROGNAME    = "PyEdPro"
 

@@ -20,7 +20,6 @@ classx = [
           'Intended Audience :: Developers',
           'Intended Audience :: System Administrators',
           'License :: OSI Approved :: Python Software Foundation License',
-          'Operating System :: MacOS :: MacOS X',
           'Operating System :: Microsoft :: Windows',
           'Operating System :: POSIX',
           'Programming Language :: Python',
@@ -36,7 +35,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyedpro",
-    version="2.9.5",
+    version="2.9.8",
     author="Peter Glen",
     author_email="peterglen99@gmail.com",
     description="High power editor in python.",
