@@ -7,8 +7,6 @@ configurable, extendable. Goodies like macro recording / playback, spell check,
 column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
-   This project is a successor of pyedit, after porting it to GTK3. PyEdPro
- will run anywhere PyGObject can run.
 
   This project's source is at - https://github.com/pglen/pyedpro
 
@@ -19,6 +17,25 @@ that I use every day.
         Windows (Native) plus MSYS2, Mingw,
         Raspberry PI 3, Raspberry PI 4, ...
         Mac ** Some functions are disabled - in particular async processing
+
+Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
+
+ Pyedpro has:
+
+            o  macro recording/play,
+            o  search/replace,
+            o  functional navigation,
+            o  comment/string spell check,
+            o  full spell check, spell suggestion dialog
+            o  auto backup,
+            o  persistent undo/redo,  (undo beyond last save)
+            o  auto complete, auto correct,
+            o
+            o  ... and a lot more.
+
+ It is fast, it is extendable. The editor has a table driven key mapping.
+ One can easily edit the key map in keyhand.py, and the key actions
+ in acthand.py The default key map resembles gedit / wed / etp / brief
 
 [See Doxygen generated Documentation on GitHub Pages](https://pglen.github.io/pyedpro/html/)
 
@@ -54,8 +71,6 @@ if an editor with familiar key op is needed -- most of it works with no destruct
     Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
-    Tue 30.Mar.2021 -- added windows installation executable
-    Mon 22.Mar.2021 -- added single file (packed) executable. Just download and run.
 
 Partial list, some highlights;
 
