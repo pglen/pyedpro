@@ -1,7 +1,7 @@
-d#!/usr/bin/python
+#!/usr/bin/python
 
-from __future__ import absolute_import
-from __future__ import print_function
+#from __future__ import absolute_import
+#from __future__ import print_function
 
 import os, sys, getopt, signal, string, fnmatch, math
 import random, time, subprocess, traceback, glob

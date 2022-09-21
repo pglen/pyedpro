@@ -1055,20 +1055,23 @@ def chg_one(butt, self, self2, win2, iter = None):
     xstr = xmodel.get_value(iter, 0)
     bb = xstr.split(" ")[0].split(":")
 
-    #print("ch_one", bb)
+    if pedconfig.conf.pgdebug > 2:
+        print("ch_one", bb)
 
     try:
         # Is this a valid entry?
         pos = int(bb[0])
-        if bb[2] != 0:
+        if int(bb[2]) >= 1:
             # Is this a non null replacement?
             self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
             self.cut(self2, True, False)
             self.clip_cb(None, self.reptxt, self2, False)
-            #print ("changed to:", self2.text[int(bb[1])])
+
+            if pedconfig.conf.pgdebug > 1:
+                print ("Changed to:", self2.text[int(bb[1])])
+
     except:
-        if pedconfig.conf.pgdebug > 1:
-            print("Invalid change line (most likely cursor line)")
+        print("Invalid change line (most likely cursor line)", sys.exc_info())
         pass
 
     sel.unselect_all()
