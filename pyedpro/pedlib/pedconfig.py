@@ -9,6 +9,8 @@
 from __future__ import absolute_import
 import signal, os, time, sys
 
+from pedlib.keywords import *
+
 config_reg = "/apps/pyedpro"
 
 inited = False
@@ -74,9 +76,7 @@ class Conf():
         self.recarr = []
 
         # Which extensions are colored
-        self.color_on = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp",
-                             ".js", ".php", ".f", ".y", ".pc", ".asm", ".inc",
-                                ".asm", ".bas", ".s", ".html")
+        self.color_on = color_files
 
 # ------------------------------------------------------------------------
 

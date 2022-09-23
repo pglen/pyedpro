@@ -1142,11 +1142,18 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if old != -1:
             self.invalidate()
 
-    # This is fooled by non extension items
+
+    # Return True if 'C' like file
+    # This is fooled by non extension items; not a big deal
+    # colors may get turned on ...
+
     def is_c_like(self):
-        exts = [ ".js",  ".c",  ".h",  ".php", ".js"]
-        for aa in exts:
-            if aa in self.fname:
+        #print("c like", self.fname)
+        for aa in c_like_exts:
+            eee = self.fname[-(len(aa)):]
+            #print("eee", eee, aa)
+            if aa == eee:
+                print("Match", self.fname)
                 return True
         return False
 
