@@ -39,40 +39,45 @@ localkwords = "(int .*)|(char .*)|(for)|(while)|(if)|(return)"
 localpywords = "(for )|(while )|(return )|(import )|(def )"
 
 # Keywords for auto correct. This corrects strings as we type.
+# Auto correct is case sensitive.
 # As a 'C' programmer I kept typing "else" in python ... this feature
-# corrects it to "else:"  (trailing colon for python)
-# It is contra indicatory to support bad habits, but for productivity ....
-# ... all is forgiven. (Especially if your next assignment is in 'C')
+# corrects it to "else: "  (the trailing colon for python)
+# It is contra indicatory to support bad habits, but for
+# productivity .... all is forgiven.
+#   Especially if one's next assignment is back to 'C'
 #
-# Syntax: from_str, to_str ....
-# Make sure to_str is longer than from_str
+# Make sure to_str is longer than from_str (if shorter ... why correct?)
+# Ctrl-m to toggle autocorrect (default: off)
 
-acorr = [   ( "else",   "else: "                 ),
-            ( "whi",    "while "                ),
-            ( "Tr",     "True "                 ),
-            ( "Fa",     "False "                ),
-            ( "bre",     "break"                 ),
+# Syntax: from_str, to_str ....
+
+auto_corr_table = \
+                [   ( "else",   "else: "                    ),
+                    ( "whi",    "while "                    ),
+                    ( "Tr",     "True "                     ),
+                    ( "Fa",     "False "                    ),
+                    ( "bre",    "break"                     ),
+                    ( "short",   "sh "                      ),
 
             # One can do unconventional things here:
 
-            ( "Fn",     "def funcname():  "     ),
+            ( "Fn",     "def funcname():  "                 ),
+            ( "If",     "if val: action else:  action2 "    ),
+
+            # No control chars, text only
+            #( "Bad",     "if val: \n "    ),
         ]
 
+
+# These files are colored by default (add if needed)
+
+color_files = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp",
+                             ".js", ".php", ".f", ".y", ".pc", ".asm", ".inc",
+                                ".asm", ".bas", ".s", ".html", ".ino")
+
+# These files are considered 'c' like (for basic syntax highlites)
+
+c_like_exts = [ ".js",  ".c",  ".h",  ".php", ".ino", ".sh"]
+
+
 # EOF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

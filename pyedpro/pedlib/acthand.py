@@ -1061,7 +1061,7 @@ class ActHand:
             self2.acorr = not self2.acorr
             if self2.acorr:
                 self2.mained.update_statusbar(\
-                    "Autocorrect is on with %d enties." % len(acorr))
+                    "Autocorrect is on with %d enties." % len(auto_corr_table))
             else:
                 self2.mained.update_statusbar("Autocorrect is off.")
 
@@ -2095,7 +2095,7 @@ class ActHand:
 
             if self2.acorr:
                 # See if autocorrect is needed
-                for acs, acs2 in acorr:
+                for acs, acs2 in auto_corr_table:
                     lendiff = len(acs2) - len(acs)
                     ss = self2.text[yidx][xidx-(len(acs)-1):xidx+1]
                     if ss == acs:
