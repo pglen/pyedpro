@@ -7,7 +7,6 @@ configurable, extendable. Goodies like macro recording / playback, spell check,
 column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
-
   This project's source is at - https://github.com/pglen/pyedpro
 
   Working and tested platforms currently are:
