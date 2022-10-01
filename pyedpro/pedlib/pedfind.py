@@ -603,6 +603,9 @@ def     find_show_file(self, self2, dialog):
                     if lim == 0:
                         break
                     lim = lim - 1
+        else:
+            if pedconfig.conf.verbose:
+                print("Not searching large file:", filename)
 
     # ---------------------------------------------------------------------
     #was, cnt2 = self2.search(self.srctxt, self.regex, self.dialog.checkbox2.get_active(),
@@ -750,7 +753,9 @@ def     tree_sel_row(xtree, self, self2):
         pass
 
 def     tree_sel2(xtree, self, self2, par1, par2, par3):
-    print( self2, par1, par2, par3)
+
+    #print( self2, par1, par2, par3)
+
     sel = xtree.get_selection()
     xmodel, xiter = sel.get_selected_rows()
     # In muti selection, only process first

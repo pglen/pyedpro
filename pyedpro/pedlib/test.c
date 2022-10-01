@@ -153,7 +153,7 @@ static  int     gl_got_client     = 0;
 //! Error related variables
 static  int     gl_error = 0, gl_errcnt = 0, gl_errflag = 0;
 
-int     gl_but_down = 0;
+int    global  gl_but_down = 0;  // test comment
 
 //{
 char *build_and_ver = "WiFiClock LCD Ver. 1.0 Built: Tue, 9 Apr";
