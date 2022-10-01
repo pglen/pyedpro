@@ -689,7 +689,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.layout = PangoCairo.create_layout(cr)
         self.layout.set_font_description(self.fd)
 
-
         self.draw_maintext(cr)
 
         if not self.hex:
@@ -1153,11 +1152,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             eee = self.fname[-(len(aa)):]
             #print("eee", eee, aa)
             if aa == eee:
-                print("Match", self.fname)
+                #print("C Match", self.fname)
                 return True
+
         return False
 
     def walk_func(self):
+
         #print( "walk func")
 
         # ts2 ---------------------------------------------------
