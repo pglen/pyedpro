@@ -158,7 +158,7 @@ def find(self, self2, replace = False):
         dialog.vbox.pack_start(hbox3, 0, 0, 0)
         dialog.vbox.pack_start(label12, 0, 0, 0)
 
-    dialog.connect("key-press-event", __find_keypress)
+    dialog.connect("key-press-event", find_keypress)
 
     dialog.show_all()
     response = dialog.run()
@@ -225,7 +225,7 @@ def load_find_history(flag):
 
 # ------------------------------------------------------------------------
 
-def __find_keypress(area, event):
+def find_keypress(area, event):
 
     global stridx, strhist, dialog
 
@@ -292,7 +292,7 @@ def __find_keypress(area, event):
 
 # -------------------------------------------------------------------------
 
-def     find_show(self, self2):
+def find_show(self, self2):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
@@ -445,7 +445,7 @@ def     find_show(self, self2):
 
 # ------------------------------------------------------------------------
 
-def     find_show_file(self, self2, dialog):
+def find_show_file(self, self2, dialog):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
@@ -720,7 +720,7 @@ def src_line2(self, self2, line, cnt):
 
 # -------------------------------------------------------------------------
 
-def     tree_sel_row(xtree, self, self2):
+def tree_sel_row(xtree, self, self2):
 
     sel = xtree.get_selection()
     xmodel, xiter = sel.get_selected_rows()
@@ -752,7 +752,7 @@ def     tree_sel_row(xtree, self, self2):
     except:
         pass
 
-def     tree_sel2(xtree, self, self2, par1, par2, par3):
+def tree_sel2(xtree, self, self2, par1, par2, par3):
 
     #print( self2, par1, par2, par3)
 
@@ -771,7 +771,7 @@ def     tree_sel2(xtree, self, self2, par1, par2, par3):
         break
     pass
 
-def     tree_sel_row2(xtree, self, self2):
+def tree_sel_row2(xtree, self, self2):
 
     sel = xtree.get_selection()
     xmodel, xiter = sel.get_selected_rows()
