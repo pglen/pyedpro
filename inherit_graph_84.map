@@ -1,8 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,120,107,145"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,145,107,171"/>
 <area shape="rect" id="node2" href="$classAppDir_1_1pycommon_1_1pggui_1_1LabelButt.html" title=" " alt="" coords="158,5,378,31"/>
 <area shape="rect" id="node3" href="$classAppImage_1_1pycommon_1_1pggui_1_1LabelButt.html" title=" " alt="" coords="176,55,360,95"/>
 <area shape="rect" id="node4" href="$classpycommon_8old_1_1pggui_1_1LabelButt.html" title=" " alt="" coords="169,120,367,145"/>
-<area shape="rect" id="node5" href="$classpyedpro_1_1pycommon_1_1pggui_1_1LabelButt.html" title=" " alt="" coords="155,169,381,195"/>
-<area shape="rect" id="node6" href="$classwebview__1_1_1ImageButton.html" title=" " alt="" coords="186,219,350,244"/>
+<area shape="rect" id="node5" href="$classpycommon_1_1pggui_1_1LabelButt.html" title=" " alt="" coords="179,169,357,195"/>
+<area shape="rect" id="node6" href="$classpyedpro_1_1pycommon_1_1pggui_1_1LabelButt.html" title=" " alt="" coords="155,219,381,244"/>
+<area shape="rect" id="node7" href="$classwebview__1_1_1ImageButton.html" title=" " alt="" coords="186,268,350,293"/>
 </map>

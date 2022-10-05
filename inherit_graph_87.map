@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,545,84,571"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,672,84,697"/>
 <area shape="rect" id="node2" href="$classAppDir_1_1pycommon_1_1pgbox_1_1Spacer.html" title=" " alt="" coords="148,5,356,31"/>
 <area shape="rect" id="node3" href="$classAppDir_1_1pycommon_1_1pggui_1_1Label.html" title=" " alt="" coords="154,55,350,80"/>
 <area shape="rect" id="node4" href="$classAppDir_1_1pycommon_1_1pggui_1_1Spacer.html" title=" " alt="" coords="149,104,355,129"/>
@@ -15,9 +15,14 @@
 <area shape="rect" id="node14" href="$classpycommon_8old_1_1pggui_1_1Spacer.html" title=" " alt="" coords="161,672,343,697"/>
 <area shape="rect" id="node15" href="$classpycommon_8old_1_1pgsimp_1_1NumberSel.html" title=" " alt="" coords="143,721,361,747"/>
 <area shape="rect" id="node16" href="$classpycommon_8old_1_1pgsimp_1_1SimpleSel.html" title=" " alt="" coords="146,771,358,796"/>
-<area shape="rect" id="node17" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1Spacer.html" title=" " alt="" coords="145,820,359,845"/>
-<area shape="rect" id="node18" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Label.html" title=" " alt="" coords="151,869,353,895"/>
-<area shape="rect" id="node19" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Spacer.html" title=" " alt="" coords="147,919,357,944"/>
-<area shape="rect" id="node20" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel.html" title=" " alt="" coords="161,969,343,1009"/>
-<area shape="rect" id="node21" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1internal__SimpleSel.html" title=" " alt="" coords="141,1033,363,1073"/>
+<area shape="rect" id="node17" href="$classpycommon_1_1pgbox_1_1Spacer.html" title=" " alt="" coords="169,820,335,845"/>
+<area shape="rect" id="node18" href="$classpycommon_1_1pggui_1_1Label.html" title=" " alt="" coords="175,869,329,895"/>
+<area shape="rect" id="node19" href="$classpycommon_1_1pggui_1_1Spacer.html" title=" " alt="" coords="171,919,333,944"/>
+<area shape="rect" id="node20" href="$classpycommon_1_1pgsimp_1_1NumberSel.html" title=" " alt="" coords="153,968,351,993"/>
+<area shape="rect" id="node21" href="$classpycommon_1_1pgsimp_1_1internal__SimpleSel.html" title=" " alt="" coords="165,1018,339,1058"/>
+<area shape="rect" id="node22" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1Spacer.html" title=" " alt="" coords="145,1083,359,1108"/>
+<area shape="rect" id="node23" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Label.html" title=" " alt="" coords="151,1132,353,1157"/>
+<area shape="rect" id="node24" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Spacer.html" title=" " alt="" coords="147,1181,357,1207"/>
+<area shape="rect" id="node25" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1NumberSel.html" title=" " alt="" coords="161,1231,343,1271"/>
+<area shape="rect" id="node26" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1internal__SimpleSel.html" title=" " alt="" coords="141,1295,363,1335"/>
 </map>

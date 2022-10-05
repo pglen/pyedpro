@@ -1,7 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,106,84,131"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,134,84,159"/>
 <area shape="rect" id="node2" href="$classAppDir_1_1pycommon_1_1pggui_1_1TextTable.html" title=" " alt="" coords="137,5,326,45"/>
 <area shape="rect" id="node3" href="$classAppImage_1_1pycommon_1_1pggui_1_1TextTable.html" title=" " alt="" coords="139,69,323,109"/>
 <area shape="rect" id="node4" href="$classpycommon_8old_1_1pggui_1_1TextTable.html" title=" " alt="" coords="132,134,331,159"/>
-<area shape="rect" id="node5" href="$classpyedpro_1_1pycommon_1_1pggui_1_1TextTable.html" title=" " alt="" coords="134,184,329,224"/>
+<area shape="rect" id="node5" href="$classpycommon_1_1pggui_1_1TextTable.html" title=" " alt="" coords="142,183,321,209"/>
+<area shape="rect" id="node6" href="$classpyedpro_1_1pycommon_1_1pggui_1_1TextTable.html" title=" " alt="" coords="134,233,329,273"/>
 </map>

@@ -1,11 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,205,115,231"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,259,115,284"/>
 <area shape="rect" id="node2" href="$classAppDir_1_1pycommon_1_1pgbox_1_1ComboBox.html" title=" " alt="" coords="165,5,396,31"/>
 <area shape="rect" id="node3" href="$classAppDir_1_1pycommon_1_1pggui_1_1ComboBox.html" title=" " alt="" coords="167,55,394,80"/>
 <area shape="rect" id="node4" href="$classAppImage_1_1pycommon_1_1pgbox_1_1ComboBox.html" title=" " alt="" coords="187,105,374,145"/>
 <area shape="rect" id="node5" href="$classAppImage_1_1pycommon_1_1pggui_1_1ComboBox.html" title=" " alt="" coords="189,169,373,209"/>
 <area shape="rect" id="node6" href="$classpycommon_8old_1_1pgbox_1_1ComboBox.html" title=" " alt="" coords="177,233,385,259"/>
 <area shape="rect" id="node7" href="$classpycommon_8old_1_1pggui_1_1ComboBox.html" title=" " alt="" coords="178,283,383,308"/>
-<area shape="rect" id="node8" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1ComboBox.html" title=" " alt="" coords="163,332,399,357"/>
-<area shape="rect" id="node9" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox.html" title=" " alt="" coords="164,381,397,407"/>
+<area shape="rect" id="node8" href="$classpycommon_1_1pgbox_1_1ComboBox.html" title=" " alt="" coords="187,332,375,357"/>
+<area shape="rect" id="node9" href="$classpycommon_1_1pggui_1_1ComboBox.html" title=" " alt="" coords="188,381,373,407"/>
+<area shape="rect" id="node10" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1ComboBox.html" title=" " alt="" coords="163,431,399,456"/>
+<area shape="rect" id="node11" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ComboBox.html" title=" " alt="" coords="164,480,397,505"/>
 </map>
