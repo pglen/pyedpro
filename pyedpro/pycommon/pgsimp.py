@@ -289,14 +289,9 @@ class   internal_SimpleSel(Gtk.Label):
                         self.newtext = self.text[:self.axx] + self.text[self.axx:].lower()
                     else:
                         #print("Non alpha, filling pipe char")
-
-                        print("old sel", self.lastidx, "new sel", idx, self.text[:idx])
-
+                        #print("old sel", self.lastidx, "new sel", idx, self.text[:idx])
                         if  self.lastidx + 2 < idx:
                             idx -= 1
-                        #elif  self.lastidx + 1 <  idx:
-                        #    idx -= 0
-
                         self.lastsel =  self.text[idx]
                         self.newtext = self.text[:idx] + "|" + self.text[idx] + "|" + self.text[idx+1:]
                         self.lastidx =  idx
