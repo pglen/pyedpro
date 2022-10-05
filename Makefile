@@ -57,5 +57,6 @@ git:
 	git add .
 	git commit -m "$(AUTOCHECK)"
 	git push
+	git push local
 
 # End of Makefile
