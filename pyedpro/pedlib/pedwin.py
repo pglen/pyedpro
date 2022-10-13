@@ -288,10 +288,13 @@ class EdMainWindow():
         merge.insert_action_group(ag, 0)
         accel = merge.get_accel_group()
         ##accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
-        accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.META_MASK)
-        accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK)
+        #accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.META_MASK)
+        #accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK |
+        #                                        Gdk.ModifierType.SHIFT_MASK)
+
         self.mywin.add_accel_group(accel)
-        #
+        self.ag = ag
+
         try:
             mergeid = merge.add_ui_from_string(ui_info)
         except GLib.GError as msg:
@@ -299,6 +302,7 @@ class EdMainWindow():
 
         merge_id = merge.new_merge_id()
         self.add_mru(merge, merge_id, ag)
+        self.merge = merge
 
         self.mbar = merge.get_widget("/MenuBar")
         self.mbar.show()
@@ -306,6 +310,9 @@ class EdMainWindow():
         #mb = self.mbar.get_children()
         #for aa in mb:
         #    print("menu", aa, aa.get_label())
+        #    #if "File" in aa.get_label():
+        #    #    print("file menu", aa, aa.get_label())
+        #    #    aa.show()
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
@@ -676,6 +683,20 @@ class EdMainWindow():
         #self.mywin.connect("my-custom-signal", self.threadevent)
         #threading.Thread(target=self.ThredMine, daemon=True).start()
         #GLib.timeout_add(1000, self.ThredCallback)
+
+    def openmenu(self, strx):
+
+        #for aa in self.ag.list_actions():
+        #    print("action", aa.get_name(), aa.get_accel_path())
+        #www = self.merge.get_widget("")
+        #mb = self.mbar.get_children()
+        #for aa in mb:
+        #    #print("menu", aa, aa.get_label())
+        #    if strx in aa.get_label():
+        #        print("opening file menu", aa, aa.get_label())
+        #        aa.show_all()
+        #        break
+        pass
 
     def note_button(self, arg1, arg2):
         #print("note_button", arg1, arg2)
