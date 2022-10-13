@@ -978,6 +978,7 @@ class ActHand:
     def alt_f(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("ALT - F")
+        pedconfig.conf.pedwin.openmenu("File")
         pass
 
     def ctrl_f(self, self2):

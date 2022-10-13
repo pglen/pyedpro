@@ -377,8 +377,9 @@ class KeyHand:
             print( "key state",  event.state)
 
         if pedconfig.conf.show_keys:
-            print ("KEY:", event.keyval, hex(event.keyval))
-            print ("KEYSTR:", event.state, event.string)
+            print ("KEY:", event.keyval, hex(event.keyval), event.string, event.type)
+            if pedconfig.conf.verbose:
+                print ("KEYSTR:", event.state, event.string)
         try:
             pedplug.keypress(self, event)
         except:
