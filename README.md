@@ -22,14 +22,14 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
 
  Pyedpro has:
 
-            o  macro recording/play,
-            o  search/replace,
-            o  functional navigation,
-            o  comment/string spell check,
-            o  full spell check, spell suggestion dialog
-            o  auto backup,
-            o  persistent undo/redo,  (undo beyond last save)
-            o  auto complete, auto correct,
+            o  Macro recording/play,
+            o  Search/replace,
+            o  Functional navigation,
+            o  Fomment/string spell check,
+            o  Full spell check, spell suggestion dialog
+            o  Auto backup,
+            o  Persistent undo/redo,  (undo beyond last save)
+            o  Auto complete, auto correct
             o
             o  ... and a lot more.
 
@@ -42,12 +42,12 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
 ### Platforms
 
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
-and the Raspberry-Pi. It behaves consistently on all these platforms,
+(x64) and the Raspberry-Pi. It behaves consistently on all these platforms,
 it is an absolute joy to edit in a different platform without the learning
 curve of new keystrokes.  If you want an editor  that works the same way in
 all your workspaces, PyEdPro is the one.
 
- PyEdPro now is working good on the Mac. I installed homebrew, and got it to fire up. It
+ PyEdPro now is working good on the Mac M1. I installed homebrew, and got it to fire up. It
 was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the
 Linux version did. No asynchronous  anything, segmentation faults everywhere. (which python
 is not suppose to have)
@@ -59,14 +59,15 @@ subsystem, hopefully time will be kind here.
 
 ** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing
 as Glib the timer functions bombed. Great hardware - bad PyGobject support. However
-if an editor with familiar key op is needed -- most of it works with no destructive errors.
+if an editor with familiar key op is needed -- most of it works. And no destructive errors.
 
 ### New:
 
     (this is extracted, use git log for up-to-date information)
 
+    Thu 27.Oct.2022 -- Restore system menu processing (Alt-f [File Menu] and such)
     Sat 10.Sep.2022 -- the system shortcuts (ctrl-s ctrl-o) are re-done by hand
-    Sat 03.Sep.2022 -- pubilshed on pip
+    Sat 03.Sep.2022 -- published on pip
     Thu 21.Apr.2022 -- release issued
     Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
@@ -201,6 +202,7 @@ Screen from Mac:
 ![Screen Shot](screen_shot_mac.png)
 
 ## Project stats:
+   (this is somewhat outdated, added here for information purposes only)
 
         Project name
             PyEdPro
