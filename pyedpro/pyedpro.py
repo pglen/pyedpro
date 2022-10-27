@@ -29,31 +29,33 @@ subdirectory under the main file's direcory.
         Mac ** Some functions are disabled - in particular async processing
 
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
-and the Raspberry-Pi. It behaves consistently on all these platforms,
-it is an absolute joy to edit in a different platform without the learning
-curve of new keystrokes.  If you want an editor  that works the same way in
+Windows 10 x64, and the Raspberry-Pi. It behaves consistently on all these
+platforms.
+  It is an absolute joy to edit in a different platform without the learning
+curve of new keystrokes.  If you want an editor that works the same way in
 all your workspaces, PyEdPro is the one.
 
 Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
 
  Pyedpro has:
 
-            o  macro recording/play,
-            o  search/replace,
-            o  functional navigation,
-            o  comment/string spell check,
-            o  full spell check, spell suggestion dialog
-            o  auto backup,
-            o  persistent undo/redo,  (undo beyond last save)
-            o  auto complete, auto correct,
+            o  Macro recording/play,
+            o  Search/replace,
+            o  Functional navigation,
+            o  Comment/string spell check,
+            o  Full spell check, spell suggestion dialog
+            o  Auto backup,
+            o  Persistent undo/redo,  (undo beyond last save)
+            o  Auto complete, auto correct,
             o
             o  ... and a lot more.
 
- It is fast, it is extendable. The editor has a table driven key mapping.
+  PyeEdPro is fast, it is extendable. The editor has a table driven key mapping.
  One can easily edit the key map in keyhand.py, and the key actions
- in acthand.py The default key map resembles gedit / wed / etp / brief
+ in acthand.py The default key map resembles gedit / wed / etp / brief / Notepad
 
- ASCII text editor, requires pyGtk. (pygobject)
+ASCII text editor, requires pyGtk. (PyGObject)
+
  See pygtk-dependencies for easy install of dependencies.
  See also the INSTALL file.
 
@@ -82,6 +84,7 @@ import platform
 
  History:  (incomplete list)
 
+ Thu 27.Oct.2022   Restored menu keymaps for the system to handle it.
  Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
  jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
  Jul/xx/2018       Update README, KEYS.TXT
@@ -176,8 +179,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.0.1"
-BUILDDATE   = "Fri 23.Sep.2022"
+VERSION     = "3.1.0"
+BUILDDATE   = "Thu 27.Oct.2022"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
