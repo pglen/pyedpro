@@ -32,7 +32,8 @@ clwords =  ("class ", " self.", "try:", "except", "except:", "finally",
 pykeywords = ("class ", "def ", "TODO ")
 basekeywords = ("(sub )|(SUB )")
 Skeywords = "(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)"
-pykeywords2 = "(class )|(def )|(TODO )|(__main__)|(_mac_)"
+pykeywords2 = "(class )|(def )|(TODO )|(__main__)"
+pykeywords3 = "(_mac_)"
 sumkeywords = "class ", "def ", "TODO "
 htmlkeywords = "(\{ .* \})"
 

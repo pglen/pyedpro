@@ -279,44 +279,34 @@ class EdMainWindow():
             except:
                 print("Canot load main icon.")
 
-        merge = Gtk.UIManager()
-        merge.connect("pre-activate", self.menu_open)
-        merge.connect("add_widget", self.menu_open)
-        #self.mywin.set_data("ui-manager", merge)
+        self.merge = Gtk.UIManager()
+        #self.merge.connect("pre-activate", self.menu_open)
+        #self.merge.connect("add_widget", self.menu_open)
+        #self.mywin.set_data("ui-manager", self.merge)
 
-        ag = create_action_group(self)
-        merge.insert_action_group(ag, 0)
-        accel = merge.get_accel_group()
+        self.acg = create_action_group(self)
+        self.merge.insert_action_group(self.acg, 0)
+        self.accel = self.merge.get_accel_group()
+
         ##accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
         #accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.META_MASK)
         #accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK |
         #                                        Gdk.ModifierType.SHIFT_MASK)
 
-        self.mywin.add_accel_group(accel)
-        self.ag = ag
+        self.mywin.add_accel_group(self.accel)
 
         try:
-            mergeid = merge.add_ui_from_string(ui_info)
+            mergeid = self.merge.add_ui_from_string(ui_info)
         except GLib.GError as msg:
             print("Building menus failed: %s" % msg)
 
-        merge_id = merge.new_merge_id()
-        self.add_mru(merge, merge_id, ag)
-        self.merge = merge
+        merge_id = self.merge.new_merge_id()
+        self.add_mru(self.merge, merge_id, self.acg)
 
-        self.mbar = merge.get_widget("/MenuBar")
+        self.mbar = self.merge.get_widget("/MenuBar")
         self.mbar.show()
 
-        #mb = self.mbar.get_children()
-        #for aa in mb:
-        #    print("menu", aa, aa.get_label())
-        #    #if "File" in aa.get_label():
-        #    #    print("file menu", aa, aa.get_label())
-        #    #    aa.show()
-
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
-
-        #self.threads = pedthread.PedThread()
 
         global notebook, notebook2, notebook3
 
@@ -402,7 +392,7 @@ class EdMainWindow():
         #self.mywin.connect("leave-notify-event", self.area_leave)
         #self.mywin.connect("event", self.unmap)
 
-        self.tbar = merge.get_widget("/ToolBar")
+        self.tbar = self.merge.get_widget("/ToolBar")
         #self.tbar.set_tooltips(True)
         self.tbar.show()
 
@@ -684,18 +674,45 @@ class EdMainWindow():
         #threading.Thread(target=self.ThredMine, daemon=True).start()
         #GLib.timeout_add(1000, self.ThredCallback)
 
+    #Gtk.Action
+
     def openmenu(self, strx):
 
-        #for aa in self.ag.list_actions():
-        #    print("action", aa.get_name(), aa.get_accel_path())
-        #www = self.merge.get_widget("")
-        #mb = self.mbar.get_children()
-        #for aa in mb:
-        #    #print("menu", aa, aa.get_label())
-        #    if strx in aa.get_label():
-        #        print("opening file menu", aa, aa.get_label())
-        #        aa.show_all()
+        # Thu 27.Oct.2022 Deactivated TODO
+        return
+
+        #for bb in self.accel:
+        #for aa in self.acg.list_actions():
+        #    #print("action", aa.get_name())
+        #    sss = aa.get_name().split(" ")
+        #    #print("action", sss)
+        #    if strx in sss[0]:
+        #        ttt = "/ui/" + sss[0]
+        #        # Gtk.Action
+        #        print("file action:", aa, aa.get_name(), aa.get_accel_path(), ttt)
+        #        #print(aa, dir(aa))
+        #        #print(self.acg, dir(self.acg))
+        #        #aa.set_sensitive(True)
+        #        aa.set_sensitive(True)
+        #        aa.set_visible(True)
+        #        aa.activate()
         #        break
+
+        # MenuItem
+        mb = self.mbar.get_children()
+        for aa in mb:
+            #print("menu", aa, aa.get_label())
+            if strx in aa.get_label():
+                # Gtk.ImageMenuItem
+                print("opening menu", aa, aa.get_label(), aa.get_accel_path())
+                #print(self.acg, dir(self.acg))
+                aa.select()
+                #aa.activate()
+                #aa.grab_focus()
+                #aa.show_all()
+                #print("has", self.acg.has_action(aa.get_accel_path()))
+                #self.acg.activate_action(aa.get_accel_path())
+                break
         pass
 
     def note_button(self, arg1, arg2):
@@ -957,7 +974,7 @@ class EdMainWindow():
     # --------------------------------------------------------------------
     # Add MRU
 
-    def add_mru(self, merge, merge_id, action_group):
+    def add_mru(self, mergex, merge_id, action_group):
 
         for aa in self.oh.histarr:
             if aa[2]:
@@ -966,7 +983,7 @@ class EdMainWindow():
                 ac = Gtk.Action(fname, fname, fname, None)
                 ac.connect('activate', self.open_recent)
                 action_group.add_action(ac)
-                merge.add_ui(merge_id, "/MenuBar/FileMenu/Recent/Recent Files/",
+                mergex.add_ui(merge_id, "/MenuBar/FileMenu/Recent/Recent Files/",
                     fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
 
         for aa in self.os.histarr:
@@ -976,7 +993,7 @@ class EdMainWindow():
                 ac = Gtk.Action(fname, fname, fname, None)
                 ac.connect('activate', self.open_recent_sess)
                 action_group.add_action(ac)
-                merge.add_ui(merge_id, "/MenuBar/FileMenu/Sessions/Recent Sessions/",
+                mergex.add_ui(merge_id, "/MenuBar/FileMenu/Sessions/Recent Sessions/",
                     fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
 
     def area_winstate(self, arg1, arg2):
@@ -1117,6 +1134,15 @@ class EdMainWindow():
             # alt
             if event.state == Gdk.ModifierType.MOD1_MASK:
                 #print("alt", event.keyval)
+
+                # These are the menu accel keys; pass it to the system
+                #  -- really dislike the accel system; takes over too many things
+                # Cannot drive it programmatically -- maybe some help needed
+                if event.keyval == ord('f') or event.keyval == ord('e') \
+                    or event.keyval == ord('m') or \
+                        event.keyval == ord('h'):
+                    return False
+
                 if event.keyval == ord('o'):
                     #print("mainwin alt-o")
                     self.altopen()
@@ -1157,13 +1183,19 @@ class EdMainWindow():
             got = self.mywin.get_focus()
             if vcurr.vbox.area == got:
                 vcurr.vbox.area.area_key(area, event)
+                return True
             elif vcurr.vbox2.area == got:
                 vcurr.vbox2.area.area_key(area, event)
+                return True
             elif self.diffpane.area == got:
                 self.diffpane.area.area_key(area, event)
+                return True
+            else:
+                return None
         else:
             pass
             #print("did not send key")  # this is normal
+            return None
 
         return True             # Handled it
         #return None

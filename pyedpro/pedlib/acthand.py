@@ -705,10 +705,10 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - B")
 
-        pedbuffs.buffers(self, self2)
+        #pedbuffs.buffers(self, self2)
         self2.mained.update_statusbar("C-A-B key pressed.")
 
-    #// Deactivate code:
+    #// Comment out code: TODO
     def ctrl_alt_c(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - C")
@@ -728,7 +728,7 @@ class ActHand:
                 strx  = "%if 0\n"
                 strx2 = "%endif\n"
             elif extx == ".htm" or extx == ".html":
-                print("html comment")
+                #print("html comment")
                 strx  = "<!-- "
                 strx2 = " -->"
             else:
@@ -736,18 +736,27 @@ class ActHand:
                 strx2 = "''' "
 
             self.add_str(self2, strx)
-            #if strx2 != "":
             self.ctrl_v(self2)
-            self.add_str(self2, strx2)
+            if strx2:
+                self.add_str(self2, strx2)
+
         else:
             if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
                 strx  = "//"
             elif extx == ".asm" or extx == ".inc" or extx == ".S":
                 strx  = ";"
             elif extx == ".htm" or extx == ".html":
-                strx  = "<!--  -->"
+                strx  = "<!-- " ; strx2 = "-->"
+                # Trailer attached to end of line
+                xidx2 = self2.caret[0] + self2.xpos;
+                yidx2 = self2.caret[1] + self2.ypos
+                xlen = len(self2.text[yidx2])
+                self2.set_caret(xlen, yidx2)
+                self.add_str(self2, strx2)
+                self2.set_caret(xidx2, yidx2)
             else:
                 strx  = "#"
+
             self.add_str(self2, strx)
 
         xidx = self2.caret[0] + self2.xpos;
@@ -760,7 +769,6 @@ class ActHand:
     def ctrl_alt_num(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - NUM", self2.lastkey)
-
 
     #// Start termnal
     def ctrl_alt_d(self, self2):
@@ -842,11 +850,68 @@ class ActHand:
             print("No TTS", sys.exc_info())
             self2.mained.update_statusbar("No TTS installed")
 
+    # // Deactivate comment TODO
     def ctrl_alt_v(self, self2):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - V ")
 
-        self2.mained.saveall()
+        #self2.mained.saveall()
+        extx = os.path.splitext(self2.fname)[1]
+        #print("extx", extx)
+        xidx = self2.caret[0] + self2.xpos;
+        yidx = self2.caret[1] + self2.ypos
+        try:
+            chh = self2.text[yidx][xidx]
+            #print("chh", chh)
+        except:
+            chh = 0
+
+        # This will catch all known varieties, else .py assumed
+        if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
+            if chh == "/":
+                self.delete(self2)
+                self.delete(self2)
+            else:
+                self2.mained.update_statusbar("Not on 'c' comment.")
+
+        elif extx == ".asm" or extx == ".inc" or extx == ".S":
+            if chh == ";":
+                self.delete(self2)
+            else:
+                self2.mained.update_statusbar("Not on 'asm' comment.")
+
+        elif extx == ".htm" or extx == ".html":
+            #print("html comment strx  = <!-- -->";
+            if chh == "<":
+                self.delete(self2)
+                self.delete(self2)
+                self.delete(self2)
+                self.delete(self2)
+                xidx2 = self2.caret[0] + self2.xpos;
+                yidx2 = self2.caret[1] + self2.ypos
+                #self.end(self2)
+                xlen = len(self2.text[yidx2])
+                self2.set_caret(xlen, yidx2)
+                self.bs(self2)
+                self.bs(self2)
+                self.bs(self2)
+                self2.set_caret(xidx2, yidx2)
+            else:
+                self2.mained.update_statusbar("Not on comment character.")
+
+        else:
+            # Default comment
+            if chh == "#":
+                self.delete(self2)
+            else:
+                self2.mained.update_statusbar("Not on comment character.")
+
+        # Goto next line
+        xidx = self2.caret[0] + self2.xpos;
+        yidx = self2.caret[1] + self2.ypos
+        self2.set_caret(xidx, yidx + 1)
+
+        #self.down(self2)
 
     # --------------------------------------------------------------------
 

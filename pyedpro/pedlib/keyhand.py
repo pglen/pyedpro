@@ -466,6 +466,7 @@ class KeyHand:
             if ret:
                 return
 
+        # Key priorities are derived fro the order of tests
         if self.super and self.ctrl and self.alt:
             self.handle_super_ctrl_alt_key(self2, area, event)
         elif self.super and self.alt:

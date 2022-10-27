@@ -2573,11 +2573,18 @@ def run_async_time(win, arg):
                 if res:
                     #print( res, res.start(), res.end())
                     sumw.append(line)
+
+            regex3 = re.compile(pykeywords3)
+            for line in win.text:
+                res = regex3.search(line)
+                if res:
+                    #print( res, res.start(), res.end())
+                    sumw.append("    " + line)
         except:
             print("Exception in py func handler", sys.exc_info())
             pass
     elif ".html" in lname[-5:]:
-        print("html file")
+        #print("html file")
         try:
             regex = re.compile(htmlkeywords)
             for line in win.text:
