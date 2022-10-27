@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,1445,83,1471"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,1211,83,1236"/>
 <area shape="rect" id="node2" href="$classAppDir_1_1pedlib_1_1pedcal_1_1pgcal.html" title=" " alt="" coords="160,5,333,31"/>
 <area shape="rect" id="node3" href="$classAppDir_1_1pedlib_1_1pedcanv_1_1ToolBox.html" title=" " alt="" coords="147,55,347,80"/>
 <area shape="rect" id="node4" href="$classAppDir_1_1pedlib_1_1pednotes_1_1pgnotes.html" title=" " alt="" coords="145,104,348,129"/>
@@ -26,33 +26,25 @@
 <area shape="rect" id="node25" href="$classAppImage_1_1pycommon_1_1pgsimp_1_1LetterNumberSel.html" title=" " alt="" coords="149,1203,344,1243"/>
 <area shape="rect" id="node26" href="$classAppImage_1_1pycommon_1_1pgsimp_1_1MinSel.html" title=" " alt="" coords="149,1267,344,1307"/>
 <area shape="rect" id="node27" href="$classAppImage_1_1pycommon_1_1pgsimp_1_1TextViewWin.html" title=" " alt="" coords="149,1331,344,1371"/>
-<area shape="rect" id="node28" href="$classpycommon_8old_1_1pgbox_1_1xVBox.html" title=" " alt="" coords="155,1396,338,1421"/>
-<area shape="rect" id="node29" href="$classpycommon_8old_1_1pggui_1_1Logo.html" title=" " alt="" coords="161,1445,332,1471"/>
-<area shape="rect" id="node30" href="$classpycommon_8old_1_1pggui_1_1xVBox.html" title=" " alt="" coords="157,1495,336,1520"/>
-<area shape="rect" id="node31" href="$classpycommon_8old_1_1pgsimp_1_1HourSel.html" title=" " alt="" coords="147,1544,347,1569"/>
-<area shape="rect" id="node32" href="$classpycommon_8old_1_1pgsimp_1_1LetterNumberSel.html" title=" " alt="" coords="153,1594,340,1634"/>
-<area shape="rect" id="node33" href="$classpycommon_8old_1_1pgsimp_1_1MinSel.html" title=" " alt="" coords="150,1659,343,1684"/>
-<area shape="rect" id="node34" href="$classpycommon_8old_1_1pgsimp_1_1TextViewWin.html" title=" " alt="" coords="157,1709,336,1749"/>
-<area shape="rect" id="node35" href="$classpycommon_8old_1_1pgwkit_1_1HtmlEdit.html" title=" " alt="" coords="147,1773,346,1799"/>
-<area shape="rect" id="node36" href="$classpycommon_1_1pgbox_1_1xVBox.html" title=" " alt="" coords="165,1823,328,1848"/>
-<area shape="rect" id="node37" href="$classpycommon_1_1pggui_1_1Logo.html" title=" " alt="" coords="171,1872,322,1897"/>
-<area shape="rect" id="node38" href="$classpycommon_1_1pggui_1_1xVBox.html" title=" " alt="" coords="167,1921,326,1947"/>
-<area shape="rect" id="node39" href="$classpycommon_1_1pgsimp_1_1HourSel.html" title=" " alt="" coords="157,1971,337,1996"/>
-<area shape="rect" id="node40" href="$classpycommon_1_1pgsimp_1_1LetterNumberSel.html" title=" " alt="" coords="131,2020,363,2045"/>
-<area shape="rect" id="node41" href="$classpycommon_1_1pgsimp_1_1MinSel.html" title=" " alt="" coords="160,2069,333,2095"/>
-<area shape="rect" id="node42" href="$classpycommon_1_1pgsimp_1_1TextViewWin.html" title=" " alt="" coords="142,2119,351,2144"/>
-<area shape="rect" id="node43" href="$classpycommon_1_1pgwkit_1_1HtmlEdit.html" title=" " alt="" coords="157,2168,336,2193"/>
-<area shape="rect" id="node44" href="$classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal.html" title=" " alt="" coords="157,2217,336,2243"/>
-<area shape="rect" id="node45" href="$classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox.html" title=" " alt="" coords="143,2267,350,2292"/>
-<area shape="rect" id="node46" href="$classpyedpro_1_1pedlib_1_1pednotes_1_1pgnotes.html" title=" " alt="" coords="142,2316,351,2341"/>
-<area shape="rect" id="node47" href="$classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline.html" title=" " alt="" coords="147,2365,346,2391"/>
-<area shape="rect" id="node48" href="$classpyedpro_1_1pedlib_1_1pedweb_1_1pgweb.html" title=" " alt="" coords="150,2415,343,2440"/>
-<area shape="rect" id="node49" href="$classpyedpro_1_1pedlib_1_1pedwin_1_1edwin.html" title=" " alt="" coords="154,2464,339,2489"/>
-<area shape="rect" id="node50" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox.html" title=" " alt="" coords="141,2513,352,2539"/>
-<area shape="rect" id="node51" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Logo.html" title=" " alt="" coords="147,2563,346,2588"/>
-<area shape="rect" id="node52" href="$classpyedpro_1_1pycommon_1_1pggui_1_1xVBox.html" title=" " alt="" coords="143,2612,350,2637"/>
-<area shape="rect" id="node53" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1HourSel.html" title=" " alt="" coords="156,2662,337,2702"/>
-<area shape="rect" id="node54" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1LetterNumberSel.html" title=" " alt="" coords="156,2726,337,2766"/>
-<area shape="rect" id="node55" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1MinSel.html" title=" " alt="" coords="156,2790,337,2830"/>
-<area shape="rect" id="node56" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1TextViewWin.html" title=" " alt="" coords="156,2854,337,2894"/>
+<area shape="rect" id="node28" href="$classpycommon_1_1pgbox_1_1xVBox.html" title=" " alt="" coords="165,1396,328,1421"/>
+<area shape="rect" id="node29" href="$classpycommon_1_1pggui_1_1Logo.html" title=" " alt="" coords="171,1445,322,1471"/>
+<area shape="rect" id="node30" href="$classpycommon_1_1pggui_1_1xVBox.html" title=" " alt="" coords="167,1495,326,1520"/>
+<area shape="rect" id="node31" href="$classpycommon_1_1pgsimp_1_1HourSel.html" title=" " alt="" coords="157,1544,337,1569"/>
+<area shape="rect" id="node32" href="$classpycommon_1_1pgsimp_1_1LetterNumberSel.html" title=" " alt="" coords="131,1593,363,1619"/>
+<area shape="rect" id="node33" href="$classpycommon_1_1pgsimp_1_1MinSel.html" title=" " alt="" coords="160,1643,333,1668"/>
+<area shape="rect" id="node34" href="$classpycommon_1_1pgsimp_1_1TextViewWin.html" title=" " alt="" coords="142,1692,351,1717"/>
+<area shape="rect" id="node35" href="$classpycommon_1_1pgwkit_1_1HtmlEdit.html" title=" " alt="" coords="157,1741,336,1767"/>
+<area shape="rect" id="node36" href="$classpyedpro_1_1pedlib_1_1pedcal_1_1pgcal.html" title=" " alt="" coords="157,1791,336,1816"/>
+<area shape="rect" id="node37" href="$classpyedpro_1_1pedlib_1_1pedcanv_1_1ToolBox.html" title=" " alt="" coords="143,1840,350,1865"/>
+<area shape="rect" id="node38" href="$classpyedpro_1_1pedlib_1_1pednotes_1_1pgnotes.html" title=" " alt="" coords="142,1889,351,1915"/>
+<area shape="rect" id="node39" href="$classpyedpro_1_1pedlib_1_1pedoline_1_1pgoline.html" title=" " alt="" coords="147,1939,346,1964"/>
+<area shape="rect" id="node40" href="$classpyedpro_1_1pedlib_1_1pedweb_1_1pgweb.html" title=" " alt="" coords="150,1988,343,2013"/>
+<area shape="rect" id="node41" href="$classpyedpro_1_1pedlib_1_1pedwin_1_1edwin.html" title=" " alt="" coords="154,2037,339,2063"/>
+<area shape="rect" id="node42" href="$classpyedpro_1_1pycommon_1_1pgbox_1_1xVBox.html" title=" " alt="" coords="141,2087,352,2112"/>
+<area shape="rect" id="node43" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Logo.html" title=" " alt="" coords="147,2136,346,2161"/>
+<area shape="rect" id="node44" href="$classpyedpro_1_1pycommon_1_1pggui_1_1xVBox.html" title=" " alt="" coords="143,2185,350,2211"/>
+<area shape="rect" id="node45" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1HourSel.html" title=" " alt="" coords="156,2235,337,2275"/>
+<area shape="rect" id="node46" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1LetterNumberSel.html" title=" " alt="" coords="156,2299,337,2339"/>
+<area shape="rect" id="node47" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1MinSel.html" title=" " alt="" coords="156,2363,337,2403"/>
+<area shape="rect" id="node48" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1TextViewWin.html" title=" " alt="" coords="156,2427,337,2467"/>
 </map>

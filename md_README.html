@@ -82,29 +82,30 @@ Python editor.</h1>
   Raspberry PI 3, Raspberry PI 4, ...
   Mac ** Some functions are disabled - in particular async processing
 </pre><p> Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI</p>
-<p >Pyedpro has: </p><pre class="fragment">       o  macro recording/play,
-       o  search/replace,
-       o  functional navigation,
-       o  comment/string spell check,
-       o  full spell check, spell suggestion dialog
-       o  auto backup,
-       o  persistent undo/redo,  (undo beyond last save)
-       o  auto complete, auto correct,
+<p >Pyedpro has: </p><pre class="fragment">       o  Macro recording/play,
+       o  Search/replace,
+       o  Functional navigation,
+       o  Fomment/string spell check,
+       o  Full spell check, spell suggestion dialog
+       o  Auto backup,
+       o  Persistent undo/redo,  (undo beyond last save)
+       o  Auto complete, auto correct
        o
        o  ... and a lot more.
 </pre><p> It is fast, it is extendable. The editor has a table driven key mapping. One can easily edit the key map in keyhand.py, and the key actions in acthand.py The default key map resembles gedit / wed / etp / brief</p>
 <p ><a href="https://pglen.github.io/pyedpro/html/">See Doxygen generated Documentation on GitHub Pages</a></p>
 <h2><a class="anchor" id="autotoc_md32"></a>
 Platforms</h2>
-<p >I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, and the Raspberry-Pi. It behaves consistently on all these platforms, it is an absolute joy to edit in a different platform without the learning curve of new keystrokes. If you want an editor that works the same way in all your workspaces, PyEdPro is the one.</p>
-<p >PyEdPro now is working good on the Mac. I installed homebrew, and got it to fire up. It was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the Linux version did. No asynchronous anything, segmentation faults everywhere. (which python is not suppose to have) The font rendering was messed up, but I got fixed by replacing Pango's get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues] Some async functions like the function updater is disabled, but it can be done manually. (right click on doc -&gt; rescan) All in all the Mac's PyGobject is not a great subsystem, hopefully time will be kind here.</p>
-<p >** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing as Glib the timer functions bombed. Great hardware - bad PyGobject support. However if an editor with familiar key op is needed &ndash; most of it works with no destructive errors.</p>
+<p >I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, (x64) and the Raspberry-Pi. It behaves consistently on all these platforms, it is an absolute joy to edit in a different platform without the learning curve of new keystrokes. If you want an editor that works the same way in all your workspaces, PyEdPro is the one.</p>
+<p >PyEdPro now is working good on the Mac M1. I installed homebrew, and got it to fire up. It was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the Linux version did. No asynchronous anything, segmentation faults everywhere. (which python is not suppose to have) The font rendering was messed up, but I got fixed by replacing Pango's get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues] Some async functions like the function updater is disabled, but it can be done manually. (right click on doc -&gt; rescan) All in all the Mac's PyGobject is not a great subsystem, hopefully time will be kind here.</p>
+<p >** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing as Glib the timer functions bombed. Great hardware - bad PyGobject support. However if an editor with familiar key op is needed &ndash; most of it works. And no destructive errors.</p>
 <h2><a class="anchor" id="autotoc_md33"></a>
 New:</h2>
 <pre class="fragment">(this is extracted, use git log for up-to-date information)
 
+Thu 27.Oct.2022 -- Restore system menu processing (Alt-f [File Menu] and such)
 Sat 10.Sep.2022 -- the system shortcuts (ctrl-s ctrl-o) are re-done by hand
-Sat 03.Sep.2022 -- pubilshed on pip
+Sat 03.Sep.2022 -- published on pip
 Thu 21.Apr.2022 -- release issued
 Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
 Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
@@ -145,24 +146,24 @@ Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
 <p ><img src="screen_shot_mac.png" alt="Screen Shot" class="inline"/></p>
 <h1><a class="anchor" id="autotoc_md34"></a>
 Project stats:</h1>
-<pre class="fragment">    Project name
-        PyEdPro
-    Generated
-        2022-04-21 13:40:49 (in 3 seconds)
-    Generator
-        GitStats (version 55c5c28), git version 2.32.0, gnuplot 5.4 patchlevel 1
-    Report Period
-        2018-09-16 00:29:10 to 2022-04-15 10:31:49
-    Age
-        1308 days, 166 active days (12.69%)
-    Total Files
-        220
-    Total Lines of Code
-        476774 (1454450 added, 977676 removed)
-    Total Commits
-        347 (average 2.1 commits per active day, 0.3 per all days)
-    Authors
-        7 (average 49.6 commits per author)
+<p >(this is somewhat outdated, added here for information purposes only) </p><pre class="fragment"> Project name
+     PyEdPro
+ Generated
+     2022-04-21 13:40:49 (in 3 seconds)
+ Generator
+     GitStats (version 55c5c28), git version 2.32.0, gnuplot 5.4 patchlevel 1
+ Report Period
+     2018-09-16 00:29:10 to 2022-04-15 10:31:49
+ Age
+     1308 days, 166 active days (12.69%)
+ Total Files
+     220
+ Total Lines of Code
+     476774 (1454450 added, 977676 removed)
+ Total Commits
+     347 (average 2.1 commits per active day, 0.3 per all days)
+ Authors
+     7 (average 49.6 commits per author)
 </pre><p ><img src="commits_by_year_month.png" alt="Stats" class="inline"/></p>
 <p >License: Open Source, FreeWare</p>
 <p >// EOF </p>

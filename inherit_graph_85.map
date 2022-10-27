@@ -1,18 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,433,88,459"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,348,88,373"/>
 <area shape="rect" id="node2" href="$classAppDir_1_1pycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="139,5,339,31"/>
 <area shape="rect" id="node3" href="$classAppDir_1_1pycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="141,55,338,95"/>
 <area shape="rect" id="node4" href="$classAppDir_1_1pycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="141,119,338,159"/>
 <area shape="rect" id="node5" href="$classAppImage_1_1pycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="147,183,331,223"/>
 <area shape="rect" id="node6" href="$classAppImage_1_1pycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="147,247,331,287"/>
 <area shape="rect" id="node7" href="$classAppImage_1_1pycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="147,311,331,351"/>
-<area shape="rect" id="node8" href="$classpycommon_8old_1_1pggui_1_1Lights.html" title=" " alt="" coords="150,376,329,401"/>
-<area shape="rect" id="node9" href="$classpycommon_8old_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="152,426,327,466"/>
-<area shape="rect" id="node10" href="$classpycommon_8old_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="152,490,327,530"/>
-<area shape="rect" id="node11" href="$classpycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="160,555,319,580"/>
-<area shape="rect" id="node12" href="$classpycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="144,604,335,629"/>
-<area shape="rect" id="node13" href="$classpycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="140,653,339,679"/>
-<area shape="rect" id="node14" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="136,703,343,728"/>
-<area shape="rect" id="node15" href="$classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="138,753,341,793"/>
-<area shape="rect" id="node16" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="138,817,341,857"/>
+<area shape="rect" id="node8" href="$classpycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="160,376,319,401"/>
+<area shape="rect" id="node9" href="$classpycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="144,425,335,451"/>
+<area shape="rect" id="node10" href="$classpycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="140,475,339,500"/>
+<area shape="rect" id="node11" href="$classpyedpro_1_1pycommon_1_1pggui_1_1Lights.html" title=" " alt="" coords="136,524,343,549"/>
+<area shape="rect" id="node12" href="$classpyedpro_1_1pycommon_1_1pggui_1_1RadioGroup.html" title=" " alt="" coords="138,574,341,614"/>
+<area shape="rect" id="node13" href="$classpyedpro_1_1pycommon_1_1pggui_1_1ScrollListBox.html" title=" " alt="" coords="138,638,341,678"/>
 </map>
