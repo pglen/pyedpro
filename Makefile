@@ -8,6 +8,8 @@
 #  OTHER DEALINGS IN THE SOFTWARE.
 #
 
+.PHONY:  doc doc3 clean
+
 all:
 	@echo "Type 'make help' for a list of targets"
 
@@ -17,7 +19,8 @@ help:
 	@echo "	 make install  -- Install PyEdPro (unofficial structure)"
 	@echo "	 make setup    -- Run the setup.py script as install "
 	@echo "	 make pack     -- package PyEdPro "
-	@echo "	 make remove   -- remove (all) traces of pyedpro from the system
+	@echo "	 make remove   -- remove (all) traces of pyedpro from the system"
+	@echo "	 make doc3     -- create documentation"
 	@echo
 
 # OLD install; use setup.py
@@ -58,5 +61,13 @@ git:
 	git commit -m "$(AUTOCHECK)"
 	git push
 	git push local
+
+doc:
+	@pdoc --logo image.png  \
+                -o doc `find . -maxdepth 2 -name  \*.py`
+
+doc3:
+	@pdoc3  --html --force -o doc3 `find . -maxdepth 2 -name  \*.py`
+
 
 # End of Makefile

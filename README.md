@@ -202,7 +202,7 @@ Screen from Mac:
 ![Screen Shot](screen_shot_mac.png)
 
 ## Project stats:
-   (this is somewhat outdated, added here for information purposes only)
+   (Note: This is somewhat outdated, added here for informational purposes only)
 
         Project name
             PyEdPro
