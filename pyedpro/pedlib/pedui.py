@@ -63,6 +63,10 @@ ui_info = \
       <menuitem action='MakeRO'/>
       <menuitem action='MakeRW'/>
       <separator/>
+      <menuitem action='ColorBar'/>
+      <menuitem action='RedBar'/>
+      <menuitem action='unColorBar'/>
+      <separator/>
       <menuitem action='StopDiff'/>
       <menuitem action='TogStrip'/>
     </menu>

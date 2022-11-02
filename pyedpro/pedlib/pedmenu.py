@@ -253,6 +253,21 @@ def create_action_group(self):
         "Make All Read_Write",
          self.activate_action ),
 
+       ( "ColorBar", Gtk.STOCK_CLEAR,
+        "Set TEAL on tab Window \t", "",
+        "Color for visual distinction",
+         self.activate_action ),
+
+       ( "RedBar", Gtk.STOCK_CLEAR,
+        "Set RED on tab Window \t", "",
+        "Color for visual distinction",
+         self.activate_action ),
+
+       ( "unColorBar", Gtk.STOCK_YES,
+        "Reset Color on tab Window \t", "",
+        "Color for visual distinction",
+         self.activate_action ),
+
        ( "StopDiff", Gtk.STOCK_HOME,
         "Stop diffing \t", "",
         "Stop all diffs",

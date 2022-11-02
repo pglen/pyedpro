@@ -182,7 +182,6 @@ class edwin(Gtk.VBox):
 # ------------------------------------------------------------------------
 #  Define Application Main Window claass
 
-
 class EdMainWindow():
 
     def __init__(self, fname, parent, names, orgdir):
@@ -198,6 +197,8 @@ class EdMainWindow():
             self.mac  = False
 
         self.orgdir = orgdir
+        self.colorbar = 0
+        self.headcolor = 0
         self.rescnt = 0
         self.full = False
         self.fcount = 0
@@ -356,6 +357,8 @@ class EdMainWindow():
         notebook2.set_scrollable(True)
         notebook2.connect("switch-page", self.note_swpage_cb2)
         notebook2.connect("move_focus_out", self.focus_out2)
+        #notebook2.override_background_color(
+        #            Gtk.StateFlags.NORMAL, Gdk.RGBA(.85, .8, .8) )
 
         #notebook.add_events(Gdk.FOCUS_CHANGE_MASK)
         #notebook.add_events(Gdk.ALL_EVENTS_MASK)
@@ -585,6 +588,8 @@ class EdMainWindow():
         self.headbar = Gtk.HeaderBar()
         self.headbar.set_decoration_layout("icon,menu:minimize,maximize,close")
         self.headbar.set_show_close_button(True)
+
+        #print("self.headcolor", self.headcolor)
 
         button = Gtk.Button()
         button.connect("pressed", self.doall)
@@ -1770,6 +1775,54 @@ class EdMainWindow():
                     ppp.area.invalidate()
                 cnt += 1
             self.update_statusbar("Made all buffers READ/WRITE")
+
+        if strx == "unColorBar":
+            if not self.headcolor:
+                style = self.headbar.get_style_context()
+                self.headcolor = style.get_property("background-color", Gtk.StateFlags.NORMAL)
+
+            self.headbar.override_background_color(
+                    Gtk.StateFlags.NORMAL, self.headcolor)
+            notebook.override_background_color(
+                    Gtk.StateFlags.NORMAL, self.headcolor)
+            self.update_statusbar("Color Bar Reset")
+
+        if strx == "ColorBar":
+            #states =  (Gtk.StateFlags.NORMAL, Gtk.StateFlags.ACTIVE,
+            #    Gtk.StateFlags.VISITED, Gtk.StateFlags.FOCUSED,
+            #        Gtk.StateFlags.SELECTED, Gtk.StateFlags.INSENSITIVE,
+            #         Gtk.StateFlags.BACKDROP, Gtk.StateFlags.DIR_RTL,
+            #         Gtk.StateFlags.VISITED, Gtk.StateFlags.INCONSISTENT,
+            #         Gtk.StateFlags.DIR_LTR)
+            # for aa in states:  # tested .. no difference
+            #    self.headbar.override_background_color(
+            #        aa, Gdk.RGBA(.8, .9, .8) )
+
+            if not self.headcolor:
+                style = self.headbar.get_style_context()
+                self.headcolor = style.get_property("background-color", Gtk.StateFlags.NORMAL)
+
+            self.headbar.override_background_color(
+                    Gtk.StateFlags.NORMAL, Gdk.RGBA(.8, .86, .85) )
+
+            notebook.override_background_color(
+                    Gtk.StateFlags.NORMAL, Gdk.RGBA(.8, .86, .85) )
+
+            self.update_statusbar("Color Bar Changed TEAL")
+
+
+        if strx == "RedBar":
+            if not self.headcolor:
+                style = self.headbar.get_style_context()
+                self.headcolor = style.get_property("background-color", Gtk.StateFlags.NORMAL)
+
+            self.headbar.override_background_color(
+                    Gtk.StateFlags.NORMAL, Gdk.RGBA(.86, .80, .80) )
+
+            notebook.override_background_color(
+                    Gtk.StateFlags.NORMAL, Gdk.RGBA(.86, .80, .80) )
+
+            self.update_statusbar("Color Bar Changed RED")
 
         if strx == "StopDiff":
             nn = notebook.get_n_pages(); cnt = 0; cnt2 = 0
