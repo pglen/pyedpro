@@ -8,7 +8,7 @@
 #  OTHER DEALINGS IN THE SOFTWARE.
 #
 
-.PHONY:  doc doc3 clean
+.PHONY:  doc doc3 clean echo
 
 all:
 	@echo "Type 'make help' for a list of targets"
@@ -45,8 +45,6 @@ clean:
 	rm -rf pedlib/__pycache__
 	rm -rf ../pycommon/__pycache__
 	rm -f  ../pycommon/*.pyc
-
-#CHECK=xxx
 
 echo:
 	@echo Echoing: ${CHECK}
