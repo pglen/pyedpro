@@ -116,7 +116,7 @@ class pgcal(Gtk.VBox):
         print("rrr", newconf.height)
 
         while 1:
-            if newconf.height < 800:
+            if newconf.height < 850:
                 self.hbox4.hide()
             else:
                 self.hbox4.show()
