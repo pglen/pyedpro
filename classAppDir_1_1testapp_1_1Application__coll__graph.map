@@ -1,4 +1,4 @@
 <map id="AppDir.testapp.Application" name="AppDir.testapp.Application">
-<area shape="rect" id="node1" title=" " alt="" coords="5,79,180,104"/>
-<area shape="rect" id="node2" title=" " alt="" coords="37,5,148,31"/>
+<area shape="rect" id="node1" title=" " coords="5,79,180,104"/>
+<area shape="rect" id="node2" title=" " coords="37,5,148,31"/>
 </map>

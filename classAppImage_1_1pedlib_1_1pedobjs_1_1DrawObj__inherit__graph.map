@@ -1,11 +1,11 @@
 <map id="AppImage.pedlib.pedobjs.DrawObj" name="AppImage.pedlib.pedobjs.DrawObj">
-<area shape="rect" id="node1" title=" " alt="" coords="111,197,280,237"/>
-<area shape="rect" id="node3" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1CircObj.html" title=" " alt="" coords="328,5,497,45"/>
-<area shape="rect" id="node4" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1CurveObj.html" title=" " alt="" coords="328,69,497,109"/>
-<area shape="rect" id="node5" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1LineObj.html" title=" " alt="" coords="328,133,497,173"/>
-<area shape="rect" id="node6" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1RectObj.html" title=" " alt="" coords="328,197,497,237"/>
-<area shape="rect" id="node7" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1RombObj.html" title=" " alt="" coords="328,261,497,301"/>
-<area shape="rect" id="node8" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1StrokeObj.html" title=" " alt="" coords="328,325,497,365"/>
-<area shape="rect" id="node9" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1TextObj.html" title=" " alt="" coords="328,389,497,429"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,205,63,230"/>
+<area shape="rect" id="node1" title=" " coords="111,197,280,237"/>
+<area shape="rect" id="node3" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1CircObj.html" title=" " coords="328,5,497,45"/>
+<area shape="rect" id="node4" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1CurveObj.html" title=" " coords="328,69,497,109"/>
+<area shape="rect" id="node5" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1LineObj.html" title=" " coords="328,133,497,173"/>
+<area shape="rect" id="node6" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1RectObj.html" title=" " coords="328,197,497,237"/>
+<area shape="rect" id="node7" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1RombObj.html" title=" " coords="328,261,497,301"/>
+<area shape="rect" id="node8" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1StrokeObj.html" title=" " coords="328,325,497,365"/>
+<area shape="rect" id="node9" href="$classAppImage_1_1pedlib_1_1pedobjs_1_1TextObj.html" title=" " coords="328,389,497,429"/>
+<area shape="rect" id="node2" title=" " coords="5,205,63,230"/>
 </map>
