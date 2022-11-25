@@ -189,7 +189,6 @@ so this can be traced easily;
     # More coming ... under construction
 
     #Ctrl Alt H                  -- Left Arrow
-    Ctrl Alt J                   -- Toggle coloring
     Ctrl Alt V                   -- Save all buffers
 
     Super - A                    -- Save all buffers

@@ -1,0 +1,11 @@
+<map id="pyedpro.pedlib.pedobjs.DrawObj" name="pyedpro.pedlib.pedobjs.DrawObj">
+<area shape="rect" id="node1" title=" " alt="" coords="111,157,321,184"/>
+<area shape="rect" id="node3" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1CircObj.html" title=" " alt="" coords="377,5,579,32"/>
+<area shape="rect" id="node4" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1CurveObj.html" title=" " alt="" coords="371,56,585,83"/>
+<area shape="rect" id="node5" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1LineObj.html" title=" " alt="" coords="377,107,579,133"/>
+<area shape="rect" id="node6" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1RectObj.html" title=" " alt="" coords="375,157,581,184"/>
+<area shape="rect" id="node7" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1RombObj.html" title=" " alt="" coords="371,208,585,235"/>
+<area shape="rect" id="node8" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1StrokeObj.html" title=" " alt="" coords="369,259,587,285"/>
+<area shape="rect" id="node9" href="$classpyedpro_1_1pedlib_1_1pedobjs_1_1TextObj.html" title=" " alt="" coords="376,309,580,336"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,157,63,184"/>
+</map>

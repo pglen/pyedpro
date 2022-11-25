@@ -1,0 +1,33 @@
+\hypertarget{index_autotoc_md0}{}\doxysubsection{Welcome to Py\+Ed\+Pro.}\label{index_autotoc_md0}
+This is modern multi-\/platform editor. Simple, powerful, configurable, extendable. Goodies like macro recording / playback, spell check, column select, multiple clipboards, unlimited undo ... makes it an editor that I use every day.
+
+This is an open source text editor. Written in python. The motivation for this project was to create a modern multi-\/platform editor. Simple, powerful, configurable, extendable. To run this module without installation put the supporting files in the \textquotesingle{}pedlib\textquotesingle{} subdirectory under the main file\textquotesingle{}s direcory.
+
+(like \textquotesingle{}cp -\/a $\ast$ to\+\_\+target\textquotesingle{})
+
+This project is a successor of pyedit, after porting it to GTK3. Py\+Ed\+Pro will run anywhere Py\+GObject can run.
+
+Working and tested platforms currently are\+: \begin{DoxyVerb}  Win 7 .. Win 10 ...
+  Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
+  Windows (Native) plus MSYS2, Mingw,
+  Raspberry PI 3, Raspberry PI 4, ...
+  Mac ** Some functions are disabled - in particular async processing
+\end{DoxyVerb}
+ I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, and the Raspberry-\/\+Pi. It behaves consistently on all these platforms, it is an absolute joy to edit in a different platform without the learning curve of new keystrokes. If you want an editor that works the same way in all your workspaces, Py\+Ed\+Pro is the one.
+
+Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
+
+Pyedpro has\+: \begin{DoxyVerb}       o  macro recording/play,
+       o  search/replace,
+       o  functional navigation,
+       o  comment/string spell check,
+       o  full spell check, spell suggestion dialog
+       o  auto backup,
+       o  persistent undo/redo,  (undo beyond last save)
+       o  auto complete, auto correct,
+       o
+       o  ... and a lot more.
+\end{DoxyVerb}
+ It is fast, it is extendable. The editor has a table driven key mapping. One can easily edit the key map in keyhand.\+py, and the key actions in acthand.\+py The default key map resembles gedit / wed / etp / brief
+
+ASCII text editor, requires py\+Gtk. (pygobject) See pygtk-\/dependencies for easy install of dependencies. See also the INSTALL file. 

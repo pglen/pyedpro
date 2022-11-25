@@ -57,34 +57,34 @@ class pgcal(Gtk.VBox):
 
         self.pack_start(Gtk.Label(" "), 0, 0, 0)
         self.pack_start(hbox, 0, 0, 0)
-        self.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #self.pack_start(Gtk.Label(" "), 0, 0, 0)
 
-        hbox2 = Gtk.HBox()
+        self.hbox2 = Gtk.HBox()
         butt = Gtk.Button("Goto Today")
         butt.connect("pressed", self.today, self.cal)
-        hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
-        hbox2.pack_start(butt, 1, 1, 0)
-        hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+
+        self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox2.pack_start(butt, 1, 1, 0)
+        self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
 
         butt2 = Gtk.Button("Edit Selection")
         butt2.connect("pressed", self.demand, self.cal)
-        hbox2.pack_start(butt2, 1, 1, 0)
-        hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox2.pack_start(butt2, 1, 1, 0)
+        self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
 
-        self.pack_start(hbox2, 0, 0, 0)
-        self.pack_start(Gtk.Label(""), 0, 0, 0)
+        self.pack_start(self.hbox2, 0, 0, 0)
+        #self.pack_start(Gtk.Label(""), 0, 0, 0)
 
-        hbox3 = Gtk.HBox()
+        self.hbox3 = Gtk.HBox()
         self.edit = Gtk.Entry()
-        hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
-        hbox3.pack_start(self.edit, 1, 1, 0)
+        self.hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
+        self.hbox3.pack_start(self.edit, 1, 1, 0)
         butt2 = Gtk.Button("Find")
         butt2.connect("pressed", self.find)
-        hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
-        hbox3.pack_start(butt2, 0, 0, 0)
-        hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
-
-        self.pack_start(hbox3, 0, 0, 2)
+        self.hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox3.pack_start(butt2, 0, 0, 0)
+        self.hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.pack_start(self.hbox3, 0, 0, 2)
 
         self.treeview2 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview2.setcallb(self.treesel)
@@ -92,8 +92,11 @@ class pgcal(Gtk.VBox):
 
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(self.treeview2)
-        frame3 = Gtk.Frame(); frame3.add(scroll2)
-        self.pack_start(frame3, 1, 1, 2)
+        frame3 = Gtk.Frame();
+        frame3.add(scroll2)
+        self.hbox4 = Gtk.HBox()
+        self.hbox4.add(frame3)
+        self.pack_start(self.hbox4, 1, 1, 2)
 
         self.edview = SimpleEdit()
         self.edview.setsavecb(self.savetext)
@@ -103,6 +106,53 @@ class pgcal(Gtk.VBox):
         frame4 = Gtk.Frame(); frame4.add(scroll3)
         self.pack_start(Gtk.Label(" "), 0, 0, 0)
         self.daysel(self.cal)
+
+        GLib.timeout_add(10, self.initial_load, self, 0)
+
+    # This was needed as the calendar took to much space
+
+    def resize(self, widgx, newconf):
+        #print("resize", widgx, newconf)
+        print("rrr", newconf.height)
+
+        while 1:
+            if newconf.height < 800:
+                self.hbox4.hide()
+            else:
+                self.hbox4.show()
+
+            if newconf.height < 700:
+                self.hbox3.hide()
+            else:
+                self.hbox3.show()
+
+            if newconf.height < 600:
+                self.hbox2.hide()
+            else:
+                self.hbox2.show()
+
+            if newconf.height < 500:
+                self.lsel.hide()
+            else:
+                self.lsel.show()
+
+            break
+
+    def  initial_load(self, arg, arg2):
+        #for aa in range(100):
+        #    if self.get_toplevel():
+        #        break
+        #    print("waiting ...", aa)
+        #    usleep(10)
+        #
+        #print("initial_load" , arg, arg2, self.get_realized())
+
+        try:
+            ttt = self.get_toplevel()
+            ttt.connect("configure-event", self.resize)
+
+        except:
+            print("width", sys.exc_info())
 
     def  letterfilter(self, letter):
         #print("letterfilter", letter)
