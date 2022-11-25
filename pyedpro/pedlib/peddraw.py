@@ -417,7 +417,9 @@ class peddraw(object):
             # Comments: # or // and "
             # This gives us PY comments, C comments and ASM comments
 
-            if self.ext == ".c" or self.ext == ".cpp":
+            if self.ext == ".c" or self.ext == ".h" or \
+                self.ext == ".cpp" or self.ext == ".hpp" or \
+                self.ext == ".php" or self.ext == ".java":
                 ccc = line.find("//");
             elif self.ext == ".asm" or self.ext == ".inc":
                 ccc = line.find(";");

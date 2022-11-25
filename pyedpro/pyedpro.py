@@ -71,8 +71,8 @@ import signal
 import time
 import platform
 
-'''
-
+'''!
+ \mainpage
  ------------------------------------------------------------------------
  This project is a successor of pyedit.py
 
@@ -179,8 +179,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.1.0"
-BUILDDATE   = "Thu 27.Oct.2022"
+VERSION     = "3.1.1"
+BUILDDATE   = "Thu 10.Nov.2022"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
