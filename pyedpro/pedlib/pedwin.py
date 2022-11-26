@@ -453,7 +453,7 @@ class EdMainWindow():
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
         try:
-            #notebook2.append_page(pednotes.pgnotes())
+            notebook2.append_page(pednotes.pgnotes())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
             pass
@@ -465,7 +465,7 @@ class EdMainWindow():
                 put_exception("Notes")
 
         try:
-            #notebook2.append_page(pedoline.pgoline())
+            notebook2.append_page(pedoline.pgoline())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Draw"))
             pass
@@ -475,7 +475,7 @@ class EdMainWindow():
                 print(sys.exc_info())
 
         try:
-            #notebook2.append_page(pedweb.pgweb())
+            notebook2.append_page(pedweb.pgweb())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Web"))
             pass
