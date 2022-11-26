@@ -124,14 +124,9 @@ class pgcal(Gtk.VBox):
 
     def resize(self, widgx, newconf):
         #print("resize", widgx, newconf)
-        print("rrr", newconf.height,  newconf.height / self.chh)
+        #print("rrr", newconf.height,  newconf.height / self.chh)
 
         while 1:
-            #if newconf.height < 850:
-            #    self.hbox4.hide()
-            #else:
-            #    self.hbox4.show()
-
             if newconf.height < self.chh * 50:
                 self.hbox3.hide()
             else:
@@ -146,10 +141,10 @@ class pgcal(Gtk.VBox):
                 self.lsel.hide()
             else:
                 self.lsel.show()
-
             break
 
     def  initial_load(self, arg, arg2):
+
         #for aa in range(100):
         #    if self.get_toplevel():
         #        break
