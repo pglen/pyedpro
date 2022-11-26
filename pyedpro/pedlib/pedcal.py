@@ -92,6 +92,7 @@ class pgcal(Gtk.VBox):
 
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(self.treeview2)
+        scroll2.set_min_content_height(1)
         frame3 = Gtk.Frame();
         frame3.add(scroll2)
         self.hbox4 = Gtk.HBox()
@@ -107,13 +108,23 @@ class pgcal(Gtk.VBox):
         self.pack_start(Gtk.Label(" "), 0, 0, 0)
         self.daysel(self.cal)
 
+
+        self.pangolayout = self.create_pango_layout("a")
+        #self.pangolayout.set_font_description(self.fd)
+
+        # Get Pango steps
+        #self.cxx, self.cyy = self.pangolayout.get_pixel_size()
+        (pr, lr) = self.pangolayout.get_extents()
+        #print("pix", pr.height / Pango.SCALE)
+        self.chh = lr.height / Pango.SCALE
+
         GLib.timeout_add(10, self.initial_load, self, 0)
 
     # This was needed as the calendar took to much space
 
     def resize(self, widgx, newconf):
         #print("resize", widgx, newconf)
-        print("rrr", newconf.height)
+        print("rrr", newconf.height,  newconf.height / self.chh)
 
         while 1:
             #if newconf.height < 850:
@@ -121,17 +132,17 @@ class pgcal(Gtk.VBox):
             #else:
             #    self.hbox4.show()
 
-            if newconf.height < 700:
+            if newconf.height < self.chh * 45:
                 self.hbox3.hide()
             else:
                 self.hbox3.show()
 
-            if newconf.height < 650:
+            if newconf.height <  self.chh *  40:
                 self.hbox2.hide()
             else:
                 self.hbox2.show()
 
-            if newconf.height < 600:
+            if newconf.height <  self.chh *  35:
                 self.lsel.hide()
             else:
                 self.lsel.show()
