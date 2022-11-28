@@ -736,7 +736,7 @@ def save_sess(sesslist):
     fc.sesslist = sesslist
     fc.old = os.getcwd()
     fc.set_filter(filter2)
-    fc.set_current_folder(pedconfig.conf.sess_data)
+    fc.set_current_folder(pedconfig.conf.sess_dir)
     fc.set_current_name(os.path.basename("Untitled.sess"))
     fc.set_default_response(Gtk.ButtonsType.OK)
     fc.connect("response", done_sess_fc, fc)
@@ -786,7 +786,7 @@ def     load_sess():
 
     fc.old = os.getcwd()
     fc.set_filter(filter)
-    fc.set_current_folder(pedconfig.conf.sess_data)
+    fc.set_current_folder(pedconfig.conf.sess_dir)
     #fc.set_current_name(os.path.basename("Untitled.sess"))
     fc.set_default_response(Gtk.ButtonsType.OK)
     fc.connect("response", done_sess2_fc, fc)
