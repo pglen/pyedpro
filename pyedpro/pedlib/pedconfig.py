@@ -10,6 +10,7 @@ from __future__ import absolute_import
 import signal, os, time, sys
 
 from pedlib.keywords import *
+from pedlib import keywords
 
 config_reg = "/apps/pyedpro"
 
@@ -52,7 +53,7 @@ class Conf():
         self.macro_dir = os.path.expanduser("~/.pyedpro/macros")
         self.data_dir = os.path.expanduser("~/.pyedpro/data")
         self.log_dir = os.path.expanduser("~/.pyedpro/log")
-        self.sess_data = os.path.expanduser("~/.pyedpro/sess")
+        self.sess_dir = os.path.expanduser("~/.pyedpro/sess")
         self.temp_dir = os.path.expanduser("~/.pyedpro/tmp")
         self.tts_dir = os.path.expanduser("~/.pyedpro/tts")
         self.plugins_dir  = os.path.expanduser("~/.pyedpro/plugins")

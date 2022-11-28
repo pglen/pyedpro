@@ -324,9 +324,9 @@ def mainstart(name = "", args = "", oldpath = ""):
             try:
                 if pedconfig.conf.verbose:
                     print( PROGNAME, "Loading sess/project", aa[1])
-                pname = pedconfig.conf.sess_data + os.sep + aa[1]
+                pname = pedconfig.conf.sess_dir + os.sep + aa[1]
                 if not os.path.isfile(pname):
-                    pname = pedconfig.conf.sess_data + os.sep + aa[1] + ".sess"
+                    pname = pedconfig.conf.sess_dir + os.sep + aa[1] + ".sess"
                     if not os.path.isfile(pname):
                         rrr = True
             except:
