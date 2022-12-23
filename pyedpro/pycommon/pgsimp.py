@@ -456,6 +456,10 @@ class TextViewWin(Gtk.VBox):
         print("Focus out")
     '''
 
+    def on_color_clicked(self, arg1, arg2):
+        print(  "on_color_clicked", arg1, arg2)
+        pass
+
     def _create_toolbar(self):
         toolbar = Gtk.Toolbar()
         self.grid.attach(toolbar, 0, 0, 3, 1)
@@ -477,28 +481,40 @@ class TextViewWin(Gtk.VBox):
         button_underline.set_icon_name("format-text-underline-symbolic")
         toolbar.insert(button_underline, 3)
 
+        button_color = Gtk.ToolButton()
+        button_color.set_icon_name("preferences-desktop")
+        button_color.set_tooltip_text("Set Background Color")
+        button_color.connect("clicked", self.on_color_clicked, 0)
+        toolbar.insert(button_color, 4)
+
+        button_color = Gtk.ToolButton()
+        button_color.set_icon_name("font-x-generic")
+        button_color.set_tooltip_text("Set Font")
+        button_color.connect("clicked", self.on_color_clicked, 0)
+        toolbar.insert(button_color, 5)
+
         button_norm.connect("clicked", self.on_rm_clicked, self.tag_norm)
         button_bold.connect("clicked", self.on_button_clicked, self.tag_bold)
         button_italic.connect("clicked", self.on_button_clicked, self.tag_italic)
         button_underline.connect("clicked", self.on_button_clicked, self.tag_underline)
 
-        toolbar.insert(Gtk.SeparatorToolItem(), 4)
+        toolbar.insert(Gtk.SeparatorToolItem(), 6)
 
         radio_justifyleft = Gtk.RadioToolButton()
         radio_justifyleft.set_icon_name("format-justify-left-symbolic")
-        toolbar.insert(radio_justifyleft, 5)
+        toolbar.insert(radio_justifyleft, 7)
 
         radio_justifycenter = Gtk.RadioToolButton.new_from_widget(radio_justifyleft)
         radio_justifycenter.set_icon_name("format-justify-center-symbolic")
-        toolbar.insert(radio_justifycenter, 6)
+        toolbar.insert(radio_justifycenter, 8)
 
         radio_justifyright = Gtk.RadioToolButton.new_from_widget(radio_justifyleft)
         radio_justifyright.set_icon_name("format-justify-right-symbolic")
-        toolbar.insert(radio_justifyright, 7)
+        toolbar.insert(radio_justifyright, 9)
 
         radio_justifyfill = Gtk.RadioToolButton.new_from_widget(radio_justifyleft)
         radio_justifyfill.set_icon_name("format-justify-fill-symbolic")
-        toolbar.insert(radio_justifyfill, 8)
+        toolbar.insert(radio_justifyfill, 10)
 
         radio_justifyleft.connect(
             "toggled", self.on_justify_toggled, Gtk.Justification.LEFT
@@ -530,8 +546,14 @@ class TextViewWin(Gtk.VBox):
         toolbar.insert(button_search, 12)
 
         button_mag = Gtk.ToolButton()
-        button_mag.set_icon_name("zoom-in-symbolic")
+        button_mag.set_icon_name("zoom-fit-best")
         button_mag.set_tooltip_text("Magnify Font")
+        button_mag.connect("clicked", self.on_zoom_clicked)
+        toolbar.insert(button_mag, 13)
+
+        button_mag = Gtk.ToolButton()
+        button_mag.set_icon_name("zoom-in-symbolic")
+        button_mag.set_tooltip_text("Set larger font")
         button_mag.connect("clicked", self.on_zoom_clicked)
         toolbar.insert(button_mag, 13)
 

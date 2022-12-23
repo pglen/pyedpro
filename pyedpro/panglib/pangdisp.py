@@ -423,18 +423,21 @@ class PangoView(Gtk.Window):
         else:
             text_view.get_window(Gtk.TEXT_WINDOW_TEXT).set_cursor(self.regular_cursor)
 
+# Some globals read: (Pang View Globals):
+
+class pvg():
+
+    buf = None; xstack = None; verbose = False
+    pgdebug = False; show_lexer = False; full_screen = False
+    lstack = None;  fullpath = None; docroot = None
+    got_clock = 0; show_timing = False; second = ""
+    xfull_screen = False; flag = False; show_parse = False
+    emit = False; show_state = False; pane_pos = -1
+
 def main():
-    PangoView()
+    PangoView(pvg)
     Gtk.main()
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
 
