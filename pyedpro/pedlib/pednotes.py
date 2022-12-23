@@ -27,6 +27,12 @@ from    pedlib.pedync import *
 from pycommon.pggui import *
 from pycommon.pgsimp import *
 
+try:
+    sys.path.append('..' + os.sep + ".." )
+    from pydbase import twincore
+except:
+    print("Cannot import twincore")
+
 # ------------------------------------------------------------------------
 
 class pgnotes(Gtk.VBox):
@@ -53,6 +59,12 @@ class pgnotes(Gtk.VBox):
             self.sql = notesql(self.data_dir + os.sep + "peddata.sql")
         except:
             print("Cannot make notes database")
+
+        try:
+            self.core = twincore.TwinCore(self.data_dir + os.sep + "peddata.pydb")
+            #print("core", self.core, self.core.fname)
+        except:
+            print("Cannot make notes py database")
 
         #message("Cannot make notes database")
 
@@ -125,6 +137,11 @@ class pgnotes(Gtk.VBox):
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
+        butt3 = Gtk.Button.new_with_mnemonic("New Item")
+        butt3.connect("pressed", self.newitem)
+        hbox13.pack_start(butt3, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
         butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
         butt3.connect("pressed", self.search)
         hbox13.pack_start(butt3, 0, 0, 2)
@@ -134,27 +151,32 @@ class pgnotes(Gtk.VBox):
         hbox13.pack_start(butt3a, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt3 = Gtk.Button.new_with_mnemonic("New")
-        butt3.connect("pressed", self.newitem)
-        hbox13.pack_start(butt3, 0, 0, 2)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt11 = Gtk.Button.new_with_mnemonic("Del")
+        hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+
+        hbox13a = Gtk.HBox()
+        hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+
+        butt11 = Gtk.Button.new_with_mnemonic("Del Item")
         butt11.connect("pressed", self.delitem)
-        hbox13.pack_start(butt11, 0, 0, 2)
+        hbox13a.pack_start(butt11, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
         butt12 = Gtk.Button.new_with_mnemonic("Export")
         butt12.connect("pressed", self.export)
-        hbox13.pack_start(butt12, 0, 0, 2)
+        hbox13a.pack_start(butt12, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        butt12a = Gtk.Button.new_with_mnemonic("Import")
+        butt12a.connect("pressed", self.importx)
+        hbox13a.pack_start(butt12a, 0, 0, 2)
 
         #butt14 = Gtk.Button.new_with_mnemonic("ExpData")
         #butt14.connect("pressed", self.exportd)
         #hbox13.pack_start(butt14, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label(" "), 0, 0, 0)
 
-        hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+        hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         #butt22 = Gtk.Button.new_with_mnemonic("Save")
         #butt22.connect("pressed", self.save)
@@ -162,6 +184,7 @@ class pgnotes(Gtk.VBox):
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
         self.pack_start(hbox13, 0, 0, 2)
+        self.pack_start(hbox13a, 0, 0, 2)
         self.load()
 
     def  letterfilter(self, letter):
@@ -253,6 +276,21 @@ class pgnotes(Gtk.VBox):
             self.load()
             self.treeview2.sel_last()
 
+    def importx(self, arg):
+        #print("Import")
+        cnt = 0
+        dbsize = self.core.getdbsize()
+        for aa in range(dbsize):
+            ddd = self.core.get_rec(aa)
+            nnn = ddd[0].decode("cp437")
+            ppp = nnn.split(",")
+            ppp[2] = ppp[2][2:-1]               # Remove quotes
+            print(aa, ppp[2])
+            cnt += 1
+
+        #print("imported", cnt, "items")
+        pedconfig.conf.pedwin.update_statusbar("Imported %d items" % cnt);
+
     def export(self, arg):
 
         base = "peddata";  cnt = 0; fff = ""
@@ -337,46 +375,55 @@ class pgnotes(Gtk.VBox):
         self.deftags.foreach(self.ddd, arg)
 
     def savetext(self):
+
+        # testing
         if not self.edview.get_modified():
             return
+
         txt = self.edview.get_text()
-        self._assurelast()
-        self._save(self.lastkey, self.lastsel, txt);
+        #self._assurelast()
+        print("save", self.lastkey, self.lastsel, txt[0:12])
+
+        self.core.verbose = 2
+        self.core.save_data(self.lastsel[0], txt)
+        self.core.verbose = 0
+
+        #self._save(self.lastkey, self.lastsel, txt);
 
         #all = self.edview.get_all()
         #print("serialize", self.edview.textbuffer.get_deserialize_formats())
         #print("str", self.edview.serial_str())
         #print("serialize", self.edview.textbuffer.get_deserialize_formats())
 
-        vv = self.edview.textbuffer
-        startt = vv.get_start_iter(); endd = vv.get_end_iter()
-        while True:
-            prev = startt.copy()
-            nextok = startt.forward_line()
-            ttt = vv.get_text(prev, startt, False)
-            prevc = prev.copy()
-            while True:
-                sss = prevc.get_toggled_tags(True)
-                if sss:
-                    print("tags on toggle", sss)
-                    for cc in sss:
-                        print("cc", cc.get_property("name"))
-                    print("pos", prevc.get_line(), prevc.get_line_offset())
-                beg = prevc.copy()
-                nextokc = prevc.forward_char()
-                if not nextokc:
-                    break
-                if startt == prevc:
-                    break
-                chh = vv.get_text(beg, prevc, False)
-                print(chh, end="")
-
-            #print("tags", prev.get_tags())
-            #print("line:", ttt, end="")
-            if not nextok:
-                break
-
-        #print("tags:", self.edview.textbuffer.get_tags())
+        #vv = self.edview.textbuffer
+        #startt = vv.get_start_iter(); endd = vv.get_end_iter()
+        #while True:
+        #    prev = startt.copy()
+        #    nextok = startt.forward_line()
+        #    ttt = vv.get_text(prev, startt, False)
+        #    prevc = prev.copy()
+        #    while True:
+        #        sss = prevc.get_toggled_tags(True)
+        #        if sss:
+        #            print("tags on toggle", sss)
+        #            for cc in sss:
+        #                print("cc", cc.get_property("name"))
+        #            print("pos", prevc.get_line(), prevc.get_line_offset())
+        #        beg = prevc.copy()
+        #        nextokc = prevc.forward_char()
+        #        if not nextokc:
+        #            break
+        #        if startt == prevc:
+        #            break
+        #        chh = vv.get_text(beg, prevc, False)
+        #        print(chh, end="")
+        #
+        #    #print("tags", prev.get_tags())
+        #    #print("line:", ttt, end="")
+        #    if not nextok:
+        #        break
+        #
+        ##print("tags:", self.edview.textbuffer.get_tags())
 
 
     def _save(self, keyx, valx, txt):
@@ -398,57 +445,90 @@ class pgnotes(Gtk.VBox):
     def treechange(self, args):
         # Old entry
         print("treechange", args)
-        self.lastsel = args[0][:]
-        # Is there one like this?
-        ddd = self.sql.gethead(args[0])
-        #print("ddd", ddd)
-
-        if ddd:
-            self.lastkey = ddd[1]
-            self.sql.put(self.lastkey, args[0], args[1], args[2])
-        #pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
+        #self.lastsel = args[0][:]
+        ## Is there one like this?
+        #ddd = self.sql.gethead(args[0])
+        ##print("ddd", ddd)
+        #
+        #if ddd:
+        #    self.lastkey = ddd[1]
+        #    self.sql.put(self.lastkey, args[0], args[1], args[2])
+        ##pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
 
     # --------------------------------------------------------------------
 
     def treesel(self, args):
         # Old entry
 
-        #print("lastsel", self.lastsel)
-        #print("newsel", args)
+        print("treesel lastsel", self.lastsel)
+        print("treesel newsel", args)
         #print("lastkey", self.lastkey)
 
-        if self.edview.get_modified():
+        if 1: # self.edview.get_modified():
+            #print("would save text")
             self.savetext()
 
-        ddd = self.sql.gethead(args[0])
-        if ddd:
-            self.lastsel = args[0]
-            self.lastkey = ddd[1]
+        self.lastsel = args
 
-            strx = self.sql.getdata(self.lastkey)
-            self.edview.set_text(strx[0])
+        #ddd = self.sql.gethead(args[0])
+        #if ddd:
+        #    self.lastsel = args[0]
+        #    self.lastkey = ddd[1]
+        #
+        #    strx = self.sql.getdata(self.lastkey)
+        #    self.edview.set_text(strx[0])
+
+        ddd = self.core.findrec(args[0], 1)
+        #print("ddd", ddd)
+        self.edview.set_text(ddd[0][1].decode("cp437"))
 
     def load(self):
         self.lastsel = None; self.lastkey = None
         #self.treeview2.clear()
-        try:
-            datax = self.sql.getall()
-            for aa in datax:
-                bb = aa[2]
-                # Follow 'New Item' count, update it
-                if "New Item" in bb:
-                    try:
-                        cntx = int(bb[9:])
-                        if cntx > self.cnt:
-                            self.cnt = cntx
-                    except:
-                        pass
-                #print(aa)
-                self.treeview2.append(aa[2:5])
-        except:
-            print("Cannot load notes Data.")
+        #try:
+        #    datax = self.sql.getall()
+        #    for aa in datax:
+        #        bb = aa[2]
+        #        # Follow 'New Item' count, update it
+        #        if "New Item" in bb:
+        #            try:
+        #                cntx = int(bb[9:])
+        #                if cntx > self.cnt:
+        #                    self.cnt = cntx
+        #            except:
+        #                pass
+        #        #print(aa)
+        #        self.treeview2.append(aa[2:5])
+        #except:
+        #    print("Cannot load notes Data.")
 
-        self.treeview2.sel_last()
+        datax = []
+        cnt = 0
+        try:
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                ddd = self.core.get_rec(aa)
+                print("ddd", ddd[0])
+                nnn = ddd[0].decode("cp437")
+                ppp = nnn.split(",")
+                if len(ppp) > 1:
+                    qqq = ppp[2][2:-1]               # Remove quotes
+                else:
+                    qqq = nnn
+
+                if qqq not in datax:
+                    datax.append(qqq)
+                    print(aa, qqq)
+                    cnt += 1
+                    self.treeview2.append((qqq, str(cnt), ""))
+
+        except:
+            put_exception("load")
+            print(sys.exc_info())
+            print("Cannot load notes Data at", cnt, qqq)
+
+        #self.treeview2.sel_last()
+        #self.treeview2.sel_first()
 
 # -------------------------------------------------------------------
 
