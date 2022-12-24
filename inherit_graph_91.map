@@ -1,11 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,221,105,246"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,223,105,249"/>
 <area shape="rect" id="node2" href="$classAppDir_1_1pycommon_1_1pggui_1_1FrameTextView.html" title=" " alt="" coords="171,5,373,45"/>
 <area shape="rect" id="node3" href="$classAppDir_1_1pycommon_1_1pgsimp_1_1SimpleEdit.html" title=" " alt="" coords="153,70,391,95"/>
 <area shape="rect" id="node4" href="$classAppImage_1_1pycommon_1_1pggui_1_1FrameTextView.html" title=" " alt="" coords="180,120,364,160"/>
 <area shape="rect" id="node5" href="$classAppImage_1_1pycommon_1_1pgsimp_1_1SimpleEdit.html" title=" " alt="" coords="175,184,369,224"/>
-<area shape="rect" id="node6" href="$classpycommon_1_1pggui_1_1FrameTextView.html" title=" " alt="" coords="165,249,379,274"/>
-<area shape="rect" id="node7" href="$classpycommon_1_1pgsimp_1_1SimpleEdit.html" title=" " alt="" coords="175,298,369,323"/>
-<area shape="rect" id="node8" href="$classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView.html" title=" " alt="" coords="169,348,375,388"/>
-<area shape="rect" id="node9" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleEdit.html" title=" " alt="" coords="181,412,363,452"/>
+<area shape="rect" id="node6" href="$classpycommon_8org_1_1pggui_1_1FrameTextView.html" title=" " alt="" coords="182,248,362,288"/>
+<area shape="rect" id="node7" href="$classpycommon_8org_1_1pgsimp_1_1SimpleEdit.html" title=" " alt="" coords="164,313,380,338"/>
+<area shape="rect" id="node8" href="$classpyedpro_1_1pycommon_1_1pggui_1_1FrameTextView.html" title=" " alt="" coords="169,363,375,403"/>
+<area shape="rect" id="node9" href="$classpyedpro_1_1pycommon_1_1pgsimp_1_1SimpleEdit.html" title=" " alt="" coords="181,427,363,467"/>
 </map>
