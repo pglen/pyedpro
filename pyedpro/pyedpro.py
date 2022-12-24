@@ -179,8 +179,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.1.1"
-BUILDDATE   = "Thu 10.Nov.2022"
+VERSION     = "3.2.0"
+BUILDDATE   = "Fri 23.Dec.2022"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -243,12 +243,13 @@ def xversion():
 def xhelp():
     ''' Offer Help '''
     print()
-    print(PROGNAME, _("Version: "), pedconfig.conf.version)
+    #print(PROGNAME, _("Version:"), pedconfig.conf.version)
+    print(PROGNAME, _("advanced text editor by Peter Glen"))
     print(_("Usage: ") + PROGNAME + _(" [options] [[filename] ... [filename]]"))
     print(_("Option(s):"))
     print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
-    print(_("            -j pname  - Load project (saved session)"))
-    print(_("            -v        - Verbose (to stdout and log)"))
+    print(_("            -j pname  - Load project (pname = saved session name)"))
+    print(_("            -v        - Verbose (to stdout and log) repeat for more verbosity"))
     print(_("            -f        - Start Full screen"))
     print(_("            -c        - Dump Config"))
     print(_("            -o        - Use real stdout (for debug strings)"))
@@ -257,7 +258,7 @@ def xhelp():
     print(_("            -g        - Key log on"))
     print(_("            -k        - Show Keys Presses"))
     print(_("            -t        - Set tracer ON (lots of output)"))
-    print(_("            -h        - Help"))
+    print(_("            -h        - Help (this screen)"))
     print()
     sys.exit(1)
 
@@ -342,11 +343,9 @@ def mainstart(name = "", args = "", oldpath = ""):
         if aa[0] == "-V" or aa[0] == "--version":
             xversion()
         if aa[0] == "-v" or aa[0] == "--verbose":
-            pedconfig.conf.verbose = True
+            pedconfig.conf.verbose += 1
         if aa[0] == "-f":
             pedconfig.conf.full_screen = True
-        if aa[0] == "-v":
-            pedconfig.conf.verbose = True
         if aa[0] == "-g":
             KEYLOG_ON = True
             pedconfig.conf.keylog_on = True

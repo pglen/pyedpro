@@ -21,17 +21,25 @@ from    pedlib.pedui import *
 from    pedlib.pedutil import *
 from    pedlib.pedync import *
 
+from pycommon.pggui import *
+from pycommon.pgsimp import *
+from pycommon.pgtextview import *
+
+#print("pednotes", __file__)
+
 #sys.path.append('..' + os.sep + "pycommon")
 #sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
-
 try:
-    sys.path.append('..' + os.sep + ".." )
+    # This will change once the pydbase is out of dev stage
+    np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + ".." + os.sep + ".."
+    #print(np)
+    sys.path.append(np)
+    #print(sys.path)
+    #print(os.getcwd())
     from pydbase import twincore
 except:
-    print("Cannot import twincore")
+    print("Cannot import twincore", sys.exc_info())
 
 # ------------------------------------------------------------------------
 
@@ -108,7 +116,8 @@ class pgnotes(Gtk.VBox):
 
         vpaned.set_position(300)
 
-        self.edview = pgsimp.TextViewWin()
+        #self.edview = pgsimp.TextViewWin()
+        self.edview =  pgTextView()
         #self.edview.callb = self.savetext
         self.edview.findcall = self.search, self
 
@@ -460,8 +469,8 @@ class pgnotes(Gtk.VBox):
     def treesel(self, args):
         # Old entry
 
-        print("treesel lastsel", self.lastsel)
-        print("treesel newsel", args)
+        #print("treesel lastsel", self.lastsel)
+        #print("treesel newsel", args)
         #print("lastkey", self.lastkey)
 
         if 1: # self.edview.get_modified():
@@ -508,7 +517,7 @@ class pgnotes(Gtk.VBox):
             dbsize = self.core.getdbsize()
             for aa in range(dbsize-1, 0, -1):
                 ddd = self.core.get_rec(aa)
-                print("ddd", ddd[0])
+                #print("ddd", ddd[0])
                 nnn = ddd[0].decode("cp437")
                 ppp = nnn.split(",")
                 if len(ppp) > 1:
@@ -518,7 +527,7 @@ class pgnotes(Gtk.VBox):
 
                 if qqq not in datax:
                     datax.append(qqq)
-                    print(aa, qqq)
+                    #print(aa, qqq)
                     cnt += 1
                     self.treeview2.append((qqq, str(cnt), ""))
 
