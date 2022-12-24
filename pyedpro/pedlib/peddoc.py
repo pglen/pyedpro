@@ -1882,7 +1882,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     def loadfile(self, filename, create = False):
 
         if not self.second:
-            if pedconfig.conf.verbose:
+            if pedconfig.conf.verbose > 1:
                 print("Loading file", filename)
 
         # Is it already loaded? ... activate
@@ -2054,7 +2054,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         try:
             xfile = pedconfig.conf.data_dir + os.sep + hhh + "_" + str(self.currback) + ".bak"
-            if pedconfig.conf.verbose:
+            if pedconfig.conf.verbose > 2:
                 print("Saving backup: ", xfile)
 
             try:

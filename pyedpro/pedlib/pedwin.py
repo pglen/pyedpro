@@ -459,8 +459,10 @@ class EdMainWindow():
             pass
         except:
             print("Cannot load auxiliary notes tab")
+            print(sys.exc_info())
             if pedconfig.conf.verbose:
-                print(sys.exc_info())
+                put_exception("Notes")
+
             if pedconfig.conf.pgdebug > 2:
                 put_exception("Notes")
 
@@ -2419,7 +2421,7 @@ def  initial_load(self2, arg):
                 ss = "/sess_%d" % nnn
                 fff = pedconfig.conf.sql.get_str(ss)
 
-                if pedconfig.conf.verbose:
+                if pedconfig.conf.verbose > 2:
                     print("Loading (initial) file:", fff)
 
                 vpaned = edPane()
