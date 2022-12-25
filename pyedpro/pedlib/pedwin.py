@@ -563,7 +563,8 @@ class EdMainWindow():
         self.newbox = Gtk.HBox()
         self.newbox2 = Gtk.HBox()
 
-        self.num_butts =  6
+        # This many buttons on screen
+        self.num_butts =  www // (1280 // 6)
         self.buttarr = []               # So later we can change labels
         self.newbox.pack_start(Gtk.Label(" "), 0, 0, 0)
         for aa in range(self.num_butts):
