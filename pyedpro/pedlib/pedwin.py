@@ -561,10 +561,12 @@ class EdMainWindow():
 
         obox2 = Gtk.VBox()
         self.newbox = Gtk.HBox()
-        obox2.pack_start(self.newbox, 1, 1, 0)
+        self.newbox2 = Gtk.HBox()
 
+        self.num_butts =  6
         self.buttarr = []               # So later we can change labels
-        for aa in range(12):
+        self.newbox.pack_start(Gtk.Label(" "), 0, 0, 0)
+        for aa in range(self.num_butts):
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
             if not head:
@@ -574,9 +576,16 @@ class EdMainWindow():
             self.buttarr.append(butt)
             #butt.connect("pressed", self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
-        self.newbox2 = Gtk.HBox()
-        obox2.pack_start(self.newbox2, 1, 1, 0)
-        for aa in range(12):
+        self.newbox.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #newscroll = Gtk.ScrolledWindow()
+        combox = Gtk.VBox()
+        combox.pack_start(self.newbox, 1, 1, 1)
+        #newscroll.add(combox)
+        #obox2.pack_start(newscroll, 0, 0, 0)
+        obox2.pack_start(combox, 1, 1, 0)
+
+        self.newbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+        for aa in range(self.num_butts):
             #butt = Gtk.Button("FuncB %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (2, aa))
             if not head:
@@ -586,6 +595,8 @@ class EdMainWindow():
             self.buttarr.append(butt)
             #butt.connect("pressed", self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
+        self.newbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+        combox.pack_start(self.newbox2, 1, 1, 1)
 
         nbox.pack_start(obox2, 1, 1, 0)
         bbox.pack_start(nbox, 0, 0, 0)
