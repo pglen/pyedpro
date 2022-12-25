@@ -196,6 +196,11 @@ class pgnotes(Gtk.VBox):
         self.pack_start(hbox13a, 0, 0, 2)
         self.load()
 
+    def __del__(self):
+        # Did not happen automatically
+        #print("pednotes __del__")
+        self.core.__del__()
+
     def  letterfilter(self, letter):
         self.savetext()
         #print("letterfilter", letter)
