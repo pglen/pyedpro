@@ -13,6 +13,8 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Pango
 
+import pgbox
+
 deftext = "It puzzles me when I see a person lacking fundamentals is \
   able to amass a fortune to the tune of billions. What is even more \
 puzziling is that they beleive their 'BS' and open flout all."
@@ -28,7 +30,8 @@ class MainWin(Gtk.Window):
 
         self.set_title("Test pgTextView")
         self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
-        self.set_default_size(1024, 768)
+        self.set_default_size(800, 600)
+        #self.set_default_size(1024, 768)
         self.connect("destroy", self.OnExit)
 
         #self.connect("key-press-event", self.key_press_event)
@@ -53,7 +56,6 @@ class MainWin(Gtk.Window):
         Gtk.main_quit()
 
 
-
 class pgTextView(Gtk.VBox):
 
     def __init__(self):
@@ -63,7 +65,7 @@ class pgTextView(Gtk.VBox):
         self.grid = Gtk.Grid()
         self.add(self.grid)
 
-        self._create_textview();
+        self._create_textview()
         self._create_toolbar()
         self._create_buttons()
 
@@ -102,6 +104,12 @@ class pgTextView(Gtk.VBox):
         combo_box = pgbox.ComboBox(cont)
         combo_box.show()
 
+    def combo_sel(self, sel):
+        print("sel", sel)
+
+    def combo_sel2(self, sel):
+        print("sel2", sel)
+
     def _create_toolbar(self):
 
         nnn = 0
@@ -126,11 +134,22 @@ class pgTextView(Gtk.VBox):
         button_underline.set_icon_name("format-text-underline-symbolic")
         toolbar.insert(button_underline, nnn)   ; nnn += 1
 
-        button_color = Gtk.ToolButton()
-        button_color.set_icon_name("preferences-desktop")
-        button_color.set_tooltip_text("Set Foreground Color")
-        button_color.connect("clicked", self.on_button_clicked, self.tag_red)
-        toolbar.insert(button_color, nnn)  ; nnn += 1
+        button_sel = Gtk.ToolItem()
+        mmm = ("8", "9", "10", "12", "14")
+        combo = pgbox.ComboBox(mmm, self.combo_sel)
+        #combo.sel_text("12")
+        print("str(self.mysize)", str(self.mysize))
+        combo.sel_text(str(int(self.mysize)))
+
+        button_sel.add(combo)
+        toolbar.insert(button_sel, nnn)  ; nnn += 1
+
+        button_sel2 = Gtk.ToolItem()
+        mmm = ("Black",  "Red", "Green", "Blue", "Gray", "White")
+        combo2 = pgbox.ColorCombo(mmm, self.combo_sel2)
+        combo2.sel_text("Black")
+        button_sel2.add(combo2)
+        toolbar.insert(button_sel2, nnn)  ; nnn += 1
 
         button_color = Gtk.ToolButton()
         button_color.set_icon_name("preferences-desktop")
@@ -266,6 +285,7 @@ class pgTextView(Gtk.VBox):
         myfd = pg.get_font_description()
         self.mysize = myfd.get_size() / Pango.SCALE
         self.myfam = myfd.get_family()
+        print(self.mysize)
 
         #self.textview.set_has_window(True)
 
@@ -273,9 +293,6 @@ class pgTextView(Gtk.VBox):
 
         scrolledwindow.add(self.textview)
 
-        #pg = Gtk.Widget.create_pango_context(self.textview)
-        #myfd = pg.get_font_description()
-        #mysize = myfd.get_size() / Pango.SCALE
         self.tag_regular = self.textbuffer.create_tag("regular", size=self.mysize * Pango.SCALE)
         #self.tag_norm = self.textbuffer.create_tag("norm", weight=20*Pango.SCALE)
         self.tag_xbig = self.textbuffer.create_tag("xbig", size=30*Pango.SCALE)
@@ -548,6 +565,7 @@ class pgTextView2(Gtk.VBox):
         self.textview.modify_font(fd)
 
     def _create_textview(self):
+
         scrolledwindow = Gtk.ScrolledWindow()
         scrolledwindow.set_hexpand(True)
         scrolledwindow.set_vexpand(True)
@@ -555,7 +573,9 @@ class pgTextView2(Gtk.VBox):
 
         self.textview = Gtk.TextView()
         self.textbuffer = self.textview.get_buffer()
+
         #self.textview.set_has_window(True)
+
 
         #self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
 
@@ -568,6 +588,12 @@ class pgTextView2(Gtk.VBox):
         self.tag_underline = self.textbuffer.create_tag("underline", underline=Pango.Underline.SINGLE)
         self.tag_found = self.textbuffer.create_tag("found", background="yellow")
         self.textview.set_wrap_mode(Gtk.WrapMode.WORD)
+
+        pg = Gtk.Widget.create_pango_context(self.textview)
+        myfd = pg.get_font_description()
+        self.myfontsize = myfd.get_size() / Pango.SCALE
+        print("myfontsize", self.myfontsize)
+
 
     def _create_buttons(self):
 
@@ -676,6 +702,7 @@ class pgTextView2(Gtk.VBox):
 
 if __name__ == '__main__':
 
+    print("Start pytextview")
     mainwin = MainWin()
     Gtk.main()
 
