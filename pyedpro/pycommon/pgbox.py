@@ -395,13 +395,15 @@ class   ComboBox(Gtk.ComboBox):
         #cell.set_property("background-set", True)
         cell.set_padding(10, 0)
 
-        if callme:
-            self.connect("changed", callme)
+        self.callme = callme
+        #if callme:
+        #    self.connect("changed", callme)
 
         #cell.set_property("foreground", "#ffff00")
         #cell.set_property("foreground-set", True)
         #print("background-set", cell.get_property("background-set"))
         #print("foreground-set", cell.get_property("foreground-set"))
+
         #print(" list_properties", cell.list_properties())
 
         self.pack_start(cell, True)
@@ -421,10 +423,13 @@ class   ComboBox(Gtk.ComboBox):
                 model = combo.get_model()
                 name = model[tree_iter][0]
                 #print("Selected: name=%s" % (name))
+            if self.callme:
+                self.callme(name)
             else:
                 entry = combo.get_child()
                 name = entry.get_text()
                 #print("Entered: %s" % name)
+
         except:
             pass
 
@@ -471,6 +476,129 @@ class   ComboBox(Gtk.ComboBox):
         model = self.get_model()
         iter = model.get_iter_first()
         self.set_active_iter(iter)
+
+
+# Gtk.TreeView simpler
+
+class   ColorCombo(Gtk.ComboBox):
+
+    def data_func(self):
+        print("data_func calld")
+
+    def __init__(self, init_cont = [], init_colors = [], callme = None):
+
+        self.store = Gtk.ListStore(str)
+        Gtk.ComboBox.__init__(self)
+        self.callme = callme
+
+        self.set_model(self.store)
+        cell = Gtk.CellRendererText()
+
+        Gtk.CellLayout.set_cell_data_func(cell, self.data_func)
+
+        #cell.set_padding(3, 3)
+        #cell.set_property("placeholder_text", "hello")
+
+        #cell.set_property("background-set", True)
+        #cell.set_property("backround-rgba", "red")
+
+        #cell.set_property("foreground", "#ffff00")
+        #cell.set_property("cell-background", "#ffff00")
+
+        #print("background-set", cell.get_property("background-set"))
+        #print("foreground-set", cell.get_property("foreground-set"))
+
+        #cell.set_property("background", "#ffff00")
+        print("cell", cell)
+
+        #print(" list_properties", cell.list_properties())
+
+        self.pack_start(cell, True)
+        self.add_attribute(cell, 'text', 0)
+        self.set_entry_text_column(0)
+
+        for bb in init_cont:
+            self.store.append([bb])
+
+        print("self.GET_MODEL", self.get_model() )
+
+        self.get_model().foreach(self.sss)
+
+        self.connect("changed", self.combo_changed)
+
+    def sss(self, arg, arg2, arg3):
+        #print(arg, arg2, arg3)
+        #print(self.store[arg2], arg3.stamp)
+
+        #for aa in
+        print(dir(self.store[arg2] ))  #.iterchildren())
+        #print(aa)
+
+        print()
+
+
+    def combo_changed(self, combo):
+        name = ""
+        tree_iter = combo.get_active_iter()
+        try:
+            if tree_iter is not None:
+                model = combo.get_model()
+                name = model[tree_iter][0]
+                #print("Selected: name=%s" % (name))
+            if self.callme:
+                    self.callme(name)
+            else:
+                entry = combo.get_child()
+                name = entry.get_text()
+                #print("Entered: %s" % name)
+
+        except:
+            pass
+
+        #print("Combo new selection / entry: '%s'" % name)
+
+    def delall(self):
+         # Delete previous contents
+        try:
+            while True:
+                root = self.store.get_iter_first()
+                if not root:
+                    break
+                try:
+                    self.store.remove(root)
+                except:
+                    print("except: self.store remove")
+        except:
+            print("combo delall", sys.exc_info())
+            pass
+
+    # --------------------------------------------------------------------
+    def  sel_text(self, txt):
+
+        #print("Sel combo text")
+
+        model = self.get_model()
+        iter = model.get_iter_first()
+        if iter:
+            cnt = 0
+            while True:
+
+                #print("entry %d" % cnt, model[iter][0], txt)
+                if  model[iter][0] == txt:
+                    #print("Found %d" % cnt, model[iter][0])
+                    self.set_active_iter(iter)
+                    break
+
+                iter = model.iter_next(iter)
+                if not iter:
+                    break
+                cnt += 1
+
+    def     sel_first(self):
+        model = self.get_model()
+        iter = model.get_iter_first()
+        self.set_active_iter(iter)
+
 
 # ------------------------------------------------------------------------
 # Added convenience methods

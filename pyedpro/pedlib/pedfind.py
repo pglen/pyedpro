@@ -103,7 +103,7 @@ def find(self, self2, replace = False):
     hbox2.pack_start(label7, 0, 0, 0)
 
     dialog.vbox.pack_start(Gtk.Label("Alt_Left / Alt_Right -> History Left/Right"), 0, 0 , 4)
-    dialog.vbox.pack_start(Gtk.Label("Alt_1->'C'Func Alt_2->PyDef Alt_3->AsmLab Alt_4->Def."), 0, 0, 4)
+    dialog.vbox.pack_start(Gtk.Label("Alt_1->C_Func Alt_2->Py_Def Alt_3->Asm_Lab Alt_4->Def"), 0, 0, 4)
 
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
     dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
