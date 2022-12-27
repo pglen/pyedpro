@@ -160,7 +160,6 @@ class pgnotes(Gtk.VBox):
         hbox13.pack_start(butt3a, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         hbox13a = Gtk.HBox()
