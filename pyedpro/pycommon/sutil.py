@@ -19,7 +19,6 @@ scr = disp.get_default_screen()
 #for aa in range(scr.get_n_monitors()):
 #    print( "mon", aa, scr.get_monitor_geometry(aa);)
 
-
 # ------------------------------------------------------------------------
 # Get current screen (monitor) width and height
 
@@ -229,5 +228,99 @@ def yn_key(win, event, cancel):
         if event.keyval == Gdk.KEY_c or \
             event.keyval == Gdk.KEY_C:
             win.response(Gtk.ResponseType.CANCEL)
+
+def opendialog(parent=None):
+
+    # We create an array, so it is passed around by reference
+    fname = [""]
+
+    def makefilter(mask, name):
+        filter =  Gtk.FileFilter.new()
+        filter.add_pattern(mask)
+        filter.set_name(name)
+        return filter
+
+    def done_open_fc(win, resp, fname):
+        #print "done_open_fc", win, resp
+        if resp == Gtk.ButtonsType.OK:
+            fname[0] = win.get_filename()
+            if not fname[0]:
+                #print "Must have filename"
+                pass
+            elif os.path.isdir(fname[0]):
+                os.chdir(fname[0])
+                win.set_current_folder(fname[0])
+                return
+            else:
+                #print("OFD", fname[0])
+                pass
+        win.destroy()
+
+    but =   "Cancel", Gtk.ButtonsType.CANCEL,\
+            "Open File", Gtk.ButtonsType.OK
+
+    fc = Gtk.FileChooserDialog("Open file", parent, \
+         Gtk.FileChooserAction.OPEN  \
+        , but)
+
+    filters = []
+    filters.append(makefilter("*.mup", "MarkUp files (*.py)"))
+    filters.append(makefilter("*.*", "All files (*.*)"))
+
+    if filters:
+        for aa in filters:
+            fc.add_filter(aa)
+
+    fc.set_default_response(Gtk.ButtonsType.OK)
+    fc.set_current_folder(os.getcwd())
+    fc.connect("response", done_open_fc, fname)
+    #fc.connect("current-folder-changed", self.folder_ch )
+    #fc.set_current_name(self.fname)
+    fc.run()
+    #print("OFD2", fname[0])
+    return fname[0]
+
+def savedialog(resp):
+
+    #print "File dialog"
+    fname = [""]   # So it is passed around as a reference
+
+    def makefilter(mask, name):
+        filter =  Gtk.FileFilter.new()
+        filter.add_pattern(mask)
+        filter.set_name(name)
+        return filter
+
+    def done_fc(win, resp, fname):
+        #print( "done_fc", win, resp)
+        if resp == Gtk.ResponseType.OK:
+            fname[0] = win.get_filename()
+            if not fname[0]:
+                print("Must have filename")
+            else:
+                pass
+        win.destroy()
+
+    but =   "Cancel", Gtk.ResponseType.CANCEL,   \
+                    "Save File", Gtk.ResponseType.OK
+    fc = Gtk.FileChooserDialog("Save file as ... ", None,
+            Gtk.FileChooserAction.SAVE, but)
+
+    #fc.set_do_overwrite_confirmation(True)
+
+    filters = []
+    filters.append(makefilter("*.mup", "MarkUp files (*.py)"))
+    filters.append(makefilter("*.*", "All files (*.*)"))
+
+    if filters:
+        for aa in filters:
+            fc.add_filter(aa)
+
+    fc.set_current_name(os.path.basename(fname[0]))
+    fc.set_current_folder(os.path.dirname(fname[0]))
+    fc.set_default_response(Gtk.ResponseType.OK)
+    fc.connect("response", done_fc, fname)
+    fc.run()
+    return fname[0]
 
 # EOF

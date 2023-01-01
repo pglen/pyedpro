@@ -8,6 +8,8 @@ import random, time, subprocess, traceback, glob
 
 import gi
 gi.require_version("Gtk", "3.0")
+gi.require_version('PangoCairo', '1.0')
+
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GLib
@@ -15,8 +17,11 @@ from gi.repository import GObject
 from gi.repository import Pango
 from gi.repository import PangoCairo
 
+import sutil
+
 sys.path.append('..')
 import pycommon.pgutils
+
 
 box_testmode = False
 
@@ -261,7 +266,7 @@ class ListBox(Gtk.TreeView):
     def __init__(self, limit = -1, colname = ''):
 
         self.limit = limit
-        self.treestore = Gtk.TreeStore(str)
+        self.treestore = Gtk.TreeStore(str, str)
         Gtk.TreeView.__init__(self, self.treestore)
 
         cell = Gtk.CellRendererText()
@@ -441,8 +446,14 @@ class   ComboBox(Gtk.ComboBox):
                 model = combo.get_model()
                 name = model[tree_iter][0]
                 #print("Selected: name=%s" % (name))
+
             if self.callme:
-                self.callme(name)
+                try:
+                    self.callme(name)
+                except:
+                    print("Callback:", sys.exc_info())
+                    sutil.print_exception("callb")
+
             else:
                 entry = combo.get_child()
                 name = entry.get_text()
@@ -532,7 +543,9 @@ class   ColorRenderer(Gtk.CellRenderer):
     def do_render(self, cr, widget, background_area, cell_area, expose_area, flags = 0):
         #ccc = str2rgb(self.bgcolor)
         ccc = str2rgba(self.bgcolor)
-        #print("text", self.text, "bgcolor", self.bgcolor, ccc)
+        #avg = (ccc[0] + ccc[1] + ccc[2] ) / 3
+        #print("text", self.text, "bgcolor", self.bgcolor, ccc)  #, "avg", avg)
+
         cr.translate (0, 0)
         layout = PangoCairo.create_layout(cr)
         # ---Note---  changing default
@@ -541,15 +554,20 @@ class   ColorRenderer(Gtk.CellRenderer):
         layout.set_text(self.text)
         cr.save()
         cr.set_source_rgba(*ccc)
+
         cr.rectangle(0, 0, background_area.width, background_area.height)
         cr.fill()
         PangoCairo.update_layout (cr, layout)
 
-        # Make it sensitve to dark / black
-        if ccc[0] < .3 and ccc[1] < .3 and ccc[2] < .3:
-            cr.set_source_rgba (0xff, 0xff, 0xff, 0xff)
-        else:
-            cr.set_source_rgba(0x00, 0x00, 0x00, 0xff)
+        # Make it sensitive to dark / light
+        ddd = []
+        for aa in ccc[:-1]:
+            if aa < .5:
+                ddd.append(1)
+            else:
+                ddd.append(0)
+        ddd.append(1.)
+        cr.set_source_rgba (*ddd)
 
         (pr, lr) = layout.get_extents()
         xx = lr.width / Pango.SCALE; yy = lr.height / Pango.SCALE;
@@ -570,7 +588,7 @@ class   ColorRenderer(Gtk.CellRenderer):
 
 class   ColorCombo(Gtk.ComboBox):
 
-    def __init__(self, init_cont = [], init_colors = [], callme = None):
+    def __init__(self, init_cont = [], callme = None):
 
         self.store = Gtk.ListStore(str, str)
         Gtk.ComboBox.__init__(self)
@@ -578,38 +596,28 @@ class   ColorCombo(Gtk.ComboBox):
 
         self.set_model(self.store)
         cell =  ColorRenderer()
-
-        #cell.font_size = ;
-        #cell.font = "Sans {}".format(cell.font_size)
-
-        cell.set_padding(0, 0)
-
-        #cell.set_property("placeholder_text", "hello")
-        #cell.set_property("background-set", True)
-        #cell.set_property("cell-background", "#ffff00")
-        #cell.set_property("foreground", "#ffff00")
-        #print("background-set", cell.get_property("background-set"))
-        #print("foreground-set", cell.get_property("foreground-set"))
-        #cell.set_property("background", "#ffff00")
+        cell2 =  ColorRenderer()
         #print("cell", cell)
-
         #print(" list_properties", cell.list_properties())
 
         self.pack_start(cell, True)
         self.add_attribute(cell, 'text', 0)
         self.add_attribute(cell, 'bgcolor', 1)
-        self.set_entry_text_column(0)
-
+        #self.set_entry_text_column(0)
+        #self.set_entry_text_column(1)
         #self.set_cell_data_func(cell, self.data_func)
 
         for bb, cc in init_cont:
-            #print(bb, cc)
             self.store.append((bb, cc))
 
         #print("self.GET_MODEL", self.get_model() )
         #self.get_model().foreach(self.printdetails)
 
         self.connect("changed", self.combo_changed)
+        #self.connect("notify::popup-shown", self.combo_focus)
+
+    def combo_focus(self, arg1, arg2):
+        print("Focus", arg1, arg2)
 
     #def data_func(self, arg1, arg2, arg3, arg4):
     '''def data_func(self, column, renderer, model, iter):
@@ -630,15 +638,22 @@ class   ColorCombo(Gtk.ComboBox):
         print()
 
     def combo_changed(self, combo):
+        #print("combo_changed")
         name = ""
         tree_iter = combo.get_active_iter()
         try:
             if tree_iter is not None:
                 model = combo.get_model()
                 name = model[tree_iter][0]
-                #print("Selected: name=%s" % (name))
+
+                if box_testmode:
+                    print("Selected: name=%s" % (name))
+
             if self.callme:
+                try:
                     self.callme(name)
+                except:
+                    print("Color sel callback", sys.exc_info())
             else:
                 entry = combo.get_child()
                 name = entry.get_text()
