@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-#from __future__ import absolute_import, print_function
-
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings, uuid, copy
 
@@ -61,12 +59,12 @@ class pgnotes(Gtk.VBox):
         except:
             print("Cannot make notes data dir")
 
-        try:
-            if pedconfig.conf.verbose:
-                print(self.data_dir + os.sep + "peddata.sql")
-            self.sql = notesql(self.data_dir + os.sep + "peddata.sql")
-        except:
-            print("Cannot make notes database")
+        #try:
+        #    if pedconfig.conf.verbose:
+        #        print(self.data_dir + os.sep + "peddata.sql")
+        #    self.sql = notesql(self.data_dir + os.sep + "peddata.sql")
+        #except:
+        #    print("Cannot make notes database")
 
         try:
             self.core = twincore.TwinCore(self.data_dir + os.sep + "peddata.pydb")
@@ -135,7 +133,7 @@ class pgnotes(Gtk.VBox):
 
         self.deftags = self.edview.textbuffer.get_tag_table()
 
-        self.pack_start(Gtk.Label(label="Font formatting is not preserved yet."), 0, 0, 0)
+        self.pack_start(Gtk.Label(label="Font formatting is work in progress."), 0, 0, 0)
         frame4 = Gtk.Frame();
         frame4.set_border_width(3)
         frame4.add(self.edview)
@@ -202,14 +200,14 @@ class pgnotes(Gtk.VBox):
 
     def  letterfilter(self, letter):
         self.savetext()
-        #print("letterfilter", letter)
-        if letter == "All":
-            self.load()
-        else:
-            aaa = self.sql.findhead(letter + "%")
-            self.treeview2.clear()
-            for aa in aaa:
-                self.treeview2.append(aa[2:5])
+        ##print("letterfilter", letter)
+        #if letter == "All":
+        #    self.load()
+        #else:
+        #    aaa = self.sql.findhead(letter + "%")
+        #    self.treeview2.clear()
+        #    for aa in aaa:
+        #        self.treeview2.append(aa[2:5])
 
     def searchall(self, arg):
         self.savetext()
@@ -222,15 +220,16 @@ class pgnotes(Gtk.VBox):
         dlg.destroy()
         self.treeview2.clear()
         try:
-            datax = self.sql.getall()
-            for aa in datax:
-                #print(aa)
-                ddd = self.sql.getdata(aa[1])
-                #print("ddd", ddd)
-                if txt in ddd[0]:
-                    #print("    ", ddd)
-                    self.treeview2.append(aa[2:5])
-                    continue
+            #datax = self.sql.getall()
+            #for aa in datax:
+            #    #print(aa)
+            #    ddd = self.sql.getdata(aa[1])
+            #    #print("ddd", ddd)
+            #    if txt in ddd[0]:
+            #        #print("    ", ddd)
+            #        self.treeview2.append(aa[2:5])
+            #        continue
+            pass
         except:
             print("exc in search ", sys.exc_info())
 
@@ -267,12 +266,15 @@ class pgnotes(Gtk.VBox):
 
         self.treeview2.append(itemx)
         self.treeview2.sel_last()
-        self.edview.set_text("")
+        newtext = "Enter text here";
+        self.edview.set_text(newtext)
         #usleep(10)
         key = str(uuid.uuid4())
-        self.sql.put(key, itemx[0], itemx[1], itemx[2])
-        self.lastsel = None
-        self._assurelast()
+        #self.sql.put(key, itemx[0], itemx[1], itemx[2])
+        self.core.save_data(ttt, newtext)
+
+        #self.lastsel = None
+        #self._assurelast()
 
     def delitem(self, arg):
         #print ("delitem", self.lastkey, self.lastsel)
@@ -283,11 +285,12 @@ class pgnotes(Gtk.VBox):
 
         rrr = yes_no_cancel("   Delete Item ?   ", str(self.lastsel), False)
         if rrr == Gtk.ResponseType.YES:
-            self.sql.rmone(self.lastkey)
-            self.sql.rmonedata(self.lastkey)
-            self.treeview2.clear()
-            self.load()
-            self.treeview2.sel_last()
+            #self.sql.rmone(self.lastkey)
+            #self.sql.rmonedata(self.lastkey)
+            #self.treeview2.clear()
+            #self.load()
+            #self.treeview2.sel_last()
+            pass
 
     def importx(self, arg):
         #print("Import")
@@ -321,18 +324,36 @@ class pgnotes(Gtk.VBox):
             pedconfig.conf.pedwin.update_statusbar("Cannot export notes")
             return
 
-        datax = self.sql.getall()
-        for aa in datax:
-            #print(aa)
-            ddd = self.sql.getdata(aa[1])
-            #print("ddd", ddd)
+        #datax = self.sql.getall()
+        #for aa in datax:
+        #    #print(aa)
+        #    ddd = self.sql.getdata(aa[1])
+        #    #print("ddd", ddd)
+        #    try:
+        #       fp.write("\n ------------------------------------------------------------------\n")
+        #       fp.write(str(aa))
+        #       fp.write("\n ------------------------------------------------------------------\n")
+        #       fp.write(str(ddd[0]) + "\n")
+        #    except:
+        #        print("exc in export ", ddd, sys.exc_info())
+
+        try:
+            datax = []
+            cnt = 0
             try:
-               fp.write("\n ------------------------------------------------------------------\n")
-               fp.write(str(aa))
-               fp.write("\n ------------------------------------------------------------------\n")
-               fp.write(str(ddd[0]) + "\n")
+                dbsize = self.core.getdbsize()
+                for aa in range(dbsize-1, 0, -1):
+                    ddd = self.core.get_rec(aa)
+                    #print("Item", type(ddd[0]), ddd[0], "Data:", ddd[1][:16] + b" ..." )
+                    fp.write("\n ------------------------------------------------------------------\n")
+                    fp.write(str(ddd))
+                    fp.write("\n ------------------------------------------------------------------\n")
             except:
-                print("exc in export ", ddd, sys.exc_info())
+                print("Cannot backup record\n", aa);
+
+        except:
+            print("Cannot backup database\n");
+
         fp.close()
         pedconfig.conf.pedwin.update_statusbar("Exported notes to %s" % os.path.basename(fff))
 
@@ -344,12 +365,12 @@ class pgnotes(Gtk.VBox):
         if not self.edit.get_text():
             self.load()
             return
-        aaa = self.sql.findhead("%" + self.edit.get_text() + "%")
-        #print("all", aaa)
-        self.treeview2.clear()
-        for aa in aaa:
-            #print("aa", aa)
-            self.treeview2.append(aa[2:5])
+        #aaa = self.sql.findhead("%" + self.edit.get_text() + "%")
+        ##print("all", aaa)
+        #self.treeview2.clear()
+        #for aa in aaa:
+        #    #print("aa", aa)
+        #    self.treeview2.append(aa[2:5])
 
     def _assurelast(self):
         if not self.lastsel:
@@ -393,65 +414,15 @@ class pgnotes(Gtk.VBox):
         if not self.edview.get_modified():
             return
 
-        txt = self.edview.get_text()
+        #txt = self.edview.get_text()
+        txt = self.edview.ser_buff()
+
         #self._assurelast()
         print("save", self.lastkey, self.lastsel, txt[0:12])
 
-        self.core.verbose = 2
+        #self.core.verbose = 2
         self.core.save_data(self.lastsel[0], txt)
-        self.core.verbose = 0
-
-        #self._save(self.lastkey, self.lastsel, txt);
-
-        #all = self.edview.get_all()
-        #print("serialize", self.edview.textbuffer.get_deserialize_formats())
-        #print("str", self.edview.serial_str())
-        #print("serialize", self.edview.textbuffer.get_deserialize_formats())
-
-        #vv = self.edview.textbuffer
-        #startt = vv.get_start_iter(); endd = vv.get_end_iter()
-        #while True:
-        #    prev = startt.copy()
-        #    nextok = startt.forward_line()
-        #    ttt = vv.get_text(prev, startt, False)
-        #    prevc = prev.copy()
-        #    while True:
-        #        sss = prevc.get_toggled_tags(True)
-        #        if sss:
-        #            print("tags on toggle", sss)
-        #            for cc in sss:
-        #                print("cc", cc.get_property("name"))
-        #            print("pos", prevc.get_line(), prevc.get_line_offset())
-        #        beg = prevc.copy()
-        #        nextokc = prevc.forward_char()
-        #        if not nextokc:
-        #            break
-        #        if startt == prevc:
-        #            break
-        #        chh = vv.get_text(beg, prevc, False)
-        #        print(chh, end="")
-        #
-        #    #print("tags", prev.get_tags())
-        #    #print("line:", ttt, end="")
-        #    if not nextok:
-        #        break
-        #
-        ##print("tags:", self.edview.textbuffer.get_tags())
-
-
-    def _save(self, keyx, valx, txt):
-        #print("saving text", keyx, valx, "--",  txt)
-        try:
-            oldtext = self.sql.getdata(keyx)
-            #print("oldtext", oldtext)
-            if oldtext:
-                self.sql.putlog(keyx, oldtext[0], oldtext[1], "")
-        except:
-            print("except:", sys.exc_info())
-
-        self.sql.putdata(keyx,  txt, "", "")
-
-        pedconfig.conf.pedwin.update_statusbar("Saved note '%s'" % keyx);
+        #self.core.verbose = 0
 
     # --------------------------------------------------------------------
 
@@ -477,9 +448,9 @@ class pgnotes(Gtk.VBox):
         #print("treesel newsel", args)
         #print("lastkey", self.lastkey)
 
-        if 1: # self.edview.get_modified():
-            #print("would save text")
-            self.savetext()
+        if self.edview.get_modified():
+            print("would save text")
+            miself.savetext()
 
         self.lastsel = args
 
@@ -492,49 +463,60 @@ class pgnotes(Gtk.VBox):
         #    self.edview.set_text(strx[0])
 
         ddd = self.core.findrec(args[0], 1)
-        #print("ddd", ddd)
-        self.edview.set_text(ddd[0][1].decode("cp437"))
+        print("ddd", type(ddd), ddd)
+        #print(b"'" + ddd[0][1][:3]) + b"'"
+
+        try:
+            # See what kind it is
+            if ddd[0][1][:3] == b"GTK":
+                self.edview.set_text("")
+                print("deser", ddd[0][1])
+                self.edview.deser_buff(ddd[0][1])
+            else:
+                print("load", ddd[0][1])
+                self.edview.set_text(ddd[0][1].decode("cp437"))
+
+            self.edview.set_modified(0)
+
+        except:
+            print(sys.exc_info())
+            pass
 
     def load(self):
-        self.lastsel = None; self.lastkey = None
-        #self.treeview2.clear()
-        #try:
-        #    datax = self.sql.getall()
-        #    for aa in datax:
-        #        bb = aa[2]
-        #        # Follow 'New Item' count, update it
-        #        if "New Item" in bb:
-        #            try:
-        #                cntx = int(bb[9:])
-        #                if cntx > self.cnt:
-        #                    self.cnt = cntx
-        #            except:
-        #                pass
-        #        #print(aa)
-        #        self.treeview2.append(aa[2:5])
-        #except:
-        #    print("Cannot load notes Data.")
 
+        ''' Load from file;
+            This is more complex than it should be ... dealing with old data
+        '''
+
+        self.lastsel = None; self.lastkey = None
         datax = []
-        cnt = 0
         try:
             dbsize = self.core.getdbsize()
             for aa in range(dbsize-1, 0, -1):
                 ddd = self.core.get_rec(aa)
-                #print("ddd", ddd[0])
-                nnn = ddd[0].decode("cp437")
-                ppp = nnn.split(",")
+                #print("Item:", ddd[0], "Data:", ddd[1][:16] + b" ..." )
+                try:
+                    ppp = ddd[0].split(b",")
+                except:
+                    print("Cannot split",sys.exc_info(), ddd[0])
+                    ppp = ddd[0]
+
                 if len(ppp) > 1:
-                    qqq = ppp[2][2:-1]               # Remove quotes
+                    qqq = ppp[2]            # Old data
                 else:
-                    qqq = nnn
+                    qqq = ppp[0]               # New data
+
+                #print("qqq", qqq)
+                qqq = qqq.decode("cp437").strip()
+
+                # remove quotes
+                if qqq[0] == '\'':
+                    qqq = qqq[1:-1]
 
                 if qqq not in datax:
                     datax.append(qqq)
                     #print(aa, qqq)
-                    cnt += 1
-                    self.treeview2.append((qqq, str(cnt), ""))
-
+                    self.treeview2.append((qqq, "", ""))
         except:
             put_exception("load")
             print(sys.exc_info())
@@ -543,423 +525,4 @@ class pgnotes(Gtk.VBox):
         #self.treeview2.sel_last()
         #self.treeview2.sel_first()
 
-# -------------------------------------------------------------------
-
-class notesql():
-
-    def __init__(self, file):
-
-        #self.take = 0
-        self.errstr = ""
-        try:
-            self.conn = sqlite3.connect(file)
-        except:
-            print("Cannot open/create db:", file, sys.exc_info())
-            pedconfig.conf.pedwin.update_statusbar("Cannot open/create the database.");
-            return
-        try:
-            self.c = self.conn.cursor()
-            # Create table
-            self.c.execute("create table if not exists notes \
-             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
-            self.c.execute("create index if not exists knotes on notes (key)")
-            self.c.execute("create index if not exists pnotes on notes (pri)")
-            self.c.execute("create table if not exists notedata \
-             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
-            self.c.execute("create index if not exists knotedata on notedata (key)")
-            self.c.execute("create index if not exists pnotedata on notedata (pri)")
-
-            self.c.execute("PRAGMA synchronous=OFF")
-            # Save (commit) the changes
-            self.conn.commit()
-        except:
-            print("Cannot insert sql data", sys.exc_info())
-            self.errstr = "Cannot insert sql data" + str(sys.exc_info())
-
-        try:
-            self.c.execute("create table if not exists logs \
-             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
-            self.c.execute("create index if not exists klog on logs (key)")
-            self.c.execute("create index if not exists plog on logs (pri)")
-            self.c.execute("create table if not exists logdata \
-             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
-            self.c.execute("create index if not exists klogdata on logdata (key)")
-            self.c.execute("create index if not exists plogdata on logdata (pri)")
-        except:
-            print("Cannot create log table ", sys.exc_info())
-            self.errstr = "Cannot create log table " + str(sys.exc_info())
-
-        finally:
-            # We close the cursor, we are done with it
-            #c.close()
-            pass
-
-    # --------------------------------------------------------------------
-    # Return None if no data
-
-    def   get(self, kkk):
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from notes where key = ?", (kkk,))
-            else:
-                self.c.execute("select * from notes indexed by knotes where key = ?", (kkk,))
-            rr = self.c.fetchone()
-        except:
-            print("Cannot get sql data", sys.exc_info())
-            rr = None
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-
-        finally:
-            #c.close
-            pass
-        return rr
-
-    def   gethead(self, vvv):
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from notes where val = ?", (vvv,))
-            else:
-                self.c.execute("select * from notes indexed by knotes where val = ?", (vvv,))
-            rr = self.c.fetchone()
-        except:
-            print("Cannot get sql data", sys.exc_info())
-            rr = None
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-
-        finally:
-            #c.close
-            pass
-
-        return rr
-
-    def   findhead(self, vvv):
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from notes where val like ?", (vvv,))
-            else:
-                self.c.execute("select * from notes indexed by knotes where val like ?", (vvv,))
-            rr = self.c.fetchall()
-        except:
-            print("Cannot get sql data", sys.exc_info())
-            rr = None
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-
-        finally:
-            #c.close
-            pass
-        return rr
-
-    def   getdata(self, kkk):
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from notedata where key = ?", (kkk,))
-            else:
-                self.c.execute("select * from notedata indexed by knotedata where key = ?", (kkk,))
-            rr = self.c.fetchone()
-        except:
-            print("Cannot get sql data", sys.exc_info())
-            rr = None
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-
-        finally:
-            #c.close
-            pass
-        if rr:
-            return (rr[2], rr[3], rr[4])
-        else:
-            return ("",)
-
-    # --------------------------------------------------------------------
-    # Return False if cannot put data
-
-    def   put(self, key, val, val2, val3):
-
-        #got_clock = time.clock()
-
-        ret = True
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from notes where key = ?", (key,))
-            else:
-                self.c.execute("select * from notes indexed by knotes where key = ?", (key,))
-            rr = self.c.fetchall()
-            if rr == []:
-                #print "inserting"
-                self.c.execute("insert into notes (key, val, val2, val3) \
-                    values (?, ?, ?, ?)", (key, val, val2, val3))
-            else:
-                #print "updating"
-                if os.name == "nt":
-                    self.c.execute("update notes \
-                                set val = ? val2 = ?, val3 = ? where key = ?", \
-                                      (val, val2, val3, key))
-                else:
-                    self.c.execute("update notes indexed by knotes \
-                                set val = ?, val2 = ?, val3 = ? where key = ?",\
-                                     (val, val2, val3, key))
-            self.conn.commit()
-        except:
-            print("Cannot put sql data", sys.exc_info())
-            self.errstr = "Cannot put sql data" + str(sys.exc_info())
-            ret = False
-        finally:
-            #c.close
-            pass
-
-        #self.take += time.clock() - got_clock
-
-        return ret
-
-    # --------------------------------------------------------------------
-    # Return False if cannot put data
-
-    def   putdata(self, key, val, val2, val3):
-
-        #got_clock = time.clock()
-
-        ret = True
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from notedata where key == ?", (key,))
-            else:
-                self.c.execute("select * from notedata indexed by knotedata where key = ?", (key,))
-            rr = self.c.fetchall()
-            if rr == []:
-                #print "inserting"
-                self.c.execute("insert into notedata (key, val, val2, val3) \
-                    values (?, ?, ?, ?)", (key, val, val2, val3))
-            else:
-                #print "updating"
-                if os.name == "nt":
-                    self.c.execute("update notedata \
-                                set val = ? val2 = ?, val3 = ? where key = ?", \
-                                      (val, val2, val3, key))
-                else:
-                    self.c.execute("update notedata indexed by knotedata \
-                                set val = ?, val2 = ?, val3 = ? where key = ?",\
-                                     (val, val2, val3, key))
-            self.conn.commit()
-        except:
-            print("Cannot put sql data", sys.exc_info())
-            self.errstr = "Cannot put sql data" + str(sys.exc_info())
-            ret = False
-        finally:
-            #c.close
-            pass
-
-        #self.take += time.clock() - got_clock
-
-        return ret
-
-    # --------------------------------------------------------------------
-    # Return False if cannot put data
-
-    def   putlog(self, key, val, val2, val3):
-
-        #got_clock = time.clock()
-
-        ret = True
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from logdata where key == ?", (key,))
-            else:
-                self.c.execute("select * from logdata indexed by klogdata where key = ?", (key,))
-            rr = self.c.fetchall()
-            if rr == []:
-                #print "inserting"
-                self.c.execute("insert into logdata (key, val, val2, val3) \
-                    values (?, ?, ?, ?)", (key, val, val2, val3))
-            else:
-                #print "updating"
-                if os.name == "nt":
-                    self.c.execute("update logdata \
-                                set val = ? val2 = ?, val3 = ? where key = ?", \
-                                      (val, val2, val3, key))
-                else:
-                    self.c.execute("update logdata indexed by klogdata \
-                                set val = ?, val2 = ?, val3 = ? where key = ?",\
-                                     (val, val2, val3, key))
-            self.conn.commit()
-        except:
-            print("Cannot put sql log data", sys.exc_info())
-            self.errstr = "Cannot put sql log data" + str(sys.exc_info())
-            ret = False
-        finally:
-            #c.close
-            pass
-
-        #self.take += time.clock() - got_clock
-
-        return ret
-
-    # --------------------------------------------------------------------
-    # Get All
-
-    def   getall(self):
-
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("select * from notes")
-            rr = self.c.fetchall()
-        except:
-            rr = []
-            print("Cannot get all sql data", sys.exc_info())
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        return rr
-
-    def   getalldata(self):
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("select * from notedata")
-            rr = self.c.fetchall()
-        except:
-            rr = []
-            print("Cannot get all sql data", sys.exc_info())
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        return rr
-
-    def   rmone(self, key):
-        #print("removing one '%s'" % key)
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("delete from notes where key = ?", (key,))
-            self.conn.commit()
-            rr = self.c.fetchone()
-        except:
-            rr = []
-            print("Cannot delete sql data", sys.exc_info())
-            self.errstr = "Cannot delete sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        return rr
-
-    def   rmonedata(self, key):
-        #print("removing one data '%s'" % key)
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("delete from notedata where key = ?", (key,))
-            self.conn.commit()
-            rr = self.c.fetchone()
-        except:
-            rr = []
-            print("Cannot delete sql data", sys.exc_info())
-            self.errstr = "Cannot delete sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        return rr
-
-# --------------------------------------------------------------------
-    # Return None if no data
-
-    def   rmall(self):
-        print("removing all")
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("delete from notes")
-            rr = self.c.fetchone()
-        except:
-            print("Cannot delete sql data", sys.exc_info())
-            self.errstr = "Cannot delete sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        if rr:
-            return rr[1]
-        else:
-            return None
-
-    def   rmalldata(self):
-        print("removing all")
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("delete from notedata")
-            rr = self.c.fetchone()
-        except:
-            print("Cannot delete sql data", sys.exc_info())
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        if rr:
-            return rr[1]
-        else:
-            return None
-
-class SearchDialog(Gtk.Dialog):
-
-    def __init__(self, parent = None):
-        Gtk.Dialog.__init__(
-            self, title=" Search ", transient_for=parent, modal=True,
-        )
-        self.add_buttons(
-            Gtk.STOCK_FIND,
-            Gtk.ResponseType.OK,
-            Gtk.STOCK_CANCEL,
-            Gtk.ResponseType.CANCEL,
-        )
-        self.set_default_response(Gtk.ResponseType.OK)
-        box = self.get_content_area()
-
-        #label = Gtk.Label(label="  Enter text you want to search for:  ")
-        label = Gtk.Label(label="   ")
-        box.add(label)
-
-        self.hbox = Gtk.HBox()
-        self.hbox.pack_start(Gtk.Label(label="   Search for:  "), 0, 0, 0)
-        self.entry = Gtk.Entry()
-        self.entry.set_activates_default(True)
-        self.hbox.pack_start(self.entry, 1, 1, 0)
-        self.hbox.pack_start(Gtk.Label(label="            "), 0, 0, 0)
-
-        box.add(self.hbox)
-
-        #box.add(self.entry)
-        self.show_all()
-
-
-class HeadDialog(Gtk.Dialog):
-    def __init__(self, initstr, parent = None):
-        Gtk.Dialog.__init__(
-            self, title="Name for Note", transient_for=parent, modal=True,
-        )
-        self.add_buttons(
-            Gtk.STOCK_OK,
-            Gtk.ResponseType.OK,
-            Gtk.STOCK_CANCEL,
-            Gtk.ResponseType.CANCEL,
-        )
-        self.set_default_response(Gtk.ResponseType.OK)
-
-        box = self.get_content_area()
-        label = Gtk.Label(label="        ")
-        box.add(label)
-
-        self.entry = Gtk.Entry()
-        self.entry.set_text(initstr)
-        self.entry.set_activates_default(True)
-
-        self.hbox = Gtk.HBox()
-        self.hbox.pack_start(Gtk.Label(label="   Note Header:  "), 0, 0, 0)
-        self.hbox.pack_start(self.entry, 1, 1, 0)
-        self.hbox.pack_start(Gtk.Label(label="                 "), 0, 0, 0)
-
-        box.add(self.hbox)
-        self.show_all()
-
 # EOF
-
