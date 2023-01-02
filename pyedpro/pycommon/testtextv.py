@@ -15,7 +15,6 @@ import os, sys, getopt, signal, random, time, warnings
 import pgutils
 import pgtextview
 
-
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -33,7 +32,8 @@ import sutil
 
 # The pango example text
 
-deftext = '''
+deftext = \
+'''
 Text sizes: <span size="xx-small">tiny</span> <span size="x-small">very small</span> <span size="small">small</span> <span size="medium">normal</span> <span size="large">large</span> <span size="x-large">very large</span> <span size="xx-large">huge</span>
 Text <span color="gray">c<span color="green">o</span>l<span color="tomato">o</span>rs</span> and <span background="pink">backgrounds</span>
 Colorful <span underline="low" underline-color="blue"><span underline="double" underline-color="red">under</span>lines</span> and <span background="pink"><span underline="error">mo</span><span underline="error" underline-color="green">re</span></span>

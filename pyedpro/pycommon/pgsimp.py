@@ -108,6 +108,20 @@ class   SimpleTree(Gtk.TreeView):
         #print("append", args)
         piter = self.treestore.append(None, args)
 
+    def insert(self, parent, pos, args):
+        #print("insert", parent, pos, args)
+        piter = self.treestore.insert(parent, pos, args)
+
+    def sel_first(self):
+        #print("sel first ...")
+        sel = self.get_selection()
+        xmodel, xiter = sel.get_selected()
+        iter = self.treestore.get_iter_first()
+        sel.select_iter(iter)
+        ppp = self.treestore.get_path(iter)
+        self.scroll_to_cell(ppp, None, 0, 0, 0 )
+        self.set_cursor(ppp, self.get_column(0), False)
+
     def sel_last(self):
         #print("sel last ...")
         sel = self.get_selection()
@@ -124,11 +138,32 @@ class   SimpleTree(Gtk.TreeView):
         ppp = self.treestore.get_path(iter)
         self.scroll_to_cell(ppp, None, 0, 0, 0 )
         self.set_cursor(ppp, self.get_column(0), False)
-
         #sel.select_path(self.treestore.get_path(iter))
+
+    def find_item(self, item):
+
+        ''' find if we already have an item like that '''
+
+        #print("find", item)
+        found = 0
+        iter = self.treestore.get_iter_first()
+        if not iter:
+            return
+        while True:
+            value = self.treestore.get_value(iter, 0)
+            #print("item:", value)
+            if item == value:
+                found = True
+                break
+            iter2 = self.treestore.iter_next(iter)
+            if not iter2:
+                break
+            iter = iter2.copy()
+        return found
 
     def clear(self):
         self.treestore.clear()
+
 
 # ------------------------------------------------------------------------
 
