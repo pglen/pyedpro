@@ -532,11 +532,11 @@ class pgTextView(Gtk.VBox):
         txt = self.textbuffer.get_text(startt, endd, False)
         return txt
 
-    def get_all(self):
-        print("Get_all called")
-        startt = self.buffer.get_start_iter()
-        endd = self.buffer.get_end_iter()
-        return self.buffer.get_text(startt, endd, True)
+    #def get_all(self):
+    #    print("Get_all called")
+    #    startt = self.buffer.get_start_iter()
+    #    endd = self.buffer.get_end_iter()
+    #    return self.buffer.get_text(startt, endd, True)
 
     def  get_modified(self):
         return self.textbuffer.get_modified()

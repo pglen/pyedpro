@@ -155,7 +155,7 @@ def about_key(win, event):
 # ------------------------------------------------------------------------
 # Show a regular message:
 
-def message(strx, title = None):
+def message(strx, title = None, parent = None):
 
     #print("called: message()", strx)
 
@@ -165,7 +165,13 @@ def message(strx, title = None):
 
     dialog.props.text = strx
 
-    dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
+    try:
+        if parent:
+            dialog.set_transient_for(parent)
+        else:
+            dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
+    except:
+        print(sys.exc_info())
 
     if title:
         dialog.set_title(title)

@@ -998,7 +998,7 @@ class EdMainWindow():
         for fff in str.split(sesslist, "\n"):
             #print ("Session opening file:", "'" + fff + "'")
             pedconfig.conf.pedwin.openfile(fff)
-            usleep(30)
+            usleep(10)
 
     # --------------------------------------------------------------------
     # Add MRU
@@ -2079,7 +2079,7 @@ class EdMainWindow():
         self.update_statusbar("%d of %d buffers saved." % (cnt2, nn))
 
     def start_term(self):
-        print("Terminal Here")
+        #print("Terminal Here")
         exename = ""
         try:
             if platform.system().find("Win") >= 0:
@@ -2260,7 +2260,7 @@ def     OnExit(arg, arg2 = False, prompt = True):
     #    arg2.stopthread = True
 
     # This way the header shows what is happening
-    usleep(400)
+    usleep(200)
 
     # Close log
     if pedconfig.conf.pedwin.klfp:
@@ -2421,7 +2421,7 @@ def  initial_load(self2, arg):
             cnt += 1
             add_page(vpaned)
             vpaned.area.set_tablabel()
-            usleep(100)
+            usleep(50)
 
         if cnt == 0:
             if pedconfig.conf.verbose:

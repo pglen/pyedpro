@@ -259,38 +259,79 @@ class pgnotes(Gtk.VBox):
         if ret != Gtk.ResponseType.OK:
             rrr.destroy()
             return
+
         ttt = rrr.entry.get_text()
         rrr.destroy()
+        #print("store", self.treeview2.treestore)
+
+        ret = self.treeview2.find_item(ttt)
+        if ret:
+
+            try:
+
+                rootwin = self.get_root_window()
+                xxx, yyy = rootwin.get_root_coords(0, 0)
+                xxxx, yyyy = rootwin.get_root_origin()
+                print("root",  xxx, yyy, xxxx, yyyy)
+
+                windowx = self.get_window()
+                xxx, yyy = windowx.get_root_coords(0, 0)
+                xxxx, yyyy = windowx.get_root_origin()
+                print("this",  xxx, yyy, xxxx, yyyy)
+
+                #Gdk.Window
+                windowx = self.get_window()
+                xx, yy = windowx.get_position()
+                print("window", windowx, xx, yy,)
+
+                #xx, yy = self.get_pointer()
+                #print(xx, yy)
+
+                #rrr = self.get_allocation()
+                #print(rrr.x, rrr.y, rrr.width, rrr.height)
+                    #pos = self.get_parent().get_parent().get_position()
+                #print("pos", pos)
+                pass
+
+            except:
+                print(sys.exc_info())
+
+            #GtkWindow *parent = NULL;
+
+            message("\nThis record already exists. \n\n %s" % ttt)
+            return
+
         itemx = (ttt, "", "")
         self.cnt += 1
 
-        self.treeview2.append(itemx)
-        self.treeview2.sel_last()
-        newtext = "Enter text here";
-        self.edview.set_text(newtext)
-        #usleep(10)
-        key = str(uuid.uuid4())
-        #self.sql.put(key, itemx[0], itemx[1], itemx[2])
-        self.core.save_data(ttt, newtext)
+        #self.treeview2.append(itemx)
+        self.treeview2.insert(None, 0, itemx)
+        self.treeview2.sel_first()
 
-        #self.lastsel = None
-        #self._assurelast()
+        newtext = ""  #Enter text here";
+        self.edview.set_text(newtext)
+        self.core.save_data(ttt, newtext)
 
     def delitem(self, arg):
         #print ("delitem", self.lastkey, self.lastsel)
-        if not self.lastkey:
+        if not self.lastsel:
             print("Nothing to delete")
             pedconfig.conf.pedwin.update_statusbar("Nothing selected for deletion.");
             return
 
-        rrr = yes_no_cancel("   Delete Item ?   ", str(self.lastsel), False)
-        if rrr == Gtk.ResponseType.YES:
-            #self.sql.rmone(self.lastkey)
-            #self.sql.rmonedata(self.lastkey)
-            #self.treeview2.clear()
-            #self.load()
-            #self.treeview2.sel_last()
-            pass
+        rrr = yes_no_cancel("   Delete Item ?   ", "'" + str(self.lastsel[0]) + "'", False)
+        if rrr != Gtk.ResponseType.YES:
+            return
+
+        #print("Removing", self.lastsel[0])
+        # Remove all of them including shadow entried
+        delx = self.core.del_recs(self.lastsel[0].encode("cp437"), 0, twincore.INT_MAX)
+        pedconfig.conf.pedwin.update_statusbar("Removed %d records." % delx)
+
+        # Refresh list in main sel window
+        self.treeview2.clear()
+        usleep(10)
+        self.load()
 
     def importx(self, arg):
         #print("Import")
@@ -298,11 +339,17 @@ class pgnotes(Gtk.VBox):
         dbsize = self.core.getdbsize()
         for aa in range(dbsize):
             ddd = self.core.get_rec(aa)
-            nnn = ddd[0].decode("cp437")
-            ppp = nnn.split(",")
-            ppp[2] = ppp[2][2:-1]               # Remove quotes
-            print(aa, ppp[2])
-            cnt += 1
+            if len(ddd) < 2:
+                continue
+
+            try:
+                nnn = ddd[0].decode("cp437")
+                ppp = nnn.split(",")
+                ppp[2] = ppp[2][2:-1]               # Remove quotes
+                print(aa, ppp[2])
+                cnt += 1
+            except:
+                print(sys.exc_info())
 
         #print("imported", cnt, "items")
         pedconfig.conf.pedwin.update_statusbar("Imported %d items" % cnt);
@@ -387,26 +434,27 @@ class pgnotes(Gtk.VBox):
                         args.append(xstr)
                 self.treesel(args)
 
-    def ddd(self, arg, arg2):
-        #print(arg)
-        self.printtag(arg, arg2)
+    #def ddd(self, arg, arg2):
+    #    #print(arg)
+    #    self.printtag(arg, arg2)
+    #
+    #def printtag(self, arg, arg2):
+    #    for aa in arg.props:
+    #        for bb in arg2.props:
+    #            try:
+    #                # same tag?
+    #                if aa.name == bb.name:
+    #                    #print(aa, bb)
+    #                    if arg.get_property(aa.name) != arg2.get_property(bb.name):
+    #                        print("    ", aa.name, "old:", arg.get_property(aa.name),
+    #                                "  new:", arg2.get_property(bb.name))
+    #            except:
+    #                pass
+    #                #print("cannot get:", aa.name)
+    #
 
-    def printtag(self, arg, arg2):
-        for aa in arg.props:
-            for bb in arg2.props:
-                try:
-                    # same tag?
-                    if aa.name == bb.name:
-                        #print(aa, bb)
-                        if arg.get_property(aa.name) != arg2.get_property(bb.name):
-                            print("    ", aa.name, "old:", arg.get_property(aa.name),
-                                    "  new:", arg2.get_property(bb.name))
-                except:
-                    pass
-                    #print("cannot get:", aa.name)
-
-    def difftags(self, arg):
-        self.deftags.foreach(self.ddd, arg)
+    #def difftags(self, arg):
+    #    self.deftags.foreach(self.ddd, arg)
 
     def savetext(self):
 
@@ -428,52 +476,44 @@ class pgnotes(Gtk.VBox):
 
     def treechange(self, args):
         # Old entry
-        print("treechange", args)
+        #print("treechange", args)
         #self.lastsel = args[0][:]
         ## Is there one like this?
         #ddd = self.sql.gethead(args[0])
         ##print("ddd", ddd)
-        #
         #if ddd:
         #    self.lastkey = ddd[1]
         #    self.sql.put(self.lastkey, args[0], args[1], args[2])
         ##pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
+        pass
 
     # --------------------------------------------------------------------
 
     def treesel(self, args):
-        # Old entry
 
+        # Old entry
         #print("treesel lastsel", self.lastsel)
+        # New entry
         #print("treesel newsel", args)
-        #print("lastkey", self.lastkey)
 
         if self.edview.get_modified():
-            print("would save text")
-            miself.savetext()
+            #print("would save text")
+            self.savetext()
 
         self.lastsel = args
 
-        #ddd = self.sql.gethead(args[0])
-        #if ddd:
-        #    self.lastsel = args[0]
-        #    self.lastkey = ddd[1]
-        #
-        #    strx = self.sql.getdata(self.lastkey)
-        #    self.edview.set_text(strx[0])
-
         ddd = self.core.findrec(args[0], 1)
-        print("ddd", type(ddd), ddd)
+        #print("ddd", type(ddd), ddd)
         #print(b"'" + ddd[0][1][:3]) + b"'"
 
         try:
             # See what kind it is
-            if ddd[0][1][:3] == b"GTK":
+            if ddd[0][1][:13] == b"GTKTEXTBUFFER":
                 self.edview.set_text("")
-                print("deser", ddd[0][1])
+                #print("deser", ddd[0][1])
                 self.edview.deser_buff(ddd[0][1])
             else:
-                print("load", ddd[0][1])
+                #print("load", ddd[0][1])
                 self.edview.set_text(ddd[0][1].decode("cp437"))
 
             self.edview.set_modified(0)
@@ -494,6 +534,11 @@ class pgnotes(Gtk.VBox):
             dbsize = self.core.getdbsize()
             for aa in range(dbsize-1, 0, -1):
                 ddd = self.core.get_rec(aa)
+                if len(ddd) < 2:
+                    continue        # Deleted record
+
+                #print("ddd", ddd)
+
                 #print("Item:", ddd[0], "Data:", ddd[1][:16] + b" ..." )
                 try:
                     ppp = ddd[0].split(b",")
@@ -524,5 +569,35 @@ class pgnotes(Gtk.VBox):
 
         #self.treeview2.sel_last()
         #self.treeview2.sel_first()
+
+class HeadDialog(Gtk.Dialog):
+    def __init__(self, initstr, parent = None):
+        Gtk.Dialog.__init__(
+            self, title="Name for Note", transient_for=parent, modal=True,
+        )
+        self.add_buttons(
+            Gtk.STOCK_OK,
+            Gtk.ResponseType.OK,
+            Gtk.STOCK_CANCEL,
+            Gtk.ResponseType.CANCEL,
+        )
+        self.set_default_response(Gtk.ResponseType.OK)
+
+        box = self.get_content_area()
+        label = Gtk.Label(label="        ")
+        box.add(label)
+
+        self.entry = Gtk.Entry()
+        self.entry.set_text(initstr)
+        self.entry.set_activates_default(True)
+
+        self.hbox = Gtk.HBox()
+        self.hbox.pack_start(Gtk.Label(label="   Note Header:  "), 0, 0, 0)
+        self.hbox.pack_start(self.entry, 1, 1, 0)
+        self.hbox.pack_start(Gtk.Label(label="                 "), 0, 0, 0)
+
+        box.add(self.hbox)
+        self.show_all()
+
 
 # EOF
