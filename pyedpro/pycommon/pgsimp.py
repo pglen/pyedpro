@@ -108,8 +108,9 @@ class   SimpleTree(Gtk.TreeView):
         #print("append", args)
         piter = self.treestore.append(None, args)
 
+    # TreeStore
     def insert(self, parent, pos, args):
-        #print("insert", parent, pos, args)
+        print("insert", parent, pos, args)
         piter = self.treestore.insert(parent, pos, args)
 
     def sel_first(self):

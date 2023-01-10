@@ -35,6 +35,7 @@ from pedlib import peddlg
 from pedlib import pedthread
 from pedlib import pedspell
 from pedlib import pedofd
+from pedlib import pedutil
 
 #sys.path.append('..' + os.sep + "pycommon")
 
@@ -255,8 +256,8 @@ class EdMainWindow():
             ww = pedconfig.conf.sql.get_int("ww")
             hh = pedconfig.conf.sql.get_int("hh")
 
-            if pedconfig.conf.verbose:
-                print("load coords", xx, yy, ww, hh)
+            #if pedconfig.conf.verbose:
+            #    print("load coords", xx, yy, ww, hh)
 
             if ww == 0 or hh == 0:
                 self.mywin.set_position(Gtk.WindowPosition.CENTER)
@@ -442,6 +443,7 @@ class EdMainWindow():
             print("Cannot load auxiliary func tab.")
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
+                pedutil.put_exception("func tab")
 
         try:
             notebook2.append_page(pedcal.pgcal())
@@ -452,6 +454,8 @@ class EdMainWindow():
             print("Cannot load auxiliary cal tab.")
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
+                pedutil.put_exception("cal tab")
+
         try:
             notebook2.append_page(pednotes.pgnotes())
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
@@ -475,6 +479,7 @@ class EdMainWindow():
             print("Cannot load outline tab.")
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
+                pedutil.put_exception("outline")
 
         try:
             notebook2.append_page(pedweb.pgweb())
@@ -484,7 +489,8 @@ class EdMainWindow():
         except:
             print("Cannot load auxiliary web tab.")
             if pedconfig.conf.verbose:
-                print("Auxiliary tabs message:", sys.exc_info())
+                print(sys.exc_info())
+                pedutil.put_exception("web tab")
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200

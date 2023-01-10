@@ -175,8 +175,8 @@ def get_img_path(fname):
 
     img_dir = os.path.dirname(__file__)
     img_path = os.path.join(img_dir, "images/", fname)
-    if pedconfig.conf.verbose:
-        print( "img_path", img_path)
+    #if pedconfig.conf.verbose:
+    #    print( "img_path", img_path)
     return img_path
 
 # Expand file name to file path in the exec dir:
@@ -1354,5 +1354,38 @@ def atoi(strx):
         rtr = rtr*10 + (occ - ord('0'))
 
     return rtr
+
+
+class HeadDialog(Gtk.Dialog):
+
+    def __init__(self, initstr, parent = None):
+        Gtk.Dialog.__init__(
+            self, title="Name for Note", transient_for=parent, modal=True,
+        )
+        self.add_buttons(
+            Gtk.STOCK_OK,
+            Gtk.ResponseType.OK,
+            Gtk.STOCK_CANCEL,
+            Gtk.ResponseType.CANCEL,
+        )
+        self.set_default_response(Gtk.ResponseType.OK)
+
+        box = self.get_content_area()
+        label = Gtk.Label(label="        ")
+        box.add(label)
+
+        self.entry = Gtk.Entry()
+        self.entry.set_text(initstr)
+        self.entry.set_activates_default(True)
+
+        self.hbox = Gtk.HBox()
+        self.hbox.pack_start(Gtk.Label(label="   Note Header:  "), 0, 0, 0)
+        self.hbox.pack_start(self.entry, 1, 1, 0)
+        self.hbox.pack_start(Gtk.Label(label="                 "), 0, 0, 0)
+
+        box.add(self.hbox)
+        self.show_all()
+
+
 
 # EOF

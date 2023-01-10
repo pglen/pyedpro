@@ -31,6 +31,17 @@ except:
     pass
     #print("Cannot load pgwkit")
 
+try:
+    # This will change once the pydbase is out of dev stage
+    np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + ".." + os.sep + ".."
+    #print(np)
+    sys.path.append(np)
+    #print(sys.path)
+    #print(os.getcwd())
+    from pydbase import twincore
+except:
+    print("Cannot import twincore", sys.exc_info())
+
 def load_html(window):
     sleep(5)
     window.load_html('<h1>This is dynamically loaded HTML</h1>')
@@ -41,8 +52,78 @@ class pgweb(Gtk.VBox):
 
     def __init__(self):
 
+        self. wasin = True
+
         #vbox = Gtk.VBox()
         Gtk.VBox.__init__(self)
+
+        self.lastsel = None;  self.lastkey = None
+        self.cnt = 0
+        self.data_dir = os.path.expanduser("~/.pyedwebnotes")
+        try:
+            if not os.path.isdir(self.data_dir):
+                os.mkdir(self.data_dir)
+        except:
+            print("Cannot make web notes data dir")
+
+        #try:
+        #    if pedconfig.conf.verbose:
+        #        print(self.data_dir + os.sep + "peddata.sql")
+        #    self.sql = notesql(self.data_dir + os.sep + "peddata.sql")
+        #except:
+        #    print("Cannot make notes database")
+
+        try:
+            self.core = twincore.TwinCore(self.data_dir + os.sep + "peddata.pydb")
+            #print("core", self.core, self.core.fname)
+        except:
+            print("Cannot make web notes py database", sys.exc_info())
+
+        #message("Cannot make notes database")
+
+        #hbox = Gtk.HBox()
+        self.pack_start(Gtk.Label(""), 0, 0, 0)
+        #self.pack_start(pggui.xSpacer(), 0, 0, 0)
+        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font="Mono 12")
+        self.lsel.set_tooltip_text("Filter entries by letter / number")
+        self.pack_start(self.lsel, 0, 0, 2)
+
+        #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#dd8822"))
+
+        hbox3 = Gtk.HBox()
+        #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
+        #hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
+        #self.edit = Gtk.Entry()
+        #hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
+        #hbox3.pack_start(self.edit, 1, 1, 0)
+        #butt2 = Gtk.Button.new_with_mnemonic("Find")
+        #butt2.connect("pressed", self.find)
+        #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #hbox3.pack_start(butt2, 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#668822"))
+        #self.pack_start(hbox3, 0, 0, 2)
+
+        self.treeview2 = pgsimp.SimpleTree(("Header", "Subject", "Description"), skipedit=0)
+        self.treeview2.setcallb(self.treesel)
+        self.treeview2.setCHcallb(self.treechange)
+
+        scroll2 = Gtk.ScrolledWindow()
+        scroll2.add(self.treeview2)
+        #scroll2.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+
+        vpaned = Gtk.VPaned()
+
+        frame3 = Gtk.Frame();
+        frame3.add(scroll2)
+        vpaned.add(frame3)
+
+        vpaned.set_position(300)
+        self.pack_start(vpaned, 1, 1, 2)
+
+        #self.edview = pgsimp.TextViewWin()
+        #self.edview =  pgTextView()
 
         self.fname = os.path.dirname(__file__) + os.sep + "home.html"
         #print("fname", self.fname)
@@ -73,7 +154,9 @@ class pgweb(Gtk.VBox):
         self.pack_start(hbox3, 0, 0, 2)
 
         hbox4 = Gtk.HBox()
-        hbox4.pack_start(Gtk.Label(" "), 1, 1, 0)
+        lab1  = Gtk.Label("  Note: This is a Live Browser ")
+        lab1.set_halign(Gtk.Align.END)
+        hbox4.pack_start(lab1,  1, 1, 0)
 
         butt3 = Gtk.Button("<")
         butt3.connect("pressed", self.backurl)
@@ -97,21 +180,21 @@ class pgweb(Gtk.VBox):
 
         self.pack_start(hbox4, 0, 0, 2)
 
-        self.treeview2 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
-        self.treeview2.setcallb(self.treesel)
-        self.treeview2.setCHcallb(self.treechange)
+        self.treeview3 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
+        self.treeview3.setcallb(self.treesel)
+        self.treeview3.setCHcallb(self.treechange)
 
         scroll2 = Gtk.ScrolledWindow()
-        scroll2.add(self.treeview2)
+        scroll2.add(self.treeview3)
         frame3 = Gtk.Frame(); frame3.add(scroll2)
         #self.pack_start(frame3, 1, 1, 2)
 
-        self.edview = SimpleEdit()
-        self.edview.setsavecb(self.savetext)
+        #self.edview = SimpleEdit()
+        #self.edview.setsavecb(self.savetext)
 
-        scroll3 = Gtk.ScrolledWindow()
-        scroll3.add(self.edview)
-        frame4 = Gtk.Frame(); frame4.add(scroll3)
+        #scroll3 = Gtk.ScrolledWindow()
+        #scroll3.add(self.edview)
+        #frame4 = Gtk.Frame(); frame4.add(scroll3)
 
         scrolled_window = Gtk.ScrolledWindow()
         try:
@@ -128,6 +211,166 @@ class pgweb(Gtk.VBox):
 
         self.status = Gtk.Label(" Status ")
         self.pack_start(self.status, 0, 0, 2)
+
+        hbox13 = Gtk.HBox()
+        hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+
+        butt3 = Gtk.Button.new_with_mnemonic("New Item")
+        butt3.connect("pressed", self.newitem)
+        hbox13.pack_start(butt3, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
+        #butt3.connect("pressed", self.search)
+        hbox13.pack_start(butt3, 0, 0, 2)
+
+        butt3a = Gtk.Button.new_with_mnemonic("Search All")
+        #butt3a.connect("pressed", self.searchall)
+        hbox13.pack_start(butt3a, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+
+        hbox13a = Gtk.HBox()
+        hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+
+        butt11 = Gtk.Button.new_with_mnemonic("Del Item")
+        #butt11.connect("pressed", self.delitem)
+        hbox13a.pack_start(butt11, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        butt12 = Gtk.Button.new_with_mnemonic("Export")
+        #butt12.connect("pressed", self.export)
+        hbox13a.pack_start(butt12, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        butt12a = Gtk.Button.new_with_mnemonic("Import")
+        #butt12a.connect("pressed", self.importx)
+        hbox13a.pack_start(butt12a, 0, 0, 2)
+
+        #butt14 = Gtk.Button.new_with_mnemonic("ExpData")
+        #butt14.connect("pressed", self.exportd)
+        #hbox13.pack_start(butt14, 0, 0, 2)
+        #hbox13.pack_start(Gtk.Label(" "), 0, 0, 0)
+
+        hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+
+        #butt22 = Gtk.Button.new_with_mnemonic("Save")
+        #butt22.connect("pressed", self.save)
+        #hbox13.pack_start(butt22, 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+
+        self.pack_start(hbox13, 0, 0, 2)
+        self.pack_start(hbox13a, 0, 0, 2)
+        self.load()
+
+    def switched(self, pageto):
+        #print("SW page signal web", pageto)
+        if pageto == self:
+            print("Web in")
+            self.wasin = True
+        else:
+            if self.wasin:
+                self.wasin = False
+                print("Web out")
+
+    def newitem(self, arg):
+        self.savetext()
+        rrr = HeadDialog("New Item %d" % self.cnt, None)
+        ret = rrr.run()
+        if ret != Gtk.ResponseType.OK:
+            rrr.destroy()
+            return
+
+        ttt = rrr.entry.get_text()
+        rrr.destroy()
+        #print("store", self.treeview2.treestore)
+
+        ret = self.treeview2.find_item(ttt)
+        if ret:
+            message("\nThis record already exists. \n\n %s" % ttt)
+            return
+
+        itemx = (ttt, "", "")
+        self.cnt += 1
+
+        self.treeview2.insert(None, 0, itemx)
+        self.treeview2.sel_first()
+
+        newtext = ""  #Enter text here";
+        #self.edview.set_text(newtext)
+
+        self.core.save_data(ttt, newtext)
+
+    def delitem(self, arg):
+        #print ("delitem", self.lastkey, self.lastsel)
+        if not self.lastsel:
+            print("Nothing to delete")
+            pedconfig.conf.pedwin.update_statusbar("Nothing selected for deletion.");
+            return
+
+        rrr = yes_no_cancel("   Delete Item ?   ", "'" + str(self.lastsel[0]) + "'", False)
+        if rrr != Gtk.ResponseType.YES:
+            return
+
+        #print("Removing", self.lastsel[0])
+        # Remove all of them including shadow entried
+        delx = self.core.del_recs(self.lastsel[0].encode("cp437"), 0, twincore.INT_MAX)
+        pedconfig.conf.pedwin.update_statusbar("Removed %d records." % delx)
+
+        # Refresh list in main sel window
+        self.treeview2.clear()
+        usleep(10)
+        self.load()
+
+
+    def load(self):
+
+        ''' Load from file;
+            This is more complex than it should be ... dealing with old data
+        '''
+
+        self.lastsel = None; self.lastkey = None
+        datax = []
+        try:
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                ddd = self.core.get_rec(aa)
+                if len(ddd) < 2:
+                    continue        # Deleted record
+
+                #print("ddd", ddd)
+
+                #print("Item:", ddd[0], "Data:", ddd[1][:16] + b" ..." )
+                try:
+                    ppp = ddd[0].split(b",")
+                except:
+                    print("Cannot split",sys.exc_info(), ddd[0])
+                    ppp = ddd[0]
+
+                if len(ppp) > 1:
+                    qqq = ppp[2]            # Old data
+                else:
+                    qqq = ppp[0]               # New data
+
+                #print("qqq", qqq)
+                qqq = qqq.decode("cp437").strip()
+
+                # remove quotes
+                if qqq[0] == '\'':
+                    qqq = qqq[1:-1]
+
+                if qqq not in datax:
+                    datax.append(qqq)
+                    #print(aa, qqq)
+                    self.treeview2.append((qqq, "", ""))
+        except:
+            put_exception("load")
+            print(sys.exc_info())
+            print("Cannot load notes Data at", cnt, qqq)
+
+        self.treeview2.sel_first()
+
 
     def backurl(self, arg1): #, url, parm, buff):
         self.webview.go_back()
@@ -162,290 +405,58 @@ class pgweb(Gtk.VBox):
     def anchor(self, arg):
         self.webview.load_uri("file://" + self.fname)
 
-    def savetext(self, txt):
-        ddd = self.cal.get_date()
-        key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], self.lastsel)
-        #print("savetext", key, "--",  txt)
-        self.sql.putdata(key, txt, "", "")
-        pedconfig.conf.pedwin.update_statusbar("Saved calendar item for '%s'" % key);
+    def savetext(self):
+
+        newtext = None
+        def completion_function(html, user_data):
+            print("Html", html)
+            newtext = html
+
+        try:
+            #newtext =  self.webview.get_content()
+            self.webview.get_html(completion_function, None)
+
+            ttt = self.lastsel[0]
+            print("newtext", newtext, "ttt", ttt)
+        except:
+            print(sys.exc_info())
+            ttt = "None"
+            pass
+
+        if not newtext:
+            return
+        try:
+            self.core.save_data(ttt, newtext)
+        except:
+            print(sys.exc_info())
+
+        pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % ttt)
 
     def treechange(self, args):
-        ddd = self.cal.get_date()
-        self.lastsel = args[0]
-        #print("treechange", ddd, args)
-        key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], args[0])
-        val =  "[%s]~[%s]" % (args[1], args[2])
-        self.sql.put(key, args[1], args[2], args[3])
+        print("treechange", args)
+        #ddd = self.cal.get_date()
+        #self.lastsel = args[0]
+        #key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], args[0])
+        #val =  "[%s]~[%s]" % (args[1], args[2])
+        #self.sql.put(key, args[1], args[2], args[3])
 
     def treesel(self, args):
         #print("treesel", args)
-        self.edview.clear()
-        ddd = self.cal.get_date()
-        key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], args[0])
-        strx = self.sql.getdata(key)
-        if strx:
-            self.edview.append(strx[0])
-        self.lastsel = args[0]
+        self.webview.load_html('<h1>Loaded HTML</h1>')
+        self.savetext()
+        self.lastsel = args
 
-    def today(self, butt, cal):
-        ddd = datetime.datetime.today()
-        #print("date",  ddd.year, ddd.month, ddd.day)
-        cal.select_month(ddd.month-1, ddd.year)
-        cal.select_day(ddd.day)
-
-    def demand(self, butt, cal):
-        ddd = datetime.datetime.today()
-        #print("demand",  ddd.year, ddd.month, ddd.day)
-
-    def daysel(self, cal):
-        #print("Day", cal.get_date())
-        #self.edit.set_text(str(cal.get_date()))
-        self.treeview2.clear()
-        for aa in range(8, 20):
-            #self.treeview2.append((ampmstr(aa), pedutil.randstr(8), pedutil.randstr(14)) )
-            ddd = self.cal.get_date()
-            key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], ampmstr(aa) )
-            try:
-                val =  self.sql.get(key)
-                if val:
-                    #print("val", val)
-                    self.treeview2.append((ampmstr(aa), val[0], val[1], val[2]) )
-                else:
-                    self.treeview2.append((ampmstr(aa), "", "", "") )
-            except:
-                print(sys.exc_info())
-                pass
-
-    def dayseldouble(self, cal):
-        #print("Day dbl", cal.get_date())
-        pass
-
-# -------------------------------------------------------------------
-
-class calsql():
-
-    def __init__(self, file):
-
-        #self.take = 0
-        self.errstr = ""
-
-        try:
-            self.conn = sqlite3.connect(file)
-        except:
-            print("Cannot open/create db:", file, sys.exc_info())
+        ddd = self.core.findrec(args[0], 1)
+        if len(ddd) < 2:
+            print("No record")
             return
+
+        #print("ddd", type(ddd), ddd)
+        #print(b"'" + ddd[0][1][:3]) + b"'"
         try:
-            self.c = self.conn.cursor()
-            # Create table
-            self.c.execute("create table if not exists calendar \
-             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
-            self.c.execute("create index if not exists kcalendar on calendar (key)")
-            self.c.execute("create index if not exists pcalendar on calendar (pri)")
-            self.c.execute("create table if not exists caldata \
-             (pri INTEGER PRIMARY KEY, key text, val text, val2 text, val3 text)")
-            self.c.execute("create index if not exists kcaldata on caldata (key)")
-            self.c.execute("create index if not exists pcaldata on caldata (pri)")
-
-            self.c.execute("PRAGMA synchronous=OFF")
-            # Save (commit) the changes
-            self.conn.commit()
+            self.webview.load_html(ddd[1])
         except:
-            print("Cannot insert sql data", sys.exc_info())
-            self.errstr = "Cannot insert sql data" + str(sys.exc_info())
-
-        finally:
-            # We close the cursor, we are done with it
-            #c.close()
+            print(sys.exc_info())
             pass
-
-    # --------------------------------------------------------------------
-    # Return None if no data
-
-    def   get(self, kkk):
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from calendar where key = ?", (kkk,))
-            else:
-                self.c.execute("select * from calendar indexed by kcalendar where key = ?", (kkk,))
-            rr = self.c.fetchone()
-        except:
-            print("Cannot get sql data", sys.exc_info())
-            rr = None
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-
-        finally:
-            #c.close
-            pass
-        if rr:
-            return (rr[2], rr[3], rr[4])
-        else:
-            return None
-
-    def   getdata(self, kkk):
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from caldata where key = ?", (kkk,))
-            else:
-                self.c.execute("select * from caldata indexed by kcaldata where key = ?", (kkk,))
-            rr = self.c.fetchone()
-        except:
-            print("Cannot get sql data", sys.exc_info())
-            rr = None
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-
-        finally:
-            #c.close
-            pass
-        if rr:
-            return (rr[2], rr[3], rr[4])
-        else:
-            return None
-
-
-    # --------------------------------------------------------------------
-    # Return False if cannot put data
-
-    def   put(self, key, val, val2, val3):
-
-        #got_clock = time.clock()
-
-        ret = True
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from calendar where key == ?", (key,))
-            else:
-                self.c.execute("select * from calendar indexed by kcalendar where key == ?", (key,))
-            rr = self.c.fetchall()
-            if rr == []:
-                #print "inserting"
-                self.c.execute("insert into calendar (key, val, val2, val3) \
-                    values (?, ?, ?, ?)", (key, val, val2, val3))
-            else:
-                #print "updating"
-                if os.name == "nt":
-                    self.c.execute("update calendar \
-                                set val = ? val2 = ?, val3 = ? where key = ?", \
-                                      (val, val2, val3, key))
-                else:
-                    self.c.execute("update calendar indexed by kcalendar \
-                                set val = ?, val2 = ?, val3 = ? where key = ?",\
-                                     (val, val2, val3, key))
-            self.conn.commit()
-        except:
-            print("Cannot put sql data", sys.exc_info())
-            self.errstr = "Cannot put sql data" + str(sys.exc_info())
-            ret = False
-        finally:
-            #c.close
-            pass
-
-        #self.take += time.clock() - got_clock
-
-        return ret
-
-    # --------------------------------------------------------------------
-    # Return False if cannot put data
-
-    def   putdata(self, key, val, val2, val3):
-
-        #got_clock = time.clock()
-
-        ret = True
-        try:
-            #c = self.conn.cursor()
-            if os.name == "nt":
-                self.c.execute("select * from caldata where key == ?", (key,))
-            else:
-                self.c.execute("select * from caldata indexed by kcaldata where key == ?", (key,))
-            rr = self.c.fetchall()
-            if rr == []:
-                #print "inserting"
-                self.c.execute("insert into caldata (key, val, val2, val3) \
-                    values (?, ?, ?, ?)", (key, val, val2, val3))
-            else:
-                #print "updating"
-                if os.name == "nt":
-                    self.c.execute("update caldata \
-                                set val = ? val2 = ?, val3 = ? where key = ?", \
-                                      (val, val2, val3, key))
-                else:
-                    self.c.execute("update caldata indexed by kcaldata \
-                                set val = ?, val2 = ?, val3 = ? where key = ?",\
-                                     (val, val2, val3, key))
-            self.conn.commit()
-        except:
-            print("Cannot put sql data", sys.exc_info())
-            self.errstr = "Cannot put sql data" + str(sys.exc_info())
-            ret = False
-        finally:
-            #c.close
-            pass
-
-        #self.take += time.clock() - got_clock
-
-        return ret
-
-    # --------------------------------------------------------------------
-    # Get All
-
-    def   getall(self, strx = "", limit = 1000):
-
-        #print("getall '" +  strx + "'")
-
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("select * from calendar where val like ? or val2 like ? or val3 like ? limit  ?",
-                                            (strx, strx, strx, limit))
-            rr = self.c.fetchall()
-        except:
-            rr = []
-            print("Cannot get all sql data", sys.exc_info())
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-
-        return rr
-
-    # --------------------------------------------------------------------
-    # Return None if no data
-
-    def   rmall(self):
-        print("removing all")
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("delete from calendar")
-            rr = self.c.fetchone()
-        except:
-            print("Cannot delete sql data", sys.exc_info())
-            self.errstr = "Cannot delete sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        if rr:
-            return rr[1]
-        else:
-            return None
-
-    def   rmalldata(self):
-        print("removing all")
-        try:
-            #c = self.conn.cursor()
-            self.c.execute("delete from caldata")
-            rr = self.c.fetchone()
-        except:
-            print("Cannot delete sql data", sys.exc_info())
-            self.errstr = "Cannot get sql data" + str(sys.exc_info())
-        finally:
-            #c.close
-            pass
-        if rr:
-            return rr[1]
-        else:
-            return None
 
 # EOF
-
