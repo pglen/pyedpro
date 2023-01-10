@@ -47,6 +47,7 @@ class pgwebw(WebKit2.WebView):
         except:
             pass
         self.xlink = xlink
+        self.set_editable(True)
 
     def do_ready_to_show(self):
         #print("do_ready_to_show() was called")
@@ -164,6 +165,17 @@ class pgwebw(WebKit2.WebView):
                                    javascript_completion,
                                    user_data)
 
+    def get_content(self):
+        self.get_main_frame().get_data_source().get_data()
+
+    #def get_content(self):
+    #    resource = self.get_main_resource()
+    #    if resource:
+    #        resource.get_data(None, self._get_response_data_finish, None)
+    #
+    #def  _get_response_data_finish(self, resource, result, user_data=None):
+    #    self.html_response = resource.get_data_finish(result)
+    #    print((self.html_response))
 
 def generate_ui(self):
     ui_def = """

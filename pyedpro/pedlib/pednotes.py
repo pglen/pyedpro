@@ -100,7 +100,7 @@ class pgnotes(Gtk.VBox):
 
         self.treeview2 = pgsimp.SimpleTree(("Header", "Subject", "Description"), skipedit=0)
         self.treeview2.setcallb(self.treesel)
-        self.treeview2.setCHcallb(self.treechange)
+        #self.treeview2.setCHcallb(self.treechange)
 
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(self.treeview2)
@@ -266,37 +266,28 @@ class pgnotes(Gtk.VBox):
 
         ret = self.treeview2.find_item(ttt)
         if ret:
-
             try:
-
-                rootwin = self.get_root_window()
-                xxx, yyy = rootwin.get_root_coords(0, 0)
-                xxxx, yyyy = rootwin.get_root_origin()
-                print("root",  xxx, yyy, xxxx, yyyy)
-
-                windowx = self.get_window()
-                xxx, yyy = windowx.get_root_coords(0, 0)
-                xxxx, yyyy = windowx.get_root_origin()
-                print("this",  xxx, yyy, xxxx, yyyy)
-
+                #rootwin = self.get_root_window()
+                #xxx, yyy = rootwin.get_root_coords(0, 0)
+                #xxxx, yyyy = rootwin.get_root_origin()
+                #print("root",  xxx, yyy, xxxx, yyyy)
+                #windowx = self.get_window()
+                #xxx, yyy = windowx.get_root_coords(0, 0)
+                #xxxx, yyyy = windowx.get_root_origin()
+                #print("this",  xxx, yyy, xxxx, yyyy)
                 #Gdk.Window
-                windowx = self.get_window()
-                xx, yy = windowx.get_position()
-                print("window", windowx, xx, yy,)
-
+                #windowx = self.get_window()
+                #xx, yy = windowx.get_position()
+                #print("window", windowx, xx, yy,)
                 #xx, yy = self.get_pointer()
                 #print(xx, yy)
-
                 #rrr = self.get_allocation()
                 #print(rrr.x, rrr.y, rrr.width, rrr.height)
-                    #pos = self.get_parent().get_parent().get_position()
+                #    #pos = self.get_parent().get_parent().get_position()
                 #print("pos", pos)
                 pass
-
             except:
                 print(sys.exc_info())
-
-            #GtkWindow *parent = NULL;
 
             message("\nThis record already exists. \n\n %s" % ttt)
             return
@@ -434,28 +425,6 @@ class pgnotes(Gtk.VBox):
                         args.append(xstr)
                 self.treesel(args)
 
-    #def ddd(self, arg, arg2):
-    #    #print(arg)
-    #    self.printtag(arg, arg2)
-    #
-    #def printtag(self, arg, arg2):
-    #    for aa in arg.props:
-    #        for bb in arg2.props:
-    #            try:
-    #                # same tag?
-    #                if aa.name == bb.name:
-    #                    #print(aa, bb)
-    #                    if arg.get_property(aa.name) != arg2.get_property(bb.name):
-    #                        print("    ", aa.name, "old:", arg.get_property(aa.name),
-    #                                "  new:", arg2.get_property(bb.name))
-    #            except:
-    #                pass
-    #                #print("cannot get:", aa.name)
-    #
-
-    #def difftags(self, arg):
-    #    self.deftags.foreach(self.ddd, arg)
-
     def savetext(self):
 
         # testing
@@ -569,35 +538,5 @@ class pgnotes(Gtk.VBox):
 
         #self.treeview2.sel_last()
         #self.treeview2.sel_first()
-
-class HeadDialog(Gtk.Dialog):
-    def __init__(self, initstr, parent = None):
-        Gtk.Dialog.__init__(
-            self, title="Name for Note", transient_for=parent, modal=True,
-        )
-        self.add_buttons(
-            Gtk.STOCK_OK,
-            Gtk.ResponseType.OK,
-            Gtk.STOCK_CANCEL,
-            Gtk.ResponseType.CANCEL,
-        )
-        self.set_default_response(Gtk.ResponseType.OK)
-
-        box = self.get_content_area()
-        label = Gtk.Label(label="        ")
-        box.add(label)
-
-        self.entry = Gtk.Entry()
-        self.entry.set_text(initstr)
-        self.entry.set_activates_default(True)
-
-        self.hbox = Gtk.HBox()
-        self.hbox.pack_start(Gtk.Label(label="   Note Header:  "), 0, 0, 0)
-        self.hbox.pack_start(self.entry, 1, 1, 0)
-        self.hbox.pack_start(Gtk.Label(label="                 "), 0, 0, 0)
-
-        box.add(self.hbox)
-        self.show_all()
-
 
 # EOF
