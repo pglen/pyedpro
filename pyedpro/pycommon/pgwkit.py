@@ -74,21 +74,21 @@ class pgwebw(WebKit2.WebView):
             self.xlink.status.set_text("Failed: " + failing_uri[:64])
 
     def on_action(self, action):
-        self.editor.run_javascript("document.execCommand('%s', false, false);" % action.get_name())
+        self.run_javascript("document.execCommand('%s', false, false);" % action.get_name())
 
     def on_paste(self, action):
-        self.editor.execute_editing_command(WebKit2.EDITING_COMMAND_PASTE)
+        selfte_editing_command(WebKit2.EDITING_COMMAND_PASTE)
 
     def on_new(self, action):
-        self.editor.load_html("", "file:///")
+        self.load_html("", "file:///")
 
     def on_select_font(self, action):
         dialog = Gtk.FontChooserDialog("Select a font")
         if dialog.run() == Gtk.ResponseType.OK:
             fname = dialog.get_font_desc().get_family()
             fsize = dialog.get_font_desc().get_size()
-            self.editor.run_javascript("document.execCommand('fontname', null, '%s');" % fname)
-            self.editor.run_javascript("document.execCommand('fontsize', null, '%s');" % fsize)
+            self.run_javascript("document.execCommand('fontname', null, '%s');" % fname)
+            self.run_javascript("document.execCommand('fontsize', null, '%s');" % fsize)
         dialog.destroy()
 
     def on_select_color(self, action):
@@ -100,7 +100,7 @@ class pgwebw(WebKit2.WebView):
                 int(g * 255),
                 int(b * 255),
                 int(a * 255))
-            self.editor.run_javascript("document.execCommand('forecolor', null, '%s');" % color)
+            self.run_javascript("document.execCommand('forecolor', null, '%s');" % color)
         dialog.destroy()
 
     def on_insert_link(self, action):
@@ -112,7 +112,7 @@ class pgwebw(WebKit2.WebView):
         dialog.show_all()
 
         if dialog.run() == Gtk.ResponseType.OK:
-            self.editor.run_javascript(
+            self.run_javascript(
                 "document.execCommand('createLink', true, '%s');" % entry.get_text())
         dialog.destroy()
 
@@ -123,7 +123,7 @@ class pgwebw(WebKit2.WebView):
         if dialog.run() == Gtk.ResponseType.OK:
             fn = dialog.get_filename()
             if os.path.exists(fn):
-                self.editor.run_javascript(
+                self.run_javascript(
                 "document.execCommand('insertImage', null, '%s');" % fn)
         dialog.destroy()
 
@@ -136,7 +136,7 @@ class pgwebw(WebKit2.WebView):
             if os.path.exists(fn):
                 self.filename = fn
                 with open(fn) as fd:
-                    self.editor.load_html(fd.read(), "file:///")
+                    self.load_html(fd.read(), "file:///")
         dialog.destroy()
 
     def on_save(self, action):
@@ -158,9 +158,9 @@ class pgwebw(WebKit2.WebView):
 
     def get_html(self, completion_function, user_data):
         def javascript_completion(obj, result, user_data):
-            html = self.editor.get_title()
+            html = self.get_title()
             completion_function(html, user_data)
-        self.editor.run_javascript("document.title=document.documentElement.innerHTML;",
+        self.run_javascript("document.title=document.documentElement.innerHTML;",
                                    None,
                                    javascript_completion,
                                    user_data)
