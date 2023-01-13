@@ -369,11 +369,11 @@ class KeyHand:
         #print ("KEY:",   event.keyval  )
 
         # Ramp up debug level
-        if pedconfig.conf.pgdebug > 2:
+        if pedconfig.conf.pgdebug > 6:
              print( "key val ",  event.keyval, "key name", event.string)
-        if pedconfig.conf.pgdebug > 3:
+        if pedconfig.conf.pgdebug > 7:
             print( "key event",  event.type)
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 8:
             print( "key state",  event.state)
 
         if pedconfig.conf.show_keys:
@@ -438,7 +438,7 @@ class KeyHand:
 
         if ret: return
 
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("mods", "ctrl ",  self.ctrl, "alt ", self.alt,  "rctrl", self.rctrl)
             print("    ", "super", self.super, "ralt", self.ralt, "rsuper", self.rsuper)
 
@@ -500,25 +500,25 @@ class KeyHand:
         # Do key down:
         if  event.type == Gdk.EventType.KEY_PRESS:
             if event.keyval == Gdk.KEY_Alt_R:
-                if pedconfig.conf.pgdebug > 0:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Alt R down")
                 self.ralt = True
                 ret = True
 
             if event.keyval == Gdk.KEY_Shift_R:
-                if pedconfig.conf.pgdebug > 0:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Shift R down")
                 self.rshift = True
                 ret = True
 
             if event.keyval == Gdk.KEY_Control_R:
-                if pedconfig.conf.pgdebug > 0:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Control R down")
                 self.rctrl = True
                 ret = True
 
             if event.keyval == Gdk.KEY_Super_R:
-                if pedconfig.conf.pgdebug > 0:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Super R down")
                 self.rsuper = True
                 ret = True
@@ -546,25 +546,25 @@ class KeyHand:
         elif  event.type == Gdk.EventType.KEY_RELEASE:
 
             if event.keyval == Gdk.KEY_Alt_R:
-                if pedconfig.conf.pgdebug > 1:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Alt R up")
                 self.ralt = False
                 ret = True
 
             if event.keyval == Gdk.KEY_Shift_R:
-                if pedconfig.conf.pgdebug > 1:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Shift R up")
                 self.rshift = False
                 ret = True
 
             if event.keyval == Gdk.KEY_Control_R:
-                if pedconfig.conf.pgdebug > 1:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Control R up")
                 self.rctrl = False
                 ret = True
 
             if event.keyval == Gdk.KEY_Super_R:
-                if pedconfig.conf.pgdebug > 1:
+                if pedconfig.conf.pgdebug > 6:
                     print( "Super R up")
                 self.rsuper = False
                 ret = True
@@ -620,7 +620,7 @@ class KeyHand:
         return ret
 
     def handle_right_alt_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_right_alt_key",self.ctrl, self.shift)
         ret = self._handle_key(self2, area, event, self.right_alt_keytab)
         return ret
@@ -629,7 +629,7 @@ class KeyHand:
     # Control Alt keytab
 
     def handle_ctrl_alt_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_ctrl_alt_key")
         self._handle_key(self2, area, event, self.ctrl_alt_keytab)
 
@@ -637,17 +637,17 @@ class KeyHand:
     # Super keytabs
 
     def handle_super_alt_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_super_alt_key")
         self._handle_key(self2, area, event, self.super_alt_keytab)
 
     def handle_super_ctrl_alt_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_super_ctrl_alt_key")
         self._handle_key(self2, area, event, self.super_ctrl_alt_keytab)
 
     def handle_super_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_super_key")
         self._handle_key(self2, area, event, self.super_keytab)
 
@@ -655,7 +655,7 @@ class KeyHand:
     # Control keytab
 
     def handle_ctrl_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_ctrl_key")
         self._handle_key(self2, area, event, self.ctrl_keytab)
 
@@ -663,7 +663,7 @@ class KeyHand:
     # Regular keytab
 
     def handle_reg_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_ctrl_key")
         # Handle multi key press counts by resetting if not that key
         if event.type == Gdk.EventType.KEY_PRESS:
@@ -678,14 +678,14 @@ class KeyHand:
     # Alt key
 
     def handle_alt_key(self, self2, area, event):
-        if pedconfig.conf.pgdebug > 4:
+        if pedconfig.conf.pgdebug > 5:
             print("handle_alt_key")
         if  event.type == Gdk.EventType.KEY_PRESS:
-            if pedconfig.conf.pgdebug > 2:
+            if pedconfig.conf.pgdebug > 5:
                 print( "alt hand", event)
 
             if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
-                if pedconfig.conf.pgdebug > 2:
+                if pedconfig.conf.pgdebug > 5:
                     print( "Keyhand Alt num", event.keyval - Gdk.KEY_1)
                 num = event.keyval - Gdk.KEY_1
                 if num >  self2.notebook.get_n_pages() - 1:

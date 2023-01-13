@@ -379,7 +379,7 @@ def mainstart(name = "", args = "", oldpath = ""):
         print(_("Cannot access config dir:"), pedconfig.conf.config_dir)
         sys.exit(1)
 
-    if pedconfig.conf.verbose:
+    if pedconfig.conf.pgdebug > 3:
         print("sys.path", sys.path)
 
     pedconfig.ensure_dirs(pedconfig.conf)

@@ -27,9 +27,12 @@ from pycommon.pgsimp import *
 
 try:
     from  pycommon import pgwkit
+    if pedconfig.conf.pgdebug > 0:
+        print("Loaded pgwkit")
+
 except:
-    pass
-    #print("Cannot load pgwkit")
+    if pedconfig.conf.verbose:
+        print("Cannot load pgwkit")
 
 try:
     # This will change once the pydbase is out of dev stage
@@ -262,17 +265,20 @@ class pgweb(Gtk.VBox):
 
         self.pack_start(hbox13, 0, 0, 2)
         self.pack_start(hbox13a, 0, 0, 2)
-        self.load()
+        try:
+            self.load()
+        except:
+            print("Cannot load", sys.exc_info())
 
     def switched(self, pageto):
         #print("SW page signal web", pageto)
         if pageto == self:
-            print("Web in")
+            #print("Web in")
             self.wasin = True
         else:
             if self.wasin:
                 self.wasin = False
-                print("Web out")
+                #print("Web out")
 
     def newitem(self, arg):
         self.savetext()

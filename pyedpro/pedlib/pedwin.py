@@ -482,7 +482,8 @@ class EdMainWindow():
                 pedutil.put_exception("outline")
 
         try:
-            notebook2.append_page(pedweb.pgweb())
+            pw = pedweb.pgweb()
+            notebook2.append_page(pw)
             ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Web"))
             pass
