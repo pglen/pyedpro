@@ -427,7 +427,7 @@ class pgweb(Gtk.VBox):
 
         newtext = None
         def completion_function(html, user_data):
-            print("Html", html)
+            #print("Html", html)
             newtext = html
 
         try:
@@ -435,9 +435,10 @@ class pgweb(Gtk.VBox):
             self.webview.get_html(completion_function, None)
 
             ttt = self.lastsel[0]
-            print("newtext", newtext, "ttt", ttt)
+            #print("newtext", newtext, "ttt", ttt)
         except:
-            print(sys.exc_info())
+            if pedconfig.conf.verbose:
+                print("savetext", sys.exc_info())
             ttt = "None"
             pass
 
@@ -457,6 +458,7 @@ class pgweb(Gtk.VBox):
         #key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], args[0])
         #val =  "[%s]~[%s]" % (args[1], args[2])
         #self.sql.put(key, args[1], args[2], args[3])
+        pass
 
     def treesel(self, args):
         #print("treesel", args)
@@ -466,7 +468,8 @@ class pgweb(Gtk.VBox):
 
         ddd = self.core.findrec(args[0], 1)
         if len(ddd) < 2:
-            print("No record")
+            if pedconfig.conf.verbose:
+                print("No record to select", sys.exc_info())
             return
 
         #print("ddd", type(ddd), ddd)
