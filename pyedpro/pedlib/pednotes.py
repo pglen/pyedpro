@@ -47,6 +47,8 @@ class pgnotes(Gtk.VBox):
 
         Gtk.VBox.__init__(self)
 
+        self.wasin = False
+
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#444444"))
         #self.prevsel = None;  self.prevkey = None;
 
@@ -196,7 +198,19 @@ class pgnotes(Gtk.VBox):
     def __del__(self):
         # Did not happen automatically
         #print("pednotes __del__")
+        self.savetext()
         self.core.__del__()
+
+    def switched(self, pageto):
+        #print("SW page signal web", pageto)
+        if pageto == self:
+            #print("Notes in")
+            self.wasin = True
+        else:
+            if self.wasin:
+                self.wasin = False
+                #print("Notes out")
+                self.savetext()
 
     def  letterfilter(self, letter):
         self.savetext()

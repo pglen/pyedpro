@@ -278,7 +278,13 @@ class pgweb(Gtk.VBox):
         else:
             if self.wasin:
                 self.wasin = False
+                self.savetext()
                 #print("Web out")
+
+    def __del__(self):
+        # Did not happen automatically
+        #print("pednotes __del__")
+        self.savetext()
 
     def newitem(self, arg):
         self.savetext()
@@ -340,6 +346,9 @@ class pgweb(Gtk.VBox):
         datax = []
         try:
             dbsize = self.core.getdbsize()
+            if not dbsize:
+                return
+
             for aa in range(dbsize-1, 0, -1):
                 ddd = self.core.get_rec(aa)
                 if len(ddd) < 2:
@@ -375,7 +384,10 @@ class pgweb(Gtk.VBox):
             print(sys.exc_info())
             print("Cannot load notes Data at", cnt, qqq)
 
-        self.treeview2.sel_first()
+        try:
+            self.treeview2.sel_first()
+        except:
+            pass
 
 
     def backurl(self, arg1): #, url, parm, buff):
