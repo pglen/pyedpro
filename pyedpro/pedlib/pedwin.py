@@ -243,7 +243,8 @@ class EdMainWindow():
         if www == 0 or hhh == 0:
             www = Gdk.screen_width(); hhh = Gdk.screen_height()
 
-        print("www", www, "hhh", hhh)
+        if pedconfig.conf.verbose:
+            print("www", www, "hhh", hhh)
 
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
