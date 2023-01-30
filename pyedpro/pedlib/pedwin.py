@@ -243,12 +243,17 @@ class EdMainWindow():
         if www == 0 or hhh == 0:
             www = Gdk.screen_width(); hhh = Gdk.screen_height()
 
+        print("www", www, "hhh", hhh)
+
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
         self.mywin = Gtk.Window()
         #www = Gdk.screen_width(); hhh = Gdk.screen_height();
 
         if pedconfig.conf.full_screen:
+            if pedconfig.conf.verbose:
+                print("Setting full screen")
+
             self.mywin.set_default_size(www, hhh)
         else:
             xx = pedconfig.conf.sql.get_int("xx")
@@ -256,8 +261,8 @@ class EdMainWindow():
             ww = pedconfig.conf.sql.get_int("ww")
             hh = pedconfig.conf.sql.get_int("hh")
 
-            #if pedconfig.conf.verbose:
-            #    print("load coords", xx, yy, ww, hh)
+            if pedconfig.conf.verbose:
+                print("load coords", xx, yy, ww, hh)
 
             if ww == 0 or hh == 0:
                 self.mywin.set_position(Gtk.WindowPosition.CENTER)
@@ -2301,19 +2306,18 @@ def     OnExit(arg, arg2 = False, prompt = True):
     # Do not save full screen coordinates (when used F11)
     #print( mained.full)
 
-    if not mained.full:
+    if 1: #not mained.full:
         xx, yy = mained.mywin.get_position()
+        ww, hh = mained.mywin.get_size()
+
+        if pedconfig.conf.verbose:
+            print("Save coord", xx, yy, ww, hh)
 
         pedconfig.conf.sql.put("xx", xx)
         pedconfig.conf.sql.put("yy", yy)
 
-        ww, hh = mained.mywin.get_size()
-
         pedconfig.conf.sql.put("ww", ww)
         pedconfig.conf.sql.put("hh", hh)
-
-        if pedconfig.conf.verbose:
-            print("Save coord", xx, yy, ww, hh)
 
     pedconfig.conf.sql.put("sess", mained.sess)
 
