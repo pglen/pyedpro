@@ -157,8 +157,14 @@ class pgwebw(WebKit2.WebView):
             dialog.destroy()
 
     def get_html(self, completion_function, user_data):
+
+        #print("get_html")
         def javascript_completion(obj, result, user_data):
-            html = self.get_title()
+            #print("javascript_completion", result)
+            fin = self.run_javascript_finish(result)
+            #print("fin", fin)
+            html = fin.get_js_value().to_string()
+            #print("html", html, "\n")
             completion_function(html, user_data)
         self.run_javascript("document.title=document.documentElement.innerHTML;",
                                    None,

@@ -45,10 +45,6 @@ try:
 except:
     print("Cannot import twincore", sys.exc_info())
 
-def load_html(window):
-    sleep(5)
-    window.load_html('<h1>This is dynamically loaded HTML</h1>')
-
 # ------------------------------------------------------------------------
 
 class pgweb(Gtk.VBox):
@@ -355,7 +351,6 @@ class pgweb(Gtk.VBox):
                     continue        # Deleted record
 
                 #print("ddd", ddd)
-
                 #print("Item:", ddd[0], "Data:", ddd[1][:16] + b" ..." )
                 try:
                     ppp = ddd[0].split(b",")
@@ -364,20 +359,21 @@ class pgweb(Gtk.VBox):
                     ppp = ddd[0]
 
                 if len(ppp) > 1:
-                    qqq = ppp[2]            # Old data
+                    qqq = ppp[2]               # Old data
                 else:
-                    qqq = ppp[0]               # New data
+                    qqq = ddd[1]               # New data
 
                 #print("qqq", qqq)
                 qqq = qqq.decode("cp437").strip()
 
-                # remove quotes
-                if qqq[0] == '\'':
-                    qqq = qqq[1:-1]
+                # Remove quotes if any
+                if len(qqq) > 1:
+                    if qqq[0] == '\'':
+                        qqq = qqq[1:-1]
 
                 if qqq not in datax:
                     datax.append(qqq)
-                    #print(aa, qqq)
+                    #print("added:", qqq)
                     self.treeview2.append((qqq, "", ""))
         except:
             put_exception("load")
@@ -423,33 +419,35 @@ class pgweb(Gtk.VBox):
     def anchor(self, arg):
         self.webview.load_uri("file://" + self.fname)
 
-    def savetext(self):
 
-        newtext = None
-        def completion_function(html, user_data):
-            #print("Html", html)
-            newtext = html
+    def _completion_function(self, html, user_data):
 
-        try:
-            #newtext =  self.webview.get_content()
-            self.webview.get_html(completion_function, None)
-
-            ttt = self.lastsel[0]
-            #print("newtext", newtext, "ttt", ttt)
-        except:
-            if pedconfig.conf.verbose:
-                print("savetext", sys.exc_info())
-            ttt = "None"
-            pass
-
-        if not newtext:
+        #print("completion:", html)
+        if not html:
             return
         try:
-            self.core.save_data(ttt, newtext)
+            ttt = self.lastsel[0]
+        except:
+            return
+            pass
+
+        #print( "Save ttt:", ttt, "html:", html)
+
+        try:
+            self.core.save_data(ttt, html)
         except:
             print(sys.exc_info())
 
-        pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % ttt)
+        pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % ttt[:12])
+
+
+    def savetext(self):
+        try:
+            self.webview.get_html(self._completion_function, None)
+        except:
+            if pedconfig.conf.verbose:
+                print("savetext", sys.exc_info())
+            pass
 
     def treechange(self, args):
         print("treechange", args)
@@ -461,23 +459,24 @@ class pgweb(Gtk.VBox):
         pass
 
     def treesel(self, args):
-        #print("treesel", args)
-        self.webview.load_html('<h1>Loaded HTML</h1>')
+        #print("treesel", args[0])
         self.savetext()
         self.lastsel = args
 
         ddd = self.core.findrec(args[0], 1)
         if len(ddd) < 2:
-            if pedconfig.conf.verbose:
+            if 1: #pedconfig.conf.verbose:
                 print("No record to select", sys.exc_info())
             return
 
-        #print("ddd", type(ddd), ddd)
+        #print("ddd", type(ddd), ddd[0], ddd[1][:16])
         #print(b"'" + ddd[0][1][:3]) + b"'"
         try:
             self.webview.load_html(ddd[1])
         except:
             print(sys.exc_info())
             pass
+
+        pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % ttt[:12])
 
 # EOF
