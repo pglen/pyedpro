@@ -72,7 +72,7 @@ class pgcal(Gtk.VBox):
         self.hbox2.pack_start(butt2, 1, 1, 0)
         self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
 
-        self.pack_start(self.hbox2, 0, 0, 0)
+        self.pack_start(self.hbox2, 0, 0, 2)
         #self.pack_start(Gtk.Label(""), 0, 0, 0)
 
         self.hbox3 = Gtk.HBox()

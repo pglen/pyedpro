@@ -74,7 +74,8 @@ class pgweb(Gtk.VBox):
 
         try:
             self.core = twincore.TwinCore(self.data_dir + os.sep + "peddata.pydb")
-            #print("core", self.core, self.core.fname)
+            if pedconfig.conf.verbose:
+                print("core", self.core, self.core.fname)
         except:
             print("Cannot make web notes py database", sys.exc_info())
 
@@ -279,8 +280,11 @@ class pgweb(Gtk.VBox):
 
     def __del__(self):
         # Did not happen automatically
-        #print("pednotes __del__")
+        #if pedconfig.conf.verbose:
+        #    print("pedweb __del__")
         self.savetext()
+        if self.core:
+            self.core.__del__()
 
     def newitem(self, arg):
         self.savetext()
@@ -376,7 +380,7 @@ class pgweb(Gtk.VBox):
                     #print("added:", qqq)
                     self.treeview2.append((qqq, "", ""))
         except:
-            put_exception("load")
+            put_exception("load web data")
             print(sys.exc_info())
             print("Cannot load notes Data at", cnt, qqq)
 

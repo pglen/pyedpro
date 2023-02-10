@@ -17,6 +17,8 @@ from gi.repository import Pango
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
+import cairo
+
 from pedlib import pedconfig
 from pedlib import pedplug
 
@@ -128,6 +130,16 @@ class peddraw(object):
     def _draw_text(self, gc, x, y, text, fg_col = None, bg_col = None, esc = None):
 
         #print( "_draw_text",  self.xpos, self.ypos, self.caret, x/self.cxx, y/self.cyy)
+
+        fo = cairo.FontOptions()
+        #fo.set_antialias( cairo.ANTIALIAS_FAST)
+        fo.set_antialias( cairo.ANTIALIAS_BEST)
+        #fo.set_antialias( cairo.ANTIALIAS_DEFAULT)
+        #fo.set_antialias( cairo.ANTIALIAS_SUBPIXEL)
+        #fo.set_antialias( cairo.ANTIALIAS_GRAY)
+        #fo.set_antialias( cairo.ANTIALIAS_NONE)
+        #print("cairo fo", fo, fo.get_antialias() )
+        gc.set_font_options(fo)
 
         #x = int(x)
         ## if below zero, shift
