@@ -18,6 +18,8 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Pango
 
+import cairo
+
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
@@ -459,6 +461,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     def setfont(self, fam, size):
 
         self.fd = Pango.FontDescription()
+
         self.fd.set_family(fam)
         # Will not wotk right on the MAC if simple set_size used
         self.fd.set_absolute_size(size * Pango.SCALE)
@@ -466,6 +469,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.pangolayout = self.create_pango_layout("a")
         self.pangolayout.set_font_description(self.fd)
 
+        #print("pc", dir(PangoCairo))
+        #print()
+        #fm = Pango.FontMap()
+        #ccc = Pango.create_context(fm)
         # Get Pango steps
         #self.cxx, self.cyy = self.pangolayout.get_pixel_size()
         (pr, lr) = self.pangolayout.get_extents()

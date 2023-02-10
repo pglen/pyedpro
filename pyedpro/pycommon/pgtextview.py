@@ -42,11 +42,10 @@ font_sizes =      \
 
 class pgTextView(Gtk.VBox):
 
-    def __init__(self):
+    def __init__(self, status = False):
 
         self.statstr = None
         Gtk.VBox.__init__(self)
-
 
         self.tagtablex = []
         self.callb = None
@@ -62,12 +61,13 @@ class pgTextView(Gtk.VBox):
         self.statstr = Gtk.Label.new("Idle")
         self.statstr.set_halign(Gtk.Align.START)
 
-        hstat = Gtk.HBox()
-        hstat.pack_start(Gtk.Label.new("  Status:  "), 0, 0, 0)
-        hstat.pack_start(Gtk.Label.new(" "), 0, 0, 0)
-        hstat.pack_start(self.statstr, 1, 1, 0)
+        if  status:
+            hstat = Gtk.HBox()
+            hstat.pack_start(Gtk.Label.new("  Status:  "), 0, 0, 0)
+            hstat.pack_start(Gtk.Label.new(" "), 0, 0, 0)
+            hstat.pack_start(self.statstr, 1, 1, 0)
 
-        self.grid.attach(hstat, 0, 4, 3, 1)
+            self.grid.attach(hstat, 0, 4, 3, 1)
 
         self.textview.connect("key-press-event", self.area_key)
         self.textview.connect("move-cursor", self.area_curs)

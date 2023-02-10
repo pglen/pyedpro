@@ -268,6 +268,7 @@ class   LetterNumberSel(Gtk.VBox):
         hbox3a = Gtk.HBox()
         hbox3a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
         self.simsel =  internal_SimpleSel(strx, self.letter, font)
+
         hbox3a.pack_start(self.simsel, 0, 0, 0)
         hbox3a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
@@ -278,12 +279,26 @@ class   LetterNumberSel(Gtk.VBox):
         hbox3b.pack_start(self.simsel2, 0, 0, 0)
         hbox3b.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
+        self.hand_cursor = Gdk.Cursor(Gdk.CursorType.HAND2)
+        self.simsel.connect("enter_notify_event", self.enter_label)
+        self.simsel.connect("leave_notify_event", self.leave_label)
+        self.simsel2.connect("enter_notify_event", self.enter_label)
+        self.simsel2.connect("leave_notify_event", self.leave_label)
+
         self.simsel2.other = self.simsel
         self.simsel.other = self.simsel2
 
         self.pack_start(hbox3a, 0, 0, False)
         self.pack_start(zSpacer(4), 0, 0, False)
         self.pack_start(hbox3b, 0, 0, False)
+
+    def enter_label(self, arg, arg2):
+        #print("Enter")
+        self.get_window().set_cursor(self.hand_cursor)
+
+    def leave_label(self, arg, arg2):
+        #print("Leave")
+        self.get_window().set_cursor()
 
     def  letter(self, letter):
         #print("LetterSel::letterx:", letter)

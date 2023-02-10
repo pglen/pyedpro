@@ -54,6 +54,7 @@ class pgnotes(Gtk.VBox):
 
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
+        self.popwin = None
         self.data_dir = os.path.expanduser("~/.pyednotes")
         try:
             if not os.path.isdir(self.data_dir):
@@ -77,9 +78,10 @@ class pgnotes(Gtk.VBox):
         #message("Cannot make notes database")
 
         #hbox = Gtk.HBox()
-        self.pack_start(Gtk.Label(""), 0, 0, 0)
+        #self.pack_start(Gtk.Label("s"), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font="Mono 12")
+        #self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font="Mono 12")
+        self.lsel = pgsimp.LetterNumberSel(self.letterfilter)
         self.lsel.set_tooltip_text("Filter entries by letter / number")
         self.pack_start(self.lsel, 0, 0, 2)
 
@@ -108,18 +110,18 @@ class pgnotes(Gtk.VBox):
         scroll2.add(self.treeview2)
         #scroll2.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
-        vpaned = Gtk.VPaned()
+        self.vpaned = Gtk.VPaned()
 
         frame3 = Gtk.Frame();
         frame3.add(scroll2)
-        vpaned.add(frame3)
+        self.vpaned.add(frame3)
 
-        vpaned.set_position(300)
+        self.vpaned.set_position(200)
 
         #self.edview = pgsimp.TextViewWin()
         self.edview =  pgTextView()
         #self.edview.callb = self.savetext
-        self.edview.findcall = self.search, self
+        self.edview.findcall = self.findx, self
 
         self.edview.textview.set_margin_left(2)
         self.edview.textview.set_margin_right(2)
@@ -135,29 +137,35 @@ class pgnotes(Gtk.VBox):
 
         self.deftags = self.edview.textbuffer.get_tag_table()
 
-        self.pack_start(Gtk.Label(label="Font formatting is work in progress."), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label="Font formatting is work in progress."), 0, 0, 0)
         frame4 = Gtk.Frame();
         frame4.set_border_width(3)
         frame4.add(self.edview)
 
-        vpaned.add(frame4)
-        self.pack_start(vpaned, 1, 1, 2)
+        self.vpaned.add(frame4)
+        self.pack_start(self.vpaned, 1, 1, 2)
 
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        butt3 = Gtk.Button.new_with_mnemonic("New Item")
-        butt3.connect("pressed", self.newitem)
-        hbox13.pack_start(butt3, 0, 0, 2)
+        #butt3 = Gtk.Button.new_with_mnemonic("New Item")
+        #butt3.connect("pressed", self.newitem)
+        butt3 = smallbutt("| New Item ", self.newitem, "Create new record")
+        hbox13.pack_start(butt3, 0, 0, 0)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
-        butt3.connect("pressed", self.search)
-        hbox13.pack_start(butt3, 0, 0, 2)
+        #butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
+        #butt3.connect("pressed", self.search)
 
-        butt3a = Gtk.Button.new_with_mnemonic("Search All")
-        butt3a.connect("pressed", self.searchall)
-        hbox13.pack_start(butt3a, 0, 0, 2)
+        butt3x = smallbutt("| Find in Text ", self.findx, "Find in text")
+        hbox13.pack_start(butt3x, 0, 0, 0)
+
+        #butt3a = Gtk.Button.new_with_mnemonic("Search All")
+        #butt3a.connect("pressed", self.searchall)
+
+        butt3a = smallbutt("| Search All |", self.searchall, "Search ALL data")
+
+        hbox13.pack_start(butt3a, 0, 0, 0)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
@@ -165,19 +173,30 @@ class pgnotes(Gtk.VBox):
         hbox13a = Gtk.HBox()
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        butt11 = Gtk.Button.new_with_mnemonic("Del Item")
-        butt11.connect("pressed", self.delitem)
-        hbox13a.pack_start(butt11, 0, 0, 2)
+        #butt11 = Gtk.Button.new_with_mnemonic("Del Item")
+        #butt11.connect("pressed", self.delitem)
+
+        butt11 = smallbutt(" | Del Item ", self.delitem, "Delete item")
+        hbox13a.pack_start(butt11, 0, 0, 0)
+
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt12 = Gtk.Button.new_with_mnemonic("Export")
-        butt12.connect("pressed", self.export)
-        hbox13a.pack_start(butt12, 0, 0, 2)
+        #butt12 = Gtk.Button.new_with_mnemonic("Export")
+        #butt12.connect("pressed", self.export)
+
+        butt12 = smallbutt("| Export ", self.export, "Export items")
+        hbox13a.pack_start(butt12, 0, 0, 0)
+
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt12a = Gtk.Button.new_with_mnemonic("Import")
-        butt12a.connect("pressed", self.importx)
-        hbox13a.pack_start(butt12a, 0, 0, 2)
+        #butt12a = Gtk.Button.new_with_mnemonic("Import")
+        #butt12a.connect("pressed", self.importx)
+
+        butt12a = smallbutt("| Import ", self.importx, "Import items")
+        hbox13a.pack_start(butt12a, 0, 0, 0)
+
+        butt12b = smallbutt("| Popout |", self.popx, "Pop out window")
+        hbox13a.pack_start(butt12b, 0, 0, 0)
 
         #butt14 = Gtk.Button.new_with_mnemonic("ExpData")
         #butt14.connect("pressed", self.exportd)
@@ -193,7 +212,12 @@ class pgnotes(Gtk.VBox):
 
         self.pack_start(hbox13, 0, 0, 2)
         self.pack_start(hbox13a, 0, 0, 2)
+        pedconfig.conf.pedwin.mywin.connect("configure-event", self.resize)
         self.load()
+
+    def resize(self, widg, newconf):
+        #print("resize", newconf.width, newconf.height)
+        self.vpaned.set_position(newconf.height / 6)
 
     def __del__(self):
         # Did not happen automatically
@@ -214,16 +238,19 @@ class pgnotes(Gtk.VBox):
 
     def  letterfilter(self, letter):
         self.savetext()
-        ##print("letterfilter", letter)
-        #if letter == "All":
-        #    self.load()
-        #else:
-        #    aaa = self.sql.findhead(letter + "%")
-        #    self.treeview2.clear()
-        #    for aa in aaa:
-        #        self.treeview2.append(aa[2:5])
+        #print("letterfilter", letter)
 
-    def searchall(self, arg):
+        if letter == "All":
+            self.load()
+        else:
+            ddd = self._getall()
+            self.treeview2.clear()
+            for aa in ddd:
+                if letter in aa[0].lower():
+                    #print("    ", aa)
+                    self.treeview2.append((aa, "", ""))
+
+    def searchall(self, arg, arg2):
         self.savetext()
         dlg = SearchDialog()
         ret = dlg.run()
@@ -234,20 +261,18 @@ class pgnotes(Gtk.VBox):
         dlg.destroy()
         self.treeview2.clear()
         try:
-            #datax = self.sql.getall()
-            #for aa in datax:
-            #    #print(aa)
-            #    ddd = self.sql.getdata(aa[1])
-            #    #print("ddd", ddd)
-            #    if txt in ddd[0]:
-            #        #print("    ", ddd)
-            #        self.treeview2.append(aa[2:5])
-            #        continue
+            datax = self._getall()
+            for aa in datax:
+                #print(aa)
+                if txt in aa:
+                    #print("    ", aa)
+                    self.treeview2.append((aa, "", ""))
+
             pass
         except:
             print("exc in search ", sys.exc_info())
 
-    def search(self, arg):
+    def findx(self, arg, arg2):
         self.savetext()
         dlg = SearchDialog() #self.edview.textview)
         ret = dlg.run()
@@ -266,7 +291,7 @@ class pgnotes(Gtk.VBox):
            textbuffer.select_range(match_start,match_end)#    datax = self.sql.getall()
            self.edview.textview.scroll_to_iter(match_start, 0, False, 0, 0)
 
-    def newitem(self, arg):
+    def newitem(self, arg, arg2):
         self.savetext()
         rrr = HeadDialog("New Item %d" % self.cnt, None)
         ret = rrr.run()
@@ -301,7 +326,7 @@ class pgnotes(Gtk.VBox):
                 #print("pos", pos)
                 pass
             except:
-                print(sys.exc_info())
+                print("newitem", sys.exc_info())
 
             message("\nThis record already exists. \n\n %s" % ttt)
             return
@@ -317,7 +342,7 @@ class pgnotes(Gtk.VBox):
         self.edview.set_text(newtext)
         self.core.save_data(ttt, newtext)
 
-    def delitem(self, arg):
+    def delitem(self, arg, arg2):
         #print ("delitem", self.lastkey, self.lastsel)
         if not self.lastsel:
             print("Nothing to delete")
@@ -338,7 +363,7 @@ class pgnotes(Gtk.VBox):
         usleep(10)
         self.load()
 
-    def importx(self, arg):
+    def importx(self, arg, arg2):
         #print("Import")
         cnt = 0
         dbsize = self.core.getdbsize()
@@ -346,7 +371,6 @@ class pgnotes(Gtk.VBox):
             ddd = self.core.get_rec(aa)
             if len(ddd) < 2:
                 continue
-
             try:
                 nnn = ddd[0].decode("cp437")
                 ppp = nnn.split(",")
@@ -354,12 +378,12 @@ class pgnotes(Gtk.VBox):
                 print(aa, ppp[2])
                 cnt += 1
             except:
-                print(sys.exc_info())
+                print("importx", sys.exc_info())
 
         #print("imported", cnt, "items")
         pedconfig.conf.pedwin.update_statusbar("Imported %d items" % cnt);
 
-    def export(self, arg):
+    def export(self, arg, arg2):
 
         base = "peddata";  cnt = 0; fff = ""
         while True:
@@ -409,35 +433,32 @@ class pgnotes(Gtk.VBox):
         fp.close()
         pedconfig.conf.pedwin.update_statusbar("Exported notes to %s" % os.path.basename(fff))
 
+    def popx(self, arg, arg2):
+
+        txt = self.edview.ser_buff()
+        #print ("popx txt", txt)
+
+        # Create if not there
+
+        if self.popwin:
+            self.popwin.destroy()
+
+        self.popwin = PopWin()
+        self.popwin.lastsel = self.lastsel
+        self.popwin.savefunc = self.savefunc
+        self.popwin.set_popwin_text(txt)
+        self.popwin.show_all()
+
+    def savefunc(self, item, text):
+        #print("savefunc", item, text[:12])
+        self.core.save_data(item[0], text)
+        if item[0] == self.lastsel[0]:
+            #print("re-read current")
+            self._readrec(item)
+
     def save(self, arg):
-        print ("save unimplemented")
-
-    def find(self, arg):
-        #print ("find", self.edit.get_text())
-        if not self.edit.get_text():
-            self.load()
-            return
-        #aaa = self.sql.findhead("%" + self.edit.get_text() + "%")
-        ##print("all", aaa)
-        #self.treeview2.clear()
-        #for aa in aaa:
-        #    #print("aa", aa)
-        #    self.treeview2.append(aa[2:5])
-
-    def _assurelast(self):
-        if not self.lastsel:
-            sel = self.treeview2.get_selection()
-            if not sel:
-                treeview2.sel_last()
-            sel = self.treeview2.get_selection()
-            xmodel, xiter = sel.get_selected()
-            if xiter:
-                args = []
-                for aa in range(1):
-                    xstr = xmodel.get_value(xiter, aa)
-                    if xstr:
-                        args.append(xstr)
-                self.treesel(args)
+        #print ("save automatic (unimplemented)")
+        pass
 
     def savetext(self):
 
@@ -448,7 +469,6 @@ class pgnotes(Gtk.VBox):
         #txt = self.edview.get_text()
         txt = self.edview.ser_buff()
 
-        #self._assurelast()
         print("save", self.lastkey, self.lastsel, txt[0:12])
 
         #self.core.verbose = 2
@@ -484,6 +504,9 @@ class pgnotes(Gtk.VBox):
             self.savetext()
 
         self.lastsel = args
+        self._readrec(args)
+
+    def _readrec(self, args):
 
         ddd = self.core.findrec(args[0], 1)
         #print("ddd", type(ddd), ddd)
@@ -491,27 +514,23 @@ class pgnotes(Gtk.VBox):
 
         try:
             # See what kind it is
-            if ddd[0][1][:13] == b"GTKTEXTBUFFER":
-                self.edview.set_text("")
-                #print("deser", ddd[0][1])
-                self.edview.deser_buff(ddd[0][1])
-            else:
+            try:
+                if ddd[0][1][:13] == b"GTKTEXTBUFFER":
+                    self.edview.set_text("")
+                    #print("deser", ddd[0][1])
+                    self.edview.deser_buff(ddd[0][1])
+            except:
+                #print("treesel", sys.exc_info())
+                pass
+
+        except:
                 #print("load", ddd[0][1])
                 self.edview.set_text(ddd[0][1].decode("cp437"))
 
-            self.edview.set_modified(0)
+        self.edview.set_modified(0)
 
-        except:
-            print(sys.exc_info())
-            pass
 
-    def load(self):
-
-        ''' Load from file;
-            This is more complex than it should be ... dealing with old data
-        '''
-
-        self.lastsel = None; self.lastkey = None
+    def _getall(self):
         datax = []
         try:
             dbsize = self.core.getdbsize()
@@ -519,9 +538,7 @@ class pgnotes(Gtk.VBox):
                 ddd = self.core.get_rec(aa)
                 if len(ddd) < 2:
                     continue        # Deleted record
-
                 #print("ddd", ddd)
-
                 #print("Item:", ddd[0], "Data:", ddd[1][:16] + b" ..." )
                 try:
                     ppp = ddd[0].split(b",")
@@ -544,13 +561,116 @@ class pgnotes(Gtk.VBox):
                 if qqq not in datax:
                     datax.append(qqq)
                     #print(aa, qqq)
-                    self.treeview2.append((qqq, "", ""))
+        except:
+            put_exception("_getall")
+
+        return datax
+
+    def load(self):
+
+        ''' Load from file;
+            This is more complex than it should be ... dealing with old data
+        '''
+
+        self.lastsel = None; self.lastkey = None
+        try:
+            ddd = self._getall()
+            for qqq in ddd:
+                self.treeview2.append((qqq, "", ""))
         except:
             put_exception("load")
-            print(sys.exc_info())
-            print("Cannot load notes Data at", cnt, qqq)
+            #print("Cannot load notes Data at", cnt, qqq)
 
         #self.treeview2.sel_last()
         #self.treeview2.sel_first()
+
+
+class   PopWin(Gtk.Window):
+
+    def __init__(self):
+
+        Gtk.Window.__init__(self)
+
+        #self.win2 = Gtk.Window()
+        self.set_position(Gtk.WindowPosition.CENTER)
+        self.set_default_size(800, 600)
+
+        tit = "pyedpro:title"
+        self.set_title(tit)
+        try:
+            self.set_icon_from_file(get_img_path("pyedpro_sub.png"))
+        except:
+            print( "Cannot load log icon:", "pyedpro_sub.png", sys.exc_info())
+
+        self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
+
+        self.connect("key-press-event", self._area_key, self)
+        self.connect("key-release-event", self._area_key, self)
+        self.connect("destroy", self._area_destroy)
+
+        #self.connect("focus-out-event", self._focus)
+        self.view = pgTextView(True)
+        #self.view.textview.set_editable(False)
+
+        self.scroll = Gtk.ScrolledWindow();
+        self.scroll.add(self.view)
+        frame = Gtk.Frame(); frame.add(self.scroll)
+        self.add(frame)
+        self.show_all()
+
+    # Gdk.EventFocus
+    def _focus(self, win, to):
+        #print("focusx", win, to.window)
+        pass
+
+    def closewin(self, win):
+        #print("close", win)
+        pass
+
+    #def close(self):
+    #    self.win2.destroy()
+
+    def _area_destroy(self, area):
+        #print("destroy", area)
+        #print("Saving", self.lastsel)
+        if self.view.get_modified():
+            txt = self.view.ser_buff()
+            self.savefunc(self.lastsel, txt)
+        # if we do not want it to close
+        #return True
+
+    #def _area_focus(self, area, event, dialog):
+    #    print("focus", event)
+
+    def set_popwin_text(self, text):
+        self.view.deser_buff(text)
+
+    # ------------------------------------------------------------------------
+
+    def _area_key(self, area, event, dialog):
+
+        if  event.type == Gdk.EventType.KEY_PRESS:
+            if event.keyval == Gdk.KEY_Escape:
+                #print "Esc"
+                area.destroy()
+
+        if  event.type == Gdk.EventType.KEY_PRESS:
+            if event.keyval == Gdk.KEY_Return:
+                #print "Ret"
+                area.destroy()
+
+            if event.keyval == Gdk.KEY_Alt_L or \
+                    event.keyval == Gdk.KEY_Alt_R:
+                area.alt = True;
+
+            if event.keyval == Gdk.KEY_x or \
+                    event.keyval == Gdk.KEY_X:
+                if area.alt:
+                    area.destroy()
+
+        elif  event.type == Gdk.EventType.KEY_RELEASE:
+            if event.keyval == Gdk.KEY_Alt_L or \
+                  event.keyval == Gdk.KEY_Alt_R:
+                area.alt = False;
 
 # EOF

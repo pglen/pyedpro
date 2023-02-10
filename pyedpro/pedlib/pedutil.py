@@ -1387,5 +1387,71 @@ class HeadDialog(Gtk.Dialog):
         self.show_all()
 
 
+class smallbutt(Gtk.VBox):
+
+    def __init__(self, labx, eventx, tooltip = None):
+
+        Gtk.VBox.__init__(self, labx)
+        #GObject.GObject.__init__(self)
+
+        self.hand_cursor = Gdk.Cursor(Gdk.CursorType.HAND2)
+        self.label = Gtk.Label.new(labx)
+
+        if tooltip:
+            self.label.set_tooltip_text(tooltip)
+
+        self.label.set_single_line_mode(True)
+
+        #self.add(self.label)
+
+        self.eb = Gtk.EventBox();
+        self.eb.set_above_child(True)
+        self.eb.add(self.label)
+        #eb.connect_after("button-press-event", eventx)
+        self.eb.connect("button-press-event", eventx)
+
+        self.eb.connect("enter_notify_event", self.enter_label)
+        self.eb.connect("leave_notify_event", self.leave_label)
+        self.add(self.eb)
+        self.show_all()
+
+    def enter_label(self, arg, arg2):
+        #print("Enter")
+        self.label.get_window().set_cursor(self.hand_cursor)
+
+    def leave_label(self, arg, arg2):
+        #print("Leave")
+        self.label.get_window().set_cursor()
+
+class SearchDialog(Gtk.Dialog):
+
+    def __init__(self, parent = None):
+        Gtk.Dialog.__init__(
+            self, title=" Search ", transient_for=parent, modal=True,
+        )
+        self.add_buttons(
+            Gtk.STOCK_FIND,
+            Gtk.ResponseType.OK,
+            Gtk.STOCK_CANCEL,
+            Gtk.ResponseType.CANCEL,
+        )
+        self.set_default_response(Gtk.ResponseType.OK)
+        box = self.get_content_area()
+
+        #label = Gtk.Label(label="  Enter text you want to search for:  ")
+        label = Gtk.Label(label="   ")
+        box.add(label)
+
+        self.hbox = Gtk.HBox()
+        self.hbox.pack_start(Gtk.Label(label="   Search for:  "), 0, 0, 0)
+        self.entry = Gtk.Entry()
+        self.entry.set_activates_default(True)
+        self.hbox.pack_start(self.entry, 1, 1, 0)
+        self.hbox.pack_start(Gtk.Label(label="            "), 0, 0, 0)
+
+        box.add(self.hbox)
+
+        #box.add(self.entry)
+        self.show_all()
 
 # EOF

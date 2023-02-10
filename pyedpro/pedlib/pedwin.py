@@ -35,7 +35,7 @@ from pedlib import peddlg
 from pedlib import pedthread
 from pedlib import pedspell
 from pedlib import pedofd
-from pedlib import pedutil
+#from pedlib import pedutil
 
 #sys.path.append('..' + os.sep + "pycommon")
 
@@ -533,21 +533,24 @@ class EdMainWindow():
         shbox.pack_start(slabs, 0, 0, 0)
         shbox.pack_start(self.slab, 0, 0, 0)
 
-        label = Gtk.Label.new(" | Hist | ")
-        label.set_tooltip_text("Look at event history")
-        label.set_single_line_mode(True)
-        eb = Gtk.EventBox(); eb.add(label)
-        eb.connect_after("button-press-event", self.status_hist)
-        eb.set_above_child(True)
+        #label = Gtk.Label.new(" | Hist | ")
+        #label.set_tooltip_text("Look at event history")
+        #label.set_single_line_mode(True)
+        #eb = Gtk.EventBox(); eb.add(label)
+        #eb.connect_after("button-press-event", self.status_hist)
+        #eb.set_above_child(True)
+
+        eb = smallbutt(" | Hist | ", self.status_hist, "Look at event history")
         shbox.pack_end(eb, 0, 0, 0)
 
-        label2 = Gtk.Label.new(" | Lang | ")
-        label2.set_tooltip_text("Change language")
-        label2.set_single_line_mode(True)
-        eb2 = Gtk.EventBox(); eb2.add(label2)
-        eb2.connect_after("button-press-event", self.status_lang)
-        eb2.set_above_child(True)
+        #label2 = Gtk.Label.new(" | Lang | ")
+        #label2.set_tooltip_text("Change language")
+        #label2.set_single_line_mode(True)
+        #eb2 = Gtk.EventBox(); eb2.add(label2)
+        #eb2.connect_after("button-press-event", self.status_lang)
+        #eb2.set_above_child(True)
 
+        eb2 = smallbutt(" | Lang | ", self.status_lang, "Change language")
         shbox.pack_end(eb2, 0, 0, 0)
 
         #shbox.override_background_color(
