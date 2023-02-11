@@ -22,7 +22,7 @@ from pedlib import pedconfig
 
 from pycommon.pggui import *
 
-def ofd(fname = None, self2 = None):
+def ofd(fname = "", self2 = None):
 
     warnings.simplefilter("ignore")
 

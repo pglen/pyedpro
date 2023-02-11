@@ -470,7 +470,8 @@ class pgweb(Gtk.VBox):
         ddd = self.core.findrec(args[0], 1)
         if len(ddd) < 2:
             if 1: #pedconfig.conf.verbose:
-                print("No record to select", sys.exc_info())
+                #print("No record to select", sys.exc_info())
+                pass
             return
 
         #print("ddd", type(ddd), ddd[0], ddd[1][:16])
