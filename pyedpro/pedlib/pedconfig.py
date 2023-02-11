@@ -68,6 +68,7 @@ class Conf():
         self.sql_data = os.path.expanduser("~/.pyedpro/sql_data")
         self.history  = os.path.expanduser("~/.pyedpro/history")
         self.sessions = os.path.expanduser("~/.pyedpro/sessions")
+        self.notes_dir = os.path.expanduser("~/.pyednotes")
 
         self.config_file = "defaults"
 

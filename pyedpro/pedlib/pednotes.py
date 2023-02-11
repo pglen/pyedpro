@@ -18,6 +18,7 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 from    pedlib.pedync import *
+from    pedlib.pedofd import *
 
 from pycommon.pggui import *
 from pycommon.pgsimp import *
@@ -55,7 +56,8 @@ class pgnotes(Gtk.VBox):
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
         self.popwin = None
-        self.data_dir = os.path.expanduser("~/.pyednotes")
+        self.data_dir = pedconfig.conf.notes_dir
+
         try:
             if not os.path.isdir(self.data_dir):
                 os.mkdir(self.data_dir)
@@ -83,7 +85,7 @@ class pgnotes(Gtk.VBox):
         #self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font="Mono 12")
         self.lsel = pgsimp.LetterNumberSel(self.letterfilter)
         self.lsel.set_tooltip_text("Filter entries by letter / number")
-        self.pack_start(self.lsel, 0, 0, 2)
+        self.pack_start(self.lsel, 0, 0, 0)
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#dd8822"))
 
@@ -104,7 +106,6 @@ class pgnotes(Gtk.VBox):
 
         self.treeview2 = pgsimp.SimpleTree(("Header", "Subject", "Description"), skipedit=0)
         self.treeview2.setcallb(self.treesel)
-        #self.treeview2.setCHcallb(self.treechange)
 
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(self.treeview2)
@@ -143,7 +144,7 @@ class pgnotes(Gtk.VBox):
         frame4.add(self.edview)
 
         self.vpaned.add(frame4)
-        self.pack_start(self.vpaned, 1, 1, 2)
+        self.pack_start(self.vpaned, 1, 1, 0)
 
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
@@ -173,9 +174,6 @@ class pgnotes(Gtk.VBox):
         hbox13a = Gtk.HBox()
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        #butt11 = Gtk.Button.new_with_mnemonic("Del Item")
-        #butt11.connect("pressed", self.delitem)
-
         butt11 = smallbutt(" | Del Item ", self.delitem, "Delete item")
         hbox13a.pack_start(butt11, 0, 0, 0)
 
@@ -198,20 +196,10 @@ class pgnotes(Gtk.VBox):
         butt12b = smallbutt("| Popout |", self.popx, "Pop out window")
         hbox13a.pack_start(butt12b, 0, 0, 0)
 
-        #butt14 = Gtk.Button.new_with_mnemonic("ExpData")
-        #butt14.connect("pressed", self.exportd)
-        #hbox13.pack_start(butt14, 0, 0, 2)
-        #hbox13.pack_start(Gtk.Label(" "), 0, 0, 0)
-
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        #butt22 = Gtk.Button.new_with_mnemonic("Save")
-        #butt22.connect("pressed", self.save)
-        #hbox13.pack_start(butt22, 0, 0, 0)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
-
-        self.pack_start(hbox13, 0, 0, 2)
-        self.pack_start(hbox13a, 0, 0, 2)
+        self.pack_start(hbox13, 0, 0, 0)
+        self.pack_start(hbox13a, 0, 0, 0)
         pedconfig.conf.pedwin.mywin.connect("configure-event", self.resize)
         self.load()
 
@@ -353,9 +341,10 @@ class pgnotes(Gtk.VBox):
         if rrr != Gtk.ResponseType.YES:
             return
 
-        #print("Removing", self.lastsel[0])
+        print("Removing", self.lastsel[0])
+        dbsize = self.core.getdbsize()
         # Remove all of them including shadow entried
-        delx = self.core.del_recs(self.lastsel[0].encode("cp437"), 0, twincore.INT_MAX)
+        delx = self.core.del_rec_bykey(self.lastsel[0], dbsize)
         pedconfig.conf.pedwin.update_statusbar("Removed %d records." % delx)
 
         # Refresh list in main sel window
@@ -363,25 +352,141 @@ class pgnotes(Gtk.VBox):
         usleep(10)
         self.load()
 
+    def import_one(self, head, body):
+
+        #body = body.strip()
+
+        #print("Head:", head)
+        #print("Body:", body[:64] + " ...")
+        #print()
+
+        # Convert old format records
+        #print("Head:", head)
+        if head[:3] == 'b"(':
+            #print(" REC ", head)
+            sss = head.split(",")
+            #print(" sss", headx)
+            if len(sss) > 1:
+                headx = sss[2]
+                #print("Headx2:", headx)
+            else:
+                print("Bad record", head)
+                #raise
+        else:
+            headx = head
+            if headx[:2] == "b'":
+                headx = headx[1:]
+            #print("Headx2:", headx)
+
+        if type(headx) != str:
+            headx = headx.decode()
+
+        headx = headx.strip("' \r\n\t\"")
+
+        #print("Headx:", headx)
+        #print("Body:", body[:64] + "...")
+        #print()
+
+        if headx not in self.recx:
+            self.recx.append(headx)
+            self.recy.append(body)
+
     def importx(self, arg, arg2):
         #print("Import")
-        cnt = 0
-        dbsize = self.core.getdbsize()
-        for aa in range(dbsize):
-            ddd = self.core.get_rec(aa)
-            if len(ddd) < 2:
-                continue
-            try:
-                nnn = ddd[0].decode("cp437")
-                ppp = nnn.split(",")
-                ppp[2] = ppp[2][2:-1]               # Remove quotes
-                print(aa, ppp[2])
-                cnt += 1
-            except:
-                print("importx", sys.exc_info())
 
-        #print("imported", cnt, "items")
-        pedconfig.conf.pedwin.update_statusbar("Imported %d items" % cnt);
+        cwd = os.getcwd();
+        os.chdir(pedconfig.conf.notes_dir)
+        fname = ofd("", self)
+        os.chdir(cwd)
+        if not fname:
+            return
+
+        #print("opening", fname)
+        try:
+            fp = open(fname[0], "rt")
+        except:
+            print("Cannot read data", sys.exc_info());
+            pedconfig.conf.pedwin.update_statusbar("Cannot import notes")
+            return
+
+        sep =  "---------------------------------------------------------"
+        state = 0
+        head = body = ""
+
+        self.recx = [];   self.recy = []
+
+        while True:
+            line = fp.readline()
+            if not line:
+                break
+
+            if sep in line:
+                #print("sep", line)
+                if state == 0:
+                    #if len(line) < 3:
+                    #    continue
+                    state = 1
+                elif state == 1:
+                    state = 2;
+                elif state == 2:
+                    self.import_one(head, body)
+                    head = body = ""
+                    state = 1;
+                else:
+                    print("Invalid FSM state")
+
+            elif state == 1:
+                #print(state, "line", "'" + line + "'")
+                #print(line, end = "")
+                #if line[0] != "(":
+                head += line
+                #    print("UNEXPECTED REC")
+
+            elif state == 2:
+                body += line
+                #print(state, "line", "'" + line + "'")
+                pass
+
+        # Last record:
+        if head:
+            self.import_one(head, body)
+        fp.close()
+
+        self.import_data()
+
+    def import_data(self):
+        cnt = 0
+        #rrr = self.core.find_key(head)
+        #rrr = self.core.retrieve(head)
+        #if not rrr:
+        #    print("this record patched", head)
+        #    #print(rrr)
+        dlen = len(self.recx)
+        for aa in range(dlen):
+            head = self.recx[aa]
+
+            #print("head:", "'" + head + "'")
+            #print("data:", len(self.recy), self.recy[aa][:64])
+
+            #self.core.core_verbose = 2
+            rrr = self.core.findrec(head, 1)
+            #print("rrr", rrr[0].decode())
+            #self.core.core_verbose = 0
+            if not rrr or rrr[0].decode() != head:
+                print("Would import", "'" + head + "'")
+                self.core.save_data(head, self.recy[aa])
+                cnt += 1
+
+            #if rrr != head:
+            #    print("Would import", "'" + head + "'", rrr)
+            #    cnt += 1
+
+        self.treeview2.clear()
+        self.load()
+
+        print("imported", cnt, "items of", dlen)
+        pedconfig.conf.pedwin.update_statusbar(\
+                    "Imported %d items of %d " % (cnt, dlen))
 
     def export(self, arg, arg2):
 
@@ -400,38 +505,30 @@ class pgnotes(Gtk.VBox):
             pedconfig.conf.pedwin.update_statusbar("Cannot export notes")
             return
 
-        #datax = self.sql.getall()
-        #for aa in datax:
-        #    #print(aa)
-        #    ddd = self.sql.getdata(aa[1])
-        #    #print("ddd", ddd)
-        #    try:
-        #       fp.write("\n ------------------------------------------------------------------\n")
-        #       fp.write(str(aa))
-        #       fp.write("\n ------------------------------------------------------------------\n")
-        #       fp.write(str(ddd[0]) + "\n")
-        #    except:
-        #        print("exc in export ", ddd, sys.exc_info())
-
         try:
             datax = []
             cnt = 0
-            try:
-                dbsize = self.core.getdbsize()
-                for aa in range(dbsize-1, 0, -1):
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                try:
                     ddd = self.core.get_rec(aa)
+                    if len(ddd) > 1:
+                        kkk = ddd[0]
+                        vvv = ddd[1]
                     #print("Item", type(ddd[0]), ddd[0], "Data:", ddd[1][:16] + b" ..." )
                     fp.write("\n ------------------------------------------------------------------\n")
-                    fp.write(str(ddd))
+                    fp.write(str(kkk))
                     fp.write("\n ------------------------------------------------------------------\n")
-            except:
-                print("Cannot backup record\n", aa);
-
+                    fp.write(str(vvv))
+                    cnt += 1
+                except:
+                    print("Cannot backup record\n", aa, sys.exc_info());
         except:
             print("Cannot backup database\n");
 
         fp.close()
-        pedconfig.conf.pedwin.update_statusbar("Exported notes to %s" % os.path.basename(fff))
+        pedconfig.conf.pedwin.update_statusbar("Exported %d/%d notes to %s" % \
+                                (dbsize, cnt, os.path.basename(fff)))
 
     def popx(self, arg, arg2):
 
@@ -471,24 +568,9 @@ class pgnotes(Gtk.VBox):
 
         print("save", self.lastkey, self.lastsel, txt[0:12])
 
-        #self.core.verbose = 2
+        #self.core.core_verbose = 2
         self.core.save_data(self.lastsel[0], txt)
-        #self.core.verbose = 0
-
-    # --------------------------------------------------------------------
-
-    def treechange(self, args):
-        # Old entry
-        #print("treechange", args)
-        #self.lastsel = args[0][:]
-        ## Is there one like this?
-        #ddd = self.sql.gethead(args[0])
-        ##print("ddd", ddd)
-        #if ddd:
-        #    self.lastkey = ddd[1]
-        #    self.sql.put(self.lastkey, args[0], args[1], args[2])
-        ##pedconfig.conf.pedwin.update_statusbar("Saved note item for '%s'" % self.lastsel);
-        pass
+        #self.core.core_verbose = 0
 
     # --------------------------------------------------------------------
 
@@ -508,27 +590,25 @@ class pgnotes(Gtk.VBox):
 
     def _readrec(self, args):
 
-        ddd = self.core.findrec(args[0], 1)
+        ddd = self.core.retrieve(args[0])
+
         #print("ddd", type(ddd), ddd)
         #print(b"'" + ddd[0][1][:3]) + b"'"
 
+        # See what kind it is
         try:
-            # See what kind it is
-            try:
-                if ddd[0][1][:13] == b"GTKTEXTBUFFER":
-                    self.edview.set_text("")
-                    #print("deser", ddd[0][1])
-                    self.edview.deser_buff(ddd[0][1])
-            except:
-                #print("treesel", sys.exc_info())
-                pass
-
-        except:
+            if ddd[0][1][:13] == b"GTKTEXTBUFFER":
+                self.edview.set_text("")
+                #print("deser", ddd[0][1])
+                self.edview.deser_buff(ddd[0][1])
+            else:
                 #print("load", ddd[0][1])
                 self.edview.set_text(ddd[0][1].decode("cp437"))
+        except:
+            print("treesel", sys.exc_info())
+            pass
 
         self.edview.set_modified(0)
-
 
     def _getall(self):
         datax = []
@@ -568,7 +648,8 @@ class pgnotes(Gtk.VBox):
 
     def load(self):
 
-        ''' Load from file;
+        '''
+            Load from file;
             This is more complex than it should be ... dealing with old data
         '''
 
