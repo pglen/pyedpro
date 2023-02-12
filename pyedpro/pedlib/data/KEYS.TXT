@@ -1,11 +1,15 @@
                          PyEdPro Key Assignments
 
+        This is the primary (authentic) key assignment doc.
+               All other files lag in up-to-date-ness.
+
    This is a list of default key assignments for PyEdPro. We tried to follow
 existing keyboard standards. The keys are assigned in keyhand.py and the
 actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
 Updates:
+            Sat 11.Feb.2023     Introduced RIGHT Control keys
             Fri 09.Sep.2022     More docs and ctr-alt entries
             Wed 07.Sep.2022     Cleaned spacing / added some key docs
             Fri 26.Feb.2021     Key allocation better documented
@@ -20,12 +24,13 @@ Updates:
 replicate functionality. The key actions are easy to follow, as the code is
 table driven. Relevant files: acthand.py and keyhand.py
 
-
  The system shortcut table is executed before the application (pyedpro)
 sees the keystroke. So if the system hogs the key press, the pyedpro shortcut
 will not get a chance to execute. This is particularly prevalent with
 CTRL-ALT- shortcuts. The -k command line option will print every key arriving,
 so this can be traced easily;
+
+The keymap:
 
     Left Arrow                  -- Go left one char
     Right Arrow                 -- Go right one char
@@ -64,6 +69,7 @@ so this can be traced easily;
     Ctrl M                      -- Toggle auto correct
     Ctrl-Shift M                -- Call up right click menu
     Ctrl N                      -- New File
+    Ctrl-Shift N                -- New terminal
     Ctrl O                      -- Open file
     Ctrl-Shift O                -- Open session
     Ctrl P                      -- Print (not implemented on all platforms)
@@ -81,6 +87,19 @@ so this can be traced easily;
     Ctrl X                      -- Cut to Clipboard
     Ctrl Y                      -- Redo last undo
     Ctrl Z                      -- Undo last change
+
+    # Right control keys    (mostly the same as on the right click menu)
+
+    RCTL - A                    -- Nothing (message on console)
+        .
+        .
+        .
+    RCTL - F                    -- File Manager Here
+
+    RCTL - L                    -- Libre office Here
+        .
+        .
+    RCTL - T                    -- Terminal Here
 
     Ctrl Up                     -- Go up 10 lines
     Ctrl Down                   -- Go down 10 lines

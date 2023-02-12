@@ -243,7 +243,7 @@ class EdMainWindow():
         if www == 0 or hhh == 0:
             www = Gdk.screen_width(); hhh = Gdk.screen_height()
 
-        if pedconfig.conf.verbose:
+        if pedconfig.conf.pgdebug > 3:
             print("www", www, "hhh", hhh)
 
         # Create the toplevel window
@@ -262,7 +262,7 @@ class EdMainWindow():
             ww = pedconfig.conf.sql.get_int("ww")
             hh = pedconfig.conf.sql.get_int("hh")
 
-            if pedconfig.conf.verbose:
+            if pedconfig.conf.pgdebug > 2:
                 print("load coords", xx, yy, ww, hh)
 
             if ww == 0 or hh == 0:
@@ -497,7 +497,7 @@ class EdMainWindow():
             print("Cannot load auxiliary web tab.")
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
-                pedutil.put_exception("web tab")
+                put_exception("web tab")
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200

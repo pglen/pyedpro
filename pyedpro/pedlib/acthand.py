@@ -914,6 +914,31 @@ class ActHand:
         #self.down(self2)
 
     # --------------------------------------------------------------------
+    # Right CTRL
+
+    def rctrl_all(self, self2):
+        if 1: #pedconfig.conf.pgdebug > 9:
+            print ("RCTRL -- Capture", self2.curr_event.keyval)
+
+    def rctrl_f(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+             print ("RCTRL -- f", self2.curr_event.keyval)
+        self2.start_external(["thunar", "."],
+                                        ["explorer", ""])
+    def rctrl_l(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+             print ("RCTRL -- l", self2.curr_event.keyval)
+
+        self2.start_external(["libreoffice", "--writer"],
+                                        ["libreoffice", "--writer"])
+    def rctrl_t(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+             print ("RCTRL -- r", self2.curr_event.keyval)
+
+        self2.mained.start_term()
+
+    # --------------------------------------------------------------------
+    # CTRL
 
     def ctrl_a(self, self2):
         if pedconfig.conf.pgdebug > 9:
@@ -1131,8 +1156,12 @@ class ActHand:
             else:
                 self2.mained.update_statusbar("Autocorrect is off.")
 
-    def ctrl_o(self, self2):
+    def ctrl_n(self, self2):
         if pedconfig.conf.pgdebug > 9:
+            print ("CTRL - N")
+
+    def ctrl_o(self, self2):
+        if 1: #pedconfig.conf.pgdebug > 9:
             print ("CTRL - O", self2.shift)
         pass
 
@@ -1164,6 +1193,11 @@ class ActHand:
             except:
                 pedync.message("\n   Cannot print  '%s'\n\n" % shortname)
 
+
+    def ctrl_q(self, self2):
+        if 1: #pedconfig.conf.pgdebug > 9:
+            print ("CTRL - P")
+        pass
 
     def ctrl_r(self, self2):
         if pedconfig.conf.pgdebug > 9:

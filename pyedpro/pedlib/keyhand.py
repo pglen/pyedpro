@@ -156,18 +156,22 @@ class KeyHand:
             [Gdk.KEY_I, self.acth.ctrl_i],
             [Gdk.KEY_j, self.acth.ctrl_j],
             [Gdk.KEY_J, self.acth.ctrl_j],
+            [Gdk.KEY_g, self.acth.ctrl_g],
+            [Gdk.KEY_G, self.acth.ctrl_g],
             [Gdk.KEY_k, self.acth.ctrl_k],
             [Gdk.KEY_K, self.acth.ctrl_k],
             [Gdk.KEY_l, self.acth.ctrl_l],
             [Gdk.KEY_L, self.acth.ctrl_l],
             [Gdk.KEY_m, self.acth.ctrl_m],
             [Gdk.KEY_M, self.acth.ctrl_m],
+            [Gdk.KEY_N, self.acth.ctrl_n],
+            [Gdk.KEY_n, self.acth.ctrl_n],
             [Gdk.KEY_o, self.acth.ctrl_o],
             [Gdk.KEY_O, self.acth.ctrl_o],
             [Gdk.KEY_p, self.acth.ctrl_p],
             [Gdk.KEY_P, self.acth.ctrl_p],
-            [Gdk.KEY_g, self.acth.ctrl_g],
-            [Gdk.KEY_G, self.acth.ctrl_g],
+            [Gdk.KEY_q, self.acth.ctrl_q],
+            [Gdk.KEY_Q, self.acth.ctrl_q],
             [Gdk.KEY_r, self.acth.ctrl_r],
             [Gdk.KEY_R, self.acth.ctrl_r],
             [Gdk.KEY_t, self.acth.ctrl_t],
@@ -194,6 +198,94 @@ class KeyHand:
             [Gdk.KEY_8, self.acth.ctrl_8],
             [Gdk.KEY_9, self.acth.ctrl_9],
             [Gdk.KEY_0, self.acth.ctrl_0],
+            [Gdk.KEY_space, self.acth.ctrl_space],
+            ]
+
+        # Separate keytab on right ctrl
+
+        self.rctrl_keytab = [
+            [Gdk.KEY_Tab, self.acth.ctrl_tab],
+            [Gdk.KEY_Up, self.acth.up],
+            [Gdk.KEY_KP_Up, self.acth.up],
+            [Gdk.KEY_Down, self.acth.down],
+            [Gdk.KEY_KP_Down, self.acth.down],
+            [Gdk.KEY_Left, self.acth.left],
+            [Gdk.KEY_KP_Left, self.acth.left],
+            [Gdk.KEY_Right, self.acth.right],
+            [Gdk.KEY_KP_Right, self.acth.right],
+            [Gdk.KEY_Page_Up, self.acth.pgup],
+            [Gdk.KEY_KP_Page_Up, self.acth.pgup],
+            [Gdk.KEY_Page_Down, self.acth.pgdn],
+            [Gdk.KEY_KP_Page_Down, self.acth.pgdn],
+            [Gdk.KEY_Home, self.acth.home],
+            [Gdk.KEY_KP_Home, self.acth.home],
+            [Gdk.KEY_End, self.acth.end],
+            [Gdk.KEY_KP_End, self.acth.end],
+            [Gdk.KEY_Delete, self.acth.delete],
+            [Gdk.KEY_KP_Delete, self.acth.delete],
+            [Gdk.KEY_BackSpace, self.acth.bs],
+            [Gdk.KEY_F6, self.acth.f6],
+            [Gdk.KEY_F10, self.acth.f10],
+            [Gdk.KEY_a, self.acth.rctrl_all],
+            [Gdk.KEY_A, self.acth.rctrl_all],
+            [Gdk.KEY_b, self.acth.rctrl_all],
+            [Gdk.KEY_B, self.acth.rctrl_all],
+            [Gdk.KEY_c, self.acth.rctrl_all],
+            [Gdk.KEY_D, self.acth.rctrl_all],
+            [Gdk.KEY_d, self.acth.rctrl_all],
+            [Gdk.KEY_C, self.acth.rctrl_all],
+            [Gdk.KEY_e, self.acth.rctrl_all],
+            [Gdk.KEY_E, self.acth.rctrl_all],
+            [Gdk.KEY_f, self.acth.rctrl_f],
+            [Gdk.KEY_F, self.acth.rctrl_f],
+            [Gdk.KEY_g, self.acth.rctrl_all],
+            [Gdk.KEY_G, self.acth.rctrl_all],
+            [Gdk.KEY_h, self.acth.rctrl_all],
+            [Gdk.KEY_H, self.acth.rctrl_all],
+            [Gdk.KEY_i, self.acth.rctrl_all],
+            [Gdk.KEY_I, self.acth.rctrl_all],
+            [Gdk.KEY_j, self.acth.rctrl_all],
+            [Gdk.KEY_J, self.acth.rctrl_all],
+            [Gdk.KEY_k, self.acth.rctrl_all],
+            [Gdk.KEY_K, self.acth.rctrl_all],
+            [Gdk.KEY_l, self.acth.rctrl_l],
+            [Gdk.KEY_L, self.acth.rctrl_l],
+            [Gdk.KEY_m, self.acth.rctrl_all],
+            [Gdk.KEY_M, self.acth.rctrl_all],
+            [Gdk.KEY_N, self.acth.rctrl_all],
+            [Gdk.KEY_n, self.acth.rctrl_all],
+            [Gdk.KEY_o, self.acth.rctrl_all],
+            [Gdk.KEY_O, self.acth.rctrl_all],
+            [Gdk.KEY_p, self.acth.rctrl_all],
+            [Gdk.KEY_P, self.acth.rctrl_all],
+            [Gdk.KEY_q, self.acth.rctrl_all],
+            [Gdk.KEY_Q, self.acth.rctrl_all],
+            [Gdk.KEY_r, self.acth.rctrl_all],
+            [Gdk.KEY_R, self.acth.rctrl_all],
+            [Gdk.KEY_t, self.acth.rctrl_t],
+            [Gdk.KEY_T, self.acth.rctrl_t],
+            [Gdk.KEY_u, self.acth.rctrl_all],
+            [Gdk.KEY_U, self.acth.rctrl_all],
+            [Gdk.KEY_v, self.acth.rctrl_all],
+            [Gdk.KEY_V, self.acth.rctrl_all],
+            [Gdk.KEY_w, self.acth.rctrl_all],
+            [Gdk.KEY_W, self.acth.rctrl_all],
+            [Gdk.KEY_x, self.acth.rctrl_all],
+            [Gdk.KEY_X, self.acth.rctrl_all],
+            [Gdk.KEY_y, self.acth.rctrl_all],
+            [Gdk.KEY_Y, self.acth.rctrl_all],
+            [Gdk.KEY_z, self.acth.rctrl_all],
+            [Gdk.KEY_Z, self.acth.rctrl_all],
+            [Gdk.KEY_1, self.acth.rctrl_all],
+            [Gdk.KEY_2, self.acth.rctrl_all],
+            [Gdk.KEY_3, self.acth.rctrl_all],
+            [Gdk.KEY_4, self.acth.rctrl_all],
+            [Gdk.KEY_5, self.acth.rctrl_all],
+            [Gdk.KEY_6, self.acth.rctrl_all],
+            [Gdk.KEY_7, self.acth.rctrl_all],
+            [Gdk.KEY_8, self.acth.rctrl_all],
+            [Gdk.KEY_9, self.acth.rctrl_all],
+            [Gdk.KEY_0, self.acth.rctrl_all],
             [Gdk.KEY_space, self.acth.ctrl_space],
             ]
 
@@ -477,6 +569,8 @@ class KeyHand:
             self.handle_super_key(self2, area, event)
         elif self.alt:
             self.handle_alt_key(self2, area, event)
+        elif self.rctrl:
+            self.handle_rctrl_key(self2, area, event)
         elif self.ctrl:
             self.handle_ctrl_key(self2, area, event)
         else:
@@ -659,6 +753,11 @@ class KeyHand:
             print("handle_ctrl_key")
         self._handle_key(self2, area, event, self.ctrl_keytab)
 
+    def handle_rctrl_key(self, self2, area, event):
+        if pedconfig.conf.pgdebug > 5:
+            print("handle_ctrl_key")
+        self._handle_key(self2, area, event, self.rctrl_keytab)
+
     # --------------------------------------------------------------------
     # Regular keytab
 
@@ -704,6 +803,7 @@ class KeyHand:
 
     # Internal key handler. Keytab preselected by caller
     def _handle_key(self, self2, area, event, xtab):
+        self2.curr_event = event
         #print( event)
         ret = True
         if  event.type == Gdk.EventType.KEY_PRESS:

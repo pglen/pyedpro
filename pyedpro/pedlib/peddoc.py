@@ -180,6 +180,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.COCOLOR    = COCOLOR
         self.STCOLOR    = STCOLOR
         self.STRIPCOLOR = STRIPCOLOR
+        self.currback  =  0
 
         self.drag = False
         self.text_fillcol = 40
@@ -1706,7 +1707,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         dialog.show()
 
     def rclick_action(self, action, sss, ttt):
-        #print( "rclck_action", sss, ttt)
+
+        print( "rclick_action", sss, ttt)
+
         if ttt == 1:
             self.mained.newfile()
         elif ttt == 3:
@@ -1748,7 +1751,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         elif ttt == 23:
             self.start_htmlstr()
         elif ttt == 24:
-            self.start_external(["caja", "."],
+            #self.start_external(["caja", "."],
+            #                            ["explorer", ""])
+            self.start_external(["thunar", "."],
                                         ["explorer", ""])
         elif ttt == 25:
             global last_scanned
