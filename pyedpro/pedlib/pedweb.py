@@ -74,7 +74,7 @@ class pgweb(Gtk.VBox):
 
         try:
             self.core = twincore.TwinCore(self.data_dir + os.sep + "peddata.pydb")
-            if pedconfig.conf.verbose:
+            if pedconfig.conf.pgdebug > 2:
                 print("core", self.core, self.core.fname)
         except:
             print("Cannot make web notes py database", sys.exc_info())
@@ -215,18 +215,23 @@ class pgweb(Gtk.VBox):
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        butt3 = Gtk.Button.new_with_mnemonic("New Item")
-        butt3.connect("pressed", self.newitem)
+        #butt3 = Gtk.Button.new_with_mnemonic("New Item")
+        #butt3.connect("pressed", self.newitem)
+        butt3 = smallbutt("| New Item ", self.newitem, "Create new item / record")
+
         hbox13.pack_start(butt3, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
+        #butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
         #butt3.connect("pressed", self.search)
-        hbox13.pack_start(butt3, 0, 0, 2)
-
-        butt3a = Gtk.Button.new_with_mnemonic("Search All")
-        #butt3a.connect("pressed", self.searchall)
+        butt3a = smallbutt("| Find in Text", self.search, "Search this record")
         hbox13.pack_start(butt3a, 0, 0, 2)
+
+        #butt3a = Gtk.Button.new_with_mnemonic("Search All")
+        #butt3a.connect("pressed", self.searchall)
+        butt3b = smallbutt("| Search in All |", self.searchall, "Search all records")
+
+        hbox13.pack_start(butt3b, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
@@ -234,17 +239,24 @@ class pgweb(Gtk.VBox):
         hbox13a = Gtk.HBox()
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        butt11 = Gtk.Button.new_with_mnemonic("Del Item")
+        #butt11 = Gtk.Button.new_with_mnemonic("Del Item")
+        butt11 = smallbutt("| Del Item ", self.searchall, "Delete One Rec")
         #butt11.connect("pressed", self.delitem)
         hbox13a.pack_start(butt11, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt12 = Gtk.Button.new_with_mnemonic("Export")
+        #butt12 = Gtk.Button.new_with_mnemonic("Export")
+        butt12 = smallbutt("| Export  ", self.searchall, "Export all items")
         #butt12.connect("pressed", self.export)
         hbox13a.pack_start(butt12, 0, 0, 2)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        butt12a = Gtk.Button.new_with_mnemonic("Import")
+        #butt12a = Gtk.Button.new_with_mnemonic("Import")
+        butt12a = smallbutt("| Import ", self.searchall, "Import items")
+        #butt12a.connect("pressed", self.importx)
+        hbox13a.pack_start(butt12a, 0, 0, 2)
+
+        butt12a = smallbutt("| PopOut |", self.searchall, "Pop Out to window")
         #butt12a.connect("pressed", self.importx)
         hbox13a.pack_start(butt12a, 0, 0, 2)
 
@@ -286,7 +298,7 @@ class pgweb(Gtk.VBox):
         if self.core:
             self.core.__del__()
 
-    def newitem(self, arg):
+    def newitem(self, arg, arg2):
         self.savetext()
         rrr = HeadDialog("New Item %d" % self.cnt, None)
         ret = rrr.run()
@@ -335,6 +347,11 @@ class pgweb(Gtk.VBox):
         usleep(10)
         self.load()
 
+    def search(self, arg, arg2):
+        pass
+
+    def searchall(self, arg, arg2):
+        pass
 
     def load(self):
 

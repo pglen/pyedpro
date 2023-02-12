@@ -7,7 +7,6 @@ configurable, extendable. Goodies like macro recording / playback, spell check,
 column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
-
   This project's source is at - https://github.com/pglen/pyedpro
 
   Working and tested platforms currently are:
@@ -18,7 +17,8 @@ that I use every day.
         Raspberry PI 3, Raspberry PI 4, ...
         Mac ** Some functions are disabled - in particular async processing
 
-Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
+Pyedpro functions in a near identical manner
+    on Linux / Windows / Mac / Raspberry PI
 
  Pyedpro has:
 
@@ -47,10 +47,12 @@ it is an absolute joy to edit in a different platform without the learning
 curve of new keystrokes.  If you want an editor  that works the same way in
 all your workspaces, PyEdPro is the one.
 
- PyEdPro now is working good on the Mac M1. I installed homebrew, and got it to fire up. It
-was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the
-Linux version did. No asynchronous  anything, segmentation faults everywhere. (which python
+ PyEdPro now is working good-ish on the Mac M1. I installed homebrew, and got
+it to fire up. It was not a trivial exercise, as the Mac PygGOject did not do
+half of the stuff as the Linux version did.
+No asynchronous  anything, segmentation faults everywhere. (which python
 is not suppose to have)
+
   The font rendering was messed up, but I got fixed by replacing Pango's
 get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues]
   Some async functions like the function updater is disabled, but it can be done
@@ -65,7 +67,8 @@ if an editor with familiar key op is needed -- most of it works. And no destruct
 
     (this is extracted, use git log for up-to-date information)
 
-    Thu 27.Oct.2022 -- Restore system menu processing (Alt-f [File Menu] and such)
+    Sat 11.Feb.2023 -- Pyedpro Notes export / import and the new pydbase data base
+    Thu 27.Oct.2022 -- Restored system menu processing (Alt-f [File Menu] and such)
     Sat 10.Sep.2022 -- the system shortcuts (ctrl-s ctrl-o) are re-done by hand
     Sat 03.Sep.2022 -- published on pip
     Thu 21.Apr.2022 -- release issued
