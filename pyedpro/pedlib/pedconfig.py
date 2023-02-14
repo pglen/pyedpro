@@ -69,6 +69,7 @@ class Conf():
         self.history  = os.path.expanduser("~/.pyedpro/history")
         self.sessions = os.path.expanduser("~/.pyedpro/sessions")
         self.notes_dir = os.path.expanduser("~/.pyednotes")
+        self.web_dir = os.path.expanduser("~/.pyedwebnotes")
 
         self.config_file = "defaults"
 

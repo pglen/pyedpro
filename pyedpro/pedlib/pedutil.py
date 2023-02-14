@@ -28,6 +28,9 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
+from gi.repository import Pango
+gi.require_version('PangoCairo', '1.0')
+from gi.repository import PangoCairo
 
 from pedlib import pedconfig
 from pedlib import pedync
@@ -1385,43 +1388,6 @@ class HeadDialog(Gtk.Dialog):
 
         box.add(self.hbox)
         self.show_all()
-
-
-class smallbutt(Gtk.VBox):
-
-    def __init__(self, labx, eventx, tooltip = None):
-
-        Gtk.VBox.__init__(self, labx)
-        #GObject.GObject.__init__(self)
-
-        self.hand_cursor = Gdk.Cursor(Gdk.CursorType.HAND2)
-        self.label = Gtk.Label.new(labx)
-
-        if tooltip:
-            self.label.set_tooltip_text(tooltip)
-
-        self.label.set_single_line_mode(True)
-
-        #self.add(self.label)
-
-        self.eb = Gtk.EventBox();
-        self.eb.set_above_child(True)
-        self.eb.add(self.label)
-        #eb.connect_after("button-press-event", eventx)
-        self.eb.connect("button-press-event", eventx)
-
-        self.eb.connect("enter_notify_event", self.enter_label)
-        self.eb.connect("leave_notify_event", self.leave_label)
-        self.add(self.eb)
-        self.show_all()
-
-    def enter_label(self, arg, arg2):
-        #print("Enter")
-        self.label.get_window().set_cursor(self.hand_cursor)
-
-    def leave_label(self, arg, arg2):
-        #print("Leave")
-        self.label.get_window().set_cursor()
 
 class SearchDialog(Gtk.Dialog):
 

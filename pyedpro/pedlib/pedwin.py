@@ -41,6 +41,7 @@ from pedlib import pedofd
 
 from pycommon.pggui import *
 from pycommon.pgsimp import *
+from pycommon.pgbutt import *
 
 # Into our name space
 from    pedlib.pedmenu import *
@@ -443,7 +444,7 @@ class EdMainWindow():
 
         try:
             notebook2.append_page(vpaned)
-            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Funcs"))
         except:
             print("Cannot load auxiliary func tab.")
@@ -453,7 +454,7 @@ class EdMainWindow():
 
         try:
             notebook2.append_page(pedcal.pgcal())
-            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Cal"))
             pass
         except:
@@ -464,7 +465,7 @@ class EdMainWindow():
 
         try:
             notebook2.append_page(pednotes.pgnotes())
-            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Notes"))
             pass
         except:
@@ -478,7 +479,7 @@ class EdMainWindow():
 
         try:
             notebook2.append_page(pedoline.pgoline())
-            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Draw"))
             pass
         except:
@@ -490,7 +491,7 @@ class EdMainWindow():
         try:
             pw = pedweb.pgweb()
             notebook2.append_page(pw)
-            ppp = self.notebook2.get_nth_page(self.notebook.get_n_pages()-1)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Web"))
             pass
         except:
@@ -533,25 +534,15 @@ class EdMainWindow():
         shbox.pack_start(slabs, 0, 0, 0)
         shbox.pack_start(self.slab, 0, 0, 0)
 
-        #label = Gtk.Label.new(" | Hist | ")
-        #label.set_tooltip_text("Look at event history")
-        #label.set_single_line_mode(True)
-        #eb = Gtk.EventBox(); eb.add(label)
-        #eb.connect_after("button-press-event", self.status_hist)
-        #eb.set_above_child(True)
-
-        eb = smallbutt(" | Hist | ", self.status_hist, "Look at event history")
+        shbox.pack_end(Gtk.Label(" | "), 0, 0, 0)
+        eb = smallbutt(" Hist ", self.status_hist, "Look at event history")
         shbox.pack_end(eb, 0, 0, 0)
+        shbox.pack_end(Gtk.Label(" | "), 0, 0, 0)
 
-        #label2 = Gtk.Label.new(" | Lang | ")
-        #label2.set_tooltip_text("Change language")
-        #label2.set_single_line_mode(True)
-        #eb2 = Gtk.EventBox(); eb2.add(label2)
-        #eb2.connect_after("button-press-event", self.status_lang)
-        #eb2.set_above_child(True)
-
-        eb2 = smallbutt(" | Lang | ", self.status_lang, "Change language")
+        shbox.pack_end(Gtk.Label(" | "), 0, 0, 0)
+        eb2 = smallbutt(" Lang ", self.status_lang, "Change language")
         shbox.pack_end(eb2, 0, 0, 0)
+        shbox.pack_end(Gtk.Label(" | "), 0, 0, 0)
 
         #shbox.override_background_color(
         #            Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, 1) )
@@ -720,6 +711,29 @@ class EdMainWindow():
         #GLib.timeout_add(1000, self.ThredCallback)
 
     #Gtk.Action
+
+    def activate_webtab(self):
+        ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
+        if ppp:
+            # This assumes the webtab is the last one
+            self.notebook2.set_current_page(self.notebook2.get_n_pages()-1)
+            pp = self.notebook2.get_current_page()
+            self.notebook2.get_nth_page(pp).treeview2.grab_focus()
+
+    def activate_notetab(self):
+        ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-3)
+        if ppp:
+            # This assumes the notetab is the one before the last one
+            self.notebook2.set_current_page(self.notebook2.get_n_pages()-3)
+            pp = self.notebook2.get_current_page()
+            self.notebook2.get_nth_page(pp).treeview2.grab_focus()
+
+    def activate_caltab(self):
+        ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-4)
+        if ppp:
+            # This assumes the notetab is the one before the last one
+            self.notebook2.set_current_page(self.notebook2.get_n_pages()-4)
+
 
     def openmenu(self, strx):
 
