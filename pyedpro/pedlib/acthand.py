@@ -39,8 +39,6 @@ try:
 except:
     print ("Printing subsys might not be available")
 
-import py_compile
-
 import gi
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
@@ -630,7 +628,7 @@ class ActHand:
         self2.insert = not self2.insert
         self2.set_caret(xidx, yidx)
 
-    def ctrl_num(self, self2, num):
+    def ctrl_num_clip(self, self2, num):
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL -- ", num)
 
@@ -642,40 +640,19 @@ class ActHand:
         self2.invalidate()
         self2.update_bar2()
 
-    def ctrl_1(self, self2):
-        self.ctrl_num(self2, 1)
+    def ctrl_num(self, self2):
+        kkk = self2.curr_event.keyval - Gdk.KEY_0
+        if pedconfig.conf.pgdebug > 9:
+            print ("CTRL -- num, key=", kkk)
 
-    def ctrl_2(self, self2):
-        self.ctrl_num(self2, 2)
+        # Process clip 9 -- sum it all
+        if kkk == 9:
+            self.clips[kkk] = ""
+            # This sums all clipboards, puts it into 9
+            for aa in range(8):
+                self.clips[kkk] += self.clips[aa]
 
-    def ctrl_3(self, self2):
-        self.ctrl_num(self2, 3)
-
-    def ctrl_4(self, self2):
-        self.ctrl_num(self2, 4)
-
-    def ctrl_5(self, self2):
-        self.ctrl_num(self2, 5)
-
-    def ctrl_6(self, self2):
-        self.ctrl_num(self2, 6)
-
-    def ctrl_7(self, self2):
-        self.ctrl_num(self2, 7)
-
-    def ctrl_8(self, self2):
-        self.ctrl_num(self2, 8)
-
-    # This sums all clipboards, puts it into 9
-    def ctrl_9(self, self2):
-        self.clips[9] = ""
-        for aa in range(8):
-            self.clips[9] += self.clips[aa]
-        self.ctrl_num(self2, 9)
-
-    def ctrl_0(self, self2):
-        self.ctrl_num(self2, 0)
-
+        self.ctrl_num_clip(self2, kkk)
 
     # --------------------------------------------------------------------
     # Not many ctrl - alt handlers yet (may conflict with Gnome/OS shortcuts)
@@ -916,26 +893,50 @@ class ActHand:
     # --------------------------------------------------------------------
     # Right CTRL
 
+    # Catch all
     def rctrl_all(self, self2):
         if 1: #pedconfig.conf.pgdebug > 9:
             print ("RCTRL -- Capture", self2.curr_event.keyval)
 
+    def rctrl_a(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.activate_notetab()
+
+    def rctrl_c(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.activate_caltab()
+
     def rctrl_f(self, self2):
         if pedconfig.conf.pgdebug > 9:
-             print ("RCTRL -- f", self2.curr_event.keyval)
+             print ("RCTRL -- ", self2.curr_event.keyval)
         self2.start_external(["thunar", "."],
                                         ["explorer", ""])
     def rctrl_l(self, self2):
         if pedconfig.conf.pgdebug > 9:
-             print ("RCTRL -- l", self2.curr_event.keyval)
-
+             print ("RCTRL -- ", self2.curr_event.keyval)
         self2.start_external(["libreoffice", "--writer"],
                                         ["libreoffice", "--writer"])
+    def rctrl_r(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.rescan()
+
     def rctrl_t(self, self2):
         if pedconfig.conf.pgdebug > 9:
-             print ("RCTRL -- r", self2.curr_event.keyval)
-
+             print ("RCTRL -- ", self2.curr_event.keyval)
         self2.mained.start_term()
+
+    def rctrl_w(self, self2):
+        if pedconfig.conf.pgdebug > 9:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.activate_webtab()
+
+    def rctrl_num(self, self2):
+        kkk = self2.curr_event.keyval - Gdk.KEY_0
+        if 1: #pedconfig.conf.pgdebug > 9:
+            print ("RCTRL -- num, key=", kkk)
 
     # --------------------------------------------------------------------
     # CTRL
@@ -994,7 +995,8 @@ class ActHand:
         if self.currclip == 0:
             if self2.shift:
                 self2.mained.update_statusbar("Clipboard appended.")
-
+                ttt = self2.clipboard.wait_for_text() + cumm
+                self2.clipboard.set_text(ttt, len(ttt))
             else:
                 self2.mained.update_statusbar("Clipboard copied.")
                 self2.clipboard.set_text(cumm, len(cumm))
@@ -1346,7 +1348,8 @@ class ActHand:
             #print("got paste", ttt)
             self.clip_cb(None, ttt,  self2)
         else:
-            self.clip_cb(clip, self.clips[self.currclip], self2)
+            #self.clip_cb(clip, self.clips[self.currclip], self2)
+            self.clip_cb(None, self.clips[self.currclip], self2)
 
     # Pad line list to accomodate insert
     # We group this operation into change (no undo needed)
@@ -2287,129 +2290,7 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("ALT- Y -- Compile")
 
-        tempfile = "tmp"
-        writefile(tempfile, self2.text, "\n")
-
-        #print("Checking file", self2.ext)
-
-        if self2.ext == ".php" or  self2.ext == ".inc":
-            #print("Checking PHP file")
-            try:
-                comline = ["php", "-l", tempfile,]
-                try:
-                    ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-                except:
-                    print("Cannot check %s" % str(comline), sys.exc_info())
-                    pedync.message("\n   Cannot check %s \n\n"  % str(comline) +
-                               str(sys.exc_info()) )
-                    return
-                try:
-                    outs, errs = ret.communicate()
-                except:
-                    print("Cannot communicate with %s" % str(comline), sys.exc_info())
-                    return
-
-            except:
-                print("Cannot execute %s" % str(comline), sys.exc_info())
-                pass
-
-            #print("outs", outs, "errs", errs)
-
-            if errs == b"":
-                pedync.message("\n  PHP Syntax OK   \n")
-                self2.mained.update_statusbar("Syntax OK.")
-            else:
-                serr = str(errs)
-                idx = serr.find("line ")
-                if idx:
-                    #print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
-                    self2.gotoxy(10, atoi(serr[idx + 5:]) - 1)
-
-                print("Error on compile: '", serr, "'")
-                pedync.message("    " + serr + "    ")
-
-
-        elif self2.ext == ".py":
-            try:
-               py_compile.compile('tmp', doraise = True)
-            except py_compile.PyCompileError as msg:
-
-                self2.mained.update_statusbar("Syntax error.")
-
-                if sys.version_info.major < 3:
-                    try:
-                        ln  = msg[2][1][1]; col = msg[2][1][2]
-                        mmm = "\n" + msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
-                        self2.gotoxy(col - 1, ln - 1)
-                        pedync.message("    " + mmm + "    ", msg[1])
-                    except:
-                        pedync.message(" " + str(msg) + "  ", "Syntax Error")
-                        #print("line", msg);
-                        pass
-                else:
-                        print("Error on compile: '", msg.args, "'")
-                        zzz = str(msg.args[2]).split("(")
-                        sss = zzz[1].split()[2].replace(")", "")
-                        #print ("sss", sss)
-                        try:
-                            self2.gotoxy(10, int(sss) - 1)
-                        except:
-                            pass
-                        pedync.message("    " + str(msg) + "    ")
-
-            except:
-                print(sys.exc_info())
-            else:
-                pedync.message("\n  PY Syntax OK   \n")
-                self2.mained.update_statusbar("Syntax OK.")
-            finally:
-                pass
-
-        elif self2.ext == ".js":
-
-            tempfile2 = "tmp.js"
-            os.rename(tempfile, tempfile2)
-            tempfile = tempfile2
-
-            print("Checking JS file")
-            try:
-                comline = ["node", "--check", tempfile2,]
-                try:
-                    ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-                except:
-                    print("Cannot check %s" % str(comline), sys.exc_info())
-                    pedync.message("\n   Cannot check %s \n\n"  % str(comline) +
-                               str(sys.exc_info()) )
-                    return
-                try:
-                    outs, errs = ret.communicate()
-                except:
-                    print("Cannot communicate with %s" % str(comline), sys.exc_info())
-                    return
-
-            except:
-                print("Cannot execute %s" % str(comline), sys.exc_info())
-                pass
-
-            #print("outs", outs, "errs", errs)
-
-            if errs == b"":
-                pedync.message("\n  JS Syntax OK   \n")
-                self2.mained.update_statusbar("Syntax OK.")
-            else:
-                serr = str(errs)
-                idx = serr.find("line ")
-                if idx:
-                    #print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
-                    self2.gotoxy(10, atoi(serr[idx + 5:]) - 1)
-
-                print("Error on compile: '", serr, "'")
-                pedync.message("    " + serr + "    ")
-
-        else:
-            self2.mained.update_statusbar("No Syntax check for this kind of file.")
-
-        os.remove(tempfile)
+        self2.check_syntax()
 
     # --------------------------------------------------------------
     # Tab handle is awkward. The regular key tab will insert

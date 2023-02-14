@@ -24,6 +24,7 @@ from    pedlib.pedutil import *
 
 from pycommon.pggui import *
 from pycommon.pgsimp import *
+from pycommon.pgbutt import *
 
 try:
     from  pycommon import pgwkit
@@ -58,7 +59,10 @@ class pgweb(Gtk.VBox):
 
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
-        self.data_dir = os.path.expanduser("~/.pyedwebnotes")
+
+        #self.data_dir = os.path.expanduser("~/.pyedwebnotes")
+        self.data_dir = pedconfig.conf.web_dir
+
         try:
             if not os.path.isdir(self.data_dir):
                 os.mkdir(self.data_dir)
@@ -107,7 +111,7 @@ class pgweb(Gtk.VBox):
 
         self.treeview2 = pgsimp.SimpleTree(("Header", "Subject", "Description"), skipedit=0)
         self.treeview2.setcallb(self.treesel)
-        self.treeview2.setCHcallb(self.treechange)
+        #self.treeview2.setCHcallb(self.treechange)
 
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(self.treeview2)
@@ -182,7 +186,6 @@ class pgweb(Gtk.VBox):
 
         self.treeview3 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview3.setcallb(self.treesel)
-        self.treeview3.setCHcallb(self.treechange)
 
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(self.treeview3)
@@ -200,70 +203,60 @@ class pgweb(Gtk.VBox):
         try:
             #self.webview = WebKit2.WebView()
             self.webview = pgwkit.pgwebw(self)
+            #print("dir", dir(self.webview))
             #self.webview.load_uri("file://" + self.fname)
         except:
             self.webview = Gtk.Label("No WebView Available.")
-
+            print("WebView Load Error", sys.exc_info())
 
         #webview.load_uri("https://google.com")
         scrolled_window.add(self.webview)
         self.pack_start(scrolled_window, 1, 1, 2)
 
-        self.status = Gtk.Label(" Status ")
+        self.status = Gtk.Label(" Status: ")
         self.pack_start(self.status, 0, 0, 2)
 
         hbox13 = Gtk.HBox()
-        hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
+        hbox13.pack_start(Gtk.Label(label=""), 1, 1, 0)
 
-        #butt3 = Gtk.Button.new_with_mnemonic("New Item")
-        #butt3.connect("pressed", self.newitem)
-        butt3 = smallbutt("| New Item ", self.newitem, "Create new item / record")
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        butt3 = smallbutt(" New Item ", self.newitem, "Create new item / record")
 
         hbox13.pack_start(butt3, 0, 0, 2)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        #butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
-        #butt3.connect("pressed", self.search)
-        butt3a = smallbutt("| Find in Text", self.search, "Search this record")
-        hbox13.pack_start(butt3a, 0, 0, 2)
+        butt3a = smallbutt(" Find in Text ", self.search, "Search this record")
+        hbox13.pack_start(butt3a, 0, 0, 0)
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        #butt3a = Gtk.Button.new_with_mnemonic("Search All")
-        #butt3a.connect("pressed", self.searchall)
-        butt3b = smallbutt("| Search in All |", self.searchall, "Search all records")
+        butt3b = smallbutt(" Search in All ", self.searchall, "Search all records")
 
-        hbox13.pack_start(butt3b, 0, 0, 2)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13.pack_start(butt3b, 0, 0, 0)
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         hbox13a = Gtk.HBox()
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        #butt11 = Gtk.Button.new_with_mnemonic("Del Item")
-        butt11 = smallbutt("| Del Item ", self.searchall, "Delete One Rec")
-        #butt11.connect("pressed", self.delitem)
-        hbox13a.pack_start(butt11, 0, 0, 2)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        butt11 = smallbutt(" Del Item ", self.searchall, "Delete One Rec")
+        hbox13a.pack_start(butt11, 0, 0, 0)
 
-        #butt12 = Gtk.Button.new_with_mnemonic("Export")
-        butt12 = smallbutt("| Export  ", self.searchall, "Export all items")
-        #butt12.connect("pressed", self.export)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+
+        butt12 = smallbutt(" Export ", self.searchall, "Export all items")
         hbox13a.pack_start(butt12, 0, 0, 2)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        #butt12a = Gtk.Button.new_with_mnemonic("Import")
-        butt12a = smallbutt("| Import ", self.searchall, "Import items")
-        #butt12a.connect("pressed", self.importx)
-        hbox13a.pack_start(butt12a, 0, 0, 2)
+        butt12a = smallbutt(" Import ", self.searchall, "Import items")
+        hbox13a.pack_start(butt12a, 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        butt12a = smallbutt("| PopOut |", self.searchall, "Pop Out to window")
-        #butt12a.connect("pressed", self.importx)
-        hbox13a.pack_start(butt12a, 0, 0, 2)
+        butt12a = smallbutt(" PopOut ", self.searchall, "Pop Out to window")
+        hbox13a.pack_start(butt12a, 0, 0, 0)
 
-        #butt14 = Gtk.Button.new_with_mnemonic("ExpData")
-        #butt14.connect("pressed", self.exportd)
-        #hbox13.pack_start(butt14, 0, 0, 2)
-        #hbox13.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
@@ -319,12 +312,12 @@ class pgweb(Gtk.VBox):
         self.cnt += 1
 
         self.treeview2.insert(None, 0, itemx)
-        self.treeview2.sel_first()
 
-        newtext = ""  #Enter text here";
-        #self.edview.set_text(newtext)
-
+        newtext = "Enter text here";
         self.core.save_data(ttt, newtext)
+
+        #self.edview.set_text(newtext)
+        self.treeview2.sel_first()
 
     def delitem(self, arg):
         #print ("delitem", self.lastkey, self.lastsel)
@@ -348,9 +341,12 @@ class pgweb(Gtk.VBox):
         self.load()
 
     def search(self, arg, arg2):
+        print("search", time.time())
         pass
 
     def searchall(self, arg, arg2):
+        #print("searchall", arg, arg2)
+        print("searchall", time.time())
         pass
 
     def load(self):
@@ -461,23 +457,17 @@ class pgweb(Gtk.VBox):
 
         pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % ttt[:12])
 
-
     def savetext(self):
+
+        if not hasattr(self.webview, "get_html"):
+            print("Cannot exec savetext without webview")
+
         try:
             self.webview.get_html(self._completion_function, None)
         except:
             if pedconfig.conf.verbose:
                 print("savetext", sys.exc_info())
             pass
-
-    def treechange(self, args):
-        print("treechange", args)
-        #ddd = self.cal.get_date()
-        #self.lastsel = args[0]
-        #key = "%d-%d-%d %s" % (ddd[0], ddd[1], ddd[2], args[0])
-        #val =  "[%s]~[%s]" % (args[1], args[2])
-        #self.sql.put(key, args[1], args[2], args[3])
-        pass
 
     def treesel(self, args):
         #print("treesel", args[0])

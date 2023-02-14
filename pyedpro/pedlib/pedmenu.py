@@ -35,7 +35,7 @@ mained = None
 
 def rclick_action(self, arg):
 
-    print ("rclick_action", "'" + arg.name + "'")
+    print ("rclick_action local", "'" + arg.name + "'")
 
     if arg.name == "<pydoc>/New":
         mained. newfile()
@@ -66,36 +66,35 @@ def rclick_quit(self, arg):
     mained.activate_exit()
 
 rclick_menu = (
-	        ( _("_New"),           "<control>N",    rclick_action, 1, None ),
+	        ( _("_New \t"),           "<control>N",    rclick_action, 1, None ),
             ( "",               None,               None, 2, "<Separator>" ),
-            ( _("_Rescan"),          None,          rclick_action, 25, None ),
+            ( _("_Rescan\t\t"),       "Right CTRL+R",          rclick_action, 25, None ),
+            ( _("Ckk PY Syntax"), "Alt-Y",        rclick_action, 26, None ),
             ( "",               None,               None, 2, "<Separator>" ),
-            ( _("_Open"),          "<control>O",    rclick_action, 3, None ),
-            ( _("_Save"),          "<control>S",    rclick_action, 4, None ),
-            ( _("Save_As"),        None,            rclick_action, 5, None ),
+            ( _("_Open  \t\t"),          "<control>O",    rclick_action, 3, None ),
+            ( _("_Save   \t\t"),          "<control>S",    rclick_action, 4, None ),
+            ( _("Save_As \t\t"),        None,            rclick_action, 5, None ),
+            ( _("Toggle _RO"),     None,            rclick_action, 11, None ),
             ( "",               None,               None, 6, "<Separator>" ),
-            ( _("_Copy"),          "<control>C",    rclick_action, 7, None ),
-            ( _("C_ut"),           "<control>X",    rclick_action, 8, None ),
-            ( _("_Paste"),         "<control>V",    rclick_action, 9, None ),
+            ( _("_Copy \t"),          "<control>C",    rclick_action, 7, None ),
+            ( _("C_ut  \t"),           "<control>X",    rclick_action, 8, None ),
+            ( _("_Paste \t\t"),         "<control>V",    rclick_action, 9, None ),
             ( "",               None,               None, 10, "<Separator>" ),
             ( _("Terminal Here"), "Right CTRL+T",   rclick_action, 14, None ),
             ( "",               None,               None, 10, "<Separator>" ),
-            ( _("File Manager Here"), "Right CTRL+F",        rclick_action, 24, None ),
+            ( _("File Manager"), "Right CTRL+F",        rclick_action, 24, None ),
             ( _("Exec current"),  None,             rclick_action, 17, None ),
-            ( _("Start libre office"), "Right CTRL+L", rclick_action, 18, None ),
-            ( _("File in NEW pyedpro"),   None,     rclick_action, 15, None ),
-            ( "",               None,               None, 12, "<Separator>" ),
-            ( _("Toggle _RO"),     None,            rclick_action, 11, None ),
-            ( "",               None,               None, 12, "<Separator>" ),
+            ( _("Libre Office"), "Right CTRL+L", rclick_action, 18, None ),
+            ( _("NEW pyedpro"),   None,     rclick_action, 15, None ),
             ( _("Filter to M4"), "<control><shift>R", rclick_action, 19, None ),
-            ( _("Filter to Markdown"), None,        rclick_action, 20, None ),
-            ( _("Show in Browser"), None,           rclick_action, 21, None ),
-            ( _("Show as HTML String"), None,       rclick_action, 23, None ),
-            ( _("Show as HTML File"), None,         rclick_action, 22, None ),
+            ( _("To Markdown"), None,        rclick_action, 20, None ),
+            ( _("In Browser"), None,           rclick_action, 21, None ),
+            ( _("As HTML String"), None,       rclick_action, 23, None ),
+            ( _("As HTML File"), None,         rclick_action, 22, None ),
             ( "",               None,               None, 12, "<Separator>" ),
             ( _("Read Selection"), None,            rclick_action, 16, None ),
             ( "",               None,               None, 12, "<Separator>" ),
-            ( _("E_xit"),          "<alt>X",        rclick_quit, 13, None ),
+            ( _("E_xit\t\t"),          "<alt>X",        rclick_quit, 13, None ),
             )
 
 rclick_menu2 = (

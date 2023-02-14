@@ -88,19 +88,6 @@ The keymap:
     Ctrl Y                      -- Redo last undo
     Ctrl Z                      -- Undo last change
 
-    # Right control keys    (mostly the same as on the right click menu)
-
-    RCTL - A                    -- Nothing (message on console)
-        .
-        .
-        .
-    RCTL - F                    -- File Manager Here
-
-    RCTL - L                    -- Libre office Here
-        .
-        .
-    RCTL - T                    -- Terminal Here
-
     Ctrl Up                     -- Go up 10 lines
     Ctrl Down                   -- Go down 10 lines
     Ctrl Left                   -- Go left one word
@@ -117,7 +104,27 @@ The keymap:
       .
       .
     Ctrl 8                      -- Switch to clipboard 8
-    Ctrl 9                      -- Switch to sum of all clipboards
+    Ctrl 9                      -- Place sum of clipboards onto clip 9, switch to it
+
+    # Right control keys    (Mostly the same actions as the right click menu)
+
+    RCTL - A                    -- Nothing (message on console)
+       .
+       .
+    RCTL - F                    -- File Manager Here
+
+    RCTL - L                    -- Libre office Here
+       .
+    RCTL - O                    -- Activate notetab
+       .
+    RCTL - T                    -- Terminal Here
+       .
+    RCTL - W                    -- Activate webtab
+       .
+       .
+    RCTL - 1                    --
+    RCTL - 2                    --
+
 
     Alt Left                    -- Go to begin of the current word*
     Alt Right                   -- Go to end of the current word

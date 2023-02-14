@@ -11,6 +11,8 @@ import platform
 import subprocess
 import threading
 
+import py_compile
+
 import gi;  gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
@@ -1751,16 +1753,21 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         elif ttt == 23:
             self.start_htmlstr()
         elif ttt == 24:
-            #self.start_external(["caja", "."],
-            #                            ["explorer", ""])
-            self.start_external(["thunar", "."],
+            self.start_external(["thunar", "."], # Caja ?
                                         ["explorer", ""])
         elif ttt == 25:
-            global last_scanned
-            last_scanned = ""
-            run_async_time(self, 0)
+            self.rescan()
+        elif ttt == 26:
+            print("Alt-Y")
+            self.check_syntax()
         else:
             print("peddoc: Invalid menu item selected")
+
+    def rescan(self):
+        global last_scanned
+        last_scanned = ""
+        run_async_time(self, 0)
+        self.mained.update_statusbar("Started rescan ...")
 
     def toggle_ro(self):
         self.readonly = not self.readonly
@@ -2539,6 +2546,133 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         return was, cnt2, before, after
 
+    def check_syntax(self):
+
+        tempfile = "tmp"
+        writefile(tempfile, self.text, "\n")
+
+        #print("Checking file", self.ext)
+
+        if self.ext == ".php" or  self.ext == ".inc":
+            #print("Checking PHP file")
+            try:
+                comline = ["php", "-l", tempfile,]
+                try:
+                    ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+                except:
+                    print("Cannot check %s" % str(comline), sys.exc_info())
+                    pedync.message("\n   Cannot check %s \n\n"  % str(comline) +
+                               str(sys.exc_info()) )
+                    return
+                try:
+                    outs, errs = ret.communicate()
+                except:
+                    print("Cannot communicate with %s" % str(comline), sys.exc_info())
+                    return
+
+            except:
+                print("Cannot execute %s" % str(comline), sys.exc_info())
+                pass
+
+            #print("outs", outs, "errs", errs)
+
+            if errs == b"":
+                pedync.message("\n  PHP Syntax OK   \n")
+                self.mained.update_statusbar("Syntax OK.")
+            else:
+                serr = str(errs)
+                idx = serr.find("line ")
+                if idx:
+                    #print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
+                    self.gotoxy(10, atoi(serr[idx + 5:]) - 1)
+
+                print("Error on compile: '", serr, "'")
+                pedync.message("    " + serr + "    ")
+
+
+        elif self.ext == ".py":
+            try:
+               py_compile.compile('tmp', doraise = True)
+            except py_compile.PyCompileError as msg:
+
+                self.mained.update_statusbar("Syntax error.")
+
+                if sys.version_info.major < 3:
+                    try:
+                        ln  = msg[2][1][1]; col = msg[2][1][2]
+                        mmm = "\n" + msg[2][0] + "\n\n    Ln: " +  str(ln) + " Col: " + str(col)
+                        self.gotoxy(col - 1, ln - 1)
+                        pedync.message("    " + mmm + "    ", msg[1])
+                    except:
+                        pedync.message(" " + str(msg) + "  ", "Syntax Error")
+                        #print("line", msg);
+                        pass
+                else:
+                        print("Error on compile: '", msg.args, "'")
+                        zzz = str(msg.args[2]).split("(")
+                        sss = zzz[1].split()[2].replace(")", "")
+                        #print ("sss", sss)
+                        try:
+                            self.gotoxy(10, int(sss) - 1)
+                        except:
+                            pass
+                        pedync.message("    " + str(msg) + "    ")
+
+            except:
+                print(sys.exc_info())
+            else:
+                pedync.message("\n  PY Syntax OK   \n")
+                self.mained.update_statusbar("Syntax OK.")
+            finally:
+                pass
+
+        elif self.ext == ".js":
+
+            tempfile2 = "tmp.js"
+            os.rename(tempfile, tempfile2)
+            tempfile = tempfile2
+
+            print("Checking JS file")
+            try:
+                comline = ["node", "--check", tempfile2,]
+                try:
+                    ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+                except:
+                    print("Cannot check %s" % str(comline), sys.exc_info())
+                    pedync.message("\n   Cannot check %s \n\n"  % str(comline) +
+                               str(sys.exc_info()) )
+                    return
+                try:
+                    outs, errs = ret.communicate()
+                except:
+                    print("Cannot communicate with %s" % str(comline), sys.exc_info())
+                    return
+
+            except:
+                print("Cannot execute %s" % str(comline), sys.exc_info())
+                pass
+
+            #print("outs", outs, "errs", errs)
+
+            if errs == b"":
+                pedync.message("\n  JS Syntax OK   \n")
+                self.mained.update_statusbar("Syntax OK.")
+            else:
+                serr = str(errs)
+                idx = serr.find("line ")
+                if idx:
+                    #print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
+                    self.gotoxy(10, atoi(serr[idx + 5:]) - 1)
+
+                print("Error on compile: '", serr, "'")
+                pedync.message("    " + serr + "    ")
+
+        else:
+            self.mained.update_statusbar("No Syntax check for this kind of file.")
+
+        os.remove(tempfile)
+
+
 # ------------------------------------------------------------------------
 # Run this on an idle callback so the user can work while this is going
 
@@ -2548,9 +2682,9 @@ def run_async_time(win, arg):
 
     #print( "run_async_time enter", win.fname)
 
-    if  last_scanned == win:
-        #print("Not rescanning", win.fname)
-        return
+    #if  last_scanned == win:
+    #    #print("Not rescanning", win.fname)
+    #    return
 
     last_scanned = win
     win.mained.start_tree()
@@ -2657,6 +2791,8 @@ def run_async_time(win, arg):
         # This is 'normal', ignore it
         print("run_async_time", sys.exc_info())
         pass
+
+    win.mained.update_statusbar("Rescan done.")
 
 def keytime(self, arg):
 

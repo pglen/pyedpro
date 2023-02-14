@@ -23,6 +23,7 @@ from    pedlib.pedofd import *
 from pycommon.pggui import *
 from pycommon.pgsimp import *
 from pycommon.pgtextview import *
+from pycommon.pgbutt import *
 
 #print("pednotes", __file__)
 
@@ -149,52 +150,42 @@ class pgnotes(Gtk.VBox):
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        #butt3 = Gtk.Button.new_with_mnemonic("New Item")
-        #butt3.connect("pressed", self.newitem)
-        butt3 = smallbutt("| New Item ", self.newitem, "Create new record")
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        butt3 = smallbutt(" New Item ", self.newitem, "Create new record")
         hbox13.pack_start(butt3, 0, 0, 0)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        #butt3 = Gtk.Button.new_with_mnemonic("Find in Text")
-        #butt3.connect("pressed", self.search)
-
-        butt3x = smallbutt("| Find in Text ", self.findx, "Find in text")
+        butt3x = smallbutt(" Find in Text ", self.findx, "Find in text")
         hbox13.pack_start(butt3x, 0, 0, 0)
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        #butt3a = Gtk.Button.new_with_mnemonic("Search All")
-        #butt3a.connect("pressed", self.searchall)
-
-        butt3a = smallbutt("| Search All |", self.searchall, "Search ALL data")
+        butt3a = smallbutt(" Search All ", self.searchall, "Search ALL data")
 
         hbox13.pack_start(butt3a, 0, 0, 0)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
+        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         hbox13a = Gtk.HBox()
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        butt11 = smallbutt(" | Del Item ", self.delitem, "Delete item")
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        butt11 = smallbutt(" Del Item ", self.delitem, "Delete item")
         hbox13a.pack_start(butt11, 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
-
-        #butt12 = Gtk.Button.new_with_mnemonic("Export")
-        #butt12.connect("pressed", self.export)
-
-        butt12 = smallbutt("| Export ", self.export, "Export items")
+        butt12 = smallbutt(" Export ", self.export, "Export items")
         hbox13a.pack_start(butt12, 0, 0, 0)
 
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        #butt12a = Gtk.Button.new_with_mnemonic("Import")
-        #butt12a.connect("pressed", self.importx)
-
-        butt12a = smallbutt("| Import ", self.importx, "Import items")
+        butt12a = smallbutt(" Import ", self.importx, "Import items")
         hbox13a.pack_start(butt12a, 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
-        butt12b = smallbutt("| Popout |", self.popx, "Pop out window")
+        butt12b = smallbutt(" Popout ", self.popx, "Pop out window")
         hbox13a.pack_start(butt12b, 0, 0, 0)
+        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
