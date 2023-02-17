@@ -220,7 +220,7 @@ class pgweb(Gtk.VBox):
         hbox13.pack_start(Gtk.Label(label=""), 1, 1, 0)
 
         hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
-        butt3 = smallbutt(" New Item ", self.newitem, "Create new item / record")
+        butt3 = smallbutt(" _New Item ", self.newitem, "Create new item / record")
 
         hbox13.pack_start(butt3, 0, 0, 2)
         hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
