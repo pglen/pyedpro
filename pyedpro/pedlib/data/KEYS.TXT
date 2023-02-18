@@ -112,6 +112,7 @@ The keymap:
        .
        .
     RCTL - F                    -- File Manager Here
+    RCTL - H                    -- Add html comment
 
     RCTL - L                    -- Libre office Here
        .
