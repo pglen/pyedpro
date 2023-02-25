@@ -2792,7 +2792,7 @@ def run_async_time(win, arg):
         print("run_async_time", sys.exc_info())
         pass
 
-    win.mained.update_statusbar("Rescan done.")
+    #win.mained.update_statusbar("Rescan done.")
 
 def keytime(self, arg):
 

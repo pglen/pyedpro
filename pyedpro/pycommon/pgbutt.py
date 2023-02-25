@@ -207,16 +207,20 @@ class smallbutt(Gtk.Widget):
         self.eventx(arg1, arg2)
 
     def  eventmn(self, arg1, arg2):
-        print("widget mnemonic activate", arg1, arg2)
+        #print("widget mnemonic activate", arg1, arg2)
+        pass
 
     def  eventmn2(self, arg1, arg2, arg3):
-        print("widget mnemonic activate", arg1, arg2, arg3)
+        pass
+        #print("widget mnemonic activate", arg1, arg2, arg3)
 
     def  eventmn3(self, arg):
-        print("widget test mnemonic activate", arg)
+        pass
+        #print("widget test mnemonic activate", arg)
 
     def  eventmn4(self, arg):
-        print("widget test activate", arg)
+        pass
+        #print("widget test activate", arg)
 
     def enter_label(self, arg, arg2):
         #print("Enter")
