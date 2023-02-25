@@ -8,7 +8,7 @@ column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
    This project's source is at - https://github.com/pglen/pyedpro
-    (also stored locally Please remove from your Makefile. -> git target)
+     (also stored locally Please remove from your Makefile. -> git target)
 
   Working and tested platforms currently are:
 
