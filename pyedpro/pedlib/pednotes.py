@@ -225,7 +225,9 @@ class pgnotes(Gtk.VBox):
             ddd = self._getall()
             self.treeview2.clear()
             for aa in ddd:
-                if letter in aa[0].lower():
+                print("aa", aa)
+
+                if letter in aa[0]: #.lower():
                     #print("    ", aa)
                     self.treeview2.append((aa, "", ""))
 
@@ -239,17 +241,28 @@ class pgnotes(Gtk.VBox):
         txt = dlg.entry.get_text()
         dlg.destroy()
         self.treeview2.clear()
+        cnt = 0
+        txt2 = txt.lower()
         try:
             datax = self._getall()
             for aa in datax:
-                #print(aa)
-                if txt in aa:
-                    #print("    ", aa)
-                    self.treeview2.append((aa, "", ""))
+                ddd = self.core.retrieve(aa)
+                #print(ddd)
+                for cc in ddd:
+                    for ee in cc:
+                        #print("ee", ee.lower())
+                        if txt2 in str(ee).lower():
+                            #print("    ", aa)
+                            self.treeview2.append((aa, "", ""))
+                            cnt += 1
+            if not cnt:
+                self.treeview2.append(("No records found", "", ""))
 
             pass
         except:
-            print("exc in search ", sys.exc_info())
+            #print("exc in search ", sys.exc_info())
+            put_exception("search all")
+
 
     def findx(self, arg, arg2):
         self.savetext()
@@ -582,7 +595,8 @@ class pgnotes(Gtk.VBox):
     def _readrec(self, args):
 
         ddd = self.core.retrieve(args[0])
-
+        #for aa in ddd:
+        #    print(aa)
         #print("ddd", type(ddd), ddd)
         #print(b"'" + ddd[0][1][:3]) + b"'"
 
@@ -594,7 +608,7 @@ class pgnotes(Gtk.VBox):
                 self.edview.deser_buff(ddd[0][1])
             else:
                 #print("load", ddd[0][1])
-                self.edview.set_text(ddd[0][1].decode("cp437"))
+                self.edview.set_text(ddd[0][1].decode())
         except:
             print("treesel", sys.exc_info())
             pass

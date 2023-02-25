@@ -58,7 +58,7 @@ def ofd(fname = "", self2 = None):
     label5  = Gtk.Label("   ");  label6 = Gtk.Label("   ")
     label7  = Gtk.Label("   ");  label8 = Gtk.Label("   ")
     label9  = Gtk.Label("   ");
-    label10 = Gtk.Label(" Open File by Name (click on 'Open This' to open it) ");
+    label10 = Gtk.Label.new_with_mnemonic(" Open File by Name (click on 'Open _This' to open it) ");
     label11  = Gtk.Label("  ");  label12 = Gtk.Label(" ");
     #label13  = Gtk.Label("  ");  label14 = Gtk.Label(" ");
 
@@ -82,7 +82,7 @@ def ofd(fname = "", self2 = None):
     dialog.entry.set_activates_default(True)
     dialog.entry.set_text(fname)
 
-    ot =  Gtk.Button(label="Open this")
+    ot =  Gtk.Button.new_with_mnemonic("Open thi_s")
     ot.connect("clicked", butt_this, dialog)
 
     hbox2 = Gtk.HBox()
@@ -152,9 +152,15 @@ def butt_this(butt, dialog):
     ttt = dialog.entry.get_text()
     #print("butt_this", ttt)
     if ttt:
+        # Expand user var
+        ttt = os.path.expanduser(ttt)
         dialog.self2.mained.openfile(ttt)
+        # Close like we have a file
+        pedconfig.conf.pedwin.update_statusbar("Opened file: '%s'" % ttt);
+        #dialog.destroy()
+        #return [ttt,]
     else:
-        pedconfig.conf.pedwin.update_statusbar("Plese enter filename to open.");
+        pedconfig.conf.pedwin.update_statusbar("Please enter filename to open.");
 
 def butt_click(butt, dialog):
     #print butt.path
