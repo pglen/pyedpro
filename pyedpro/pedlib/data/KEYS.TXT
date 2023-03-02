@@ -108,7 +108,9 @@ The keymap:
 
     # Right control keys    (Mostly the same actions as the right click menu)
 
-    RCTL - A                    -- Nothing (message on console)
+    RCTL - A                    -- Activate note tab
+
+    RCTL - C                    -- Activate calendar tab
        .
        .
     RCTL - F                    -- File Manager Here
@@ -116,7 +118,7 @@ The keymap:
 
     RCTL - L                    -- Libre office Here
        .
-    RCTL - O                    -- Activate notetab
+    RCTL - O                    -- None -- CTRL-O overrides it
        .
     RCTL - T                    -- Terminal Here
        .
