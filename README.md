@@ -79,6 +79,9 @@ if an editor with familiar key op is needed -- most of it works. And no destruct
 
 Partial list, some highlights;
 
+Added separate interpretation for right control keys, so exotic items 
+like 'insert html comment' can be tied to a shortcut key;
+
 Added drag / drop source / target. New keystroke combo for keyboards
  without home / pgup etc ... Implemented html preview. Just right click on
 the file body, an select the corresponding menu item.
