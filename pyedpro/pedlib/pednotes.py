@@ -25,19 +25,11 @@ from pycommon.pgsimp import *
 from pycommon.pgtextview import *
 from pycommon.pgbutt import *
 
-#print("pednotes", __file__)
-
-#sys.path.append('..' + os.sep + "pycommon")
-#sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
-
 try:
-    # This will change once the pydbase is out of dev stage
-    np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + ".." + os.sep + ".."
-    #print(np)
-    sys.path.append(np)
-    #print(sys.path)
-    #print(os.getcwd())
-    from pydbase import twincore
+    # This is a copy of the pydbase -- refresh when needed
+    sys.path.append('..' + os.sep + ".."  + os.sep + "pydbase")
+    import twinbase
+    import twincore
 except:
     print("Cannot import twincore", sys.exc_info())
 
