@@ -90,7 +90,7 @@ def softmake(ddd):
 
     if not os.path.isdir(ddd):
         if(conf.verbose):
-            print("making", ddd)
+            print("softmake making", ddd)
         os.mkdir(ddd)
 
 # Create config dirs
@@ -106,8 +106,8 @@ def ensure_dirs(conf):
         if type(zz) == str:
             if "_dir" in aa:
                 if ".pyedpro" in zz:
-                    if conf.pgdebug > 5:
-                        print("making dir entry", zz)
+                    #if conf.pgdebug > 5:
+                    #    print("making dir entry", zz)
                     softmake(zz)
 
 class Unbuffered(object):
