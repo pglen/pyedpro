@@ -60,28 +60,23 @@ class pgweb(Gtk.VBox):
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
 
-        #self.data_dir = os.path.expanduser("~/.pyedwebnotes")
-        self.data_dir = pedconfig.conf.web_dir
+        self.web_dir = pedconfig.conf.web_dir
+
+        if pedconfig.conf.verbose:
+            print("Using webdir:", self.web_dir)
 
         try:
-            if not os.path.isdir(self.data_dir):
-                os.mkdir(self.data_dir)
+            if not os.path.isdir(self.web_dir):
+                os.mkdir(self.web_dir)
         except:
             print("Cannot make web notes data dir")
 
-        #try:
-        #    if pedconfig.conf.verbose:
-        #        print(self.data_dir + os.sep + "peddata.sql")
-        #    self.sql = notesql(self.data_dir + os.sep + "peddata.sql")
-        #except:
-        #    print("Cannot make notes database")
-
         try:
-            self.core = twincore.TwinCore(self.data_dir + os.sep + "peddata.pydb")
+            self.core = twincore.TwinCore(self.web_dir + os.sep + "pedweb.pydb")
             if pedconfig.conf.pgdebug > 2:
                 print("core", self.core, self.core.fname)
         except:
-            print("Cannot make web notes py database", sys.exc_info())
+            print("Cannot open / make web notes py database", sys.exc_info())
 
         #message("Cannot make notes database")
 
@@ -310,7 +305,6 @@ class pgweb(Gtk.VBox):
 
         itemx = (ttt, "", "")
         self.cnt += 1
-
         self.treeview2.insert(None, 0, itemx)
 
         newtext = "Enter text here";
@@ -366,35 +360,14 @@ class pgweb(Gtk.VBox):
                 ddd = self.core.get_rec(aa)
                 if len(ddd) < 2:
                     continue        # Deleted record
-
                 #print("ddd", ddd)
-                #print("Item:", ddd[0], "Data:", ddd[1][:16] + b" ..." )
-                try:
-                    ppp = ddd[0].split(b",")
-                except:
-                    print("Cannot split",sys.exc_info(), ddd[0])
-                    ppp = ddd[0]
-
-                if len(ppp) > 1:
-                    qqq = ppp[2]               # Old data
-                else:
-                    qqq = ddd[1]               # New data
-
-                #print("qqq", qqq)
-                qqq = qqq.decode("cp437").strip()
-
-                # Remove quotes if any
-                if len(qqq) > 1:
-                    if qqq[0] == '\'':
-                        qqq = qqq[1:-1]
-
-                if qqq not in datax:
-                    datax.append(qqq)
-                    #print("added:", qqq)
-                    self.treeview2.append((qqq, "", ""))
+                hhh = ddd[0].decode()
+                if hhh not in datax:
+                    datax.append(hhh)
+                    #print("adding", hhh)
+                    self.treeview2.append((hhh, "", ""))
         except:
             put_exception("load web data")
-            print(sys.exc_info())
             print("Cannot load notes Data at", cnt, qqq)
 
         try:
@@ -436,59 +409,63 @@ class pgweb(Gtk.VBox):
     def anchor(self, arg):
         self.webview.load_uri("file://" + self.fname)
 
-
     def _completion_function(self, html, user_data):
 
         #print("completion:", html)
+
         if not html:
             return
+
+        #print( "Save ttt:", ttt, "html:", html)
+
+        try:
+            self.core.save_data(user_data, html)
+        except:
+            print(sys.exc_info())
+        pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % user_data[:12])
+
+    # --------------------------------------------------------------------
+
+    def savetext(self):
+
         try:
             ttt = self.lastsel[0]
         except:
             return
             pass
 
-        #print( "Save ttt:", ttt, "html:", html)
-
-        try:
-            self.core.save_data(ttt, html)
-        except:
-            print(sys.exc_info())
-
-        pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % ttt[:12])
-
-    def savetext(self):
+        #print("Savetext", ttt)
 
         if not hasattr(self.webview, "get_html"):
             print("Cannot exec savetext without webview")
 
         try:
-            self.webview.get_html(self._completion_function, None)
+            self.webview.get_html(self._completion_function, ttt)
         except:
             if pedconfig.conf.verbose:
-                print("savetext", sys.exc_info())
+                put_exception("savetext", sys.exc_info())
             pass
 
+    # --------------------------------------------------------------------
+
     def treesel(self, args):
+
         #print("treesel", args[0])
+
         self.savetext()
         self.lastsel = args
 
-        ddd = self.core.findrec(args[0], 1)
-        if len(ddd) < 2:
-            if 1: #pedconfig.conf.verbose:
-                #print("No record to select", sys.exc_info())
-                pass
-            return
+        ddd = self.core.retrieve(args[0])[0]
+        hhh = ddd[1].decode()
+        #print("hhh", hhh)
 
-        #print("ddd", type(ddd), ddd[0], ddd[1][:16])
-        #print(b"'" + ddd[0][1][:3]) + b"'"
         try:
-            self.webview.load_html(ddd[1])
+            self.webview.load_html(hhh)
         except:
             print(sys.exc_info())
             pass
 
-        pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % ttt[:12])
+        #if args:
+        #    pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % args[0][:12])
 
 # EOF

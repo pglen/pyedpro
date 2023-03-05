@@ -54,7 +54,7 @@ class smallbutt(Gtk.Widget):
                 mark = 1
             else:
                 if mark:
-                    print("Accel", aa)
+                    #print("Accel", aa)
                     self.accel = aa
                     mark = 0
                 self.labx += aa

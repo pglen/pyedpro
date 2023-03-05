@@ -28,7 +28,7 @@ from pycommon.pgbutt import *
 try:
     # This is a copy of the pydbase -- refresh when needed
     np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + "pydbase"
-    print(np)
+    #print(np)
     sys.path.append(np)
     from pydbase import twinbase
     from pydbase import twincore
@@ -51,23 +51,19 @@ class pgnotes(Gtk.VBox):
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
         self.popwin = None
-        self.data_dir = pedconfig.conf.notes_dir
+        self.notes_dir = pedconfig.conf.notes_dir
 
         try:
-            if not os.path.isdir(self.data_dir):
-                os.mkdir(self.data_dir)
+            if not os.path.isdir(self.notes_dir):
+                os.mkdir(self.notes_dir)
         except:
-            print("Cannot make notes data dir")
+            print("Cannot make notes notes dir")
 
-        #try:
-        #    if pedconfig.conf.verbose:
-        #        print(self.data_dir + os.sep + "peddata.sql")
-        #    self.sql = notesql(self.data_dir + os.sep + "peddata.sql")
-        #except:
-        #    print("Cannot make notes database")
+        if pedconfig.conf.verbose:
+            print("Using notesdir:", self.notes_dir)
 
         try:
-            self.core = twincore.TwinCore(self.data_dir + os.sep + "peddata.pydb")
+            self.core = twincore.TwinCore(self.notes_dir + os.sep + "peddata.pydb")
             #print("core", self.core, self.core.fname)
         except:
             print("Cannot make notes py database")
@@ -490,7 +486,7 @@ class pgnotes(Gtk.VBox):
 
         base = "peddata";  cnt = 0; fff = ""
         while True:
-            fff =  "%s%s%s_%d.bak" % (self.data_dir, os.sep, base, cnt)
+            fff =  "%s%s%s_%d.bak" % (self.notes_dir, os.sep, base, cnt)
             #print("trying:", fff)
             if not os.path.isfile(fff):
                 break

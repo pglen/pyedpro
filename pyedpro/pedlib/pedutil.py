@@ -1194,7 +1194,7 @@ def put_debug(xstr):
 
 def put_exception(xstr):
 
-    cumm = xstr + " "
+    cumm = "Exception: " + xstr + " "
     a,b,c = sys.exc_info()
     if a != None:
         cumm += str(a) + " " + str(b) + "\n"
@@ -1202,7 +1202,8 @@ def put_exception(xstr):
             #cumm += str(traceback.format_tb(c, 10))
             ttt = traceback.extract_tb(c)
             for aa in ttt:
-                cumm += "File: " + os.path.basename(aa[0]) + \
+                sss = os.path.split(aa[0])
+                cumm += "File: " + sss[-2:] + \
                         " Line: " + str(aa[1]) + "\n" +  \
                     "   Context: " + aa[2] + " -> " + aa[3] + "\n"
         except:
