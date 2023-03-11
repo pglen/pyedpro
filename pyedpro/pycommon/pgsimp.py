@@ -19,6 +19,8 @@ import pgbox
 
 #print("pyedpro pgsimp", __file__)
 
+#print("pgsimp", __file__)
+
 # ------------------------------------------------------------------------
 # An N pixel horizontal spacer. Defaults to X pix get_center
 # Re-created for no dependency include of this module
@@ -39,12 +41,13 @@ class zSpacer(Gtk.HBox):
 
 class   SimpleTree(Gtk.TreeView):
 
-    def __init__(self, head = [], editx = [], skipedit = 0):
+    def __init__(self, head = [], editx = [], skipedit = 0, xalign = 0.5):
 
         Gtk.TreeView.__init__(self)
 
         self.callb = None
         self.chcallb = None
+        self.actcallb = None
 
         # repair missing column
         if len(head) == 0:
@@ -64,6 +67,10 @@ class   SimpleTree(Gtk.TreeView):
         for aa in head:
             # Create a CellRendererText to render the data
             cell = Gtk.CellRendererText()
+            #cell.set_property("alignment", Pango.Alignment.CENTER)
+            #cell.set_property("align-set", True)
+            cell.set_property("xalign", xalign)
+
             if cnt > skipedit:
                 cell.set_property("editable", True)
                 cell.connect("edited", self.text_edited, cnt)
@@ -76,6 +83,17 @@ class   SimpleTree(Gtk.TreeView):
 
         self.set_model(self.treestore)
         self.connect("cursor-changed", self.selection)
+        self.connect("row-activated", self.activate)
+
+    def activate(self, xtree, arg2, arg3):
+        #print("Activated", row, arg2, arg3)
+        sel = xtree.get_selection()
+        xmodel, xiter = sel.get_selected()
+        if xiter:
+            xstr = xmodel.get_value(xiter, 0)
+            #print("Activated str", xstr)
+            if self.actcallb:
+                self.actcallb(xstr)
 
     def text_edited(self, widget, path, text, idx):
         #print ("edited", widget, path, text, idx)
@@ -103,6 +121,9 @@ class   SimpleTree(Gtk.TreeView):
 
     def setCHcallb(self, callb):
         self.chcallb = callb
+
+    def setActcallb(self, callb):
+        self.actcallb = callb
 
     def append(self, args):
         #print("append", args)
@@ -164,7 +185,6 @@ class   SimpleTree(Gtk.TreeView):
 
     def clear(self):
         self.treestore.clear()
-
 
 # ------------------------------------------------------------------------
 

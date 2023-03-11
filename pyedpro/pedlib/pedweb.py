@@ -286,7 +286,7 @@ class pgweb(Gtk.VBox):
         if self.core:
             self.core.__del__()
 
-    def newitem(self, arg, arg2):
+    def newitem(self, arg):
         self.savetext()
         rrr = HeadDialog("New Item %d" % self.cnt, None)
         ret = rrr.run()
@@ -334,12 +334,12 @@ class pgweb(Gtk.VBox):
         usleep(10)
         self.load()
 
-    def search(self, arg, arg2):
+    def search(self, arg):
         print("search", time.time())
         pass
 
-    def searchall(self, arg, arg2):
-        #print("searchall", arg, arg2)
+    def searchall(self, arg):
+        #print("searchall", arg)
         print("searchall", time.time())
         pass
 

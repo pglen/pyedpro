@@ -141,7 +141,7 @@ class pgnotes(Gtk.VBox):
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
-        butt3 = smallbutt(" New Item ", self.newitem, "Create new record")
+        butt3 = smallbutt(" _New Item ", self.newitem, "Create new record")
         hbox13.pack_start(butt3, 0, 0, 0)
         hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
@@ -221,7 +221,7 @@ class pgnotes(Gtk.VBox):
                     #print("    ", aa)
                     self.treeview2.append((aa, "", ""))
 
-    def searchall(self, arg, arg2):
+    def searchall(self, arg):
         self.savetext()
         dlg = SearchDialog()
         ret = dlg.run()
@@ -254,7 +254,7 @@ class pgnotes(Gtk.VBox):
             put_exception("search all")
 
 
-    def findx(self, arg, arg2):
+    def findx(self, arg):
         self.savetext()
         dlg = SearchDialog() #self.edview.textview)
         ret = dlg.run()
@@ -273,7 +273,7 @@ class pgnotes(Gtk.VBox):
            textbuffer.select_range(match_start,match_end)#    datax = self.sql.getall()
            self.edview.textview.scroll_to_iter(match_start, 0, False, 0, 0)
 
-    def newitem(self, arg, arg2):
+    def newitem(self, arg):
         self.savetext()
         rrr = HeadDialog("New Item %d" % self.cnt, None)
         ret = rrr.run()
@@ -324,7 +324,7 @@ class pgnotes(Gtk.VBox):
         self.edview.set_text(newtext)
         self.core.save_data(ttt, newtext)
 
-    def delitem(self, arg, arg2):
+    def delitem(self, arg):
         #print ("delitem", self.lastkey, self.lastsel)
         if not self.lastsel:
             print("Nothing to delete")
@@ -385,7 +385,7 @@ class pgnotes(Gtk.VBox):
             self.recx.append(headx)
             self.recy.append(body)
 
-    def importx(self, arg, arg2):
+    def importx(self, arg):
         #print("Import")
 
         cwd = os.getcwd();
@@ -482,7 +482,7 @@ class pgnotes(Gtk.VBox):
         pedconfig.conf.pedwin.update_statusbar(\
                     "Imported %d items of %d " % (cnt, dlen))
 
-    def export(self, arg, arg2):
+    def export(self, arg):
 
         base = "peddata";  cnt = 0; fff = ""
         while True:
@@ -524,7 +524,7 @@ class pgnotes(Gtk.VBox):
         pedconfig.conf.pedwin.update_statusbar("Exported %d/%d notes to %s" % \
                                 (dbsize, cnt, os.path.basename(fff)))
 
-    def popx(self, arg, arg2):
+    def popx(self, arg):
 
         txt = self.edview.ser_buff()
         #print ("popx txt", txt)

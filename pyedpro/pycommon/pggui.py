@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from __future__ import absolute_import
-from __future__ import print_function
+#from __future__ import absolute_import
+#from __future__ import print_function
 
 import signal, os, time, sys, pickle, subprocess, random, warnings
 import math, copy
@@ -15,7 +15,6 @@ from gi.repository import Pango
 
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
-
 
 realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
 sys.path.append(realinc)
@@ -222,12 +221,17 @@ class   TextRow(Gtk.HBox):
 
 class LabelButt(Gtk.EventBox):
 
+    ''' Imitate button '''
     def __init__(self, front, callb, toolt=""):
+
         GObject.GObject.__init__(self)
 
-        self.label = Gtk.Label.new(front)
-        self.curve =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
+        self.set_can_focus(True)
+        self.label = Gtk.Label.new_with_mnemonic(front)
+        self.label.set_mnemonic_widget(self)
+        #self.curve =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
         self.arrow =  Gdk.Cursor(Gdk.CursorType.ARROW)
+        self.hand =  Gdk.Cursor(Gdk.CursorType.HAND1)
 
         #gdk_window = self.get_root_window()
         #self.arrow = gdk_window.get_cursor()
@@ -236,24 +240,35 @@ class LabelButt(Gtk.EventBox):
             self.label.set_tooltip_text(toolt)
         self.label.set_single_line_mode(True)
         self.add(self.label)
+
+        self.label.connect("event-after", self.eventx, front)
+        self.connect("mnemonic-activate", self.mnemonic, front)
+
         if callb:
-            self.connect_after("button-press-event", callb, front)
+            self.connect("button-press-event", callb, front)
+
         self.set_above_child(True)
+        self.add_mnemonic_label(self.label)
 
         #self.label.connect("motion-notify-event", self.area_motion)
         self.connect("motion-notify-event", self.area_motion)
+        self.connect("enter-notify-event", self.area_enter)
+        self.connect("leave-notify-event", self.area_leave)
 
-        #self.connect("enter-notify-event", self.area_enter)
-        #self.connect("leave-notify-event", self.area_leave)
+    def eventx(self, *args):
+        print("eventx", *args)
+
+    def mnemonic(self, *arg):
+        print("Mnemonic", *arg)
 
     def area_motion(self, arg1, arg2):
         #print("LabelButt Motion")
         pass
 
     def area_enter(self, arg1, arg2):
-        #print("LabelButt neter")
+        #print("LabelButt enter")
         gdk_window = self.get_root_window()
-        gdk_window.set_cursor(self.curve)
+        gdk_window.set_cursor(self.hand)
 
     def area_leave(self, arg1, arg2):
         #print("LabelButt leave")
