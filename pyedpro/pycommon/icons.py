@@ -1,7 +1,25 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+
+import os, sys, getopt, signal, random, time, warnings
+
+realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
+sys.path.append(realinc)
+
+from pgutils import  *
+from pggui import  *
+from pgsimp import  *
+
+import gi
+gi.require_version("Gtk", "3.0")
+gi.require_version('WebKit2', '4.0')
 
 from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GObject
+from gi.repository import Pango
 from gi.repository.GdkPixbuf import Pixbuf
+
 
 # wget -q http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html -O /dev/stdout | grep '</td></tr><tr><td>.*</td><td>' | sed 's/.*<td>\(.[^<]*\).*/"\1",/'
 
@@ -290,7 +308,7 @@ class IconViewWindow(Gtk.Window):
 
         Gtk.Window.__init__(self)
         self.set_title("%d icon%c" % (len(icons), '' if len(icons) < 2 else 's'))
-        self.set_default_size(660, 400)
+        #self.set_default_size(660, 400)
 
         liststore = Gtk.ListStore(Pixbuf, str)
         iconview = Gtk.IconView.new()
@@ -299,8 +317,14 @@ class IconViewWindow(Gtk.Window):
         iconview.set_text_column(1)
 
         for icon in sorted(icons):
+
+            if len(sys.argv) > 1 and sys.argv[1]:
+                # filter
+                if  not sys.argv[1].lower() in icon.lower():
+                    continue
+
             try:
-                pixbuf = Gtk.IconTheme.get_default().load_icon(icon, 64, 0)
+                pixbuf = Gtk.IconTheme.get_default().load_icon(icon, 32, 0)
                 liststore.append([pixbuf, icon])
             except Exception as inst:
                 print(inst)
@@ -310,8 +334,35 @@ class IconViewWindow(Gtk.Window):
         self.add(swnd)
 
 
-win = IconViewWindow()
-win.connect("delete-event", Gtk.main_quit)
-win.show_all()
-Gtk.main()
+if __name__ == '__main__':
+
+    win = IconViewWindow()
+    win.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
+
+    #ic = Gtk.Image(); ic.set_from_stock(Gtk.STOCK_DIALOG, Gtk.ICON_SIZE_BUTTON)
+    #window.set_icon(ic.get_pixbuf())
+
+    #www = Gdk.Screen.width(); hhh = Gdk.Screen.height();
+    disp2 = Gdk.Display()
+    disp = disp2.get_default()
+    #print( disp)
+    scr = disp.get_default_screen()
+    ptr = disp.get_pointer()
+    mon = scr.get_monitor_at_point(ptr[1], ptr[2])
+    geo = scr.get_monitor_geometry(mon)
+    www = geo.width; hhh = geo.height
+    xxx = geo.x;     yyy = geo.y
+
+    # Resort to old means of getting screen w / h
+    if www == 0 or hhh == 0:
+        www = Gdk.screen_width(); hhh = Gdk.screen_height();
+
+    if www / hhh > 2:
+        win.set_default_size(5*www/8, 7*hhh/8)
+    else:
+        win.set_default_size(7*www/8, 7*hhh/8)
+
+    win.connect("delete-event", Gtk.main_quit)
+    win.show_all()
+    Gtk.main()
 

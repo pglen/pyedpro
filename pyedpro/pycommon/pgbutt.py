@@ -21,7 +21,23 @@ from gi.repository import PangoCairo
 import cairo
 from sutil import *
 
-class smallbutt(Gtk.Widget):
+class smallbutt(Gtk.Button):
+
+    def __init__(self, labx, eventx = None, tooltip = None, *args, **kwds):
+        super().__init__(labx, *args, **kwds)
+        self.set_use_underline(True)
+        if tooltip:
+            self.set_tooltip_text(tooltip)
+        if eventx:
+            self.connect("clicked", eventx)
+        self.set_relief(Gtk.ReliefStyle.NONE)
+        font = "Sans 10"
+        self.override_font(Pango.FontDescription(font))
+
+
+# This is defunct, kept it here for good drawing code skeleton
+
+class smallbutt2(Gtk.Widget):
 
     __gsignals__ = {
       "xmnemonic-activate": (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
@@ -45,42 +61,53 @@ class smallbutt(Gtk.Widget):
         super().__init__(*args, **kwds)
 
         self.state = 0; self.stat2 = 0
-        self.labx = ""; self.accel = ""; mark = 0
-        self.agroup = None
+        self.labx = labx;  self.orgtext = ""
+        self.accel = "";  self.agroup = None
+        self.mark = -1;
 
+        cnt = 0;
         # Process ACCEL Key
-        for aa in labx:
+        for aa in self.labx:
             if aa == "_":
-                mark = 1
+                self.mark = cnt
             else:
-                if mark:
-                    #print("Accel", aa)
+                if self.mark != -1 and self.accel != "":
                     self.accel = aa
-                    mark = 0
-                self.labx += aa
-        self.eventx = eventx
+                self.orgtext += aa
+            cnt += 1
 
+        print("mark", self.mark, self.accel)
+
+        self.eventx = eventx
         self.set_events(Gdk.EventMask.ALL_EVENTS_MASK)
 
         self.akey = 0
+        self.mnem = False
 
         self.set_can_focus(True)
         self.set_can_default(True)
         self.set_sensitive(True)
-        self.add_mnemonic_label(self)
+        #self.add_mnemonic_label(self)
 
-        self.layout = self.create_pango_layout("a")
-        self.layout.set_text(self.labx, len(self.labx))
+        self.layoutx = self.create_pango_layout("a")
+        self.layoutx.set_text(self.orgtext, self.mark)
+        (self.charx, self.chary) =  self.layoutx.get_extents()
+        self.charx.width /= Pango.SCALE;  self.charx.height /= Pango.SCALE;
+        self.chary.width /= Pango.SCALE;  self.chary.height /= Pango.SCALE;
+
+        self.layout  = self.create_pango_layout("a")
+        self.layout.set_text(self.orgtext, len(self.orgtext))
         (pr, lr) = self.layout.get_extents()
-        xx = lr.width / Pango.SCALE; yy = lr.height / Pango.SCALE;
-        #print("xx", xx, "yy", yy)
+        self.ww = lr.width / Pango.SCALE; self.hh = lr.height / Pango.SCALE;
+        #print("ww", self.ww, "hh", self.hh)
 
-        self.set_size_request(xx, yy)
+        self.set_size_request(self.ww, self.hh)
         self.hand_cursor = Gdk.Cursor(Gdk.CursorType.HAND2)
 
         if tooltip:
             self.set_tooltip_text(tooltip)
 
+        #self.connect("event_after", self.eventx)
         self.connect("mnemonic-activate", self.eventmn)
         self.connect("xmnemonic-activate", self.eventmn2)
         self.connect("test-activate", self.eventmn3)
@@ -88,6 +115,9 @@ class smallbutt(Gtk.Widget):
 
         self.connect("button-press-event", self.event_press)
         self.connect("button-release-event", self.event_release)
+
+        self.connect("key-press-event", self.key_press)
+        self.connect("key-release-event", self.key_release)
 
         self.connect("enter_notify_event", self.enter_label)
         self.connect("leave_notify_event", self.leave_label)
@@ -97,6 +127,19 @@ class smallbutt(Gtk.Widget):
         #self.emit('xmnemonic-activate', 0, self)
         self.emit('test-activate')
         self.emit('activate')
+
+    # EventKey
+    def key_press(self, arg, arg2):
+        print("key_press", arg2.keyval)
+        if arg2.keyval ==  Gdk.KEY_Alt_L:
+            self.mnem = True
+            self.queue_draw()
+
+    def key_release(self, arg, arg2):
+        print("key_release", arg2.keyval)
+        if arg2.keyval ==  Gdk.KEY_Alt_L:
+            self.mnem = False
+            self.queue_draw()
 
     def add_accel(self):
 
@@ -137,7 +180,10 @@ class smallbutt(Gtk.Widget):
             bg_color = Gdk.RGBA(.9, .9, .9)
             #print(bg_color)
         else:
-            bg_color = self.get_style_context().get_background_color(Gtk.StateFlags.NORMAL)
+            if 0: #self.has_focus():
+                bg_color = Gdk.RGBA(.75, .75, .75)
+            else:
+                bg_color = self.get_style_context().get_background_color(Gtk.StateFlags.NORMAL)
 
         cr.set_source_rgba(*list(bg_color))
         cr.paint()
@@ -161,6 +207,24 @@ class smallbutt(Gtk.Widget):
         if self.state:
             cr.move_to(1, 1)
             PangoCairo.show_layout(cr, self.layout)
+
+        frame_color = Gdk.RGBA(.5, .5, .5)
+        cr.set_source_rgba(*list(frame_color))
+
+        if self.mnem:
+            #print("corr", self.chary.width, self.chary.height)
+            cr.move_to( self.chary.width,  self.chary.height-2)
+            cr.line_to( self.chary.width + 8, self.chary.height-2)
+            cr.stroke()
+
+        if self.has_focus():
+            cr.set_dash([.5, .9])
+            cr.move_to( 0, 0)
+            cr.line_to( self.ww, 0)
+            cr.line_to( self.ww, self.hh)
+            cr.line_to( 0, self.hh)
+            cr.line_to( 0, 0)
+
         cr.stroke()
 
     def do_realize(self):
@@ -205,6 +269,10 @@ class smallbutt(Gtk.Widget):
             #print("yy over")
             return
         self.eventx(arg1, arg2)
+
+    def  eventx(self, arg1, arg2):
+        print("eventx", arg1, arg2)
+        pass
 
     def  eventmn(self, arg1, arg2):
         #print("widget mnemonic activate", arg1, arg2)
