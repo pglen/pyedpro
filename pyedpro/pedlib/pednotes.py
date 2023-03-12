@@ -650,8 +650,8 @@ class pgnotes(Gtk.VBox):
 
         self.lastsel = None; self.lastkey = None
         try:
-            ddd = self._getall()
-            for qqq in ddd:
+            datax = self._getall()
+            for qqq in datax:
                 self.treeview2.append((qqq, "", ""))
         except:
             put_exception("load")
@@ -659,6 +659,20 @@ class pgnotes(Gtk.VBox):
 
         #self.treeview2.sel_last()
         #self.treeview2.sel_first()
+
+        # Update new counter
+        for aa in datax:
+            if aa[:9] == "New Item ":
+                try:
+                    ccc = int(aa[9:])
+                    #print("new", ccc)
+                    if ccc > self.cnt:
+                        self.cnt = ccc
+                except:
+                    pass
+        self.cnt += 1
+        #print("self.cnt", self.cnt)
+
 
 
 class   PopWin(Gtk.Window):

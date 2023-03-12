@@ -1202,14 +1202,15 @@ def put_exception(xstr):
             #cumm += str(traceback.format_tb(c, 10))
             ttt = traceback.extract_tb(c)
             for aa in ttt:
-                sss = os.path.split(aa[0])
-                cumm += "File: " + sss[-2:] + \
+                sss = aa[0].split(os.sep)
+                cumm += "File: " + os.sep.join(sss[-3:]) + \
                         " Line: " + str(aa[1]) + "\n" +  \
                     "   Context: " + aa[2] + " -> " + aa[3] + "\n"
         except:
             print( "Could not print trace stack. ", sys.exc_info())
 
-    put_debug(cumm)
+    #put_debug(cumm)
+    print(cumm)
     #syslog.syslog("%s %s %s" % (xstr, a, b))
 
 def put_exception2(xstr):

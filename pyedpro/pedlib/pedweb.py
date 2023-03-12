@@ -20,20 +20,19 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 
-#sys.path.append('..' + os.sep + "pycommon")
-
 from pycommon.pggui import *
 from pycommon.pgsimp import *
 from pycommon.pgbutt import *
+from pycommon.browsewin import *
 
-try:
-    from  pycommon import pgwkit
-    if pedconfig.conf.pgdebug > 0:
-        print("Loaded pgwkit")
+    #from  pycommon import pgwkit
+    #if pedconfig.conf.pgdebug > 0:
+    #    print("Loaded pgwkit")
 
-except:
-    if pedconfig.conf.verbose:
-        print("Cannot load pgwkit")
+#except:
+#    if pedconfig.conf.verbose:
+#        print("Cannot load pgwkit")
+#    raise
 
 try:
     # This will change once the pydbase is out of dev stage
@@ -44,7 +43,7 @@ try:
     #print(os.getcwd())
     from pydbase import twincore
 except:
-    print("Cannot import twincore", sys.exc_info())
+    put_exception("Cannot Load")
 
 # ------------------------------------------------------------------------
 
@@ -59,26 +58,22 @@ class pgweb(Gtk.VBox):
 
         self.lastsel = None;  self.lastkey = None
         self.cnt = 0
-
         self.web_dir = pedconfig.conf.web_dir
-
         if pedconfig.conf.verbose:
             print("Using webdir:", self.web_dir)
-
         try:
             if not os.path.isdir(self.web_dir):
                 os.mkdir(self.web_dir)
         except:
-            print("Cannot make web notes data dir")
-
+            print("Cannot make web data dir")
         try:
             self.core = twincore.TwinCore(self.web_dir + os.sep + "pedweb.pydb")
             if pedconfig.conf.pgdebug > 2:
                 print("core", self.core, self.core.fname)
         except:
-            print("Cannot open / make web notes py database", sys.exc_info())
+            put_exception("Cannot open / make web notes py database")
 
-        #message("Cannot make notes database")
+        #message("Cannot make  database")
 
         #hbox = Gtk.HBox()
         self.pack_start(Gtk.Label(""), 0, 0, 0)
@@ -118,7 +113,8 @@ class pgweb(Gtk.VBox):
         frame3.add(scroll2)
         vpaned.add(frame3)
 
-        vpaned.set_position(300)
+        vpaned.set_position(150)
+
         self.pack_start(vpaned, 1, 1, 2)
 
         #self.edview = pgsimp.TextViewWin()
@@ -150,7 +146,7 @@ class pgweb(Gtk.VBox):
         hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
         hbox3.pack_start(butt2, 0, 0, 0)
 
-        self.pack_start(hbox3, 0, 0, 2)
+        #self.pack_start(hbox3, 0, 0, 2)
 
         hbox4 = Gtk.HBox()
         lab1  = Gtk.Label("  Note: This is a Live Browser ")
@@ -160,6 +156,7 @@ class pgweb(Gtk.VBox):
         butt3 = Gtk.Button("<")
         butt3.connect("pressed", self.backurl)
         butt3.set_tooltip_text("Back")
+
         hbox4.pack_start(Gtk.Label(" "), 0, 0, 0)
         hbox4.pack_start(butt3, 0, 0, 0)
 
@@ -177,7 +174,7 @@ class pgweb(Gtk.VBox):
 
         #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
 
-        self.pack_start(hbox4, 0, 0, 2)
+        #self.pack_start(hbox4, 0, 0, 2)
 
         self.treeview3 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview3.setcallb(self.treesel)
@@ -189,69 +186,78 @@ class pgweb(Gtk.VBox):
 
         #self.edview = SimpleEdit()
         #self.edview.setsavecb(self.savetext)
-
         #scroll3 = Gtk.ScrolledWindow()
         #scroll3.add(self.edview)
         #frame4 = Gtk.Frame(); frame4.add(scroll3)
 
         scrolled_window = Gtk.ScrolledWindow()
         try:
-            #self.webview = WebKit2.WebView()
-            self.webview = pgwkit.pgwebw(self)
-            #print("dir", dir(self.webview))
-            #self.webview.load_uri("file://" + self.fname)
+            #self.brow_win = WebKit2.WebView()
+            #self.brow_win = pgwkit.pgwebw(self)
+            self.brow_win = brow_win()
+            #print("dir", dir(self.brow_win))
+            #self.brow_win.load_uri("file://" + self.fname)
         except:
-            self.webview = Gtk.Label("No WebView Available.")
-            print("WebView Load Error", sys.exc_info())
+            #self.brow_win = Gtk.Label("No WebView Available.")
+            put_exception("WebView load")
+
+        vbox5 = Gtk.VBox()
+        frame4 = Gtk.Frame();
+        frame4.add(scrolled_window)
+        vbox5.pack_start(frame4, 1,1,0)
+        vpaned.add(vbox5)
+
+        #self.brow_win.override_background_color(
+        #                Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, .5) )
 
         #webview.load_uri("https://google.com")
-        scrolled_window.add(self.webview)
+        scrolled_window.add(self.brow_win)
         self.pack_start(scrolled_window, 1, 1, 2)
 
-        self.status = Gtk.Label(" Status: ")
-        self.pack_start(self.status, 0, 0, 2)
+        #self.status = Gtk.Label(" Status: ")
+        #self.pack_start(self.status, 0, 0, 2)
 
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=""), 1, 1, 0)
 
-        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
         butt3 = smallbutt(" _New Item ", self.newitem, "Create new item / record")
 
         hbox13.pack_start(butt3, 0, 0, 2)
-        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         butt3a = smallbutt(" Find in Text ", self.search, "Search this record")
         hbox13.pack_start(butt3a, 0, 0, 0)
-        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         butt3b = smallbutt(" Search in All ", self.searchall, "Search all records")
 
         hbox13.pack_start(butt3b, 0, 0, 0)
-        hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         hbox13.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
         hbox13a = Gtk.HBox()
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
-        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
         butt11 = smallbutt(" Del Item ", self.searchall, "Delete One Rec")
         hbox13a.pack_start(butt11, 0, 0, 0)
 
-        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         butt12 = smallbutt(" Export ", self.searchall, "Export all items")
         hbox13a.pack_start(butt12, 0, 0, 2)
-        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         butt12a = smallbutt(" Import ", self.searchall, "Import items")
         hbox13a.pack_start(butt12a, 0, 0, 0)
-        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         butt12a = smallbutt(" PopOut ", self.searchall, "Pop Out to window")
         hbox13a.pack_start(butt12a, 0, 0, 0)
 
-        hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13a.pack_start(Gtk.Label(" | "), 0, 0, 0)
 
         hbox13a.pack_start(Gtk.Label(label=" "), 1, 1, 0)
 
@@ -260,12 +266,13 @@ class pgweb(Gtk.VBox):
         #hbox13.pack_start(butt22, 0, 0, 0)
         #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
 
-        self.pack_start(hbox13, 0, 0, 2)
-        self.pack_start(hbox13a, 0, 0, 2)
+        vbox5.pack_start(hbox13, 0, 0, 0)
+        vbox5.pack_start(hbox13a, 0, 0, 0)
+
         try:
             self.load()
         except:
-            print("Cannot load", sys.exc_info())
+            put_exception("Cannot load")
 
     def switched(self, pageto):
         #print("SW page signal web", pageto)
@@ -307,8 +314,8 @@ class pgweb(Gtk.VBox):
         self.cnt += 1
         self.treeview2.insert(None, 0, itemx)
 
-        newtext = "Enter text here";
-        self.core.save_data(ttt, newtext)
+        #newtext = "Enter text here";
+        #self.core.save_data(ttt, newtext)
 
         #self.edview.set_text(newtext)
         self.treeview2.sel_first()
@@ -375,12 +382,24 @@ class pgweb(Gtk.VBox):
         except:
             pass
 
+        # Update new counter
+        for aa in datax:
+            if aa[:9] == "New Item ":
+                try:
+                    ccc = int(aa[9:])
+                    #print("new", ccc)
+                    if ccc > self.cnt:
+                        self.cnt = ccc
+                except:
+                    pass
+        self.cnt += 1
+        #print("self.cnt", self.cnt)
 
     def backurl(self, arg1): #, url, parm, buff):
-        self.webview.go_back()
+        self.brow_win.go_back()
 
     def forwurl(self, arg1): #, url, parm, buff):
-        self.webview.go_forward()
+        self.brow_win.go_forward()
 
     def  letterfilter(self, letter):
         #print("letterfilter", letter)
@@ -399,15 +418,16 @@ class pgweb(Gtk.VBox):
                     #aa.append("fff")
                     self.treeview2.append(aa[1:])
                 except:
-                    print(sys.exc_info())
+                    put_exception("Letter Filter")
+
 
     def go(self, arg):
         txt = self.edit.get_text()
         #print ("go", txt)
-        self.webview.load_uri(txt)
+        self.brow_win.load_uri(txt)
 
     def anchor(self, arg):
-        self.webview.load_uri("file://" + self.fname)
+        self.brow_win.load_uri("file://" + self.fname)
 
     def _completion_function(self, html, user_data):
 
@@ -421,10 +441,30 @@ class pgweb(Gtk.VBox):
         try:
             self.core.save_data(user_data, html)
         except:
-            print(sys.exc_info())
+            put_exception("Cannot load")
+
         pedconfig.conf.pedwin.update_statusbar("Saved item for '%s'" % user_data[:12])
 
     # --------------------------------------------------------------------
+
+    def  microsleep(msec, flag = [0,]):
+
+        if sys.version_info[0] < 3 or \
+            (sys.version_info[0] == 3 and sys.version_info[1] < 3):
+            timefunc = time.clock
+        else:
+            timefunc = time.process_time
+
+        got_clock = timefunc() + float(msec) / 1000
+        #print( got_clock)
+        while True:
+            if timefunc() > got_clock:
+                break
+            if flag[0]:
+                break
+            #print ("Sleeping")
+            Gtk.main_iteration_do(False)
+
 
     def savetext(self):
 
@@ -434,16 +474,22 @@ class pgweb(Gtk.VBox):
             return
             pass
 
-        #print("Savetext", ttt)
+        #ee = vv
 
-        if not hasattr(self.webview, "get_html"):
-            print("Cannot exec savetext without webview")
+        if self.brow_win.is_modified():
+            #print("Savetext", ttt)
+            newtext =  self.brow_win.get_content()
+            self.core.save_data(ttt, newtext)
+            #print("newtext", newtext)
+        else:
+            #print("Not saving", ttt)
+            pass
 
         try:
-            self.webview.get_html(self._completion_function, ttt)
+            self.brow_win.load_html(self._completion_function, ttt)
         except:
             if pedconfig.conf.verbose:
-                put_exception("savetext", sys.exc_info())
+                put_exception("savetext")
             pass
 
     # --------------------------------------------------------------------
@@ -460,9 +506,9 @@ class pgweb(Gtk.VBox):
         #print("hhh", hhh)
 
         try:
-            self.webview.load_html(hhh)
+            self.brow_win.load_html(hhh)
         except:
-            print(sys.exc_info())
+            put_exception("Load Data")
             pass
 
         #if args:

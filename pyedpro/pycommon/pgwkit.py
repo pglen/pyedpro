@@ -159,7 +159,7 @@ class pgwebw(WebKit2.WebView):
                 if state == aa.accel_parsed[1]:
                     #print("state match")
                     if key == aa.accel_parsed[0]:
-                        print("Fire ", aa.get_name(), aa.get_label())
+                        #print("Fire ", aa.get_name(), aa.get_label())
                         #lab = aa.get_label()
                         aa.activate()
                         break   # Only one accel the other is a mistake
@@ -168,7 +168,7 @@ class pgwebw(WebKit2.WebView):
         navkey = False
         for aa in navkeys:
             if key == aa:
-                print("Navkey", aa)
+                #print("Navkey", aa)
                 navkey = True
         if not navkey:
             # Exclude Ctrl-s

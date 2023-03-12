@@ -150,6 +150,8 @@ pedconfig.conf.acth = acthand.ActHand()
 pedconfig.conf.keyh = keyhand.KeyHand(pedconfig.conf.acth)
 pedconfig.conf.orig_path = orgbase
 
+#sys.path.append('.' + os.sep + "pycommon")
+
 from pedlib import pedwin
 from pedlib import pedlog
 from pedlib import pedutil
