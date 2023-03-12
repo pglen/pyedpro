@@ -21,6 +21,8 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Pango
 
+ret = ""
+
 try:
     import pgwkit
 except:
@@ -84,6 +86,9 @@ class  brow_win(Gtk.VBox):
         self.set_can_focus(True)
         #self.grab_focus()
 
+    def load_html(self, strx):
+        self.webview.load_html(strx)
+
     def open(self):
         dialog = Gtk.FileChooserDialog("Open an HTML file", None,
                 Gtk.FileChooserAction.OPEN,
@@ -120,6 +125,25 @@ class  brow_win(Gtk.VBox):
                 self.set_status("Saved file '%s'" % self.fname)
                 self.webview.modified = False
         self.webview.get_html(completion, 'w')
+
+    def is_modified(self):
+        return self.webview.modified
+
+    def _completion(self, html, user_data):
+        self.ret = html
+        self.done = True
+        self.webview.modified = False
+        #print("retx", ret)
+
+    def get_content(self):
+        self.done = 0; self.ret = ""
+        self.webview.get_html(self._completion, "w")
+        # Wait until done is set
+        for aa in range(1000):
+            if self.done:
+                break
+            Gtk.main_iteration_do(False)
+        return self.ret
 
     def saveas(self):
         def completion(html, user_data):

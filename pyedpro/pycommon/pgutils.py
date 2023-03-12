@@ -43,7 +43,7 @@ testmode = 0
 # -----------------------------------------------------------------------
 # Sleep just a little, but allow the system to breed
 #
-#def  usleep(msec):
+#def  usleep2(msec):
 #
 #    got_clock = time.clock() + float(msec) / 1000
 #    #print( got_clock)
@@ -57,7 +57,7 @@ testmode = 0
 # -----------------------------------------------------------------------
 # Sleep just a little, but allow the system to breed
 
-def  usleep(msec):
+def  usleep2(msec):
 
     if sys.version_info[0] < 3 or \
         (sys.version_info[0] == 3 and sys.version_info[1] < 3):
@@ -76,7 +76,7 @@ def  usleep(msec):
 # -----------------------------------------------------------------------
 # Pull up a message box
 
-def message(strx, title = "Dialog", parent=None):
+def message2(strx, title = "Dialog", parent=None):
 
         dialog = Gtk.MessageDialog()
 
@@ -98,7 +98,7 @@ def message(strx, title = "Dialog", parent=None):
         dialog.show_all()
 
 
-def yes_no(message, title = "Question", parent=None):
+def yes_no2(message, title = "Question", parent=None):
 
         dialog = Gtk.MessageDialog()
 
@@ -126,11 +126,10 @@ def yes_no(message, title = "Question", parent=None):
 
         return response
 
-
 # ------------------------------------------------------------------------
 # Do dialog
 
-def yes_no_cancel(message, title = "Question", cancel = True, parent=None):
+def yes_no_cancel2(message, title = "Question", cancel = True, parent=None):
 
     warnings.simplefilter("ignore")
 
@@ -163,8 +162,8 @@ def yes_no_cancel(message, title = "Question", cancel = True, parent=None):
     if cancel:
         dialog.add_button("_Cancel", Gtk.ResponseType.CANCEL)
 
-    dialog.connect("key-press-event", yn_key, cancel)
-    #dialog.connect("key-release-event", yn_key, cancel)
+    dialog.connect("key-press-event", _yn_key, cancel)
+    #dialog.connect("key-release-event", _yn_key, cancel)
     warnings.simplefilter("default")
 
     dialog.show_all()
@@ -182,7 +181,7 @@ def yes_no_cancel(message, title = "Question", cancel = True, parent=None):
     #print("YNC result:", response);
     return  response
 
-def yn_key(win, event, cancel):
+def _yn_key(win, event, cancel):
     #print event
     if event.keyval == Gdk.KEY_y or \
         event.keyval == Gdk.KEY_Y:
@@ -268,7 +267,7 @@ def rgb2col(icol):
     col[2] = float(icol.blue) / 256
     return col
 
-def put_debug(xstr):
+def put_debug2(xstr):
     try:
         if os.isatty(sys.stdout.fileno()):
             print( xstr)
@@ -281,7 +280,7 @@ def put_debug(xstr):
         print( "Failed on debug output.")
         print( sys.exc_info())
 
-def put_exception(xstr):
+def put_exception_old(xstr):
 
     cumm = xstr + " "
     a,b,c = sys.exc_info()
@@ -297,7 +296,7 @@ def put_exception(xstr):
         except:
             print( "Could not print trace stack. ", sys.exc_info())
 
-    put_debug(cumm)
+    put_debug2(cumm)
     #syslog.syslog("%s %s %s" % (xstr, a, b))
 
 def decode_bits(numx):
@@ -713,7 +712,7 @@ def timesheet(kind, startt, endd):
     fp.close()
 '''
 
-def put_exception2(xstr):
+def put_exception2_old(xstr):
 
     cumm = xstr + " "
     a,b,c = sys.exc_info()
@@ -729,7 +728,7 @@ def put_exception2(xstr):
         except:
             print( "Could not print trace stack. ", sys.exc_info())
 
-    put_debug(cumm)
+    put_debug2(cumm)
     #syslog.syslog("%s %s %s" % (xstr, a, b))
 
 # Create a one way hash of a name. Not cryptographically secure,
@@ -972,8 +971,8 @@ def yes_no_cancel(title, message, cancel = True):
     if cancel:
         dialog.add_button("_Cancel", Gtk.ResponseType.CANCEL)
 
-    dialog.connect("key-press-event", yn_key, cancel)
-    #dialog.connect("key-release-event", yn_key, cancel)
+    dialog.connect("key-press-event", _yn_key, cancel)
+    #dialog.connect("key-release-event", _yn_key, cancel)
     warnings.simplefilter("default")
 
     dialog.show_all()
@@ -991,7 +990,7 @@ def yes_no_cancel(title, message, cancel = True):
     #print("YNC result:", response);
     return  response
 
-def yn_key(win, event, cancel):
+def _yn_key(win, event, cancel):
     #print event
     if event.keyval == Gdk.KEY_y or \
         event.keyval == Gdk.KEY_Y:
