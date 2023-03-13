@@ -76,7 +76,7 @@ class pgweb(Gtk.VBox):
         #message("Cannot make  database")
 
         #hbox = Gtk.HBox()
-        self.pack_start(Gtk.Label(""), 0, 0, 0)
+        #self.pack_start(Gtk.Label("ccc"), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
         self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font="Mono 12")
         self.lsel.set_tooltip_text("Filter entries by letter / number")
@@ -496,7 +496,7 @@ class pgweb(Gtk.VBox):
 
     def treesel(self, args):
 
-        #print("treesel", args[0])
+        print("treesel", args[0])
 
         self.savetext()
         self.lastsel = args
@@ -507,6 +507,10 @@ class pgweb(Gtk.VBox):
 
         try:
             self.brow_win.load_html(hhh)
+            usleep(10)
+            self.treeview2.grab_focus()
+            usleep(10)
+
         except:
             put_exception("Load Data")
             pass
