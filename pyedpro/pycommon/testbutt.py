@@ -17,6 +17,23 @@ from gi.repository import WebKit2
 from pgbutt import *
 from pggui import *
 
+def vspacer(sp = 8):
+    #ab = Gtk.Label.new(" ")
+    lab = Gtk.VBox()
+    #fff = Gtk.Frame()
+    #fff.set_size_request(sp, sp)
+    #lab.pack_start(fff, 0, 0, 0)
+    lab.set_size_request(sp, sp)
+    #lab.override_background_color(
+    #                Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, .5) )
+    return lab
+
+#def spacer(sp = 4):
+#    #ab = Gtk.Label.new(" ")
+#    lab = Gtk.HBox()
+#    lab.set_size_request(sp, sp)
+    return lab
+
 class testWin(Gtk.Window):
 
     def __init__(self, *args, **kwargs):
@@ -26,41 +43,54 @@ class testWin(Gtk.Window):
 
         vbox13 = Gtk.VBox()
 
-        #vbox13.pack_start(Gtk.Label.new(""), 1, 1, 0)
-        vbox13.pack_start(xSpacer(), 0, 0, 0)
-        vbox13.pack_start(Gtk.Label.new("Test smallbutt implementation"), 1, 1, 0)
-        #vbox13.pack_start(Gtk.Label.new(""), 1, 1, 0)
-        vbox13.pack_start(xSpacer(), 0, 0, 0)
+        vbox13.pack_start(vspacer(), 0, 0, 0)
+        vbox13.pack_start(Gtk.Label.new("Test smallbutt TEST implementation"), 1, 1, 0)
+        #vbox13.pack_start(vspacer(), 1, 1, 0)
 
         hbox13 = Gtk.HBox()
-        hbox13.pack_start(Gtk.Label.new("  "), 1, 1, 0)
-        butt3x = smallbutt("_Find in Text", self.findx, "Find in text")
+        hbox13.pack_start(vspacer(), 1, 1, 0)
+        butt3x = smallbutt(" _Find in Text ", self.findx, "")
         hbox13.pack_start(butt3x, 0, 0, 0)
-        hbox13.pack_start(Gtk.Label.new("  "), 1, 1, 0)
+        hbox13.pack_start(vspacer(), 0, 0, 0)
+        butt3z = smallbutt(" _Search All ", self.findx, "")
+        hbox13.pack_start(butt3z, 0, 0, 0)
+        hbox13.pack_start(vspacer(), 1, 1, 0)
+
+        hbox16 = Gtk.HBox()
+        hbox16.pack_start(vspacer(), 1, 1, 0)
+        butt3x = smallbutt("_Align in Text", self.findx, "")
+        hbox16.pack_start(butt3x, 0, 0, 0)
+        hbox16.pack_start(vspacer(), 0, 0, 0)
+        butt3z = smallbutt("_Delete All", self.delx, "")
+        hbox16.pack_start(butt3z, 0, 0, 0)
+        hbox16.pack_start(vspacer(), 1, 1, 0)
 
         hbox14 = Gtk.HBox()
-        hbox14.pack_start(Gtk.Label.new("  "), 1, 1, 0)
+        hbox14.pack_start(vspacer(), 1, 1, 0)
         butt3y = smallbutt("E_xit", self.exit_prog, "Exit program")
         hbox14.pack_start(butt3y, 0, 0, 0)
-        hbox14.pack_start(Gtk.Label.new("   "), 1, 1, 0)
+        hbox14.pack_start(vspacer(), 1, 1, 0)
 
         hbox15 = Gtk.HBox()
-        hbox15.pack_start(Gtk.Label.new("  "), 1, 1, 0)
+        hbox15.pack_start(vspacer(), 1, 1, 0)
         butt3z = Gtk.Button.new_with_mnemonic("Regular _Button")
         butt3z.set_relief(Gtk.ReliefStyle.NONE)
         butt3z.connect("clicked", self.regbutt)
         hbox15.pack_start(butt3z, 0, 0, 0)
-        hbox15.pack_start(Gtk.Label.new("   "), 1, 1, 0)
+        hbox15.pack_start(vspacer(), 1, 1, 0)
 
-        #vbox13.pack_start(Gtk.Label.new("   "), 1, 1, 0)
         vbox13.pack_start(hbox13, 0, 0, 0)
-        vbox13.pack_start(hbox15, 0, 0, 0)
+        vbox13.pack_start(hbox16, 0, 0, 0)
+        #vbox13.pack_start(hbox15, 0, 0, 0)
         vbox13.pack_start(hbox14, 0, 0, 0)
-        vbox13.pack_start(Gtk.Label.new("   "), 1, 1, 0)
+        vbox13.pack_start(vspacer(), 1, 1, 0)
 
         self.set_size_request(300, 200)
         self.add(vbox13)
         self.show_all()
+
+        # Gtk.Label
+        #print("children", butt3x.get_children())
 
     def regbutt(self, arg):
         print("regbutt pressed", arg)
@@ -73,9 +103,12 @@ class testWin(Gtk.Window):
     def findx(self, arg):
         print("Findx", arg)
 
+    def delx(self, arg):
+        print("Delx", arg)
+
 if __name__ == "__main__":
     Gtk.init(sys.argv)
     testwin = testWin()
     Gtk.main()
 
-
+# EOF
