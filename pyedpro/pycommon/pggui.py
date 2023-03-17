@@ -656,6 +656,18 @@ def set_testmode(flag):
 # ------------------------------------------------------------------------
 # An N pixel horizontal spacer. Defaults to X pix  get_center
 
+def vspacer(sp = 8):
+    lab = Gtk.VBox()
+    lab.set_size_request(sp, sp)
+
+    if gui_testmode:
+        lab.override_background_color(
+                    Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, .5) )
+    return lab
+
+# ------------------------------------------------------------------------
+# An N pixel horizontal spacer. Defaults to X pix  get_center
+
 class xSpacer(Gtk.HBox):
 
     def __init__(self, sp = None):

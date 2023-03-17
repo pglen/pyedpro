@@ -549,6 +549,7 @@ class pgnotes(Gtk.VBox):
 
     def save(self, arg):
         #print ("save automatic (unimplemented)")
+        self.savetext()
         pass
 
     def savetext(self):
@@ -560,7 +561,7 @@ class pgnotes(Gtk.VBox):
         #txt = self.edview.get_text()
         txt = self.edview.ser_buff()
 
-        print("save", self.lastkey, self.lastsel, txt[0:12])
+        print("notes savetext", self.lastkey, self.lastsel, txt[0:12])
 
         #self.core.core_verbose = 2
         self.core.save_data(self.lastsel[0], txt)

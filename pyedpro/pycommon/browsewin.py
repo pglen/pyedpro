@@ -89,6 +89,19 @@ class  brow_win(Gtk.VBox):
     def load_html(self, strx):
         self.webview.load_html(strx)
 
+    def cut(self):
+        #print("cut")
+        self.webview.on_action("cut")
+
+    def copy(self):
+        #print("copy")
+        self.webview.on_action("copy")
+
+    def paste(self):
+        #print("paste")
+        self.webview.on_paste()
+        #self.webview.on_action("paste")
+
     def open(self):
         dialog = Gtk.FileChooserDialog("Open an HTML file", None,
                 Gtk.FileChooserAction.OPEN,

@@ -59,6 +59,10 @@ ui_def = """
                 <toolitem action="insertlink" />
                 <toolitem action="inserttable" />
                 <toolitem action="editmarker" />
+                <toolitem action="H1" />
+                <toolitem action="H2" />
+                <toolitem action="H3" />
+                <toolitem action="H4" />
             </toolbar>
         </ui>
         """
@@ -216,15 +220,51 @@ class pgwebw(WebKit2.WebView):
         if self.xlink:
             self.xlink.set_status("Failed: " + failing_uri[:64])
 
+    def on_header(self, action):
+        #print("on_aheader", action.get_name())
+        ddd = Gtk.Clipboard.get(Gdk.SELECTION_PRIMARY)
+        ccc = None
+        while True:
+            #target = Gdk.Atom.intern ("text/html", True);
+            #ccc = ddd.wait_for_contents(target)
+            #if ccc:
+            #    break
+            target2 = Gdk.Atom.intern ("text/plain", True);
+            ccc = ddd.wait_for_contents(target2)
+            if ccc:
+                break
+            break
+
+        if not ccc:
+            return
+
+        dddd = ccc.get_data().decode()
+        if not dddd:
+            return
+        #print("dddd", dddd)
+        htmlx = "<%s>%s</%s>" % (action.get_name(), dddd, action.get_name())
+        self.run_javascript("document.execCommand \
+                            ('insertHTML', null, '%s');" % htmlx)
+        Gtk.Clipboard.clear(ddd)
+        self.modified = True
+
     def on_action(self, action):
         #print("on_action", action.get_name())
-        self.run_javascript("document.execCommand('%s', false, false);" % action.get_name())
+        # Make it caller neutral
+        if type(action) == str:
+            nnn = action
+        else:
+            nnn = action.get_name()
+        self.run_javascript("document.execCommand('%s', false, false);" % nnn)
+        self.modified = True
 
-    def on_paste(self, action):
+    def on_paste(self, action = ""):
+        print("Paste")
         self.execute_editing_command(WebKit2.EDITING_COMMAND_PASTE)
 
     def on_new(self, action):
         self.load_html("", "file:///")
+        self.modified = False
 
     def on_fontsize(self, action):
         #print("on_fontsize")
@@ -250,6 +290,8 @@ class pgwebw(WebKit2.WebView):
         #print("ddd", ddd)
         htmlx = "<span style=\"font-size: %dpx;\">%s</span>" % (int(sizex), ddd)
         self.run_javascript("document.execCommand('insertHTML', null, '%s');" % htmlx)
+        Gtk.Clipboard.clear(c)
+        self.modified = True
 
     def on_select_font(self, action):
         dialog = Gtk.FontChooserDialog("Select a font")
@@ -293,7 +335,7 @@ class pgwebw(WebKit2.WebView):
         sel = c.wait_for_targets()
         target = Gdk.Atom.intern ("text/html", True);
         ccc = c.wait_for_contents(target)
-        print("sel", ccc.get_data())
+        #print("sel", ccc.get_data())
         #ccc.free()
         htmlx = markdialog(ccc.get_data().decode())
         if htmlx:
@@ -306,8 +348,7 @@ class pgwebw(WebKit2.WebView):
 
         #print("table", htmlx)
         self.run_javascript("document.execCommand('insertHTML', null, '%s');" % htmlx)
-
-        #self.run_javascript("document.execCommand('insertHorizontalRule', null, null);")
+        self.modified = True
 
     def on_insert_link(self, action):
         dialog = Gtk.Dialog("   Enter a URL:   ", None, 0,
@@ -328,6 +369,7 @@ class pgwebw(WebKit2.WebView):
             self.run_javascript(
                 "document.execCommand('createLink', True, '%s');" % entry.get_text())
         dialog.destroy()
+        self.modified = True
 
     def on_insert_image(self, action):
         dialog = Gtk.FileChooserDialog("Select an image file", None, Gtk.FileChooserAction.OPEN,
@@ -339,6 +381,7 @@ class pgwebw(WebKit2.WebView):
                 self.run_javascript(
                 "document.execCommand('insertImage', null, '%s');" % fn)
         dialog.destroy()
+        self.modified = True
 
     def on_open(self, action):
         dialog = Gtk.FileChooserDialog("Select an HTML file", self, Gtk.FileChooserAction.OPEN,
@@ -419,7 +462,6 @@ class pgwebw(WebKit2.WebView):
     #("menuEdit",    None, "_Edit"),
     #("menuInsert",  None, "_Insert"),
     #("menuFormat",  None, "_Format"),
-
     #("new",         Gtk.STOCK_NEW, "_New", None, None, self.on_new),
     #("open",        Gtk.STOCK_OPEN, "_Open", None, None, self.on_open),
     #("save",        Gtk.STOCK_SAVE, "_Save", None, None, self.on_save),
@@ -437,7 +479,7 @@ class pgwebw(WebKit2.WebView):
     ("underline",       Gtk.STOCK_UNDERLINE, "_Underline", "", None, self.on_action),
     ("strikethrough", Gtk.STOCK_STRIKETHROUGH, "_Strike", "", None, self.on_action),
     ("font",        Gtk.STOCK_SELECT_FONT, "Select _Font", "", None, self.on_select_font),
-    ("fontsize",    None, "Select _Font", "<Control>f", "Set Absolute Size (removes color)", self.on_fontsize),
+    ("fontsize",    None, "Select Font _Size", "<Control>f", "Set Absolute Size (removes color)", self.on_fontsize),
     ("color",       Gtk.STOCK_SELECT_COLOR, "Select _Color", None, None, self.on_select_color),
     ("backgroundcolor", Gtk.STOCK_COLOR_PICKER, "Select Back Color", None, None, self.on_select_bgcolor),
 
@@ -451,6 +493,12 @@ class pgwebw(WebKit2.WebView):
     ("insertlink", "insert-link", "Insert _Link", None, None, self.on_insert_link),
     ("inserttable", "insert-table", "Insert _Table", None, None, self.on_insert_table),
     ("editmarker", "edit-marker", "edit _Marker", None, None, self.on_edit_marker),
+
+    ("H1",   Gtk.STOCK_EXECUTE, "Header 1", None, "Insert Header 1", self.on_header),
+    ("H2",   Gtk.STOCK_EXECUTE, "Header 2", None, "Insert Header 2", self.on_header),
+    ("H3",   Gtk.STOCK_EXECUTE, "Header 3", None, "Insert Header 3", self.on_header),
+    ("H4",   Gtk.STOCK_EXECUTE, "Header 4", None, "Insert Header 4", self.on_header),
+
     ]
 
         actions.add_actions(accel_arr)

@@ -17,23 +17,6 @@ from gi.repository import WebKit2
 from pgbutt import *
 from pggui import *
 
-def vspacer(sp = 8):
-    #ab = Gtk.Label.new(" ")
-    lab = Gtk.VBox()
-    #fff = Gtk.Frame()
-    #fff.set_size_request(sp, sp)
-    #lab.pack_start(fff, 0, 0, 0)
-    lab.set_size_request(sp, sp)
-    #lab.override_background_color(
-    #                Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, .5) )
-    return lab
-
-#def spacer(sp = 4):
-#    #ab = Gtk.Label.new(" ")
-#    lab = Gtk.HBox()
-#    lab.set_size_request(sp, sp)
-    return lab
-
 class testWin(Gtk.Window):
 
     def __init__(self, *args, **kwargs):
