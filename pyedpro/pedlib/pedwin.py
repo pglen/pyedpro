@@ -2384,6 +2384,16 @@ def     OnExit(arg, arg2 = False, prompt = True):
 
     #print( "OnExit called \"" + arg.get_title() + "\"")
 
+    # Force save note and web content
+    for aa in range(notebook2.get_n_pages()):
+        ppp = notebook2.get_nth_page(aa)
+        #print("ppp", ppp)
+        try:
+            ppp.save()
+        except:
+            #print("sys", sys.exc_info() )
+            pass
+
     # Exit here, destroy / stop
     arg.destroy()
     Gtk.main_quit()
