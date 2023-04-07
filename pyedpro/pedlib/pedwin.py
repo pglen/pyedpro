@@ -1707,7 +1707,7 @@ class EdMainWindow():
         strx = action.get_name()
         warnings.simplefilter("default")
 
-        if pedconfig.conf.verbose:
+        if 1: #pedconfig.conf.verbose:
             print ("activate_action with:", strx)
 
         if strx == "Close All":
