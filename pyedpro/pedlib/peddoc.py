@@ -1758,7 +1758,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         elif ttt == 25:
             self.rescan()
         elif ttt == 26:
-            print("Alt-Y")
+            self.find(self)
+        elif ttt == 27:
+            #print("Alt-Y")
             self.check_syntax()
         else:
             print("peddoc: Invalid menu item selected")

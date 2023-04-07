@@ -69,7 +69,8 @@ rclick_menu = (
 	        ( _("_New \t"),           "<control>N",    rclick_action, 1, None ),
             ( "",               None,               None, 2, "<Separator>" ),
             ( _("_Rescan\t\t"),       "Right CTRL+R",          rclick_action, 25, None ),
-            ( _("Ckk PY Syntax"), "Alt-Y",        rclick_action, 26, None ),
+            ( _("_Find\t"),       "CTRL+F",          rclick_action, 26, None ),
+            ( _("Check Syntax"),     "Alt-Y",        rclick_action, 27, None ),
             ( "",               None,               None, 2, "<Separator>" ),
             ( _("_Open  \t\t"),          "<control>O",    rclick_action, 3, None ),
             ( _("_Save   \t\t"),          "<control>S",    rclick_action, 4, None ),
@@ -212,6 +213,11 @@ def create_action_group(self):
         "Paste clipboard into text",
          self.activate_action ),
 
+      ( "Paste", Gtk.STOCK_PASTE,
+        "_Find  \tCtrl-F", "",
+        "Find text",
+         self.activate_action ),
+
       ( "Undo", Gtk.STOCK_UNDO,
         "_Undo  \t\tCtrl-Z", "",
         "Undo last Edit",
@@ -283,7 +289,7 @@ def create_action_group(self):
          self.activate_action ),
 
       ( "Find", Gtk.STOCK_FIND,
-        "Find in File \t\tCtrl-F", "",
+        "Find in File\tCtrl-F", "",
         "Find line in file",
          self.activate_action ),
 

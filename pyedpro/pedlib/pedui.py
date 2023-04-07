@@ -51,6 +51,7 @@ ui_info = \
       <menuitem action='Copy'/>
       <separator/>
       <menuitem action='Paste'/>
+      <menuitem action='Find'/>
       <separator/>
       <menuitem action='Undo'/>
       <menuitem action='Redo'/>
