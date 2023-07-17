@@ -22,6 +22,19 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Pango
 
+class dummywebview():
+    def set_editable(self, flag):
+        pass
+    def load_html(self, ff, kk):
+        pass
+    def connect(self, aa, bb):
+        pass
+
+class dummywebkit():
+    WebView = dummywebview
+    def __init(self):
+        pass
+
 # Here is where / how the toolbar is constructed
 
 #    <toolitem action="new" />
@@ -78,7 +91,8 @@ try:
 except:
     print("Cannot import webkit2, web functions may not be available.")
     present = 0
-    raise
+    WebKit2 = dummywebkit
+    #raise
 
 #unmask_reserved =   Gdk.ModifierType.GDK_MODIFIER_RESERVED_13_MASK | \
 #                    Gdk.ModifierType.GDK_MODIFIER_RESERVED_14_MASK | \
