@@ -77,7 +77,7 @@ class tts():
                 #self.speech_pid = subprocess.Popen(["espeak", "-f", fname, "-v", "english-us"])
                 self.speech_pid = subprocess.Popen(["espeak-ng", "-f", fname,])
         except:
-            print ("Cannot start TTS", sys.exc_info())
+            print ("Cannot start TTS espeak-ng", sys.exc_info())
             return
 
         #print ("started", self.speech_pid.pid)
