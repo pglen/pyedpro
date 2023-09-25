@@ -1,0 +1,37 @@
+\hypertarget{index_autotoc_md12}{}\doxysection{Twincore}\label{index_autotoc_md12}
+Database with two files. One for data, one for index;
+
+The reason for this name is that two files are created. The first contains the data, the second contains the offsets (indexes) and hashes.
+
+The second file can be re-\/built easily from the first using the reindex option.
+
+Structure of the data\+: \begin{DoxyVerb}32 byte header, starating with FILESIG;
+
+4 bytes    4 bytes          4 bytes         Variable
+------------------------------------------------------------
+RECSIG     Hash_of_key      Len_of_key      DATA_for_key
+RECSEP     Hash_of_payload  Len_of_payload  DATA_for_payload
+
+    .
+    .
+    .
+
+RECSIG     Hash_of_key      Len_of_key      DATA_for_key
+RECSEP     Hash_of_payload  Len_of_payload  DATA_for_payload
+\end{DoxyVerb}
+ Deleted records are marked with RECSIG mutated from RECB to RECX
+
+New data is appended to the end, no duplicate filtering is done. Retrieval is searched from reverse, the latest record with this key is retrieved first.
+
+Verbosity\+: (use the \textquotesingle{}-\/v\textquotesingle{} option multiple times) \begin{DoxyVerb}0 =  no output
+1 =  normal, some items printed, short record ;
+2 =  more detail; full record (-vv)
+3 =  more detail + damaged records (-vvv)
+\end{DoxyVerb}
+ Debug\+: (use the \textquotesingle{}-\/d\textquotesingle{} option with number) \begin{DoxyVerb}0 =  no output
+1 =  normal, some items
+2 =  more details
+\end{DoxyVerb}
+ History\+: \begin{DoxyVerb}Sat 04.Feb.2023     --  Converted from CURRDATA to ftell
+\end{DoxyVerb}
+ 

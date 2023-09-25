@@ -1,0 +1,111 @@
+\hypertarget{md_README_autotoc_md1}{}\doxysection{High speed database with key / data}\label{md_README_autotoc_md1}
+The motivation was to create a no frills way of saving / retrieving data. It is fast, and the time test shows that this is an order of magnitude faster than most mainstream databases. This is due to the engine\textquotesingle{}s simplicity. It avoids expensive computations in favor of quickly saving data.\hypertarget{md_README_autotoc_md2}{}\doxysubsection{Fast data save / retrieve}\label{md_README_autotoc_md2}
+Mostly ready for production. All tests pass. Please use caution, as this is new. The command line tester can drive most aspects of this API; and it is somewhat complete. It is also good way to see the API / Module in action.\hypertarget{md_README_autotoc_md3}{}\doxysection{API}\label{md_README_autotoc_md3}
+The module \textquotesingle{}twincore\textquotesingle{} uses two data files and a lock file. The file names are generated from the base name of the data file; name.\+pydb for data; name.\+pidx for the index, name.\+lock for the lock file. In case of frozen process the lock file times out in xx seconds and breaks the lock. If the locking process (id in lockfile) does not exist, the lock breaks immediately.
+
+Setting verbosity and debug level\+: \begin{DoxyVerb}twincore.core_quiet   = quiet
+twincore.core_verbose = verbose
+twincore.core_pgdebug = pgdebug
+twincore.core_showdel = sdelx
+\end{DoxyVerb}
+ (Setting before data creation will display mesages from the construtor)
+
+Example db creation\+: \begin{DoxyVerb}core = twincore.TwinCore(datafile_name)
+\end{DoxyVerb}
+ Some basic ops\+: \begin{DoxyVerb}dbsize = core.getdbsize()
+
+core.save_data(keyx, datax)
+rec_arr = core.retrieve(keyx, ncount)
+print("rec_arr", rec_arr)
+\end{DoxyVerb}
+ \hypertarget{md_README_autotoc_md4}{}\doxysubsection{Structure of the data\+:}\label{md_README_autotoc_md4}
+\begin{DoxyVerb}32 byte header, starting with FILESIG
+
+4 bytes    4 bytes          4 bytes         Variable
+------------------------------------------------------------
+RECSIG     Hash_of_key      Len_of_key      DATA_for_key
+RECSEP     Hash_of_payload  Len_of_payload  DATA_for_payload
+
+    .
+    .
+
+RECSIG     Hash_of_key      Len_of_key      DATA_for_key
+RECSEP     Hash_of_payload  Len_of_payload  DATA_for_payload
+
+where:
+RECSIG="RECB" (record begin here)
+RECSEP="RECS" (record separated here)
+RECDEL="RECX" (record deleted)
+
+Deleted records are marked with the RECSIG mutated from RECB to RECX
+
+  Vacuum will remove the deleted records; Make sure your database has no
+pending ops; or non atomic opts;
+
+    (like: find keys - delete keys in two ops)
+
+  New data is appended to the end, no duplicate filtering is done.
+Retrieval is searched from reverse, the latest record with this key
+is retrieved first. Most of the times this behavior is what we
+want; also the record history is kept this way, also a desirable
+behavior.
+\end{DoxyVerb}
+ \hypertarget{md_README_autotoc_md5}{}\doxysection{The db exerciser executable script \textquotesingle{}pydbase.\+py\textquotesingle{}\+:}\label{md_README_autotoc_md5}
+The file \doxylink{pydbase_8py}{pydbase.\+py} exercises most of the twincore functionality. It also provides examples of how to drive it.
+
+The command line utility\textquotesingle{}s help response\+:
+
+Usage\+: pydebase.\+py \mbox{[}options\mbox{]} \mbox{[}arg\+\_\+key arg\+\_\+data\mbox{]} Options\+: -\/h help (this screen) -\/$\vert$-\/ -\/i show deleted on dump -\/V print version -\/$\vert$-\/ -\/q quiet on -\/d debug level (0-\/10) -\/$\vert$-\/ -\/v increment verbosity level -\/r randomize data -\/$\vert$-\/ -\/w write fixed record(s) -\/z dump backwards(s) -\/$\vert$-\/ -\/i show deleted record(s) -\/U Vacuum DB -\/$\vert$-\/ -\/R reindex / recover DB -\/I DB Integrity check -\/$\vert$-\/ -\/c set check integrity flag -\/s Skip to count recs -\/$\vert$-\/ -\/K list keys only -\/y key find by key -\/$\vert$-\/ -\/m dump data to console -\/o offs get data from offset -\/$\vert$-\/ -\/e offs delete at offset -\/u rec delete at position -\/$\vert$-\/ -\/g num get number of recs. -\/k key key to save -\/$\vert$-\/ -\/a str data to save -\/S print num recs -\/$\vert$-\/ -\/D key delete by key -\/n num number of records -\/$\vert$-\/ -\/t key retrieve by key -\/p num skip number of records on get -\/l lim limit number of records on get -\/x max limit max number of records to get -\/f file input or output file (default\+: \textquotesingle{}data/pydbase.\+pydb\textquotesingle{}) The default action is to dump records to screen in reverse order. On the command line, use quotes for multi word arguments.\hypertarget{md_README_autotoc_md6}{}\doxysubsection{Comparison to other databases\+:}\label{md_README_autotoc_md6}
+This comparison is to show the time it takes to write 500 records. In the tests the record size is about the same (Hello, 1 /vs/ \char`\"{}\+Hello\char`\"{}, 1) Please see the sqlite\+\_\+test.\+sql for details of data output;
+
+The test can be repeated with running the \textquotesingle{}time.\+sh\textquotesingle{} script file. Please note the the time.\+sh clears all files test\+\_\+data/$\ast$ for a fair test. \begin{DoxyVerb}    sqlite time test, writing 500 records ...
+    real    0m1.730s
+    user    0m0.110s
+    sys 0m0.455s
+
+    pydbase time test, writing 500 records ...
+    real    0m0.120s
+    user    0m0.075s
+    sys 0m0.044s
+
+    -rw-r--r-- 1 peterglen users  4032 Feb  7 15:35 pydb_test.pidx
+    -rw-r--r-- 1 peterglen users 15032 Feb  7 15:35 pydb_test.pydb
+    -rw-r--r-- 1 peterglen users 20480 Feb  7 15:35 sqlite_test.db
+\end{DoxyVerb}
+ Please mind the fact that the sqlite engine has to do a lot of parsing which we skip doing; That is why pydbase is more than an order of magnitude faster ...\hypertarget{md_README_autotoc_md7}{}\doxysubsection{Saving more complex data}\label{md_README_autotoc_md7}
+The database saves a key / value pair. However, the key can be mutated to contain meta data. (for example adding a string in front of it.) \mbox{[}like\+: CUST\+\_\+ for customer data / details\mbox{]} Also the key can be made unique by adding a UUID to it.
+
+The data can consist of any text / binary. The library \doxylink{pypacker_8py}{pypacker.\+py} can pack any data into a string; A copy of pypacker is included here.\hypertarget{md_README_autotoc_md8}{}\doxysection{pypacker.\+py}\label{md_README_autotoc_md8}
+This module can pack arbitrary python data into a string; which can be used to store anything in the pydbase key / data sections.
+
+Example from running \doxylink{testpacker_8py}{testpacker.\+py}\+: \begin{DoxyVerb}    org: (1, 2, 'aa', ['bb', b'dd'])
+    packed: pg s4 'iisa' i4 1 i4 2 s2 'aa' a29 'pg s2 'sb' s2 'bb' b4 'ZGQ=' '
+    unpacked: [1, 2, 'aa', ['bb', b'dd']]
+    rec_arr: pg s4 'iisa' i4 1 i4 2 s2 'aa' a29 'pg s2 'sb' s2 'bb' b4 'ZGQ=' '
+    rec_arr_upacked: [1, 2, 'aa', ['bb', b'dd']]
+    (Note: the decode returns an array of data; use data[0] to get the original)
+\end{DoxyVerb}
+ There is also the option of using pypacker on the key itself. Because the key is identified by its hash, there is no speed penalty; Note that the hash is a 32 bit one; collisions are possible, however unlikely; To compensate, make sure you compare the key proper with the returned key.\hypertarget{md_README_autotoc_md9}{}\doxysection{Py\+Test}\label{md_README_autotoc_md9}
+The pytest passes with no errors; Run it from the tests/ directory.
+
+The following (and more) test are created / executed\+:
+
+collected 24 items
+
+test\+\_\+bindata.\+py . \mbox{[} 4\%\mbox{]} test\+\_\+create.\+py ..... \mbox{[} 25\%\mbox{]} test\+\_\+del.\+py . \mbox{[} 29\%\mbox{]} test\+\_\+dump.\+py . \mbox{[} 33\%\mbox{]} test\+\_\+find.\+py .. \mbox{[} 41\%\mbox{]} test\+\_\+findrec.\+py .. \mbox{[} 50\%\mbox{]} test\+\_\+getrec.\+py . \mbox{[} 54\%\mbox{]} test\+\_\+integrity.\+py . \mbox{[} 58\%\mbox{]} test\+\_\+multi.\+py . \mbox{[} 62\%\mbox{]} test\+\_\+packer.\+py ...... \mbox{[} 87\%\mbox{]} test\+\_\+randdata.\+py . \mbox{[} 91\%\mbox{]} test\+\_\+reindex.\+py . \mbox{[} 95\%\mbox{]} test\+\_\+vacuum.\+py . \mbox{[}100\%\mbox{]}\hypertarget{md_README_autotoc_md10}{}\doxysection{Maintenance}\label{md_README_autotoc_md10}
+The DB can rebuild its index and purge all deleted records. In the test utility the options are\+: \begin{DoxyVerb}    ./pydbase.py -U     for vacuum (add -v for verbosity)
+\end{DoxyVerb}
+ The database is re-\/built, the deleted entries are purged, the damaged data (if any) is saved into a separate file, created with the same base name as the data base, with the \textquotesingle{}.perr\textquotesingle{} extension. \begin{DoxyVerb}  ./pydbase.py -R     for re-index
+\end{DoxyVerb}
+ The index is recreated; as of the current file contents. This is useful if the index is lost (like copying the data only)
+
+If there is a data file without the index, the re-\/indexing is called automatically. In case of deleted data file, pydbase will recognize the dangling index and nuke it by renaming it to orgfilename.\+pidx.\+dangle (Tue 07.\+Feb.\+2023 just deleted it);
+
+Note about the \textquotesingle{}garbage\textquotesingle{} and \textquotesingle{}old\+\_\+tries\textquotesingle{} directory ... older stuff I tried; some are really useful; For instance take a look at the simplifier\+: an array of indexes to save offsets and lengths; The simplifier makes one range out of overlapping or close to each other ranges. (min. dist=4)
+
+The database grows with every record added to it. It does not check if the particular record already exists. It adds the new record version to the end; Retrieving starts from the end, and the data retrieved (for this particular key) is the last record saved. All the other records of this key are also there in chronological (save) order. Miracle of record history archived by default.
+
+To clean the old record history, one may delete all the records with this same key, except the last one.\hypertarget{md_README_autotoc_md11}{}\doxysubsection{TODO}\label{md_README_autotoc_md11}
+\begin{DoxyVerb}Speed this up by implementing this as a 'C' module
+\end{DoxyVerb}
+ ; EOF 
