@@ -10,7 +10,80 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
-import webview
+sys.path.append("../pycommon")
+
+from browsewin import *
+
+import pgwkit
+
+
+class MainWin(Gtk.Window):
+
+    def __init__(self):
+
+        self.cnt = 0
+        Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
+
+        #self = Gtk.Window(Gtk.WindowType.TOPLEVEL)
+
+        #Gtk.register_stock_icons()
+
+        self.set_title("Md viewer")
+        self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
+
+
+        www = Gdk.Screen.width(); hhh = Gdk.Screen.height();
+
+        disp2 = Gdk.Display()
+        disp = disp2.get_default()
+        #print( disp)
+        scr = disp.get_default_screen()
+        ptr = disp.get_pointer()
+        mon = scr.get_monitor_at_point(ptr[1], ptr[2])
+        geo = scr.get_monitor_geometry(mon)
+        www = geo.width; hhh = geo.height
+        xxx = geo.x;     yyy = geo.y
+
+        # Resort to old means of getting screen w / h
+        if www == 0 or hhh == 0:
+            www = Gdk.screen_width(); hhh = Gdk.screen_height();
+
+        if www / hhh > 2:
+            self.set_default_size(5*www/8, 7*hhh/8)
+        else:
+            self.set_default_size(7*www/8, 7*hhh/8)
+
+
+        #
+        self.connect("destroy", self.exit)
+
+        scrolled_window = Gtk.ScrolledWindow()
+        try:
+            self.brow_win = brow_win()
+            #print("dir", dir(self.brow_win))
+            #self.brow_win.load_uri("file://" + self.fname)
+        except:
+            #self.brow_win = Gtk.Label("No WebView Available.")
+            put_exception("WebView load")
+            raise
+
+        vbox5 = Gtk.VBox()
+        scrolled_window.add(self.brow_win )
+        frame4 = Gtk.Frame();
+        frame4.add(scrolled_window)
+        vbox5.pack_start(frame4, 1,1,0)
+
+        self.add(vbox5)
+        self.show_all()
+        GLib.timeout_add(200, self.load)
+
+    def exit(self, arg):
+        print("exit")
+        Gtk.main_quit()
+
+    def load(self):
+        with open(newfname) as fd:
+            self.brow_win.load_html(fd.read())
 
 if __name__ == '__main__':
 
@@ -35,16 +108,8 @@ if __name__ == '__main__':
 
     #print("newfname", newfname)
 
-    try:
-        if is_text:
-            webview.create_window("Html Text", html=newfname)
-        else:
-            webview.create_window(newfname, newfname)
-
-        webview.start()
-
-    except:
-        print("Cannot start HTML Win %s" % str(newfname), sys.exc_info())
+    mw = MainWin()
+    Gtk.main()
 
     print("Ended webview delmode", delmode)
 
