@@ -1,0 +1,221 @@
+\hypertarget{classtwincore_1_1TwinCoreBase}{}\doxysection{twincore.\+Twin\+Core\+Base Class Reference}
+\label{classtwincore_1_1TwinCoreBase}\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+
+
+Inheritance diagram for twincore.\+Twin\+Core\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classtwincore_1_1TwinCoreBase__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a5651804e97c292da51b1479166949fd5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_ad45f0d509a0f42b0ab7048fec7257296}{getsize}} (self, buffio)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a66509d1174b9416bdaea70f1ffec557c}{getidxint}} (self, offs)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_aeda2eb85c2ef1065e9f5401f1557f8fb}{putidxint}} (self, offs, val)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a0fdf61d7d11491bcf0d88f2e0b2aa45f}{getbuffint}} (self, offs)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a3210c72299b0210cda1d13ae4f472472}{putbuffint}} (self, offs, val)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a80d3262e70c86ac704f5a56cd41000ee}{getbuffstr}} (self, offs, xlen)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_af823bc46f7ca499e70c613d295198f31}{putbuffstr}} (self, offs, xstr)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a80e3bc2b021c4a6b915cdc11320463c1}{hash32}} (self, strx)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a56fd21beaf3736e7ba68313dcf6b4605}{softcreate}} (self, \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_ad5d219011e05ea1cb6a099a1006b421f}{fname}}, raisex=True)
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_ab6c993d1469f9cb32d267921e3ab8b7f}{create\+\_\+data}} (self, \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a6e122bc22459940a446616bba311b113}{fp}})
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a21c94a7662ccf9dd4ca68ded3395fdbb}{create\+\_\+idx}} (self, \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a678b760651e3326911d9555b47b9c72f}{ifp}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a6e122bc22459940a446616bba311b113}{fp}}
+\item 
+\mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a678b760651e3326911d9555b47b9c72f}{ifp}}
+\item 
+\mbox{\hyperlink{classtwincore_1_1TwinCoreBase_aa8c40c9d1da7a4acd8991522bb089422}{cnt}}
+\item 
+\mbox{\hyperlink{classtwincore_1_1TwinCoreBase_ad5d219011e05ea1cb6a099a1006b421f}{fname}}
+\item 
+\mbox{\hyperlink{classtwincore_1_1TwinCoreBase_af704f2b80bd7cd90922cfbf6e9ac053b}{idxname}}
+\item 
+\mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a647c0d3d3725bddcb3bea970d4b5d314}{lckname}}
+\item 
+\mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a210b0854779643130ab538ba5c215635}{lasterr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a5532acbc1445708470b47c81a38d841d}{INTSIZE}} = 4
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_abf8fe123ccfb1a1e824b5a51fe925b81}{\+\_\+putint}} (self, \mbox{\hyperlink{classtwincore_1_1TwinCoreBase_a678b760651e3326911d9555b47b9c72f}{ifp}}, offs, val)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb} This class provides basic services to twincore. \end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a5651804e97c292da51b1479166949fd5}\label{classtwincore_1_1TwinCoreBase_a5651804e97c292da51b1479166949fd5}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classtwincore_1_1TwinCore_a253266fb833f30e84345c88dc728eb7e}{twincore.\+Twin\+Core}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_abf8fe123ccfb1a1e824b5a51fe925b81}\label{classtwincore_1_1TwinCoreBase_abf8fe123ccfb1a1e824b5a51fe925b81}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!\_putint@{\_putint}}
+\index{\_putint@{\_putint}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{\_putint()}{\_putint()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+\_\+putint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ifp,  }\item[{}]{offs,  }\item[{}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_ab6c993d1469f9cb32d267921e3ab8b7f}\label{classtwincore_1_1TwinCoreBase_ab6c993d1469f9cb32d267921e3ab8b7f}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!create\_data@{create\_data}}
+\index{create\_data@{create\_data}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{create\_data()}{create\_data()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+create\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Sub for initial DATA file \end{DoxyVerb}
+ \mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a21c94a7662ccf9dd4ca68ded3395fdbb}\label{classtwincore_1_1TwinCoreBase_a21c94a7662ccf9dd4ca68ded3395fdbb}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!create\_idx@{create\_idx}}
+\index{create\_idx@{create\_idx}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{create\_idx()}{create\_idx()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+create\+\_\+idx (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ifp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Sub for initial INDEX file \end{DoxyVerb}
+ \mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a0fdf61d7d11491bcf0d88f2e0b2aa45f}\label{classtwincore_1_1TwinCoreBase_a0fdf61d7d11491bcf0d88f2e0b2aa45f}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!getbuffint@{getbuffint}}
+\index{getbuffint@{getbuffint}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{getbuffint()}{getbuffint()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+getbuffint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} get an integer value from offset \end{DoxyVerb}
+ \mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a80d3262e70c86ac704f5a56cd41000ee}\label{classtwincore_1_1TwinCoreBase_a80d3262e70c86ac704f5a56cd41000ee}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!getbuffstr@{getbuffstr}}
+\index{getbuffstr@{getbuffstr}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{getbuffstr()}{getbuffstr()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+getbuffstr (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offs,  }\item[{}]{xlen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a66509d1174b9416bdaea70f1ffec557c}\label{classtwincore_1_1TwinCoreBase_a66509d1174b9416bdaea70f1ffec557c}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!getidxint@{getidxint}}
+\index{getidxint@{getidxint}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{getidxint()}{getidxint()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+getidxint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} get an integer value from index offset \end{DoxyVerb}
+ \mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_ad45f0d509a0f42b0ab7048fec7257296}\label{classtwincore_1_1TwinCoreBase_ad45f0d509a0f42b0ab7048fec7257296}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!getsize@{getsize}}
+\index{getsize@{getsize}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{getsize()}{getsize()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+getsize (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{buffio }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} get the dabase file size \end{DoxyVerb}
+ \mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a80e3bc2b021c4a6b915cdc11320463c1}\label{classtwincore_1_1TwinCoreBase_a80e3bc2b021c4a6b915cdc11320463c1}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!hash32@{hash32}}
+\index{hash32@{hash32}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{hash32()}{hash32()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+hash32 (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{strx }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Deliver a 32 bit hash of the passed entity \end{DoxyVerb}
+ \mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a3210c72299b0210cda1d13ae4f472472}\label{classtwincore_1_1TwinCoreBase_a3210c72299b0210cda1d13ae4f472472}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!putbuffint@{putbuffint}}
+\index{putbuffint@{putbuffint}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{putbuffint()}{putbuffint()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+putbuffint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offs,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_af823bc46f7ca499e70c613d295198f31}\label{classtwincore_1_1TwinCoreBase_af823bc46f7ca499e70c613d295198f31}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!putbuffstr@{putbuffstr}}
+\index{putbuffstr@{putbuffstr}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{putbuffstr()}{putbuffstr()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+putbuffstr (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offs,  }\item[{}]{xstr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_aeda2eb85c2ef1065e9f5401f1557f8fb}\label{classtwincore_1_1TwinCoreBase_aeda2eb85c2ef1065e9f5401f1557f8fb}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!putidxint@{putidxint}}
+\index{putidxint@{putidxint}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{putidxint()}{putidxint()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+putidxint (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{offs,  }\item[{}]{val }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} put an integer value to offset \end{DoxyVerb}
+ \mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a56fd21beaf3736e7ba68313dcf6b4605}\label{classtwincore_1_1TwinCoreBase_a56fd21beaf3736e7ba68313dcf6b4605}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!softcreate@{softcreate}}
+\index{softcreate@{softcreate}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{softcreate()}{softcreate()}}
+{\footnotesize\ttfamily def twincore.\+Twin\+Core\+Base.\+softcreate (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{fname,  }\item[{}]{raisex = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} Open for read / write. Create if needed. \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_aa8c40c9d1da7a4acd8991522bb089422}\label{classtwincore_1_1TwinCoreBase_aa8c40c9d1da7a4acd8991522bb089422}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!cnt@{cnt}}
+\index{cnt@{cnt}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{cnt}{cnt}}
+{\footnotesize\ttfamily twincore.\+Twin\+Core\+Base.\+cnt}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_ad5d219011e05ea1cb6a099a1006b421f}\label{classtwincore_1_1TwinCoreBase_ad5d219011e05ea1cb6a099a1006b421f}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!fname@{fname}}
+\index{fname@{fname}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{fname}{fname}}
+{\footnotesize\ttfamily twincore.\+Twin\+Core\+Base.\+fname}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a6e122bc22459940a446616bba311b113}\label{classtwincore_1_1TwinCoreBase_a6e122bc22459940a446616bba311b113}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!fp@{fp}}
+\index{fp@{fp}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{fp}{fp}}
+{\footnotesize\ttfamily twincore.\+Twin\+Core\+Base.\+fp}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_af704f2b80bd7cd90922cfbf6e9ac053b}\label{classtwincore_1_1TwinCoreBase_af704f2b80bd7cd90922cfbf6e9ac053b}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!idxname@{idxname}}
+\index{idxname@{idxname}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{idxname}{idxname}}
+{\footnotesize\ttfamily twincore.\+Twin\+Core\+Base.\+idxname}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a678b760651e3326911d9555b47b9c72f}\label{classtwincore_1_1TwinCoreBase_a678b760651e3326911d9555b47b9c72f}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!ifp@{ifp}}
+\index{ifp@{ifp}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{ifp}{ifp}}
+{\footnotesize\ttfamily twincore.\+Twin\+Core\+Base.\+ifp}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a5532acbc1445708470b47c81a38d841d}\label{classtwincore_1_1TwinCoreBase_a5532acbc1445708470b47c81a38d841d}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!INTSIZE@{INTSIZE}}
+\index{INTSIZE@{INTSIZE}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{INTSIZE}{INTSIZE}}
+{\footnotesize\ttfamily int twincore.\+Twin\+Core\+Base.\+INTSIZE = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a210b0854779643130ab538ba5c215635}\label{classtwincore_1_1TwinCoreBase_a210b0854779643130ab538ba5c215635}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!lasterr@{lasterr}}
+\index{lasterr@{lasterr}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{lasterr}{lasterr}}
+{\footnotesize\ttfamily twincore.\+Twin\+Core\+Base.\+lasterr}
+
+\mbox{\Hypertarget{classtwincore_1_1TwinCoreBase_a647c0d3d3725bddcb3bea970d4b5d314}\label{classtwincore_1_1TwinCoreBase_a647c0d3d3725bddcb3bea970d4b5d314}} 
+\index{twincore.TwinCoreBase@{twincore.TwinCoreBase}!lckname@{lckname}}
+\index{lckname@{lckname}!twincore.TwinCoreBase@{twincore.TwinCoreBase}}
+\doxysubsubsection{\texorpdfstring{lckname}{lckname}}
+{\footnotesize\ttfamily twincore.\+Twin\+Core\+Base.\+lckname}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{twincore_8py}{twincore.\+py}}\end{DoxyCompactItemize}
