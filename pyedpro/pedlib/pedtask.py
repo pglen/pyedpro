@@ -139,7 +139,11 @@ class pedtask():
 
         print(yfname)
 
-        comline = ["md2html", "-s", yfname, self.fname,]
+        #comline = ["md2html", "-s", yfname, self.fname,]
+
+        comline = ["markdown", self.fname,]
+
+        outs = ''
         try:
             ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         except:
@@ -154,7 +158,9 @@ class pedtask():
             return
 
         newfname = os.path.splitext(self.fname)[0] + ".html"
-        #print("processed:", self.fname, newfname)
+        print("processed:", self.fname, newfname)
+        with open(newfname,'wb') as fd:
+            fd.write(outs)
 
         if not os.path.isfile(newfname):
             print("No conversion on %s" % self.fname)
@@ -178,7 +184,9 @@ class pedtask():
         try:
             xfname = os.path.dirname(__file__) + os.sep + "webwin.py"
             #print("xfname", )
-            comline3 = ["python", xfname, "-d", newfname,]
+            #comline3 = ["python", xfname, "-d", newfname,]
+            comline3 = ["firefox", newfname,]
+
             try:
                 ret = subprocess.Popen(comline3)
             except:
