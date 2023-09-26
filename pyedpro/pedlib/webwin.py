@@ -10,9 +10,18 @@ from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 
-sys.path.append("../pycommon")
+try:
+    # This will change once the pydbase is out of dev stage
+    np = os.path.split(__file__)[0] + os.sep + '..' + os.sep
+    #print(np)
 
-from browsewin import *
+    sys.path.append(np)
+    #print(sys.path)
+    #print(os.getcwd())
+    from pycommon.browsewin import *
+except:
+    print("Cannot Load browser window")
+
 
 import pgwkit
 
