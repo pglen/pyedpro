@@ -50,7 +50,8 @@ from    pedlib.pedutil import *
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
-treestore = None; treestore2 = None
+treestore = None;  treestore2 = None
+treeview = None;   treeview2 = None
 notebook = None;   notebook2 = None
 notebook3 = None;  notebook4 = None
 
@@ -413,6 +414,7 @@ class EdMainWindow():
         scroll = Gtk.ScrolledWindow()
         #warnings.simplefilter("default")
 
+        global treeview
         treeview = self.create_tree()
         treeview.set_activate_on_single_click (True)
         treeview.connect("row-activated",  self.tree_sel)
@@ -420,6 +422,7 @@ class EdMainWindow():
         self.treeview = treeview
         #treeview.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
+        global treeview2
         treeview2 = self.create_vartree()
         treeview2.set_activate_on_single_click (True)
         treeview2.connect("row-activated",  self.tree_sel2)
@@ -1365,12 +1368,30 @@ class EdMainWindow():
 
         return tv
 
+    def xupdate_treestore(self, text):
+        pass
+
     # --------------------------------------------------------------------
     def update_treestore(self, text):
 
-        global treestore
-
+        global treestore, treeview
         if not treestore: return
+
+        # Remember old position
+        #Gtk.TreeViewColumn Gtk.TreeView Gtk.TreeStore
+        old_sel = None
+        try:
+            path = treeview.get_path_at_pos(0, 0)
+            #print("path", path)
+            xiter = treestore.get_iter(path[0])
+            #print("xiter", xiter)
+            if xiter:
+                old_sel = treestore.get_value(xiter, 0)
+
+        except:
+            print("update_tree old pos", sys.exc_info())
+            pass
+
         # Delete previous contents
         try:
             while True:
@@ -1387,10 +1408,11 @@ class EdMainWindow():
 
         if not text:
             return
-
         try:
             for line in text:
                 piter = treestore.append(None, [cut_lead_space(line)])
+            # Back to old line
+            treeview.scroll_to_cell(path[0], None, False, 0, 0)
         except:
             print("Exception in append treestore", sys.exc_info())
 
