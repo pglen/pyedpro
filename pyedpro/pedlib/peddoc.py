@@ -258,6 +258,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect("destroy", self.destroy_cb)
 
     def run_keytime(self):
+        global last_scanned
+        last_scanned = ""
         if not self.mained.mac:
             GLib.timeout_add(300, keytime, self, 0)
         pass
@@ -2684,18 +2686,20 @@ def run_async_time(win, arg):
 
     #print( "run_async_time enter", win.fname)
 
-    #if  last_scanned == win:
-    #    #print("Not rescanning", win.fname)
-    #    return
+    if  last_scanned == win:
+        #print("Not rescanning", win.fname)
+        return
 
     last_scanned = win
+
     win.mained.start_tree()
 
     #print( "run_sync_time", time.time())
 
-    sumw = [] ; lname = win.fname.lower()
     if not win.text:
         return
+
+    sumw = [] ; lname = win.fname.lower()
 
     #print("lname", lname[-2:])
 
