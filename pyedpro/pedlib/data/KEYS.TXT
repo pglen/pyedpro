@@ -158,6 +158,7 @@ The keymap:
     Alt H                       -- Help Menu
     Alt I                       -- Ignore (convert) tabs to spaces
     Alt J                       -- Jump to next long line (80+)
+    Alt H                       -- Show Help menu
     Alt K                       -- Delete (kill) till end of line
     Alt L                       -- Select current line
     Alt M                       -- Macros menu
@@ -187,7 +188,7 @@ The keymap:
     Alt 8                       -- Switch to buffer 8
     Alt 9                       -- Switch to buffer 9
 
-    Alt F1                      -- Gnome (system) - Menu
+    Alt F1                      -- Gnome - Menu (system menu)
     Alt F2                      -- Gnome - Run App
     Alt F4                      -- Gnome - Exit program (Use Alt X)
     Alt F7                      -- Gnome - Move window
@@ -206,14 +207,12 @@ The keymap:
     Ctrl Alt F                  -- Fill to column
     Ctrl Alt Shift F            -- Prompt for fill column
     Ctrl Alt G                  -- Go execute cycle.sh (shortcut for header cycle)
-
-    Ctrl Alt T                  -- Execute terminal here (most likely global)
-        ...
-
     Ctrl Alt H                  -- Find (alias)
     Ctrl Alt J                  -- Coloring
     Ctrl Alt K                  -- Hex view
+        ...
     Ctrl Alt R                  -- Read file (text to speech)
+    Ctrl Alt T                  -- Execute terminal here (most likely global)
 
     # More coming ... under construction
 

@@ -1389,7 +1389,7 @@ class EdMainWindow():
                 old_sel = treestore.get_value(xiter, 0)
 
         except:
-            print("update_tree old pos", sys.exc_info())
+            #print("update_tree old pos", sys.exc_info())
             pass
 
         # Delete previous contents
@@ -1414,7 +1414,8 @@ class EdMainWindow():
             # Back to old line
             treeview.scroll_to_cell(path[0], None, False, 0, 0)
         except:
-            print("Exception in append treestore", sys.exc_info())
+            #print("Exception in append treestore", sys.exc_info())
+            pass
 
     # --------------------------------------------------------------------
     def update_treestore2(self, text):
@@ -1442,7 +1443,8 @@ class EdMainWindow():
             for line in text:
                 piter = treestore2.append(None, [cut_lead_space(line)])
         except:
-            print("Exception in append treestore2", sys.exc_info())
+            pass
+            #print("Exception in append treestore2", sys.exc_info())
 
     # --------------------------------------------------------------------
     # Handlers: (deactivated)

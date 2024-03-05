@@ -217,11 +217,16 @@ def launch_pangview(docx):
     ret = 0
     pname = get_pangview_path()
 
-    if pedconfig.conf.verbose:
-        print("launching pangview:", pname, "with", docx)
-    try:
-        ret = subprocess.Popen(["python", pname,  docx])
+    if pname == "pangview.py":
+        # we are running in pip
+        arr =  ['pangview',  docx]
+    else:
+        arr = ["python", pname,  docx]
 
+    if pedconfig.conf.verbose:
+        print("Launching pangview:", arr) # pname, "with", docx)
+    try:
+        ret = subprocess.Popen(arr)
     except:
         print("except on pang",  sys.exc_info())
         pedync.message("\n   Cannot launch the pangview.py utility.   \n\n"
