@@ -8,16 +8,39 @@ import random, time, subprocess, traceback, glob
 
 import gi
 gi.require_version("Gtk", "3.0")
+gi.require_version('PangoCairo', '1.0')
+
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Pango
+from gi.repository import PangoCairo
+
+import sutil
 
 sys.path.append('..')
 import pycommon.pgutils
 
+
 box_testmode = False
+
+def str2rgb(col):
+
+    #print("in", col)
+    aa = int(col[1:3], base=16)
+    bb = int(col[3:5], base=16)
+    cc = int(col[5:7], base=16)
+    return aa, bb, cc
+
+def str2rgba(col):
+
+    #print("in", col)
+    aa = float(int(col[1:3], base=16)) / 256
+    bb = float(int(col[3:5], base=16)) / 256
+    cc = float(int(col[5:7], base=16)) / 256
+    dd = float(int(col[7:9], base=16)) / 256
+    return aa, bb, cc, dd
 
 # ------------------------------------------------------------------------
 
@@ -243,7 +266,7 @@ class ListBox(Gtk.TreeView):
     def __init__(self, limit = -1, colname = ''):
 
         self.limit = limit
-        self.treestore = Gtk.TreeStore(str)
+        self.treestore = Gtk.TreeStore(str, str)
         Gtk.TreeView.__init__(self, self.treestore)
 
         cell = Gtk.CellRendererText()
@@ -395,13 +418,15 @@ class   ComboBox(Gtk.ComboBox):
         #cell.set_property("background-set", True)
         cell.set_padding(10, 0)
 
-        if callme:
-            self.connect("changed", callme)
+        self.callme = callme
+        #if callme:
+        #    self.connect("changed", callme)
 
         #cell.set_property("foreground", "#ffff00")
         #cell.set_property("foreground-set", True)
         #print("background-set", cell.get_property("background-set"))
         #print("foreground-set", cell.get_property("foreground-set"))
+
         #print(" list_properties", cell.list_properties())
 
         self.pack_start(cell, True)
@@ -421,10 +446,19 @@ class   ComboBox(Gtk.ComboBox):
                 model = combo.get_model()
                 name = model[tree_iter][0]
                 #print("Selected: name=%s" % (name))
+
+            if self.callme:
+                try:
+                    self.callme(name)
+                except:
+                    print("Callback:", sys.exc_info())
+                    sutil.print_exception("callb")
+
             else:
                 entry = combo.get_child()
                 name = entry.get_text()
                 #print("Entered: %s" % name)
+
         except:
             pass
 
@@ -471,6 +505,207 @@ class   ComboBox(Gtk.ComboBox):
         model = self.get_model()
         iter = model.get_iter_first()
         self.set_active_iter(iter)
+
+# ------------------------------------------------------------------------
+# Gtk.TreeView simpler combo for color selection
+
+class   ColorRenderer(Gtk.CellRenderer):
+
+    __gproperties__ = {
+          'text' : (GObject.TYPE_STRING, 'text',
+                    'string that represents the item',
+                    'hello', GObject.PARAM_READWRITE),
+          'bgcolor' : (GObject.TYPE_STRING, 'bgcolor',
+                    'string that represents the RGB color',
+                    'white', GObject.PARAM_READWRITE),
+          }
+
+    def __init__(self):
+        Gtk.CellRenderer.__init__(self)
+        # Create placeholders
+        self.text = "None"
+        self.bgcolor = "None"
+
+        self.font_size=10
+        self.font = "Sans {}".format(self.font_size)
+        #print(self.list_properties())
+
+    def do_get_size(self, widget, cell_area):
+
+        # Get this from the client -> original display values
+        #pg = Gtk.Widget.create_pango_context(widget)
+        #myfd = pg.get_font_description()
+        #self.font_size = myfd.get_size() / Pango.SCALE
+
+        tsize = len(self.text)
+        return (0, 0, self.font_size * (tsize - 2), self.font_size * 3)
+
+    def do_render(self, cr, widget, background_area, cell_area, expose_area, flags = 0):
+        #ccc = str2rgb(self.bgcolor)
+        ccc = str2rgba(self.bgcolor)
+        #avg = (ccc[0] + ccc[1] + ccc[2] ) / 3
+        #print("text", self.text, "bgcolor", self.bgcolor, ccc)  #, "avg", avg)
+
+        cr.translate (0, 0)
+        layout = PangoCairo.create_layout(cr)
+        # ---Note---  changing default
+        desc = Pango.font_description_from_string(self.font)
+        layout.set_font_description(desc)
+        layout.set_text(self.text)
+        cr.save()
+        cr.set_source_rgba(*ccc)
+
+        cr.rectangle(0, 0, background_area.width, background_area.height)
+        cr.fill()
+        PangoCairo.update_layout (cr, layout)
+
+        # Make it sensitive to dark / light
+        ddd = []
+        for aa in ccc[:-1]:
+            if aa < .5:
+                ddd.append(1)
+            else:
+                ddd.append(0)
+        ddd.append(1.)
+        cr.set_source_rgba (*ddd)
+
+        (pr, lr) = layout.get_extents()
+        xx = lr.width / Pango.SCALE; yy = lr.height / Pango.SCALE;
+
+        cr.move_to((background_area.width - xx)/2, (background_area.height - yy)/2)
+        PangoCairo.show_layout (cr, layout)
+
+        cr.restore()
+
+    def do_get_property(self, property):
+        #print("get prop", property)
+        return getattr(self, property.name)
+
+    def do_set_property(self, property, val):
+        #print("set prop", property, val)
+        setattr(self, property.name, val)
+        pass
+
+class   ColorCombo(Gtk.ComboBox):
+
+    def __init__(self, init_cont = [], callme = None):
+
+        self.store = Gtk.ListStore(str, str)
+        Gtk.ComboBox.__init__(self)
+        self.callme = callme
+
+        self.set_model(self.store)
+        cell =  ColorRenderer()
+        cell2 =  ColorRenderer()
+        #print("cell", cell)
+        #print(" list_properties", cell.list_properties())
+
+        self.pack_start(cell, True)
+        self.add_attribute(cell, 'text', 0)
+        self.add_attribute(cell, 'bgcolor', 1)
+        #self.set_entry_text_column(0)
+        #self.set_entry_text_column(1)
+        #self.set_cell_data_func(cell, self.data_func)
+
+        for bb, cc in init_cont:
+            self.store.append((bb, cc))
+
+        #print("self.GET_MODEL", self.get_model() )
+        #self.get_model().foreach(self.printdetails)
+
+        self.connect("changed", self.combo_changed)
+        #self.connect("notify::popup-shown", self.combo_focus)
+
+    def combo_focus(self, arg1, arg2):
+        print("Focus", arg1, arg2)
+
+    #def data_func(self, arg1, arg2, arg3, arg4):
+    '''def data_func(self, column, renderer, model, iter):
+        #print("data_func called", arg1, arg2, arg3, arg4)
+        #print("data_func ", model, iter)
+        val = model.get_value(iter, 0)
+        #print("val", val)
+        #renderer.set_property("cell-background", val)
+        renderer.set_property("background", val)
+        renderer.set_property("xpad", 0)
+    '''
+
+    def printdetails(self, arg, arg2, arg3):
+        #print(arg, arg2, arg3)
+        #print(self.store[arg2], arg3.stamp)
+        print(dir(self.store[arg2] ))  #.iterchildren())
+        #print(aa)
+        print()
+
+    def combo_changed(self, combo):
+        #print("combo_changed")
+        name = ""
+        tree_iter = combo.get_active_iter()
+        try:
+            if tree_iter is not None:
+                model = combo.get_model()
+                name = model[tree_iter][0]
+
+                if box_testmode:
+                    print("Selected: name=%s" % (name))
+
+            if self.callme:
+                try:
+                    self.callme(name)
+                except:
+                    print("Color sel callback", sys.exc_info())
+            else:
+                entry = combo.get_child()
+                name = entry.get_text()
+                #print("Entered: %s" % name)
+
+        except:
+            pass
+
+        #print("Combo new selection / entry: '%s'" % name)
+
+    def delall(self):
+         # Delete previous contents
+        try:
+            while True:
+                root = self.store.get_iter_first()
+                if not root:
+                    break
+                try:
+                    self.store.remove(root)
+                except:
+                    print("except: self.store remove")
+        except:
+            print("combo delall", sys.exc_info())
+            pass
+
+    # --------------------------------------------------------------------
+    def  sel_text(self, txt):
+
+        #print("Sel combo text")
+
+        model = self.get_model()
+        iter = model.get_iter_first()
+        if iter:
+            cnt = 0
+            while True:
+
+                #print("entry %d" % cnt, model[iter][0], txt)
+                if  model[iter][0] == txt:
+                    #print("Found %d" % cnt, model[iter][0])
+                    self.set_active_iter(iter)
+                    break
+
+                iter = model.iter_next(iter)
+                if not iter:
+                    break
+                cnt += 1
+
+    def     sel_first(self):
+        model = self.get_model()
+        iter = model.get_iter_first()
+        self.set_active_iter(iter)
+
 
 # ------------------------------------------------------------------------
 # Added convenience methods

@@ -27,13 +27,15 @@ from pycommon.pgbutt import *
 
 try:
     # This is a copy of the pydbase -- refresh when needed
-    np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + "pydbase"
+    #np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + "pydbase"
     #print(np)
-    sys.path.append(np)
-    from pydbase import twinbase
+    #sys.path.append(np)
+    #from pydbase
+    #import twinbase
+    #from pydbase
     from pydbase import twincore
 except:
-    print("Cannot import twincore", sys.exc_info())
+    print("Cannot import twincore / twinbase", sys.exc_info())
 
 # ------------------------------------------------------------------------
 

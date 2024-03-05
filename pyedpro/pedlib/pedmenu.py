@@ -213,7 +213,7 @@ def create_action_group(self):
         "Paste clipboard into text",
          self.activate_action ),
 
-      ( "Paste", Gtk.STOCK_PASTE,
+      ( "Findit", Gtk.STOCK_PASTE,
         "_Find  \tCtrl-F", "",
         "Find text",
          self.activate_action ),

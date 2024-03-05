@@ -682,8 +682,36 @@ class ActHand:
         if pedconfig.conf.pgdebug > 9:
             print ("CTRL - ALT - B")
 
-        #pedbuffs.buffers(self, self2)
-        self2.mained.update_statusbar("C-A-B key pressed.")
+        #line = ""; xidx = 0; yidx = 0
+        # No selection, assume word
+        if self2.xsel == -1 or self2.ysel == -1:
+            xidx = self2.caret[0] + self2.xpos
+            yidx = self2.caret[1] + self2.ypos
+            line = self2.text[yidx]
+            #cntb, cnte = selword(line, xidx)
+            cntb, cnte = selasci2(line, xidx, "_-")
+        else:
+            # Normalize
+            xssel = min(self2.xsel, self2.xsel2)
+            xesel = max(self2.xsel, self2.xsel2)
+            yssel = min(self2.ysel, self2.ysel2)
+            yesel = max(self2.ysel, self2.ysel2)
+
+            xidx = xssel; yidx = yssel;
+            line = self2.text[yidx]
+            cntb = xssel; cnte = xesel
+
+        if cnte == cntb:
+            self2.mained.update_statusbar("Please nav to a word first.")
+            return
+
+        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, line))
+        #print ("word / selection", line[cntb:cnte])
+
+        wlow = line[cntb].upper()
+
+        self2.text[yidx] = line[:cntb] + wlow + line[cntb+1:]
+        self2.inval_line()
 
     #// Comment out code: TODO
     def ctrl_alt_c(self, self2):

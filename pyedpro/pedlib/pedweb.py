@@ -30,12 +30,13 @@ try:
     np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + ".." + os.sep + ".."
     #print(np)
 
-    np =  '..' + os.sep + "pydbase"
+    #np =  '..' + os.sep + "pydbase"
 
     sys.path.append(np)
     #print(sys.path)
     #print(os.getcwd())
-    from pydbase import twincore
+    #from pydbase
+    import twincore
 except:
     put_exception("Cannot Load twincore")
 
