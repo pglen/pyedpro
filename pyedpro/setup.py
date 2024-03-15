@@ -56,7 +56,6 @@ setuptools.setup(
 
     package_dir = {
                     'pedlib': 'pedlib',
-                    'pydbase': 'pydbase',
                     'pedlib/images': 'pedlib/images',
                     'pedlib/plugins': 'pedlib/plugins',
                     'pedlib/data' : 'pedlib/data',
@@ -81,7 +80,7 @@ setuptools.setup(
                    ],
 
     python_requires='>=3',
-    install_requires=['pyvpacker', 'pydbase', ],
+    install_requires=['pyvpacker',  ],
     entry_points={
         'console_scripts': [ "pyedpro=pyedpro:mainfunc",
             "pangview=pangview:mainfunc",

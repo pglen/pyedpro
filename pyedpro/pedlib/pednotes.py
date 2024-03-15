@@ -46,6 +46,7 @@ class pgnotes(Gtk.VBox):
         Gtk.VBox.__init__(self)
 
         self.wasin = False
+        self.old_iter = None
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#444444"))
         #self.prevsel = None;  self.prevkey = None;
@@ -67,6 +68,8 @@ class pgnotes(Gtk.VBox):
         try:
             self.core = twincore.TwinCore(self.notes_dir + os.sep + "peddata.pydb")
             #print("core", self.core, self.core.fname)
+            #self.core.pgdebug = 10
+
         except:
             print("Cannot make notes py database")
 
@@ -194,7 +197,7 @@ class pgnotes(Gtk.VBox):
         # Did not happen automatically
         #print("pednotes __del__")
         self.savetext()
-        self.core.__del__()
+        #self.core.__del__()
 
     def switched(self, pageto):
         #print("SW page signal web", pageto)
@@ -233,20 +236,37 @@ class pgnotes(Gtk.VBox):
         txt = dlg.entry.get_text()
         dlg.destroy()
         self.treeview2.clear()
+        self.edview.set_text("")
         cnt = 0
         txt2 = txt.lower()
+        arrx = []
         try:
-            datax = self._getall()
-            for aa in datax:
-                ddd = self.core.retrieve(aa)
+            #datax = self._getall()
+            #for aa in datax:
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                #ddd = self.core.retrieve(aa)
+                #ddd = self.core.findrecpos(aa, 1)
+                ddd = self.core.get_rec(aa)
+                if not ddd:
+                    continue
                 #print(ddd)
-                for cc in ddd:
-                    for ee in cc:
-                        #print("ee", ee.lower())
-                        if txt2 in str(ee).lower():
-                            #print("    ", aa)
-                            self.treeview2.append((aa, "", ""))
-                            cnt += 1
+                if type(ddd[0]) != type(""):
+                    ddd[0] = ddd[0].decode()
+                if type(ddd[1]) != type(""):
+                    try:
+                        ddd[1] = ddd[1].decode()
+                    except:
+                        ddd[1] = ddd[1].decode("cp437")
+
+                sss = ddd[1].lower()
+                #print("sss", sss)
+                if txt2 in sss:
+                    print("found:", txt2, "in", ddd[0])
+                    if ddd[0] not in arrx:
+                        arrx.append(ddd[0])
+                        self.treeview2.append((ddd[0], "", ""))
+                    cnt += 1
             if not cnt:
                 self.treeview2.append(("No records found", "", ""))
 
@@ -268,12 +288,19 @@ class pgnotes(Gtk.VBox):
         #print("Searching for:", txt)
 
         textbuffer  =  self.edview.textview.get_buffer()
-        start_iter  =  textbuffer.get_start_iter()
-        found       =  start_iter.forward_search(txt, Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
+        if self.old_iter:
+            start_iter  =  self.old_iter
+        else:
+            start_iter  =  textbuffer.get_start_iter()
+        found  = start_iter.forward_search(txt, Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
         if found:
-           match_start,match_end = found #add this line to get match_start and match_end#try:
-           textbuffer.select_range(match_start,match_end)#    datax = self.sql.getall()
+           match_start, match_end = found
+           self.old_iter = match_end
+           textbuffer.select_range(match_start, match_end)
            self.edview.textview.scroll_to_iter(match_start, 0, False, 0, 0)
+        else:
+            self.old_iter = None
+            message("\n'%s' not found or EOF reached. \n" % (txt))
 
     def newitem(self, arg):
         self.savetext()
@@ -587,7 +614,21 @@ class pgnotes(Gtk.VBox):
 
     def _readrec(self, args):
 
-        ddd = self.core.retrieve(args[0])
+        #print("readargs", args)
+        ddd = None
+        #ddd = self.core.retrieve(args[0])
+        for aa in range(self.core.getdbsize()-1, -1, -1):
+            rec = self.core.get_rec(aa)
+            if not rec:
+                continue
+            #print("rec", rec[0])
+            if rec[0].decode() == args[0]:
+                #print("found")
+                ddd = rec
+                break
+
+        #print("readrec", ddd)
+
         #for aa in ddd:
         #    print(aa)
         #print("ddd", type(ddd), ddd)
@@ -595,13 +636,13 @@ class pgnotes(Gtk.VBox):
 
         # See what kind it is
         try:
-            if ddd[0][1][:13] == b"GTKTEXTBUFFER":
+            if ddd[1][:13] == b"GTKTEXTBUFFER":
                 self.edview.set_text("")
                 #print("deser", ddd[0][1])
-                self.edview.deser_buff(ddd[0][1])
+                self.edview.deser_buff(ddd[1])
             else:
                 #print("load", ddd[0][1])
-                self.edview.set_text(ddd[0][1].decode())
+                self.edview.set_text(ddd[1].decode())
         except:
             print("treesel", sys.exc_info())
             pass
@@ -612,7 +653,7 @@ class pgnotes(Gtk.VBox):
         datax = []
         try:
             dbsize = self.core.getdbsize()
-            for aa in range(dbsize-1, 0, -1):
+            for aa in range(dbsize-1, -1, -1):
                 ddd = self.core.get_rec(aa)
                 if len(ddd) < 2:
                     continue        # Deleted record
@@ -675,8 +716,6 @@ class pgnotes(Gtk.VBox):
                     pass
         self.cnt += 1
         #print("self.cnt", self.cnt)
-
-
 
 class   PopWin(Gtk.Window):
 
