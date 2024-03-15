@@ -1,6 +1,6 @@
 #   PyEdPro README
 
-## Python editor.
+## Python editor. 
 
    Welcome to PyEdPro. This is modern multi-platform editor. Simple, powerful,
 configurable, extendable. Goodies like macro recording / playback, spell check,
