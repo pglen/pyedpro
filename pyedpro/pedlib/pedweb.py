@@ -35,8 +35,7 @@ try:
     sys.path.append(np)
     #print(sys.path)
     #print(os.getcwd())
-    #from pydbase
-    import twincore
+    from pydbase import twincore
 except:
     put_exception("Cannot Load twincore")
 
