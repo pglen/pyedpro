@@ -7,9 +7,6 @@ configurable, extendable. Goodies like macro recording / playback, spell check,
 column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
-   This project's source is at - https://github.com/pglen/pyedpro
-     (also stored locally Please remove from your Makefile. -> git target)
-
   Working and tested platforms currently are:
 
         Win 7 .. Win 10 ...
@@ -45,10 +42,10 @@ Pyedpro functions in a near identical manner
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
 (x64) and the Raspberry-Pi. It behaves consistently on all these platforms,
 it is an absolute joy to edit in a different platform without the learning
-curve of new keystrokes.  If you want an editor  that works the same way in
+curve of new keystrokes.  If you want an editor that works the same way in
 all your workspaces, PyEdPro is the one.
 
- PyEdPro now is working good-ish on the Mac M1. I installed homebrew, and got
+ PyEdPro now is working OK on the Mac M1. I installed homebrew, and got
 it to fire up. It was not a trivial exercise, as the Mac PygGOject did not do
 half of the stuff as the Linux version did.
 No asynchronous  anything, segmentation faults everywhere. (which python
@@ -61,8 +58,9 @@ manually. (right click on doc -> rescan) All in all the Mac's PyGobject is not a
 subsystem, hopefully time will be kind here.
 
 ** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing
-as Glib the timer functions bombed. Great hardware - bad PyGobject support. However
-if an editor with familiar key op is needed -- most of it works. And no destructive errors.
+as in Glib the timer functions bombed. Great hardware - bad PyGobject support. However
+if an editor with familiar key op is needed -- most of it works. And no
+destructive errors.
 
 ### New:
 
@@ -76,10 +74,12 @@ if an editor with familiar key op is needed -- most of it works. And no destruct
     Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
+        ....        -- lot of changes, see github log
+    Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
 
 Partial list, some highlights;
 
-Added separate interpretation for right control keys, so exotic items 
+Added separate interpretation for right control keys, so exotic items
 like 'insert html comment' can be tied to a shortcut key;
 
 Added drag / drop source / target. New keystroke combo for keyboards
@@ -147,9 +147,9 @@ editor or look at the file in pyedlib/KEYS. This file is also called up when the
  Help -> 'KeyHelp In Doc' is called up.
 
   If you highlight a word, and press F2, Zeal will open with the item searched and
-highlighted. Shift F2 will do the same with Devhelp. This is what I use to see the API of PyGobj.
-F1 will call up the PyEdPro's help screen. Shift-F1 will open DevDocs. Naturally,
-Devdocs/Devhelp/Zeal need to be installed for these to function.
+highlighted. Shift F2 will do the same with Devhelp. This is what I use to see the
+ API of PyGobj. F1 will call up the PyEdPro's help screen. Shift-F1 will open
+DevDocs. Naturally, Devdocs/Devhelp/Zeal need to be installed for these to function.
 
   On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
