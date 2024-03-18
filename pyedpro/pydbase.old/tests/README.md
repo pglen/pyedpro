@@ -1,1 +1,0 @@
-Execute tests from this directory;
