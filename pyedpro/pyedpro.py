@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+__doc__ = \
 '''! \mainpage
 
 ## Welcome to PyEdPro.
@@ -54,27 +55,8 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
  One can easily edit the key map in keyhand.py, and the key actions
  in acthand.py The default key map resembles gedit / wed / etp / brief / Notepad
 
-ASCII text editor, requires pyGtk. (PyGObject)
-
- See pygtk-dependencies for easy install of dependencies.
- See also the INSTALL file.
-
-'''
-
-#from __future__ import absolute_import
-#from __future__ import print_function
-
-import os
-import sys
-import getopt
-import signal
-import time
-import platform
-
-'''!
- \mainpage
  ------------------------------------------------------------------------
- This project is a successor of pyedit.py
+ ## This project is a successor of pyedit.py
 
  Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
 
@@ -82,59 +64,54 @@ import platform
  One can easily edit the key map in keyhand.py, and the key actions
  in acthand.py The default key map resembles gedit / wed / etp / brief
 
- History:  (incomplete list)
+History:  (incomplete list, see git log for a more complete list)
 
- Thu 27.Oct.2022   Restored menu keymaps for the system to handle it.
- Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
- jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
- Jul/xx/2018       Update README, KEYS.TXT
- Jun/xx/2018       Log Files for time accounting.
- Jun/08/2020       Menu control / Headerbar / Version update
- Mon 28.Sep.2020   Reshuffled imports pylint
- Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
- Fri 07.May.2021   Many fixed, installs, new features
- Tue 06.Sep.2022   Installation, anchor for search ...
+    jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
+    Jul/xx/2018       Update README, KEYS.TXT
+    Jun/xx/2018       Log Files for time accounting.
+    Jun/08/2020       Menu control / Headerbar / Version update
+    Mon 28.Sep.2020   Reshuffled imports pylint
+    Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
+    Fri 07.May.2021   Many fixed, installs, new features
+    Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
+    Tue 06.Sep.2022   Installation, anchor for search ...
+    Thu 27.Oct.2022   Restored menu keymaps for the system to handle it.
 
  ASCII text editor, requires pyGtk. (pygobject)
  See pygtk-dependencies for easy install of dependencies.
  See also the INSTALL file.
+
 '''
+
+import os, sys, getopt, signal, time, platform
 
 import gettext
 gettext.bindtextdomain('pyedpro', './locale/')
 gettext.textdomain('pyedpro')
 _ = gettext.gettext
 #locale.setlocale(locale.LC_ALL, '')
+#print("domain", gettext.textdomain)
+
+import gi; gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import Gio
+from gi.repository import GObject
 
 orgbase = os.getcwd()
 #print("cwd", orgbase)
 
-#base    = os.path.realpath(__file__)
-#basedir = os.path.dirname(base)
-#print("file", os.path.dirname(base))
+basedir = os.path.dirname(os.path.realpath(__file__))
+#print("file dir", basedir)
 #os.chdir(basedir)
 
-#modbase = ""
-#for aa in sys.path:
-#    if "pyedpro-" in aa:
-#        #print("aa", aa)
-#        modbase = aa
-
-#sys.path.append(basedir + os.sep + "panglib")
-#sys.path.append(basedir + os.sep + "pedlib")
+#sys.path.append(basedir + os.sep)
 #sys.path.append(basedir + os.sep + "pycommon")
+#sys.path.append(basedir + os.sep + "pedlib")
 
-# Also add pyedpro's EGG module dependencies
-
-#sys.path.append(modbase + os.sep + "panglib")
-#sys.path.append(modbase + os.sep + "pedlib")
-#sys.path.append(modbase + os.sep + "pycommon")
-
-#sys.path.append("panglib")
-#sys.path.append("pedlib")
-#sys.path.append("pycommon")
-
-#print(sys.path)
+#print("pyedpro path", sys.path)
 
 from pedlib import pedconfig
 from pedlib import pedync
@@ -150,20 +127,10 @@ pedconfig.conf.acth = acthand.ActHand()
 pedconfig.conf.keyh = keyhand.KeyHand(pedconfig.conf.acth)
 pedconfig.conf.orig_path = orgbase
 
-#sys.path.append('.' + os.sep + "pycommon")
-
 from pedlib import pedwin
 from pedlib import pedlog
 from pedlib import pedutil
 from pedlib import pedplug
-
-import gi; gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
-from gi.repository import Gtk
-from gi.repository import Gdk
-from gi.repository import GLib
-from gi.repository import Gio
-from gi.repository import GObject
 
 import faulthandler
 faulthandler.enable()
@@ -173,16 +140,14 @@ def tracer(frame, event, arg):
         print(event, frame.f_code.co_filename, frame.f_lineno)
     return tracer
 
-#print("domain", gettext.textdomain)
-
 #try:
 #    from pkg_resources import resource_filename
 #    print (os.path.abspath(resource_filename(__name__.data, 'pedicon.png')) )
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.3.1"
-BUILDDATE   = "Thu 15.Feb.2024"
+VERSION     = "3.3.2"
+BUILDDATE   = "Sun 17.Mar.2024"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

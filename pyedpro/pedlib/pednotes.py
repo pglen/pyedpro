@@ -3,27 +3,30 @@
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings, uuid, copy
 
-#from six.moves import range
-
 import gi; gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk
 from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Pango
 
+#print(sys.path)
+
 from pedlib import pedconfig
 
 # Into our name space
-from    pedlib.pedmenu import *
-from    pedlib.pedui import *
-from    pedlib.pedutil import *
-from    pedlib.pedync import *
-from    pedlib.pedofd import *
+from pedlib.pedmenu import *
+from pedlib.pedui import *
+from pedlib.pedutil import *
+from pedlib.pedync import *
+from pedlib.pedofd import *
+
+#print(sys.path)
 
 from pycommon.pggui import *
 from pycommon.pgsimp import *
-from pycommon.pgtextview import *
-from pycommon.pgbutt import *
+
+from pycommon import pgbutt
+from pycommon import pgtextview
 
 try:
     # This is a copy of the pydbase -- refresh when needed
@@ -116,7 +119,7 @@ class pgnotes(Gtk.VBox):
         self.vpaned.set_position(200)
 
         #self.edview = pgsimp.TextViewWin()
-        self.edview =  pgTextView()
+        self.edview =  pgtextview.pgTextView()
         #self.edview.callb = self.savetext
         self.edview.findcall = self.findx, self
 
@@ -146,15 +149,15 @@ class pgnotes(Gtk.VBox):
         hbox13.pack_start(zSpacer(), 1, 1, 0)
 
         hbox13.pack_start(zSpacer(), 0, 0, 0)
-        butt3 = smallbutt(" _New Item ", self.newitem, "Create new record")
+        butt3 = pgbutt.smallbutt(" _New Item ", self.newitem, "Create new record")
         hbox13.pack_start(butt3, 0, 0, 0)
         hbox13.pack_start(zSpacer(), 0, 0, 0)
 
-        butt3x = smallbutt(" Find in Text ", self.findx, "Find in text")
+        butt3x = pgbutt.smallbutt(" Find in Text ", self.findx, "Find in text")
         hbox13.pack_start(butt3x, 0, 0, 0)
         hbox13.pack_start(zSpacer(), 0, 0, 0)
 
-        butt3a = smallbutt(" Search All ", self.searchall, "Search ALL data")
+        butt3a = pgbutt.smallbutt(" Search All ", self.searchall, "Search ALL data")
 
         hbox13.pack_start(butt3a, 0, 0, 0)
 
@@ -165,20 +168,20 @@ class pgnotes(Gtk.VBox):
         hbox13a.pack_start(zSpacer(), 1, 1, 0)
 
         hbox13a.pack_start(zSpacer(), 0, 0, 0)
-        butt11 = smallbutt(" Del Item ", self.delitem, "Delete item")
+        butt11 = pgbutt.smallbutt(" Del Item ", self.delitem, "Delete item")
         hbox13a.pack_start(butt11, 0, 0, 0)
         hbox13a.pack_start(zSpacer(), 0, 0, 0)
 
-        butt12 = smallbutt(" Export ", self.export, "Export items")
+        butt12 = pgbutt.smallbutt(" Export ", self.export, "Export items")
         hbox13a.pack_start(butt12, 0, 0, 0)
 
         hbox13a.pack_start(zSpacer(), 0, 0, 0)
 
-        butt12a = smallbutt(" Import ", self.importx, "Import items")
+        butt12a = pgbutt.smallbutt(" Import ", self.importx, "Import items")
         hbox13a.pack_start(butt12a, 0, 0, 0)
         hbox13a.pack_start(zSpacer(), 0, 0, 0)
 
-        butt12b = smallbutt(" Popout ", self.popx, "Pop out window")
+        butt12b = pgbutt.smallbutt(" Popout ", self.popx, "Pop out window")
         hbox13a.pack_start(butt12b, 0, 0, 0)
         hbox13a.pack_start(zSpacer(), 0, 0, 0)
 
@@ -741,7 +744,7 @@ class   PopWin(Gtk.Window):
         self.connect("destroy", self._area_destroy)
 
         #self.connect("focus-out-event", self._focus)
-        self.view = pgTextView(True)
+        self.view = pgtextview.pgTextView(True)
         #self.view.textview.set_editable(False)
 
         self.scroll = Gtk.ScrolledWindow();

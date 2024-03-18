@@ -580,9 +580,22 @@ class pgweb(Gtk.VBox):
         self.lastsel = args
 
         hhh = ""
+
         try:
-            ddd = self.core.retrieve(args[0])[0]
-            hhh = ddd[1].decode()
+            #ddd = self.core.retrieve(args[0])[0]
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                #ddd = self.core.retrieve(aa)
+                #ddd = self.core.findrecpos(aa, 1)
+                ddd = self.core.get_rec(aa)
+                if not ddd:
+                    continue
+                #print(ddd)
+                if ddd[0].decode() == args[0]:
+                    #print("found", ddd[0])
+                    #print(ddd[0], args[0])
+                    hhh = ddd[1].decode()
+                    break
         except:
             if pedconfig.conf.verbose:
                 put_exception("treesel")
