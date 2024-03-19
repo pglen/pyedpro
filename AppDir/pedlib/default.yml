@@ -1,8 +1,0 @@
-title: page title
-author: page author
-description: page description
-navigation:
-  nav_title: navigation test menu title
-  links:
-    - title: Test Link
-      url: HTML file path

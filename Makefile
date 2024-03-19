@@ -8,25 +8,23 @@
 #  OTHER DEALINGS IN THE SOFTWARE.
 #
 
-.PHONY:  doc doc3 clean echo
+.PHONY:  doc doc3 clean prepimage
 
 all:
-	@echo "Type 'make help' for a list of targets"
+	@echo "Targets: doc setup pack prepimage -- Type 'make help' more targets"
 
 help:
 	@echo
 	@echo "Targets:"
-	@echo "	 make install  -- Install PyEdPro (unofficial structure)"
-	@echo "	 make setup    -- Run the setup.py script as install "
-	@echo "	 make pack     -- package PyEdPro "
-	@echo "	 make remove   -- remove (all) traces of pyedpro from the system"
-	@echo "	 make doc3     -- create documentation"
+	@echo "	 make install      -- Install PyEdPro (unofficial structure)"
+	@echo "	 make setup        -- Run the setup.py script as install "
+	@echo "	 make pack         -- package PyEdPro "
+	@echo "	 make remove       -- remove (all) traces of pyedpro from the system"
+	@echo "	 make doc          -- create documentation"
+	@echo "	 make prepimage    -- create app image
 	@echo
 
 # OLD install; use setup.py
-
-#install:
-#	@python3 ./install.py
 
 setup:
 	@python3 ./setup.py install
@@ -40,14 +38,8 @@ pack:
 	@./pack.sh
 
 clean:
-	rm -f *.pyc
-	rm -f pedlib/*.pyc
-	rm -rf pedlib/__pycache__
-	rm -rf ../pycommon/__pycache__
-	rm -f  ../pycommon/*.pyc
-
-echo:
-	@echo Echoing: ${CHECK}
+	-find . -name "__pycache__" -exec rm -r {} \;
+	-find . -name "*.pyc" -exec rm -r {} \;
 
 # Auto Checkin
 ifeq ("$(AUTOCHECK)","")
@@ -61,11 +53,11 @@ git:
 #	git push local
 
 doc:
-	@pdoc --logo image.png  \
-                -o doc `find . -maxdepth 2 -name  \*.py`
+	@PYTHONPATH=pedlib:pycommon pdoc --html --force -o doc pyedpro/pyedpro.py
+	@PYTHONPATH=pedlib:pycommon pdoc --html --force -o doc pyedpro/pedlib/pedwin.py
+	@#PYTHONPATH=pedlib:pycommon pdoc --html --force -o doc pyedpro/pedlib/peddoc.py
 
-doc3:
-	@pdoc3  --html --force -o doc3 `find . -maxdepth 2 -name  \*.py`
-
+prepimage:
+	./prepimage.sh
 
 # End of Makefile

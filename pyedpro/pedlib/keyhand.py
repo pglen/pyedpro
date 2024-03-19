@@ -4,7 +4,7 @@
 # for easy update. The key handler is table driven, so new key
 # assignments can be made with ease
 
-from __future__ import absolute_import
+#from __future__ import absolute_import
 
 import sys
 

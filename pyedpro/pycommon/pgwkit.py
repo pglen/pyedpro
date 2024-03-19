@@ -5,8 +5,8 @@
 import os, sys, getopt, signal, random, time, warnings
 import inspect
 
-realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
-sys.path.append(realinc)
+#realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
+#sys.path.append(realinc)
 
 from pgutils import  *
 from pggui import  *

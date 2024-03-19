@@ -17,11 +17,16 @@ from gi.repository import GObject
 from gi.repository import Pango
 from gi.repository import PangoCairo
 
+realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
+if realinc not in sys.path:
+    sys.path.append(realinc)
+
+#print("import", __file__)
+
 import sutil
-
-sys.path.append('..')
-import pycommon.pgutils
-
+#sys.path.append('..')
+#import pycommon.pgutils
+import pgutils
 
 box_testmode = False
 

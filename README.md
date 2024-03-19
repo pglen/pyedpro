@@ -1,6 +1,6 @@
 #   PyEdPro README
 
-## Python editor. 
+## Python editor.
 
    Welcome to PyEdPro. This is modern multi-platform editor. Simple, powerful,
 configurable, extendable. Goodies like macro recording / playback, spell check,
@@ -34,6 +34,9 @@ Pyedpro functions in a near identical manner
  It is fast, it is extendable. The editor has a table driven key mapping.
  One can easily edit the key map in keyhand.py, and the key actions
  in acthand.py The default key map resembles gedit / wed / etp / brief
+
+ The editor can be run from pip; from single packed executable; from git
+directory, and from packaged appimage.
 
 [See Doxygen generated Documentation on GitHub Pages](https://pglen.github.io/pyedpro/html/)
 
