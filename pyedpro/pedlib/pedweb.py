@@ -29,15 +29,21 @@ try:
     # This will change once the pydbase is out of dev stage
     np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + ".." + os.sep + ".."
     #print(np)
-
     #np =  '..' + os.sep + "pydbase"
-
     sys.path.append(np)
+    np += os.sep + "pydbase"
+    sys.path.append(np)
+
     #print(sys.path)
     #print(os.getcwd())
     from pydbase import twincore
 except:
-    put_exception("Cannot Load twincore")
+    np =  os.path.split(__file__)[0] + os.sep + '..' + os.sep + "pydbase"
+    sys.path.append(np)
+    print(sys.path[-3:])
+
+    from pydbase import twincore
+    #put_exception("Cannot Load twincore")
 
 # ------------------------------------------------------------------------
 
@@ -81,7 +87,7 @@ class pgweb(Gtk.VBox):
 
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#dd8822"))
 
-        hbox3 = Gtk.HBox()
+        #hbox3 = Gtk.HBox()
         #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
         #hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
         #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
@@ -171,15 +177,14 @@ class pgweb(Gtk.VBox):
         hbox4.pack_start(butt5, 0, 0, 0)
 
         #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
-
         #self.pack_start(hbox4, 0, 0, 2)
 
         self.treeview3 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview3.setcallb(self.treesel)
 
-        scroll2 = Gtk.ScrolledWindow()
-        scroll2.add(self.treeview3)
-        frame3 = Gtk.Frame(); frame3.add(scroll2)
+        scroll2a = Gtk.ScrolledWindow()
+        scroll2a.add(self.treeview3)
+        frame3 = Gtk.Frame(); frame3.add(scroll2a)
         #self.pack_start(frame3, 1, 1, 2)
 
         #self.edview = SimpleEdit()
@@ -193,8 +198,10 @@ class pgweb(Gtk.VBox):
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
             self.brow_win = brow_win()
+            #self.brow_win = Gtk.Label("No WebView Available.")
             #print("dir", dir(self.brow_win))
             #self.brow_win.load_uri("file://" + self.fname)
+            pass
         except:
             #self.brow_win = Gtk.Label("No WebView Available.")
             put_exception("WebView load")
@@ -202,7 +209,7 @@ class pgweb(Gtk.VBox):
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();
         frame4.add(scrolled_window)
-        vbox5.pack_start(frame4, 1,1,0)
+        vbox5.pack_start(frame4, 1, 1, 0)
         vpaned.add(vbox5)
 
         #self.brow_win.override_background_color(
@@ -210,8 +217,7 @@ class pgweb(Gtk.VBox):
 
         #webview.load_uri("https://google.com")
         scrolled_window.add(self.brow_win)
-        self.pack_start(scrolled_window, 1, 1, 2)
-
+        #self.pack_start(scrolled_window, 1, 1, 2)
         #self.status = Gtk.Label(" Status: ")
         #self.pack_start(self.status, 0, 0, 2)
 

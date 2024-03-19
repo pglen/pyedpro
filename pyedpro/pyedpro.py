@@ -102,14 +102,14 @@ from gi.repository import GObject
 
 orgbase = os.getcwd()
 #print("cwd", orgbase)
+#os.chdir(basedir)
 
 basedir = os.path.dirname(os.path.realpath(__file__))
 #print("file dir", basedir)
-#os.chdir(basedir)
-
-#sys.path.append(basedir + os.sep)
-#sys.path.append(basedir + os.sep + "pycommon")
-#sys.path.append(basedir + os.sep + "pedlib")
+sys.path.append(basedir + os.sep)
+sys.path.append(basedir + os.sep + "pycommon")
+sys.path.append(basedir + os.sep + "pedlib")
+#sys.path.append(basedir + os.sep + ".." + os.sep + "pycommon")
 
 #print("pyedpro path", sys.path)
 
@@ -146,8 +146,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.3.2"
-BUILDDATE   = "Sun 17.Mar.2024"
+VERSION     = "3.3.3"
+BUILDDATE   = "Tue 19.Mar.2024"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

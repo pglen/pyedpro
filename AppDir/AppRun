@@ -1,4 +1,0 @@
-#!/bin/bash
-#ls
-pwd
-$APPDIR/pyedpro.py

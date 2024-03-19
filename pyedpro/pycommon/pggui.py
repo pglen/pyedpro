@@ -17,8 +17,10 @@ gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
 realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
-sys.path.append(realinc)
+if realinc not in sys.path:
+    sys.path.append(realinc)
 
+#print("import", __file__)
 import pgutils
 import pgsimp
 

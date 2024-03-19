@@ -46,7 +46,11 @@ plugin_list = []
 
 def     load_plugins():
 
+    if not os.path.isdir(pedconfig.conf.plugins_dir):
+        os.mkdir(pedconfig.conf.plugins_dir)
+
     sys.path.append(pedconfig.conf.plugins_dir)
+
     for aa in os.listdir(pedconfig.conf.plugins_dir):
         if aa[-3:] == ".py":
             modname =  aa[:-3]

@@ -18,11 +18,14 @@ from gi.repository import GObject
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
-import cairo
+realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
+if realinc not in sys.path:
+    sys.path.append(realinc)
 
+import cairo
 import pgutils
 import pgsimp
-from sutil import *
+import sutil
 
 class smallbutt(Gtk.EventBox):
 

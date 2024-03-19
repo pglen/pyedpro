@@ -11,6 +11,12 @@ from gi.repository import Pango
 
 #print(sys.path)
 
+realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + "../pycommon")
+if realinc not in sys.path:
+    sys.path.append(realinc)
+
+#print("import", __file__)
+
 from pedlib import pedconfig
 
 # Into our name space
@@ -22,23 +28,47 @@ from pedlib.pedofd import *
 
 #print(sys.path)
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
-
+from pycommon import pgsimp
+from pycommon import pggui
 from pycommon import pgbutt
 from pycommon import pgtextview
 
 try:
-    # This is a copy of the pydbase -- refresh when needed
-    #np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + "pydbase"
-    #print(np)
-    #sys.path.append(np)
-    #from pydbase
-    #import twinbase
-    #from pydbase
+    #from pydbase import dbutils
+    #from pydbase import twinbase
     from pydbase import twincore
+
+    #print("pednotes", sys.path)
+    #print(os.getcwd())
 except:
-    print("Cannot import twincore / twinbase", sys.exc_info())
+    try:
+        print("local")
+        # This will change once the pydbase is out of dev stage
+        np = os.path.split(__file__)[0] + os.sep + '..' + os.sep + ".." + os.sep + ".."
+        #print(np)
+        #np =  '..' + os.sep + "pydbase"
+        sys.path.append(np)
+        np += os.sep + "pydbase"
+        sys.path.append(np)
+
+        np =  os.path.split(__file__)[0] + os.sep + '..' + os.sep + "pydbase"
+        sys.path.append(np)
+
+        #print(sys.path[-3:])
+
+        from pydbase import dbutils
+        from pydbase import twinbase
+        from pydbase import twincore
+    except:
+        np = os.path.split(__file__)[0]
+        sys.path.append(np)
+        sys.path.append(np + os.sep + "..")
+        print("files2", os.listdir(np))
+        print("special2", sys.path)
+
+        import dbutils
+        import twinbase
+        import twincore
 
 # ------------------------------------------------------------------------
 
@@ -146,46 +176,46 @@ class pgnotes(Gtk.VBox):
         self.pack_start(self.vpaned, 1, 1, 0)
 
         hbox13 = Gtk.HBox()
-        hbox13.pack_start(zSpacer(), 1, 1, 0)
+        hbox13.pack_start(pgsimp.zSpacer(), 1, 1, 0)
 
-        hbox13.pack_start(zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
         butt3 = pgbutt.smallbutt(" _New Item ", self.newitem, "Create new record")
         hbox13.pack_start(butt3, 0, 0, 0)
-        hbox13.pack_start(zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
 
         butt3x = pgbutt.smallbutt(" Find in Text ", self.findx, "Find in text")
         hbox13.pack_start(butt3x, 0, 0, 0)
-        hbox13.pack_start(zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
 
         butt3a = pgbutt.smallbutt(" Search All ", self.searchall, "Search ALL data")
 
         hbox13.pack_start(butt3a, 0, 0, 0)
 
-        hbox13.pack_start(zSpacer(), 0, 0, 0)
-        hbox13.pack_start(zSpacer(), 1, 1, 0)
+        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pgsimp.zSpacer(), 1, 1, 0)
 
         hbox13a = Gtk.HBox()
-        hbox13a.pack_start(zSpacer(), 1, 1, 0)
+        hbox13a.pack_start(pgsimp.zSpacer(), 1, 1, 0)
 
-        hbox13a.pack_start(zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
         butt11 = pgbutt.smallbutt(" Del Item ", self.delitem, "Delete item")
         hbox13a.pack_start(butt11, 0, 0, 0)
-        hbox13a.pack_start(zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
 
         butt12 = pgbutt.smallbutt(" Export ", self.export, "Export items")
         hbox13a.pack_start(butt12, 0, 0, 0)
 
-        hbox13a.pack_start(zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
 
         butt12a = pgbutt.smallbutt(" Import ", self.importx, "Import items")
         hbox13a.pack_start(butt12a, 0, 0, 0)
-        hbox13a.pack_start(zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
 
         butt12b = pgbutt.smallbutt(" Popout ", self.popx, "Pop out window")
         hbox13a.pack_start(butt12b, 0, 0, 0)
-        hbox13a.pack_start(zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
 
-        hbox13a.pack_start(zSpacer(), 1, 1, 0)
+        hbox13a.pack_start(pgsimp.zSpacer(), 1, 1, 0)
 
         self.pack_start(hbox13, 0, 0, 0)
         self.pack_start(hbox13a, 0, 0, 0)

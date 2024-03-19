@@ -1656,10 +1656,8 @@ class EdMainWindow():
         #warnings.simplefilter("ignore")
         but =   "Cancel", Gtk.ButtonsType.CANCEL,\
          "Open File", Gtk.ButtonsType.OK
-        fc = Gtk.FileChooserDialog("Open file", self.mywin, \
-             Gtk.FileChooserAction.OPEN  \
-            #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
-            , but)
+        fc = Gtk.FileChooserDialog(title="Open file", transient_for=self.mywin, \
+             action=Gtk.FileChooserAction.OPEN, buttons=but)
         #warnings.simplefilter("default")
 
         filters = []
