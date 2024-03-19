@@ -38,6 +38,8 @@ Pyedpro functions in a near identical manner
  The editor can be run from pip; from single packed executable; from git
 directory, and from packaged appimage.
 
+ The images are available from the git largefile subsystem.
+
 [See Doxygen generated Documentation on GitHub Pages](https://pglen.github.io/pyedpro/html/)
 
 ### Platforms
