@@ -8,5 +8,6 @@ ARCH=x86_64 appimagetool AppImage
 rm -rf AppImage
 rm -rf AppDir
 rm -rf appimage-build
+mv pyedpro.py-x86_64.AppImage ../largefiles
 
 # EOF

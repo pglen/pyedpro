@@ -40,13 +40,15 @@ pack:
 clean:
 	-find . -name "__pycache__" -exec rm -r {} \;
 	-find . -name "*.pyc" -exec rm -r {} \;
+	-find . -name "build" -exec rm -r {} \;
+	-find . -name "dist" -exec rm -r {} \;
 
 # Auto Checkin
 ifeq ("$(AUTOCHECK)","")
 AUTOCHECK=autocheck
 endif
 
-git:
+git: clean
 	git add .
 	git commit -m "$(AUTOCHECK)"
 	git push
