@@ -1684,10 +1684,8 @@ class EdMainWindow():
         #warnings.simplefilter(&#34;ignore&#34;)
         but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
          &#34;Open File&#34;, Gtk.ButtonsType.OK
-        fc = Gtk.FileChooserDialog(&#34;Open file&#34;, self.mywin, \
-             Gtk.FileChooserAction.OPEN  \
-            #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
-            , but)
+        fc = Gtk.FileChooserDialog(title=&#34;Open file&#34;, transient_for=self.mywin, \
+             action=Gtk.FileChooserAction.OPEN, buttons=but)
         #warnings.simplefilter(&#34;default&#34;)
 
         filters = []
@@ -4572,10 +4570,8 @@ def handler_tick(arg, arg2):
         #warnings.simplefilter(&#34;ignore&#34;)
         but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
          &#34;Open File&#34;, Gtk.ButtonsType.OK
-        fc = Gtk.FileChooserDialog(&#34;Open file&#34;, self.mywin, \
-             Gtk.FileChooserAction.OPEN  \
-            #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
-            , but)
+        fc = Gtk.FileChooserDialog(title=&#34;Open file&#34;, transient_for=self.mywin, \
+             action=Gtk.FileChooserAction.OPEN, buttons=but)
         #warnings.simplefilter(&#34;default&#34;)
 
         filters = []
@@ -6894,10 +6890,8 @@ def handler_tick(arg, arg2):
     #warnings.simplefilter(&#34;ignore&#34;)
     but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
      &#34;Open File&#34;, Gtk.ButtonsType.OK
-    fc = Gtk.FileChooserDialog(&#34;Open file&#34;, self.mywin, \
-         Gtk.FileChooserAction.OPEN  \
-        #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
-        , but)
+    fc = Gtk.FileChooserDialog(title=&#34;Open file&#34;, transient_for=self.mywin, \
+         action=Gtk.FileChooserAction.OPEN, buttons=but)
     #warnings.simplefilter(&#34;default&#34;)
 
     filters = []

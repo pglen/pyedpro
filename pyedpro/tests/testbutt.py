@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pdb
 import sys, os
 
@@ -5,16 +7,13 @@ import gi; gi.require_version("Gtk", "3.0")
 
 #pdb.run("from gi.repository import Gtk")
 
-#add_accelerator
-
 gi.require_version("Gtk", "3.0")
-gi.require_version("Gdk", "3.0")
 
+from gi.repository import Gtk
 from gi.repository import GObject
 from gi.repository import GLib
 from gi.repository import Gio
 from gi.repository import Gdk
-from gi.repository import Gtk
 
 sys.path.append('.' + os.sep + "pycommon")
 
