@@ -352,8 +352,10 @@ def find_show(self, self2):
         wxx, wyy = self2.mained.mywin.get_size()
         myww = 3 * wxx / 8; myhh = 3 * wyy / 8
         win2.set_default_size(myww, myhh)
-        win2.move(sxx + wxx - (myww  + self.xnum), \
-                            syy + wyy - (myhh + self.xnum))
+        #win2.move(sxx + wxx - (myww  + self.xnum), \
+        #                    syy + wyy - (myhh + self.xnum))
+        win2.move(sxx + wxx - (myww + 8 + self.xnum), \
+                            syy + 8 + self.xnum)
     else:
         # Restore old size / location
         win2.set_default_size(oldww, oldhh)

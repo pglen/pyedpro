@@ -1,0 +1,28 @@
+TODO
+
+  List of todos. Asterisk or hash next to the item means it is completed.
+
+#On doc unload clear functions field and local scpoe window
+#On doc load cd to file's dir
+
+On double click select on tabbed line: selection offset is wrong
+
+# On search - Left Arrow Right Arrow -- recall from global pool
+# Navigation for which function I am in
+
+# Navigation from search popup -> update function I am in
+
+# On clip copy, discard empty attempts, keep old
+# On macro, discard empty rec, keep old
+# Same macro for all doc
+# Shift tab does not erase indent when tab is in text
+
+# Search all buffers, no match, no popup.
+# On down arrow, indent faulty with tab
+# On double click selection is off with line with TAB
+
+# Upper lower case keystrokes in harmony - ctrl-alt U / L
+
+
+
+

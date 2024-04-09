@@ -1,0 +1,112 @@
+                                   INSTALL
+
+   Just copy the files anywhere and type ./pyedpro.py The only pre-requisites
+ are is to have the ./pyedlib sub directory in the same directory as pyedpro.py and
+ ../pycommon in the parent.
+
+  PyEdpro requires GTK3, PyGobject and related libraries. Most distros
+come with them pre-installed, so PyEdPro.py should run on most any system
+including Linux, Windoze and Macz. One of the motivations, of course is to
+have the same text editor on all platforms. Currently running (editing)
+on a chromebook in a debian window.
+
+ (PyEdPro is extensively tested on UBU/FEDO Linux, Raspberry PI and Windows)
+
+ Migration:
+
+    The GUI part is used by other project to accomodate thet the common GUI
+    items are moved to ../pycommon
+
+    check out 'pycommon' into ../
+
+ Updates:
+
+    3.8 py changes OK  (timer updates)
+    switched to python 3.x  (2.x will still works)
+    setup.py install updated
+
+  Obsolete:
+
+    .deb file created           (old)
+    .rpm file created           (old)
+
+To install pygtobj on python 2/3 issue the msys32/64 commands:
+
+    pacman -S mingw-w64-i686-gtk3 mingw-w64-i686-python2-gobject \
+                 mingw-w64-i686-python3-gobject
+
+Or on 64 bit:   (support incomplete as of dec/2018 - now complete (may/2019))
+
+    pacman -S mingw-w64-x86_64-python3-gobject python-gi-cairo
+
+To install pyedpro on Ubuntu (py2 and py3):
+
+    sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo \
+            gir1.2-gtk-3.0
+
+    Additional modules:
+        webview, webkit2
+
+To install pyedpro on Windows:
+
+ a.) MSYS
+
+    Go to http://www.msys2.org/ and download the x86_64 installer
+
+    Follow the instructions on the page for setting up the basic environment
+
+    Run C:\msys64\mingw64.exe - a terminal window should pop up
+
+    Execute pacman -Suy
+
+    Execute pacman -S mingw-w64-x86_64-gtk3 mingw-w64-x86_64-python3 \
+                         mingw-w64-x86_64-python3-gobject
+
+    To test that GTK 3 is working you can run gtk3-demo
+    To test Copy the hello.py script you created to C:\msys64\home\<username>
+
+    In the mingw32 terminal execute python3 hello.py - a window should appear.
+
+
+ a.) Windows Native
+
+    There is no good support for pyGObject in Windows. (2022) Some
+    fledglings, but no real progress, no stable way of deploying pyGTK/pyGObj.
+
+    #Download and install python 3.4
+    #Download and install pygobject for windows from sourceforge
+
+    This may change in the future; pygobject windows src build is broken
+
+  Links (may/2019):
+
+        Gobject:
+             https://sourceforge.net/projects/pygobjectwin32/
+
+    To display the keymap and documentation, PyEdPro needs pangview.py (included)
+
+If you do not have root access, PyEdPro will run without installation from any directory.
+   Make sure that the subdirectory pyedlib is under the directory PyEdPro.py is in.
+
+ You may also install PyEdPro in the user's private bin directory
+ (if it is in the user's path) with the command like cp -a * ~/bin
+
+Additional tweaks neede for different platforms:
+
+  On Unix you may need to execute dos2unix pyedpro.py to allow it to run from
+command line.
+
+  Some platforms will need the 'python-gi-cairo' module. The symptom is that the
+editor's text field remains blank. PyedPro will issue appropriate messages on the
+controlling terminal for the missing library, install it with:
+
+  sudo apt install python-gi-cairo
+
+ If you want to use the built in browser, install WebKit2
+
+  sudo apt install gir1.2-webkit2-4.0
+
+
+Enjoy.
+
+# EOF

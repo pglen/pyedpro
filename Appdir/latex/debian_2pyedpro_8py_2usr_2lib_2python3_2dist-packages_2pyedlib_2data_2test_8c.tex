@@ -1,0 +1,898 @@
+\hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c}{}\doxysection{debian/pyedpro.py/usr/lib/python3/dist-\/packages/pyedlib/data/test.c File Reference}
+\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c}\index{debian/pyedpro.py/usr/lib/python3/dist-\/packages/pyedlib/data/test.c@{debian/pyedpro.py/usr/lib/python3/dist-\/packages/pyedlib/data/test.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+RTOS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/event\+\_\+groups.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/spi\+\_\+master.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/rtc\+\_\+io.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}soc/gpio\+\_\+struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+console.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+vfs\+\_\+dev.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linenoise/linenoise.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}argtable3/argtable3.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+vfs\+\_\+fat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nvs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nvs\+\_\+flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sdkconfig.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+wifi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+wpa2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+event\+\_\+loop.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+attr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp32/ulp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+sleep.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+smartconfig.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+int\+\_\+wdt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+task\+\_\+wdt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+bt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+adc\+\_\+cal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ulp\+\_\+main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lwip/err.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lwip/apps/sntp.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lwip/sockets.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+pm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../../common/v000/cutils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../../common/v000/sutils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/wifi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/wlog.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/cpu\+\_\+load.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/httpd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/captdns.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/wcrdate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/wcmesht.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/gettime.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../common/v001/dst\+\_\+algo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lcd\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lcd7\+\_\+i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lcd\+\_\+imain.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2efb61bf99b38b4ad7111b1bbaa18453}{HUMIDITY\+\_\+\+COUNT}}~10
+\begin{DoxyCompactList}\small\item\em User settable parameters. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa8552f06ff0b40560ad5ca706c0e4144}{TEMP\+\_\+\+COUNT}}~8
+\begin{DoxyCompactList}\small\item\em How many secs between temp meas. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac18936cf577e69442364372ba913e01a}{BATT\+\_\+\+COUNT}}~12
+\begin{DoxyCompactList}\small\item\em How many secs between batt meas. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a65f99511ef13d74a1e9ae35f3722da0b}{BAD\+\_\+\+LIM}}~2 $\ast$ 60
+\begin{DoxyCompactList}\small\item\em Bad clock retry limit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a4682a25166da67e3c0570658359f1e3b}{BAD\+\_\+\+HOUR\+\_\+\+LIM}}~1 $\ast$ 60 $\ast$ 60
+\begin{DoxyCompactList}\small\item\em Bad clock hourly limit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a1601bfcb96c0961a65ea2e6a909ca59c}{BAD\+\_\+\+TRY\+\_\+\+CYCLES}}~6
+\begin{DoxyCompactList}\small\item\em Bad clock retry cycle limit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a44da941e3dc0f06f1de3e69769829d26}{BAD\+\_\+\+RETRY\+\_\+\+TRESH}}~2 $\ast$ 60
+\begin{DoxyCompactList}\small\item\em Bad counts subsystem. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a43213a45d8309f8185dac7f74fe2fa04}{BAD\+\_\+\+RETRY\+\_\+\+MAX}}~6
+\begin{DoxyCompactList}\small\item\em Bad clock retry cycle limit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2fcfd7a8180ede5abce6bafe6109df13}{BAD\+\_\+\+SHOW\+\_\+\+DOTS}}~3
+\begin{DoxyCompactList}\small\item\em Dots ON after this many bad tries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t ulp\+\_\+main\+\_\+bin\+\_\+start\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9434fc8cae6becf273d384dd686dfacd}{asm}} (\char`\"{}\+\_\+binary\+\_\+ulp\+\_\+main\+\_\+bin\+\_\+start\char`\"{})
+\item 
+const uint8\+\_\+t ulp\+\_\+main\+\_\+bin\+\_\+end\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a3543f503f287b8e8ae631ec264ddc20b}{asm}} (\char`\"{}\+\_\+binary\+\_\+ulp\+\_\+main\+\_\+bin\+\_\+end\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aeb7a694f8380cef7003ac9184229aa8d}{gl\+\_\+but\+\_\+down}} = 0
+\item 
+char $\ast$ \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a54a39f3f3c6a95eb8dade5e8525f2127}{build\+\_\+and\+\_\+ver}} = \char`\"{}Wi\+Fi\+Clock LCD Ver. 1.\+0 Built\+: Tue, 9 Apr\char`\"{}
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2232db5a502652c2ce32b09a11a0e3c3}{gl\+\_\+kiosk}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aad1eb02d5e1e8e122e7ec07998f11bba}{gl\+\_\+kiosk\+\_\+num}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a47fb090af2d450d1bf2d2c053defcd7e}{gl\+\_\+timer\+\_\+blink}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af51601a9fc8a9d609493073f7ac6688c}{gl\+\_\+wasboot}} = 1
+\begin{DoxyCompactList}\small\item\em Flag for identifing fresh boot. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a07f2ad9998d14a395a91045830365eed}{gl\+\_\+temp\+\_\+calib}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad1c6904aa51e2b37074372718cc7448c}{gl\+\_\+celsius}} = false
+\begin{DoxyCompactList}\small\item\em 12 hour default, DST default, count up limit \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5451c1345945bf995900a999a56a17ca}{gl\+\_\+var\+\_\+24}} = false
+\begin{DoxyCompactList}\small\item\em Flag for 12/24 \mbox{[}24 if true\mbox{]}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aca3324ebc4b3fe1a70ba9345607374a5}{gl\+\_\+countlim}} = 24 $\ast$ 60 $\ast$ 60
+\item 
+uint64\+\_\+t \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ae61ca8f352c81afd55d030b451b423b8}{gl\+\_\+lastserve}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac473e4c903256146892ae2c3b63eb171}{gl\+\_\+last\+\_\+try}} = 0
+\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aedf02e96ebebacb227b3747af61a8f25}{gl\+\_\+tz}} \mbox{[}12\mbox{]} = \char`\"{}EST+5DST\char`\"{}
+\begin{DoxyCompactList}\small\item\em TZ val. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af0225ebfc6c258c531ba1e31e0091ae6}{gl\+\_\+cus}} \mbox{[}12\mbox{]} = \char`\"{}EST+5\char`\"{}
+\begin{DoxyCompactList}\small\item\em TZ value. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab91e7016288e948d391c7a17b9f7cf98}{gl\+\_\+colnm}} \mbox{[}12\mbox{]} = \char`\"{}WW\char`\"{}
+\begin{DoxyCompactList}\small\item\em Color name. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a09ed7e476b5873a01040e964a1b2a86e}{gl\+\_\+sernm}} \mbox{[}24\mbox{]} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Custom server name. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a27c267e505c93005d63d75865a0795b1}{gl\+\_\+prefnm}} \mbox{[}24\mbox{]} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Preferred. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac5c5bdda042ea91a1263b99980fc024e}{gl\+\_\+dst}} \mbox{[}12\mbox{]} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em DST on off aut. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a6417dac9c4009d6d54842bce24e97367}{gl\+\_\+cust\+\_\+ip}} \mbox{[}24\mbox{]} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Custom IP. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a11f92fd7ccbc59681adf67c97df75bec}{gl\+\_\+cust\+\_\+ip2}} \mbox{[}24\mbox{]} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Custom IP2. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aed3130017b8c97c830af96c653f0269c}{gl\+\_\+cust\+\_\+ip3}} \mbox{[}24\mbox{]} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Custom IP3. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa896f17b9b127a9939565c4b02eae043}{gl\+\_\+sel\+\_\+ip}} \mbox{[}24\mbox{]} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Selected IP. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac1305fd93d34f145948d5ccb29154018}{gl\+\_\+other\+\_\+nm}} \mbox{[}36\mbox{]} = \char`\"{}\char`\"{}
+\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad3fbcf8b333ce0a98f1d05fd310c1988}{gl\+\_\+other\+\_\+pa}} \mbox{[}36\mbox{]} = \char`\"{}\char`\"{}
+\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5f2a9bf92625c0f4b9653bdf6736fa60}{gl\+\_\+other\+\_\+nm2}} \mbox{[}36\mbox{]} = \char`\"{}\char`\"{}
+\item 
+char \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9783e4d379534c12aafff718889e9a45}{gl\+\_\+other\+\_\+pa2}} \mbox{[}36\mbox{]} = \char`\"{}\char`\"{}
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5771725c8a79930d09a59e42d0d7f66c}{gl\+\_\+other}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acc00f583f81fb24e18fec78e63662225}{gl\+\_\+bright\+\_\+per}} = 20
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a442ef9bec1e24dfbd31edb1ee45f9565}{gl\+\_\+custz}} = 0
+\begin{DoxyCompactList}\small\item\em Custom time zone OK. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab306b894e6d2c86f03b56c7217ade03d}{gl\+\_\+cuscol}} = 0
+\begin{DoxyCompactList}\small\item\em Custom color OK. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8674a64e12ce6858b4a5852cc5363e24}{gl\+\_\+custser}} = 0
+\begin{DoxyCompactList}\small\item\em Custom time server OK. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_adb85cce5a7d449631465d6663b8c1ce7}{gl\+\_\+manual}} = 0
+\begin{DoxyCompactList}\small\item\em If manual override. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af778aa6ad167acf5e08cc0005e243b73}{gl\+\_\+dst\+\_\+flag}} = 0
+\begin{DoxyCompactList}\small\item\em DST flag. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a85e28a0051b65b3b76473095dd23417b}{gl\+\_\+leadz}} = 0
+\begin{DoxyCompactList}\small\item\em Leading zero showing. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aff72f74a71ede36e678b4928daccfe9c}{gl\+\_\+rr}} = 255
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9d68564f8bea8c4e1f04655ff08cdc1c}{gl\+\_\+gg}} = 255
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a025df8f3869895b9ec88a1188bb606b2}{gl\+\_\+bb}} = 255
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a58e63fc67b4e5a9f4573677dca02695e}{gl\+\_\+crr}} = 255
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5b3a0fca4878588a1e962a28c9277e99}{gl\+\_\+cgg}} = 255
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8806614b460bb8fad02ef09767d15f60}{gl\+\_\+cbb}} = 255
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a610192b5870986936b65dfa03423a1a4}{gl\+\_\+nodots}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aba687ed6d293375a24e497616a9ec781}{gl\+\_\+attention}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_abc4d28092091af2f2619dca2aab94be0}{gl\+\_\+effect}} = 0
+\begin{DoxyCompactList}\small\item\em Effect in operation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a504d67046fed72993faf6dbf91c27f0c}{gl\+\_\+restart\+\_\+ntp}} = 0
+\begin{DoxyCompactList}\small\item\em Keep going with NTP. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5d83a6a6bc54383fae842cfa2c1c6d61}{gl\+\_\+countup\+\_\+on}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad19b4ff4d14b18f25175307f70da8471}{gl\+\_\+wiflag}} = 1
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Sensors and Power}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a16c43a4e4c425027e55bd952451f1ad5}{gl\+\_\+temp\+\_\+cal}} = 0
+\begin{DoxyCompactList}\small\item\em Calibration temp \%. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac23938a515a2e004f5d1630058d7ea68}{gl\+\_\+humi\+\_\+cal}} = 0
+\begin{DoxyCompactList}\small\item\em Calibration humidity \&. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa183342fe91dd56b42e84f71ebde7ee9}{gl\+\_\+cont\+\_\+cal}} = 0
+\begin{DoxyCompactList}\small\item\em Calibration humidity \&. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a6f11ca88624af75cf943aab5f7481604}{gl\+\_\+minmod}} = 0
+\begin{DoxyCompactList}\small\item\em Minute mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac99917653188618f21b3bd9abb98c422}{gl\+\_\+humioff}} = 0
+\begin{DoxyCompactList}\small\item\em Humidity sensor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aac2b5c2cadf94c7a7d48bddf2cff788c}{gl\+\_\+tempoff}} = 0
+\begin{DoxyCompactList}\small\item\em Temperature sensor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a53e719055a6a81373684c9b7af03faba}{gl\+\_\+modem\+\_\+on}} = 0
+\begin{DoxyCompactList}\small\item\em Modem \mbox{[}RF\mbox{]} on. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a98ed14e08b1c7e0c5d2a798ee2222ea9}{gl\+\_\+bad\+\_\+fmode}} = 0
+\begin{DoxyCompactList}\small\item\em Are we in failure mode? \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a52efdf9d6f9a8bc526e918f45807da65}{gl\+\_\+rf\+\_\+pow}} = RFPOW\+\_\+\+HIGH
+\begin{DoxyCompactList}\small\item\em RF power level. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acc9be4cabf98a7570bb24b71e5be6333}{gl\+\_\+wifiatt}} = WIFI\+\_\+\+ATTEM1
+\begin{DoxyCompactList}\small\item\em Number of wifi attempts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Sleep related}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_abc46f1b4a7ce12bda6ed9b329f3acff8}{gl\+\_\+modemsleep}} = 0
+\item 
+uint \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad4967a62833741c3e4a3a44e1c93f9ef}{gl\+\_\+modemcnt}} = 0
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Countdown countup timer related}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab2fc5e1b701c13413bbbc95c949c9400}{gl\+\_\+countup}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a1e4d939e3641ba56872a2f3357876c54}{gl\+\_\+timer\+\_\+inits}} = 30
+\begin{DoxyCompactList}\small\item\em Initial timer value in secs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8f8d4241c1fcfb316868d2483812b01e}{gl\+\_\+timer\+\_\+initm}} = 0
+\begin{DoxyCompactList}\small\item\em Initial timer value in mins. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acb9450e69d96a35730774411ae0efb8e}{gl\+\_\+timer\+\_\+on}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ae3ce92d46cfd1eef9351b756aec7acb7}{gl\+\_\+timer\+\_\+go}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a997b646594e632adf1bf2bcc0ff89693}{gl\+\_\+timer\+\_\+mins}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2f41744cf042f9d8c2c8775bc8479026}{gl\+\_\+timer\+\_\+secs}} = 0
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Count\+Up timer related}\par
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a3400e8ce92d2a4c9c6eec53bc7b4adae}{gl\+\_\+uptimer\+\_\+on}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ade6529ba54e84b4cc13d42de3fb52842}{gl\+\_\+uptimer\+\_\+go}} = false
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a142344bb004e4fb95541690dc73096a3}{gl\+\_\+uptimer\+\_\+secs}} = 0
+\item 
+int \mbox{\hyperlink{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af32fdaba6c9cca2a6d2c25ff355ec187}{gl\+\_\+uptimer\+\_\+mins}} = 0
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a4682a25166da67e3c0570658359f1e3b}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a4682a25166da67e3c0570658359f1e3b}} 
+\index{test.c@{test.c}!BAD\_HOUR\_LIM@{BAD\_HOUR\_LIM}}
+\index{BAD\_HOUR\_LIM@{BAD\_HOUR\_LIM}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{BAD\_HOUR\_LIM}{BAD\_HOUR\_LIM}}
+{\footnotesize\ttfamily \#define BAD\+\_\+\+HOUR\+\_\+\+LIM~1 $\ast$ 60 $\ast$ 60}
+
+
+
+Bad clock hourly limit. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a65f99511ef13d74a1e9ae35f3722da0b}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a65f99511ef13d74a1e9ae35f3722da0b}} 
+\index{test.c@{test.c}!BAD\_LIM@{BAD\_LIM}}
+\index{BAD\_LIM@{BAD\_LIM}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{BAD\_LIM}{BAD\_LIM}}
+{\footnotesize\ttfamily \#define BAD\+\_\+\+LIM~2 $\ast$ 60}
+
+
+
+Bad clock retry limit. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a43213a45d8309f8185dac7f74fe2fa04}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a43213a45d8309f8185dac7f74fe2fa04}} 
+\index{test.c@{test.c}!BAD\_RETRY\_MAX@{BAD\_RETRY\_MAX}}
+\index{BAD\_RETRY\_MAX@{BAD\_RETRY\_MAX}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{BAD\_RETRY\_MAX}{BAD\_RETRY\_MAX}}
+{\footnotesize\ttfamily \#define BAD\+\_\+\+RETRY\+\_\+\+MAX~6}
+
+
+
+Bad clock retry cycle limit. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a44da941e3dc0f06f1de3e69769829d26}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a44da941e3dc0f06f1de3e69769829d26}} 
+\index{test.c@{test.c}!BAD\_RETRY\_TRESH@{BAD\_RETRY\_TRESH}}
+\index{BAD\_RETRY\_TRESH@{BAD\_RETRY\_TRESH}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{BAD\_RETRY\_TRESH}{BAD\_RETRY\_TRESH}}
+{\footnotesize\ttfamily \#define BAD\+\_\+\+RETRY\+\_\+\+TRESH~2 $\ast$ 60}
+
+
+
+Bad counts subsystem. 
+
+Bad clock retry limit (2 minutes) \mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2fcfd7a8180ede5abce6bafe6109df13}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2fcfd7a8180ede5abce6bafe6109df13}} 
+\index{test.c@{test.c}!BAD\_SHOW\_DOTS@{BAD\_SHOW\_DOTS}}
+\index{BAD\_SHOW\_DOTS@{BAD\_SHOW\_DOTS}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{BAD\_SHOW\_DOTS}{BAD\_SHOW\_DOTS}}
+{\footnotesize\ttfamily \#define BAD\+\_\+\+SHOW\+\_\+\+DOTS~3}
+
+
+
+Dots ON after this many bad tries. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a1601bfcb96c0961a65ea2e6a909ca59c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a1601bfcb96c0961a65ea2e6a909ca59c}} 
+\index{test.c@{test.c}!BAD\_TRY\_CYCLES@{BAD\_TRY\_CYCLES}}
+\index{BAD\_TRY\_CYCLES@{BAD\_TRY\_CYCLES}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{BAD\_TRY\_CYCLES}{BAD\_TRY\_CYCLES}}
+{\footnotesize\ttfamily \#define BAD\+\_\+\+TRY\+\_\+\+CYCLES~6}
+
+
+
+Bad clock retry cycle limit. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac18936cf577e69442364372ba913e01a}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac18936cf577e69442364372ba913e01a}} 
+\index{test.c@{test.c}!BATT\_COUNT@{BATT\_COUNT}}
+\index{BATT\_COUNT@{BATT\_COUNT}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{BATT\_COUNT}{BATT\_COUNT}}
+{\footnotesize\ttfamily \#define BATT\+\_\+\+COUNT~12}
+
+
+
+How many secs between batt meas. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2efb61bf99b38b4ad7111b1bbaa18453}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2efb61bf99b38b4ad7111b1bbaa18453}} 
+\index{test.c@{test.c}!HUMIDITY\_COUNT@{HUMIDITY\_COUNT}}
+\index{HUMIDITY\_COUNT@{HUMIDITY\_COUNT}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{HUMIDITY\_COUNT}{HUMIDITY\_COUNT}}
+{\footnotesize\ttfamily \#define HUMIDITY\+\_\+\+COUNT~10}
+
+
+
+User settable parameters. 
+
+How many secs between humidity meas. \mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa8552f06ff0b40560ad5ca706c0e4144}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa8552f06ff0b40560ad5ca706c0e4144}} 
+\index{test.c@{test.c}!TEMP\_COUNT@{TEMP\_COUNT}}
+\index{TEMP\_COUNT@{TEMP\_COUNT}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{TEMP\_COUNT}{TEMP\_COUNT}}
+{\footnotesize\ttfamily \#define TEMP\+\_\+\+COUNT~8}
+
+
+
+How many secs between temp meas. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a3543f503f287b8e8ae631ec264ddc20b}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a3543f503f287b8e8ae631ec264ddc20b}} 
+\index{test.c@{test.c}!asm@{asm}}
+\index{asm@{asm}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{asm()}{asm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const uint8\+\_\+t ulp\+\_\+main\+\_\+bin\+\_\+end \mbox{[}$\,$\mbox{]} asm (\begin{DoxyParamCaption}\item[{\char`\"{}\+\_\+binary\+\_\+ulp\+\_\+main\+\_\+bin\+\_\+end\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9434fc8cae6becf273d384dd686dfacd}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9434fc8cae6becf273d384dd686dfacd}} 
+\index{test.c@{test.c}!asm@{asm}}
+\index{asm@{asm}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{asm()}{asm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const uint8\+\_\+t ulp\+\_\+main\+\_\+bin\+\_\+start \mbox{[}$\,$\mbox{]} asm (\begin{DoxyParamCaption}\item[{\char`\"{}\+\_\+binary\+\_\+ulp\+\_\+main\+\_\+bin\+\_\+start\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a54a39f3f3c6a95eb8dade5e8525f2127}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a54a39f3f3c6a95eb8dade5e8525f2127}} 
+\index{test.c@{test.c}!build\_and\_ver@{build\_and\_ver}}
+\index{build\_and\_ver@{build\_and\_ver}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{build\_and\_ver}{build\_and\_ver}}
+{\footnotesize\ttfamily char$\ast$ build\+\_\+and\+\_\+ver = \char`\"{}Wi\+Fi\+Clock LCD Ver. 1.\+0 Built\+: Tue, 9 Apr\char`\"{}}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aba687ed6d293375a24e497616a9ec781}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aba687ed6d293375a24e497616a9ec781}} 
+\index{test.c@{test.c}!gl\_attention@{gl\_attention}}
+\index{gl\_attention@{gl\_attention}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_attention}{gl\_attention}}
+{\footnotesize\ttfamily int gl\+\_\+attention = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a98ed14e08b1c7e0c5d2a798ee2222ea9}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a98ed14e08b1c7e0c5d2a798ee2222ea9}} 
+\index{test.c@{test.c}!gl\_bad\_fmode@{gl\_bad\_fmode}}
+\index{gl\_bad\_fmode@{gl\_bad\_fmode}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_bad\_fmode}{gl\_bad\_fmode}}
+{\footnotesize\ttfamily int gl\+\_\+bad\+\_\+fmode = 0}
+
+
+
+Are we in failure mode? 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a025df8f3869895b9ec88a1188bb606b2}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a025df8f3869895b9ec88a1188bb606b2}} 
+\index{test.c@{test.c}!gl\_bb@{gl\_bb}}
+\index{gl\_bb@{gl\_bb}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_bb}{gl\_bb}}
+{\footnotesize\ttfamily int gl\+\_\+bb = 255}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acc00f583f81fb24e18fec78e63662225}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acc00f583f81fb24e18fec78e63662225}} 
+\index{test.c@{test.c}!gl\_bright\_per@{gl\_bright\_per}}
+\index{gl\_bright\_per@{gl\_bright\_per}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_bright\_per}{gl\_bright\_per}}
+{\footnotesize\ttfamily int gl\+\_\+bright\+\_\+per = 20}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aeb7a694f8380cef7003ac9184229aa8d}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aeb7a694f8380cef7003ac9184229aa8d}} 
+\index{test.c@{test.c}!gl\_but\_down@{gl\_but\_down}}
+\index{gl\_but\_down@{gl\_but\_down}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_but\_down}{gl\_but\_down}}
+{\footnotesize\ttfamily int gl\+\_\+but\+\_\+down = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8806614b460bb8fad02ef09767d15f60}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8806614b460bb8fad02ef09767d15f60}} 
+\index{test.c@{test.c}!gl\_cbb@{gl\_cbb}}
+\index{gl\_cbb@{gl\_cbb}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cbb}{gl\_cbb}}
+{\footnotesize\ttfamily int gl\+\_\+cbb = 255}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad1c6904aa51e2b37074372718cc7448c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad1c6904aa51e2b37074372718cc7448c}} 
+\index{test.c@{test.c}!gl\_celsius@{gl\_celsius}}
+\index{gl\_celsius@{gl\_celsius}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_celsius}{gl\_celsius}}
+{\footnotesize\ttfamily int gl\+\_\+celsius = false}
+
+
+
+12 hour default, DST default, count up limit 
+
+Show in celsius else fahrenheit \mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5b3a0fca4878588a1e962a28c9277e99}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5b3a0fca4878588a1e962a28c9277e99}} 
+\index{test.c@{test.c}!gl\_cgg@{gl\_cgg}}
+\index{gl\_cgg@{gl\_cgg}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cgg}{gl\_cgg}}
+{\footnotesize\ttfamily int gl\+\_\+cgg = 255}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab91e7016288e948d391c7a17b9f7cf98}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab91e7016288e948d391c7a17b9f7cf98}} 
+\index{test.c@{test.c}!gl\_colnm@{gl\_colnm}}
+\index{gl\_colnm@{gl\_colnm}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_colnm}{gl\_colnm}}
+{\footnotesize\ttfamily char gl\+\_\+colnm\mbox{[}12\mbox{]} = \char`\"{}WW\char`\"{}}
+
+
+
+Color name. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa183342fe91dd56b42e84f71ebde7ee9}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa183342fe91dd56b42e84f71ebde7ee9}} 
+\index{test.c@{test.c}!gl\_cont\_cal@{gl\_cont\_cal}}
+\index{gl\_cont\_cal@{gl\_cont\_cal}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cont\_cal}{gl\_cont\_cal}}
+{\footnotesize\ttfamily int gl\+\_\+cont\+\_\+cal = 0}
+
+
+
+Calibration humidity \&. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aca3324ebc4b3fe1a70ba9345607374a5}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aca3324ebc4b3fe1a70ba9345607374a5}} 
+\index{test.c@{test.c}!gl\_countlim@{gl\_countlim}}
+\index{gl\_countlim@{gl\_countlim}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_countlim}{gl\_countlim}}
+{\footnotesize\ttfamily int gl\+\_\+countlim = 24 $\ast$ 60 $\ast$ 60}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab2fc5e1b701c13413bbbc95c949c9400}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab2fc5e1b701c13413bbbc95c949c9400}} 
+\index{test.c@{test.c}!gl\_countup@{gl\_countup}}
+\index{gl\_countup@{gl\_countup}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_countup}{gl\_countup}}
+{\footnotesize\ttfamily int gl\+\_\+countup = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5d83a6a6bc54383fae842cfa2c1c6d61}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5d83a6a6bc54383fae842cfa2c1c6d61}} 
+\index{test.c@{test.c}!gl\_countup\_on@{gl\_countup\_on}}
+\index{gl\_countup\_on@{gl\_countup\_on}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_countup\_on}{gl\_countup\_on}}
+{\footnotesize\ttfamily int gl\+\_\+countup\+\_\+on = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a58e63fc67b4e5a9f4573677dca02695e}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a58e63fc67b4e5a9f4573677dca02695e}} 
+\index{test.c@{test.c}!gl\_crr@{gl\_crr}}
+\index{gl\_crr@{gl\_crr}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_crr}{gl\_crr}}
+{\footnotesize\ttfamily int gl\+\_\+crr = 255}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af0225ebfc6c258c531ba1e31e0091ae6}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af0225ebfc6c258c531ba1e31e0091ae6}} 
+\index{test.c@{test.c}!gl\_cus@{gl\_cus}}
+\index{gl\_cus@{gl\_cus}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cus}{gl\_cus}}
+{\footnotesize\ttfamily char gl\+\_\+cus\mbox{[}12\mbox{]} = \char`\"{}EST+5\char`\"{}}
+
+
+
+TZ value. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab306b894e6d2c86f03b56c7217ade03d}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ab306b894e6d2c86f03b56c7217ade03d}} 
+\index{test.c@{test.c}!gl\_cuscol@{gl\_cuscol}}
+\index{gl\_cuscol@{gl\_cuscol}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cuscol}{gl\_cuscol}}
+{\footnotesize\ttfamily int gl\+\_\+cuscol = 0}
+
+
+
+Custom color OK. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a6417dac9c4009d6d54842bce24e97367}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a6417dac9c4009d6d54842bce24e97367}} 
+\index{test.c@{test.c}!gl\_cust\_ip@{gl\_cust\_ip}}
+\index{gl\_cust\_ip@{gl\_cust\_ip}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cust\_ip}{gl\_cust\_ip}}
+{\footnotesize\ttfamily char gl\+\_\+cust\+\_\+ip\mbox{[}24\mbox{]} = \char`\"{}\char`\"{}}
+
+
+
+Custom IP. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a11f92fd7ccbc59681adf67c97df75bec}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a11f92fd7ccbc59681adf67c97df75bec}} 
+\index{test.c@{test.c}!gl\_cust\_ip2@{gl\_cust\_ip2}}
+\index{gl\_cust\_ip2@{gl\_cust\_ip2}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cust\_ip2}{gl\_cust\_ip2}}
+{\footnotesize\ttfamily char gl\+\_\+cust\+\_\+ip2\mbox{[}24\mbox{]} = \char`\"{}\char`\"{}}
+
+
+
+Custom IP2. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aed3130017b8c97c830af96c653f0269c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aed3130017b8c97c830af96c653f0269c}} 
+\index{test.c@{test.c}!gl\_cust\_ip3@{gl\_cust\_ip3}}
+\index{gl\_cust\_ip3@{gl\_cust\_ip3}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_cust\_ip3}{gl\_cust\_ip3}}
+{\footnotesize\ttfamily char gl\+\_\+cust\+\_\+ip3\mbox{[}24\mbox{]} = \char`\"{}\char`\"{}}
+
+
+
+Custom IP3. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8674a64e12ce6858b4a5852cc5363e24}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8674a64e12ce6858b4a5852cc5363e24}} 
+\index{test.c@{test.c}!gl\_custser@{gl\_custser}}
+\index{gl\_custser@{gl\_custser}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_custser}{gl\_custser}}
+{\footnotesize\ttfamily int gl\+\_\+custser = 0}
+
+
+
+Custom time server OK. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a442ef9bec1e24dfbd31edb1ee45f9565}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a442ef9bec1e24dfbd31edb1ee45f9565}} 
+\index{test.c@{test.c}!gl\_custz@{gl\_custz}}
+\index{gl\_custz@{gl\_custz}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_custz}{gl\_custz}}
+{\footnotesize\ttfamily int gl\+\_\+custz = 0}
+
+
+
+Custom time zone OK. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac5c5bdda042ea91a1263b99980fc024e}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac5c5bdda042ea91a1263b99980fc024e}} 
+\index{test.c@{test.c}!gl\_dst@{gl\_dst}}
+\index{gl\_dst@{gl\_dst}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_dst}{gl\_dst}}
+{\footnotesize\ttfamily char gl\+\_\+dst\mbox{[}12\mbox{]} = \char`\"{}\char`\"{}}
+
+
+
+DST on off aut. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af778aa6ad167acf5e08cc0005e243b73}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af778aa6ad167acf5e08cc0005e243b73}} 
+\index{test.c@{test.c}!gl\_dst\_flag@{gl\_dst\_flag}}
+\index{gl\_dst\_flag@{gl\_dst\_flag}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_dst\_flag}{gl\_dst\_flag}}
+{\footnotesize\ttfamily int gl\+\_\+dst\+\_\+flag = 0}
+
+
+
+DST flag. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_abc4d28092091af2f2619dca2aab94be0}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_abc4d28092091af2f2619dca2aab94be0}} 
+\index{test.c@{test.c}!gl\_effect@{gl\_effect}}
+\index{gl\_effect@{gl\_effect}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_effect}{gl\_effect}}
+{\footnotesize\ttfamily int gl\+\_\+effect = 0}
+
+
+
+Effect in operation. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9d68564f8bea8c4e1f04655ff08cdc1c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9d68564f8bea8c4e1f04655ff08cdc1c}} 
+\index{test.c@{test.c}!gl\_gg@{gl\_gg}}
+\index{gl\_gg@{gl\_gg}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_gg}{gl\_gg}}
+{\footnotesize\ttfamily int gl\+\_\+gg = 255}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac23938a515a2e004f5d1630058d7ea68}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac23938a515a2e004f5d1630058d7ea68}} 
+\index{test.c@{test.c}!gl\_humi\_cal@{gl\_humi\_cal}}
+\index{gl\_humi\_cal@{gl\_humi\_cal}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_humi\_cal}{gl\_humi\_cal}}
+{\footnotesize\ttfamily int gl\+\_\+humi\+\_\+cal = 0}
+
+
+
+Calibration humidity \&. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac99917653188618f21b3bd9abb98c422}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac99917653188618f21b3bd9abb98c422}} 
+\index{test.c@{test.c}!gl\_humioff@{gl\_humioff}}
+\index{gl\_humioff@{gl\_humioff}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_humioff}{gl\_humioff}}
+{\footnotesize\ttfamily int gl\+\_\+humioff = 0}
+
+
+
+Humidity sensor. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2232db5a502652c2ce32b09a11a0e3c3}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2232db5a502652c2ce32b09a11a0e3c3}} 
+\index{test.c@{test.c}!gl\_kiosk@{gl\_kiosk}}
+\index{gl\_kiosk@{gl\_kiosk}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_kiosk}{gl\_kiosk}}
+{\footnotesize\ttfamily int gl\+\_\+kiosk = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aad1eb02d5e1e8e122e7ec07998f11bba}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aad1eb02d5e1e8e122e7ec07998f11bba}} 
+\index{test.c@{test.c}!gl\_kiosk\_num@{gl\_kiosk\_num}}
+\index{gl\_kiosk\_num@{gl\_kiosk\_num}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_kiosk\_num}{gl\_kiosk\_num}}
+{\footnotesize\ttfamily int gl\+\_\+kiosk\+\_\+num = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac473e4c903256146892ae2c3b63eb171}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac473e4c903256146892ae2c3b63eb171}} 
+\index{test.c@{test.c}!gl\_last\_try@{gl\_last\_try}}
+\index{gl\_last\_try@{gl\_last\_try}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_last\_try}{gl\_last\_try}}
+{\footnotesize\ttfamily int gl\+\_\+last\+\_\+try = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ae61ca8f352c81afd55d030b451b423b8}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ae61ca8f352c81afd55d030b451b423b8}} 
+\index{test.c@{test.c}!gl\_lastserve@{gl\_lastserve}}
+\index{gl\_lastserve@{gl\_lastserve}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_lastserve}{gl\_lastserve}}
+{\footnotesize\ttfamily uint64\+\_\+t gl\+\_\+lastserve = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a85e28a0051b65b3b76473095dd23417b}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a85e28a0051b65b3b76473095dd23417b}} 
+\index{test.c@{test.c}!gl\_leadz@{gl\_leadz}}
+\index{gl\_leadz@{gl\_leadz}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_leadz}{gl\_leadz}}
+{\footnotesize\ttfamily int gl\+\_\+leadz = 0}
+
+
+
+Leading zero showing. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_adb85cce5a7d449631465d6663b8c1ce7}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_adb85cce5a7d449631465d6663b8c1ce7}} 
+\index{test.c@{test.c}!gl\_manual@{gl\_manual}}
+\index{gl\_manual@{gl\_manual}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_manual}{gl\_manual}}
+{\footnotesize\ttfamily int gl\+\_\+manual = 0}
+
+
+
+If manual override. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a6f11ca88624af75cf943aab5f7481604}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a6f11ca88624af75cf943aab5f7481604}} 
+\index{test.c@{test.c}!gl\_minmod@{gl\_minmod}}
+\index{gl\_minmod@{gl\_minmod}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_minmod}{gl\_minmod}}
+{\footnotesize\ttfamily int gl\+\_\+minmod = 0}
+
+
+
+Minute mode. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a53e719055a6a81373684c9b7af03faba}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a53e719055a6a81373684c9b7af03faba}} 
+\index{test.c@{test.c}!gl\_modem\_on@{gl\_modem\_on}}
+\index{gl\_modem\_on@{gl\_modem\_on}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_modem\_on}{gl\_modem\_on}}
+{\footnotesize\ttfamily int gl\+\_\+modem\+\_\+on = 0}
+
+
+
+Modem \mbox{[}RF\mbox{]} on. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad4967a62833741c3e4a3a44e1c93f9ef}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad4967a62833741c3e4a3a44e1c93f9ef}} 
+\index{test.c@{test.c}!gl\_modemcnt@{gl\_modemcnt}}
+\index{gl\_modemcnt@{gl\_modemcnt}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_modemcnt}{gl\_modemcnt}}
+{\footnotesize\ttfamily uint gl\+\_\+modemcnt = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_abc46f1b4a7ce12bda6ed9b329f3acff8}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_abc46f1b4a7ce12bda6ed9b329f3acff8}} 
+\index{test.c@{test.c}!gl\_modemsleep@{gl\_modemsleep}}
+\index{gl\_modemsleep@{gl\_modemsleep}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_modemsleep}{gl\_modemsleep}}
+{\footnotesize\ttfamily int gl\+\_\+modemsleep = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a610192b5870986936b65dfa03423a1a4}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a610192b5870986936b65dfa03423a1a4}} 
+\index{test.c@{test.c}!gl\_nodots@{gl\_nodots}}
+\index{gl\_nodots@{gl\_nodots}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_nodots}{gl\_nodots}}
+{\footnotesize\ttfamily int gl\+\_\+nodots = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5771725c8a79930d09a59e42d0d7f66c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5771725c8a79930d09a59e42d0d7f66c}} 
+\index{test.c@{test.c}!gl\_other@{gl\_other}}
+\index{gl\_other@{gl\_other}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_other}{gl\_other}}
+{\footnotesize\ttfamily int gl\+\_\+other = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac1305fd93d34f145948d5ccb29154018}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ac1305fd93d34f145948d5ccb29154018}} 
+\index{test.c@{test.c}!gl\_other\_nm@{gl\_other\_nm}}
+\index{gl\_other\_nm@{gl\_other\_nm}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_other\_nm}{gl\_other\_nm}}
+{\footnotesize\ttfamily char gl\+\_\+other\+\_\+nm\mbox{[}36\mbox{]} = \char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5f2a9bf92625c0f4b9653bdf6736fa60}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5f2a9bf92625c0f4b9653bdf6736fa60}} 
+\index{test.c@{test.c}!gl\_other\_nm2@{gl\_other\_nm2}}
+\index{gl\_other\_nm2@{gl\_other\_nm2}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_other\_nm2}{gl\_other\_nm2}}
+{\footnotesize\ttfamily char gl\+\_\+other\+\_\+nm2\mbox{[}36\mbox{]} = \char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad3fbcf8b333ce0a98f1d05fd310c1988}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad3fbcf8b333ce0a98f1d05fd310c1988}} 
+\index{test.c@{test.c}!gl\_other\_pa@{gl\_other\_pa}}
+\index{gl\_other\_pa@{gl\_other\_pa}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_other\_pa}{gl\_other\_pa}}
+{\footnotesize\ttfamily char gl\+\_\+other\+\_\+pa\mbox{[}36\mbox{]} = \char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9783e4d379534c12aafff718889e9a45}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a9783e4d379534c12aafff718889e9a45}} 
+\index{test.c@{test.c}!gl\_other\_pa2@{gl\_other\_pa2}}
+\index{gl\_other\_pa2@{gl\_other\_pa2}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_other\_pa2}{gl\_other\_pa2}}
+{\footnotesize\ttfamily char gl\+\_\+other\+\_\+pa2\mbox{[}36\mbox{]} = \char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a27c267e505c93005d63d75865a0795b1}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a27c267e505c93005d63d75865a0795b1}} 
+\index{test.c@{test.c}!gl\_prefnm@{gl\_prefnm}}
+\index{gl\_prefnm@{gl\_prefnm}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_prefnm}{gl\_prefnm}}
+{\footnotesize\ttfamily char gl\+\_\+prefnm\mbox{[}24\mbox{]} = \char`\"{}\char`\"{}}
+
+
+
+Preferred. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a504d67046fed72993faf6dbf91c27f0c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a504d67046fed72993faf6dbf91c27f0c}} 
+\index{test.c@{test.c}!gl\_restart\_ntp@{gl\_restart\_ntp}}
+\index{gl\_restart\_ntp@{gl\_restart\_ntp}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_restart\_ntp}{gl\_restart\_ntp}}
+{\footnotesize\ttfamily int gl\+\_\+restart\+\_\+ntp = 0}
+
+
+
+Keep going with NTP. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a52efdf9d6f9a8bc526e918f45807da65}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a52efdf9d6f9a8bc526e918f45807da65}} 
+\index{test.c@{test.c}!gl\_rf\_pow@{gl\_rf\_pow}}
+\index{gl\_rf\_pow@{gl\_rf\_pow}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_rf\_pow}{gl\_rf\_pow}}
+{\footnotesize\ttfamily int gl\+\_\+rf\+\_\+pow = RFPOW\+\_\+\+HIGH}
+
+
+
+RF power level. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aff72f74a71ede36e678b4928daccfe9c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aff72f74a71ede36e678b4928daccfe9c}} 
+\index{test.c@{test.c}!gl\_rr@{gl\_rr}}
+\index{gl\_rr@{gl\_rr}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_rr}{gl\_rr}}
+{\footnotesize\ttfamily int gl\+\_\+rr = 255}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa896f17b9b127a9939565c4b02eae043}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aa896f17b9b127a9939565c4b02eae043}} 
+\index{test.c@{test.c}!gl\_sel\_ip@{gl\_sel\_ip}}
+\index{gl\_sel\_ip@{gl\_sel\_ip}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_sel\_ip}{gl\_sel\_ip}}
+{\footnotesize\ttfamily char gl\+\_\+sel\+\_\+ip\mbox{[}24\mbox{]} = \char`\"{}\char`\"{}}
+
+
+
+Selected IP. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a09ed7e476b5873a01040e964a1b2a86e}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a09ed7e476b5873a01040e964a1b2a86e}} 
+\index{test.c@{test.c}!gl\_sernm@{gl\_sernm}}
+\index{gl\_sernm@{gl\_sernm}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_sernm}{gl\_sernm}}
+{\footnotesize\ttfamily char gl\+\_\+sernm\mbox{[}24\mbox{]} = \char`\"{}\char`\"{}}
+
+
+
+Custom server name. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a16c43a4e4c425027e55bd952451f1ad5}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a16c43a4e4c425027e55bd952451f1ad5}} 
+\index{test.c@{test.c}!gl\_temp\_cal@{gl\_temp\_cal}}
+\index{gl\_temp\_cal@{gl\_temp\_cal}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_temp\_cal}{gl\_temp\_cal}}
+{\footnotesize\ttfamily int gl\+\_\+temp\+\_\+cal = 0}
+
+
+
+Calibration temp \%. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a07f2ad9998d14a395a91045830365eed}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a07f2ad9998d14a395a91045830365eed}} 
+\index{test.c@{test.c}!gl\_temp\_calib@{gl\_temp\_calib}}
+\index{gl\_temp\_calib@{gl\_temp\_calib}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_temp\_calib}{gl\_temp\_calib}}
+{\footnotesize\ttfamily float gl\+\_\+temp\+\_\+calib = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aac2b5c2cadf94c7a7d48bddf2cff788c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aac2b5c2cadf94c7a7d48bddf2cff788c}} 
+\index{test.c@{test.c}!gl\_tempoff@{gl\_tempoff}}
+\index{gl\_tempoff@{gl\_tempoff}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_tempoff}{gl\_tempoff}}
+{\footnotesize\ttfamily int gl\+\_\+tempoff = 0}
+
+
+
+Temperature sensor. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a47fb090af2d450d1bf2d2c053defcd7e}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a47fb090af2d450d1bf2d2c053defcd7e}} 
+\index{test.c@{test.c}!gl\_timer\_blink@{gl\_timer\_blink}}
+\index{gl\_timer\_blink@{gl\_timer\_blink}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_timer\_blink}{gl\_timer\_blink}}
+{\footnotesize\ttfamily int gl\+\_\+timer\+\_\+blink = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ae3ce92d46cfd1eef9351b756aec7acb7}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ae3ce92d46cfd1eef9351b756aec7acb7}} 
+\index{test.c@{test.c}!gl\_timer\_go@{gl\_timer\_go}}
+\index{gl\_timer\_go@{gl\_timer\_go}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_timer\_go}{gl\_timer\_go}}
+{\footnotesize\ttfamily int gl\+\_\+timer\+\_\+go = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8f8d4241c1fcfb316868d2483812b01e}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a8f8d4241c1fcfb316868d2483812b01e}} 
+\index{test.c@{test.c}!gl\_timer\_initm@{gl\_timer\_initm}}
+\index{gl\_timer\_initm@{gl\_timer\_initm}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_timer\_initm}{gl\_timer\_initm}}
+{\footnotesize\ttfamily int gl\+\_\+timer\+\_\+initm = 0}
+
+
+
+Initial timer value in mins. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a1e4d939e3641ba56872a2f3357876c54}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a1e4d939e3641ba56872a2f3357876c54}} 
+\index{test.c@{test.c}!gl\_timer\_inits@{gl\_timer\_inits}}
+\index{gl\_timer\_inits@{gl\_timer\_inits}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_timer\_inits}{gl\_timer\_inits}}
+{\footnotesize\ttfamily int gl\+\_\+timer\+\_\+inits = 30}
+
+
+
+Initial timer value in secs. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a997b646594e632adf1bf2bcc0ff89693}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a997b646594e632adf1bf2bcc0ff89693}} 
+\index{test.c@{test.c}!gl\_timer\_mins@{gl\_timer\_mins}}
+\index{gl\_timer\_mins@{gl\_timer\_mins}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_timer\_mins}{gl\_timer\_mins}}
+{\footnotesize\ttfamily int gl\+\_\+timer\+\_\+mins = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acb9450e69d96a35730774411ae0efb8e}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acb9450e69d96a35730774411ae0efb8e}} 
+\index{test.c@{test.c}!gl\_timer\_on@{gl\_timer\_on}}
+\index{gl\_timer\_on@{gl\_timer\_on}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_timer\_on}{gl\_timer\_on}}
+{\footnotesize\ttfamily int gl\+\_\+timer\+\_\+on = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2f41744cf042f9d8c2c8775bc8479026}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a2f41744cf042f9d8c2c8775bc8479026}} 
+\index{test.c@{test.c}!gl\_timer\_secs@{gl\_timer\_secs}}
+\index{gl\_timer\_secs@{gl\_timer\_secs}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_timer\_secs}{gl\_timer\_secs}}
+{\footnotesize\ttfamily int gl\+\_\+timer\+\_\+secs = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aedf02e96ebebacb227b3747af61a8f25}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_aedf02e96ebebacb227b3747af61a8f25}} 
+\index{test.c@{test.c}!gl\_tz@{gl\_tz}}
+\index{gl\_tz@{gl\_tz}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_tz}{gl\_tz}}
+{\footnotesize\ttfamily char gl\+\_\+tz\mbox{[}12\mbox{]} = \char`\"{}EST+5DST\char`\"{}}
+
+
+
+TZ val. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ade6529ba54e84b4cc13d42de3fb52842}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ade6529ba54e84b4cc13d42de3fb52842}} 
+\index{test.c@{test.c}!gl\_uptimer\_go@{gl\_uptimer\_go}}
+\index{gl\_uptimer\_go@{gl\_uptimer\_go}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_uptimer\_go}{gl\_uptimer\_go}}
+{\footnotesize\ttfamily int gl\+\_\+uptimer\+\_\+go = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af32fdaba6c9cca2a6d2c25ff355ec187}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af32fdaba6c9cca2a6d2c25ff355ec187}} 
+\index{test.c@{test.c}!gl\_uptimer\_mins@{gl\_uptimer\_mins}}
+\index{gl\_uptimer\_mins@{gl\_uptimer\_mins}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_uptimer\_mins}{gl\_uptimer\_mins}}
+{\footnotesize\ttfamily int gl\+\_\+uptimer\+\_\+mins = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a3400e8ce92d2a4c9c6eec53bc7b4adae}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a3400e8ce92d2a4c9c6eec53bc7b4adae}} 
+\index{test.c@{test.c}!gl\_uptimer\_on@{gl\_uptimer\_on}}
+\index{gl\_uptimer\_on@{gl\_uptimer\_on}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_uptimer\_on}{gl\_uptimer\_on}}
+{\footnotesize\ttfamily int gl\+\_\+uptimer\+\_\+on = false}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a142344bb004e4fb95541690dc73096a3}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a142344bb004e4fb95541690dc73096a3}} 
+\index{test.c@{test.c}!gl\_uptimer\_secs@{gl\_uptimer\_secs}}
+\index{gl\_uptimer\_secs@{gl\_uptimer\_secs}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_uptimer\_secs}{gl\_uptimer\_secs}}
+{\footnotesize\ttfamily int gl\+\_\+uptimer\+\_\+secs = 0}
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5451c1345945bf995900a999a56a17ca}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_a5451c1345945bf995900a999a56a17ca}} 
+\index{test.c@{test.c}!gl\_var\_24@{gl\_var\_24}}
+\index{gl\_var\_24@{gl\_var\_24}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_var\_24}{gl\_var\_24}}
+{\footnotesize\ttfamily int gl\+\_\+var\+\_\+24 = false}
+
+
+
+Flag for 12/24 \mbox{[}24 if true\mbox{]}. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af51601a9fc8a9d609493073f7ac6688c}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_af51601a9fc8a9d609493073f7ac6688c}} 
+\index{test.c@{test.c}!gl\_wasboot@{gl\_wasboot}}
+\index{gl\_wasboot@{gl\_wasboot}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_wasboot}{gl\_wasboot}}
+{\footnotesize\ttfamily int gl\+\_\+wasboot = 1}
+
+
+
+Flag for identifing fresh boot. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acc9be4cabf98a7570bb24b71e5be6333}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_acc9be4cabf98a7570bb24b71e5be6333}} 
+\index{test.c@{test.c}!gl\_wifiatt@{gl\_wifiatt}}
+\index{gl\_wifiatt@{gl\_wifiatt}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_wifiatt}{gl\_wifiatt}}
+{\footnotesize\ttfamily int gl\+\_\+wifiatt = WIFI\+\_\+\+ATTEM1}
+
+
+
+Number of wifi attempts. 
+
+\mbox{\Hypertarget{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad19b4ff4d14b18f25175307f70da8471}\label{debian_2pyedpro_8py_2usr_2lib_2python3_2dist-packages_2pyedlib_2data_2test_8c_ad19b4ff4d14b18f25175307f70da8471}} 
+\index{test.c@{test.c}!gl\_wiflag@{gl\_wiflag}}
+\index{gl\_wiflag@{gl\_wiflag}!test.c@{test.c}}
+\doxysubsubsection{\texorpdfstring{gl\_wiflag}{gl\_wiflag}}
+{\footnotesize\ttfamily int gl\+\_\+wiflag = 1}
+

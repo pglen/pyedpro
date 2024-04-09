@@ -1,0 +1,134 @@
+\hypertarget{md_README_autotoc_md10}{}\doxysection{Python editor.}\label{md_README_autotoc_md10}
+Welcome to Py\+Ed\+Pro. This is modern multi-\/platform editor. Simple, powerful, configurable, extendable. Goodies like macro recording / playback, spell check, column select, multiple clipboards, unlimited undo ... makes it an editor that I use every day.
+
+This project\textquotesingle{}s source is at -\/ \href{https://github.com/pglen/pyedpro}{\texttt{ https\+://github.\+com/pglen/pyedpro}}
+
+Working and tested platforms currently are\+: \begin{DoxyVerb}  Win 7 .. Win 10 ...
+  Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
+  Windows (Native) plus MSYS2, Mingw,
+  Raspberry PI 3, Raspberry PI 4, ...
+  Mac ** Some functions are disabled - in particular async processing
+\end{DoxyVerb}
+ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
+
+Pyedpro has\+: \begin{DoxyVerb}       o  macro recording/play,
+       o  search/replace,
+       o  functional navigation,
+       o  comment/string spell check,
+       o  full spell check, spell suggestion dialog
+       o  auto backup,
+       o  persistent undo/redo,  (undo beyond last save)
+       o  auto complete, auto correct,
+       o
+       o  ... and a lot more.
+\end{DoxyVerb}
+ It is fast, it is extendable. The editor has a table driven key mapping. One can easily edit the key map in keyhand.\+py, and the key actions in acthand.\+py The default key map resembles gedit / wed / etp / brief
+
+\href{https://pglen.github.io/pyedpro/html/}{\texttt{ See Doxygen generated Documentation on Git\+Hub Pages}}\hypertarget{md_README_autotoc_md11}{}\doxysubsection{Platforms}\label{md_README_autotoc_md11}
+I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10, and the Raspberry-\/\+Pi. It behaves consistently on all these platforms, it is an absolute joy to edit in a different platform without the learning curve of new keystrokes. If you want an editor that works the same way in all your workspaces, Py\+Ed\+Pro is the one.
+
+Py\+Ed\+Pro now is working good on the Mac. I installed homebrew, and got it to fire up. It was not a trivial exercise, as the Mac Pyg\+GOject did not do half of the stuff as the Linux version did. No asynchronous anything, segmentation faults everywhere. (which python is not suppose to have) The font rendering was messed up, but I got fixed by replacing Pango\textquotesingle{}s get\+\_\+pixel\+\_\+size() with get\+\_\+size() / PANGO\+\_\+\+UNIT. \mbox{[}Suspect int vs float accuracy issues\mbox{]} Some async functions like the function updater is disabled, but it can be done manually. (right click on doc -\/$>$ rescan) All in all the Mac\textquotesingle{}s Py\+Gobject is not a great subsystem, hopefully time will be kind here.
+
+$\ast$$\ast$ tried the M1 ... Sun 03.\+Apr.\+2022 most of it worked; no async processing as Glib the timer functions bombed. Great hardware -\/ bad Py\+Gobject support. However if an editor with familiar key op is needed -- most of it works with no destructive errors.\hypertarget{md_README_autotoc_md12}{}\doxysubsection{New\+:}\label{md_README_autotoc_md12}
+\begin{DoxyVerb}(this is extracted, use git log for up-to-date information)
+
+Sat 10.Sep.2022 -- the system shortcuts (ctrl-s ctrl-o) are re-done by hand
+Sat 03.Sep.2022 -- pubilshed on pip
+Thu 21.Apr.2022 -- release issued
+Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
+Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
+Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
+\end{DoxyVerb}
+ Partial list, some highlights;
+
+Added drag / drop source / target. New keystroke combo for keyboards without home / pgup etc ... Implemented html preview. Just right click on the file body, an select the corresponding menu item.
+
+Implemented markdown preview. Right click ... menu Implemented M4 preview. The files are pulled in from the current directory (of the macro), and expanded with the m4 macro processor. The results than are previewed in an html window. (Yes, head and footer are now one file for the whole site, the way it should be) Right click ... and look for\+: Filter to M4
+
+Added drag and drop. Accepts file name from file manager, and accepts clipboard text. The dropped content is inserted where the editor\textquotesingle{}s caret is. (not where the cursor is) The caret is moved to the end of insertion.
+
+This (above / below) list is an extract, please see git log for complete history.
+
+Py\+Ed\+Pro now has buffer diff. Right clicking on the file\textquotesingle{}s tab header presents a menu. One may select the diff source, the diff destination (or target). When the source and target is selected, a diff window slides in from the right. The diff window presents the diff of the two buffers, relative to \textquotesingle{}target\textquotesingle{}. The three buffers navigate in sync, one may inspect them and edit the source and the target. The position sync is somewhat intelligent by guessing the correct position of the cursor on the current buffer. One can re-\/diff the buffers by right clicking on the tab header, and select re-\/diff. Please note, that this diff is somewhat simple, as it marks only --del --ins points. Again, its simplicity yields benefits that are surprizing. For instance; hand merging small changes become more visual. And yes, it is no substitute for a real diff.
+
+The diff buffer (grayed) is read only. To refresh the diff, select from the tab\textquotesingle{}s right click menu \textquotesingle{}Re-\/diff buffers\textquotesingle{}. The diff-\/ing can be stopped from the same right click menu, by selecting \textquotesingle{}Stop Diffing\textquotesingle{}. The diff algorithm is crude, but the simplicity has its advantages. Speed and predictability.
+
+Py\+Ed\+Pro.\+py has macro recording/play, search/replace, one click function navigation, auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion ... and a lot more.
+
+The recorded macros, undo / redo information / editing session detail persists (and reloaded) after the editor is closed.
+
+The spell checker can check text, code and code comments. The parsing of the code is rudimentary, comments and strings are spell checked. (Press F9) The code is filtered out for Python and \textquotesingle{}C\textquotesingle{}, which assures most derivative languages have correct code spell code check. (.sh .php .cpp) The whole file can be checked in full text spell mode. Press (Shift-\/\+F9) The spell checker is executed on live text. (while typing) The re scan period is set to 300 millisec, an optimum between resource usage and real time feel.
+
+Syntax highlighting. Again, a simpler parser for speed. Succeeds in its mission with giving great visual candy effect without speed impact.
+
+Py\+Ed\+Pro is fast, it is extendable, as python lends itself to easy extending. The editor has a table driven key mapping. One can easily edit the key map in keyhand.\+py, and the key actions in acthand.\+py
+
+If you encounter blank screen after start, cairo is not installed. The terminal interface will complain, but if you start from the GUI, you can see the message in the log window. (Menu-\/$>$Windows-\/$>$Show\+\_\+\+Log) To install cairo type \textquotesingle{}sudo apt install cairo\textquotesingle{}.
+
+The default key map resembles gedit / wed / etp / brief. Full ASCII; Any (fixed) font can be configured. No arrangements in the program for variable pitch fonts.
+
+See KEYS file for the list of keyboard shortcuts or press F1 in the editor or look at the file in pyedlib/\+KEYS. This file is also called up when the main menu Help -\/$>$ \textquotesingle{}Key\+Help In Doc\textquotesingle{} is called up.
+
+If you highlight a word, and press F2, Zeal will open with the item searched and highlighted. Shift F2 will do the same with Devhelp. This is what I use to see the API of Py\+Gobj. F1 will call up the Py\+Ed\+Pro\textquotesingle{}s help screen. Shift-\/\+F1 will open Dev\+Docs. Naturally, Devdocs/\+Devhelp/\+Zeal need to be installed for these to function.
+
+On initial start, Py\+Ed\+Pro shows a left pane and a top pane. The left pane is for function summary and the top pane is for double view of the same file. (to see the caller and the called \mbox{[}function\mbox{]} at once) These panes can be hidden with the mouse by dragging on their handle, or by the key combination Alt-\/Q (Shift-\/\+Alt-\/Q for the left pane) The first file window\textquotesingle{}s settings are saved for the next startup.
+
+Py\+Ed\+Pro remembers a lot about the editing session. Loaded files, cursor positions, fonts, font size, colors, search strings, goto numbers, undo / redo info, window positions ... and more.
+
+This is all stored in the $\sim$/.Py\+Ed\+Pro directory. You may safely delete that directory to start Py\+Ed\+Pro with no memory of what has been done.
+
+Py\+Ed\+Pro also keeps a stack of original files in the $\sim$/\+Py\+Ed\+Pro/data directory. The file path is treated as a name hash, so it is a flat list. For example this file is known to the Py\+Ed\+Pro hash function as \textquotesingle{}754ad753\+\_\+. Under this hash name there are a multitude of items. The original file, the numbered backups (from \+\_\+1 to \+\_\+9, circular) the undo file, redo file, the auto save (.sav) file, the backup file ).bak) from this session start ... and more. The way to find the file\textquotesingle{}s hash is to switch buffers and the current buffer\textquotesingle{}s hash is displayed on the status line.
+
+Starting Py\+Ed\+Pro with no command line arguments will put you back to the previous session, exactly where you left off. Files, positions undo-\/s and all.
+
+The editor will work on all Py\+Gobject platforms, and can open UNIX and Windows files transparently. It will save the file as the current platform\textquotesingle{}s native CRLF convention dictates. CRLF setting can also be forced.
+
+Developer\textquotesingle{}s note\+: in order to make Py\+Ed\+Pro multi platform, we save the configuration info into a SQLite database in the $\sim$/.Py\+Ed\+Pro directory. Sqlite\+Browser may be a tool to see what is going on.
+
+($\sim$/ user\textquotesingle{}s home directory)
+
+Contributors are welcome.
+
+The author, \begin{DoxyVerb}  Peter Glen
+\end{DoxyVerb}
+ Latest screen shot, showing DIFF and other new features
+
+
+
+Screen from a regular session, including clip buttons ...
+
+
+
+Screen from an older session, note the function list on the left\+:
+
+
+
+Screen from Mac\+:
+
+\hypertarget{md_README_autotoc_md13}{}\doxysection{Project stats\+:}\label{md_README_autotoc_md13}
+\begin{DoxyVerb}    Project name
+        PyEdPro
+    Generated
+        2022-04-21 13:40:49 (in 3 seconds)
+    Generator
+        GitStats (version 55c5c28), git version 2.32.0, gnuplot 5.4 patchlevel 1
+    Report Period
+        2018-09-16 00:29:10 to 2022-04-15 10:31:49
+    Age
+        1308 days, 166 active days (12.69%)
+    Total Files
+        220
+    Total Lines of Code
+        476774 (1454450 added, 977676 removed)
+    Total Commits
+        347 (average 2.1 commits per active day, 0.3 per all days)
+    Authors
+        7 (average 49.6 commits per author)
+\end{DoxyVerb}
+
+
+
+
+License\+: Open Source, Free\+Ware
+
+// EOF 

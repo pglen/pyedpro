@@ -1,0 +1,25 @@
+\hypertarget{md_pycommon_README_autotoc_md7}{}\doxysection{Common GUI routines (and classes) for python Py\+Gobject (\+Gtk) development.}\label{md_pycommon_README_autotoc_md7}
+Just a sampler of what is in there (pasted from code, in no particular order)\+:
+
+
+\begin{DoxyItemize}
+\item class Cairo\+Helper()\+: class Text\+Table(Gtk.\+Table)\+: class Text\+Row(Gtk.\+HBox)\+: class Radio\+Group(Gtk.\+Frame)\+:
+\end{DoxyItemize}
+
+class Led(Gtk.\+Drawing\+Area)\+: class Separator\+Menu\+Item(Gtk.\+Separator\+Menu\+Item)\+: class Menu()\+: class Menu\+Butt(Gtk.\+Drawing\+Area)\+: class Lights(Gtk.\+Frame)\+: $\ast$class Wide\+Butt(Gtk.\+Button)\+: class Scroll\+List\+Box(Gtk.\+Frame)\+: class Text\+Row(Gtk.\+HBox)\+: class Radio\+Group(Gtk.\+Frame)\+:
+\begin{DoxyItemize}
+\item class Led(Gtk.\+Drawing\+Area)\+: class Lights(Gtk.\+Frame)\+: class Frame\+Text\+View(Gtk.\+Text\+View)\+: class Label(Gtk.\+Label)\+:
+\item class Logo(Gtk.\+VBox)\+: class x\+Spacer(Gtk.\+HBox)\+: class Scroll\+List\+Box(Gtk.\+Frame)\+: class List\+Box(Gtk.\+Tree\+View)\+:
+\end{DoxyItemize}
+
+... and a lot more ...
+
+These classes act as a simplification of the Py\+Gtk (Py\+Gobject) classes.
+
+For instance the Label takes a constructor, and feeds the arguments as one would expect. Like this\+: \begin{DoxyVerb}   def __init__(self, textm = "", widget = None, tooltip=None, font = None):
+\end{DoxyVerb}
+ The defaults are set to a reasonable value, and the named argument can be set on one line. This makes the code look compact and maintainable.
+
+See descendent projects for examples. (pyedpro; pycal; pggui; ...)
+
+Peter Glen 

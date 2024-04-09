@@ -279,10 +279,10 @@ class peddraw(object):
 
                     #line2 = self.text[cnt][self.xpos:]
                     line2 = self.text[cnt]
-                    line  = untab_str(line2)
 
                     xssel2 = calc_tabs(line2, xssel, self.tabstop)
                     xesel2 = calc_tabs(line2, xesel, self.tabstop)
+                    line  = untab_str(line2)
 
                     # adjust selection to tabs
                     if self.colsel:
@@ -291,7 +291,9 @@ class peddraw(object):
                     else :   # Startsel - endsel
                         if cnt == yssel and cnt == yesel:   # sel on the same line
                             frag = line[xssel2:xesel2]
+                            draw_start = xssel2
                         elif cnt == yssel:                  # start line
+                            draw_start = xssel2
                             frag = line[xssel2:]
                         elif cnt == yesel:                  # end line
                             draw_start = 0
@@ -300,8 +302,11 @@ class peddraw(object):
                             draw_start = 0                  # intermediate line
                             frag = line[:]
 
-                    #dss = draw_start #-= self.xpos
-                    dss = calc_tabs(line2, draw_start, self.tabstop) - self.xpos
+                    dss = draw_start - self.xpos
+                    #dss2 = calc_tabs(line2, draw_start, self.tabstop)
+                                #(self.xpos % self.tabstop)
+                    #print(dss, dss2)
+
                     if dss < 0:
                           frag = frag[-dss:]
                           dss = 0
@@ -490,11 +495,17 @@ class peddraw(object):
         for xaa, ybb, lcc in self.ularr:
             # Draw within visible range
             if ybb >= self.ypos and ybb < yyy:
+                # Correct for tab
+                line = self.text[ybb]
+                #print("line:", line)
+                xaa -= self.xpos;
                 ybb -= self.ypos;
-                xaa -= self.xpos; lcc -= self.xpos;
+                lcc -= self.xpos
+                xaa2 = calc_tabs(line, xaa, self.tabstop)
+                lcc += xaa2 - xaa
+                xaa = xaa2
                 if xaa < 0:
                     xaa = 0
-
                 self.draw_wiggle(cr,
                      xaa * self.cxx, ybb * self.cyy + self.cyy,
                             lcc * self.cxx, ybb * self.cyy + self.cyy)

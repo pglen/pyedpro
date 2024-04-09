@@ -406,6 +406,7 @@ class EdMainWindow():
 
         self.tbar = self.merge.get_widget("/ToolBar")
         #self.tbar.set_tooltips(True)
+        self.tbar.set_icon_size(Gtk.IconSize.LARGE_TOOLBAR)
         self.tbar.show()
 
         self.hpaned = Gtk.HPaned(); self.hpaned.set_border_width(2)

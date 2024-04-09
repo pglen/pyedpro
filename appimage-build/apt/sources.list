@@ -1,0 +1,22 @@
+deb http://mirror.cedia.org.ec/ubuntu/ jammy main restricted
+deb http://mirror.cedia.org.ec/ubuntu/ jammy-updates main restricted
+deb http://mirror.cedia.org.ec/ubuntu/ jammy universe
+deb http://mirror.cedia.org.ec/ubuntu/ jammy-updates universe
+deb http://mirror.cedia.org.ec/ubuntu/ jammy multiverse
+deb http://mirror.cedia.org.ec/ubuntu/ jammy-updates multiverse
+deb http://mirror.cedia.org.ec/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://mirror.cedia.org.ec/ubuntu/ jammy-security main restricted
+deb http://mirror.cedia.org.ec/ubuntu/ jammy-security universe
+deb http://mirror.cedia.org.ec/ubuntu/ jammy-security multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ impish main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ impish-updates main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ impish-security main restricted universe multiverse
+deb https://ppa.launchpadcontent.net/alessandro-strada/ppa/ubuntu/ jammy main
+deb [arch=amd64] http://dl.google.com/linux/earth/deb/ stable main
+deb https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu/ jammy main
+deb https://ppa.launchpadcontent.net/kelebek333/kablosuz/ubuntu/ jammy main
+deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu/ jammy main
+deb https://ppa.launchpadcontent.net/mozillateam/ppa/ubuntu/ jammy main
+deb https://ppa.launchpadcontent.net/vala-team/ppa/ubuntu/ jammy main
+deb [arch="all", signed-by=/usr/share/keyrings/protonvpn-stable-archive-keyring.gpg] https://repo.protonvpn.com/debian stable main
+deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main

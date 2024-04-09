@@ -1,3 +1,4 @@
+import os, sys
 import setuptools
 
 descx = '''PyEdPro is modern multi-platform editor. Simple, powerful,
@@ -33,9 +34,24 @@ includex = ["*", "pedlib/", "panglib", "pedlib/images",
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
+# Get version number  from the server support file:
+fp = open("pyedpro.py", "rt")
+vvv = fp.read(); fp.close()
+loc_vers =  '1.0.0'     # Default
+for aa in vvv.split("\n"):
+    idx = aa.find("VERSION ")
+    if idx == 0:        # At the beginning of line
+        try:
+            loc_vers = aa.split()[2].replace('"', "")
+            break
+        except:
+            pass
+#print("loc_vers:", loc_vers)
+#sys.exit()
+
 setuptools.setup(
     name="pyedpro",
-    version="3.3.3",
+    version=loc_vers,
     author="Peter Glen",
     author_email="peterglen99@gmail.com",
     description="High power editor in python.",
