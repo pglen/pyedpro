@@ -230,7 +230,7 @@ class pgnotes(Gtk.VBox):
         # Did not happen automatically
         #print("pednotes __del__")
         self.savetext()
-        #self.core.__del__()
+        #del self.core
 
     def switched(self, pageto):
         #print("SW page signal web", pageto)

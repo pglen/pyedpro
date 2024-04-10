@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pedfont API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pedfont</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Ped font selection
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+import  signal, os, time, sys, subprocess
+
+import gi
+gi.require_version(&#34;Gtk&#34;, &#34;3.0&#34;)
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import Pango
+
+from pedlib import pedconfig
+from pedlib.pedutil import *
+
+# I had to do this, as the standard font dialog does not have a mono filter.
+# Also, we do not need mono italic etc so the dialog is simpler.
+# Plus, the mono fonts are marked incorrectly, this way we can filter them.
+# Oh yeah, live feedback ...
+
+def selfont(self, self2):
+
+    head = &#34;pyedpro: Set Editor Main Font&#34;
+
+    dialog = Gtk.Dialog(head,
+                   None,
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_transient_for(self2.mained.mywin)
+
+    try:
+        dialog.set_icon_from_file(get_img_path(&#34;spyedpro_sub.png&#34;))
+    except:
+        print(&#34;Cannot set icon in&#34;, __file__)
+
+    self.dialog = dialog
+
+    dialog.myfd = self2.pangolayout.get_font_description()
+    myfam = dialog.myfd.get_family()
+    mysiz = dialog.myfd.get_size() / Pango.SCALE
+
+    dialog.lastfam = myfam
+    dialog.lastsiz = mysiz
+
+    xx, yy = self2.mained.mywin.get_size()
+    #dialog.set_default_size(3*xx/4, yy/2)
+
+    # Spacers
+    label1 = Gtk.Label(&#34;  &#34;);
+    label2a = Gtk.Label(&#34;  &#34;);  label2 = Gtk.Label(&#34;  &#34;)
+    label3 = Gtk.Label(&#34;  &#34;);
+    label3a = Gtk.Label(&#34;  &#34;);
+    label4 = Gtk.Label(&#34;  &#34;)
+
+    dialog.testlab = Gtk.Label(&#34;The test line.\nMulti line text.&#34;)
+    dialog.testlab.modify_font(dialog.myfd)
+    dialog.testlab.set_size_request(200, yy/3)
+
+    dialog.tree = create_tree(self)
+    dialog.tree.set_headers_visible(False)
+    #dialog.tree.set_size_request(200, -1)
+
+    dialog.tree.connect(&#34;cursor-changed&#34;,  tree_sel_row, dialog, self2)
+    dialog.tree.connect(&#34;key-press-event&#34;, area_key, dialog)
+    dialog.tree.connect(&#34;key-release-event&#34;, area_key, dialog)
+
+    stree = Gtk.ScrolledWindow()
+    stree.add(dialog.tree)
+    stree.set_size_request(150, -1)
+
+    hbox = Gtk.HBox()
+    hbox.pack_start(label2a, False, False,0)
+    hbox.pack_start(stree, True, True,0)
+    hbox.pack_start(label2, False ,0, 0)
+
+    vbox = Gtk.VBox()
+
+    #dialog.tree2 = create_tree(self)
+    #dialog.tree2.set_headers_visible(False)
+    #dialog.tree2.set_size_request(200, 80)
+    #dialog.tree2.connect(&#34;cursor-changed&#34;,  tree_sel_row2, dialog)
+
+    vbox.pack_start(label1, False, 0 ,0 )
+    frame = Gtk.Frame()
+    frame.add(dialog.testlab)
+    vbox.pack_start(frame, True, 0, 0)
+    vbox.pack_start(label3, False, 0, 0 )
+
+    hbox.pack_start(vbox, True,  0, 0)
+    hbox.pack_start(label4, False, 0, 0 )
+
+    dialog.tree3 = create_tree(self)
+    dialog.tree3.set_headers_visible(False)
+    dialog.tree3.set_size_request(180, yy/3)
+
+    dialog.tree3.connect(&#34;cursor-changed&#34;,  tree_sel_row3, dialog, self2)
+    dialog.tree3.connect(&#34;key-press-event&#34;, area_key, dialog)
+    dialog.tree3.connect(&#34;key-release-event&#34;, area_key, dialog)
+
+    stree3 = Gtk.ScrolledWindow()
+    stree3.add(dialog.tree3)
+    stree3.set_size_request(80, -1)
+
+    sizes = []; add_sizes(sizes)
+    update_treestore2(None, dialog.tree3, sizes, mysiz)
+
+    hbox.pack_start(stree3, True, True, 0)
+    hbox.pack_start(label3a, False, 0, 0 )
+
+    vlab1 = Gtk.Label() ;    vlab2 = Gtk.Label()
+    vbox2 = Gtk.VBox()
+
+    vbox2.add(vlab1)
+    vbox2.add(hbox)
+    vbox2.add(vlab2)
+
+    dialog.vbox.add(vbox2)
+    dialog.show_all()
+
+    pg = Gtk.Widget.create_pango_context(self.mywin)
+    fd = pg.get_font_description()
+
+    fonts = pg.list_families();
+    dialog.monos = []
+    for aa in fonts:
+        if aa.is_monospace():
+            # Some fonts are marked mono, they are not
+            if aa.get_name() == &#34;Cursor&#34;:
+                continue
+            if aa.get_name() == &#34;CM Typewriter Greek&#34;:
+                continue
+            dialog.monos.append(aa)
+
+    dialog.fonts2 = []
+    curr = 0; cnt = 0
+    for cc in dialog.monos:
+        nnn = cc.get_name()
+        # This will match more than one, we accept the last match
+        if nnn.upper().find(myfam.upper()) &gt;= 0:
+            curr = cnt
+        dialog.fonts2.append(nnn)
+        cnt += 1
+    update_treestore(None, dialog.tree, dialog.fonts2, curr)
+
+    result = dialog.run()
+    dialog.destroy()
+    if result == Gtk.ResponseType.ACCEPT:
+        #print result, dialog.lastfam, dialog.lastsiz
+        for mm in range(self2.notebook.get_n_pages()):
+            vcurr = self2.notebook.get_nth_page(mm)
+            vcurr.area.setfont(dialog.lastfam, dialog.lastsiz)
+
+        pedconfig.conf.sql.put(&#34;fsize&#34;, dialog.lastsiz)
+        pedconfig.conf.sql.put(&#34;fname&#34;, dialog.lastfam)
+    else:
+        # Restore
+        self2.setfont(myfam, mysiz)
+        self2.invalidate()
+
+
+def tree_sel_row(xtree, dialog, self2):
+
+    sel = xtree.get_selection()
+    xmodel, xiter = sel.get_selected()
+    xstr = xmodel.get_value(xiter, 0)
+    dialog.lastfam = xstr
+    dialog.myfd.set_family(xstr);
+    dialog.myfd.set_size(dialog.lastsiz * Pango.SCALE)
+    dialog.testlab.modify_font(dialog.myfd)
+
+    self2.setfont(dialog.lastfam, dialog.lastsiz)
+    self2.invalidate()
+
+def tree_sel_row3(xtree, dialog, self2):
+
+    sel = xtree.get_selection()
+    xmodel, xiter = sel.get_selected()
+    xstr = xmodel.get_value(xiter, 0)
+    #print &#34;tree_sel_row3&#34;, xstr
+    dialog.lastsiz = int(xstr)
+    dialog.myfd.set_family(dialog.lastfam);
+    dialog.myfd.set_size(dialog.lastsiz * Pango.SCALE)
+    dialog.testlab.modify_font(dialog.myfd)
+
+    self2.setfont(dialog.lastfam, dialog.lastsiz)
+    self2.invalidate()
+
+
+# -------------------------------------------------------------------------
+def create_tree(self):
+
+    # create the TreeView using treestore
+    treestore = Gtk.TreeStore(str)
+    tv = Gtk.TreeView(treestore)
+    tv.set_enable_search(True)
+
+    # create a CellRendererText to render the data
+    cell = Gtk.CellRendererText()
+
+    # create the TreeViewColumn to display the data
+    tvcolumn = Gtk.TreeViewColumn()
+
+    # add the cell to the tvcolumn and allow it to expand
+    tvcolumn.pack_start(cell, True)
+
+    # set the cell &#34;text&#34; attribute to column 0 - retrieve text
+    # from that column in treestore
+    tvcolumn.add_attribute(cell, &#39;text&#39;, 0)
+
+    # add tvcolumn to treeview
+    tv.append_column(tvcolumn)
+
+    return tv
+
+def update_treestore(self, tree, text, was):
+
+    #print &#34;was&#34;, was
+
+    treestore = tree.get_model()
+
+    # Delete previous contents
+    try:
+        while True:
+            root = treestore.get_iter_first()
+            treestore.remove(root)
+    except:
+        pass
+        #print  sys.exc_info()
+    if not text:
+        treestore.append(None, [&#34;No Fonts&#34;,])
+        return
+
+    cnt = 0; piter2 = None; next = False
+    try:
+        for line in text:
+            piter = treestore.append(None, [cut_lead_space(line)])
+            if cnt == was:
+                piter2 = piter
+            cnt += 1
+    except:
+        pass
+        #print  sys.exc_info()
+
+    if piter2:
+        tree.set_cursor(treestore.get_path(piter2))
+    else:
+        root = treestore.get_iter_first()
+        tree.set_cursor(treestore.get_path(root))
+
+def update_treestore2(self, tree, text, was):
+
+    #print &#34;was&#34;, was
+
+    treestore = tree.get_model()
+
+    # Delete previous contents
+    try:
+        while True:
+            root = treestore.get_iter_first()
+            treestore.remove(root)
+    except:
+        pass
+        #print  sys.exc_info()
+    if not text:
+        treestore.append(None, [&#34;No Fonts&#34;,])
+        return
+
+    cnt = 0; piter2 = None; next = False
+    try:
+        for line in text:
+            piter = treestore.append(None, [cut_lead_space(line)])
+            if int(line) == was:
+                piter2 = piter
+            cnt += 1
+    except:
+        pass
+        #print  sys.exc_info()
+
+    if piter2:
+        tree.set_cursor(treestore.get_path(piter2))
+    else:
+        root = treestore.get_iter_first()
+        tree.set_cursor(treestore.get_path(root))
+
+
+def add_sizes(sizes):
+
+    for num in range(6, 18, 1):     sizes.append(str(num))
+    for num in range(18, 32, 2):    sizes.append(str(num))
+    for num in range(32, 64, 4):    sizes.append(str(num))
+    for num in range(64, 96+1, 8):  sizes.append(str(num))
+
+# ------------------------------------------------------------------------
+
+def area_key(area, event, dialog):
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
+            #print &#34;Esc&#34;
+            dialog.response(Gtk.ResponseType.REJECT)
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
+            #print &#34;Ret&#34;
+            dialog.response(Gtk.ResponseType.ACCEPT)
+
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
+            area.alt = True;
+
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
+            if area.alt:
+                dialog.response(Gtk.ResponseType.REJECT)
+
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
+            area.alt = False;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="pedfont.add_sizes"><code class="name flex">
+<span>def <span class="ident">add_sizes</span></span>(<span>sizes)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_sizes(sizes):
+
+    for num in range(6, 18, 1):     sizes.append(str(num))
+    for num in range(18, 32, 2):    sizes.append(str(num))
+    for num in range(32, 64, 4):    sizes.append(str(num))
+    for num in range(64, 96+1, 8):  sizes.append(str(num))</code></pre>
+</details>
+</dd>
+<dt id="pedfont.area_key"><code class="name flex">
+<span>def <span class="ident">area_key</span></span>(<span>area, event, dialog)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_key(area, event, dialog):
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
+            #print &#34;Esc&#34;
+            dialog.response(Gtk.ResponseType.REJECT)
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
+            #print &#34;Ret&#34;
+            dialog.response(Gtk.ResponseType.ACCEPT)
+
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
+            area.alt = True;
+
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
+            if area.alt:
+                dialog.response(Gtk.ResponseType.REJECT)
+
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
+            area.alt = False;</code></pre>
+</details>
+</dd>
+<dt id="pedfont.create_tree"><code class="name flex">
+<span>def <span class="ident">create_tree</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_tree(self):
+
+    # create the TreeView using treestore
+    treestore = Gtk.TreeStore(str)
+    tv = Gtk.TreeView(treestore)
+    tv.set_enable_search(True)
+
+    # create a CellRendererText to render the data
+    cell = Gtk.CellRendererText()
+
+    # create the TreeViewColumn to display the data
+    tvcolumn = Gtk.TreeViewColumn()
+
+    # add the cell to the tvcolumn and allow it to expand
+    tvcolumn.pack_start(cell, True)
+
+    # set the cell &#34;text&#34; attribute to column 0 - retrieve text
+    # from that column in treestore
+    tvcolumn.add_attribute(cell, &#39;text&#39;, 0)
+
+    # add tvcolumn to treeview
+    tv.append_column(tvcolumn)
+
+    return tv</code></pre>
+</details>
+</dd>
+<dt id="pedfont.selfont"><code class="name flex">
+<span>def <span class="ident">selfont</span></span>(<span>self, self2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def selfont(self, self2):
+
+    head = &#34;pyedpro: Set Editor Main Font&#34;
+
+    dialog = Gtk.Dialog(head,
+                   None,
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    dialog.set_transient_for(self2.mained.mywin)
+
+    try:
+        dialog.set_icon_from_file(get_img_path(&#34;spyedpro_sub.png&#34;))
+    except:
+        print(&#34;Cannot set icon in&#34;, __file__)
+
+    self.dialog = dialog
+
+    dialog.myfd = self2.pangolayout.get_font_description()
+    myfam = dialog.myfd.get_family()
+    mysiz = dialog.myfd.get_size() / Pango.SCALE
+
+    dialog.lastfam = myfam
+    dialog.lastsiz = mysiz
+
+    xx, yy = self2.mained.mywin.get_size()
+    #dialog.set_default_size(3*xx/4, yy/2)
+
+    # Spacers
+    label1 = Gtk.Label(&#34;  &#34;);
+    label2a = Gtk.Label(&#34;  &#34;);  label2 = Gtk.Label(&#34;  &#34;)
+    label3 = Gtk.Label(&#34;  &#34;);
+    label3a = Gtk.Label(&#34;  &#34;);
+    label4 = Gtk.Label(&#34;  &#34;)
+
+    dialog.testlab = Gtk.Label(&#34;The test line.\nMulti line text.&#34;)
+    dialog.testlab.modify_font(dialog.myfd)
+    dialog.testlab.set_size_request(200, yy/3)
+
+    dialog.tree = create_tree(self)
+    dialog.tree.set_headers_visible(False)
+    #dialog.tree.set_size_request(200, -1)
+
+    dialog.tree.connect(&#34;cursor-changed&#34;,  tree_sel_row, dialog, self2)
+    dialog.tree.connect(&#34;key-press-event&#34;, area_key, dialog)
+    dialog.tree.connect(&#34;key-release-event&#34;, area_key, dialog)
+
+    stree = Gtk.ScrolledWindow()
+    stree.add(dialog.tree)
+    stree.set_size_request(150, -1)
+
+    hbox = Gtk.HBox()
+    hbox.pack_start(label2a, False, False,0)
+    hbox.pack_start(stree, True, True,0)
+    hbox.pack_start(label2, False ,0, 0)
+
+    vbox = Gtk.VBox()
+
+    #dialog.tree2 = create_tree(self)
+    #dialog.tree2.set_headers_visible(False)
+    #dialog.tree2.set_size_request(200, 80)
+    #dialog.tree2.connect(&#34;cursor-changed&#34;,  tree_sel_row2, dialog)
+
+    vbox.pack_start(label1, False, 0 ,0 )
+    frame = Gtk.Frame()
+    frame.add(dialog.testlab)
+    vbox.pack_start(frame, True, 0, 0)
+    vbox.pack_start(label3, False, 0, 0 )
+
+    hbox.pack_start(vbox, True,  0, 0)
+    hbox.pack_start(label4, False, 0, 0 )
+
+    dialog.tree3 = create_tree(self)
+    dialog.tree3.set_headers_visible(False)
+    dialog.tree3.set_size_request(180, yy/3)
+
+    dialog.tree3.connect(&#34;cursor-changed&#34;,  tree_sel_row3, dialog, self2)
+    dialog.tree3.connect(&#34;key-press-event&#34;, area_key, dialog)
+    dialog.tree3.connect(&#34;key-release-event&#34;, area_key, dialog)
+
+    stree3 = Gtk.ScrolledWindow()
+    stree3.add(dialog.tree3)
+    stree3.set_size_request(80, -1)
+
+    sizes = []; add_sizes(sizes)
+    update_treestore2(None, dialog.tree3, sizes, mysiz)
+
+    hbox.pack_start(stree3, True, True, 0)
+    hbox.pack_start(label3a, False, 0, 0 )
+
+    vlab1 = Gtk.Label() ;    vlab2 = Gtk.Label()
+    vbox2 = Gtk.VBox()
+
+    vbox2.add(vlab1)
+    vbox2.add(hbox)
+    vbox2.add(vlab2)
+
+    dialog.vbox.add(vbox2)
+    dialog.show_all()
+
+    pg = Gtk.Widget.create_pango_context(self.mywin)
+    fd = pg.get_font_description()
+
+    fonts = pg.list_families();
+    dialog.monos = []
+    for aa in fonts:
+        if aa.is_monospace():
+            # Some fonts are marked mono, they are not
+            if aa.get_name() == &#34;Cursor&#34;:
+                continue
+            if aa.get_name() == &#34;CM Typewriter Greek&#34;:
+                continue
+            dialog.monos.append(aa)
+
+    dialog.fonts2 = []
+    curr = 0; cnt = 0
+    for cc in dialog.monos:
+        nnn = cc.get_name()
+        # This will match more than one, we accept the last match
+        if nnn.upper().find(myfam.upper()) &gt;= 0:
+            curr = cnt
+        dialog.fonts2.append(nnn)
+        cnt += 1
+    update_treestore(None, dialog.tree, dialog.fonts2, curr)
+
+    result = dialog.run()
+    dialog.destroy()
+    if result == Gtk.ResponseType.ACCEPT:
+        #print result, dialog.lastfam, dialog.lastsiz
+        for mm in range(self2.notebook.get_n_pages()):
+            vcurr = self2.notebook.get_nth_page(mm)
+            vcurr.area.setfont(dialog.lastfam, dialog.lastsiz)
+
+        pedconfig.conf.sql.put(&#34;fsize&#34;, dialog.lastsiz)
+        pedconfig.conf.sql.put(&#34;fname&#34;, dialog.lastfam)
+    else:
+        # Restore
+        self2.setfont(myfam, mysiz)
+        self2.invalidate()</code></pre>
+</details>
+</dd>
+<dt id="pedfont.tree_sel_row"><code class="name flex">
+<span>def <span class="ident">tree_sel_row</span></span>(<span>xtree, dialog, self2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tree_sel_row(xtree, dialog, self2):
+
+    sel = xtree.get_selection()
+    xmodel, xiter = sel.get_selected()
+    xstr = xmodel.get_value(xiter, 0)
+    dialog.lastfam = xstr
+    dialog.myfd.set_family(xstr);
+    dialog.myfd.set_size(dialog.lastsiz * Pango.SCALE)
+    dialog.testlab.modify_font(dialog.myfd)
+
+    self2.setfont(dialog.lastfam, dialog.lastsiz)
+    self2.invalidate()</code></pre>
+</details>
+</dd>
+<dt id="pedfont.tree_sel_row3"><code class="name flex">
+<span>def <span class="ident">tree_sel_row3</span></span>(<span>xtree, dialog, self2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tree_sel_row3(xtree, dialog, self2):
+
+    sel = xtree.get_selection()
+    xmodel, xiter = sel.get_selected()
+    xstr = xmodel.get_value(xiter, 0)
+    #print &#34;tree_sel_row3&#34;, xstr
+    dialog.lastsiz = int(xstr)
+    dialog.myfd.set_family(dialog.lastfam);
+    dialog.myfd.set_size(dialog.lastsiz * Pango.SCALE)
+    dialog.testlab.modify_font(dialog.myfd)
+
+    self2.setfont(dialog.lastfam, dialog.lastsiz)
+    self2.invalidate()</code></pre>
+</details>
+</dd>
+<dt id="pedfont.update_treestore"><code class="name flex">
+<span>def <span class="ident">update_treestore</span></span>(<span>self, tree, text, was)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_treestore(self, tree, text, was):
+
+    #print &#34;was&#34;, was
+
+    treestore = tree.get_model()
+
+    # Delete previous contents
+    try:
+        while True:
+            root = treestore.get_iter_first()
+            treestore.remove(root)
+    except:
+        pass
+        #print  sys.exc_info()
+    if not text:
+        treestore.append(None, [&#34;No Fonts&#34;,])
+        return
+
+    cnt = 0; piter2 = None; next = False
+    try:
+        for line in text:
+            piter = treestore.append(None, [cut_lead_space(line)])
+            if cnt == was:
+                piter2 = piter
+            cnt += 1
+    except:
+        pass
+        #print  sys.exc_info()
+
+    if piter2:
+        tree.set_cursor(treestore.get_path(piter2))
+    else:
+        root = treestore.get_iter_first()
+        tree.set_cursor(treestore.get_path(root))</code></pre>
+</details>
+</dd>
+<dt id="pedfont.update_treestore2"><code class="name flex">
+<span>def <span class="ident">update_treestore2</span></span>(<span>self, tree, text, was)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_treestore2(self, tree, text, was):
+
+    #print &#34;was&#34;, was
+
+    treestore = tree.get_model()
+
+    # Delete previous contents
+    try:
+        while True:
+            root = treestore.get_iter_first()
+            treestore.remove(root)
+    except:
+        pass
+        #print  sys.exc_info()
+    if not text:
+        treestore.append(None, [&#34;No Fonts&#34;,])
+        return
+
+    cnt = 0; piter2 = None; next = False
+    try:
+        for line in text:
+            piter = treestore.append(None, [cut_lead_space(line)])
+            if int(line) == was:
+                piter2 = piter
+            cnt += 1
+    except:
+        pass
+        #print  sys.exc_info()
+
+    if piter2:
+        tree.set_cursor(treestore.get_path(piter2))
+    else:
+        root = treestore.get_iter_first()
+        tree.set_cursor(treestore.get_path(root))</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="pedfont.add_sizes" href="#pedfont.add_sizes">add_sizes</a></code></li>
+<li><code><a title="pedfont.area_key" href="#pedfont.area_key">area_key</a></code></li>
+<li><code><a title="pedfont.create_tree" href="#pedfont.create_tree">create_tree</a></code></li>
+<li><code><a title="pedfont.selfont" href="#pedfont.selfont">selfont</a></code></li>
+<li><code><a title="pedfont.tree_sel_row" href="#pedfont.tree_sel_row">tree_sel_row</a></code></li>
+<li><code><a title="pedfont.tree_sel_row3" href="#pedfont.tree_sel_row3">tree_sel_row3</a></code></li>
+<li><code><a title="pedfont.update_treestore" href="#pedfont.update_treestore">update_treestore</a></code></li>
+<li><code><a title="pedfont.update_treestore2" href="#pedfont.update_treestore2">update_treestore2</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

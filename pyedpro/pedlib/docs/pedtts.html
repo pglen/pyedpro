@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pedtts API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pedtts</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+import os, sys, getopt, signal, subprocess
+
+import gi
+gi.require_version(&#34;Gtk&#34;, &#34;3.0&#34;)
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GObject
+from gi.repository import Pango
+
+from pedlib import  pedconfig
+
+from pedlib.pedutil import *
+
+# Set this to non zero if you want festival to speak
+USE_FESTIVAL = 1
+# Otherwise it calls espeak
+
+# -----------------------------------------------------------------------
+# Call func with all processes, func called with stat as its argument
+# Function may return True to stop iteration
+
+def withps(func, opt = None):
+    ret = False
+    dl = os.listdir(&#34;/proc&#34;)
+    for aa in dl:
+        fname = &#34;/proc/&#34; + aa + &#34;/stat&#34;
+        try:
+            if os.path.isfile(fname):
+                fd = open(fname, &#34;r&#34;)
+                ff = fd.read().split()
+                ret = func(ff, opt)
+                fd.close()
+            if ret:
+                break
+        except:
+            pass
+    return ret
+
+# ------------------------------------------------------------------------
+# Create it with status bar text setter
+
+class tts():
+
+    def __init__(self, prog = None):
+        self.stopspeak = False
+        self.haltspeak = False
+        self.speech_pid = None
+        self.prog_set_text = prog
+        self.prog_set_text(&#34;Inited TTS&#34;)
+
+    # Create a file, send it to festival
+    def _speak(self, cstr):
+
+        self.stopspeak = False
+        fname = pedconfig.conf.data_dir + &#34;/festival.txt&#34;
+
+        try:
+            fh = open(fname, &#34;w&#34;)
+            fh.write(cstr)
+        except:
+            put_exception(&#34;Cannot create festival file&#34;)
+            return
+        finally:
+            fh.close()
+        try:
+            if USE_FESTIVAL:
+                self.speech_pid = subprocess.Popen([&#34;festival&#34;, &#34;--tts&#34;, fname])
+            else:
+                # This is more configurable, add option as it is displayed below.
+                #self.speech_pid = subprocess.Popen([&#34;espeak&#34;, &#34;-f&#34;, fname, &#34;-s&#34;, &#34;100&#34;])
+                #self.speech_pid = subprocess.Popen([&#34;espeak&#34;, &#34;-f&#34;, fname, &#34;-v&#34;, &#34;english-us&#34;])
+                self.speech_pid = subprocess.Popen([&#34;espeak-ng&#34;, &#34;-f&#34;, fname,])
+        except:
+            print (&#34;Cannot start TTS espeak-ng&#34;, sys.exc_info())
+            return
+
+        #print (&#34;started&#34;, self.speech_pid.pid)
+        GLib.timeout_add(100, self.check_speak)
+        return True
+
+    def check_speak2(self, ss, opt):
+        if self.speech_pid:
+            if  self.speech_pid.pid == int(ss[0]):
+                # Zombie does not count:
+                if ss[2] != &#34;Z&#34;:
+                    return True
+
+    # Wait for speech to end (sync)
+    def   wait_done(self):
+
+        while True:
+            if self.stopspeak:
+                break
+            if self.haltspeak:
+                return
+            if not self.speech_pid:
+                break
+            usleep(100)
+
+        self.stopspeak = False
+
+    # Timer to see if the speaker has terminated
+    def check_speak(self):
+        # If found, the search returns True
+        ret = withps(self.check_speak2)
+        if not ret:
+            self.speech_pid = None
+        else:
+            # Look for termination again
+            GLib.timeout_add(1000, self.check_speak)
+
+    # --------------------------------------------------------------------
+    # Stop tts instances, kill (all) children
+    # Start speak
+
+    def read_tts(self, self2, butt = None):
+
+        # Running?
+
+        if self.haltspeak and self.speech_pid:
+            return
+
+        self.haltspeak = True
+        self.prog_set_text(&#34;Stopping TTS processes (please wait)&#34;)
+        usleep(100)
+        if self.speech_pid:
+            self.stop_tts()
+            return
+
+        self.haltspeak = False
+        self.stopspeak = False
+        self.prog_set_text(&#34;Started Reading&#34;)
+
+        #self._speak(&#34;Started reading&#34;); self.wait_done()
+        #print(&#34;After start&#34;)
+
+        if self2.xsel == -1 or self2.ysel == -1:
+            self2.mained.update_statusbar(&#34;Nothing selected&#34;)
+            #self._speak(&#34;Nothing selected&#34;)
+
+            # Speak from current point
+            #xxx = self2.xpos + self2.caret[0]
+
+            # Speak from current line
+            xxx = 0
+            yyy = self2.ypos + self2.caret[1]
+
+            # Collect until dot - repeat
+            sss = &#34;&#34;
+
+            self2.xsel = xxx; self2.ysel = yyy;
+
+            for yy in range(len(self2.text) - yyy):
+                yy2 = yyy + yy
+                ttt = self2.text[yy2]
+                if &#34;.&#34; in ttt:
+                    idx = ttt.find(&#34;.&#34;) + 1  # point after dot
+                    sss += ttt[:idx]
+
+                    self2.xsel2 = idx; self2.ysel2 = yy2;
+                    self2.gotoxy(self2.xsel2, self2.ysel2, None, True)
+                    self2.invalidate()
+
+                    #print(&#34;line %d: &#39;%s&#39;&#34; % (yy, sss))
+                    self.prog_set_text(&#34;Reading at line %d&#34; % (yy2))
+                    if not self._speak(sss):
+                        self2.mained.update_statusbar(&#34;TTS cannot start (installed?)&#34;)
+                        break
+
+                    self.wait_done()
+
+                    self2.xsel = idx; self2.ysel = yy2;
+                    self2.invalidate()
+                    sss = ttt[idx:] + &#34; &#34;
+                else:
+                    sss += ttt + &#34; &#34;
+
+                if  self.haltspeak:
+                    break
+            return
+
+        # Normalize
+        xssel = min(self2.xsel, self2.xsel2)
+        xesel = max(self2.xsel, self2.xsel2)
+        yssel = min(self2.ysel, self2.ysel2)
+        yesel = max(self2.ysel, self2.ysel2)
+
+        cnt = yssel; cnt2 = 0; cumm = &#34;&#34;
+
+        while True:
+            if cnt &gt; yesel: break
+            #self.pad_list(self2, cnt)
+
+            line = self2.text[cnt]
+            if self2.colsel:
+                frag = line[xssel:xesel]
+            else :                                  # startsel - endsel
+                if cnt == yssel and cnt == yesel:   # sel on the same line
+                    frag = line[xssel:xesel]
+                elif cnt == yssel:                  # start line
+                    frag = line[xssel:]
+                elif cnt == yesel:                  # end line
+                    frag = line[:xesel]
+                else:
+                    frag = line[:]
+
+            if cnt2: frag = &#34;\n&#34; + frag
+            cumm += frag
+            cnt += 1; cnt2 += 1
+
+        print (&#34;clip:&#34;, cumm)
+        self._speak(cumm)
+
+    def stop_tts2(self, ss, opt):
+        #print ( &#34;stop_tts2&#34;, ss[1])
+        if USE_FESTIVAL:
+            if ss[1] == &#34;(audsp)&#34;:
+                #print (&#34;killing&#34;, ss)
+                os.kill(int(ss[0]), signal.SIGKILL)
+        else:
+            if ss[1] == &#34;(espeak)&#34;:
+                #print (&#34;killing&#34;, ss)
+                os.kill(int(ss[0]), signal.SIGKILL)
+
+    def stop_tts(self):
+        self.stopspeak = True
+        self.prog_set_text(&#34;Stopped Reading&#34;)
+        try:
+            withps(self.stop_tts2)
+        except:
+            put_exception(&#34;Cannot kill&#34;)
+            #self.speech_pid.pid
+
+        self.speech_pid = None
+
+# EOF</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="pedtts.withps"><code class="name flex">
+<span>def <span class="ident">withps</span></span>(<span>func, opt=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def withps(func, opt = None):
+    ret = False
+    dl = os.listdir(&#34;/proc&#34;)
+    for aa in dl:
+        fname = &#34;/proc/&#34; + aa + &#34;/stat&#34;
+        try:
+            if os.path.isfile(fname):
+                fd = open(fname, &#34;r&#34;)
+                ff = fd.read().split()
+                ret = func(ff, opt)
+                fd.close()
+            if ret:
+                break
+        except:
+            pass
+    return ret</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pedtts.tts"><code class="flex name class">
+<span>class <span class="ident">tts</span></span>
+<span>(</span><span>prog=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class tts():
+
+    def __init__(self, prog = None):
+        self.stopspeak = False
+        self.haltspeak = False
+        self.speech_pid = None
+        self.prog_set_text = prog
+        self.prog_set_text(&#34;Inited TTS&#34;)
+
+    # Create a file, send it to festival
+    def _speak(self, cstr):
+
+        self.stopspeak = False
+        fname = pedconfig.conf.data_dir + &#34;/festival.txt&#34;
+
+        try:
+            fh = open(fname, &#34;w&#34;)
+            fh.write(cstr)
+        except:
+            put_exception(&#34;Cannot create festival file&#34;)
+            return
+        finally:
+            fh.close()
+        try:
+            if USE_FESTIVAL:
+                self.speech_pid = subprocess.Popen([&#34;festival&#34;, &#34;--tts&#34;, fname])
+            else:
+                # This is more configurable, add option as it is displayed below.
+                #self.speech_pid = subprocess.Popen([&#34;espeak&#34;, &#34;-f&#34;, fname, &#34;-s&#34;, &#34;100&#34;])
+                #self.speech_pid = subprocess.Popen([&#34;espeak&#34;, &#34;-f&#34;, fname, &#34;-v&#34;, &#34;english-us&#34;])
+                self.speech_pid = subprocess.Popen([&#34;espeak-ng&#34;, &#34;-f&#34;, fname,])
+        except:
+            print (&#34;Cannot start TTS espeak-ng&#34;, sys.exc_info())
+            return
+
+        #print (&#34;started&#34;, self.speech_pid.pid)
+        GLib.timeout_add(100, self.check_speak)
+        return True
+
+    def check_speak2(self, ss, opt):
+        if self.speech_pid:
+            if  self.speech_pid.pid == int(ss[0]):
+                # Zombie does not count:
+                if ss[2] != &#34;Z&#34;:
+                    return True
+
+    # Wait for speech to end (sync)
+    def   wait_done(self):
+
+        while True:
+            if self.stopspeak:
+                break
+            if self.haltspeak:
+                return
+            if not self.speech_pid:
+                break
+            usleep(100)
+
+        self.stopspeak = False
+
+    # Timer to see if the speaker has terminated
+    def check_speak(self):
+        # If found, the search returns True
+        ret = withps(self.check_speak2)
+        if not ret:
+            self.speech_pid = None
+        else:
+            # Look for termination again
+            GLib.timeout_add(1000, self.check_speak)
+
+    # --------------------------------------------------------------------
+    # Stop tts instances, kill (all) children
+    # Start speak
+
+    def read_tts(self, self2, butt = None):
+
+        # Running?
+
+        if self.haltspeak and self.speech_pid:
+            return
+
+        self.haltspeak = True
+        self.prog_set_text(&#34;Stopping TTS processes (please wait)&#34;)
+        usleep(100)
+        if self.speech_pid:
+            self.stop_tts()
+            return
+
+        self.haltspeak = False
+        self.stopspeak = False
+        self.prog_set_text(&#34;Started Reading&#34;)
+
+        #self._speak(&#34;Started reading&#34;); self.wait_done()
+        #print(&#34;After start&#34;)
+
+        if self2.xsel == -1 or self2.ysel == -1:
+            self2.mained.update_statusbar(&#34;Nothing selected&#34;)
+            #self._speak(&#34;Nothing selected&#34;)
+
+            # Speak from current point
+            #xxx = self2.xpos + self2.caret[0]
+
+            # Speak from current line
+            xxx = 0
+            yyy = self2.ypos + self2.caret[1]
+
+            # Collect until dot - repeat
+            sss = &#34;&#34;
+
+            self2.xsel = xxx; self2.ysel = yyy;
+
+            for yy in range(len(self2.text) - yyy):
+                yy2 = yyy + yy
+                ttt = self2.text[yy2]
+                if &#34;.&#34; in ttt:
+                    idx = ttt.find(&#34;.&#34;) + 1  # point after dot
+                    sss += ttt[:idx]
+
+                    self2.xsel2 = idx; self2.ysel2 = yy2;
+                    self2.gotoxy(self2.xsel2, self2.ysel2, None, True)
+                    self2.invalidate()
+
+                    #print(&#34;line %d: &#39;%s&#39;&#34; % (yy, sss))
+                    self.prog_set_text(&#34;Reading at line %d&#34; % (yy2))
+                    if not self._speak(sss):
+                        self2.mained.update_statusbar(&#34;TTS cannot start (installed?)&#34;)
+                        break
+
+                    self.wait_done()
+
+                    self2.xsel = idx; self2.ysel = yy2;
+                    self2.invalidate()
+                    sss = ttt[idx:] + &#34; &#34;
+                else:
+                    sss += ttt + &#34; &#34;
+
+                if  self.haltspeak:
+                    break
+            return
+
+        # Normalize
+        xssel = min(self2.xsel, self2.xsel2)
+        xesel = max(self2.xsel, self2.xsel2)
+        yssel = min(self2.ysel, self2.ysel2)
+        yesel = max(self2.ysel, self2.ysel2)
+
+        cnt = yssel; cnt2 = 0; cumm = &#34;&#34;
+
+        while True:
+            if cnt &gt; yesel: break
+            #self.pad_list(self2, cnt)
+
+            line = self2.text[cnt]
+            if self2.colsel:
+                frag = line[xssel:xesel]
+            else :                                  # startsel - endsel
+                if cnt == yssel and cnt == yesel:   # sel on the same line
+                    frag = line[xssel:xesel]
+                elif cnt == yssel:                  # start line
+                    frag = line[xssel:]
+                elif cnt == yesel:                  # end line
+                    frag = line[:xesel]
+                else:
+                    frag = line[:]
+
+            if cnt2: frag = &#34;\n&#34; + frag
+            cumm += frag
+            cnt += 1; cnt2 += 1
+
+        print (&#34;clip:&#34;, cumm)
+        self._speak(cumm)
+
+    def stop_tts2(self, ss, opt):
+        #print ( &#34;stop_tts2&#34;, ss[1])
+        if USE_FESTIVAL:
+            if ss[1] == &#34;(audsp)&#34;:
+                #print (&#34;killing&#34;, ss)
+                os.kill(int(ss[0]), signal.SIGKILL)
+        else:
+            if ss[1] == &#34;(espeak)&#34;:
+                #print (&#34;killing&#34;, ss)
+                os.kill(int(ss[0]), signal.SIGKILL)
+
+    def stop_tts(self):
+        self.stopspeak = True
+        self.prog_set_text(&#34;Stopped Reading&#34;)
+        try:
+            withps(self.stop_tts2)
+        except:
+            put_exception(&#34;Cannot kill&#34;)
+            #self.speech_pid.pid
+
+        self.speech_pid = None</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="pedtts.tts.check_speak"><code class="name flex">
+<span>def <span class="ident">check_speak</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_speak(self):
+    # If found, the search returns True
+    ret = withps(self.check_speak2)
+    if not ret:
+        self.speech_pid = None
+    else:
+        # Look for termination again
+        GLib.timeout_add(1000, self.check_speak)</code></pre>
+</details>
+</dd>
+<dt id="pedtts.tts.check_speak2"><code class="name flex">
+<span>def <span class="ident">check_speak2</span></span>(<span>self, ss, opt)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_speak2(self, ss, opt):
+    if self.speech_pid:
+        if  self.speech_pid.pid == int(ss[0]):
+            # Zombie does not count:
+            if ss[2] != &#34;Z&#34;:
+                return True</code></pre>
+</details>
+</dd>
+<dt id="pedtts.tts.read_tts"><code class="name flex">
+<span>def <span class="ident">read_tts</span></span>(<span>self, self2, butt=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read_tts(self, self2, butt = None):
+
+    # Running?
+
+    if self.haltspeak and self.speech_pid:
+        return
+
+    self.haltspeak = True
+    self.prog_set_text(&#34;Stopping TTS processes (please wait)&#34;)
+    usleep(100)
+    if self.speech_pid:
+        self.stop_tts()
+        return
+
+    self.haltspeak = False
+    self.stopspeak = False
+    self.prog_set_text(&#34;Started Reading&#34;)
+
+    #self._speak(&#34;Started reading&#34;); self.wait_done()
+    #print(&#34;After start&#34;)
+
+    if self2.xsel == -1 or self2.ysel == -1:
+        self2.mained.update_statusbar(&#34;Nothing selected&#34;)
+        #self._speak(&#34;Nothing selected&#34;)
+
+        # Speak from current point
+        #xxx = self2.xpos + self2.caret[0]
+
+        # Speak from current line
+        xxx = 0
+        yyy = self2.ypos + self2.caret[1]
+
+        # Collect until dot - repeat
+        sss = &#34;&#34;
+
+        self2.xsel = xxx; self2.ysel = yyy;
+
+        for yy in range(len(self2.text) - yyy):
+            yy2 = yyy + yy
+            ttt = self2.text[yy2]
+            if &#34;.&#34; in ttt:
+                idx = ttt.find(&#34;.&#34;) + 1  # point after dot
+                sss += ttt[:idx]
+
+                self2.xsel2 = idx; self2.ysel2 = yy2;
+                self2.gotoxy(self2.xsel2, self2.ysel2, None, True)
+                self2.invalidate()
+
+                #print(&#34;line %d: &#39;%s&#39;&#34; % (yy, sss))
+                self.prog_set_text(&#34;Reading at line %d&#34; % (yy2))
+                if not self._speak(sss):
+                    self2.mained.update_statusbar(&#34;TTS cannot start (installed?)&#34;)
+                    break
+
+                self.wait_done()
+
+                self2.xsel = idx; self2.ysel = yy2;
+                self2.invalidate()
+                sss = ttt[idx:] + &#34; &#34;
+            else:
+                sss += ttt + &#34; &#34;
+
+            if  self.haltspeak:
+                break
+        return
+
+    # Normalize
+    xssel = min(self2.xsel, self2.xsel2)
+    xesel = max(self2.xsel, self2.xsel2)
+    yssel = min(self2.ysel, self2.ysel2)
+    yesel = max(self2.ysel, self2.ysel2)
+
+    cnt = yssel; cnt2 = 0; cumm = &#34;&#34;
+
+    while True:
+        if cnt &gt; yesel: break
+        #self.pad_list(self2, cnt)
+
+        line = self2.text[cnt]
+        if self2.colsel:
+            frag = line[xssel:xesel]
+        else :                                  # startsel - endsel
+            if cnt == yssel and cnt == yesel:   # sel on the same line
+                frag = line[xssel:xesel]
+            elif cnt == yssel:                  # start line
+                frag = line[xssel:]
+            elif cnt == yesel:                  # end line
+                frag = line[:xesel]
+            else:
+                frag = line[:]
+
+        if cnt2: frag = &#34;\n&#34; + frag
+        cumm += frag
+        cnt += 1; cnt2 += 1
+
+    print (&#34;clip:&#34;, cumm)
+    self._speak(cumm)</code></pre>
+</details>
+</dd>
+<dt id="pedtts.tts.stop_tts"><code class="name flex">
+<span>def <span class="ident">stop_tts</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop_tts(self):
+    self.stopspeak = True
+    self.prog_set_text(&#34;Stopped Reading&#34;)
+    try:
+        withps(self.stop_tts2)
+    except:
+        put_exception(&#34;Cannot kill&#34;)
+        #self.speech_pid.pid
+
+    self.speech_pid = None</code></pre>
+</details>
+</dd>
+<dt id="pedtts.tts.stop_tts2"><code class="name flex">
+<span>def <span class="ident">stop_tts2</span></span>(<span>self, ss, opt)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop_tts2(self, ss, opt):
+    #print ( &#34;stop_tts2&#34;, ss[1])
+    if USE_FESTIVAL:
+        if ss[1] == &#34;(audsp)&#34;:
+            #print (&#34;killing&#34;, ss)
+            os.kill(int(ss[0]), signal.SIGKILL)
+    else:
+        if ss[1] == &#34;(espeak)&#34;:
+            #print (&#34;killing&#34;, ss)
+            os.kill(int(ss[0]), signal.SIGKILL)</code></pre>
+</details>
+</dd>
+<dt id="pedtts.tts.wait_done"><code class="name flex">
+<span>def <span class="ident">wait_done</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def   wait_done(self):
+
+    while True:
+        if self.stopspeak:
+            break
+        if self.haltspeak:
+            return
+        if not self.speech_pid:
+            break
+        usleep(100)
+
+    self.stopspeak = False</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="pedtts.withps" href="#pedtts.withps">withps</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pedtts.tts" href="#pedtts.tts">tts</a></code></h4>
+<ul class="two-column">
+<li><code><a title="pedtts.tts.check_speak" href="#pedtts.tts.check_speak">check_speak</a></code></li>
+<li><code><a title="pedtts.tts.check_speak2" href="#pedtts.tts.check_speak2">check_speak2</a></code></li>
+<li><code><a title="pedtts.tts.read_tts" href="#pedtts.tts.read_tts">read_tts</a></code></li>
+<li><code><a title="pedtts.tts.stop_tts" href="#pedtts.tts.stop_tts">stop_tts</a></code></li>
+<li><code><a title="pedtts.tts.stop_tts2" href="#pedtts.tts.stop_tts2">stop_tts2</a></code></li>
+<li><code><a title="pedtts.tts.wait_done" href="#pedtts.tts.wait_done">wait_done</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

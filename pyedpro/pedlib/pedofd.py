@@ -146,6 +146,7 @@ def ofd(fname = "", self2 = None):
 
     #print ("response", response, "result", res  )
     dialog.destroy()
+    #del dialog
     return res
 
 def butt_this(butt, dialog):

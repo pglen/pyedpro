@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pedofd API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pedofd</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Action Handler for simple open file dialog
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+import time, os, re, string, warnings, platform, sys
+
+import gi
+gi.require_version(&#34;Gtk&#34;, &#34;3.0&#34;)
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GObject
+from gi.repository import GdkPixbuf
+
+from pedlib import pedconfig
+
+#sys.path.append(&#39;..&#39;)
+#sys.path.append(&#39;..&#39; + os.sep + &#34;pycommon&#34;)
+
+from pycommon.pggui import *
+
+def ofd(fname = &#34;&#34;, self2 = None):
+
+    warnings.simplefilter(&#34;ignore&#34;)
+
+    dialog = Gtk.Dialog(&#34;pyedpro: Open File&#34;,
+                   None,
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+
+    #dialog.set_transient_for(self2.mained.mywin)
+    if self2:
+        dialog.set_transient_for(self2.get_toplevel())
+    #else:
+    #    dialog.set_transient_for(None)
+
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    #dialog.set_position(Gtk.WindowPosition.CENTER)
+    dialog.set_size_request(800, 600)
+    dialog.set_default_size(800, 600)
+    #print dialog
+    dialog.xmulti = []
+    dialog.self2 = self2
+
+    #dialog.set_transient_for(pyedlib.pedconfig.conf.pe.mywin);
+
+    dialog.connect(&#34;key-press-event&#34;, area_key, dialog)
+    dialog.connect(&#34;key-release-event&#34;, area_key, dialog)
+
+    # Spacers
+    label1  = Gtk.Label(&#34;   &#34;);  label2 = Gtk.Label(&#34;   &#34;)
+    label3  = Gtk.Label(&#34;   &#34;);  label4 = Gtk.Label(&#34;   &#34;)
+    label5  = Gtk.Label(&#34;   &#34;);  label6 = Gtk.Label(&#34;   &#34;)
+    label7  = Gtk.Label(&#34;   &#34;);  label8 = Gtk.Label(&#34;   &#34;)
+    label9  = Gtk.Label(&#34;   &#34;);
+    label10 = Gtk.Label.new_with_mnemonic(&#34; Open File by Name (click on &#39;Open _This&#39; to open it) &#34;);
+    label11  = Gtk.Label(&#34;  &#34;);  label12 = Gtk.Label(&#34; &#34;);
+    #label13  = Gtk.Label(&#34;  &#34;);  label14 = Gtk.Label(&#34; &#34;);
+
+    dialog.label11 = Gtk.Label(&#34;   &#34;)
+    dialog.label12 = Gtk.Label(&#34;   &#34;)
+
+    dialog.pbox = Gtk.HBox()
+    fill_path(dialog)
+
+    dialog.vbox.pack_start(label4, 0, 0, 0)
+    dialog.vbox.pack_start(dialog.pbox, 0, 0, 0)
+
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+    dialog.vbox.pack_start(label10, 0, 0, 0)
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+
+    warnings.simplefilter(&#34;ignore&#34;)
+    dialog.entry = Gtk.Entry();
+    warnings.simplefilter(&#34;default&#34;)
+
+    dialog.entry.set_activates_default(True)
+    dialog.entry.set_text(fname)
+
+    ot =  Gtk.Button.new_with_mnemonic(&#34;Open thi_s&#34;)
+    ot.connect(&#34;clicked&#34;, butt_this, dialog)
+
+    hbox2 = Gtk.HBox()
+    hbox2.pack_start(label6, 0, 0, 0)
+    hbox2.pack_start(dialog.entry, True, True, 0)
+    hbox2.pack_start(label11, 0, 0, 0)
+    hbox2.pack_start(ot, 0, 0, 0)
+    hbox2.pack_start(label7, 0, 0, 0)
+
+    dialog.vbox.pack_start(hbox2, 0, 0, 0)
+
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+    label13 = Gtk.Label.new(&#34; Dbl click to select one File/Dir, or Shift/Ctrl for multi select; then press Alt-O or click OK&#34;);
+    dialog.vbox.pack_start(label13, 0, 0, 0)
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+
+    dialog.ts = Gtk.ListStore(str, str, str, str)
+    tview = create_ftree(dialog.ts)
+
+    scroll = Gtk.ScrolledWindow()
+
+    tview.connect(&#34;row-activated&#34;,  tree_sel, dialog)
+    tview.connect(&#34;cursor-changed&#34;,  tree_sel_row, dialog)
+    dialog.tview = tview
+
+    scroll.add(tview)
+
+    frame2 = Gtk.Frame(); frame2.add(scroll)
+
+    hbox3 = Gtk.HBox()
+    hbox3.pack_start(label1, 0, 0, 0)
+    hbox3.pack_start(frame2, True, True, 0)
+    hbox3.pack_start(label2, 0, 0, 0)
+
+    dialog.vbox.pack_start(hbox3, True, True, 0)
+    dialog.vbox.pack_start(label3, 0, 0, 0)
+
+    dialog.show_all()
+    populate(dialog)
+    dialog.set_focus(tview)
+    #dialog.set_focus(dialog.entry)
+    warnings.simplefilter(&#34;default&#34;)
+
+    response = dialog.run()
+
+    res = []
+    if response == Gtk.ResponseType.ACCEPT:
+        xmodel = dialog.ts
+        sel = tview.get_selection()
+        # Is multi selection?
+        iter = xmodel.get_iter_first()
+        while True:
+            #print(&#34;iterate&#34;, xmodel.get_value(iter, 0))
+            if sel.iter_is_selected(iter):
+                xstr = xmodel.get_value(iter, 0)
+                xstr2 = os.path.realpath(xstr)
+                res.append(xstr2)
+            iter = xmodel.iter_next(iter)
+            if not iter:
+                break
+
+    #print (&#34;response&#34;, response, &#34;result&#34;, res  )
+    dialog.destroy()
+    return res
+
+def butt_this(butt, dialog):
+    ttt = dialog.entry.get_text()
+    #print(&#34;butt_this&#34;, ttt)
+    if ttt:
+        # Expand user var
+        ttt = os.path.expanduser(ttt)
+        dialog.self2.mained.openfile(ttt)
+        # Close like we have a file
+        pedconfig.conf.pedwin.update_statusbar(&#34;Opened file: &#39;%s&#39;&#34; % ttt);
+        #dialog.destroy()
+        #return [ttt,]
+    else:
+        pedconfig.conf.pedwin.update_statusbar(&#34;Please enter filename to open.&#34;);
+
+def butt_click(butt, dialog):
+    #print butt.path
+    os.chdir(butt.path)
+    populate(dialog)
+
+def fill_path(dialog):
+
+    cccc = dialog.pbox.get_children()
+    for cc in cccc:
+        dialog.pbox.remove(cc)
+
+    cwd = os.getcwd();
+    darr = cwd.split(os.sep)
+    dialog.pbox.pack_start(dialog.label11, 0, 0, 0)
+
+    if platform.system().find(&#34;Win&#34;) &gt;= 0:
+        curr = &#34;&#34;
+    else:
+        curr = os.sep
+
+    for aa in darr:
+        butt = Gtk.Button(label=aa)
+        if platform.system().find(&#34;Win&#34;) &gt;= 0:
+            curr = curr + aa + os.sep
+        else:
+            curr = os.path.join(curr, aa)
+        #print(&#34;path aa &#39;%s&#39; &#39;%s&#39;&#34; % (aa, curr) )
+        butt.path = curr
+        butt.set_focus_on_click(False)
+        butt.connect(&#34;clicked&#34;, butt_click, dialog)
+        dialog.pbox.pack_start(butt, 0, 0, 2)
+
+    dialog.pbox.pack_start(dialog.label12, 0, 0, 0)
+    dialog.show_all()
+
+# ------------------------------------------------------------------------
+
+def populate(dialog):
+
+    fill_path(dialog)
+
+    # Clear old contents:
+    while True:
+        root = dialog.ts.get_iter_first()
+        if not root:
+            break
+        try:
+            dialog.ts.remove(root)
+        except:
+            print(&#34;Exception on rm ts&#34;, sys.exc_info())
+
+    ppp = &#34;..&#34;
+    filestat = os.stat(ppp)
+    piter = dialog.ts.append(row=None)
+    dialog.ts.set(piter, 0, str(ppp))
+    dialog.ts.set(piter, 1, str(filestat.st_size))
+    dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
+    dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+
+    ddd2 = os.listdir(&#34;.&#34;)
+    #ddd = sorted(ddd2)
+    ddd2.sort()
+    ddd = []
+
+    # List ignored extensions here
+    extno = [&#34;.pyc&#34;, &#34;.o&#34; &#34;.lo&#34;, &#34;.lst&#34;, &#34;.png&#34;, &#34;.jpg&#34;, ]
+
+    for aa in ddd2:
+        ext = os.path.splitext(aa)[1]
+        flaf = 0
+        # Ignore many ext
+        for bb in extno:
+            #print(&#34;bb&#34;, bb, ext)
+            if ext == bb:
+                flaf = 1
+                break
+
+        if not flaf:
+            ddd.append(aa)
+
+    for filename in ddd:
+        if filename[0] == &#34;.&#34;:
+            continue
+        if os.path.isdir(filename):
+            try:
+                filestat = os.stat(filename)
+            except:
+                pass
+            piter = dialog.ts.append(row=None)
+            #dialog.ts.set(piter, 0, &#34;[&#34;+ filename + &#34;]&#34;)
+            #print filename,
+            dialog.ts.set(piter, 0, filename )
+            dialog.ts.set(piter, 1, str(filestat.st_size))
+            dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
+            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+
+    for filename in ddd:
+        if filename[0] == &#34;.&#34;:
+            continue
+        if not os.path.isdir(filename):
+            try:
+                filestat = os.stat(filename)
+            except:
+                print(&#34;Cannot stat&#34;, filename)
+                pass
+
+            piter = dialog.ts.append(row=None)
+            #print filename,
+            dialog.ts.set(piter, 0, filename)
+            dialog.ts.set(piter, 1, str(filestat.st_size))
+            dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
+            #dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_atime)))
+
+    # --------------------------------------------------------------------
+
+def compare(model, row1, row2, user_data):
+
+    sort_column, _ = model.get_sort_column_id()
+    value1 = model.get_value(row1, sort_column)
+    value2 = model.get_value(row2, sort_column)
+    #print(sort_column, value1, value2)
+    if value1 &lt; value2:
+        return -1
+    elif value1 == value2:
+        return 0
+    else:
+        return 1
+
+def ncompare(model, row1, row2, user_data):
+    sort_column, _ = model.get_sort_column_id()
+    value1 = model.get_value(row1, sort_column)
+    value2 = model.get_value(row2, sort_column)
+    #print(&#34;n&#34;, sort_column, value1, value2, type(value1))
+    if int(value1) &lt; int(value2):
+        return -1
+    elif int(value1) == int(value2):
+        return 0
+    else:
+        return 1
+
+def create_ftree(ts, text = None):
+
+    # create the tview using ts
+    tv = Gtk.TreeView(model=ts)
+
+    tv.set_search_column(0)
+    tv.set_headers_clickable(True)
+    #tv.set_enable_search(True)
+    ts.set_sort_func(0, compare, None)
+    ts.set_sort_func(1, ncompare, None)
+
+    # create a CellRendererText to render the data
+    cell = Gtk.CellRendererText()
+
+    tvcolumn = Gtk.TreeViewColumn(&#39;File&#39;)
+    tvcolumn.set_min_width(240)
+    tvcolumn.pack_start(cell, True)
+    tvcolumn.add_attribute(cell, &#39;text&#39;, 0)
+    tvcolumn.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
+    tvcolumn.set_sort_column_id(0)
+    tv.append_column(tvcolumn)
+
+    cell2 = Gtk.CellRendererText()
+    tvcolumn2 = Gtk.TreeViewColumn(&#39;Size&#39;)
+    tvcolumn2.set_min_width(100)
+    tvcolumn2.set_sort_column_id(1)
+    tvcolumn2.pack_start(cell2, True)
+    tvcolumn2.add_attribute(cell2, &#39;text&#39;, 1)
+    tv.append_column(tvcolumn2)
+
+    cell3 = Gtk.CellRendererText()
+    tvcolumn3 = Gtk.TreeViewColumn(&#39;Perm&#39;)
+    tvcolumn3.set_min_width(120)
+    tvcolumn3.pack_start(cell3, True)
+    tvcolumn3.add_attribute(cell3, &#39;text&#39;, 2)
+    tv.append_column(tvcolumn3)
+
+    cell4 = Gtk.CellRendererText()
+    tvcolumn4 = Gtk.TreeViewColumn(&#39;Modified&#39;)
+    tvcolumn4.set_min_width(150)
+    tvcolumn4.pack_start(cell4, True)
+    tvcolumn4.set_sort_column_id(3)
+    tvcolumn4.add_attribute(cell4, &#39;text&#39;, 3)
+    tv.append_column(tvcolumn4)
+
+    tv.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
+
+    return tv
+
+    #sel.get_selected()
+
+def tree_sel_row(xtree, dialog):
+
+    #print(&#34;tree_sel_row&#34;, xtree)
+    sel = xtree.get_selection()
+    xmodel, xpath = sel.get_selected_rows()
+    if sel:
+        try:
+            xiter2 = xmodel.get_iter(xpath)
+            xstr = xmodel.get_value(xiter2, 0)
+            dialog.entry.set_text(xstr)
+        except:
+            pass
+            #print(&#34;sel row&#34;, sys.exc_info())
+    else:
+        dialog.entry.set_text(&#34;&#34;)
+
+def tree_sel(xtree, xiter, xpath, dialog):
+
+    #print (&#34;tree_sel&#34;, xtree, xiter, xpath)
+    sel = xtree.get_selection()
+    xmodel, xpath = sel.get_selected_rows()
+    if xpath:
+        for aa in xpath:
+            xiter2 = xmodel.get_iter(aa)
+            xstr = xmodel.get_value(xiter2, 0)
+            #print(&#34;mul selstr: &#34;, &#34;&#39;&#34; + xstr + &#34;&#39;&#34; )
+            if click_dir_action(xstr):
+                dialog.xmulti = []
+                populate(dialog)
+                return
+        dialog.response(Gtk.ResponseType.ACCEPT)
+
+# If directory, change to it
+def click_dir_action(xstr):
+    if xstr[0] == &#34;[&#34;:
+         xstr = xstr[1:len(xstr)-1]
+    if os.path.isdir(xstr):
+        #print (&#34;dir&#34;, xstr)
+        os.chdir(xstr)
+        return True
+
+# Call key handler
+def area_key(area, event, self):
+
+    #print &#34;area_key&#34;, event
+    # Do key down:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
+            #print &#34;Esc&#34;
+            return
+            #area.destroy()
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
+            #print &#34;Ret&#34;
+            return
+            #area.destroy()
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_BackSpace:
+            os.chdir(&#34;..&#34;)
+            populate(self)
+            #print &#34;BS&#34;
+
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
+            self.alt = True;
+
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
+            if self.alt:
+                area.destroy()
+
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
+            self.alt = False;
+
+    return None
+
+# ------------------------------------------------------------------------
+def mode2str(mode):
+
+    #print mode, oct(mode), hex(mode)
+
+    dstr = &#34; &#34;
+    if mode &amp; 0x4000:
+        dstr = &#34;d&#34;
+
+    estr = &#34;&#34;
+    for aa in range(3):
+        xstr = &#34;&#34;
+        if mode &amp; 0x4: xstr += &#34;r&#34;
+        else:        xstr += &#34;-&#34;
+        if mode &amp; 0x2: xstr += &#34;w&#34;
+        else:        xstr += &#34;-&#34;
+        if mode &amp; 0x1: xstr += &#34;x&#34;
+        else:        xstr += &#34;-&#34;
+        mode = mode &gt;&gt; 3
+        estr = xstr + estr  # Reverse
+
+    estr = dstr + estr
+    return estr
+
+# eof</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="pedofd.area_key"><code class="name flex">
+<span>def <span class="ident">area_key</span></span>(<span>area, event, self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_key(area, event, self):
+
+    #print &#34;area_key&#34;, event
+    # Do key down:
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Escape:
+            #print &#34;Esc&#34;
+            return
+            #area.destroy()
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_Return:
+            #print &#34;Ret&#34;
+            return
+            #area.destroy()
+
+    if  event.type == Gdk.EventType.KEY_PRESS:
+        if event.keyval == Gdk.KEY_BackSpace:
+            os.chdir(&#34;..&#34;)
+            populate(self)
+            #print &#34;BS&#34;
+
+        if event.keyval == Gdk.KEY_Alt_L or \
+                event.keyval == Gdk.KEY_Alt_R:
+            self.alt = True;
+
+        if event.keyval == Gdk.KEY_x or \
+                event.keyval == Gdk.KEY_X:
+            if self.alt:
+                area.destroy()
+
+    elif  event.type == Gdk.EventType.KEY_RELEASE:
+        if event.keyval == Gdk.KEY_Alt_L or \
+              event.keyval == Gdk.KEY_Alt_R:
+            self.alt = False;
+
+    return None</code></pre>
+</details>
+</dd>
+<dt id="pedofd.butt_click"><code class="name flex">
+<span>def <span class="ident">butt_click</span></span>(<span>butt, dialog)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def butt_click(butt, dialog):
+    #print butt.path
+    os.chdir(butt.path)
+    populate(dialog)</code></pre>
+</details>
+</dd>
+<dt id="pedofd.butt_this"><code class="name flex">
+<span>def <span class="ident">butt_this</span></span>(<span>butt, dialog)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def butt_this(butt, dialog):
+    ttt = dialog.entry.get_text()
+    #print(&#34;butt_this&#34;, ttt)
+    if ttt:
+        # Expand user var
+        ttt = os.path.expanduser(ttt)
+        dialog.self2.mained.openfile(ttt)
+        # Close like we have a file
+        pedconfig.conf.pedwin.update_statusbar(&#34;Opened file: &#39;%s&#39;&#34; % ttt);
+        #dialog.destroy()
+        #return [ttt,]
+    else:
+        pedconfig.conf.pedwin.update_statusbar(&#34;Please enter filename to open.&#34;);</code></pre>
+</details>
+</dd>
+<dt id="pedofd.click_dir_action"><code class="name flex">
+<span>def <span class="ident">click_dir_action</span></span>(<span>xstr)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def click_dir_action(xstr):
+    if xstr[0] == &#34;[&#34;:
+         xstr = xstr[1:len(xstr)-1]
+    if os.path.isdir(xstr):
+        #print (&#34;dir&#34;, xstr)
+        os.chdir(xstr)
+        return True</code></pre>
+</details>
+</dd>
+<dt id="pedofd.compare"><code class="name flex">
+<span>def <span class="ident">compare</span></span>(<span>model, row1, row2, user_data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare(model, row1, row2, user_data):
+
+    sort_column, _ = model.get_sort_column_id()
+    value1 = model.get_value(row1, sort_column)
+    value2 = model.get_value(row2, sort_column)
+    #print(sort_column, value1, value2)
+    if value1 &lt; value2:
+        return -1
+    elif value1 == value2:
+        return 0
+    else:
+        return 1</code></pre>
+</details>
+</dd>
+<dt id="pedofd.create_ftree"><code class="name flex">
+<span>def <span class="ident">create_ftree</span></span>(<span>ts, text=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_ftree(ts, text = None):
+
+    # create the tview using ts
+    tv = Gtk.TreeView(model=ts)
+
+    tv.set_search_column(0)
+    tv.set_headers_clickable(True)
+    #tv.set_enable_search(True)
+    ts.set_sort_func(0, compare, None)
+    ts.set_sort_func(1, ncompare, None)
+
+    # create a CellRendererText to render the data
+    cell = Gtk.CellRendererText()
+
+    tvcolumn = Gtk.TreeViewColumn(&#39;File&#39;)
+    tvcolumn.set_min_width(240)
+    tvcolumn.pack_start(cell, True)
+    tvcolumn.add_attribute(cell, &#39;text&#39;, 0)
+    tvcolumn.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
+    tvcolumn.set_sort_column_id(0)
+    tv.append_column(tvcolumn)
+
+    cell2 = Gtk.CellRendererText()
+    tvcolumn2 = Gtk.TreeViewColumn(&#39;Size&#39;)
+    tvcolumn2.set_min_width(100)
+    tvcolumn2.set_sort_column_id(1)
+    tvcolumn2.pack_start(cell2, True)
+    tvcolumn2.add_attribute(cell2, &#39;text&#39;, 1)
+    tv.append_column(tvcolumn2)
+
+    cell3 = Gtk.CellRendererText()
+    tvcolumn3 = Gtk.TreeViewColumn(&#39;Perm&#39;)
+    tvcolumn3.set_min_width(120)
+    tvcolumn3.pack_start(cell3, True)
+    tvcolumn3.add_attribute(cell3, &#39;text&#39;, 2)
+    tv.append_column(tvcolumn3)
+
+    cell4 = Gtk.CellRendererText()
+    tvcolumn4 = Gtk.TreeViewColumn(&#39;Modified&#39;)
+    tvcolumn4.set_min_width(150)
+    tvcolumn4.pack_start(cell4, True)
+    tvcolumn4.set_sort_column_id(3)
+    tvcolumn4.add_attribute(cell4, &#39;text&#39;, 3)
+    tv.append_column(tvcolumn4)
+
+    tv.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
+
+    return tv
+
+    #sel.get_selected()</code></pre>
+</details>
+</dd>
+<dt id="pedofd.fill_path"><code class="name flex">
+<span>def <span class="ident">fill_path</span></span>(<span>dialog)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fill_path(dialog):
+
+    cccc = dialog.pbox.get_children()
+    for cc in cccc:
+        dialog.pbox.remove(cc)
+
+    cwd = os.getcwd();
+    darr = cwd.split(os.sep)
+    dialog.pbox.pack_start(dialog.label11, 0, 0, 0)
+
+    if platform.system().find(&#34;Win&#34;) &gt;= 0:
+        curr = &#34;&#34;
+    else:
+        curr = os.sep
+
+    for aa in darr:
+        butt = Gtk.Button(label=aa)
+        if platform.system().find(&#34;Win&#34;) &gt;= 0:
+            curr = curr + aa + os.sep
+        else:
+            curr = os.path.join(curr, aa)
+        #print(&#34;path aa &#39;%s&#39; &#39;%s&#39;&#34; % (aa, curr) )
+        butt.path = curr
+        butt.set_focus_on_click(False)
+        butt.connect(&#34;clicked&#34;, butt_click, dialog)
+        dialog.pbox.pack_start(butt, 0, 0, 2)
+
+    dialog.pbox.pack_start(dialog.label12, 0, 0, 0)
+    dialog.show_all()</code></pre>
+</details>
+</dd>
+<dt id="pedofd.mode2str"><code class="name flex">
+<span>def <span class="ident">mode2str</span></span>(<span>mode)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mode2str(mode):
+
+    #print mode, oct(mode), hex(mode)
+
+    dstr = &#34; &#34;
+    if mode &amp; 0x4000:
+        dstr = &#34;d&#34;
+
+    estr = &#34;&#34;
+    for aa in range(3):
+        xstr = &#34;&#34;
+        if mode &amp; 0x4: xstr += &#34;r&#34;
+        else:        xstr += &#34;-&#34;
+        if mode &amp; 0x2: xstr += &#34;w&#34;
+        else:        xstr += &#34;-&#34;
+        if mode &amp; 0x1: xstr += &#34;x&#34;
+        else:        xstr += &#34;-&#34;
+        mode = mode &gt;&gt; 3
+        estr = xstr + estr  # Reverse
+
+    estr = dstr + estr
+    return estr</code></pre>
+</details>
+</dd>
+<dt id="pedofd.ncompare"><code class="name flex">
+<span>def <span class="ident">ncompare</span></span>(<span>model, row1, row2, user_data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ncompare(model, row1, row2, user_data):
+    sort_column, _ = model.get_sort_column_id()
+    value1 = model.get_value(row1, sort_column)
+    value2 = model.get_value(row2, sort_column)
+    #print(&#34;n&#34;, sort_column, value1, value2, type(value1))
+    if int(value1) &lt; int(value2):
+        return -1
+    elif int(value1) == int(value2):
+        return 0
+    else:
+        return 1</code></pre>
+</details>
+</dd>
+<dt id="pedofd.ofd"><code class="name flex">
+<span>def <span class="ident">ofd</span></span>(<span>fname='', self2=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ofd(fname = &#34;&#34;, self2 = None):
+
+    warnings.simplefilter(&#34;ignore&#34;)
+
+    dialog = Gtk.Dialog(&#34;pyedpro: Open File&#34;,
+                   None,
+                   Gtk.DialogFlags.MODAL | \
+                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+
+    #dialog.set_transient_for(self2.mained.mywin)
+    if self2:
+        dialog.set_transient_for(self2.get_toplevel())
+    #else:
+    #    dialog.set_transient_for(None)
+
+    dialog.set_default_response(Gtk.ResponseType.ACCEPT)
+    #dialog.set_position(Gtk.WindowPosition.CENTER)
+    dialog.set_size_request(800, 600)
+    dialog.set_default_size(800, 600)
+    #print dialog
+    dialog.xmulti = []
+    dialog.self2 = self2
+
+    #dialog.set_transient_for(pyedlib.pedconfig.conf.pe.mywin);
+
+    dialog.connect(&#34;key-press-event&#34;, area_key, dialog)
+    dialog.connect(&#34;key-release-event&#34;, area_key, dialog)
+
+    # Spacers
+    label1  = Gtk.Label(&#34;   &#34;);  label2 = Gtk.Label(&#34;   &#34;)
+    label3  = Gtk.Label(&#34;   &#34;);  label4 = Gtk.Label(&#34;   &#34;)
+    label5  = Gtk.Label(&#34;   &#34;);  label6 = Gtk.Label(&#34;   &#34;)
+    label7  = Gtk.Label(&#34;   &#34;);  label8 = Gtk.Label(&#34;   &#34;)
+    label9  = Gtk.Label(&#34;   &#34;);
+    label10 = Gtk.Label.new_with_mnemonic(&#34; Open File by Name (click on &#39;Open _This&#39; to open it) &#34;);
+    label11  = Gtk.Label(&#34;  &#34;);  label12 = Gtk.Label(&#34; &#34;);
+    #label13  = Gtk.Label(&#34;  &#34;);  label14 = Gtk.Label(&#34; &#34;);
+
+    dialog.label11 = Gtk.Label(&#34;   &#34;)
+    dialog.label12 = Gtk.Label(&#34;   &#34;)
+
+    dialog.pbox = Gtk.HBox()
+    fill_path(dialog)
+
+    dialog.vbox.pack_start(label4, 0, 0, 0)
+    dialog.vbox.pack_start(dialog.pbox, 0, 0, 0)
+
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+    dialog.vbox.pack_start(label10, 0, 0, 0)
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+
+    warnings.simplefilter(&#34;ignore&#34;)
+    dialog.entry = Gtk.Entry();
+    warnings.simplefilter(&#34;default&#34;)
+
+    dialog.entry.set_activates_default(True)
+    dialog.entry.set_text(fname)
+
+    ot =  Gtk.Button.new_with_mnemonic(&#34;Open thi_s&#34;)
+    ot.connect(&#34;clicked&#34;, butt_this, dialog)
+
+    hbox2 = Gtk.HBox()
+    hbox2.pack_start(label6, 0, 0, 0)
+    hbox2.pack_start(dialog.entry, True, True, 0)
+    hbox2.pack_start(label11, 0, 0, 0)
+    hbox2.pack_start(ot, 0, 0, 0)
+    hbox2.pack_start(label7, 0, 0, 0)
+
+    dialog.vbox.pack_start(hbox2, 0, 0, 0)
+
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+    label13 = Gtk.Label.new(&#34; Dbl click to select one File/Dir, or Shift/Ctrl for multi select; then press Alt-O or click OK&#34;);
+    dialog.vbox.pack_start(label13, 0, 0, 0)
+    dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
+
+    dialog.ts = Gtk.ListStore(str, str, str, str)
+    tview = create_ftree(dialog.ts)
+
+    scroll = Gtk.ScrolledWindow()
+
+    tview.connect(&#34;row-activated&#34;,  tree_sel, dialog)
+    tview.connect(&#34;cursor-changed&#34;,  tree_sel_row, dialog)
+    dialog.tview = tview
+
+    scroll.add(tview)
+
+    frame2 = Gtk.Frame(); frame2.add(scroll)
+
+    hbox3 = Gtk.HBox()
+    hbox3.pack_start(label1, 0, 0, 0)
+    hbox3.pack_start(frame2, True, True, 0)
+    hbox3.pack_start(label2, 0, 0, 0)
+
+    dialog.vbox.pack_start(hbox3, True, True, 0)
+    dialog.vbox.pack_start(label3, 0, 0, 0)
+
+    dialog.show_all()
+    populate(dialog)
+    dialog.set_focus(tview)
+    #dialog.set_focus(dialog.entry)
+    warnings.simplefilter(&#34;default&#34;)
+
+    response = dialog.run()
+
+    res = []
+    if response == Gtk.ResponseType.ACCEPT:
+        xmodel = dialog.ts
+        sel = tview.get_selection()
+        # Is multi selection?
+        iter = xmodel.get_iter_first()
+        while True:
+            #print(&#34;iterate&#34;, xmodel.get_value(iter, 0))
+            if sel.iter_is_selected(iter):
+                xstr = xmodel.get_value(iter, 0)
+                xstr2 = os.path.realpath(xstr)
+                res.append(xstr2)
+            iter = xmodel.iter_next(iter)
+            if not iter:
+                break
+
+    #print (&#34;response&#34;, response, &#34;result&#34;, res  )
+    dialog.destroy()
+    return res</code></pre>
+</details>
+</dd>
+<dt id="pedofd.populate"><code class="name flex">
+<span>def <span class="ident">populate</span></span>(<span>dialog)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def populate(dialog):
+
+    fill_path(dialog)
+
+    # Clear old contents:
+    while True:
+        root = dialog.ts.get_iter_first()
+        if not root:
+            break
+        try:
+            dialog.ts.remove(root)
+        except:
+            print(&#34;Exception on rm ts&#34;, sys.exc_info())
+
+    ppp = &#34;..&#34;
+    filestat = os.stat(ppp)
+    piter = dialog.ts.append(row=None)
+    dialog.ts.set(piter, 0, str(ppp))
+    dialog.ts.set(piter, 1, str(filestat.st_size))
+    dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
+    dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+
+    ddd2 = os.listdir(&#34;.&#34;)
+    #ddd = sorted(ddd2)
+    ddd2.sort()
+    ddd = []
+
+    # List ignored extensions here
+    extno = [&#34;.pyc&#34;, &#34;.o&#34; &#34;.lo&#34;, &#34;.lst&#34;, &#34;.png&#34;, &#34;.jpg&#34;, ]
+
+    for aa in ddd2:
+        ext = os.path.splitext(aa)[1]
+        flaf = 0
+        # Ignore many ext
+        for bb in extno:
+            #print(&#34;bb&#34;, bb, ext)
+            if ext == bb:
+                flaf = 1
+                break
+
+        if not flaf:
+            ddd.append(aa)
+
+    for filename in ddd:
+        if filename[0] == &#34;.&#34;:
+            continue
+        if os.path.isdir(filename):
+            try:
+                filestat = os.stat(filename)
+            except:
+                pass
+            piter = dialog.ts.append(row=None)
+            #dialog.ts.set(piter, 0, &#34;[&#34;+ filename + &#34;]&#34;)
+            #print filename,
+            dialog.ts.set(piter, 0, filename )
+            dialog.ts.set(piter, 1, str(filestat.st_size))
+            dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
+            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+
+    for filename in ddd:
+        if filename[0] == &#34;.&#34;:
+            continue
+        if not os.path.isdir(filename):
+            try:
+                filestat = os.stat(filename)
+            except:
+                print(&#34;Cannot stat&#34;, filename)
+                pass
+
+            piter = dialog.ts.append(row=None)
+            #print filename,
+            dialog.ts.set(piter, 0, filename)
+            dialog.ts.set(piter, 1, str(filestat.st_size))
+            dialog.ts.set(piter, 2, mode2str(filestat.st_mode))
+            #dialog.ts.set(piter, 3, str(time.ctime(filestat.st_mtime)))
+            dialog.ts.set(piter, 3, str(time.ctime(filestat.st_atime)))
+
+    # --------------------------------------------------------------------</code></pre>
+</details>
+</dd>
+<dt id="pedofd.tree_sel"><code class="name flex">
+<span>def <span class="ident">tree_sel</span></span>(<span>xtree, xiter, xpath, dialog)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tree_sel(xtree, xiter, xpath, dialog):
+
+    #print (&#34;tree_sel&#34;, xtree, xiter, xpath)
+    sel = xtree.get_selection()
+    xmodel, xpath = sel.get_selected_rows()
+    if xpath:
+        for aa in xpath:
+            xiter2 = xmodel.get_iter(aa)
+            xstr = xmodel.get_value(xiter2, 0)
+            #print(&#34;mul selstr: &#34;, &#34;&#39;&#34; + xstr + &#34;&#39;&#34; )
+            if click_dir_action(xstr):
+                dialog.xmulti = []
+                populate(dialog)
+                return
+        dialog.response(Gtk.ResponseType.ACCEPT)</code></pre>
+</details>
+</dd>
+<dt id="pedofd.tree_sel_row"><code class="name flex">
+<span>def <span class="ident">tree_sel_row</span></span>(<span>xtree, dialog)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tree_sel_row(xtree, dialog):
+
+    #print(&#34;tree_sel_row&#34;, xtree)
+    sel = xtree.get_selection()
+    xmodel, xpath = sel.get_selected_rows()
+    if sel:
+        try:
+            xiter2 = xmodel.get_iter(xpath)
+            xstr = xmodel.get_value(xiter2, 0)
+            dialog.entry.set_text(xstr)
+        except:
+            pass
+            #print(&#34;sel row&#34;, sys.exc_info())
+    else:
+        dialog.entry.set_text(&#34;&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="pedofd.area_key" href="#pedofd.area_key">area_key</a></code></li>
+<li><code><a title="pedofd.butt_click" href="#pedofd.butt_click">butt_click</a></code></li>
+<li><code><a title="pedofd.butt_this" href="#pedofd.butt_this">butt_this</a></code></li>
+<li><code><a title="pedofd.click_dir_action" href="#pedofd.click_dir_action">click_dir_action</a></code></li>
+<li><code><a title="pedofd.compare" href="#pedofd.compare">compare</a></code></li>
+<li><code><a title="pedofd.create_ftree" href="#pedofd.create_ftree">create_ftree</a></code></li>
+<li><code><a title="pedofd.fill_path" href="#pedofd.fill_path">fill_path</a></code></li>
+<li><code><a title="pedofd.mode2str" href="#pedofd.mode2str">mode2str</a></code></li>
+<li><code><a title="pedofd.ncompare" href="#pedofd.ncompare">ncompare</a></code></li>
+<li><code><a title="pedofd.ofd" href="#pedofd.ofd">ofd</a></code></li>
+<li><code><a title="pedofd.populate" href="#pedofd.populate">populate</a></code></li>
+<li><code><a title="pedofd.tree_sel" href="#pedofd.tree_sel">tree_sel</a></code></li>
+<li><code><a title="pedofd.tree_sel_row" href="#pedofd.tree_sel_row">tree_sel_row</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

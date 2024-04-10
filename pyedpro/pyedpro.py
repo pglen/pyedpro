@@ -83,7 +83,7 @@ History:  (incomplete list, see git log for a more complete list)
 
 '''
 
-import os, sys, getopt, signal, time, platform
+import os, sys, getopt, signal, time, platform, atexit
 
 import gettext
 gettext.bindtextdomain('pyedpro', './locale/')
@@ -183,6 +183,14 @@ class MainPyed(Gtk.Application):
         if self.projname:
             mainwin.opensess(self.projname)
 
+def cleanup(mw):
+    #print("Cleanup", mw.cleanit)
+    for aa in mw.cleanit:
+        bb = os.path.join(pedconfig.conf.temp_dir, os.path.basename(aa))
+        if os.path.isfile(bb):
+            os.remove(bb)
+        #print("Cleaning", aa, bb)
+        os.rename(aa, bb)
 
 def run_main(projname, strarr):
 
@@ -196,6 +204,8 @@ def run_main(projname, strarr):
     signal.signal(signal.SIGTERM, terminate)
     mainwin = pedwin.EdMainWindow(None, None, strarr, orgbase)
     pedconfig.conf.pedwin = mainwin
+    mainwin.cleanit = []
+    atexit.register(cleanup, mainwin)
 
     if projname:
         mainwin.opensess(projname)

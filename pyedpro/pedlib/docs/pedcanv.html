@@ -1,0 +1,2958 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pedcanv API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pedcanv</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+from __future__ import absolute_import, print_function
+
+import signal, os, time, sys, subprocess, platform
+import ctypes, datetime, sqlite3, warnings, math, pickle
+
+#from six.moves import range
+
+import gi; gi.require_version(&#34;Gtk&#34;, &#34;3.0&#34;)
+from gi.repository import Gtk, Gdk
+from gi.repository import GObject
+from gi.repository import GLib
+from gi.repository import Pango
+from gi.repository import cairo
+
+gi.require_version(&#39;PangoCairo&#39;, &#39;1.0&#39;)
+from gi.repository import PangoCairo
+
+from pedlib import pedconfig
+from pedlib import pedcolor
+
+# Into our name space
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedcolor import *
+from    pedlib.pedtdlg import *
+from    pedlib.pedobjs import *
+from    pedlib.pedutil import *
+from    pedlib.pedofd import *
+
+#sys.path.append(&#39;..&#39; + os.sep + &#34;pycommon&#34;)
+from pycommon.pggui import *
+
+canv_testmode = 0
+
+def canv_colsel(oldcol, title):
+
+    csd = Gtk.ColorSelectionDialog(title)
+    col = csd.get_color_selection()
+    #col.set_current_color(float2col(oldcol))
+    response = csd.run()
+    color = 0
+    if response == Gtk.ResponseType.OK:
+        color = col.get_current_color()
+        #print (&#34;color&#34;, color)
+    csd.destroy()
+    return col2float(color)
+
+#class ToolBox(Gtk.Toolbar):
+#class ToolBox(Gtk.Window):
+class ToolBox(Gtk.VBox):
+
+    def __init__(self, callb, parent):
+        #Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
+        #Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
+        #Gtk.Toolbar.__init__(self)
+        super(ToolBox, self).__init__()
+
+        #self.set_size_request(10, 10)
+        #self.set_default_size(10, 10)
+        #self.set_keep_above(True)
+        #self.set_decorated(False)
+
+        self.drag = False
+        self.dragpos = (0, 0)
+        self.callb = callb
+        self.opacity = 1
+
+        self.connect(&#34;button-press-event&#34;, self.area_button)
+        self.connect(&#34;button-release-event&#34;, self.area_button_rel)
+        self.connect(&#34;motion-notify-event&#34;, self.area_motion)
+
+        vbox = Gtk.VBox()
+
+        self.labelm = Gtk.Label(&#34; - &#34;)
+        self.labelx = Gtk.Label(&#34; x &#34;)
+        self.toolt = Gtk.Label(&#34;Main Toolbox&#34;)
+
+        self.hboxt = Gtk.HBox()
+        self.hboxt.pack_start(self.labelm, 0, 0, 0)
+        self.hboxt.pack_start(self.toolt, 1, 1, 0)
+        self.hboxt.pack_start(self.labelx, 0, 0, 0)
+
+        self.hbox = Gtk.HBox()
+        tarr = ((Gtk.STOCK_OPEN, &#34;Open&#34;), (Gtk.STOCK_SAVE, &#34;Save&#34;),
+                    (Gtk.STOCK_COPY, &#34;Copy&#34;), (Gtk.STOCK_PASTE, &#34;Paste&#34;),
+                    (Gtk.STOCK_NO, &#34;None&#34;), (Gtk.STOCK_CLEAR, &#34;Clear&#34;),
+                    (Gtk.STOCK_DELETE, &#34;Delete&#34;), (Gtk.STOCK_PROPERTIES , &#34;Proerties&#34;),
+                     )
+        cnt = 0
+        for aa in tarr:
+            butt = Gtk.ToolButton().new_from_stock(aa[0])
+            butt.set_tooltip_text(aa[1])
+            butt.connect(&#34;clicked&#34;, self.callb, cnt)
+            cnt += 1
+            self.hbox.add(butt)
+
+        self.hbox2 = Gtk.HBox()
+        tarr2 = ( (Gtk.STOCK_UNDO, &#34;Undo&#34;), (Gtk.STOCK_REDO, &#34;Redo&#34;),
+                    (Gtk.STOCK_COLOR_PICKER, &#34;Color&#34;), (Gtk.STOCK_YES , &#34;yes?&#34;),
+                    (Gtk.STOCK_SELECT_ALL , &#34;SelAll&#34;), (Gtk.STOCK_SELECT_FONT , &#34;Font&#34;),
+                    (Gtk.STOCK_ZOOM_100 , &#34;Zoom100&#34;), (Gtk.STOCK_ZOOM_FIT , &#34;ZoomFit&#34;),
+                     )
+        for aa in tarr2:
+            butt = Gtk.ToolButton().new_from_stock(aa[0])
+            butt.set_tooltip_text(aa[1])
+            butt.connect(&#34;clicked&#34;, self.callb, cnt)
+            cnt += 1
+            self.hbox2.add(butt)
+
+        vbox.add(self.hboxt)
+        vbox.add(self.hbox)
+        vbox.add(self.hbox2)
+        self.add(vbox)
+
+        &#39;&#39;&#39;openbtn = Gtk.ToolButton(Gtk.STOCK_OPEN)
+        self.insert(openbtn, 0)
+        self.show_all()
+        &#39;&#39;&#39;
+
+    def area_motion(self, area, event):
+        #print (&#34;motion event&#34;, event.state, event.x, event.y)
+        if self.drag:
+            #print (&#34;drag toolbox&#34;, event.state, event.x, event.y)
+            #print(&#34;delta:&#34;, event.x - self.dragpos[0],  event.y - self.dragpos[1])
+            pos = self.get_position()
+            self.move(pos[0] + event.x - self.dragpos[0],
+                pos[1] + event.y - self.dragpos[1])
+
+    def area_button_rel(self, area, event):
+        self.drag = False
+
+    def area_button(self, area, event):
+
+        #return
+        #print(&#34;moudown&#34;, event.x, event.y)
+        hit = Rectangle(event.x, event.y, 2, 2)
+
+        rr = self.labelm.get_allocation()
+        rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+        if rrr.intersect(hit)[0]:
+            #print(&#34;objl&#34;, rr.x, rr.y)
+            if self.opacity == 1:
+                self.opacity = 0.5
+            else:
+                self.opacity = 1
+            self.set_opacity(self.opacity)
+
+        rr = self.toolt.get_allocation()
+        rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+        if rrr.intersect(hit)[0]:
+            #print(&#34;objhead&#34;, rr.x, rr.y)
+            self.dragpos = event.x, event.y
+            self.drag = True
+
+        rr = self.labelx.get_allocation()
+        rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+        if rrr.intersect(hit)[0]:
+            print(&#34;objx&#34;, rr.x, rr.y)
+            self.hide()
+
+        return True
+
+    def show_box(self, parent):
+        self.parent = parent
+        self.set_transient_for (self.parent)
+        #self.set_parent(parent)
+        sxx, syy = self.parent.get_position()
+        self.move(sxx + 30, syy + 180)
+        self.show_all()
+
+class Canvas(Gtk.DrawingArea):
+
+    def __init__(self, parent, statbox = None):
+        Gtk.DrawingArea.__init__(self)
+        self.statbox = statbox
+        self.parewin = parent
+        self.set_can_focus(True)
+        self.set_events(Gdk.EventMask.ALL_EVENTS_MASK)
+
+        self.connect(&#34;draw&#34;, self.draw_event)
+        self.connect(&#34;motion-notify-event&#34;, self.area_motion)
+        self.connect(&#34;button-press-event&#34;, self.area_button)
+        self.connect(&#34;button-release-event&#34;, self.area_button)
+        self.connect(&#34;key-press-event&#34;, self.area_key)
+        #self.connect(&#34;focus-in-event&#34;, self.focus_in)
+
+        self.coll = []
+        self.cnt = 0
+        self.drag = None
+        self.curl = None
+        self.resize = None
+        self.dragcoord = (0,0)
+        self.size2 = (0,0)
+        self.noop_down = False
+        self.drawline = False
+        self.stroke = []
+        self.hand = Gdk.Cursor(Gdk.CursorType.HAND1)
+        self.arrow = Gdk.Cursor(Gdk.CursorType.ARROW)
+        self.sizing =  Gdk.Cursor(Gdk.CursorType.SIZING)
+        self.cross =  Gdk.Cursor(Gdk.CursorType.TCROSS)
+        self.hair =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
+        self.curve =  Gdk.Cursor(Gdk.CursorType.TARGET)
+        self.pencil =  Gdk.Cursor(Gdk.CursorType.PENCIL)
+        self.fname = &#34;untitled.ped&#34;
+
+    def area_key(self, area, event):
+        print (&#34;area_key&#34;, event.keyval)
+        if event.keyval == Gdk.KEY_Delete or event.keyval == Gdk.KEY_KP_Delete:
+            #print(&#34;Del key&#34;)
+            for bb in self.coll:
+                if bb.selected:
+                    #print(&#34;would delete&#34;, bb)
+                    self.coll.remove(bb)
+            self.queue_draw()
+
+        if event.keyval == Gdk.KEY_Up:
+            print(&#34;UP key&#34;)
+
+        if event.keyval == Gdk.KEY_Down:
+            print(&#34;DN key&#34;)
+
+        return True
+
+    &#39;&#39;&#39;
+    def show_status(self, strx):
+        if self.statusbar:
+            self.statusbar.set_text(strx)
+
+    &#39;&#39;&#39;
+
+    def area_motion(self, area, event):
+        #print (&#34;motion event&#34;, event.state, event.x, event.y)
+        if self.drag:
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.hand)
+            #print (&#34;drag coord&#34;, self.dragcoord[0],  self.dragcoord[1], event.x, event.y)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+            #print (&#34;delta&#34;, xd, yd)
+            for aa in self.coll:
+                if aa.selected:
+                    aa.rect.x = aa.orgdrag.x  - xd
+                    aa.rect.y = aa.orgdrag.y  - yd
+                    # Also move whole group IN NOT SHIFT
+                    if aa.groupid and not (event.state &amp; Gdk.ModifierType.SHIFT_MASK) :
+                        for bb in self.coll:
+                            if aa.groupid == bb.groupid:
+                                bb.rect.x = bb.orgdrag.x  - xd
+                                bb.rect.y = bb.orgdrag.y  - yd
+            self.queue_draw()
+
+        elif self.curl:
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.pencil)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+            #print (&#34;curl rdelta&#34;, xd, yd)
+            self.queue_draw()
+
+        elif self.resize:
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.sizing)
+            #print (&#34;resize&#34;, self.resize.text,  event.x, event.y)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+            #print (&#34;rdelta&#34;, xd, yd)
+
+            #if self.size2[0] - xd &gt; 2:
+            self.resize.rect.w = self.size2[0] - xd
+            #if self.size2[1] - yd &gt; 2:
+            self.resize.rect.h = self.size2[1] - yd
+
+            #print(&#34;resize rect&#34;, self.resize.rect.w, self.resize.rect.h)
+            #if self.resize.rect.h &lt; 0:
+            #    self.resize.rect.y -= 2 * abs(self.resize.rect.h)
+            #    self.resize.rect.h = abs(self.resize.rect.h)
+
+            self.queue_draw()
+        else:
+            onmarker = 0 #False
+            hit = Rectangle(event.x, event.y, 2, 2)
+            # Check if on marker
+            for cc in self.coll:
+                mark = cc.hitmarker(hit)
+                if mark:
+                    onmarker = mark
+                    break
+
+            gdk_window = self.get_root_window()
+            if onmarker == 5:
+                gdk_window.set_cursor(self.pencil)
+            elif onmarker:
+                gdk_window.set_cursor(self.cross)
+            elif self.noop_down:
+                gdk_window.set_cursor(self.hair)
+            else:
+                gdk_window.set_cursor(self.arrow)
+
+            &#39;&#39;&#39;if event.state &amp; Gdk.ModifierType.SHIFT_MASK:
+                print( &#34;Shift ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+            if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                print( &#34;Ctrl ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+            if event.state &amp; Gdk.ModifierType.MOD1_MASK :
+                print( &#34;Alt ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+            else:&#39;&#39;&#39;
+
+            if event.state &amp; Gdk.ModifierType.BUTTON1_MASK:
+                #print( &#34;But Drag&#34;, event.state, &#34;x =&#34;, int(event.x), &#34;y =&#34;, int(event.y))
+                self.stroke.append((int(event.x), int(event.y)))
+                self.queue_draw()
+
+    def area_button(self, area, event):
+
+        self.grab_focus()
+
+        self.mouse = Rectangle(event.x, event.y, 4, 4)
+        #print( &#34;Button&#34;, event.button, &#34;state&#34;, event.state, &#34; x =&#34;, event.x, &#34;y =&#34;, event.y)
+
+        mods = event.state &amp; Gtk.accelerator_get_default_mod_mask()
+        if(mods &amp; Gdk.ModifierType.MOD1_MASK):
+            print(&#34;Modifier ALT&#34;,  event.state)
+
+        if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+            print( &#34;Ctrl ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+
+        if  event.type == Gdk.EventType.DOUBLE_BUTTON_PRESS:
+            print(&#34;DBL click&#34;, event.button)
+
+        if  event.type == Gdk.EventType.BUTTON_RELEASE:
+            self.curl = None
+            self.drag = None
+            self.resize = None
+            self.noop_down = False
+            if self.drawline:
+                self.drawline = False
+                #print (self.stroke)
+                rstr = &#34;&#34; #randstr(6)
+                coord = Rectangle(stroke_dims(self.stroke))
+                self.add_stroke(coord, rstr, randcolstr(), arr = self.stroke)
+                self.stroke = []
+
+            self.get_root_window().set_cursor(self.arrow)
+
+        if  event.type == Gdk.EventType.BUTTON_PRESS:
+            hit = Rectangle(event.x, event.y, 2, 2)
+            hitx = None
+            if event.button == 1:
+                if not event.state &amp; Gdk.ModifierType.SHIFT_MASK and \
+                            not event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                    # Operate on pre selected
+                    if not self.drag:
+                        for bb in self.coll:
+                            if bb.selected:
+                                hitx = bb.hittest(hit)
+                                hity = bb.hitmarker(hit)
+                                #print(&#34;Operate on selected&#34;, bb.id)
+                                if hity == 5:
+                                    #print(&#34;Hit on curve marker&#34;)
+                                    self.resize = None
+                                    self.drag = None
+                                    self.curl = bb
+                                    self.dragcoord  = (event.x, event.y)
+                                elif hity:
+                                    #print(&#34;Hit on marker&#34;)
+                                    self.resize = bb
+                                    self.drag = None
+                                    self.dragcoord  = (event.x, event.y)
+                                    self.size2 = (self.resize.rect.w, self.resize.rect.h)
+                                    return
+                                elif hitx:
+                                    self.drag = bb
+                                    self.dragcoord  = (event.x, event.y)
+                                    for cc in self.coll:
+                                        if cc.selected:
+                                            cc.orgdrag = cc.rect.copy()
+                                            # Also move whole group
+                                            if cc.groupid:
+                                                for bb in self.coll:
+                                                    if cc.groupid == bb.groupid:
+                                                        bb.orgdrag = bb.rect.copy()
+                                else:
+                                    pass
+
+                    if self.drag:
+                        return
+
+                sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
+
+                # Execute new hit test on drag immidiate
+                #for aa in self.coll:
+                for aa in sortx:
+                    if aa.hittest(hit): # and aa.selected:
+                        hitx = aa
+                        self.drag = aa
+                        self.dragcoord  = (event.x, event.y)
+                        aa.orgdrag = aa.rect.copy()
+                        # Also move whole group
+                        if aa.groupid:
+                            for bb in self.coll:
+                                if bb.groupid == aa.groupid:
+                                    bb.orgdrag = bb.rect.copy()
+                        break
+
+                #for bb in self.coll:
+                for bb in sortx:
+                    if bb == hitx:
+                        if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                            bb.selected = not bb.selected
+                        else:
+                            bb.selected = True
+                            #break
+                    else:
+                        if event.state &amp; Gdk.ModifierType.SHIFT_MASK or \
+                            event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                            pass
+                        else:
+                            bb.selected = False
+
+                if not hitx:
+                    self.noop_down = True
+                    gdk_window = self.get_root_window()
+                    gdk_window.set_cursor(self.hair)
+
+                    # Turn on draw
+                    self.drawline = True
+
+                self.queue_draw()
+
+            elif event.button == 3:
+                #print(&#34;Right click&#34;)
+                bb = None
+                # Execute new hit test
+                for aa in self.coll:
+                    if aa.hittest(hit):
+                        bb = aa
+                        break
+                if bb:
+                    cnt = 0
+                    for aa in self.coll:
+                        if aa.selected:
+                            cnt += 1
+
+                    mms = (&#34;Alignment&#34;,
+                            &#34;Align Left&#34;,&#34;Align Right&#34;,
+                            &#34;Align Top&#34;,&#34;Align Buttom&#34;,
+                            &#34;Align Mid X&#34;,&#34;Align Mid Y&#34;,)
+                    sss = Menu(mms, self.menu_sss, event, True)
+
+                    mmz = ( &#34;Z-Order&#34;,
+                            &#34;To Front&#34;,&#34;To Back&#34;,
+                            &#34;One forward&#34;,&#34;One Backward&#34;,)
+                    zzz = Menu(mmz, self.menu_zzz, event, True)
+
+                    ccs = ( &#34;Connect&#34;,
+                            &#34;Connect Objects (Reg)&#34;, &#34;Connect Objects (Yes)&#34;,
+                            &#34;Connect Objects (No)&#34;, &#34;Disconnect Objects&#34;,)
+
+                    ccc = Menu(ccs, self.menu_ccc, event, True)
+
+                    if cnt &gt; 1:
+                        mmm = (bb.text, ccc,
+                        &#34;Group Objects&#34;, &#34;Ungroup Objects&#34;, sss, zzz)
+
+                        Menu(mmm, self.menu_action, event)
+
+                    else:
+                        mmm = (bb.text, &#34;Object Properties&#34;, &#34;Text&#34;,
+                                &#34;FG Color&#34;, &#34;BG Color&#34;, &#34;Ungroup&#34;, &#34;Delete&#34;, zzz)
+                        Menu(mmm, self.menu_action2, event)
+
+                    self.queue_draw()
+                else:
+                    mmm = (&#34;Main Menu&#34;, &#34;Dump Objects&#34;, &#34;Add Rectangle&#34;,
+                                &#34;Add Rombus&#34;, &#34;Add Circle&#34;, &#34;Add Text&#34;, &#34;Add Line&#34;,
+                                    &#34;Save Objects&#34;, &#34;Load Objects&#34;, &#34;-&#34;, &#34;Clear Canvas&#34;, &#34;-&#34;,
+                                        &#34;Export&#34;,  &#34;-&#34;, &#34;Open&#34;, &#34;-&#34;, &#34;Save&#34;, &#34;Save As&#34;)
+                    Menu(mmm, self.menu_action3, event)
+            else:
+                print(&#34;??? click&#34;, event.button)
+
+    def writeout(self):
+        print( &#34;writeout&#34;, self.fname)
+        sum = []
+        for aa in self.coll:
+            sum.append(aa.dump())
+        ff = open(self.fname, &#34;wb&#34;)
+        pickle.dump(sum, ff)
+        ff.close()
+
+    def done_fc(self, win, resp):
+        #print( &#34;done_fc&#34;, win, resp)
+        if resp == Gtk.ResponseType.OK:
+            fname = win.get_filename()
+            if not fname:
+                print(&#34;Must have filename&#34;)
+            else:
+                if os.path.isfile(fname):
+                    resp = pedync.yes_no_cancel(&#34;Overwrite File Prompt&#34;,
+                                &#34;Overwrite existing file?\n &#39;%s&#39;&#34; % fname, False)
+                    print(&#34;resp&#34;, resp)
+                    if resp == Gtk.ResponseType.YES:
+                        self.fname = fname
+                        self.writeout()
+                        self.mained.update_statusbar(&#34;Saved under new filename &#39;%s&#39;&#34; % fname)
+                    else:
+                        self.mained.update_statusbar(&#34;No new file name supplied, cancelled &#39;Save As&#39;&#34;)
+                else:
+                    self.fname = fname
+                    self.writeout()
+                    pass
+                pedconfig.conf.pedwin.mywin.set_title(&#34;pyedpro: &#34; + self.fname)
+
+        win.destroy()
+
+    def file_dlg(self, resp):
+        #print &#34;File dialog&#34;
+        if resp == Gtk.ResponseType.YES:
+            but =   &#34;Cancel&#34;, Gtk.ResponseType.CANCEL,   \
+                            &#34;Save File&#34;, Gtk.ResponseType.OK
+            fc = Gtk.FileChooserDialog(&#34;Save file as ... &#34;, None,
+                    Gtk.FileChooserAction.SAVE, but)
+            #fc.set_do_overwrite_confirmation(True)
+            fc.set_current_name(os.path.basename(self.fname))
+            fc.set_current_folder(os.path.dirname(self.fname))
+            fc.set_default_response(Gtk.ResponseType.OK)
+            fc.connect(&#34;response&#34;, self.done_fc)
+            fc.run()
+
+    def menu_ccc(self, item, num):
+        print (&#34;Connect&#34;, item, num)
+        if num == 1:
+            #print (&#34;Conn obj&#34;, item, num)
+            ccc = []
+            for aa in self.coll:
+                if aa.selected:
+                    ccc.append(aa)
+            for aa in ccc[1:]:
+                ccc[0].other.append(aa.id)
+
+        if num == 4:
+            ccc = []
+            for aa in self.coll:
+                if aa.selected:
+                    ccc.append(aa)
+
+            if len(ccc) == 2:
+                #print(&#34;Please select two objects to disconnect&#34;)
+                print(&#34;disconnecting&#34;, ccc[0].text, ccc[1].text)
+                try:    ccc[0].other.remove(ccc[1].id)
+                except: pass
+            else:
+                for dd in ccc:
+                    dd.other = []
+
+            self.queue_draw()
+
+    def menu_zzz(self, item, num):
+
+        #print (&#34;Z order&#34;, item, num)
+        global globzorder
+        if num == 1:
+            for aa in self.coll:
+                if aa.selected:
+                    globzorder = globzorder + 1
+                    aa.zorder = globzorder
+                    break
+
+        if num == 2:
+            for aa in self.coll:
+                aa.zorder += 1
+            for aa in self.coll:
+                if aa.selected:
+                    aa.zorder = 0
+                    break
+
+        self.queue_draw()
+
+    def menu_sss(self, item, num):
+            print (&#34;Align&#34;, item, num)
+
+    def menu_action(self, item, num):
+
+        # Group
+        if num == 2:
+            global globgroup
+            globgroup += 1
+            for aa in self.coll:
+                if aa.selected:
+                    aa.groupid = globgroup
+
+        # Ungroup
+        if num == 3:
+            for aa in self.coll:
+                if aa.selected:
+                    for bb in self.coll:
+                        if aa.groupid == bb.groupid:
+                            bb.groupid = 0
+                        aa.groupid = 0
+        # Align
+        if num == 5:
+            for aa in self.coll:
+                if aa.selected:
+                    for bb in self.coll:
+                        if bb.selected:
+                            bb.rect.x = aa.rect.x
+                    break
+        self.queue_draw()
+
+    def menu_action2(self, item, num):
+
+        if num == 2:
+            print(&#34;Getting text&#34;)
+            bb = None
+            for aa in self.coll:
+                    if aa.selected:
+                        bb = aa
+            if bb:
+                response, txt = textdlg(bb.text, self.get_toplevel())
+                if response == Gtk.ResponseType.ACCEPT:
+                    #print(&#34;Got text&#34;, txt)
+                    bb.text = txt
+                    self.queue_draw()
+
+        if num == 3:
+            ccc = canv_colsel(0, &#34;Foreground Color&#34;)
+            for aa in self.coll:
+                if aa.selected:
+                    aa.col2 = ccc
+            self.queue_draw()
+
+        if num == 4:
+            ccc = canv_colsel(0, &#34;Background Color&#34;)
+            for aa in self.coll:
+                if aa.selected:
+                    aa.col1 = ccc
+            self.queue_draw()
+
+        if num == 5:
+            for aa in self.coll:
+                if aa.selected:
+                    for bb in self.coll:
+                        if aa.groupid == bb.groupid:
+                            bb.groupid = 0
+                        aa.groupid = 0
+            self.queue_draw()
+
+        if num == 6:
+            #print(&#34;Delete&#34;)
+            for bb in self.coll:
+                if bb.selected:
+                    #print(&#34;would delete&#34;, bb)
+                    self.coll.remove(bb)
+            self.queue_draw()
+
+
+    def menu_action3(self, item, num):
+
+        #print(&#34;menu action &#34;, item, num)
+
+        if num == 1:
+            for aa in self.coll:
+                print(aa.dump())
+
+        if num == 2:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
+            self.add_rect(coord, rstr, randcolstr())
+
+        if num == 3:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
+            self.add_romb(coord, rstr, randcolstr())
+
+        if num == 4:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 70, 70)
+            self.add_circle(coord, rstr, randcolstr())
+
+        if num == 5:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+            self.add_text(coord, rstr, randcolstr())
+
+        if num == 6:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+            self.add_line(coord, rstr, randcolstr())
+
+        if num == 7:
+            fff = &#34;outline.pickle&#34;
+            #print(&#34;Saving to:&#34;, fff)
+            sum = []
+            for aa in self.coll:
+                sum.append(aa.dump())
+            ff = open(fff, &#34;wb&#34;)
+            pickle.dump(sum, ff)
+            ff.close()
+
+        if num == 8:
+            fff = &#34;outline.pickle&#34;
+            #print(&#34;Loading:&#34;, fff)
+            self.readfile(fff)
+
+        if num == 9:
+            pass
+
+        if num == 10:
+            # Clear canvas
+            self.coll = []
+            self.queue_draw()
+
+        if num == 11:
+            # crate PNG
+            for aa in self.coll:
+                aa.selected = False
+            self.queue_draw()
+            usleep(10)
+            rect = self.get_allocation()
+
+            #pixbuf = Gdk.pixbuf_get_from_window(self.get_window(), 0, 0, rect.width, rect.height)
+            #self.surface = cairo.create_for_rectangle(0, 0, width, height)
+            #self.surface = cairo.create_similar_image(cairo.Format.ARGB32, rect.width, rect.height)
+            #cr =  self.get_window().cairo_create()
+            #cr =  cairo.Context(self.surface)
+
+            cr = Gdk.cairo_create(self.get_window())
+            self.draw_event(self, cr)
+            pixbuf = Gdk.pixbuf_get_from_surface(cr.get_target(), 0, 0, rect.width, rect.height)
+            pixbuf.savev(&#34;buff.png&#34;, &#34;png&#34;, [None], [])
+
+        if num == 12:
+            print(&#34;Export&#34;)
+
+        if num == 14:
+            #print(&#34;Open&#34;)
+            filter =  Gtk.FileFilter.new()
+            filter.add_pattern(&#34;*.ped&#34;); filter.set_name(&#34;PED files (*.ped)&#34;)
+            filter2 =  Gtk.FileFilter.new()
+            filter2.add_pattern(&#34;*.*&#34;); filter2.set_name(&#34;ALL files (*.*)&#34;)
+            filters = (filter2, filter)
+            ofn = OpenFname(self.parewin.get_toplevel(), filters)
+            fff = ofn.run()
+            if not fff.fc_code:
+                return
+            print(&#34;Open filename&#34;, fff.fname)
+
+            # Clear canvas
+            self.coll = []
+            self.queue_draw()
+
+            self.readfile(fff.fname)
+
+        if num == 16:
+            #print(&#34;Save&#34;)
+            if self.fname == &#34;untitled.ped&#34;:
+                fff = self.file_dlg(Gtk.ResponseType.YES)
+            else:
+                self.writeout()
+
+        if num == 17:
+            #print(&#34;Save As&#34;)
+            fff = self.file_dlg(Gtk.ResponseType.YES)
+
+    def show_objects(self):
+        for aa in self.coll:
+            print (&#34;GUI Object&#34;, aa)
+
+    def readfile(self, fname):
+        ff = open(fname, &#34;rb&#34;)
+        sum2  = pickle.load(ff)
+        ff.close()
+        #print(sum2)
+
+        for aa in sum2:
+            obj = None
+            rectx = Rectangle(aa[5])
+            if aa[2] == &#34;Rect&#34;:
+                obj = self.add_rect(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == &#34;Circ&#34;:
+                obj = self.add_circle(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == &#34;Text&#34;:
+                obj = self.add_text(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == &#34;Romb&#34;:
+                obj = self.add_romb(rectx, aa[1], aa[7], aa[6])
+
+            if obj:
+                obj.id = aa[0]
+                obj.zorder = int(aa[3])
+                obj.groupid = int(aa[4])
+                obj.other  = list(aa[8])
+
+    # Add rectangle to collection of objects
+    def add_rect(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = RectObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_line(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = LineObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_curve(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = CurveObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_text(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = TextObj(coord, text, col1, col2, border, fill)
+
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_circle(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = CircObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_stroke(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False, arr = []):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = StrokeObj(coord, text, col1, col2, border, fill, arr)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_romb(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = RombObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def draw_event(self, doc, cr):
+
+        #print (&#34;Painting .. &#34;, self.cnt)
+        self.cnt += 1
+        ctx = self.get_style_context()
+        fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
+        #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
+
+        self.layout = PangoCairo.create_layout(cr)
+        self.rect = self.get_allocation()
+        self.cr = cr
+        self.crh = CairoHelper(cr)
+
+        # Paint white, ignore system BG
+        border = 4
+        cr.set_source_rgba(255/255, 255/255, 255/255)
+        cr.rectangle( border, border, self.rect.width - border * 2, self.rect.height - border * 2);
+        cr.fill()
+
+        # Draw connections
+        cr.set_source_rgba(55/255, 55/255, 55/255)
+        for aa in self.coll:
+            for cc in aa.other:
+                for bb in self.coll:
+                    if cc == bb.id:
+                        #print(&#34;connect draw&#34;, aa.text, bb.text)
+                        aac = aa.center()
+                        cr.move_to(aac[0], aac[1])
+                        bbc = bb.center()
+                        cr.line_to(bbc[0], bbc[1])
+                        cr.stroke()
+
+        #for aa in self.coll:
+        #    aa.dump()
+
+        sortx = sorted(self.coll, reverse = False, key = lambda item: item.zorder)
+
+        # Draw objects
+        #for aa in self.coll:
+        for aa in sortx:
+            try:
+                aa.draw(cr, self)
+            except:
+                put_exception(&#34;Cannot draw &#34; + str(type(aa)))
+                #aa.dump()
+
+        init = 0;
+        for aa, bb in self.stroke:
+            if init == 0:
+                self.cr.move_to(aa, bb)
+            else:
+                self.cr.line_to(aa, bb)
+            init += 1
+        self.cr.stroke()
+
+
+def set_canv_testmode(flag):
+    global canv_testmode
+    canv_testmode = flag
+
+# EOF</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="pedcanv.canv_colsel"><code class="name flex">
+<span>def <span class="ident">canv_colsel</span></span>(<span>oldcol, title)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def canv_colsel(oldcol, title):
+
+    csd = Gtk.ColorSelectionDialog(title)
+    col = csd.get_color_selection()
+    #col.set_current_color(float2col(oldcol))
+    response = csd.run()
+    color = 0
+    if response == Gtk.ResponseType.OK:
+        color = col.get_current_color()
+        #print (&#34;color&#34;, color)
+    csd.destroy()
+    return col2float(color)</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.set_canv_testmode"><code class="name flex">
+<span>def <span class="ident">set_canv_testmode</span></span>(<span>flag)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_canv_testmode(flag):
+    global canv_testmode
+    canv_testmode = flag</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pedcanv.Canvas"><code class="flex name class">
+<span>class <span class="ident">Canvas</span></span>
+<span>(</span><span>parent, statbox=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:Constructors:</p>
+<p>::</p>
+<pre><code>DrawingArea(**properties)
+new() -&gt; Gtk.Widget
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Canvas(Gtk.DrawingArea):
+
+    def __init__(self, parent, statbox = None):
+        Gtk.DrawingArea.__init__(self)
+        self.statbox = statbox
+        self.parewin = parent
+        self.set_can_focus(True)
+        self.set_events(Gdk.EventMask.ALL_EVENTS_MASK)
+
+        self.connect(&#34;draw&#34;, self.draw_event)
+        self.connect(&#34;motion-notify-event&#34;, self.area_motion)
+        self.connect(&#34;button-press-event&#34;, self.area_button)
+        self.connect(&#34;button-release-event&#34;, self.area_button)
+        self.connect(&#34;key-press-event&#34;, self.area_key)
+        #self.connect(&#34;focus-in-event&#34;, self.focus_in)
+
+        self.coll = []
+        self.cnt = 0
+        self.drag = None
+        self.curl = None
+        self.resize = None
+        self.dragcoord = (0,0)
+        self.size2 = (0,0)
+        self.noop_down = False
+        self.drawline = False
+        self.stroke = []
+        self.hand = Gdk.Cursor(Gdk.CursorType.HAND1)
+        self.arrow = Gdk.Cursor(Gdk.CursorType.ARROW)
+        self.sizing =  Gdk.Cursor(Gdk.CursorType.SIZING)
+        self.cross =  Gdk.Cursor(Gdk.CursorType.TCROSS)
+        self.hair =  Gdk.Cursor(Gdk.CursorType.CROSSHAIR)
+        self.curve =  Gdk.Cursor(Gdk.CursorType.TARGET)
+        self.pencil =  Gdk.Cursor(Gdk.CursorType.PENCIL)
+        self.fname = &#34;untitled.ped&#34;
+
+    def area_key(self, area, event):
+        print (&#34;area_key&#34;, event.keyval)
+        if event.keyval == Gdk.KEY_Delete or event.keyval == Gdk.KEY_KP_Delete:
+            #print(&#34;Del key&#34;)
+            for bb in self.coll:
+                if bb.selected:
+                    #print(&#34;would delete&#34;, bb)
+                    self.coll.remove(bb)
+            self.queue_draw()
+
+        if event.keyval == Gdk.KEY_Up:
+            print(&#34;UP key&#34;)
+
+        if event.keyval == Gdk.KEY_Down:
+            print(&#34;DN key&#34;)
+
+        return True
+
+    &#39;&#39;&#39;
+    def show_status(self, strx):
+        if self.statusbar:
+            self.statusbar.set_text(strx)
+
+    &#39;&#39;&#39;
+
+    def area_motion(self, area, event):
+        #print (&#34;motion event&#34;, event.state, event.x, event.y)
+        if self.drag:
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.hand)
+            #print (&#34;drag coord&#34;, self.dragcoord[0],  self.dragcoord[1], event.x, event.y)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+            #print (&#34;delta&#34;, xd, yd)
+            for aa in self.coll:
+                if aa.selected:
+                    aa.rect.x = aa.orgdrag.x  - xd
+                    aa.rect.y = aa.orgdrag.y  - yd
+                    # Also move whole group IN NOT SHIFT
+                    if aa.groupid and not (event.state &amp; Gdk.ModifierType.SHIFT_MASK) :
+                        for bb in self.coll:
+                            if aa.groupid == bb.groupid:
+                                bb.rect.x = bb.orgdrag.x  - xd
+                                bb.rect.y = bb.orgdrag.y  - yd
+            self.queue_draw()
+
+        elif self.curl:
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.pencil)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+            #print (&#34;curl rdelta&#34;, xd, yd)
+            self.queue_draw()
+
+        elif self.resize:
+            gdk_window = self.get_root_window()
+            gdk_window.set_cursor(self.sizing)
+            #print (&#34;resize&#34;, self.resize.text,  event.x, event.y)
+            xd = int(self.dragcoord[0] - event.x)
+            yd = int(self.dragcoord[1] - event.y)
+            #print (&#34;rdelta&#34;, xd, yd)
+
+            #if self.size2[0] - xd &gt; 2:
+            self.resize.rect.w = self.size2[0] - xd
+            #if self.size2[1] - yd &gt; 2:
+            self.resize.rect.h = self.size2[1] - yd
+
+            #print(&#34;resize rect&#34;, self.resize.rect.w, self.resize.rect.h)
+            #if self.resize.rect.h &lt; 0:
+            #    self.resize.rect.y -= 2 * abs(self.resize.rect.h)
+            #    self.resize.rect.h = abs(self.resize.rect.h)
+
+            self.queue_draw()
+        else:
+            onmarker = 0 #False
+            hit = Rectangle(event.x, event.y, 2, 2)
+            # Check if on marker
+            for cc in self.coll:
+                mark = cc.hitmarker(hit)
+                if mark:
+                    onmarker = mark
+                    break
+
+            gdk_window = self.get_root_window()
+            if onmarker == 5:
+                gdk_window.set_cursor(self.pencil)
+            elif onmarker:
+                gdk_window.set_cursor(self.cross)
+            elif self.noop_down:
+                gdk_window.set_cursor(self.hair)
+            else:
+                gdk_window.set_cursor(self.arrow)
+
+            &#39;&#39;&#39;if event.state &amp; Gdk.ModifierType.SHIFT_MASK:
+                print( &#34;Shift ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+            if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                print( &#34;Ctrl ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+            if event.state &amp; Gdk.ModifierType.MOD1_MASK :
+                print( &#34;Alt ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+            else:&#39;&#39;&#39;
+
+            if event.state &amp; Gdk.ModifierType.BUTTON1_MASK:
+                #print( &#34;But Drag&#34;, event.state, &#34;x =&#34;, int(event.x), &#34;y =&#34;, int(event.y))
+                self.stroke.append((int(event.x), int(event.y)))
+                self.queue_draw()
+
+    def area_button(self, area, event):
+
+        self.grab_focus()
+
+        self.mouse = Rectangle(event.x, event.y, 4, 4)
+        #print( &#34;Button&#34;, event.button, &#34;state&#34;, event.state, &#34; x =&#34;, event.x, &#34;y =&#34;, event.y)
+
+        mods = event.state &amp; Gtk.accelerator_get_default_mod_mask()
+        if(mods &amp; Gdk.ModifierType.MOD1_MASK):
+            print(&#34;Modifier ALT&#34;,  event.state)
+
+        if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+            print( &#34;Ctrl ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+
+        if  event.type == Gdk.EventType.DOUBLE_BUTTON_PRESS:
+            print(&#34;DBL click&#34;, event.button)
+
+        if  event.type == Gdk.EventType.BUTTON_RELEASE:
+            self.curl = None
+            self.drag = None
+            self.resize = None
+            self.noop_down = False
+            if self.drawline:
+                self.drawline = False
+                #print (self.stroke)
+                rstr = &#34;&#34; #randstr(6)
+                coord = Rectangle(stroke_dims(self.stroke))
+                self.add_stroke(coord, rstr, randcolstr(), arr = self.stroke)
+                self.stroke = []
+
+            self.get_root_window().set_cursor(self.arrow)
+
+        if  event.type == Gdk.EventType.BUTTON_PRESS:
+            hit = Rectangle(event.x, event.y, 2, 2)
+            hitx = None
+            if event.button == 1:
+                if not event.state &amp; Gdk.ModifierType.SHIFT_MASK and \
+                            not event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                    # Operate on pre selected
+                    if not self.drag:
+                        for bb in self.coll:
+                            if bb.selected:
+                                hitx = bb.hittest(hit)
+                                hity = bb.hitmarker(hit)
+                                #print(&#34;Operate on selected&#34;, bb.id)
+                                if hity == 5:
+                                    #print(&#34;Hit on curve marker&#34;)
+                                    self.resize = None
+                                    self.drag = None
+                                    self.curl = bb
+                                    self.dragcoord  = (event.x, event.y)
+                                elif hity:
+                                    #print(&#34;Hit on marker&#34;)
+                                    self.resize = bb
+                                    self.drag = None
+                                    self.dragcoord  = (event.x, event.y)
+                                    self.size2 = (self.resize.rect.w, self.resize.rect.h)
+                                    return
+                                elif hitx:
+                                    self.drag = bb
+                                    self.dragcoord  = (event.x, event.y)
+                                    for cc in self.coll:
+                                        if cc.selected:
+                                            cc.orgdrag = cc.rect.copy()
+                                            # Also move whole group
+                                            if cc.groupid:
+                                                for bb in self.coll:
+                                                    if cc.groupid == bb.groupid:
+                                                        bb.orgdrag = bb.rect.copy()
+                                else:
+                                    pass
+
+                    if self.drag:
+                        return
+
+                sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
+
+                # Execute new hit test on drag immidiate
+                #for aa in self.coll:
+                for aa in sortx:
+                    if aa.hittest(hit): # and aa.selected:
+                        hitx = aa
+                        self.drag = aa
+                        self.dragcoord  = (event.x, event.y)
+                        aa.orgdrag = aa.rect.copy()
+                        # Also move whole group
+                        if aa.groupid:
+                            for bb in self.coll:
+                                if bb.groupid == aa.groupid:
+                                    bb.orgdrag = bb.rect.copy()
+                        break
+
+                #for bb in self.coll:
+                for bb in sortx:
+                    if bb == hitx:
+                        if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                            bb.selected = not bb.selected
+                        else:
+                            bb.selected = True
+                            #break
+                    else:
+                        if event.state &amp; Gdk.ModifierType.SHIFT_MASK or \
+                            event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                            pass
+                        else:
+                            bb.selected = False
+
+                if not hitx:
+                    self.noop_down = True
+                    gdk_window = self.get_root_window()
+                    gdk_window.set_cursor(self.hair)
+
+                    # Turn on draw
+                    self.drawline = True
+
+                self.queue_draw()
+
+            elif event.button == 3:
+                #print(&#34;Right click&#34;)
+                bb = None
+                # Execute new hit test
+                for aa in self.coll:
+                    if aa.hittest(hit):
+                        bb = aa
+                        break
+                if bb:
+                    cnt = 0
+                    for aa in self.coll:
+                        if aa.selected:
+                            cnt += 1
+
+                    mms = (&#34;Alignment&#34;,
+                            &#34;Align Left&#34;,&#34;Align Right&#34;,
+                            &#34;Align Top&#34;,&#34;Align Buttom&#34;,
+                            &#34;Align Mid X&#34;,&#34;Align Mid Y&#34;,)
+                    sss = Menu(mms, self.menu_sss, event, True)
+
+                    mmz = ( &#34;Z-Order&#34;,
+                            &#34;To Front&#34;,&#34;To Back&#34;,
+                            &#34;One forward&#34;,&#34;One Backward&#34;,)
+                    zzz = Menu(mmz, self.menu_zzz, event, True)
+
+                    ccs = ( &#34;Connect&#34;,
+                            &#34;Connect Objects (Reg)&#34;, &#34;Connect Objects (Yes)&#34;,
+                            &#34;Connect Objects (No)&#34;, &#34;Disconnect Objects&#34;,)
+
+                    ccc = Menu(ccs, self.menu_ccc, event, True)
+
+                    if cnt &gt; 1:
+                        mmm = (bb.text, ccc,
+                        &#34;Group Objects&#34;, &#34;Ungroup Objects&#34;, sss, zzz)
+
+                        Menu(mmm, self.menu_action, event)
+
+                    else:
+                        mmm = (bb.text, &#34;Object Properties&#34;, &#34;Text&#34;,
+                                &#34;FG Color&#34;, &#34;BG Color&#34;, &#34;Ungroup&#34;, &#34;Delete&#34;, zzz)
+                        Menu(mmm, self.menu_action2, event)
+
+                    self.queue_draw()
+                else:
+                    mmm = (&#34;Main Menu&#34;, &#34;Dump Objects&#34;, &#34;Add Rectangle&#34;,
+                                &#34;Add Rombus&#34;, &#34;Add Circle&#34;, &#34;Add Text&#34;, &#34;Add Line&#34;,
+                                    &#34;Save Objects&#34;, &#34;Load Objects&#34;, &#34;-&#34;, &#34;Clear Canvas&#34;, &#34;-&#34;,
+                                        &#34;Export&#34;,  &#34;-&#34;, &#34;Open&#34;, &#34;-&#34;, &#34;Save&#34;, &#34;Save As&#34;)
+                    Menu(mmm, self.menu_action3, event)
+            else:
+                print(&#34;??? click&#34;, event.button)
+
+    def writeout(self):
+        print( &#34;writeout&#34;, self.fname)
+        sum = []
+        for aa in self.coll:
+            sum.append(aa.dump())
+        ff = open(self.fname, &#34;wb&#34;)
+        pickle.dump(sum, ff)
+        ff.close()
+
+    def done_fc(self, win, resp):
+        #print( &#34;done_fc&#34;, win, resp)
+        if resp == Gtk.ResponseType.OK:
+            fname = win.get_filename()
+            if not fname:
+                print(&#34;Must have filename&#34;)
+            else:
+                if os.path.isfile(fname):
+                    resp = pedync.yes_no_cancel(&#34;Overwrite File Prompt&#34;,
+                                &#34;Overwrite existing file?\n &#39;%s&#39;&#34; % fname, False)
+                    print(&#34;resp&#34;, resp)
+                    if resp == Gtk.ResponseType.YES:
+                        self.fname = fname
+                        self.writeout()
+                        self.mained.update_statusbar(&#34;Saved under new filename &#39;%s&#39;&#34; % fname)
+                    else:
+                        self.mained.update_statusbar(&#34;No new file name supplied, cancelled &#39;Save As&#39;&#34;)
+                else:
+                    self.fname = fname
+                    self.writeout()
+                    pass
+                pedconfig.conf.pedwin.mywin.set_title(&#34;pyedpro: &#34; + self.fname)
+
+        win.destroy()
+
+    def file_dlg(self, resp):
+        #print &#34;File dialog&#34;
+        if resp == Gtk.ResponseType.YES:
+            but =   &#34;Cancel&#34;, Gtk.ResponseType.CANCEL,   \
+                            &#34;Save File&#34;, Gtk.ResponseType.OK
+            fc = Gtk.FileChooserDialog(&#34;Save file as ... &#34;, None,
+                    Gtk.FileChooserAction.SAVE, but)
+            #fc.set_do_overwrite_confirmation(True)
+            fc.set_current_name(os.path.basename(self.fname))
+            fc.set_current_folder(os.path.dirname(self.fname))
+            fc.set_default_response(Gtk.ResponseType.OK)
+            fc.connect(&#34;response&#34;, self.done_fc)
+            fc.run()
+
+    def menu_ccc(self, item, num):
+        print (&#34;Connect&#34;, item, num)
+        if num == 1:
+            #print (&#34;Conn obj&#34;, item, num)
+            ccc = []
+            for aa in self.coll:
+                if aa.selected:
+                    ccc.append(aa)
+            for aa in ccc[1:]:
+                ccc[0].other.append(aa.id)
+
+        if num == 4:
+            ccc = []
+            for aa in self.coll:
+                if aa.selected:
+                    ccc.append(aa)
+
+            if len(ccc) == 2:
+                #print(&#34;Please select two objects to disconnect&#34;)
+                print(&#34;disconnecting&#34;, ccc[0].text, ccc[1].text)
+                try:    ccc[0].other.remove(ccc[1].id)
+                except: pass
+            else:
+                for dd in ccc:
+                    dd.other = []
+
+            self.queue_draw()
+
+    def menu_zzz(self, item, num):
+
+        #print (&#34;Z order&#34;, item, num)
+        global globzorder
+        if num == 1:
+            for aa in self.coll:
+                if aa.selected:
+                    globzorder = globzorder + 1
+                    aa.zorder = globzorder
+                    break
+
+        if num == 2:
+            for aa in self.coll:
+                aa.zorder += 1
+            for aa in self.coll:
+                if aa.selected:
+                    aa.zorder = 0
+                    break
+
+        self.queue_draw()
+
+    def menu_sss(self, item, num):
+            print (&#34;Align&#34;, item, num)
+
+    def menu_action(self, item, num):
+
+        # Group
+        if num == 2:
+            global globgroup
+            globgroup += 1
+            for aa in self.coll:
+                if aa.selected:
+                    aa.groupid = globgroup
+
+        # Ungroup
+        if num == 3:
+            for aa in self.coll:
+                if aa.selected:
+                    for bb in self.coll:
+                        if aa.groupid == bb.groupid:
+                            bb.groupid = 0
+                        aa.groupid = 0
+        # Align
+        if num == 5:
+            for aa in self.coll:
+                if aa.selected:
+                    for bb in self.coll:
+                        if bb.selected:
+                            bb.rect.x = aa.rect.x
+                    break
+        self.queue_draw()
+
+    def menu_action2(self, item, num):
+
+        if num == 2:
+            print(&#34;Getting text&#34;)
+            bb = None
+            for aa in self.coll:
+                    if aa.selected:
+                        bb = aa
+            if bb:
+                response, txt = textdlg(bb.text, self.get_toplevel())
+                if response == Gtk.ResponseType.ACCEPT:
+                    #print(&#34;Got text&#34;, txt)
+                    bb.text = txt
+                    self.queue_draw()
+
+        if num == 3:
+            ccc = canv_colsel(0, &#34;Foreground Color&#34;)
+            for aa in self.coll:
+                if aa.selected:
+                    aa.col2 = ccc
+            self.queue_draw()
+
+        if num == 4:
+            ccc = canv_colsel(0, &#34;Background Color&#34;)
+            for aa in self.coll:
+                if aa.selected:
+                    aa.col1 = ccc
+            self.queue_draw()
+
+        if num == 5:
+            for aa in self.coll:
+                if aa.selected:
+                    for bb in self.coll:
+                        if aa.groupid == bb.groupid:
+                            bb.groupid = 0
+                        aa.groupid = 0
+            self.queue_draw()
+
+        if num == 6:
+            #print(&#34;Delete&#34;)
+            for bb in self.coll:
+                if bb.selected:
+                    #print(&#34;would delete&#34;, bb)
+                    self.coll.remove(bb)
+            self.queue_draw()
+
+
+    def menu_action3(self, item, num):
+
+        #print(&#34;menu action &#34;, item, num)
+
+        if num == 1:
+            for aa in self.coll:
+                print(aa.dump())
+
+        if num == 2:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
+            self.add_rect(coord, rstr, randcolstr())
+
+        if num == 3:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
+            self.add_romb(coord, rstr, randcolstr())
+
+        if num == 4:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 70, 70)
+            self.add_circle(coord, rstr, randcolstr())
+
+        if num == 5:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+            self.add_text(coord, rstr, randcolstr())
+
+        if num == 6:
+            rstr = randstr(6)
+            coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+            self.add_line(coord, rstr, randcolstr())
+
+        if num == 7:
+            fff = &#34;outline.pickle&#34;
+            #print(&#34;Saving to:&#34;, fff)
+            sum = []
+            for aa in self.coll:
+                sum.append(aa.dump())
+            ff = open(fff, &#34;wb&#34;)
+            pickle.dump(sum, ff)
+            ff.close()
+
+        if num == 8:
+            fff = &#34;outline.pickle&#34;
+            #print(&#34;Loading:&#34;, fff)
+            self.readfile(fff)
+
+        if num == 9:
+            pass
+
+        if num == 10:
+            # Clear canvas
+            self.coll = []
+            self.queue_draw()
+
+        if num == 11:
+            # crate PNG
+            for aa in self.coll:
+                aa.selected = False
+            self.queue_draw()
+            usleep(10)
+            rect = self.get_allocation()
+
+            #pixbuf = Gdk.pixbuf_get_from_window(self.get_window(), 0, 0, rect.width, rect.height)
+            #self.surface = cairo.create_for_rectangle(0, 0, width, height)
+            #self.surface = cairo.create_similar_image(cairo.Format.ARGB32, rect.width, rect.height)
+            #cr =  self.get_window().cairo_create()
+            #cr =  cairo.Context(self.surface)
+
+            cr = Gdk.cairo_create(self.get_window())
+            self.draw_event(self, cr)
+            pixbuf = Gdk.pixbuf_get_from_surface(cr.get_target(), 0, 0, rect.width, rect.height)
+            pixbuf.savev(&#34;buff.png&#34;, &#34;png&#34;, [None], [])
+
+        if num == 12:
+            print(&#34;Export&#34;)
+
+        if num == 14:
+            #print(&#34;Open&#34;)
+            filter =  Gtk.FileFilter.new()
+            filter.add_pattern(&#34;*.ped&#34;); filter.set_name(&#34;PED files (*.ped)&#34;)
+            filter2 =  Gtk.FileFilter.new()
+            filter2.add_pattern(&#34;*.*&#34;); filter2.set_name(&#34;ALL files (*.*)&#34;)
+            filters = (filter2, filter)
+            ofn = OpenFname(self.parewin.get_toplevel(), filters)
+            fff = ofn.run()
+            if not fff.fc_code:
+                return
+            print(&#34;Open filename&#34;, fff.fname)
+
+            # Clear canvas
+            self.coll = []
+            self.queue_draw()
+
+            self.readfile(fff.fname)
+
+        if num == 16:
+            #print(&#34;Save&#34;)
+            if self.fname == &#34;untitled.ped&#34;:
+                fff = self.file_dlg(Gtk.ResponseType.YES)
+            else:
+                self.writeout()
+
+        if num == 17:
+            #print(&#34;Save As&#34;)
+            fff = self.file_dlg(Gtk.ResponseType.YES)
+
+    def show_objects(self):
+        for aa in self.coll:
+            print (&#34;GUI Object&#34;, aa)
+
+    def readfile(self, fname):
+        ff = open(fname, &#34;rb&#34;)
+        sum2  = pickle.load(ff)
+        ff.close()
+        #print(sum2)
+
+        for aa in sum2:
+            obj = None
+            rectx = Rectangle(aa[5])
+            if aa[2] == &#34;Rect&#34;:
+                obj = self.add_rect(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == &#34;Circ&#34;:
+                obj = self.add_circle(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == &#34;Text&#34;:
+                obj = self.add_text(rectx, aa[1], aa[7], aa[6])
+            if aa[2] == &#34;Romb&#34;:
+                obj = self.add_romb(rectx, aa[1], aa[7], aa[6])
+
+            if obj:
+                obj.id = aa[0]
+                obj.zorder = int(aa[3])
+                obj.groupid = int(aa[4])
+                obj.other  = list(aa[8])
+
+    # Add rectangle to collection of objects
+    def add_rect(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = RectObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_line(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = LineObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_curve(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = CurveObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_text(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = TextObj(coord, text, col1, col2, border, fill)
+
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_circle(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = CircObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_stroke(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False, arr = []):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = StrokeObj(coord, text, col1, col2, border, fill, arr)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def add_romb(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+        col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+        rob = RombObj(coord, text, col1, col2, border, fill)
+        self.coll.append(rob)
+        self.queue_draw()
+        return rob
+
+    def draw_event(self, doc, cr):
+
+        #print (&#34;Painting .. &#34;, self.cnt)
+        self.cnt += 1
+        ctx = self.get_style_context()
+        fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
+        #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
+
+        self.layout = PangoCairo.create_layout(cr)
+        self.rect = self.get_allocation()
+        self.cr = cr
+        self.crh = CairoHelper(cr)
+
+        # Paint white, ignore system BG
+        border = 4
+        cr.set_source_rgba(255/255, 255/255, 255/255)
+        cr.rectangle( border, border, self.rect.width - border * 2, self.rect.height - border * 2);
+        cr.fill()
+
+        # Draw connections
+        cr.set_source_rgba(55/255, 55/255, 55/255)
+        for aa in self.coll:
+            for cc in aa.other:
+                for bb in self.coll:
+                    if cc == bb.id:
+                        #print(&#34;connect draw&#34;, aa.text, bb.text)
+                        aac = aa.center()
+                        cr.move_to(aac[0], aac[1])
+                        bbc = bb.center()
+                        cr.line_to(bbc[0], bbc[1])
+                        cr.stroke()
+
+        #for aa in self.coll:
+        #    aa.dump()
+
+        sortx = sorted(self.coll, reverse = False, key = lambda item: item.zorder)
+
+        # Draw objects
+        #for aa in self.coll:
+        for aa in sortx:
+            try:
+                aa.draw(cr, self)
+            except:
+                put_exception(&#34;Cannot draw &#34; + str(type(aa)))
+                #aa.dump()
+
+        init = 0;
+        for aa, bb in self.stroke:
+            if init == 0:
+                self.cr.move_to(aa, bb)
+            else:
+                self.cr.line_to(aa, bb)
+            init += 1
+        self.cr.stroke()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>gi.repository.Gtk.DrawingArea</li>
+<li>gi.overrides.Gtk.Widget</li>
+<li>gi.repository.Gtk.Widget</li>
+<li>gi.repository.GObject.InitiallyUnowned</li>
+<li>gi.overrides.GObject.Object</li>
+<li>gi.repository.GObject.Object</li>
+<li>gi._gi.GObject</li>
+<li>gi.repository.Atk.ImplementorIface</li>
+<li>gi.repository.Gtk.Buildable</li>
+<li>gobject.GInterface</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pedcanv.Canvas.add_circle"><code class="name flex">
+<span>def <span class="ident">add_circle</span></span>(<span>self, coord, text, crf, crb='#ffffff', border=2, fill=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_circle(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+    col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+    rob = CircObj(coord, text, col1, col2, border, fill)
+    self.coll.append(rob)
+    self.queue_draw()
+    return rob</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.add_curve"><code class="name flex">
+<span>def <span class="ident">add_curve</span></span>(<span>self, coord, text, crf, crb='#ffffff', border=2, fill=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_curve(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+    col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+    rob = CurveObj(coord, text, col1, col2, border, fill)
+    self.coll.append(rob)
+    self.queue_draw()
+    return rob</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.add_line"><code class="name flex">
+<span>def <span class="ident">add_line</span></span>(<span>self, coord, text, crf, crb='#ffffff', border=2, fill=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_line(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+    col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+    rob = LineObj(coord, text, col1, col2, border, fill)
+    self.coll.append(rob)
+    self.queue_draw()
+    return rob</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.add_rect"><code class="name flex">
+<span>def <span class="ident">add_rect</span></span>(<span>self, coord, text, crf, crb='#ffffff', border=2, fill=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_rect(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+    col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+    rob = RectObj(coord, text, col1, col2, border, fill)
+    self.coll.append(rob)
+    self.queue_draw()
+    return rob</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.add_romb"><code class="name flex">
+<span>def <span class="ident">add_romb</span></span>(<span>self, coord, text, crf, crb='#ffffff', border=2, fill=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_romb(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+    col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+    rob = RombObj(coord, text, col1, col2, border, fill)
+    self.coll.append(rob)
+    self.queue_draw()
+    return rob</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.add_stroke"><code class="name flex">
+<span>def <span class="ident">add_stroke</span></span>(<span>self, coord, text, crf, crb='#ffffff', border=2, fill=False, arr=[])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_stroke(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False, arr = []):
+    col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+    rob = StrokeObj(coord, text, col1, col2, border, fill, arr)
+    self.coll.append(rob)
+    self.queue_draw()
+    return rob</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.add_text"><code class="name flex">
+<span>def <span class="ident">add_text</span></span>(<span>self, coord, text, crf, crb='#ffffff', border=2, fill=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_text(self, coord, text, crf, crb = &#34;#ffffff&#34;, border = 2, fill = False):
+    col1 = pedcolor.str2float(crb);    col2 = pedcolor.str2float(crf)
+    rob = TextObj(coord, text, col1, col2, border, fill)
+
+    self.coll.append(rob)
+    self.queue_draw()
+    return rob</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.area_button"><code class="name flex">
+<span>def <span class="ident">area_button</span></span>(<span>self, area, event)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_button(self, area, event):
+
+    self.grab_focus()
+
+    self.mouse = Rectangle(event.x, event.y, 4, 4)
+    #print( &#34;Button&#34;, event.button, &#34;state&#34;, event.state, &#34; x =&#34;, event.x, &#34;y =&#34;, event.y)
+
+    mods = event.state &amp; Gtk.accelerator_get_default_mod_mask()
+    if(mods &amp; Gdk.ModifierType.MOD1_MASK):
+        print(&#34;Modifier ALT&#34;,  event.state)
+
+    if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+        print( &#34;Ctrl ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+
+    if  event.type == Gdk.EventType.DOUBLE_BUTTON_PRESS:
+        print(&#34;DBL click&#34;, event.button)
+
+    if  event.type == Gdk.EventType.BUTTON_RELEASE:
+        self.curl = None
+        self.drag = None
+        self.resize = None
+        self.noop_down = False
+        if self.drawline:
+            self.drawline = False
+            #print (self.stroke)
+            rstr = &#34;&#34; #randstr(6)
+            coord = Rectangle(stroke_dims(self.stroke))
+            self.add_stroke(coord, rstr, randcolstr(), arr = self.stroke)
+            self.stroke = []
+
+        self.get_root_window().set_cursor(self.arrow)
+
+    if  event.type == Gdk.EventType.BUTTON_PRESS:
+        hit = Rectangle(event.x, event.y, 2, 2)
+        hitx = None
+        if event.button == 1:
+            if not event.state &amp; Gdk.ModifierType.SHIFT_MASK and \
+                        not event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                # Operate on pre selected
+                if not self.drag:
+                    for bb in self.coll:
+                        if bb.selected:
+                            hitx = bb.hittest(hit)
+                            hity = bb.hitmarker(hit)
+                            #print(&#34;Operate on selected&#34;, bb.id)
+                            if hity == 5:
+                                #print(&#34;Hit on curve marker&#34;)
+                                self.resize = None
+                                self.drag = None
+                                self.curl = bb
+                                self.dragcoord  = (event.x, event.y)
+                            elif hity:
+                                #print(&#34;Hit on marker&#34;)
+                                self.resize = bb
+                                self.drag = None
+                                self.dragcoord  = (event.x, event.y)
+                                self.size2 = (self.resize.rect.w, self.resize.rect.h)
+                                return
+                            elif hitx:
+                                self.drag = bb
+                                self.dragcoord  = (event.x, event.y)
+                                for cc in self.coll:
+                                    if cc.selected:
+                                        cc.orgdrag = cc.rect.copy()
+                                        # Also move whole group
+                                        if cc.groupid:
+                                            for bb in self.coll:
+                                                if cc.groupid == bb.groupid:
+                                                    bb.orgdrag = bb.rect.copy()
+                            else:
+                                pass
+
+                if self.drag:
+                    return
+
+            sortx = sorted(self.coll, reverse = True, key = lambda item: item.zorder)
+
+            # Execute new hit test on drag immidiate
+            #for aa in self.coll:
+            for aa in sortx:
+                if aa.hittest(hit): # and aa.selected:
+                    hitx = aa
+                    self.drag = aa
+                    self.dragcoord  = (event.x, event.y)
+                    aa.orgdrag = aa.rect.copy()
+                    # Also move whole group
+                    if aa.groupid:
+                        for bb in self.coll:
+                            if bb.groupid == aa.groupid:
+                                bb.orgdrag = bb.rect.copy()
+                    break
+
+            #for bb in self.coll:
+            for bb in sortx:
+                if bb == hitx:
+                    if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                        bb.selected = not bb.selected
+                    else:
+                        bb.selected = True
+                        #break
+                else:
+                    if event.state &amp; Gdk.ModifierType.SHIFT_MASK or \
+                        event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+                        pass
+                    else:
+                        bb.selected = False
+
+            if not hitx:
+                self.noop_down = True
+                gdk_window = self.get_root_window()
+                gdk_window.set_cursor(self.hair)
+
+                # Turn on draw
+                self.drawline = True
+
+            self.queue_draw()
+
+        elif event.button == 3:
+            #print(&#34;Right click&#34;)
+            bb = None
+            # Execute new hit test
+            for aa in self.coll:
+                if aa.hittest(hit):
+                    bb = aa
+                    break
+            if bb:
+                cnt = 0
+                for aa in self.coll:
+                    if aa.selected:
+                        cnt += 1
+
+                mms = (&#34;Alignment&#34;,
+                        &#34;Align Left&#34;,&#34;Align Right&#34;,
+                        &#34;Align Top&#34;,&#34;Align Buttom&#34;,
+                        &#34;Align Mid X&#34;,&#34;Align Mid Y&#34;,)
+                sss = Menu(mms, self.menu_sss, event, True)
+
+                mmz = ( &#34;Z-Order&#34;,
+                        &#34;To Front&#34;,&#34;To Back&#34;,
+                        &#34;One forward&#34;,&#34;One Backward&#34;,)
+                zzz = Menu(mmz, self.menu_zzz, event, True)
+
+                ccs = ( &#34;Connect&#34;,
+                        &#34;Connect Objects (Reg)&#34;, &#34;Connect Objects (Yes)&#34;,
+                        &#34;Connect Objects (No)&#34;, &#34;Disconnect Objects&#34;,)
+
+                ccc = Menu(ccs, self.menu_ccc, event, True)
+
+                if cnt &gt; 1:
+                    mmm = (bb.text, ccc,
+                    &#34;Group Objects&#34;, &#34;Ungroup Objects&#34;, sss, zzz)
+
+                    Menu(mmm, self.menu_action, event)
+
+                else:
+                    mmm = (bb.text, &#34;Object Properties&#34;, &#34;Text&#34;,
+                            &#34;FG Color&#34;, &#34;BG Color&#34;, &#34;Ungroup&#34;, &#34;Delete&#34;, zzz)
+                    Menu(mmm, self.menu_action2, event)
+
+                self.queue_draw()
+            else:
+                mmm = (&#34;Main Menu&#34;, &#34;Dump Objects&#34;, &#34;Add Rectangle&#34;,
+                            &#34;Add Rombus&#34;, &#34;Add Circle&#34;, &#34;Add Text&#34;, &#34;Add Line&#34;,
+                                &#34;Save Objects&#34;, &#34;Load Objects&#34;, &#34;-&#34;, &#34;Clear Canvas&#34;, &#34;-&#34;,
+                                    &#34;Export&#34;,  &#34;-&#34;, &#34;Open&#34;, &#34;-&#34;, &#34;Save&#34;, &#34;Save As&#34;)
+                Menu(mmm, self.menu_action3, event)
+        else:
+            print(&#34;??? click&#34;, event.button)</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.area_key"><code class="name flex">
+<span>def <span class="ident">area_key</span></span>(<span>self, area, event)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_key(self, area, event):
+    print (&#34;area_key&#34;, event.keyval)
+    if event.keyval == Gdk.KEY_Delete or event.keyval == Gdk.KEY_KP_Delete:
+        #print(&#34;Del key&#34;)
+        for bb in self.coll:
+            if bb.selected:
+                #print(&#34;would delete&#34;, bb)
+                self.coll.remove(bb)
+        self.queue_draw()
+
+    if event.keyval == Gdk.KEY_Up:
+        print(&#34;UP key&#34;)
+
+    if event.keyval == Gdk.KEY_Down:
+        print(&#34;DN key&#34;)
+
+    return True</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.area_motion"><code class="name flex">
+<span>def <span class="ident">area_motion</span></span>(<span>self, area, event)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_motion(self, area, event):
+    #print (&#34;motion event&#34;, event.state, event.x, event.y)
+    if self.drag:
+        gdk_window = self.get_root_window()
+        gdk_window.set_cursor(self.hand)
+        #print (&#34;drag coord&#34;, self.dragcoord[0],  self.dragcoord[1], event.x, event.y)
+        xd = int(self.dragcoord[0] - event.x)
+        yd = int(self.dragcoord[1] - event.y)
+        #print (&#34;delta&#34;, xd, yd)
+        for aa in self.coll:
+            if aa.selected:
+                aa.rect.x = aa.orgdrag.x  - xd
+                aa.rect.y = aa.orgdrag.y  - yd
+                # Also move whole group IN NOT SHIFT
+                if aa.groupid and not (event.state &amp; Gdk.ModifierType.SHIFT_MASK) :
+                    for bb in self.coll:
+                        if aa.groupid == bb.groupid:
+                            bb.rect.x = bb.orgdrag.x  - xd
+                            bb.rect.y = bb.orgdrag.y  - yd
+        self.queue_draw()
+
+    elif self.curl:
+        gdk_window = self.get_root_window()
+        gdk_window.set_cursor(self.pencil)
+        xd = int(self.dragcoord[0] - event.x)
+        yd = int(self.dragcoord[1] - event.y)
+        #print (&#34;curl rdelta&#34;, xd, yd)
+        self.queue_draw()
+
+    elif self.resize:
+        gdk_window = self.get_root_window()
+        gdk_window.set_cursor(self.sizing)
+        #print (&#34;resize&#34;, self.resize.text,  event.x, event.y)
+        xd = int(self.dragcoord[0] - event.x)
+        yd = int(self.dragcoord[1] - event.y)
+        #print (&#34;rdelta&#34;, xd, yd)
+
+        #if self.size2[0] - xd &gt; 2:
+        self.resize.rect.w = self.size2[0] - xd
+        #if self.size2[1] - yd &gt; 2:
+        self.resize.rect.h = self.size2[1] - yd
+
+        #print(&#34;resize rect&#34;, self.resize.rect.w, self.resize.rect.h)
+        #if self.resize.rect.h &lt; 0:
+        #    self.resize.rect.y -= 2 * abs(self.resize.rect.h)
+        #    self.resize.rect.h = abs(self.resize.rect.h)
+
+        self.queue_draw()
+    else:
+        onmarker = 0 #False
+        hit = Rectangle(event.x, event.y, 2, 2)
+        # Check if on marker
+        for cc in self.coll:
+            mark = cc.hitmarker(hit)
+            if mark:
+                onmarker = mark
+                break
+
+        gdk_window = self.get_root_window()
+        if onmarker == 5:
+            gdk_window.set_cursor(self.pencil)
+        elif onmarker:
+            gdk_window.set_cursor(self.cross)
+        elif self.noop_down:
+            gdk_window.set_cursor(self.hair)
+        else:
+            gdk_window.set_cursor(self.arrow)
+
+        &#39;&#39;&#39;if event.state &amp; Gdk.ModifierType.SHIFT_MASK:
+            print( &#34;Shift ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+        if event.state &amp; Gdk.ModifierType.CONTROL_MASK:
+            print( &#34;Ctrl ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+        if event.state &amp; Gdk.ModifierType.MOD1_MASK :
+            print( &#34;Alt ButPress x =&#34;, event.x, &#34;y =&#34;, event.y)
+        else:&#39;&#39;&#39;
+
+        if event.state &amp; Gdk.ModifierType.BUTTON1_MASK:
+            #print( &#34;But Drag&#34;, event.state, &#34;x =&#34;, int(event.x), &#34;y =&#34;, int(event.y))
+            self.stroke.append((int(event.x), int(event.y)))
+            self.queue_draw()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.done_fc"><code class="name flex">
+<span>def <span class="ident">done_fc</span></span>(<span>self, win, resp)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def done_fc(self, win, resp):
+    #print( &#34;done_fc&#34;, win, resp)
+    if resp == Gtk.ResponseType.OK:
+        fname = win.get_filename()
+        if not fname:
+            print(&#34;Must have filename&#34;)
+        else:
+            if os.path.isfile(fname):
+                resp = pedync.yes_no_cancel(&#34;Overwrite File Prompt&#34;,
+                            &#34;Overwrite existing file?\n &#39;%s&#39;&#34; % fname, False)
+                print(&#34;resp&#34;, resp)
+                if resp == Gtk.ResponseType.YES:
+                    self.fname = fname
+                    self.writeout()
+                    self.mained.update_statusbar(&#34;Saved under new filename &#39;%s&#39;&#34; % fname)
+                else:
+                    self.mained.update_statusbar(&#34;No new file name supplied, cancelled &#39;Save As&#39;&#34;)
+            else:
+                self.fname = fname
+                self.writeout()
+                pass
+            pedconfig.conf.pedwin.mywin.set_title(&#34;pyedpro: &#34; + self.fname)
+
+    win.destroy()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.draw_event"><code class="name flex">
+<span>def <span class="ident">draw_event</span></span>(<span>self, doc, cr)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_event(self, doc, cr):
+
+    #print (&#34;Painting .. &#34;, self.cnt)
+    self.cnt += 1
+    ctx = self.get_style_context()
+    fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
+    #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
+
+    self.layout = PangoCairo.create_layout(cr)
+    self.rect = self.get_allocation()
+    self.cr = cr
+    self.crh = CairoHelper(cr)
+
+    # Paint white, ignore system BG
+    border = 4
+    cr.set_source_rgba(255/255, 255/255, 255/255)
+    cr.rectangle( border, border, self.rect.width - border * 2, self.rect.height - border * 2);
+    cr.fill()
+
+    # Draw connections
+    cr.set_source_rgba(55/255, 55/255, 55/255)
+    for aa in self.coll:
+        for cc in aa.other:
+            for bb in self.coll:
+                if cc == bb.id:
+                    #print(&#34;connect draw&#34;, aa.text, bb.text)
+                    aac = aa.center()
+                    cr.move_to(aac[0], aac[1])
+                    bbc = bb.center()
+                    cr.line_to(bbc[0], bbc[1])
+                    cr.stroke()
+
+    #for aa in self.coll:
+    #    aa.dump()
+
+    sortx = sorted(self.coll, reverse = False, key = lambda item: item.zorder)
+
+    # Draw objects
+    #for aa in self.coll:
+    for aa in sortx:
+        try:
+            aa.draw(cr, self)
+        except:
+            put_exception(&#34;Cannot draw &#34; + str(type(aa)))
+            #aa.dump()
+
+    init = 0;
+    for aa, bb in self.stroke:
+        if init == 0:
+            self.cr.move_to(aa, bb)
+        else:
+            self.cr.line_to(aa, bb)
+        init += 1
+    self.cr.stroke()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.file_dlg"><code class="name flex">
+<span>def <span class="ident">file_dlg</span></span>(<span>self, resp)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def file_dlg(self, resp):
+    #print &#34;File dialog&#34;
+    if resp == Gtk.ResponseType.YES:
+        but =   &#34;Cancel&#34;, Gtk.ResponseType.CANCEL,   \
+                        &#34;Save File&#34;, Gtk.ResponseType.OK
+        fc = Gtk.FileChooserDialog(&#34;Save file as ... &#34;, None,
+                Gtk.FileChooserAction.SAVE, but)
+        #fc.set_do_overwrite_confirmation(True)
+        fc.set_current_name(os.path.basename(self.fname))
+        fc.set_current_folder(os.path.dirname(self.fname))
+        fc.set_default_response(Gtk.ResponseType.OK)
+        fc.connect(&#34;response&#34;, self.done_fc)
+        fc.run()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.menu_action"><code class="name flex">
+<span>def <span class="ident">menu_action</span></span>(<span>self, item, num)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu_action(self, item, num):
+
+    # Group
+    if num == 2:
+        global globgroup
+        globgroup += 1
+        for aa in self.coll:
+            if aa.selected:
+                aa.groupid = globgroup
+
+    # Ungroup
+    if num == 3:
+        for aa in self.coll:
+            if aa.selected:
+                for bb in self.coll:
+                    if aa.groupid == bb.groupid:
+                        bb.groupid = 0
+                    aa.groupid = 0
+    # Align
+    if num == 5:
+        for aa in self.coll:
+            if aa.selected:
+                for bb in self.coll:
+                    if bb.selected:
+                        bb.rect.x = aa.rect.x
+                break
+    self.queue_draw()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.menu_action2"><code class="name flex">
+<span>def <span class="ident">menu_action2</span></span>(<span>self, item, num)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu_action2(self, item, num):
+
+    if num == 2:
+        print(&#34;Getting text&#34;)
+        bb = None
+        for aa in self.coll:
+                if aa.selected:
+                    bb = aa
+        if bb:
+            response, txt = textdlg(bb.text, self.get_toplevel())
+            if response == Gtk.ResponseType.ACCEPT:
+                #print(&#34;Got text&#34;, txt)
+                bb.text = txt
+                self.queue_draw()
+
+    if num == 3:
+        ccc = canv_colsel(0, &#34;Foreground Color&#34;)
+        for aa in self.coll:
+            if aa.selected:
+                aa.col2 = ccc
+        self.queue_draw()
+
+    if num == 4:
+        ccc = canv_colsel(0, &#34;Background Color&#34;)
+        for aa in self.coll:
+            if aa.selected:
+                aa.col1 = ccc
+        self.queue_draw()
+
+    if num == 5:
+        for aa in self.coll:
+            if aa.selected:
+                for bb in self.coll:
+                    if aa.groupid == bb.groupid:
+                        bb.groupid = 0
+                    aa.groupid = 0
+        self.queue_draw()
+
+    if num == 6:
+        #print(&#34;Delete&#34;)
+        for bb in self.coll:
+            if bb.selected:
+                #print(&#34;would delete&#34;, bb)
+                self.coll.remove(bb)
+        self.queue_draw()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.menu_action3"><code class="name flex">
+<span>def <span class="ident">menu_action3</span></span>(<span>self, item, num)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu_action3(self, item, num):
+
+    #print(&#34;menu action &#34;, item, num)
+
+    if num == 1:
+        for aa in self.coll:
+            print(aa.dump())
+
+    if num == 2:
+        rstr = randstr(6)
+        coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
+        self.add_rect(coord, rstr, randcolstr())
+
+    if num == 3:
+        rstr = randstr(6)
+        coord = Rectangle(self.mouse.x, self.mouse.y, 120, 120)
+        self.add_romb(coord, rstr, randcolstr())
+
+    if num == 4:
+        rstr = randstr(6)
+        coord = Rectangle(self.mouse.x, self.mouse.y, 70, 70)
+        self.add_circle(coord, rstr, randcolstr())
+
+    if num == 5:
+        rstr = randstr(6)
+        coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+        self.add_text(coord, rstr, randcolstr())
+
+    if num == 6:
+        rstr = randstr(6)
+        coord = Rectangle(self.mouse.x, self.mouse.y, 40, 40)
+        self.add_line(coord, rstr, randcolstr())
+
+    if num == 7:
+        fff = &#34;outline.pickle&#34;
+        #print(&#34;Saving to:&#34;, fff)
+        sum = []
+        for aa in self.coll:
+            sum.append(aa.dump())
+        ff = open(fff, &#34;wb&#34;)
+        pickle.dump(sum, ff)
+        ff.close()
+
+    if num == 8:
+        fff = &#34;outline.pickle&#34;
+        #print(&#34;Loading:&#34;, fff)
+        self.readfile(fff)
+
+    if num == 9:
+        pass
+
+    if num == 10:
+        # Clear canvas
+        self.coll = []
+        self.queue_draw()
+
+    if num == 11:
+        # crate PNG
+        for aa in self.coll:
+            aa.selected = False
+        self.queue_draw()
+        usleep(10)
+        rect = self.get_allocation()
+
+        #pixbuf = Gdk.pixbuf_get_from_window(self.get_window(), 0, 0, rect.width, rect.height)
+        #self.surface = cairo.create_for_rectangle(0, 0, width, height)
+        #self.surface = cairo.create_similar_image(cairo.Format.ARGB32, rect.width, rect.height)
+        #cr =  self.get_window().cairo_create()
+        #cr =  cairo.Context(self.surface)
+
+        cr = Gdk.cairo_create(self.get_window())
+        self.draw_event(self, cr)
+        pixbuf = Gdk.pixbuf_get_from_surface(cr.get_target(), 0, 0, rect.width, rect.height)
+        pixbuf.savev(&#34;buff.png&#34;, &#34;png&#34;, [None], [])
+
+    if num == 12:
+        print(&#34;Export&#34;)
+
+    if num == 14:
+        #print(&#34;Open&#34;)
+        filter =  Gtk.FileFilter.new()
+        filter.add_pattern(&#34;*.ped&#34;); filter.set_name(&#34;PED files (*.ped)&#34;)
+        filter2 =  Gtk.FileFilter.new()
+        filter2.add_pattern(&#34;*.*&#34;); filter2.set_name(&#34;ALL files (*.*)&#34;)
+        filters = (filter2, filter)
+        ofn = OpenFname(self.parewin.get_toplevel(), filters)
+        fff = ofn.run()
+        if not fff.fc_code:
+            return
+        print(&#34;Open filename&#34;, fff.fname)
+
+        # Clear canvas
+        self.coll = []
+        self.queue_draw()
+
+        self.readfile(fff.fname)
+
+    if num == 16:
+        #print(&#34;Save&#34;)
+        if self.fname == &#34;untitled.ped&#34;:
+            fff = self.file_dlg(Gtk.ResponseType.YES)
+        else:
+            self.writeout()
+
+    if num == 17:
+        #print(&#34;Save As&#34;)
+        fff = self.file_dlg(Gtk.ResponseType.YES)</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.menu_ccc"><code class="name flex">
+<span>def <span class="ident">menu_ccc</span></span>(<span>self, item, num)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu_ccc(self, item, num):
+    print (&#34;Connect&#34;, item, num)
+    if num == 1:
+        #print (&#34;Conn obj&#34;, item, num)
+        ccc = []
+        for aa in self.coll:
+            if aa.selected:
+                ccc.append(aa)
+        for aa in ccc[1:]:
+            ccc[0].other.append(aa.id)
+
+    if num == 4:
+        ccc = []
+        for aa in self.coll:
+            if aa.selected:
+                ccc.append(aa)
+
+        if len(ccc) == 2:
+            #print(&#34;Please select two objects to disconnect&#34;)
+            print(&#34;disconnecting&#34;, ccc[0].text, ccc[1].text)
+            try:    ccc[0].other.remove(ccc[1].id)
+            except: pass
+        else:
+            for dd in ccc:
+                dd.other = []
+
+        self.queue_draw()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.menu_sss"><code class="name flex">
+<span>def <span class="ident">menu_sss</span></span>(<span>self, item, num)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu_sss(self, item, num):
+        print (&#34;Align&#34;, item, num)</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.menu_zzz"><code class="name flex">
+<span>def <span class="ident">menu_zzz</span></span>(<span>self, item, num)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu_zzz(self, item, num):
+
+    #print (&#34;Z order&#34;, item, num)
+    global globzorder
+    if num == 1:
+        for aa in self.coll:
+            if aa.selected:
+                globzorder = globzorder + 1
+                aa.zorder = globzorder
+                break
+
+    if num == 2:
+        for aa in self.coll:
+            aa.zorder += 1
+        for aa in self.coll:
+            if aa.selected:
+                aa.zorder = 0
+                break
+
+    self.queue_draw()</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.readfile"><code class="name flex">
+<span>def <span class="ident">readfile</span></span>(<span>self, fname)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def readfile(self, fname):
+    ff = open(fname, &#34;rb&#34;)
+    sum2  = pickle.load(ff)
+    ff.close()
+    #print(sum2)
+
+    for aa in sum2:
+        obj = None
+        rectx = Rectangle(aa[5])
+        if aa[2] == &#34;Rect&#34;:
+            obj = self.add_rect(rectx, aa[1], aa[7], aa[6])
+        if aa[2] == &#34;Circ&#34;:
+            obj = self.add_circle(rectx, aa[1], aa[7], aa[6])
+        if aa[2] == &#34;Text&#34;:
+            obj = self.add_text(rectx, aa[1], aa[7], aa[6])
+        if aa[2] == &#34;Romb&#34;:
+            obj = self.add_romb(rectx, aa[1], aa[7], aa[6])
+
+        if obj:
+            obj.id = aa[0]
+            obj.zorder = int(aa[3])
+            obj.groupid = int(aa[4])
+            obj.other  = list(aa[8])</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.show_objects"><code class="name flex">
+<span>def <span class="ident">show_objects</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_objects(self):
+    for aa in self.coll:
+        print (&#34;GUI Object&#34;, aa)</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.Canvas.writeout"><code class="name flex">
+<span>def <span class="ident">writeout</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def writeout(self):
+    print( &#34;writeout&#34;, self.fname)
+    sum = []
+    for aa in self.coll:
+        sum.append(aa.dump())
+    ff = open(self.fname, &#34;wb&#34;)
+    pickle.dump(sum, ff)
+    ff.close()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pedcanv.ToolBox"><code class="flex name class">
+<span>class <span class="ident">ToolBox</span></span>
+<span>(</span><span>callb, parent)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>:Constructors:</p>
+<p>::</p>
+<pre><code>VBox(**properties)
+new(homogeneous:bool, spacing:int) -&gt; Gtk.Widget
+</code></pre>
+<p>Initializer for a GObject based classes with support for property
+sets through the use of explicit keyword arguments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ToolBox(Gtk.VBox):
+
+    def __init__(self, callb, parent):
+        #Gtk.Window.__init__(self, Gtk.WindowType.POPUP)
+        #Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
+        #Gtk.Toolbar.__init__(self)
+        super(ToolBox, self).__init__()
+
+        #self.set_size_request(10, 10)
+        #self.set_default_size(10, 10)
+        #self.set_keep_above(True)
+        #self.set_decorated(False)
+
+        self.drag = False
+        self.dragpos = (0, 0)
+        self.callb = callb
+        self.opacity = 1
+
+        self.connect(&#34;button-press-event&#34;, self.area_button)
+        self.connect(&#34;button-release-event&#34;, self.area_button_rel)
+        self.connect(&#34;motion-notify-event&#34;, self.area_motion)
+
+        vbox = Gtk.VBox()
+
+        self.labelm = Gtk.Label(&#34; - &#34;)
+        self.labelx = Gtk.Label(&#34; x &#34;)
+        self.toolt = Gtk.Label(&#34;Main Toolbox&#34;)
+
+        self.hboxt = Gtk.HBox()
+        self.hboxt.pack_start(self.labelm, 0, 0, 0)
+        self.hboxt.pack_start(self.toolt, 1, 1, 0)
+        self.hboxt.pack_start(self.labelx, 0, 0, 0)
+
+        self.hbox = Gtk.HBox()
+        tarr = ((Gtk.STOCK_OPEN, &#34;Open&#34;), (Gtk.STOCK_SAVE, &#34;Save&#34;),
+                    (Gtk.STOCK_COPY, &#34;Copy&#34;), (Gtk.STOCK_PASTE, &#34;Paste&#34;),
+                    (Gtk.STOCK_NO, &#34;None&#34;), (Gtk.STOCK_CLEAR, &#34;Clear&#34;),
+                    (Gtk.STOCK_DELETE, &#34;Delete&#34;), (Gtk.STOCK_PROPERTIES , &#34;Proerties&#34;),
+                     )
+        cnt = 0
+        for aa in tarr:
+            butt = Gtk.ToolButton().new_from_stock(aa[0])
+            butt.set_tooltip_text(aa[1])
+            butt.connect(&#34;clicked&#34;, self.callb, cnt)
+            cnt += 1
+            self.hbox.add(butt)
+
+        self.hbox2 = Gtk.HBox()
+        tarr2 = ( (Gtk.STOCK_UNDO, &#34;Undo&#34;), (Gtk.STOCK_REDO, &#34;Redo&#34;),
+                    (Gtk.STOCK_COLOR_PICKER, &#34;Color&#34;), (Gtk.STOCK_YES , &#34;yes?&#34;),
+                    (Gtk.STOCK_SELECT_ALL , &#34;SelAll&#34;), (Gtk.STOCK_SELECT_FONT , &#34;Font&#34;),
+                    (Gtk.STOCK_ZOOM_100 , &#34;Zoom100&#34;), (Gtk.STOCK_ZOOM_FIT , &#34;ZoomFit&#34;),
+                     )
+        for aa in tarr2:
+            butt = Gtk.ToolButton().new_from_stock(aa[0])
+            butt.set_tooltip_text(aa[1])
+            butt.connect(&#34;clicked&#34;, self.callb, cnt)
+            cnt += 1
+            self.hbox2.add(butt)
+
+        vbox.add(self.hboxt)
+        vbox.add(self.hbox)
+        vbox.add(self.hbox2)
+        self.add(vbox)
+
+        &#39;&#39;&#39;openbtn = Gtk.ToolButton(Gtk.STOCK_OPEN)
+        self.insert(openbtn, 0)
+        self.show_all()
+        &#39;&#39;&#39;
+
+    def area_motion(self, area, event):
+        #print (&#34;motion event&#34;, event.state, event.x, event.y)
+        if self.drag:
+            #print (&#34;drag toolbox&#34;, event.state, event.x, event.y)
+            #print(&#34;delta:&#34;, event.x - self.dragpos[0],  event.y - self.dragpos[1])
+            pos = self.get_position()
+            self.move(pos[0] + event.x - self.dragpos[0],
+                pos[1] + event.y - self.dragpos[1])
+
+    def area_button_rel(self, area, event):
+        self.drag = False
+
+    def area_button(self, area, event):
+
+        #return
+        #print(&#34;moudown&#34;, event.x, event.y)
+        hit = Rectangle(event.x, event.y, 2, 2)
+
+        rr = self.labelm.get_allocation()
+        rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+        if rrr.intersect(hit)[0]:
+            #print(&#34;objl&#34;, rr.x, rr.y)
+            if self.opacity == 1:
+                self.opacity = 0.5
+            else:
+                self.opacity = 1
+            self.set_opacity(self.opacity)
+
+        rr = self.toolt.get_allocation()
+        rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+        if rrr.intersect(hit)[0]:
+            #print(&#34;objhead&#34;, rr.x, rr.y)
+            self.dragpos = event.x, event.y
+            self.drag = True
+
+        rr = self.labelx.get_allocation()
+        rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+        if rrr.intersect(hit)[0]:
+            print(&#34;objx&#34;, rr.x, rr.y)
+            self.hide()
+
+        return True
+
+    def show_box(self, parent):
+        self.parent = parent
+        self.set_transient_for (self.parent)
+        #self.set_parent(parent)
+        sxx, syy = self.parent.get_position()
+        self.move(sxx + 30, syy + 180)
+        self.show_all()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>gi.repository.Gtk.VBox</li>
+<li>gi.overrides.Gtk.Box</li>
+<li>gi.repository.Gtk.Box</li>
+<li>gi.overrides.Gtk.Container</li>
+<li>gi.repository.Gtk.Container</li>
+<li>gi.overrides.Gtk.Widget</li>
+<li>gi.repository.Gtk.Widget</li>
+<li>gi.repository.GObject.InitiallyUnowned</li>
+<li>gi.overrides.GObject.Object</li>
+<li>gi.repository.GObject.Object</li>
+<li>gi._gi.GObject</li>
+<li>gi.repository.Atk.ImplementorIface</li>
+<li>gi.repository.Gtk.Buildable</li>
+<li>gi.repository.Gtk.Orientable</li>
+<li>gobject.GInterface</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pedcanv.ToolBox.area_button"><code class="name flex">
+<span>def <span class="ident">area_button</span></span>(<span>self, area, event)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_button(self, area, event):
+
+    #return
+    #print(&#34;moudown&#34;, event.x, event.y)
+    hit = Rectangle(event.x, event.y, 2, 2)
+
+    rr = self.labelm.get_allocation()
+    rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+    if rrr.intersect(hit)[0]:
+        #print(&#34;objl&#34;, rr.x, rr.y)
+        if self.opacity == 1:
+            self.opacity = 0.5
+        else:
+            self.opacity = 1
+        self.set_opacity(self.opacity)
+
+    rr = self.toolt.get_allocation()
+    rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+    if rrr.intersect(hit)[0]:
+        #print(&#34;objhead&#34;, rr.x, rr.y)
+        self.dragpos = event.x, event.y
+        self.drag = True
+
+    rr = self.labelx.get_allocation()
+    rrr = Rectangle(rr.x, rr.y, rr.width, rr.height)
+    if rrr.intersect(hit)[0]:
+        print(&#34;objx&#34;, rr.x, rr.y)
+        self.hide()
+
+    return True</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.ToolBox.area_button_rel"><code class="name flex">
+<span>def <span class="ident">area_button_rel</span></span>(<span>self, area, event)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_button_rel(self, area, event):
+    self.drag = False</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.ToolBox.area_motion"><code class="name flex">
+<span>def <span class="ident">area_motion</span></span>(<span>self, area, event)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def area_motion(self, area, event):
+    #print (&#34;motion event&#34;, event.state, event.x, event.y)
+    if self.drag:
+        #print (&#34;drag toolbox&#34;, event.state, event.x, event.y)
+        #print(&#34;delta:&#34;, event.x - self.dragpos[0],  event.y - self.dragpos[1])
+        pos = self.get_position()
+        self.move(pos[0] + event.x - self.dragpos[0],
+            pos[1] + event.y - self.dragpos[1])</code></pre>
+</details>
+</dd>
+<dt id="pedcanv.ToolBox.show_box"><code class="name flex">
+<span>def <span class="ident">show_box</span></span>(<span>self, parent)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_box(self, parent):
+    self.parent = parent
+    self.set_transient_for (self.parent)
+    #self.set_parent(parent)
+    sxx, syy = self.parent.get_position()
+    self.move(sxx + 30, syy + 180)
+    self.show_all()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="pedcanv.canv_colsel" href="#pedcanv.canv_colsel">canv_colsel</a></code></li>
+<li><code><a title="pedcanv.set_canv_testmode" href="#pedcanv.set_canv_testmode">set_canv_testmode</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pedcanv.Canvas" href="#pedcanv.Canvas">Canvas</a></code></h4>
+<ul class="two-column">
+<li><code><a title="pedcanv.Canvas.add_circle" href="#pedcanv.Canvas.add_circle">add_circle</a></code></li>
+<li><code><a title="pedcanv.Canvas.add_curve" href="#pedcanv.Canvas.add_curve">add_curve</a></code></li>
+<li><code><a title="pedcanv.Canvas.add_line" href="#pedcanv.Canvas.add_line">add_line</a></code></li>
+<li><code><a title="pedcanv.Canvas.add_rect" href="#pedcanv.Canvas.add_rect">add_rect</a></code></li>
+<li><code><a title="pedcanv.Canvas.add_romb" href="#pedcanv.Canvas.add_romb">add_romb</a></code></li>
+<li><code><a title="pedcanv.Canvas.add_stroke" href="#pedcanv.Canvas.add_stroke">add_stroke</a></code></li>
+<li><code><a title="pedcanv.Canvas.add_text" href="#pedcanv.Canvas.add_text">add_text</a></code></li>
+<li><code><a title="pedcanv.Canvas.area_button" href="#pedcanv.Canvas.area_button">area_button</a></code></li>
+<li><code><a title="pedcanv.Canvas.area_key" href="#pedcanv.Canvas.area_key">area_key</a></code></li>
+<li><code><a title="pedcanv.Canvas.area_motion" href="#pedcanv.Canvas.area_motion">area_motion</a></code></li>
+<li><code><a title="pedcanv.Canvas.done_fc" href="#pedcanv.Canvas.done_fc">done_fc</a></code></li>
+<li><code><a title="pedcanv.Canvas.draw_event" href="#pedcanv.Canvas.draw_event">draw_event</a></code></li>
+<li><code><a title="pedcanv.Canvas.file_dlg" href="#pedcanv.Canvas.file_dlg">file_dlg</a></code></li>
+<li><code><a title="pedcanv.Canvas.menu_action" href="#pedcanv.Canvas.menu_action">menu_action</a></code></li>
+<li><code><a title="pedcanv.Canvas.menu_action2" href="#pedcanv.Canvas.menu_action2">menu_action2</a></code></li>
+<li><code><a title="pedcanv.Canvas.menu_action3" href="#pedcanv.Canvas.menu_action3">menu_action3</a></code></li>
+<li><code><a title="pedcanv.Canvas.menu_ccc" href="#pedcanv.Canvas.menu_ccc">menu_ccc</a></code></li>
+<li><code><a title="pedcanv.Canvas.menu_sss" href="#pedcanv.Canvas.menu_sss">menu_sss</a></code></li>
+<li><code><a title="pedcanv.Canvas.menu_zzz" href="#pedcanv.Canvas.menu_zzz">menu_zzz</a></code></li>
+<li><code><a title="pedcanv.Canvas.readfile" href="#pedcanv.Canvas.readfile">readfile</a></code></li>
+<li><code><a title="pedcanv.Canvas.show_objects" href="#pedcanv.Canvas.show_objects">show_objects</a></code></li>
+<li><code><a title="pedcanv.Canvas.writeout" href="#pedcanv.Canvas.writeout">writeout</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pedcanv.ToolBox" href="#pedcanv.ToolBox">ToolBox</a></code></h4>
+<ul class="">
+<li><code><a title="pedcanv.ToolBox.area_button" href="#pedcanv.ToolBox.area_button">area_button</a></code></li>
+<li><code><a title="pedcanv.ToolBox.area_button_rel" href="#pedcanv.ToolBox.area_button_rel">area_button_rel</a></code></li>
+<li><code><a title="pedcanv.ToolBox.area_motion" href="#pedcanv.ToolBox.area_motion">area_motion</a></code></li>
+<li><code><a title="pedcanv.ToolBox.show_box" href="#pedcanv.ToolBox.show_box">show_box</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

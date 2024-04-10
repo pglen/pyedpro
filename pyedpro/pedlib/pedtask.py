@@ -157,8 +157,8 @@ class pedtask():
             print("Cannot communicate with MD filter %s" % str(comline), sys.exc_info())
             return
 
-        newfname = os.path.splitext(self.fname)[0] + ".html"
-        print("processed:", self.fname, newfname)
+        newfname = os.path.splitext(self.fname)[0] + ".preview.html"
+        #print("processed:", self.fname, newfname)
         with open(newfname,'wb') as fd:
             fd.write(outs)
 
@@ -169,6 +169,8 @@ class pedtask():
             return
 
         self.start_htmlwin(newfname)
+        pedconfig.conf.pedwin.cleanit.append(newfname)
+
 
     def start_browser(self, newfname):
         comline2 = ["firefox", newfname,]

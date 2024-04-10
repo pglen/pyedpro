@@ -20,7 +20,7 @@ from gi.repository import GLib
 from gi.repository import Gio
 
 from pedlib import pedconfig
-from pedlib import peddoc
+#from pedlib import peddoc
 from pedlib import pedync
 from pedlib import pedlog
 from pedlib import pedcal

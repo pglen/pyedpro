@@ -4,14 +4,13 @@ from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
 
-import gi;
+#import gi;
+#from gi.repository import Gtk
+#from gi.repository import Gdk
+#from gi.repository import GObject
+#from gi.repository import GLib
 
-from gi.repository import Gtk
-from gi.repository import Gdk
-from gi.repository import GObject
-from gi.repository import GLib
-
-#    gi.require_version('WebKit2', '4.0')
+#gi.require_version('WebKit2', '4.0')
 
 from pedlib import pedconfig
 

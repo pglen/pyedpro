@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pedmenu API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pedmenu</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+import sys
+import gi
+
+import gettext
+gettext.bindtextdomain(&#39;pyedpro&#39;, &#39;./locale/&#39;)
+gettext.textdomain(&#39;pyedpro&#39;)
+
+_ = gettext.gettext
+
+gi.require_version(&#34;Gtk&#34;, &#34;3.0&#34;)
+from gi.repository import Gtk
+from gi.repository import GObject
+
+(
+  COLOR_RED,
+  COLOR_GREEN,
+  COLOR_BLUE
+) = list(range(3))
+
+(
+  SHAPE_SQUARE,
+  SHAPE_RECTANGLE,
+  SHAPE_OVAL,
+) = list(range(3))
+
+mained = None
+
+# ------------------------------------------------------------------------
+# Callback for rigth click menu
+
+def rclick_action(self, arg):
+
+    print (&#34;rclick_action local&#34;, &#34;&#39;&#34; + arg.name + &#34;&#39;&#34;)
+
+    if arg.name == &#34;&lt;pydoc&gt;/New&#34;:
+        mained. newfile()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Open&#34;:
+        mained.open()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Save&#34;:
+        mained.save()
+
+    if arg.name == &#34;&lt;pydoc&gt;/SaveAs&#34;:
+        mained.save(True )
+
+    if arg.name == &#34;&lt;pydoc&gt;/Copy&#34;:
+        mained.copy( )
+
+    if arg.name == &#34;&lt;pydoc&gt;/Cut&#34;:
+        mained.cut()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Paste&#34;:
+        mained.paste()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Read&#34;:
+        mained.tts()
+
+def rclick_quit(self, arg):
+    print(__name__, arg.name)
+    mained.activate_exit()
+
+rclick_menu = (
+                ( _(&#34;_New \t&#34;),           &#34;&lt;control&gt;N&#34;,    rclick_action, 1, None ),
+            ( &#34;&#34;,               None,               None, 2, &#34;&lt;Separator&gt;&#34; ),
+            ( _(&#34;_Rescan\t\t&#34;),       &#34;Right CTRL+R&#34;,          rclick_action, 25, None ),
+            ( _(&#34;_Find\t&#34;),       &#34;CTRL+F&#34;,          rclick_action, 26, None ),
+            ( _(&#34;Check Syntax&#34;),     &#34;Alt-Y&#34;,        rclick_action, 27, None ),
+            ( &#34;&#34;,               None,               None, 2, &#34;&lt;Separator&gt;&#34; ),
+            ( _(&#34;_Open  \t\t&#34;),          &#34;&lt;control&gt;O&#34;,    rclick_action, 3, None ),
+            ( _(&#34;_Save   \t\t&#34;),          &#34;&lt;control&gt;S&#34;,    rclick_action, 4, None ),
+            ( _(&#34;Save_As \t\t&#34;),        None,            rclick_action, 5, None ),
+            ( _(&#34;Toggle _RO&#34;),     None,            rclick_action, 11, None ),
+            ( &#34;&#34;,               None,               None, 6, &#34;&lt;Separator&gt;&#34; ),
+            ( _(&#34;_Copy \t&#34;),          &#34;&lt;control&gt;C&#34;,    rclick_action, 7, None ),
+            ( _(&#34;C_ut  \t&#34;),           &#34;&lt;control&gt;X&#34;,    rclick_action, 8, None ),
+            ( _(&#34;_Paste \t\t&#34;),         &#34;&lt;control&gt;V&#34;,    rclick_action, 9, None ),
+            ( &#34;&#34;,               None,               None, 10, &#34;&lt;Separator&gt;&#34; ),
+            ( _(&#34;Terminal Here&#34;), &#34;Right CTRL+T&#34;,   rclick_action, 14, None ),
+            ( &#34;&#34;,               None,               None, 10, &#34;&lt;Separator&gt;&#34; ),
+            ( _(&#34;File Manager&#34;), &#34;Right CTRL+F&#34;,        rclick_action, 24, None ),
+            ( _(&#34;Exec current&#34;),  None,             rclick_action, 17, None ),
+            ( _(&#34;Libre Office&#34;), &#34;Right CTRL+L&#34;, rclick_action, 18, None ),
+            ( _(&#34;NEW pyedpro&#34;),   None,     rclick_action, 15, None ),
+            ( _(&#34;Filter to M4&#34;), &#34;&lt;control&gt;&lt;shift&gt;R&#34;, rclick_action, 19, None ),
+            ( _(&#34;To Markdown&#34;), None,        rclick_action, 20, None ),
+            ( _(&#34;In Browser&#34;), None,           rclick_action, 21, None ),
+            ( _(&#34;As HTML String&#34;), None,       rclick_action, 23, None ),
+            ( _(&#34;As HTML File&#34;), None,         rclick_action, 22, None ),
+            ( &#34;&#34;,               None,               None, 12, &#34;&lt;Separator&gt;&#34; ),
+            ( _(&#34;Read Selection&#34;), None,            rclick_action, 16, None ),
+            ( &#34;&#34;,               None,               None, 12, &#34;&lt;Separator&gt;&#34; ),
+            ( _(&#34;E_xit\t\t&#34;),          &#34;&lt;alt&gt;X&#34;,        rclick_quit, 13, None ),
+            )
+
+rclick_menu2 = (
+            ( _(&#34;Terminal Here&#34;),  None,            rclick_action, 14, None ),
+            ( _(&#34;Exec current&#34;),  None,             rclick_action, 17, None ),
+            )
+
+def create_action_group(self):
+    # GtkActionEntry
+    if sys.version_info[0] &lt; 3:
+        verx = &#34;_Help&#34;
+    else:
+        verx = &#34;_Help&#34;
+
+    entries = (
+      ( &#34;FileMenu&#34;, None, &#34;_File&#34; ),                # name, stock id, label
+      ( &#34;EditMenu&#34;, None, &#34;_Edit&#34; ),
+      ( &#34;PreferencesMenu&#34;, None, &#34;Settings&#34; ),
+      ( &#34;NavMenu&#34;, None, &#34;Navigation&#34; ),
+      ( &#34;MacrosMenu&#34;, None, &#34;_Macros&#34; ),
+      ( &#34;ColorMenu&#34;, None, &#34;_Color&#34;  ),
+      ( &#34;ShapeMenu&#34;, None, &#34;Shape&#34; ),
+      ( &#34;WinMenu&#34;, None, &#34;Windows&#34; ),
+      ( &#34;HelpMenu&#34;, None, verx ),
+
+      # -------------------------------------------------------------------
+
+      ( &#34;New&#34;, Gtk.STOCK_NEW,                       # name, stock id
+        &#34;_New&#34;, &#34;&lt;control&gt;N&#34;,                       # label, accelerator
+        &#34;Create a new file&#34;,                        # tooltip
+        self.activate_action ),
+
+      ( &#34;Open&#34;, Gtk.STOCK_OPEN,
+        &#34;_Open&#34;, &#34;&lt;control&gt;O&#34;,
+        &#34;Open a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Close&#34;, Gtk.STOCK_CLEAR,
+        &#34;_Close&#34;,&#34;&lt;control&gt;W&#34;,
+        &#34;Close current buffer&#34;,
+        self.activate_action ),
+
+      ( &#34;Close All&#34;, Gtk.STOCK_CLEAR,
+        &#34;Close All&#34;,&#34;&lt;control&gt;&lt;shift&gt;W&#34;,
+        &#34;Close all buffers&#34;,
+        self.activate_action ),
+
+      ( &#34;Save&#34;, Gtk.STOCK_SAVE,
+        &#34;_Save&#34;,&#34;&lt;control&gt;S&#34;,
+        &#34;Save current file&#34;,
+        self.activate_action ),
+
+      ( &#34;SaveAs&#34;, Gtk.STOCK_SAVE_AS,
+        &#34;Save _As...&#34;, &#34;&lt;control&gt;&lt;shift&gt;S&#34;,
+        &#34;Save to a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Save Session&#34;, Gtk.STOCK_SAVE,
+        &#34;Save _Session ...&#34;, &#34;&#34;,
+        &#34;Save session to a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Load Session&#34;, Gtk.STOCK_OPEN,
+        &#34;Load _Session ...&#34;, &#34;&lt;control&gt;&lt;shift&gt;O&#34;,
+        &#34;Load session from a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Start Terminal&#34;, Gtk.STOCK_FILE,
+        &#34;Start _Terminal ...&#34;, &#34;&#34;,
+        &#34;Star terminal in current dir&#34;,
+        self.activate_action ),
+
+      ( &#34;Recent&#34;, Gtk.STOCK_OPEN,
+        &#34;_Recent  &#34;, &#34;&#34;,
+        &#34;Load recent file list&#34;,
+         self.activate_action ),
+
+      ( &#34;Recent Files&#34;, Gtk.STOCK_OPEN,
+        &#34;Recent Files &#34;, &#34;&#34;,
+        &#34;Load recent file&#34;,
+         self.open_recent ),
+
+      ( &#34;Sessions&#34;, Gtk.STOCK_OPEN,
+        &#34;_Recent Session &#34;, &#34;&#34;,
+        &#34;Load recent session list&#34;,
+         self.activate_action ),
+
+      ( &#34;Recent Sessions&#34;, Gtk.STOCK_OPEN,
+        &#34;Recent _Sessions&#34;, &#34;&#34;,
+        &#34;Load recent sessions &#34;,
+         self.open_recent_sess ),
+
+     ( &#34;Quit&#34;, Gtk.STOCK_QUIT,
+        &#34;_Quit  (No Save)&#34;, &#34;&lt;control&gt;Q&#34;,
+        &#34;Quit program, abandon files&#34;,
+         self.activate_quit ),
+
+      ( &#34;Exit&#34;, Gtk.STOCK_CLOSE,
+        &#34;_Exit&#34;, &#34;&lt;alt&gt;X&#34;,
+        &#34;Exit program, save files&#34;,
+         self.activate_exit ),
+
+      ( &#34;Cut&#34;, Gtk.STOCK_CUT,
+        &#34;Cu_t   \t\tCtrl-X&#34;, &#34;&#34;,
+        &#34;Cut selection to clipboard&#34;,
+         self.activate_action ),
+
+       ( &#34;Copy&#34;, Gtk.STOCK_COPY,
+        &#34;_Copy   \t\tCtrl-C&#34;, &#34;&#34;,
+        &#34;Copy selection to clipboard&#34;,
+         self.activate_action ),
+
+      ( &#34;Paste&#34;, Gtk.STOCK_PASTE,
+        &#34;_Paste  \t\tCtrl-V&#34;, &#34;&#34;,
+        &#34;Paste clipboard into text&#34;,
+         self.activate_action ),
+
+      ( &#34;Findit&#34;, Gtk.STOCK_PASTE,
+        &#34;_Find  \tCtrl-F&#34;, &#34;&#34;,
+        &#34;Find text&#34;,
+         self.activate_action ),
+
+      ( &#34;Undo&#34;, Gtk.STOCK_UNDO,
+        &#34;_Undo  \t\tCtrl-Z&#34;, &#34;&#34;,
+        &#34;Undo last Edit&#34;,
+         self.activate_action ),
+
+       ( &#34;TogStrip&#34;, Gtk.STOCK_UNDO,
+        &#34;_Toggle Line No. Strip  &#34;, &#34;&#34;,
+        &#34;Toggle line number stip&#34;,
+         self.activate_action ),
+
+      ( &#34;Redo&#34;, Gtk.STOCK_REDO,
+        &#34;_Redo  \t\tCtrl-Y&#34;, &#34;&#34;,
+        &#34;Redo last Undo&#34;,
+         self.activate_action ),
+
+      ( &#34;Discard Undo&#34;, Gtk.STOCK_QUIT,
+        &#34;Discard Undo / Redo&#34;, &#34;&#34;,
+        &#34;Discard all undo / redo information&#34;,
+         self.activate_action ),
+
+      ( &#34;Spell&#34;, Gtk.STOCK_SPELL_CHECK,
+        &#34;_Spell (code) \tF9&#34;, &#34;&#34;,
+        &#34;Spell Buffer (code mode)&#34;,
+         self.activate_action ),
+
+      ( &#34;Spell2&#34;, Gtk.STOCK_SPELL_CHECK,
+        &#34;S_pell (text) \tShift-F9&#34;, &#34;&#34;,
+        &#34;Spell Buffer (text mode)&#34;,
+         self.activate_action ),
+
+      ( &#34;MakeRO&#34;, Gtk.STOCK_NO,
+        &#34;Make _Buffs Read Only \t&#34;, &#34;&#34;,
+        &#34;Make All ReadOnly&#34;,
+         self.activate_action ),
+
+       ( &#34;MakeRW&#34;, Gtk.STOCK_YES,
+        &#34;Make Buffs Read _Write \t&#34;, &#34;&#34;,
+        &#34;Make All Read_Write&#34;,
+         self.activate_action ),
+
+       ( &#34;ColorBar&#34;, Gtk.STOCK_CLEAR,
+        &#34;Set TEAL on tab Window \t&#34;, &#34;&#34;,
+        &#34;Color for visual distinction&#34;,
+         self.activate_action ),
+
+       ( &#34;RedBar&#34;, Gtk.STOCK_CLEAR,
+        &#34;Set RED on tab Window \t&#34;, &#34;&#34;,
+        &#34;Color for visual distinction&#34;,
+         self.activate_action ),
+
+       ( &#34;unColorBar&#34;, Gtk.STOCK_YES,
+        &#34;Reset Color on tab Window \t&#34;, &#34;&#34;,
+        &#34;Color for visual distinction&#34;,
+         self.activate_action ),
+
+       ( &#34;StopDiff&#34;, Gtk.STOCK_HOME,
+        &#34;Stop diffing \t&#34;, &#34;&#34;,
+        &#34;Stop all diffs&#34;,
+         self.activate_action ),
+
+      ( &#34;Settings&#34;, Gtk.STOCK_REDO,
+        &#34;Settings&#34;, &#34;&#34;,
+        &#34;Change program settings&#34;,
+         self.activate_action ),
+
+      ( &#34;Goto&#34;, Gtk.STOCK_INDEX,
+        &#34;Goto Line\t\tAlt-G&#34;, &#34;&#34;,
+        &#34;Goto line in file&#34;,
+         self.activate_action ),
+
+      ( &#34;Find&#34;, Gtk.STOCK_FIND,
+        &#34;Find in File\tCtrl-F&#34;, &#34;&#34;,
+        &#34;Find line in file&#34;,
+         self.activate_action ),
+
+      ( &#34;Next&#34;, Gtk.STOCK_MEDIA_NEXT,
+        &#34;Next Match\tAlt-N F6&#34;, &#34;&#34;,
+        &#34;Goto Next match in file&#34;,
+         self.activate_action ),
+
+        ( &#34;Prev&#34;, Gtk.STOCK_MEDIA_PREVIOUS,
+        &#34;Prev Match\t\tAlt-P F5&#34;, &#34;&#34;,
+        &#34;Goto previous match in file&#34;,
+         self.activate_action ),
+
+        ( &#34;Begin&#34;, Gtk.STOCK_MEDIA_PLAY,
+        &#34;Begin of doc\tCtrl-Home&#34;, &#34;&#34;,
+        &#34;Goto the beginning of document&#34;,
+         self.activate_action ),
+
+        ( &#34;End&#34;, Gtk.STOCK_MEDIA_PAUSE,
+        &#34;End of doc\t\tCtrl-End&#34;, &#34;&#34;,
+        &#34;Goto the end of document&#34;,
+         self.activate_action ),
+
+      ( &#34;Record&#34;, Gtk.STOCK_MEDIA_RECORD,
+        &#34;Start / Stop Record\t\tF7&#34;, &#34;&#34;,
+        &#34;Start / Stop Recording macro&#34;,
+         self.activate_action ),
+
+      ( &#34;Play&#34;, Gtk.STOCK_MEDIA_PLAY,
+        &#34;Play Macro       \t\t\tF8&#34;, &#34;&#34;,
+        &#34;Play macro&#34;,
+         self.activate_action ),
+
+      ( &#34;Animate&#34;, Gtk.STOCK_ADD,
+        &#34;_Animate macro\t\tShift-F8&#34;, None,
+        &#34;Play macro with animation effect&#34;,
+         self.activate_action ),
+
+      ( &#34;Savemacro&#34;, Gtk.STOCK_SAVE,
+        &#34;Save macro&#34;, None,
+        &#34;Save macro to file&#34;,
+         self.activate_action ),
+
+      ( &#34;Loadmacro&#34;, Gtk.STOCK_APPLY,
+        &#34;Load macro&#34;, None,
+        &#34;Load macro from file&#34;,
+         self.activate_action ),
+
+      ( &#34;Colors&#34;, Gtk.STOCK_COLOR_PICKER,
+        &#34;Set Colors&#34;, None,
+        &#34;Set Editor window colors&#34;,
+         self.activate_action ),
+
+      ( &#34;Fonts&#34;, Gtk.STOCK_SELECT_FONT,
+        &#34;Set Font&#34;, None,
+        &#34;Set Editor Window Font&#34;,
+         self.activate_action ),
+
+      ( &#34;NextWin&#34;, Gtk.STOCK_GO_FORWARD,
+        &#34;Next Window\t\tAlt-PgUp&#34;, None,
+        &#34;Switch to next window&#34;,
+         self.activate_action ),
+
+      ( &#34;PrevWin&#34;, Gtk.STOCK_GO_BACK,
+        &#34;Prev. Window\t\tAlt-PgDn&#34;, None,
+        &#34;Switch to next window&#34;,
+         self.activate_action ),
+
+      ( &#34;SaveAll&#34;, Gtk.STOCK_SAVE_AS,
+        &#34;Save All\t(Alt-A)&#34;, None,
+        &#34;Save all Buffers&#34;,
+         self.activate_action ),
+
+      ( &#34;ShowLog&#34;, Gtk.STOCK_DIALOG_INFO,
+        &#34;Show Log Window&#34;, None,
+        &#34;Show log window&#34;,
+         self.activate_action ),
+
+      ( &#34;About&#34;, &#34;demo-gtk-logo&#34;,
+        &#34;_About&#34;, &#34;&#34;,
+        &#34;About&#34;,
+        self.activate_about ),
+
+      ( &#34;KeyHelp&#34;, Gtk.STOCK_INFO,
+        &#34;_Sys Help          \tShift-F2&#34;, &#34;&#34;,
+        &#34;Show keyboard help&#34;,
+        self.activate_khelp ),
+
+      ( &#34;KeyDoc&#34;, Gtk.STOCK_INFO,
+        &#34;_Keyhelp in Doc&#34;, &#34;&#34;,
+        &#34;Show keyboard help in a new doc&#34;,
+        self.activate_action ),
+
+      ( &#34;DevHelp&#34;, Gtk.STOCK_INFO,
+        &#34;_Developer Help\tF2&#34;, &#34;&#34;,
+        &#34;Show developer help&#34;,
+        self.activate_dhelp ),
+
+        ( &#34;Help&#34;, Gtk.STOCK_HELP,
+         &#34;_Help          \t\t\tF1&#34;, &#34;&#34;,
+        &#34;Show Help&#34;,
+        self.activate_action ),
+
+      ( &#34;Logo&#34;, &#34;demo-gtk-logo&#34;,
+         None, None,
+        &#34;GTK+&#34;,
+        self.activate_action ),
+    );
+
+    # GtkToggleActionEntry
+    toggle_entries = (
+      ( &#34;Bold&#34;, Gtk.STOCK_BOLD,                    # name, stock id
+         &#34;_Bold&#34;, &#34;&lt;control&gt;B&#34;,                    # label, accelerator
+        &#34;Bold&#34;,                                    # tooltip
+        self.activate_action,
+        True ),                                    # is_active
+    )
+
+    # GtkRadioActionEntry
+    color_entries = (
+      ( &#34;Red&#34;, None,                               # name, stock id
+        &#34;_Red&#34;, &#34;&lt;control&gt;&lt;shift&gt;R&#34;,               # label, accelerator
+        &#34;Blood&#34;, COLOR_RED ),                      # tooltip, value
+      ( &#34;Green&#34;, None,                             # name, stock id
+        &#34;_Green&#34;, &#34;&lt;control&gt;&lt;shift&gt;G&#34;,             # label, accelerator
+        &#34;Grass&#34;, COLOR_GREEN ),                    # tooltip, value
+      ( &#34;Blue&#34;, None,                              # name, stock id
+        &#34;_Blue&#34;, &#34;&lt;control&gt;&lt;shift&gt;B&#34;,              # label, accelerator
+        &#34;Sky&#34;, COLOR_BLUE ),                       # tooltip, value
+    )
+
+    # GtkRadioActionEntry
+    shape_entries = (
+      ( &#34;Square&#34;, None,                            # name, stock id
+        &#34;_Square&#34;, &#34;&lt;control&gt;&lt;shift&gt;S&#34;,            # label, accelerator
+        &#34;Square&#34;,  SHAPE_SQUARE ),                 # tooltip, value
+      ( &#34;Rectangle&#34;, None,                         # name, stock id
+        &#34;_Rectangle&#34;, &#34;&lt;control&gt;&lt;shift&gt;R&#34;,         # label, accelerator
+        &#34;Rectangle&#34;, SHAPE_RECTANGLE ),            # tooltip, value
+      ( &#34;Oval&#34;, None,                              # name, stock id
+        &#34;_Oval&#34;, &#34;&lt;control&gt;&lt;shift&gt;O&#34;,              # label, accelerator
+        &#34;Egg&#34;, SHAPE_OVAL ),                       # tooltip, value
+    )
+
+    # Create the menubar and toolbar
+    action_group = Gtk.ActionGroup(&#34;AppWindowActions&#34;)
+    action_group.add_actions(entries)
+    #action_group.add_toggle_actions(toggle_entries)
+    #action_group.add_radio_actions(color_entries, COLOR_RED, self.activate_radio_action)
+    #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
+
+    return action_group
+
+
+# EOF</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="pedmenu.create_action_group"><code class="name flex">
+<span>def <span class="ident">create_action_group</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_action_group(self):
+    # GtkActionEntry
+    if sys.version_info[0] &lt; 3:
+        verx = &#34;_Help&#34;
+    else:
+        verx = &#34;_Help&#34;
+
+    entries = (
+      ( &#34;FileMenu&#34;, None, &#34;_File&#34; ),                # name, stock id, label
+      ( &#34;EditMenu&#34;, None, &#34;_Edit&#34; ),
+      ( &#34;PreferencesMenu&#34;, None, &#34;Settings&#34; ),
+      ( &#34;NavMenu&#34;, None, &#34;Navigation&#34; ),
+      ( &#34;MacrosMenu&#34;, None, &#34;_Macros&#34; ),
+      ( &#34;ColorMenu&#34;, None, &#34;_Color&#34;  ),
+      ( &#34;ShapeMenu&#34;, None, &#34;Shape&#34; ),
+      ( &#34;WinMenu&#34;, None, &#34;Windows&#34; ),
+      ( &#34;HelpMenu&#34;, None, verx ),
+
+      # -------------------------------------------------------------------
+
+      ( &#34;New&#34;, Gtk.STOCK_NEW,                       # name, stock id
+        &#34;_New&#34;, &#34;&lt;control&gt;N&#34;,                       # label, accelerator
+        &#34;Create a new file&#34;,                        # tooltip
+        self.activate_action ),
+
+      ( &#34;Open&#34;, Gtk.STOCK_OPEN,
+        &#34;_Open&#34;, &#34;&lt;control&gt;O&#34;,
+        &#34;Open a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Close&#34;, Gtk.STOCK_CLEAR,
+        &#34;_Close&#34;,&#34;&lt;control&gt;W&#34;,
+        &#34;Close current buffer&#34;,
+        self.activate_action ),
+
+      ( &#34;Close All&#34;, Gtk.STOCK_CLEAR,
+        &#34;Close All&#34;,&#34;&lt;control&gt;&lt;shift&gt;W&#34;,
+        &#34;Close all buffers&#34;,
+        self.activate_action ),
+
+      ( &#34;Save&#34;, Gtk.STOCK_SAVE,
+        &#34;_Save&#34;,&#34;&lt;control&gt;S&#34;,
+        &#34;Save current file&#34;,
+        self.activate_action ),
+
+      ( &#34;SaveAs&#34;, Gtk.STOCK_SAVE_AS,
+        &#34;Save _As...&#34;, &#34;&lt;control&gt;&lt;shift&gt;S&#34;,
+        &#34;Save to a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Save Session&#34;, Gtk.STOCK_SAVE,
+        &#34;Save _Session ...&#34;, &#34;&#34;,
+        &#34;Save session to a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Load Session&#34;, Gtk.STOCK_OPEN,
+        &#34;Load _Session ...&#34;, &#34;&lt;control&gt;&lt;shift&gt;O&#34;,
+        &#34;Load session from a file&#34;,
+        self.activate_action ),
+
+      ( &#34;Start Terminal&#34;, Gtk.STOCK_FILE,
+        &#34;Start _Terminal ...&#34;, &#34;&#34;,
+        &#34;Star terminal in current dir&#34;,
+        self.activate_action ),
+
+      ( &#34;Recent&#34;, Gtk.STOCK_OPEN,
+        &#34;_Recent  &#34;, &#34;&#34;,
+        &#34;Load recent file list&#34;,
+         self.activate_action ),
+
+      ( &#34;Recent Files&#34;, Gtk.STOCK_OPEN,
+        &#34;Recent Files &#34;, &#34;&#34;,
+        &#34;Load recent file&#34;,
+         self.open_recent ),
+
+      ( &#34;Sessions&#34;, Gtk.STOCK_OPEN,
+        &#34;_Recent Session &#34;, &#34;&#34;,
+        &#34;Load recent session list&#34;,
+         self.activate_action ),
+
+      ( &#34;Recent Sessions&#34;, Gtk.STOCK_OPEN,
+        &#34;Recent _Sessions&#34;, &#34;&#34;,
+        &#34;Load recent sessions &#34;,
+         self.open_recent_sess ),
+
+     ( &#34;Quit&#34;, Gtk.STOCK_QUIT,
+        &#34;_Quit  (No Save)&#34;, &#34;&lt;control&gt;Q&#34;,
+        &#34;Quit program, abandon files&#34;,
+         self.activate_quit ),
+
+      ( &#34;Exit&#34;, Gtk.STOCK_CLOSE,
+        &#34;_Exit&#34;, &#34;&lt;alt&gt;X&#34;,
+        &#34;Exit program, save files&#34;,
+         self.activate_exit ),
+
+      ( &#34;Cut&#34;, Gtk.STOCK_CUT,
+        &#34;Cu_t   \t\tCtrl-X&#34;, &#34;&#34;,
+        &#34;Cut selection to clipboard&#34;,
+         self.activate_action ),
+
+       ( &#34;Copy&#34;, Gtk.STOCK_COPY,
+        &#34;_Copy   \t\tCtrl-C&#34;, &#34;&#34;,
+        &#34;Copy selection to clipboard&#34;,
+         self.activate_action ),
+
+      ( &#34;Paste&#34;, Gtk.STOCK_PASTE,
+        &#34;_Paste  \t\tCtrl-V&#34;, &#34;&#34;,
+        &#34;Paste clipboard into text&#34;,
+         self.activate_action ),
+
+      ( &#34;Findit&#34;, Gtk.STOCK_PASTE,
+        &#34;_Find  \tCtrl-F&#34;, &#34;&#34;,
+        &#34;Find text&#34;,
+         self.activate_action ),
+
+      ( &#34;Undo&#34;, Gtk.STOCK_UNDO,
+        &#34;_Undo  \t\tCtrl-Z&#34;, &#34;&#34;,
+        &#34;Undo last Edit&#34;,
+         self.activate_action ),
+
+       ( &#34;TogStrip&#34;, Gtk.STOCK_UNDO,
+        &#34;_Toggle Line No. Strip  &#34;, &#34;&#34;,
+        &#34;Toggle line number stip&#34;,
+         self.activate_action ),
+
+      ( &#34;Redo&#34;, Gtk.STOCK_REDO,
+        &#34;_Redo  \t\tCtrl-Y&#34;, &#34;&#34;,
+        &#34;Redo last Undo&#34;,
+         self.activate_action ),
+
+      ( &#34;Discard Undo&#34;, Gtk.STOCK_QUIT,
+        &#34;Discard Undo / Redo&#34;, &#34;&#34;,
+        &#34;Discard all undo / redo information&#34;,
+         self.activate_action ),
+
+      ( &#34;Spell&#34;, Gtk.STOCK_SPELL_CHECK,
+        &#34;_Spell (code) \tF9&#34;, &#34;&#34;,
+        &#34;Spell Buffer (code mode)&#34;,
+         self.activate_action ),
+
+      ( &#34;Spell2&#34;, Gtk.STOCK_SPELL_CHECK,
+        &#34;S_pell (text) \tShift-F9&#34;, &#34;&#34;,
+        &#34;Spell Buffer (text mode)&#34;,
+         self.activate_action ),
+
+      ( &#34;MakeRO&#34;, Gtk.STOCK_NO,
+        &#34;Make _Buffs Read Only \t&#34;, &#34;&#34;,
+        &#34;Make All ReadOnly&#34;,
+         self.activate_action ),
+
+       ( &#34;MakeRW&#34;, Gtk.STOCK_YES,
+        &#34;Make Buffs Read _Write \t&#34;, &#34;&#34;,
+        &#34;Make All Read_Write&#34;,
+         self.activate_action ),
+
+       ( &#34;ColorBar&#34;, Gtk.STOCK_CLEAR,
+        &#34;Set TEAL on tab Window \t&#34;, &#34;&#34;,
+        &#34;Color for visual distinction&#34;,
+         self.activate_action ),
+
+       ( &#34;RedBar&#34;, Gtk.STOCK_CLEAR,
+        &#34;Set RED on tab Window \t&#34;, &#34;&#34;,
+        &#34;Color for visual distinction&#34;,
+         self.activate_action ),
+
+       ( &#34;unColorBar&#34;, Gtk.STOCK_YES,
+        &#34;Reset Color on tab Window \t&#34;, &#34;&#34;,
+        &#34;Color for visual distinction&#34;,
+         self.activate_action ),
+
+       ( &#34;StopDiff&#34;, Gtk.STOCK_HOME,
+        &#34;Stop diffing \t&#34;, &#34;&#34;,
+        &#34;Stop all diffs&#34;,
+         self.activate_action ),
+
+      ( &#34;Settings&#34;, Gtk.STOCK_REDO,
+        &#34;Settings&#34;, &#34;&#34;,
+        &#34;Change program settings&#34;,
+         self.activate_action ),
+
+      ( &#34;Goto&#34;, Gtk.STOCK_INDEX,
+        &#34;Goto Line\t\tAlt-G&#34;, &#34;&#34;,
+        &#34;Goto line in file&#34;,
+         self.activate_action ),
+
+      ( &#34;Find&#34;, Gtk.STOCK_FIND,
+        &#34;Find in File\tCtrl-F&#34;, &#34;&#34;,
+        &#34;Find line in file&#34;,
+         self.activate_action ),
+
+      ( &#34;Next&#34;, Gtk.STOCK_MEDIA_NEXT,
+        &#34;Next Match\tAlt-N F6&#34;, &#34;&#34;,
+        &#34;Goto Next match in file&#34;,
+         self.activate_action ),
+
+        ( &#34;Prev&#34;, Gtk.STOCK_MEDIA_PREVIOUS,
+        &#34;Prev Match\t\tAlt-P F5&#34;, &#34;&#34;,
+        &#34;Goto previous match in file&#34;,
+         self.activate_action ),
+
+        ( &#34;Begin&#34;, Gtk.STOCK_MEDIA_PLAY,
+        &#34;Begin of doc\tCtrl-Home&#34;, &#34;&#34;,
+        &#34;Goto the beginning of document&#34;,
+         self.activate_action ),
+
+        ( &#34;End&#34;, Gtk.STOCK_MEDIA_PAUSE,
+        &#34;End of doc\t\tCtrl-End&#34;, &#34;&#34;,
+        &#34;Goto the end of document&#34;,
+         self.activate_action ),
+
+      ( &#34;Record&#34;, Gtk.STOCK_MEDIA_RECORD,
+        &#34;Start / Stop Record\t\tF7&#34;, &#34;&#34;,
+        &#34;Start / Stop Recording macro&#34;,
+         self.activate_action ),
+
+      ( &#34;Play&#34;, Gtk.STOCK_MEDIA_PLAY,
+        &#34;Play Macro       \t\t\tF8&#34;, &#34;&#34;,
+        &#34;Play macro&#34;,
+         self.activate_action ),
+
+      ( &#34;Animate&#34;, Gtk.STOCK_ADD,
+        &#34;_Animate macro\t\tShift-F8&#34;, None,
+        &#34;Play macro with animation effect&#34;,
+         self.activate_action ),
+
+      ( &#34;Savemacro&#34;, Gtk.STOCK_SAVE,
+        &#34;Save macro&#34;, None,
+        &#34;Save macro to file&#34;,
+         self.activate_action ),
+
+      ( &#34;Loadmacro&#34;, Gtk.STOCK_APPLY,
+        &#34;Load macro&#34;, None,
+        &#34;Load macro from file&#34;,
+         self.activate_action ),
+
+      ( &#34;Colors&#34;, Gtk.STOCK_COLOR_PICKER,
+        &#34;Set Colors&#34;, None,
+        &#34;Set Editor window colors&#34;,
+         self.activate_action ),
+
+      ( &#34;Fonts&#34;, Gtk.STOCK_SELECT_FONT,
+        &#34;Set Font&#34;, None,
+        &#34;Set Editor Window Font&#34;,
+         self.activate_action ),
+
+      ( &#34;NextWin&#34;, Gtk.STOCK_GO_FORWARD,
+        &#34;Next Window\t\tAlt-PgUp&#34;, None,
+        &#34;Switch to next window&#34;,
+         self.activate_action ),
+
+      ( &#34;PrevWin&#34;, Gtk.STOCK_GO_BACK,
+        &#34;Prev. Window\t\tAlt-PgDn&#34;, None,
+        &#34;Switch to next window&#34;,
+         self.activate_action ),
+
+      ( &#34;SaveAll&#34;, Gtk.STOCK_SAVE_AS,
+        &#34;Save All\t(Alt-A)&#34;, None,
+        &#34;Save all Buffers&#34;,
+         self.activate_action ),
+
+      ( &#34;ShowLog&#34;, Gtk.STOCK_DIALOG_INFO,
+        &#34;Show Log Window&#34;, None,
+        &#34;Show log window&#34;,
+         self.activate_action ),
+
+      ( &#34;About&#34;, &#34;demo-gtk-logo&#34;,
+        &#34;_About&#34;, &#34;&#34;,
+        &#34;About&#34;,
+        self.activate_about ),
+
+      ( &#34;KeyHelp&#34;, Gtk.STOCK_INFO,
+        &#34;_Sys Help          \tShift-F2&#34;, &#34;&#34;,
+        &#34;Show keyboard help&#34;,
+        self.activate_khelp ),
+
+      ( &#34;KeyDoc&#34;, Gtk.STOCK_INFO,
+        &#34;_Keyhelp in Doc&#34;, &#34;&#34;,
+        &#34;Show keyboard help in a new doc&#34;,
+        self.activate_action ),
+
+      ( &#34;DevHelp&#34;, Gtk.STOCK_INFO,
+        &#34;_Developer Help\tF2&#34;, &#34;&#34;,
+        &#34;Show developer help&#34;,
+        self.activate_dhelp ),
+
+        ( &#34;Help&#34;, Gtk.STOCK_HELP,
+         &#34;_Help          \t\t\tF1&#34;, &#34;&#34;,
+        &#34;Show Help&#34;,
+        self.activate_action ),
+
+      ( &#34;Logo&#34;, &#34;demo-gtk-logo&#34;,
+         None, None,
+        &#34;GTK+&#34;,
+        self.activate_action ),
+    );
+
+    # GtkToggleActionEntry
+    toggle_entries = (
+      ( &#34;Bold&#34;, Gtk.STOCK_BOLD,                    # name, stock id
+         &#34;_Bold&#34;, &#34;&lt;control&gt;B&#34;,                    # label, accelerator
+        &#34;Bold&#34;,                                    # tooltip
+        self.activate_action,
+        True ),                                    # is_active
+    )
+
+    # GtkRadioActionEntry
+    color_entries = (
+      ( &#34;Red&#34;, None,                               # name, stock id
+        &#34;_Red&#34;, &#34;&lt;control&gt;&lt;shift&gt;R&#34;,               # label, accelerator
+        &#34;Blood&#34;, COLOR_RED ),                      # tooltip, value
+      ( &#34;Green&#34;, None,                             # name, stock id
+        &#34;_Green&#34;, &#34;&lt;control&gt;&lt;shift&gt;G&#34;,             # label, accelerator
+        &#34;Grass&#34;, COLOR_GREEN ),                    # tooltip, value
+      ( &#34;Blue&#34;, None,                              # name, stock id
+        &#34;_Blue&#34;, &#34;&lt;control&gt;&lt;shift&gt;B&#34;,              # label, accelerator
+        &#34;Sky&#34;, COLOR_BLUE ),                       # tooltip, value
+    )
+
+    # GtkRadioActionEntry
+    shape_entries = (
+      ( &#34;Square&#34;, None,                            # name, stock id
+        &#34;_Square&#34;, &#34;&lt;control&gt;&lt;shift&gt;S&#34;,            # label, accelerator
+        &#34;Square&#34;,  SHAPE_SQUARE ),                 # tooltip, value
+      ( &#34;Rectangle&#34;, None,                         # name, stock id
+        &#34;_Rectangle&#34;, &#34;&lt;control&gt;&lt;shift&gt;R&#34;,         # label, accelerator
+        &#34;Rectangle&#34;, SHAPE_RECTANGLE ),            # tooltip, value
+      ( &#34;Oval&#34;, None,                              # name, stock id
+        &#34;_Oval&#34;, &#34;&lt;control&gt;&lt;shift&gt;O&#34;,              # label, accelerator
+        &#34;Egg&#34;, SHAPE_OVAL ),                       # tooltip, value
+    )
+
+    # Create the menubar and toolbar
+    action_group = Gtk.ActionGroup(&#34;AppWindowActions&#34;)
+    action_group.add_actions(entries)
+    #action_group.add_toggle_actions(toggle_entries)
+    #action_group.add_radio_actions(color_entries, COLOR_RED, self.activate_radio_action)
+    #action_group.add_radio_actions(shape_entries, SHAPE_OVAL, self.activate_radio_action)
+
+    return action_group</code></pre>
+</details>
+</dd>
+<dt id="pedmenu.rclick_action"><code class="name flex">
+<span>def <span class="ident">rclick_action</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rclick_action(self, arg):
+
+    print (&#34;rclick_action local&#34;, &#34;&#39;&#34; + arg.name + &#34;&#39;&#34;)
+
+    if arg.name == &#34;&lt;pydoc&gt;/New&#34;:
+        mained. newfile()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Open&#34;:
+        mained.open()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Save&#34;:
+        mained.save()
+
+    if arg.name == &#34;&lt;pydoc&gt;/SaveAs&#34;:
+        mained.save(True )
+
+    if arg.name == &#34;&lt;pydoc&gt;/Copy&#34;:
+        mained.copy( )
+
+    if arg.name == &#34;&lt;pydoc&gt;/Cut&#34;:
+        mained.cut()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Paste&#34;:
+        mained.paste()
+
+    if arg.name == &#34;&lt;pydoc&gt;/Read&#34;:
+        mained.tts()</code></pre>
+</details>
+</dd>
+<dt id="pedmenu.rclick_quit"><code class="name flex">
+<span>def <span class="ident">rclick_quit</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rclick_quit(self, arg):
+    print(__name__, arg.name)
+    mained.activate_exit()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="pedmenu.create_action_group" href="#pedmenu.create_action_group">create_action_group</a></code></li>
+<li><code><a title="pedmenu.rclick_action" href="#pedmenu.rclick_action">rclick_action</a></code></li>
+<li><code><a title="pedmenu.rclick_quit" href="#pedmenu.rclick_quit">rclick_quit</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

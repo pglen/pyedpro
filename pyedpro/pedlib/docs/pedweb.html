@@ -1,0 +1,2067 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>pedweb API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>pedweb</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+
+from __future__ import absolute_import, print_function
+import signal, os, time, sys, subprocess, platform
+import ctypes, datetime, sqlite3, warnings
+
+#import gi;
+#from gi.repository import Gtk
+#from gi.repository import Gdk
+#from gi.repository import GObject
+#from gi.repository import GLib
+
+#gi.require_version(&#39;WebKit2&#39;, &#39;4.0&#39;)
+
+from pedlib import pedconfig
+
+# Into our name space
+from    pedlib.pedmenu import *
+from    pedlib.pedui import *
+from    pedlib.pedutil import *
+
+from pycommon.pggui import *
+from pycommon.pgsimp import *
+from pycommon.pgbutt import *
+from pycommon.browsewin import *
+
+try:
+    # This will change once the pydbase is out of dev stage
+    np = os.path.split(__file__)[0] + os.sep + &#39;..&#39; + os.sep + &#34;..&#34; + os.sep + &#34;..&#34;
+    #print(np)
+    #np =  &#39;..&#39; + os.sep + &#34;pydbase&#34;
+    sys.path.append(np)
+    np += os.sep + &#34;pydbase&#34;
+    sys.path.append(np)
+
+    #print(sys.path)
+    #print(os.getcwd())
+    from pydbase import twincore
+except:
+    np =  os.path.split(__file__)[0] + os.sep + &#39;..&#39; + os.sep + &#34;pydbase&#34;
+    sys.path.append(np)
+    print(sys.path[-3:])
+
+    from pydbase import twincore
+    #put_exception(&#34;Cannot Load twincore&#34;)
+
+# ------------------------------------------------------------------------
+
+class pgweb(Gtk.VBox):
+
+    def __init__(self):
+
+        self. wasin = True
+
+        #vbox = Gtk.VBox()
+        Gtk.VBox.__init__(self)
+
+        self.popwin = None
+        self.lastsel = None;  self.lastkey = None
+        self.cnt = 0
+        self.web_dir = pedconfig.conf.web_dir
+        if pedconfig.conf.verbose:
+            print(&#34;Using webdir:&#34;, self.web_dir)
+        try:
+            if not os.path.isdir(self.web_dir):
+                os.mkdir(self.web_dir)
+        except:
+            print(&#34;Cannot make web data dir&#34;)
+        try:
+            self.core = twincore.TwinCore(self.web_dir + os.sep + &#34;pedweb.pydb&#34;)
+            if pedconfig.conf.pgdebug &gt; 2:
+                print(&#34;core&#34;, self.core, self.core.fname)
+        except:
+            put_exception(&#34;Cannot open / make web notes py database&#34;)
+
+        #message(&#34;Cannot make  database&#34;)
+
+        self.popwin = None
+
+        #hbox = Gtk.HBox()
+        #self.pack_start(Gtk.Label(&#34;ccc&#34;), 0, 0, 0)
+        #self.pack_start(pggui.xSpacer(), 0, 0, 0)
+        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
+        self.pack_start(self.lsel, 0, 0, 2)
+
+        #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#dd8822&#34;))
+
+        #hbox3 = Gtk.HBox()
+        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #self.edit = Gtk.Entry()
+        #hbox3.pack_start(Gtk.Label(&#34; Find: &#34;), 0, 0, 0)
+        #hbox3.pack_start(self.edit, 1, 1, 0)
+        #butt2 = Gtk.Button.new_with_mnemonic(&#34;Find&#34;)
+        #butt2.connect(&#34;pressed&#34;, self.find)
+        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(butt2, 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#668822&#34;))
+        #self.pack_start(hbox3, 0, 0, 2)
+
+        #self.treeview2 = pgsimp.SimpleTree((&#34;Header&#34;, &#34;Subject&#34;, &#34;Description&#34;), skipedit=0)
+        self.treeview2 = pgsimp.SimpleTree((&#34;Header&#34;,))
+        self.treeview2.setcallb(self.treesel)
+        #self.treeview2.setCHcallb(self.treechange)
+
+        scroll2 = Gtk.ScrolledWindow()
+        scroll2.add(self.treeview2)
+        #scroll2.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+
+        vpaned = Gtk.VPaned()
+
+        frame3 = Gtk.Frame();
+        frame3.add(scroll2)
+        vpaned.add(frame3)
+
+        vpaned.set_position(150)
+
+        self.pack_start(vpaned, 1, 1, 2)
+
+        #self.edview = pgsimp.TextViewWin()
+        #self.edview =  pgTextView()
+
+        self.fname = os.path.dirname(__file__) + os.sep + &#34;home.html&#34;
+        #print(&#34;fname&#34;, self.fname)
+
+        hbox = Gtk.HBox()
+        self.lastsel = &#34;&#34;
+
+        hbox3 = Gtk.HBox()
+        #scroll12 = Gtk.ScrolledWindow()
+        self.edit = Gtk.Entry()
+        #scroll12.add(self.edit)
+        self.edit.set_width_chars(12)
+        #self.edit.set_size_request(96,96)
+
+        self.edit.set_activates_default(True)
+        self.edit.connect(&#34;activate&#34;, self.go)
+
+        hbox3.pack_start(Gtk.Label(&#34; URL: &#34;), 0, 0, 0)
+        hbox3.pack_start(self.edit, 1, 1, 0)
+        #hbox3.pack_start(scroll12, 1, 1, 0)
+        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+
+        butt2 = Gtk.Button(&#34;Go&#34;)
+        butt2.connect(&#34;pressed&#34;, self.go)
+        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox3.pack_start(butt2, 0, 0, 0)
+
+        #self.pack_start(hbox3, 0, 0, 2)
+
+        hbox4 = Gtk.HBox()
+        lab1  = Gtk.Label(&#34;  Note: This is a Live Browser &#34;)
+        lab1.set_halign(Gtk.Align.END)
+        hbox4.pack_start(lab1,  1, 1, 0)
+
+        butt3 = Gtk.Button(&#34;&lt;&#34;)
+        butt3.connect(&#34;pressed&#34;, self.backurl)
+        butt3.set_tooltip_text(&#34;Back&#34;)
+
+        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(butt3, 0, 0, 0)
+
+        butt4 = Gtk.Button(&#34;&gt;&#34;)
+        butt4.connect(&#34;pressed&#34;, self.forwurl)
+        butt4.set_tooltip_text(&#34;Forward&#34;)
+        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(butt4, 0, 0, 0)
+
+        butt5 = Gtk.Button(&#34;~&#34;)
+        butt5.connect(&#34;pressed&#34;, self.anchor)
+        butt5.set_tooltip_text(&#34;Goto local anchor page&#34;)
+        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(butt5, 0, 0, 0)
+
+        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #self.pack_start(hbox4, 0, 0, 2)
+
+        self.treeview3 = SimpleTree((&#34;Hour&#34;, &#34;Subject&#34;, &#34;Alarm&#34;, &#34;Notes&#34;))
+        self.treeview3.setcallb(self.treesel)
+
+        scroll2a = Gtk.ScrolledWindow()
+        scroll2a.add(self.treeview3)
+        frame3 = Gtk.Frame(); frame3.add(scroll2a)
+        #self.pack_start(frame3, 1, 1, 2)
+
+        #self.edview = SimpleEdit()
+        #self.edview.setsavecb(self.savetext)
+        #scroll3 = Gtk.ScrolledWindow()
+        #scroll3.add(self.edview)
+        #frame4 = Gtk.Frame(); frame4.add(scroll3)
+
+        scrolled_window = Gtk.ScrolledWindow()
+        try:
+            #self.brow_win = WebKit2.WebView()
+            #self.brow_win = pgwkit.pgwebw(self)
+            self.brow_win = brow_win()
+            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
+            #print(&#34;dir&#34;, dir(self.brow_win))
+            #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
+            pass
+        except:
+            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
+            put_exception(&#34;WebView load&#34;)
+
+        vbox5 = Gtk.VBox()
+        frame4 = Gtk.Frame();
+        frame4.add(scrolled_window)
+        vbox5.pack_start(frame4, 1, 1, 0)
+        vpaned.add(vbox5)
+
+        #self.brow_win.override_background_color(
+        #                Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, .5) )
+
+        #webview.load_uri(&#34;https://google.com&#34;)
+        scrolled_window.add(self.brow_win)
+        #self.pack_start(scrolled_window, 1, 1, 2)
+        #self.status = Gtk.Label(&#34; Status: &#34;)
+        #self.pack_start(self.status, 0, 0, 2)
+
+        hbox13 = Gtk.HBox()
+        hbox13.pack_start(Gtk.Label(label=&#34;&#34;), 1, 1, 0)
+
+        #hbox13.pack_start(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        butt3 = smallbutt(&#34; _New Item &#34;, self.newitem, &#34;Create new item / record&#34;)
+
+        hbox13.pack_start(butt3, 0, 0, 2)
+
+        butt3a = smallbutt(&#34; _Find in Text &#34;, self.search, &#34;Search this record&#34;)
+        hbox13.pack_start(butt3a, 0, 0, 0)
+
+        butt3b = smallbutt(&#34; Search in All &#34;, self.searchall, &#34;Search all records&#34;)
+
+        hbox13.pack_start(butt3b, 0, 0, 0)
+        hbox13.pack_start(Gtk.Label(label=&#34; &#34;), 1, 1, 0)
+
+        hbox13a = Gtk.HBox()
+        hbox13a.pack_start(Gtk.Label(label=&#34; &#34;), 1, 1, 0)
+
+        butt11 = smallbutt(&#34; Del Item &#34;, self.delitem, &#34;Delete One Rec&#34;)
+        hbox13a.pack_start(butt11, 0, 0, 0)
+
+        butt12 = smallbutt(&#34; _Export &#34;, self.export, &#34;Export all items&#34;)
+        hbox13a.pack_start(butt12, 0, 0, 2)
+
+        butt12a = smallbutt(&#34; Impo_rt &#34;, self.searchall, &#34;Import items&#34;)
+        hbox13a.pack_start(butt12a, 0, 0, 0)
+
+        butt12a = smallbutt(&#34; PopOu_t &#34;, self.popx, &#34;Pop Out to window&#34;)
+        hbox13a.pack_start(butt12a, 0, 0, 0)
+
+        hbox13a.pack_start(Gtk.Label(label=&#34; &#34;), 1, 1, 0)
+
+        #butt22 = Gtk.Button.new_with_mnemonic(&#34;Save&#34;)
+        #butt22.connect(&#34;pressed&#34;, self.save)
+        #hbox13.pack_start(butt22, 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(&#34;  &#34;), 0, 0, 0)
+
+        vbox5.pack_start(hbox13, 0, 0, 0)
+        vbox5.pack_start(hbox13a, 0, 0, 0)
+
+        try:
+            self.load()
+        except:
+            put_exception(&#34;Cannot load&#34;)
+
+        #Gtk.connect
+        #self.connect(&#34;window_state_event&#34;, self.eventx)
+
+    def popx(self, arg):
+
+        txt = self.brow_win.get_content()
+        print (&#34;popx txt&#34;, txt)
+
+        # Create if not there
+        if self.popwin:
+            self.popwin.destroy()
+
+        self.popwin = PopWebWin()
+        self.popwin.lastsel = self.lastsel
+        self.popwin.savefunc = self.savefunc
+        self.popwin.set_popwin_text(txt)
+        self.popwin.show_all()
+
+    def switched(self, pageto):
+        #print(&#34;SW page signal web&#34;, pageto)
+        if pageto == self:
+            #print(&#34;Web in&#34;)
+            self.wasin = True
+        else:
+            if self.wasin:
+                self.wasin = False
+                self.savetext()
+                #print(&#34;Web out&#34;)
+
+    def __del__(self):
+        # Did not happen automatically ... force it from outside
+        if pedconfig.conf.verbose:
+            print(&#34;pedweb __del__&#34;)
+        #self.savetext()
+        #if self.core:
+        #    self.core.__del__()
+
+    def newitem(self, arg):
+        self.savetext()
+        rrr = HeadDialog(&#34;New Item %d&#34; % self.cnt, None)
+        ret = rrr.run()
+        if ret != Gtk.ResponseType.OK:
+            rrr.destroy()
+            return
+
+        ttt = rrr.entry.get_text()
+        rrr.destroy()
+        #print(&#34;store&#34;, self.treeview2.treestore)
+
+        ret = self.treeview2.find_item(ttt)
+        if ret:
+            message(&#34;\nThis record already exists. \n\n %s&#34; % ttt)
+            return
+
+        #itemx = (ttt, &#34;&#34;, &#34;&#34;)
+        itemx = (ttt, )
+        self.cnt += 1
+        self.treeview2.insert(None, 0, itemx)
+
+        #newtext = &#34;Enter text here&#34;;
+        #self.core.save_data(ttt, newtext)
+
+        #self.edview.set_text(newtext)
+        #self.treeview2.sel_first()
+
+    def delitem(self, arg):
+        #print (&#34;delitem&#34;, self.lastkey, self.lastsel)
+        if not self.lastsel:
+            print(&#34;Nothing to delete&#34;)
+            pedconfig.conf.pedwin.update_statusbar(&#34;Nothing selected for deletion.&#34;);
+            return
+
+        rrr = yes_no_cancel(&#34;   Delete Item ?   &#34;, &#34;&#39;&#34; + str(self.lastsel[0]) + &#34;&#39;&#34;, False)
+        if rrr != Gtk.ResponseType.YES:
+            return
+
+        #print(&#34;Removing&#34;, self.lastsel[0])
+        # Remove all of them including shadow entried
+        #delx = self.core.del_recs(self.lastsel[0].encode(&#34;&#34;), 0, twincore.INT_MAX)
+
+        dbsize = self.core.getdbsize()
+        # Remove all of them including shadow entried
+        delx = self.core.del_rec_bykey(self.lastsel[0], dbsize)
+
+        pedconfig.conf.pedwin.update_statusbar(&#34;Removed %s %d records.&#34; % \
+                            (self.lastsel[0], delx) )
+
+        # Refresh list in main sel window
+        self.treeview2.clear()
+        usleep(10)
+        self.load()
+
+    def savefunc(self, item, text):
+        #print(&#34;savefunc&#34;, item, text[:12])
+        self.core.save_data(item[0], text)
+        if item[0] == self.lastsel[0]:
+            #print(&#34;re-read current&#34;)
+            self._readrec(item)
+
+    def search(self, arg):
+        print(&#34;search&#34;, time.time())
+        pass
+
+    def searchall(self, arg):
+        #print(&#34;searchall&#34;, arg)
+        print(&#34;searchall&#34;, time.time())
+        pass
+
+    def export(self, arg):
+        #print(&#34;Exporting&#34;, arg)
+
+        base = &#34;pedwebdata&#34;;  cnt = 0; fff = &#34;&#34;
+        while True:
+            fff =  &#34;%s%s%s_%d.bak&#34; % (self.web_dir, os.sep, base, cnt)
+            #print(&#34;trying:&#34;, fff)
+            if not os.path.isfile(fff):
+                break
+            cnt += 1
+
+        try:
+            fp = open(fff, &#34;wt&#34;)
+        except:
+            print(&#34;Cannot backup notes data&#34;, sys.exc_info());
+            pedconfig.conf.pedwin.update_statusbar(&#34;Cannot export notes&#34;)
+            return
+
+        try:
+            datax = []
+            cnt = 0
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                try:
+                    ddd = self.core.get_rec(aa)
+                    if len(ddd) &gt; 1:
+                        kkk = ddd[0]
+                        vvv = ddd[1]
+                    #print(&#34;Item&#34;, type(ddd[0]), ddd[0], &#34;Data:&#34;, ddd[1][:16] + b&#34; ...&#34; )
+                    fp.write(&#34;\n ------------------------------------------------------------------\n&#34;)
+                    fp.write(str(kkk))
+                    fp.write(&#34;\n ------------------------------------------------------------------\n&#34;)
+                    fp.write(str(vvv))
+                    cnt += 1
+                except:
+                    print(&#34;Cannot backup record\n&#34;, aa, sys.exc_info());
+        except:
+            print(&#34;Cannot backup database\n&#34;);
+
+        fp.close()
+        pedconfig.conf.pedwin.update_statusbar(&#34;Exported %d/%d web notes to %s&#34; % \
+                                (dbsize, cnt, os.path.basename(fff)))
+
+
+    def load(self):
+
+        &#39;&#39;&#39; Load from file;
+            This is more complex than it should be ... dealing with old data
+        &#39;&#39;&#39;
+
+        self.lastsel = None; self.lastkey = None
+        datax = []
+        try:
+            dbsize = self.core.getdbsize()
+            if not dbsize:
+                return
+
+            try:
+                self.treeview2.freeze_child_notify()
+                for aa in range(dbsize-1, 0, -1):
+                    ddd = self.core.get_rec(aa)
+                    if len(ddd) &lt; 2:
+                        continue        # Deleted record
+                    #print(&#34;ddd&#34;, ddd)
+                    hhh = ddd[0].decode()
+                    if hhh not in datax:
+                        datax.append(hhh)
+                        #print(&#34;adding&#34;, hhh)
+                        #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
+                        self.treeview2.append((hhh,))
+            finally:
+                self.treeview2.thaw_child_notify()
+
+        except:
+            put_exception(&#34;load web data&#34;)
+            print(&#34;Cannot load notes Data at&#34;, cnt, qqq)
+
+        #try:
+        #    self.treeview2.sel_first()
+        #    print(&#34;Select first&#34;)
+        #except:
+        #    if pedconfig.conf.verbose:
+        #        put_exception(&#34;sel firs&#34;)
+        #    pass
+
+        # Update new counter
+        for aa in datax:
+            if aa[:9] == &#34;New Item &#34;:
+                try:
+                    ccc = int(aa[9:])
+                    #print(&#34;new&#34;, ccc)
+                    if ccc &gt; self.cnt:
+                        self.cnt = ccc
+                except:
+                    pass
+        self.cnt += 1
+        #print(&#34;self.cnt&#34;, self.cnt)
+
+    def backurl(self, arg1): #, url, parm, buff):
+        self.brow_win.go_back()
+
+    def forwurl(self, arg1): #, url, parm, buff):
+        self.brow_win.go_forward()
+
+    def  letterfilter(self, letter):
+        #print(&#34;letterfilter&#34;, letter)
+        if letter == &#34;All&#34;:
+            self.treeview2.clear()
+            print(&#34;Erase selection&#34;)
+        else:
+            aaa = self.sql.getall(letter + &#34;%&#34;)
+            print(&#34;all-&gt;&#34;, aaa)
+
+            self.treeview2.clear()
+            for aa in aaa:
+                try:
+                    #aa.append(&#34;ddd&#34;)
+                    #aa.append(&#34;eee&#34;)
+                    #aa.append(&#34;fff&#34;)
+                    self.treeview2.append(aa[1:])
+                except:
+                    put_exception(&#34;Letter Filter&#34;)
+
+
+    def go(self, arg):
+        txt = self.edit.get_text()
+        #print (&#34;go&#34;, txt)
+        self.brow_win.load_uri(txt)
+
+    def anchor(self, arg):
+        self.brow_win.load_uri(&#34;file://&#34; + self.fname)
+
+    def _completion_function(self, html, user_data):
+
+        #print(&#34;completion:&#34;, html)
+
+        if not html:
+            return
+
+        #print( &#34;Save ttt:&#34;, ttt, &#34;html:&#34;, html)
+
+        try:
+            self.core.save_data(user_data, html)
+        except:
+            put_exception(&#34;Cannot load&#34;)
+
+        pedconfig.conf.pedwin.update_statusbar(&#34;Saved item for &#39;%s&#39;&#34; % user_data[:12])
+
+    # --------------------------------------------------------------------
+
+    def  microsleep(msec, flag = [0,]):
+
+        if sys.version_info[0] &lt; 3 or \
+            (sys.version_info[0] == 3 and sys.version_info[1] &lt; 3):
+            timefunc = time.clock
+        else:
+            timefunc = time.process_time
+
+        got_clock = timefunc() + float(msec) / 1000
+        #print( got_clock)
+        while True:
+            if timefunc() &gt; got_clock:
+                break
+            if flag[0]:
+                break
+            #print (&#34;Sleeping&#34;)
+            Gtk.main_iteration_do(False)
+
+    def save(self):
+        #print (&#34;web save automatic (unimplemented)&#34;)
+        self.savetext()
+        pass
+
+    def savetext(self):
+
+        if not self.lastsel:
+            return
+
+        try:
+            ttt = self.lastsel[0]
+        except:
+            if pedconfig.conf.verbose:
+                put_exception(&#34;savetext&#34;)
+            return
+
+        if self.brow_win.is_modified():
+            newtext =  self.brow_win.get_content()
+            #print(&#34;web Savetext&#34;, ttt, &#34;nt:&#34;, newtext)
+            self.core.save_data(ttt, newtext)
+            #print(&#34;newtext&#34;, newtext)
+        else:
+            #print(&#34;Not saving&#34;, ttt)
+            pass
+
+        try:
+            #self.brow_win.load_html(self._completion_function, ttt)
+            self.brow_win.load_html(ttt)
+        except:
+            if pedconfig.conf.verbose:
+                put_exception(&#34;savetext&#34;)
+
+    # --------------------------------------------------------------------
+
+    def treesel(self, args):
+
+        #print(&#34;treesel&#34;, args[0])
+
+        self.savetext()
+        self.lastsel = args
+
+        hhh = &#34;&#34;
+
+        try:
+            #ddd = self.core.retrieve(args[0])[0]
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                #ddd = self.core.retrieve(aa)
+                #ddd = self.core.findrecpos(aa, 1)
+                ddd = self.core.get_rec(aa)
+                if not ddd:
+                    continue
+                #print(ddd)
+                if ddd[0].decode() == args[0]:
+                    #print(&#34;found&#34;, ddd[0])
+                    #print(ddd[0], args[0])
+                    hhh = ddd[1].decode()
+                    break
+        except:
+            if pedconfig.conf.verbose:
+                put_exception(&#34;treesel&#34;)
+            pass
+
+        #print(&#34;Content&#34;, hhh)
+
+        try:
+            self.brow_win.load_html(hhh)
+            #usleep(10)
+            #self.treeview2.grab_focus()
+            #usleep(10)
+
+        except:
+            put_exception(&#34;Load Data&#34;)
+            pass
+
+        #if args:
+        #    pedconfig.conf.pedwin.update_statusbar(&#34;Saved item for &#39;%s&#39;&#34; % args[0][:12])
+
+# ------------------------------------------------------------------------
+
+class   PopWebWin(Gtk.Window):
+
+    def __init__(self):
+
+        Gtk.Window.__init__(self)
+
+        #self.win2 = Gtk.Window()
+        self.set_position(Gtk.WindowPosition.CENTER)
+        self.set_default_size(800, 600)
+
+        tit = &#34;pyedpro:title&#34;
+        self.set_title(tit)
+        try:
+            self.set_icon_from_file(get_img_path(&#34;pyedpro_sub.png&#34;))
+        except:
+            print( &#34;Cannot load log icon:&#34;, &#34;pyedpro_sub.png&#34;, sys.exc_info())
+
+        self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
+
+        self.connect(&#34;key-press-event&#34;, self._area_key, self)
+        self.connect(&#34;key-release-event&#34;, self._area_key, self)
+        self.connect(&#34;destroy&#34;, self._area_destroy)
+
+        #self.connect(&#34;focus-out-event&#34;, self._focus)
+        #self.view = pgTextView(True)
+        self.view = brow_win()
+        #self.view.textview.set_editable(False)
+
+        self.scroll = Gtk.ScrolledWindow();
+        self.scroll.add(self.view)
+        frame = Gtk.Frame(); frame.add(self.scroll)
+        self.add(frame)
+        self.show_all()
+
+    # Gdk.EventFocus
+    def _focus(self, win, to):
+        #print(&#34;focusx&#34;, win, to.window)
+        pass
+
+    def closewin(self, win):
+        #print(&#34;close&#34;, win)
+        pass
+
+    def _area_destroy(self, area):
+        #print(&#34;destroy&#34;, area)
+        #print(&#34;Saving&#34;, self.lastsel)
+        if self.view.is_modified():
+            txt = self.view.get_content()
+            self.savefunc(self.lastsel, txt)
+        # if we do not want it to close
+        #return True
+
+    #def _area_focus(self, area, event, dialog):
+    #    print(&#34;focus&#34;, event)
+
+    def set_popwin_text(self, text):
+        #self.view.deser_buff(text)
+        self.view.load_html(text)
+
+    # ------------------------------------------------------------------------
+
+    def _area_key(self, area, event, dialog):
+
+        if  event.type == Gdk.EventType.KEY_PRESS:
+            if event.keyval == Gdk.KEY_Escape:
+                #print &#34;Esc&#34;
+                area.destroy()
+
+        if  event.type == Gdk.EventType.KEY_PRESS:
+            if event.keyval == Gdk.KEY_Return:
+                #print &#34;Ret&#34;
+                area.destroy()
+
+            if event.keyval == Gdk.KEY_Alt_L or \
+                    event.keyval == Gdk.KEY_Alt_R:
+                area.alt = True;
+
+            if event.keyval == Gdk.KEY_x or \
+                    event.keyval == Gdk.KEY_X:
+                if area.alt:
+                    area.destroy()
+
+        elif  event.type == Gdk.EventType.KEY_RELEASE:
+            if event.keyval == Gdk.KEY_Alt_L or \
+                  event.keyval == Gdk.KEY_Alt_R:
+                area.alt = False;
+
+# EOF</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="pedweb.PopWebWin"><code class="flex name class">
+<span>class <span class="ident">PopWebWin</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>:Constructors:</p>
+<p>::</p>
+<pre><code>Window(**properties)
+new(type:Gtk.WindowType) -&gt; Gtk.Widget
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class   PopWebWin(Gtk.Window):
+
+    def __init__(self):
+
+        Gtk.Window.__init__(self)
+
+        #self.win2 = Gtk.Window()
+        self.set_position(Gtk.WindowPosition.CENTER)
+        self.set_default_size(800, 600)
+
+        tit = &#34;pyedpro:title&#34;
+        self.set_title(tit)
+        try:
+            self.set_icon_from_file(get_img_path(&#34;pyedpro_sub.png&#34;))
+        except:
+            print( &#34;Cannot load log icon:&#34;, &#34;pyedpro_sub.png&#34;, sys.exc_info())
+
+        self.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
+
+        self.connect(&#34;key-press-event&#34;, self._area_key, self)
+        self.connect(&#34;key-release-event&#34;, self._area_key, self)
+        self.connect(&#34;destroy&#34;, self._area_destroy)
+
+        #self.connect(&#34;focus-out-event&#34;, self._focus)
+        #self.view = pgTextView(True)
+        self.view = brow_win()
+        #self.view.textview.set_editable(False)
+
+        self.scroll = Gtk.ScrolledWindow();
+        self.scroll.add(self.view)
+        frame = Gtk.Frame(); frame.add(self.scroll)
+        self.add(frame)
+        self.show_all()
+
+    # Gdk.EventFocus
+    def _focus(self, win, to):
+        #print(&#34;focusx&#34;, win, to.window)
+        pass
+
+    def closewin(self, win):
+        #print(&#34;close&#34;, win)
+        pass
+
+    def _area_destroy(self, area):
+        #print(&#34;destroy&#34;, area)
+        #print(&#34;Saving&#34;, self.lastsel)
+        if self.view.is_modified():
+            txt = self.view.get_content()
+            self.savefunc(self.lastsel, txt)
+        # if we do not want it to close
+        #return True
+
+    #def _area_focus(self, area, event, dialog):
+    #    print(&#34;focus&#34;, event)
+
+    def set_popwin_text(self, text):
+        #self.view.deser_buff(text)
+        self.view.load_html(text)
+
+    # ------------------------------------------------------------------------
+
+    def _area_key(self, area, event, dialog):
+
+        if  event.type == Gdk.EventType.KEY_PRESS:
+            if event.keyval == Gdk.KEY_Escape:
+                #print &#34;Esc&#34;
+                area.destroy()
+
+        if  event.type == Gdk.EventType.KEY_PRESS:
+            if event.keyval == Gdk.KEY_Return:
+                #print &#34;Ret&#34;
+                area.destroy()
+
+            if event.keyval == Gdk.KEY_Alt_L or \
+                    event.keyval == Gdk.KEY_Alt_R:
+                area.alt = True;
+
+            if event.keyval == Gdk.KEY_x or \
+                    event.keyval == Gdk.KEY_X:
+                if area.alt:
+                    area.destroy()
+
+        elif  event.type == Gdk.EventType.KEY_RELEASE:
+            if event.keyval == Gdk.KEY_Alt_L or \
+                  event.keyval == Gdk.KEY_Alt_R:
+                area.alt = False;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>gi.overrides.Gtk.Window</li>
+<li>gi.repository.Gtk.Window</li>
+<li>gi.repository.Gtk.Bin</li>
+<li>gi.overrides.Gtk.Container</li>
+<li>gi.repository.Gtk.Container</li>
+<li>gi.overrides.Gtk.Widget</li>
+<li>gi.repository.Gtk.Widget</li>
+<li>gi.repository.GObject.InitiallyUnowned</li>
+<li>gi.overrides.GObject.Object</li>
+<li>gi.repository.GObject.Object</li>
+<li>gi._gi.GObject</li>
+<li>gi.repository.Atk.ImplementorIface</li>
+<li>gi.repository.Gtk.Buildable</li>
+<li>gobject.GInterface</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pedweb.PopWebWin.closewin"><code class="name flex">
+<span>def <span class="ident">closewin</span></span>(<span>self, win)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def closewin(self, win):
+    #print(&#34;close&#34;, win)
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pedweb.PopWebWin.set_popwin_text"><code class="name flex">
+<span>def <span class="ident">set_popwin_text</span></span>(<span>self, text)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_popwin_text(self, text):
+    #self.view.deser_buff(text)
+    self.view.load_html(text)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="pedweb.pgweb"><code class="flex name class">
+<span>class <span class="ident">pgweb</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>:Constructors:</p>
+<p>::</p>
+<pre><code>VBox(**properties)
+new(homogeneous:bool, spacing:int) -&gt; Gtk.Widget
+</code></pre>
+<p>Initializer for a GObject based classes with support for property
+sets through the use of explicit keyword arguments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class pgweb(Gtk.VBox):
+
+    def __init__(self):
+
+        self. wasin = True
+
+        #vbox = Gtk.VBox()
+        Gtk.VBox.__init__(self)
+
+        self.popwin = None
+        self.lastsel = None;  self.lastkey = None
+        self.cnt = 0
+        self.web_dir = pedconfig.conf.web_dir
+        if pedconfig.conf.verbose:
+            print(&#34;Using webdir:&#34;, self.web_dir)
+        try:
+            if not os.path.isdir(self.web_dir):
+                os.mkdir(self.web_dir)
+        except:
+            print(&#34;Cannot make web data dir&#34;)
+        try:
+            self.core = twincore.TwinCore(self.web_dir + os.sep + &#34;pedweb.pydb&#34;)
+            if pedconfig.conf.pgdebug &gt; 2:
+                print(&#34;core&#34;, self.core, self.core.fname)
+        except:
+            put_exception(&#34;Cannot open / make web notes py database&#34;)
+
+        #message(&#34;Cannot make  database&#34;)
+
+        self.popwin = None
+
+        #hbox = Gtk.HBox()
+        #self.pack_start(Gtk.Label(&#34;ccc&#34;), 0, 0, 0)
+        #self.pack_start(pggui.xSpacer(), 0, 0, 0)
+        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
+        self.pack_start(self.lsel, 0, 0, 2)
+
+        #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#dd8822&#34;))
+
+        #hbox3 = Gtk.HBox()
+        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #self.edit = Gtk.Entry()
+        #hbox3.pack_start(Gtk.Label(&#34; Find: &#34;), 0, 0, 0)
+        #hbox3.pack_start(self.edit, 1, 1, 0)
+        #butt2 = Gtk.Button.new_with_mnemonic(&#34;Find&#34;)
+        #butt2.connect(&#34;pressed&#34;, self.find)
+        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(butt2, 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#668822&#34;))
+        #self.pack_start(hbox3, 0, 0, 2)
+
+        #self.treeview2 = pgsimp.SimpleTree((&#34;Header&#34;, &#34;Subject&#34;, &#34;Description&#34;), skipedit=0)
+        self.treeview2 = pgsimp.SimpleTree((&#34;Header&#34;,))
+        self.treeview2.setcallb(self.treesel)
+        #self.treeview2.setCHcallb(self.treechange)
+
+        scroll2 = Gtk.ScrolledWindow()
+        scroll2.add(self.treeview2)
+        #scroll2.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+
+        vpaned = Gtk.VPaned()
+
+        frame3 = Gtk.Frame();
+        frame3.add(scroll2)
+        vpaned.add(frame3)
+
+        vpaned.set_position(150)
+
+        self.pack_start(vpaned, 1, 1, 2)
+
+        #self.edview = pgsimp.TextViewWin()
+        #self.edview =  pgTextView()
+
+        self.fname = os.path.dirname(__file__) + os.sep + &#34;home.html&#34;
+        #print(&#34;fname&#34;, self.fname)
+
+        hbox = Gtk.HBox()
+        self.lastsel = &#34;&#34;
+
+        hbox3 = Gtk.HBox()
+        #scroll12 = Gtk.ScrolledWindow()
+        self.edit = Gtk.Entry()
+        #scroll12.add(self.edit)
+        self.edit.set_width_chars(12)
+        #self.edit.set_size_request(96,96)
+
+        self.edit.set_activates_default(True)
+        self.edit.connect(&#34;activate&#34;, self.go)
+
+        hbox3.pack_start(Gtk.Label(&#34; URL: &#34;), 0, 0, 0)
+        hbox3.pack_start(self.edit, 1, 1, 0)
+        #hbox3.pack_start(scroll12, 1, 1, 0)
+        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+
+        butt2 = Gtk.Button(&#34;Go&#34;)
+        butt2.connect(&#34;pressed&#34;, self.go)
+        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox3.pack_start(butt2, 0, 0, 0)
+
+        #self.pack_start(hbox3, 0, 0, 2)
+
+        hbox4 = Gtk.HBox()
+        lab1  = Gtk.Label(&#34;  Note: This is a Live Browser &#34;)
+        lab1.set_halign(Gtk.Align.END)
+        hbox4.pack_start(lab1,  1, 1, 0)
+
+        butt3 = Gtk.Button(&#34;&lt;&#34;)
+        butt3.connect(&#34;pressed&#34;, self.backurl)
+        butt3.set_tooltip_text(&#34;Back&#34;)
+
+        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(butt3, 0, 0, 0)
+
+        butt4 = Gtk.Button(&#34;&gt;&#34;)
+        butt4.connect(&#34;pressed&#34;, self.forwurl)
+        butt4.set_tooltip_text(&#34;Forward&#34;)
+        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(butt4, 0, 0, 0)
+
+        butt5 = Gtk.Button(&#34;~&#34;)
+        butt5.connect(&#34;pressed&#34;, self.anchor)
+        butt5.set_tooltip_text(&#34;Goto local anchor page&#34;)
+        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(butt5, 0, 0, 0)
+
+        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #self.pack_start(hbox4, 0, 0, 2)
+
+        self.treeview3 = SimpleTree((&#34;Hour&#34;, &#34;Subject&#34;, &#34;Alarm&#34;, &#34;Notes&#34;))
+        self.treeview3.setcallb(self.treesel)
+
+        scroll2a = Gtk.ScrolledWindow()
+        scroll2a.add(self.treeview3)
+        frame3 = Gtk.Frame(); frame3.add(scroll2a)
+        #self.pack_start(frame3, 1, 1, 2)
+
+        #self.edview = SimpleEdit()
+        #self.edview.setsavecb(self.savetext)
+        #scroll3 = Gtk.ScrolledWindow()
+        #scroll3.add(self.edview)
+        #frame4 = Gtk.Frame(); frame4.add(scroll3)
+
+        scrolled_window = Gtk.ScrolledWindow()
+        try:
+            #self.brow_win = WebKit2.WebView()
+            #self.brow_win = pgwkit.pgwebw(self)
+            self.brow_win = brow_win()
+            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
+            #print(&#34;dir&#34;, dir(self.brow_win))
+            #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
+            pass
+        except:
+            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
+            put_exception(&#34;WebView load&#34;)
+
+        vbox5 = Gtk.VBox()
+        frame4 = Gtk.Frame();
+        frame4.add(scrolled_window)
+        vbox5.pack_start(frame4, 1, 1, 0)
+        vpaned.add(vbox5)
+
+        #self.brow_win.override_background_color(
+        #                Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, .5) )
+
+        #webview.load_uri(&#34;https://google.com&#34;)
+        scrolled_window.add(self.brow_win)
+        #self.pack_start(scrolled_window, 1, 1, 2)
+        #self.status = Gtk.Label(&#34; Status: &#34;)
+        #self.pack_start(self.status, 0, 0, 2)
+
+        hbox13 = Gtk.HBox()
+        hbox13.pack_start(Gtk.Label(label=&#34;&#34;), 1, 1, 0)
+
+        #hbox13.pack_start(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        butt3 = smallbutt(&#34; _New Item &#34;, self.newitem, &#34;Create new item / record&#34;)
+
+        hbox13.pack_start(butt3, 0, 0, 2)
+
+        butt3a = smallbutt(&#34; _Find in Text &#34;, self.search, &#34;Search this record&#34;)
+        hbox13.pack_start(butt3a, 0, 0, 0)
+
+        butt3b = smallbutt(&#34; Search in All &#34;, self.searchall, &#34;Search all records&#34;)
+
+        hbox13.pack_start(butt3b, 0, 0, 0)
+        hbox13.pack_start(Gtk.Label(label=&#34; &#34;), 1, 1, 0)
+
+        hbox13a = Gtk.HBox()
+        hbox13a.pack_start(Gtk.Label(label=&#34; &#34;), 1, 1, 0)
+
+        butt11 = smallbutt(&#34; Del Item &#34;, self.delitem, &#34;Delete One Rec&#34;)
+        hbox13a.pack_start(butt11, 0, 0, 0)
+
+        butt12 = smallbutt(&#34; _Export &#34;, self.export, &#34;Export all items&#34;)
+        hbox13a.pack_start(butt12, 0, 0, 2)
+
+        butt12a = smallbutt(&#34; Impo_rt &#34;, self.searchall, &#34;Import items&#34;)
+        hbox13a.pack_start(butt12a, 0, 0, 0)
+
+        butt12a = smallbutt(&#34; PopOu_t &#34;, self.popx, &#34;Pop Out to window&#34;)
+        hbox13a.pack_start(butt12a, 0, 0, 0)
+
+        hbox13a.pack_start(Gtk.Label(label=&#34; &#34;), 1, 1, 0)
+
+        #butt22 = Gtk.Button.new_with_mnemonic(&#34;Save&#34;)
+        #butt22.connect(&#34;pressed&#34;, self.save)
+        #hbox13.pack_start(butt22, 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(&#34;  &#34;), 0, 0, 0)
+
+        vbox5.pack_start(hbox13, 0, 0, 0)
+        vbox5.pack_start(hbox13a, 0, 0, 0)
+
+        try:
+            self.load()
+        except:
+            put_exception(&#34;Cannot load&#34;)
+
+        #Gtk.connect
+        #self.connect(&#34;window_state_event&#34;, self.eventx)
+
+    def popx(self, arg):
+
+        txt = self.brow_win.get_content()
+        print (&#34;popx txt&#34;, txt)
+
+        # Create if not there
+        if self.popwin:
+            self.popwin.destroy()
+
+        self.popwin = PopWebWin()
+        self.popwin.lastsel = self.lastsel
+        self.popwin.savefunc = self.savefunc
+        self.popwin.set_popwin_text(txt)
+        self.popwin.show_all()
+
+    def switched(self, pageto):
+        #print(&#34;SW page signal web&#34;, pageto)
+        if pageto == self:
+            #print(&#34;Web in&#34;)
+            self.wasin = True
+        else:
+            if self.wasin:
+                self.wasin = False
+                self.savetext()
+                #print(&#34;Web out&#34;)
+
+    def __del__(self):
+        # Did not happen automatically ... force it from outside
+        if pedconfig.conf.verbose:
+            print(&#34;pedweb __del__&#34;)
+        #self.savetext()
+        #if self.core:
+        #    self.core.__del__()
+
+    def newitem(self, arg):
+        self.savetext()
+        rrr = HeadDialog(&#34;New Item %d&#34; % self.cnt, None)
+        ret = rrr.run()
+        if ret != Gtk.ResponseType.OK:
+            rrr.destroy()
+            return
+
+        ttt = rrr.entry.get_text()
+        rrr.destroy()
+        #print(&#34;store&#34;, self.treeview2.treestore)
+
+        ret = self.treeview2.find_item(ttt)
+        if ret:
+            message(&#34;\nThis record already exists. \n\n %s&#34; % ttt)
+            return
+
+        #itemx = (ttt, &#34;&#34;, &#34;&#34;)
+        itemx = (ttt, )
+        self.cnt += 1
+        self.treeview2.insert(None, 0, itemx)
+
+        #newtext = &#34;Enter text here&#34;;
+        #self.core.save_data(ttt, newtext)
+
+        #self.edview.set_text(newtext)
+        #self.treeview2.sel_first()
+
+    def delitem(self, arg):
+        #print (&#34;delitem&#34;, self.lastkey, self.lastsel)
+        if not self.lastsel:
+            print(&#34;Nothing to delete&#34;)
+            pedconfig.conf.pedwin.update_statusbar(&#34;Nothing selected for deletion.&#34;);
+            return
+
+        rrr = yes_no_cancel(&#34;   Delete Item ?   &#34;, &#34;&#39;&#34; + str(self.lastsel[0]) + &#34;&#39;&#34;, False)
+        if rrr != Gtk.ResponseType.YES:
+            return
+
+        #print(&#34;Removing&#34;, self.lastsel[0])
+        # Remove all of them including shadow entried
+        #delx = self.core.del_recs(self.lastsel[0].encode(&#34;&#34;), 0, twincore.INT_MAX)
+
+        dbsize = self.core.getdbsize()
+        # Remove all of them including shadow entried
+        delx = self.core.del_rec_bykey(self.lastsel[0], dbsize)
+
+        pedconfig.conf.pedwin.update_statusbar(&#34;Removed %s %d records.&#34; % \
+                            (self.lastsel[0], delx) )
+
+        # Refresh list in main sel window
+        self.treeview2.clear()
+        usleep(10)
+        self.load()
+
+    def savefunc(self, item, text):
+        #print(&#34;savefunc&#34;, item, text[:12])
+        self.core.save_data(item[0], text)
+        if item[0] == self.lastsel[0]:
+            #print(&#34;re-read current&#34;)
+            self._readrec(item)
+
+    def search(self, arg):
+        print(&#34;search&#34;, time.time())
+        pass
+
+    def searchall(self, arg):
+        #print(&#34;searchall&#34;, arg)
+        print(&#34;searchall&#34;, time.time())
+        pass
+
+    def export(self, arg):
+        #print(&#34;Exporting&#34;, arg)
+
+        base = &#34;pedwebdata&#34;;  cnt = 0; fff = &#34;&#34;
+        while True:
+            fff =  &#34;%s%s%s_%d.bak&#34; % (self.web_dir, os.sep, base, cnt)
+            #print(&#34;trying:&#34;, fff)
+            if not os.path.isfile(fff):
+                break
+            cnt += 1
+
+        try:
+            fp = open(fff, &#34;wt&#34;)
+        except:
+            print(&#34;Cannot backup notes data&#34;, sys.exc_info());
+            pedconfig.conf.pedwin.update_statusbar(&#34;Cannot export notes&#34;)
+            return
+
+        try:
+            datax = []
+            cnt = 0
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                try:
+                    ddd = self.core.get_rec(aa)
+                    if len(ddd) &gt; 1:
+                        kkk = ddd[0]
+                        vvv = ddd[1]
+                    #print(&#34;Item&#34;, type(ddd[0]), ddd[0], &#34;Data:&#34;, ddd[1][:16] + b&#34; ...&#34; )
+                    fp.write(&#34;\n ------------------------------------------------------------------\n&#34;)
+                    fp.write(str(kkk))
+                    fp.write(&#34;\n ------------------------------------------------------------------\n&#34;)
+                    fp.write(str(vvv))
+                    cnt += 1
+                except:
+                    print(&#34;Cannot backup record\n&#34;, aa, sys.exc_info());
+        except:
+            print(&#34;Cannot backup database\n&#34;);
+
+        fp.close()
+        pedconfig.conf.pedwin.update_statusbar(&#34;Exported %d/%d web notes to %s&#34; % \
+                                (dbsize, cnt, os.path.basename(fff)))
+
+
+    def load(self):
+
+        &#39;&#39;&#39; Load from file;
+            This is more complex than it should be ... dealing with old data
+        &#39;&#39;&#39;
+
+        self.lastsel = None; self.lastkey = None
+        datax = []
+        try:
+            dbsize = self.core.getdbsize()
+            if not dbsize:
+                return
+
+            try:
+                self.treeview2.freeze_child_notify()
+                for aa in range(dbsize-1, 0, -1):
+                    ddd = self.core.get_rec(aa)
+                    if len(ddd) &lt; 2:
+                        continue        # Deleted record
+                    #print(&#34;ddd&#34;, ddd)
+                    hhh = ddd[0].decode()
+                    if hhh not in datax:
+                        datax.append(hhh)
+                        #print(&#34;adding&#34;, hhh)
+                        #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
+                        self.treeview2.append((hhh,))
+            finally:
+                self.treeview2.thaw_child_notify()
+
+        except:
+            put_exception(&#34;load web data&#34;)
+            print(&#34;Cannot load notes Data at&#34;, cnt, qqq)
+
+        #try:
+        #    self.treeview2.sel_first()
+        #    print(&#34;Select first&#34;)
+        #except:
+        #    if pedconfig.conf.verbose:
+        #        put_exception(&#34;sel firs&#34;)
+        #    pass
+
+        # Update new counter
+        for aa in datax:
+            if aa[:9] == &#34;New Item &#34;:
+                try:
+                    ccc = int(aa[9:])
+                    #print(&#34;new&#34;, ccc)
+                    if ccc &gt; self.cnt:
+                        self.cnt = ccc
+                except:
+                    pass
+        self.cnt += 1
+        #print(&#34;self.cnt&#34;, self.cnt)
+
+    def backurl(self, arg1): #, url, parm, buff):
+        self.brow_win.go_back()
+
+    def forwurl(self, arg1): #, url, parm, buff):
+        self.brow_win.go_forward()
+
+    def  letterfilter(self, letter):
+        #print(&#34;letterfilter&#34;, letter)
+        if letter == &#34;All&#34;:
+            self.treeview2.clear()
+            print(&#34;Erase selection&#34;)
+        else:
+            aaa = self.sql.getall(letter + &#34;%&#34;)
+            print(&#34;all-&gt;&#34;, aaa)
+
+            self.treeview2.clear()
+            for aa in aaa:
+                try:
+                    #aa.append(&#34;ddd&#34;)
+                    #aa.append(&#34;eee&#34;)
+                    #aa.append(&#34;fff&#34;)
+                    self.treeview2.append(aa[1:])
+                except:
+                    put_exception(&#34;Letter Filter&#34;)
+
+
+    def go(self, arg):
+        txt = self.edit.get_text()
+        #print (&#34;go&#34;, txt)
+        self.brow_win.load_uri(txt)
+
+    def anchor(self, arg):
+        self.brow_win.load_uri(&#34;file://&#34; + self.fname)
+
+    def _completion_function(self, html, user_data):
+
+        #print(&#34;completion:&#34;, html)
+
+        if not html:
+            return
+
+        #print( &#34;Save ttt:&#34;, ttt, &#34;html:&#34;, html)
+
+        try:
+            self.core.save_data(user_data, html)
+        except:
+            put_exception(&#34;Cannot load&#34;)
+
+        pedconfig.conf.pedwin.update_statusbar(&#34;Saved item for &#39;%s&#39;&#34; % user_data[:12])
+
+    # --------------------------------------------------------------------
+
+    def  microsleep(msec, flag = [0,]):
+
+        if sys.version_info[0] &lt; 3 or \
+            (sys.version_info[0] == 3 and sys.version_info[1] &lt; 3):
+            timefunc = time.clock
+        else:
+            timefunc = time.process_time
+
+        got_clock = timefunc() + float(msec) / 1000
+        #print( got_clock)
+        while True:
+            if timefunc() &gt; got_clock:
+                break
+            if flag[0]:
+                break
+            #print (&#34;Sleeping&#34;)
+            Gtk.main_iteration_do(False)
+
+    def save(self):
+        #print (&#34;web save automatic (unimplemented)&#34;)
+        self.savetext()
+        pass
+
+    def savetext(self):
+
+        if not self.lastsel:
+            return
+
+        try:
+            ttt = self.lastsel[0]
+        except:
+            if pedconfig.conf.verbose:
+                put_exception(&#34;savetext&#34;)
+            return
+
+        if self.brow_win.is_modified():
+            newtext =  self.brow_win.get_content()
+            #print(&#34;web Savetext&#34;, ttt, &#34;nt:&#34;, newtext)
+            self.core.save_data(ttt, newtext)
+            #print(&#34;newtext&#34;, newtext)
+        else:
+            #print(&#34;Not saving&#34;, ttt)
+            pass
+
+        try:
+            #self.brow_win.load_html(self._completion_function, ttt)
+            self.brow_win.load_html(ttt)
+        except:
+            if pedconfig.conf.verbose:
+                put_exception(&#34;savetext&#34;)
+
+    # --------------------------------------------------------------------
+
+    def treesel(self, args):
+
+        #print(&#34;treesel&#34;, args[0])
+
+        self.savetext()
+        self.lastsel = args
+
+        hhh = &#34;&#34;
+
+        try:
+            #ddd = self.core.retrieve(args[0])[0]
+            dbsize = self.core.getdbsize()
+            for aa in range(dbsize-1, 0, -1):
+                #ddd = self.core.retrieve(aa)
+                #ddd = self.core.findrecpos(aa, 1)
+                ddd = self.core.get_rec(aa)
+                if not ddd:
+                    continue
+                #print(ddd)
+                if ddd[0].decode() == args[0]:
+                    #print(&#34;found&#34;, ddd[0])
+                    #print(ddd[0], args[0])
+                    hhh = ddd[1].decode()
+                    break
+        except:
+            if pedconfig.conf.verbose:
+                put_exception(&#34;treesel&#34;)
+            pass
+
+        #print(&#34;Content&#34;, hhh)
+
+        try:
+            self.brow_win.load_html(hhh)
+            #usleep(10)
+            #self.treeview2.grab_focus()
+            #usleep(10)
+
+        except:
+            put_exception(&#34;Load Data&#34;)
+            pass
+
+        #if args:
+        #    pedconfig.conf.pedwin.update_statusbar(&#34;Saved item for &#39;%s&#39;&#34; % args[0][:12])</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>gi.repository.Gtk.VBox</li>
+<li>gi.overrides.Gtk.Box</li>
+<li>gi.repository.Gtk.Box</li>
+<li>gi.overrides.Gtk.Container</li>
+<li>gi.repository.Gtk.Container</li>
+<li>gi.overrides.Gtk.Widget</li>
+<li>gi.repository.Gtk.Widget</li>
+<li>gi.repository.GObject.InitiallyUnowned</li>
+<li>gi.overrides.GObject.Object</li>
+<li>gi.repository.GObject.Object</li>
+<li>gi._gi.GObject</li>
+<li>gi.repository.Atk.ImplementorIface</li>
+<li>gi.repository.Gtk.Buildable</li>
+<li>gi.repository.Gtk.Orientable</li>
+<li>gobject.GInterface</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="pedweb.pgweb.anchor"><code class="name flex">
+<span>def <span class="ident">anchor</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def anchor(self, arg):
+    self.brow_win.load_uri(&#34;file://&#34; + self.fname)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.backurl"><code class="name flex">
+<span>def <span class="ident">backurl</span></span>(<span>self, arg1)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def backurl(self, arg1): #, url, parm, buff):
+    self.brow_win.go_back()</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.delitem"><code class="name flex">
+<span>def <span class="ident">delitem</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delitem(self, arg):
+    #print (&#34;delitem&#34;, self.lastkey, self.lastsel)
+    if not self.lastsel:
+        print(&#34;Nothing to delete&#34;)
+        pedconfig.conf.pedwin.update_statusbar(&#34;Nothing selected for deletion.&#34;);
+        return
+
+    rrr = yes_no_cancel(&#34;   Delete Item ?   &#34;, &#34;&#39;&#34; + str(self.lastsel[0]) + &#34;&#39;&#34;, False)
+    if rrr != Gtk.ResponseType.YES:
+        return
+
+    #print(&#34;Removing&#34;, self.lastsel[0])
+    # Remove all of them including shadow entried
+    #delx = self.core.del_recs(self.lastsel[0].encode(&#34;&#34;), 0, twincore.INT_MAX)
+
+    dbsize = self.core.getdbsize()
+    # Remove all of them including shadow entried
+    delx = self.core.del_rec_bykey(self.lastsel[0], dbsize)
+
+    pedconfig.conf.pedwin.update_statusbar(&#34;Removed %s %d records.&#34; % \
+                        (self.lastsel[0], delx) )
+
+    # Refresh list in main sel window
+    self.treeview2.clear()
+    usleep(10)
+    self.load()</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.export"><code class="name flex">
+<span>def <span class="ident">export</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def export(self, arg):
+    #print(&#34;Exporting&#34;, arg)
+
+    base = &#34;pedwebdata&#34;;  cnt = 0; fff = &#34;&#34;
+    while True:
+        fff =  &#34;%s%s%s_%d.bak&#34; % (self.web_dir, os.sep, base, cnt)
+        #print(&#34;trying:&#34;, fff)
+        if not os.path.isfile(fff):
+            break
+        cnt += 1
+
+    try:
+        fp = open(fff, &#34;wt&#34;)
+    except:
+        print(&#34;Cannot backup notes data&#34;, sys.exc_info());
+        pedconfig.conf.pedwin.update_statusbar(&#34;Cannot export notes&#34;)
+        return
+
+    try:
+        datax = []
+        cnt = 0
+        dbsize = self.core.getdbsize()
+        for aa in range(dbsize-1, 0, -1):
+            try:
+                ddd = self.core.get_rec(aa)
+                if len(ddd) &gt; 1:
+                    kkk = ddd[0]
+                    vvv = ddd[1]
+                #print(&#34;Item&#34;, type(ddd[0]), ddd[0], &#34;Data:&#34;, ddd[1][:16] + b&#34; ...&#34; )
+                fp.write(&#34;\n ------------------------------------------------------------------\n&#34;)
+                fp.write(str(kkk))
+                fp.write(&#34;\n ------------------------------------------------------------------\n&#34;)
+                fp.write(str(vvv))
+                cnt += 1
+            except:
+                print(&#34;Cannot backup record\n&#34;, aa, sys.exc_info());
+    except:
+        print(&#34;Cannot backup database\n&#34;);
+
+    fp.close()
+    pedconfig.conf.pedwin.update_statusbar(&#34;Exported %d/%d web notes to %s&#34; % \
+                            (dbsize, cnt, os.path.basename(fff)))</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.forwurl"><code class="name flex">
+<span>def <span class="ident">forwurl</span></span>(<span>self, arg1)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forwurl(self, arg1): #, url, parm, buff):
+    self.brow_win.go_forward()</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.go"><code class="name flex">
+<span>def <span class="ident">go</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def go(self, arg):
+    txt = self.edit.get_text()
+    #print (&#34;go&#34;, txt)
+    self.brow_win.load_uri(txt)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.letterfilter"><code class="name flex">
+<span>def <span class="ident">letterfilter</span></span>(<span>self, letter)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def  letterfilter(self, letter):
+    #print(&#34;letterfilter&#34;, letter)
+    if letter == &#34;All&#34;:
+        self.treeview2.clear()
+        print(&#34;Erase selection&#34;)
+    else:
+        aaa = self.sql.getall(letter + &#34;%&#34;)
+        print(&#34;all-&gt;&#34;, aaa)
+
+        self.treeview2.clear()
+        for aa in aaa:
+            try:
+                #aa.append(&#34;ddd&#34;)
+                #aa.append(&#34;eee&#34;)
+                #aa.append(&#34;fff&#34;)
+                self.treeview2.append(aa[1:])
+            except:
+                put_exception(&#34;Letter Filter&#34;)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.load"><code class="name flex">
+<span>def <span class="ident">load</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load from file;
+This is more complex than it should be &hellip; dealing with old data</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load(self):
+
+    &#39;&#39;&#39; Load from file;
+        This is more complex than it should be ... dealing with old data
+    &#39;&#39;&#39;
+
+    self.lastsel = None; self.lastkey = None
+    datax = []
+    try:
+        dbsize = self.core.getdbsize()
+        if not dbsize:
+            return
+
+        try:
+            self.treeview2.freeze_child_notify()
+            for aa in range(dbsize-1, 0, -1):
+                ddd = self.core.get_rec(aa)
+                if len(ddd) &lt; 2:
+                    continue        # Deleted record
+                #print(&#34;ddd&#34;, ddd)
+                hhh = ddd[0].decode()
+                if hhh not in datax:
+                    datax.append(hhh)
+                    #print(&#34;adding&#34;, hhh)
+                    #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
+                    self.treeview2.append((hhh,))
+        finally:
+            self.treeview2.thaw_child_notify()
+
+    except:
+        put_exception(&#34;load web data&#34;)
+        print(&#34;Cannot load notes Data at&#34;, cnt, qqq)
+
+    #try:
+    #    self.treeview2.sel_first()
+    #    print(&#34;Select first&#34;)
+    #except:
+    #    if pedconfig.conf.verbose:
+    #        put_exception(&#34;sel firs&#34;)
+    #    pass
+
+    # Update new counter
+    for aa in datax:
+        if aa[:9] == &#34;New Item &#34;:
+            try:
+                ccc = int(aa[9:])
+                #print(&#34;new&#34;, ccc)
+                if ccc &gt; self.cnt:
+                    self.cnt = ccc
+            except:
+                pass
+    self.cnt += 1
+    #print(&#34;self.cnt&#34;, self.cnt)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.microsleep"><code class="name flex">
+<span>def <span class="ident">microsleep</span></span>(<span>msec, flag=[0])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def  microsleep(msec, flag = [0,]):
+
+    if sys.version_info[0] &lt; 3 or \
+        (sys.version_info[0] == 3 and sys.version_info[1] &lt; 3):
+        timefunc = time.clock
+    else:
+        timefunc = time.process_time
+
+    got_clock = timefunc() + float(msec) / 1000
+    #print( got_clock)
+    while True:
+        if timefunc() &gt; got_clock:
+            break
+        if flag[0]:
+            break
+        #print (&#34;Sleeping&#34;)
+        Gtk.main_iteration_do(False)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.newitem"><code class="name flex">
+<span>def <span class="ident">newitem</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def newitem(self, arg):
+    self.savetext()
+    rrr = HeadDialog(&#34;New Item %d&#34; % self.cnt, None)
+    ret = rrr.run()
+    if ret != Gtk.ResponseType.OK:
+        rrr.destroy()
+        return
+
+    ttt = rrr.entry.get_text()
+    rrr.destroy()
+    #print(&#34;store&#34;, self.treeview2.treestore)
+
+    ret = self.treeview2.find_item(ttt)
+    if ret:
+        message(&#34;\nThis record already exists. \n\n %s&#34; % ttt)
+        return
+
+    #itemx = (ttt, &#34;&#34;, &#34;&#34;)
+    itemx = (ttt, )
+    self.cnt += 1
+    self.treeview2.insert(None, 0, itemx)
+
+    #newtext = &#34;Enter text here&#34;;
+    #self.core.save_data(ttt, newtext)
+
+    #self.edview.set_text(newtext)
+    #self.treeview2.sel_first()</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.popx"><code class="name flex">
+<span>def <span class="ident">popx</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def popx(self, arg):
+
+    txt = self.brow_win.get_content()
+    print (&#34;popx txt&#34;, txt)
+
+    # Create if not there
+    if self.popwin:
+        self.popwin.destroy()
+
+    self.popwin = PopWebWin()
+    self.popwin.lastsel = self.lastsel
+    self.popwin.savefunc = self.savefunc
+    self.popwin.set_popwin_text(txt)
+    self.popwin.show_all()</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save(self):
+    #print (&#34;web save automatic (unimplemented)&#34;)
+    self.savetext()
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.savefunc"><code class="name flex">
+<span>def <span class="ident">savefunc</span></span>(<span>self, item, text)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def savefunc(self, item, text):
+    #print(&#34;savefunc&#34;, item, text[:12])
+    self.core.save_data(item[0], text)
+    if item[0] == self.lastsel[0]:
+        #print(&#34;re-read current&#34;)
+        self._readrec(item)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.savetext"><code class="name flex">
+<span>def <span class="ident">savetext</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def savetext(self):
+
+    if not self.lastsel:
+        return
+
+    try:
+        ttt = self.lastsel[0]
+    except:
+        if pedconfig.conf.verbose:
+            put_exception(&#34;savetext&#34;)
+        return
+
+    if self.brow_win.is_modified():
+        newtext =  self.brow_win.get_content()
+        #print(&#34;web Savetext&#34;, ttt, &#34;nt:&#34;, newtext)
+        self.core.save_data(ttt, newtext)
+        #print(&#34;newtext&#34;, newtext)
+    else:
+        #print(&#34;Not saving&#34;, ttt)
+        pass
+
+    try:
+        #self.brow_win.load_html(self._completion_function, ttt)
+        self.brow_win.load_html(ttt)
+    except:
+        if pedconfig.conf.verbose:
+            put_exception(&#34;savetext&#34;)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.search"><code class="name flex">
+<span>def <span class="ident">search</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def search(self, arg):
+    print(&#34;search&#34;, time.time())
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.searchall"><code class="name flex">
+<span>def <span class="ident">searchall</span></span>(<span>self, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def searchall(self, arg):
+    #print(&#34;searchall&#34;, arg)
+    print(&#34;searchall&#34;, time.time())
+    pass</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.switched"><code class="name flex">
+<span>def <span class="ident">switched</span></span>(<span>self, pageto)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def switched(self, pageto):
+    #print(&#34;SW page signal web&#34;, pageto)
+    if pageto == self:
+        #print(&#34;Web in&#34;)
+        self.wasin = True
+    else:
+        if self.wasin:
+            self.wasin = False
+            self.savetext()
+            #print(&#34;Web out&#34;)</code></pre>
+</details>
+</dd>
+<dt id="pedweb.pgweb.treesel"><code class="name flex">
+<span>def <span class="ident">treesel</span></span>(<span>self, args)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def treesel(self, args):
+
+    #print(&#34;treesel&#34;, args[0])
+
+    self.savetext()
+    self.lastsel = args
+
+    hhh = &#34;&#34;
+
+    try:
+        #ddd = self.core.retrieve(args[0])[0]
+        dbsize = self.core.getdbsize()
+        for aa in range(dbsize-1, 0, -1):
+            #ddd = self.core.retrieve(aa)
+            #ddd = self.core.findrecpos(aa, 1)
+            ddd = self.core.get_rec(aa)
+            if not ddd:
+                continue
+            #print(ddd)
+            if ddd[0].decode() == args[0]:
+                #print(&#34;found&#34;, ddd[0])
+                #print(ddd[0], args[0])
+                hhh = ddd[1].decode()
+                break
+    except:
+        if pedconfig.conf.verbose:
+            put_exception(&#34;treesel&#34;)
+        pass
+
+    #print(&#34;Content&#34;, hhh)
+
+    try:
+        self.brow_win.load_html(hhh)
+        #usleep(10)
+        #self.treeview2.grab_focus()
+        #usleep(10)
+
+    except:
+        put_exception(&#34;Load Data&#34;)
+        pass
+
+    #if args:
+    #    pedconfig.conf.pedwin.update_statusbar(&#34;Saved item for &#39;%s&#39;&#34; % args[0][:12])</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="pedweb.PopWebWin" href="#pedweb.PopWebWin">PopWebWin</a></code></h4>
+<ul class="">
+<li><code><a title="pedweb.PopWebWin.closewin" href="#pedweb.PopWebWin.closewin">closewin</a></code></li>
+<li><code><a title="pedweb.PopWebWin.set_popwin_text" href="#pedweb.PopWebWin.set_popwin_text">set_popwin_text</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="pedweb.pgweb" href="#pedweb.pgweb">pgweb</a></code></h4>
+<ul class="two-column">
+<li><code><a title="pedweb.pgweb.anchor" href="#pedweb.pgweb.anchor">anchor</a></code></li>
+<li><code><a title="pedweb.pgweb.backurl" href="#pedweb.pgweb.backurl">backurl</a></code></li>
+<li><code><a title="pedweb.pgweb.delitem" href="#pedweb.pgweb.delitem">delitem</a></code></li>
+<li><code><a title="pedweb.pgweb.export" href="#pedweb.pgweb.export">export</a></code></li>
+<li><code><a title="pedweb.pgweb.forwurl" href="#pedweb.pgweb.forwurl">forwurl</a></code></li>
+<li><code><a title="pedweb.pgweb.go" href="#pedweb.pgweb.go">go</a></code></li>
+<li><code><a title="pedweb.pgweb.letterfilter" href="#pedweb.pgweb.letterfilter">letterfilter</a></code></li>
+<li><code><a title="pedweb.pgweb.load" href="#pedweb.pgweb.load">load</a></code></li>
+<li><code><a title="pedweb.pgweb.microsleep" href="#pedweb.pgweb.microsleep">microsleep</a></code></li>
+<li><code><a title="pedweb.pgweb.newitem" href="#pedweb.pgweb.newitem">newitem</a></code></li>
+<li><code><a title="pedweb.pgweb.popx" href="#pedweb.pgweb.popx">popx</a></code></li>
+<li><code><a title="pedweb.pgweb.save" href="#pedweb.pgweb.save">save</a></code></li>
+<li><code><a title="pedweb.pgweb.savefunc" href="#pedweb.pgweb.savefunc">savefunc</a></code></li>
+<li><code><a title="pedweb.pgweb.savetext" href="#pedweb.pgweb.savetext">savetext</a></code></li>
+<li><code><a title="pedweb.pgweb.search" href="#pedweb.pgweb.search">search</a></code></li>
+<li><code><a title="pedweb.pgweb.searchall" href="#pedweb.pgweb.searchall">searchall</a></code></li>
+<li><code><a title="pedweb.pgweb.switched" href="#pedweb.pgweb.switched">switched</a></code></li>
+<li><code><a title="pedweb.pgweb.treesel" href="#pedweb.pgweb.treesel">treesel</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
