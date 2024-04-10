@@ -58,16 +58,10 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pglen/pyedpro",
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
+    classifiers=[ classx, ],
     include_package_data=True,
+    package_data={ "pedlib": ["docs/*"], },
     packages=setuptools.find_packages(include=includex),
-    #packages=setuptools.find_packages('pedlib, pedlib/data, panglib, pycommon'),
-
-    #str(['pedlib', 'panglib', 'pycommon'])),
     scripts = ['pyedpro.py', 'pangview.py'],
 
     package_dir = {
@@ -79,14 +73,14 @@ setuptools.setup(
                     'panglib': 'panglib',
                    },
 
-    package_py = {
-                    '':
-                        ['pedlib/images/pyedpro.png',
-                         'pedlib/images/pyedpro_sub.png',
-                         'pedlib/images/pedicon.png', 'image.png',
-                         'pyedpro_ubuntu.png'
-                        ]
-                    },
+    #package_py = {
+    #                '':
+    #                    ['pedlib/images/pyedpro.png',
+    #                     'pedlib/images/pyedpro_sub.png',
+    #                     'pedlib/images/pedicon.png', 'image.png',
+    #                     'pyedpro_ubuntu.png'
+    #                    ]
+    #                },
 
     data_files =  [('/usr/share/icons/hicolor/96x96/apps/',
                         ['pedlib/images/pyedpro.png',

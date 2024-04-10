@@ -17,7 +17,7 @@ package:
 PPP=PYTHONPATH=pedlib:./:../pycommon  python -W ignore::DeprecationWarning `which pdoc` --force --html
 
 docs:
-	@${PPP} -o docs pyedpro.py
+	@${PPP} -o pedlib/docs pyedpro.py
 	@${PPP} -o pedlib/docs pedlib/pedweb.py
 	@${PPP} -o pedlib/docs pedlib/parser.py
 	@${PPP} -o pedlib/docs pedlib/pedthread.py
