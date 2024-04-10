@@ -204,19 +204,19 @@ The author,
 
 Latest screen shot, showing DIFF and other new features
 
-![Screen Shot of DIFF](diffscr.png)
+![Screen Shot of DIFF](https://github.com/pglen/pyedpro/raw/master/diffscr.png)
 
 Screen from a regular session, including clip buttons ...
 
-![Screen Shot Ubuntu](screen.png)
+![Screen Shot Ubuntu](https://github.com/pglen/pyedpro/raw/master/screen.png)
 
 Screen from an older session, note the function list on the left:
 
-![Screen Shot More](image.png)
+![Screen Shot More](https://github.com/pglen/pyedpro/raw/master/image.png)
 
 Screen from Mac:
 
-![Screen Shot](screen_shot_mac.png)
+![Screen Shot](https://github.com/pglen/pyedpro/raw/master/screen_shot_mac.png)
 
 ## Project stats:
 
@@ -239,10 +239,11 @@ Screen from Mac:
     Authors
         7 (average 108.0 commits per author)
 
-![Stats](commits_by_year_month.png)
+![Stats](https://github.com/pglen/pyedpro/raw/master/commits_by_year_month.png)
 
 ## License:
 
     Open Source, FreeWare, Unlicence, MIT at your convenience
 
 // EOF
+
