@@ -64,4 +64,10 @@ docs:
 	@${PPP} -o pedlib/docs pedlib/stack.py
 	@${PPP} -o pedlib/docs pedlib/webwin.py
 
+pipup:
+	@# Prep
+	cp ../README.md README.md
+	./pip-build.py
+	./pip-upload.sh
+
 # EOF

@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, shutil
 import setuptools
 
 descx = '''PyEdPro is modern multi-platform editor. Simple, powerful,
@@ -15,24 +15,18 @@ out for Python and  'C'. The spell checker is executed on live text. (while typi
 '''
 
 classx = [
-          'Development Status :: Mature',
-          'Environment :: GUI',
-          'Intended Audience :: End Users/Desktop',
-          'Intended Audience :: Developers',
-          'Intended Audience :: System Administrators',
-          'License :: OSI Approved :: Python Software Foundation License',
-          'Operating System :: Microsoft :: Windows',
-          'Operating System :: POSIX',
-          'Programming Language :: Python',
-          'Topic :: Editors',
-          'Topic :: Software Development :: Editor',
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
         ]
 
 includex = ["*", "pedlib/", "panglib", "pedlib/images",
             "image.png", "pyedpro_ubuntu.png"]
 
+#shutil.copy("../README.md", "README.copy.md")
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
+#os.remove("README.copy.md")
 
 # Get version number  from the server support file:
 fp = open("pyedpro.py", "rt")
@@ -58,7 +52,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pglen/pyedpro",
-    classifiers=[ classx, ],
+    classifiers=classx,
     include_package_data=True,
     package_data={ "pedlib": ["docs/*"], },
     packages=setuptools.find_packages(include=includex),

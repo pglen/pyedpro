@@ -67,7 +67,7 @@ as in Glib the timer functions bombed. Great hardware - bad PyGobject support. H
 if an editor with familiar key op is needed -- most of it works. And no
 destructive errors.
 
-### New:
+### History:
 
     (this is extracted, use git log for up-to-date information)
 
@@ -80,7 +80,12 @@ destructive errors.
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
         ....        -- lot of changes, see github log
-    Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
+
+
+### New:
+
+    3.3.1   Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
+    3.3.5   Wed 10.Apr.2024 -- Relocated search window for better screen allocation
 
 Partial list, some highlights;
 
@@ -214,30 +219,30 @@ Screen from Mac:
 ![Screen Shot](screen_shot_mac.png)
 
 ## Project stats:
-   (Note: This is somewhat outdated, added here for informational purposes only)
 
-        Project name
-            PyEdPro
-        Generated
-            2022-04-21 13:40:49 (in 3 seconds)
-        Generator
-            GitStats (version 55c5c28), git version 2.32.0, gnuplot 5.4 patchlevel 1
-        Report Period
-            2018-09-16 00:29:10 to 2022-04-15 10:31:49
-        Age
-            1308 days, 166 active days (12.69%)
-        Total Files
-            220
-        Total Lines of Code
-            476774 (1454450 added, 977676 removed)
-        Total Commits
-            347 (average 2.1 commits per active day, 0.3 per all days)
-        Authors
-            7 (average 49.6 commits per author)
-
+    Project name
+        pgpygtk
+    Generated
+        2024-04-10 02:22:26 (in 61 seconds)
+    Generator
+        GitStats (version 55c5c28), git version 2.34.1, gnuplot 5.4 patchlevel 2
+    Report Period
+        2018-09-16 00:29:10 to 2024-04-10 02:10:24
+    Age
+        2034 days, 224 active days (11.01%)
+    Total Files
+        13122
+    Total Lines of Code
+        2412587 (7146598 added, 4734011 removed)
+    Total Commits
+        756 (average 3.4 commits per active day, 0.4 per all days)
+    Authors
+        7 (average 108.0 commits per author)
 
 ![Stats](commits_by_year_month.png)
 
-License:    Open Source, FreeWare
+## License:
+
+    Open Source, FreeWare, Unlicence, MIT at your convenience
 
 // EOF

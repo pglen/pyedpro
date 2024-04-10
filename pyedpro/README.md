@@ -7,8 +7,6 @@ configurable, extendable. Goodies like macro recording / playback, spell check,
 column select, multiple clipboards, unlimited undo ... makes it an editor
 that I use every day.
 
-  This project's source is at - https://github.com/pglen/pyedpro
-
   Working and tested platforms currently are:
 
         Win 7 .. Win 10 ...
@@ -17,18 +15,19 @@ that I use every day.
         Raspberry PI 3, Raspberry PI 4, ...
         Mac ** Some functions are disabled - in particular async processing
 
-Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
+Pyedpro functions in a near identical manner
+    on Linux / Windows / Mac / Raspberry PI
 
  Pyedpro has:
 
-            o  macro recording/play,
-            o  search/replace,
-            o  functional navigation,
-            o  comment/string spell check,
-            o  full spell check, spell suggestion dialog
-            o  auto backup,
-            o  persistent undo/redo,  (undo beyond last save)
-            o  auto complete, auto correct,
+            o  Macro recording/play,
+            o  Search/replace,
+            o  Functional navigation,
+            o  Fomment/string spell check,
+            o  Full spell check, spell suggestion dialog
+            o  Auto backup,
+            o  Persistent undo/redo,  (undo beyond last save)
+            o  Auto complete, auto correct
             o
             o  ... and a lot more.
 
@@ -36,20 +35,27 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
  One can easily edit the key map in keyhand.py, and the key actions
  in acthand.py The default key map resembles gedit / wed / etp / brief
 
+ The editor can be run from pip; from single packed executable; from git
+directory, and from packaged appimage.
+
+ The images are available from the git largefile subsystem.
+
 [See Doxygen generated Documentation on GitHub Pages](https://pglen.github.io/pyedpro/html/)
 
 ### Platforms
 
   I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
-and the Raspberry-Pi. It behaves consistently on all these platforms,
+(x64) and the Raspberry-Pi. It behaves consistently on all these platforms,
 it is an absolute joy to edit in a different platform without the learning
-curve of new keystrokes.  If you want an editor  that works the same way in
+curve of new keystrokes.  If you want an editor that works the same way in
 all your workspaces, PyEdPro is the one.
 
- PyEdPro now is working good on the Mac. I installed homebrew, and got it to fire up. It
-was not a trivial exercise, as the Mac PygGOject did not do half of the stuff as the
-Linux version did. No asynchronous  anything, segmentation faults everywhere. (which python
+ PyEdPro now is working OK on the Mac M1. I installed homebrew, and got
+it to fire up. It was not a trivial exercise, as the Mac PygGOject did not do
+half of the stuff as the Linux version did.
+No asynchronous  anything, segmentation faults everywhere. (which python
 is not suppose to have)
+
   The font rendering was messed up, but I got fixed by replacing Pango's
 get_pixel_size() with get_size() / PANGO_UNIT. [Suspect int vs float accuracy issues]
   Some async functions like the function updater is disabled, but it can be done
@@ -57,21 +63,34 @@ manually. (right click on doc -> rescan) All in all the Mac's PyGobject is not a
 subsystem, hopefully time will be kind here.
 
 ** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing
-as Glib the timer functions bombed. Great hardware - bad PyGobject support. However
-if an editor with familiar key op is needed -- most of it works with no destructive errors.
+as in Glib the timer functions bombed. Great hardware - bad PyGobject support. However
+if an editor with familiar key op is needed -- most of it works. And no
+destructive errors.
 
-### New:
+### History:
 
     (this is extracted, use git log for up-to-date information)
 
+    Sat 11.Feb.2023 -- Pyedpro Notes export / import and the new pydbase data base
+    Thu 27.Oct.2022 -- Restored system menu processing (Alt-f [File Menu] and such)
     Sat 10.Sep.2022 -- the system shortcuts (ctrl-s ctrl-o) are re-done by hand
-    Sat 03.Sep.2022 -- pubilshed on pip
+    Sat 03.Sep.2022 -- published on pip
     Thu 21.Apr.2022 -- release issued
     Wed 16.Mar.2022 -- dialog for read only file, export notes ... lots of other stuff
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
+        ....        -- lot of changes, see github log
+
+
+### New:
+
+    3.3.1   Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
+    3.3.5   Wed 10.Apr.2024 -- Relocated search window for better screen allocation
 
 Partial list, some highlights;
+
+Added separate interpretation for right control keys, so exotic items
+like 'insert html comment' can be tied to a shortcut key;
 
 Added drag / drop source / target. New keystroke combo for keyboards
  without home / pgup etc ... Implemented html preview. Just right click on
@@ -138,9 +157,9 @@ editor or look at the file in pyedlib/KEYS. This file is also called up when the
  Help -> 'KeyHelp In Doc' is called up.
 
   If you highlight a word, and press F2, Zeal will open with the item searched and
-highlighted. Shift F2 will do the same with Devhelp. This is what I use to see the API of PyGobj.
-F1 will call up the PyEdPro's help screen. Shift-F1 will open DevDocs. Naturally,
-Devdocs/Devhelp/Zeal need to be installed for these to function.
+highlighted. Shift F2 will do the same with Devhelp. This is what I use to see the
+ API of PyGobj. F1 will call up the PyEdPro's help screen. Shift-F1 will open
+DevDocs. Naturally, Devdocs/Devhelp/Zeal need to be installed for these to function.
 
   On initial start, PyEdPro shows a left pane and a top pane. The left pane
 is for function summary and the top pane is for double view of the same file.
@@ -201,28 +220,29 @@ Screen from Mac:
 
 ## Project stats:
 
-        Project name
-            PyEdPro
-        Generated
-            2022-04-21 13:40:49 (in 3 seconds)
-        Generator
-            GitStats (version 55c5c28), git version 2.32.0, gnuplot 5.4 patchlevel 1
-        Report Period
-            2018-09-16 00:29:10 to 2022-04-15 10:31:49
-        Age
-            1308 days, 166 active days (12.69%)
-        Total Files
-            220
-        Total Lines of Code
-            476774 (1454450 added, 977676 removed)
-        Total Commits
-            347 (average 2.1 commits per active day, 0.3 per all days)
-        Authors
-            7 (average 49.6 commits per author)
-
+    Project name
+        pgpygtk
+    Generated
+        2024-04-10 02:22:26 (in 61 seconds)
+    Generator
+        GitStats (version 55c5c28), git version 2.34.1, gnuplot 5.4 patchlevel 2
+    Report Period
+        2018-09-16 00:29:10 to 2024-04-10 02:10:24
+    Age
+        2034 days, 224 active days (11.01%)
+    Total Files
+        13122
+    Total Lines of Code
+        2412587 (7146598 added, 4734011 removed)
+    Total Commits
+        756 (average 3.4 commits per active day, 0.4 per all days)
+    Authors
+        7 (average 108.0 commits per author)
 
 ![Stats](commits_by_year_month.png)
 
-License:    Open Source, FreeWare
+## License:
+
+    Open Source, FreeWare, Unlicence, MIT at your convenience
 
 // EOF
