@@ -69,5 +69,7 @@ pipup:
 	cp ../README.md README.md
 	./pip-build.py
 	./pip-upload.sh
+	@# Mke sure only one copy hangs around
+	rm README.md
 
 # EOF
