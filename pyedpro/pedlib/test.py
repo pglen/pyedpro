@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-
-'''
+    
+'''123456
 This is open source text editor. Written on python. The motivation for
 this project was to create a modern multi-platform editor. Simple,
 powerful, configurable, extendable. To run this module without

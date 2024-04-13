@@ -561,14 +561,30 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                         "changed outside PyEdPro." \
                         "Reload?" % self.fname, False)
                     if rrr == Gtk.ResponseType.YES:
-                        print("Reloading")
+                        if pedconfig.conf.verbose:
+                           print("Reloading", self.fname)
                         self.savebackup()
-                        self.loadfile(self.fname)
+                        self.saveparms()
+
+                        # Is it already loaded? ... close
+                        #nn = self.notebook.get_n_pages()
+                        #fname2 = os.path.realpath(self.fname)
+                        #for aa in range(nn):
+                        #    vcurr = self.notebook.get_nth_page(aa)
+                        #    if vcurr.area.fname == fname2:
+                        #        if pedconfig.conf.verbose:
+                        #            print("Closing '"+ fname2 + "'")
+                        #        #vcurr.area.closedoc(noprompt = True)
+                        #        #self.mained.close_document(self)
+
+                        #usleep(100)
+                        self.loadfile(self.fname, reload = True)
+                        self.loadparms()
 
             # Update stat info
             self.stat = xstat
         except:
-            #put_exception("cmp mtime")
+            put_exception("cmp mtime")
             pass
 
         self.update_bar2()
@@ -1902,25 +1918,26 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
     # --------------------------------------------------------------------
     # Load file into this buffer, return False on failure
 
-    def loadfile(self, filename, create = False):
+    def loadfile(self, filename, create = False, reload = True):
 
         if not self.second:
             if pedconfig.conf.verbose > 1:
                 print("Loading file", filename)
 
-        # Is it already loaded? ... activate
-        nn = self.notebook.get_n_pages()
-        fname2 = os.path.realpath(filename)
-        for aa in range(nn):
-            vcurr = self.notebook.get_nth_page(aa)
-            if vcurr.area.fname == fname2:
-                if pedconfig.conf.verbose:
-                    print("Already open '"+ fname2 + "'")
-                self.mained.update_statusbar("Already open, activating '{0:s}'".format(fname2))
-                vcurr = self.notebook.set_current_page(aa)
+        if not reload:
+            # Is it already loaded? ... activate
+            nn = self.notebook.get_n_pages()
+            fname2 = os.path.realpath(filename)
+            for aa in range(nn):
                 vcurr = self.notebook.get_nth_page(aa)
-                self.mained.mywin.set_focus(vcurr.vbox.area)
-                return
+                if vcurr.area.fname == fname2:
+                    if pedconfig.conf.verbose:
+                        print("Already open '"+ fname2 + "'")
+                    self.mained.update_statusbar("Already open, activating '{0:s}'".format(fname2))
+                    vcurr = self.notebook.set_current_page(aa)
+                    vcurr = self.notebook.get_nth_page(aa)
+                    self.mained.mywin.set_focus(vcurr.vbox.area)
+                    return
 
         if not self.second:
             self.mained.oh.add(filename)

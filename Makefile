@@ -8,26 +8,28 @@
 #  OTHER DEALINGS IN THE SOFTWARE.
 #
 
-.PHONY:  doc doc3 clean prepimage
+.PHONY:  docs clean prepimage
 
 all:
-	@echo "Targets: doc setup pack prepimage -- Type 'make help' more targets"
+	@echo "Targets: docs setup pack prepimage -- Type 'make help' more targets"
 
 help:
 	@echo
 	@echo "Targets:"
-	@echo "	 make install      -- Install PyEdPro (unofficial structure)"
-	@echo "	 make setup        -- Run the setup.py script as install "
-	@echo "	 make pack         -- package PyEdPro "
-	@echo "	 make remove       -- remove (all) traces of pyedpro from the system"
-	@echo "	 make doc          -- create documentation"
-	@echo "	 make prepimage    -- create app image
+	@echo "	 make install      -- *Install PyEdPro (unofficial structure)"
+	@echo "	 make pipinstall   -- Run the pip setup.py script as install "
+	@echo "	 make pack         -- *package PyEdPro "
+	@echo "	 make remove       -- *remove (all) traces of pyedpro from the system"
+	@echo "	 make docs         -- *create documentation (see pyedpro dir)"
+	@echo "	 make prepimage    -- create app image"
+	@echo
+	@echo Targets marked with '*' are obsolete
 	@echo
 
-# OLD install; use setup.py
-
-setup:
-	@python3 ./setup.py install
+pipinstall:
+	cp README.md pyedpro
+	cd pyedpro; pip install .
+	rm pyedpro/README.md
 
 remove:
 	@python3 ./setup.py install --record files.txt
@@ -54,10 +56,8 @@ git: clean
 	git push
 #	git push local
 
-doc:
-	@PYTHONPATH=pedlib:pycommon pdoc --html --force -o doc pyedpro/pyedpro.py
-	@PYTHONPATH=pedlib:pycommon pdoc --html --force -o doc pyedpro/pedlib/pedwin.py
-	@#PYTHONPATH=pedlib:pycommon pdoc --html --force -o doc pyedpro/pedlib/peddoc.py
+docs:
+	@echo plese see docs gen in the pyedpro directory
 
 prepimage:
 	./prepimage.sh
