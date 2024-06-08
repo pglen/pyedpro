@@ -71,7 +71,7 @@ def genrandcircle(maxww, maxhh):
 
     ww = 40
     for aa in range(18):
-        ww = random.randint(30, maxww / 2)
+        ww = random.randint(30, maxww // 2)
         if ww &lt; xx and ww &lt; yy:
             break
 
@@ -106,7 +106,7 @@ class pgoline(Gtk.VBox):
         except:
             print(&#34;Cannot make notes data dir&#34;)
 
-        self.statbox = Gtk.Label(&#34; Idle&#34;)
+        self.statbox = Gtk.Label(label=&#34; Idle&#34;)
         self.statbox.set_xalign(0); self.statbox.set_yalign(0)
 
         #self.vbox = Gtk.VBox()
@@ -534,7 +534,7 @@ class notesql():
 
     ww = 40
     for aa in range(18):
-        ww = random.randint(30, maxww / 2)
+        ww = random.randint(30, maxww // 2)
         if ww &lt; xx and ww &lt; yy:
             break
 
@@ -1088,7 +1088,7 @@ sets through the use of explicit keyword arguments.</p></div>
         except:
             print(&#34;Cannot make notes data dir&#34;)
 
-        self.statbox = Gtk.Label(&#34; Idle&#34;)
+        self.statbox = Gtk.Label(label=&#34; Idle&#34;)
         self.statbox.set_xalign(0); self.statbox.set_yalign(0)
 
         #self.vbox = Gtk.VBox()

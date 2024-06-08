@@ -36,18 +36,24 @@ from pedlib import pedthread
 from pedlib import pedspell
 from pedlib import pedofd
 #from pedlib import pedplug
-#from pedlib import pedutil
+from pedlib import pedutil
+from pedlib import pedai
 
-#sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pyvguicom")
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
-from pycommon.pgbutt import *
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
+from pyvguicom.pgbutt import *
 
 # Into our name space
 from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
+
+__doc__ = '''
+    This module is responsible for creating the main window.
+
+'''
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
@@ -69,9 +75,10 @@ def add_page(page):
     notebook.set_tab_detachable(page, True)
 
 # ------------------------------------------------------------------------
-# FIFO for freq strings
 
 class itemhistory():
+
+    ''' FIFO for freq strings '''
 
     def __init__(self, fname):
 
@@ -129,9 +136,10 @@ class itemhistory():
         #print("Saved", openhist)
 
 # -----------------------------------------------------------------------
-# Create document
 
 class edPane(Gtk.VPaned):
+
+    '''  Create document '''
 
     def __init__(self, buff = [], focus = False):
 
@@ -154,9 +162,10 @@ class edPane(Gtk.VPaned):
         self.area2.second = True
 
 # -----------------------------------------------------------------------
-# Create main document widget with scroll bars
 
 class edwin(Gtk.VBox):
+
+    ''' Create main document widget with scroll bars '''
 
     def __init__(self, buff, readonly = False, second = False):
 
@@ -184,9 +193,10 @@ class edwin(Gtk.VBox):
         self.pack_end(self.area.hscroll, False, False, 0)
 
 # ------------------------------------------------------------------------
-#  Define Application Main Window claass
 
 class EdMainWindow():
+
+    '''  Define Application Main Window claass '''
 
     def __init__(self, fname, parent, names, orgdir):
 
@@ -458,6 +468,20 @@ class EdMainWindow():
                 pedutil.put_exception("func tab")
 
         try:
+            #pw = Gtk.Label("hello")
+            pw = pedai.pgAI()
+            notebook2.append_page(pw)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
+            self.notebook2.set_tab_label(ppp, self.make_label("_AI"))
+            pass
+        except:
+            print("Cannot load auxiliary AI tab.")
+            if pedconfig.conf.verbose:
+                print(sys.exc_info())
+                if pedconfig.conf.verbose:
+                    put_exception("load AI tab")
+
+        try:
             notebook2.append_page(pedcal.pgcal())
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label("Cal"))
@@ -503,7 +527,8 @@ class EdMainWindow():
             print("Cannot load auxiliary web tab.")
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
-                put_exception("web tab")
+                if pedconfig.conf.verbose:
+                    put_exception("load web tab")
 
         self.hpanepos = pedconfig.conf.sql.get_int("hpaned")
         if self.hpanepos == 0: self.hpanepos = 200
@@ -584,8 +609,8 @@ class EdMainWindow():
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
             if not head:
                 head =  "B_A%d" % (aa + 1)
-            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Action Button %d" % (aa+1), space=1)
-            butt.ord = 1; butt.id = aa;
+            butt = RCLButt(head, self.rcl, self.rcl2, space=0, ttip = "Action Button %d" % (aa+1))
+            butt.ord = 1; butt.id = aa ;
             self.buttarr.append(butt)
             #butt.connect("pressed", self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
@@ -603,7 +628,7 @@ class EdMainWindow():
             head = pedconfig.conf.sql.get("mac%d%d" % (2, aa))
             if not head:
                 head =  "B_B%d" % (aa + 1)
-            butt = RCLButt(head, self.rcl, self.rcl2, ttip = "Lower Action Button %d" % (aa+1), space=1)
+            butt = RCLButt(head, self.rcl, self.rcl2, space=0, ttip = "Lower Action Button %d" % (aa+1))
             butt.ord = 2; butt.id = aa;
             self.buttarr.append(butt)
             #butt.connect("pressed", self.buttB, aa + 1)
@@ -702,7 +727,7 @@ class EdMainWindow():
             pass
 
         if not self.mac:
-            GLib.timeout_add(500, initial_load, self, 0)
+            GLib.timeout_add(100, initial_load, self, 0)
             #initial_load(self, 0)
             pass
         else:
@@ -986,7 +1011,8 @@ class EdMainWindow():
 
     def make_label(self, strx):
         hbox = Gtk.HBox()
-        labx  = Gtk.Label(strx)
+        labx  = Gtk.Label.new_with_mnemonic(strx)
+        labx.set_mnemonic_widget(hbox)
         eb = Gtk.EventBox(); eb.add(labx)
         eb.connect_after("button-press-event", self.label_callb, strx)
         eb.set_above_child(True)
@@ -1122,12 +1148,13 @@ class EdMainWindow():
             self.mywin.set_focus(vcurr.vbox.area)
 
     # --------------------------------------------------------------------
-    # Call the document's key handler after some inspection
 
     def area_key(self, area, event):
 
+        ''' Call the document's key handler after some inspection '''
+
         #if pedconfig.conf.verbose:
-            #print("pedwin key", event.keyval, event.state)
+        #    print("pedwin key", event.keyval, event.state)
 
         if pedconfig.conf.keylog_on:
             if self.klfp:
@@ -1198,6 +1225,21 @@ class EdMainWindow():
             # alt
             if event.state == Gdk.ModifierType.MOD1_MASK:
                 #print("alt", event.keyval)
+
+                if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
+                    num = event.keyval - Gdk.KEY_1
+                    self.notebook.grab_focus()
+
+                    if pedconfig.conf.pgdebug > 5:
+                        print( "PedWin Keyhand Alt num", num)
+                    if num >  self.notebook.get_n_pages() - 1:
+                        self.update_statusbar("Invalid tab (page) index.")
+                    else:
+                        old = self.notebook.get_current_page()
+                        if old == num:
+                            self.update_statusbar("Already at page %d ..." % old)
+                        else:
+                            self.notebook.set_current_page(num)
 
                 # These are the menu accel keys; pass it to the system
                 #  -- really dislike the accel system; takes over too many things
@@ -1323,7 +1365,7 @@ class EdMainWindow():
         self.start_tree()
 
         # create the TreeView using treestore
-        tv = Gtk.TreeView(treestore)
+        tv = Gtk.TreeView(model=treestore)
 
         # create a CellRendererText to render the data
         cell = Gtk.CellRendererText()
@@ -1350,7 +1392,7 @@ class EdMainWindow():
         self.start_tree2()
 
         # create the TreeView using treestore
-        tv = Gtk.TreeView(treestore2)
+        tv = Gtk.TreeView(model=treestore2)
 
         # create a CellRendererText to render the data
         cell = Gtk.CellRendererText()
@@ -2484,7 +2526,7 @@ def  initial_load(self2, arg):
             cnt += 1
             add_page(vpaned)
             vpaned.area.set_tablabel()
-            usleep(50)
+            usleep(10)
 
         if cnt == 0:
             if pedconfig.conf.verbose:

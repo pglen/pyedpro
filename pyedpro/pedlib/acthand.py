@@ -1,33 +1,37 @@
 #!/usr/bin/env python
 
-# Action Handler for the editor. Extracted to a separate module for
-# easy update. These are the actions for pyedpro. You may define more
-# and attach a key handler to it in the tables of keyhand.py
+'''
+ Action Handler for the editor. Extracted to a separate module for
+ easy update. These are the actions for pyedpro. You may define more
+ and attach a key handler to it in the tables of keyhand.py
 
-# Notes:
-#
-# a.) Navigation may be blind, the doc class will contain the cursor
-#       within the document.
-#
-# b.) Some functions are sensitive to shift ctrl alt etc ...
-#       See the arrow key code [left()] how it is implemented to extend
-#       selection.
-#
-# c.) Anatomy of key handler function:
-#       shift pre - ctrl/alt handler - regular handler - shift post
-#       This way the nav keys can select in their original function
-#
-# d.) Token completion. Tokens are kept in a stack 10 deep. If half of the
-#       token is typed, the token complete will fill in the other half.
-#       This is a very desirable behavior when writing code, as it feeds the
-#       variable name to the text, essentially preventing var name mistype.
-#       Because token completion has a short stack, it has a large
-#       probability to fill in the var names from local scope.
-#       If token completion filled in an unwanted string, backpedal to the
-#       half point in the string and type as usual.
-#       If the completion behavior is not desired, disable the code marked
-#       "Token Completion"
-#
+ The function names hint to the key handled. (Half) of the documentation
+ can be deduced from the function names.
+
+ Notes:
+
+ a.) Navigation may be blind, the doc class will contain the cursor
+       within the document.
+
+ b.) Many functions are sensitive to shift ctrl alt etc ...
+       See the arrow key code [left()] how it is implemented to extend
+       selection.
+
+ c.) Anatomy of key handler function:
+       shift pre - ctrl/alt handler - regular handler - shift post
+       This way the nav keys can select in their original function
+
+ d.) Token completion. Tokens are kept in a stack 10 deep. If half of the
+       token is typed, the token complete will fill in the other half.
+       This is a very desirable behavior when writing code, as it feeds the
+       variable name to the text, essentially preventing var name mistype.
+       Because token completion has a short stack, it has a large
+       probability to fill in the var names from local scope.
+       If token completion filled in an unwanted string, backpedal to the
+       half point in the string and type as usual.
+       If the completion behavior is not desired, disable the code marked
+       'Token Completion'
+'''
 
 from __future__ import absolute_import
 from __future__ import print_function
@@ -44,9 +48,6 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
-
-#sys.path.append('..' + os.sep + "pycommon")
-#sys.path.append('..' + os.sep + ".." + os.sep + "pycommon")
 
 from pedlib import  pedconfig
 from pedlib import  pedofd
@@ -1407,6 +1408,7 @@ class ActHand:
             wlow = line[cntb:cnte].upper()
 
         self2.text[yidx] = line[:cntb] + wlow + line[cnte:]
+        self2.set_changed(True)
         self2.inval_line()
 
     def ctrl_w(self, self2):
@@ -1964,8 +1966,8 @@ class ActHand:
                 pedync.message("\n   This feature is Linux only   \n\n"
                                    "              ()")
             else:
-                sss = self._getsel(self2)
-                self2.mained.update_statusbar("Opening DEV (zeal) help file ...")
+                sss = "python:" + self._getsel(self2)
+                self2.mained.update_statusbar("Opening Zeal with '%s'" % sss)
                 try:
                     #print("sss", sss)
                     ret = subprocess.Popen(["zeal", sss,])
@@ -2301,7 +2303,8 @@ class ActHand:
                         #    xidx + lendiff, sel2.tabstop), yidx)
                         self2.set_caret(xidx + lendiff + 1, yidx)
 
-            ''' # See if token is complete
+            # See if token is complete (disabled by default)
+            '''
             if ccc == " ":
                 line = self2.text[yidx]
                 begs, ends = selword(line, xidx - 1)
@@ -2329,7 +2332,9 @@ class ActHand:
                     xstr =  "Autocompleted to "'"%s"'"" % aa
                     self2.mained.update_statusbar(xstr)'''
 
-            ''' # See if spell checking needed
+            '''
+
+            # See if spell checking needed
             if ccc == " ":
                 #err = pedspell.spell_line(line, 0, len(line))
                 #self2.ularr = []

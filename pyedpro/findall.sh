@@ -1,1 +1,1 @@
-find . -name "*.py" -exec grep -H $1 {} \;
+find . -name "*.py" -type f -exec grep -H $1 {} \;

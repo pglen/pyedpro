@@ -18,7 +18,7 @@ try:
     sys.path.append(np)
     #print(sys.path)
     #print(os.getcwd())
-    from pycommon.browsewin import *
+    from pyvguicom.browsewin import *
 except:
     print("Cannot Load browser window")
 
@@ -68,7 +68,7 @@ class MainWin(Gtk.Window):
 
         scrolled_window = Gtk.ScrolledWindow()
         try:
-            self.brow_win = brow_win()
+            self.brow_win = browserWin()
             #print("dir", dir(self.brow_win))
             #self.brow_win.load_uri("file://" + self.fname)
         except:

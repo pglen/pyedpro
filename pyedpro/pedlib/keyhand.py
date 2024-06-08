@@ -784,12 +784,13 @@ class KeyHand:
                 print( "alt hand", event)
 
             if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
-                if pedconfig.conf.pgdebug > 5:
+                if 1: #pedconfig.conf.pgdebug > 5:
                     print( "Keyhand Alt num", event.keyval - Gdk.KEY_1)
                 num = event.keyval - Gdk.KEY_1
                 if num >  self2.notebook.get_n_pages() - 1:
                     self2.mained.update_statusbar("Invalid tab (page) index.")
                 else:
+                    pedconfig.conf.pedwin.notebook.grab_focus()
                     old = self2.notebook.get_current_page()
                     if old == num:
                         self2.mained.update_statusbar("Already at page %d ..." % old)
@@ -797,7 +798,11 @@ class KeyHand:
                         self2.notebook.set_current_page(num)
 
             elif event.keyval == Gdk.KEY_0:
-                self2.appwin.mywin.set_focus(self2.appwin.treeview)
+                #self2.mywin.set_focus(self2.mywin.treeview)
+                #self2.mywin.set_focus(self2.notebook.treeview)
+                pedconfig.conf.pedwin.notebook2.grab_focus()
+                #self2.notebook.grab_focus()
+
             else:
                 self._handle_key(self2, area, event, self.alt_keytab)
 

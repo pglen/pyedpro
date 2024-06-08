@@ -18,9 +18,9 @@ from pedlib import pedconfig
 
 from pedlib.pedcanv import *
 
-#sys.path.append('..' + os.sep + "pycommon")
-from pycommon.pggui import *
-from pycommon.pgsimp import *
+#sys.path.append('..' + os.sep + "pyvguicom")
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
 
 random.seed()
 
@@ -43,7 +43,7 @@ def genrandcircle(maxww, maxhh):
 
     ww = 40
     for aa in range(18):
-        ww = random.randint(30, maxww / 2)
+        ww = random.randint(30, maxww // 2)
         if ww < xx and ww < yy:
             break
 
@@ -78,7 +78,7 @@ class pgoline(Gtk.VBox):
         except:
             print("Cannot make notes data dir")
 
-        self.statbox = Gtk.Label(" Idle")
+        self.statbox = Gtk.Label(label=" Idle")
         self.statbox.set_xalign(0); self.statbox.set_yalign(0)
 
         #self.vbox = Gtk.VBox()

@@ -32,10 +32,10 @@ from pedlib import pedfind
 from pedlib import pedweb
 from pedlib import peddlg
 
-#sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pyvguicom")
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
 
 # Into our name space
 from    pedlib.pedmenu import *

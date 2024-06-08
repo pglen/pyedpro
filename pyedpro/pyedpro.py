@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 __doc__ = \
-'''! \mainpage
-
+'''
 ## Welcome to PyEdPro.
 
 This is modern multi-platform editor. Simple, powerful,
@@ -18,18 +17,20 @@ subdirectory under the main file's direcory.
 
 (like 'cp -a * to_target')
 
- This project is a successor of pyedit, after porting it to GTK3. PyEdPro
- will run anywhere PyGObject can run.
+This project is a successor of pyedit, after porting it to GTK3.
+PyEdPro  will run anywhere PyGObject runs. This includes
+    Linux*; Windows (MSYS2); Mac;
 
-  Working and tested platforms currently are:
+  Working, and tested platforms currently are:
 
         Win 7 .. Win 10 ...
-        Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
+        Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x ... 24x
+                        (should run on any linux )
         Windows (Native) plus MSYS2, Mingw,
         Raspberry PI 3, Raspberry PI 4, ...
         Mac ** Some functions are disabled - in particular async processing
 
-  I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
+  I mainly run it on Ubuntu, and in Win / MSYS2, some Fedora, Windows 10,
 Windows 10 x64, and the Raspberry-Pi. It behaves consistently on all these
 platforms.
   It is an absolute joy to edit in a different platform without the learning
@@ -76,6 +77,7 @@ History:  (incomplete list, see git log for a more complete list)
     Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
     Tue 06.Sep.2022   Installation, anchor for search ...
     Thu 27.Oct.2022   Restored menu keymaps for the system to handle it.
+    Sun 05.May.2024   Import webView dummySun
 
  ASCII text editor, requires pyGtk. (pygobject)
  See pygtk-dependencies for easy install of dependencies.
@@ -110,8 +112,6 @@ sys.path.append(basedir + os.sep + "pycommon")
 sys.path.append(basedir + os.sep + "pedlib")
 #sys.path.append(basedir + os.sep + ".." + os.sep + "pycommon")
 
-#print("pyedpro path", sys.path)
-
 from pedlib import pedconfig
 from pedlib import pedync
 
@@ -145,8 +145,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.3.5"
-BUILDDATE   = "Wed 10.Apr.2024"
+VERSION     = "3.3.8"
+BUILDDATE   = "Sun 05.May.2024"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -184,6 +184,9 @@ class MainPyed(Gtk.Application):
             mainwin.opensess(self.projname)
 
 def cleanup(mw):
+
+    ''' On exit, remove marked files (mostly temporary files) '''
+
     #print("Cleanup", mw.cleanit)
     for aa in mw.cleanit:
         bb = os.path.join(pedconfig.conf.temp_dir, os.path.basename(aa))
@@ -240,9 +243,10 @@ def xhelp():
 
 # ------------------------------------------------------------------------
 
-#def terminate(arg1 = None, arg2 = None):
 def terminate():
+
     ''' Termination Handler'''
+
     if pedconfig.conf.verbose:
         print(_("Terminating pydepro.py, saving files to ~/pydepro"))
 
@@ -251,11 +255,12 @@ def terminate():
     #return signal.SIG_IGN
 
 # ------------------------------------------------------------------------
-# Start of program:
 
 def mainstart(name = "", args = "", oldpath = ""):
 
-    ''' Main Entry Point for the editor '''
+    ''' Start of program. This is the main Entry Point for the editor from
+        command line.
+    '''
 
     SHOW_TIMING = 0
     SHOW_CONFIG = 0
@@ -404,9 +409,14 @@ def mainstart(name = "", args = "", oldpath = ""):
 
     # Uncomment this for buffered output
     if pedconfig.conf.verbose:
-        print("Started", PROGNAME, "in",
-                    pedconfig.conf.orig_dir, "from",
-                        pedconfig.conf.orig_path)
+        print("Started:", PROGNAME, "in", pedconfig.conf.orig_dir)
+        print("From dir", pedconfig.conf.orig_path)
+
+    if pedconfig.conf.pgdebug > 2:
+        print("pyedpro sys path:")
+        for aa in sys.path:
+            print(aa)
+
     # Init plugins
     try:
         pedplug.load_plugins()
@@ -422,6 +432,8 @@ def mainstart(name = "", args = "", oldpath = ""):
 
 def mainfunc():
 
+    ''' Called from the command line scripts '''
+
     # Create log window
     sys.stdout = pedlog.fake_stdout(sys.stdout)
     sys.stderr = pedlog.fake_stdout(sys.stdout)
@@ -434,9 +446,10 @@ def mainfunc():
     #print("in main", sys.argv[0])
     mainstart("", [], "")
 
-# Setup needed it for scripts
-
 if __name__ == '__main__':
+
+    ''' Setup needed an entry point for scripts '''
+
     mainfunc()
 
 # EOF

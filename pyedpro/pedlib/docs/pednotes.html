@@ -258,7 +258,7 @@ class pgnotes(Gtk.VBox):
         # Did not happen automatically
         #print(&#34;pednotes __del__&#34;)
         self.savetext()
-        #self.core.__del__()
+        #del self.core
 
     def switched(self, pageto):
         #print(&#34;SW page signal web&#34;, pageto)
@@ -1200,7 +1200,7 @@ sets through the use of explicit keyword arguments.</p></div>
         # Did not happen automatically
         #print(&#34;pednotes __del__&#34;)
         self.savetext()
-        #self.core.__del__()
+        #del self.core
 
     def switched(self, pageto):
         #print(&#34;SW page signal web&#34;, pageto)

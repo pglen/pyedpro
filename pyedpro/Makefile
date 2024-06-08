@@ -14,7 +14,7 @@ clean:
 package:
 	pyinstaller pyedpro.spec --distpath ../../largefiles/pyedpro_packed
 
-PPP=PYTHONPATH=pedlib:./:../pycommon  python -W ignore::DeprecationWarning `which pdoc` --force --html
+PPP=PYTHONPATH=pedlib:./:../pycommon  python3 -W ignore::DeprecationWarning `which pdoc` --force --html
 
 docs:
 	@${PPP} -o pedlib/docs pyedpro.py
@@ -26,7 +26,6 @@ docs:
 	@${PPP} -o pedlib/docs pedlib/peddoc.py
 	@${PPP} -o pedlib/docs pedlib/pedtask.py
 	@${PPP} -o pedlib/docs pedlib/lexer.py
-	@${PPP} -o pedlib/docs pedlib/peddoc_diff.py
 	@${PPP} -o pedlib/docs pedlib/acthand.py
 	@${PPP} -o pedlib/docs pedlib/importer.py
 	@${PPP} -o pedlib/docs pedlib/keyhand.py
@@ -71,5 +70,10 @@ pipup:
 	./pip-upload.sh
 	@# Mke sure only one copy hangs around
 	rm README.md
+
+pipcycle:
+	pip uninstall pyedpro
+	make clean
+	pip install .
 
 # EOF

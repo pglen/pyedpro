@@ -19,10 +19,11 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
-from pycommon.pgbutt import *
-from pycommon.browsewin import *
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
+from pyvguicom.pgbutt import *
+from pyvguicom.pgsel import *
+from pyvguicom.browsewin import *
 
 try:
     # This will change once the pydbase is out of dev stage
@@ -80,7 +81,7 @@ class pgweb(Gtk.VBox):
         #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label("ccc"), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font="Mono 12")
+        self.lsel = LetterNumberSel(self.letterfilter, font="Mono 12")
         self.lsel.set_tooltip_text("Filter entries by letter / number")
         self.pack_start(self.lsel, 0, 0, 2)
 
@@ -196,14 +197,15 @@ class pgweb(Gtk.VBox):
         try:
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
-            self.brow_win = brow_win()
+            self.brow_win = browserWin()
             #self.brow_win = Gtk.Label("No WebView Available.")
             #print("dir", dir(self.brow_win))
             #self.brow_win.load_uri("file://" + self.fname)
             pass
         except:
             #self.brow_win = Gtk.Label("No WebView Available.")
-            put_exception("WebView load")
+            #put_exception("WebView load")
+            pass
 
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();

@@ -224,14 +224,15 @@ class pgweb(Gtk.VBox):
         try:
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
-            self.brow_win = brow_win()
+            self.brow_win = browserWin()
             #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
             #print(&#34;dir&#34;, dir(self.brow_win))
             #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
             pass
         except:
             #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
-            put_exception(&#34;WebView load&#34;)
+            #put_exception(&#34;WebView load&#34;)
+            pass
 
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();
@@ -1064,14 +1065,15 @@ sets through the use of explicit keyword arguments.</p></div>
         try:
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
-            self.brow_win = brow_win()
+            self.brow_win = browserWin()
             #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
             #print(&#34;dir&#34;, dir(self.brow_win))
             #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
             pass
         except:
             #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
-            put_exception(&#34;WebView load&#34;)
+            #put_exception(&#34;WebView load&#34;)
+            pass
 
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();

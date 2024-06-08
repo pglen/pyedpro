@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-    
+
 '''123456
 This is open source text editor. Written on python. The motivation for
 this project was to create a modern multi-platform editor. Simple,
@@ -11,7 +11,7 @@ subdirectory under the main file's direcory. Hello Keylog. 12345678
 from __future__ import absolute_import
 from __future__ import print_function
 
-import os
+import osx
 import sys
 import getopt
 import signal

@@ -41,6 +41,16 @@ from pedlib import  pedplug
 from pedlib.pedutil import *
 from pedlib.keywords import *
 
+__doc__ =  '''
+    This module is the heart of the editor. Maintains  buffer that is
+continually updated to the screen. With the help of sublsses, it draws text,
+undeline, squiggly, syntax coloring etc ... etc.
+
+  It also maintains and draws cursor, cursor shape ... etc. Loads Saves
+  files, file mata information, undo / redo information.
+
+'''
+
 (TARGET_ENTRY_TEXT, TARGET_ENTRY_PIXBUF) = range(2)
 (COLUMN_TEXT, COLUMN_PIXBUF) = range(2)
 DRAG_ACTION = Gdk.DragAction.COPY
@@ -86,11 +96,14 @@ CARCOLOR = "#4455dd"
 
 DRAGTRESH = 3                   # This many pixels for drag highlight
 
+
 # ------------------------------------------------------------------------
-# We create a custom class for display, as we want a text editor that
-# can take thousands of lines.
 
 class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask):
+
+    ''' We create a custom class for display, as we want a text editor that
+    can take thousands of lines.
+    '''
 
     def __init__(self, buff, mained, readonly = False):
 
@@ -312,8 +325,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.set_caret(self.xpos + xx // self.cxx, self.ypos + yy // self.cyy)
         widget.drag_get_data(context, context.list_targets()[-1], time)
 
-    # Insert text at current point
     def inserttext(self, xtext):
+
+        ''' Insert text at current point '''
 
         newtxt = xtext.split("\n") + []
         ycoord = self.ypos + self.caret[1]
@@ -343,8 +357,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         #self.set_maxlines(len(self.text), False)
         self.invalidate()
 
-    # Drag and drop here
     def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
+
+        ''' Drag and drop here '''
+
         #print("Received data:", data, data.get_data_type(), x, y, info)
         if info == TARGET_ENTRY_TEXT:
             if str(data.get_data_type()) == "text/plain":
@@ -389,8 +405,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         Gtk.drag_finish(drag_context, True, False, time)
 
-    # Customize your colors here
     def setcol(self):
+
+        ''' Customize your colors here '''
+
         ccc = pedconfig.conf.sql.get_str("fgcolor")
         if ccc == "":
             self.fgcolor  = pedcolor.str2float(FGCOLOR)
@@ -1007,9 +1025,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.invalidate()
 
     # --------------------------------------------------------------------
-    # Goto position, and place it to upper half / quarter
 
     def set_caret_middle(self, xx, yy, sel = None, quart = 2):
+
+        '''  Goto position, and place it to upper half / quarter '''
 
         xx = int(xx); yy = int(yy)
 
@@ -1035,13 +1054,15 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         return self.get_width() / self.cxx
 
     # --------------------------------------------------------------------
-    # Goto position, put caret (cursor) back to view, [vh]scrap
-    # distance from ends. This function was a difficult to write. :-{
-    # Note the trick with comparing old cursor pos for a hint on scroll
-    # direction.
-    # xx, yy - absolute position in the text buffer
 
     def set_caret(self, xx, yy, ignore = False):
+
+        ''' Goto position, put caret (cursor) back to view, [vh]scrap
+            distance from ends. This function was a difficult to write. :-{
+            Note the trick with comparing old cursor pos for a hint on scroll
+            direction.
+            xx, yy - absolute position in the text buffer
+        '''
 
         if self.caretshot:
             self.caretshot = False; return
@@ -1169,12 +1190,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if old != -1:
             self.invalidate()
 
-
-    # Return True if 'C' like file
-    # This is fooled by non extension items; not a big deal
-    # colors may get turned on ...
-
     def is_c_like(self):
+
+        ''' Return True if 'C' like file
+            This is fooled by non extension items; not a big deal
+            colors may get turned on ...
+        '''
         #print("c like", self.fname)
         for aa in c_like_exts:
             eee = self.fname[-(len(aa)):]
@@ -1182,7 +1203,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             if aa == eee:
                 #print("C Match", self.fname)
                 return True
-
         return False
 
     def walk_func(self):
@@ -1916,9 +1936,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         return rrr
 
     # --------------------------------------------------------------------
-    # Load file into this buffer, return False on failure
 
     def loadfile(self, filename, create = False, reload = True):
+
+        ''' Load file into this buffer, return False on failure '''
 
         if not self.second:
             if pedconfig.conf.verbose > 1:
@@ -2145,9 +2166,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             fc.run()
 
     # --------------------------------------------------------------------
-    # The actual savefile routine
 
     def writeout(self):
+
+        ''' The actual savefile routine '''
 
         if pedconfig.conf.verbose:
             print("Saving '"+ self.fname + "'")
@@ -2295,9 +2317,11 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         win.destroy()
 
     # --------------------------------------------------------------------
-    # Turn off coloring if not python / c / sh / perl / header(s)
 
     def set_nocol(self):
+
+        ''' Turn off coloring if not python / c / sh / perl / header(s) '''
+
         colflag = False
         ext = os.path.splitext(self.fname)[1].lower()
         for aa in pedconfig.conf.color_on:
@@ -2604,7 +2628,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 serr = str(errs)
                 idx = serr.find("line ")
                 if idx:
-                    #print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
+                    print("idx", idx, "line no", "'" + serr[idx + 5:] + "'")
                     self.gotoxy(10, atoi(serr[idx + 5:]) - 1)
 
                 print("Error on compile: '", serr, "'")
@@ -2693,11 +2717,12 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         os.remove(tempfile)
 
-
-# ------------------------------------------------------------------------
-# Run this on an idle callback so the user can work while this is going
+# ---------------------------------------------------------------------
 
 def run_async_time(win, arg):
+
+    '''  Run this on an idle callback so the user can work
+            while this is going '''
 
     global last_scanned
 
@@ -2885,8 +2910,10 @@ def keytime(self, arg):
             src_tab.area.ypos = self.ypos
             src_tab.area.set_caret(self.xpos + self.caret[0], zzz, True)
 
-# Do Tasks  when the system is idle
 def idle_callback(self, arg):
+
+    ''' Do Tasks  when the system is idle '''
+
     #print( "Idle callback", self.fname)
     GLib.source_remove(self.source_id)
     try:

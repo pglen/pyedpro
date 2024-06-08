@@ -96,7 +96,7 @@ class MainWin(Gtk.Window):
 
         scrolled_window = Gtk.ScrolledWindow()
         try:
-            self.brow_win = brow_win()
+            self.brow_win = browserWin()
             #print(&#34;dir&#34;, dir(self.brow_win))
             #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
         except:
@@ -218,7 +218,7 @@ new(type:Gtk.WindowType) -&gt; Gtk.Widget
 
         scrolled_window = Gtk.ScrolledWindow()
         try:
-            self.brow_win = brow_win()
+            self.brow_win = browserWin()
             #print(&#34;dir&#34;, dir(self.brow_win))
             #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
         except:

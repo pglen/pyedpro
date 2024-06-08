@@ -17,22 +17,22 @@ from gi.repository import GdkPixbuf
 
 def domod(mmm):
 
-    print mmm.__name__
+    print (mmm.__name__)
     cnt = 0
     cc = dir(mmm)
-    for ee in cc: 
-        print ee + ",", 
+    for ee in cc:
+        print( ee + ",", )
         #print ee
         if cnt % 4 == 3:
             print
         cnt = cnt + 1
-   
+
     print
     print
-    
+
     dd = mmm.__dict__.keys()
-    for aa in dd: 
-        print aa + ":"
+    for aa in dd:
+        print (aa + ":")
         #print  "-" * len(aa)
         try:
             #ddd = mmm.__dict__[aa].__dict__
@@ -40,26 +40,27 @@ def domod(mmm):
             cnt = 0
             for bb in ddd:
                 if  not bb.startswith("__"):
-                    print bb + ",",
+                    print (bb + ",",)
                 if cnt % 4 == 3:
                     print
                 cnt = cnt + 1
-                    
+
             print
             print
-            
+
         except:
-            print "exception occured"
+            print ("exception occured")
             pass
-    
+
 if __name__ == '__main__':
 
-    #domod(Gtk)
+    domod(Gtk)
     #domod(Gdk)
     #domod(GLib)
     #domod(Gio)
     #domod(Pango)
     #domod(GObject)
     #domod(GdkPixbuf)
-                                            
-#eof
+    pass
+
+# EOF

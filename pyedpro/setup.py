@@ -1,4 +1,4 @@
-import os, sys, shutil
+import os, sys
 import setuptools
 
 descx = '''PyEdPro is modern multi-platform editor. Simple, powerful,
@@ -14,16 +14,24 @@ rudimentary, comments and strings are spell checked. (Press F9 or Shit-F9) The c
 out for Python and  'C'. The spell checker is executed on live text. (while typing)
 '''
 
+doclist = []; droot = "pedlib/docs/"
+doclistx = os.listdir(droot)
+for aa in doclistx:
+    doclist.append("docs/" + aa)
+
 classx = [
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         ]
 
-includex = ["*", "pedlib/", "panglib", "pedlib/images",
-            "image.png", "pyedpro_ubuntu.png"]
+includex = [    "*", "panglib/", "pycommon/",
+                "pedlib/", "pedlib/images",
+                "image.png", "pyedpro_ubuntu.png"]
 
+#import shutil
 #shutil.copy("../README.md", "README.copy.md")
+
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 #os.remove("README.copy.md")
@@ -43,6 +51,8 @@ for aa in vvv.split("\n"):
 #print("loc_vers:", loc_vers)
 #sys.exit()
 
+deplist = ["pyvpacker", "pydbase", "pyvguicom"] ,
+
 setuptools.setup(
     name="pyedpro",
     version=loc_vers,
@@ -54,7 +64,6 @@ setuptools.setup(
     url="https://github.com/pglen/pyedpro",
     classifiers=classx,
     include_package_data=True,
-    package_data={ "pedlib": ["docs/*"], },
     packages=setuptools.find_packages(include=includex),
     scripts = ['pyedpro.py', 'pangview.py'],
 
@@ -67,14 +76,7 @@ setuptools.setup(
                     'panglib': 'panglib',
                    },
 
-    #package_py = {
-    #                '':
-    #                    ['pedlib/images/pyedpro.png',
-    #                     'pedlib/images/pyedpro_sub.png',
-    #                     'pedlib/images/pedicon.png', 'image.png',
-    #                     'pyedpro_ubuntu.png'
-    #                    ]
-    #                },
+    package_data={ "pedlib": doclist, },
 
     data_files =  [('/usr/share/icons/hicolor/96x96/apps/',
                         ['pedlib/images/pyedpro.png',
@@ -82,11 +84,11 @@ setuptools.setup(
                             'pedlib/images/pyedpro_sub.png' ]),
                             ('/usr/share/applications', ['pyedpro.desktop']),
                    ],
-
     python_requires='>=3',
-    install_requires=["pyvpacker", "pydbase" ],
+    install_requires=deplist,
     entry_points={
-        'console_scripts': [ "pyedpro=pyedpro:mainfunc",
+        'console_scripts': [
+            "pyedpro=pyedpro:mainfunc",
             "pangview=pangview:mainfunc",
             ],
     },

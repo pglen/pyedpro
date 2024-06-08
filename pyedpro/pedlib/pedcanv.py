@@ -29,8 +29,8 @@ from    pedlib.pedobjs import *
 from    pedlib.pedutil import *
 from    pedlib.pedofd import *
 
-#sys.path.append('..' + os.sep + "pycommon")
-from pycommon.pggui import *
+#sys.path.append('..' + os.sep + "pyvguicom")
+from pyvguicom.pggui import *
 
 canv_testmode = 0
 
@@ -73,9 +73,9 @@ class ToolBox(Gtk.VBox):
 
         vbox = Gtk.VBox()
 
-        self.labelm = Gtk.Label(" - ")
-        self.labelx = Gtk.Label(" x ")
-        self.toolt = Gtk.Label("Main Toolbox")
+        self.labelm = Gtk.Label(label=" - ")
+        self.labelx = Gtk.Label(label=" x ")
+        self.toolt = Gtk.Label(label="Main Toolbox")
 
         self.hboxt = Gtk.HBox()
         self.hboxt.pack_start(self.labelm, 0, 0, 0)

@@ -18,9 +18,9 @@ from gi.repository import GdkPixbuf
 from pedlib import pedconfig
 
 #sys.path.append('..')
-#sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pyvguicom")
 
-from pycommon.pggui import *
+from pyvguicom.pggui import *
 
 def ofd(fname = "", self2 = None):
 

@@ -17,10 +17,17 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 
-#sys.path.append('..' + os.sep + "pycommon")
+#sys.path.append('..' + os.sep + "pyvguicom")
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
+from pyvguicom import pgutils
+fff = os.path.dirname(pgutils.__file__)
+#print("fff", fff)
+sys.path.append(fff)
+
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
+from pyvguicom import pggui
+from pyvguicom import pgsel
 
 # ------------------------------------------------------------------------
 
@@ -45,8 +52,9 @@ class pgcal(Gtk.VBox):
         except:
             print("Cannot make calendar database")
 
+        sp = pggui.ySpacer()
         self.pack_start(xSpacer(), 0, 0, 0)
-        self.lsel = LetterNumberSel(self.letterfilter, font="Mono 12")
+        self.lsel = pgsel.LetterNumberSel(self.letterfilter, font="Mono 12")
         self.pack_start(self.lsel, 0, 0, 2)
 
         self.cal = Gtk.Calendar()
@@ -55,19 +63,19 @@ class pgcal(Gtk.VBox):
         self.cal.connect("day-selected", self.daysel)
         self.cal.connect("day-selected-double-click", self.dayseldouble)
 
-        self.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         self.pack_start(hbox, 0, 0, 0)
-        #self.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label=" "), 0, 0, 0)
 
         self.hbox2 = Gtk.HBox()
-        butt = Gtk.Button("Goto Today")
+        butt = Gtk.Button.new_with_mnemonic("Goto Today")
         butt.connect("pressed", self.today, self.cal)
 
-        self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox2.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         self.hbox2.pack_start(butt, 1, 1, 0)
-        self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox2.pack_start(Gtk.Label(label=" "), 0, 0, 0)
 
-        butt2 = Gtk.Button("Edit Selection")
+        butt2 = Gtk.Button.new_with_mnemonic("Edit Selection")
         butt2.connect("pressed", self.demand, self.cal)
         self.hbox2.pack_start(butt2, 1, 1, 0)
         self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
@@ -77,13 +85,13 @@ class pgcal(Gtk.VBox):
 
         self.hbox3 = Gtk.HBox()
         self.edit = Gtk.Entry()
-        self.hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
+        self.hbox3.pack_start(Gtk.Label(label=" Find: "), 0, 0, 0)
         self.hbox3.pack_start(self.edit, 1, 1, 0)
         butt2 = Gtk.Button("Find")
         butt2.connect("pressed", self.find)
-        self.hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         self.hbox3.pack_start(butt2, 0, 0, 0)
-        self.hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         self.pack_start(self.hbox3, 0, 0, 2)
 
         self.treeview2 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))

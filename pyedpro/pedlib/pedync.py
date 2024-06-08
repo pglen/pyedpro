@@ -110,15 +110,15 @@ def  about(self2):
 
     # GLib.pyglib_version
     vvv = gi.version_info
-    comm = "Python based easily configurable editor\n"\
-        "with time accounting module, spell "\
-        "check \n and macro recording.\n"\
+    comm = "Python based professional editor.\n"\
+        "Time accounting module, spell check,\n"\
+        "column select, macro recording and more ...\n"\
         "\nRunning PyGtk %d.%d.%d" % vvv +\
         "\non GTK %d.%d.%d\n" % gver +\
-        "\nRunning Python %s" % platform.python_version() +\
+        "\nRunning on Python %s" % platform.python_version() +\
         "\non %s %s\n" % (platform.system(), platform.release()) +\
-        "\nPyedPro Build Date: %s\n" % pedconfig.conf.build_date +\
-        "Exe Path:\n%s\n" % os.path.realpath(ddd)
+        "\nBuild Date: %s\n" % pedconfig.conf.build_date +\
+        "Script path:\n%s\n" % os.path.realpath(ddd)
 
     dialog.set_comments(comm);
     dialog.set_copyright(pedconfig.conf.progname + " Created by Peter Glen.\n"

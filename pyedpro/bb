@@ -1,0 +1,70 @@
+2024-05-04T10:15:04,513 Using pip 24.0 from /home/peterglen/.local/lib/python3.10/site-packages/pip (python 3.10)
+2024-05-04T10:15:04,527 Defaulting to user installation because normal site-packages is not writeable
+2024-05-04T10:15:04,825 Created temporary directory: /tmp/pip-build-tracker-hiv06_4c
+2024-05-04T10:15:04,825 Initialized build tracking at /tmp/pip-build-tracker-hiv06_4c
+2024-05-04T10:15:04,825 Created build tracker: /tmp/pip-build-tracker-hiv06_4c
+2024-05-04T10:15:04,826 Entered build tracker: /tmp/pip-build-tracker-hiv06_4c
+2024-05-04T10:15:04,826 Created temporary directory: /tmp/pip-install-bu5s6vbi
+2024-05-04T10:15:04,827 Created temporary directory: /tmp/pip-ephem-wheel-cache-7j4jf5dk
+2024-05-04T10:15:04,862 Processing /home/peterglen/pgpygtk/pyedpro/pyedpro
+2024-05-04T10:15:04,863   Added file:///home/peterglen/pgpygtk/pyedpro/pyedpro to build tracker '/tmp/pip-build-tracker-hiv06_4c'
+2024-05-04T10:15:04,864   Created temporary directory: /tmp/pip-build-env-vrjp3t0_
+2024-05-04T10:15:04,865   Running command pip subprocess to install build dependencies
+2024-05-04T10:15:05,242   Using pip 24.0 from /home/peterglen/.local/lib/python3.10/site-packages/pip (python 3.10)
+2024-05-04T10:15:05,552   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f30b7f27160>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/
+2024-05-04T10:15:06,055   WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f30b7f27460>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/
+2024-05-04T10:15:07,061   WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f30b7f27610>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/
+2024-05-04T10:15:09,068   WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f30b7f277c0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/
+2024-05-04T10:15:13,075   WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f30b7f27970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/
+2024-05-04T10:15:13,106   ERROR: Could not find a version that satisfies the requirement setuptools>=61 (from versions: none)
+2024-05-04T10:15:13,106   ERROR: No matching distribution found for setuptools>=61
+2024-05-04T10:15:13,269   ERROR: pip subprocess to install build dependencies exited with 1
+2024-05-04T10:15:13,276   [bold magenta]full command[/]: [blue]/usr/bin/python3 /home/peterglen/.local/lib/python3.10/site-packages/pip/__pip-runner__.py install --ignore-installed --no-user --prefix /tmp/pip-build-env-vrjp3t0_/overlay --no-warn-script-location -v --no-binary :none: --only-binary :none: -i https://pypi.org/simple -- 'setuptools>=61' wheel[/]
+2024-05-04T10:15:13,276   [bold magenta]cwd[/]: \[inherit]
+2024-05-04T10:15:13,277 ERROR: pip subprocess to install build dependencies exited with 1
+2024-05-04T10:15:13,279 Exception information:
+2024-05-04T10:15:13,279 Traceback (most recent call last):
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/cli/base_command.py", line 180, in exc_logging_wrapper
+2024-05-04T10:15:13,279     status = run_func(*args)
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/cli/req_command.py", line 245, in wrapper
+2024-05-04T10:15:13,279     return func(self, options, args)
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/commands/install.py", line 377, in run
+2024-05-04T10:15:13,279     requirement_set = resolver.resolve(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/resolver.py", line 76, in resolve
+2024-05-04T10:15:13,279     collected = self.factory.collect_root_requirements(root_reqs)
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 534, in collect_root_requirements
+2024-05-04T10:15:13,279     reqs = list(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 490, in _make_requirements_from_install_req
+2024-05-04T10:15:13,279     cand = self._make_base_candidate_from_link(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 228, in _make_base_candidate_from_link
+2024-05-04T10:15:13,279     self._link_candidate_cache[link] = LinkCandidate(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 290, in __init__
+2024-05-04T10:15:13,279     super().__init__(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 156, in __init__
+2024-05-04T10:15:13,279     self.dist = self._prepare()
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 222, in _prepare
+2024-05-04T10:15:13,279     dist = self._prepare_distribution()
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 301, in _prepare_distribution
+2024-05-04T10:15:13,279     return preparer.prepare_linked_requirement(self._ireq, parallel_builds=True)
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/operations/prepare.py", line 525, in prepare_linked_requirement
+2024-05-04T10:15:13,279     return self._prepare_linked_requirement(req, parallel_builds)
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/operations/prepare.py", line 640, in _prepare_linked_requirement
+2024-05-04T10:15:13,279     dist = _get_prepared_distribution(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/operations/prepare.py", line 71, in _get_prepared_distribution
+2024-05-04T10:15:13,279     abstract_dist.prepare_distribution_metadata(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/distributions/sdist.py", line 44, in prepare_distribution_metadata
+2024-05-04T10:15:13,279     self._prepare_build_backend(finder)
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/distributions/sdist.py", line 76, in _prepare_build_backend
+2024-05-04T10:15:13,279     self.req.build_env.install_requirements(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/build_env.py", line 217, in install_requirements
+2024-05-04T10:15:13,279     self._install_requirements(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/build_env.py", line 275, in _install_requirements
+2024-05-04T10:15:13,279     call_subprocess(
+2024-05-04T10:15:13,279   File "/home/peterglen/.local/lib/python3.10/site-packages/pip/_internal/utils/subprocess.py", line 224, in call_subprocess
+2024-05-04T10:15:13,279     raise error
+2024-05-04T10:15:13,279 pip._internal.exceptions.InstallationSubprocessError: pip subprocess to install build dependencies exited with 1
+2024-05-04T10:15:13,352 Remote version of pip: 24.0
+2024-05-04T10:15:13,353 Local version of pip:  24.0
+2024-05-04T10:15:13,354 Was pip installed by pip? True
+2024-05-04T10:15:13,354 Removed file:///home/peterglen/pgpygtk/pyedpro/pyedpro from build tracker '/tmp/pip-build-tracker-hiv06_4c'
+2024-05-04T10:15:13,355 Removed build tracker: '/tmp/pip-build-tracker-hiv06_4c'

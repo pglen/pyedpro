@@ -26,8 +26,8 @@ from    pedlib.pedutil import *
 from    pedlib.pedcolor import *
 from    pedlib.pedtdlg import *
 
-#sys.path.append('..' + os.sep + "pycommon")
-from pycommon.pggui import *
+#sys.path.append('..' + os.sep + "pyvguicom")
+from pyvguicom.pggui import *
 
 RECT = 1
 TEXT = 2
