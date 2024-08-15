@@ -604,8 +604,6 @@ class EdMainWindow():
         self.num_butts =  www // (1280 // 5)
         self.buttarr = []               # So later we can change labels
         self.newbox.pack_start(Gtk.Label(" "), 0, 0, 0)
-        #newscroll = Gtk.ScrolledWindow()
-        #newscroll.add(self.newbox)
         for aa in range(self.num_butts):
             #butt = Gtk.Button("FuncA %d " % (aa + 1))
             head = pedconfig.conf.sql.get("mac%d%d" % (1, aa))
@@ -617,13 +615,14 @@ class EdMainWindow():
             #butt.connect("pressed", self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
         self.newbox.pack_start(Gtk.Label(" "), 0, 0, 0)
-        #newscroll = Gtk.ScrolledWindow()
         combox = Gtk.VBox()
         combox.pack_start(self.newbox, 1, 1, 1)
-        #combox.pack_start(newscroll, 1, 1, 1)
-        #newscroll.add(combox)
-        #obox2.pack_start(newscroll, 0, 0, 0)
-        obox2.pack_start(combox, 1, 1, 0)
+        newscroll = Gtk.ScrolledWindow()
+        newscroll.set_overlay_scrolling(False)
+        newscroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+        newscroll.add_with_viewport(combox)
+        obox2.pack_start(newscroll, 1, 1, 0)
+        #obox2.pack_start(combox, 1, 1, 0)
 
         self.newbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
         for aa in range(self.num_butts):
