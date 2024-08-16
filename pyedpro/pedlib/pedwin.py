@@ -596,12 +596,13 @@ class EdMainWindow():
         obox.pack_start(self.tbar, 0, 0, 0)
         nbox.pack_start(obox, 0, 0, 0)
 
+        obox3 = Gtk.HBox()
         obox2 = Gtk.VBox()
         self.newbox = Gtk.HBox()
         self.newbox2 = Gtk.HBox()
 
         # This many buttons on screen
-        self.num_butts =  www // (1280 // 5)
+        self.num_butts =  www // (1280 // 6)
         self.buttarr = []               # So later we can change labels
         self.newbox.pack_start(Gtk.Label(" "), 0, 0, 0)
         for aa in range(self.num_butts):
@@ -622,7 +623,6 @@ class EdMainWindow():
         newscroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
         newscroll.add_with_viewport(combox)
         obox2.pack_start(newscroll, 1, 1, 0)
-        #obox2.pack_start(combox, 1, 1, 0)
 
         self.newbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
         for aa in range(self.num_butts):
@@ -638,7 +638,20 @@ class EdMainWindow():
         self.newbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
         combox.pack_start(self.newbox2, 1, 1, 1)
 
-        nbox.pack_start(obox2, 1, 1, 0)
+        leftb = Gtk.Button("<")
+        rightb = Gtk.Button(">")
+        #obox3.pack_start(leftb, 0,0,0)
+
+        oscroll = Gtk.ScrolledWindow()
+        adj =  Gtk.Adjustment()
+        oscroll.set_hadjustment(adj)
+        oscroll.get_hscrollbar().hide()
+        oscroll.add(obox2)
+        obox3.pack_start(oscroll, 1, 1, 0)
+        #obox3.pack_start(obox2, 1,1,0)
+
+        #obox3.pack_start(rightb, 0,0,0)
+        nbox.pack_start(obox3, 1, 1, 0)
         bbox.pack_start(nbox, 0, 0, 0)
         bbox.pack_start(self.hpaned3, 1, 1, 0)
 
