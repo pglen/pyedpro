@@ -76,6 +76,7 @@ it works. And no destructive errors.
 
     (this is extracted, use git log for up-to-date information)
 
+    Mon 30.Sep.2024 -- Right click menu simplified, Ver 3.4.0
     Sat 11.Feb.2023 -- Pyedpro Notes export / import and the new pydbase data base
     Thu 27.Oct.2022 -- Restored system menu processing (Alt-f [File Menu] and such)
     Sat 10.Sep.2022 -- the system shortcuts (ctrl-s ctrl-o) are re-done by hand
