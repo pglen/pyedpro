@@ -4,10 +4,15 @@ __pycache__/
 *$py.class
 *.pyc
 
-# Large file
+# Large dirs
+xml/
+html/
 pyedpro_packed/
-*.AppImage
+pyedpro.dist/
+pyedpro.build/
 
+# Large files
+*.AppImage
 
 # C extensions
 *.so

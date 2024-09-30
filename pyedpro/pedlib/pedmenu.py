@@ -35,7 +35,8 @@ mained = None
 
 def rclick_action(self, arg):
 
-    print ("rclick_action local", "'" + arg.name + "'")
+    if pedconfig.conf.verbose:
+        print ("rclick_action local", "'" + arg.name + "'")
 
     if arg.name == "<pydoc>/New":
         mained. newfile()
@@ -65,24 +66,16 @@ def rclick_quit(self, arg):
     print(__name__, arg.name)
     mained.activate_exit()
 
-rclick_menu = (
-	        ( _("_New \t"),           "<control>N",    rclick_action, 1, None ),
-            ( "",               None,               None, 2, "<Separator>" ),
-            ( _("_Rescan\t\t"),       "Right CTRL+R",          rclick_action, 25, None ),
-            ( _("_Find\t"),       "CTRL+F",          rclick_action, 26, None ),
-            ( _("Check Syntax"),     "Alt-Y",        rclick_action, 27, None ),
-            ( "",               None,               None, 2, "<Separator>" ),
-            ( _("_Open  \t\t"),          "<control>O",    rclick_action, 3, None ),
-            ( _("_Save   \t\t"),          "<control>S",    rclick_action, 4, None ),
-            ( _("Save_As \t\t"),        None,            rclick_action, 5, None ),
-            ( _("Toggle _RO"),     None,            rclick_action, 11, None ),
-            ( "",               None,               None, 6, "<Separator>" ),
-            ( _("_Copy \t"),          "<control>C",    rclick_action, 7, None ),
-            ( _("C_ut  \t"),           "<control>X",    rclick_action, 8, None ),
-            ( _("_Paste \t\t"),         "<control>V",    rclick_action, 9, None ),
-            ( "",               None,               None, 10, "<Separator>" ),
-            ( _("Terminal Here"), "Right CTRL+T",   rclick_action, 14, None ),
-            ( "",               None,               None, 10, "<Separator>" ),
+# Sat 28.Sep.2024 removed
+#( _("_New \t"),    "<control>N",    rclick_action, 1, None ),
+#( "",               None,               None, 2, "<Separator>" ),
+
+rclick_menu2 = (
+            ( _("Terminal Here"),  None,            rclick_action, 14, None ),
+            ( _("Exec current"),  None,             rclick_action, 17, None ),
+            )
+
+rclick_menu3 = (
             ( _("File Manager"), "Right CTRL+F",        rclick_action, 24, None ),
             ( _("Exec current"),  None,             rclick_action, 17, None ),
             ( _("Libre Office"), "Right CTRL+L", rclick_action, 18, None ),
@@ -92,16 +85,30 @@ rclick_menu = (
             ( _("In Browser"), None,           rclick_action, 21, None ),
             ( _("As HTML String"), None,       rclick_action, 23, None ),
             ( _("As HTML File"), None,         rclick_action, 22, None ),
-            ( "",               None,               None, 12, "<Separator>" ),
-            ( _("Read Selection"), None,            rclick_action, 16, None ),
-            ( "",               None,               None, 12, "<Separator>" ),
-            ( _("E_xit\t\t"),          "<alt>X",        rclick_quit, 13, None ),
             )
 
-rclick_menu2 = (
-            ( _("Terminal Here"),  None,            rclick_action, 14, None ),
-            ( _("Exec current"),  None,             rclick_action, 17, None ),
-            )
+rclick_menu = (
+    ( _("_Rescan\t\t"), "Right CTRL+R",   rclick_action, 25, None ),
+    ( _("_Find\t"),       "CTRL+F",          rclick_action, 26, None ),
+    ( _("Check Syntax"),     "Alt-Y",        rclick_action, 27, None ),
+    ( "",               None,               None, 2, "<Separator>" ),
+    ( _("_Open  \t\t"),          "<control>O",    rclick_action, 3, None ),
+    ( _("_Save   \t\t"),          "<control>S",    rclick_action, 4, None ),
+    ( _("Save_As \t\t"),        None,            rclick_action, 5, None ),
+    ( _("Toggle _RO"),     None,            rclick_action, 11, None ),
+    ( "",               None,               None, 6, "<Separator>" ),
+    ( _("_Copy \t"),          "<control>C",    rclick_action, 7, None ),
+    ( _("C_ut  \t"),           "<control>X",    rclick_action, 8, None ),
+    ( _("_Paste \t\t"),         "<control>V",    rclick_action, 9, None ),
+    ( "",               None,               None, 10, "<Separator>" ),
+    ( _("Terminal Here"), "Right CTRL+T",   rclick_action, 14, None ),
+    ( "",               None,               None, 10, "<Separator>" ),
+    ( _("File Actions"),  None,             rclick_action, 14, rclick_menu3 ),
+    ( "",               None,               None, 10, "<Separator>" ),
+    ( _("Read Selection"), None,            rclick_action, 16, None ),
+    ( "",               None,               None, 12, "<Separator>" ),
+    ( _("E_xit\t\t"),          "<alt>X",        rclick_quit, 13, None ),
+    )
 
 def create_action_group(self):
     # GtkActionEntry

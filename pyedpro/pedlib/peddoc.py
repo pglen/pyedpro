@@ -1703,12 +1703,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if self.nomenu: return
 
         #print ("Making rclick")
-        self.build_menu(self, pedmenu.rclick_menu)
+        menu = self.build_menu(self, pedmenu.rclick_menu)
+        menu.show_all()
+
         if event:
-            self.menu.popup(None, None, None, None, event.button, event.time)
+            menu.popup(None, None, None, None, event.button, event.time)
         else:
             event = Gdk.EventButton()
-            self.menu.popup(None, None, None, None, event.button, event.time)
+            menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response2(self, widget, stringx, arg):
         #print( "menuitem response2 '%s'" % stringx)
@@ -1746,9 +1748,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         dialog.connect ("response", lambda d, r: d.destroy())
         dialog.show()
 
-    def rclick_action(self, action, sss, ttt):
+    def rclick_action_doc(self, action, sss, ttt):
 
-        print( "rclick_action", sss, ttt)
+        if pedconfig.conf.verbose:
+            print( "rclick_action_doc", sss, ttt)
 
         if ttt == 1:
             self.mained.newfile()
@@ -1801,7 +1804,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             #print("Alt-Y")
             self.check_syntax()
         else:
-            print("peddoc: Invalid menu item selected")
+            print("peddoc: Invalid menu item selected", ttt)
 
     def rescan(self):
         global last_scanned
@@ -1827,29 +1830,42 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         action_group.add_actions(entries)
         return action_group
 
+    def _fill(self, aa,  bb):
+        ttt = str(bb).replace("<control>", "CTRL+")
+        ttt = str(ttt).replace("<alt>",     "ALT+")
+        ttt = str(ttt).replace("<shift>",   "SHIFT+")
+        fff = " " * (15 - len(aa))
+        sss = aa + "%s\t%s" % (fff, ttt)
+        return sss
+
     def build_menu(self, window, items):
 
-        self.menu =  Gtk.Menu()
+        menu =  Gtk.Menu()
         for aa, bb, cc, dd, ee  in items:
             #print ("menu item", aa)
-            if ee:
+            if ee == "<Separator>":
                 menu_item = Gtk.MenuItem.new_with_mnemonic(
                             "----------------------------")
                 menu_item.set_sensitive(False)
                 menu_item.set_size_request(-1, 10)
                 pass
-            else:
-                ttt = str(bb).replace("<control>", "CTRL+")
-                ttt = str(ttt).replace("<alt>",     "ALT+")
-                ttt = str(ttt).replace("<shift>",   "SHIFT+")
-                fff = " " * (15 - len(aa))
-                sss = aa + "%s\t%s" % (fff, ttt)
+            elif type(ee) == type(()):
+                self.submenu =  Gtk.Menu()
+                for aaa, bbb, ccc, ddd, eee  in ee:
+                    #print ("sub menu item", aaa)
+                    sss = self._fill(aaa, bbb)
+                    menu_subitem = Gtk.MenuItem.new_with_mnemonic(sss)
+                    menu_subitem.connect("activate", self.rclick_action_doc, aaa, ddd )
+                    self.submenu.append(menu_subitem)
+                sss = self._fill(aa, bb)
                 menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
-                menu_item.connect("activate", self.rclick_action, aa, dd )
-
-            self.menu.append(menu_item)
-        self.menu.show_all()
-        return self.menu
+                menu_item.set_submenu(self.submenu)
+            else:
+                sss = self._fill(aa, bb)
+                menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
+                menu_item.connect("activate", self.rclick_action_doc, aa, dd )
+            menu.append(menu_item)
+        return menu
 
     def get_size(self):
         rect = self.get_allocation()
