@@ -13,6 +13,7 @@ pyedpro.build/
 
 # Large files
 *.AppImage
+pyedpro.bin
 
 # C extensions
 *.so
