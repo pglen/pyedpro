@@ -683,6 +683,7 @@ class ActHand(acthand2.ActHand2):
     def rctrl_f(self, self2):
         if pedconfig.conf.pgdebug > 4:
              print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.update_statusbar("Starting Thunar ...")
         self2.start_external(["thunar", "."],
                                         ["explorer", ""])
     def rctrl_h(self, self2):
@@ -714,7 +715,6 @@ class ActHand(acthand2.ActHand2):
         self2.set_caret(xidx, yidx)
         self2.mained.update_statusbar("Selection HTML comment added.")
         self2.invalidate()
-
 
     def rctrl_i(self, self2):
         if pedconfig.conf.pgdebug > 4:
@@ -749,6 +749,7 @@ class ActHand(acthand2.ActHand2):
     def rctrl_l(self, self2):
         if pedconfig.conf.pgdebug > 4:
              print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.update_statusbar("Starting Libre Office ...")
         self2.start_external(["libreoffice", "--writer"],
                                         ["libreoffice", "--writer"])
     def rctrl_r(self, self2):
@@ -759,6 +760,7 @@ class ActHand(acthand2.ActHand2):
     def rctrl_t(self, self2):
         if pedconfig.conf.pgdebug > 4:
              print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.update_statusbar("Starting terminal ...")
         self2.mained.start_term()
 
     def rctrl_w(self, self2):
