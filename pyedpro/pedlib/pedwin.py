@@ -324,6 +324,11 @@ class EdMainWindow():
         merge_id = self.merge.new_merge_id()
         self.add_mru(self.merge, merge_id, self.acg)
 
+        # Keybinder
+        #actions = self.acg.list_actions()
+        #for aa in actions:
+        #    print(aa.get_name(), )
+
         self.mbar = self.merge.get_widget("/MenuBar")
         self.mbar.show()
 
@@ -1713,10 +1718,11 @@ class EdMainWindow():
     def open(self):
 
         #warnings.simplefilter("ignore")
-        but =   "Cancel", Gtk.ButtonsType.CANCEL,\
-         "Open File", Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog(title="Open file", transient_for=self.mywin, \
-             action=Gtk.FileChooserAction.OPEN, buttons=but)
+                        action=Gtk.FileChooserAction.OPEN)
+
+        but =   "Cancel", Gtk.ButtonsType.CANCEL, "Open File", Gtk.ButtonsType.OK
+        fc.add_buttons(*but)
         #warnings.simplefilter("default")
 
         filters = []
@@ -1780,6 +1786,7 @@ class EdMainWindow():
         #dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
         #    Gtk.MESSAGE_INFO, Gtk.BUTTONS_CLOSE,
         #    'Action: "%s" of type "%s"' % (action.get_name(), type(action)))
+
         # Close dialog on user response
         #dialog.connect ("response", lambda d, r: d.destroy())
         #dialog.show()

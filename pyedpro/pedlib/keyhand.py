@@ -143,29 +143,29 @@ class KeyHand:
             [Gdk.KEY_b, self.acth.ctrl_b],
             [Gdk.KEY_B, self.acth.ctrl_b],
             [Gdk.KEY_c, self.acth.ctrl_c],
-            [Gdk.KEY_D, self.acth.ctrl_d],
-            [Gdk.KEY_d, self.acth.ctrl_d],
             [Gdk.KEY_C, self.acth.ctrl_c],
+            [Gdk.KEY_d, self.acth.ctrl_d],
+            [Gdk.KEY_D, self.acth.ctrl_d],
             [Gdk.KEY_e, self.acth.ctrl_e],
             [Gdk.KEY_E, self.acth.ctrl_e],
             [Gdk.KEY_f, self.acth.ctrl_f],
             [Gdk.KEY_F, self.acth.ctrl_f],
+            [Gdk.KEY_g, self.acth.ctrl_g],
+            [Gdk.KEY_G, self.acth.ctrl_g],
             [Gdk.KEY_h, self.acth.ctrl_h],
             [Gdk.KEY_H, self.acth.ctrl_h],
             [Gdk.KEY_i, self.acth.ctrl_i],
             [Gdk.KEY_I, self.acth.ctrl_i],
             [Gdk.KEY_j, self.acth.ctrl_j],
             [Gdk.KEY_J, self.acth.ctrl_j],
-            [Gdk.KEY_g, self.acth.ctrl_g],
-            [Gdk.KEY_G, self.acth.ctrl_g],
             [Gdk.KEY_k, self.acth.ctrl_k],
             [Gdk.KEY_K, self.acth.ctrl_k],
             [Gdk.KEY_l, self.acth.ctrl_l],
             [Gdk.KEY_L, self.acth.ctrl_l],
             [Gdk.KEY_m, self.acth.ctrl_m],
             [Gdk.KEY_M, self.acth.ctrl_m],
-            [Gdk.KEY_N, self.acth.ctrl_n],
             [Gdk.KEY_n, self.acth.ctrl_n],
+            [Gdk.KEY_N, self.acth.ctrl_n],
             [Gdk.KEY_o, self.acth.ctrl_o],
             [Gdk.KEY_O, self.acth.ctrl_o],
             [Gdk.KEY_p, self.acth.ctrl_p],
@@ -174,6 +174,8 @@ class KeyHand:
             [Gdk.KEY_Q, self.acth.ctrl_q],
             [Gdk.KEY_r, self.acth.ctrl_r],
             [Gdk.KEY_R, self.acth.ctrl_r],
+            [Gdk.KEY_s, self.acth.ctrl_s],
+            [Gdk.KEY_S, self.acth.ctrl_s],
             [Gdk.KEY_t, self.acth.ctrl_t],
             [Gdk.KEY_T, self.acth.ctrl_t],
             [Gdk.KEY_u, self.acth.ctrl_u],
@@ -349,10 +351,18 @@ class KeyHand:
             [Gdk.KEY_G, self.acth.ctrl_alt_g],
             [Gdk.KEY_h, self.acth.ctrl_alt_h],
             [Gdk.KEY_H, self.acth.ctrl_alt_h],
+            [Gdk.KEY_i, self.acth.ctrl_alt_i],
+            [Gdk.KEY_I, self.acth.ctrl_alt_i],
             [Gdk.KEY_j, self.acth.ctrl_alt_j],
             [Gdk.KEY_J, self.acth.ctrl_alt_j],
             [Gdk.KEY_k, self.acth.ctrl_alt_k],
             [Gdk.KEY_K, self.acth.ctrl_alt_k],
+            [Gdk.KEY_l, self.acth.ctrl_alt_l],
+            [Gdk.KEY_L, self.acth.ctrl_alt_l],
+            [Gdk.KEY_m, self.acth.ctrl_alt_m],
+            [Gdk.KEY_M, self.acth.ctrl_alt_m],
+            [Gdk.KEY_n, self.acth.ctrl_alt_n],
+            [Gdk.KEY_N, self.acth.ctrl_alt_n],
             [Gdk.KEY_t, self.acth.ctrl_alt_t],
             [Gdk.KEY_T, self.acth.ctrl_alt_t],
 
@@ -403,6 +413,8 @@ class KeyHand:
             [Gdk.KEY_C, self.acth.alt_c],
             [Gdk.KEY_d, self.acth.alt_d],
             [Gdk.KEY_D, self.acth.alt_d],
+            [Gdk.KEY_e, self.acth.alt_e],
+            [Gdk.KEY_E, self.acth.alt_e],
             [Gdk.KEY_f, self.acth.alt_f],
             [Gdk.KEY_F, self.acth.alt_f],
             [Gdk.KEY_g, self.acth.alt_g],
@@ -415,12 +427,34 @@ class KeyHand:
             [Gdk.KEY_K, self.acth.alt_k],
             [Gdk.KEY_l, self.acth.alt_l],
             [Gdk.KEY_L, self.acth.alt_l],
+            [Gdk.KEY_m, self.acth.alt_m],
+            [Gdk.KEY_M, self.acth.alt_m],
+            [Gdk.KEY_n, self.acth.alt_n],
+            [Gdk.KEY_N, self.acth.alt_n],
             [Gdk.KEY_o, self.acth.alt_o],
             [Gdk.KEY_O, self.acth.alt_o],
+            [Gdk.KEY_p, self.acth.alt_p],
+            [Gdk.KEY_P, self.acth.alt_p],
             [Gdk.KEY_q, self.acth.alt_q],
             [Gdk.KEY_Q, self.acth.alt_q],
-            [Gdk.KEY_y, self.acth.alt_y],
+            [Gdk.KEY_r, self.acth.alt_r],
+            [Gdk.KEY_R, self.acth.alt_r],
+            [Gdk.KEY_s, self.acth.alt_s],
+            [Gdk.KEY_S, self.acth.alt_s],
+            [Gdk.KEY_t, self.acth.alt_t],
+            [Gdk.KEY_T, self.acth.alt_t],
+            [Gdk.KEY_u, self.acth.alt_u],
+            [Gdk.KEY_U, self.acth.alt_u],
+            [Gdk.KEY_v, self.acth.alt_v],
+            [Gdk.KEY_V, self.acth.alt_v],
+            [Gdk.KEY_w, self.acth.alt_w],
+            [Gdk.KEY_W, self.acth.alt_w],
+            [Gdk.KEY_x, self.acth.alt_x],
+            [Gdk.KEY_X, self.acth.alt_x],
             [Gdk.KEY_Y, self.acth.alt_y],
+            [Gdk.KEY_z, self.acth.alt_z],
+            [Gdk.KEY_Z, self.acth.alt_z],
+
             [Gdk.KEY_p, self.acth.f5],
             [Gdk.KEY_P, self.acth.f5],
             [Gdk.KEY_n, self.acth.f6],
@@ -435,15 +469,10 @@ class KeyHand:
             [Gdk.KEY_U, self.acth.ctrl_z],
             [Gdk.KEY_v, self.acth.alt_v],
             [Gdk.KEY_V, self.acth.alt_v],
-            [Gdk.KEY_w, self.acth.alt_w],
-            [Gdk.KEY_W, self.acth.alt_w],
-            [Gdk.KEY_x, self.acth.alt_x],
-            [Gdk.KEY_X, self.acth.alt_x],
-            [Gdk.KEY_z, self.acth.alt_z],
-            [Gdk.KEY_Z, self.acth.alt_z],
             #[Gdk.KEY_bracketleft, self.acth.ctrl_u],
             #[Gdk.KEY_bracketright, self.acth.ctrl_alt_l],
             ]
+
 
     # When we get focus, we start out with no modifier keys
     def reset(self):
@@ -459,7 +488,6 @@ class KeyHand:
     def handle_key(self, self2, area, event):
 
         #print ("KEY:",   event.keyval  )
-
         # Ramp up debug level
         if pedconfig.conf.pgdebug > 6:
              print( "key val ",  event.keyval, "key name", event.string)
@@ -467,9 +495,9 @@ class KeyHand:
             print( "key event",  event.type)
         if pedconfig.conf.pgdebug > 8:
             print( "key state",  event.state)
-
         if pedconfig.conf.show_keys:
-            print ("KEY:", event.keyval, hex(event.keyval), event.string, event.type)
+            print ("Key: '%s'" % event.string,
+                      "%d (0x%x)" % (event.keyval, event.keyval), "type:", int(event.type))
             if pedconfig.conf.verbose:
                 print ("KEYSTR:", event.state, event.string)
         try:

@@ -147,27 +147,4 @@ ui_info = \
     <toolitem action='Help'/>   '''
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# EOF

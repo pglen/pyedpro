@@ -569,38 +569,39 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         #print ("focus_in_cb", self.fname)
         self.focus = True
         try:
-            os.chdir(os.path.dirname(self.fname))
-            xstat = os.stat(self.fname)
-            if not self.readonly:
-                #print(self.fname, "stat", self.stat.st_mtime, "xstat", xstat.st_mtime)
-                if self.stat.st_mtime !=  xstat.st_mtime:
-                    rrr = pedync.yes_no_cancel("File changed outside PyEdPro",
-                        "'%s'\n" \
-                        "changed outside PyEdPro." \
-                        "Reload?" % self.fname, False)
-                    if rrr == Gtk.ResponseType.YES:
-                        if pedconfig.conf.verbose:
-                           print("Reloading", self.fname)
-                        self.savebackup()
-                        self.saveparms()
+            if os.path.isfile(self.fname):
+                os.chdir(os.path.dirname(self.fname))
+                xstat = os.stat(self.fname)
+                if not self.readonly:
+                    #print(self.fname, "stat", self.stat.st_mtime, "xstat", xstat.st_mtime)
+                    if self.stat.st_mtime !=  xstat.st_mtime:
+                        rrr = pedync.yes_no_cancel("File changed outside PyEdPro",
+                            "'%s'\n" \
+                            "changed outside PyEdPro." \
+                            "Reload?" % self.fname, False)
+                        if rrr == Gtk.ResponseType.YES:
+                            if pedconfig.conf.verbose:
+                               print("Reloading", self.fname)
+                            self.savebackup()
+                            self.saveparms()
 
-                        # Is it already loaded? ... close
-                        #nn = self.notebook.get_n_pages()
-                        #fname2 = os.path.realpath(self.fname)
-                        #for aa in range(nn):
-                        #    vcurr = self.notebook.get_nth_page(aa)
-                        #    if vcurr.area.fname == fname2:
-                        #        if pedconfig.conf.verbose:
-                        #            print("Closing '"+ fname2 + "'")
-                        #        #vcurr.area.closedoc(noprompt = True)
-                        #        #self.mained.close_document(self)
+                            # Is it already loaded? ... close
+                            #nn = self.notebook.get_n_pages()
+                            #fname2 = os.path.realpath(self.fname)
+                            #for aa in range(nn):
+                            #    vcurr = self.notebook.get_nth_page(aa)
+                            #    if vcurr.area.fname == fname2:
+                            #        if pedconfig.conf.verbose:
+                            #            print("Closing '"+ fname2 + "'")
+                            #        #vcurr.area.closedoc(noprompt = True)
+                            #        #self.mained.close_document(self)
 
-                        #usleep(100)
-                        self.loadfile(self.fname, reload = True)
-                        self.loadparms()
+                            #usleep(100)
+                            self.loadfile(self.fname, reload = True)
+                            self.loadparms()
 
-            # Update stat info
-            self.stat = xstat
+                # Update stat info
+                self.stat = xstat
         except:
             put_exception("cmp mtime")
             pass
@@ -1740,7 +1741,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.run_keytime()
         #self.mained.threads.submit_job(keytime, self, None)
 
-    def activate_action(self, action):
+    def doc_activate_action(self, action):
+
+        print("doc_activate_action")
+
         dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
             Gtk.ButtonsType.INFO, Gtk.ButtonsType.CLOSE,
             'You activated action: "%s" of type "%s"' % (action.get_name(), type(action)))
