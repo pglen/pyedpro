@@ -29,8 +29,6 @@ def find(self, self2, replace = False):
 
     self.reptxt = ""
 
-    warnings.simplefilter("ignore")
-
     entry = Gtk.Entry();
     xll = len(strhist)
     if xll:
@@ -43,12 +41,10 @@ def find(self, self2, replace = False):
     else:
         head = "pyedpro: Find in text"
 
-    dialog = Gtk.Dialog(head,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    butts = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+    dialog = Gtk.Dialog(title=head, modal=True)
+    dialog.add_buttons(*butts)
 
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.mywin)
@@ -63,10 +59,10 @@ def find(self, self2, replace = False):
     self.dialog = dialog
 
     # Spacers
-    label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ")
-    label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ")
-    label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ")
-    label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ")
+    label1 = Gtk.Label(label="   ");  label2 = Gtk.Label(label="   ")
+    label3 = Gtk.Label(label="   ");  label4 = Gtk.Label(label="   ")
+    label5 = Gtk.Label(label="   ");  label6 = Gtk.Label(label="   ")
+    label7 = Gtk.Label(label="   ");  label8 = Gtk.Label(label="   ")
 
     dialog.entry = entry
     entry.set_activates_default(True)
@@ -102,8 +98,8 @@ def find(self, self2, replace = False):
     hbox2.pack_start(entry, True, True, 0)
     hbox2.pack_start(label7, 0, 0, 0)
 
-    dialog.vbox.pack_start(Gtk.Label("Alt_Left / Alt_Right -> History Left/Right"), 0, 0 , 4)
-    dialog.vbox.pack_start(Gtk.Label("Alt_1->C_Func Alt_2->Py_Def Alt_3->Asm_Lab Alt_4->Def"), 0, 0, 4)
+    dialog.vbox.pack_start(Gtk.Label(label="Alt_Left / Alt_Right -> History Left/Right"), 0, 0 , 4)
+    dialog.vbox.pack_start(Gtk.Label(label="Alt_1->C_Func Alt_2->Py_Def Alt_3->Asm_Lab Alt_4->Def"), 0, 0, 4)
 
     dialog.vbox.pack_start(hbox2, 0, 0, 0)
     dialog.checkbox = Gtk.CheckButton.new_with_mnemonic("Use _regular expression")
@@ -121,9 +117,9 @@ def find(self, self2, replace = False):
     dialog.vbox.pack_start(hbox, 0, 0, 0)
     dialog.vbox.pack_start(label8, 0, 0, 0)
 
-    label30 = Gtk.Label("   ");  label31 = Gtk.Label("   ")
-    label32 = Gtk.Label("   ");  label33 = Gtk.Label("   ")
-    #label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ")
+    label30 = Gtk.Label(label="   ");  label31 = Gtk.Label(label="   ")
+    label32 = Gtk.Label(label="   ");  label33 = Gtk.Label(label="   ")
+    #label34 = Gtk.Label(label="   ");  label35 = Gtk.Label(label="   ")
 
     dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic("Search _All Buffers")
     dialog.checkbox4 = Gtk.CheckButton.new_with_mnemonic("Search _Files")
@@ -149,8 +145,8 @@ def find(self, self2, replace = False):
     if replace:
         dialog.repl = Gtk.Entry();  dialog.repl.set_text(self2.oldrep)
         dialog.repl.set_activates_default(True)
-        label10 = Gtk.Label("   ");  label11 = Gtk.Label("   ")
-        label12 = Gtk.Label("   ");  label13 = Gtk.Label("   ")
+        label10 = Gtk.Label(label="   ");  label11 = Gtk.Label(label="   ")
+        label12 = Gtk.Label(label="   ");  label13 = Gtk.Label(label="   ")
         hbox3 = Gtk.HBox()
         hbox3.pack_start(label10, 0, 0, 0)
         hbox3.pack_start(dialog.repl, True, True, 0)
@@ -174,8 +170,6 @@ def find(self, self2, replace = False):
         strhist.append(self.srctxt)
 
     #print("post", strhist)
-
-    warnings.simplefilter("default")
     dialog.destroy()
 
     if response != Gtk.ResponseType.ACCEPT:
@@ -296,7 +290,7 @@ def find_show(self, self2):
 
     #print "find_show", "'" + self.srctxt + "'" + self2.fname
 
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
     self.regex = None
 
     if self.srctxt == "":
@@ -370,7 +364,7 @@ def find_show(self, self2):
     win2.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
 
     hbox4 = Gtk.HBox()
-    hbox4.pack_start(Gtk.Label("   "), 1, 0, 0)
+    hbox4.pack_start(Gtk.Label(label="   "), 1, 0, 0)
 
     if self.dialog.replace:
         butt2 = Gtk.Button.new_with_mnemonic(" Change _One ")
@@ -391,13 +385,13 @@ def find_show(self, self2):
         #butt4.connect("clicked", cp_all, self, self2, win2)
         hbox4.pack_start(butt2, 0, 0, 2)
 
-    hbox4.pack_start(Gtk.Label("   "), 1, 0, 2)
+    hbox4.pack_start(Gtk.Label(label="   "), 1, 0, 2)
 
-    #vbox.pack_start(Gtk.Label("   "), 0, 0, 0)
+    #vbox.pack_start(Gtk.Label(label="   "), 0, 0, 0)
     vbox.pack_start(hbox4, 0, 0, 4)
-    #vbox.pack_start( Gtk.Label("   "), 0, 0, 0)
+    #vbox.pack_start( Gtk.Label(label="   "), 0, 0, 0)
 
-    #lab4a = Gtk.Label(" Alt-C to copy all  ");
+    #lab4a = Gtk.Label(label=" Alt-C to copy all  ");
     #vbox.pack_start(lab4a, 0, 0, 0)
 
     #self.tree.connect("row-activated",  tree_sel, self, self2)
@@ -457,7 +451,7 @@ def find_show_file(self, self2, dialog):
     recurse = dialog.checkbox5.get_active()
 
     matchfiles = []
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
     self.regex = None
 
     if self.srctxt == "":
@@ -532,12 +526,12 @@ def find_show_file(self, self2, dialog):
     win2.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
 
     hbox = Gtk.HBox()
-    lab4 = Gtk.Label("  ");
+    lab4 = Gtk.Label(label="  ");
     hbox.pack_start(lab4, 1,0,0)
     butt = Gtk.Button("Load All Matched Files")
     butt.connect("clicked", loadfiles, win2.tree)
     hbox.pack_start(butt, 0,0,0)
-    lab4a = Gtk.Label("  ");
+    lab4a = Gtk.Label(label="  ");
     hbox.pack_start(lab4a, 1,0,0)
     vbox.pack_start(hbox, 0, 0, 4)
 

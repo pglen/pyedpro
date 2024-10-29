@@ -21,20 +21,17 @@ from pedlib import pedconfig
 
 def yes_no_cancel(title, message, cancel = True):
 
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
 
-    dialog = Gtk.Dialog(title,
-                   None,
-                   Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
-
+    dialog = Gtk.Dialog(title = title,  modal = True)
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
     dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 
     sp = "     "
-    label = Gtk.Label(message);
-    label2 = Gtk.Label(sp);      label3 = Gtk.Label(sp)
-    label2a = Gtk.Label(sp);     label3a = Gtk.Label(sp)
+    label = Gtk.Label(label=message);
+    label2 = Gtk.Label(label=sp);      label3 = Gtk.Label(label=sp)
+    label2a = Gtk.Label(label=sp);     label3a = Gtk.Label(label=sp)
 
     hbox = Gtk.HBox() ;
 
@@ -54,7 +51,7 @@ def yes_no_cancel(title, message, cancel = True):
 
     dialog.connect("key-press-event", yn_key, cancel)
     #dialog.connect("key-release-event", yn_key, cancel)
-    warnings.simplefilter("default")
+    #warnings.simplefilter("default")
 
     dialog.show_all()
     response = dialog.run()

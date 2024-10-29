@@ -45,12 +45,9 @@ def  _keypress(area, event):
 
 def  config_dlg(title, head, clip, parent = None):
 
-    dialog = Gtk.Dialog(title,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog = Gtk.Dialog(title=title, Modal=True)
+    dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                            Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
 
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     #dialog.set_transient_for(self2.mained.mywin)

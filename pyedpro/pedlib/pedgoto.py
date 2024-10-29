@@ -17,14 +17,15 @@ from pedlib import pedconfig
 
 def gotodlg(self2):
 
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
 
-    dialog = Gtk.Dialog("pyedpro: Goto Line",
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #Gtk.DialogFlags.MODAL |  Gtk.DialogFlags.DESTROY_WITH_PARENT,
+
+    dialog = Gtk.Dialog(title="pyedpro: Goto Line", modal=True)
+
+    dialog.add_buttons( Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                         Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.mywin)
     dialog.self2 = self2
@@ -106,7 +107,7 @@ def gotodlg(self2):
             self2.gotoxy(self2.xpos + self2.caret[0], num -1)
             self2.mained.update_statusbar("Done goto line %d" % num)
 
-    warnings.simplefilter("default")
+    #warnings.simplefilter("default")
 
 def  area_key(dialog, event):
     #print(keypress)

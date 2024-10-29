@@ -17,6 +17,11 @@ from pedlib import  pedtts
 from pedlib import  pedmisc
 from pedlib import  pedbuffs
 
+from pedlib.keywords import *
+from pedlib.pedutil import *
+from pedlib.pedgoto import *
+from pedlib.pedcanv import *
+
 class ActHand2():
 
     def ctrl_alt_num(self, self2):

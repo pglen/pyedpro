@@ -119,7 +119,11 @@ def colsel(ev, title):
         #print "col", col.get_current_color()
         ev.color =  col2float( col.get_current_color())
         #print "ev.color", ev.color
+
+        warnings.simplefilter("ignore")
         ev.modify_bg(Gtk.StateFlags.NORMAL, col.get_current_color())
+        warnings.simplefilter("default")
+
     csd.destroy()
     return ev.color
 
@@ -212,19 +216,20 @@ def colordlg(self, self2):
 
     #print("Start colordlg")
 
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
 
     head = "pyedro: colors"
     ev_arr = []
     #printcols(self2)
-    dialog = Gtk.Dialog(head,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #flags = Gtk.DialogFlags.MODAL | \
+    #               Gtk.DialogFlags.DESTROY_WITH_PARENT)
 
-    warnings.simplefilter("default")
+    dialog = Gtk.Dialog(title=head, modal=True)
+
+    dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+
+    #warnings.simplefilter("default")
 
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.mywin)

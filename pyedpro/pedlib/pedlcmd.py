@@ -16,22 +16,19 @@ from pedlib import pedconfig
 
 def cmddlg(self2):
 
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
 
-    dialog = Gtk.Dialog("pyedpro: lastCommand",
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog = Gtk.Dialog(title="pyedpro: lastCommand", modal=True)
+    dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                            Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.mywin)
 
     # Spacers
-    label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ")
-    label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ")
-    label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ")
-    label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ")
+    label1 = Gtk.Label(label="   ");  label2 = Gtk.Label(label="   ")
+    label3 = Gtk.Label(label="   ");  label4 = Gtk.Label(label="   ")
+    label5 = Gtk.Label(label="   ");  label6 = Gtk.Label(label="   ")
+    label7 = Gtk.Label(label="   ");  label8 = Gtk.Label(label="   ")
 
     #warnings.simplefilter("ignore")
     entry = Gtk.Entry();

@@ -13,14 +13,15 @@ from pedlib import pedconfig
 
 def textdlg(oldtext = "", parent = None):
 
-    warnings.simplefilter("ignore")
+    #warnings.simplefilter("ignore")
 
-    dialog = Gtk.Dialog("pyedpro: Get text",
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #print("textdlg()", oldtext)
+
+    #Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+
+    dialog = Gtk.Dialog(title="pyedpro: Get text", modal = True)
+    dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                            Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
 
     if parent:
@@ -64,7 +65,7 @@ def textdlg(oldtext = "", parent = None):
     response = dialog.run()
     gotxt = entry.get_text()
     dialog.destroy()
-    warnings.simplefilter("default")
+    #warnings.simplefilter("default")
 
     #if response != Gtk.ResponseType.ACCEPT:
     #    gotxt = ""

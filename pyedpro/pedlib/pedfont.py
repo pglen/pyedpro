@@ -25,12 +25,10 @@ def selfont(self, self2):
 
     head = "pyedpro: Set Editor Main Font"
 
-    dialog = Gtk.Dialog(head,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    dialog = Gtk.Dialog(title = head, modal = True)
+
+    dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                            Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.mywin)
 

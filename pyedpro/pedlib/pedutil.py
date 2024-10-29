@@ -1299,14 +1299,14 @@ class OpenFname():
         self.fc_code = 0
         self.fname = ""
 
-        warnings.simplefilter("ignore")
+        #warnings.simplefilter("ignore")
         but =   "Cancel", Gtk.ButtonsType.CANCEL,\
          "Open File", Gtk.ButtonsType.OK
         self.fc = Gtk.FileChooserDialog("Open file", mywin, \
              Gtk.FileChooserAction.OPEN  \
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
-        warnings.simplefilter("default")
+        #warnings.simplefilter("default")
 
         if filters:
             for aa in filters:

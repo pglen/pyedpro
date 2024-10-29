@@ -611,12 +611,13 @@ class Canvas(Gtk.DrawingArea):
     def menu_action2(self, item, num):
 
         if num == 2:
-            print("Getting text")
+            #print("Getting text")
             bb = None
             for aa in self.coll:
                     if aa.selected:
                         bb = aa
             if bb:
+                #print("Getting text", bb)
                 response, txt = textdlg(bb.text, self.get_toplevel())
                 if response == Gtk.ResponseType.ACCEPT:
                     #print("Got text", txt)
