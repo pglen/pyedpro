@@ -45,14 +45,15 @@ from pedlib import pedconfig
 
 def gotodlg(self2):
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
 
-    dialog = Gtk.Dialog(&#34;pyedpro: Goto Line&#34;,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #Gtk.DialogFlags.MODAL |  Gtk.DialogFlags.DESTROY_WITH_PARENT,
+
+    dialog = Gtk.Dialog(title=&#34;pyedpro: Goto Line&#34;, modal=True)
+
+    dialog.add_buttons( Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                         Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.mywin)
     dialog.self2 = self2
@@ -134,7 +135,7 @@ def gotodlg(self2):
             self2.gotoxy(self2.xpos + self2.caret[0], num -1)
             self2.mained.update_statusbar(&#34;Done goto line %d&#34; % num)
 
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
 def  area_key(dialog, event):
     #print(keypress)
@@ -269,14 +270,15 @@ def  area_key(dialog, event):
 </summary>
 <pre><code class="python">def gotodlg(self2):
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
 
-    dialog = Gtk.Dialog(&#34;pyedpro: Goto Line&#34;,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #Gtk.DialogFlags.MODAL |  Gtk.DialogFlags.DESTROY_WITH_PARENT,
+
+    dialog = Gtk.Dialog(title=&#34;pyedpro: Goto Line&#34;, modal=True)
+
+    dialog.add_buttons( Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                         Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
     dialog.set_transient_for(self2.mained.mywin)
     dialog.self2 = self2
@@ -358,7 +360,7 @@ def  area_key(dialog, event):
             self2.gotoxy(self2.xpos + self2.caret[0], num -1)
             self2.mained.update_statusbar(&#34;Done goto line %d&#34; % num)
 
-    warnings.simplefilter(&#34;default&#34;)</code></pre>
+    #warnings.simplefilter(&#34;default&#34;)</code></pre>
 </details>
 </dd>
 </dl>

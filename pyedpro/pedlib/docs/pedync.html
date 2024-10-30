@@ -49,20 +49,17 @@ from pedlib import pedconfig
 
 def yes_no_cancel(title, message, cancel = True):
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
 
-    dialog = Gtk.Dialog(title,
-                   None,
-                   Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
-
+    dialog = Gtk.Dialog(title = title,  modal = True)
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
     dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 
     sp = &#34;     &#34;
-    label = Gtk.Label(message);
-    label2 = Gtk.Label(sp);      label3 = Gtk.Label(sp)
-    label2a = Gtk.Label(sp);     label3a = Gtk.Label(sp)
+    label = Gtk.Label(label=message);
+    label2 = Gtk.Label(label=sp);      label3 = Gtk.Label(label=sp)
+    label2a = Gtk.Label(label=sp);     label3a = Gtk.Label(label=sp)
 
     hbox = Gtk.HBox() ;
 
@@ -82,7 +79,7 @@ def yes_no_cancel(title, message, cancel = True):
 
     dialog.connect(&#34;key-press-event&#34;, yn_key, cancel)
     #dialog.connect(&#34;key-release-event&#34;, yn_key, cancel)
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     dialog.show_all()
     response = dialog.run()
@@ -355,20 +352,17 @@ def message(strx, title = None, parent = None):
 </summary>
 <pre><code class="python">def yes_no_cancel(title, message, cancel = True):
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
 
-    dialog = Gtk.Dialog(title,
-                   None,
-                   Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT)
-
+    dialog = Gtk.Dialog(title = title,  modal = True)
     dialog.set_default_response(Gtk.ResponseType.YES)
     dialog.set_position(Gtk.WindowPosition.CENTER)
     dialog.set_transient_for(pedconfig.conf.pedwin.mywin)
 
     sp = &#34;     &#34;
-    label = Gtk.Label(message);
-    label2 = Gtk.Label(sp);      label3 = Gtk.Label(sp)
-    label2a = Gtk.Label(sp);     label3a = Gtk.Label(sp)
+    label = Gtk.Label(label=message);
+    label2 = Gtk.Label(label=sp);      label3 = Gtk.Label(label=sp)
+    label2a = Gtk.Label(label=sp);     label3a = Gtk.Label(label=sp)
 
     hbox = Gtk.HBox() ;
 
@@ -388,7 +382,7 @@ def message(strx, title = None, parent = None):
 
     dialog.connect(&#34;key-press-event&#34;, yn_key, cancel)
     #dialog.connect(&#34;key-release-event&#34;, yn_key, cancel)
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     dialog.show_all()
     response = dialog.run()

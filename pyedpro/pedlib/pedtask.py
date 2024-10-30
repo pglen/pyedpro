@@ -35,7 +35,8 @@ from pedlib.keywords import *
 
 class pedtask():
     def __init__(self):
-        print("Pedtask started", pedtask)
+        #print("Pedtask started", pedtask)
+        pass
 
     # Pass in two lists, one for linux and one for windows
     def start_external(self, linprog, winprog):
@@ -65,9 +66,11 @@ class pedtask():
 
         old = os.getcwd()
         fdir = os.path.dirname(os.path.realpath(__file__))
-        #print("fdir:", fdir)
+        if pedconfig.conf.verbose:
+            print("fdir:", fdir)
         mydir = os.path.dirname(os.path.join(fdir, "../"))
-        print("mydir:", mydir)
+        if pedconfig.conf.verbose:
+            print("mydir:", mydir)
         os.chdir(mydir)
         myscript = os.path.realpath(os.path.join(mydir, 'pyedpro.py'))
         mysh = os.path.realpath(os.path.join(fdir, 'run.sh'))
@@ -126,7 +129,7 @@ class pedtask():
             pedync.message("\n   Cannot launch new editor instance \n\n")
 
         # Back to original dir
-        print("Back to original thread.", old)
+        #print("Back to original thread.", old)
         #print("env", os.environ)
         #os.chdir(os.path.dirname(old))
 

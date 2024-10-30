@@ -103,9 +103,6 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 
-#sys.path.append(&#39;..&#39; + os.sep + &#34;pycommon&#34;)
-#sys.path.append(&#39;..&#39; + os.sep + &#34;..&#34; + os.sep + &#34;pycommon&#34;)
-
 from pedlib import  pedconfig
 from pedlib import  pedofd
 from pedlib import  pedync
@@ -128,12 +125,14 @@ from pedlib.pedcanv import *
 lastcmd = &#34;&#34;
 rostr = &#34;This buffer is read only.&#34;
 
+import acthand2
+
 # ------------------------------------------------------------------------
 # Action handler. Called from key handler.
 # There is a function for most every key. Have at it.
 # Function name hints to key / . like up() is key up, and the action
 
-class ActHand:
+class ActHand(acthand2.ActHand2):
 
     def __init__(self):
         self.was_home = 0
@@ -178,7 +177,7 @@ class ActHand:
     # -----------------------------------------------------------------------
 
     def ctrl_tab(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;ctrl_tab&#34;)
 
         if self2.shift:
@@ -550,6 +549,8 @@ class ActHand:
 
     def home(self, self2):
 
+        #print(&#34;Home&#34;)
+
         xidx = self2.caret[0] + self2.xpos
         yidx = self2.caret[1] + self2.ypos
         if self2.shift:
@@ -560,7 +561,7 @@ class ActHand:
                 self2.ysel = yidx
         if self2.alt:
             #print (&#34;alt-home&#34;)
-            #self2.mained.firstwin()
+            self2.mained.firstwin()
             pass
         elif self2.ctrl:
             self2.set_caret(0, 0)
@@ -615,7 +616,7 @@ class ActHand:
 
         if self2.alt:
             #print (&#34;alt-end&#34;)
-            #self2.mained.lastwin()
+            self2.mained.lastwin()
             pass
         elif self2.ctrl:
             self.bottom(self2)
@@ -672,13 +673,13 @@ class ActHand:
 
         self2.mained.update_statusbar(&#34;Esc&#34;)
         self2.clearsel()
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;ESC&#34;)
 
         #print (pedync.yes_no_cancel(&#34;Escape&#34;, &#34;This is a question&#34; ))
 
     def ins(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;INS&#34;)
 
         xidx = self2.caret[0] + self2.xpos;
@@ -687,7 +688,7 @@ class ActHand:
         self2.set_caret(xidx, yidx)
 
     def ctrl_num_clip(self, self2, num):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- &#34;, num)
 
         self2.mained.update_statusbar(&#34;Switched to clipboard %d.&#34; % num)
@@ -700,7 +701,7 @@ class ActHand:
 
     def ctrl_num(self, self2):
         kkk = self2.curr_event.keyval - Gdk.KEY_0
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- num, key=&#34;, kkk)
 
         # Process clip 9 -- sum it all
@@ -715,382 +716,11 @@ class ActHand:
     # --------------------------------------------------------------------
     # Not many ctrl - alt handlers yet (may conflict with Gnome/OS shortcuts)
 
-    # Cleanse non ascii
-    def ctrl_alt_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - A&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        line = self2.text[yidx]
-        #print(&#34;line: (&#34;, line))
-        newline = &#34;&#34;
-        for aa in line:
-            #print(&#34;%d&#34; (% ord(aa)),)
-            if ord(aa) &lt; 128:
-                newline += aa
-
-        if line != newline:
-            self2.text[yidx] = newline
-            self2.mained.update_statusbar(&#34;Cleaned non ASCII characters.&#34;)
-            self2.invalidate()
-        pass
-
-    def ctrl_alt_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - B&#34;)
-
-        #line = &#34;&#34;; xidx = 0; yidx = 0
-        # No selection, assume word
-        if self2.xsel == -1 or self2.ysel == -1:
-            xidx = self2.caret[0] + self2.xpos
-            yidx = self2.caret[1] + self2.ypos
-            line = self2.text[yidx]
-            #cntb, cnte = selword(line, xidx)
-            cntb, cnte = selasci2(line, xidx, &#34;_-&#34;)
-        else:
-            # Normalize
-            xssel = min(self2.xsel, self2.xsel2)
-            xesel = max(self2.xsel, self2.xsel2)
-            yssel = min(self2.ysel, self2.ysel2)
-            yesel = max(self2.ysel, self2.ysel2)
-
-            xidx = xssel; yidx = yssel;
-            line = self2.text[yidx]
-            cntb = xssel; cnte = xesel
-
-        if cnte == cntb:
-            self2.mained.update_statusbar(&#34;Please nav to a word first.&#34;)
-            return
-
-        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, line))
-        #print (&#34;word / selection&#34;, line[cntb:cnte])
-
-        wlow = line[cntb].upper()
-
-        self2.text[yidx] = line[:cntb] + wlow + line[cntb+1:]
-        self2.inval_line()
-
-    #// Comment out code: TODO
-    def ctrl_alt_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - C&#34;)
-
-        extx = os.path.splitext(self2.fname)[1]
-        #print(&#34;extx&#34;, extx)
-
-        cumm = self._getsel(self2)
-        strx = &#34;&#34;; strx2 = &#34;&#34;
-        if cumm:
-            self.ctrl_c(self2)
-            # This will catch all known varieties, else .py assumed
-            if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-                strx  = &#34;#if 0\n&#34;
-                strx2 = &#34;#endif\n&#34;
-            elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-                strx  = &#34;%if 0\n&#34;
-                strx2 = &#34;%endif\n&#34;
-            elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-                #print(&#34;html comment&#34;)
-                strx  = &#34;&lt;!-- &#34;
-                strx2 = &#34; --&gt;&#34;
-            else:
-                strx  = &#34;&#39;&#39;&#39; &#34;
-                strx2 = &#34;&#39;&#39;&#39; &#34;
-
-            self.add_str(self2, strx)
-            self.ctrl_v(self2)
-            if strx2:
-                self.add_str(self2, strx2)
-
-        else:
-            if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-                strx  = &#34;//&#34;
-            elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-                strx  = &#34;;&#34;
-            elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-                strx  = &#34;&lt;!-- &#34; ; strx2 = &#34;--&gt;&#34;
-                # Trailer attached to end of line
-                xidx2 = self2.caret[0] + self2.xpos;
-                yidx2 = self2.caret[1] + self2.ypos
-                xlen = len(self2.text[yidx2])
-                self2.set_caret(xlen, yidx2)
-                self.add_str(self2, strx2)
-                self2.set_caret(xidx2, yidx2)
-            else:
-                strx  = &#34;#&#34;
-
-            self.add_str(self2, strx)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        xidx -= len(strx); yidx += 1
-        self2.set_caret(xidx, yidx)
-        self2.mained.update_statusbar(&#34;Selection commented out.&#34;)
-        self2.invalidate()
-
-    def ctrl_alt_num(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - NUM&#34;, self2.lastkey)
-
-    #// Start termnal
-    def ctrl_alt_d(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - D&#34;)
-        self2.mained.start_term()
-
-    def ctrl_alt_e(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - E&#34;)
-        pedmisc.exec_test(self2, &#34;kb&#34;)
-
-    def ctrl_alt_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - F&#34;)
-
-        self2.mained.update_statusbar(&#34;Filling to column.&#34;)
-        # Fill till column
-        if  self2.shift:
-            #self2.mained.update_statusbar(&#34;C-A-S &#39;F&#39; Key pressed.&#34;)
-            self2.mained.update_statusbar(&#34;Promt for fill to column&#34;)
-            ttt = prompt_for_text(self2, &#34;Enter column to fill to&#34;, str(self2.text_fillcol))
-            if ttt:
-                self2.text_fillcol = int(ttt);
-        else:
-            xidx = self2.caret[0] + self2.xpos;
-            #print(&#34;Filling from&#34;, xidx, &#34;to&#34;, self2.text_fillcol)
-            if xidx &lt; self2.text_fillcol:
-                for aa in range(self2.text_fillcol - xidx):
-                    event = Gdk.EventKey()
-                    event.string  = &#34; &#34;
-                    event.keyval = ord(&#34; &#34;)
-                    self.add_key(self2, event)
-            else:
-                self2.mained.update_statusbar(&#34;Past filling point already.&#34;)
-
-    def ctrl_alt_g(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - G&#34;)
-        self2.mained.update_statusbar(&#34;Execute cycle&#34;)
-        if  self2.shift:
-            pass
-        self2.mained.doall(None)
-
-    def ctrl_alt_t(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - T&#34;)
-        self2.start_term()
-
-    def ctrl_alt_h(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - H&#34;)
-        #pedfind.find(self, self2, True)
-        self2.find(self, True)
-
-    def ctrl_alt_j(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - J&#34;)
-        self2.coloring(not self2.colflag)
-        if self2.colflag: strx = &#34;on&#34;
-        else: strx = &#34;off&#34;
-        self2.mained.update_statusbar(&#34;Coloring is %s.&#34; % strx)
-
-    def ctrl_alt_k(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - K&#34;)
-        self2.hexview(not self2.hex)
-
-    def ctrl_alt_r(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - R&#34;)
-        #print(&#34;Read file on tts &#34;);
-        try:
-            if not self2.tts:
-                self2.tts = pedtts.tts(self2.mained.update_statusbar)
-
-            self2.tts.read_tts(self2)
-        except:
-            print(&#34;No TTS&#34;, sys.exc_info())
-            self2.mained.update_statusbar(&#34;No TTS installed&#34;)
-
-    # // Deactivate comment TODO
-    def ctrl_alt_v(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - V &#34;)
-
-        #self2.mained.saveall()
-        extx = os.path.splitext(self2.fname)[1]
-        #print(&#34;extx&#34;, extx)
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        try:
-            chh = self2.text[yidx][xidx]
-            #print(&#34;chh&#34;, chh)
-        except:
-            chh = 0
-
-        # This will catch all known varieties, else .py assumed
-        if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-            if chh == &#34;/&#34;:
-                self.delete(self2)
-                self.delete(self2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on &#39;c&#39; comment.&#34;)
-
-        elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-            if chh == &#34;;&#34;:
-                self.delete(self2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on &#39;asm&#39; comment.&#34;)
-
-        elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-            #print(&#34;html comment strx  = &lt;!-- --&gt;&#34;;
-            if chh == &#34;&lt;&#34;:
-                self.delete(self2)
-                self.delete(self2)
-                self.delete(self2)
-                self.delete(self2)
-                xidx2 = self2.caret[0] + self2.xpos;
-                yidx2 = self2.caret[1] + self2.ypos
-                #self.end(self2)
-                xlen = len(self2.text[yidx2])
-                self2.set_caret(xlen, yidx2)
-                self.bs(self2)
-                self.bs(self2)
-                self.bs(self2)
-                self2.set_caret(xidx2, yidx2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on comment character.&#34;)
-
-        else:
-            # Default comment
-            if chh == &#34;#&#34;:
-                self.delete(self2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on comment character.&#34;)
-
-        # Goto next line
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.set_caret(xidx, yidx + 1)
-
-        #self.down(self2)
-
-    # --------------------------------------------------------------------
-    # Right CTRL
-
-    # Catch all
-    def rctrl_all(self, self2):
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;RCTRL -- Captured str=&#34;, self2.curr_event.string,
-                                            &#34;keyval=&#34;, self2.curr_event.keyval)
-
-    def rctrl_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.activate_notetab()
-
-    def rctrl_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.activate_caltab()
-
-    def rctrl_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.start_external([&#34;thunar&#34;, &#34;.&#34;],
-                                        [&#34;explorer&#34;, &#34;&#34;])
-    def rctrl_h(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        #print(&#34;Add html comment&#34;)
-
-        cumm = self._getsel(self2)
-        strx  = &#34;&lt;!-- &#34;; strx2 = &#34; --&gt;&#34;
-        if cumm:
-            self.ctrl_c(self2)
-            self.add_str(self2, strx)
-            self.ctrl_v(self2)
-            if strx2:
-                self.add_str(self2, strx2)
-        else:
-            # Trailer attached to end of line
-            xidx2 = self2.caret[0] + self2.xpos;
-            yidx2 = self2.caret[1] + self2.ypos
-            xlen = len(self2.text[yidx2])
-            self2.set_caret(xlen, yidx2)
-            self.add_str(self2, strx2)
-            self2.set_caret(xidx2, yidx2)
-            self.add_str(self2, strx)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        xidx -= len(strx); yidx += 1
-        self2.set_caret(xidx, yidx)
-        self2.mained.update_statusbar(&#34;Selection HTML comment added.&#34;)
-        self2.invalidate()
-
-
-    def rctrl_i(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        #print(&#34;Add &#39;C&#39; comment&#34;)
-
-        cumm = self._getsel(self2)
-        strx  = &#34;/* &#34;; strx2 = &#34; */&#34;
-        if cumm:
-            self.ctrl_c(self2)
-            self.add_str(self2, strx)
-            self.ctrl_v(self2)
-            if strx2:
-                self.add_str(self2, strx2)
-        else:
-            # Trailer attached to end of line
-            xidx2 = self2.caret[0] + self2.xpos;
-            yidx2 = self2.caret[1] + self2.ypos
-            xlen = len(self2.text[yidx2])
-            self2.set_caret(xlen, yidx2)
-            self.add_str(self2, strx2)
-            self2.set_caret(xidx2, yidx2)
-            self.add_str(self2, strx)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        xidx -= len(strx); yidx += 1
-        self2.set_caret(xidx, yidx)
-        self2.mained.update_statusbar(&#34;Selection HTML comment added.&#34;)
-        self2.invalidate()
-
-    def rctrl_l(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.start_external([&#34;libreoffice&#34;, &#34;--writer&#34;],
-                                        [&#34;libreoffice&#34;, &#34;--writer&#34;])
-    def rctrl_r(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.rescan()
-
-    def rctrl_t(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.start_term()
-
-    def rctrl_w(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.activate_webtab()
-
-    def rctrl_num(self, self2):
-        kkk = self2.curr_event.keyval - Gdk.KEY_0
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;RCTRL -- num, key=&#34;, kkk)
-
     # --------------------------------------------------------------------
     # CTRL
 
     def ctrl_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- A&#34;)
 
         if self2.shift:
@@ -1107,7 +737,7 @@ class ActHand:
             self2.invalidate()
 
     def ctrl_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- B&#34;)
 
         if self2.shift:
@@ -1131,7 +761,7 @@ class ActHand:
         #self2.set_changed(True)
 
     def ctrl_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - C&#34;)
 
         if self2.xsel == -1 or  self2.ysel == -1:
@@ -1155,13 +785,6 @@ class ActHand:
             else:
                 self2.mained.update_statusbar(&#34;Clipboard %d copied.&#34; % self.currclip)
                 self.clips[self.currclip] = cumm
-
-    def xclip_cb(self, self2, ctext, cummx):
-        cummx = ctext + cummx
-        self2.clipboard.set_text(cummx, len(cummx))
-        #self2.clipboard.request_text(self.xclip_cb, cumm)
-        ttt = self2.clipboard.wait_for_text()
-        self.clip_cb(none, ttt, self2)
 
     def ctrl_d(self, self2):
         if self2.shift:
@@ -1193,7 +816,7 @@ class ActHand:
 
     def ctrl_e(self, self2):
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - E&#34;)
 
         if self2.shift:
@@ -1215,14 +838,8 @@ class ActHand:
             self2.set_changed(True)
             self2.inval_line()
 
-    def alt_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - F&#34;)
-        pedconfig.conf.pedwin.openmenu(&#34;File&#34;)
-        pass
-
     def ctrl_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - F&#34;)
 
         if self2.shift:
@@ -1231,7 +848,7 @@ class ActHand:
             self2.find(self);
 
     def ctrl_h(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - H&#34;)
 
         self2.ctrl = False
@@ -1239,7 +856,7 @@ class ActHand:
         self.left(self2)
 
     def ctrl_g(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - G&#34;)
 
         #self2.closedoc()
@@ -1250,7 +867,7 @@ class ActHand:
         pass
 
     def ctrl_i(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - I&#34;)
 
 
@@ -1267,7 +884,7 @@ class ActHand:
             self2.countup += 1
 
     def ctrl_j(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - J&#34;)
 
         self2.ctrl = False
@@ -1275,7 +892,7 @@ class ActHand:
         self.down(self2)
 
     def ctrl_k(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - K&#34;)
 
         self2.ctrl = False
@@ -1284,7 +901,7 @@ class ActHand:
         self.up(self2)
 
     def ctrl_l(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - L&#34;)
 
         self2.ctrl = False
@@ -1292,7 +909,7 @@ class ActHand:
         self.right(self2)
 
     def ctrl_m(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - M&#34;)
 
         if self2.shift:
@@ -1307,16 +924,21 @@ class ActHand:
                 self2.mained.update_statusbar(&#34;Autocorrect is off.&#34;)
 
     def ctrl_n(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - N&#34;)
+        if 1: #pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;Warning: got CTRL - N Main menu did not interpret it.&#34;, self2.shift)
+            self2.mained.newfile()
 
     def ctrl_o(self, self2):
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - O&#34;, self2.shift)
+        if 1: #pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;Warning: got CTRL - O Main menu did not interpret it.&#34;, &#34;shift=&#34;, self2.shift)
         pass
+        if self2.shift:
+            load_sess()
+        else:
+            self2.mained.open()
 
     def ctrl_p(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - P&#34;)
         pass
 
@@ -1343,18 +965,17 @@ class ActHand:
             except:
                 pedync.message(&#34;\n   Cannot print  &#39;%s&#39;\n\n&#34; % shortname)
 
-
     def ctrl_q(self, self2):
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - P&#34;)
+        if 1: #pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;CTRL - Q&#34;)
         pass
 
     def ctrl_r(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - R&#34;)
 
         if self2.shift:
-            if pedconfig.conf.pgdebug &gt; 9:
+            if pedconfig.conf.pgdebug &gt; 4:
                 print (&#34;CTRL-SHIFT - R&#34;)
             self2.start_m4filter()
             return
@@ -1393,9 +1014,15 @@ class ActHand:
 
     # ---------------------------------------------------------------------
 
+    def ctrl_s(self, self2):
+
+        if pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;CTRL - S&#34;)
+        self2.save()
+
     def ctrl_t(self, self2):
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - T&#34;)
 
         xidx = self2.caret[0] + self2.xpos;
@@ -1430,7 +1057,7 @@ class ActHand:
 
     # Uppercase stuff
     def ctrl_u(self, self2, lowit = False):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - U&#34;)
 
         #line = &#34;&#34;; xidx = 0; yidx = 0
@@ -1469,7 +1096,7 @@ class ActHand:
         self2.inval_line()
 
     def ctrl_w(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - W&#34;)
 
         if self2.shift:
@@ -1478,7 +1105,7 @@ class ActHand:
             self2.mained.close_document()
 
     def ctrl_v(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - V&#34;)
 
         if self2.readonly:
@@ -1619,7 +1246,7 @@ class ActHand:
     # Cut to clipboard
 
     def ctrl_x(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - X&#34;)
 
         if self2.readonly:
@@ -1735,7 +1362,7 @@ class ActHand:
         self2.src_changed = True
 
     def ctrl_y(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - Y&#34;)
 
         if self2.readonly:
@@ -1745,7 +1372,7 @@ class ActHand:
         pedundo.redo(self2, self)
 
     def ctrl_z(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - Z&#34;)
 
         if self2.readonly:
@@ -1754,7 +1381,7 @@ class ActHand:
         pedundo.undo(self2, self)
 
     def ctrl_space(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - SP&#34;)
 
         if self2.shift:
@@ -1763,224 +1390,9 @@ class ActHand:
             self2.nokey = True
             self2.mained.update_statusbar(&#34;Keyboard disabled.&#34;)
 
-    def alt_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            printb (&#34;ALT - B&#34;)
-
-        pedbuffs.buffers(self, self2)
-
-    def alt_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - C&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.xsel, self2.xsel2 = xidx, xidx + 1
-        self2.ysel = self2.ysel2 = yidx
-        self2.colsel = True
-        self2.invalidate()
-
-    def alt_d(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - D&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-
-        # After EOF, move to end
-        if yidx &gt;= len(self2.text):
-            yidx = len(self2.text) - 1
-            yidx = max(yidx, 0)
-            self2.set_caret(xidx, yidx)
-
-            # Refresh values
-            xidx = self2.caret[0] + self2.xpos;
-            yidx = self2.caret[1] + self2.ypos
-
-        self.pad_list(self2, yidx)
-        self2.undoarr.append((xidx, yidx, pedundo.DELETED, self2.text[yidx]))
-
-        del (self2.text[yidx])
-        self2.mained.update_statusbar(&#34;Deleted line %d&#34; % yidx)
-        self2.invalidate()
-        self2.set_changed(True)
-        self2.src_changed = True
-
-    def alt_i(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - I&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos;
-
-        self2.undoarr.append((xidx, yidx, pedundo.NOOP, &#34;&#34;))
-
-        cnt = 0; cnt2 = 0; found  = False;
-        zlen = len(self2.text)
-        while True:
-            if cnt &gt;= zlen: break
-            line = self2.text[cnt];  xlen = len(line)
-            if line.find(&#34;\t&#34;) &gt;= 0:
-                self2.undoarr.append((xidx, cnt, pedundo.MODIFIED + pedundo.CONTFLAG,
-                                       self2.text[cnt]))
-                line2 = untab_str(line, self2.tabstop)
-                self2.text[cnt] = line2
-                cnt2 += 1
-            cnt += 1
-        self2.mained.update_statusbar(&#34;Converted %d lines with tabs&#34; % cnt2)
-
-    def alt_j(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - J&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos;
-
-        cnt = yidx + 1; found  = False; zlen = len(self2.text)
-        while True:
-            if cnt &gt;= zlen: break
-            line = self2.text[cnt];  xlen = len(line)
-            if xlen &gt;= 80:
-                self2.gotoxy(xlen, cnt)
-                found = True
-                break
-            cnt += 1
-        if found:
-            self2.mained.update_statusbar(&#34;Jumped to line %d&#34; % cnt)
-        else:
-            self2.mained.update_statusbar(&#34;No long lines found or at EOF&#34;)
-
-    def alt_k(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - K&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
-        line = self2.text[yidx]
-        self2.text[yidx] = line[:xidx]
-        self2.invalidate()
-        self2.set_changed(True)
-
-    def alt_l(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - L&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.xsel = 0; self2.xsel2 = len(self2.text[yidx])
-        self2.ysel = self2.ysel2 = yidx
-        self2.inval_line()
-
-    def alt_o(self, self2):
-
-        # Test
-        #pedync.message(&#34;\n   Testing    \n\n&#34;)
-
-        # Simplified open
-        fnames = pedofd.ofd(&#34;&#34;, self2)
-        #print(&#34;openfile fnames&#34;, fnames)
-        for fff in fnames:
-            #print(&#34;Open&#34;, (fff))
-            self2.mained.openfile(fff)
-            pass
-
-    def alt_q(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - Q&#34;)
-
-        for mm in range(self2.notebook.get_n_pages()):
-            vcurr = self2.notebook.get_nth_page(mm)
-            vcurr.set_position(1)
-
-        if self2.shift:
-            self2.mained.hpaned.set_position(1)
-
-    def alt_s(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - T&#34;)
-
-        #pedfind.find(self, self2)
-        self2.find(self)
-
-    def alt_t(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - T&#34;)
-
-        #pedfind.find(self, self2, True)
-        self2.find(self, True)
-
-    def alt_v(self, self2):
-        xidx = int(self2.caret[0] + self2.xpos)
-        yidx = int(self2.caret[1] + self2.ypos)
-        line = self2.text[yidx]
-        #self2.xsel, self2.xsel2 = selasci2(line, xidx, &#34;-_.[]&#34;)
-        self2.xsel, self2.xsel2 = selasci2(line, xidx,&#34;-_&#34;)
-        self2.ysel = self2.ysel2 = yidx
-        self2.gotoxy(self2.xsel2, self2.ysel)
-        self2.inval_line()
-
-    def alt_w(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - W&#34;)
-
-        self2.save()
-
-    def alt_z(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - Z&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos;
-        self2.undoarr.append((xidx, yidx, pedundo.NOOP, &#34;&#34;))
-
-        cnt = 0; cnt2 = 0; cnt3 = 0
-        zlen = len(self2.text)
-        while True:
-            if cnt &gt;= zlen: break
-            line = self2.text[cnt];  xlen = len(line)
-
-            if xlen &gt; 78:
-                cnt2 += 1
-                # Delete this line from doc
-                self2.undoarr.append((xidx, cnt, \
-                                pedundo.DELETED + pedundo.CONTFLAG, line))
-                text = self2.text[:cnt] + self2.text[cnt+1:]
-                self2.text = text
-                zlen -= 1
-                arr = line.split();  ttt = &#34;&#34;
-                for aa in arr:
-                    if len(ttt) + len(aa) &gt; 75:
-                        #print (ttt)
-                        text = self2.text[:cnt]
-                        text.append(ttt)
-                        text += self2.text[cnt:]
-                        self2.text = text
-                        self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
-                                       ttt))
-                        zlen += 1; cnt += 1; cnt3 += 1
-                        ttt = aa + &#34; &#34;
-                    else:
-                        ttt += aa + &#34; &#34;
-                if ttt:
-                    #print (ttt)
-                    text = self2.text[:cnt]
-                    text.append(ttt)
-                    text += self2.text[cnt:]
-                    self2.text = text
-                    self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
-                                       ttt))
-                    zlen += 1; cnt += 1; cnt3 += 1
-            else:
-                cnt += 1
-
-        self2.invalidate()
-        self2.set_changed(True)
-        self2.mained.update_statusbar(\
-            &#34;Converted %d long lines to %d short lines&#34; % (cnt2, cnt3))
 
     def f1(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F1&#34;)
         if self2.shift:
             sss = self._getsel(self2)
@@ -1999,7 +1411,7 @@ class ActHand:
             launch_pangview(kk)
 
     def f2(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F2&#34;)
 
         if self2.shift:
@@ -2035,7 +1447,7 @@ class ActHand:
                                    &#34;              (Please install)&#34;)
 
     def f3(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F3&#34;)
 
         if self2.shift:
@@ -2044,7 +1456,7 @@ class ActHand:
             self.f6(self2)
 
     def f4(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F4&#34;)
         #self.play(self2, True)
         try:
@@ -2056,7 +1468,7 @@ class ActHand:
                        &#34;              (Please install)&#34;)
 
     def f5(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F5&#34;)
 
         if len(self2.accum) == 0:
@@ -2097,7 +1509,7 @@ class ActHand:
             self2.mained.update_statusbar(&#34;At or before first match.&#34;)
 
     def f6(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F6&#34;)
 
         if len(self2.accum) == 0:
@@ -2133,7 +1545,7 @@ class ActHand:
             self2.mained.update_statusbar(&#34;At or after last match.&#34;)
 
     def f7(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F7&#34;)
 
         pedconfig.conf.keyh.reset()
@@ -2210,7 +1622,7 @@ class ActHand:
         self2.mained.update_statusbar(&#34;Ended Play.&#34;)
 
     def f8(self, self2, anim = False):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F8&#34;)
 
         self.play(self2, anim)
@@ -2218,7 +1630,7 @@ class ActHand:
     def f9(self, self2, flag = False):
         self2.spell = not self2.spell
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F9 spell&#34;, self2.spell)
 
         if self2.spell:
@@ -2249,12 +1661,12 @@ class ActHand:
         else:
             self2.mained.mywin.fullscreen()
             self2.mained.full = True
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F11&#34;)
 
 
     def f12(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F12&#34;)
 
         pass
@@ -2279,7 +1691,7 @@ class ActHand:
 
     def add_key(self, self2, event):
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print(&#34;add_key: &#39;%s&#39;&#34; % event.string)
 
         # CR / LF still haunts us, ignore CR
@@ -2414,35 +1826,14 @@ class ActHand:
         return True
 
     def super_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;SUPER - A&#34;)
         self.alt_a(self2)
 
     def super_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;SUPER - B&#34;)
         self.alt_b(self2)
-
-    def alt_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - A&#34;)
-        self2.mained.saveall()
-
-    def alt_g(self, self2):
-        gotodlg(self2)
-
-    def alt_x(self, self2):
-
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT- X -- Exit&#34;)
-        self2.mained.activate_exit()
-
-    def alt_y(self, self2):
-
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT- Y -- Compile&#34;)
-
-        self2.check_syntax()
 
     # --------------------------------------------------------------
     # Tab handle is awkward. The regular key tab will insert
@@ -2454,7 +1845,7 @@ class ActHand:
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;TAB&#34;, self2.shift)
 
         #tabstop = 4
@@ -2507,7 +1898,14 @@ class ActHand:
             self2.invalidate()
             self2.set_changed(True)
 
-# EOF</code></pre>
+    def xclip_cb(self, self2, ctext, cummx):
+        cummx = ctext + cummx
+        self2.clipboard.set_text(cummx, len(cummx))
+        #self2.clipboard.request_text(self.xclip_cb, cumm)
+        ttt = self2.clipboard.wait_for_text()
+        self.clip_cb(none, ttt, self2)
+
+    # EOF</code></pre>
 </details>
 </section>
 <section>
@@ -2528,7 +1926,7 @@ class ActHand:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class ActHand:
+<pre><code class="python">class ActHand(acthand2.ActHand2):
 
     def __init__(self):
         self.was_home = 0
@@ -2573,7 +1971,7 @@ class ActHand:
     # -----------------------------------------------------------------------
 
     def ctrl_tab(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;ctrl_tab&#34;)
 
         if self2.shift:
@@ -2945,6 +2343,8 @@ class ActHand:
 
     def home(self, self2):
 
+        #print(&#34;Home&#34;)
+
         xidx = self2.caret[0] + self2.xpos
         yidx = self2.caret[1] + self2.ypos
         if self2.shift:
@@ -2955,7 +2355,7 @@ class ActHand:
                 self2.ysel = yidx
         if self2.alt:
             #print (&#34;alt-home&#34;)
-            #self2.mained.firstwin()
+            self2.mained.firstwin()
             pass
         elif self2.ctrl:
             self2.set_caret(0, 0)
@@ -3010,7 +2410,7 @@ class ActHand:
 
         if self2.alt:
             #print (&#34;alt-end&#34;)
-            #self2.mained.lastwin()
+            self2.mained.lastwin()
             pass
         elif self2.ctrl:
             self.bottom(self2)
@@ -3067,13 +2467,13 @@ class ActHand:
 
         self2.mained.update_statusbar(&#34;Esc&#34;)
         self2.clearsel()
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;ESC&#34;)
 
         #print (pedync.yes_no_cancel(&#34;Escape&#34;, &#34;This is a question&#34; ))
 
     def ins(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;INS&#34;)
 
         xidx = self2.caret[0] + self2.xpos;
@@ -3082,7 +2482,7 @@ class ActHand:
         self2.set_caret(xidx, yidx)
 
     def ctrl_num_clip(self, self2, num):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- &#34;, num)
 
         self2.mained.update_statusbar(&#34;Switched to clipboard %d.&#34; % num)
@@ -3095,7 +2495,7 @@ class ActHand:
 
     def ctrl_num(self, self2):
         kkk = self2.curr_event.keyval - Gdk.KEY_0
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- num, key=&#34;, kkk)
 
         # Process clip 9 -- sum it all
@@ -3110,382 +2510,11 @@ class ActHand:
     # --------------------------------------------------------------------
     # Not many ctrl - alt handlers yet (may conflict with Gnome/OS shortcuts)
 
-    # Cleanse non ascii
-    def ctrl_alt_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - A&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        line = self2.text[yidx]
-        #print(&#34;line: (&#34;, line))
-        newline = &#34;&#34;
-        for aa in line:
-            #print(&#34;%d&#34; (% ord(aa)),)
-            if ord(aa) &lt; 128:
-                newline += aa
-
-        if line != newline:
-            self2.text[yidx] = newline
-            self2.mained.update_statusbar(&#34;Cleaned non ASCII characters.&#34;)
-            self2.invalidate()
-        pass
-
-    def ctrl_alt_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - B&#34;)
-
-        #line = &#34;&#34;; xidx = 0; yidx = 0
-        # No selection, assume word
-        if self2.xsel == -1 or self2.ysel == -1:
-            xidx = self2.caret[0] + self2.xpos
-            yidx = self2.caret[1] + self2.ypos
-            line = self2.text[yidx]
-            #cntb, cnte = selword(line, xidx)
-            cntb, cnte = selasci2(line, xidx, &#34;_-&#34;)
-        else:
-            # Normalize
-            xssel = min(self2.xsel, self2.xsel2)
-            xesel = max(self2.xsel, self2.xsel2)
-            yssel = min(self2.ysel, self2.ysel2)
-            yesel = max(self2.ysel, self2.ysel2)
-
-            xidx = xssel; yidx = yssel;
-            line = self2.text[yidx]
-            cntb = xssel; cnte = xesel
-
-        if cnte == cntb:
-            self2.mained.update_statusbar(&#34;Please nav to a word first.&#34;)
-            return
-
-        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, line))
-        #print (&#34;word / selection&#34;, line[cntb:cnte])
-
-        wlow = line[cntb].upper()
-
-        self2.text[yidx] = line[:cntb] + wlow + line[cntb+1:]
-        self2.inval_line()
-
-    #// Comment out code: TODO
-    def ctrl_alt_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - C&#34;)
-
-        extx = os.path.splitext(self2.fname)[1]
-        #print(&#34;extx&#34;, extx)
-
-        cumm = self._getsel(self2)
-        strx = &#34;&#34;; strx2 = &#34;&#34;
-        if cumm:
-            self.ctrl_c(self2)
-            # This will catch all known varieties, else .py assumed
-            if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-                strx  = &#34;#if 0\n&#34;
-                strx2 = &#34;#endif\n&#34;
-            elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-                strx  = &#34;%if 0\n&#34;
-                strx2 = &#34;%endif\n&#34;
-            elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-                #print(&#34;html comment&#34;)
-                strx  = &#34;&lt;!-- &#34;
-                strx2 = &#34; --&gt;&#34;
-            else:
-                strx  = &#34;&#39;&#39;&#39; &#34;
-                strx2 = &#34;&#39;&#39;&#39; &#34;
-
-            self.add_str(self2, strx)
-            self.ctrl_v(self2)
-            if strx2:
-                self.add_str(self2, strx2)
-
-        else:
-            if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-                strx  = &#34;//&#34;
-            elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-                strx  = &#34;;&#34;
-            elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-                strx  = &#34;&lt;!-- &#34; ; strx2 = &#34;--&gt;&#34;
-                # Trailer attached to end of line
-                xidx2 = self2.caret[0] + self2.xpos;
-                yidx2 = self2.caret[1] + self2.ypos
-                xlen = len(self2.text[yidx2])
-                self2.set_caret(xlen, yidx2)
-                self.add_str(self2, strx2)
-                self2.set_caret(xidx2, yidx2)
-            else:
-                strx  = &#34;#&#34;
-
-            self.add_str(self2, strx)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        xidx -= len(strx); yidx += 1
-        self2.set_caret(xidx, yidx)
-        self2.mained.update_statusbar(&#34;Selection commented out.&#34;)
-        self2.invalidate()
-
-    def ctrl_alt_num(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - NUM&#34;, self2.lastkey)
-
-    #// Start termnal
-    def ctrl_alt_d(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - D&#34;)
-        self2.mained.start_term()
-
-    def ctrl_alt_e(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - E&#34;)
-        pedmisc.exec_test(self2, &#34;kb&#34;)
-
-    def ctrl_alt_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - F&#34;)
-
-        self2.mained.update_statusbar(&#34;Filling to column.&#34;)
-        # Fill till column
-        if  self2.shift:
-            #self2.mained.update_statusbar(&#34;C-A-S &#39;F&#39; Key pressed.&#34;)
-            self2.mained.update_statusbar(&#34;Promt for fill to column&#34;)
-            ttt = prompt_for_text(self2, &#34;Enter column to fill to&#34;, str(self2.text_fillcol))
-            if ttt:
-                self2.text_fillcol = int(ttt);
-        else:
-            xidx = self2.caret[0] + self2.xpos;
-            #print(&#34;Filling from&#34;, xidx, &#34;to&#34;, self2.text_fillcol)
-            if xidx &lt; self2.text_fillcol:
-                for aa in range(self2.text_fillcol - xidx):
-                    event = Gdk.EventKey()
-                    event.string  = &#34; &#34;
-                    event.keyval = ord(&#34; &#34;)
-                    self.add_key(self2, event)
-            else:
-                self2.mained.update_statusbar(&#34;Past filling point already.&#34;)
-
-    def ctrl_alt_g(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - G&#34;)
-        self2.mained.update_statusbar(&#34;Execute cycle&#34;)
-        if  self2.shift:
-            pass
-        self2.mained.doall(None)
-
-    def ctrl_alt_t(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - T&#34;)
-        self2.start_term()
-
-    def ctrl_alt_h(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - H&#34;)
-        #pedfind.find(self, self2, True)
-        self2.find(self, True)
-
-    def ctrl_alt_j(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - J&#34;)
-        self2.coloring(not self2.colflag)
-        if self2.colflag: strx = &#34;on&#34;
-        else: strx = &#34;off&#34;
-        self2.mained.update_statusbar(&#34;Coloring is %s.&#34; % strx)
-
-    def ctrl_alt_k(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - K&#34;)
-        self2.hexview(not self2.hex)
-
-    def ctrl_alt_r(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - R&#34;)
-        #print(&#34;Read file on tts &#34;);
-        try:
-            if not self2.tts:
-                self2.tts = pedtts.tts(self2.mained.update_statusbar)
-
-            self2.tts.read_tts(self2)
-        except:
-            print(&#34;No TTS&#34;, sys.exc_info())
-            self2.mained.update_statusbar(&#34;No TTS installed&#34;)
-
-    # // Deactivate comment TODO
-    def ctrl_alt_v(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - ALT - V &#34;)
-
-        #self2.mained.saveall()
-        extx = os.path.splitext(self2.fname)[1]
-        #print(&#34;extx&#34;, extx)
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        try:
-            chh = self2.text[yidx][xidx]
-            #print(&#34;chh&#34;, chh)
-        except:
-            chh = 0
-
-        # This will catch all known varieties, else .py assumed
-        if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-            if chh == &#34;/&#34;:
-                self.delete(self2)
-                self.delete(self2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on &#39;c&#39; comment.&#34;)
-
-        elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-            if chh == &#34;;&#34;:
-                self.delete(self2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on &#39;asm&#39; comment.&#34;)
-
-        elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-            #print(&#34;html comment strx  = &lt;!-- --&gt;&#34;;
-            if chh == &#34;&lt;&#34;:
-                self.delete(self2)
-                self.delete(self2)
-                self.delete(self2)
-                self.delete(self2)
-                xidx2 = self2.caret[0] + self2.xpos;
-                yidx2 = self2.caret[1] + self2.ypos
-                #self.end(self2)
-                xlen = len(self2.text[yidx2])
-                self2.set_caret(xlen, yidx2)
-                self.bs(self2)
-                self.bs(self2)
-                self.bs(self2)
-                self2.set_caret(xidx2, yidx2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on comment character.&#34;)
-
-        else:
-            # Default comment
-            if chh == &#34;#&#34;:
-                self.delete(self2)
-            else:
-                self2.mained.update_statusbar(&#34;Not on comment character.&#34;)
-
-        # Goto next line
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.set_caret(xidx, yidx + 1)
-
-        #self.down(self2)
-
-    # --------------------------------------------------------------------
-    # Right CTRL
-
-    # Catch all
-    def rctrl_all(self, self2):
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;RCTRL -- Captured str=&#34;, self2.curr_event.string,
-                                            &#34;keyval=&#34;, self2.curr_event.keyval)
-
-    def rctrl_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.activate_notetab()
-
-    def rctrl_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.activate_caltab()
-
-    def rctrl_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.start_external([&#34;thunar&#34;, &#34;.&#34;],
-                                        [&#34;explorer&#34;, &#34;&#34;])
-    def rctrl_h(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        #print(&#34;Add html comment&#34;)
-
-        cumm = self._getsel(self2)
-        strx  = &#34;&lt;!-- &#34;; strx2 = &#34; --&gt;&#34;
-        if cumm:
-            self.ctrl_c(self2)
-            self.add_str(self2, strx)
-            self.ctrl_v(self2)
-            if strx2:
-                self.add_str(self2, strx2)
-        else:
-            # Trailer attached to end of line
-            xidx2 = self2.caret[0] + self2.xpos;
-            yidx2 = self2.caret[1] + self2.ypos
-            xlen = len(self2.text[yidx2])
-            self2.set_caret(xlen, yidx2)
-            self.add_str(self2, strx2)
-            self2.set_caret(xidx2, yidx2)
-            self.add_str(self2, strx)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        xidx -= len(strx); yidx += 1
-        self2.set_caret(xidx, yidx)
-        self2.mained.update_statusbar(&#34;Selection HTML comment added.&#34;)
-        self2.invalidate()
-
-
-    def rctrl_i(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        #print(&#34;Add &#39;C&#39; comment&#34;)
-
-        cumm = self._getsel(self2)
-        strx  = &#34;/* &#34;; strx2 = &#34; */&#34;
-        if cumm:
-            self.ctrl_c(self2)
-            self.add_str(self2, strx)
-            self.ctrl_v(self2)
-            if strx2:
-                self.add_str(self2, strx2)
-        else:
-            # Trailer attached to end of line
-            xidx2 = self2.caret[0] + self2.xpos;
-            yidx2 = self2.caret[1] + self2.ypos
-            xlen = len(self2.text[yidx2])
-            self2.set_caret(xlen, yidx2)
-            self.add_str(self2, strx2)
-            self2.set_caret(xidx2, yidx2)
-            self.add_str(self2, strx)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        xidx -= len(strx); yidx += 1
-        self2.set_caret(xidx, yidx)
-        self2.mained.update_statusbar(&#34;Selection HTML comment added.&#34;)
-        self2.invalidate()
-
-    def rctrl_l(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.start_external([&#34;libreoffice&#34;, &#34;--writer&#34;],
-                                        [&#34;libreoffice&#34;, &#34;--writer&#34;])
-    def rctrl_r(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.rescan()
-
-    def rctrl_t(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.start_term()
-
-    def rctrl_w(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-             print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-        self2.mained.activate_webtab()
-
-    def rctrl_num(self, self2):
-        kkk = self2.curr_event.keyval - Gdk.KEY_0
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;RCTRL -- num, key=&#34;, kkk)
-
     # --------------------------------------------------------------------
     # CTRL
 
     def ctrl_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- A&#34;)
 
         if self2.shift:
@@ -3502,7 +2531,7 @@ class ActHand:
             self2.invalidate()
 
     def ctrl_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL -- B&#34;)
 
         if self2.shift:
@@ -3526,7 +2555,7 @@ class ActHand:
         #self2.set_changed(True)
 
     def ctrl_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - C&#34;)
 
         if self2.xsel == -1 or  self2.ysel == -1:
@@ -3550,13 +2579,6 @@ class ActHand:
             else:
                 self2.mained.update_statusbar(&#34;Clipboard %d copied.&#34; % self.currclip)
                 self.clips[self.currclip] = cumm
-
-    def xclip_cb(self, self2, ctext, cummx):
-        cummx = ctext + cummx
-        self2.clipboard.set_text(cummx, len(cummx))
-        #self2.clipboard.request_text(self.xclip_cb, cumm)
-        ttt = self2.clipboard.wait_for_text()
-        self.clip_cb(none, ttt, self2)
 
     def ctrl_d(self, self2):
         if self2.shift:
@@ -3588,7 +2610,7 @@ class ActHand:
 
     def ctrl_e(self, self2):
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - E&#34;)
 
         if self2.shift:
@@ -3610,14 +2632,8 @@ class ActHand:
             self2.set_changed(True)
             self2.inval_line()
 
-    def alt_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - F&#34;)
-        pedconfig.conf.pedwin.openmenu(&#34;File&#34;)
-        pass
-
     def ctrl_f(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - F&#34;)
 
         if self2.shift:
@@ -3626,7 +2642,7 @@ class ActHand:
             self2.find(self);
 
     def ctrl_h(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - H&#34;)
 
         self2.ctrl = False
@@ -3634,7 +2650,7 @@ class ActHand:
         self.left(self2)
 
     def ctrl_g(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - G&#34;)
 
         #self2.closedoc()
@@ -3645,7 +2661,7 @@ class ActHand:
         pass
 
     def ctrl_i(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - I&#34;)
 
 
@@ -3662,7 +2678,7 @@ class ActHand:
             self2.countup += 1
 
     def ctrl_j(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - J&#34;)
 
         self2.ctrl = False
@@ -3670,7 +2686,7 @@ class ActHand:
         self.down(self2)
 
     def ctrl_k(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - K&#34;)
 
         self2.ctrl = False
@@ -3679,7 +2695,7 @@ class ActHand:
         self.up(self2)
 
     def ctrl_l(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - L&#34;)
 
         self2.ctrl = False
@@ -3687,7 +2703,7 @@ class ActHand:
         self.right(self2)
 
     def ctrl_m(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - M&#34;)
 
         if self2.shift:
@@ -3702,16 +2718,21 @@ class ActHand:
                 self2.mained.update_statusbar(&#34;Autocorrect is off.&#34;)
 
     def ctrl_n(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - N&#34;)
+        if 1: #pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;Warning: got CTRL - N Main menu did not interpret it.&#34;, self2.shift)
+            self2.mained.newfile()
 
     def ctrl_o(self, self2):
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - O&#34;, self2.shift)
+        if 1: #pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;Warning: got CTRL - O Main menu did not interpret it.&#34;, &#34;shift=&#34;, self2.shift)
         pass
+        if self2.shift:
+            load_sess()
+        else:
+            self2.mained.open()
 
     def ctrl_p(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - P&#34;)
         pass
 
@@ -3738,18 +2759,17 @@ class ActHand:
             except:
                 pedync.message(&#34;\n   Cannot print  &#39;%s&#39;\n\n&#34; % shortname)
 
-
     def ctrl_q(self, self2):
-        if 1: #pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;CTRL - P&#34;)
+        if 1: #pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;CTRL - Q&#34;)
         pass
 
     def ctrl_r(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - R&#34;)
 
         if self2.shift:
-            if pedconfig.conf.pgdebug &gt; 9:
+            if pedconfig.conf.pgdebug &gt; 4:
                 print (&#34;CTRL-SHIFT - R&#34;)
             self2.start_m4filter()
             return
@@ -3788,9 +2808,15 @@ class ActHand:
 
     # ---------------------------------------------------------------------
 
+    def ctrl_s(self, self2):
+
+        if pedconfig.conf.pgdebug &gt; 4:
+            print (&#34;CTRL - S&#34;)
+        self2.save()
+
     def ctrl_t(self, self2):
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - T&#34;)
 
         xidx = self2.caret[0] + self2.xpos;
@@ -3825,7 +2851,7 @@ class ActHand:
 
     # Uppercase stuff
     def ctrl_u(self, self2, lowit = False):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - U&#34;)
 
         #line = &#34;&#34;; xidx = 0; yidx = 0
@@ -3864,7 +2890,7 @@ class ActHand:
         self2.inval_line()
 
     def ctrl_w(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - W&#34;)
 
         if self2.shift:
@@ -3873,7 +2899,7 @@ class ActHand:
             self2.mained.close_document()
 
     def ctrl_v(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - V&#34;)
 
         if self2.readonly:
@@ -4014,7 +3040,7 @@ class ActHand:
     # Cut to clipboard
 
     def ctrl_x(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - X&#34;)
 
         if self2.readonly:
@@ -4130,7 +3156,7 @@ class ActHand:
         self2.src_changed = True
 
     def ctrl_y(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - Y&#34;)
 
         if self2.readonly:
@@ -4140,7 +3166,7 @@ class ActHand:
         pedundo.redo(self2, self)
 
     def ctrl_z(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - Z&#34;)
 
         if self2.readonly:
@@ -4149,7 +3175,7 @@ class ActHand:
         pedundo.undo(self2, self)
 
     def ctrl_space(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL - SP&#34;)
 
         if self2.shift:
@@ -4158,224 +3184,9 @@ class ActHand:
             self2.nokey = True
             self2.mained.update_statusbar(&#34;Keyboard disabled.&#34;)
 
-    def alt_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            printb (&#34;ALT - B&#34;)
-
-        pedbuffs.buffers(self, self2)
-
-    def alt_c(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - C&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.xsel, self2.xsel2 = xidx, xidx + 1
-        self2.ysel = self2.ysel2 = yidx
-        self2.colsel = True
-        self2.invalidate()
-
-    def alt_d(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - D&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-
-        # After EOF, move to end
-        if yidx &gt;= len(self2.text):
-            yidx = len(self2.text) - 1
-            yidx = max(yidx, 0)
-            self2.set_caret(xidx, yidx)
-
-            # Refresh values
-            xidx = self2.caret[0] + self2.xpos;
-            yidx = self2.caret[1] + self2.ypos
-
-        self.pad_list(self2, yidx)
-        self2.undoarr.append((xidx, yidx, pedundo.DELETED, self2.text[yidx]))
-
-        del (self2.text[yidx])
-        self2.mained.update_statusbar(&#34;Deleted line %d&#34; % yidx)
-        self2.invalidate()
-        self2.set_changed(True)
-        self2.src_changed = True
-
-    def alt_i(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - I&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos;
-
-        self2.undoarr.append((xidx, yidx, pedundo.NOOP, &#34;&#34;))
-
-        cnt = 0; cnt2 = 0; found  = False;
-        zlen = len(self2.text)
-        while True:
-            if cnt &gt;= zlen: break
-            line = self2.text[cnt];  xlen = len(line)
-            if line.find(&#34;\t&#34;) &gt;= 0:
-                self2.undoarr.append((xidx, cnt, pedundo.MODIFIED + pedundo.CONTFLAG,
-                                       self2.text[cnt]))
-                line2 = untab_str(line, self2.tabstop)
-                self2.text[cnt] = line2
-                cnt2 += 1
-            cnt += 1
-        self2.mained.update_statusbar(&#34;Converted %d lines with tabs&#34; % cnt2)
-
-    def alt_j(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - J&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos;
-
-        cnt = yidx + 1; found  = False; zlen = len(self2.text)
-        while True:
-            if cnt &gt;= zlen: break
-            line = self2.text[cnt];  xlen = len(line)
-            if xlen &gt;= 80:
-                self2.gotoxy(xlen, cnt)
-                found = True
-                break
-            cnt += 1
-        if found:
-            self2.mained.update_statusbar(&#34;Jumped to line %d&#34; % cnt)
-        else:
-            self2.mained.update_statusbar(&#34;No long lines found or at EOF&#34;)
-
-    def alt_k(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - K&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
-        line = self2.text[yidx]
-        self2.text[yidx] = line[:xidx]
-        self2.invalidate()
-        self2.set_changed(True)
-
-    def alt_l(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - L&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-        self2.xsel = 0; self2.xsel2 = len(self2.text[yidx])
-        self2.ysel = self2.ysel2 = yidx
-        self2.inval_line()
-
-    def alt_o(self, self2):
-
-        # Test
-        #pedync.message(&#34;\n   Testing    \n\n&#34;)
-
-        # Simplified open
-        fnames = pedofd.ofd(&#34;&#34;, self2)
-        #print(&#34;openfile fnames&#34;, fnames)
-        for fff in fnames:
-            #print(&#34;Open&#34;, (fff))
-            self2.mained.openfile(fff)
-            pass
-
-    def alt_q(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - Q&#34;)
-
-        for mm in range(self2.notebook.get_n_pages()):
-            vcurr = self2.notebook.get_nth_page(mm)
-            vcurr.set_position(1)
-
-        if self2.shift:
-            self2.mained.hpaned.set_position(1)
-
-    def alt_s(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - T&#34;)
-
-        #pedfind.find(self, self2)
-        self2.find(self)
-
-    def alt_t(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - T&#34;)
-
-        #pedfind.find(self, self2, True)
-        self2.find(self, True)
-
-    def alt_v(self, self2):
-        xidx = int(self2.caret[0] + self2.xpos)
-        yidx = int(self2.caret[1] + self2.ypos)
-        line = self2.text[yidx]
-        #self2.xsel, self2.xsel2 = selasci2(line, xidx, &#34;-_.[]&#34;)
-        self2.xsel, self2.xsel2 = selasci2(line, xidx,&#34;-_&#34;)
-        self2.ysel = self2.ysel2 = yidx
-        self2.gotoxy(self2.xsel2, self2.ysel)
-        self2.inval_line()
-
-    def alt_w(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - W&#34;)
-
-        self2.save()
-
-    def alt_z(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - Z&#34;)
-
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos;
-        self2.undoarr.append((xidx, yidx, pedundo.NOOP, &#34;&#34;))
-
-        cnt = 0; cnt2 = 0; cnt3 = 0
-        zlen = len(self2.text)
-        while True:
-            if cnt &gt;= zlen: break
-            line = self2.text[cnt];  xlen = len(line)
-
-            if xlen &gt; 78:
-                cnt2 += 1
-                # Delete this line from doc
-                self2.undoarr.append((xidx, cnt, \
-                                pedundo.DELETED + pedundo.CONTFLAG, line))
-                text = self2.text[:cnt] + self2.text[cnt+1:]
-                self2.text = text
-                zlen -= 1
-                arr = line.split();  ttt = &#34;&#34;
-                for aa in arr:
-                    if len(ttt) + len(aa) &gt; 75:
-                        #print (ttt)
-                        text = self2.text[:cnt]
-                        text.append(ttt)
-                        text += self2.text[cnt:]
-                        self2.text = text
-                        self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
-                                       ttt))
-                        zlen += 1; cnt += 1; cnt3 += 1
-                        ttt = aa + &#34; &#34;
-                    else:
-                        ttt += aa + &#34; &#34;
-                if ttt:
-                    #print (ttt)
-                    text = self2.text[:cnt]
-                    text.append(ttt)
-                    text += self2.text[cnt:]
-                    self2.text = text
-                    self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
-                                       ttt))
-                    zlen += 1; cnt += 1; cnt3 += 1
-            else:
-                cnt += 1
-
-        self2.invalidate()
-        self2.set_changed(True)
-        self2.mained.update_statusbar(\
-            &#34;Converted %d long lines to %d short lines&#34; % (cnt2, cnt3))
 
     def f1(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F1&#34;)
         if self2.shift:
             sss = self._getsel(self2)
@@ -4394,7 +3205,7 @@ class ActHand:
             launch_pangview(kk)
 
     def f2(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F2&#34;)
 
         if self2.shift:
@@ -4430,7 +3241,7 @@ class ActHand:
                                    &#34;              (Please install)&#34;)
 
     def f3(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F3&#34;)
 
         if self2.shift:
@@ -4439,7 +3250,7 @@ class ActHand:
             self.f6(self2)
 
     def f4(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F4&#34;)
         #self.play(self2, True)
         try:
@@ -4451,7 +3262,7 @@ class ActHand:
                        &#34;              (Please install)&#34;)
 
     def f5(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F5&#34;)
 
         if len(self2.accum) == 0:
@@ -4492,7 +3303,7 @@ class ActHand:
             self2.mained.update_statusbar(&#34;At or before first match.&#34;)
 
     def f6(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F6&#34;)
 
         if len(self2.accum) == 0:
@@ -4528,7 +3339,7 @@ class ActHand:
             self2.mained.update_statusbar(&#34;At or after last match.&#34;)
 
     def f7(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F7&#34;)
 
         pedconfig.conf.keyh.reset()
@@ -4605,7 +3416,7 @@ class ActHand:
         self2.mained.update_statusbar(&#34;Ended Play.&#34;)
 
     def f8(self, self2, anim = False):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F8&#34;)
 
         self.play(self2, anim)
@@ -4613,7 +3424,7 @@ class ActHand:
     def f9(self, self2, flag = False):
         self2.spell = not self2.spell
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F9 spell&#34;, self2.spell)
 
         if self2.spell:
@@ -4644,12 +3455,12 @@ class ActHand:
         else:
             self2.mained.mywin.fullscreen()
             self2.mained.full = True
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F11&#34;)
 
 
     def f12(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;F12&#34;)
 
         pass
@@ -4674,7 +3485,7 @@ class ActHand:
 
     def add_key(self, self2, event):
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print(&#34;add_key: &#39;%s&#39;&#34; % event.string)
 
         # CR / LF still haunts us, ignore CR
@@ -4809,35 +3620,14 @@ class ActHand:
         return True
 
     def super_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;SUPER - A&#34;)
         self.alt_a(self2)
 
     def super_b(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;SUPER - B&#34;)
         self.alt_b(self2)
-
-    def alt_a(self, self2):
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT - A&#34;)
-        self2.mained.saveall()
-
-    def alt_g(self, self2):
-        gotodlg(self2)
-
-    def alt_x(self, self2):
-
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT- X -- Exit&#34;)
-        self2.mained.activate_exit()
-
-    def alt_y(self, self2):
-
-        if pedconfig.conf.pgdebug &gt; 9:
-            print (&#34;ALT- Y -- Compile&#34;)
-
-        self2.check_syntax()
 
     # --------------------------------------------------------------
     # Tab handle is awkward. The regular key tab will insert
@@ -4849,7 +3639,7 @@ class ActHand:
         xidx = self2.caret[0] + self2.xpos;
         yidx = self2.caret[1] + self2.ypos
 
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;TAB&#34;, self2.shift)
 
         #tabstop = 4
@@ -4900,8 +3690,21 @@ class ActHand:
                     self2.text[cnt] = &#34;    &#34; + self2.text[cnt]
                     cnt += 1
             self2.invalidate()
-            self2.set_changed(True)</code></pre>
+            self2.set_changed(True)
+
+    def xclip_cb(self, self2, ctext, cummx):
+        cummx = ctext + cummx
+        self2.clipboard.set_text(cummx, len(cummx))
+        #self2.clipboard.request_text(self.xclip_cb, cumm)
+        ttt = self2.clipboard.wait_for_text()
+        self.clip_cb(none, ttt, self2)
+
+    # EOF</code></pre>
 </details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>acthand2.ActHand2</li>
+</ul>
 <h3>Methods</h3>
 <dl>
 <dt id="acthand.ActHand.add_key"><code class="name flex">
@@ -4915,7 +3718,7 @@ class ActHand:
 </summary>
 <pre><code class="python">def add_key(self, self2, event):
 
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print(&#34;add_key: &#39;%s&#39;&#34; % event.string)
 
     # CR / LF still haunts us, ignore CR
@@ -5070,439 +3873,6 @@ class ActHand:
             event.string  = aa
             event.keyval = ord(aa)
             self.add_key(self2, event)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_a"><code class="name flex">
-<span>def <span class="ident">alt_a</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_a(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - A&#34;)
-    self2.mained.saveall()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_b"><code class="name flex">
-<span>def <span class="ident">alt_b</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_b(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        printb (&#34;ALT - B&#34;)
-
-    pedbuffs.buffers(self, self2)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_c"><code class="name flex">
-<span>def <span class="ident">alt_c</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_c(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - C&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    self2.xsel, self2.xsel2 = xidx, xidx + 1
-    self2.ysel = self2.ysel2 = yidx
-    self2.colsel = True
-    self2.invalidate()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_d"><code class="name flex">
-<span>def <span class="ident">alt_d</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_d(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - D&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-
-    # After EOF, move to end
-    if yidx &gt;= len(self2.text):
-        yidx = len(self2.text) - 1
-        yidx = max(yidx, 0)
-        self2.set_caret(xidx, yidx)
-
-        # Refresh values
-        xidx = self2.caret[0] + self2.xpos;
-        yidx = self2.caret[1] + self2.ypos
-
-    self.pad_list(self2, yidx)
-    self2.undoarr.append((xidx, yidx, pedundo.DELETED, self2.text[yidx]))
-
-    del (self2.text[yidx])
-    self2.mained.update_statusbar(&#34;Deleted line %d&#34; % yidx)
-    self2.invalidate()
-    self2.set_changed(True)
-    self2.src_changed = True</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_f"><code class="name flex">
-<span>def <span class="ident">alt_f</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_f(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - F&#34;)
-    pedconfig.conf.pedwin.openmenu(&#34;File&#34;)
-    pass</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_g"><code class="name flex">
-<span>def <span class="ident">alt_g</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_g(self, self2):
-    gotodlg(self2)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_i"><code class="name flex">
-<span>def <span class="ident">alt_i</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_i(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - I&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos;
-
-    self2.undoarr.append((xidx, yidx, pedundo.NOOP, &#34;&#34;))
-
-    cnt = 0; cnt2 = 0; found  = False;
-    zlen = len(self2.text)
-    while True:
-        if cnt &gt;= zlen: break
-        line = self2.text[cnt];  xlen = len(line)
-        if line.find(&#34;\t&#34;) &gt;= 0:
-            self2.undoarr.append((xidx, cnt, pedundo.MODIFIED + pedundo.CONTFLAG,
-                                   self2.text[cnt]))
-            line2 = untab_str(line, self2.tabstop)
-            self2.text[cnt] = line2
-            cnt2 += 1
-        cnt += 1
-    self2.mained.update_statusbar(&#34;Converted %d lines with tabs&#34; % cnt2)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_j"><code class="name flex">
-<span>def <span class="ident">alt_j</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_j(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - J&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos;
-
-    cnt = yidx + 1; found  = False; zlen = len(self2.text)
-    while True:
-        if cnt &gt;= zlen: break
-        line = self2.text[cnt];  xlen = len(line)
-        if xlen &gt;= 80:
-            self2.gotoxy(xlen, cnt)
-            found = True
-            break
-        cnt += 1
-    if found:
-        self2.mained.update_statusbar(&#34;Jumped to line %d&#34; % cnt)
-    else:
-        self2.mained.update_statusbar(&#34;No long lines found or at EOF&#34;)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_k"><code class="name flex">
-<span>def <span class="ident">alt_k</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_k(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - K&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, self2.text[yidx]))
-    line = self2.text[yidx]
-    self2.text[yidx] = line[:xidx]
-    self2.invalidate()
-    self2.set_changed(True)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_l"><code class="name flex">
-<span>def <span class="ident">alt_l</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_l(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - L&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    self2.xsel = 0; self2.xsel2 = len(self2.text[yidx])
-    self2.ysel = self2.ysel2 = yidx
-    self2.inval_line()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_o"><code class="name flex">
-<span>def <span class="ident">alt_o</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_o(self, self2):
-
-    # Test
-    #pedync.message(&#34;\n   Testing    \n\n&#34;)
-
-    # Simplified open
-    fnames = pedofd.ofd(&#34;&#34;, self2)
-    #print(&#34;openfile fnames&#34;, fnames)
-    for fff in fnames:
-        #print(&#34;Open&#34;, (fff))
-        self2.mained.openfile(fff)
-        pass</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_q"><code class="name flex">
-<span>def <span class="ident">alt_q</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_q(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - Q&#34;)
-
-    for mm in range(self2.notebook.get_n_pages()):
-        vcurr = self2.notebook.get_nth_page(mm)
-        vcurr.set_position(1)
-
-    if self2.shift:
-        self2.mained.hpaned.set_position(1)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_s"><code class="name flex">
-<span>def <span class="ident">alt_s</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_s(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - T&#34;)
-
-    #pedfind.find(self, self2)
-    self2.find(self)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_t"><code class="name flex">
-<span>def <span class="ident">alt_t</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_t(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - T&#34;)
-
-    #pedfind.find(self, self2, True)
-    self2.find(self, True)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_v"><code class="name flex">
-<span>def <span class="ident">alt_v</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_v(self, self2):
-    xidx = int(self2.caret[0] + self2.xpos)
-    yidx = int(self2.caret[1] + self2.ypos)
-    line = self2.text[yidx]
-    #self2.xsel, self2.xsel2 = selasci2(line, xidx, &#34;-_.[]&#34;)
-    self2.xsel, self2.xsel2 = selasci2(line, xidx,&#34;-_&#34;)
-    self2.ysel = self2.ysel2 = yidx
-    self2.gotoxy(self2.xsel2, self2.ysel)
-    self2.inval_line()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_w"><code class="name flex">
-<span>def <span class="ident">alt_w</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_w(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - W&#34;)
-
-    self2.save()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_x"><code class="name flex">
-<span>def <span class="ident">alt_x</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_x(self, self2):
-
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT- X -- Exit&#34;)
-    self2.mained.activate_exit()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_y"><code class="name flex">
-<span>def <span class="ident">alt_y</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_y(self, self2):
-
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT- Y -- Compile&#34;)
-
-    self2.check_syntax()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.alt_z"><code class="name flex">
-<span>def <span class="ident">alt_z</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def alt_z(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;ALT - Z&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos;
-    self2.undoarr.append((xidx, yidx, pedundo.NOOP, &#34;&#34;))
-
-    cnt = 0; cnt2 = 0; cnt3 = 0
-    zlen = len(self2.text)
-    while True:
-        if cnt &gt;= zlen: break
-        line = self2.text[cnt];  xlen = len(line)
-
-        if xlen &gt; 78:
-            cnt2 += 1
-            # Delete this line from doc
-            self2.undoarr.append((xidx, cnt, \
-                            pedundo.DELETED + pedundo.CONTFLAG, line))
-            text = self2.text[:cnt] + self2.text[cnt+1:]
-            self2.text = text
-            zlen -= 1
-            arr = line.split();  ttt = &#34;&#34;
-            for aa in arr:
-                if len(ttt) + len(aa) &gt; 75:
-                    #print (ttt)
-                    text = self2.text[:cnt]
-                    text.append(ttt)
-                    text += self2.text[cnt:]
-                    self2.text = text
-                    self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
-                                   ttt))
-                    zlen += 1; cnt += 1; cnt3 += 1
-                    ttt = aa + &#34; &#34;
-                else:
-                    ttt += aa + &#34; &#34;
-            if ttt:
-                #print (ttt)
-                text = self2.text[:cnt]
-                text.append(ttt)
-                text += self2.text[cnt:]
-                self2.text = text
-                self2.undoarr.append((xidx, cnt, pedundo.ADDED + pedundo.CONTFLAG,
-                                   ttt))
-                zlen += 1; cnt += 1; cnt3 += 1
-        else:
-            cnt += 1
-
-    self2.invalidate()
-    self2.set_changed(True)
-    self2.mained.update_statusbar(\
-        &#34;Converted %d long lines to %d short lines&#34; % (cnt2, cnt3))</code></pre>
 </details>
 </dd>
 <dt id="acthand.ActHand.bottom"><code class="name flex">
@@ -5691,7 +4061,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_a(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL -- A&#34;)
 
     if self2.shift:
@@ -5708,403 +4078,6 @@ class ActHand:
         self2.invalidate()</code></pre>
 </details>
 </dd>
-<dt id="acthand.ActHand.ctrl_alt_a"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_a</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_a(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - A&#34;)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    line = self2.text[yidx]
-    #print(&#34;line: (&#34;, line))
-    newline = &#34;&#34;
-    for aa in line:
-        #print(&#34;%d&#34; (% ord(aa)),)
-        if ord(aa) &lt; 128:
-            newline += aa
-
-    if line != newline:
-        self2.text[yidx] = newline
-        self2.mained.update_statusbar(&#34;Cleaned non ASCII characters.&#34;)
-        self2.invalidate()
-    pass</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_b"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_b</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_b(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - B&#34;)
-
-    #line = &#34;&#34;; xidx = 0; yidx = 0
-    # No selection, assume word
-    if self2.xsel == -1 or self2.ysel == -1:
-        xidx = self2.caret[0] + self2.xpos
-        yidx = self2.caret[1] + self2.ypos
-        line = self2.text[yidx]
-        #cntb, cnte = selword(line, xidx)
-        cntb, cnte = selasci2(line, xidx, &#34;_-&#34;)
-    else:
-        # Normalize
-        xssel = min(self2.xsel, self2.xsel2)
-        xesel = max(self2.xsel, self2.xsel2)
-        yssel = min(self2.ysel, self2.ysel2)
-        yesel = max(self2.ysel, self2.ysel2)
-
-        xidx = xssel; yidx = yssel;
-        line = self2.text[yidx]
-        cntb = xssel; cnte = xesel
-
-    if cnte == cntb:
-        self2.mained.update_statusbar(&#34;Please nav to a word first.&#34;)
-        return
-
-    self2.undoarr.append((xidx, yidx, pedundo.MODIFIED, line))
-    #print (&#34;word / selection&#34;, line[cntb:cnte])
-
-    wlow = line[cntb].upper()
-
-    self2.text[yidx] = line[:cntb] + wlow + line[cntb+1:]
-    self2.inval_line()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_c"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_c</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_c(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - C&#34;)
-
-    extx = os.path.splitext(self2.fname)[1]
-    #print(&#34;extx&#34;, extx)
-
-    cumm = self._getsel(self2)
-    strx = &#34;&#34;; strx2 = &#34;&#34;
-    if cumm:
-        self.ctrl_c(self2)
-        # This will catch all known varieties, else .py assumed
-        if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-            strx  = &#34;#if 0\n&#34;
-            strx2 = &#34;#endif\n&#34;
-        elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-            strx  = &#34;%if 0\n&#34;
-            strx2 = &#34;%endif\n&#34;
-        elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-            #print(&#34;html comment&#34;)
-            strx  = &#34;&lt;!-- &#34;
-            strx2 = &#34; --&gt;&#34;
-        else:
-            strx  = &#34;&#39;&#39;&#39; &#34;
-            strx2 = &#34;&#39;&#39;&#39; &#34;
-
-        self.add_str(self2, strx)
-        self.ctrl_v(self2)
-        if strx2:
-            self.add_str(self2, strx2)
-
-    else:
-        if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-            strx  = &#34;//&#34;
-        elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-            strx  = &#34;;&#34;
-        elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-            strx  = &#34;&lt;!-- &#34; ; strx2 = &#34;--&gt;&#34;
-            # Trailer attached to end of line
-            xidx2 = self2.caret[0] + self2.xpos;
-            yidx2 = self2.caret[1] + self2.ypos
-            xlen = len(self2.text[yidx2])
-            self2.set_caret(xlen, yidx2)
-            self.add_str(self2, strx2)
-            self2.set_caret(xidx2, yidx2)
-        else:
-            strx  = &#34;#&#34;
-
-        self.add_str(self2, strx)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    xidx -= len(strx); yidx += 1
-    self2.set_caret(xidx, yidx)
-    self2.mained.update_statusbar(&#34;Selection commented out.&#34;)
-    self2.invalidate()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_d"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_d</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_d(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - D&#34;)
-    self2.mained.start_term()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_e"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_e</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_e(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - E&#34;)
-    pedmisc.exec_test(self2, &#34;kb&#34;)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_f"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_f</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_f(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - F&#34;)
-
-    self2.mained.update_statusbar(&#34;Filling to column.&#34;)
-    # Fill till column
-    if  self2.shift:
-        #self2.mained.update_statusbar(&#34;C-A-S &#39;F&#39; Key pressed.&#34;)
-        self2.mained.update_statusbar(&#34;Promt for fill to column&#34;)
-        ttt = prompt_for_text(self2, &#34;Enter column to fill to&#34;, str(self2.text_fillcol))
-        if ttt:
-            self2.text_fillcol = int(ttt);
-    else:
-        xidx = self2.caret[0] + self2.xpos;
-        #print(&#34;Filling from&#34;, xidx, &#34;to&#34;, self2.text_fillcol)
-        if xidx &lt; self2.text_fillcol:
-            for aa in range(self2.text_fillcol - xidx):
-                event = Gdk.EventKey()
-                event.string  = &#34; &#34;
-                event.keyval = ord(&#34; &#34;)
-                self.add_key(self2, event)
-        else:
-            self2.mained.update_statusbar(&#34;Past filling point already.&#34;)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_g"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_g</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_g(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - G&#34;)
-    self2.mained.update_statusbar(&#34;Execute cycle&#34;)
-    if  self2.shift:
-        pass
-    self2.mained.doall(None)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_h"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_h</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_h(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - H&#34;)
-    #pedfind.find(self, self2, True)
-    self2.find(self, True)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_j"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_j</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_j(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - J&#34;)
-    self2.coloring(not self2.colflag)
-    if self2.colflag: strx = &#34;on&#34;
-    else: strx = &#34;off&#34;
-    self2.mained.update_statusbar(&#34;Coloring is %s.&#34; % strx)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_k"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_k</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_k(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - K&#34;)
-    self2.hexview(not self2.hex)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_num"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_num</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_num(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - NUM&#34;, self2.lastkey)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_r"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_r</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_r(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - R&#34;)
-    #print(&#34;Read file on tts &#34;);
-    try:
-        if not self2.tts:
-            self2.tts = pedtts.tts(self2.mained.update_statusbar)
-
-        self2.tts.read_tts(self2)
-    except:
-        print(&#34;No TTS&#34;, sys.exc_info())
-        self2.mained.update_statusbar(&#34;No TTS installed&#34;)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_t"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_t</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_t(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - T&#34;)
-    self2.start_term()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.ctrl_alt_v"><code class="name flex">
-<span>def <span class="ident">ctrl_alt_v</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def ctrl_alt_v(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - ALT - V &#34;)
-
-    #self2.mained.saveall()
-    extx = os.path.splitext(self2.fname)[1]
-    #print(&#34;extx&#34;, extx)
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    try:
-        chh = self2.text[yidx][xidx]
-        #print(&#34;chh&#34;, chh)
-    except:
-        chh = 0
-
-    # This will catch all known varieties, else .py assumed
-    if extx == &#34;.c&#34; or extx == &#34;.h&#34; or extx == &#34;.y&#34; or extx == &#34;.l&#34;:
-        if chh == &#34;/&#34;:
-            self.delete(self2)
-            self.delete(self2)
-        else:
-            self2.mained.update_statusbar(&#34;Not on &#39;c&#39; comment.&#34;)
-
-    elif extx == &#34;.asm&#34; or extx == &#34;.inc&#34; or extx == &#34;.S&#34;:
-        if chh == &#34;;&#34;:
-            self.delete(self2)
-        else:
-            self2.mained.update_statusbar(&#34;Not on &#39;asm&#39; comment.&#34;)
-
-    elif extx == &#34;.htm&#34; or extx == &#34;.html&#34;:
-        #print(&#34;html comment strx  = &lt;!-- --&gt;&#34;;
-        if chh == &#34;&lt;&#34;:
-            self.delete(self2)
-            self.delete(self2)
-            self.delete(self2)
-            self.delete(self2)
-            xidx2 = self2.caret[0] + self2.xpos;
-            yidx2 = self2.caret[1] + self2.ypos
-            #self.end(self2)
-            xlen = len(self2.text[yidx2])
-            self2.set_caret(xlen, yidx2)
-            self.bs(self2)
-            self.bs(self2)
-            self.bs(self2)
-            self2.set_caret(xidx2, yidx2)
-        else:
-            self2.mained.update_statusbar(&#34;Not on comment character.&#34;)
-
-    else:
-        # Default comment
-        if chh == &#34;#&#34;:
-            self.delete(self2)
-        else:
-            self2.mained.update_statusbar(&#34;Not on comment character.&#34;)
-
-    # Goto next line
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    self2.set_caret(xidx, yidx + 1)
-
-    #self.down(self2)</code></pre>
-</details>
-</dd>
 <dt id="acthand.ActHand.ctrl_b"><code class="name flex">
 <span>def <span class="ident">ctrl_b</span></span>(<span>self, self2)</span>
 </code></dt>
@@ -6115,7 +4088,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_b(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL -- B&#34;)
 
     if self2.shift:
@@ -6149,7 +4122,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_c(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - C&#34;)
 
     if self2.xsel == -1 or  self2.ysel == -1:
@@ -6222,7 +4195,7 @@ class ActHand:
 </summary>
 <pre><code class="python">def ctrl_e(self, self2):
 
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - E&#34;)
 
     if self2.shift:
@@ -6255,7 +4228,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_f(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - F&#34;)
 
     if self2.shift:
@@ -6274,7 +4247,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_g(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - G&#34;)
 
     #self2.closedoc()
@@ -6295,7 +4268,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_h(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - H&#34;)
 
     self2.ctrl = False
@@ -6313,7 +4286,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_i(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - I&#34;)
 
 
@@ -6340,7 +4313,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_j(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - J&#34;)
 
     self2.ctrl = False
@@ -6358,7 +4331,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_k(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - K&#34;)
 
     self2.ctrl = False
@@ -6377,7 +4350,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_l(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - L&#34;)
 
     self2.ctrl = False
@@ -6395,7 +4368,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_m(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - M&#34;)
 
     if self2.shift:
@@ -6420,8 +4393,9 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_n(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - N&#34;)</code></pre>
+    if 1: #pedconfig.conf.pgdebug &gt; 4:
+        print (&#34;Warning: got CTRL - N Main menu did not interpret it.&#34;, self2.shift)
+        self2.mained.newfile()</code></pre>
 </details>
 </dd>
 <dt id="acthand.ActHand.ctrl_num"><code class="name flex">
@@ -6435,7 +4409,7 @@ class ActHand:
 </summary>
 <pre><code class="python">def ctrl_num(self, self2):
     kkk = self2.curr_event.keyval - Gdk.KEY_0
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL -- num, key=&#34;, kkk)
 
     # Process clip 9 -- sum it all
@@ -6458,7 +4432,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_num_clip(self, self2, num):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL -- &#34;, num)
 
     self2.mained.update_statusbar(&#34;Switched to clipboard %d.&#34; % num)
@@ -6480,9 +4454,13 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_o(self, self2):
-    if 1: #pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - O&#34;, self2.shift)
-    pass</code></pre>
+    if 1: #pedconfig.conf.pgdebug &gt; 4:
+        print (&#34;Warning: got CTRL - O Main menu did not interpret it.&#34;, &#34;shift=&#34;, self2.shift)
+    pass
+    if self2.shift:
+        load_sess()
+    else:
+        self2.mained.open()</code></pre>
 </details>
 </dd>
 <dt id="acthand.ActHand.ctrl_p"><code class="name flex">
@@ -6495,7 +4473,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_p(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - P&#34;)
     pass
 
@@ -6533,8 +4511,8 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_q(self, self2):
-    if 1: #pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;CTRL - P&#34;)
+    if 1: #pedconfig.conf.pgdebug &gt; 4:
+        print (&#34;CTRL - Q&#34;)
     pass</code></pre>
 </details>
 </dd>
@@ -6548,11 +4526,11 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_r(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - R&#34;)
 
     if self2.shift:
-        if pedconfig.conf.pgdebug &gt; 9:
+        if pedconfig.conf.pgdebug &gt; 4:
             print (&#34;CTRL-SHIFT - R&#34;)
         self2.start_m4filter()
         return
@@ -6590,6 +4568,22 @@ class ActHand:
     self2.inval_line()</code></pre>
 </details>
 </dd>
+<dt id="acthand.ActHand.ctrl_s"><code class="name flex">
+<span>def <span class="ident">ctrl_s</span></span>(<span>self, self2)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ctrl_s(self, self2):
+
+    if pedconfig.conf.pgdebug &gt; 4:
+        print (&#34;CTRL - S&#34;)
+    self2.save()</code></pre>
+</details>
+</dd>
 <dt id="acthand.ActHand.ctrl_space"><code class="name flex">
 <span>def <span class="ident">ctrl_space</span></span>(<span>self, self2)</span>
 </code></dt>
@@ -6600,7 +4594,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_space(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - SP&#34;)
 
     if self2.shift:
@@ -6621,7 +4615,7 @@ class ActHand:
 </summary>
 <pre><code class="python">def ctrl_t(self, self2):
 
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - T&#34;)
 
     xidx = self2.caret[0] + self2.xpos;
@@ -6665,7 +4659,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_tab(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;ctrl_tab&#34;)
 
     if self2.shift:
@@ -6684,7 +4678,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_u(self, self2, lowit = False):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - U&#34;)
 
     #line = &#34;&#34;; xidx = 0; yidx = 0
@@ -6733,7 +4727,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_v(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - V&#34;)
 
     if self2.readonly:
@@ -6766,7 +4760,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_w(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - W&#34;)
 
     if self2.shift:
@@ -6785,7 +4779,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_x(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - X&#34;)
 
     if self2.readonly:
@@ -6805,7 +4799,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_y(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - Y&#34;)
 
     if self2.readonly:
@@ -6825,7 +4819,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ctrl_z(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;CTRL - Z&#34;)
 
     if self2.readonly:
@@ -7059,7 +5053,7 @@ class ActHand:
 
     if self2.alt:
         #print (&#34;alt-end&#34;)
-        #self2.mained.lastwin()
+        self2.mained.lastwin()
         pass
     elif self2.ctrl:
         self.bottom(self2)
@@ -7124,7 +5118,7 @@ class ActHand:
 
     self2.mained.update_statusbar(&#34;Esc&#34;)
     self2.clearsel()
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;ESC&#34;)
 
     #print (pedync.yes_no_cancel(&#34;Escape&#34;, &#34;This is a question&#34; ))</code></pre>
@@ -7140,7 +5134,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f1(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F1&#34;)
     if self2.shift:
         sss = self._getsel(self2)
@@ -7193,7 +5187,7 @@ class ActHand:
     else:
         self2.mained.mywin.fullscreen()
         self2.mained.full = True
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F11&#34;)</code></pre>
 </details>
 </dd>
@@ -7207,7 +5201,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f12(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F12&#34;)
 
     pass</code></pre>
@@ -7223,7 +5217,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f2(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F2&#34;)
 
     if self2.shift:
@@ -7269,7 +5263,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f3(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F3&#34;)
 
     if self2.shift:
@@ -7288,7 +5282,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f4(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F4&#34;)
     #self.play(self2, True)
     try:
@@ -7310,7 +5304,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f5(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F5&#34;)
 
     if len(self2.accum) == 0:
@@ -7361,7 +5355,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f6(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F6&#34;)
 
     if len(self2.accum) == 0:
@@ -7407,7 +5401,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f7(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F7&#34;)
 
     pedconfig.conf.keyh.reset()
@@ -7440,7 +5434,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def f8(self, self2, anim = False):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F8&#34;)
 
     self.play(self2, anim)</code></pre>
@@ -7458,7 +5452,7 @@ class ActHand:
 <pre><code class="python">def f9(self, self2, flag = False):
     self2.spell = not self2.spell
 
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;F9 spell&#34;, self2.spell)
 
     if self2.spell:
@@ -7485,6 +5479,8 @@ class ActHand:
 </summary>
 <pre><code class="python">def home(self, self2):
 
+    #print(&#34;Home&#34;)
+
     xidx = self2.caret[0] + self2.xpos
     yidx = self2.caret[1] + self2.ypos
     if self2.shift:
@@ -7495,7 +5491,7 @@ class ActHand:
             self2.ysel = yidx
     if self2.alt:
         #print (&#34;alt-home&#34;)
-        #self2.mained.firstwin()
+        self2.mained.firstwin()
         pass
     elif self2.ctrl:
         self2.set_caret(0, 0)
@@ -7533,7 +5529,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def ins(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;INS&#34;)
 
     xidx = self2.caret[0] + self2.xpos;
@@ -7787,223 +5783,6 @@ class ActHand:
     self2.mained.update_statusbar(&#34;Ended Play.&#34;)</code></pre>
 </details>
 </dd>
-<dt id="acthand.ActHand.rctrl_a"><code class="name flex">
-<span>def <span class="ident">rctrl_a</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_a(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    self2.mained.activate_notetab()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_all"><code class="name flex">
-<span>def <span class="ident">rctrl_all</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_all(self, self2):
-    if 1: #pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;RCTRL -- Captured str=&#34;, self2.curr_event.string,
-                                        &#34;keyval=&#34;, self2.curr_event.keyval)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_c"><code class="name flex">
-<span>def <span class="ident">rctrl_c</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_c(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    self2.mained.activate_caltab()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_f"><code class="name flex">
-<span>def <span class="ident">rctrl_f</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_f(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    self2.start_external([&#34;thunar&#34;, &#34;.&#34;],
-                                    [&#34;explorer&#34;, &#34;&#34;])</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_h"><code class="name flex">
-<span>def <span class="ident">rctrl_h</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_h(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    #print(&#34;Add html comment&#34;)
-
-    cumm = self._getsel(self2)
-    strx  = &#34;&lt;!-- &#34;; strx2 = &#34; --&gt;&#34;
-    if cumm:
-        self.ctrl_c(self2)
-        self.add_str(self2, strx)
-        self.ctrl_v(self2)
-        if strx2:
-            self.add_str(self2, strx2)
-    else:
-        # Trailer attached to end of line
-        xidx2 = self2.caret[0] + self2.xpos;
-        yidx2 = self2.caret[1] + self2.ypos
-        xlen = len(self2.text[yidx2])
-        self2.set_caret(xlen, yidx2)
-        self.add_str(self2, strx2)
-        self2.set_caret(xidx2, yidx2)
-        self.add_str(self2, strx)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    xidx -= len(strx); yidx += 1
-    self2.set_caret(xidx, yidx)
-    self2.mained.update_statusbar(&#34;Selection HTML comment added.&#34;)
-    self2.invalidate()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_i"><code class="name flex">
-<span>def <span class="ident">rctrl_i</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_i(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    #print(&#34;Add &#39;C&#39; comment&#34;)
-
-    cumm = self._getsel(self2)
-    strx  = &#34;/* &#34;; strx2 = &#34; */&#34;
-    if cumm:
-        self.ctrl_c(self2)
-        self.add_str(self2, strx)
-        self.ctrl_v(self2)
-        if strx2:
-            self.add_str(self2, strx2)
-    else:
-        # Trailer attached to end of line
-        xidx2 = self2.caret[0] + self2.xpos;
-        yidx2 = self2.caret[1] + self2.ypos
-        xlen = len(self2.text[yidx2])
-        self2.set_caret(xlen, yidx2)
-        self.add_str(self2, strx2)
-        self2.set_caret(xidx2, yidx2)
-        self.add_str(self2, strx)
-
-    xidx = self2.caret[0] + self2.xpos;
-    yidx = self2.caret[1] + self2.ypos
-    xidx -= len(strx); yidx += 1
-    self2.set_caret(xidx, yidx)
-    self2.mained.update_statusbar(&#34;Selection HTML comment added.&#34;)
-    self2.invalidate()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_l"><code class="name flex">
-<span>def <span class="ident">rctrl_l</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_l(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    self2.start_external([&#34;libreoffice&#34;, &#34;--writer&#34;],
-                                    [&#34;libreoffice&#34;, &#34;--writer&#34;])</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_num"><code class="name flex">
-<span>def <span class="ident">rctrl_num</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_num(self, self2):
-    kkk = self2.curr_event.keyval - Gdk.KEY_0
-    if 1: #pedconfig.conf.pgdebug &gt; 9:
-        print (&#34;RCTRL -- num, key=&#34;, kkk)</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_r"><code class="name flex">
-<span>def <span class="ident">rctrl_r</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_r(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    self2.rescan()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_t"><code class="name flex">
-<span>def <span class="ident">rctrl_t</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_t(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    self2.mained.start_term()</code></pre>
-</details>
-</dd>
-<dt id="acthand.ActHand.rctrl_w"><code class="name flex">
-<span>def <span class="ident">rctrl_w</span></span>(<span>self, self2)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def rctrl_w(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
-         print (&#34;RCTRL -- &#34;, self2.curr_event.keyval)
-    self2.mained.activate_webtab()</code></pre>
-</details>
-</dd>
 <dt id="acthand.ActHand.ret"><code class="name flex">
 <span>def <span class="ident">ret</span></span>(<span>self, self2)</span>
 </code></dt>
@@ -8122,7 +5901,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def super_a(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;SUPER - A&#34;)
     self.alt_a(self2)</code></pre>
 </details>
@@ -8137,7 +5916,7 @@ class ActHand:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def super_b(self, self2):
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;SUPER - B&#34;)
     self.alt_b(self2)</code></pre>
 </details>
@@ -8156,7 +5935,7 @@ class ActHand:
     xidx = self2.caret[0] + self2.xpos;
     yidx = self2.caret[1] + self2.ypos
 
-    if pedconfig.conf.pgdebug &gt; 9:
+    if pedconfig.conf.pgdebug &gt; 4:
         print (&#34;TAB&#34;, self2.shift)
 
     #tabstop = 4
@@ -8296,43 +6075,10 @@ class ActHand:
 <ul class="two-column">
 <li><code><a title="acthand.ActHand.add_key" href="#acthand.ActHand.add_key">add_key</a></code></li>
 <li><code><a title="acthand.ActHand.add_str" href="#acthand.ActHand.add_str">add_str</a></code></li>
-<li><code><a title="acthand.ActHand.alt_a" href="#acthand.ActHand.alt_a">alt_a</a></code></li>
-<li><code><a title="acthand.ActHand.alt_b" href="#acthand.ActHand.alt_b">alt_b</a></code></li>
-<li><code><a title="acthand.ActHand.alt_c" href="#acthand.ActHand.alt_c">alt_c</a></code></li>
-<li><code><a title="acthand.ActHand.alt_d" href="#acthand.ActHand.alt_d">alt_d</a></code></li>
-<li><code><a title="acthand.ActHand.alt_f" href="#acthand.ActHand.alt_f">alt_f</a></code></li>
-<li><code><a title="acthand.ActHand.alt_g" href="#acthand.ActHand.alt_g">alt_g</a></code></li>
-<li><code><a title="acthand.ActHand.alt_i" href="#acthand.ActHand.alt_i">alt_i</a></code></li>
-<li><code><a title="acthand.ActHand.alt_j" href="#acthand.ActHand.alt_j">alt_j</a></code></li>
-<li><code><a title="acthand.ActHand.alt_k" href="#acthand.ActHand.alt_k">alt_k</a></code></li>
-<li><code><a title="acthand.ActHand.alt_l" href="#acthand.ActHand.alt_l">alt_l</a></code></li>
-<li><code><a title="acthand.ActHand.alt_o" href="#acthand.ActHand.alt_o">alt_o</a></code></li>
-<li><code><a title="acthand.ActHand.alt_q" href="#acthand.ActHand.alt_q">alt_q</a></code></li>
-<li><code><a title="acthand.ActHand.alt_s" href="#acthand.ActHand.alt_s">alt_s</a></code></li>
-<li><code><a title="acthand.ActHand.alt_t" href="#acthand.ActHand.alt_t">alt_t</a></code></li>
-<li><code><a title="acthand.ActHand.alt_v" href="#acthand.ActHand.alt_v">alt_v</a></code></li>
-<li><code><a title="acthand.ActHand.alt_w" href="#acthand.ActHand.alt_w">alt_w</a></code></li>
-<li><code><a title="acthand.ActHand.alt_x" href="#acthand.ActHand.alt_x">alt_x</a></code></li>
-<li><code><a title="acthand.ActHand.alt_y" href="#acthand.ActHand.alt_y">alt_y</a></code></li>
-<li><code><a title="acthand.ActHand.alt_z" href="#acthand.ActHand.alt_z">alt_z</a></code></li>
 <li><code><a title="acthand.ActHand.bottom" href="#acthand.ActHand.bottom">bottom</a></code></li>
 <li><code><a title="acthand.ActHand.bs" href="#acthand.ActHand.bs">bs</a></code></li>
 <li><code><a title="acthand.ActHand.clip_cb" href="#acthand.ActHand.clip_cb">clip_cb</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_a" href="#acthand.ActHand.ctrl_a">ctrl_a</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_a" href="#acthand.ActHand.ctrl_alt_a">ctrl_alt_a</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_b" href="#acthand.ActHand.ctrl_alt_b">ctrl_alt_b</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_c" href="#acthand.ActHand.ctrl_alt_c">ctrl_alt_c</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_d" href="#acthand.ActHand.ctrl_alt_d">ctrl_alt_d</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_e" href="#acthand.ActHand.ctrl_alt_e">ctrl_alt_e</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_f" href="#acthand.ActHand.ctrl_alt_f">ctrl_alt_f</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_g" href="#acthand.ActHand.ctrl_alt_g">ctrl_alt_g</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_h" href="#acthand.ActHand.ctrl_alt_h">ctrl_alt_h</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_j" href="#acthand.ActHand.ctrl_alt_j">ctrl_alt_j</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_k" href="#acthand.ActHand.ctrl_alt_k">ctrl_alt_k</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_num" href="#acthand.ActHand.ctrl_alt_num">ctrl_alt_num</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_r" href="#acthand.ActHand.ctrl_alt_r">ctrl_alt_r</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_t" href="#acthand.ActHand.ctrl_alt_t">ctrl_alt_t</a></code></li>
-<li><code><a title="acthand.ActHand.ctrl_alt_v" href="#acthand.ActHand.ctrl_alt_v">ctrl_alt_v</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_b" href="#acthand.ActHand.ctrl_b">ctrl_b</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_c" href="#acthand.ActHand.ctrl_c">ctrl_c</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_d" href="#acthand.ActHand.ctrl_d">ctrl_d</a></code></li>
@@ -8352,6 +6098,7 @@ class ActHand:
 <li><code><a title="acthand.ActHand.ctrl_p" href="#acthand.ActHand.ctrl_p">ctrl_p</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_q" href="#acthand.ActHand.ctrl_q">ctrl_q</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_r" href="#acthand.ActHand.ctrl_r">ctrl_r</a></code></li>
+<li><code><a title="acthand.ActHand.ctrl_s" href="#acthand.ActHand.ctrl_s">ctrl_s</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_space" href="#acthand.ActHand.ctrl_space">ctrl_space</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_t" href="#acthand.ActHand.ctrl_t">ctrl_t</a></code></li>
 <li><code><a title="acthand.ActHand.ctrl_tab" href="#acthand.ActHand.ctrl_tab">ctrl_tab</a></code></li>
@@ -8386,17 +6133,6 @@ class ActHand:
 <li><code><a title="acthand.ActHand.pgdn" href="#acthand.ActHand.pgdn">pgdn</a></code></li>
 <li><code><a title="acthand.ActHand.pgup" href="#acthand.ActHand.pgup">pgup</a></code></li>
 <li><code><a title="acthand.ActHand.play" href="#acthand.ActHand.play">play</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_a" href="#acthand.ActHand.rctrl_a">rctrl_a</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_all" href="#acthand.ActHand.rctrl_all">rctrl_all</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_c" href="#acthand.ActHand.rctrl_c">rctrl_c</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_f" href="#acthand.ActHand.rctrl_f">rctrl_f</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_h" href="#acthand.ActHand.rctrl_h">rctrl_h</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_i" href="#acthand.ActHand.rctrl_i">rctrl_i</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_l" href="#acthand.ActHand.rctrl_l">rctrl_l</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_num" href="#acthand.ActHand.rctrl_num">rctrl_num</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_r" href="#acthand.ActHand.rctrl_r">rctrl_r</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_t" href="#acthand.ActHand.rctrl_t">rctrl_t</a></code></li>
-<li><code><a title="acthand.ActHand.rctrl_w" href="#acthand.ActHand.rctrl_w">rctrl_w</a></code></li>
 <li><code><a title="acthand.ActHand.ret" href="#acthand.ActHand.ret">ret</a></code></li>
 <li><code><a title="acthand.ActHand.right" href="#acthand.ActHand.right">right</a></code></li>
 <li><code><a title="acthand.ActHand.super_a" href="#acthand.ActHand.super_a">super_a</a></code></li>

@@ -761,7 +761,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.lastevent = event
 
         #if pedconfig.conf.pgdebug > 5:
-        #    print( "Button press  ", self, event.type, " x=", event.x, " y=", event.y)
+        #    print( "Button press  ", self, event.type, " x=", event.x,
+        #    " y=", event.y)
 
         event.x = int(event.x) - self.strip
         event.y = int(event.y)

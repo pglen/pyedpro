@@ -39,9 +39,9 @@ from gi.repository import Pango
 
 #print(sys.path)
 
-realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + &#34;../pycommon&#34;)
-if realinc not in sys.path:
-    sys.path.append(realinc)
+#realinc = os.path.realpath(os.path.dirname(__file__) + os.sep + &#34;../pyvguicom&#34;)
+#if realinc not in sys.path:
+#    sys.path.append(realinc)
 
 #print(&#34;import&#34;, __file__)
 
@@ -56,10 +56,14 @@ from pedlib.pedofd import *
 
 #print(sys.path)
 
-from pycommon import pgsimp
-from pycommon import pggui
-from pycommon import pgbutt
-from pycommon import pgtextview
+from pyvguicom import pgsel
+from pyvguicom import pgsimp
+from pyvguicom import pggui
+from pyvguicom import pgbutt
+
+#from pyvguicom import pggui
+
+from pyvguicom import pgtextview
 
 try:
     #from pydbase import dbutils
@@ -139,8 +143,8 @@ class pgnotes(Gtk.VBox):
         #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label(&#34;s&#34;), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        #self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
-        self.lsel = pgsimp.LetterNumberSel(self.letterfilter)
+        #self.lsel = pgsel.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel = pgsel.LetterNumberSel(self.letterfilter)
         self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
         self.pack_start(self.lsel, 0, 0, 0)
 
@@ -204,46 +208,46 @@ class pgnotes(Gtk.VBox):
         self.pack_start(self.vpaned, 1, 1, 0)
 
         hbox13 = Gtk.HBox()
-        hbox13.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13.pack_start(pggui.xSpacer(), 1, 1, 0)
 
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
         butt3 = pgbutt.smallbutt(&#34; _New Item &#34;, self.newitem, &#34;Create new record&#34;)
         hbox13.pack_start(butt3, 0, 0, 0)
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt3x = pgbutt.smallbutt(&#34; Find in Text &#34;, self.findx, &#34;Find in text&#34;)
         hbox13.pack_start(butt3x, 0, 0, 0)
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt3a = pgbutt.smallbutt(&#34; Search All &#34;, self.searchall, &#34;Search ALL data&#34;)
 
         hbox13.pack_start(butt3a, 0, 0, 0)
 
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
-        hbox13.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 1, 1, 0)
 
         hbox13a = Gtk.HBox()
-        hbox13a.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 1, 1, 0)
 
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
         butt11 = pgbutt.smallbutt(&#34; Del Item &#34;, self.delitem, &#34;Delete item&#34;)
         hbox13a.pack_start(butt11, 0, 0, 0)
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt12 = pgbutt.smallbutt(&#34; Export &#34;, self.export, &#34;Export items&#34;)
         hbox13a.pack_start(butt12, 0, 0, 0)
 
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt12a = pgbutt.smallbutt(&#34; Import &#34;, self.importx, &#34;Import items&#34;)
         hbox13a.pack_start(butt12a, 0, 0, 0)
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt12b = pgbutt.smallbutt(&#34; Popout &#34;, self.popx, &#34;Pop out window&#34;)
         hbox13a.pack_start(butt12b, 0, 0, 0)
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
-        hbox13a.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 1, 1, 0)
 
         self.pack_start(hbox13, 0, 0, 0)
         self.pack_start(hbox13a, 0, 0, 0)
@@ -323,7 +327,7 @@ class pgnotes(Gtk.VBox):
                 sss = ddd[1].lower()
                 #print(&#34;sss&#34;, sss)
                 if txt2 in sss:
-                    print(&#34;found:&#34;, txt2, &#34;in&#34;, ddd[0])
+                    #print(&#34;found:&#34;, txt2, &#34;in&#34;, ddd[0])
                     if ddd[0] not in arrx:
                         arrx.append(ddd[0])
                         self.treeview2.append((ddd[0], &#34;&#34;, &#34;&#34;))
@@ -353,7 +357,10 @@ class pgnotes(Gtk.VBox):
             start_iter  =  self.old_iter
         else:
             start_iter  =  textbuffer.get_start_iter()
-        found  = start_iter.forward_search(txt, Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
+        found = False
+        if start_iter:
+            found  = start_iter.forward_search(txt,
+                            Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
         if found:
            match_start, match_end = found
            self.old_iter = match_end
@@ -1081,8 +1088,8 @@ sets through the use of explicit keyword arguments.</p></div>
         #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label(&#34;s&#34;), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        #self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
-        self.lsel = pgsimp.LetterNumberSel(self.letterfilter)
+        #self.lsel = pgsel.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel = pgsel.LetterNumberSel(self.letterfilter)
         self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
         self.pack_start(self.lsel, 0, 0, 0)
 
@@ -1146,46 +1153,46 @@ sets through the use of explicit keyword arguments.</p></div>
         self.pack_start(self.vpaned, 1, 1, 0)
 
         hbox13 = Gtk.HBox()
-        hbox13.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13.pack_start(pggui.xSpacer(), 1, 1, 0)
 
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
         butt3 = pgbutt.smallbutt(&#34; _New Item &#34;, self.newitem, &#34;Create new record&#34;)
         hbox13.pack_start(butt3, 0, 0, 0)
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt3x = pgbutt.smallbutt(&#34; Find in Text &#34;, self.findx, &#34;Find in text&#34;)
         hbox13.pack_start(butt3x, 0, 0, 0)
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt3a = pgbutt.smallbutt(&#34; Search All &#34;, self.searchall, &#34;Search ALL data&#34;)
 
         hbox13.pack_start(butt3a, 0, 0, 0)
 
-        hbox13.pack_start(pgsimp.zSpacer(), 0, 0, 0)
-        hbox13.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13.pack_start(pggui.xSpacer(), 0, 0, 0)
+        hbox13.pack_start(pggui.xSpacer(), 1, 1, 0)
 
         hbox13a = Gtk.HBox()
-        hbox13a.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 1, 1, 0)
 
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
         butt11 = pgbutt.smallbutt(&#34; Del Item &#34;, self.delitem, &#34;Delete item&#34;)
         hbox13a.pack_start(butt11, 0, 0, 0)
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt12 = pgbutt.smallbutt(&#34; Export &#34;, self.export, &#34;Export items&#34;)
         hbox13a.pack_start(butt12, 0, 0, 0)
 
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt12a = pgbutt.smallbutt(&#34; Import &#34;, self.importx, &#34;Import items&#34;)
         hbox13a.pack_start(butt12a, 0, 0, 0)
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
         butt12b = pgbutt.smallbutt(&#34; Popout &#34;, self.popx, &#34;Pop out window&#34;)
         hbox13a.pack_start(butt12b, 0, 0, 0)
-        hbox13a.pack_start(pgsimp.zSpacer(), 0, 0, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 0, 0, 0)
 
-        hbox13a.pack_start(pgsimp.zSpacer(), 1, 1, 0)
+        hbox13a.pack_start(pggui.xSpacer(), 1, 1, 0)
 
         self.pack_start(hbox13, 0, 0, 0)
         self.pack_start(hbox13a, 0, 0, 0)
@@ -1265,7 +1272,7 @@ sets through the use of explicit keyword arguments.</p></div>
                 sss = ddd[1].lower()
                 #print(&#34;sss&#34;, sss)
                 if txt2 in sss:
-                    print(&#34;found:&#34;, txt2, &#34;in&#34;, ddd[0])
+                    #print(&#34;found:&#34;, txt2, &#34;in&#34;, ddd[0])
                     if ddd[0] not in arrx:
                         arrx.append(ddd[0])
                         self.treeview2.append((ddd[0], &#34;&#34;, &#34;&#34;))
@@ -1295,7 +1302,10 @@ sets through the use of explicit keyword arguments.</p></div>
             start_iter  =  self.old_iter
         else:
             start_iter  =  textbuffer.get_start_iter()
-        found  = start_iter.forward_search(txt, Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
+        found = False
+        if start_iter:
+            found  = start_iter.forward_search(txt,
+                            Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
         if found:
            match_start, match_end = found
            self.old_iter = match_end
@@ -1849,7 +1859,10 @@ sets through the use of explicit keyword arguments.</p></div>
         start_iter  =  self.old_iter
     else:
         start_iter  =  textbuffer.get_start_iter()
-    found  = start_iter.forward_search(txt, Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
+    found = False
+    if start_iter:
+        found  = start_iter.forward_search(txt,
+                        Gtk.TextSearchFlags.CASE_INSENSITIVE, None)
     if found:
        match_start, match_end = found
        self.old_iter = match_end
@@ -2298,7 +2311,7 @@ This is more complex than it should be &hellip; dealing with old data</p></div>
             sss = ddd[1].lower()
             #print(&#34;sss&#34;, sss)
             if txt2 in sss:
-                print(&#34;found:&#34;, txt2, &#34;in&#34;, ddd[0])
+                #print(&#34;found:&#34;, txt2, &#34;in&#34;, ddd[0])
                 if ddd[0] not in arrx:
                     arrx.append(ddd[0])
                     self.treeview2.append((ddd[0], &#34;&#34;, &#34;&#34;))

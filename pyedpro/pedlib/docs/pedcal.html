@@ -45,10 +45,17 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 
-#sys.path.append(&#39;..&#39; + os.sep + &#34;pycommon&#34;)
+#sys.path.append(&#39;..&#39; + os.sep + &#34;pyvguicom&#34;)
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
+from pyvguicom import pgutils
+fff = os.path.dirname(pgutils.__file__)
+#print(&#34;fff&#34;, fff)
+sys.path.append(fff)
+
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
+from pyvguicom import pggui
+from pyvguicom import pgsel
 
 # ------------------------------------------------------------------------
 
@@ -73,8 +80,9 @@ class pgcal(Gtk.VBox):
         except:
             print(&#34;Cannot make calendar database&#34;)
 
+        sp = pggui.ySpacer()
         self.pack_start(xSpacer(), 0, 0, 0)
-        self.lsel = LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel = pgsel.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
         self.pack_start(self.lsel, 0, 0, 2)
 
         self.cal = Gtk.Calendar()
@@ -1030,8 +1038,9 @@ sets through the use of explicit keyword arguments.</p></div>
         except:
             print(&#34;Cannot make calendar database&#34;)
 
+        sp = pggui.ySpacer()
         self.pack_start(xSpacer(), 0, 0, 0)
-        self.lsel = LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel = pgsel.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
         self.pack_start(self.lsel, 0, 0, 2)
 
         self.cal = Gtk.Calendar()

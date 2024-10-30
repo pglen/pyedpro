@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>leven API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="Levenstein distance. Converted from CPP ..." />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,40 +22,33 @@
 <h1 class="title">Module <code>leven</code></h1>
 </header>
 <section id="section-intro">
+<p>Levenstein distance. Converted from CPP &hellip;</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">#!/usr/bin/env python
 
-# Levenstein distance. Converted from CPP
+__doc__ =  &#39;&#39;&#39; Levenstein distance. Converted from CPP ...  &#39;&#39;&#39;
 
-#import re, string, gtk, glib, gobject
-
-from __future__ import print_function
-#from six.moves import range
-darr = []; 
+darr = [];
 MXDIM   =   36
- 
-#//****************************
-#// Get minimum of three values
-#//****************************
 
 def  Minimum(a, b, c):
-    
+
+    &#39;&#39;&#39;
+    Get minimum of three values
+    &#39;&#39;&#39;
+
     mi = a;
     if b &lt; mi:
         mi = b
     if c &lt; mi:
         mi = c
-        
     return mi
 
-#//****************************
-#// Show Matrix
-#//****************************
-
 def show_mx(darr):
+    &#39;&#39;&#39; Show Matrix &#39;&#39;&#39;
     cnt = 0
     for ii in darr:
         cnt2 = 0
@@ -63,30 +56,26 @@ def show_mx(darr):
             print(darr[cnt][cnt2], end=&#39; &#39;)
             cnt2 += 1
         print()
-        cnt += 1 
-    print()   
-
-#//****************************
-#// Create Matrix
-#//****************************
+        cnt += 1
+    print()
 
 def create_mx():
 
+    &#39;&#39;&#39; Create Matrix &#39;&#39;&#39;
+
     global darr
-    
+
     # Create two dimentional list
     for ii in range(MXDIM):
         darr2 = []
         for iii in range(MXDIM):
             darr2.append(0)
         darr.append(darr2[:])
-   
-#//*****************************
-#// Compute Levenshtein distance
-#//*****************************
 
 def     Distance (s, t):
-    
+
+    &#39;&#39;&#39; Compute Levenshtein distance. Uses pre made darr. &#39;&#39;&#39;
+
     global darr
 
     n = len(s);  m = len(t);
@@ -94,26 +83,26 @@ def     Distance (s, t):
     if n &gt; MXDIM or m &gt; MXDIM:
         print(&#34;Levenshtine -- Warn: Array Dim exceeded &#34;, s, t)
         return MXDIM
-        
+
     #print &#34;&#39;&#34; + s+ &#34;&#39;&#34;, &#34;&#39;&#34; + t + &#34;&#39;&#34;
     #print &#34;n&#34;, n, &#34;m&#34;, m
 
     #// If any of them is empty ... return len() of the other
     if (n == 0):  return m;
     if (m == 0):  return n;
-    
+
     cost = 0
-    
+
     #// Step 1     Create matrix
     if len(darr) == 0:
         create_mx()
-        
+
     #// Step 2      Fill matrix
     for ii in range(n+1):
         darr[ii][0] = ii
     for ii in range(m+1):
         darr[0][ii] = ii
-      
+
     #// Step 3 Eval matrix
     for ii in range(1, n+1):
         s_i = s[ii-1]
@@ -121,16 +110,17 @@ def     Distance (s, t):
             t_j = t[iii - 1]
             if (s_i == t_j):
                 cost = 0
-            else:  
+            else:
                 cost = 1
             above = darr[ii-1][iii]         # GetAt (d,i-1,j, n);
             left  = darr[ii][iii-1]         # GetAt (d,i, j-1, n);
             diag =  darr[ii-1][iii-1]       # GetAt (d, i-1,j-1, n);
             cell = Minimum(above + 1, left + 1, diag + cost)
             darr[ii][iii] = cell            # PutAt (d, i, j, n, cell);
-    result = darr[n][m]                
+    result = darr[n][m]
     return result;
-            </code></pre>
+
+# EOF</code></pre>
 </details>
 </section>
 <section>
@@ -144,13 +134,15 @@ def     Distance (s, t):
 <span>def <span class="ident">Distance</span></span>(<span>s, t)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Compute Levenshtein distance. Uses pre made darr.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def     Distance (s, t):
-    
+
+    &#39;&#39;&#39; Compute Levenshtein distance. Uses pre made darr. &#39;&#39;&#39;
+
     global darr
 
     n = len(s);  m = len(t);
@@ -158,26 +150,26 @@ def     Distance (s, t):
     if n &gt; MXDIM or m &gt; MXDIM:
         print(&#34;Levenshtine -- Warn: Array Dim exceeded &#34;, s, t)
         return MXDIM
-        
+
     #print &#34;&#39;&#34; + s+ &#34;&#39;&#34;, &#34;&#39;&#34; + t + &#34;&#39;&#34;
     #print &#34;n&#34;, n, &#34;m&#34;, m
 
     #// If any of them is empty ... return len() of the other
     if (n == 0):  return m;
     if (m == 0):  return n;
-    
+
     cost = 0
-    
+
     #// Step 1     Create matrix
     if len(darr) == 0:
         create_mx()
-        
+
     #// Step 2      Fill matrix
     for ii in range(n+1):
         darr[ii][0] = ii
     for ii in range(m+1):
         darr[0][ii] = ii
-      
+
     #// Step 3 Eval matrix
     for ii in range(1, n+1):
         s_i = s[ii-1]
@@ -185,14 +177,14 @@ def     Distance (s, t):
             t_j = t[iii - 1]
             if (s_i == t_j):
                 cost = 0
-            else:  
+            else:
                 cost = 1
             above = darr[ii-1][iii]         # GetAt (d,i-1,j, n);
             left  = darr[ii][iii-1]         # GetAt (d,i, j-1, n);
             diag =  darr[ii-1][iii-1]       # GetAt (d, i-1,j-1, n);
             cell = Minimum(above + 1, left + 1, diag + cost)
             darr[ii][iii] = cell            # PutAt (d, i, j, n, cell);
-    result = darr[n][m]                
+    result = darr[n][m]
     return result;</code></pre>
 </details>
 </dd>
@@ -200,19 +192,22 @@ def     Distance (s, t):
 <span>def <span class="ident">Minimum</span></span>(<span>a, b, c)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Get minimum of three values</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def  Minimum(a, b, c):
-    
+
+    &#39;&#39;&#39;
+    Get minimum of three values
+    &#39;&#39;&#39;
+
     mi = a;
     if b &lt; mi:
         mi = b
     if c &lt; mi:
         mi = c
-        
     return mi</code></pre>
 </details>
 </dd>
@@ -220,15 +215,17 @@ def     Distance (s, t):
 <span>def <span class="ident">create_mx</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Create Matrix</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def create_mx():
 
+    &#39;&#39;&#39; Create Matrix &#39;&#39;&#39;
+
     global darr
-    
+
     # Create two dimentional list
     for ii in range(MXDIM):
         darr2 = []
@@ -241,12 +238,13 @@ def     Distance (s, t):
 <span>def <span class="ident">show_mx</span></span>(<span>darr)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Show Matrix</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def show_mx(darr):
+    &#39;&#39;&#39; Show Matrix &#39;&#39;&#39;
     cnt = 0
     for ii in darr:
         cnt2 = 0
@@ -254,8 +252,8 @@ def     Distance (s, t):
             print(darr[cnt][cnt2], end=&#39; &#39;)
             cnt2 += 1
         print()
-        cnt += 1 
-    print()   </code></pre>
+        cnt += 1
+    print()</code></pre>
 </details>
 </dd>
 </dl>

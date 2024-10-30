@@ -10,24 +10,23 @@ clean:
 	@-find . -name "*.pyc" -exec rm -rf {} \;
 	@-rm -rf ./build/*
 	@-rm -rf ./dist/*
+	@-rm -rf ./pyedpro.build
+	@-rm -rf ./pyedpro.dist
+	@-rm -f aa bb cc
 
 package:
 	pyinstaller pyedpro.spec --distpath ../../largefiles/pyedpro_packed
 
-PPP=PYTHONPATH=pedlib:./:../pycommon  python3 -W ignore::DeprecationWarning `which pdoc` --force --html
+PPP=PYTHONPATH=pedlib:./:../../pyvguicom/pyvguicom python3 -W ignore::DeprecationWarning `which pdoc` --force --html
 
 docs:
-	@${PPP} -o pedlib/docs pyedpro.py
+	@${PPP} -o docs/ pyedpro.py
 	@${PPP} -o pedlib/docs pedlib/pedweb.py
-	@${PPP} -o pedlib/docs pedlib/parser.py
 	@${PPP} -o pedlib/docs pedlib/pedthread.py
 	@${PPP} -o pedlib/docs pedlib/pedbuffs.py
-	@${PPP} -o pedlib/docs pedlib/notesql.py
 	@${PPP} -o pedlib/docs pedlib/peddoc.py
 	@${PPP} -o pedlib/docs pedlib/pedtask.py
-	@${PPP} -o pedlib/docs pedlib/lexer.py
 	@${PPP} -o pedlib/docs pedlib/acthand.py
-	@${PPP} -o pedlib/docs pedlib/importer.py
 	@${PPP} -o pedlib/docs pedlib/keyhand.py
 	@${PPP} -o pedlib/docs pedlib/keywords.py
 	@${PPP} -o pedlib/docs pedlib/leven.py

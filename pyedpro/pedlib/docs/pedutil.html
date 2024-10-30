@@ -1327,14 +1327,14 @@ class OpenFname():
         self.fc_code = 0
         self.fname = &#34;&#34;
 
-        warnings.simplefilter(&#34;ignore&#34;)
+        #warnings.simplefilter(&#34;ignore&#34;)
         but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
          &#34;Open File&#34;, Gtk.ButtonsType.OK
         self.fc = Gtk.FileChooserDialog(&#34;Open file&#34;, mywin, \
              Gtk.FileChooserAction.OPEN  \
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
-        warnings.simplefilter(&#34;default&#34;)
+        #warnings.simplefilter(&#34;default&#34;)
 
         if filters:
             for aa in filters:
@@ -3180,14 +3180,14 @@ new() -&gt; Gtk.Widget
         self.fc_code = 0
         self.fname = &#34;&#34;
 
-        warnings.simplefilter(&#34;ignore&#34;)
+        #warnings.simplefilter(&#34;ignore&#34;)
         but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
          &#34;Open File&#34;, Gtk.ButtonsType.OK
         self.fc = Gtk.FileChooserDialog(&#34;Open file&#34;, mywin, \
              Gtk.FileChooserAction.OPEN  \
             #Gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER
             , but)
-        warnings.simplefilter(&#34;default&#34;)
+        #warnings.simplefilter(&#34;default&#34;)
 
         if filters:
             for aa in filters:

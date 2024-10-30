@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-'''
+__doc__ = '''
  Action Handler for the editor. Extracted to a separate module for
  easy update. These are the actions for pyedpro. You may define more
  and attach a key handler to it in the tables of keyhand.py
 
- The function names hint to the key handled. (Half) of the documentation
- can be deduced from the function names.
+ The function names hint to the key handled, and functionalty implemented.
+ -- Half -- of the documentation can be deduced just from the function names.
 
  Notes:
 
@@ -33,10 +33,8 @@
        'Token Completion'
 '''
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-import string, subprocess, os, platform, datetime, sys, codecs
+import sys, os
+import subprocess, platform, datetime, codecs
 
 try:
     import cups

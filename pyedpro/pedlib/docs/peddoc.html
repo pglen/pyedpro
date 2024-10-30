@@ -7,7 +7,7 @@
 <title>peddoc API documentation</title>
 <meta name="description" content="This module is the heart of the editor. Maintains
 buffer that is
-continually updated to the screen. With the help of sublsses, it draws text,
+continually updated to the screen. With the help of sublasses, it draws text,
 …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -27,10 +27,10 @@ continually updated to the screen. With the help of sublsses, it draws text,
 <section id="section-intro">
 <p>This module is the heart of the editor. Maintains
 buffer that is
-continually updated to the screen. With the help of sublsses, it draws text,
+continually updated to the screen. With the help of sublasses, it draws text,
 undeline, squiggly, syntax coloring etc &hellip; etc.</p>
 <p>It also maintains and draws cursor, cursor shape &hellip; etc. Loads Saves
-files, file mata information, undo / redo information.</p>
+files, file meta information, undo / redo information.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -80,11 +80,11 @@ from pedlib.keywords import *
 
 __doc__ =  &#39;&#39;&#39;
     This module is the heart of the editor. Maintains  buffer that is
-continually updated to the screen. With the help of sublsses, it draws text,
+continually updated to the screen. With the help of sublasses, it draws text,
 undeline, squiggly, syntax coloring etc ... etc.
 
   It also maintains and draws cursor, cursor shape ... etc. Loads Saves
-  files, file mata information, undo / redo information.
+  files, file meta information, undo / redo information.
 
 &#39;&#39;&#39;
 
@@ -133,7 +133,6 @@ CARCOLOR = &#34;#4455dd&#34;
 
 DRAGTRESH = 3                   # This many pixels for drag highlight
 
-
 # ------------------------------------------------------------------------
 
 class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask):
@@ -161,7 +160,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.src_changed = False
         self.needscan = True
         self.record = False
-        self.recarr = []                # Macros
+        self.recarr = []                # Macros  recording
         self.undoarr = []               # Undo
         self.redoarr = []               # Redo
         self.queue = []                 # Idle tasks
@@ -286,15 +285,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect(&#34;button-press-event&#34;, self.area_button)
         self.connect(&#34;button-release-event&#34;, self.area_button)
 
-        # This was needed ad ALT-a and ALT-b ....
-        # .... misteriousely stopped working;
+        # This was needed as ALT-a ... ALT-b stopped working;
         # Now getting key from main window
         #self.connect(&#34;key-press-event&#34;, self.area_key)
         #self.connect(&#34;key-release-event&#34;, self.area_key)
 
         self.connect(&#34;focus&#34;, self.area_focus)
         self.connect(&#34;configure_event&#34;, self.configure_event)
-        #self.connect(&#34;size-request&#34;, self.)
         self.connect(&#34;size-allocate&#34;, self.size_alloc)
         self.connect(&#34;scroll-event&#34;, self.scroll_event)
         self.connect(&#34;focus-in-event&#34;, self.focus_in_cb)
@@ -606,38 +603,39 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         #print (&#34;focus_in_cb&#34;, self.fname)
         self.focus = True
         try:
-            os.chdir(os.path.dirname(self.fname))
-            xstat = os.stat(self.fname)
-            if not self.readonly:
-                #print(self.fname, &#34;stat&#34;, self.stat.st_mtime, &#34;xstat&#34;, xstat.st_mtime)
-                if self.stat.st_mtime !=  xstat.st_mtime:
-                    rrr = pedync.yes_no_cancel(&#34;File changed outside PyEdPro&#34;,
-                        &#34;&#39;%s&#39;\n&#34; \
-                        &#34;changed outside PyEdPro.&#34; \
-                        &#34;Reload?&#34; % self.fname, False)
-                    if rrr == Gtk.ResponseType.YES:
-                        if pedconfig.conf.verbose:
-                           print(&#34;Reloading&#34;, self.fname)
-                        self.savebackup()
-                        self.saveparms()
+            if os.path.isfile(self.fname):
+                os.chdir(os.path.dirname(self.fname))
+                xstat = os.stat(self.fname)
+                if not self.readonly:
+                    #print(self.fname, &#34;stat&#34;, self.stat.st_mtime, &#34;xstat&#34;, xstat.st_mtime)
+                    if self.stat.st_mtime !=  xstat.st_mtime:
+                        rrr = pedync.yes_no_cancel(&#34;File changed outside PyEdPro&#34;,
+                            &#34;&#39;%s&#39;\n&#34; \
+                            &#34;changed outside PyEdPro.&#34; \
+                            &#34;Reload?&#34; % self.fname, False)
+                        if rrr == Gtk.ResponseType.YES:
+                            if pedconfig.conf.verbose:
+                               print(&#34;Reloading&#34;, self.fname)
+                            self.savebackup()
+                            self.saveparms()
 
-                        # Is it already loaded? ... close
-                        #nn = self.notebook.get_n_pages()
-                        #fname2 = os.path.realpath(self.fname)
-                        #for aa in range(nn):
-                        #    vcurr = self.notebook.get_nth_page(aa)
-                        #    if vcurr.area.fname == fname2:
-                        #        if pedconfig.conf.verbose:
-                        #            print(&#34;Closing &#39;&#34;+ fname2 + &#34;&#39;&#34;)
-                        #        #vcurr.area.closedoc(noprompt = True)
-                        #        #self.mained.close_document(self)
+                            # Is it already loaded? ... close
+                            #nn = self.notebook.get_n_pages()
+                            #fname2 = os.path.realpath(self.fname)
+                            #for aa in range(nn):
+                            #    vcurr = self.notebook.get_nth_page(aa)
+                            #    if vcurr.area.fname == fname2:
+                            #        if pedconfig.conf.verbose:
+                            #            print(&#34;Closing &#39;&#34;+ fname2 + &#34;&#39;&#34;)
+                            #        #vcurr.area.closedoc(noprompt = True)
+                            #        #self.mained.close_document(self)
 
-                        #usleep(100)
-                        self.loadfile(self.fname, reload = True)
-                        self.loadparms()
+                            #usleep(100)
+                            self.loadfile(self.fname, reload = True)
+                            self.loadparms()
 
-            # Update stat info
-            self.stat = xstat
+                # Update stat info
+                self.stat = xstat
         except:
             put_exception(&#34;cmp mtime&#34;)
             pass
@@ -800,7 +798,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.lastevent = event
 
         #if pedconfig.conf.pgdebug &gt; 5:
-        #    print( &#34;Button press  &#34;, self, event.type, &#34; x=&#34;, event.x, &#34; y=&#34;, event.y)
+        #    print( &#34;Button press  &#34;, self, event.type, &#34; x=&#34;, event.x,
+        #    &#34; y=&#34;, event.y)
 
         event.x = int(event.x) - self.strip
         event.y = int(event.y)
@@ -1740,12 +1739,14 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         if self.nomenu: return
 
         #print (&#34;Making rclick&#34;)
-        self.build_menu(self, pedmenu.rclick_menu)
+        menu = self.build_menu(self, pedmenu.rclick_menu)
+        menu.show_all()
+
         if event:
-            self.menu.popup(None, None, None, None, event.button, event.time)
+            menu.popup(None, None, None, None, event.button, event.time)
         else:
             event = Gdk.EventButton()
-            self.menu.popup(None, None, None, None, event.button, event.time)
+            menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response2(self, widget, stringx, arg):
         #print( &#34;menuitem response2 &#39;%s&#39;&#34; % stringx)
@@ -1775,7 +1776,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.run_keytime()
         #self.mained.threads.submit_job(keytime, self, None)
 
-    def activate_action(self, action):
+    def doc_activate_action(self, action):
+
+        print(&#34;doc_activate_action&#34;)
+
         dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
             Gtk.ButtonsType.INFO, Gtk.ButtonsType.CLOSE,
             &#39;You activated action: &#34;%s&#34; of type &#34;%s&#34;&#39; % (action.get_name(), type(action)))
@@ -1783,9 +1787,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         dialog.connect (&#34;response&#34;, lambda d, r: d.destroy())
         dialog.show()
 
-    def rclick_action(self, action, sss, ttt):
+    def rclick_action_doc(self, action, sss, ttt):
 
-        print( &#34;rclick_action&#34;, sss, ttt)
+        if pedconfig.conf.verbose:
+            print( &#34;rclick_action_doc&#34;, sss, ttt)
 
         if ttt == 1:
             self.mained.newfile()
@@ -1838,7 +1843,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             #print(&#34;Alt-Y&#34;)
             self.check_syntax()
         else:
-            print(&#34;peddoc: Invalid menu item selected&#34;)
+            print(&#34;peddoc: Invalid menu item selected&#34;, ttt)
 
     def rescan(self):
         global last_scanned
@@ -1864,29 +1869,42 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         action_group.add_actions(entries)
         return action_group
 
+    def _fill(self, aa,  bb):
+        ttt = str(bb).replace(&#34;&lt;control&gt;&#34;, &#34;CTRL+&#34;)
+        ttt = str(ttt).replace(&#34;&lt;alt&gt;&#34;,     &#34;ALT+&#34;)
+        ttt = str(ttt).replace(&#34;&lt;shift&gt;&#34;,   &#34;SHIFT+&#34;)
+        fff = &#34; &#34; * (15 - len(aa))
+        sss = aa + &#34;%s\t%s&#34; % (fff, ttt)
+        return sss
+
     def build_menu(self, window, items):
 
-        self.menu =  Gtk.Menu()
+        menu =  Gtk.Menu()
         for aa, bb, cc, dd, ee  in items:
             #print (&#34;menu item&#34;, aa)
-            if ee:
+            if ee == &#34;&lt;Separator&gt;&#34;:
                 menu_item = Gtk.MenuItem.new_with_mnemonic(
                             &#34;----------------------------&#34;)
                 menu_item.set_sensitive(False)
                 menu_item.set_size_request(-1, 10)
                 pass
-            else:
-                ttt = str(bb).replace(&#34;&lt;control&gt;&#34;, &#34;CTRL+&#34;)
-                ttt = str(ttt).replace(&#34;&lt;alt&gt;&#34;,     &#34;ALT+&#34;)
-                ttt = str(ttt).replace(&#34;&lt;shift&gt;&#34;,   &#34;SHIFT+&#34;)
-                fff = &#34; &#34; * (15 - len(aa))
-                sss = aa + &#34;%s\t%s&#34; % (fff, ttt)
+            elif type(ee) == type(()):
+                self.submenu =  Gtk.Menu()
+                for aaa, bbb, ccc, ddd, eee  in ee:
+                    #print (&#34;sub menu item&#34;, aaa)
+                    sss = self._fill(aaa, bbb)
+                    menu_subitem = Gtk.MenuItem.new_with_mnemonic(sss)
+                    menu_subitem.connect(&#34;activate&#34;, self.rclick_action_doc, aaa, ddd )
+                    self.submenu.append(menu_subitem)
+                sss = self._fill(aa, bb)
                 menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
-                menu_item.connect(&#34;activate&#34;, self.rclick_action, aa, dd )
-
-            self.menu.append(menu_item)
-        self.menu.show_all()
-        return self.menu
+                menu_item.set_submenu(self.submenu)
+            else:
+                sss = self._fill(aa, bb)
+                menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
+                menu_item.connect(&#34;activate&#34;, self.rclick_action_doc, aa, dd )
+            menu.append(menu_item)
+        return menu
 
     def get_size(self):
         rect = self.get_allocation()
@@ -2665,7 +2683,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 serr = str(errs)
                 idx = serr.find(&#34;line &#34;)
                 if idx:
-                    #print(&#34;idx&#34;, idx, &#34;line no&#34;, &#34;&#39;&#34; + serr[idx + 5:] + &#34;&#39;&#34;)
+                    print(&#34;idx&#34;, idx, &#34;line no&#34;, &#34;&#39;&#34; + serr[idx + 5:] + &#34;&#39;&#34;)
                     self.gotoxy(10, atoi(serr[idx + 5:]) - 1)
 
                 print(&#34;Error on compile: &#39;&#34;, serr, &#34;&#39;&#34;)
@@ -3301,7 +3319,7 @@ can take thousands of lines.</p></div>
         self.src_changed = False
         self.needscan = True
         self.record = False
-        self.recarr = []                # Macros
+        self.recarr = []                # Macros  recording
         self.undoarr = []               # Undo
         self.redoarr = []               # Redo
         self.queue = []                 # Idle tasks
@@ -3426,15 +3444,13 @@ can take thousands of lines.</p></div>
         self.connect(&#34;button-press-event&#34;, self.area_button)
         self.connect(&#34;button-release-event&#34;, self.area_button)
 
-        # This was needed ad ALT-a and ALT-b ....
-        # .... misteriousely stopped working;
+        # This was needed as ALT-a ... ALT-b stopped working;
         # Now getting key from main window
         #self.connect(&#34;key-press-event&#34;, self.area_key)
         #self.connect(&#34;key-release-event&#34;, self.area_key)
 
         self.connect(&#34;focus&#34;, self.area_focus)
         self.connect(&#34;configure_event&#34;, self.configure_event)
-        #self.connect(&#34;size-request&#34;, self.)
         self.connect(&#34;size-allocate&#34;, self.size_alloc)
         self.connect(&#34;scroll-event&#34;, self.scroll_event)
         self.connect(&#34;focus-in-event&#34;, self.focus_in_cb)
@@ -3746,38 +3762,39 @@ can take thousands of lines.</p></div>
         #print (&#34;focus_in_cb&#34;, self.fname)
         self.focus = True
         try:
-            os.chdir(os.path.dirname(self.fname))
-            xstat = os.stat(self.fname)
-            if not self.readonly:
-                #print(self.fname, &#34;stat&#34;, self.stat.st_mtime, &#34;xstat&#34;, xstat.st_mtime)
-                if self.stat.st_mtime !=  xstat.st_mtime:
-                    rrr = pedync.yes_no_cancel(&#34;File changed outside PyEdPro&#34;,
-                        &#34;&#39;%s&#39;\n&#34; \
-                        &#34;changed outside PyEdPro.&#34; \
-                        &#34;Reload?&#34; % self.fname, False)
-                    if rrr == Gtk.ResponseType.YES:
-                        if pedconfig.conf.verbose:
-                           print(&#34;Reloading&#34;, self.fname)
-                        self.savebackup()
-                        self.saveparms()
+            if os.path.isfile(self.fname):
+                os.chdir(os.path.dirname(self.fname))
+                xstat = os.stat(self.fname)
+                if not self.readonly:
+                    #print(self.fname, &#34;stat&#34;, self.stat.st_mtime, &#34;xstat&#34;, xstat.st_mtime)
+                    if self.stat.st_mtime !=  xstat.st_mtime:
+                        rrr = pedync.yes_no_cancel(&#34;File changed outside PyEdPro&#34;,
+                            &#34;&#39;%s&#39;\n&#34; \
+                            &#34;changed outside PyEdPro.&#34; \
+                            &#34;Reload?&#34; % self.fname, False)
+                        if rrr == Gtk.ResponseType.YES:
+                            if pedconfig.conf.verbose:
+                               print(&#34;Reloading&#34;, self.fname)
+                            self.savebackup()
+                            self.saveparms()
 
-                        # Is it already loaded? ... close
-                        #nn = self.notebook.get_n_pages()
-                        #fname2 = os.path.realpath(self.fname)
-                        #for aa in range(nn):
-                        #    vcurr = self.notebook.get_nth_page(aa)
-                        #    if vcurr.area.fname == fname2:
-                        #        if pedconfig.conf.verbose:
-                        #            print(&#34;Closing &#39;&#34;+ fname2 + &#34;&#39;&#34;)
-                        #        #vcurr.area.closedoc(noprompt = True)
-                        #        #self.mained.close_document(self)
+                            # Is it already loaded? ... close
+                            #nn = self.notebook.get_n_pages()
+                            #fname2 = os.path.realpath(self.fname)
+                            #for aa in range(nn):
+                            #    vcurr = self.notebook.get_nth_page(aa)
+                            #    if vcurr.area.fname == fname2:
+                            #        if pedconfig.conf.verbose:
+                            #            print(&#34;Closing &#39;&#34;+ fname2 + &#34;&#39;&#34;)
+                            #        #vcurr.area.closedoc(noprompt = True)
+                            #        #self.mained.close_document(self)
 
-                        #usleep(100)
-                        self.loadfile(self.fname, reload = True)
-                        self.loadparms()
+                            #usleep(100)
+                            self.loadfile(self.fname, reload = True)
+                            self.loadparms()
 
-            # Update stat info
-            self.stat = xstat
+                # Update stat info
+                self.stat = xstat
         except:
             put_exception(&#34;cmp mtime&#34;)
             pass
@@ -3940,7 +3957,8 @@ can take thousands of lines.</p></div>
         self.lastevent = event
 
         #if pedconfig.conf.pgdebug &gt; 5:
-        #    print( &#34;Button press  &#34;, self, event.type, &#34; x=&#34;, event.x, &#34; y=&#34;, event.y)
+        #    print( &#34;Button press  &#34;, self, event.type, &#34; x=&#34;, event.x,
+        #    &#34; y=&#34;, event.y)
 
         event.x = int(event.x) - self.strip
         event.y = int(event.y)
@@ -4880,12 +4898,14 @@ can take thousands of lines.</p></div>
         if self.nomenu: return
 
         #print (&#34;Making rclick&#34;)
-        self.build_menu(self, pedmenu.rclick_menu)
+        menu = self.build_menu(self, pedmenu.rclick_menu)
+        menu.show_all()
+
         if event:
-            self.menu.popup(None, None, None, None, event.button, event.time)
+            menu.popup(None, None, None, None, event.button, event.time)
         else:
             event = Gdk.EventButton()
-            self.menu.popup(None, None, None, None, event.button, event.time)
+            menu.popup(None, None, None, None, event.button, event.time)
 
     def menuitem_response2(self, widget, stringx, arg):
         #print( &#34;menuitem response2 &#39;%s&#39;&#34; % stringx)
@@ -4915,7 +4935,10 @@ can take thousands of lines.</p></div>
         self.run_keytime()
         #self.mained.threads.submit_job(keytime, self, None)
 
-    def activate_action(self, action):
+    def doc_activate_action(self, action):
+
+        print(&#34;doc_activate_action&#34;)
+
         dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
             Gtk.ButtonsType.INFO, Gtk.ButtonsType.CLOSE,
             &#39;You activated action: &#34;%s&#34; of type &#34;%s&#34;&#39; % (action.get_name(), type(action)))
@@ -4923,9 +4946,10 @@ can take thousands of lines.</p></div>
         dialog.connect (&#34;response&#34;, lambda d, r: d.destroy())
         dialog.show()
 
-    def rclick_action(self, action, sss, ttt):
+    def rclick_action_doc(self, action, sss, ttt):
 
-        print( &#34;rclick_action&#34;, sss, ttt)
+        if pedconfig.conf.verbose:
+            print( &#34;rclick_action_doc&#34;, sss, ttt)
 
         if ttt == 1:
             self.mained.newfile()
@@ -4978,7 +5002,7 @@ can take thousands of lines.</p></div>
             #print(&#34;Alt-Y&#34;)
             self.check_syntax()
         else:
-            print(&#34;peddoc: Invalid menu item selected&#34;)
+            print(&#34;peddoc: Invalid menu item selected&#34;, ttt)
 
     def rescan(self):
         global last_scanned
@@ -5004,29 +5028,42 @@ can take thousands of lines.</p></div>
         action_group.add_actions(entries)
         return action_group
 
+    def _fill(self, aa,  bb):
+        ttt = str(bb).replace(&#34;&lt;control&gt;&#34;, &#34;CTRL+&#34;)
+        ttt = str(ttt).replace(&#34;&lt;alt&gt;&#34;,     &#34;ALT+&#34;)
+        ttt = str(ttt).replace(&#34;&lt;shift&gt;&#34;,   &#34;SHIFT+&#34;)
+        fff = &#34; &#34; * (15 - len(aa))
+        sss = aa + &#34;%s\t%s&#34; % (fff, ttt)
+        return sss
+
     def build_menu(self, window, items):
 
-        self.menu =  Gtk.Menu()
+        menu =  Gtk.Menu()
         for aa, bb, cc, dd, ee  in items:
             #print (&#34;menu item&#34;, aa)
-            if ee:
+            if ee == &#34;&lt;Separator&gt;&#34;:
                 menu_item = Gtk.MenuItem.new_with_mnemonic(
                             &#34;----------------------------&#34;)
                 menu_item.set_sensitive(False)
                 menu_item.set_size_request(-1, 10)
                 pass
-            else:
-                ttt = str(bb).replace(&#34;&lt;control&gt;&#34;, &#34;CTRL+&#34;)
-                ttt = str(ttt).replace(&#34;&lt;alt&gt;&#34;,     &#34;ALT+&#34;)
-                ttt = str(ttt).replace(&#34;&lt;shift&gt;&#34;,   &#34;SHIFT+&#34;)
-                fff = &#34; &#34; * (15 - len(aa))
-                sss = aa + &#34;%s\t%s&#34; % (fff, ttt)
+            elif type(ee) == type(()):
+                self.submenu =  Gtk.Menu()
+                for aaa, bbb, ccc, ddd, eee  in ee:
+                    #print (&#34;sub menu item&#34;, aaa)
+                    sss = self._fill(aaa, bbb)
+                    menu_subitem = Gtk.MenuItem.new_with_mnemonic(sss)
+                    menu_subitem.connect(&#34;activate&#34;, self.rclick_action_doc, aaa, ddd )
+                    self.submenu.append(menu_subitem)
+                sss = self._fill(aa, bb)
                 menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
-                menu_item.connect(&#34;activate&#34;, self.rclick_action, aa, dd )
-
-            self.menu.append(menu_item)
-        self.menu.show_all()
-        return self.menu
+                menu_item.set_submenu(self.submenu)
+            else:
+                sss = self._fill(aa, bb)
+                menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
+                menu_item.connect(&#34;activate&#34;, self.rclick_action_doc, aa, dd )
+            menu.append(menu_item)
+        return menu
 
     def get_size(self):
         rect = self.get_allocation()
@@ -5805,7 +5842,7 @@ can take thousands of lines.</p></div>
                 serr = str(errs)
                 idx = serr.find(&#34;line &#34;)
                 if idx:
-                    #print(&#34;idx&#34;, idx, &#34;line no&#34;, &#34;&#39;&#34; + serr[idx + 5:] + &#34;&#39;&#34;)
+                    print(&#34;idx&#34;, idx, &#34;line no&#34;, &#34;&#39;&#34; + serr[idx + 5:] + &#34;&#39;&#34;)
                     self.gotoxy(10, atoi(serr[idx + 5:]) - 1)
 
                 print(&#34;Error on compile: &#39;&#34;, serr, &#34;&#39;&#34;)
@@ -5912,24 +5949,6 @@ can take thousands of lines.</p></div>
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="peddoc.pedDoc.activate_action"><code class="name flex">
-<span>def <span class="ident">activate_action</span></span>(<span>self, action)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def activate_action(self, action):
-    dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
-        Gtk.ButtonsType.INFO, Gtk.ButtonsType.CLOSE,
-        &#39;You activated action: &#34;%s&#34; of type &#34;%s&#34;&#39; % (action.get_name(), type(action)))
-    # Close dialog on user response
-    dialog.connect (&#34;response&#34;, lambda d, r: d.destroy())
-    dialog.show()</code></pre>
-</details>
-</dd>
 <dt id="peddoc.pedDoc.addict"><code class="name flex">
 <span>def <span class="ident">addict</span></span>(<span>self, widget, string, arg)</span>
 </code></dt>
@@ -5967,7 +5986,8 @@ can take thousands of lines.</p></div>
     self.lastevent = event
 
     #if pedconfig.conf.pgdebug &gt; 5:
-    #    print( &#34;Button press  &#34;, self, event.type, &#34; x=&#34;, event.x, &#34; y=&#34;, event.y)
+    #    print( &#34;Button press  &#34;, self, event.type, &#34; x=&#34;, event.x,
+    #    &#34; y=&#34;, event.y)
 
     event.x = int(event.x) - self.strip
     event.y = int(event.y)
@@ -6278,27 +6298,32 @@ can take thousands of lines.</p></div>
 </summary>
 <pre><code class="python">def build_menu(self, window, items):
 
-    self.menu =  Gtk.Menu()
+    menu =  Gtk.Menu()
     for aa, bb, cc, dd, ee  in items:
         #print (&#34;menu item&#34;, aa)
-        if ee:
+        if ee == &#34;&lt;Separator&gt;&#34;:
             menu_item = Gtk.MenuItem.new_with_mnemonic(
                         &#34;----------------------------&#34;)
             menu_item.set_sensitive(False)
             menu_item.set_size_request(-1, 10)
             pass
-        else:
-            ttt = str(bb).replace(&#34;&lt;control&gt;&#34;, &#34;CTRL+&#34;)
-            ttt = str(ttt).replace(&#34;&lt;alt&gt;&#34;,     &#34;ALT+&#34;)
-            ttt = str(ttt).replace(&#34;&lt;shift&gt;&#34;,   &#34;SHIFT+&#34;)
-            fff = &#34; &#34; * (15 - len(aa))
-            sss = aa + &#34;%s\t%s&#34; % (fff, ttt)
+        elif type(ee) == type(()):
+            self.submenu =  Gtk.Menu()
+            for aaa, bbb, ccc, ddd, eee  in ee:
+                #print (&#34;sub menu item&#34;, aaa)
+                sss = self._fill(aaa, bbb)
+                menu_subitem = Gtk.MenuItem.new_with_mnemonic(sss)
+                menu_subitem.connect(&#34;activate&#34;, self.rclick_action_doc, aaa, ddd )
+                self.submenu.append(menu_subitem)
+            sss = self._fill(aa, bb)
             menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
-            menu_item.connect(&#34;activate&#34;, self.rclick_action, aa, dd )
-
-        self.menu.append(menu_item)
-    self.menu.show_all()
-    return self.menu</code></pre>
+            menu_item.set_submenu(self.submenu)
+        else:
+            sss = self._fill(aa, bb)
+            menu_item = Gtk.MenuItem.new_with_mnemonic(sss)
+            menu_item.connect(&#34;activate&#34;, self.rclick_action_doc, aa, dd )
+        menu.append(menu_item)
+    return menu</code></pre>
 </details>
 </dd>
 <dt id="peddoc.pedDoc.builddoc"><code class="name flex">
@@ -6382,7 +6407,7 @@ can take thousands of lines.</p></div>
             serr = str(errs)
             idx = serr.find(&#34;line &#34;)
             if idx:
-                #print(&#34;idx&#34;, idx, &#34;line no&#34;, &#34;&#39;&#34; + serr[idx + 5:] + &#34;&#39;&#34;)
+                print(&#34;idx&#34;, idx, &#34;line no&#34;, &#34;&#39;&#34; + serr[idx + 5:] + &#34;&#39;&#34;)
                 self.gotoxy(10, atoi(serr[idx + 5:]) - 1)
 
             print(&#34;Error on compile: &#39;&#34;, serr, &#34;&#39;&#34;)
@@ -6726,6 +6751,27 @@ can take thousands of lines.</p></div>
     pedconfig.conf.syncidle = pedconfig.conf.SYNCIDLE_TIMEOUT</code></pre>
 </details>
 </dd>
+<dt id="peddoc.pedDoc.doc_activate_action"><code class="name flex">
+<span>def <span class="ident">doc_activate_action</span></span>(<span>self, action)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def doc_activate_action(self, action):
+
+    print(&#34;doc_activate_action&#34;)
+
+    dialog = Gtk.MessageDialog(self, Gtk.DIALOG_DESTROY_WITH_PARENT,
+        Gtk.ButtonsType.INFO, Gtk.ButtonsType.CLOSE,
+        &#39;You activated action: &#34;%s&#34; of type &#34;%s&#34;&#39; % (action.get_name(), type(action)))
+    # Close dialog on user response
+    dialog.connect (&#34;response&#34;, lambda d, r: d.destroy())
+    dialog.show()</code></pre>
+</details>
+</dd>
 <dt id="peddoc.pedDoc.doclabel_callb"><code class="name flex">
 <span>def <span class="ident">doclabel_callb</span></span>(<span>self, widg, event)</span>
 </code></dt>
@@ -6983,38 +7029,39 @@ can take thousands of lines.</p></div>
     #print (&#34;focus_in_cb&#34;, self.fname)
     self.focus = True
     try:
-        os.chdir(os.path.dirname(self.fname))
-        xstat = os.stat(self.fname)
-        if not self.readonly:
-            #print(self.fname, &#34;stat&#34;, self.stat.st_mtime, &#34;xstat&#34;, xstat.st_mtime)
-            if self.stat.st_mtime !=  xstat.st_mtime:
-                rrr = pedync.yes_no_cancel(&#34;File changed outside PyEdPro&#34;,
-                    &#34;&#39;%s&#39;\n&#34; \
-                    &#34;changed outside PyEdPro.&#34; \
-                    &#34;Reload?&#34; % self.fname, False)
-                if rrr == Gtk.ResponseType.YES:
-                    if pedconfig.conf.verbose:
-                       print(&#34;Reloading&#34;, self.fname)
-                    self.savebackup()
-                    self.saveparms()
+        if os.path.isfile(self.fname):
+            os.chdir(os.path.dirname(self.fname))
+            xstat = os.stat(self.fname)
+            if not self.readonly:
+                #print(self.fname, &#34;stat&#34;, self.stat.st_mtime, &#34;xstat&#34;, xstat.st_mtime)
+                if self.stat.st_mtime !=  xstat.st_mtime:
+                    rrr = pedync.yes_no_cancel(&#34;File changed outside PyEdPro&#34;,
+                        &#34;&#39;%s&#39;\n&#34; \
+                        &#34;changed outside PyEdPro.&#34; \
+                        &#34;Reload?&#34; % self.fname, False)
+                    if rrr == Gtk.ResponseType.YES:
+                        if pedconfig.conf.verbose:
+                           print(&#34;Reloading&#34;, self.fname)
+                        self.savebackup()
+                        self.saveparms()
 
-                    # Is it already loaded? ... close
-                    #nn = self.notebook.get_n_pages()
-                    #fname2 = os.path.realpath(self.fname)
-                    #for aa in range(nn):
-                    #    vcurr = self.notebook.get_nth_page(aa)
-                    #    if vcurr.area.fname == fname2:
-                    #        if pedconfig.conf.verbose:
-                    #            print(&#34;Closing &#39;&#34;+ fname2 + &#34;&#39;&#34;)
-                    #        #vcurr.area.closedoc(noprompt = True)
-                    #        #self.mained.close_document(self)
+                        # Is it already loaded? ... close
+                        #nn = self.notebook.get_n_pages()
+                        #fname2 = os.path.realpath(self.fname)
+                        #for aa in range(nn):
+                        #    vcurr = self.notebook.get_nth_page(aa)
+                        #    if vcurr.area.fname == fname2:
+                        #        if pedconfig.conf.verbose:
+                        #            print(&#34;Closing &#39;&#34;+ fname2 + &#34;&#39;&#34;)
+                        #        #vcurr.area.closedoc(noprompt = True)
+                        #        #self.mained.close_document(self)
 
-                    #usleep(100)
-                    self.loadfile(self.fname, reload = True)
-                    self.loadparms()
+                        #usleep(100)
+                        self.loadfile(self.fname, reload = True)
+                        self.loadparms()
 
-        # Update stat info
-        self.stat = xstat
+            # Update stat info
+            self.stat = xstat
     except:
         put_exception(&#34;cmp mtime&#34;)
         pass
@@ -7893,12 +7940,14 @@ colors may get turned on &hellip;</p></div>
     if self.nomenu: return
 
     #print (&#34;Making rclick&#34;)
-    self.build_menu(self, pedmenu.rclick_menu)
+    menu = self.build_menu(self, pedmenu.rclick_menu)
+    menu.show_all()
+
     if event:
-        self.menu.popup(None, None, None, None, event.button, event.time)
+        menu.popup(None, None, None, None, event.button, event.time)
     else:
         event = Gdk.EventButton()
-        self.menu.popup(None, None, None, None, event.button, event.time)</code></pre>
+        menu.popup(None, None, None, None, event.button, event.time)</code></pre>
 </details>
 </dd>
 <dt id="peddoc.pedDoc.poprclick2"><code class="name flex">
@@ -8057,8 +8106,8 @@ colors may get turned on &hellip;</p></div>
         print(&#34;warning: invalid response from dialog&#34;)</code></pre>
 </details>
 </dd>
-<dt id="peddoc.pedDoc.rclick_action"><code class="name flex">
-<span>def <span class="ident">rclick_action</span></span>(<span>self, action, sss, ttt)</span>
+<dt id="peddoc.pedDoc.rclick_action_doc"><code class="name flex">
+<span>def <span class="ident">rclick_action_doc</span></span>(<span>self, action, sss, ttt)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -8066,9 +8115,10 @@ colors may get turned on &hellip;</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def rclick_action(self, action, sss, ttt):
+<pre><code class="python">def rclick_action_doc(self, action, sss, ttt):
 
-    print( &#34;rclick_action&#34;, sss, ttt)
+    if pedconfig.conf.verbose:
+        print( &#34;rclick_action_doc&#34;, sss, ttt)
 
     if ttt == 1:
         self.mained.newfile()
@@ -8121,7 +8171,7 @@ colors may get turned on &hellip;</p></div>
         #print(&#34;Alt-Y&#34;)
         self.check_syntax()
     else:
-        print(&#34;peddoc: Invalid menu item selected&#34;)</code></pre>
+        print(&#34;peddoc: Invalid menu item selected&#34;, ttt)</code></pre>
 </details>
 </dd>
 <dt id="peddoc.pedDoc.re_diff"><code class="name flex">
@@ -9355,7 +9405,6 @@ xx, yy - absolute position in the text buffer</p></div>
 <li>
 <h4><code><a title="peddoc.pedDoc" href="#peddoc.pedDoc">pedDoc</a></code></h4>
 <ul class="">
-<li><code><a title="peddoc.pedDoc.activate_action" href="#peddoc.pedDoc.activate_action">activate_action</a></code></li>
 <li><code><a title="peddoc.pedDoc.addict" href="#peddoc.pedDoc.addict">addict</a></code></li>
 <li><code><a title="peddoc.pedDoc.area_button" href="#peddoc.pedDoc.area_button">area_button</a></code></li>
 <li><code><a title="peddoc.pedDoc.area_enter" href="#peddoc.pedDoc.area_enter">area_enter</a></code></li>
@@ -9377,6 +9426,7 @@ xx, yy - absolute position in the text buffer</p></div>
 <li><code><a title="peddoc.pedDoc.destroy_cb" href="#peddoc.pedDoc.destroy_cb">destroy_cb</a></code></li>
 <li><code><a title="peddoc.pedDoc.diffx" href="#peddoc.pedDoc.diffx">diffx</a></code></li>
 <li><code><a title="peddoc.pedDoc.do_chores" href="#peddoc.pedDoc.do_chores">do_chores</a></code></li>
+<li><code><a title="peddoc.pedDoc.doc_activate_action" href="#peddoc.pedDoc.doc_activate_action">doc_activate_action</a></code></li>
 <li><code><a title="peddoc.pedDoc.doclabel_callb" href="#peddoc.pedDoc.doclabel_callb">doclabel_callb</a></code></li>
 <li><code><a title="peddoc.pedDoc.done_fc" href="#peddoc.pedDoc.done_fc">done_fc</a></code></li>
 <li><code><a title="peddoc.pedDoc.done_mac_fc" href="#peddoc.pedDoc.done_mac_fc">done_mac_fc</a></code></li>
@@ -9425,7 +9475,7 @@ xx, yy - absolute position in the text buffer</p></div>
 <li><code><a title="peddoc.pedDoc.poprclick3" href="#peddoc.pedDoc.poprclick3">poprclick3</a></code></li>
 <li><code><a title="peddoc.pedDoc.popspell" href="#peddoc.pedDoc.popspell">popspell</a></code></li>
 <li><code><a title="peddoc.pedDoc.prompt_save" href="#peddoc.pedDoc.prompt_save">prompt_save</a></code></li>
-<li><code><a title="peddoc.pedDoc.rclick_action" href="#peddoc.pedDoc.rclick_action">rclick_action</a></code></li>
+<li><code><a title="peddoc.pedDoc.rclick_action_doc" href="#peddoc.pedDoc.rclick_action_doc">rclick_action_doc</a></code></li>
 <li><code><a title="peddoc.pedDoc.re_diff" href="#peddoc.pedDoc.re_diff">re_diff</a></code></li>
 <li><code><a title="peddoc.pedDoc.rescan" href="#peddoc.pedDoc.rescan">rescan</a></code></li>
 <li><code><a title="peddoc.pedDoc.run_keytime" href="#peddoc.pedDoc.run_keytime">run_keytime</a></code></li>

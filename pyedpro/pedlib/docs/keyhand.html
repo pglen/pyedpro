@@ -84,9 +84,15 @@ GDK_RELEASE_MASK  = 1 &lt;&lt; 30
 GDK_MODIFIER_MASK = 0x5c001fff
 
 # ------------------------------------------------------------------------
-# Handle keys:
 
 class KeyHand:
+
+    &#39;&#39;&#39; Handle keys for pyedpro. This is made somewhat complex with
+    the key macro recording and playback.
+    The keys are table driven, the table contains a key and and
+    a function to call. If a control key is not recognized, it is treated
+    as a char to be inserted.
+    &#39;&#39;&#39;
 
     #ctrl = 0; alt = 0; shift = 0; super = 0;
 
@@ -171,29 +177,29 @@ class KeyHand:
             [Gdk.KEY_b, self.acth.ctrl_b],
             [Gdk.KEY_B, self.acth.ctrl_b],
             [Gdk.KEY_c, self.acth.ctrl_c],
-            [Gdk.KEY_D, self.acth.ctrl_d],
-            [Gdk.KEY_d, self.acth.ctrl_d],
             [Gdk.KEY_C, self.acth.ctrl_c],
+            [Gdk.KEY_d, self.acth.ctrl_d],
+            [Gdk.KEY_D, self.acth.ctrl_d],
             [Gdk.KEY_e, self.acth.ctrl_e],
             [Gdk.KEY_E, self.acth.ctrl_e],
             [Gdk.KEY_f, self.acth.ctrl_f],
             [Gdk.KEY_F, self.acth.ctrl_f],
+            [Gdk.KEY_g, self.acth.ctrl_g],
+            [Gdk.KEY_G, self.acth.ctrl_g],
             [Gdk.KEY_h, self.acth.ctrl_h],
             [Gdk.KEY_H, self.acth.ctrl_h],
             [Gdk.KEY_i, self.acth.ctrl_i],
             [Gdk.KEY_I, self.acth.ctrl_i],
             [Gdk.KEY_j, self.acth.ctrl_j],
             [Gdk.KEY_J, self.acth.ctrl_j],
-            [Gdk.KEY_g, self.acth.ctrl_g],
-            [Gdk.KEY_G, self.acth.ctrl_g],
             [Gdk.KEY_k, self.acth.ctrl_k],
             [Gdk.KEY_K, self.acth.ctrl_k],
             [Gdk.KEY_l, self.acth.ctrl_l],
             [Gdk.KEY_L, self.acth.ctrl_l],
             [Gdk.KEY_m, self.acth.ctrl_m],
             [Gdk.KEY_M, self.acth.ctrl_m],
-            [Gdk.KEY_N, self.acth.ctrl_n],
             [Gdk.KEY_n, self.acth.ctrl_n],
+            [Gdk.KEY_N, self.acth.ctrl_n],
             [Gdk.KEY_o, self.acth.ctrl_o],
             [Gdk.KEY_O, self.acth.ctrl_o],
             [Gdk.KEY_p, self.acth.ctrl_p],
@@ -202,6 +208,8 @@ class KeyHand:
             [Gdk.KEY_Q, self.acth.ctrl_q],
             [Gdk.KEY_r, self.acth.ctrl_r],
             [Gdk.KEY_R, self.acth.ctrl_r],
+            [Gdk.KEY_s, self.acth.ctrl_s],
+            [Gdk.KEY_S, self.acth.ctrl_s],
             [Gdk.KEY_t, self.acth.ctrl_t],
             [Gdk.KEY_T, self.acth.ctrl_t],
             [Gdk.KEY_u, self.acth.ctrl_u],
@@ -377,10 +385,18 @@ class KeyHand:
             [Gdk.KEY_G, self.acth.ctrl_alt_g],
             [Gdk.KEY_h, self.acth.ctrl_alt_h],
             [Gdk.KEY_H, self.acth.ctrl_alt_h],
+            [Gdk.KEY_i, self.acth.ctrl_alt_i],
+            [Gdk.KEY_I, self.acth.ctrl_alt_i],
             [Gdk.KEY_j, self.acth.ctrl_alt_j],
             [Gdk.KEY_J, self.acth.ctrl_alt_j],
             [Gdk.KEY_k, self.acth.ctrl_alt_k],
             [Gdk.KEY_K, self.acth.ctrl_alt_k],
+            [Gdk.KEY_l, self.acth.ctrl_alt_l],
+            [Gdk.KEY_L, self.acth.ctrl_alt_l],
+            [Gdk.KEY_m, self.acth.ctrl_alt_m],
+            [Gdk.KEY_M, self.acth.ctrl_alt_m],
+            [Gdk.KEY_n, self.acth.ctrl_alt_n],
+            [Gdk.KEY_N, self.acth.ctrl_alt_n],
             [Gdk.KEY_t, self.acth.ctrl_alt_t],
             [Gdk.KEY_T, self.acth.ctrl_alt_t],
 
@@ -431,10 +447,14 @@ class KeyHand:
             [Gdk.KEY_C, self.acth.alt_c],
             [Gdk.KEY_d, self.acth.alt_d],
             [Gdk.KEY_D, self.acth.alt_d],
+            [Gdk.KEY_e, self.acth.alt_e],
+            [Gdk.KEY_E, self.acth.alt_e],
             [Gdk.KEY_f, self.acth.alt_f],
             [Gdk.KEY_F, self.acth.alt_f],
             [Gdk.KEY_g, self.acth.alt_g],
             [Gdk.KEY_G, self.acth.alt_g],
+            [Gdk.KEY_h, self.acth.alt_h],
+            [Gdk.KEY_H, self.acth.alt_h],
             [Gdk.KEY_i, self.acth.alt_i],
             [Gdk.KEY_I, self.acth.alt_i],
             [Gdk.KEY_j, self.acth.alt_j],
@@ -443,12 +463,35 @@ class KeyHand:
             [Gdk.KEY_K, self.acth.alt_k],
             [Gdk.KEY_l, self.acth.alt_l],
             [Gdk.KEY_L, self.acth.alt_l],
+            [Gdk.KEY_m, self.acth.alt_m],
+            [Gdk.KEY_M, self.acth.alt_m],
+            [Gdk.KEY_n, self.acth.alt_n],
+            [Gdk.KEY_N, self.acth.alt_n],
             [Gdk.KEY_o, self.acth.alt_o],
             [Gdk.KEY_O, self.acth.alt_o],
+            [Gdk.KEY_p, self.acth.alt_p],
+            [Gdk.KEY_P, self.acth.alt_p],
             [Gdk.KEY_q, self.acth.alt_q],
             [Gdk.KEY_Q, self.acth.alt_q],
+            [Gdk.KEY_r, self.acth.alt_r],
+            [Gdk.KEY_R, self.acth.alt_r],
+            [Gdk.KEY_s, self.acth.alt_s],
+            [Gdk.KEY_S, self.acth.alt_s],
+            [Gdk.KEY_t, self.acth.alt_t],
+            [Gdk.KEY_T, self.acth.alt_t],
+            [Gdk.KEY_u, self.acth.alt_u],
+            [Gdk.KEY_U, self.acth.alt_u],
+            [Gdk.KEY_v, self.acth.alt_v],
+            [Gdk.KEY_V, self.acth.alt_v],
+            [Gdk.KEY_w, self.acth.alt_w],
+            [Gdk.KEY_W, self.acth.alt_w],
+            [Gdk.KEY_x, self.acth.alt_x],
+            [Gdk.KEY_X, self.acth.alt_x],
             [Gdk.KEY_y, self.acth.alt_y],
             [Gdk.KEY_Y, self.acth.alt_y],
+            [Gdk.KEY_z, self.acth.alt_z],
+            [Gdk.KEY_Z, self.acth.alt_z],
+
             [Gdk.KEY_p, self.acth.f5],
             [Gdk.KEY_P, self.acth.f5],
             [Gdk.KEY_n, self.acth.f6],
@@ -463,15 +506,10 @@ class KeyHand:
             [Gdk.KEY_U, self.acth.ctrl_z],
             [Gdk.KEY_v, self.acth.alt_v],
             [Gdk.KEY_V, self.acth.alt_v],
-            [Gdk.KEY_w, self.acth.alt_w],
-            [Gdk.KEY_W, self.acth.alt_w],
-            [Gdk.KEY_x, self.acth.alt_x],
-            [Gdk.KEY_X, self.acth.alt_x],
-            [Gdk.KEY_z, self.acth.alt_z],
-            [Gdk.KEY_Z, self.acth.alt_z],
             #[Gdk.KEY_bracketleft, self.acth.ctrl_u],
             #[Gdk.KEY_bracketright, self.acth.ctrl_alt_l],
             ]
+
 
     # When we get focus, we start out with no modifier keys
     def reset(self):
@@ -487,7 +525,6 @@ class KeyHand:
     def handle_key(self, self2, area, event):
 
         #print (&#34;KEY:&#34;,   event.keyval  )
-
         # Ramp up debug level
         if pedconfig.conf.pgdebug &gt; 6:
              print( &#34;key val &#34;,  event.keyval, &#34;key name&#34;, event.string)
@@ -495,9 +532,9 @@ class KeyHand:
             print( &#34;key event&#34;,  event.type)
         if pedconfig.conf.pgdebug &gt; 8:
             print( &#34;key state&#34;,  event.state)
-
         if pedconfig.conf.show_keys:
-            print (&#34;KEY:&#34;, event.keyval, hex(event.keyval), event.string, event.type)
+            print (&#34;Key: &#39;%s&#39;&#34; % event.string,
+                      &#34;%d (0x%x)&#34; % (event.keyval, event.keyval), &#34;type:&#34;, int(event.type))
             if pedconfig.conf.verbose:
                 print (&#34;KEYSTR:&#34;, event.state, event.string)
         try:
@@ -586,7 +623,7 @@ class KeyHand:
             if ret:
                 return
 
-        # Key priorities are derived fro the order of tests
+        # Key priorities are derived from the order of these tests
         if self.super and self.ctrl and self.alt:
             self.handle_super_ctrl_alt_key(self2, area, event)
         elif self.super and self.alt:
@@ -812,20 +849,25 @@ class KeyHand:
                 print( &#34;alt hand&#34;, event)
 
             if event.keyval &gt;= Gdk.KEY_1 and event.keyval &lt;= Gdk.KEY_9:
-                if pedconfig.conf.pgdebug &gt; 5:
+                if 1: #pedconfig.conf.pgdebug &gt; 5:
                     print( &#34;Keyhand Alt num&#34;, event.keyval - Gdk.KEY_1)
                 num = event.keyval - Gdk.KEY_1
                 if num &gt;  self2.notebook.get_n_pages() - 1:
                     self2.mained.update_statusbar(&#34;Invalid tab (page) index.&#34;)
                 else:
+                    pedconfig.conf.pedwin.notebook.grab_focus()
                     old = self2.notebook.get_current_page()
                     if old == num:
                         self2.mained.update_statusbar(&#34;Already at page %d ...&#34; % old)
                     else:
                         self2.notebook.set_current_page(num)
 
-            elif event.keyval == Gdk.KEY_0:
-                self2.appwin.mywin.set_focus(self2.appwin.treeview)
+            #elif event.keyval == Gdk.KEY_0:
+            #    #self2.mywin.set_focus(self2.mywin.treeview)
+            #    #self2.mywin.set_focus(self2.notebook.treeview)
+            #    pedconfig.conf.pedwin.notebook2.grab_focus()
+            #    #self2.notebook.grab_focus()
+
             else:
                 self._handle_key(self2, area, event, self.alt_keytab)
 
@@ -888,12 +930,23 @@ class KeyHand:
 <span>(</span><span>acth)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Handle keys for pyedpro. This is made somewhat complex with
+the key macro recording and playback.
+The keys are table driven, the table contains a key and and
+a function to call. If a control key is not recognized, it is treated
+as a char to be inserted.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class KeyHand:
+
+    &#39;&#39;&#39; Handle keys for pyedpro. This is made somewhat complex with
+    the key macro recording and playback.
+    The keys are table driven, the table contains a key and and
+    a function to call. If a control key is not recognized, it is treated
+    as a char to be inserted.
+    &#39;&#39;&#39;
 
     #ctrl = 0; alt = 0; shift = 0; super = 0;
 
@@ -978,29 +1031,29 @@ class KeyHand:
             [Gdk.KEY_b, self.acth.ctrl_b],
             [Gdk.KEY_B, self.acth.ctrl_b],
             [Gdk.KEY_c, self.acth.ctrl_c],
-            [Gdk.KEY_D, self.acth.ctrl_d],
-            [Gdk.KEY_d, self.acth.ctrl_d],
             [Gdk.KEY_C, self.acth.ctrl_c],
+            [Gdk.KEY_d, self.acth.ctrl_d],
+            [Gdk.KEY_D, self.acth.ctrl_d],
             [Gdk.KEY_e, self.acth.ctrl_e],
             [Gdk.KEY_E, self.acth.ctrl_e],
             [Gdk.KEY_f, self.acth.ctrl_f],
             [Gdk.KEY_F, self.acth.ctrl_f],
+            [Gdk.KEY_g, self.acth.ctrl_g],
+            [Gdk.KEY_G, self.acth.ctrl_g],
             [Gdk.KEY_h, self.acth.ctrl_h],
             [Gdk.KEY_H, self.acth.ctrl_h],
             [Gdk.KEY_i, self.acth.ctrl_i],
             [Gdk.KEY_I, self.acth.ctrl_i],
             [Gdk.KEY_j, self.acth.ctrl_j],
             [Gdk.KEY_J, self.acth.ctrl_j],
-            [Gdk.KEY_g, self.acth.ctrl_g],
-            [Gdk.KEY_G, self.acth.ctrl_g],
             [Gdk.KEY_k, self.acth.ctrl_k],
             [Gdk.KEY_K, self.acth.ctrl_k],
             [Gdk.KEY_l, self.acth.ctrl_l],
             [Gdk.KEY_L, self.acth.ctrl_l],
             [Gdk.KEY_m, self.acth.ctrl_m],
             [Gdk.KEY_M, self.acth.ctrl_m],
-            [Gdk.KEY_N, self.acth.ctrl_n],
             [Gdk.KEY_n, self.acth.ctrl_n],
+            [Gdk.KEY_N, self.acth.ctrl_n],
             [Gdk.KEY_o, self.acth.ctrl_o],
             [Gdk.KEY_O, self.acth.ctrl_o],
             [Gdk.KEY_p, self.acth.ctrl_p],
@@ -1009,6 +1062,8 @@ class KeyHand:
             [Gdk.KEY_Q, self.acth.ctrl_q],
             [Gdk.KEY_r, self.acth.ctrl_r],
             [Gdk.KEY_R, self.acth.ctrl_r],
+            [Gdk.KEY_s, self.acth.ctrl_s],
+            [Gdk.KEY_S, self.acth.ctrl_s],
             [Gdk.KEY_t, self.acth.ctrl_t],
             [Gdk.KEY_T, self.acth.ctrl_t],
             [Gdk.KEY_u, self.acth.ctrl_u],
@@ -1184,10 +1239,18 @@ class KeyHand:
             [Gdk.KEY_G, self.acth.ctrl_alt_g],
             [Gdk.KEY_h, self.acth.ctrl_alt_h],
             [Gdk.KEY_H, self.acth.ctrl_alt_h],
+            [Gdk.KEY_i, self.acth.ctrl_alt_i],
+            [Gdk.KEY_I, self.acth.ctrl_alt_i],
             [Gdk.KEY_j, self.acth.ctrl_alt_j],
             [Gdk.KEY_J, self.acth.ctrl_alt_j],
             [Gdk.KEY_k, self.acth.ctrl_alt_k],
             [Gdk.KEY_K, self.acth.ctrl_alt_k],
+            [Gdk.KEY_l, self.acth.ctrl_alt_l],
+            [Gdk.KEY_L, self.acth.ctrl_alt_l],
+            [Gdk.KEY_m, self.acth.ctrl_alt_m],
+            [Gdk.KEY_M, self.acth.ctrl_alt_m],
+            [Gdk.KEY_n, self.acth.ctrl_alt_n],
+            [Gdk.KEY_N, self.acth.ctrl_alt_n],
             [Gdk.KEY_t, self.acth.ctrl_alt_t],
             [Gdk.KEY_T, self.acth.ctrl_alt_t],
 
@@ -1238,10 +1301,14 @@ class KeyHand:
             [Gdk.KEY_C, self.acth.alt_c],
             [Gdk.KEY_d, self.acth.alt_d],
             [Gdk.KEY_D, self.acth.alt_d],
+            [Gdk.KEY_e, self.acth.alt_e],
+            [Gdk.KEY_E, self.acth.alt_e],
             [Gdk.KEY_f, self.acth.alt_f],
             [Gdk.KEY_F, self.acth.alt_f],
             [Gdk.KEY_g, self.acth.alt_g],
             [Gdk.KEY_G, self.acth.alt_g],
+            [Gdk.KEY_h, self.acth.alt_h],
+            [Gdk.KEY_H, self.acth.alt_h],
             [Gdk.KEY_i, self.acth.alt_i],
             [Gdk.KEY_I, self.acth.alt_i],
             [Gdk.KEY_j, self.acth.alt_j],
@@ -1250,12 +1317,35 @@ class KeyHand:
             [Gdk.KEY_K, self.acth.alt_k],
             [Gdk.KEY_l, self.acth.alt_l],
             [Gdk.KEY_L, self.acth.alt_l],
+            [Gdk.KEY_m, self.acth.alt_m],
+            [Gdk.KEY_M, self.acth.alt_m],
+            [Gdk.KEY_n, self.acth.alt_n],
+            [Gdk.KEY_N, self.acth.alt_n],
             [Gdk.KEY_o, self.acth.alt_o],
             [Gdk.KEY_O, self.acth.alt_o],
+            [Gdk.KEY_p, self.acth.alt_p],
+            [Gdk.KEY_P, self.acth.alt_p],
             [Gdk.KEY_q, self.acth.alt_q],
             [Gdk.KEY_Q, self.acth.alt_q],
+            [Gdk.KEY_r, self.acth.alt_r],
+            [Gdk.KEY_R, self.acth.alt_r],
+            [Gdk.KEY_s, self.acth.alt_s],
+            [Gdk.KEY_S, self.acth.alt_s],
+            [Gdk.KEY_t, self.acth.alt_t],
+            [Gdk.KEY_T, self.acth.alt_t],
+            [Gdk.KEY_u, self.acth.alt_u],
+            [Gdk.KEY_U, self.acth.alt_u],
+            [Gdk.KEY_v, self.acth.alt_v],
+            [Gdk.KEY_V, self.acth.alt_v],
+            [Gdk.KEY_w, self.acth.alt_w],
+            [Gdk.KEY_W, self.acth.alt_w],
+            [Gdk.KEY_x, self.acth.alt_x],
+            [Gdk.KEY_X, self.acth.alt_x],
             [Gdk.KEY_y, self.acth.alt_y],
             [Gdk.KEY_Y, self.acth.alt_y],
+            [Gdk.KEY_z, self.acth.alt_z],
+            [Gdk.KEY_Z, self.acth.alt_z],
+
             [Gdk.KEY_p, self.acth.f5],
             [Gdk.KEY_P, self.acth.f5],
             [Gdk.KEY_n, self.acth.f6],
@@ -1270,15 +1360,10 @@ class KeyHand:
             [Gdk.KEY_U, self.acth.ctrl_z],
             [Gdk.KEY_v, self.acth.alt_v],
             [Gdk.KEY_V, self.acth.alt_v],
-            [Gdk.KEY_w, self.acth.alt_w],
-            [Gdk.KEY_W, self.acth.alt_w],
-            [Gdk.KEY_x, self.acth.alt_x],
-            [Gdk.KEY_X, self.acth.alt_x],
-            [Gdk.KEY_z, self.acth.alt_z],
-            [Gdk.KEY_Z, self.acth.alt_z],
             #[Gdk.KEY_bracketleft, self.acth.ctrl_u],
             #[Gdk.KEY_bracketright, self.acth.ctrl_alt_l],
             ]
+
 
     # When we get focus, we start out with no modifier keys
     def reset(self):
@@ -1294,7 +1379,6 @@ class KeyHand:
     def handle_key(self, self2, area, event):
 
         #print (&#34;KEY:&#34;,   event.keyval  )
-
         # Ramp up debug level
         if pedconfig.conf.pgdebug &gt; 6:
              print( &#34;key val &#34;,  event.keyval, &#34;key name&#34;, event.string)
@@ -1302,9 +1386,9 @@ class KeyHand:
             print( &#34;key event&#34;,  event.type)
         if pedconfig.conf.pgdebug &gt; 8:
             print( &#34;key state&#34;,  event.state)
-
         if pedconfig.conf.show_keys:
-            print (&#34;KEY:&#34;, event.keyval, hex(event.keyval), event.string, event.type)
+            print (&#34;Key: &#39;%s&#39;&#34; % event.string,
+                      &#34;%d (0x%x)&#34; % (event.keyval, event.keyval), &#34;type:&#34;, int(event.type))
             if pedconfig.conf.verbose:
                 print (&#34;KEYSTR:&#34;, event.state, event.string)
         try:
@@ -1393,7 +1477,7 @@ class KeyHand:
             if ret:
                 return
 
-        # Key priorities are derived fro the order of tests
+        # Key priorities are derived from the order of these tests
         if self.super and self.ctrl and self.alt:
             self.handle_super_ctrl_alt_key(self2, area, event)
         elif self.super and self.alt:
@@ -1619,20 +1703,25 @@ class KeyHand:
                 print( &#34;alt hand&#34;, event)
 
             if event.keyval &gt;= Gdk.KEY_1 and event.keyval &lt;= Gdk.KEY_9:
-                if pedconfig.conf.pgdebug &gt; 5:
+                if 1: #pedconfig.conf.pgdebug &gt; 5:
                     print( &#34;Keyhand Alt num&#34;, event.keyval - Gdk.KEY_1)
                 num = event.keyval - Gdk.KEY_1
                 if num &gt;  self2.notebook.get_n_pages() - 1:
                     self2.mained.update_statusbar(&#34;Invalid tab (page) index.&#34;)
                 else:
+                    pedconfig.conf.pedwin.notebook.grab_focus()
                     old = self2.notebook.get_current_page()
                     if old == num:
                         self2.mained.update_statusbar(&#34;Already at page %d ...&#34; % old)
                     else:
                         self2.notebook.set_current_page(num)
 
-            elif event.keyval == Gdk.KEY_0:
-                self2.appwin.mywin.set_focus(self2.appwin.treeview)
+            #elif event.keyval == Gdk.KEY_0:
+            #    #self2.mywin.set_focus(self2.mywin.treeview)
+            #    #self2.mywin.set_focus(self2.notebook.treeview)
+            #    pedconfig.conf.pedwin.notebook2.grab_focus()
+            #    #self2.notebook.grab_focus()
+
             else:
                 self._handle_key(self2, area, event, self.alt_keytab)
 
@@ -1697,20 +1786,25 @@ class KeyHand:
             print( &#34;alt hand&#34;, event)
 
         if event.keyval &gt;= Gdk.KEY_1 and event.keyval &lt;= Gdk.KEY_9:
-            if pedconfig.conf.pgdebug &gt; 5:
+            if 1: #pedconfig.conf.pgdebug &gt; 5:
                 print( &#34;Keyhand Alt num&#34;, event.keyval - Gdk.KEY_1)
             num = event.keyval - Gdk.KEY_1
             if num &gt;  self2.notebook.get_n_pages() - 1:
                 self2.mained.update_statusbar(&#34;Invalid tab (page) index.&#34;)
             else:
+                pedconfig.conf.pedwin.notebook.grab_focus()
                 old = self2.notebook.get_current_page()
                 if old == num:
                     self2.mained.update_statusbar(&#34;Already at page %d ...&#34; % old)
                 else:
                     self2.notebook.set_current_page(num)
 
-        elif event.keyval == Gdk.KEY_0:
-            self2.appwin.mywin.set_focus(self2.appwin.treeview)
+        #elif event.keyval == Gdk.KEY_0:
+        #    #self2.mywin.set_focus(self2.mywin.treeview)
+        #    #self2.mywin.set_focus(self2.notebook.treeview)
+        #    pedconfig.conf.pedwin.notebook2.grab_focus()
+        #    #self2.notebook.grab_focus()
+
         else:
             self._handle_key(self2, area, event, self.alt_keytab)</code></pre>
 </details>
@@ -1757,7 +1851,6 @@ class KeyHand:
 <pre><code class="python">def handle_key(self, self2, area, event):
 
     #print (&#34;KEY:&#34;,   event.keyval  )
-
     # Ramp up debug level
     if pedconfig.conf.pgdebug &gt; 6:
          print( &#34;key val &#34;,  event.keyval, &#34;key name&#34;, event.string)
@@ -1765,9 +1858,9 @@ class KeyHand:
         print( &#34;key event&#34;,  event.type)
     if pedconfig.conf.pgdebug &gt; 8:
         print( &#34;key state&#34;,  event.state)
-
     if pedconfig.conf.show_keys:
-        print (&#34;KEY:&#34;, event.keyval, hex(event.keyval), event.string, event.type)
+        print (&#34;Key: &#39;%s&#39;&#34; % event.string,
+                  &#34;%d (0x%x)&#34; % (event.keyval, event.keyval), &#34;type:&#34;, int(event.type))
         if pedconfig.conf.verbose:
             print (&#34;KEYSTR:&#34;, event.state, event.string)
     try:
@@ -1865,7 +1958,7 @@ class KeyHand:
         if ret:
             return
 
-    # Key priorities are derived fro the order of tests
+    # Key priorities are derived from the order of these tests
     if self.super and self.ctrl and self.alt:
         self.handle_super_ctrl_alt_key(self2, area, event)
     elif self.super and self.alt:

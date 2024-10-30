@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>pyedpro API documentation</title>
-<meta name="description" content="! mainpage …" />
+<meta name="description" content="Welcome to PyEdPro …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,7 +22,6 @@
 <h1 class="title">Module <code>pyedpro</code></h1>
 </header>
 <section id="section-intro">
-<p>! mainpage</p>
 <h2 id="welcome-to-pyedpro">Welcome to PyEdPro.</h2>
 <p>This is modern multi-platform editor. Simple, powerful,
 configurable, extendable. Goodies like macro recording / playback, spell check,
@@ -34,16 +33,19 @@ powerful, configurable, extendable. To run this module without
 installation put the supporting files in the 'pedlib'
 subdirectory under the main file's direcory.</p>
 <p>(like 'cp -a * to_target')</p>
-<p>This project is a successor of pyedit, after porting it to GTK3. PyEdPro
-will run anywhere PyGObject can run.</p>
-<p>Working and tested platforms currently are:</p>
+<p>This project is a successor of pyedit, after porting it to GTK3.
+PyEdPro
+will run anywhere PyGObject runs. This includes
+Linux*; Windows (MSYS2); Mac;</p>
+<p>Working, and tested platforms currently are:</p>
 <pre><code>    Win 7 .. Win 10 ...
-    Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
+    Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x ... 24x
+                    (should run on any linux )
     Windows (Native) plus MSYS2, Mingw,
     Raspberry PI 3, Raspberry PI 4, ...
     Mac ** Some functions are disabled - in particular async processing
 </code></pre>
-<p>I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
+<p>I mainly run it on Ubuntu, and in Win / MSYS2, some Fedora, Windows 10,
 Windows 10 x64, and the Raspberry-Pi. It behaves consistently on all these
 platforms.
 It is an absolute joy to edit in a different platform without the learning
@@ -96,8 +98,7 @@ See also the INSTALL file.</p>
 <pre><code class="python">#!/usr/bin/env python3
 
 __doc__ = \
-&#39;&#39;&#39;! mainpage
-
+&#39;&#39;&#39;
 ## Welcome to PyEdPro.
 
 This is modern multi-platform editor. Simple, powerful,
@@ -113,18 +114,20 @@ subdirectory under the main file&#39;s direcory.
 
 (like &#39;cp -a * to_target&#39;)
 
- This project is a successor of pyedit, after porting it to GTK3. PyEdPro
- will run anywhere PyGObject can run.
+This project is a successor of pyedit, after porting it to GTK3.
+PyEdPro  will run anywhere PyGObject runs. This includes
+    Linux*; Windows (MSYS2); Mac;
 
-  Working and tested platforms currently are:
+  Working, and tested platforms currently are:
 
         Win 7 .. Win 10 ...
-        Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x (should run on any linux )
+        Centos 6 .. 7 Ubuntu 14 ... 16 ...  20.x ... 24x
+                        (should run on any linux )
         Windows (Native) plus MSYS2, Mingw,
         Raspberry PI 3, Raspberry PI 4, ...
         Mac ** Some functions are disabled - in particular async processing
 
-  I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
+  I mainly run it on Ubuntu, and in Win / MSYS2, some Fedora, Windows 10,
 Windows 10 x64, and the Raspberry-Pi. It behaves consistently on all these
 platforms.
   It is an absolute joy to edit in a different platform without the learning
@@ -239,7 +242,7 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = &#34;3.3.8&#34;
+VERSION     = &#34;3.4.0&#34;
 BUILDDATE   = &#34;Sun 05.May.2024&#34;
 PROGNAME    = &#34;PyEdPro&#34;
 
@@ -278,6 +281,9 @@ class MainPyed(Gtk.Application):
             mainwin.opensess(self.projname)
 
 def cleanup(mw):
+
+    &#39;&#39;&#39; On exit, remove marked files (mostly temporary files) &#39;&#39;&#39;
+
     #print(&#34;Cleanup&#34;, mw.cleanit)
     for aa in mw.cleanit:
         bb = os.path.join(pedconfig.conf.temp_dir, os.path.basename(aa))
@@ -334,9 +340,10 @@ def xhelp():
 
 # ------------------------------------------------------------------------
 
-#def terminate(arg1 = None, arg2 = None):
 def terminate():
+
     &#39;&#39;&#39; Termination Handler&#39;&#39;&#39;
+
     if pedconfig.conf.verbose:
         print(_(&#34;Terminating pydepro.py, saving files to ~/pydepro&#34;))
 
@@ -345,11 +352,12 @@ def terminate():
     #return signal.SIG_IGN
 
 # ------------------------------------------------------------------------
-# Start of program:
 
 def mainstart(name = &#34;&#34;, args = &#34;&#34;, oldpath = &#34;&#34;):
 
-    &#39;&#39;&#39; Main Entry Point for the editor &#39;&#39;&#39;
+    &#39;&#39;&#39; Start of program. This is the main Entry Point for the editor from
+        command line.
+    &#39;&#39;&#39;
 
     SHOW_TIMING = 0
     SHOW_CONFIG = 0
@@ -521,6 +529,8 @@ def mainstart(name = &#34;&#34;, args = &#34;&#34;, oldpath = &#34;&#34;):
 
 def mainfunc():
 
+    &#39;&#39;&#39; Called from the command line scripts &#39;&#39;&#39;
+
     # Create log window
     sys.stdout = pedlog.fake_stdout(sys.stdout)
     sys.stderr = pedlog.fake_stdout(sys.stdout)
@@ -533,9 +543,10 @@ def mainfunc():
     #print(&#34;in main&#34;, sys.argv[0])
     mainstart(&#34;&#34;, [], &#34;&#34;)
 
-# Setup needed it for scripts
-
 if __name__ == &#39;__main__&#39;:
+
+    &#39;&#39;&#39; Setup needed an entry point for scripts &#39;&#39;&#39;
+
     mainfunc()
 
 # EOF</code></pre>
@@ -552,12 +563,15 @@ if __name__ == &#39;__main__&#39;:
 <span>def <span class="ident">cleanup</span></span>(<span>mw)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>On exit, remove marked files (mostly temporary files)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def cleanup(mw):
+
+    &#39;&#39;&#39; On exit, remove marked files (mostly temporary files) &#39;&#39;&#39;
+
     #print(&#34;Cleanup&#34;, mw.cleanit)
     for aa in mw.cleanit:
         bb = os.path.join(pedconfig.conf.temp_dir, os.path.basename(aa))
@@ -571,12 +585,14 @@ if __name__ == &#39;__main__&#39;:
 <span>def <span class="ident">mainfunc</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Called from the command line scripts</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def mainfunc():
+
+    &#39;&#39;&#39; Called from the command line scripts &#39;&#39;&#39;
 
     # Create log window
     sys.stdout = pedlog.fake_stdout(sys.stdout)
@@ -595,14 +611,17 @@ if __name__ == &#39;__main__&#39;:
 <span>def <span class="ident">mainstart</span></span>(<span>name='', args='', oldpath='')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Main Entry Point for the editor</p></div>
+<div class="desc"><p>Start of program. This is the main Entry Point for the editor from
+command line.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def mainstart(name = &#34;&#34;, args = &#34;&#34;, oldpath = &#34;&#34;):
 
-    &#39;&#39;&#39; Main Entry Point for the editor &#39;&#39;&#39;
+    &#39;&#39;&#39; Start of program. This is the main Entry Point for the editor from
+        command line.
+    &#39;&#39;&#39;
 
     SHOW_TIMING = 0
     SHOW_CONFIG = 0
@@ -810,7 +829,9 @@ if __name__ == &#39;__main__&#39;:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def terminate():
+
     &#39;&#39;&#39; Termination Handler&#39;&#39;&#39;
+
     if pedconfig.conf.verbose:
         print(_(&#34;Terminating pydepro.py, saving files to ~/pydepro&#34;))
 

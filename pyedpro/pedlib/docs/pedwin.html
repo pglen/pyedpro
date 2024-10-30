@@ -66,12 +66,13 @@ from pedlib import pedspell
 from pedlib import pedofd
 #from pedlib import pedplug
 from pedlib import pedutil
+from pedlib import pedai
 
-#sys.path.append(&#39;..&#39; + os.sep + &#34;pycommon&#34;)
+#sys.path.append(&#39;..&#39; + os.sep + &#34;pyvguicom&#34;)
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
-from pycommon.pgbutt import *
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
+from pyvguicom.pgbutt import *
 
 # Into our name space
 from    pedlib.pedmenu import *
@@ -352,6 +353,11 @@ class EdMainWindow():
         merge_id = self.merge.new_merge_id()
         self.add_mru(self.merge, merge_id, self.acg)
 
+        # Keybinder
+        #actions = self.acg.list_actions()
+        #for aa in actions:
+        #    print(aa.get_name(), )
+
         self.mbar = self.merge.get_widget(&#34;/MenuBar&#34;)
         self.mbar.show()
 
@@ -496,6 +502,20 @@ class EdMainWindow():
                 pedutil.put_exception(&#34;func tab&#34;)
 
         try:
+            #pw = Gtk.Label(&#34;hello&#34;)
+            pw = pedai.pgAI()
+            notebook2.append_page(pw)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
+            self.notebook2.set_tab_label(ppp, self.make_label(&#34;_AI&#34;))
+            pass
+        except:
+            print(&#34;Cannot load auxiliary AI tab.&#34;)
+            if pedconfig.conf.verbose:
+                print(sys.exc_info())
+                if pedconfig.conf.verbose:
+                    put_exception(&#34;load AI tab&#34;)
+
+        try:
             notebook2.append_page(pedcal.pgcal())
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label(&#34;Cal&#34;))
@@ -610,6 +630,7 @@ class EdMainWindow():
         obox.pack_start(self.tbar, 0, 0, 0)
         nbox.pack_start(obox, 0, 0, 0)
 
+        obox3 = Gtk.HBox()
         obox2 = Gtk.VBox()
         self.newbox = Gtk.HBox()
         self.newbox2 = Gtk.HBox()
@@ -629,12 +650,13 @@ class EdMainWindow():
             #butt.connect(&#34;pressed&#34;, self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
         self.newbox.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
-        #newscroll = Gtk.ScrolledWindow()
         combox = Gtk.VBox()
         combox.pack_start(self.newbox, 1, 1, 1)
-        #newscroll.add(combox)
-        #obox2.pack_start(newscroll, 0, 0, 0)
-        obox2.pack_start(combox, 1, 1, 0)
+        newscroll = Gtk.ScrolledWindow()
+        newscroll.set_overlay_scrolling(False)
+        newscroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+        newscroll.add_with_viewport(combox)
+        obox2.pack_start(newscroll, 1, 1, 0)
 
         self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
         for aa in range(self.num_butts):
@@ -650,7 +672,20 @@ class EdMainWindow():
         self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
         combox.pack_start(self.newbox2, 1, 1, 1)
 
-        nbox.pack_start(obox2, 1, 1, 0)
+        leftb = Gtk.Button(&#34;&lt;&#34;)
+        rightb = Gtk.Button(&#34;&gt;&#34;)
+        #obox3.pack_start(leftb, 0,0,0)
+
+        oscroll = Gtk.ScrolledWindow()
+        adj =  Gtk.Adjustment()
+        oscroll.set_hadjustment(adj)
+        oscroll.get_hscrollbar().hide()
+        oscroll.add(obox2)
+        obox3.pack_start(oscroll, 1, 1, 0)
+        #obox3.pack_start(obox2, 1,1,0)
+
+        #obox3.pack_start(rightb, 0,0,0)
+        nbox.pack_start(obox3, 1, 1, 0)
         bbox.pack_start(nbox, 0, 0, 0)
         bbox.pack_start(self.hpaned3, 1, 1, 0)
 
@@ -741,11 +776,13 @@ class EdMainWindow():
             pass
 
         if not self.mac:
-            GLib.timeout_add(500, initial_load, self, 0)
+            GLib.timeout_add(100, initial_load, self, 0)
             #initial_load(self, 0)
             pass
         else:
             initial_load(self, 0)
+
+        #print(&#34;initial key state&#34;, Gtk.get_current_event_state())
 
         # Tried it ... NO
         #GObject.signal_new(&#34;my-custom-signal&#34;, self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
@@ -1025,7 +1062,8 @@ class EdMainWindow():
 
     def make_label(self, strx):
         hbox = Gtk.HBox()
-        labx  = Gtk.Label(label=strx)
+        labx  = Gtk.Label.new_with_mnemonic(strx)
+        labx.set_mnemonic_widget(hbox)
         eb = Gtk.EventBox(); eb.add(labx)
         eb.connect_after(&#34;button-press-event&#34;, self.label_callb, strx)
         eb.set_above_child(True)
@@ -1166,8 +1204,8 @@ class EdMainWindow():
 
         &#39;&#39;&#39; Call the document&#39;s key handler after some inspection &#39;&#39;&#39;
 
-        #if pedconfig.conf.verbose:
-            #print(&#34;pedwin key&#34;, event.keyval, event.state)
+        if pedconfig.conf.pgdebug &gt; 4:
+            print(&#34;pedwin key&#34;, event.keyval, event.state)
 
         if pedconfig.conf.keylog_on:
             if self.klfp:
@@ -1236,8 +1274,29 @@ class EdMainWindow():
         # Sad sad; do system shortcuts
         if event.type == Gdk.EventType.KEY_PRESS:
             # alt
-            if event.state == Gdk.ModifierType.MOD1_MASK:
+            if event.state &amp; Gdk.ModifierType.MOD1_MASK:
                 #print(&#34;alt&#34;, event.keyval)
+
+                if event.keyval &gt;= Gdk.KEY_0 and event.keyval &lt;= Gdk.KEY_9:
+                    if event.keyval == Gdk.KEY_0:
+                        self.notebook.grab_focus()
+                        old = self.notebook.get_current_page()
+                        print(&#34;Set current&#34;, old)
+                        self.notebook.set_current_page(old)
+                    else:
+                        num = event.keyval - Gdk.KEY_1
+                        self.notebook.grab_focus()
+                        if pedconfig.conf.pgdebug &gt; 5:
+                            print( &#34;PedWin Keyhand Alt num&#34;, num)
+                        if num &gt;  self.notebook.get_n_pages() - 1:
+                            self.update_statusbar(&#34;Invalid tab (page) index.&#34;)
+                        else:
+                            old = self.notebook.get_current_page()
+                            if old == num:
+                                self.update_statusbar(&#34;Already at page %d ...&#34; % old)
+                            else:
+                                self.notebook.set_current_page(num)
+                    return True
 
                 # These are the menu accel keys; pass it to the system
                 #  -- really dislike the accel system; takes over too many things
@@ -1247,14 +1306,14 @@ class EdMainWindow():
                         event.keyval == ord(&#39;h&#39;):
                     return False
 
-                if event.keyval == ord(&#39;o&#39;):
+                if event.keyval == ord(&#39;o&#39;) or event.keyval == ord(&#39;O&#39;):
                     #print(&#34;mainwin alt-o&#34;)
                     self.altopen()
                     return True
 
             # ctrl-shift
-            elif event.state == \
-                    (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK):
+            elif event.state &amp; Gdk.ModifierType.CONTROL_MASK and \
+                    event.state &amp; Gdk.ModifierType.SHIFT_MASK:
                 #print(&#34;control shift&#34;, event.keyval)
                 if event.keyval == ord(&#39;S&#39;):
                     #print(&#34;save as&#34;, event.keyval)
@@ -1266,7 +1325,7 @@ class EdMainWindow():
                     load_sess()
                     return True
             # ctrl
-            elif event.state == Gdk.ModifierType.CONTROL_MASK:
+            elif event.state &amp; Gdk.ModifierType.CONTROL_MASK:
                 if event.keyval == ord(&#39;o&#39;):
                     #print(&#34;open&#34;, keyval)
                     self.open()
@@ -1280,7 +1339,7 @@ class EdMainWindow():
                     return True
 
         # This was needed ad ALT-a and ALT-b ....
-        # .... misteriousely stopped working
+        # .... mysteriousely stopped working
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
             # See which window has focus
@@ -1696,10 +1755,11 @@ class EdMainWindow():
     def open(self):
 
         #warnings.simplefilter(&#34;ignore&#34;)
-        but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
-         &#34;Open File&#34;, Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog(title=&#34;Open file&#34;, transient_for=self.mywin, \
-             action=Gtk.FileChooserAction.OPEN, buttons=but)
+                        action=Gtk.FileChooserAction.OPEN)
+
+        but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL, &#34;Open File&#34;, Gtk.ButtonsType.OK
+        fc.add_buttons(*but)
         #warnings.simplefilter(&#34;default&#34;)
 
         filters = []
@@ -1763,6 +1823,7 @@ class EdMainWindow():
         #dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
         #    Gtk.MESSAGE_INFO, Gtk.BUTTONS_CLOSE,
         #    &#39;Action: &#34;%s&#34; of type &#34;%s&#34;&#39; % (action.get_name(), type(action)))
+
         # Close dialog on user response
         #dialog.connect (&#34;response&#34;, lambda d, r: d.destroy())
         #dialog.show()
@@ -2524,7 +2585,7 @@ def  initial_load(self2, arg):
             cnt += 1
             add_page(vpaned)
             vpaned.area.set_tablabel()
-            usleep(50)
+            usleep(10)
 
         if cnt == 0:
             if pedconfig.conf.verbose:
@@ -3040,7 +3101,7 @@ def handler_tick(arg, arg2):
             cnt += 1
             add_page(vpaned)
             vpaned.area.set_tablabel()
-            usleep(50)
+            usleep(10)
 
         if cnt == 0:
             if pedconfig.conf.verbose:
@@ -3243,6 +3304,11 @@ def handler_tick(arg, arg2):
         merge_id = self.merge.new_merge_id()
         self.add_mru(self.merge, merge_id, self.acg)
 
+        # Keybinder
+        #actions = self.acg.list_actions()
+        #for aa in actions:
+        #    print(aa.get_name(), )
+
         self.mbar = self.merge.get_widget(&#34;/MenuBar&#34;)
         self.mbar.show()
 
@@ -3387,6 +3453,20 @@ def handler_tick(arg, arg2):
                 pedutil.put_exception(&#34;func tab&#34;)
 
         try:
+            #pw = Gtk.Label(&#34;hello&#34;)
+            pw = pedai.pgAI()
+            notebook2.append_page(pw)
+            ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
+            self.notebook2.set_tab_label(ppp, self.make_label(&#34;_AI&#34;))
+            pass
+        except:
+            print(&#34;Cannot load auxiliary AI tab.&#34;)
+            if pedconfig.conf.verbose:
+                print(sys.exc_info())
+                if pedconfig.conf.verbose:
+                    put_exception(&#34;load AI tab&#34;)
+
+        try:
             notebook2.append_page(pedcal.pgcal())
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
             self.notebook2.set_tab_label(ppp, self.make_label(&#34;Cal&#34;))
@@ -3501,6 +3581,7 @@ def handler_tick(arg, arg2):
         obox.pack_start(self.tbar, 0, 0, 0)
         nbox.pack_start(obox, 0, 0, 0)
 
+        obox3 = Gtk.HBox()
         obox2 = Gtk.VBox()
         self.newbox = Gtk.HBox()
         self.newbox2 = Gtk.HBox()
@@ -3520,12 +3601,13 @@ def handler_tick(arg, arg2):
             #butt.connect(&#34;pressed&#34;, self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
         self.newbox.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
-        #newscroll = Gtk.ScrolledWindow()
         combox = Gtk.VBox()
         combox.pack_start(self.newbox, 1, 1, 1)
-        #newscroll.add(combox)
-        #obox2.pack_start(newscroll, 0, 0, 0)
-        obox2.pack_start(combox, 1, 1, 0)
+        newscroll = Gtk.ScrolledWindow()
+        newscroll.set_overlay_scrolling(False)
+        newscroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+        newscroll.add_with_viewport(combox)
+        obox2.pack_start(newscroll, 1, 1, 0)
 
         self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
         for aa in range(self.num_butts):
@@ -3541,7 +3623,20 @@ def handler_tick(arg, arg2):
         self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
         combox.pack_start(self.newbox2, 1, 1, 1)
 
-        nbox.pack_start(obox2, 1, 1, 0)
+        leftb = Gtk.Button(&#34;&lt;&#34;)
+        rightb = Gtk.Button(&#34;&gt;&#34;)
+        #obox3.pack_start(leftb, 0,0,0)
+
+        oscroll = Gtk.ScrolledWindow()
+        adj =  Gtk.Adjustment()
+        oscroll.set_hadjustment(adj)
+        oscroll.get_hscrollbar().hide()
+        oscroll.add(obox2)
+        obox3.pack_start(oscroll, 1, 1, 0)
+        #obox3.pack_start(obox2, 1,1,0)
+
+        #obox3.pack_start(rightb, 0,0,0)
+        nbox.pack_start(obox3, 1, 1, 0)
         bbox.pack_start(nbox, 0, 0, 0)
         bbox.pack_start(self.hpaned3, 1, 1, 0)
 
@@ -3632,11 +3727,13 @@ def handler_tick(arg, arg2):
             pass
 
         if not self.mac:
-            GLib.timeout_add(500, initial_load, self, 0)
+            GLib.timeout_add(100, initial_load, self, 0)
             #initial_load(self, 0)
             pass
         else:
             initial_load(self, 0)
+
+        #print(&#34;initial key state&#34;, Gtk.get_current_event_state())
 
         # Tried it ... NO
         #GObject.signal_new(&#34;my-custom-signal&#34;, self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
@@ -3916,7 +4013,8 @@ def handler_tick(arg, arg2):
 
     def make_label(self, strx):
         hbox = Gtk.HBox()
-        labx  = Gtk.Label(label=strx)
+        labx  = Gtk.Label.new_with_mnemonic(strx)
+        labx.set_mnemonic_widget(hbox)
         eb = Gtk.EventBox(); eb.add(labx)
         eb.connect_after(&#34;button-press-event&#34;, self.label_callb, strx)
         eb.set_above_child(True)
@@ -4057,8 +4155,8 @@ def handler_tick(arg, arg2):
 
         &#39;&#39;&#39; Call the document&#39;s key handler after some inspection &#39;&#39;&#39;
 
-        #if pedconfig.conf.verbose:
-            #print(&#34;pedwin key&#34;, event.keyval, event.state)
+        if pedconfig.conf.pgdebug &gt; 4:
+            print(&#34;pedwin key&#34;, event.keyval, event.state)
 
         if pedconfig.conf.keylog_on:
             if self.klfp:
@@ -4127,8 +4225,29 @@ def handler_tick(arg, arg2):
         # Sad sad; do system shortcuts
         if event.type == Gdk.EventType.KEY_PRESS:
             # alt
-            if event.state == Gdk.ModifierType.MOD1_MASK:
+            if event.state &amp; Gdk.ModifierType.MOD1_MASK:
                 #print(&#34;alt&#34;, event.keyval)
+
+                if event.keyval &gt;= Gdk.KEY_0 and event.keyval &lt;= Gdk.KEY_9:
+                    if event.keyval == Gdk.KEY_0:
+                        self.notebook.grab_focus()
+                        old = self.notebook.get_current_page()
+                        print(&#34;Set current&#34;, old)
+                        self.notebook.set_current_page(old)
+                    else:
+                        num = event.keyval - Gdk.KEY_1
+                        self.notebook.grab_focus()
+                        if pedconfig.conf.pgdebug &gt; 5:
+                            print( &#34;PedWin Keyhand Alt num&#34;, num)
+                        if num &gt;  self.notebook.get_n_pages() - 1:
+                            self.update_statusbar(&#34;Invalid tab (page) index.&#34;)
+                        else:
+                            old = self.notebook.get_current_page()
+                            if old == num:
+                                self.update_statusbar(&#34;Already at page %d ...&#34; % old)
+                            else:
+                                self.notebook.set_current_page(num)
+                    return True
 
                 # These are the menu accel keys; pass it to the system
                 #  -- really dislike the accel system; takes over too many things
@@ -4138,14 +4257,14 @@ def handler_tick(arg, arg2):
                         event.keyval == ord(&#39;h&#39;):
                     return False
 
-                if event.keyval == ord(&#39;o&#39;):
+                if event.keyval == ord(&#39;o&#39;) or event.keyval == ord(&#39;O&#39;):
                     #print(&#34;mainwin alt-o&#34;)
                     self.altopen()
                     return True
 
             # ctrl-shift
-            elif event.state == \
-                    (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK):
+            elif event.state &amp; Gdk.ModifierType.CONTROL_MASK and \
+                    event.state &amp; Gdk.ModifierType.SHIFT_MASK:
                 #print(&#34;control shift&#34;, event.keyval)
                 if event.keyval == ord(&#39;S&#39;):
                     #print(&#34;save as&#34;, event.keyval)
@@ -4157,7 +4276,7 @@ def handler_tick(arg, arg2):
                     load_sess()
                     return True
             # ctrl
-            elif event.state == Gdk.ModifierType.CONTROL_MASK:
+            elif event.state &amp; Gdk.ModifierType.CONTROL_MASK:
                 if event.keyval == ord(&#39;o&#39;):
                     #print(&#34;open&#34;, keyval)
                     self.open()
@@ -4171,7 +4290,7 @@ def handler_tick(arg, arg2):
                     return True
 
         # This was needed ad ALT-a and ALT-b ....
-        # .... misteriousely stopped working
+        # .... mysteriousely stopped working
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
             # See which window has focus
@@ -4587,10 +4706,11 @@ def handler_tick(arg, arg2):
     def open(self):
 
         #warnings.simplefilter(&#34;ignore&#34;)
-        but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
-         &#34;Open File&#34;, Gtk.ButtonsType.OK
         fc = Gtk.FileChooserDialog(title=&#34;Open file&#34;, transient_for=self.mywin, \
-             action=Gtk.FileChooserAction.OPEN, buttons=but)
+                        action=Gtk.FileChooserAction.OPEN)
+
+        but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL, &#34;Open File&#34;, Gtk.ButtonsType.OK
+        fc.add_buttons(*but)
         #warnings.simplefilter(&#34;default&#34;)
 
         filters = []
@@ -4654,6 +4774,7 @@ def handler_tick(arg, arg2):
         #dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
         #    Gtk.MESSAGE_INFO, Gtk.BUTTONS_CLOSE,
         #    &#39;Action: &#34;%s&#34; of type &#34;%s&#34;&#39; % (action.get_name(), type(action)))
+
         # Close dialog on user response
         #dialog.connect (&#34;response&#34;, lambda d, r: d.destroy())
         #dialog.show()
@@ -5304,6 +5425,7 @@ def handler_tick(arg, arg2):
     #dialog = Gtk.MessageDialog(None, Gtk.DIALOG_DESTROY_WITH_PARENT,
     #    Gtk.MESSAGE_INFO, Gtk.BUTTONS_CLOSE,
     #    &#39;Action: &#34;%s&#34; of type &#34;%s&#34;&#39; % (action.get_name(), type(action)))
+
     # Close dialog on user response
     #dialog.connect (&#34;response&#34;, lambda d, r: d.destroy())
     #dialog.show()
@@ -5917,8 +6039,8 @@ def handler_tick(arg, arg2):
 
     &#39;&#39;&#39; Call the document&#39;s key handler after some inspection &#39;&#39;&#39;
 
-    #if pedconfig.conf.verbose:
-        #print(&#34;pedwin key&#34;, event.keyval, event.state)
+    if pedconfig.conf.pgdebug &gt; 4:
+        print(&#34;pedwin key&#34;, event.keyval, event.state)
 
     if pedconfig.conf.keylog_on:
         if self.klfp:
@@ -5987,8 +6109,29 @@ def handler_tick(arg, arg2):
     # Sad sad; do system shortcuts
     if event.type == Gdk.EventType.KEY_PRESS:
         # alt
-        if event.state == Gdk.ModifierType.MOD1_MASK:
+        if event.state &amp; Gdk.ModifierType.MOD1_MASK:
             #print(&#34;alt&#34;, event.keyval)
+
+            if event.keyval &gt;= Gdk.KEY_0 and event.keyval &lt;= Gdk.KEY_9:
+                if event.keyval == Gdk.KEY_0:
+                    self.notebook.grab_focus()
+                    old = self.notebook.get_current_page()
+                    print(&#34;Set current&#34;, old)
+                    self.notebook.set_current_page(old)
+                else:
+                    num = event.keyval - Gdk.KEY_1
+                    self.notebook.grab_focus()
+                    if pedconfig.conf.pgdebug &gt; 5:
+                        print( &#34;PedWin Keyhand Alt num&#34;, num)
+                    if num &gt;  self.notebook.get_n_pages() - 1:
+                        self.update_statusbar(&#34;Invalid tab (page) index.&#34;)
+                    else:
+                        old = self.notebook.get_current_page()
+                        if old == num:
+                            self.update_statusbar(&#34;Already at page %d ...&#34; % old)
+                        else:
+                            self.notebook.set_current_page(num)
+                return True
 
             # These are the menu accel keys; pass it to the system
             #  -- really dislike the accel system; takes over too many things
@@ -5998,14 +6141,14 @@ def handler_tick(arg, arg2):
                     event.keyval == ord(&#39;h&#39;):
                 return False
 
-            if event.keyval == ord(&#39;o&#39;):
+            if event.keyval == ord(&#39;o&#39;) or event.keyval == ord(&#39;O&#39;):
                 #print(&#34;mainwin alt-o&#34;)
                 self.altopen()
                 return True
 
         # ctrl-shift
-        elif event.state == \
-                (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK):
+        elif event.state &amp; Gdk.ModifierType.CONTROL_MASK and \
+                event.state &amp; Gdk.ModifierType.SHIFT_MASK:
             #print(&#34;control shift&#34;, event.keyval)
             if event.keyval == ord(&#39;S&#39;):
                 #print(&#34;save as&#34;, event.keyval)
@@ -6017,7 +6160,7 @@ def handler_tick(arg, arg2):
                 load_sess()
                 return True
         # ctrl
-        elif event.state == Gdk.ModifierType.CONTROL_MASK:
+        elif event.state &amp; Gdk.ModifierType.CONTROL_MASK:
             if event.keyval == ord(&#39;o&#39;):
                 #print(&#34;open&#34;, keyval)
                 self.open()
@@ -6031,7 +6174,7 @@ def handler_tick(arg, arg2):
                 return True
 
     # This was needed ad ALT-a and ALT-b ....
-    # .... misteriousely stopped working
+    # .... mysteriousely stopped working
     vcurr = notebook.get_nth_page(notebook.get_current_page())
     if vcurr:
         # See which window has focus
@@ -6514,7 +6657,8 @@ def handler_tick(arg, arg2):
 </summary>
 <pre><code class="python">def make_label(self, strx):
     hbox = Gtk.HBox()
-    labx  = Gtk.Label(label=strx)
+    labx  = Gtk.Label.new_with_mnemonic(strx)
+    labx.set_mnemonic_widget(hbox)
     eb = Gtk.EventBox(); eb.add(labx)
     eb.connect_after(&#34;button-press-event&#34;, self.label_callb, strx)
     eb.set_above_child(True)
@@ -6909,10 +7053,11 @@ def handler_tick(arg, arg2):
 <pre><code class="python">def open(self):
 
     #warnings.simplefilter(&#34;ignore&#34;)
-    but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL,\
-     &#34;Open File&#34;, Gtk.ButtonsType.OK
     fc = Gtk.FileChooserDialog(title=&#34;Open file&#34;, transient_for=self.mywin, \
-         action=Gtk.FileChooserAction.OPEN, buttons=but)
+                    action=Gtk.FileChooserAction.OPEN)
+
+    but =   &#34;Cancel&#34;, Gtk.ButtonsType.CANCEL, &#34;Open File&#34;, Gtk.ButtonsType.OK
+    fc.add_buttons(*but)
     #warnings.simplefilter(&#34;default&#34;)
 
     filters = []

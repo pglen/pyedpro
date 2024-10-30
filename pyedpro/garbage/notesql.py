@@ -1,7 +1,6 @@
 # -------------------------------------------------------------------
 # Dead code; Saved for possible cut paste
 
-
 class notesql():
 
     def __init__(self, file):

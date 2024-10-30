@@ -46,20 +46,18 @@ from gi.repository import GdkPixbuf
 from pedlib import pedconfig
 
 #sys.path.append(&#39;..&#39;)
-#sys.path.append(&#39;..&#39; + os.sep + &#34;pycommon&#34;)
+#sys.path.append(&#39;..&#39; + os.sep + &#34;pyvguicom&#34;)
 
-from pycommon.pggui import *
+from pyvguicom.pggui import *
 
 def ofd(fname = &#34;&#34;, self2 = None):
 
-    warnings.simplefilter(&#34;ignore&#34;)
-
-    dialog = Gtk.Dialog(&#34;pyedpro: Open File&#34;,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #warnings.simplefilter(&#34;ignore&#34;)
+    dialog = Gtk.Dialog(title=&#34;pyedpro: Open File&#34;,  modal=True)
+    #transient_for=self2.get_root_window(), flags = flagx)
+    buts = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+    dialog.add_buttons(*buts)
 
     #dialog.set_transient_for(self2.mained.mywin)
     if self2:
@@ -81,17 +79,17 @@ def ofd(fname = &#34;&#34;, self2 = None):
     dialog.connect(&#34;key-release-event&#34;, area_key, dialog)
 
     # Spacers
-    label1  = Gtk.Label(&#34;   &#34;);  label2 = Gtk.Label(&#34;   &#34;)
-    label3  = Gtk.Label(&#34;   &#34;);  label4 = Gtk.Label(&#34;   &#34;)
-    label5  = Gtk.Label(&#34;   &#34;);  label6 = Gtk.Label(&#34;   &#34;)
-    label7  = Gtk.Label(&#34;   &#34;);  label8 = Gtk.Label(&#34;   &#34;)
-    label9  = Gtk.Label(&#34;   &#34;);
+    label1  = Gtk.Label(label=&#34;   &#34;);  label2 = Gtk.Label(label=&#34;   &#34;)
+    label3  = Gtk.Label(label=&#34;   &#34;);  label4 = Gtk.Label(label=&#34;   &#34;)
+    label5  = Gtk.Label(label=&#34;   &#34;);  label6 = Gtk.Label(label=&#34;   &#34;)
+    label7  = Gtk.Label(label=&#34;   &#34;);  label8 = Gtk.Label(label=&#34;   &#34;)
+    label9  = Gtk.Label(label=&#34;   &#34;);
     label10 = Gtk.Label.new_with_mnemonic(&#34; Open File by Name (click on &#39;Open _This&#39; to open it) &#34;);
-    label11  = Gtk.Label(&#34;  &#34;);  label12 = Gtk.Label(&#34; &#34;);
-    #label13  = Gtk.Label(&#34;  &#34;);  label14 = Gtk.Label(&#34; &#34;);
+    label11  = Gtk.Label(label=&#34;  &#34;);  label12 = Gtk.Label(label=&#34; &#34;);
+    #label13  = Gtk.Label(label=&#34;  &#34;);  label14 = Gtk.Label(label=&#34; &#34;);
 
-    dialog.label11 = Gtk.Label(&#34;   &#34;)
-    dialog.label12 = Gtk.Label(&#34;   &#34;)
+    dialog.label11 = Gtk.Label(label=&#34;   &#34;)
+    dialog.label12 = Gtk.Label(label=&#34;   &#34;)
 
     dialog.pbox = Gtk.HBox()
     fill_path(dialog)
@@ -103,9 +101,9 @@ def ofd(fname = &#34;&#34;, self2 = None):
     dialog.vbox.pack_start(label10, 0, 0, 0)
     dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
     dialog.entry = Gtk.Entry();
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     dialog.entry.set_activates_default(True)
     dialog.entry.set_text(fname)
@@ -152,7 +150,7 @@ def ofd(fname = &#34;&#34;, self2 = None):
     populate(dialog)
     dialog.set_focus(tview)
     #dialog.set_focus(dialog.entry)
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     response = dialog.run()
 
@@ -792,14 +790,12 @@ def mode2str(mode):
 </summary>
 <pre><code class="python">def ofd(fname = &#34;&#34;, self2 = None):
 
-    warnings.simplefilter(&#34;ignore&#34;)
-
-    dialog = Gtk.Dialog(&#34;pyedpro: Open File&#34;,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #warnings.simplefilter(&#34;ignore&#34;)
+    dialog = Gtk.Dialog(title=&#34;pyedpro: Open File&#34;,  modal=True)
+    #transient_for=self2.get_root_window(), flags = flagx)
+    buts = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                    Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
+    dialog.add_buttons(*buts)
 
     #dialog.set_transient_for(self2.mained.mywin)
     if self2:
@@ -821,17 +817,17 @@ def mode2str(mode):
     dialog.connect(&#34;key-release-event&#34;, area_key, dialog)
 
     # Spacers
-    label1  = Gtk.Label(&#34;   &#34;);  label2 = Gtk.Label(&#34;   &#34;)
-    label3  = Gtk.Label(&#34;   &#34;);  label4 = Gtk.Label(&#34;   &#34;)
-    label5  = Gtk.Label(&#34;   &#34;);  label6 = Gtk.Label(&#34;   &#34;)
-    label7  = Gtk.Label(&#34;   &#34;);  label8 = Gtk.Label(&#34;   &#34;)
-    label9  = Gtk.Label(&#34;   &#34;);
+    label1  = Gtk.Label(label=&#34;   &#34;);  label2 = Gtk.Label(label=&#34;   &#34;)
+    label3  = Gtk.Label(label=&#34;   &#34;);  label4 = Gtk.Label(label=&#34;   &#34;)
+    label5  = Gtk.Label(label=&#34;   &#34;);  label6 = Gtk.Label(label=&#34;   &#34;)
+    label7  = Gtk.Label(label=&#34;   &#34;);  label8 = Gtk.Label(label=&#34;   &#34;)
+    label9  = Gtk.Label(label=&#34;   &#34;);
     label10 = Gtk.Label.new_with_mnemonic(&#34; Open File by Name (click on &#39;Open _This&#39; to open it) &#34;);
-    label11  = Gtk.Label(&#34;  &#34;);  label12 = Gtk.Label(&#34; &#34;);
-    #label13  = Gtk.Label(&#34;  &#34;);  label14 = Gtk.Label(&#34; &#34;);
+    label11  = Gtk.Label(label=&#34;  &#34;);  label12 = Gtk.Label(label=&#34; &#34;);
+    #label13  = Gtk.Label(label=&#34;  &#34;);  label14 = Gtk.Label(label=&#34; &#34;);
 
-    dialog.label11 = Gtk.Label(&#34;   &#34;)
-    dialog.label12 = Gtk.Label(&#34;   &#34;)
+    dialog.label11 = Gtk.Label(label=&#34;   &#34;)
+    dialog.label12 = Gtk.Label(label=&#34;   &#34;)
 
     dialog.pbox = Gtk.HBox()
     fill_path(dialog)
@@ -843,9 +839,9 @@ def mode2str(mode):
     dialog.vbox.pack_start(label10, 0, 0, 0)
     dialog.vbox.pack_start(xSpacer(), 0, 0, 0)
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
     dialog.entry = Gtk.Entry();
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     dialog.entry.set_activates_default(True)
     dialog.entry.set_text(fname)
@@ -892,7 +888,7 @@ def mode2str(mode):
     populate(dialog)
     dialog.set_focus(tview)
     #dialog.set_focus(dialog.entry)
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     response = dialog.run()
 

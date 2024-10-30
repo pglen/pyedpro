@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>keywords API documentation</title>
-<meta name="description" content="" />
+<meta name="description" content="Syntax highlite keywords …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,6 +22,20 @@
 <h1 class="title">Module <code>keywords</code></h1>
 </header>
 <section id="section-intro">
+<p>Syntax highlite keywords.</p>
+<p>Add keywords to taste. Note, that we are cheating here, as the
+coloring sub system does not parse the file, marely does a string
+compare. For example ' len(' is
+unlikely to appear in any
+context
+but in it's intended
+place. Note that '=len(xx)' is not highlited but
+'= len(xx)' is. Add
+strings that match your coding style or your
+language. It is feasible to have a set of keywords that cover
+multiple languages. (like # (hash) for bash, perl, python &hellip;)</p>
+<p>Also note that coloring too much distracts from readability, so
+configure this conservatively.</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -31,16 +45,21 @@
 # Global keyword configuration for pyedpro.
 
 # ------------------------------------------------------------------------
-# Add keywords to taste. Note, that we are cheating here, as the
-# coloring sub system does not  parse the file, marely does a string
-# compare. For example &#39; len(&#39; is  unlikely to appear in any  context
-# but in it&#39;s intended  place. Note that &#39;=len(xx)&#39; is not highlited but
-# &#39;= len(xx)&#39; is. Add  strings that match your coding style or your
-# language. It is feasible to have a set of keywords that cover
-# multiple languages. (like # (hash) for bash, perl, python ...)
-#
-# Also note that coloring too much distracts from readability, so
-# configure this conservatively.
+__doc__ = &#39;&#39;&#39;
+
+ Syntax highlite keywords.
+
+ Add keywords to taste. Note, that we are cheating here, as the
+ coloring sub system does not parse the file, marely does a string
+ compare. For example &#39; len(&#39; is  unlikely to appear in any  context
+ but in it&#39;s intended  place. Note that &#39;=len(xx)&#39; is not highlited but
+ &#39;= len(xx)&#39; is. Add  strings that match your coding style or your
+ language. It is feasible to have a set of keywords that cover
+ multiple languages. (like # (hash) for bash, perl, python ...)
+
+ Also note that coloring too much distracts from readability, so
+ configure this conservatively.
+&#39;&#39;&#39;
 
 # Keywords for Python coloring (this is in effect for .sh .c ... etc):
 
@@ -69,18 +88,20 @@ ckeywords =  &#34;^[_a-zA-Z].*\(.*\)&#34;
 localkwords = &#34;(int .*)|(char .*)|(for)|(while)|(if)|(return)&#34;
 localpywords = &#34;(for )|(while )|(return )|(import )|(def )&#34;
 
-# Keywords for auto correct. This corrects strings as we type.
-# Auto correct is case sensitive.
-# As a &#39;C&#39; programmer I kept typing &#34;else&#34; in python ... this feature
-# corrects it to &#34;else: &#34;  (the trailing colon for python)
-# It is contra indicatory to support bad habits, but for
-# productivity .... all is forgiven.
-#   Especially if one&#39;s next assignment is back to &#39;C&#39;
-#
-# Make sure to_str is longer than from_str (if shorter ... why correct?)
-# Ctrl-m to toggle autocorrect (default: off)
+&#39;&#39;&#39;
+ Keywords for auto correct. This corrects strings as we type.
+ Auto correct is case sensitive.
+ As a &#39;C&#39; programmer I kept typing &#34;else&#34; in python ... this feature
+ corrects it to &#34;else: &#34;  (the trailing colon for python)
+ It is contra indicatory to support bad habits, but for productivity ...
+ all is forgiven. Especially if one&#39;s next assignment is back to &#39;C&#39;
 
-# Syntax: from_str, to_str ....
+ Make sure to_str is longer than from_str (if shorter ... why correct?)
+ Ctrl-m to toggle autocorrect (default: off)
+
+ Syntax: (from_str, to_str),  ....
+
+&#39;&#39;&#39;
 
 auto_corr_table = \
                 [   ( &#34;else&#34;,   &#34;else: &#34;                    ),
@@ -117,6 +138,23 @@ c_like_exts = ( &#34;.js&#34;,  &#34;.c&#34;,  &#34;.h&#34;,  &#34;.php&#34;, &#
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="keywords.localpywords"><code class="name">var <span class="ident">localpywords</span></code></dt>
+<dd>
+<div class="desc"><p>Keywords for auto correct. This corrects strings as we type.
+Auto correct is case sensitive.
+As a 'C' programmer I kept typing "else" in python &hellip; this feature
+corrects it to "else: "
+(the trailing colon for python)
+It is contra indicatory to support bad habits, but for productivity &hellip;
+all is forgiven. Especially if one's next assignment is back to 'C'</p>
+<p>Make sure to_str is longer than from_str (if shorter &hellip; why correct?)
+Ctrl-m to toggle autocorrect (default: off)</p>
+<p>Syntax: (from_str, to_str),
+....</p></div>
+</dd>
+</dl>
 </section>
 <section>
 </section>
@@ -129,6 +167,11 @@ c_like_exts = ( &#34;.js&#34;,  &#34;.c&#34;,  &#34;.h&#34;,  &#34;.php&#34;, &#
 <ul></ul>
 </div>
 <ul id="index">
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="keywords.localpywords" href="#keywords.localpywords">localpywords</a></code></li>
+</ul>
+</li>
 </ul>
 </nav>
 </main>

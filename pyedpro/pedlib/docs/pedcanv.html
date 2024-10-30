@@ -57,8 +57,8 @@ from    pedlib.pedobjs import *
 from    pedlib.pedutil import *
 from    pedlib.pedofd import *
 
-#sys.path.append(&#39;..&#39; + os.sep + &#34;pycommon&#34;)
-from pycommon.pggui import *
+#sys.path.append(&#39;..&#39; + os.sep + &#34;pyvguicom&#34;)
+from pyvguicom.pggui import *
 
 canv_testmode = 0
 
@@ -639,12 +639,13 @@ class Canvas(Gtk.DrawingArea):
     def menu_action2(self, item, num):
 
         if num == 2:
-            print(&#34;Getting text&#34;)
+            #print(&#34;Getting text&#34;)
             bb = None
             for aa in self.coll:
                     if aa.selected:
                         bb = aa
             if bb:
+                #print(&#34;Getting text&#34;, bb)
                 response, txt = textdlg(bb.text, self.get_toplevel())
                 if response == Gtk.ResponseType.ACCEPT:
                     #print(&#34;Got text&#34;, txt)
@@ -1437,12 +1438,13 @@ new() -&gt; Gtk.Widget
     def menu_action2(self, item, num):
 
         if num == 2:
-            print(&#34;Getting text&#34;)
+            #print(&#34;Getting text&#34;)
             bb = None
             for aa in self.coll:
                     if aa.selected:
                         bb = aa
             if bb:
+                #print(&#34;Getting text&#34;, bb)
                 response, txt = textdlg(bb.text, self.get_toplevel())
                 if response == Gtk.ResponseType.ACCEPT:
                     #print(&#34;Got text&#34;, txt)
@@ -2330,12 +2332,13 @@ new() -&gt; Gtk.Widget
 <pre><code class="python">def menu_action2(self, item, num):
 
     if num == 2:
-        print(&#34;Getting text&#34;)
+        #print(&#34;Getting text&#34;)
         bb = None
         for aa in self.coll:
                 if aa.selected:
                     bb = aa
         if bb:
+            #print(&#34;Getting text&#34;, bb)
             response, txt = textdlg(bb.text, self.get_toplevel())
             if response == Gtk.ResponseType.ACCEPT:
                 #print(&#34;Got text&#34;, txt)

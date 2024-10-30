@@ -41,14 +41,15 @@ from pedlib import pedconfig
 
 def textdlg(oldtext = &#34;&#34;, parent = None):
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
 
-    dialog = Gtk.Dialog(&#34;pyedpro: Get text&#34;,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #print(&#34;textdlg()&#34;, oldtext)
+
+    #Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+
+    dialog = Gtk.Dialog(title=&#34;pyedpro: Get text&#34;, modal = True)
+    dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                            Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
 
     if parent:
@@ -92,7 +93,7 @@ def textdlg(oldtext = &#34;&#34;, parent = None):
     response = dialog.run()
     gotxt = entry.get_text()
     dialog.destroy()
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     #if response != Gtk.ResponseType.ACCEPT:
     #    gotxt = &#34;&#34;
@@ -120,14 +121,15 @@ def textdlg(oldtext = &#34;&#34;, parent = None):
 </summary>
 <pre><code class="python">def textdlg(oldtext = &#34;&#34;, parent = None):
 
-    warnings.simplefilter(&#34;ignore&#34;)
+    #warnings.simplefilter(&#34;ignore&#34;)
 
-    dialog = Gtk.Dialog(&#34;pyedpro: Get text&#34;,
-                   None,
-                   Gtk.DialogFlags.MODAL | \
-                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
-                   (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                   Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    #print(&#34;textdlg()&#34;, oldtext)
+
+    #Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
+
+    dialog = Gtk.Dialog(title=&#34;pyedpro: Get text&#34;, modal = True)
+    dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
+                            Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
     dialog.set_default_response(Gtk.ResponseType.ACCEPT)
 
     if parent:
@@ -171,7 +173,7 @@ def textdlg(oldtext = &#34;&#34;, parent = None):
     response = dialog.run()
     gotxt = entry.get_text()
     dialog.destroy()
-    warnings.simplefilter(&#34;default&#34;)
+    #warnings.simplefilter(&#34;default&#34;)
 
     #if response != Gtk.ResponseType.ACCEPT:
     #    gotxt = &#34;&#34;

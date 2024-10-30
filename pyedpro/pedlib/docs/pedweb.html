@@ -47,10 +47,11 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 
-from pycommon.pggui import *
-from pycommon.pgsimp import *
-from pycommon.pgbutt import *
-from pycommon.browsewin import *
+from pyvguicom.pggui import *
+from pyvguicom.pgsimp import *
+from pyvguicom.pgbutt import *
+from pyvguicom.pgsel import *
+from pyvguicom.browsewin import *
 
 try:
     # This will change once the pydbase is out of dev stage
@@ -108,7 +109,7 @@ class pgweb(Gtk.VBox):
         #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label(&#34;ccc&#34;), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel = LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
         self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
         self.pack_start(self.lsel, 0, 0, 2)
 
@@ -949,7 +950,7 @@ sets through the use of explicit keyword arguments.</p></div>
         #hbox = Gtk.HBox()
         #self.pack_start(Gtk.Label(&#34;ccc&#34;), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
-        self.lsel = pgsimp.LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
+        self.lsel = LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
         self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
         self.pack_start(self.lsel, 0, 0, 2)
 

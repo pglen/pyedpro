@@ -3,16 +3,21 @@
 # Global keyword configuration for pyedpro.
 
 # ------------------------------------------------------------------------
-# Add keywords to taste. Note, that we are cheating here, as the
-# coloring sub system does not  parse the file, marely does a string
-# compare. For example ' len(' is  unlikely to appear in any  context
-# but in it's intended  place. Note that '=len(xx)' is not highlited but
-# '= len(xx)' is. Add  strings that match your coding style or your
-# language. It is feasible to have a set of keywords that cover
-# multiple languages. (like # (hash) for bash, perl, python ...)
-#
-# Also note that coloring too much distracts from readability, so
-# configure this conservatively.
+__doc__ = '''
+
+ Syntax highlite keywords.
+
+ Add keywords to taste. Note, that we are cheating here, as the
+ coloring sub system does not parse the file, marely does a string
+ compare. For example ' len(' is  unlikely to appear in any  context
+ but in it's intended  place. Note that '=len(xx)' is not highlited but
+ '= len(xx)' is. Add  strings that match your coding style or your
+ language. It is feasible to have a set of keywords that cover
+ multiple languages. (like # (hash) for bash, perl, python ...)
+
+ Also note that coloring too much distracts from readability, so
+ configure this conservatively.
+'''
 
 # Keywords for Python coloring (this is in effect for .sh .c ... etc):
 
@@ -41,18 +46,20 @@ ckeywords =  "^[_a-zA-Z].*\(.*\)"
 localkwords = "(int .*)|(char .*)|(for)|(while)|(if)|(return)"
 localpywords = "(for )|(while )|(return )|(import )|(def )"
 
-# Keywords for auto correct. This corrects strings as we type.
-# Auto correct is case sensitive.
-# As a 'C' programmer I kept typing "else" in python ... this feature
-# corrects it to "else: "  (the trailing colon for python)
-# It is contra indicatory to support bad habits, but for
-# productivity .... all is forgiven.
-#   Especially if one's next assignment is back to 'C'
-#
-# Make sure to_str is longer than from_str (if shorter ... why correct?)
-# Ctrl-m to toggle autocorrect (default: off)
+'''
+ Keywords for auto correct. This corrects strings as we type.
+ Auto correct is case sensitive.
+ As a 'C' programmer I kept typing "else" in python ... this feature
+ corrects it to "else: "  (the trailing colon for python)
+ It is contra indicatory to support bad habits, but for productivity ...
+ all is forgiven. Especially if one's next assignment is back to 'C'
 
-# Syntax: from_str, to_str ....
+ Make sure to_str is longer than from_str (if shorter ... why correct?)
+ Ctrl-m to toggle autocorrect (default: off)
+
+ Syntax: (from_str, to_str),  ....
+
+'''
 
 auto_corr_table = \
                 [   ( "else",   "else: "                    ),
