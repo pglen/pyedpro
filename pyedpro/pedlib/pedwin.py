@@ -753,6 +753,8 @@ class EdMainWindow():
         else:
             initial_load(self, 0)
 
+        #print("initial key state", Gtk.get_current_event_state())
+
         # Tried it ... NO
         #GObject.signal_new("my-custom-signal", self.mywin, GObject.SIGNAL_RUN_LAST, GObject.TYPE_PYOBJECT,
         #               (GObject.TYPE_PYOBJECT,))
@@ -1173,8 +1175,8 @@ class EdMainWindow():
 
         ''' Call the document's key handler after some inspection '''
 
-        #if pedconfig.conf.verbose:
-        #    print("pedwin key", event.keyval, event.state)
+        if pedconfig.conf.pgdebug > 4:
+            print("pedwin key", event.keyval, event.state)
 
         if pedconfig.conf.keylog_on:
             if self.klfp:
@@ -1243,23 +1245,29 @@ class EdMainWindow():
         # Sad sad; do system shortcuts
         if event.type == Gdk.EventType.KEY_PRESS:
             # alt
-            if event.state == Gdk.ModifierType.MOD1_MASK:
+            if event.state & Gdk.ModifierType.MOD1_MASK:
                 #print("alt", event.keyval)
 
-                if event.keyval >= Gdk.KEY_1 and event.keyval <= Gdk.KEY_9:
-                    num = event.keyval - Gdk.KEY_1
-                    self.notebook.grab_focus()
-
-                    if pedconfig.conf.pgdebug > 5:
-                        print( "PedWin Keyhand Alt num", num)
-                    if num >  self.notebook.get_n_pages() - 1:
-                        self.update_statusbar("Invalid tab (page) index.")
-                    else:
+                if event.keyval >= Gdk.KEY_0 and event.keyval <= Gdk.KEY_9:
+                    if event.keyval == Gdk.KEY_0:
+                        self.notebook.grab_focus()
                         old = self.notebook.get_current_page()
-                        if old == num:
-                            self.update_statusbar("Already at page %d ..." % old)
+                        print("Set current", old)
+                        self.notebook.set_current_page(old)
+                    else:
+                        num = event.keyval - Gdk.KEY_1
+                        self.notebook.grab_focus()
+                        if pedconfig.conf.pgdebug > 5:
+                            print( "PedWin Keyhand Alt num", num)
+                        if num >  self.notebook.get_n_pages() - 1:
+                            self.update_statusbar("Invalid tab (page) index.")
                         else:
-                            self.notebook.set_current_page(num)
+                            old = self.notebook.get_current_page()
+                            if old == num:
+                                self.update_statusbar("Already at page %d ..." % old)
+                            else:
+                                self.notebook.set_current_page(num)
+                    return True
 
                 # These are the menu accel keys; pass it to the system
                 #  -- really dislike the accel system; takes over too many things
@@ -1269,13 +1277,13 @@ class EdMainWindow():
                         event.keyval == ord('h'):
                     return False
 
-                if event.keyval == ord('o'):
+                if event.keyval == ord('o') or event.keyval == ord('O'):
                     #print("mainwin alt-o")
                     self.altopen()
                     return True
 
             # ctrl-shift
-            elif event.state == \
+            elif event.state & \
                     (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK):
                 #print("control shift", event.keyval)
                 if event.keyval == ord('S'):
@@ -1288,7 +1296,7 @@ class EdMainWindow():
                     load_sess()
                     return True
             # ctrl
-            elif event.state == Gdk.ModifierType.CONTROL_MASK:
+            elif event.state & Gdk.ModifierType.CONTROL_MASK:
                 if event.keyval == ord('o'):
                     #print("open", keyval)
                     self.open()
@@ -1302,7 +1310,7 @@ class EdMainWindow():
                     return True
 
         # This was needed ad ALT-a and ALT-b ....
-        # .... misteriousely stopped working
+        # .... mysteriousely stopped working
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         if vcurr:
             # See which window has focus

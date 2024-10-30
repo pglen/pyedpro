@@ -495,6 +495,8 @@ class ActHand(acthand2.ActHand2):
 
     def home(self, self2):
 
+        #print("Home")
+
         xidx = self2.caret[0] + self2.xpos
         yidx = self2.caret[1] + self2.ypos
         if self2.shift:
@@ -505,7 +507,7 @@ class ActHand(acthand2.ActHand2):
                 self2.ysel = yidx
         if self2.alt:
             #print ("alt-home")
-            #self2.mained.firstwin()
+            self2.mained.firstwin()
             pass
         elif self2.ctrl:
             self2.set_caret(0, 0)
@@ -560,7 +562,7 @@ class ActHand(acthand2.ActHand2):
 
         if self2.alt:
             #print ("alt-end")
-            #self2.mained.lastwin()
+            self2.mained.lastwin()
             pass
         elif self2.ctrl:
             self.bottom(self2)

@@ -9,6 +9,7 @@ actions are implemented in acthand.py. Regular keys are added to the text
 buffer verbatim.
 
 Updates:
+            Wed 30.Oct.2024     Cleanup of ALT-0
             Sat 11.Feb.2023     Introduced RIGHT Control keys
             Fri 09.Sep.2022     More docs and ctr-alt entries
             Wed 07.Sep.2022     Cleaned spacing / added some key docs
@@ -106,29 +107,6 @@ The keymap:
     Ctrl 8                      -- Switch to clipboard 8
     Ctrl 9                      -- Place sum of clipboards onto clip 9, switch to it
 
-    # Right control keys    (Mostly the same actions as the right click menu)
-
-    RCTL - A                    -- Activate note tab
-
-    RCTL - C                    -- Activate calendar tab
-       .
-       .
-    RCTL - F                    -- File Manager (Thunar) Here
-    RCTL - H                    -- Add html comment
-
-    RCTL - L                    -- Libre office Here
-       .
-    RCTL - O                    -- None -- CTRL-O overrides it
-       .
-    RCTL - T                    -- Terminal Here
-       .
-    RCTL - W                    -- Activate webtab
-       .
-       .
-    RCTL - 1                    --
-    RCTL - 2                    --
-
-
     Alt Left                    -- Go to begin of the current word*
     Alt Right                   -- Go to end of the current word
     Alt Up                      -- Go to next buffer
@@ -214,7 +192,26 @@ The keymap:
     Ctrl Alt R                  -- Read file (text to speech)
     Ctrl Alt T                  -- Execute terminal here (most likely global)
 
-    # More coming ... under construction
+    # Right control keys    (Mostly the same actions as the right click menu)
+
+    RCTL - A                    -- Activate note tab
+    RCTL - C                    -- Activate calendar tab
+       .
+       .
+    RCTL - F                    -- File Manager (Thunar) Here
+    RCTL - H                    -- Add html comment
+    RCTL - L                    -- Libre office Here
+    RCTL - O                    -- None -- CTRL-O overrides it
+       .
+    RCTL - T                    -- Terminal Here
+       .
+    RCTL - W                    -- Activate webtab
+       .
+       .
+    RCTL - 1                    -- To be added
+    RCTL - 2                    --
+
+    # More coming ... always under construction
 
     #Ctrl Alt H                  -- Left Arrow
     Ctrl Alt V                   -- Save all buffers

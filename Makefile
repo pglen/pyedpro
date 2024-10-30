@@ -16,14 +16,14 @@ all:
 help:
 	@echo
 	@echo "Targets:"
-	@echo "	 make install      -- *Install PyEdPro (unofficial structure)"
 	@echo "	 make pipinstall   -- Run the pip setup.py script as install "
-	@echo "	 make pack         -- *package PyEdPro "
+	@echo "	 make prepimage    -- create app image"
+	@echo "	 make pack         -- package PyEdPro into parent dir (pyedpro.tgz)"
+	@echo "	 make install      -- *Install PyEdPro (unofficial structure)"
 	@echo "	 make remove       -- *remove (all) traces of pyedpro from the system"
 	@echo "	 make docs         -- *create documentation (see pyedpro dir)"
-	@echo "	 make prepimage    -- create app image"
 	@echo
-	@echo Targets marked with '*' are obsolete
+	@echo Targets marked with '*' are obsolete or defective
 	@echo
 
 pipinstall:

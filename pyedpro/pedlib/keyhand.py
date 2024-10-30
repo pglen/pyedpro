@@ -56,9 +56,15 @@ GDK_RELEASE_MASK  = 1 << 30
 GDK_MODIFIER_MASK = 0x5c001fff
 
 # ------------------------------------------------------------------------
-# Handle keys:
 
 class KeyHand:
+
+    ''' Handle keys for pyedpro. This is made somewhat complex with
+    the key macro recording and playback.
+    The keys are table driven, the table contains a key and and
+    a function to call. If a control key is not recognized, it is treated
+    as a char to be inserted.
+    '''
 
     #ctrl = 0; alt = 0; shift = 0; super = 0;
 
@@ -589,7 +595,7 @@ class KeyHand:
             if ret:
                 return
 
-        # Key priorities are derived fro the order of tests
+        # Key priorities are derived from the order of these tests
         if self.super and self.ctrl and self.alt:
             self.handle_super_ctrl_alt_key(self2, area, event)
         elif self.super and self.alt:
@@ -828,11 +834,11 @@ class KeyHand:
                     else:
                         self2.notebook.set_current_page(num)
 
-            elif event.keyval == Gdk.KEY_0:
-                #self2.mywin.set_focus(self2.mywin.treeview)
-                #self2.mywin.set_focus(self2.notebook.treeview)
-                pedconfig.conf.pedwin.notebook2.grab_focus()
-                #self2.notebook.grab_focus()
+            #elif event.keyval == Gdk.KEY_0:
+            #    #self2.mywin.set_focus(self2.mywin.treeview)
+            #    #self2.mywin.set_focus(self2.notebook.treeview)
+            #    pedconfig.conf.pedwin.notebook2.grab_focus()
+            #    #self2.notebook.grab_focus()
 
             else:
                 self._handle_key(self2, area, event, self.alt_keytab)

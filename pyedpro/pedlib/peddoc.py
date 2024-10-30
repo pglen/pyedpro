@@ -43,11 +43,11 @@ from pedlib.keywords import *
 
 __doc__ =  '''
     This module is the heart of the editor. Maintains  buffer that is
-continually updated to the screen. With the help of sublsses, it draws text,
+continually updated to the screen. With the help of sublasses, it draws text,
 undeline, squiggly, syntax coloring etc ... etc.
 
   It also maintains and draws cursor, cursor shape ... etc. Loads Saves
-  files, file mata information, undo / redo information.
+  files, file meta information, undo / redo information.
 
 '''
 
@@ -96,7 +96,6 @@ CARCOLOR = "#4455dd"
 
 DRAGTRESH = 3                   # This many pixels for drag highlight
 
-
 # ------------------------------------------------------------------------
 
 class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask):
@@ -124,7 +123,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.src_changed = False
         self.needscan = True
         self.record = False
-        self.recarr = []                # Macros
+        self.recarr = []                # Macros  recording
         self.undoarr = []               # Undo
         self.redoarr = []               # Redo
         self.queue = []                 # Idle tasks
@@ -249,15 +248,13 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect("button-press-event", self.area_button)
         self.connect("button-release-event", self.area_button)
 
-        # This was needed ad ALT-a and ALT-b ....
-        # .... misteriousely stopped working;
+        # This was needed as ALT-a ... ALT-b stopped working;
         # Now getting key from main window
         #self.connect("key-press-event", self.area_key)
         #self.connect("key-release-event", self.area_key)
 
         self.connect("focus", self.area_focus)
         self.connect("configure_event", self.configure_event)
-        #self.connect("size-request", self.)
         self.connect("size-allocate", self.size_alloc)
         self.connect("scroll-event", self.scroll_event)
         self.connect("focus-in-event", self.focus_in_cb)
