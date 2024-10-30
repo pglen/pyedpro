@@ -1283,8 +1283,8 @@ class EdMainWindow():
                     return True
 
             # ctrl-shift
-            elif event.state & \
-                    (Gdk.ModifierType.CONTROL_MASK | Gdk.ModifierType.SHIFT_MASK):
+            elif event.state & Gdk.ModifierType.CONTROL_MASK and \
+                    event.state & Gdk.ModifierType.SHIFT_MASK:
                 #print("control shift", event.keyval)
                 if event.keyval == ord('S'):
                     #print("save as", event.keyval)

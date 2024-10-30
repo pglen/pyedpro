@@ -45,8 +45,11 @@ The keymap:
     [a-z]|[A-Z]|[0-9]           -- Insert character (key)
     !@#$%^&*()_ ...             -- Insert punctuation (key)
 
-    Tab                         -- Insert 4 spaces up to % 4
-    Shift-Tab                   -- Insert a real tab up to % 4
+    Tab                         -- Insert 4 spaces up to curr % 4
+    Shift-Tab                   -- Insert a real tab up to curr % 4
+
+    # Control keys are both upper and lower, shift key acts as modifier
+
     Ctrl A                      -- Select All text in buffer
     Ctrl-Shift A                -- Goto beginning of line
     Ctrl B                      -- Select word (till spaces)
@@ -57,7 +60,7 @@ The keymap:
     Ctrl-Shift D                -- Insert date string at cursor location
     Ctrl E                      -- Capitalize (emphasize) word
     Ctrl-Shift E                -- Goto end of line
-    Ctrl F                      -- Find in file or all buffers
+    Ctrl F                      -- Find in file or in all buffers
     Ctrl-Shift F                -- Fill in HTML <tr> <td>
     Ctrl G                      -- Goto next match
     Shift-Ctrl G                -- Goto previous match
@@ -70,11 +73,11 @@ The keymap:
     Ctrl M                      -- Toggle auto correct
     Ctrl-Shift M                -- Call up right click menu
     Ctrl N                      -- New File
-    Ctrl-Shift N                -- New terminal
+    Ctrl-Shift N                -- ???? New terminal
     Ctrl O                      -- Open file
     Ctrl-Shift O                -- Open session
     Ctrl P                      -- Print (not implemented on all platforms)
-    Ctrl Q                      -- Quit program **
+    Ctrl Q                      -- Quit program (abandon changes) see: **
     Ctrl R                      -- Reverse (swap) three words. Cursor on W1 ***
     Ctrl-Shift R                -- Review M4 macro file
     Ctrl S                      -- Save current file
@@ -124,7 +127,7 @@ The keymap:
     Home Home                   -- Go to beginning of page (PgUp)
     3x Home                     -- Go to begin of file (Ctrl Home)
 
-    # Both upper and lower case
+    # Alt keys are both upper and lower case
 
     Alt A                       -- Save All buffers
     Alt B                       -- Show Buffers
@@ -272,14 +275,16 @@ Notes:
 
     *       Alt-Arrow   Goto begin / end of current word. Word delimited with
                         alpha_num + punctuation
-    **      Ctrl-Q      Quit program, no save, but files are backed up in
+    **      Ctrl-Q      Quit program, no save. Current files are backed up in
                         (~/.pyedpro/data) '*.sav'
-    ***     Ctrl-R      Reverse words around the middle. (a = b becomes b = a)
-                        Cursor on word one. Useful for turning (reversing) assignments.
-    ****    F9          Only Comments and strings are checked, otherwise all
+    ***     Ctrl-R      Reverse words around the middle.
+                        (a = b becomes b = a)
+                        Cursor on word one. Useful for turning (reversing)
+                        assignments.
+    ****    F9          Only Comments and strings are checked.  If shift is
+                        down, all text is checked.
                         text is checked
     *****   Alt-0       Alt - 1 .. 9 brings back the focus to current buffer
-
 
 # EOF
 

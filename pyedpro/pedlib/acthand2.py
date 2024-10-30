@@ -580,4 +580,116 @@ class ActHand2():
             "Converted %d long lines to %d short lines" % (cnt2, cnt3))
 
 
+# --------------------------------------------------------------------
+    # Right CTRL
+
+    # Catch all
+    def rctrl_all(self, self2):
+        if 1: #pedconfig.conf.pgdebug > 4:
+            print ("RCTRL -- Captured str=", self2.curr_event.string,
+                                            "keyval=", self2.curr_event.keyval)
+
+    def rctrl_a(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.activate_notetab()
+
+    def rctrl_c(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.activate_caltab()
+
+    def rctrl_f(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.update_statusbar("Starting Thunar ...")
+        self2.start_external(["thunar", "."],
+                                        ["explorer", ""])
+    def rctrl_h(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        #print("Add html comment")
+
+        cumm = self._getsel(self2)
+        strx  = "<!-- "; strx2 = " -->"
+        if cumm:
+            self.ctrl_c(self2)
+            self.add_str(self2, strx)
+            self.ctrl_v(self2)
+            if strx2:
+                self.add_str(self2, strx2)
+        else:
+            # Trailer attached to end of line
+            xidx2 = self2.caret[0] + self2.xpos;
+            yidx2 = self2.caret[1] + self2.ypos
+            xlen = len(self2.text[yidx2])
+            self2.set_caret(xlen, yidx2)
+            self.add_str(self2, strx2)
+            self2.set_caret(xidx2, yidx2)
+            self.add_str(self2, strx)
+
+        xidx = self2.caret[0] + self2.xpos;
+        yidx = self2.caret[1] + self2.ypos
+        xidx -= len(strx); yidx += 1
+        self2.set_caret(xidx, yidx)
+        self2.mained.update_statusbar("Selection HTML comment added.")
+        self2.invalidate()
+
+    def rctrl_i(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        #print("Add 'C' comment")
+
+        cumm = self._getsel(self2)
+        strx  = "/* "; strx2 = " */"
+        if cumm:
+            self.ctrl_c(self2)
+            self.add_str(self2, strx)
+            self.ctrl_v(self2)
+            if strx2:
+                self.add_str(self2, strx2)
+        else:
+            # Trailer attached to end of line
+            xidx2 = self2.caret[0] + self2.xpos;
+            yidx2 = self2.caret[1] + self2.ypos
+            xlen = len(self2.text[yidx2])
+            self2.set_caret(xlen, yidx2)
+            self.add_str(self2, strx2)
+            self2.set_caret(xidx2, yidx2)
+            self.add_str(self2, strx)
+
+        xidx = self2.caret[0] + self2.xpos;
+        yidx = self2.caret[1] + self2.ypos
+        xidx -= len(strx); yidx += 1
+        self2.set_caret(xidx, yidx)
+        self2.mained.update_statusbar("Selection HTML comment added.")
+        self2.invalidate()
+
+    def rctrl_l(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.update_statusbar("Starting Libre Office ...")
+        self2.start_external(["libreoffice", "--writer"],
+                                        ["libreoffice", "--writer"])
+    def rctrl_r(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.rescan()
+
+    def rctrl_t(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.update_statusbar("Starting terminal ...")
+        self2.mained.start_term()
+
+    def rctrl_w(self, self2):
+        if pedconfig.conf.pgdebug > 4:
+             print ("RCTRL -- ", self2.curr_event.keyval)
+        self2.mained.activate_webtab()
+
+    def rctrl_num(self, self2):
+        kkk = self2.curr_event.keyval - Gdk.KEY_0
+        if 1: #pedconfig.conf.pgdebug > 4:
+            print ("RCTRL -- num, key=", kkk)
+
 # EOF
