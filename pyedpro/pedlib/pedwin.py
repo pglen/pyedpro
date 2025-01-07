@@ -229,7 +229,7 @@ class EdMainWindow():
         self.oh = itemhistory(pedconfig.conf.history)
         self.os = itemhistory(pedconfig.conf.sessions)
         self.sess = "initial.sess"
-
+        self.rootlab = ""
         if pedconfig.conf.keylog_on:
             self.klfp = open(pedconfig.conf.keylog_file, "at")
         else:
@@ -723,6 +723,8 @@ class EdMainWindow():
         self.headbar.pack_start(box)
         self.sess_label =  Gtk.Label(self.sess)
         self.headbar.pack_start(self.sess_label)
+        self.root_label =  Gtk.Label(self.rootlab)
+        self.headbar.pack_start(self.root_label)
 
         self.mywin.set_titlebar(self.headbar)
 
@@ -2494,6 +2496,10 @@ def     OnExit(arg, arg2 = False, prompt = True):
     arg.destroy()
     Gtk.main_quit()
 
+def  initial_rootlab(self2, arg):
+     self2.rootlab = ""
+     self2.root_label.set_text(self2.rootlab)
+
 def  initial_load(self2, arg):
 
     global notebook, hidden
@@ -2502,12 +2508,22 @@ def  initial_load(self2, arg):
 
     try:
         if os.getuid() == 0:
-            ret = pedync.yes_no_cancel("Root user detected", "This program was not meant to run as root.\n"
-                                    "\nPress Yes to run anyway, No to quit.", False)
-            if ret == Gtk.ResponseType.NO:
-                sys.exit()
+            #ret = pedync.yes_no_cancel("Root user detected", "This program was not meant to run as root.\n"
+            #                        "\nPress Yes to run anyway, No to quit.", False)
+            ##print("ret:", ret)
+            #if ret == Gtk.ResponseType.NO or ret == Gtk.ResponseType.CANCEL:
+            #    if pedconfig.conf.verbose:
+            #        print("Exiting on no root")
+            #    #sys.exit()
+            #    self2.activate_exit()
+
+            self2.update_statusbar("WARNING: Running as root, you may not want to.")
+            self2.rootlab = " Warning: !!! Running as user: 'root' !!! "
+            self2.root_label.set_text(self2.rootlab)
+            GLib.timeout_add(3000, initial_rootlab, self2, 0)
+
     except:
-        pass
+        print("root test", sys.exc_info())
 
     try:
         #print( 'Signal handler called with signal')

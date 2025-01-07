@@ -219,6 +219,7 @@ class ActHand2():
     def ctrl_alt_n(self, self2):
         if pedconfig.conf.pgdebug > 4:
             print ("CTRL - ALT - N")
+        self2.uniview(not self2.uni)
 
     def ctrl_alt_r(self, self2):
         if pedconfig.conf.pgdebug > 4:

@@ -190,6 +190,7 @@ The keymap:
     Ctrl Alt G                  -- Go execute cycle.sh (shortcut for header cycle)
     Ctrl Alt H                  -- Find (alias)
     Ctrl Alt J                  -- Coloring
+    Ctrl Alt N                  -- Unicode dump view
     Ctrl Alt K                  -- Hex view
         ...
     Ctrl Alt R                  -- Read file (text to speech)

@@ -140,6 +140,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.insert = True
         self.startxxx = -1;  self.startyyy = -1
         self.hex = False
+        self.uni = False
         self.colflag = True
         self.acorr = False
         self.scol = False
@@ -1926,6 +1927,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.hex = flag
         self.invalidate()
 
+    def uniview(self, flag):
+        self.uni = flag
+        self.invalidate()
+
     def flash(self, flag):
         self.bigcaret = flag
         self.invalidate()
@@ -2004,7 +2009,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         except:
             errr = "Cannot read file '" + self.fname + "'" #, sys.exc_info()
             if pedconfig.conf.verbose:
-                print(errr, sys.exc_info())
+                #print(errr, sys.exc_info())
+                put_exception("readfile")
 
             #pedync.message("\n   Cannot open / read file:  \n\n"
             #                  "      %s" % self.fname)
@@ -2255,7 +2261,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         except:
             print("Cannot save undo file", sys.exc_info())
             put_exception("undo")
-
 
         hhh = hash_name(self.fname) + ".rdo"
         xfile = pedconfig.conf.data_dir + os.sep + hhh

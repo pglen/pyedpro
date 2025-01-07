@@ -29,6 +29,8 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Pango
+from gi.repository import GLib
+
 gi.require_version('PangoCairo', '1.0')
 from gi.repository import PangoCairo
 
@@ -69,13 +71,20 @@ def  readfile(strx, sep = None):
     # Now read and parse
     f = open(strx, "rb");  buff2 = f.read();  f.close()
     if sys.version_info.major < 3:
+        # Old python did not need this
         buff = buff2
     else:
+        # Tried ...
+        #buff = GLib.locale_to_utf8(buff2)[0]
         try:
-            buff = buff2.decode('UTF-8')
+            buff = buff2.decode('UTF-8', errors='strict')
         except UnicodeDecodeError:
-            buff = buff2.decode('cp437')
+            try:
+                buff = buff2.decode('cp437')
+            except:
+                print("Cannot decode:", buff2)
 
+    # Get rid of memory used
     buff2 = ""
 
     if not sep:
@@ -1426,5 +1435,6 @@ class SearchDialog(Gtk.Dialog):
 
         #box.add(self.entry)
         self.show_all()
+
 
 # EOF

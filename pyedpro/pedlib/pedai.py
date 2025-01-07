@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
 import signal, os, time, sys, subprocess, platform, socket, requests
-import ctypes, datetime, sqlite3, warnings, threading, httpx
+import ctypes, datetime, sqlite3, warnings, threading
 import json
 import select
-
-#from    ollama import Ollama
-import  ollama
 
 #import gi;
 #from gi.repository import Gtk
@@ -28,6 +25,18 @@ from pyvguicom.pgsimp import *
 from pyvguicom.pgbutt import *
 from pyvguicom.pgsel import *
 from pyvguicom.browsewin import *
+
+try:
+    import httpx
+except:
+    #print("cannot import httpx")
+    pass
+try:
+    #from    ollama import Ollama
+    import  ollama
+except:
+    #print("cannot import ollama")
+    pass
 
 try:
     # This will change once the pydbase is out of dev stage
