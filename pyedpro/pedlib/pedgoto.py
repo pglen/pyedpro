@@ -32,17 +32,17 @@ def gotodlg(self2):
     dialog.alt = self2.keyh.alt
 
     # Spacers
-    #label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ")
-    #label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ")
-    label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ")
-    label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ")
-    label9 = Gtk.Label("   ");
+    #label1 = Gtk.Label(label="   ");  label2 = Gtk.Label(label="   ")
+    #label3 = Gtk.Label(label="   ");  label4 = Gtk.Label(label="   ")
+    label5 = Gtk.Label(label="   ");  label6 = Gtk.Label(label="   ")
+    label7 = Gtk.Label(label="   ");  label8 = Gtk.Label(label="   ")
+    label9 = Gtk.Label(label="   ");
 
-    labela = Gtk.Label("   ")
-    labelb = Gtk.Label("  Top of File: ALT-A   End of File: ALT-Z  ");
-    labelc = Gtk.Label("  Line Start: ALT-S    Line End: ALT-E  ");
-    labeld = Gtk.Label("  Exit Dialog: ESC or ALT-X  ");
-    labele = Gtk.Label("   ")
+    labela = Gtk.Label(label="   ")
+    labelb = Gtk.Label(label="  Top of File: ALT-A   End of File: ALT-Z  ");
+    labelc = Gtk.Label(label="  Line Start: ALT-S    Line End: ALT-E  ");
+    labeld = Gtk.Label(label="  Exit Dialog: ESC or ALT-X  ");
+    labele = Gtk.Label(label="   ")
 
     dialog.connect("key-press-event", area_key)
     dialog.connect("key-release-event", area_key)

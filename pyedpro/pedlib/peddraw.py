@@ -129,6 +129,7 @@ class peddraw(object):
 
     def _draw_text(self, gc, x, y, text, fg_col = None, bg_col = None, esc = None):
 
+
         #print( "_draw_text",  self.xpos, self.ypos, self.caret, x/self.cxx, y/self.cyy)
 
         #if isinstance(text, str):

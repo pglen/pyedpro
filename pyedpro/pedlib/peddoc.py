@@ -89,8 +89,7 @@ CLCOLOR     = "#880000"
 COCOLOR     = "#4444ff"
 STCOLOR     = "#ee44ee"
 STRIPCOLOR  = "#eeeeee"
-
-CARCOLOR = "#4455dd"
+CARCOLOR    = "#4455dd"
 
 # UI specific values:
 
@@ -184,19 +183,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.diffpane = False
         self.webwin = None
         self.nomenu = False
-        self.FGCOLOR    = FGCOLOR
-        self.FGCOLORRO  = FGCOLORRO
-        self.RFGCOLOR   = RFGCOLOR
-        self.BGCOLOR    = BGCOLOR
-        self.RBGCOLOR   = RBGCOLOR
-        self.CBGCOLOR   = CBGCOLOR
-        self.KWCOLOR    = KWCOLOR
-        self.CLCOLOR    = CLCOLOR
-        self.COCOLOR    = COCOLOR
-        self.STCOLOR    = STCOLOR
-        self.STRIPCOLOR = STRIPCOLOR
-        self.currback  =  0
 
+        self.currback  =  0
         self.drag = False
         self.text_fillcol = 40
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
@@ -697,22 +685,21 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.xlen = len(self.text)
 
         ctx = self.get_style_context()
-        fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
-        #bg_color = ctx.get_background_color(Gtk..NORMAL)
+        #fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
+        #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
 
-        # Paint white, ignore system BG
-        #cr.set_source_rgba(255, 255, 255)
+        newcol =  list(self.bgcolor)
+
         # Paint prescribed color
         if self.readonly:
             # Slightly darker / lighter
-            newcol =  list(self.bgcolor)
             for aa in range(len(newcol)):
                 if newcol[aa] > 0.5: newcol[aa] -= .08
                 else: newcol[aa] += .2
-            cr.set_source_rgba(*list(newcol))
-        else:
-            cr.set_source_rgba(*list(self.bgcolor))
 
+        #print("newcol", newcol)
+
+        cr.set_source_rgba(*list(newcol))
         cr.rectangle( 0, 0, self.www, self.hhh)
         cr.fill()
 
@@ -727,6 +714,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Pre set for drawing
         #cr.set_source_rgba(*list(fg_color))
+
         # Paint prescribed color
         cr.set_source_rgba(*list(self.fgcolor))
 
@@ -1247,7 +1235,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 except:
                     print("Exception in c func handler", sys.exc_info())
                     pass
-            if ".bas" in self.fname.lower():
+            if ".bas" in self.fname.lower()[-4]:
                 try:
                     regex = re.compile(basekeywords)
                     for line in win.text:
@@ -1258,7 +1246,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 except:
                     print("Exception in bas func extraction handler", sys.exc_info())
                     pass
-            if ".py" in self.fname.lower():
+            if ".py" in self.fname.lower()[-3]:
                 try:
                     aa = 0; bb = 0
                     regex = re.compile("class")
@@ -2735,6 +2723,30 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 print("Error on compile: '", serr, "'")
                 pedync.message("    " + serr + "    ")
 
+        elif self.ext == ".sh":
+            comline = ["shellcheck", tempfile]
+            #print("checking", comline, os.getcwd())
+            try:
+                ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+            except:
+                print("Cannot check %s" % str(comline), sys.exc_info())
+                pedync.message("\n   Cannot check %s \n\n"  % str(comline) +
+                           str(sys.exc_info()) )
+                return
+            try:
+                outs, errs = ret.communicate()
+            except:
+                self.mained.update_statusbar("Cannot communicate with shellcheck.")
+                print("Cannot communicate with %s" % str(comline), sys.exc_info())
+                return
+
+            if errs:
+                self.mained.update_statusbar("Syntax error.")
+            else:
+                #print("outs:", outs.decode())
+                pedync.message("    " + outs.decode()[:300] + "    ",
+                                    "Shell Syntax Check")
+                #self.text += outs
         else:
             self.mained.update_statusbar("No Syntax check for this kind of file.")
 

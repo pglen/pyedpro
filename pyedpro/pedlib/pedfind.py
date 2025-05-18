@@ -936,7 +936,7 @@ def create_tree(self, win2, match, text = None):
     start_tree(self, win2)
 
     # create the TreeView using treestore
-    tv = Gtk.TreeView(win2.treestore)
+    tv = Gtk.TreeView(model=win2.treestore)
     tv.set_enable_search(True)
 
     # create a CellRendererText to render the data

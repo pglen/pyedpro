@@ -38,6 +38,7 @@ from pedlib import pedofd
 #from pedlib import pedplug
 from pedlib import pedutil
 from pedlib import pedai
+from pedlib import setupdlg
 
 #sys.path.append('..' + os.sep + "pyvguicom")
 
@@ -210,6 +211,7 @@ class EdMainWindow():
         else:
             self.mac  = False
 
+        self.alpha = 1.0
         self.orgdir = orgdir
         self.colorbar = 0
         self.headcolor = 0
@@ -222,7 +224,6 @@ class EdMainWindow():
         self.names = names
         self.show_menu = True
         self.show_tbar = True
-        #self.alttime = 0
         self.old_x = 0
         self.old_y = 0
         self.lastfile = ""
@@ -262,6 +263,10 @@ class EdMainWindow():
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
         self.mywin = Gtk.Window()
+
+        if self.mywin.is_composited():
+            self.mywin.set_opacity(self.alpha)
+
         #www = Gdk.screen_width(); hhh = Gdk.screen_height();
 
         if pedconfig.conf.full_screen:
@@ -1422,7 +1427,7 @@ class EdMainWindow():
         self.start_tree2()
 
         # create the TreeView using treestore
-        tv = Gtk.TreeView(model=treestore2)
+        tv = Gtk.TreeView(treestore2)
 
         # create a CellRendererText to render the data
         cell = Gtk.CellRendererText()
@@ -1580,8 +1585,20 @@ class EdMainWindow():
         pass
 
     def area_size(self, win, rect):
-        #print(  "area size", rect)
+
+        #print("area size", rect.width, rect.height)
         #self.hpaned2.set_position(self.get_width() - 280)
+        #print("hpaned", self.hpaned.get_position())
+        #print("hpaned3", self.hpaned3.get_position())
+        GLib.timeout_add(100, self.follow)
+        pass
+
+    def follow(self):
+        # Follow ?
+        ww, hh = self.mywin.get_size()
+        if ww  - self.hpaned3.get_position() < 140:
+            #print("Follow")
+            self.hpaned3.set_position(ww - 10)
         pass
 
     def  note_focus_in(self, win, act):
@@ -1805,7 +1822,7 @@ class EdMainWindow():
         strx = action.get_name()
         warnings.simplefilter("default")
 
-        if 1: #pedconfig.conf.verbose:
+        if pedconfig.conf.verbose:
             print ("activate_action with:", strx)
 
         if strx == "Close All":
@@ -2070,7 +2087,11 @@ class EdMainWindow():
 
         if strx == "Settings":
             self.update_statusbar("Showing Settings Dialog")
-            pedync.message("\n    Settings: Work in progress    \n")
+            nn2 = notebook.get_current_page()
+            vcurr2 = notebook.get_nth_page(nn2)
+            dlg = setupdlg.SetupDlg(self, vcurr2.area)
+            res = dlg.run()
+            dlg.destroy()
 
         if strx == "Help":
             #pedync.message("\n    Help: Work in progress    \n")
