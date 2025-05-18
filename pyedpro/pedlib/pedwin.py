@@ -264,9 +264,6 @@ class EdMainWindow():
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
         self.mywin = Gtk.Window()
 
-        if self.mywin.is_composited():
-            self.mywin.set_opacity(self.alpha)
-
         #www = Gdk.screen_width(); hhh = Gdk.screen_height();
 
         if pedconfig.conf.full_screen:
@@ -296,6 +293,17 @@ class EdMainWindow():
             #self.mywin.set_default_size(7*www/8, 7*hhh/8)
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
+
+        alpha = pedconfig.conf.sql.get_float("alpha")
+        if pedconfig.conf.verbose:
+                print("Alpha:", alpha)
+
+        if alpha > 1.0:         alpha = 1.0
+        if alpha < .5:          alpha = .5
+        self.alpha = alpha
+
+        if self.mywin.is_composited():
+            self.mywin.set_opacity(self.alpha)
 
         try:
             self.mywin.set_icon_from_file(get_img_path("pyedpro.png"))
@@ -2439,6 +2447,8 @@ def     OnExit(arg, arg2 = False, prompt = True):
         pos = max(pos, 1)
 
         pedconfig.conf.sql.put("vpaned", pos)
+
+    pedconfig.conf.sql.put("alpha", mained.alpha)
 
     # Do not save full screen coordinates (when used F11)
     #print( mained.full)

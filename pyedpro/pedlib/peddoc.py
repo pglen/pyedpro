@@ -1872,7 +1872,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def save(self):
 
-        #print ("Saving", self.fname)
+        if pedconfig.conf.verbose:
+            print("Saving", self.fname)
+
         # Always save params
         self.saveparms()
         strx = ""
@@ -1891,7 +1893,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             bn = os.path.basename(self.fname)
             err = self.writeout()
             if  err[0]:
-                strx = "Saved '{0:s}'".format(self.fname)
+                if self.get_width() < 700:
+                    if len(self.fname) > 32:
+                        strx = "Saved: '{0} ... {1}'".format \
+                            (self.fname[:12], self.fname[-12:])
+                        pass
+                    else:
+                        strx = "Saved: '{0:s}'".format(self.fname)
+                else:
+                    strx = "Saved: '{0:s}'".format(self.fname)
+
             else:
                 #strx = "Not Saved '{0:s}' {1:s}".format(bn, err[1])
                 strx = "Not Saved "
