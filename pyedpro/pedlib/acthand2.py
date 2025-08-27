@@ -97,7 +97,8 @@ class ActHand2():
         if cumm:
             self.ctrl_c(self2)
             # This will catch all known varieties, else .py assumed
-            if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
+            if extx == ".c" or extx == ".h" or \
+                    extx == ".f" or extx == ".y" or extx == ".l":
                 strx  = "#if 0\n"
                 strx2 = "#endif\n"
             elif extx == ".asm" or extx == ".inc" or extx == ".S":
@@ -117,7 +118,8 @@ class ActHand2():
                 self.add_str(self2, strx2)
 
         else:
-            if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
+            if extx == ".c" or extx == ".h" or extx == ".y" or \
+                        extx == ".l" or extx == ".f":
                 strx  = "//"
             elif extx == ".asm" or extx == ".inc" or extx == ".S":
                 strx  = ";"

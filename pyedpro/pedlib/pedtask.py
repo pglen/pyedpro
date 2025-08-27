@@ -133,8 +133,34 @@ class pedtask():
         #print("env", os.environ)
         #os.chdir(os.path.dirname(old))
 
-    # --------------------------------------------------------------------
     def start_mdfilter(self):
+
+        #print("MD Filter called.", os.getcwd())
+        try:
+            import markdown
+            from mdx_gfm import GithubFlavoredMarkdownExtension
+        except:
+            pedync.message("\n   Cannot import MD converter\n\n")
+            return
+
+        newfname = os.path.splitext(self.fname)[0] + ".preview.html"
+
+        cnt = 0; buff = ""; sepx = ""; sep = '\n'
+        for aa in self.text:
+            if cnt:
+                sepx = sep
+            buff += sepx + aa.rstrip()
+            cnt += 1
+
+        mdhtml = markdown.markdown(buff, extensions=[GithubFlavoredMarkdownExtension()])
+
+        with open(newfname,'wt') as fd:
+            fd.write(mdhtml)
+        self.start_htmlwin(newfname)
+        pedconfig.conf.pedwin.cleanit.append(newfname)
+
+    # --------------------------------------------------------------------
+    def start_mdfilter2(self):
 
         #print("MD Filter called.", os.getcwd())
 

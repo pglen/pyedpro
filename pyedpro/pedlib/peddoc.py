@@ -2846,7 +2846,7 @@ def run_async_time(win, arg):
         except:
             print("Exception in func extraction handler", sys.exc_info())
             pass
-    elif ".s" in lname[-2:] or ".asm" in lname[-4:]:
+    elif ".s" in lname[-2:] or ".asm" in lname[-4:] or ".inc" in lname[-4:]:
         try:
             regex = re.compile(Skeywords)
             for line in win.text:
