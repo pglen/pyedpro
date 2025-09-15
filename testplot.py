@@ -1,4 +1,8 @@
 import matplotlib.pyplot as plt
+import sys
+
+print(dir(plt))
+sys.exit(0)
 
 # Sample data
 x_values = [1, 2, 3, 4, 5]
@@ -13,7 +17,7 @@ plt.ylabel("Y-axis Label")
 plt.title("Simple Line Plot Example")
 
 # Save the plot to a file
-plt.savefig("simple_plot.png")
+#plt.savefig("simple_plot.png")
 
 # Optionally, display the plot
-plt.show()
+#plt.show()
