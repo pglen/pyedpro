@@ -3,7 +3,7 @@ import setuptools
 
 descx = '''PyEdPro is modern multi-platform editor. Simple, powerful,
 configurable, extendable. Goodies like macro recording / playback, spell check,
-column select, multiple clipboards, unlimited undo ...
+column select, multiple clipboards, unlimited persistent undo ...
    PyEdPro.py has macro recording/play, search/replace, one click function navigation,
 auto backup, undo/redo, auto complete, auto correct, syntax check, spell suggestion
  ... and a lot more.
@@ -48,7 +48,7 @@ for aa in vvv.split("\n"):
             break
         except:
             pass
-#print("loc_vers:", loc_vers)
+print("loc_vers:", loc_vers)
 #sys.exit()
 
 deplist = ["pyvpacker", "pydbase", "pyvguicom"] ,

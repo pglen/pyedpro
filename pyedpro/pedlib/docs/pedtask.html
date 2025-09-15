@@ -63,7 +63,8 @@ from pedlib.keywords import *
 
 class pedtask():
     def __init__(self):
-        print(&#34;Pedtask started&#34;, pedtask)
+        #print(&#34;Pedtask started&#34;, pedtask)
+        pass
 
     # Pass in two lists, one for linux and one for windows
     def start_external(self, linprog, winprog):
@@ -93,9 +94,11 @@ class pedtask():
 
         old = os.getcwd()
         fdir = os.path.dirname(os.path.realpath(__file__))
-        #print(&#34;fdir:&#34;, fdir)
+        if pedconfig.conf.verbose:
+            print(&#34;fdir:&#34;, fdir)
         mydir = os.path.dirname(os.path.join(fdir, &#34;../&#34;))
-        print(&#34;mydir:&#34;, mydir)
+        if pedconfig.conf.verbose:
+            print(&#34;mydir:&#34;, mydir)
         os.chdir(mydir)
         myscript = os.path.realpath(os.path.join(mydir, &#39;pyedpro.py&#39;))
         mysh = os.path.realpath(os.path.join(fdir, &#39;run.sh&#39;))
@@ -154,12 +157,38 @@ class pedtask():
             pedync.message(&#34;\n   Cannot launch new editor instance \n\n&#34;)
 
         # Back to original dir
-        print(&#34;Back to original thread.&#34;, old)
+        #print(&#34;Back to original thread.&#34;, old)
         #print(&#34;env&#34;, os.environ)
         #os.chdir(os.path.dirname(old))
 
-    # --------------------------------------------------------------------
     def start_mdfilter(self):
+
+        #print(&#34;MD Filter called.&#34;, os.getcwd())
+        try:
+            import markdown
+            from mdx_gfm import GithubFlavoredMarkdownExtension
+        except:
+            pedync.message(&#34;\n   Cannot import MD converter\n\n&#34;)
+            return
+
+        newfname = os.path.splitext(self.fname)[0] + &#34;.preview.html&#34;
+
+        cnt = 0; buff = &#34;&#34;; sepx = &#34;&#34;; sep = &#39;\n&#39;
+        for aa in self.text:
+            if cnt:
+                sepx = sep
+            buff += sepx + aa.rstrip()
+            cnt += 1
+
+        mdhtml = markdown.markdown(buff, extensions=[GithubFlavoredMarkdownExtension()])
+
+        with open(newfname,&#39;wt&#39;) as fd:
+            fd.write(mdhtml)
+        self.start_htmlwin(newfname)
+        pedconfig.conf.pedwin.cleanit.append(newfname)
+
+    # --------------------------------------------------------------------
+    def start_mdfilter2(self):
 
         #print(&#34;MD Filter called.&#34;, os.getcwd())
 
@@ -313,7 +342,8 @@ class pedtask():
 </summary>
 <pre><code class="python">class pedtask():
     def __init__(self):
-        print(&#34;Pedtask started&#34;, pedtask)
+        #print(&#34;Pedtask started&#34;, pedtask)
+        pass
 
     # Pass in two lists, one for linux and one for windows
     def start_external(self, linprog, winprog):
@@ -343,9 +373,11 @@ class pedtask():
 
         old = os.getcwd()
         fdir = os.path.dirname(os.path.realpath(__file__))
-        #print(&#34;fdir:&#34;, fdir)
+        if pedconfig.conf.verbose:
+            print(&#34;fdir:&#34;, fdir)
         mydir = os.path.dirname(os.path.join(fdir, &#34;../&#34;))
-        print(&#34;mydir:&#34;, mydir)
+        if pedconfig.conf.verbose:
+            print(&#34;mydir:&#34;, mydir)
         os.chdir(mydir)
         myscript = os.path.realpath(os.path.join(mydir, &#39;pyedpro.py&#39;))
         mysh = os.path.realpath(os.path.join(fdir, &#39;run.sh&#39;))
@@ -404,12 +436,38 @@ class pedtask():
             pedync.message(&#34;\n   Cannot launch new editor instance \n\n&#34;)
 
         # Back to original dir
-        print(&#34;Back to original thread.&#34;, old)
+        #print(&#34;Back to original thread.&#34;, old)
         #print(&#34;env&#34;, os.environ)
         #os.chdir(os.path.dirname(old))
 
-    # --------------------------------------------------------------------
     def start_mdfilter(self):
+
+        #print(&#34;MD Filter called.&#34;, os.getcwd())
+        try:
+            import markdown
+            from mdx_gfm import GithubFlavoredMarkdownExtension
+        except:
+            pedync.message(&#34;\n   Cannot import MD converter\n\n&#34;)
+            return
+
+        newfname = os.path.splitext(self.fname)[0] + &#34;.preview.html&#34;
+
+        cnt = 0; buff = &#34;&#34;; sepx = &#34;&#34;; sep = &#39;\n&#39;
+        for aa in self.text:
+            if cnt:
+                sepx = sep
+            buff += sepx + aa.rstrip()
+            cnt += 1
+
+        mdhtml = markdown.markdown(buff, extensions=[GithubFlavoredMarkdownExtension()])
+
+        with open(newfname,&#39;wt&#39;) as fd:
+            fd.write(mdhtml)
+        self.start_htmlwin(newfname)
+        pedconfig.conf.pedwin.cleanit.append(newfname)
+
+    # --------------------------------------------------------------------
+    def start_mdfilter2(self):
 
         #print(&#34;MD Filter called.&#34;, os.getcwd())
 
@@ -575,9 +633,11 @@ class pedtask():
 
     old = os.getcwd()
     fdir = os.path.dirname(os.path.realpath(__file__))
-    #print(&#34;fdir:&#34;, fdir)
+    if pedconfig.conf.verbose:
+        print(&#34;fdir:&#34;, fdir)
     mydir = os.path.dirname(os.path.join(fdir, &#34;../&#34;))
-    print(&#34;mydir:&#34;, mydir)
+    if pedconfig.conf.verbose:
+        print(&#34;mydir:&#34;, mydir)
     os.chdir(mydir)
     myscript = os.path.realpath(os.path.join(mydir, &#39;pyedpro.py&#39;))
     mysh = os.path.realpath(os.path.join(fdir, &#39;run.sh&#39;))
@@ -636,7 +696,7 @@ class pedtask():
         pedync.message(&#34;\n   Cannot launch new editor instance \n\n&#34;)
 
     # Back to original dir
-    print(&#34;Back to original thread.&#34;, old)
+    #print(&#34;Back to original thread.&#34;, old)
     #print(&#34;env&#34;, os.environ)
     #os.chdir(os.path.dirname(old))</code></pre>
 </details>
@@ -791,6 +851,42 @@ class pedtask():
 <pre><code class="python">def start_mdfilter(self):
 
     #print(&#34;MD Filter called.&#34;, os.getcwd())
+    try:
+        import markdown
+        from mdx_gfm import GithubFlavoredMarkdownExtension
+    except:
+        pedync.message(&#34;\n   Cannot import MD converter\n\n&#34;)
+        return
+
+    newfname = os.path.splitext(self.fname)[0] + &#34;.preview.html&#34;
+
+    cnt = 0; buff = &#34;&#34;; sepx = &#34;&#34;; sep = &#39;\n&#39;
+    for aa in self.text:
+        if cnt:
+            sepx = sep
+        buff += sepx + aa.rstrip()
+        cnt += 1
+
+    mdhtml = markdown.markdown(buff, extensions=[GithubFlavoredMarkdownExtension()])
+
+    with open(newfname,&#39;wt&#39;) as fd:
+        fd.write(mdhtml)
+    self.start_htmlwin(newfname)
+    pedconfig.conf.pedwin.cleanit.append(newfname)</code></pre>
+</details>
+</dd>
+<dt id="pedtask.pedtask.start_mdfilter2"><code class="name flex">
+<span>def <span class="ident">start_mdfilter2</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start_mdfilter2(self):
+
+    #print(&#34;MD Filter called.&#34;, os.getcwd())
 
     yfname = os.path.dirname(__file__) + os.sep + &#34;default.yml&#34;
 
@@ -852,6 +948,7 @@ class pedtask():
 <li><code><a title="pedtask.pedtask.start_htmlwin" href="#pedtask.pedtask.start_htmlwin">start_htmlwin</a></code></li>
 <li><code><a title="pedtask.pedtask.start_m4filter" href="#pedtask.pedtask.start_m4filter">start_m4filter</a></code></li>
 <li><code><a title="pedtask.pedtask.start_mdfilter" href="#pedtask.pedtask.start_mdfilter">start_mdfilter</a></code></li>
+<li><code><a title="pedtask.pedtask.start_mdfilter2" href="#pedtask.pedtask.start_mdfilter2">start_mdfilter2</a></code></li>
 </ul>
 </li>
 </ul>

@@ -57,6 +57,8 @@ from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import GObject
 from gi.repository import Pango
+from gi.repository import GLib
+
 gi.require_version(&#39;PangoCairo&#39;, &#39;1.0&#39;)
 from gi.repository import PangoCairo
 
@@ -97,13 +99,20 @@ def  readfile(strx, sep = None):
     # Now read and parse
     f = open(strx, &#34;rb&#34;);  buff2 = f.read();  f.close()
     if sys.version_info.major &lt; 3:
+        # Old python did not need this
         buff = buff2
     else:
+        # Tried ...
+        #buff = GLib.locale_to_utf8(buff2)[0]
         try:
-            buff = buff2.decode(&#39;UTF-8&#39;)
+            buff = buff2.decode(&#39;UTF-8&#39;, errors=&#39;strict&#39;)
         except UnicodeDecodeError:
-            buff = buff2.decode(&#39;cp437&#39;)
+            try:
+                buff = buff2.decode(&#39;cp437&#39;)
+            except:
+                print(&#34;Cannot decode:&#34;, buff2)
 
+    # Get rid of memory used
     buff2 = &#34;&#34;
 
     if not sep:
@@ -1455,6 +1464,7 @@ class SearchDialog(Gtk.Dialog):
         #box.add(self.entry)
         self.show_all()
 
+
 # EOF</code></pre>
 </details>
 </section>
@@ -2410,13 +2420,20 @@ class SearchDialog(Gtk.Dialog):
     # Now read and parse
     f = open(strx, &#34;rb&#34;);  buff2 = f.read();  f.close()
     if sys.version_info.major &lt; 3:
+        # Old python did not need this
         buff = buff2
     else:
+        # Tried ...
+        #buff = GLib.locale_to_utf8(buff2)[0]
         try:
-            buff = buff2.decode(&#39;UTF-8&#39;)
+            buff = buff2.decode(&#39;UTF-8&#39;, errors=&#39;strict&#39;)
         except UnicodeDecodeError:
-            buff = buff2.decode(&#39;cp437&#39;)
+            try:
+                buff = buff2.decode(&#39;cp437&#39;)
+            except:
+                print(&#34;Cannot decode:&#34;, buff2)
 
+    # Get rid of memory used
     buff2 = &#34;&#34;
 
     if not sep:

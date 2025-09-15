@@ -242,8 +242,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = &#34;3.4.0&#34;
-BUILDDATE   = &#34;Sun 05.May.2024&#34;
+VERSION     = &#34;3.6.0&#34;
+BUILDDATE   = &#34;Mon 15.Sep.2025&#34;
 PROGNAME    = &#34;PyEdPro&#34;
 
 # ------------------------------------------------------------------------
@@ -340,7 +340,7 @@ def xhelp():
 
 # ------------------------------------------------------------------------
 
-def terminate():
+def terminate(arg1, arg2):
 
     &#39;&#39;&#39; Termination Handler&#39;&#39;&#39;
 
@@ -820,7 +820,7 @@ command line.</p></div>
 </details>
 </dd>
 <dt id="pyedpro.terminate"><code class="name flex">
-<span>def <span class="ident">terminate</span></span>(<span>)</span>
+<span>def <span class="ident">terminate</span></span>(<span>arg1, arg2)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Termination Handler</p></div>
@@ -828,7 +828,7 @@ command line.</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def terminate():
+<pre><code class="python">def terminate(arg1, arg2):
 
     &#39;&#39;&#39; Termination Handler&#39;&#39;&#39;
 

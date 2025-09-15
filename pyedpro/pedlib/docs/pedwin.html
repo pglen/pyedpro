@@ -67,6 +67,7 @@ from pedlib import pedofd
 #from pedlib import pedplug
 from pedlib import pedutil
 from pedlib import pedai
+from pedlib import setupdlg
 
 #sys.path.append(&#39;..&#39; + os.sep + &#34;pyvguicom&#34;)
 
@@ -239,6 +240,7 @@ class EdMainWindow():
         else:
             self.mac  = False
 
+        self.alpha = 1.0
         self.orgdir = orgdir
         self.colorbar = 0
         self.headcolor = 0
@@ -251,14 +253,13 @@ class EdMainWindow():
         self.names = names
         self.show_menu = True
         self.show_tbar = True
-        #self.alttime = 0
         self.old_x = 0
         self.old_y = 0
         self.lastfile = &#34;&#34;
         self.oh = itemhistory(pedconfig.conf.history)
         self.os = itemhistory(pedconfig.conf.sessions)
         self.sess = &#34;initial.sess&#34;
-
+        self.rootlab = &#34;&#34;
         if pedconfig.conf.keylog_on:
             self.klfp = open(pedconfig.conf.keylog_file, &#34;at&#34;)
         else:
@@ -291,6 +292,7 @@ class EdMainWindow():
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
         self.mywin = Gtk.Window()
+
         #www = Gdk.screen_width(); hhh = Gdk.screen_height();
 
         if pedconfig.conf.full_screen:
@@ -320,6 +322,17 @@ class EdMainWindow():
             #self.mywin.set_default_size(7*www/8, 7*hhh/8)
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
+
+        alpha = pedconfig.conf.sql.get_float(&#34;alpha&#34;)
+        if pedconfig.conf.verbose:
+                print(&#34;Alpha:&#34;, alpha)
+
+        if alpha &gt; 1.0:         alpha = 1.0
+        if alpha &lt; .5:          alpha = .5
+        self.alpha = alpha
+
+        if self.mywin.is_composited():
+            self.mywin.set_opacity(self.alpha)
 
         try:
             self.mywin.set_icon_from_file(get_img_path(&#34;pyedpro.png&#34;))
@@ -752,6 +765,8 @@ class EdMainWindow():
         self.headbar.pack_start(box)
         self.sess_label =  Gtk.Label(self.sess)
         self.headbar.pack_start(self.sess_label)
+        self.root_label =  Gtk.Label(self.rootlab)
+        self.headbar.pack_start(self.root_label)
 
         self.mywin.set_titlebar(self.headbar)
 
@@ -1449,7 +1464,7 @@ class EdMainWindow():
         self.start_tree2()
 
         # create the TreeView using treestore
-        tv = Gtk.TreeView(model=treestore2)
+        tv = Gtk.TreeView(treestore2)
 
         # create a CellRendererText to render the data
         cell = Gtk.CellRendererText()
@@ -1607,8 +1622,20 @@ class EdMainWindow():
         pass
 
     def area_size(self, win, rect):
-        #print(  &#34;area size&#34;, rect)
+
+        #print(&#34;area size&#34;, rect.width, rect.height)
         #self.hpaned2.set_position(self.get_width() - 280)
+        #print(&#34;hpaned&#34;, self.hpaned.get_position())
+        #print(&#34;hpaned3&#34;, self.hpaned3.get_position())
+        GLib.timeout_add(100, self.follow)
+        pass
+
+    def follow(self):
+        # Follow ?
+        ww, hh = self.mywin.get_size()
+        if ww  - self.hpaned3.get_position() &lt; 140:
+            #print(&#34;Follow&#34;)
+            self.hpaned3.set_position(ww - 10)
         pass
 
     def  note_focus_in(self, win, act):
@@ -1832,7 +1859,7 @@ class EdMainWindow():
         strx = action.get_name()
         warnings.simplefilter(&#34;default&#34;)
 
-        if 1: #pedconfig.conf.verbose:
+        if pedconfig.conf.verbose:
             print (&#34;activate_action with:&#34;, strx)
 
         if strx == &#34;Close All&#34;:
@@ -2097,7 +2124,11 @@ class EdMainWindow():
 
         if strx == &#34;Settings&#34;:
             self.update_statusbar(&#34;Showing Settings Dialog&#34;)
-            pedync.message(&#34;\n    Settings: Work in progress    \n&#34;)
+            nn2 = notebook.get_current_page()
+            vcurr2 = notebook.get_nth_page(nn2)
+            dlg = setupdlg.SetupDlg(self, vcurr2.area)
+            res = dlg.run()
+            dlg.destroy()
 
         if strx == &#34;Help&#34;:
             #pedync.message(&#34;\n    Help: Work in progress    \n&#34;)
@@ -2234,32 +2265,29 @@ class EdMainWindow():
         self.update_statusbar(&#34;%d of %d buffers saved.&#34; % (cnt2, nn))
 
     def start_term(self):
-        #print(&#34;Terminal Here&#34;)
-        exename = &#34;&#34;
+        exename = &#34;&#34;  ; ret = None
         try:
             if platform.system().find(&#34;Win&#34;) &gt;= 0:
-                ret = subprocess.Popen([&#34;putty&#34;])
-                #if not ret.returncode:
-                #    raise OSError
-                #print(&#34;No terminal on windows. (TODO)&#34;)
+                termstrs = (&#34;c:\\msys64\\ucrt64.exe&#34;, &#34;putty&#34;,)
             else:
-                ret = None
                 # The order represents the priority of opening
-                termstr = (&#34;xfce4-terminal&#34;, &#34;gnome-terminal&#34;, &#34;lxterminal&#34;, &#34;xterm&#34;,)
-                for exename in termstr:
-                    # Stumble until terminal found
-                    try:
-                        ret = subprocess.Popen([exename],)
-                        if not ret.returncode:
-                            break
-                    except:
-                        pass
-
-                if ret.returncode:
-                    raise OSError
+                termstrs = (&#34;xfce4-terminal&#34;, &#34;gnome-terminal2&#34;,
+                                    &#34;lxterminal&#34;, &#34;xterm&#34;,)
+            for exename in termstrs:
+                # Stumble until terminal found
+                if pedconfig.conf.verbose:
+                    print(&#34;Term try:&#34;, exename)
+                try:
+                    ret = subprocess.Popen([exename],)
+                    if ret and not ret.returncode:
+                        break
+                except:
+                    pass
+            if ret.returncode:
+                raise OSError
         except:
-            print(&#34;Cannot launch terminal&#34;, sys.exc_info())
-            pedync.message(&#34;\n   Cannot launch terminal executable \n\n&#34;
+            print(&#34;Cannot launch terminal:&#34;, execname, sys.exc_info())
+            pedync.message(&#34;\n   Cannot launch terminal executable:&#34; + exename + &#34;\n\n&#34;
                        &#34;              (Please install)&#34;)
         finally:
             self.update_statusbar(&#34;Started terminal &#39;%s&#39;&#34; % exename)
@@ -2446,6 +2474,8 @@ def     OnExit(arg, arg2 = False, prompt = True):
 
         pedconfig.conf.sql.put(&#34;vpaned&#34;, pos)
 
+    pedconfig.conf.sql.put(&#34;alpha&#34;, mained.alpha)
+
     # Do not save full screen coordinates (when used F11)
     #print( mained.full)
 
@@ -2523,6 +2553,10 @@ def     OnExit(arg, arg2 = False, prompt = True):
     arg.destroy()
     Gtk.main_quit()
 
+def  initial_rootlab(self2, arg):
+     self2.rootlab = &#34;&#34;
+     self2.root_label.set_text(self2.rootlab)
+
 def  initial_load(self2, arg):
 
     global notebook, hidden
@@ -2531,12 +2565,22 @@ def  initial_load(self2, arg):
 
     try:
         if os.getuid() == 0:
-            ret = pedync.yes_no_cancel(&#34;Root user detected&#34;, &#34;This program was not meant to run as root.\n&#34;
-                                    &#34;\nPress Yes to run anyway, No to quit.&#34;, False)
-            if ret == Gtk.ResponseType.NO:
-                sys.exit()
+            #ret = pedync.yes_no_cancel(&#34;Root user detected&#34;, &#34;This program was not meant to run as root.\n&#34;
+            #                        &#34;\nPress Yes to run anyway, No to quit.&#34;, False)
+            ##print(&#34;ret:&#34;, ret)
+            #if ret == Gtk.ResponseType.NO or ret == Gtk.ResponseType.CANCEL:
+            #    if pedconfig.conf.verbose:
+            #        print(&#34;Exiting on no root&#34;)
+            #    #sys.exit()
+            #    self2.activate_exit()
+
+            self2.update_statusbar(&#34;WARNING: Running as root, you may not want to.&#34;)
+            self2.rootlab = &#34; Warning: !!! Running as user: &#39;root&#39; !!! &#34;
+            self2.root_label.set_text(self2.rootlab)
+            GLib.timeout_add(3000, initial_rootlab, self2, 0)
+
     except:
-        pass
+        print(&#34;root test&#34;, sys.exc_info())
 
     try:
         #print( &#39;Signal handler called with signal&#39;)
@@ -2820,6 +2864,8 @@ def handler_tick(arg, arg2):
 
         pedconfig.conf.sql.put(&#34;vpaned&#34;, pos)
 
+    pedconfig.conf.sql.put(&#34;alpha&#34;, mained.alpha)
+
     # Do not save full screen coordinates (when used F11)
     #print( mained.full)
 
@@ -3047,12 +3093,22 @@ def handler_tick(arg, arg2):
 
     try:
         if os.getuid() == 0:
-            ret = pedync.yes_no_cancel(&#34;Root user detected&#34;, &#34;This program was not meant to run as root.\n&#34;
-                                    &#34;\nPress Yes to run anyway, No to quit.&#34;, False)
-            if ret == Gtk.ResponseType.NO:
-                sys.exit()
+            #ret = pedync.yes_no_cancel(&#34;Root user detected&#34;, &#34;This program was not meant to run as root.\n&#34;
+            #                        &#34;\nPress Yes to run anyway, No to quit.&#34;, False)
+            ##print(&#34;ret:&#34;, ret)
+            #if ret == Gtk.ResponseType.NO or ret == Gtk.ResponseType.CANCEL:
+            #    if pedconfig.conf.verbose:
+            #        print(&#34;Exiting on no root&#34;)
+            #    #sys.exit()
+            #    self2.activate_exit()
+
+            self2.update_statusbar(&#34;WARNING: Running as root, you may not want to.&#34;)
+            self2.rootlab = &#34; Warning: !!! Running as user: &#39;root&#39; !!! &#34;
+            self2.root_label.set_text(self2.rootlab)
+            GLib.timeout_add(3000, initial_rootlab, self2, 0)
+
     except:
-        pass
+        print(&#34;root test&#34;, sys.exc_info())
 
     try:
         #print( &#39;Signal handler called with signal&#39;)
@@ -3159,6 +3215,20 @@ def handler_tick(arg, arg2):
         pass</code></pre>
 </details>
 </dd>
+<dt id="pedwin.initial_rootlab"><code class="name flex">
+<span>def <span class="ident">initial_rootlab</span></span>(<span>self2, arg)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def  initial_rootlab(self2, arg):
+     self2.rootlab = &#34;&#34;
+     self2.root_label.set_text(self2.rootlab)</code></pre>
+</details>
+</dd>
 </dl>
 </section>
 <section>
@@ -3190,6 +3260,7 @@ def handler_tick(arg, arg2):
         else:
             self.mac  = False
 
+        self.alpha = 1.0
         self.orgdir = orgdir
         self.colorbar = 0
         self.headcolor = 0
@@ -3202,14 +3273,13 @@ def handler_tick(arg, arg2):
         self.names = names
         self.show_menu = True
         self.show_tbar = True
-        #self.alttime = 0
         self.old_x = 0
         self.old_y = 0
         self.lastfile = &#34;&#34;
         self.oh = itemhistory(pedconfig.conf.history)
         self.os = itemhistory(pedconfig.conf.sessions)
         self.sess = &#34;initial.sess&#34;
-
+        self.rootlab = &#34;&#34;
         if pedconfig.conf.keylog_on:
             self.klfp = open(pedconfig.conf.keylog_file, &#34;at&#34;)
         else:
@@ -3242,6 +3312,7 @@ def handler_tick(arg, arg2):
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
         self.mywin = Gtk.Window()
+
         #www = Gdk.screen_width(); hhh = Gdk.screen_height();
 
         if pedconfig.conf.full_screen:
@@ -3271,6 +3342,17 @@ def handler_tick(arg, arg2):
             #self.mywin.set_default_size(7*www/8, 7*hhh/8)
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
+
+        alpha = pedconfig.conf.sql.get_float(&#34;alpha&#34;)
+        if pedconfig.conf.verbose:
+                print(&#34;Alpha:&#34;, alpha)
+
+        if alpha &gt; 1.0:         alpha = 1.0
+        if alpha &lt; .5:          alpha = .5
+        self.alpha = alpha
+
+        if self.mywin.is_composited():
+            self.mywin.set_opacity(self.alpha)
 
         try:
             self.mywin.set_icon_from_file(get_img_path(&#34;pyedpro.png&#34;))
@@ -3703,6 +3785,8 @@ def handler_tick(arg, arg2):
         self.headbar.pack_start(box)
         self.sess_label =  Gtk.Label(self.sess)
         self.headbar.pack_start(self.sess_label)
+        self.root_label =  Gtk.Label(self.rootlab)
+        self.headbar.pack_start(self.root_label)
 
         self.mywin.set_titlebar(self.headbar)
 
@@ -4400,7 +4484,7 @@ def handler_tick(arg, arg2):
         self.start_tree2()
 
         # create the TreeView using treestore
-        tv = Gtk.TreeView(model=treestore2)
+        tv = Gtk.TreeView(treestore2)
 
         # create a CellRendererText to render the data
         cell = Gtk.CellRendererText()
@@ -4558,8 +4642,20 @@ def handler_tick(arg, arg2):
         pass
 
     def area_size(self, win, rect):
-        #print(  &#34;area size&#34;, rect)
+
+        #print(&#34;area size&#34;, rect.width, rect.height)
         #self.hpaned2.set_position(self.get_width() - 280)
+        #print(&#34;hpaned&#34;, self.hpaned.get_position())
+        #print(&#34;hpaned3&#34;, self.hpaned3.get_position())
+        GLib.timeout_add(100, self.follow)
+        pass
+
+    def follow(self):
+        # Follow ?
+        ww, hh = self.mywin.get_size()
+        if ww  - self.hpaned3.get_position() &lt; 140:
+            #print(&#34;Follow&#34;)
+            self.hpaned3.set_position(ww - 10)
         pass
 
     def  note_focus_in(self, win, act):
@@ -4783,7 +4879,7 @@ def handler_tick(arg, arg2):
         strx = action.get_name()
         warnings.simplefilter(&#34;default&#34;)
 
-        if 1: #pedconfig.conf.verbose:
+        if pedconfig.conf.verbose:
             print (&#34;activate_action with:&#34;, strx)
 
         if strx == &#34;Close All&#34;:
@@ -5048,7 +5144,11 @@ def handler_tick(arg, arg2):
 
         if strx == &#34;Settings&#34;:
             self.update_statusbar(&#34;Showing Settings Dialog&#34;)
-            pedync.message(&#34;\n    Settings: Work in progress    \n&#34;)
+            nn2 = notebook.get_current_page()
+            vcurr2 = notebook.get_nth_page(nn2)
+            dlg = setupdlg.SetupDlg(self, vcurr2.area)
+            res = dlg.run()
+            dlg.destroy()
 
         if strx == &#34;Help&#34;:
             #pedync.message(&#34;\n    Help: Work in progress    \n&#34;)
@@ -5185,32 +5285,29 @@ def handler_tick(arg, arg2):
         self.update_statusbar(&#34;%d of %d buffers saved.&#34; % (cnt2, nn))
 
     def start_term(self):
-        #print(&#34;Terminal Here&#34;)
-        exename = &#34;&#34;
+        exename = &#34;&#34;  ; ret = None
         try:
             if platform.system().find(&#34;Win&#34;) &gt;= 0:
-                ret = subprocess.Popen([&#34;putty&#34;])
-                #if not ret.returncode:
-                #    raise OSError
-                #print(&#34;No terminal on windows. (TODO)&#34;)
+                termstrs = (&#34;c:\\msys64\\ucrt64.exe&#34;, &#34;putty&#34;,)
             else:
-                ret = None
                 # The order represents the priority of opening
-                termstr = (&#34;xfce4-terminal&#34;, &#34;gnome-terminal&#34;, &#34;lxterminal&#34;, &#34;xterm&#34;,)
-                for exename in termstr:
-                    # Stumble until terminal found
-                    try:
-                        ret = subprocess.Popen([exename],)
-                        if not ret.returncode:
-                            break
-                    except:
-                        pass
-
-                if ret.returncode:
-                    raise OSError
+                termstrs = (&#34;xfce4-terminal&#34;, &#34;gnome-terminal2&#34;,
+                                    &#34;lxterminal&#34;, &#34;xterm&#34;,)
+            for exename in termstrs:
+                # Stumble until terminal found
+                if pedconfig.conf.verbose:
+                    print(&#34;Term try:&#34;, exename)
+                try:
+                    ret = subprocess.Popen([exename],)
+                    if ret and not ret.returncode:
+                        break
+                except:
+                    pass
+            if ret.returncode:
+                raise OSError
         except:
-            print(&#34;Cannot launch terminal&#34;, sys.exc_info())
-            pedync.message(&#34;\n   Cannot launch terminal executable \n\n&#34;
+            print(&#34;Cannot launch terminal:&#34;, execname, sys.exc_info())
+            pedync.message(&#34;\n   Cannot launch terminal executable:&#34; + exename + &#34;\n\n&#34;
                        &#34;              (Please install)&#34;)
         finally:
             self.update_statusbar(&#34;Started terminal &#39;%s&#39;&#34; % exename)
@@ -5434,7 +5531,7 @@ def handler_tick(arg, arg2):
     strx = action.get_name()
     warnings.simplefilter(&#34;default&#34;)
 
-    if 1: #pedconfig.conf.verbose:
+    if pedconfig.conf.verbose:
         print (&#34;activate_action with:&#34;, strx)
 
     if strx == &#34;Close All&#34;:
@@ -5699,7 +5796,11 @@ def handler_tick(arg, arg2):
 
     if strx == &#34;Settings&#34;:
         self.update_statusbar(&#34;Showing Settings Dialog&#34;)
-        pedync.message(&#34;\n    Settings: Work in progress    \n&#34;)
+        nn2 = notebook.get_current_page()
+        vcurr2 = notebook.get_nth_page(nn2)
+        dlg = setupdlg.SetupDlg(self, vcurr2.area)
+        res = dlg.run()
+        dlg.destroy()
 
     if strx == &#34;Help&#34;:
         #pedync.message(&#34;\n    Help: Work in progress    \n&#34;)
@@ -6223,8 +6324,12 @@ def handler_tick(arg, arg2):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def area_size(self, win, rect):
-    #print(  &#34;area size&#34;, rect)
+
+    #print(&#34;area size&#34;, rect.width, rect.height)
     #self.hpaned2.set_position(self.get_width() - 280)
+    #print(&#34;hpaned&#34;, self.hpaned.get_position())
+    #print(&#34;hpaned3&#34;, self.hpaned3.get_position())
+    GLib.timeout_add(100, self.follow)
     pass</code></pre>
 </details>
 </dd>
@@ -6440,7 +6545,7 @@ def handler_tick(arg, arg2):
     self.start_tree2()
 
     # create the TreeView using treestore
-    tv = Gtk.TreeView(model=treestore2)
+    tv = Gtk.TreeView(treestore2)
 
     # create a CellRendererText to render the data
     cell = Gtk.CellRendererText()
@@ -6582,6 +6687,24 @@ def handler_tick(arg, arg2):
     #print &#34;folder_ch&#34;
     pass
     #return True</code></pre>
+</details>
+</dd>
+<dt id="pedwin.EdMainWindow.follow"><code class="name flex">
+<span>def <span class="ident">follow</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def follow(self):
+    # Follow ?
+    ww, hh = self.mywin.get_size()
+    if ww  - self.hpaned3.get_position() &lt; 140:
+        #print(&#34;Follow&#34;)
+        self.hpaned3.set_position(ww - 10)
+    pass</code></pre>
 </details>
 </dd>
 <dt id="pedwin.EdMainWindow.get_height"><code class="name flex">
@@ -7415,32 +7538,29 @@ def handler_tick(arg, arg2):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def start_term(self):
-    #print(&#34;Terminal Here&#34;)
-    exename = &#34;&#34;
+    exename = &#34;&#34;  ; ret = None
     try:
         if platform.system().find(&#34;Win&#34;) &gt;= 0:
-            ret = subprocess.Popen([&#34;putty&#34;])
-            #if not ret.returncode:
-            #    raise OSError
-            #print(&#34;No terminal on windows. (TODO)&#34;)
+            termstrs = (&#34;c:\\msys64\\ucrt64.exe&#34;, &#34;putty&#34;,)
         else:
-            ret = None
             # The order represents the priority of opening
-            termstr = (&#34;xfce4-terminal&#34;, &#34;gnome-terminal&#34;, &#34;lxterminal&#34;, &#34;xterm&#34;,)
-            for exename in termstr:
-                # Stumble until terminal found
-                try:
-                    ret = subprocess.Popen([exename],)
-                    if not ret.returncode:
-                        break
-                except:
-                    pass
-
-            if ret.returncode:
-                raise OSError
+            termstrs = (&#34;xfce4-terminal&#34;, &#34;gnome-terminal2&#34;,
+                                &#34;lxterminal&#34;, &#34;xterm&#34;,)
+        for exename in termstrs:
+            # Stumble until terminal found
+            if pedconfig.conf.verbose:
+                print(&#34;Term try:&#34;, exename)
+            try:
+                ret = subprocess.Popen([exename],)
+                if ret and not ret.returncode:
+                    break
+            except:
+                pass
+        if ret.returncode:
+            raise OSError
     except:
-        print(&#34;Cannot launch terminal&#34;, sys.exc_info())
-        pedync.message(&#34;\n   Cannot launch terminal executable \n\n&#34;
+        print(&#34;Cannot launch terminal:&#34;, execname, sys.exc_info())
+        pedync.message(&#34;\n   Cannot launch terminal executable:&#34; + exename + &#34;\n\n&#34;
                    &#34;              (Please install)&#34;)
     finally:
         self.update_statusbar(&#34;Started terminal &#39;%s&#39;&#34; % exename)</code></pre>
@@ -8166,6 +8286,7 @@ sets through the use of explicit keyword arguments.</p></div>
 <li><code><a title="pedwin.add_page" href="#pedwin.add_page">add_page</a></code></li>
 <li><code><a title="pedwin.handler_tick" href="#pedwin.handler_tick">handler_tick</a></code></li>
 <li><code><a title="pedwin.initial_load" href="#pedwin.initial_load">initial_load</a></code></li>
+<li><code><a title="pedwin.initial_rootlab" href="#pedwin.initial_rootlab">initial_rootlab</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
@@ -8213,6 +8334,7 @@ sets through the use of explicit keyword arguments.</p></div>
 <li><code><a title="pedwin.EdMainWindow.firstwin" href="#pedwin.EdMainWindow.firstwin">firstwin</a></code></li>
 <li><code><a title="pedwin.EdMainWindow.focus_out2" href="#pedwin.EdMainWindow.focus_out2">focus_out2</a></code></li>
 <li><code><a title="pedwin.EdMainWindow.folder_ch" href="#pedwin.EdMainWindow.folder_ch">folder_ch</a></code></li>
+<li><code><a title="pedwin.EdMainWindow.follow" href="#pedwin.EdMainWindow.follow">follow</a></code></li>
 <li><code><a title="pedwin.EdMainWindow.get_height" href="#pedwin.EdMainWindow.get_height">get_height</a></code></li>
 <li><code><a title="pedwin.EdMainWindow.get_width" href="#pedwin.EdMainWindow.get_width">get_width</a></code></li>
 <li><code><a title="pedwin.EdMainWindow.label_callb" href="#pedwin.EdMainWindow.label_callb">label_callb</a></code></li>

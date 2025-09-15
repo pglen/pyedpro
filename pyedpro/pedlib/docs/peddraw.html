@@ -32,7 +32,7 @@
 
 from __future__ import absolute_import
 
-import signal, os, time, sys, codecs
+import signal, os, time, sys #, codecs
 
 import gi
 gi.require_version(&#34;Gtk&#34;, &#34;3.0&#34;)
@@ -59,7 +59,7 @@ class peddraw(object):
 
     def __init__(self, self2):
         self.self2 = self2
-        self.utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
+        #self.utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
 
     # Underline with red wiggle
     def draw_wiggle(self, gcr, xx, yy, xx2, yy2):
@@ -157,17 +157,43 @@ class peddraw(object):
 
     def _draw_text(self, gc, x, y, text, fg_col = None, bg_col = None, esc = None):
 
+
         #print( &#34;_draw_text&#34;,  self.xpos, self.ypos, self.caret, x/self.cxx, y/self.cyy)
 
-        fo = cairo.FontOptions()
-        #fo.set_antialias( cairo.ANTIALIAS_FAST)
-        fo.set_antialias( cairo.ANTIALIAS_BEST)
-        #fo.set_antialias( cairo.ANTIALIAS_DEFAULT)
-        #fo.set_antialias( cairo.ANTIALIAS_SUBPIXEL)
-        #fo.set_antialias( cairo.ANTIALIAS_GRAY)
-        #fo.set_antialias( cairo.ANTIALIAS_NONE)
-        #print(&#34;cairo fo&#34;, fo, fo.get_antialias() )
-        gc.set_font_options(fo)
+        #if isinstance(text, str):
+        #    print(&#34;str&#34;, text)
+        #elif isinstance(s, unicode):
+        #    print(&#34;utf&#34;, text)
+        #else:
+        #    print(&#34;misc&#34;, text)
+
+        #utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
+        try:
+            if type(text) != str:
+                try:
+                    text.decode(&#39;utf-8&#39;)
+                    #text2 = codecs.decode(text2)
+                    #text2 = self.utf_decoder(text2)
+                    #print (&#34;string is UTF-8, length %d bytes&#34; % len(text2))
+                except:
+                    print(&#34;unicode err&#34;)
+            else:
+                pass
+                #print (&#34;string is text, length %d bytes&#34; % len(text2))
+
+        #except UnicodeError:
+        except:
+            print (&#34;string is not UTF-8&#34;, text)
+
+        #fo = cairo.FontOptions()
+        ##fo.set_antialias( cairo.ANTIALIAS_FAST)
+        #fo.set_antialias( cairo.ANTIALIAS_BEST)
+        ##fo.set_antialias( cairo.ANTIALIAS_DEFAULT)
+        ##fo.set_antialias( cairo.ANTIALIAS_SUBPIXEL)
+        ##fo.set_antialias( cairo.ANTIALIAS_GRAY)
+        ##fo.set_antialias( cairo.ANTIALIAS_NONE)
+        ##print(&#34;cairo fo&#34;, fo, fo.get_antialias() )
+        #gc.set_font_options(fo)
 
         #x = int(x)
         ## if below zero, shift
@@ -185,12 +211,20 @@ class peddraw(object):
         if not esc:
             if self.hex:
                 text2 = &#34;&#34;
+                for aa in bytes(text, &#39;utf-8&#39;):
+                    #tmp = &#34;%02x &#34; % ord(aa)
+                    tmp = &#34;%02x &#34; % aa
+                    text2 += tmp
+                text2 = text2[self.xpos * 3:]
+                #print(&#34;text2&#34;, text2)
+
+            elif self.uni:
+                text2 = &#34;&#34;
                 for aa in text:
                     tmp = &#34;%02x &#34; % ord(aa)
                     text2 += tmp
                 text2 = text2[self.xpos * 3:]
                 #print(&#34;text2&#34;, text2)
-
             elif self.stab:
                 text2 = &#34;&#34;;  cnt = 0;
                 for aa in text:
@@ -211,28 +245,7 @@ class peddraw(object):
             #text2 = text[self.xpos:].replace(&#34;\r&#34;, &#34; &#34;)
             text2 = text.replace(&#34;\r&#34;, &#34;a &#34;)
 
-        #utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
-        try:
-            if type(text2) != str:
-                text2 = codecs.decode(text2)
-                #print (&#34;string is UTF-8, length %d bytes&#34; % len(text2))
-            else:
-                pass
-                #print (&#34;string is text, length %d bytes&#34; % len(text2))
-
-        except UnicodeError:
-            print (&#34;string is not UTF-8&#34;)
-            #return xx, yy
-
-        #text2 = kill_non_ascii(text2)
-
-        &#39;&#39;&#39;bbb = is_ascii(text2)
-        if bbb &gt; 0:
-            text2 = text2[:bbb-1] + &#34; Non ASCII char &#34;
-            #return xx, yy
-        &#39;&#39;&#39;
-
-        self.layout.set_text(text2, len(text2))
+        self.layout.set_text(text2, -1)
 
         #xx, yy = self.layout.get_pixel_size()
         #xx, yy = self.layout.get_size()
@@ -368,6 +381,9 @@ class peddraw(object):
     # Color keywords. Very primitive coloring, a compromise for speed
 
     def draw_syntax(self, cr):
+
+        if self.uni:
+            return
 
         if not self.colflag:
             return
@@ -601,7 +617,7 @@ class peddraw(object):
 
     def __init__(self, self2):
         self.self2 = self2
-        self.utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
+        #self.utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
 
     # Underline with red wiggle
     def draw_wiggle(self, gcr, xx, yy, xx2, yy2):
@@ -699,17 +715,43 @@ class peddraw(object):
 
     def _draw_text(self, gc, x, y, text, fg_col = None, bg_col = None, esc = None):
 
+
         #print( &#34;_draw_text&#34;,  self.xpos, self.ypos, self.caret, x/self.cxx, y/self.cyy)
 
-        fo = cairo.FontOptions()
-        #fo.set_antialias( cairo.ANTIALIAS_FAST)
-        fo.set_antialias( cairo.ANTIALIAS_BEST)
-        #fo.set_antialias( cairo.ANTIALIAS_DEFAULT)
-        #fo.set_antialias( cairo.ANTIALIAS_SUBPIXEL)
-        #fo.set_antialias( cairo.ANTIALIAS_GRAY)
-        #fo.set_antialias( cairo.ANTIALIAS_NONE)
-        #print(&#34;cairo fo&#34;, fo, fo.get_antialias() )
-        gc.set_font_options(fo)
+        #if isinstance(text, str):
+        #    print(&#34;str&#34;, text)
+        #elif isinstance(s, unicode):
+        #    print(&#34;utf&#34;, text)
+        #else:
+        #    print(&#34;misc&#34;, text)
+
+        #utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
+        try:
+            if type(text) != str:
+                try:
+                    text.decode(&#39;utf-8&#39;)
+                    #text2 = codecs.decode(text2)
+                    #text2 = self.utf_decoder(text2)
+                    #print (&#34;string is UTF-8, length %d bytes&#34; % len(text2))
+                except:
+                    print(&#34;unicode err&#34;)
+            else:
+                pass
+                #print (&#34;string is text, length %d bytes&#34; % len(text2))
+
+        #except UnicodeError:
+        except:
+            print (&#34;string is not UTF-8&#34;, text)
+
+        #fo = cairo.FontOptions()
+        ##fo.set_antialias( cairo.ANTIALIAS_FAST)
+        #fo.set_antialias( cairo.ANTIALIAS_BEST)
+        ##fo.set_antialias( cairo.ANTIALIAS_DEFAULT)
+        ##fo.set_antialias( cairo.ANTIALIAS_SUBPIXEL)
+        ##fo.set_antialias( cairo.ANTIALIAS_GRAY)
+        ##fo.set_antialias( cairo.ANTIALIAS_NONE)
+        ##print(&#34;cairo fo&#34;, fo, fo.get_antialias() )
+        #gc.set_font_options(fo)
 
         #x = int(x)
         ## if below zero, shift
@@ -727,12 +769,20 @@ class peddraw(object):
         if not esc:
             if self.hex:
                 text2 = &#34;&#34;
+                for aa in bytes(text, &#39;utf-8&#39;):
+                    #tmp = &#34;%02x &#34; % ord(aa)
+                    tmp = &#34;%02x &#34; % aa
+                    text2 += tmp
+                text2 = text2[self.xpos * 3:]
+                #print(&#34;text2&#34;, text2)
+
+            elif self.uni:
+                text2 = &#34;&#34;
                 for aa in text:
                     tmp = &#34;%02x &#34; % ord(aa)
                     text2 += tmp
                 text2 = text2[self.xpos * 3:]
                 #print(&#34;text2&#34;, text2)
-
             elif self.stab:
                 text2 = &#34;&#34;;  cnt = 0;
                 for aa in text:
@@ -753,28 +803,7 @@ class peddraw(object):
             #text2 = text[self.xpos:].replace(&#34;\r&#34;, &#34; &#34;)
             text2 = text.replace(&#34;\r&#34;, &#34;a &#34;)
 
-        #utf8_decoder = codecs.getincrementaldecoder(&#39;utf8&#39;)()
-        try:
-            if type(text2) != str:
-                text2 = codecs.decode(text2)
-                #print (&#34;string is UTF-8, length %d bytes&#34; % len(text2))
-            else:
-                pass
-                #print (&#34;string is text, length %d bytes&#34; % len(text2))
-
-        except UnicodeError:
-            print (&#34;string is not UTF-8&#34;)
-            #return xx, yy
-
-        #text2 = kill_non_ascii(text2)
-
-        &#39;&#39;&#39;bbb = is_ascii(text2)
-        if bbb &gt; 0:
-            text2 = text2[:bbb-1] + &#34; Non ASCII char &#34;
-            #return xx, yy
-        &#39;&#39;&#39;
-
-        self.layout.set_text(text2, len(text2))
+        self.layout.set_text(text2, -1)
 
         #xx, yy = self.layout.get_pixel_size()
         #xx, yy = self.layout.get_size()
@@ -910,6 +939,9 @@ class peddraw(object):
     # Color keywords. Very primitive coloring, a compromise for speed
 
     def draw_syntax(self, cr):
+
+        if self.uni:
+            return
 
         if not self.colflag:
             return
@@ -1526,6 +1558,9 @@ class peddraw(object):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def draw_syntax(self, cr):
+
+    if self.uni:
+        return
 
     if not self.colflag:
         return

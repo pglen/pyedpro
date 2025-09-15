@@ -3,7 +3,7 @@
 .PHONY: docs ver clean
 
 all:
-	@echo Targets: clean package docs
+	@echo Targets: clean package docs pipup pipbuild
 
 clean:
 	@-find . -name "__pycache__" -exec rm -rf {} \;
@@ -67,12 +67,20 @@ pipup:
 	cp ../README.md README.md
 	./pip-build.py
 	./pip-upload.sh
-	@# Mke sure only one copy hangs around
-	rm README.md
+	@# Make sure only one copy hangs around
+	rm -f README.md
+
+pipbuild:
+	@cp ../README.md README.md
+	./pip-build.py
+	@rm -f README.md
 
 pipcycle:
 	pip uninstall pyedpro
 	make clean
 	pip install .
+
+makestats:
+	gitstats https://github.com/pglen/pyedpro
 
 # EOF

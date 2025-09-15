@@ -27,8 +27,8 @@ and attach a key …" />
 <p>Action Handler for the editor. Extracted to a separate module for
 easy update. These are the actions for pyedpro. You may define more
 and attach a key handler to it in the tables of keyhand.py</p>
-<p>The function names hint to the key handled. (Half) of the documentation
-can be deduced from the function names.</p>
+<p>The function names hint to the key handled, and functionalty implemented.
+&ndash; Half &ndash; of the documentation can be deduced just from the function names.</p>
 <p>Notes:</p>
 <p>a.) Navigation may be blind, the doc class will contain the cursor
 within the document.</p>
@@ -54,13 +54,13 @@ If the completion behavior is not desired, disable the code marked
 </summary>
 <pre><code class="python">#!/usr/bin/env python
 
-&#39;&#39;&#39;
+__doc__ = &#39;&#39;&#39;
  Action Handler for the editor. Extracted to a separate module for
  easy update. These are the actions for pyedpro. You may define more
  and attach a key handler to it in the tables of keyhand.py
 
- The function names hint to the key handled. (Half) of the documentation
- can be deduced from the function names.
+ The function names hint to the key handled, and functionalty implemented.
+ -- Half -- of the documentation can be deduced just from the function names.
 
  Notes:
 
@@ -87,10 +87,8 @@ If the completion behavior is not desired, disable the code marked
        &#39;Token Completion&#39;
 &#39;&#39;&#39;
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-import string, subprocess, os, platform, datetime, sys, codecs
+import sys, os
+import subprocess, platform, datetime, codecs
 
 try:
     import cups

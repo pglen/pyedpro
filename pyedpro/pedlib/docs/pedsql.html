@@ -32,149 +32,157 @@ from __future__ import absolute_import
 from __future__ import print_function
 import sys, os, time, sqlite3
 
-# Replaces g c o n f, so it is less platforrm dependent 
+# Replaces g c o n f, so it is less platforrm dependent
 
 class pedsql():
 
     def __init__(self, file):
-    
+
         #self.take = 0
-        
+
         try:
             self.conn = sqlite3.connect(file)
         except:
-            print(&#34;Cannot open/create db:&#34;, file, sys.exc_info()) 
-            return            
+            print(&#34;Cannot open/create db:&#34;, file, sys.exc_info())
+            return
         try:
             self.c = self.conn.cursor()
             # Create table
             self.c.execute(&#34;create table if not exists config \
              (pri INTEGER PRIMARY KEY, key text, val text)&#34;)
-            self.c.execute(&#34;create index if not exists iconfig on config (key)&#34;)            
-            self.c.execute(&#34;create index if not exists pconfig on config (pri)&#34;)            
+            self.c.execute(&#34;create index if not exists iconfig on config (key)&#34;)
+            self.c.execute(&#34;create index if not exists pconfig on config (pri)&#34;)
             self.c.execute(&#34;PRAGMA synchronous=OFF&#34;)
             # Save (commit) the changes
-            self.conn.commit()            
+            self.conn.commit()
         except:
-            print(&#34;Cannot insert sql data&#34;, sys.exc_info()) 
-             
-        finally:    
+            print(&#34;Cannot insert sql data&#34;, sys.exc_info())
+
+        finally:
             # We close the cursor, we are done with it
-            #c.close()    
+            #c.close()
             pass
-                            
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Return None if no data
-    
+
     def   get(self, kkk):
-        try:      
-            #c = self.conn.cursor()            
+        try:
+            #c = self.conn.cursor()
             if os.name == &#34;nt&#34;:
                 self.c.execute(&#34;select * from config where key = ?&#34;, (kkk,))
-            else: 
+            else:
                 self.c.execute(&#34;select * from config indexed by iconfig where key = ?&#34;, (kkk,))
             rr = self.c.fetchone()
         except:
-            print(&#34;Cannot get sql data&#34;, sys.exc_info()) 
+            print(&#34;Cannot get sql data&#34;, sys.exc_info())
             rr = None
         finally:
-            #c.close   
+            #c.close
             pass
-        if rr:            
+        if rr:
             return rr[2]
         else:
             return None
 
-    # --------------------------------------------------------------------        
+    # --------------------------------------------------------------------
     # Return zero if no data
-    
+
     def get_int(self, kkk):
         ret = self.get(kkk)
-        if ret: 
-            return int(float(ret))        
-        else:   
+        if ret:
+            return int(float(ret))
+        else:
             return int(0)
 
-    # --------------------------------------------------------------------        
+    def get_float(self, kkk):
+
+        ret = self.get(kkk)
+        if ret:
+            return float(float(ret))
+        else:
+            return float(0)
+
+    # --------------------------------------------------------------------
     # Return empty if no data
-    
+
     def get_str(self, kkk):
         ret = self.get(kkk)
-        if ret: 
-            return str(ret)        
-        else:   
+        if ret:
+            return str(ret)
+        else:
             return &#34;&#34;
-    
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Return False if cannot put data
-    
+
     def   put(self, key, val):
-    
-        #got_clock = time.clock()         
-        
-        ret = True  
-        try:      
+
+        #got_clock = time.clock()
+
+        ret = True
+        try:
             #c = self.conn.cursor()
             if os.name == &#34;nt&#34;:
                 self.c.execute(&#34;select * from config where key == ?&#34;, (key,))
-            else: 
-                self.c.execute(&#34;select * from config indexed by iconfig where key == ?&#34;, (key,))            
+            else:
+                self.c.execute(&#34;select * from config indexed by iconfig where key == ?&#34;, (key,))
             rr = self.c.fetchall()
             if rr == []:
                 #print &#34;inserting&#34;
                 self.c.execute(&#34;insert into config (key, val) \
                     values (?, ?)&#34;, (key, val))
             else:
-            
+
                 #print &#34;updating&#34;
                 if os.name == &#34;nt&#34;:
                     self.c.execute(&#34;update config set val = ? where key = ?&#34;,\
-                                     (val, key))                                     
-                else: 
+                                     (val, key))
+                else:
                     self.c.execute(&#34;update config indexed by iconfig set val = ? where key = ?&#34;,\
-                                     (val, key))                                     
-            self.conn.commit()          
+                                     (val, key))
+            self.conn.commit()
         except:
-            print(&#34;Cannot put sql data&#34;, sys.exc_info())             
-            ret = False  
+            print(&#34;Cannot put sql data&#34;, sys.exc_info())
+            ret = False
         finally:
-            #c.close     
+            #c.close
             pass
 
-        #self.take += time.clock() - got_clock        
-          
+        #self.take += time.clock() - got_clock
+
         return ret
-  
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Get All
-    
+
     def   getall(self):
-        try:      
+        try:
             #c = self.conn.cursor()
             self.c.execute(&#34;select * from config&#34;)
             rr = self.c.fetchall()
         except:
-            print(&#34;Cannot get sql data&#34;, sys.exc_info()) 
+            print(&#34;Cannot get sql data&#34;, sys.exc_info())
         finally:
-            #c.close   
+            #c.close
             pass
         return rr
-        
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Return None if no data
-    
+
     def   rmall(self):
         print(&#34;removing all&#34;)
-        try:      
+        try:
             #c = self.conn.cursor()
             self.c.execute(&#34;delete from config&#34;)
             rr = self.c.fetchone()
         except:
-            print(&#34;Cannot delete sql data&#34;, sys.exc_info()) 
+            print(&#34;Cannot delete sql data&#34;, sys.exc_info())
         finally:
-            #c.close   
+            #c.close
             pass
-        if rr:            
+        if rr:
             return rr[1]
         else:
             return None</code></pre>
@@ -202,144 +210,152 @@ class pedsql():
 <pre><code class="python">class pedsql():
 
     def __init__(self, file):
-    
+
         #self.take = 0
-        
+
         try:
             self.conn = sqlite3.connect(file)
         except:
-            print(&#34;Cannot open/create db:&#34;, file, sys.exc_info()) 
-            return            
+            print(&#34;Cannot open/create db:&#34;, file, sys.exc_info())
+            return
         try:
             self.c = self.conn.cursor()
             # Create table
             self.c.execute(&#34;create table if not exists config \
              (pri INTEGER PRIMARY KEY, key text, val text)&#34;)
-            self.c.execute(&#34;create index if not exists iconfig on config (key)&#34;)            
-            self.c.execute(&#34;create index if not exists pconfig on config (pri)&#34;)            
+            self.c.execute(&#34;create index if not exists iconfig on config (key)&#34;)
+            self.c.execute(&#34;create index if not exists pconfig on config (pri)&#34;)
             self.c.execute(&#34;PRAGMA synchronous=OFF&#34;)
             # Save (commit) the changes
-            self.conn.commit()            
+            self.conn.commit()
         except:
-            print(&#34;Cannot insert sql data&#34;, sys.exc_info()) 
-             
-        finally:    
+            print(&#34;Cannot insert sql data&#34;, sys.exc_info())
+
+        finally:
             # We close the cursor, we are done with it
-            #c.close()    
+            #c.close()
             pass
-                            
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Return None if no data
-    
+
     def   get(self, kkk):
-        try:      
-            #c = self.conn.cursor()            
+        try:
+            #c = self.conn.cursor()
             if os.name == &#34;nt&#34;:
                 self.c.execute(&#34;select * from config where key = ?&#34;, (kkk,))
-            else: 
+            else:
                 self.c.execute(&#34;select * from config indexed by iconfig where key = ?&#34;, (kkk,))
             rr = self.c.fetchone()
         except:
-            print(&#34;Cannot get sql data&#34;, sys.exc_info()) 
+            print(&#34;Cannot get sql data&#34;, sys.exc_info())
             rr = None
         finally:
-            #c.close   
+            #c.close
             pass
-        if rr:            
+        if rr:
             return rr[2]
         else:
             return None
 
-    # --------------------------------------------------------------------        
+    # --------------------------------------------------------------------
     # Return zero if no data
-    
+
     def get_int(self, kkk):
         ret = self.get(kkk)
-        if ret: 
-            return int(float(ret))        
-        else:   
+        if ret:
+            return int(float(ret))
+        else:
             return int(0)
 
-    # --------------------------------------------------------------------        
+    def get_float(self, kkk):
+
+        ret = self.get(kkk)
+        if ret:
+            return float(float(ret))
+        else:
+            return float(0)
+
+    # --------------------------------------------------------------------
     # Return empty if no data
-    
+
     def get_str(self, kkk):
         ret = self.get(kkk)
-        if ret: 
-            return str(ret)        
-        else:   
+        if ret:
+            return str(ret)
+        else:
             return &#34;&#34;
-    
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Return False if cannot put data
-    
+
     def   put(self, key, val):
-    
-        #got_clock = time.clock()         
-        
-        ret = True  
-        try:      
+
+        #got_clock = time.clock()
+
+        ret = True
+        try:
             #c = self.conn.cursor()
             if os.name == &#34;nt&#34;:
                 self.c.execute(&#34;select * from config where key == ?&#34;, (key,))
-            else: 
-                self.c.execute(&#34;select * from config indexed by iconfig where key == ?&#34;, (key,))            
+            else:
+                self.c.execute(&#34;select * from config indexed by iconfig where key == ?&#34;, (key,))
             rr = self.c.fetchall()
             if rr == []:
                 #print &#34;inserting&#34;
                 self.c.execute(&#34;insert into config (key, val) \
                     values (?, ?)&#34;, (key, val))
             else:
-            
+
                 #print &#34;updating&#34;
                 if os.name == &#34;nt&#34;:
                     self.c.execute(&#34;update config set val = ? where key = ?&#34;,\
-                                     (val, key))                                     
-                else: 
+                                     (val, key))
+                else:
                     self.c.execute(&#34;update config indexed by iconfig set val = ? where key = ?&#34;,\
-                                     (val, key))                                     
-            self.conn.commit()          
+                                     (val, key))
+            self.conn.commit()
         except:
-            print(&#34;Cannot put sql data&#34;, sys.exc_info())             
-            ret = False  
+            print(&#34;Cannot put sql data&#34;, sys.exc_info())
+            ret = False
         finally:
-            #c.close     
+            #c.close
             pass
 
-        #self.take += time.clock() - got_clock        
-          
+        #self.take += time.clock() - got_clock
+
         return ret
-  
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Get All
-    
+
     def   getall(self):
-        try:      
+        try:
             #c = self.conn.cursor()
             self.c.execute(&#34;select * from config&#34;)
             rr = self.c.fetchall()
         except:
-            print(&#34;Cannot get sql data&#34;, sys.exc_info()) 
+            print(&#34;Cannot get sql data&#34;, sys.exc_info())
         finally:
-            #c.close   
+            #c.close
             pass
         return rr
-        
-    # --------------------------------------------------------------------        
+
+    # --------------------------------------------------------------------
     # Return None if no data
-    
+
     def   rmall(self):
         print(&#34;removing all&#34;)
-        try:      
+        try:
             #c = self.conn.cursor()
             self.c.execute(&#34;delete from config&#34;)
             rr = self.c.fetchone()
         except:
-            print(&#34;Cannot delete sql data&#34;, sys.exc_info()) 
+            print(&#34;Cannot delete sql data&#34;, sys.exc_info())
         finally:
-            #c.close   
+            #c.close
             pass
-        if rr:            
+        if rr:
             return rr[1]
         else:
             return None</code></pre>
@@ -356,23 +372,41 @@ class pedsql():
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def   get(self, kkk):
-    try:      
-        #c = self.conn.cursor()            
+    try:
+        #c = self.conn.cursor()
         if os.name == &#34;nt&#34;:
             self.c.execute(&#34;select * from config where key = ?&#34;, (kkk,))
-        else: 
+        else:
             self.c.execute(&#34;select * from config indexed by iconfig where key = ?&#34;, (kkk,))
         rr = self.c.fetchone()
     except:
-        print(&#34;Cannot get sql data&#34;, sys.exc_info()) 
+        print(&#34;Cannot get sql data&#34;, sys.exc_info())
         rr = None
     finally:
-        #c.close   
+        #c.close
         pass
-    if rr:            
+    if rr:
         return rr[2]
     else:
         return None</code></pre>
+</details>
+</dd>
+<dt id="pedsql.pedsql.get_float"><code class="name flex">
+<span>def <span class="ident">get_float</span></span>(<span>self, kkk)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_float(self, kkk):
+
+    ret = self.get(kkk)
+    if ret:
+        return float(float(ret))
+    else:
+        return float(0)</code></pre>
 </details>
 </dd>
 <dt id="pedsql.pedsql.get_int"><code class="name flex">
@@ -386,9 +420,9 @@ class pedsql():
 </summary>
 <pre><code class="python">def get_int(self, kkk):
     ret = self.get(kkk)
-    if ret: 
-        return int(float(ret))        
-    else:   
+    if ret:
+        return int(float(ret))
+    else:
         return int(0)</code></pre>
 </details>
 </dd>
@@ -403,9 +437,9 @@ class pedsql():
 </summary>
 <pre><code class="python">def get_str(self, kkk):
     ret = self.get(kkk)
-    if ret: 
-        return str(ret)        
-    else:   
+    if ret:
+        return str(ret)
+    else:
         return &#34;&#34;</code></pre>
 </details>
 </dd>
@@ -419,14 +453,14 @@ class pedsql():
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def   getall(self):
-    try:      
+    try:
         #c = self.conn.cursor()
         self.c.execute(&#34;select * from config&#34;)
         rr = self.c.fetchall()
     except:
-        print(&#34;Cannot get sql data&#34;, sys.exc_info()) 
+        print(&#34;Cannot get sql data&#34;, sys.exc_info())
     finally:
-        #c.close   
+        #c.close
         pass
     return rr</code></pre>
 </details>
@@ -442,39 +476,39 @@ class pedsql():
 </summary>
 <pre><code class="python">def   put(self, key, val):
 
-    #got_clock = time.clock()         
-    
-    ret = True  
-    try:      
+    #got_clock = time.clock()
+
+    ret = True
+    try:
         #c = self.conn.cursor()
         if os.name == &#34;nt&#34;:
             self.c.execute(&#34;select * from config where key == ?&#34;, (key,))
-        else: 
-            self.c.execute(&#34;select * from config indexed by iconfig where key == ?&#34;, (key,))            
+        else:
+            self.c.execute(&#34;select * from config indexed by iconfig where key == ?&#34;, (key,))
         rr = self.c.fetchall()
         if rr == []:
             #print &#34;inserting&#34;
             self.c.execute(&#34;insert into config (key, val) \
                 values (?, ?)&#34;, (key, val))
         else:
-        
+
             #print &#34;updating&#34;
             if os.name == &#34;nt&#34;:
                 self.c.execute(&#34;update config set val = ? where key = ?&#34;,\
-                                 (val, key))                                     
-            else: 
+                                 (val, key))
+            else:
                 self.c.execute(&#34;update config indexed by iconfig set val = ? where key = ?&#34;,\
-                                 (val, key))                                     
-        self.conn.commit()          
+                                 (val, key))
+        self.conn.commit()
     except:
-        print(&#34;Cannot put sql data&#34;, sys.exc_info())             
-        ret = False  
+        print(&#34;Cannot put sql data&#34;, sys.exc_info())
+        ret = False
     finally:
-        #c.close     
+        #c.close
         pass
 
-    #self.take += time.clock() - got_clock        
-      
+    #self.take += time.clock() - got_clock
+
     return ret</code></pre>
 </details>
 </dd>
@@ -489,16 +523,16 @@ class pedsql():
 </summary>
 <pre><code class="python">def   rmall(self):
     print(&#34;removing all&#34;)
-    try:      
+    try:
         #c = self.conn.cursor()
         self.c.execute(&#34;delete from config&#34;)
         rr = self.c.fetchone()
     except:
-        print(&#34;Cannot delete sql data&#34;, sys.exc_info()) 
+        print(&#34;Cannot delete sql data&#34;, sys.exc_info())
     finally:
-        #c.close   
+        #c.close
         pass
-    if rr:            
+    if rr:
         return rr[1]
     else:
         return None</code></pre>
@@ -521,6 +555,7 @@ class pedsql():
 <h4><code><a title="pedsql.pedsql" href="#pedsql.pedsql">pedsql</a></code></h4>
 <ul class="two-column">
 <li><code><a title="pedsql.pedsql.get" href="#pedsql.pedsql.get">get</a></code></li>
+<li><code><a title="pedsql.pedsql.get_float" href="#pedsql.pedsql.get_float">get_float</a></code></li>
 <li><code><a title="pedsql.pedsql.get_int" href="#pedsql.pedsql.get_int">get_int</a></code></li>
 <li><code><a title="pedsql.pedsql.get_str" href="#pedsql.pedsql.get_str">get_str</a></code></li>
 <li><code><a title="pedsql.pedsql.getall" href="#pedsql.pedsql.getall">getall</a></code></li>

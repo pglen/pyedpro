@@ -2236,32 +2236,29 @@ class EdMainWindow():
         self.update_statusbar("%d of %d buffers saved." % (cnt2, nn))
 
     def start_term(self):
-        #print("Terminal Here")
-        exename = ""
+        exename = ""  ; ret = None
         try:
             if platform.system().find("Win") >= 0:
-                ret = subprocess.Popen(["putty"])
-                #if not ret.returncode:
-                #    raise OSError
-                #print("No terminal on windows. (TODO)")
+                termstrs = ("c:\\msys64\\ucrt64.exe", "putty",)
             else:
-                ret = None
                 # The order represents the priority of opening
-                termstr = ("xfce4-terminal", "gnome-terminal", "lxterminal", "xterm",)
-                for exename in termstr:
-                    # Stumble until terminal found
-                    try:
-                        ret = subprocess.Popen([exename],)
-                        if not ret.returncode:
-                            break
-                    except:
-                        pass
-
-                if ret.returncode:
-                    raise OSError
+                termstrs = ("xfce4-terminal", "gnome-terminal2",
+                                    "lxterminal", "xterm",)
+            for exename in termstrs:
+                # Stumble until terminal found
+                if pedconfig.conf.verbose:
+                    print("Term try:", exename)
+                try:
+                    ret = subprocess.Popen([exename],)
+                    if ret and not ret.returncode:
+                        break
+                except:
+                    pass
+            if ret.returncode:
+                raise OSError
         except:
-            print("Cannot launch terminal", sys.exc_info())
-            pedync.message("\n   Cannot launch terminal executable \n\n"
+            print("Cannot launch terminal:", execname, sys.exc_info())
+            pedync.message("\n   Cannot launch terminal executable:" + exename + "\n\n"
                        "              (Please install)")
         finally:
             self.update_statusbar("Started terminal '%s'" % exename)

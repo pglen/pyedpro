@@ -126,8 +126,7 @@ CLCOLOR     = &#34;#880000&#34;
 COCOLOR     = &#34;#4444ff&#34;
 STCOLOR     = &#34;#ee44ee&#34;
 STRIPCOLOR  = &#34;#eeeeee&#34;
-
-CARCOLOR = &#34;#4455dd&#34;
+CARCOLOR    = &#34;#4455dd&#34;
 
 # UI specific values:
 
@@ -177,6 +176,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.insert = True
         self.startxxx = -1;  self.startyyy = -1
         self.hex = False
+        self.uni = False
         self.colflag = True
         self.acorr = False
         self.scol = False
@@ -220,19 +220,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.diffpane = False
         self.webwin = None
         self.nomenu = False
-        self.FGCOLOR    = FGCOLOR
-        self.FGCOLORRO  = FGCOLORRO
-        self.RFGCOLOR   = RFGCOLOR
-        self.BGCOLOR    = BGCOLOR
-        self.RBGCOLOR   = RBGCOLOR
-        self.CBGCOLOR   = CBGCOLOR
-        self.KWCOLOR    = KWCOLOR
-        self.CLCOLOR    = CLCOLOR
-        self.COCOLOR    = COCOLOR
-        self.STCOLOR    = STCOLOR
-        self.STRIPCOLOR = STRIPCOLOR
-        self.currback  =  0
 
+        self.currback  =  0
         self.drag = False
         self.text_fillcol = 40
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
@@ -733,22 +722,21 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.xlen = len(self.text)
 
         ctx = self.get_style_context()
-        fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
-        #bg_color = ctx.get_background_color(Gtk..NORMAL)
+        #fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
+        #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
 
-        # Paint white, ignore system BG
-        #cr.set_source_rgba(255, 255, 255)
+        newcol =  list(self.bgcolor)
+
         # Paint prescribed color
         if self.readonly:
             # Slightly darker / lighter
-            newcol =  list(self.bgcolor)
             for aa in range(len(newcol)):
                 if newcol[aa] &gt; 0.5: newcol[aa] -= .08
                 else: newcol[aa] += .2
-            cr.set_source_rgba(*list(newcol))
-        else:
-            cr.set_source_rgba(*list(self.bgcolor))
 
+        #print(&#34;newcol&#34;, newcol)
+
+        cr.set_source_rgba(*list(newcol))
         cr.rectangle( 0, 0, self.www, self.hhh)
         cr.fill()
 
@@ -763,6 +751,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         # Pre set for drawing
         #cr.set_source_rgba(*list(fg_color))
+
         # Paint prescribed color
         cr.set_source_rgba(*list(self.fgcolor))
 
@@ -1283,7 +1272,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 except:
                     print(&#34;Exception in c func handler&#34;, sys.exc_info())
                     pass
-            if &#34;.bas&#34; in self.fname.lower():
+            if &#34;.bas&#34; in self.fname.lower()[-4]:
                 try:
                     regex = re.compile(basekeywords)
                     for line in win.text:
@@ -1294,7 +1283,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 except:
                     print(&#34;Exception in bas func extraction handler&#34;, sys.exc_info())
                     pass
-            if &#34;.py&#34; in self.fname.lower():
+            if &#34;.py&#34; in self.fname.lower()[-3]:
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(&#34;class&#34;)
@@ -1920,7 +1909,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def save(self):
 
-        #print (&#34;Saving&#34;, self.fname)
+        if pedconfig.conf.verbose:
+            print(&#34;Saving&#34;, self.fname)
+
         # Always save params
         self.saveparms()
         strx = &#34;&#34;
@@ -1939,7 +1930,16 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             bn = os.path.basename(self.fname)
             err = self.writeout()
             if  err[0]:
-                strx = &#34;Saved &#39;{0:s}&#39;&#34;.format(self.fname)
+                if self.get_width() &lt; 700:
+                    if len(self.fname) &gt; 32:
+                        strx = &#34;Saved: &#39;{0} ... {1}&#39;&#34;.format \
+                            (self.fname[:12], self.fname[-12:])
+                        pass
+                    else:
+                        strx = &#34;Saved: &#39;{0:s}&#39;&#34;.format(self.fname)
+                else:
+                    strx = &#34;Saved: &#39;{0:s}&#39;&#34;.format(self.fname)
+
             else:
                 #strx = &#34;Not Saved &#39;{0:s}&#39; {1:s}&#34;.format(bn, err[1])
                 strx = &#34;Not Saved &#34;
@@ -1961,6 +1961,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def hexview(self, flag):
         self.hex = flag
+        self.invalidate()
+
+    def uniview(self, flag):
+        self.uni = flag
         self.invalidate()
 
     def flash(self, flag):
@@ -2041,7 +2045,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         except:
             errr = &#34;Cannot read file &#39;&#34; + self.fname + &#34;&#39;&#34; #, sys.exc_info()
             if pedconfig.conf.verbose:
-                print(errr, sys.exc_info())
+                #print(errr, sys.exc_info())
+                put_exception(&#34;readfile&#34;)
 
             #pedync.message(&#34;\n   Cannot open / read file:  \n\n&#34;
             #                  &#34;      %s&#34; % self.fname)
@@ -2292,7 +2297,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         except:
             print(&#34;Cannot save undo file&#34;, sys.exc_info())
             put_exception(&#34;undo&#34;)
-
 
         hhh = hash_name(self.fname) + &#34;.rdo&#34;
         xfile = pedconfig.conf.data_dir + os.sep + hhh
@@ -2767,6 +2771,30 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 print(&#34;Error on compile: &#39;&#34;, serr, &#34;&#39;&#34;)
                 pedync.message(&#34;    &#34; + serr + &#34;    &#34;)
 
+        elif self.ext == &#34;.sh&#34;:
+            comline = [&#34;shellcheck&#34;, tempfile]
+            #print(&#34;checking&#34;, comline, os.getcwd())
+            try:
+                ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+            except:
+                print(&#34;Cannot check %s&#34; % str(comline), sys.exc_info())
+                pedync.message(&#34;\n   Cannot check %s \n\n&#34;  % str(comline) +
+                           str(sys.exc_info()) )
+                return
+            try:
+                outs, errs = ret.communicate()
+            except:
+                self.mained.update_statusbar(&#34;Cannot communicate with shellcheck.&#34;)
+                print(&#34;Cannot communicate with %s&#34; % str(comline), sys.exc_info())
+                return
+
+            if errs:
+                self.mained.update_statusbar(&#34;Syntax error.&#34;)
+            else:
+                #print(&#34;outs:&#34;, outs.decode())
+                pedync.message(&#34;    &#34; + outs.decode()[:300] + &#34;    &#34;,
+                                    &#34;Shell Syntax Check&#34;)
+                #self.text += outs
         else:
             self.mained.update_statusbar(&#34;No Syntax check for this kind of file.&#34;)
 
@@ -2855,7 +2883,7 @@ def run_async_time(win, arg):
         except:
             print(&#34;Exception in func extraction handler&#34;, sys.exc_info())
             pass
-    elif &#34;.s&#34; in lname[-2:] or &#34;.asm&#34; in lname[-4:]:
+    elif &#34;.s&#34; in lname[-2:] or &#34;.asm&#34; in lname[-4:] or &#34;.inc&#34; in lname[-4:]:
         try:
             regex = re.compile(Skeywords)
             for line in win.text:
@@ -3235,7 +3263,7 @@ while this is going</p></div>
         except:
             print(&#34;Exception in func extraction handler&#34;, sys.exc_info())
             pass
-    elif &#34;.s&#34; in lname[-2:] or &#34;.asm&#34; in lname[-4:]:
+    elif &#34;.s&#34; in lname[-2:] or &#34;.asm&#34; in lname[-4:] or &#34;.inc&#34; in lname[-4:]:
         try:
             regex = re.compile(Skeywords)
             for line in win.text:
@@ -3336,6 +3364,7 @@ can take thousands of lines.</p></div>
         self.insert = True
         self.startxxx = -1;  self.startyyy = -1
         self.hex = False
+        self.uni = False
         self.colflag = True
         self.acorr = False
         self.scol = False
@@ -3379,19 +3408,8 @@ can take thousands of lines.</p></div>
         self.diffpane = False
         self.webwin = None
         self.nomenu = False
-        self.FGCOLOR    = FGCOLOR
-        self.FGCOLORRO  = FGCOLORRO
-        self.RFGCOLOR   = RFGCOLOR
-        self.BGCOLOR    = BGCOLOR
-        self.RBGCOLOR   = RBGCOLOR
-        self.CBGCOLOR   = CBGCOLOR
-        self.KWCOLOR    = KWCOLOR
-        self.CLCOLOR    = CLCOLOR
-        self.COCOLOR    = COCOLOR
-        self.STCOLOR    = STCOLOR
-        self.STRIPCOLOR = STRIPCOLOR
-        self.currback  =  0
 
+        self.currback  =  0
         self.drag = False
         self.text_fillcol = 40
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
@@ -3892,22 +3910,21 @@ can take thousands of lines.</p></div>
         self.xlen = len(self.text)
 
         ctx = self.get_style_context()
-        fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
-        #bg_color = ctx.get_background_color(Gtk..NORMAL)
+        #fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
+        #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
 
-        # Paint white, ignore system BG
-        #cr.set_source_rgba(255, 255, 255)
+        newcol =  list(self.bgcolor)
+
         # Paint prescribed color
         if self.readonly:
             # Slightly darker / lighter
-            newcol =  list(self.bgcolor)
             for aa in range(len(newcol)):
                 if newcol[aa] &gt; 0.5: newcol[aa] -= .08
                 else: newcol[aa] += .2
-            cr.set_source_rgba(*list(newcol))
-        else:
-            cr.set_source_rgba(*list(self.bgcolor))
 
+        #print(&#34;newcol&#34;, newcol)
+
+        cr.set_source_rgba(*list(newcol))
         cr.rectangle( 0, 0, self.www, self.hhh)
         cr.fill()
 
@@ -3922,6 +3939,7 @@ can take thousands of lines.</p></div>
 
         # Pre set for drawing
         #cr.set_source_rgba(*list(fg_color))
+
         # Paint prescribed color
         cr.set_source_rgba(*list(self.fgcolor))
 
@@ -4442,7 +4460,7 @@ can take thousands of lines.</p></div>
                 except:
                     print(&#34;Exception in c func handler&#34;, sys.exc_info())
                     pass
-            if &#34;.bas&#34; in self.fname.lower():
+            if &#34;.bas&#34; in self.fname.lower()[-4]:
                 try:
                     regex = re.compile(basekeywords)
                     for line in win.text:
@@ -4453,7 +4471,7 @@ can take thousands of lines.</p></div>
                 except:
                     print(&#34;Exception in bas func extraction handler&#34;, sys.exc_info())
                     pass
-            if &#34;.py&#34; in self.fname.lower():
+            if &#34;.py&#34; in self.fname.lower()[-3]:
                 try:
                     aa = 0; bb = 0
                     regex = re.compile(&#34;class&#34;)
@@ -5079,7 +5097,9 @@ can take thousands of lines.</p></div>
 
     def save(self):
 
-        #print (&#34;Saving&#34;, self.fname)
+        if pedconfig.conf.verbose:
+            print(&#34;Saving&#34;, self.fname)
+
         # Always save params
         self.saveparms()
         strx = &#34;&#34;
@@ -5098,7 +5118,16 @@ can take thousands of lines.</p></div>
             bn = os.path.basename(self.fname)
             err = self.writeout()
             if  err[0]:
-                strx = &#34;Saved &#39;{0:s}&#39;&#34;.format(self.fname)
+                if self.get_width() &lt; 700:
+                    if len(self.fname) &gt; 32:
+                        strx = &#34;Saved: &#39;{0} ... {1}&#39;&#34;.format \
+                            (self.fname[:12], self.fname[-12:])
+                        pass
+                    else:
+                        strx = &#34;Saved: &#39;{0:s}&#39;&#34;.format(self.fname)
+                else:
+                    strx = &#34;Saved: &#39;{0:s}&#39;&#34;.format(self.fname)
+
             else:
                 #strx = &#34;Not Saved &#39;{0:s}&#39; {1:s}&#34;.format(bn, err[1])
                 strx = &#34;Not Saved &#34;
@@ -5120,6 +5149,10 @@ can take thousands of lines.</p></div>
 
     def hexview(self, flag):
         self.hex = flag
+        self.invalidate()
+
+    def uniview(self, flag):
+        self.uni = flag
         self.invalidate()
 
     def flash(self, flag):
@@ -5200,7 +5233,8 @@ can take thousands of lines.</p></div>
         except:
             errr = &#34;Cannot read file &#39;&#34; + self.fname + &#34;&#39;&#34; #, sys.exc_info()
             if pedconfig.conf.verbose:
-                print(errr, sys.exc_info())
+                #print(errr, sys.exc_info())
+                put_exception(&#34;readfile&#34;)
 
             #pedync.message(&#34;\n   Cannot open / read file:  \n\n&#34;
             #                  &#34;      %s&#34; % self.fname)
@@ -5451,7 +5485,6 @@ can take thousands of lines.</p></div>
         except:
             print(&#34;Cannot save undo file&#34;, sys.exc_info())
             put_exception(&#34;undo&#34;)
-
 
         hhh = hash_name(self.fname) + &#34;.rdo&#34;
         xfile = pedconfig.conf.data_dir + os.sep + hhh
@@ -5926,6 +5959,30 @@ can take thousands of lines.</p></div>
                 print(&#34;Error on compile: &#39;&#34;, serr, &#34;&#39;&#34;)
                 pedync.message(&#34;    &#34; + serr + &#34;    &#34;)
 
+        elif self.ext == &#34;.sh&#34;:
+            comline = [&#34;shellcheck&#34;, tempfile]
+            #print(&#34;checking&#34;, comline, os.getcwd())
+            try:
+                ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+            except:
+                print(&#34;Cannot check %s&#34; % str(comline), sys.exc_info())
+                pedync.message(&#34;\n   Cannot check %s \n\n&#34;  % str(comline) +
+                           str(sys.exc_info()) )
+                return
+            try:
+                outs, errs = ret.communicate()
+            except:
+                self.mained.update_statusbar(&#34;Cannot communicate with shellcheck.&#34;)
+                print(&#34;Cannot communicate with %s&#34; % str(comline), sys.exc_info())
+                return
+
+            if errs:
+                self.mained.update_statusbar(&#34;Syntax error.&#34;)
+            else:
+                #print(&#34;outs:&#34;, outs.decode())
+                pedync.message(&#34;    &#34; + outs.decode()[:300] + &#34;    &#34;,
+                                    &#34;Shell Syntax Check&#34;)
+                #self.text += outs
         else:
             self.mained.update_statusbar(&#34;No Syntax check for this kind of file.&#34;)
 
@@ -6491,6 +6548,30 @@ can take thousands of lines.</p></div>
             print(&#34;Error on compile: &#39;&#34;, serr, &#34;&#39;&#34;)
             pedync.message(&#34;    &#34; + serr + &#34;    &#34;)
 
+    elif self.ext == &#34;.sh&#34;:
+        comline = [&#34;shellcheck&#34;, tempfile]
+        #print(&#34;checking&#34;, comline, os.getcwd())
+        try:
+            ret = subprocess.Popen(comline, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+        except:
+            print(&#34;Cannot check %s&#34; % str(comline), sys.exc_info())
+            pedync.message(&#34;\n   Cannot check %s \n\n&#34;  % str(comline) +
+                       str(sys.exc_info()) )
+            return
+        try:
+            outs, errs = ret.communicate()
+        except:
+            self.mained.update_statusbar(&#34;Cannot communicate with shellcheck.&#34;)
+            print(&#34;Cannot communicate with %s&#34; % str(comline), sys.exc_info())
+            return
+
+        if errs:
+            self.mained.update_statusbar(&#34;Syntax error.&#34;)
+        else:
+            #print(&#34;outs:&#34;, outs.decode())
+            pedync.message(&#34;    &#34; + outs.decode()[:300] + &#34;    &#34;,
+                                &#34;Shell Syntax Check&#34;)
+            #self.text += outs
     else:
         self.mained.update_statusbar(&#34;No Syntax check for this kind of file.&#34;)
 
@@ -6906,22 +6987,21 @@ can take thousands of lines.</p></div>
     self.xlen = len(self.text)
 
     ctx = self.get_style_context()
-    fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
-    #bg_color = ctx.get_background_color(Gtk..NORMAL)
+    #fg_color = ctx.get_color(Gtk.StateFlags.NORMAL)
+    #bg_color = ctx.get_background_color(Gtk.StateFlags.NORMAL)
 
-    # Paint white, ignore system BG
-    #cr.set_source_rgba(255, 255, 255)
+    newcol =  list(self.bgcolor)
+
     # Paint prescribed color
     if self.readonly:
         # Slightly darker / lighter
-        newcol =  list(self.bgcolor)
         for aa in range(len(newcol)):
             if newcol[aa] &gt; 0.5: newcol[aa] -= .08
             else: newcol[aa] += .2
-        cr.set_source_rgba(*list(newcol))
-    else:
-        cr.set_source_rgba(*list(self.bgcolor))
 
+    #print(&#34;newcol&#34;, newcol)
+
+    cr.set_source_rgba(*list(newcol))
     cr.rectangle( 0, 0, self.www, self.hhh)
     cr.fill()
 
@@ -6936,6 +7016,7 @@ can take thousands of lines.</p></div>
 
     # Pre set for drawing
     #cr.set_source_rgba(*list(fg_color))
+
     # Paint prescribed color
     cr.set_source_rgba(*list(self.fgcolor))
 
@@ -7483,7 +7564,8 @@ colors may get turned on &hellip;</p></div>
     except:
         errr = &#34;Cannot read file &#39;&#34; + self.fname + &#34;&#39;&#34; #, sys.exc_info()
         if pedconfig.conf.verbose:
-            print(errr, sys.exc_info())
+            #print(errr, sys.exc_info())
+            put_exception(&#34;readfile&#34;)
 
         #pedync.message(&#34;\n   Cannot open / read file:  \n\n&#34;
         #                  &#34;      %s&#34; % self.fname)
@@ -8267,7 +8349,9 @@ colors may get turned on &hellip;</p></div>
 </summary>
 <pre><code class="python">def save(self):
 
-    #print (&#34;Saving&#34;, self.fname)
+    if pedconfig.conf.verbose:
+        print(&#34;Saving&#34;, self.fname)
+
     # Always save params
     self.saveparms()
     strx = &#34;&#34;
@@ -8286,7 +8370,16 @@ colors may get turned on &hellip;</p></div>
         bn = os.path.basename(self.fname)
         err = self.writeout()
         if  err[0]:
-            strx = &#34;Saved &#39;{0:s}&#39;&#34;.format(self.fname)
+            if self.get_width() &lt; 700:
+                if len(self.fname) &gt; 32:
+                    strx = &#34;Saved: &#39;{0} ... {1}&#39;&#34;.format \
+                        (self.fname[:12], self.fname[-12:])
+                    pass
+                else:
+                    strx = &#34;Saved: &#39;{0:s}&#39;&#34;.format(self.fname)
+            else:
+                strx = &#34;Saved: &#39;{0:s}&#39;&#34;.format(self.fname)
+
         else:
             #strx = &#34;Not Saved &#39;{0:s}&#39; {1:s}&#34;.format(bn, err[1])
             strx = &#34;Not Saved &#34;
@@ -8439,7 +8532,6 @@ colors may get turned on &hellip;</p></div>
     except:
         print(&#34;Cannot save undo file&#34;, sys.exc_info())
         put_exception(&#34;undo&#34;)
-
 
     hhh = hash_name(self.fname) + &#34;.rdo&#34;
     xfile = pedconfig.conf.data_dir + os.sep + hhh
@@ -9164,6 +9256,20 @@ xx, yy - absolute position in the text buffer</p></div>
     self.mained.update_statusbar(&#34;Toggled read only to %s&#34; % arrx[self.readonly])</code></pre>
 </details>
 </dd>
+<dt id="peddoc.pedDoc.uniview"><code class="name flex">
+<span>def <span class="ident">uniview</span></span>(<span>self, flag)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def uniview(self, flag):
+    self.uni = flag
+    self.invalidate()</code></pre>
+</details>
+</dd>
 <dt id="peddoc.pedDoc.update_bar2"><code class="name flex">
 <span>def <span class="ident">update_bar2</span></span>(<span>self)</span>
 </code></dt>
@@ -9251,7 +9357,7 @@ xx, yy - absolute position in the text buffer</p></div>
             except:
                 print(&#34;Exception in c func handler&#34;, sys.exc_info())
                 pass
-        if &#34;.bas&#34; in self.fname.lower():
+        if &#34;.bas&#34; in self.fname.lower()[-4]:
             try:
                 regex = re.compile(basekeywords)
                 for line in win.text:
@@ -9262,7 +9368,7 @@ xx, yy - absolute position in the text buffer</p></div>
             except:
                 print(&#34;Exception in bas func extraction handler&#34;, sys.exc_info())
                 pass
-        if &#34;.py&#34; in self.fname.lower():
+        if &#34;.py&#34; in self.fname.lower()[-3]:
             try:
                 aa = 0; bb = 0
                 regex = re.compile(&#34;class&#34;)
@@ -9506,6 +9612,7 @@ xx, yy - absolute position in the text buffer</p></div>
 <li><code><a title="peddoc.pedDoc.size_alloc" href="#peddoc.pedDoc.size_alloc">size_alloc</a></code></li>
 <li><code><a title="peddoc.pedDoc.size_request" href="#peddoc.pedDoc.size_request">size_request</a></code></li>
 <li><code><a title="peddoc.pedDoc.toggle_ro" href="#peddoc.pedDoc.toggle_ro">toggle_ro</a></code></li>
+<li><code><a title="peddoc.pedDoc.uniview" href="#peddoc.pedDoc.uniview">uniview</a></code></li>
 <li><code><a title="peddoc.pedDoc.update_bar2" href="#peddoc.pedDoc.update_bar2">update_bar2</a></code></li>
 <li><code><a title="peddoc.pedDoc.vscroll_cb" href="#peddoc.pedDoc.vscroll_cb">vscroll_cb</a></code></li>
 <li><code><a title="peddoc.pedDoc.walk_func" href="#peddoc.pedDoc.walk_func">walk_func</a></code></li>

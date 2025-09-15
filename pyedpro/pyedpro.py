@@ -145,8 +145,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.5.0"
-BUILDDATE   = "Tue 07.Jan.2025"
+VERSION     = "3.7.2"
+BUILDDATE   = "Mon 15.Sep.2025"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -243,7 +243,7 @@ def xhelp():
 
 # ------------------------------------------------------------------------
 
-def terminate():
+def terminate(arg1, arg2):
 
     ''' Termination Handler'''
 
