@@ -990,7 +990,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def gotoxy(self, xx, yy, sel = None, mid = False):
 
-        #print ("gotoxy", xx, yy)
+        if pedconfig.conf.verbose:
+            print ("gotoxy", xx, yy)
         #xx +=  30
         # Contain
         ylen = len(self.text)
@@ -1235,18 +1236,19 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                 except:
                     print("Exception in c func handler", sys.exc_info())
                     pass
-            if ".bas" in self.fname.lower()[-4]:
+            if ".bas" in self.fname.lower()[-4:]:
                 try:
                     regex = re.compile(basekeywords)
                     for line in win.text:
                         res = regex.search(line)
                         if res:
                             #print( res, res.start(), res.end())
-                            sumw.append(line)
+                            sumw2.append(line)
                 except:
                     print("Exception in bas func extraction handler", sys.exc_info())
                     pass
-            if ".py" in self.fname.lower()[-3]:
+            if ".py" in self.fname.lower()[-3:]:
+                #print("Search in:", self.fname)
                 try:
                     aa = 0; bb = 0
                     regex = re.compile("class")
@@ -1950,7 +1952,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         rrr = self.prompt_save(noprompt)
         if not rrr:
             # Clear treestore(s)
-            self.mained.update_treestore([])
+            self.mained.update_treestore([], [])
             self.mained.update_treestore2([])
             # Add to accounting:
             logentry("Closed File", self.start_time, self.fname)
@@ -2772,8 +2774,6 @@ def run_async_time(win, arg):
 
     global last_scanned
 
-    #print( "run_async_time enter", win.fname)
-
     if  last_scanned == win:
         #print("Not rescanning", win.fname)
         return
@@ -2787,7 +2787,11 @@ def run_async_time(win, arg):
     if not win.text:
         return
 
-    sumw = [] ; lname = win.fname.lower()
+    if pedconfig.conf.verbose:
+        print( "run_async_time enter", win.fname)
+
+    sumw = [] ; sumnum = []
+    lname = win.fname.lower()
 
     #print("lname", lname[-2:])
 
@@ -2808,21 +2812,24 @@ def run_async_time(win, arg):
     elif ".py" in lname[-3:]:
         try:
             regex = re.compile(pykeywords2)
-            for line in win.text:
+            for cnt, line in enumerate(win.text):
                 res = regex.search(line)
                 if res:
-                    #print( res, res.start(), res.end())
+                    #print("regex2 num:", res.start(), res.end(), "line:", cnt)
                     sumw.append(line)
+                    sumnum.append(cnt)
 
             regex3 = re.compile(pykeywords3)
-            for line in win.text:
+            for cnt, line in enumerate(win.text):
                 res = regex3.search(line)
                 if res:
-                    #print( res, res.start(), res.end())
+                    #print("regex3 num:", res.start(), res.end(), "line:", cnt)
                     sumw.append("    " + line)
+                    sumnum.append(cnt)
         except:
             print("Exception in py func handler", sys.exc_info())
             pass
+        #print("sumnum", sumnum)
     elif ".html" in lname[-5:]:
         #print("html file")
         try:
@@ -2867,7 +2874,6 @@ def run_async_time(win, arg):
                         sumw.append(line)
         except:
             pass
-
         try:
             regex = re.compile(ckeywords)
             for line in win.text:
@@ -2880,7 +2886,8 @@ def run_async_time(win, arg):
             pass
 
     try:
-        win.mained.update_treestore(sumw)
+        win.mained.update_treestore(sumw, sumnum)
+
     except:
         # This is 'normal', ignore it
         print("run_async_time", sys.exc_info())

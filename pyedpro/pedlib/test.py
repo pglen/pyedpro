@@ -85,6 +85,18 @@ SHOW_CONFIG = 0
 CLEAR_CONFIG = 0
 USE_STDOUT = 0
 
+class test_1():
+    def __init__(self):
+        pass
+
+class test_2():
+    def __init__(self):
+        pass
+
+class test_3():
+    def __init__(self):
+        pass
+
 # ------------------------------------------------------------------------
 
 def main(strarr):

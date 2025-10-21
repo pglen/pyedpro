@@ -93,6 +93,7 @@ it works. And no destructive errors.
 
 ### New:
 
+    3.7.3   Mon 20.Oct.2025 -- lookup for function names now line number based
     3.3.1   Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
     3.3.5   Wed 10.Apr.2024 -- Relocated search window for better screen allocation
     3.3.8   Sun 05.May.2024 -- WebView update, pipx installation ...
@@ -103,16 +104,16 @@ Added separate interpretation for right control keys, so exotic items
 like 'insert html comment' can be tied to a shortcut key;
 
 Added drag / drop source / target. New keystroke combo for keyboards
- without home / pgup etc ... Implemented html preview. Just right click on
-the file body, an select the corresponding menu item.
-
+  without home / pgup etc ...
+Implemented html preview. Just right click on the file body, an select
+  the corresponding menu item.
 Implemented markdown preview. Right click ... menu
 Implemented M4 preview. The files are pulled in from the current directory (of the macro),
-and expanded with the m4 macro processor. The results than are previewed
-in an html window. (Yes, head and footer are now one file for the whole site,
-the way it should be) Right click ... and look for: Filter to M4
+  and expanded with the m4 macro processor. The results than are previewed
+  in an html window. (Yes, head and footer are now one file for the whole site,
+  the way it should be) Right click ... and look for: Filter to M4
 
-  Added drag and drop. Accepts file name from file manager, and accepts clipboard text.
+Added drag and drop. Accepts file name from file manager, and accepts clipboard text.
 The dropped content is inserted where the editor's caret is. (not where the cursor is)
 The caret is moved to the end of insertion.
 

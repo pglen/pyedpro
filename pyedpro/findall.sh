@@ -5,6 +5,6 @@
 #find . -name "*.py" -type f -exec grep -H $1 {} \;
 
 find . -name "*.py" | grep -v pycommon.org/ | grep -v study/ | grep -v debian/ | \
-    grep -v garbage/ | xargs -i grep -H $1 {}
+    grep -v garbage/ | xargs -i grep -H $@ {}
 
 # EOF

@@ -59,6 +59,7 @@ __doc__ = '''
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
 treestore = None;  treestore2 = None
+treenums = []
 treeview = None;   treeview2 = None
 notebook = None;   notebook2 = None
 notebook3 = None;  notebook4 = None
@@ -1159,14 +1160,24 @@ class EdMainWindow():
         #    vcurr.area.locate(xstr)
 
     def tree_sel(self, xtree, xiter, xpath):
-        #print("tree_sel", xtree, xiter, xpath)
+
         # Focus on main doc
         sel = xtree.get_selection()
+        #print("tree_sel", dir(sel))
+
         xmodel, xiter = sel.get_selected()
         if xiter:
             xstr = xmodel.get_value(xiter, 0)
+            #print("tree_sel:", xstr)
+            # Calculate position
+            posx = int(str(xmodel.get_path(xiter)) )
+            #print("tree_sel: path %d" % posx)
             vcurr = notebook.get_nth_page(notebook.get_current_page())
-            vcurr.area.locate(xstr)
+            #vcurr.area.locate(xstr)
+            global treenums
+            #print("treenums:", treenums)
+            vcurr.area.gotoxy(0, treenums[posx], len(xstr), True)
+
             # Focus on main doc
             vcurr = notebook.get_nth_page(notebook.get_current_page())
             self.mywin.set_focus(vcurr.vbox.area)
@@ -1459,11 +1470,11 @@ class EdMainWindow():
         pass
 
     # --------------------------------------------------------------------
-    def update_treestore(self, text):
+    def update_treestore(self, text, nums):
 
-        global treestore, treeview
-        if not treestore: return
-
+        global treestore, treeview, treenums
+        if not treestore:
+            return
         # Remember old position
         #Gtk.TreeViewColumn Gtk.TreeView Gtk.TreeStore
         old_sel = None
@@ -1474,12 +1485,11 @@ class EdMainWindow():
             #print("xiter", xiter)
             if xiter:
                 old_sel = treestore.get_value(xiter, 0)
-
         except:
             #print("update_tree old pos", sys.exc_info())
             pass
-
         # Delete previous contents
+        treenums = []
         try:
             while True:
                 root = treestore.get_iter_first()
@@ -1492,7 +1502,6 @@ class EdMainWindow():
         except:
             print("update_tree", sys.exc_info())
             pass
-
         if not text:
             return
         try:
@@ -1500,6 +1509,8 @@ class EdMainWindow():
                 piter = treestore.append(None, [cut_lead_space(line)])
             # Back to old line
             treeview.scroll_to_cell(path[0], None, False, 0, 0)
+            for numx in nums:
+                treenums.append(numx)
         except:
             #print("Exception in append treestore", sys.exc_info())
             pass
