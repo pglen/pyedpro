@@ -37,6 +37,7 @@ from pedlib import  pedmisc
 from pedlib import  pedtask
 from pedlib import  pedfind
 from pedlib import  pedplug
+from pedlib import  pedidle
 
 from pedlib.pedutil import *
 from pedlib.keywords import *
@@ -72,9 +73,6 @@ TABSTOP = 4                 # One tab stop worth of spaces
 # profiled code here
 #print(  "Str", time.clock() - got_clock)
 
-# Globals
-
-last_scanned = None
 
 # Colors for the text, configure the defaults here
 
@@ -257,10 +255,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect("destroy", self.destroy_cb)
 
     def run_keytime(self):
-        global last_scanned
-        last_scanned = ""
+        pedidle.last_scanned = ""
         if not self.mained.mac:
-            GLib.timeout_add(300, keytime, self, 0)
+            GLib.timeout_add(300, pedidle.keytime, self, 0)
         pass
 
     def destroy_cb(self, arg):
@@ -552,7 +549,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.focus = False
 
     def focus_in_cb(self, widget, event):
-        #print ("focus_in_cb", self.fname)
+        if pedconfig.conf.verbose > 2:
+            print ("focus_in_cb", self.fname)
         self.focus = True
         try:
             if os.path.isfile(self.fname):
@@ -979,9 +977,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                     self.xsel    = self.pix2xpos(event.x)
                 else:
                     self.xsel2 = self.pix2xpos(event.x)
-
             self.invalidate()
-
         if event.state & Gdk.ModifierType.SHIFT_MASK and \
             event.state & Gdk.ModifierType.BUTTON1_MASK:
             #print( "Shift Drag", event.x, event.y)
@@ -990,8 +986,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def gotoxy(self, xx, yy, sel = None, mid = False):
 
-        if pedconfig.conf.verbose:
-            print ("gotoxy", xx, yy)
+        if pedconfig.conf.verbose > 1:
+            print ("gotoxy", xx, yy, os.path.basename(self.fname))
         #xx +=  30
         # Contain
         ylen = len(self.text)
@@ -1167,6 +1163,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.invalidate()
 
     def update_bar2(self):
+        # Let the system do its thing
+        #usleep(100)
         clip = pedconfig.conf.keyh.acth.currclip
         self.mained.update_statusbar2(self.caret[0] + self.xpos, \
                 self.caret[1] + self.ypos, self.insert, len(self.text), clip,
@@ -1178,135 +1176,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.xsel2 =  self.ysel2 = -1
         if old != -1:
             self.invalidate()
-
-    def is_c_like(self):
-
-        ''' Return True if 'C' like file
-            This is fooled by non extension items; not a big deal
-            colors may get turned on ...
-        '''
-        #print("c like", self.fname)
-        for aa in c_like_exts:
-            eee = self.fname[-(len(aa)):]
-            #print("eee", eee, aa)
-            if aa == eee:
-                #print("C Match", self.fname)
-                return True
-        return False
-
-    def walk_func(self):
-
-        #print( "walk func")
-
-        # ts2 ---------------------------------------------------
-        sumw2 = []
-        if self.text:
-            sline = self.caret[1] + int(self.ypos)
-            sline = max(sline, 0); sline = min(sline, len(self.text))
-            #print( "Start point", sline, self.text[sline])
-
-            # Walk back to last function
-            if self.is_c_like():
-                try:
-                    aa = 0; bb = 0
-                    regex = re.compile(ckeywords)
-                    for aa in range(sline - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( "start", line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-                    if aa > 0:
-                        for bb in range(aa + 1, len(self.text)):
-                            line = self.text[bb]
-                            res = regex.search(line)
-                            if res:
-                                #print( "end", line, res.start(), res.end())
-                                break
-
-                        regex2 = re.compile(localkwords)
-                        for cc in range(aa + 1, bb - 1):
-                            line = self.text[cc]
-                            res = regex2.search(line)
-                            if res:
-                                #print( "match", line, res.start(), res.end())
-                                sumw2.append(line)
-
-                except:
-                    print("Exception in c func handler", sys.exc_info())
-                    pass
-            if ".bas" in self.fname.lower()[-4:]:
-                try:
-                    regex = re.compile(basekeywords)
-                    for line in win.text:
-                        res = regex.search(line)
-                        if res:
-                            #print( res, res.start(), res.end())
-                            sumw2.append(line)
-                except:
-                    print("Exception in bas func extraction handler", sys.exc_info())
-                    pass
-            if ".py" in self.fname.lower()[-3:]:
-                #print("Search in:", self.fname)
-                try:
-                    aa = 0; bb = 0
-                    regex = re.compile("class")
-                    for aa in range(int(sline) - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( "start", line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-
-                    regex = re.compile(pykeywords2)
-                    for aa in range(int(sline) - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( "start", line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-
-                    if aa > 0:
-                        for bb in range(aa + 1, len(self.text)):
-                            line = self.text[bb]
-                            res = regex.search(line)
-                            if res:
-                                #print( "end", line, res.start(), res.end())
-                                break
-
-                        regex2 = re.compile(localpywords)
-                        for cc in range(aa + 1, bb - 1):
-                            line = self.text[cc]
-                            res = regex2.search(line)
-                            if res:
-                                #print( "match", line, res.start(), res.end())
-                                sumw2.append(line)
-
-                except:
-                    print("Exception in py func handler", sys.exc_info())
-                    raise
-                    pass
-            else:
-                pass
-
-            # Always show todo
-            got_todo = 0
-            for line in self.text:
-                if "TODO" in line:
-                    if not got_todo:
-                        got_todo = 1
-                        sumw2.append("----------- TODO List ----------")
-                    sumw2.append(line)
-
-        try:
-            self.mained.update_treestore2(sumw2)
-        except:
-            # This is normal, ignore it
-            print("walk2", sys.exc_info())
-            pass
 
     # Call key handler
     def area_key(self, area, event):
@@ -1800,9 +1669,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             print("peddoc: Invalid menu item selected", ttt)
 
     def rescan(self):
-        global last_scanned
-        last_scanned = ""
-        run_async_time(self, 0)
+        pedidle.last_scanned = ""
+        pedidle.run_async_time(self, 0)
         self.mained.update_statusbar("Started rescan ...")
 
     def toggle_ro(self):
@@ -2764,239 +2632,5 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.mained.update_statusbar("No Syntax check for this kind of file.")
 
         os.remove(tempfile)
-
-# ---------------------------------------------------------------------
-
-def run_async_time(win, arg):
-
-    '''  Run this on an idle callback so the user can work
-            while this is going '''
-
-    global last_scanned
-
-    if  last_scanned == win:
-        #print("Not rescanning", win.fname)
-        return
-
-    last_scanned = win
-
-    win.mained.start_tree()
-
-    #print( "run_sync_time", time.time())
-
-    if not win.text:
-        return
-
-    if pedconfig.conf.verbose:
-        print( "run_async_time enter", win.fname)
-
-    sumw = [] ; sumnum = []
-    lname = win.fname.lower()
-
-    #print("lname", lname[-2:])
-
-    # Added flex and yacc
-    if ".c" in lname[-2:] or ".h" in lname[-2:] or ".y" \
-        in lname[-2:] or ".f" in lname[-2:] or ".php" in lname[:-4]:
-        try:
-            regex = re.compile(ckeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print("Exception in c func handler", sys.exc_info())
-            pass
-
-    elif ".py" in lname[-3:]:
-        try:
-            regex = re.compile(pykeywords2)
-            for cnt, line in enumerate(win.text):
-                res = regex.search(line)
-                if res:
-                    #print("regex2 num:", res.start(), res.end(), "line:", cnt)
-                    sumw.append(line)
-                    sumnum.append(cnt)
-
-            regex3 = re.compile(pykeywords3)
-            for cnt, line in enumerate(win.text):
-                res = regex3.search(line)
-                if res:
-                    #print("regex3 num:", res.start(), res.end(), "line:", cnt)
-                    sumw.append("    " + line)
-                    sumnum.append(cnt)
-        except:
-            print("Exception in py func handler", sys.exc_info())
-            pass
-        #print("sumnum", sumnum)
-    elif ".html" in lname[-5:]:
-        #print("html file")
-        try:
-            regex = re.compile(htmlkeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print("Exception in py func handler", sys.exc_info())
-            pass
-    elif ".bas" in lname[-4:]:
-        try:
-            regex = re.compile(basekeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print("Exception in func extraction handler", sys.exc_info())
-            pass
-    elif ".s" in lname[-2:] or ".asm" in lname[-4:] or ".inc" in lname[-4:]:
-        try:
-            regex = re.compile(Skeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print("Exception in func extraction handler", sys.exc_info())
-            pass
-    elif ".txt" in lname[-4:]:
-        pass
-    else:            # Default to 'C' like syntax
-        try:
-            for kw in sumkeywords:
-                for line in win.text:
-                    if line.find(kw) >= 0:
-                        sumw.append(line)
-        except:
-            pass
-        try:
-            regex = re.compile(ckeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print("Exception in c func handler", sys.exc_info())
-            pass
-
-    try:
-        win.mained.update_treestore(sumw, sumnum)
-
-    except:
-        # This is 'normal', ignore it
-        print("run_async_time", sys.exc_info())
-        pass
-
-    #win.mained.update_statusbar("Rescan done.")
-
-def keytime(self, arg):
-
-    #print( "keytime raw", time.ctime(), self.fired)
-    #return
-
-    if self.fired ==  1:
-        #print( "keytime", time.time(), self.fired)
-        pedspell.spell(self, self.spellmode)
-        self.walk_func()
-
-    if self.fired:
-        self.fired -= 1
-
-    # Track this buffer
-    #if self.diffmode == 2:
-    #    self.mained.diffpane.area.xpos = self.xpos
-    #    self.mained.diffpane.area.ypos = self.ypos
-    #    self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
-    #                                                self.ypos + self.caret[1], True)
-
-    # Track pane buffer back to diff components
-    if self.diffpane:
-        got_src = 0; got_targ = 0
-        src = ""; targ = ""
-        srctxt = [] ;  targtxt = []
-        dst_tab = None ; src_tab = None
-
-        # See if diff complete, put it in motion
-        nn = self.notebook.get_n_pages(); cnt = 0
-        while True:
-            if cnt >= nn: break
-            ppp = self.notebook.get_nth_page(cnt)
-            if ppp.area.diffmode == 1:
-                got_src = True
-                src = os.path.basename(ppp.area.fname)
-                srctxt = ppp.area.text
-                src_tab = ppp
-            elif ppp.area.diffmode == 2:
-                got_targ = True
-                targ = os.path.basename(ppp.area.fname)
-                targtxt = ppp.area.text
-                dst_tab = ppp
-
-            cnt += 1
-
-        yyy = self.ypos +  self.caret[1]
-        zzz = self.ypos +  self.caret[1]
-        txt = ""
-        for aa in range( self.ypos + self.caret[1]):
-            try:
-                txt = self.text[aa]
-            except:
-                pass
-            if txt[:8] == " --del--":
-                yyy -= 1
-
-            if txt[:8] == " --ins--":
-                zzz -= 1
-
-        if got_targ:
-            dst_tab.area.xpos = self.xpos
-            dst_tab.area.ypos = self.ypos
-            dst_tab.area.set_caret(self.xpos + self.caret[0], yyy, True)
-        if got_src:
-            src_tab.area.xpos = self.xpos
-            src_tab.area.ypos = self.ypos
-            src_tab.area.set_caret(self.xpos + self.caret[0], zzz, True)
-
-def idle_callback(self, arg):
-
-    ''' Do Tasks  when the system is idle '''
-
-    #print( "Idle callback", self.fname)
-    GLib.source_remove(self.source_id)
-    try:
-        # Mon 06.Sep.2021 always save
-        if self.changed:
-            hhh = hash_name(self.fname) + "_" + str(self.currback) + ".sav"
-            xfile = pedconfig.conf.data_dir + os.sep + hhh
-            err = writefile(xfile, self.text, "\n")
-            if err[0]:
-                strx = "Backed up file '{0:s}'".format(xfile)
-                # Make a log entry
-                logfile = pedconfig.conf.log_dir + os.sep + "backup.log"
-                xentry = "Sav " + time.ctime() + " " + \
-                    self.fname + " " + os.path.basename(xfile) + "\n"
-                writefile(logfile, (xentry, ""), "\n", "a+")
-            else:
-                strx = "Cannot back up file '{0:s}' {1:s}".format(xfile, err[1])
-
-            self.mained.update_statusbar(strx)
-    except:
-        print("Exception in idle handler", sys.exc_info())
-
-# Do Tasks2 when the system is idle
-
-def idle_callback2(self, arg):
-    #print( "Idle callback2", arg)
-    GLib.source_remove(self.source_id2)
-    try:
-        run_async_time(self, None)
-    except:
-        print("Exception in async handler", sys.exc_info())
 
 # EOF

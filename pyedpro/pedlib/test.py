@@ -88,9 +88,13 @@ USE_STDOUT = 0
 class test_1():
     def __init__(self):
         pass
+    def aa():
+        pass
 
 class test_2():
     def __init__(self):
+        pass
+    def bb():
         pass
 
 class test_3():
@@ -212,69 +216,3 @@ if __name__ == '__main__':
             pedconfig.conf.show_keys = True
             #print("Showing keys")
 
-    if pedconfig.conf.pgdebug > 0:
-        print("Running '{}'".format(os.path.abspath(sys.argv[0])) )
-
-    try:
-        if not os.path.isdir(pedconfig.conf.config_dir):
-            if pedconfig.conf.verbose:
-                print("making", pedconfig.conf.config_dir)
-            os.mkdir(pedconfig.conf.config_dir)
-    except:
-        pass
-
-    # Let the user know if it needs fixin'
-    if not os.path.isdir(pedconfig.conf.config_dir):
-        print(_("Cannot access config dir:"), pedconfig.conf.config_dir)
-        sys.exit(1)
-
-    pedconfig.ensure_dirs(pedconfig.conf)
-
-    if pedconfig.conf.verbose:
-        print(_("Data stored in "), pedconfig.conf.config_dir)
-
-    # Initialize sqlite to load / save preferences & other info
-    # Initialize pedconfig for use
-
-    pedconfig.conf.sql = pedsql.pedsql(pedconfig.conf.sql_data)
-    pedconfig.conf.mydir = os.path.abspath(__file__)
-    #print("Exe path:",  pedconfig.conf.mydir)
-
-    # To clear all config vars
-    if CLEAR_CONFIG:
-        print(_("Are you sure you want to clear config ? (y/n)"))
-        sys.stdout.flush()
-        aa = sys.stdin.readline()
-        if aa[0] == "y":
-            print(_("Removing configuration ... "), end=' ')
-            pedconfig.conf.sql.rmall()
-            print("OK")
-        sys.exit(0)
-
-    # To check all config vars
-    if SHOW_CONFIG:
-        print("Dumping configuration:")
-        ss = pedconfig.conf.sql.getall()
-        for aa in ss:
-            print(aa)
-        sys.exit(0)
-
-    # Uncomment this for silent stdout
-    if USE_STDOUT or pedconfig.conf.pgdebug or \
-                    pedconfig.conf.verbose:
-        # Do not hide console
-        #print("Using real stdout")
-        pedwin.hidden = True    # Already hidden no hide
-    else:
-        pedwin.hidden = False   # Take action, hide
-
-    sys.stdout = pedlog.fake_stdout(sys.stdout)
-    sys.stderr = pedlog.fake_stdout(sys.stdout)
-
-    # Uncomment this for buffered output
-    if pedconfig.conf.verbose:
-        print("Started", PROGNAME)
-
-    main(args[0:])
-
-# EOF

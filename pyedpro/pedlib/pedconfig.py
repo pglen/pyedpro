@@ -39,6 +39,7 @@ class Conf():
         self.pgdebug = 0
         self.show_keys = 0
         self.keylog_on = 0
+        self.trace = ""
 
         # Count down variables
         self.idle = 0; self.syncidle = 0;   self.statuscount = 0

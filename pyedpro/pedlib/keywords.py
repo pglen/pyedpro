@@ -34,17 +34,28 @@ clwords =  ("class ", " self.", "try:", "except", "except:", "finally",
                 "table ", "/table",)
 
 # Keywords for summary extraction: (left side window)
-pykeywords = ("class ", "def ", "TODO ")
 basekeywords = ("(sub )|(SUB )")
-Skeywords = "(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)"
-pykeywords2 = "(class )|(def )|(TODO )|(__main__)"
+basewalk = ("(sub )|(SUB )")
+cwalk =  "^[_a-zA-Z].*\(.*\)"
+
+asmwalk =   "^[_a-zA-Z].*:"
+asmkeywords = "(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)|(\%if )|(%else)|(\%endif)"
+asmkeywords2 = "(^[_a-zA-Z].*:)|(jmp )|(ret )"
+
+pykeywords = ("class ", "def ")
+pykeywords2 = "(class )|(def )|(__main__)"
 pykeywords3 = "(_mac_)"
+pykeywords4 = "(def )|(for )|(while )|(return )|(import )|(def )"
+pywalk = "class"
+
 sumkeywords = "class ", "def ", "TODO "
 htmlkeywords = "(\{ .* \})"
 
 ckeywords =  "^[_a-zA-Z].*\(.*\)"
-localkwords = "(int .*)|(char .*)|(for)|(while)|(if)|(return)"
-localpywords = "(for )|(while )|(return )|(import )|(def )"
+ckeywords2 = "(int .*)|(char .*)|(for )|(while )|(if )|(return )"
+
+vkeywords  = "(module )|(endmodule )|(import )|(def )"
+vkeywords2 = "(wire )|(input )(output )|(if )(else )"
 
 '''
  Keywords for auto correct. This corrects strings as we type.
@@ -78,12 +89,12 @@ auto_corr_table = \
             #( "Bad",     "if val: \n "    ),
         ]
 
-
 # These files are colored by default (add extension if needed)
 
 color_files = (".py", ".c", ".cpp", ".sh", ".pl", ".h", ".hpp",
                     ".js", ".php", ".f", ".y", ".pc", ".asm",
-                        ".inc", ".asm", ".bas", ".s", ".html", ".ino")
+                        ".inc", ".asm", ".bas", ".s", ".html",
+                        ".v",  ".ino")
 
 # These files are considered 'c' like (for basic syntax highlites)
 

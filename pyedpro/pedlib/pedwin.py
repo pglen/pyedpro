@@ -35,10 +35,11 @@ from pedlib import peddlg
 from pedlib import pedthread
 from pedlib import pedspell
 from pedlib import pedofd
-#from pedlib import pedplug
 from pedlib import pedutil
 from pedlib import pedai
 from pedlib import setupdlg
+from pedlib import pedidle
+#from pedlib import pedplug
 
 #sys.path.append('..' + os.sep + "pyvguicom")
 
@@ -53,7 +54,6 @@ from    pedlib.pedutil import *
 
 __doc__ = '''
     This module is responsible for creating the main window.
-
 '''
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
@@ -1564,7 +1564,10 @@ class EdMainWindow():
         #print(  "pedwin area focus", win, act)
 
     def area_focus_in(self, win, act):
-        #print(  "area focus in", win, act)
+
+        if pedconfig.conf.verbose > 3:
+            print(  "area focus in", win, act)
+
         # This was needed as pygtk leaves the alt key hanging
         pedconfig.conf.keyh.reset()
         # Focus on main doc
@@ -2741,7 +2744,7 @@ def handler_tick(arg, arg2):
                     vcurr.area.doidle = 1
                     if not mw.mac:
                         vcurr.area.source_id = \
-                            GLib.idle_add(peddoc.idle_callback, vcurr.area, 0)
+                            GLib.idle_add(pedidle.idle_callback, vcurr.area, 0)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -2752,7 +2755,7 @@ def handler_tick(arg, arg2):
                         #pedspell.spell(vcurr.area)
                         #print("adding callback2")
                         vcurr.area.source_id2 = \
-                            GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
+                            GLib.idle_add(pedidle.idle_callback2, vcurr.area, 0)
 
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text

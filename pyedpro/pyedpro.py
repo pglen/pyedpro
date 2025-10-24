@@ -145,8 +145,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.7.3"
-BUILDDATE   = "Mon 20.Oct.2025"
+VERSION     = "3.7.4"
+BUILDDATE   = "Sat 25.Oct.2025"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -228,6 +228,7 @@ def xhelp():
     print(_("Option(s):"))
     print(_("            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)"))
     print(_("            -j pname  - Load project (pname = saved session name)"))
+    print(_("            -z keyw   - output keyword specific trace events"))
     print(_("            -v        - Verbose (to stdout and log) repeat for more verbosity"))
     print(_("            -f        - Start Full screen"))
     print(_("            -c        - Dump Config"))
@@ -236,10 +237,11 @@ def xhelp():
     print(_("            -x        - Clear (eXtinguish) config (will prompt)"))
     print(_("            -g        - Key log on"))
     print(_("            -k        - Show Keys Presses"))
-    print(_("            -t        - Set tracer ON (lots of output)"))
     print(_("            -h        - Help (this screen)"))
     print()
     sys.exit(1)
+
+#print(_("            -t        - Set tracer ON (lots of output)"))
 
 # ------------------------------------------------------------------------
 
@@ -276,7 +278,7 @@ def mainstart(name = "", args = "", oldpath = ""):
     opts = []; args = []
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "d:h?vVj:fxctoktg",
+        opts, args = getopt.getopt(sys.argv[1:], "d:h?vVj:fxctoktgz:",
                         ["debug=", "help", "help", "verbose", "version", "project="])
 
     except getopt.GetoptError as err:
@@ -300,6 +302,14 @@ def mainstart(name = "", args = "", oldpath = ""):
                 print( PROGNAME, _("Running at debug level:"),  pedconfig.conf.pgdebug)
             except:
                 pedconfig.conf.pgdebug = 0
+
+        if aa[0] == "-z":
+            #print("Trace subsys")
+            try:
+                pedconfig.conf.trace = aa[1]
+                print( PROGNAME, _("Running trace:"),  pedconfig.conf.trace)
+            except:
+                pedconfig.conf.trace = ""
 
         if aa[0] == "-j" or aa[0] == "--project":
             rrr = False
@@ -340,9 +350,9 @@ def mainstart(name = "", args = "", oldpath = ""):
             USE_STDOUT = True
         if aa[0] == "-k":
             pedconfig.conf.show_keys = True
-        if aa[0] == "-t":
-            print("Tracing ON")
-            sys.settrace(tracer)
+        #if aa[0] == "-t":
+        #    print("Tracing ON")
+        #    sys.settrace(tracer)
 
     if pedconfig.conf.pgdebug > 0:
         print("Running '{}'".format(os.path.abspath(sys.argv[0])) )

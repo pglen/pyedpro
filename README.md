@@ -70,14 +70,18 @@ All in all the Mac's PyGobject is not a great subsystem, hopefully time
 will be kind here.
 
 ** tried the M1 ... Sun 03.Apr.2022 most of it worked; no async processing
-as in Glib the timer functions bombed. Great hardware - bad PyGobject
+as in : Glib.timer functions bombed. Great hardware - bad PyGobject
 support. However if an editor with familiar key op is needed -- most of
 it works. And no destructive errors.
 
 ### History:
 
     (this is extracted, use git log for up-to-date information)
-
+    3.7.5   Sat 25.Oct.2025 -- Updated left side function displays
+    3.7.3   Mon 20.Oct.2025 -- lookup for function names now line number based
+    3.3.1   Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
+    3.3.5   Wed 10.Apr.2024 -- Relocated search window for better screen allocation
+    3.3.8   Sun 05.May.2024 -- WebView update, pipx installation ...
     Mon 15.Sep.2025 -- Corrected sigterm behavior, now remembers session correctly
     Mon 30.Sep.2024 -- Right click menu simplified, Ver 3.4.0
     Sat 11.Feb.2023 -- Pyedpro Notes export / import and the new pydbase data base
@@ -89,14 +93,6 @@ it works. And no destructive errors.
     Wed 01.Dec.2021 -- on search, descending one dir level with Ext. Search
     Sun 05.Sep.2021 -- made it function on the Mac M1 laptop  - !@#$$%
         ....        -- lot of changes, see github log
-
-
-### New:
-
-    3.7.3   Mon 20.Oct.2025 -- lookup for function names now line number based
-    3.3.1   Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
-    3.3.5   Wed 10.Apr.2024 -- Relocated search window for better screen allocation
-    3.3.8   Sun 05.May.2024 -- WebView update, pipx installation ...
 
 Partial list, some highlights;
 

@@ -15,6 +15,7 @@ from gi.repository import GObject
 
 from pedlib import  pedconfig
 from pedlib import  pedundo
+from pedlib import  pedidle
 from pedlib.pedutil import *
 
 strhist = [] #strhist.append("aa")
@@ -744,7 +745,7 @@ def tree_sel_row(xtree, self, self2):
         if int(bb[2]) == 0:
             bb[2] = 1
         self2.gotoxy(int(bb[0]), int(bb[1]), int(bb[2]), True)
-        self2.walk_func()
+        pedidle.self2.walk_func(self2)
     except:
         pass
 
