@@ -319,6 +319,8 @@ def walk_func(self):
         sumw2 = _walk_one(self, sline, pywalk, pykeywords4, "def ")
     elif ".asm" in self.fname.lower()[-4:] or  ".S" in self.fname.lower()[-2:] :
         sumw2 = _walk_one(self, sline, asmwalk, asmkeywords2)
+    elif ".v" in self.fname.lower()[-4:]:
+        sumw2 = _walk_one(self, sline, vwalk, vkeywords2)
     #elif _is_c_like(self.fname):
     #   sumw2 = _walk_one(self, sline, cwalk, ckeywords)
     else:
