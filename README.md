@@ -48,9 +48,43 @@ directory, and from packaged appimage.
 
 [See Doxygen generated Documentation on GitHub Pages](https://pglen.github.io/pyedpro/html/)
 
+Newer Linux(es) changed the pip subsystem for higher security. One can use pipx
+    with the injection feature.
+
+###  Debian 13
+
+    sudo apt install -y python3-dev pkg-config libgirepository1.0-dev \
+    libcairo2-dev gir1.2-gtk-3.0    # if needed
+
+    pipx install pyedpro
+    pipx inject pyedpro pygobject
+    pipx inject pyedpro requests
+
+    On later versions of pygobject the slider stopped working. As it
+    is a virtual environment, you are free to use an older pygobject like
+    version '3.42.1' -> pygobject==3.42.1
+
+###  Ubuntu 22.x +
+    # Assuming dependencies are OK
+    pip install pyedpro
+    --- or ---
+    pipx install pyedpro
+    pipx inject pyedpro pygobject==3.42.1
+
+###  Ubuntu 24.x +
+
+    sudo apt install pipx  # If needed
+    pipx install pyedpro
+    pipx inject pyedpro pygobject==3.42.1
+    pipx inject pyedpro requests
+
+###  Fedora (tested on 42)
+
+    pip install pyedpro
+
 ### Platforms
 
-  I mainly run it on Ubuntu, and in Win32 / MSYS2, some Fedora, Windows 10,
+  I mainly run it on Ubuntu 22.x, and in Win32 / MSYS2, some Fedora, Windows 10,
 (x64) and the Raspberry-Pi. It behaves consistently on all these platforms,
 it is an absolute joy to edit in a different platform without the learning
 curve of new keystrokes.  If you want an editor that works the same way in
@@ -77,7 +111,9 @@ it works. And no destructive errors.
 ### History:
 
     (this is extracted, use git log for up-to-date information)
-    3.7.5   Sat 25.Oct.2025 -- Updated left side function displays
+
+    3.7.5   Sat 15.Nov.2025 -- Tested pipx on newer linux (es)
+    3.7.4   Sat 25.Oct.2025 -- Updated left side function displays
     3.7.3   Mon 20.Oct.2025 -- lookup for function names now line number based
     3.3.1   Fri 15.Mar.2024 -- corrected for changes in the public pydbase interface
     3.3.5   Wed 10.Apr.2024 -- Relocated search window for better screen allocation

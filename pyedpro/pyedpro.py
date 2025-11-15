@@ -107,9 +107,19 @@ orgbase = os.getcwd()
 
 basedir = os.path.dirname(os.path.realpath(__file__))
 #print("file dir", basedir)
-sys.path.append(basedir + os.sep)
-sys.path.append(basedir + os.sep + "pycommon")
-sys.path.append(basedir + os.sep + "pedlib")
+
+from pedlib import pedconfig
+libdir = os.path.dirname(os.path.realpath(pedconfig.__file__))
+#print("lib dir", libdir)
+
+parentd = os.path.dirname(os.path.realpath(libdir))
+#print("par dir", parentd)
+
+#sys.path.append(basedir + os.sep)
+#sys.path.append(parentd + os.sep + "pycommon")
+sys.path.append(parentd)
+sys.path.append(parentd + os.sep + "pedlib")
+
 #sys.path.append(basedir + os.sep + ".." + os.sep + "pycommon")
 
 from pedlib import pedconfig
@@ -120,6 +130,7 @@ pedconfig.conf = pedconfig.Conf()
 
 from pedlib import keyhand
 from pedlib import acthand
+
 from pedlib import pedsql
 
 pedconfig.conf.acth = acthand.ActHand()
@@ -145,8 +156,8 @@ def tracer(frame, event, arg):
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.7.4"
-BUILDDATE   = "Sat 25.Oct.2025"
+VERSION     = "3.7.6"
+BUILDDATE   = "Sat 15.Nov.2025"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

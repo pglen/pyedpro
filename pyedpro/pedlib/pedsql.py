@@ -67,13 +67,13 @@ class pedsql():
         else:
             return int(0)
 
-    def get_float(self, kkk):
+    def get_float(self, kkk, default = 0):
 
         ret = self.get(kkk)
         if ret:
             return float(float(ret))
         else:
-            return float(0)
+            return float(default)
 
     # --------------------------------------------------------------------
     # Return empty if no data

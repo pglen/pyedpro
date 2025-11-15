@@ -58,6 +58,7 @@ from pedlib import  pedundo
 from pedlib import  pedtts
 from pedlib import  pedmisc
 from pedlib import  pedbuffs
+from pedlib import  acthand2
 
 #import  pyperclip # dead end
 
@@ -68,8 +69,6 @@ from pedlib.pedcanv import *
 
 lastcmd = ""
 rostr = "This buffer is read only."
-
-import acthand2
 
 # ------------------------------------------------------------------------
 # Action handler. Called from key handler.

@@ -25,14 +25,15 @@ classx = [
         "Operating System :: OS Independent",
         ]
 
-includex = [    "*", "panglib/", "pycommon/",
-                "pedlib/", "pedlib/images",
+includex = [    "*", "panglib/",
+                #"pycommon/",
+                "pedlib/", "pedlib/images", "pedlib/examples",
                 "image.png", "pyedpro_ubuntu.png"]
 
 #import shutil
 #shutil.copy("../README.md", "README.copy.md")
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("../README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 #os.remove("README.copy.md")
 
@@ -66,24 +67,16 @@ setuptools.setup(
     include_package_data=True,
     packages=setuptools.find_packages(include=includex),
     scripts = ['pyedpro.py', 'pangview.py'],
-
     package_dir = {
                     'pedlib': 'pedlib',
                     'pedlib/images': 'pedlib/images',
+                    'pedlib/examples': 'pedlib/examples',
                     'pedlib/plugins': 'pedlib/plugins',
                     'pedlib/data' : 'pedlib/data',
                     'pycommon': 'pycommon',
                     'panglib': 'panglib',
                    },
-
     package_data={ "pedlib": doclist, },
-
-    data_files =  [('/usr/share/icons/hicolor/96x96/apps/',
-                        ['pedlib/images/pyedpro.png',
-                            'pedlib/images/pedicon.png',
-                            'pedlib/images/pyedpro_sub.png' ]),
-                            ('/usr/share/applications', ['pyedpro.desktop']),
-                   ],
     python_requires='>=3',
     install_requires=deplist,
     entry_points={
@@ -91,7 +84,7 @@ setuptools.setup(
             "pyedpro=pyedpro:mainfunc",
             "pangview=pangview:mainfunc",
             ],
-    },
+        },
 )
 
 # EOF

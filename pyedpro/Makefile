@@ -83,4 +83,20 @@ pipcycle:
 makestats:
 	gitstats https://github.com/pglen/pyedpro
 
+# These are targets used in development (incomplete)
+
+local-install:
+	pip install .
+
+local-pipx-install:
+	pipx install .
+	pipx inject pyedpro pygobject==3.42.1
+	pipx inject pyedpro requests
+
+local-pipx-uninstall:
+	pipx uninstall pyedpro
+
+local-uninstall:
+	pip uninstall pyedpro
+
 # EOF

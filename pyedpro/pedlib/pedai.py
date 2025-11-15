@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
 
-import signal, os, time, sys, subprocess, platform, socket, requests
+import signal, os, time, sys, subprocess, platform, socket
 import ctypes, datetime, sqlite3, warnings, threading
 import json
 import select
 
-#import gi;
-#from gi.repository import Gtk
-#from gi.repository import Gdk
-#from gi.repository import GObject
-#from gi.repository import GLib
-
-#gi.require_version('WebKit2', '4.0')
+try:
+    import requests
+except:
+    pass
 
 from pedlib import pedconfig
 

@@ -295,13 +295,14 @@ class EdMainWindow():
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
 
-        alpha = pedconfig.conf.sql.get_float("alpha")
+        alpha = pedconfig.conf.sql.get_float("alpha", 1.0)
         if pedconfig.conf.verbose:
                 print("Alpha:", alpha)
 
         if alpha > 1.0:         alpha = 1.0
         if alpha < .5:          alpha = .5
         self.alpha = alpha
+        #self.alpha = 1.0
 
         if self.mywin.is_composited():
             self.mywin.set_opacity(self.alpha)

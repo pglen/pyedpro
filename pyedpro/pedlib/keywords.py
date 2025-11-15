@@ -42,7 +42,6 @@ asmwalk =   "^[_a-zA-Z].*:"
 asmkeywords = "(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)|(\%if )|(%else)|(\%endif)"
 asmkeywords2 = "(^[_a-zA-Z].*:)|(jmp )|(ret )"
 
-
 pykeywords = ("class ", "def ")
 pykeywords2 = "(class )|(def )|(__main__)"
 pykeywords3 = "(_mac_)"
@@ -56,8 +55,10 @@ ckeywords =  "^[_a-zA-Z].*\(.*\)"
 ckeywords2 = "(int .*)|(char .*)|(for )|(while )|(if )|(return )"
 
 vwalk =   "module"
-vkeywords  = "(module )|(endmodule )|(import )"
+vkeywords  = "(module )|(endmodule )|(import )(always)"
 vkeywords2 = "(if )|(else )|(end )|(wire )|(input )(output )"
+
+commwords = "*.c", ".h", ".h", ".y", ".l", ".f", ".v"
 
 '''
  Keywords for auto correct. This corrects strings as we type.

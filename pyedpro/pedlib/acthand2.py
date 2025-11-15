@@ -22,6 +22,11 @@ from pedlib.pedutil import *
 from pedlib.pedgoto import *
 from pedlib.pedcanv import *
 
+def _is_c_com(extx):
+    for aa in commwords:
+        if extx == aa:
+            return True
+
 class ActHand2():
 
     def ctrl_alt_num(self, self2):
@@ -97,8 +102,7 @@ class ActHand2():
         if cumm:
             self.ctrl_c(self2)
             # This will catch all known varieties, else .py assumed
-            if extx == ".c" or extx == ".h" or \
-                    extx == ".f" or extx == ".y" or extx == ".l":
+            if _is_c_com(extx):
                 strx  = "#if 0\n"
                 strx2 = "#endif\n"
             elif extx == ".asm" or extx == ".inc" or extx == ".S":
@@ -118,8 +122,7 @@ class ActHand2():
                 self.add_str(self2, strx2)
 
         else:
-            if extx == ".c" or extx == ".h" or extx == ".y" or \
-                        extx == ".l" or extx == ".f":
+            if _is_c_com(extx):
                 strx  = "//"
             elif extx == ".asm" or extx == ".inc" or extx == ".S":
                 strx  = ";"
@@ -263,8 +266,8 @@ class ActHand2():
         except:
             chh = 0
 
-        # This will catch all known varieties, else .py assumed
-        if extx == ".c" or extx == ".h" or extx == ".y" or extx == ".l":
+        # This will catch c like varieties, else .py assumed
+        if _is_c_com(extx):
             if chh == "/":
                 self.delete(self2)
                 self.delete(self2)
