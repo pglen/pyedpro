@@ -78,16 +78,16 @@ class pgcal(Gtk.VBox):
         butt2 = Gtk.Button.new_with_mnemonic("Edit Selection")
         butt2.connect("pressed", self.demand, self.cal)
         self.hbox2.pack_start(butt2, 1, 1, 0)
-        self.hbox2.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.hbox2.pack_start(Gtk.Label(label=" "), 0, 0, 0)
 
         self.pack_start(self.hbox2, 0, 0, 2)
-        #self.pack_start(Gtk.Label(""), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label=""), 0, 0, 0)
 
         self.hbox3 = Gtk.HBox()
         self.edit = Gtk.Entry()
         self.hbox3.pack_start(Gtk.Label(label=" Find: "), 0, 0, 0)
         self.hbox3.pack_start(self.edit, 1, 1, 0)
-        butt2 = Gtk.Button("Find")
+        butt2 = Gtk.Button(label="Find")
         butt2.connect("pressed", self.find)
         self.hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         self.hbox3.pack_start(butt2, 0, 0, 0)
@@ -113,7 +113,7 @@ class pgcal(Gtk.VBox):
         scroll3 = Gtk.ScrolledWindow()
         scroll3.add(self.edview)
         frame4 = Gtk.Frame(); frame4.add(scroll3)
-        self.pack_start(Gtk.Label(" "), 0, 0, 0)
+        self.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         self.daysel(self.cal)
 
 

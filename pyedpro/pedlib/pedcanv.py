@@ -90,7 +90,10 @@ class ToolBox(Gtk.VBox):
                      )
         cnt = 0
         for aa in tarr:
+            warnings.simplefilter("ignore")
             butt = Gtk.ToolButton().new_from_stock(aa[0])
+            warnings.simplefilter("default")
+
             butt.set_tooltip_text(aa[1])
             butt.connect("clicked", self.callb, cnt)
             cnt += 1

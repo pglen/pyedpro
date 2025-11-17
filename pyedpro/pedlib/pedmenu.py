@@ -442,7 +442,7 @@ def create_action_group(self):
     )
 
     # Create the menubar and toolbar
-    action_group = Gtk.ActionGroup("AppWindowActions")
+    action_group = Gtk.ActionGroup(name="AppWindowActions")
     action_group.add_actions(entries)
     #action_group.add_toggle_actions(toggle_entries)
     #action_group.add_radio_actions(color_entries, COLOR_RED, self.activate_radio_action)

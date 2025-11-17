@@ -253,7 +253,7 @@ def find_keypress(area, event):
                 if event.keyval == Gdk.KEY_1 or \
                     event.keyval == Gdk.KEY_1:
                     #print("find dlg keypress, Alt-1 pressed")
-                    dialog.entry.set_text("^[a-z].*\(.*\)")
+                    dialog.entry.set_text('^[a-z].*\(.*\)')
                     dialog.checkbox.set_active(1)
                     dialog.checkbox2.set_active(0)
                     dialog.checkbox3.set_active(0)
@@ -309,7 +309,7 @@ def find_show(self, self2):
                             None, Gtk.MESSAGE_ERROR)
             return
 
-    win2 = Gtk.Window(Gtk.WindowType.TOPLEVEL)
+    win2 = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
     #win2.set_position(Gtk.WindowPosition.CENTER)
     #win2.set_transient_for(self2.mained.mywin)
     win2.set_transient_for(None)
@@ -470,7 +470,7 @@ def find_show_file(self, self2, dialog):
                             None, Gtk.MESSAGE_ERROR)
             return
 
-    win2 = Gtk.Window(Gtk.WindowType.TOPLEVEL)
+    win2 = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
     win2.set_position((Gtk.WindowPosition.CENTER))
 
     #win2.set_transient_for(self2.mained.mywin)

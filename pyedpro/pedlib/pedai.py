@@ -93,7 +93,7 @@ class pgAI(Gtk.VBox):
         scroll2.set_size_request(-1, 140)
         scroll2.add(self.entry)
         frame = Gtk.Frame()
-        #frame.set_label_widget(Gtk.Label("  Enter Text:  "))
+        #frame.set_label_widget(Gtk.Label(label="  Enter Text:  "))
         frame.add(scroll2)
 
         #hbox2.pack_start(Gtk.Label(label = "   "), 0, 0, 0)
@@ -102,14 +102,14 @@ class pgAI(Gtk.VBox):
 
         vbox5.pack_start(hbox2, 0, 0, 0)
 
-        hbox13a.pack_start(Gtk.Label("  "), 1, 1, 0)
+        hbox13a.pack_start(Gtk.Label(label="  "), 1, 1, 0)
         butt11 = smallbutt(" [Send ] ", self.send2, "Send query to ollama")
         hbox13a.pack_start(butt11, 0, 0, 0)
         butt11 = smallbutt(" [ Stop ] ", self.stopfunc, "Stop ollama query")
         hbox13a.pack_start(butt11, 0, 0, 0)
         butt11 = smallbutt(" [ Start Server ] ", self.server, "Start ollama server")
         hbox13a.pack_start(butt11, 0, 0, 0)
-        hbox13a.pack_start(Gtk.Label("  "), 1, 1, 0)
+        hbox13a.pack_start(Gtk.Label(label="  "), 1, 1, 0)
 
         vbox5.pack_start(hbox13a, 0, 0, 0)
 
@@ -119,7 +119,7 @@ class pgAI(Gtk.VBox):
 
         self.lab = self.tv.get_buffer()
         self.lab.set_text("AI Content")
-        #self.lab = Gtk.Label("AI Content")
+        #self.lab = Gtk.Label(label="AI Content")
         #self.lab.set_line_wrap(True)
         scroll = Gtk.ScrolledWindow()
         scroll.add(self.tv)

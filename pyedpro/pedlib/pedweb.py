@@ -79,7 +79,7 @@ class pgweb(Gtk.VBox):
         self.popwin = None
 
         #hbox = Gtk.HBox()
-        #self.pack_start(Gtk.Label("ccc"), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label="ccc"), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
         self.lsel = LetterNumberSel(self.letterfilter, font="Mono 12")
         self.lsel.set_tooltip_text("Filter entries by letter / number")
@@ -88,17 +88,17 @@ class pgweb(Gtk.VBox):
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#dd8822"))
 
         #hbox3 = Gtk.HBox()
-        #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=""), 0, 0, 0)
         #hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
-        #hbox3.pack_start(Gtk.Label(""), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=""), 0, 0, 0)
         #self.edit = Gtk.Entry()
-        #hbox3.pack_start(Gtk.Label(" Find: "), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=" Find: "), 0, 0, 0)
         #hbox3.pack_start(self.edit, 1, 1, 0)
         #butt2 = Gtk.Button.new_with_mnemonic("Find")
         #butt2.connect("pressed", self.find)
-        #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         #hbox3.pack_start(butt2, 0, 0, 0)
-        #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#668822"))
         #self.pack_start(hbox3, 0, 0, 2)
 
@@ -140,43 +140,43 @@ class pgweb(Gtk.VBox):
         self.edit.set_activates_default(True)
         self.edit.connect("activate", self.go)
 
-        hbox3.pack_start(Gtk.Label(" URL: "), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=" URL: "), 0, 0, 0)
         hbox3.pack_start(self.edit, 1, 1, 0)
         #hbox3.pack_start(scroll12, 1, 1, 0)
-        hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
 
-        butt2 = Gtk.Button("Go")
+        butt2 = Gtk.Button(label="Go")
         butt2.connect("pressed", self.go)
-        hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         hbox3.pack_start(butt2, 0, 0, 0)
 
         #self.pack_start(hbox3, 0, 0, 2)
 
         hbox4 = Gtk.HBox()
-        lab1  = Gtk.Label("  Note: This is a Live Browser ")
+        lab1  = Gtk.Label(label="  Note: This is a Live Browser ")
         lab1.set_halign(Gtk.Align.END)
         hbox4.pack_start(lab1,  1, 1, 0)
 
-        butt3 = Gtk.Button("<")
+        butt3 = Gtk.Button(label="<")
         butt3.connect("pressed", self.backurl)
         butt3.set_tooltip_text("Back")
 
-        hbox4.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         hbox4.pack_start(butt3, 0, 0, 0)
 
-        butt4 = Gtk.Button(">")
+        butt4 = Gtk.Button(label=">")
         butt4.connect("pressed", self.forwurl)
         butt4.set_tooltip_text("Forward")
-        hbox4.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         hbox4.pack_start(butt4, 0, 0, 0)
 
-        butt5 = Gtk.Button("~")
+        butt5 = Gtk.Button(label="~")
         butt5.connect("pressed", self.anchor)
         butt5.set_tooltip_text("Goto local anchor page")
-        hbox4.pack_start(Gtk.Label(" "), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         hbox4.pack_start(butt5, 0, 0, 0)
 
-        #hbox3.pack_start(Gtk.Label(" "), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         #self.pack_start(hbox4, 0, 0, 2)
 
         self.treeview3 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
@@ -198,12 +198,12 @@ class pgweb(Gtk.VBox):
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
             self.brow_win = browserWin()
-            #self.brow_win = Gtk.Label("No WebView Available.")
+            #self.brow_win = Gtk.Label(label="No WebView Available.")
             #print("dir", dir(self.brow_win))
             #self.brow_win.load_uri("file://" + self.fname)
             pass
         except:
-            #self.brow_win = Gtk.Label("No WebView Available.")
+            #self.brow_win = Gtk.Label(label="No WebView Available.")
             #put_exception("WebView load")
             pass
 
@@ -219,13 +219,13 @@ class pgweb(Gtk.VBox):
         #webview.load_uri("https://google.com")
         scrolled_window.add(self.brow_win)
         #self.pack_start(scrolled_window, 1, 1, 2)
-        #self.status = Gtk.Label(" Status: ")
+        #self.status = Gtk.Label(label=" Status: ")
         #self.pack_start(self.status, 0, 0, 2)
 
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=""), 1, 1, 0)
 
-        #hbox13.pack_start(Gtk.Label(" | "), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(label=" | "), 0, 0, 0)
         butt3 = smallbutt(" _New Item ", self.newitem, "Create new item / record")
 
         hbox13.pack_start(butt3, 0, 0, 2)
@@ -258,7 +258,7 @@ class pgweb(Gtk.VBox):
         #butt22 = Gtk.Button.new_with_mnemonic("Save")
         #butt22.connect("pressed", self.save)
         #hbox13.pack_start(butt22, 0, 0, 0)
-        #hbox13.pack_start(Gtk.Label("  "), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(label="  "), 0, 0, 0)
 
         vbox5.pack_start(hbox13, 0, 0, 0)
         vbox5.pack_start(hbox13a, 0, 0, 0)

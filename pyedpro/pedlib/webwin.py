@@ -22,9 +22,7 @@ try:
 except:
     print("Cannot Load browser window")
 
-
 import pgwkit
-
 
 class MainWin(Gtk.Window):
 

@@ -2291,7 +2291,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         eb.set_above_child(True)
 
         image = Gtk.Image()
+        warnings.simplefilter("ignore")
         image.set_from_stock(Gtk.STOCK_CLOSE, Gtk.IconSize.MENU)
+        warnings.simplefilter("default")
+
         butt = Gtk.Button();  butt.add(image)
         butt.set_focus_on_click(False)
         butt.set_relief( Gtk.ReliefStyle.NONE)

@@ -62,17 +62,14 @@ docs:
 	@${PPP} -o pedlib/docs pedlib/stack.py
 	@${PPP} -o pedlib/docs pedlib/webwin.py
 
-pipup:
-	@# Prep
-	cp ../README.md README.md
-	./pip-build.py
-	./pip-upload.sh
-	@# Make sure only one copy hangs around
-	rm -f README.md
+pipup: pipbuild
+	@./pip-upload.sh
 
 pipbuild:
+	@# Gather a copy of main README
 	@cp ../README.md README.md
-	./pip-build.py
+	@./pip-build.py
+	@# Make sure only one copy hangs around
 	@rm -f README.md
 
 pipcycle:
@@ -89,12 +86,17 @@ local-install:
 	pip install .
 
 local-pipx-install:
+	@cp ../README.md .
 	pipx install .
 	pipx inject pyedpro pygobject==3.42.1
+	@#pipx inject pyedpro pygobject  # this broke with missing dependency
 	pipx inject pyedpro requests
+	@rm README.md
 
 local-pipx-uninstall:
 	pipx uninstall pyedpro
+
+local-pipx-cycle:  local-pipx-uninstall local-pipx-install
 
 local-uninstall:
 	pip uninstall pyedpro

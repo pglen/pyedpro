@@ -26,16 +26,14 @@ classx = [
         ]
 
 includex = [    "*", "panglib/",
-                #"pycommon/",
                 "pedlib/", "pedlib/images", "pedlib/examples",
                 "image.png", "pyedpro_ubuntu.png"]
 
 #import shutil
-#shutil.copy("../README.md", "README.copy.md")
+#shutil.copy("../README.md", "README.md")
 
-with open("../README.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
-#os.remove("README.copy.md")
 
 # Get version number  from the server support file:
 fp = open("pyedpro.py", "rt")

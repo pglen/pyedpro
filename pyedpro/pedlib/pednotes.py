@@ -157,10 +157,12 @@ class pgnotes(Gtk.VBox):
         #self.edview.callb = self.savetext
         self.edview.findcall = self.findx, self
 
+        warnings.simplefilter("ignore")
         self.edview.textview.set_margin_left(2)
         self.edview.textview.set_margin_right(2)
         self.edview.textview.set_margin_top(2)
         self.edview.textview.set_margin_bottom(2)
+        warnings.simplefilter("default")
 
         self.fd = Pango.FontDescription()
         pg = Gtk.Widget.create_pango_context(self.edview.textview)

@@ -256,7 +256,9 @@ def register_stock_icons():
 
     # Add our custom icon factory to the list of defaults
     factory = Gtk.IconFactory()
+    warnings.simplefilter("ignore")
     factory.add_default()
+    warnings.simplefilter("default")
 
     img_dir = os.path.join(os.path.dirname(__file__), 'images')
     img_path = os.path.join(img_dir, 'gtk-logo-rgb.gif')
