@@ -1223,7 +1223,7 @@ def put_exception(xstr):
                         " Line: " + str(aa[1]) + "\n" +  \
                     "   Context: " + aa[2] + " -> " + aa[3] + "\n"
         except:
-            print( "Could not print trace stack. ", sys.exc_info())
+            print( "Couldx not print trace stack. ", sys.exc_info())
 
     #put_debug(cumm)
     print(cumm)

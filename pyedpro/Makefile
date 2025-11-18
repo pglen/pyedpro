@@ -83,7 +83,9 @@ makestats:
 # These are targets used in development (incomplete)
 
 local-install:
+	@cp ../README.md .
 	pip install .
+	@rm README.md
 
 local-pipx-install:
 	@cp ../README.md .
@@ -91,6 +93,7 @@ local-pipx-install:
 	pipx inject pyedpro pygobject==3.42.1
 	@#pipx inject pyedpro pygobject  # this broke with missing dependency
 	pipx inject pyedpro requests
+	pipx inject pyedpro pyvguicom
 	@rm README.md
 
 local-pipx-uninstall:

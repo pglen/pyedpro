@@ -253,7 +253,7 @@ def find_keypress(area, event):
                 if event.keyval == Gdk.KEY_1 or \
                     event.keyval == Gdk.KEY_1:
                     #print("find dlg keypress, Alt-1 pressed")
-                    dialog.entry.set_text('^[a-z].*\(.*\)')
+                    dialog.entry.set_text(r'^[a-z].*\(.*\)')
                     dialog.checkbox.set_active(1)
                     dialog.checkbox2.set_active(0)
                     dialog.checkbox3.set_active(0)
@@ -262,7 +262,7 @@ def find_keypress(area, event):
                 if event.keyval == Gdk.KEY_2 or \
                     event.keyval == Gdk.KEY_2:
                     #print("find dlg keypress, Alt-2 pressed")
-                    dialog.entry.set_text("^def.*[a-z].*\(.*\):")
+                    dialog.entry.set_text(r"^def.*[a-z].*\(.*\):")
                     dialog.checkbox.set_active(1)
                     dialog.checkbox2.set_active(0)
                     dialog.checkbox3.set_active(0)
@@ -529,7 +529,7 @@ def find_show_file(self, self2, dialog):
     hbox = Gtk.HBox()
     lab4 = Gtk.Label(label="  ");
     hbox.pack_start(lab4, 1,0,0)
-    butt = Gtk.Button("Load All Matched Files")
+    butt = Gtk.Button(label="Load All Matched Files")
     butt.connect("clicked", loadfiles, win2.tree)
     hbox.pack_start(butt, 0,0,0)
     lab4a = Gtk.Label(label="  ");

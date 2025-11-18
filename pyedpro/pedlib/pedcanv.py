@@ -209,7 +209,8 @@ class Canvas(Gtk.DrawingArea):
         self.fname = "untitled.ped"
 
     def area_key(self, area, event):
-        print ("area_key", event.keyval)
+        if pedconfig.conf.pgdebug > 2:
+            print ("area_key", event.keyval)
         if event.keyval == Gdk.KEY_Delete or event.keyval == Gdk.KEY_KP_Delete:
             #print("Del key")
             for bb in self.coll:
@@ -219,10 +220,12 @@ class Canvas(Gtk.DrawingArea):
             self.queue_draw()
 
         if event.keyval == Gdk.KEY_Up:
-            print("UP key")
+            if pedconfig.conf.pgdebug > 2:
+                print("UP key")
 
         if event.keyval == Gdk.KEY_Down:
-            print("DN key")
+            if pedconfig.conf.pgdebug > 2:
+                    print("DN key")
 
         return True
 
@@ -291,7 +294,10 @@ class Canvas(Gtk.DrawingArea):
                     onmarker = mark
                     break
 
+            warnings.simplefilter("ignore")
             gdk_window = self.get_root_window()
+            warnings.simplefilter("default")
+
             if onmarker == 5:
                 gdk_window.set_cursor(self.pencil)
             elif onmarker:

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
 
@@ -9,7 +8,6 @@ import ctypes, datetime, sqlite3, warnings
 #from gi.repository import Gdk
 #from gi.repository import GObject
 #from gi.repository import GLib
-
 #gi.require_version('WebKit2', '4.0')
 
 from pedlib import pedconfig
@@ -264,7 +262,7 @@ class pgweb(Gtk.VBox):
         vbox5.pack_start(hbox13a, 0, 0, 0)
 
         try:
-            self.load()
+            self.load("")
         except:
             put_exception("Cannot load")
 
@@ -358,7 +356,7 @@ class pgweb(Gtk.VBox):
         # Refresh list in main sel window
         self.treeview2.clear()
         usleep(10)
-        self.load()
+        self.load("")
 
     def savefunc(self, item, text):
         #print("savefunc", item, text[:12])
@@ -420,7 +418,7 @@ class pgweb(Gtk.VBox):
                                 (dbsize, cnt, os.path.basename(fff)))
 
 
-    def load(self):
+    def load(self, searchx):
 
         ''' Load from file;
             This is more complex than it should be ... dealing with old data
@@ -432,20 +430,20 @@ class pgweb(Gtk.VBox):
             dbsize = self.core.getdbsize()
             if not dbsize:
                 return
-
             try:
                 self.treeview2.freeze_child_notify()
                 for aa in range(dbsize-1, 0, -1):
                     ddd = self.core.get_rec(aa)
                     if len(ddd) < 2:
                         continue        # Deleted record
-                    #print("ddd", ddd)
                     hhh = ddd[0].decode()
-                    if hhh not in datax:
-                        datax.append(hhh)
-                        #print("adding", hhh)
-                        #self.treeview2.append((hhh, "", ""))
-                        self.treeview2.append((hhh,))
+                    if not searchx or searchx[0].upper() == hhh[0].upper():
+                        #print("hhh", hhh)
+                        if hhh not in datax:
+                            datax.append(hhh)
+                            #print("adding", hhh)
+                            #self.treeview2.append((hhh, "", ""))
+                            self.treeview2.append((hhh,))
             finally:
                 self.treeview2.thaw_child_notify()
 
@@ -481,24 +479,14 @@ class pgweb(Gtk.VBox):
         self.brow_win.go_forward()
 
     def  letterfilter(self, letter):
-        #print("letterfilter", letter)
+        if pedconfig.conf.pgdebug > 2:
+            print("letterfilter", letter)
+        self.treeview2.clear()
+        usleep(10)
         if letter == "All":
-            self.treeview2.clear()
-            print("Erase selection")
+            self.load("")
         else:
-            aaa = self.sql.getall(letter + "%")
-            print("all->", aaa)
-
-            self.treeview2.clear()
-            for aa in aaa:
-                try:
-                    #aa.append("ddd")
-                    #aa.append("eee")
-                    #aa.append("fff")
-                    self.treeview2.append(aa[1:])
-                except:
-                    put_exception("Letter Filter")
-
+            self.load(letter)
 
     def go(self, arg):
         txt = self.edit.get_text()
@@ -611,7 +599,7 @@ class pgweb(Gtk.VBox):
         #print("Content", hhh)
 
         try:
-            self.brow_win.load_html(hhh)
+            self.brow_win.load_html(hhh, "file://")
             #usleep(10)
             #self.treeview2.grab_focus()
             #usleep(10)

@@ -65,27 +65,13 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
  One can easily edit the key map in keyhand.py, and the key actions
  in acthand.py The default key map resembles gedit / wed / etp / brief
 
-History:  (incomplete list, see git log for a more complete list)
-
-    jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
-    Jul/xx/2018       Update README, KEYS.TXT
-    Jun/xx/2018       Log Files for time accounting.
-    Jun/08/2020       Menu control / Headerbar / Version update
-    Mon 28.Sep.2020   Reshuffled imports pylint
-    Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
-    Fri 07.May.2021   Many fixed, installs, new features
-    Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
-    Tue 06.Sep.2022   Installation, anchor for search ...
-    Thu 27.Oct.2022   Restored menu keymaps for the system to handle it.
-    Sun 05.May.2024   Import webView dummySun
-
  ASCII text editor, requires pyGtk. (pygobject)
  See pygtk-dependencies for easy install of dependencies.
  See also the INSTALL file.
 
 '''
 
-import os, sys, getopt, signal, time, platform, atexit
+import os, sys, getopt, signal, time, platform, atexit, warnings
 
 import gettext
 gettext.bindtextdomain('pyedpro', './locale/')
@@ -130,7 +116,6 @@ pedconfig.conf = pedconfig.Conf()
 
 from pedlib import keyhand
 from pedlib import acthand
-
 from pedlib import pedsql
 
 pedconfig.conf.acth = acthand.ActHand()
@@ -150,14 +135,16 @@ def tracer(frame, event, arg):
         print(event, frame.f_code.co_filename, frame.f_lineno)
     return tracer
 
+warnings.simplefilter("default")
+
 #try:
 #    from pkg_resources import resource_filename
 #    print (os.path.abspath(resource_filename(__name__.data, 'pedicon.png')) )
 #except:
 #    print(sys.exc_info())
 
-VERSION     = "3.7.6"
-BUILDDATE   = "Sat 15.Nov.2025"
+VERSION     = "3.7.8"
+BUILDDATE   = "Mon 17.Nov.2025"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

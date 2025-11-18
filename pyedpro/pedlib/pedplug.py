@@ -25,7 +25,6 @@ from pedlib import pedync
 from pedlib import pedlog
 from pedlib import pedcal
 from pedlib import pednotes
-from pedlib import pedoline
 from pedlib import pedfont
 from pedlib import pedcolor
 from pedlib import pedfind
