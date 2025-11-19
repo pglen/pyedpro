@@ -355,6 +355,9 @@ def mainstart(name = "", args = "", oldpath = ""):
     if pedconfig.conf.pgdebug > 0:
         print("Running '{}'".format(os.path.abspath(sys.argv[0])) )
 
+    #if pedconfig.conf.verbose:
+    #    print("Icon Size:", Gtk.IconSize.BUTTON)
+
     try:
         if not os.path.isdir(pedconfig.conf.config_dir):
             if pedconfig.conf.verbose:

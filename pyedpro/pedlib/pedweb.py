@@ -3,13 +3,6 @@
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
 
-#import gi;
-#from gi.repository import Gtk
-#from gi.repository import Gdk
-#from gi.repository import GObject
-#from gi.repository import GLib
-#gi.require_version('WebKit2', '4.0')
-
 from pedlib import pedconfig
 
 # Into our name space
@@ -17,11 +10,14 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 
-from pyvguicom.pggui import *
-from pyvguicom.pgsimp import *
+#from pyvguicom.pggui import *
 from pyvguicom.pgbutt import *
 from pyvguicom.pgsel import *
-from pyvguicom.browsewin import *
+#from pyvguicom.browsewin import *
+
+from pyvguicom import pggui
+from pyvguicom import pgsimp
+from pyvguicom import browsewin
 
 try:
     # This will change once the pydbase is out of dev stage
@@ -177,7 +173,7 @@ class pgweb(Gtk.VBox):
         #hbox3.pack_start(Gtk.Label(label=" "), 0, 0, 0)
         #self.pack_start(hbox4, 0, 0, 2)
 
-        self.treeview3 = SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
+        self.treeview3 = pgsimp.SimpleTree(("Hour", "Subject", "Alarm", "Notes"))
         self.treeview3.setcallb(self.treesel)
 
         scroll2a = Gtk.ScrolledWindow()
@@ -195,15 +191,17 @@ class pgweb(Gtk.VBox):
         try:
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
-            self.brow_win = browserWin()
+            self.brow_win = browsewin.browserWin()
             #self.brow_win = Gtk.Label(label="No WebView Available.")
             #print("dir", dir(self.brow_win))
             #self.brow_win.load_uri("file://" + self.fname)
             pass
         except:
             #self.brow_win = Gtk.Label(label="No WebView Available.")
-            #put_exception("WebView load")
-            pass
+            if pedconfig.conf.verbose:
+                put_exception("WebView load")
+
+        print("browwin", self.brow_win)
 
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
 
@@ -18,9 +17,10 @@ try:
     sys.path.append(np)
     #print(sys.path)
     #print(os.getcwd())
-    from pyvguicom.browsewin import *
+    from pyvguicom import browserwin
 except:
     print("Cannot Load browser window")
+    raise
 
 import pgwkit
 
@@ -66,7 +66,7 @@ class MainWin(Gtk.Window):
 
         scrolled_window = Gtk.ScrolledWindow()
         try:
-            self.brow_win = browserWin()
+            self.brow_win = browserwin.browserWin()
             #print("dir", dir(self.brow_win))
             #self.brow_win.load_uri("file://" + self.fname)
         except:
