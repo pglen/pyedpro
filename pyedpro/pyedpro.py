@@ -137,14 +137,8 @@ def tracer(frame, event, arg):
 
 warnings.simplefilter("default")
 
-#try:
-#    from pkg_resources import resource_filename
-#    print (os.path.abspath(resource_filename(__name__.data, 'pedicon.png')) )
-#except:
-#    print(sys.exc_info())
-
-VERSION     = "3.7.8"
-BUILDDATE   = "Mon 17.Nov.2025"
+VERSION     = "3.7.9"
+BUILDDATE   = "Tue 02.Dec.2025"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
