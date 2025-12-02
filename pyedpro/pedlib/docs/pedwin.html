@@ -31,9 +31,7 @@
 
 from __future__ import absolute_import, print_function
 
-import os
-import time
-import sys
+import os, time, sys
 import ctypes
 import warnings
 import stat
@@ -64,10 +62,11 @@ from pedlib import peddlg
 from pedlib import pedthread
 from pedlib import pedspell
 from pedlib import pedofd
-#from pedlib import pedplug
 from pedlib import pedutil
 from pedlib import pedai
 from pedlib import setupdlg
+from pedlib import pedidle
+#from pedlib import pedplug
 
 #sys.path.append(&#39;..&#39; + os.sep + &#34;pyvguicom&#34;)
 
@@ -82,12 +81,12 @@ from    pedlib.pedutil import *
 
 __doc__ = &#39;&#39;&#39;
     This module is responsible for creating the main window.
-
 &#39;&#39;&#39;
 
 STATUSCOUNT = 5             # Length of the status bar timeout (in sec)
 
 treestore = None;  treestore2 = None
+treenums = []
 treeview = None;   treeview2 = None
 notebook = None;   notebook2 = None
 notebook3 = None;  notebook4 = None
@@ -275,10 +274,13 @@ class EdMainWindow():
         disp2 = Gdk.Display()
         disp = disp2.get_default()
         #print( disp)
+        warnings.simplefilter(&#34;ignore&#34;)
         scr = disp.get_default_screen()
         ptr = disp.get_pointer()
         mon = scr.get_monitor_at_point(ptr[1], ptr[2])
         geo = scr.get_monitor_geometry(mon)
+        warnings.simplefilter(&#34;default&#34;)
+
         www = geo.width; hhh = geo.height
         xxx = geo.x;     yyy = geo.y
 
@@ -323,14 +325,16 @@ class EdMainWindow():
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
 
-        alpha = pedconfig.conf.sql.get_float(&#34;alpha&#34;)
+        alpha = pedconfig.conf.sql.get_float(&#34;alpha&#34;, 1.0)
         if pedconfig.conf.verbose:
                 print(&#34;Alpha:&#34;, alpha)
 
         if alpha &gt; 1.0:         alpha = 1.0
         if alpha &lt; .5:          alpha = .5
         self.alpha = alpha
+        #self.alpha = 1.0
 
+        warnings.simplefilter(&#34;ignore&#34;)
         if self.mywin.is_composited():
             self.mywin.set_opacity(self.alpha)
 
@@ -341,15 +345,18 @@ class EdMainWindow():
                 self.mywin.set_icon_from_file(&#34;images/pyedpro.png&#34;)
             except:
                 print(&#34;Canot load main icon.&#34;)
+        warnings.simplefilter(&#34;default&#34;)
 
         self.merge = Gtk.UIManager()
         #self.merge.connect(&#34;pre-activate&#34;, self.menu_open)
         #self.merge.connect(&#34;add_widget&#34;, self.menu_open)
         #self.mywin.set_data(&#34;ui-manager&#34;, self.merge)
 
+        warnings.simplefilter(&#34;ignore&#34;)
         self.acg = create_action_group(self)
         self.merge.insert_action_group(self.acg, 0)
         self.accel = self.merge.get_accel_group()
+        warnings.simplefilter(&#34;default&#34;)
 
         ##accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
         #accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.META_MASK)
@@ -359,11 +366,15 @@ class EdMainWindow():
         self.mywin.add_accel_group(self.accel)
 
         try:
+            warnings.simplefilter(&#34;ignore&#34;)
             mergeid = self.merge.add_ui_from_string(ui_info)
+            warnings.simplefilter(&#34;default&#34;)
         except GLib.GError as msg:
             print(&#34;Building menus failed: %s&#34; % msg)
 
+        warnings.simplefilter(&#34;ignore&#34;)
         merge_id = self.merge.new_merge_id()
+        warnings.simplefilter(&#34;default&#34;)
         self.add_mru(self.merge, merge_id, self.acg)
 
         # Keybinder
@@ -371,7 +382,9 @@ class EdMainWindow():
         #for aa in actions:
         #    print(aa.get_name(), )
 
+        warnings.simplefilter(&#34;ignore&#34;)
         self.mbar = self.merge.get_widget(&#34;/MenuBar&#34;)
+        warnings.simplefilter(&#34;default&#34;)
         self.mbar.show()
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
@@ -469,9 +482,9 @@ class EdMainWindow():
 
         self.hpaned = Gtk.HPaned(); self.hpaned.set_border_width(2)
 
-        #warnings.simplefilter(&#34;ignore&#34;)
+        warnings.simplefilter(&#34;ignore&#34;)
         scroll = Gtk.ScrolledWindow()
-        #warnings.simplefilter(&#34;default&#34;)
+        warnings.simplefilter(&#34;default&#34;)
 
         global treeview
         treeview = self.create_tree()
@@ -497,7 +510,9 @@ class EdMainWindow():
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(treeview2)
         frame3 = Gtk.Frame(); frame3.add(scroll2)
+        warnings.simplefilter(&#34;ignore&#34;)
         vpaned.set_focus_chain((frame2,))
+        warnings.simplefilter(&#34;default&#34;)
         vpaned.add(frame3)
 
         vpaned.set_position(self.get_height() - 340)
@@ -515,7 +530,7 @@ class EdMainWindow():
                 pedutil.put_exception(&#34;func tab&#34;)
 
         try:
-            #pw = Gtk.Label(&#34;hello&#34;)
+            #pw = Gtk.Label(label=&#34;hello&#34;)
             pw = pedai.pgAI()
             notebook2.append_page(pw)
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
@@ -582,7 +597,7 @@ class EdMainWindow():
         self.hpaned.set_position(self.hpanepos)
 
         self.hpaned.add(notebook2)
-        #self.hpaned.pack2(Gtk.Label(&#34;hello &#34;))
+        #self.hpaned.pack2(Gtk.Label(label=&#34;hello &#34;))
         self.hpaned.pack2(notebook)
         #notebook.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#888888&#34;))
 
@@ -599,8 +614,8 @@ class EdMainWindow():
         #self.statusbar2.set_spacing(0)
 
         # Replaced it with simple labels
-        slabs = Gtk.Label(&#34;   &#34;)
-        self.slab = Gtk.Label(&#34; status  &#34;)
+        slabs = Gtk.Label(label=&#34;   &#34;)
+        self.slab = Gtk.Label(label=&#34; status  &#34;)
         self.slab.set_xalign(Gtk.Align.START)
         self.slab.set_yalign(Gtk.Align.START)
 
@@ -611,20 +626,20 @@ class EdMainWindow():
         shbox.pack_start(slabs, 0, 0, 0)
         shbox.pack_start(self.slab, 0, 0, 0)
 
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
         eb = smallbutt(&#34; Hist &#34;, self.status_hist, &#34;Look at event history&#34;)
         shbox.pack_end(eb, 0, 0, 0)
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
 
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
         eb2 = smallbutt(&#34; Lang &#34;, self.status_lang, &#34;Change language&#34;)
         shbox.pack_end(eb2, 0, 0, 0)
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
 
         #shbox.override_background_color(
         #            Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, 1) )
 
-        self.slab2 = Gtk.Label(&#34; status2  &#34;)
+        self.slab2 = Gtk.Label(label=&#34; status2  &#34;)
 
         #self.hpaned2 = Gtk.HPaned(); self.hpaned2.set_border_width(5)
         #self.hpaned2.set_position(20)
@@ -651,7 +666,7 @@ class EdMainWindow():
         # This many buttons on screen
         self.num_butts =  www // (1280 // 6)
         self.buttarr = []               # So later we can change labels
-        self.newbox.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         for aa in range(self.num_butts):
             #butt = Gtk.Button(&#34;FuncA %d &#34; % (aa + 1))
             head = pedconfig.conf.sql.get(&#34;mac%d%d&#34; % (1, aa))
@@ -662,16 +677,20 @@ class EdMainWindow():
             self.buttarr.append(butt)
             #butt.connect(&#34;pressed&#34;, self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
-        self.newbox.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         combox = Gtk.VBox()
         combox.pack_start(self.newbox, 1, 1, 1)
         newscroll = Gtk.ScrolledWindow()
         newscroll.set_overlay_scrolling(False)
         newscroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+
+        warnings.simplefilter(&#34;ignore&#34;)
         newscroll.add_with_viewport(combox)
+        warnings.simplefilter(&#34;default&#34;)
+
         obox2.pack_start(newscroll, 1, 1, 0)
 
-        self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox2.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         for aa in range(self.num_butts):
             #butt = Gtk.Button(&#34;FuncB %d &#34; % (aa + 1))
             head = pedconfig.conf.sql.get(&#34;mac%d%d&#34; % (2, aa))
@@ -682,11 +701,11 @@ class EdMainWindow():
             self.buttarr.append(butt)
             #butt.connect(&#34;pressed&#34;, self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
-        self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox2.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         combox.pack_start(self.newbox2, 1, 1, 1)
 
-        leftb = Gtk.Button(&#34;&lt;&#34;)
-        rightb = Gtk.Button(&#34;&gt;&#34;)
+        leftb = Gtk.Button(label=&#34;&lt;&#34;)
+        rightb = Gtk.Button(label=&#34;&gt;&#34;)
         #obox3.pack_start(leftb, 0,0,0)
 
         oscroll = Gtk.ScrolledWindow()
@@ -732,11 +751,12 @@ class EdMainWindow():
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         Gtk.StyleContext.add_class(box.get_style_context(), &#34;linked&#34;)
 
+        warnings.simplefilter(&#34;ignore&#34;)
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
         button.set_tooltip_text(&#34;Show / Hide Toolbar&#34;)
         box.add(button)
-        box.add(Gtk.Label(&#34; &#34;))
+        box.add(Gtk.Label(label=&#34; &#34;))
         button.connect(&#34;pressed&#34;, self.ttt)
 
         button = Gtk.Button()
@@ -744,18 +764,19 @@ class EdMainWindow():
         button.connect(&#34;pressed&#34;, self.mmm)
         button.set_tooltip_text(&#34;Show / Hide menu&#34;)
         box.add(button)
-        box.add(Gtk.Label(&#34;   &#34;))
+        box.add(Gtk.Label(label=&#34;   &#34;))
 
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE))
         button.connect(&#34;pressed&#34;, self.bleft)
         box.add(button)
-        box.add(Gtk.Label(&#34; &#34;))
+        box.add(Gtk.Label(label=&#34; &#34;))
 
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE))
         button.connect(&#34;pressed&#34;, self.bright)
         box.add(button)
+        warnings.simplefilter(&#34;default&#34;)
 
         # See if session is remembred
         oldsess = pedconfig.conf.sql.get(&#34;sess&#34;)
@@ -763,9 +784,9 @@ class EdMainWindow():
             self.sess = oldsess
 
         self.headbar.pack_start(box)
-        self.sess_label =  Gtk.Label(self.sess)
+        self.sess_label =  Gtk.Label(label=self.sess)
         self.headbar.pack_start(self.sess_label)
-        self.root_label =  Gtk.Label(self.rootlab)
+        self.root_label =  Gtk.Label(label=self.rootlab)
         self.headbar.pack_start(self.root_label)
 
         self.mywin.set_titlebar(self.headbar)
@@ -1132,25 +1153,31 @@ class EdMainWindow():
 
     def add_mru(self, mergex, merge_id, action_group):
 
+        warnings.simplefilter(&#34;ignore&#34;)
+
         for aa in self.oh.histarr:
             if aa[2]:
                 #print(&#34;.oh&#34;, aa)
                 fname = aa[2]
+                warnings.simplefilter(&#34;ignore&#34;)
                 ac = Gtk.Action(fname, fname, fname, None)
                 ac.connect(&#39;activate&#39;, self.open_recent)
                 action_group.add_action(ac)
                 mergex.add_ui(merge_id, &#34;/MenuBar/FileMenu/Recent/Recent Files/&#34;,
                     fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+                warnings.simplefilter(&#34;default&#34;)
 
         for aa in self.os.histarr:
             if aa[2]:
                 #print(&#34;.os&#34;, aa)
                 fname = aa[2]
-                ac = Gtk.Action(fname, fname, fname, None)
+                ac = Gtk.Action(name=fname, label=fname,
+                                    tooltip=fname, stock_id=None)
                 ac.connect(&#39;activate&#39;, self.open_recent_sess)
                 action_group.add_action(ac)
                 mergex.add_ui(merge_id, &#34;/MenuBar/FileMenu/Sessions/Recent Sessions/&#34;,
                     fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+        warnings.simplefilter(&#34;default&#34;)
 
     def area_winstate(self, arg1, arg2):
         pass
@@ -1188,14 +1215,24 @@ class EdMainWindow():
         #    vcurr.area.locate(xstr)
 
     def tree_sel(self, xtree, xiter, xpath):
-        #print(&#34;tree_sel&#34;, xtree, xiter, xpath)
+
         # Focus on main doc
         sel = xtree.get_selection()
+        #print(&#34;tree_sel&#34;, dir(sel))
+
         xmodel, xiter = sel.get_selected()
         if xiter:
             xstr = xmodel.get_value(xiter, 0)
+            #print(&#34;tree_sel:&#34;, xstr)
+            # Calculate position
+            posx = int(str(xmodel.get_path(xiter)) )
+            #print(&#34;tree_sel: path %d&#34; % posx)
             vcurr = notebook.get_nth_page(notebook.get_current_page())
-            vcurr.area.locate(xstr)
+            #vcurr.area.locate(xstr)
+            global treenums
+            #print(&#34;treenums:&#34;, treenums)
+            vcurr.area.gotoxy(0, treenums[posx], len(xstr), True)
+
             # Focus on main doc
             vcurr = notebook.get_nth_page(notebook.get_current_page())
             self.mywin.set_focus(vcurr.vbox.area)
@@ -1464,7 +1501,7 @@ class EdMainWindow():
         self.start_tree2()
 
         # create the TreeView using treestore
-        tv = Gtk.TreeView(treestore2)
+        tv = Gtk.TreeView(model=treestore2)
 
         # create a CellRendererText to render the data
         cell = Gtk.CellRendererText()
@@ -1488,11 +1525,11 @@ class EdMainWindow():
         pass
 
     # --------------------------------------------------------------------
-    def update_treestore(self, text):
+    def update_treestore(self, text, nums):
 
-        global treestore, treeview
-        if not treestore: return
-
+        global treestore, treeview, treenums
+        if not treestore:
+            return
         # Remember old position
         #Gtk.TreeViewColumn Gtk.TreeView Gtk.TreeStore
         old_sel = None
@@ -1503,12 +1540,11 @@ class EdMainWindow():
             #print(&#34;xiter&#34;, xiter)
             if xiter:
                 old_sel = treestore.get_value(xiter, 0)
-
         except:
             #print(&#34;update_tree old pos&#34;, sys.exc_info())
             pass
-
         # Delete previous contents
+        treenums = []
         try:
             while True:
                 root = treestore.get_iter_first()
@@ -1521,7 +1557,6 @@ class EdMainWindow():
         except:
             print(&#34;update_tree&#34;, sys.exc_info())
             pass
-
         if not text:
             return
         try:
@@ -1529,6 +1564,8 @@ class EdMainWindow():
                 piter = treestore.append(None, [cut_lead_space(line)])
             # Back to old line
             treeview.scroll_to_cell(path[0], None, False, 0, 0)
+            for numx in nums:
+                treenums.append(numx)
         except:
             #print(&#34;Exception in append treestore&#34;, sys.exc_info())
             pass
@@ -1582,7 +1619,10 @@ class EdMainWindow():
         #print(  &#34;pedwin area focus&#34;, win, act)
 
     def area_focus_in(self, win, act):
-        #print(  &#34;area focus in&#34;, win, act)
+
+        if pedconfig.conf.verbose &gt; 3:
+            print(  &#34;area focus in&#34;, win, act)
+
         # This was needed as pygtk leaves the alt key hanging
         pedconfig.conf.keyh.reset()
         # Focus on main doc
@@ -2759,7 +2799,7 @@ def handler_tick(arg, arg2):
                     vcurr.area.doidle = 1
                     if not mw.mac:
                         vcurr.area.source_id = \
-                            GLib.idle_add(peddoc.idle_callback, vcurr.area, 0)
+                            GLib.idle_add(pedidle.idle_callback, vcurr.area, 0)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -2770,7 +2810,7 @@ def handler_tick(arg, arg2):
                         #pedspell.spell(vcurr.area)
                         #print(&#34;adding callback2&#34;)
                         vcurr.area.source_id2 = \
-                            GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
+                            GLib.idle_add(pedidle.idle_callback2, vcurr.area, 0)
 
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text
@@ -3037,7 +3077,7 @@ def handler_tick(arg, arg2):
                     vcurr.area.doidle = 1
                     if not mw.mac:
                         vcurr.area.source_id = \
-                            GLib.idle_add(peddoc.idle_callback, vcurr.area, 0)
+                            GLib.idle_add(pedidle.idle_callback, vcurr.area, 0)
 
         if pedconfig.conf.syncidle:
             pedconfig.conf.syncidle -= 1
@@ -3048,7 +3088,7 @@ def handler_tick(arg, arg2):
                         #pedspell.spell(vcurr.area)
                         #print(&#34;adding callback2&#34;)
                         vcurr.area.source_id2 = \
-                            GLib.idle_add(peddoc.idle_callback2, vcurr.area, 0)
+                            GLib.idle_add(pedidle.idle_callback2, vcurr.area, 0)
 
                     if len(vcurr.area2.text) == 0:
                         vcurr.area2.text = vcurr.area.text
@@ -3295,10 +3335,13 @@ def handler_tick(arg, arg2):
         disp2 = Gdk.Display()
         disp = disp2.get_default()
         #print( disp)
+        warnings.simplefilter(&#34;ignore&#34;)
         scr = disp.get_default_screen()
         ptr = disp.get_pointer()
         mon = scr.get_monitor_at_point(ptr[1], ptr[2])
         geo = scr.get_monitor_geometry(mon)
+        warnings.simplefilter(&#34;default&#34;)
+
         www = geo.width; hhh = geo.height
         xxx = geo.x;     yyy = geo.y
 
@@ -3343,14 +3386,16 @@ def handler_tick(arg, arg2):
             #self.mywin.set_position(Gtk.WindowPosition.CENTER)
             #self.mywin.move(xxx + www / 16, yyy / hhh / 16)
 
-        alpha = pedconfig.conf.sql.get_float(&#34;alpha&#34;)
+        alpha = pedconfig.conf.sql.get_float(&#34;alpha&#34;, 1.0)
         if pedconfig.conf.verbose:
                 print(&#34;Alpha:&#34;, alpha)
 
         if alpha &gt; 1.0:         alpha = 1.0
         if alpha &lt; .5:          alpha = .5
         self.alpha = alpha
+        #self.alpha = 1.0
 
+        warnings.simplefilter(&#34;ignore&#34;)
         if self.mywin.is_composited():
             self.mywin.set_opacity(self.alpha)
 
@@ -3361,15 +3406,18 @@ def handler_tick(arg, arg2):
                 self.mywin.set_icon_from_file(&#34;images/pyedpro.png&#34;)
             except:
                 print(&#34;Canot load main icon.&#34;)
+        warnings.simplefilter(&#34;default&#34;)
 
         self.merge = Gtk.UIManager()
         #self.merge.connect(&#34;pre-activate&#34;, self.menu_open)
         #self.merge.connect(&#34;add_widget&#34;, self.menu_open)
         #self.mywin.set_data(&#34;ui-manager&#34;, self.merge)
 
+        warnings.simplefilter(&#34;ignore&#34;)
         self.acg = create_action_group(self)
         self.merge.insert_action_group(self.acg, 0)
         self.accel = self.merge.get_accel_group()
+        warnings.simplefilter(&#34;default&#34;)
 
         ##accel.disconnect_key(Gdk.KEY_o, Gdk.ModifierType.CONTROL_MASK)
         #accel.disconnect_key(Gdk.KEY_a, Gdk.ModifierType.META_MASK)
@@ -3379,11 +3427,15 @@ def handler_tick(arg, arg2):
         self.mywin.add_accel_group(self.accel)
 
         try:
+            warnings.simplefilter(&#34;ignore&#34;)
             mergeid = self.merge.add_ui_from_string(ui_info)
+            warnings.simplefilter(&#34;default&#34;)
         except GLib.GError as msg:
             print(&#34;Building menus failed: %s&#34; % msg)
 
+        warnings.simplefilter(&#34;ignore&#34;)
         merge_id = self.merge.new_merge_id()
+        warnings.simplefilter(&#34;default&#34;)
         self.add_mru(self.merge, merge_id, self.acg)
 
         # Keybinder
@@ -3391,7 +3443,9 @@ def handler_tick(arg, arg2):
         #for aa in actions:
         #    print(aa.get_name(), )
 
+        warnings.simplefilter(&#34;ignore&#34;)
         self.mbar = self.merge.get_widget(&#34;/MenuBar&#34;)
+        warnings.simplefilter(&#34;default&#34;)
         self.mbar.show()
 
         self.mywin.set_events(Gdk.EventMask.ALL_EVENTS_MASK )
@@ -3489,9 +3543,9 @@ def handler_tick(arg, arg2):
 
         self.hpaned = Gtk.HPaned(); self.hpaned.set_border_width(2)
 
-        #warnings.simplefilter(&#34;ignore&#34;)
+        warnings.simplefilter(&#34;ignore&#34;)
         scroll = Gtk.ScrolledWindow()
-        #warnings.simplefilter(&#34;default&#34;)
+        warnings.simplefilter(&#34;default&#34;)
 
         global treeview
         treeview = self.create_tree()
@@ -3517,7 +3571,9 @@ def handler_tick(arg, arg2):
         scroll2 = Gtk.ScrolledWindow()
         scroll2.add(treeview2)
         frame3 = Gtk.Frame(); frame3.add(scroll2)
+        warnings.simplefilter(&#34;ignore&#34;)
         vpaned.set_focus_chain((frame2,))
+        warnings.simplefilter(&#34;default&#34;)
         vpaned.add(frame3)
 
         vpaned.set_position(self.get_height() - 340)
@@ -3535,7 +3591,7 @@ def handler_tick(arg, arg2):
                 pedutil.put_exception(&#34;func tab&#34;)
 
         try:
-            #pw = Gtk.Label(&#34;hello&#34;)
+            #pw = Gtk.Label(label=&#34;hello&#34;)
             pw = pedai.pgAI()
             notebook2.append_page(pw)
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
@@ -3602,7 +3658,7 @@ def handler_tick(arg, arg2):
         self.hpaned.set_position(self.hpanepos)
 
         self.hpaned.add(notebook2)
-        #self.hpaned.pack2(Gtk.Label(&#34;hello &#34;))
+        #self.hpaned.pack2(Gtk.Label(label=&#34;hello &#34;))
         self.hpaned.pack2(notebook)
         #notebook.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#888888&#34;))
 
@@ -3619,8 +3675,8 @@ def handler_tick(arg, arg2):
         #self.statusbar2.set_spacing(0)
 
         # Replaced it with simple labels
-        slabs = Gtk.Label(&#34;   &#34;)
-        self.slab = Gtk.Label(&#34; status  &#34;)
+        slabs = Gtk.Label(label=&#34;   &#34;)
+        self.slab = Gtk.Label(label=&#34; status  &#34;)
         self.slab.set_xalign(Gtk.Align.START)
         self.slab.set_yalign(Gtk.Align.START)
 
@@ -3631,20 +3687,20 @@ def handler_tick(arg, arg2):
         shbox.pack_start(slabs, 0, 0, 0)
         shbox.pack_start(self.slab, 0, 0, 0)
 
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
         eb = smallbutt(&#34; Hist &#34;, self.status_hist, &#34;Look at event history&#34;)
         shbox.pack_end(eb, 0, 0, 0)
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
 
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
         eb2 = smallbutt(&#34; Lang &#34;, self.status_lang, &#34;Change language&#34;)
         shbox.pack_end(eb2, 0, 0, 0)
-        shbox.pack_end(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        shbox.pack_end(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
 
         #shbox.override_background_color(
         #            Gtk.StateFlags.NORMAL, Gdk.RGBA(1, .5, 1) )
 
-        self.slab2 = Gtk.Label(&#34; status2  &#34;)
+        self.slab2 = Gtk.Label(label=&#34; status2  &#34;)
 
         #self.hpaned2 = Gtk.HPaned(); self.hpaned2.set_border_width(5)
         #self.hpaned2.set_position(20)
@@ -3671,7 +3727,7 @@ def handler_tick(arg, arg2):
         # This many buttons on screen
         self.num_butts =  www // (1280 // 6)
         self.buttarr = []               # So later we can change labels
-        self.newbox.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         for aa in range(self.num_butts):
             #butt = Gtk.Button(&#34;FuncA %d &#34; % (aa + 1))
             head = pedconfig.conf.sql.get(&#34;mac%d%d&#34; % (1, aa))
@@ -3682,16 +3738,20 @@ def handler_tick(arg, arg2):
             self.buttarr.append(butt)
             #butt.connect(&#34;pressed&#34;, self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
-        self.newbox.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         combox = Gtk.VBox()
         combox.pack_start(self.newbox, 1, 1, 1)
         newscroll = Gtk.ScrolledWindow()
         newscroll.set_overlay_scrolling(False)
         newscroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
+
+        warnings.simplefilter(&#34;ignore&#34;)
         newscroll.add_with_viewport(combox)
+        warnings.simplefilter(&#34;default&#34;)
+
         obox2.pack_start(newscroll, 1, 1, 0)
 
-        self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox2.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         for aa in range(self.num_butts):
             #butt = Gtk.Button(&#34;FuncB %d &#34; % (aa + 1))
             head = pedconfig.conf.sql.get(&#34;mac%d%d&#34; % (2, aa))
@@ -3702,11 +3762,11 @@ def handler_tick(arg, arg2):
             self.buttarr.append(butt)
             #butt.connect(&#34;pressed&#34;, self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
-        self.newbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.newbox2.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         combox.pack_start(self.newbox2, 1, 1, 1)
 
-        leftb = Gtk.Button(&#34;&lt;&#34;)
-        rightb = Gtk.Button(&#34;&gt;&#34;)
+        leftb = Gtk.Button(label=&#34;&lt;&#34;)
+        rightb = Gtk.Button(label=&#34;&gt;&#34;)
         #obox3.pack_start(leftb, 0,0,0)
 
         oscroll = Gtk.ScrolledWindow()
@@ -3752,11 +3812,12 @@ def handler_tick(arg, arg2):
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         Gtk.StyleContext.add_class(box.get_style_context(), &#34;linked&#34;)
 
+        warnings.simplefilter(&#34;ignore&#34;)
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
         button.set_tooltip_text(&#34;Show / Hide Toolbar&#34;)
         box.add(button)
-        box.add(Gtk.Label(&#34; &#34;))
+        box.add(Gtk.Label(label=&#34; &#34;))
         button.connect(&#34;pressed&#34;, self.ttt)
 
         button = Gtk.Button()
@@ -3764,18 +3825,19 @@ def handler_tick(arg, arg2):
         button.connect(&#34;pressed&#34;, self.mmm)
         button.set_tooltip_text(&#34;Show / Hide menu&#34;)
         box.add(button)
-        box.add(Gtk.Label(&#34;   &#34;))
+        box.add(Gtk.Label(label=&#34;   &#34;))
 
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.LEFT, Gtk.ShadowType.NONE))
         button.connect(&#34;pressed&#34;, self.bleft)
         box.add(button)
-        box.add(Gtk.Label(&#34; &#34;))
+        box.add(Gtk.Label(label=&#34; &#34;))
 
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE))
         button.connect(&#34;pressed&#34;, self.bright)
         box.add(button)
+        warnings.simplefilter(&#34;default&#34;)
 
         # See if session is remembred
         oldsess = pedconfig.conf.sql.get(&#34;sess&#34;)
@@ -3783,9 +3845,9 @@ def handler_tick(arg, arg2):
             self.sess = oldsess
 
         self.headbar.pack_start(box)
-        self.sess_label =  Gtk.Label(self.sess)
+        self.sess_label =  Gtk.Label(label=self.sess)
         self.headbar.pack_start(self.sess_label)
-        self.root_label =  Gtk.Label(self.rootlab)
+        self.root_label =  Gtk.Label(label=self.rootlab)
         self.headbar.pack_start(self.root_label)
 
         self.mywin.set_titlebar(self.headbar)
@@ -4152,25 +4214,31 @@ def handler_tick(arg, arg2):
 
     def add_mru(self, mergex, merge_id, action_group):
 
+        warnings.simplefilter(&#34;ignore&#34;)
+
         for aa in self.oh.histarr:
             if aa[2]:
                 #print(&#34;.oh&#34;, aa)
                 fname = aa[2]
+                warnings.simplefilter(&#34;ignore&#34;)
                 ac = Gtk.Action(fname, fname, fname, None)
                 ac.connect(&#39;activate&#39;, self.open_recent)
                 action_group.add_action(ac)
                 mergex.add_ui(merge_id, &#34;/MenuBar/FileMenu/Recent/Recent Files/&#34;,
                     fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+                warnings.simplefilter(&#34;default&#34;)
 
         for aa in self.os.histarr:
             if aa[2]:
                 #print(&#34;.os&#34;, aa)
                 fname = aa[2]
-                ac = Gtk.Action(fname, fname, fname, None)
+                ac = Gtk.Action(name=fname, label=fname,
+                                    tooltip=fname, stock_id=None)
                 ac.connect(&#39;activate&#39;, self.open_recent_sess)
                 action_group.add_action(ac)
                 mergex.add_ui(merge_id, &#34;/MenuBar/FileMenu/Sessions/Recent Sessions/&#34;,
                     fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+        warnings.simplefilter(&#34;default&#34;)
 
     def area_winstate(self, arg1, arg2):
         pass
@@ -4208,14 +4276,24 @@ def handler_tick(arg, arg2):
         #    vcurr.area.locate(xstr)
 
     def tree_sel(self, xtree, xiter, xpath):
-        #print(&#34;tree_sel&#34;, xtree, xiter, xpath)
+
         # Focus on main doc
         sel = xtree.get_selection()
+        #print(&#34;tree_sel&#34;, dir(sel))
+
         xmodel, xiter = sel.get_selected()
         if xiter:
             xstr = xmodel.get_value(xiter, 0)
+            #print(&#34;tree_sel:&#34;, xstr)
+            # Calculate position
+            posx = int(str(xmodel.get_path(xiter)) )
+            #print(&#34;tree_sel: path %d&#34; % posx)
             vcurr = notebook.get_nth_page(notebook.get_current_page())
-            vcurr.area.locate(xstr)
+            #vcurr.area.locate(xstr)
+            global treenums
+            #print(&#34;treenums:&#34;, treenums)
+            vcurr.area.gotoxy(0, treenums[posx], len(xstr), True)
+
             # Focus on main doc
             vcurr = notebook.get_nth_page(notebook.get_current_page())
             self.mywin.set_focus(vcurr.vbox.area)
@@ -4484,7 +4562,7 @@ def handler_tick(arg, arg2):
         self.start_tree2()
 
         # create the TreeView using treestore
-        tv = Gtk.TreeView(treestore2)
+        tv = Gtk.TreeView(model=treestore2)
 
         # create a CellRendererText to render the data
         cell = Gtk.CellRendererText()
@@ -4508,11 +4586,11 @@ def handler_tick(arg, arg2):
         pass
 
     # --------------------------------------------------------------------
-    def update_treestore(self, text):
+    def update_treestore(self, text, nums):
 
-        global treestore, treeview
-        if not treestore: return
-
+        global treestore, treeview, treenums
+        if not treestore:
+            return
         # Remember old position
         #Gtk.TreeViewColumn Gtk.TreeView Gtk.TreeStore
         old_sel = None
@@ -4523,12 +4601,11 @@ def handler_tick(arg, arg2):
             #print(&#34;xiter&#34;, xiter)
             if xiter:
                 old_sel = treestore.get_value(xiter, 0)
-
         except:
             #print(&#34;update_tree old pos&#34;, sys.exc_info())
             pass
-
         # Delete previous contents
+        treenums = []
         try:
             while True:
                 root = treestore.get_iter_first()
@@ -4541,7 +4618,6 @@ def handler_tick(arg, arg2):
         except:
             print(&#34;update_tree&#34;, sys.exc_info())
             pass
-
         if not text:
             return
         try:
@@ -4549,6 +4625,8 @@ def handler_tick(arg, arg2):
                 piter = treestore.append(None, [cut_lead_space(line)])
             # Back to old line
             treeview.scroll_to_cell(path[0], None, False, 0, 0)
+            for numx in nums:
+                treenums.append(numx)
         except:
             #print(&#34;Exception in append treestore&#34;, sys.exc_info())
             pass
@@ -4602,7 +4680,10 @@ def handler_tick(arg, arg2):
         #print(  &#34;pedwin area focus&#34;, win, act)
 
     def area_focus_in(self, win, act):
-        #print(  &#34;area focus in&#34;, win, act)
+
+        if pedconfig.conf.verbose &gt; 3:
+            print(  &#34;area focus in&#34;, win, act)
+
         # This was needed as pygtk leaves the alt key hanging
         pedconfig.conf.keyh.reset()
         # Focus on main doc
@@ -5981,25 +6062,31 @@ def handler_tick(arg, arg2):
 </summary>
 <pre><code class="python">def add_mru(self, mergex, merge_id, action_group):
 
+    warnings.simplefilter(&#34;ignore&#34;)
+
     for aa in self.oh.histarr:
         if aa[2]:
             #print(&#34;.oh&#34;, aa)
             fname = aa[2]
+            warnings.simplefilter(&#34;ignore&#34;)
             ac = Gtk.Action(fname, fname, fname, None)
             ac.connect(&#39;activate&#39;, self.open_recent)
             action_group.add_action(ac)
             mergex.add_ui(merge_id, &#34;/MenuBar/FileMenu/Recent/Recent Files/&#34;,
                 fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+            warnings.simplefilter(&#34;default&#34;)
 
     for aa in self.os.histarr:
         if aa[2]:
             #print(&#34;.os&#34;, aa)
             fname = aa[2]
-            ac = Gtk.Action(fname, fname, fname, None)
+            ac = Gtk.Action(name=fname, label=fname,
+                                tooltip=fname, stock_id=None)
             ac.connect(&#39;activate&#39;, self.open_recent_sess)
             action_group.add_action(ac)
             mergex.add_ui(merge_id, &#34;/MenuBar/FileMenu/Sessions/Recent Sessions/&#34;,
-                fname, fname, Gtk.UIManagerItemType.MENUITEM, False)</code></pre>
+                fname, fname, Gtk.UIManagerItemType.MENUITEM, False)
+    warnings.simplefilter(&#34;default&#34;)</code></pre>
 </details>
 </dd>
 <dt id="pedwin.EdMainWindow.altopen"><code class="name flex">
@@ -6077,7 +6164,10 @@ def handler_tick(arg, arg2):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def area_focus_in(self, win, act):
-    #print(  &#34;area focus in&#34;, win, act)
+
+    if pedconfig.conf.verbose &gt; 3:
+        print(  &#34;area focus in&#34;, win, act)
+
     # This was needed as pygtk leaves the alt key hanging
     pedconfig.conf.keyh.reset()
     # Focus on main doc
@@ -6545,7 +6635,7 @@ def handler_tick(arg, arg2):
     self.start_tree2()
 
     # create the TreeView using treestore
-    tv = Gtk.TreeView(treestore2)
+    tv = Gtk.TreeView(model=treestore2)
 
     # create a CellRendererText to render the data
     cell = Gtk.CellRendererText()
@@ -7703,14 +7793,24 @@ def handler_tick(arg, arg2):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def tree_sel(self, xtree, xiter, xpath):
-    #print(&#34;tree_sel&#34;, xtree, xiter, xpath)
+
     # Focus on main doc
     sel = xtree.get_selection()
+    #print(&#34;tree_sel&#34;, dir(sel))
+
     xmodel, xiter = sel.get_selected()
     if xiter:
         xstr = xmodel.get_value(xiter, 0)
+        #print(&#34;tree_sel:&#34;, xstr)
+        # Calculate position
+        posx = int(str(xmodel.get_path(xiter)) )
+        #print(&#34;tree_sel: path %d&#34; % posx)
         vcurr = notebook.get_nth_page(notebook.get_current_page())
-        vcurr.area.locate(xstr)
+        #vcurr.area.locate(xstr)
+        global treenums
+        #print(&#34;treenums:&#34;, treenums)
+        vcurr.area.gotoxy(0, treenums[posx], len(xstr), True)
+
         # Focus on main doc
         vcurr = notebook.get_nth_page(notebook.get_current_page())
         self.mywin.set_focus(vcurr.vbox.area)</code></pre>
@@ -7903,7 +8003,7 @@ def handler_tick(arg, arg2):
 </details>
 </dd>
 <dt id="pedwin.EdMainWindow.update_treestore"><code class="name flex">
-<span>def <span class="ident">update_treestore</span></span>(<span>self, text)</span>
+<span>def <span class="ident">update_treestore</span></span>(<span>self, text, nums)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -7911,11 +8011,11 @@ def handler_tick(arg, arg2):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def update_treestore(self, text):
+<pre><code class="python">def update_treestore(self, text, nums):
 
-    global treestore, treeview
-    if not treestore: return
-
+    global treestore, treeview, treenums
+    if not treestore:
+        return
     # Remember old position
     #Gtk.TreeViewColumn Gtk.TreeView Gtk.TreeStore
     old_sel = None
@@ -7926,12 +8026,11 @@ def handler_tick(arg, arg2):
         #print(&#34;xiter&#34;, xiter)
         if xiter:
             old_sel = treestore.get_value(xiter, 0)
-
     except:
         #print(&#34;update_tree old pos&#34;, sys.exc_info())
         pass
-
     # Delete previous contents
+    treenums = []
     try:
         while True:
             root = treestore.get_iter_first()
@@ -7944,7 +8043,6 @@ def handler_tick(arg, arg2):
     except:
         print(&#34;update_tree&#34;, sys.exc_info())
         pass
-
     if not text:
         return
     try:
@@ -7952,6 +8050,8 @@ def handler_tick(arg, arg2):
             piter = treestore.append(None, [cut_lead_space(line)])
         # Back to old line
         treeview.scroll_to_cell(path[0], None, False, 0, 0)
+        for numx in nums:
+            treenums.append(numx)
     except:
         #print(&#34;Exception in append treestore&#34;, sys.exc_info())
         pass</code></pre>

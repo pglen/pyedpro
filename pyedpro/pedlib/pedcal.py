@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
 
@@ -29,9 +28,14 @@ from pyvguicom.pgsimp import *
 from pyvguicom import pggui
 from pyvguicom import pgsel
 
+__doc__ = '''
+    Calendar module for pyedpro
+'''
 # ------------------------------------------------------------------------
 
 class pgcal(Gtk.VBox):
+
+    ''' Call up the calendar dialog '''
 
     def __init__(self):
 

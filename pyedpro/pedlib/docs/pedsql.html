@@ -95,13 +95,13 @@ class pedsql():
         else:
             return int(0)
 
-    def get_float(self, kkk):
+    def get_float(self, kkk, default = 0):
 
         ret = self.get(kkk)
         if ret:
             return float(float(ret))
         else:
-            return float(0)
+            return float(default)
 
     # --------------------------------------------------------------------
     # Return empty if no data
@@ -268,13 +268,13 @@ class pedsql():
         else:
             return int(0)
 
-    def get_float(self, kkk):
+    def get_float(self, kkk, default = 0):
 
         ret = self.get(kkk)
         if ret:
             return float(float(ret))
         else:
-            return float(0)
+            return float(default)
 
     # --------------------------------------------------------------------
     # Return empty if no data
@@ -392,7 +392,7 @@ class pedsql():
 </details>
 </dd>
 <dt id="pedsql.pedsql.get_float"><code class="name flex">
-<span>def <span class="ident">get_float</span></span>(<span>self, kkk)</span>
+<span>def <span class="ident">get_float</span></span>(<span>self, kkk, default=0)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -400,13 +400,13 @@ class pedsql():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_float(self, kkk):
+<pre><code class="python">def get_float(self, kkk, default = 0):
 
     ret = self.get(kkk)
     if ret:
         return float(float(ret))
     else:
-        return float(0)</code></pre>
+        return float(default)</code></pre>
 </details>
 </dd>
 <dt id="pedsql.pedsql.get_int"><code class="name flex">

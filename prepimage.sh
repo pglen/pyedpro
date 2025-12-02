@@ -1,18 +1,21 @@
 #!/bin/bash
 
 TARG=/tmp/AppImage_$$_pyedpro
-#echo $TARG
-#exit
+#echo $TARG ; exit
+LARGFILES=../largefiles
+VER=$(grep "VERSION.*=" pyedpro/pyedpro.py | awk '{print $3}' | sed "s/\"//g")
+OUTFILE=pyedpro-$VER-x86_64.appimage
+#echo $OUTFILE ; exit
 mkdir -p $TARG
 rm -rf $TARG/*
 cp -a pyedpro/* $TARG
-cp -a ~/.local/lib/python3.10/site-packages/webkit/ $TARG
-cp -a ~/.local/lib/python3.10/site-packages/pyvpacker/ $TARG
+cp -a ~/.local/lib/python3.10/site-packages/pyvpacker.py $TARG
 cp -a ~/.local/lib/python3.10/site-packages/pydbase/ $TARG
-cp -a ~/.local/lib/python3.10/site-packages/pydbase/dbutils.py $TARG
+cp -a ~/.local/lib/python3.10/site-packages/pyvguicom/ $TARG
 find $TARG -name "*.pyc" -exec rm {} \;
-ARCH=x86_64  appimagetool  $TARG
-mv pyedpro.py-x86_64.AppImage ../largefiles
+ARCH=x86_64 appimagetool $TARG  $OUTFILE
+mv $OUTFILE $LARGFILES
+echo Results in $LARGFILES/$OUTFILE
 rm -rf $TARG
 
 # EOF

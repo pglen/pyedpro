@@ -118,7 +118,10 @@ class ToolBox(Gtk.VBox):
                      )
         cnt = 0
         for aa in tarr:
+            warnings.simplefilter(&#34;ignore&#34;)
             butt = Gtk.ToolButton().new_from_stock(aa[0])
+            warnings.simplefilter(&#34;default&#34;)
+
             butt.set_tooltip_text(aa[1])
             butt.connect(&#34;clicked&#34;, self.callb, cnt)
             cnt += 1
@@ -234,7 +237,8 @@ class Canvas(Gtk.DrawingArea):
         self.fname = &#34;untitled.ped&#34;
 
     def area_key(self, area, event):
-        print (&#34;area_key&#34;, event.keyval)
+        if pedconfig.conf.pgdebug &gt; 2:
+            print (&#34;area_key&#34;, event.keyval)
         if event.keyval == Gdk.KEY_Delete or event.keyval == Gdk.KEY_KP_Delete:
             #print(&#34;Del key&#34;)
             for bb in self.coll:
@@ -244,10 +248,12 @@ class Canvas(Gtk.DrawingArea):
             self.queue_draw()
 
         if event.keyval == Gdk.KEY_Up:
-            print(&#34;UP key&#34;)
+            if pedconfig.conf.pgdebug &gt; 2:
+                print(&#34;UP key&#34;)
 
         if event.keyval == Gdk.KEY_Down:
-            print(&#34;DN key&#34;)
+            if pedconfig.conf.pgdebug &gt; 2:
+                    print(&#34;DN key&#34;)
 
         return True
 
@@ -316,7 +322,10 @@ class Canvas(Gtk.DrawingArea):
                     onmarker = mark
                     break
 
+            warnings.simplefilter(&#34;ignore&#34;)
             gdk_window = self.get_root_window()
+            warnings.simplefilter(&#34;default&#34;)
+
             if onmarker == 5:
                 gdk_window.set_cursor(self.pencil)
             elif onmarker:
@@ -1033,7 +1042,8 @@ new() -&gt; Gtk.Widget
         self.fname = &#34;untitled.ped&#34;
 
     def area_key(self, area, event):
-        print (&#34;area_key&#34;, event.keyval)
+        if pedconfig.conf.pgdebug &gt; 2:
+            print (&#34;area_key&#34;, event.keyval)
         if event.keyval == Gdk.KEY_Delete or event.keyval == Gdk.KEY_KP_Delete:
             #print(&#34;Del key&#34;)
             for bb in self.coll:
@@ -1043,10 +1053,12 @@ new() -&gt; Gtk.Widget
             self.queue_draw()
 
         if event.keyval == Gdk.KEY_Up:
-            print(&#34;UP key&#34;)
+            if pedconfig.conf.pgdebug &gt; 2:
+                print(&#34;UP key&#34;)
 
         if event.keyval == Gdk.KEY_Down:
-            print(&#34;DN key&#34;)
+            if pedconfig.conf.pgdebug &gt; 2:
+                    print(&#34;DN key&#34;)
 
         return True
 
@@ -1115,7 +1127,10 @@ new() -&gt; Gtk.Widget
                     onmarker = mark
                     break
 
+            warnings.simplefilter(&#34;ignore&#34;)
             gdk_window = self.get_root_window()
+            warnings.simplefilter(&#34;default&#34;)
+
             if onmarker == 5:
                 gdk_window.set_cursor(self.pencil)
             elif onmarker:
@@ -2049,7 +2064,8 @@ new() -&gt; Gtk.Widget
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def area_key(self, area, event):
-    print (&#34;area_key&#34;, event.keyval)
+    if pedconfig.conf.pgdebug &gt; 2:
+        print (&#34;area_key&#34;, event.keyval)
     if event.keyval == Gdk.KEY_Delete or event.keyval == Gdk.KEY_KP_Delete:
         #print(&#34;Del key&#34;)
         for bb in self.coll:
@@ -2059,10 +2075,12 @@ new() -&gt; Gtk.Widget
         self.queue_draw()
 
     if event.keyval == Gdk.KEY_Up:
-        print(&#34;UP key&#34;)
+        if pedconfig.conf.pgdebug &gt; 2:
+            print(&#34;UP key&#34;)
 
     if event.keyval == Gdk.KEY_Down:
-        print(&#34;DN key&#34;)
+        if pedconfig.conf.pgdebug &gt; 2:
+                print(&#34;DN key&#34;)
 
     return True</code></pre>
 </details>
@@ -2134,7 +2152,10 @@ new() -&gt; Gtk.Widget
                 onmarker = mark
                 break
 
+        warnings.simplefilter(&#34;ignore&#34;)
         gdk_window = self.get_root_window()
+        warnings.simplefilter(&#34;default&#34;)
+
         if onmarker == 5:
             gdk_window.set_cursor(self.pencil)
         elif onmarker:
@@ -2703,7 +2724,10 @@ sets through the use of explicit keyword arguments.</p></div>
                      )
         cnt = 0
         for aa in tarr:
+            warnings.simplefilter(&#34;ignore&#34;)
             butt = Gtk.ToolButton().new_from_stock(aa[0])
+            warnings.simplefilter(&#34;default&#34;)
+
             butt.set_tooltip_text(aa[1])
             butt.connect(&#34;clicked&#34;, self.callb, cnt)
             cnt += 1

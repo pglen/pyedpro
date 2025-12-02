@@ -76,17 +76,31 @@ clwords =  (&#34;class &#34;, &#34; self.&#34;, &#34;try:&#34;, &#34;except&#34;
                 &#34;table &#34;, &#34;/table&#34;,)
 
 # Keywords for summary extraction: (left side window)
-pykeywords = (&#34;class &#34;, &#34;def &#34;, &#34;TODO &#34;)
 basekeywords = (&#34;(sub )|(SUB )&#34;)
-Skeywords = &#34;(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)&#34;
-pykeywords2 = &#34;(class )|(def )|(TODO )|(__main__)&#34;
+basewalk = (&#34;(sub )|(SUB )&#34;)
+cwalk =  &#34;^[_a-zA-Z].*\(.*\)&#34;
+
+asmwalk =   &#34;^[_a-zA-Z].*:&#34;
+asmkeywords = &#34;(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)|(\%if )|(%else)|(\%endif)&#34;
+asmkeywords2 = &#34;(^[_a-zA-Z].*:)|(jmp )|(ret )&#34;
+
+pykeywords = (&#34;class &#34;, &#34;def &#34;)
+pykeywords2 = &#34;(class )|(def )|(__main__)&#34;
 pykeywords3 = &#34;(_mac_)&#34;
+pykeywords4 = &#34;(def )|(for )|(while )|(return )|(import )|(def )&#34;
+pywalk = &#34;class&#34;
+
 sumkeywords = &#34;class &#34;, &#34;def &#34;, &#34;TODO &#34;
 htmlkeywords = &#34;(\{ .* \})&#34;
 
 ckeywords =  &#34;^[_a-zA-Z].*\(.*\)&#34;
-localkwords = &#34;(int .*)|(char .*)|(for)|(while)|(if)|(return)&#34;
-localpywords = &#34;(for )|(while )|(return )|(import )|(def )&#34;
+ckeywords2 = &#34;(int .*)|(char .*)|(for )|(while )|(if )|(return )&#34;
+
+vwalk =   &#34;module&#34;
+vkeywords  = &#34;(module )|(endmodule )|(import )(always)&#34;
+vkeywords2 = &#34;(if )|(else )|(end )|(wire )|(input )(output )&#34;
+
+commwords = &#34;*.c&#34;, &#34;.h&#34;, &#34;.h&#34;, &#34;.y&#34;, &#34;.l&#34;, &#34;.f&#34;, &#34;.v&#34;
 
 &#39;&#39;&#39;
  Keywords for auto correct. This corrects strings as we type.
@@ -120,12 +134,12 @@ auto_corr_table = \
             #( &#34;Bad&#34;,     &#34;if val: \n &#34;    ),
         ]
 
-
 # These files are colored by default (add extension if needed)
 
 color_files = (&#34;.py&#34;, &#34;.c&#34;, &#34;.cpp&#34;, &#34;.sh&#34;, &#34;.pl&#34;, &#34;.h&#34;, &#34;.hpp&#34;,
                     &#34;.js&#34;, &#34;.php&#34;, &#34;.f&#34;, &#34;.y&#34;, &#34;.pc&#34;, &#34;.asm&#34;,
-                        &#34;.inc&#34;, &#34;.asm&#34;, &#34;.bas&#34;, &#34;.s&#34;, &#34;.html&#34;, &#34;.ino&#34;)
+                        &#34;.inc&#34;, &#34;.asm&#34;, &#34;.bas&#34;, &#34;.s&#34;, &#34;.html&#34;,
+                        &#34;.v&#34;,  &#34;.ino&#34;)
 
 # These files are considered &#39;c&#39; like (for basic syntax highlites)
 
@@ -140,7 +154,7 @@ c_like_exts = ( &#34;.js&#34;,  &#34;.c&#34;,  &#34;.h&#34;,  &#34;.php&#34;, &#
 <section>
 <h2 class="section-title" id="header-variables">Global variables</h2>
 <dl>
-<dt id="keywords.localpywords"><code class="name">var <span class="ident">localpywords</span></code></dt>
+<dt id="keywords.commwords"><code class="name">var <span class="ident">commwords</span></code></dt>
 <dd>
 <div class="desc"><p>Keywords for auto correct. This corrects strings as we type.
 Auto correct is case sensitive.
@@ -169,7 +183,7 @@ Ctrl-m to toggle autocorrect (default: off)</p>
 <ul id="index">
 <li><h3><a href="#header-variables">Global variables</a></h3>
 <ul class="">
-<li><code><a title="keywords.localpywords" href="#keywords.localpywords">localpywords</a></code></li>
+<li><code><a title="keywords.commwords" href="#keywords.commwords">commwords</a></code></li>
 </ul>
 </li>
 </ul>

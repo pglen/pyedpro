@@ -106,16 +106,16 @@ class pgcal(Gtk.VBox):
         butt2 = Gtk.Button.new_with_mnemonic(&#34;Edit Selection&#34;)
         butt2.connect(&#34;pressed&#34;, self.demand, self.cal)
         self.hbox2.pack_start(butt2, 1, 1, 0)
-        self.hbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.hbox2.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
 
         self.pack_start(self.hbox2, 0, 0, 2)
-        #self.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label=&#34;&#34;), 0, 0, 0)
 
         self.hbox3 = Gtk.HBox()
         self.edit = Gtk.Entry()
         self.hbox3.pack_start(Gtk.Label(label=&#34; Find: &#34;), 0, 0, 0)
         self.hbox3.pack_start(self.edit, 1, 1, 0)
-        butt2 = Gtk.Button(&#34;Find&#34;)
+        butt2 = Gtk.Button(label=&#34;Find&#34;)
         butt2.connect(&#34;pressed&#34;, self.find)
         self.hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         self.hbox3.pack_start(butt2, 0, 0, 0)
@@ -141,7 +141,7 @@ class pgcal(Gtk.VBox):
         scroll3 = Gtk.ScrolledWindow()
         scroll3.add(self.edview)
         frame4 = Gtk.Frame(); frame4.add(scroll3)
-        self.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         self.daysel(self.cal)
 
 
@@ -1064,16 +1064,16 @@ sets through the use of explicit keyword arguments.</p></div>
         butt2 = Gtk.Button.new_with_mnemonic(&#34;Edit Selection&#34;)
         butt2.connect(&#34;pressed&#34;, self.demand, self.cal)
         self.hbox2.pack_start(butt2, 1, 1, 0)
-        self.hbox2.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.hbox2.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
 
         self.pack_start(self.hbox2, 0, 0, 2)
-        #self.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label=&#34;&#34;), 0, 0, 0)
 
         self.hbox3 = Gtk.HBox()
         self.edit = Gtk.Entry()
         self.hbox3.pack_start(Gtk.Label(label=&#34; Find: &#34;), 0, 0, 0)
         self.hbox3.pack_start(self.edit, 1, 1, 0)
-        butt2 = Gtk.Button(&#34;Find&#34;)
+        butt2 = Gtk.Button(label=&#34;Find&#34;)
         butt2.connect(&#34;pressed&#34;, self.find)
         self.hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         self.hbox3.pack_start(butt2, 0, 0, 0)
@@ -1099,7 +1099,7 @@ sets through the use of explicit keyword arguments.</p></div>
         scroll3 = Gtk.ScrolledWindow()
         scroll3.add(self.edview)
         frame4 = Gtk.Frame(); frame4.add(scroll3)
-        self.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        self.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         self.daysel(self.cal)
 
 

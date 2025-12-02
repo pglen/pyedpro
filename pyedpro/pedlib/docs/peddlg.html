@@ -73,7 +73,7 @@ def  _keypress(area, event):
 
 def  config_dlg(title, head, clip, parent = None):
 
-    dialog = Gtk.Dialog(title=title, Modal=True)
+    dialog = Gtk.Dialog(title=title, modal=True)
     dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                             Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
 
@@ -89,10 +89,10 @@ def  config_dlg(title, head, clip, parent = None):
     &#39;&#39;&#39;
 
     # Spacers
-    label1 = Gtk.Label(&#34;   &#34;);  label2 = Gtk.Label(&#34;   &#34;)
-    label3 = Gtk.Label(&#34;   &#34;);  label4 = Gtk.Label(&#34;   &#34;)
-    label5 = Gtk.Label(&#34;   &#34;);  label6 = Gtk.Label(&#34;   &#34;)
-    label7 = Gtk.Label(&#34;   &#34;);  label8 = Gtk.Label(&#34;   &#34;)
+    label1 = Gtk.Label(label=&#34;   &#34;);  label2 = Gtk.Label(label=&#34;   &#34;)
+    label3 = Gtk.Label(label=&#34;   &#34;);  label4 = Gtk.Label(label=&#34;   &#34;)
+    label5 = Gtk.Label(label=&#34;   &#34;);  label6 = Gtk.Label(label=&#34;   &#34;)
+    label7 = Gtk.Label(label=&#34;   &#34;);  label8 = Gtk.Label(label=&#34;   &#34;)
 
     entry = Gtk.Entry(); entry.set_max_width_chars(64);
     entry.set_text(head)
@@ -128,11 +128,11 @@ def  config_dlg(title, head, clip, parent = None):
     spacer(dialog.vbox)
 
     hbox3 = Gtk.HBox()
-    hbox3.pack_start(Gtk.Label(&#34;   &#34;), 0, 0, 0)
+    hbox3.pack_start(Gtk.Label(label=&#34;   &#34;), 0, 0, 0)
     #hbox3.pack_start(entry2, True, True, 0)
     #hbox3.pack_start(tview, True, True, 0)
     hbox3.pack_start(scroll, True, True, 0)
-    hbox3.pack_start(Gtk.Label(&#34;   &#34;), 0, 0, 0)
+    hbox3.pack_start(Gtk.Label(label=&#34;   &#34;), 0, 0, 0)
     dialog.vbox.pack_start(hbox3, 0, 0, 0)
     spacer(dialog.vbox)
 
@@ -146,9 +146,9 @@ def  config_dlg(title, head, clip, parent = None):
     #dialog.vbox.pack_start(hbox, 0, 0, 0)
     #dialog.vbox.pack_start(label8, 0, 0, 0)
 
-    label30 = Gtk.Label(&#34;   &#34;);  label31 = Gtk.Label(&#34;   &#34;)
-    label32 = Gtk.Label(&#34;   &#34;);  label33 = Gtk.Label(&#34;   &#34;)
-    label34 = Gtk.Label(&#34;   &#34;);  label35 = Gtk.Label(&#34;   &#34;)
+    label30 = Gtk.Label(label=&#34;   &#34;);  label31 = Gtk.Label(label=&#34;   &#34;)
+    label32 = Gtk.Label(label=&#34;   &#34;);  label33 = Gtk.Label(label=&#34;   &#34;)
+    label34 = Gtk.Label(label=&#34;   &#34;);  label35 = Gtk.Label(label=&#34;   &#34;)
 
     #dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic(&#34;Search _All Buffers&#34;)
     #dialog.checkbox4 = Gtk.CheckButton(&#34;Hello&#34;)
@@ -185,7 +185,7 @@ def  config_dlg(title, head, clip, parent = None):
 def     spacer(vbox, txt = &#34;   &#34;):
 
     hbox = Gtk.HBox()
-    hbox.pack_start(Gtk.Label(&#34; &#34; + txt + &#34; &#34;), 0, 0, 0)
+    hbox.pack_start(Gtk.Label(label=&#34; &#34; + txt + &#34; &#34;), 0, 0, 0)
     vbox.pack_start(hbox, 0, 0, 0)
     return hbox</code></pre>
 </details>
@@ -208,7 +208,7 @@ def     spacer(vbox, txt = &#34;   &#34;):
 </summary>
 <pre><code class="python">def  config_dlg(title, head, clip, parent = None):
 
-    dialog = Gtk.Dialog(title=title, Modal=True)
+    dialog = Gtk.Dialog(title=title, modal=True)
     dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                             Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
 
@@ -224,10 +224,10 @@ def     spacer(vbox, txt = &#34;   &#34;):
     &#39;&#39;&#39;
 
     # Spacers
-    label1 = Gtk.Label(&#34;   &#34;);  label2 = Gtk.Label(&#34;   &#34;)
-    label3 = Gtk.Label(&#34;   &#34;);  label4 = Gtk.Label(&#34;   &#34;)
-    label5 = Gtk.Label(&#34;   &#34;);  label6 = Gtk.Label(&#34;   &#34;)
-    label7 = Gtk.Label(&#34;   &#34;);  label8 = Gtk.Label(&#34;   &#34;)
+    label1 = Gtk.Label(label=&#34;   &#34;);  label2 = Gtk.Label(label=&#34;   &#34;)
+    label3 = Gtk.Label(label=&#34;   &#34;);  label4 = Gtk.Label(label=&#34;   &#34;)
+    label5 = Gtk.Label(label=&#34;   &#34;);  label6 = Gtk.Label(label=&#34;   &#34;)
+    label7 = Gtk.Label(label=&#34;   &#34;);  label8 = Gtk.Label(label=&#34;   &#34;)
 
     entry = Gtk.Entry(); entry.set_max_width_chars(64);
     entry.set_text(head)
@@ -263,11 +263,11 @@ def     spacer(vbox, txt = &#34;   &#34;):
     spacer(dialog.vbox)
 
     hbox3 = Gtk.HBox()
-    hbox3.pack_start(Gtk.Label(&#34;   &#34;), 0, 0, 0)
+    hbox3.pack_start(Gtk.Label(label=&#34;   &#34;), 0, 0, 0)
     #hbox3.pack_start(entry2, True, True, 0)
     #hbox3.pack_start(tview, True, True, 0)
     hbox3.pack_start(scroll, True, True, 0)
-    hbox3.pack_start(Gtk.Label(&#34;   &#34;), 0, 0, 0)
+    hbox3.pack_start(Gtk.Label(label=&#34;   &#34;), 0, 0, 0)
     dialog.vbox.pack_start(hbox3, 0, 0, 0)
     spacer(dialog.vbox)
 
@@ -281,9 +281,9 @@ def     spacer(vbox, txt = &#34;   &#34;):
     #dialog.vbox.pack_start(hbox, 0, 0, 0)
     #dialog.vbox.pack_start(label8, 0, 0, 0)
 
-    label30 = Gtk.Label(&#34;   &#34;);  label31 = Gtk.Label(&#34;   &#34;)
-    label32 = Gtk.Label(&#34;   &#34;);  label33 = Gtk.Label(&#34;   &#34;)
-    label34 = Gtk.Label(&#34;   &#34;);  label35 = Gtk.Label(&#34;   &#34;)
+    label30 = Gtk.Label(label=&#34;   &#34;);  label31 = Gtk.Label(label=&#34;   &#34;)
+    label32 = Gtk.Label(label=&#34;   &#34;);  label33 = Gtk.Label(label=&#34;   &#34;)
+    label34 = Gtk.Label(label=&#34;   &#34;);  label35 = Gtk.Label(label=&#34;   &#34;)
 
     #dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic(&#34;Search _All Buffers&#34;)
     #dialog.checkbox4 = Gtk.CheckButton(&#34;Hello&#34;)
@@ -331,7 +331,7 @@ def     spacer(vbox, txt = &#34;   &#34;):
 <pre><code class="python">def     spacer(vbox, txt = &#34;   &#34;):
 
     hbox = Gtk.HBox()
-    hbox.pack_start(Gtk.Label(&#34; &#34; + txt + &#34; &#34;), 0, 0, 0)
+    hbox.pack_start(Gtk.Label(label=&#34; &#34; + txt + &#34; &#34;), 0, 0, 0)
     vbox.pack_start(hbox, 0, 0, 0)
     return hbox</code></pre>
 </details>

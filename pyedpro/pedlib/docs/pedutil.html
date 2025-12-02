@@ -284,7 +284,9 @@ def register_stock_icons():
 
     # Add our custom icon factory to the list of defaults
     factory = Gtk.IconFactory()
+    warnings.simplefilter(&#34;ignore&#34;)
     factory.add_default()
+    warnings.simplefilter(&#34;default&#34;)
 
     img_dir = os.path.join(os.path.dirname(__file__), &#39;images&#39;)
     img_path = os.path.join(img_dir, &#39;gtk-logo-rgb.gif&#39;)
@@ -1249,7 +1251,7 @@ def put_exception(xstr):
                         &#34; Line: &#34; + str(aa[1]) + &#34;\n&#34; +  \
                     &#34;   Context: &#34; + aa[2] + &#34; -&gt; &#34; + aa[3] + &#34;\n&#34;
         except:
-            print( &#34;Could not print trace stack. &#34;, sys.exc_info())
+            print( &#34;Couldx not print trace stack. &#34;, sys.exc_info())
 
     #put_debug(cumm)
     print(cumm)
@@ -2305,7 +2307,7 @@ class SearchDialog(Gtk.Dialog):
                         &#34; Line: &#34; + str(aa[1]) + &#34;\n&#34; +  \
                     &#34;   Context: &#34; + aa[2] + &#34; -&gt; &#34; + aa[3] + &#34;\n&#34;
         except:
-            print( &#34;Could not print trace stack. &#34;, sys.exc_info())
+            print( &#34;Couldx not print trace stack. &#34;, sys.exc_info())
 
     #put_debug(cumm)
     print(cumm)
@@ -2486,7 +2488,9 @@ can be themed.</p></div>
 
     # Add our custom icon factory to the list of defaults
     factory = Gtk.IconFactory()
+    warnings.simplefilter(&#34;ignore&#34;)
     factory.add_default()
+    warnings.simplefilter(&#34;default&#34;)
 
     img_dir = os.path.join(os.path.dirname(__file__), &#39;images&#39;)
     img_path = os.path.join(img_dir, &#39;gtk-logo-rgb.gif&#39;)

@@ -17,10 +17,13 @@ clean:
 package:
 	pyinstaller pyedpro.spec --distpath ../../largefiles/pyedpro_packed
 
+#	@${PPP} -o pedlib/docs pedlib/webwin.py
+
 PPP=PYTHONPATH=pedlib:./:../../pyvguicom/pyvguicom python3 -W ignore::DeprecationWarning `which pdoc` --force --html
 
 docs:
 	@${PPP} -o docs/ pyedpro.py
+	@${PPP} -o pedlib/docs pedlib/pedwin.py
 	@${PPP} -o pedlib/docs pedlib/pedweb.py
 	@${PPP} -o pedlib/docs pedlib/pedthread.py
 	@${PPP} -o pedlib/docs pedlib/pedbuffs.py
@@ -56,11 +59,9 @@ docs:
 	@${PPP} -o pedlib/docs pedlib/pedui.py
 	@${PPP} -o pedlib/docs pedlib/pedundo.py
 	@${PPP} -o pedlib/docs pedlib/pedutil.py
-	@${PPP} -o pedlib/docs pedlib/pedwin.py
 	@${PPP} -o pedlib/docs pedlib/pedxtnd.py
 	@${PPP} -o pedlib/docs pedlib/pedync.py
 	@${PPP} -o pedlib/docs pedlib/stack.py
-	@${PPP} -o pedlib/docs pedlib/webwin.py
 
 pipup: pipbuild
 	@./pip-upload.sh

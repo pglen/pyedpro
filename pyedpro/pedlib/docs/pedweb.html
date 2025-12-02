@@ -28,17 +28,8 @@
 </summary>
 <pre><code class="python">#!/usr/bin/env python3
 
-from __future__ import absolute_import, print_function
 import signal, os, time, sys, subprocess, platform
 import ctypes, datetime, sqlite3, warnings
-
-#import gi;
-#from gi.repository import Gtk
-#from gi.repository import Gdk
-#from gi.repository import GObject
-#from gi.repository import GLib
-
-#gi.require_version(&#39;WebKit2&#39;, &#39;4.0&#39;)
 
 from pedlib import pedconfig
 
@@ -47,11 +38,14 @@ from    pedlib.pedmenu import *
 from    pedlib.pedui import *
 from    pedlib.pedutil import *
 
-from pyvguicom.pggui import *
-from pyvguicom.pgsimp import *
+#from pyvguicom.pggui import *
 from pyvguicom.pgbutt import *
 from pyvguicom.pgsel import *
-from pyvguicom.browsewin import *
+#from pyvguicom.browsewin import *
+
+from pyvguicom import pggui
+from pyvguicom import pgsimp
+from pyvguicom import browsewin
 
 try:
     # This will change once the pydbase is out of dev stage
@@ -107,7 +101,7 @@ class pgweb(Gtk.VBox):
         self.popwin = None
 
         #hbox = Gtk.HBox()
-        #self.pack_start(Gtk.Label(&#34;ccc&#34;), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label=&#34;ccc&#34;), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
         self.lsel = LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
         self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
@@ -116,17 +110,17 @@ class pgweb(Gtk.VBox):
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#dd8822&#34;))
 
         #hbox3 = Gtk.HBox()
-        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34;&#34;), 0, 0, 0)
         #hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
-        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34;&#34;), 0, 0, 0)
         #self.edit = Gtk.Entry()
-        #hbox3.pack_start(Gtk.Label(&#34; Find: &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; Find: &#34;), 0, 0, 0)
         #hbox3.pack_start(self.edit, 1, 1, 0)
         #butt2 = Gtk.Button.new_with_mnemonic(&#34;Find&#34;)
         #butt2.connect(&#34;pressed&#34;, self.find)
-        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         #hbox3.pack_start(butt2, 0, 0, 0)
-        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#668822&#34;))
         #self.pack_start(hbox3, 0, 0, 2)
 
@@ -168,46 +162,46 @@ class pgweb(Gtk.VBox):
         self.edit.set_activates_default(True)
         self.edit.connect(&#34;activate&#34;, self.go)
 
-        hbox3.pack_start(Gtk.Label(&#34; URL: &#34;), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=&#34; URL: &#34;), 0, 0, 0)
         hbox3.pack_start(self.edit, 1, 1, 0)
         #hbox3.pack_start(scroll12, 1, 1, 0)
-        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
 
-        butt2 = Gtk.Button(&#34;Go&#34;)
+        butt2 = Gtk.Button(label=&#34;Go&#34;)
         butt2.connect(&#34;pressed&#34;, self.go)
-        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox3.pack_start(butt2, 0, 0, 0)
 
         #self.pack_start(hbox3, 0, 0, 2)
 
         hbox4 = Gtk.HBox()
-        lab1  = Gtk.Label(&#34;  Note: This is a Live Browser &#34;)
+        lab1  = Gtk.Label(label=&#34;  Note: This is a Live Browser &#34;)
         lab1.set_halign(Gtk.Align.END)
         hbox4.pack_start(lab1,  1, 1, 0)
 
-        butt3 = Gtk.Button(&#34;&lt;&#34;)
+        butt3 = Gtk.Button(label=&#34;&lt;&#34;)
         butt3.connect(&#34;pressed&#34;, self.backurl)
         butt3.set_tooltip_text(&#34;Back&#34;)
 
-        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox4.pack_start(butt3, 0, 0, 0)
 
-        butt4 = Gtk.Button(&#34;&gt;&#34;)
+        butt4 = Gtk.Button(label=&#34;&gt;&#34;)
         butt4.connect(&#34;pressed&#34;, self.forwurl)
         butt4.set_tooltip_text(&#34;Forward&#34;)
-        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox4.pack_start(butt4, 0, 0, 0)
 
-        butt5 = Gtk.Button(&#34;~&#34;)
+        butt5 = Gtk.Button(label=&#34;~&#34;)
         butt5.connect(&#34;pressed&#34;, self.anchor)
         butt5.set_tooltip_text(&#34;Goto local anchor page&#34;)
-        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox4.pack_start(butt5, 0, 0, 0)
 
-        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         #self.pack_start(hbox4, 0, 0, 2)
 
-        self.treeview3 = SimpleTree((&#34;Hour&#34;, &#34;Subject&#34;, &#34;Alarm&#34;, &#34;Notes&#34;))
+        self.treeview3 = pgsimp.SimpleTree((&#34;Hour&#34;, &#34;Subject&#34;, &#34;Alarm&#34;, &#34;Notes&#34;))
         self.treeview3.setcallb(self.treesel)
 
         scroll2a = Gtk.ScrolledWindow()
@@ -225,15 +219,17 @@ class pgweb(Gtk.VBox):
         try:
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
-            self.brow_win = browserWin()
-            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
+            self.brow_win = browsewin.browserWin()
+            #self.brow_win = Gtk.Label(label=&#34;No WebView Available.&#34;)
             #print(&#34;dir&#34;, dir(self.brow_win))
             #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
             pass
         except:
-            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
-            #put_exception(&#34;WebView load&#34;)
-            pass
+            #self.brow_win = Gtk.Label(label=&#34;No WebView Available.&#34;)
+            if pedconfig.conf.verbose:
+                put_exception(&#34;WebView load&#34;)
+
+        print(&#34;browwin&#34;, self.brow_win)
 
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();
@@ -247,13 +243,13 @@ class pgweb(Gtk.VBox):
         #webview.load_uri(&#34;https://google.com&#34;)
         scrolled_window.add(self.brow_win)
         #self.pack_start(scrolled_window, 1, 1, 2)
-        #self.status = Gtk.Label(&#34; Status: &#34;)
+        #self.status = Gtk.Label(label=&#34; Status: &#34;)
         #self.pack_start(self.status, 0, 0, 2)
 
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=&#34;&#34;), 1, 1, 0)
 
-        #hbox13.pack_start(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
         butt3 = smallbutt(&#34; _New Item &#34;, self.newitem, &#34;Create new item / record&#34;)
 
         hbox13.pack_start(butt3, 0, 0, 2)
@@ -286,13 +282,13 @@ class pgweb(Gtk.VBox):
         #butt22 = Gtk.Button.new_with_mnemonic(&#34;Save&#34;)
         #butt22.connect(&#34;pressed&#34;, self.save)
         #hbox13.pack_start(butt22, 0, 0, 0)
-        #hbox13.pack_start(Gtk.Label(&#34;  &#34;), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(label=&#34;  &#34;), 0, 0, 0)
 
         vbox5.pack_start(hbox13, 0, 0, 0)
         vbox5.pack_start(hbox13a, 0, 0, 0)
 
         try:
-            self.load()
+            self.load(&#34;&#34;)
         except:
             put_exception(&#34;Cannot load&#34;)
 
@@ -386,7 +382,7 @@ class pgweb(Gtk.VBox):
         # Refresh list in main sel window
         self.treeview2.clear()
         usleep(10)
-        self.load()
+        self.load(&#34;&#34;)
 
     def savefunc(self, item, text):
         #print(&#34;savefunc&#34;, item, text[:12])
@@ -448,7 +444,7 @@ class pgweb(Gtk.VBox):
                                 (dbsize, cnt, os.path.basename(fff)))
 
 
-    def load(self):
+    def load(self, searchx):
 
         &#39;&#39;&#39; Load from file;
             This is more complex than it should be ... dealing with old data
@@ -460,20 +456,20 @@ class pgweb(Gtk.VBox):
             dbsize = self.core.getdbsize()
             if not dbsize:
                 return
-
             try:
                 self.treeview2.freeze_child_notify()
                 for aa in range(dbsize-1, 0, -1):
                     ddd = self.core.get_rec(aa)
                     if len(ddd) &lt; 2:
                         continue        # Deleted record
-                    #print(&#34;ddd&#34;, ddd)
                     hhh = ddd[0].decode()
-                    if hhh not in datax:
-                        datax.append(hhh)
-                        #print(&#34;adding&#34;, hhh)
-                        #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
-                        self.treeview2.append((hhh,))
+                    if not searchx or searchx[0].upper() == hhh[0].upper():
+                        #print(&#34;hhh&#34;, hhh)
+                        if hhh not in datax:
+                            datax.append(hhh)
+                            #print(&#34;adding&#34;, hhh)
+                            #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
+                            self.treeview2.append((hhh,))
             finally:
                 self.treeview2.thaw_child_notify()
 
@@ -509,24 +505,14 @@ class pgweb(Gtk.VBox):
         self.brow_win.go_forward()
 
     def  letterfilter(self, letter):
-        #print(&#34;letterfilter&#34;, letter)
+        if pedconfig.conf.pgdebug &gt; 2:
+            print(&#34;letterfilter&#34;, letter)
+        self.treeview2.clear()
+        usleep(10)
         if letter == &#34;All&#34;:
-            self.treeview2.clear()
-            print(&#34;Erase selection&#34;)
+            self.load(&#34;&#34;)
         else:
-            aaa = self.sql.getall(letter + &#34;%&#34;)
-            print(&#34;all-&gt;&#34;, aaa)
-
-            self.treeview2.clear()
-            for aa in aaa:
-                try:
-                    #aa.append(&#34;ddd&#34;)
-                    #aa.append(&#34;eee&#34;)
-                    #aa.append(&#34;fff&#34;)
-                    self.treeview2.append(aa[1:])
-                except:
-                    put_exception(&#34;Letter Filter&#34;)
-
+            self.load(letter)
 
     def go(self, arg):
         txt = self.edit.get_text()
@@ -639,7 +625,7 @@ class pgweb(Gtk.VBox):
         #print(&#34;Content&#34;, hhh)
 
         try:
-            self.brow_win.load_html(hhh)
+            self.brow_win.load_html(hhh, &#34;file://&#34;)
             #usleep(10)
             #self.treeview2.grab_focus()
             #usleep(10)
@@ -948,7 +934,7 @@ sets through the use of explicit keyword arguments.</p></div>
         self.popwin = None
 
         #hbox = Gtk.HBox()
-        #self.pack_start(Gtk.Label(&#34;ccc&#34;), 0, 0, 0)
+        #self.pack_start(Gtk.Label(label=&#34;ccc&#34;), 0, 0, 0)
         #self.pack_start(pggui.xSpacer(), 0, 0, 0)
         self.lsel = LetterNumberSel(self.letterfilter, font=&#34;Mono 12&#34;)
         self.lsel.set_tooltip_text(&#34;Filter entries by letter / number&#34;)
@@ -957,17 +943,17 @@ sets through the use of explicit keyword arguments.</p></div>
         #self.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#dd8822&#34;))
 
         #hbox3 = Gtk.HBox()
-        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34;&#34;), 0, 0, 0)
         #hbox3.pack_start(pggui.xSpacer(4), 0, 0, 0)
-        #hbox3.pack_start(Gtk.Label(&#34;&#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34;&#34;), 0, 0, 0)
         #self.edit = Gtk.Entry()
-        #hbox3.pack_start(Gtk.Label(&#34; Find: &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; Find: &#34;), 0, 0, 0)
         #hbox3.pack_start(self.edit, 1, 1, 0)
         #butt2 = Gtk.Button.new_with_mnemonic(&#34;Find&#34;)
         #butt2.connect(&#34;pressed&#34;, self.find)
-        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         #hbox3.pack_start(butt2, 0, 0, 0)
-        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         #hbox3.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse(&#34;#668822&#34;))
         #self.pack_start(hbox3, 0, 0, 2)
 
@@ -1009,46 +995,46 @@ sets through the use of explicit keyword arguments.</p></div>
         self.edit.set_activates_default(True)
         self.edit.connect(&#34;activate&#34;, self.go)
 
-        hbox3.pack_start(Gtk.Label(&#34; URL: &#34;), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=&#34; URL: &#34;), 0, 0, 0)
         hbox3.pack_start(self.edit, 1, 1, 0)
         #hbox3.pack_start(scroll12, 1, 1, 0)
-        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
 
-        butt2 = Gtk.Button(&#34;Go&#34;)
+        butt2 = Gtk.Button(label=&#34;Go&#34;)
         butt2.connect(&#34;pressed&#34;, self.go)
-        hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox3.pack_start(butt2, 0, 0, 0)
 
         #self.pack_start(hbox3, 0, 0, 2)
 
         hbox4 = Gtk.HBox()
-        lab1  = Gtk.Label(&#34;  Note: This is a Live Browser &#34;)
+        lab1  = Gtk.Label(label=&#34;  Note: This is a Live Browser &#34;)
         lab1.set_halign(Gtk.Align.END)
         hbox4.pack_start(lab1,  1, 1, 0)
 
-        butt3 = Gtk.Button(&#34;&lt;&#34;)
+        butt3 = Gtk.Button(label=&#34;&lt;&#34;)
         butt3.connect(&#34;pressed&#34;, self.backurl)
         butt3.set_tooltip_text(&#34;Back&#34;)
 
-        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox4.pack_start(butt3, 0, 0, 0)
 
-        butt4 = Gtk.Button(&#34;&gt;&#34;)
+        butt4 = Gtk.Button(label=&#34;&gt;&#34;)
         butt4.connect(&#34;pressed&#34;, self.forwurl)
         butt4.set_tooltip_text(&#34;Forward&#34;)
-        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox4.pack_start(butt4, 0, 0, 0)
 
-        butt5 = Gtk.Button(&#34;~&#34;)
+        butt5 = Gtk.Button(label=&#34;~&#34;)
         butt5.connect(&#34;pressed&#34;, self.anchor)
         butt5.set_tooltip_text(&#34;Goto local anchor page&#34;)
-        hbox4.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        hbox4.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         hbox4.pack_start(butt5, 0, 0, 0)
 
-        #hbox3.pack_start(Gtk.Label(&#34; &#34;), 0, 0, 0)
+        #hbox3.pack_start(Gtk.Label(label=&#34; &#34;), 0, 0, 0)
         #self.pack_start(hbox4, 0, 0, 2)
 
-        self.treeview3 = SimpleTree((&#34;Hour&#34;, &#34;Subject&#34;, &#34;Alarm&#34;, &#34;Notes&#34;))
+        self.treeview3 = pgsimp.SimpleTree((&#34;Hour&#34;, &#34;Subject&#34;, &#34;Alarm&#34;, &#34;Notes&#34;))
         self.treeview3.setcallb(self.treesel)
 
         scroll2a = Gtk.ScrolledWindow()
@@ -1066,15 +1052,17 @@ sets through the use of explicit keyword arguments.</p></div>
         try:
             #self.brow_win = WebKit2.WebView()
             #self.brow_win = pgwkit.pgwebw(self)
-            self.brow_win = browserWin()
-            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
+            self.brow_win = browsewin.browserWin()
+            #self.brow_win = Gtk.Label(label=&#34;No WebView Available.&#34;)
             #print(&#34;dir&#34;, dir(self.brow_win))
             #self.brow_win.load_uri(&#34;file://&#34; + self.fname)
             pass
         except:
-            #self.brow_win = Gtk.Label(&#34;No WebView Available.&#34;)
-            #put_exception(&#34;WebView load&#34;)
-            pass
+            #self.brow_win = Gtk.Label(label=&#34;No WebView Available.&#34;)
+            if pedconfig.conf.verbose:
+                put_exception(&#34;WebView load&#34;)
+
+        print(&#34;browwin&#34;, self.brow_win)
 
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();
@@ -1088,13 +1076,13 @@ sets through the use of explicit keyword arguments.</p></div>
         #webview.load_uri(&#34;https://google.com&#34;)
         scrolled_window.add(self.brow_win)
         #self.pack_start(scrolled_window, 1, 1, 2)
-        #self.status = Gtk.Label(&#34; Status: &#34;)
+        #self.status = Gtk.Label(label=&#34; Status: &#34;)
         #self.pack_start(self.status, 0, 0, 2)
 
         hbox13 = Gtk.HBox()
         hbox13.pack_start(Gtk.Label(label=&#34;&#34;), 1, 1, 0)
 
-        #hbox13.pack_start(Gtk.Label(&#34; | &#34;), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(label=&#34; | &#34;), 0, 0, 0)
         butt3 = smallbutt(&#34; _New Item &#34;, self.newitem, &#34;Create new item / record&#34;)
 
         hbox13.pack_start(butt3, 0, 0, 2)
@@ -1127,13 +1115,13 @@ sets through the use of explicit keyword arguments.</p></div>
         #butt22 = Gtk.Button.new_with_mnemonic(&#34;Save&#34;)
         #butt22.connect(&#34;pressed&#34;, self.save)
         #hbox13.pack_start(butt22, 0, 0, 0)
-        #hbox13.pack_start(Gtk.Label(&#34;  &#34;), 0, 0, 0)
+        #hbox13.pack_start(Gtk.Label(label=&#34;  &#34;), 0, 0, 0)
 
         vbox5.pack_start(hbox13, 0, 0, 0)
         vbox5.pack_start(hbox13a, 0, 0, 0)
 
         try:
-            self.load()
+            self.load(&#34;&#34;)
         except:
             put_exception(&#34;Cannot load&#34;)
 
@@ -1227,7 +1215,7 @@ sets through the use of explicit keyword arguments.</p></div>
         # Refresh list in main sel window
         self.treeview2.clear()
         usleep(10)
-        self.load()
+        self.load(&#34;&#34;)
 
     def savefunc(self, item, text):
         #print(&#34;savefunc&#34;, item, text[:12])
@@ -1289,7 +1277,7 @@ sets through the use of explicit keyword arguments.</p></div>
                                 (dbsize, cnt, os.path.basename(fff)))
 
 
-    def load(self):
+    def load(self, searchx):
 
         &#39;&#39;&#39; Load from file;
             This is more complex than it should be ... dealing with old data
@@ -1301,20 +1289,20 @@ sets through the use of explicit keyword arguments.</p></div>
             dbsize = self.core.getdbsize()
             if not dbsize:
                 return
-
             try:
                 self.treeview2.freeze_child_notify()
                 for aa in range(dbsize-1, 0, -1):
                     ddd = self.core.get_rec(aa)
                     if len(ddd) &lt; 2:
                         continue        # Deleted record
-                    #print(&#34;ddd&#34;, ddd)
                     hhh = ddd[0].decode()
-                    if hhh not in datax:
-                        datax.append(hhh)
-                        #print(&#34;adding&#34;, hhh)
-                        #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
-                        self.treeview2.append((hhh,))
+                    if not searchx or searchx[0].upper() == hhh[0].upper():
+                        #print(&#34;hhh&#34;, hhh)
+                        if hhh not in datax:
+                            datax.append(hhh)
+                            #print(&#34;adding&#34;, hhh)
+                            #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
+                            self.treeview2.append((hhh,))
             finally:
                 self.treeview2.thaw_child_notify()
 
@@ -1350,24 +1338,14 @@ sets through the use of explicit keyword arguments.</p></div>
         self.brow_win.go_forward()
 
     def  letterfilter(self, letter):
-        #print(&#34;letterfilter&#34;, letter)
+        if pedconfig.conf.pgdebug &gt; 2:
+            print(&#34;letterfilter&#34;, letter)
+        self.treeview2.clear()
+        usleep(10)
         if letter == &#34;All&#34;:
-            self.treeview2.clear()
-            print(&#34;Erase selection&#34;)
+            self.load(&#34;&#34;)
         else:
-            aaa = self.sql.getall(letter + &#34;%&#34;)
-            print(&#34;all-&gt;&#34;, aaa)
-
-            self.treeview2.clear()
-            for aa in aaa:
-                try:
-                    #aa.append(&#34;ddd&#34;)
-                    #aa.append(&#34;eee&#34;)
-                    #aa.append(&#34;fff&#34;)
-                    self.treeview2.append(aa[1:])
-                except:
-                    put_exception(&#34;Letter Filter&#34;)
-
+            self.load(letter)
 
     def go(self, arg):
         txt = self.edit.get_text()
@@ -1480,7 +1458,7 @@ sets through the use of explicit keyword arguments.</p></div>
         #print(&#34;Content&#34;, hhh)
 
         try:
-            self.brow_win.load_html(hhh)
+            self.brow_win.load_html(hhh, &#34;file://&#34;)
             #usleep(10)
             #self.treeview2.grab_focus()
             #usleep(10)
@@ -1572,7 +1550,7 @@ sets through the use of explicit keyword arguments.</p></div>
     # Refresh list in main sel window
     self.treeview2.clear()
     usleep(10)
-    self.load()</code></pre>
+    self.load(&#34;&#34;)</code></pre>
 </details>
 </dd>
 <dt id="pedweb.pgweb.export"><code class="name flex">
@@ -1666,27 +1644,18 @@ sets through the use of explicit keyword arguments.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def  letterfilter(self, letter):
-    #print(&#34;letterfilter&#34;, letter)
+    if pedconfig.conf.pgdebug &gt; 2:
+        print(&#34;letterfilter&#34;, letter)
+    self.treeview2.clear()
+    usleep(10)
     if letter == &#34;All&#34;:
-        self.treeview2.clear()
-        print(&#34;Erase selection&#34;)
+        self.load(&#34;&#34;)
     else:
-        aaa = self.sql.getall(letter + &#34;%&#34;)
-        print(&#34;all-&gt;&#34;, aaa)
-
-        self.treeview2.clear()
-        for aa in aaa:
-            try:
-                #aa.append(&#34;ddd&#34;)
-                #aa.append(&#34;eee&#34;)
-                #aa.append(&#34;fff&#34;)
-                self.treeview2.append(aa[1:])
-            except:
-                put_exception(&#34;Letter Filter&#34;)</code></pre>
+        self.load(letter)</code></pre>
 </details>
 </dd>
 <dt id="pedweb.pgweb.load"><code class="name flex">
-<span>def <span class="ident">load</span></span>(<span>self)</span>
+<span>def <span class="ident">load</span></span>(<span>self, searchx)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Load from file;
@@ -1695,7 +1664,7 @@ This is more complex than it should be &hellip; dealing with old data</p></div>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def load(self):
+<pre><code class="python">def load(self, searchx):
 
     &#39;&#39;&#39; Load from file;
         This is more complex than it should be ... dealing with old data
@@ -1707,20 +1676,20 @@ This is more complex than it should be &hellip; dealing with old data</p></div>
         dbsize = self.core.getdbsize()
         if not dbsize:
             return
-
         try:
             self.treeview2.freeze_child_notify()
             for aa in range(dbsize-1, 0, -1):
                 ddd = self.core.get_rec(aa)
                 if len(ddd) &lt; 2:
                     continue        # Deleted record
-                #print(&#34;ddd&#34;, ddd)
                 hhh = ddd[0].decode()
-                if hhh not in datax:
-                    datax.append(hhh)
-                    #print(&#34;adding&#34;, hhh)
-                    #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
-                    self.treeview2.append((hhh,))
+                if not searchx or searchx[0].upper() == hhh[0].upper():
+                    #print(&#34;hhh&#34;, hhh)
+                    if hhh not in datax:
+                        datax.append(hhh)
+                        #print(&#34;adding&#34;, hhh)
+                        #self.treeview2.append((hhh, &#34;&#34;, &#34;&#34;))
+                        self.treeview2.append((hhh,))
         finally:
             self.treeview2.thaw_child_notify()
 
@@ -2002,7 +1971,7 @@ This is more complex than it should be &hellip; dealing with old data</p></div>
     #print(&#34;Content&#34;, hhh)
 
     try:
-        self.brow_win.load_html(hhh)
+        self.brow_win.load_html(hhh, &#34;file://&#34;)
         #usleep(10)
         #self.treeview2.grab_focus()
         #usleep(10)

@@ -112,6 +112,7 @@ from pedlib import  pedundo
 from pedlib import  pedtts
 from pedlib import  pedmisc
 from pedlib import  pedbuffs
+from pedlib import  acthand2
 
 #import  pyperclip # dead end
 
@@ -122,8 +123,6 @@ from pedlib.pedcanv import *
 
 lastcmd = &#34;&#34;
 rostr = &#34;This buffer is read only.&#34;
-
-import acthand2
 
 # ------------------------------------------------------------------------
 # Action handler. Called from key handler.
@@ -3701,7 +3700,7 @@ class ActHand(acthand2.ActHand2):
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
-<li>acthand2.ActHand2</li>
+<li>pedlib.acthand2.ActHand2</li>
 </ul>
 <h3>Methods</h3>
 <dl>

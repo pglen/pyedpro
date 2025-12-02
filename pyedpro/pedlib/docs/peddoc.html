@@ -74,6 +74,7 @@ from pedlib import  pedmisc
 from pedlib import  pedtask
 from pedlib import  pedfind
 from pedlib import  pedplug
+from pedlib import  pedidle
 
 from pedlib.pedutil import *
 from pedlib.keywords import *
@@ -109,9 +110,6 @@ TABSTOP = 4                 # One tab stop worth of spaces
 # profiled code here
 #print(  &#34;Str&#34;, time.clock() - got_clock)
 
-# Globals
-
-last_scanned = None
 
 # Colors for the text, configure the defaults here
 
@@ -294,10 +292,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.connect(&#34;destroy&#34;, self.destroy_cb)
 
     def run_keytime(self):
-        global last_scanned
-        last_scanned = &#34;&#34;
+        pedidle.last_scanned = &#34;&#34;
         if not self.mained.mac:
-            GLib.timeout_add(300, keytime, self, 0)
+            GLib.timeout_add(300, pedidle.keytime, self, 0)
         pass
 
     def destroy_cb(self, arg):
@@ -589,7 +586,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.focus = False
 
     def focus_in_cb(self, widget, event):
-        #print (&#34;focus_in_cb&#34;, self.fname)
+        if pedconfig.conf.verbose &gt; 2:
+            print (&#34;focus_in_cb&#34;, self.fname)
         self.focus = True
         try:
             if os.path.isfile(self.fname):
@@ -1016,9 +1014,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
                     self.xsel    = self.pix2xpos(event.x)
                 else:
                     self.xsel2 = self.pix2xpos(event.x)
-
             self.invalidate()
-
         if event.state &amp; Gdk.ModifierType.SHIFT_MASK and \
             event.state &amp; Gdk.ModifierType.BUTTON1_MASK:
             #print( &#34;Shift Drag&#34;, event.x, event.y)
@@ -1027,7 +1023,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
     def gotoxy(self, xx, yy, sel = None, mid = False):
 
-        #print (&#34;gotoxy&#34;, xx, yy)
+        if pedconfig.conf.verbose &gt; 1:
+            print (&#34;gotoxy&#34;, xx, yy, os.path.basename(self.fname))
         #xx +=  30
         # Contain
         ylen = len(self.text)
@@ -1203,6 +1200,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             self.invalidate()
 
     def update_bar2(self):
+        # Let the system do its thing
+        #usleep(100)
         clip = pedconfig.conf.keyh.acth.currclip
         self.mained.update_statusbar2(self.caret[0] + self.xpos, \
                 self.caret[1] + self.ypos, self.insert, len(self.text), clip,
@@ -1214,134 +1213,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         self.xsel2 =  self.ysel2 = -1
         if old != -1:
             self.invalidate()
-
-    def is_c_like(self):
-
-        &#39;&#39;&#39; Return True if &#39;C&#39; like file
-            This is fooled by non extension items; not a big deal
-            colors may get turned on ...
-        &#39;&#39;&#39;
-        #print(&#34;c like&#34;, self.fname)
-        for aa in c_like_exts:
-            eee = self.fname[-(len(aa)):]
-            #print(&#34;eee&#34;, eee, aa)
-            if aa == eee:
-                #print(&#34;C Match&#34;, self.fname)
-                return True
-        return False
-
-    def walk_func(self):
-
-        #print( &#34;walk func&#34;)
-
-        # ts2 ---------------------------------------------------
-        sumw2 = []
-        if self.text:
-            sline = self.caret[1] + int(self.ypos)
-            sline = max(sline, 0); sline = min(sline, len(self.text))
-            #print( &#34;Start point&#34;, sline, self.text[sline])
-
-            # Walk back to last function
-            if self.is_c_like():
-                try:
-                    aa = 0; bb = 0
-                    regex = re.compile(ckeywords)
-                    for aa in range(sline - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;start&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-                    if aa &gt; 0:
-                        for bb in range(aa + 1, len(self.text)):
-                            line = self.text[bb]
-                            res = regex.search(line)
-                            if res:
-                                #print( &#34;end&#34;, line, res.start(), res.end())
-                                break
-
-                        regex2 = re.compile(localkwords)
-                        for cc in range(aa + 1, bb - 1):
-                            line = self.text[cc]
-                            res = regex2.search(line)
-                            if res:
-                                #print( &#34;match&#34;, line, res.start(), res.end())
-                                sumw2.append(line)
-
-                except:
-                    print(&#34;Exception in c func handler&#34;, sys.exc_info())
-                    pass
-            if &#34;.bas&#34; in self.fname.lower()[-4]:
-                try:
-                    regex = re.compile(basekeywords)
-                    for line in win.text:
-                        res = regex.search(line)
-                        if res:
-                            #print( res, res.start(), res.end())
-                            sumw.append(line)
-                except:
-                    print(&#34;Exception in bas func extraction handler&#34;, sys.exc_info())
-                    pass
-            if &#34;.py&#34; in self.fname.lower()[-3]:
-                try:
-                    aa = 0; bb = 0
-                    regex = re.compile(&#34;class&#34;)
-                    for aa in range(int(sline) - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;start&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-
-                    regex = re.compile(pykeywords2)
-                    for aa in range(int(sline) - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;start&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-
-                    if aa &gt; 0:
-                        for bb in range(aa + 1, len(self.text)):
-                            line = self.text[bb]
-                            res = regex.search(line)
-                            if res:
-                                #print( &#34;end&#34;, line, res.start(), res.end())
-                                break
-
-                        regex2 = re.compile(localpywords)
-                        for cc in range(aa + 1, bb - 1):
-                            line = self.text[cc]
-                            res = regex2.search(line)
-                            if res:
-                                #print( &#34;match&#34;, line, res.start(), res.end())
-                                sumw2.append(line)
-
-                except:
-                    print(&#34;Exception in py func handler&#34;, sys.exc_info())
-                    raise
-                    pass
-            else:
-                pass
-
-            # Always show todo
-            got_todo = 0
-            for line in self.text:
-                if &#34;TODO&#34; in line:
-                    if not got_todo:
-                        got_todo = 1
-                        sumw2.append(&#34;----------- TODO List ----------&#34;)
-                    sumw2.append(line)
-
-        try:
-            self.mained.update_treestore2(sumw2)
-        except:
-            # This is normal, ignore it
-            print(&#34;walk2&#34;, sys.exc_info())
-            pass
 
     # Call key handler
     def area_key(self, area, event):
@@ -1835,9 +1706,8 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
             print(&#34;peddoc: Invalid menu item selected&#34;, ttt)
 
     def rescan(self):
-        global last_scanned
-        last_scanned = &#34;&#34;
-        run_async_time(self, 0)
+        pedidle.last_scanned = &#34;&#34;
+        pedidle.run_async_time(self, 0)
         self.mained.update_statusbar(&#34;Started rescan ...&#34;)
 
     def toggle_ro(self):
@@ -1987,7 +1857,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         rrr = self.prompt_save(noprompt)
         if not rrr:
             # Clear treestore(s)
-            self.mained.update_treestore([])
+            self.mained.update_treestore([], [])
             self.mained.update_treestore2([])
             # Add to accounting:
             logentry(&#34;Closed File&#34;, self.start_time, self.fname)
@@ -2458,7 +2328,10 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         eb.set_above_child(True)
 
         image = Gtk.Image()
+        warnings.simplefilter(&#34;ignore&#34;)
         image.set_from_stock(Gtk.STOCK_CLOSE, Gtk.IconSize.MENU)
+        warnings.simplefilter(&#34;default&#34;)
+
         butt = Gtk.Button();  butt.add(image)
         butt.set_focus_on_click(False)
         butt.set_relief( Gtk.ReliefStyle.NONE)
@@ -2800,235 +2673,6 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
 
         os.remove(tempfile)
 
-# ---------------------------------------------------------------------
-
-def run_async_time(win, arg):
-
-    &#39;&#39;&#39;  Run this on an idle callback so the user can work
-            while this is going &#39;&#39;&#39;
-
-    global last_scanned
-
-    #print( &#34;run_async_time enter&#34;, win.fname)
-
-    if  last_scanned == win:
-        #print(&#34;Not rescanning&#34;, win.fname)
-        return
-
-    last_scanned = win
-
-    win.mained.start_tree()
-
-    #print( &#34;run_sync_time&#34;, time.time())
-
-    if not win.text:
-        return
-
-    sumw = [] ; lname = win.fname.lower()
-
-    #print(&#34;lname&#34;, lname[-2:])
-
-    # Added flex and yacc
-    if &#34;.c&#34; in lname[-2:] or &#34;.h&#34; in lname[-2:] or &#34;.y&#34; \
-        in lname[-2:] or &#34;.f&#34; in lname[-2:] or &#34;.php&#34; in lname[:-4]:
-        try:
-            regex = re.compile(ckeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in c func handler&#34;, sys.exc_info())
-            pass
-
-    elif &#34;.py&#34; in lname[-3:]:
-        try:
-            regex = re.compile(pykeywords2)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-
-            regex3 = re.compile(pykeywords3)
-            for line in win.text:
-                res = regex3.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(&#34;    &#34; + line)
-        except:
-            print(&#34;Exception in py func handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.html&#34; in lname[-5:]:
-        #print(&#34;html file&#34;)
-        try:
-            regex = re.compile(htmlkeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in py func handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.bas&#34; in lname[-4:]:
-        try:
-            regex = re.compile(basekeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in func extraction handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.s&#34; in lname[-2:] or &#34;.asm&#34; in lname[-4:] or &#34;.inc&#34; in lname[-4:]:
-        try:
-            regex = re.compile(Skeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in func extraction handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.txt&#34; in lname[-4:]:
-        pass
-    else:            # Default to &#39;C&#39; like syntax
-        try:
-            for kw in sumkeywords:
-                for line in win.text:
-                    if line.find(kw) &gt;= 0:
-                        sumw.append(line)
-        except:
-            pass
-
-        try:
-            regex = re.compile(ckeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in c func handler&#34;, sys.exc_info())
-            pass
-
-    try:
-        win.mained.update_treestore(sumw)
-    except:
-        # This is &#39;normal&#39;, ignore it
-        print(&#34;run_async_time&#34;, sys.exc_info())
-        pass
-
-    #win.mained.update_statusbar(&#34;Rescan done.&#34;)
-
-def keytime(self, arg):
-
-    #print( &#34;keytime raw&#34;, time.ctime(), self.fired)
-    #return
-
-    if self.fired ==  1:
-        #print( &#34;keytime&#34;, time.time(), self.fired)
-        pedspell.spell(self, self.spellmode)
-        self.walk_func()
-
-    if self.fired:
-        self.fired -= 1
-
-    # Track this buffer
-    #if self.diffmode == 2:
-    #    self.mained.diffpane.area.xpos = self.xpos
-    #    self.mained.diffpane.area.ypos = self.ypos
-    #    self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
-    #                                                self.ypos + self.caret[1], True)
-
-    # Track pane buffer back to diff components
-    if self.diffpane:
-        got_src = 0; got_targ = 0
-        src = &#34;&#34;; targ = &#34;&#34;
-        srctxt = [] ;  targtxt = []
-        dst_tab = None ; src_tab = None
-
-        # See if diff complete, put it in motion
-        nn = self.notebook.get_n_pages(); cnt = 0
-        while True:
-            if cnt &gt;= nn: break
-            ppp = self.notebook.get_nth_page(cnt)
-            if ppp.area.diffmode == 1:
-                got_src = True
-                src = os.path.basename(ppp.area.fname)
-                srctxt = ppp.area.text
-                src_tab = ppp
-            elif ppp.area.diffmode == 2:
-                got_targ = True
-                targ = os.path.basename(ppp.area.fname)
-                targtxt = ppp.area.text
-                dst_tab = ppp
-
-            cnt += 1
-
-        yyy = self.ypos +  self.caret[1]
-        zzz = self.ypos +  self.caret[1]
-        txt = &#34;&#34;
-        for aa in range( self.ypos + self.caret[1]):
-            try:
-                txt = self.text[aa]
-            except:
-                pass
-            if txt[:8] == &#34; --del--&#34;:
-                yyy -= 1
-
-            if txt[:8] == &#34; --ins--&#34;:
-                zzz -= 1
-
-        if got_targ:
-            dst_tab.area.xpos = self.xpos
-            dst_tab.area.ypos = self.ypos
-            dst_tab.area.set_caret(self.xpos + self.caret[0], yyy, True)
-        if got_src:
-            src_tab.area.xpos = self.xpos
-            src_tab.area.ypos = self.ypos
-            src_tab.area.set_caret(self.xpos + self.caret[0], zzz, True)
-
-def idle_callback(self, arg):
-
-    &#39;&#39;&#39; Do Tasks  when the system is idle &#39;&#39;&#39;
-
-    #print( &#34;Idle callback&#34;, self.fname)
-    GLib.source_remove(self.source_id)
-    try:
-        # Mon 06.Sep.2021 always save
-        if self.changed:
-            hhh = hash_name(self.fname) + &#34;_&#34; + str(self.currback) + &#34;.sav&#34;
-            xfile = pedconfig.conf.data_dir + os.sep + hhh
-            err = writefile(xfile, self.text, &#34;\n&#34;)
-            if err[0]:
-                strx = &#34;Backed up file &#39;{0:s}&#39;&#34;.format(xfile)
-                # Make a log entry
-                logfile = pedconfig.conf.log_dir + os.sep + &#34;backup.log&#34;
-                xentry = &#34;Sav &#34; + time.ctime() + &#34; &#34; + \
-                    self.fname + &#34; &#34; + os.path.basename(xfile) + &#34;\n&#34;
-                writefile(logfile, (xentry, &#34;&#34;), &#34;\n&#34;, &#34;a+&#34;)
-            else:
-                strx = &#34;Cannot back up file &#39;{0:s}&#39; {1:s}&#34;.format(xfile, err[1])
-
-            self.mained.update_statusbar(strx)
-    except:
-        print(&#34;Exception in idle handler&#34;, sys.exc_info())
-
-# Do Tasks2 when the system is idle
-
-def idle_callback2(self, arg):
-    #print( &#34;Idle callback2&#34;, arg)
-    GLib.source_remove(self.source_id2)
-    try:
-        run_async_time(self, None)
-    except:
-        print(&#34;Exception in async handler&#34;, sys.exc_info())
-
 # EOF</code></pre>
 </details>
 </section>
@@ -3037,276 +2681,6 @@ def idle_callback2(self, arg):
 <section>
 </section>
 <section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="peddoc.idle_callback"><code class="name flex">
-<span>def <span class="ident">idle_callback</span></span>(<span>self, arg)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Do Tasks
-when the system is idle</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def idle_callback(self, arg):
-
-    &#39;&#39;&#39; Do Tasks  when the system is idle &#39;&#39;&#39;
-
-    #print( &#34;Idle callback&#34;, self.fname)
-    GLib.source_remove(self.source_id)
-    try:
-        # Mon 06.Sep.2021 always save
-        if self.changed:
-            hhh = hash_name(self.fname) + &#34;_&#34; + str(self.currback) + &#34;.sav&#34;
-            xfile = pedconfig.conf.data_dir + os.sep + hhh
-            err = writefile(xfile, self.text, &#34;\n&#34;)
-            if err[0]:
-                strx = &#34;Backed up file &#39;{0:s}&#39;&#34;.format(xfile)
-                # Make a log entry
-                logfile = pedconfig.conf.log_dir + os.sep + &#34;backup.log&#34;
-                xentry = &#34;Sav &#34; + time.ctime() + &#34; &#34; + \
-                    self.fname + &#34; &#34; + os.path.basename(xfile) + &#34;\n&#34;
-                writefile(logfile, (xentry, &#34;&#34;), &#34;\n&#34;, &#34;a+&#34;)
-            else:
-                strx = &#34;Cannot back up file &#39;{0:s}&#39; {1:s}&#34;.format(xfile, err[1])
-
-            self.mained.update_statusbar(strx)
-    except:
-        print(&#34;Exception in idle handler&#34;, sys.exc_info())</code></pre>
-</details>
-</dd>
-<dt id="peddoc.idle_callback2"><code class="name flex">
-<span>def <span class="ident">idle_callback2</span></span>(<span>self, arg)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def idle_callback2(self, arg):
-    #print( &#34;Idle callback2&#34;, arg)
-    GLib.source_remove(self.source_id2)
-    try:
-        run_async_time(self, None)
-    except:
-        print(&#34;Exception in async handler&#34;, sys.exc_info())</code></pre>
-</details>
-</dd>
-<dt id="peddoc.keytime"><code class="name flex">
-<span>def <span class="ident">keytime</span></span>(<span>self, arg)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def keytime(self, arg):
-
-    #print( &#34;keytime raw&#34;, time.ctime(), self.fired)
-    #return
-
-    if self.fired ==  1:
-        #print( &#34;keytime&#34;, time.time(), self.fired)
-        pedspell.spell(self, self.spellmode)
-        self.walk_func()
-
-    if self.fired:
-        self.fired -= 1
-
-    # Track this buffer
-    #if self.diffmode == 2:
-    #    self.mained.diffpane.area.xpos = self.xpos
-    #    self.mained.diffpane.area.ypos = self.ypos
-    #    self.mained.diffpane.area.set_caret(self.xpos + self.caret[0],
-    #                                                self.ypos + self.caret[1], True)
-
-    # Track pane buffer back to diff components
-    if self.diffpane:
-        got_src = 0; got_targ = 0
-        src = &#34;&#34;; targ = &#34;&#34;
-        srctxt = [] ;  targtxt = []
-        dst_tab = None ; src_tab = None
-
-        # See if diff complete, put it in motion
-        nn = self.notebook.get_n_pages(); cnt = 0
-        while True:
-            if cnt &gt;= nn: break
-            ppp = self.notebook.get_nth_page(cnt)
-            if ppp.area.diffmode == 1:
-                got_src = True
-                src = os.path.basename(ppp.area.fname)
-                srctxt = ppp.area.text
-                src_tab = ppp
-            elif ppp.area.diffmode == 2:
-                got_targ = True
-                targ = os.path.basename(ppp.area.fname)
-                targtxt = ppp.area.text
-                dst_tab = ppp
-
-            cnt += 1
-
-        yyy = self.ypos +  self.caret[1]
-        zzz = self.ypos +  self.caret[1]
-        txt = &#34;&#34;
-        for aa in range( self.ypos + self.caret[1]):
-            try:
-                txt = self.text[aa]
-            except:
-                pass
-            if txt[:8] == &#34; --del--&#34;:
-                yyy -= 1
-
-            if txt[:8] == &#34; --ins--&#34;:
-                zzz -= 1
-
-        if got_targ:
-            dst_tab.area.xpos = self.xpos
-            dst_tab.area.ypos = self.ypos
-            dst_tab.area.set_caret(self.xpos + self.caret[0], yyy, True)
-        if got_src:
-            src_tab.area.xpos = self.xpos
-            src_tab.area.ypos = self.ypos
-            src_tab.area.set_caret(self.xpos + self.caret[0], zzz, True)</code></pre>
-</details>
-</dd>
-<dt id="peddoc.run_async_time"><code class="name flex">
-<span>def <span class="ident">run_async_time</span></span>(<span>win, arg)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Run this on an idle callback so the user can work
-while this is going</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def run_async_time(win, arg):
-
-    &#39;&#39;&#39;  Run this on an idle callback so the user can work
-            while this is going &#39;&#39;&#39;
-
-    global last_scanned
-
-    #print( &#34;run_async_time enter&#34;, win.fname)
-
-    if  last_scanned == win:
-        #print(&#34;Not rescanning&#34;, win.fname)
-        return
-
-    last_scanned = win
-
-    win.mained.start_tree()
-
-    #print( &#34;run_sync_time&#34;, time.time())
-
-    if not win.text:
-        return
-
-    sumw = [] ; lname = win.fname.lower()
-
-    #print(&#34;lname&#34;, lname[-2:])
-
-    # Added flex and yacc
-    if &#34;.c&#34; in lname[-2:] or &#34;.h&#34; in lname[-2:] or &#34;.y&#34; \
-        in lname[-2:] or &#34;.f&#34; in lname[-2:] or &#34;.php&#34; in lname[:-4]:
-        try:
-            regex = re.compile(ckeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in c func handler&#34;, sys.exc_info())
-            pass
-
-    elif &#34;.py&#34; in lname[-3:]:
-        try:
-            regex = re.compile(pykeywords2)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-
-            regex3 = re.compile(pykeywords3)
-            for line in win.text:
-                res = regex3.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(&#34;    &#34; + line)
-        except:
-            print(&#34;Exception in py func handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.html&#34; in lname[-5:]:
-        #print(&#34;html file&#34;)
-        try:
-            regex = re.compile(htmlkeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in py func handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.bas&#34; in lname[-4:]:
-        try:
-            regex = re.compile(basekeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in func extraction handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.s&#34; in lname[-2:] or &#34;.asm&#34; in lname[-4:] or &#34;.inc&#34; in lname[-4:]:
-        try:
-            regex = re.compile(Skeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in func extraction handler&#34;, sys.exc_info())
-            pass
-    elif &#34;.txt&#34; in lname[-4:]:
-        pass
-    else:            # Default to &#39;C&#39; like syntax
-        try:
-            for kw in sumkeywords:
-                for line in win.text:
-                    if line.find(kw) &gt;= 0:
-                        sumw.append(line)
-        except:
-            pass
-
-        try:
-            regex = re.compile(ckeywords)
-            for line in win.text:
-                res = regex.search(line)
-                if res:
-                    #print( res, res.start(), res.end())
-                    sumw.append(line)
-        except:
-            print(&#34;Exception in c func handler&#34;, sys.exc_info())
-            pass
-
-    try:
-        win.mained.update_treestore(sumw)
-    except:
-        # This is &#39;normal&#39;, ignore it
-        print(&#34;run_async_time&#34;, sys.exc_info())
-        pass
-
-    #win.mained.update_statusbar(&#34;Rescan done.&#34;)</code></pre>
-</details>
-</dd>
-</dl>
 </section>
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
@@ -3482,10 +2856,9 @@ can take thousands of lines.</p></div>
         self.connect(&#34;destroy&#34;, self.destroy_cb)
 
     def run_keytime(self):
-        global last_scanned
-        last_scanned = &#34;&#34;
+        pedidle.last_scanned = &#34;&#34;
         if not self.mained.mac:
-            GLib.timeout_add(300, keytime, self, 0)
+            GLib.timeout_add(300, pedidle.keytime, self, 0)
         pass
 
     def destroy_cb(self, arg):
@@ -3777,7 +3150,8 @@ can take thousands of lines.</p></div>
         self.focus = False
 
     def focus_in_cb(self, widget, event):
-        #print (&#34;focus_in_cb&#34;, self.fname)
+        if pedconfig.conf.verbose &gt; 2:
+            print (&#34;focus_in_cb&#34;, self.fname)
         self.focus = True
         try:
             if os.path.isfile(self.fname):
@@ -4204,9 +3578,7 @@ can take thousands of lines.</p></div>
                     self.xsel    = self.pix2xpos(event.x)
                 else:
                     self.xsel2 = self.pix2xpos(event.x)
-
             self.invalidate()
-
         if event.state &amp; Gdk.ModifierType.SHIFT_MASK and \
             event.state &amp; Gdk.ModifierType.BUTTON1_MASK:
             #print( &#34;Shift Drag&#34;, event.x, event.y)
@@ -4215,7 +3587,8 @@ can take thousands of lines.</p></div>
 
     def gotoxy(self, xx, yy, sel = None, mid = False):
 
-        #print (&#34;gotoxy&#34;, xx, yy)
+        if pedconfig.conf.verbose &gt; 1:
+            print (&#34;gotoxy&#34;, xx, yy, os.path.basename(self.fname))
         #xx +=  30
         # Contain
         ylen = len(self.text)
@@ -4391,6 +3764,8 @@ can take thousands of lines.</p></div>
             self.invalidate()
 
     def update_bar2(self):
+        # Let the system do its thing
+        #usleep(100)
         clip = pedconfig.conf.keyh.acth.currclip
         self.mained.update_statusbar2(self.caret[0] + self.xpos, \
                 self.caret[1] + self.ypos, self.insert, len(self.text), clip,
@@ -4402,134 +3777,6 @@ can take thousands of lines.</p></div>
         self.xsel2 =  self.ysel2 = -1
         if old != -1:
             self.invalidate()
-
-    def is_c_like(self):
-
-        &#39;&#39;&#39; Return True if &#39;C&#39; like file
-            This is fooled by non extension items; not a big deal
-            colors may get turned on ...
-        &#39;&#39;&#39;
-        #print(&#34;c like&#34;, self.fname)
-        for aa in c_like_exts:
-            eee = self.fname[-(len(aa)):]
-            #print(&#34;eee&#34;, eee, aa)
-            if aa == eee:
-                #print(&#34;C Match&#34;, self.fname)
-                return True
-        return False
-
-    def walk_func(self):
-
-        #print( &#34;walk func&#34;)
-
-        # ts2 ---------------------------------------------------
-        sumw2 = []
-        if self.text:
-            sline = self.caret[1] + int(self.ypos)
-            sline = max(sline, 0); sline = min(sline, len(self.text))
-            #print( &#34;Start point&#34;, sline, self.text[sline])
-
-            # Walk back to last function
-            if self.is_c_like():
-                try:
-                    aa = 0; bb = 0
-                    regex = re.compile(ckeywords)
-                    for aa in range(sline - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;start&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-                    if aa &gt; 0:
-                        for bb in range(aa + 1, len(self.text)):
-                            line = self.text[bb]
-                            res = regex.search(line)
-                            if res:
-                                #print( &#34;end&#34;, line, res.start(), res.end())
-                                break
-
-                        regex2 = re.compile(localkwords)
-                        for cc in range(aa + 1, bb - 1):
-                            line = self.text[cc]
-                            res = regex2.search(line)
-                            if res:
-                                #print( &#34;match&#34;, line, res.start(), res.end())
-                                sumw2.append(line)
-
-                except:
-                    print(&#34;Exception in c func handler&#34;, sys.exc_info())
-                    pass
-            if &#34;.bas&#34; in self.fname.lower()[-4]:
-                try:
-                    regex = re.compile(basekeywords)
-                    for line in win.text:
-                        res = regex.search(line)
-                        if res:
-                            #print( res, res.start(), res.end())
-                            sumw.append(line)
-                except:
-                    print(&#34;Exception in bas func extraction handler&#34;, sys.exc_info())
-                    pass
-            if &#34;.py&#34; in self.fname.lower()[-3]:
-                try:
-                    aa = 0; bb = 0
-                    regex = re.compile(&#34;class&#34;)
-                    for aa in range(int(sline) - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;start&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-
-                    regex = re.compile(pykeywords2)
-                    for aa in range(int(sline) - 1, 0, -1):
-                        line = self.text[aa]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;start&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-                            break
-
-                    if aa &gt; 0:
-                        for bb in range(aa + 1, len(self.text)):
-                            line = self.text[bb]
-                            res = regex.search(line)
-                            if res:
-                                #print( &#34;end&#34;, line, res.start(), res.end())
-                                break
-
-                        regex2 = re.compile(localpywords)
-                        for cc in range(aa + 1, bb - 1):
-                            line = self.text[cc]
-                            res = regex2.search(line)
-                            if res:
-                                #print( &#34;match&#34;, line, res.start(), res.end())
-                                sumw2.append(line)
-
-                except:
-                    print(&#34;Exception in py func handler&#34;, sys.exc_info())
-                    raise
-                    pass
-            else:
-                pass
-
-            # Always show todo
-            got_todo = 0
-            for line in self.text:
-                if &#34;TODO&#34; in line:
-                    if not got_todo:
-                        got_todo = 1
-                        sumw2.append(&#34;----------- TODO List ----------&#34;)
-                    sumw2.append(line)
-
-        try:
-            self.mained.update_treestore2(sumw2)
-        except:
-            # This is normal, ignore it
-            print(&#34;walk2&#34;, sys.exc_info())
-            pass
 
     # Call key handler
     def area_key(self, area, event):
@@ -5023,9 +4270,8 @@ can take thousands of lines.</p></div>
             print(&#34;peddoc: Invalid menu item selected&#34;, ttt)
 
     def rescan(self):
-        global last_scanned
-        last_scanned = &#34;&#34;
-        run_async_time(self, 0)
+        pedidle.last_scanned = &#34;&#34;
+        pedidle.run_async_time(self, 0)
         self.mained.update_statusbar(&#34;Started rescan ...&#34;)
 
     def toggle_ro(self):
@@ -5175,7 +4421,7 @@ can take thousands of lines.</p></div>
         rrr = self.prompt_save(noprompt)
         if not rrr:
             # Clear treestore(s)
-            self.mained.update_treestore([])
+            self.mained.update_treestore([], [])
             self.mained.update_treestore2([])
             # Add to accounting:
             logentry(&#34;Closed File&#34;, self.start_time, self.fname)
@@ -5646,7 +4892,10 @@ can take thousands of lines.</p></div>
         eb.set_above_child(True)
 
         image = Gtk.Image()
+        warnings.simplefilter(&#34;ignore&#34;)
         image.set_from_stock(Gtk.STOCK_CLOSE, Gtk.IconSize.MENU)
+        warnings.simplefilter(&#34;default&#34;)
+
         butt = Gtk.Button();  butt.add(image)
         butt.set_focus_on_click(False)
         butt.set_relief( Gtk.ReliefStyle.NONE)
@@ -6334,9 +5583,7 @@ can take thousands of lines.</p></div>
                 self.xsel    = self.pix2xpos(event.x)
             else:
                 self.xsel2 = self.pix2xpos(event.x)
-
         self.invalidate()
-
     if event.state &amp; Gdk.ModifierType.SHIFT_MASK and \
         event.state &amp; Gdk.ModifierType.BUTTON1_MASK:
         #print( &#34;Shift Drag&#34;, event.x, event.y)
@@ -6630,7 +5877,7 @@ can take thousands of lines.</p></div>
     rrr = self.prompt_save(noprompt)
     if not rrr:
         # Clear treestore(s)
-        self.mained.update_treestore([])
+        self.mained.update_treestore([], [])
         self.mained.update_treestore2([])
         # Add to accounting:
         logentry(&#34;Closed File&#34;, self.start_time, self.fname)
@@ -7107,7 +6354,8 @@ can take thousands of lines.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def focus_in_cb(self, widget, event):
-    #print (&#34;focus_in_cb&#34;, self.fname)
+    if pedconfig.conf.verbose &gt; 2:
+        print (&#34;focus_in_cb&#34;, self.fname)
     self.focus = True
     try:
         if os.path.isfile(self.fname):
@@ -7246,7 +6494,8 @@ can take thousands of lines.</p></div>
 </summary>
 <pre><code class="python">def gotoxy(self, xx, yy, sel = None, mid = False):
 
-    #print (&#34;gotoxy&#34;, xx, yy)
+    if pedconfig.conf.verbose &gt; 1:
+        print (&#34;gotoxy&#34;, xx, yy, os.path.basename(self.fname))
     #xx +=  30
     # Contain
     ylen = len(self.text)
@@ -7439,33 +6688,6 @@ can take thousands of lines.</p></div>
     else:
         self.queue_draw_area(rect.x, rect.y,
                         rect.width, rect.height)</code></pre>
-</details>
-</dd>
-<dt id="peddoc.pedDoc.is_c_like"><code class="name flex">
-<span>def <span class="ident">is_c_like</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Return True if 'C' like file
-This is fooled by non extension items; not a big deal
-colors may get turned on &hellip;</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def is_c_like(self):
-
-    &#39;&#39;&#39; Return True if &#39;C&#39; like file
-        This is fooled by non extension items; not a big deal
-        colors may get turned on ...
-    &#39;&#39;&#39;
-    #print(&#34;c like&#34;, self.fname)
-    for aa in c_like_exts:
-        eee = self.fname[-(len(aa)):]
-        #print(&#34;eee&#34;, eee, aa)
-        if aa == eee:
-            #print(&#34;C Match&#34;, self.fname)
-            return True
-    return False</code></pre>
 </details>
 </dd>
 <dt id="peddoc.pedDoc.iterdocs"><code class="name flex">
@@ -8315,9 +7537,8 @@ colors may get turned on &hellip;</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def rescan(self):
-    global last_scanned
-    last_scanned = &#34;&#34;
-    run_async_time(self, 0)
+    pedidle.last_scanned = &#34;&#34;
+    pedidle.run_async_time(self, 0)
     self.mained.update_statusbar(&#34;Started rescan ...&#34;)</code></pre>
 </details>
 </dd>
@@ -8331,10 +7552,9 @@ colors may get turned on &hellip;</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def run_keytime(self):
-    global last_scanned
-    last_scanned = &#34;&#34;
+    pedidle.last_scanned = &#34;&#34;
     if not self.mained.mac:
-        GLib.timeout_add(300, keytime, self, 0)
+        GLib.timeout_add(300, pedidle.keytime, self, 0)
     pass</code></pre>
 </details>
 </dd>
@@ -9280,6 +8500,8 @@ xx, yy - absolute position in the text buffer</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def update_bar2(self):
+    # Let the system do its thing
+    #usleep(100)
     clip = pedconfig.conf.keyh.acth.currclip
     self.mained.update_statusbar2(self.caret[0] + self.xpos, \
             self.caret[1] + self.ypos, self.insert, len(self.text), clip,
@@ -9304,129 +8526,6 @@ xx, yy - absolute position in the text buffer</p></div>
     yidx = int(widget.get_value())
     self.set_caret(self.xpos + self.caret[0], yidx + self.caret[1])
     self.invalidate()</code></pre>
-</details>
-</dd>
-<dt id="peddoc.pedDoc.walk_func"><code class="name flex">
-<span>def <span class="ident">walk_func</span></span>(<span>self)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def walk_func(self):
-
-    #print( &#34;walk func&#34;)
-
-    # ts2 ---------------------------------------------------
-    sumw2 = []
-    if self.text:
-        sline = self.caret[1] + int(self.ypos)
-        sline = max(sline, 0); sline = min(sline, len(self.text))
-        #print( &#34;Start point&#34;, sline, self.text[sline])
-
-        # Walk back to last function
-        if self.is_c_like():
-            try:
-                aa = 0; bb = 0
-                regex = re.compile(ckeywords)
-                for aa in range(sline - 1, 0, -1):
-                    line = self.text[aa]
-                    res = regex.search(line)
-                    if res:
-                        #print( &#34;start&#34;, line, res.start(), res.end())
-                        sumw2.append(line)
-                        break
-                if aa &gt; 0:
-                    for bb in range(aa + 1, len(self.text)):
-                        line = self.text[bb]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;end&#34;, line, res.start(), res.end())
-                            break
-
-                    regex2 = re.compile(localkwords)
-                    for cc in range(aa + 1, bb - 1):
-                        line = self.text[cc]
-                        res = regex2.search(line)
-                        if res:
-                            #print( &#34;match&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-
-            except:
-                print(&#34;Exception in c func handler&#34;, sys.exc_info())
-                pass
-        if &#34;.bas&#34; in self.fname.lower()[-4]:
-            try:
-                regex = re.compile(basekeywords)
-                for line in win.text:
-                    res = regex.search(line)
-                    if res:
-                        #print( res, res.start(), res.end())
-                        sumw.append(line)
-            except:
-                print(&#34;Exception in bas func extraction handler&#34;, sys.exc_info())
-                pass
-        if &#34;.py&#34; in self.fname.lower()[-3]:
-            try:
-                aa = 0; bb = 0
-                regex = re.compile(&#34;class&#34;)
-                for aa in range(int(sline) - 1, 0, -1):
-                    line = self.text[aa]
-                    res = regex.search(line)
-                    if res:
-                        #print( &#34;start&#34;, line, res.start(), res.end())
-                        sumw2.append(line)
-                        break
-
-                regex = re.compile(pykeywords2)
-                for aa in range(int(sline) - 1, 0, -1):
-                    line = self.text[aa]
-                    res = regex.search(line)
-                    if res:
-                        #print( &#34;start&#34;, line, res.start(), res.end())
-                        sumw2.append(line)
-                        break
-
-                if aa &gt; 0:
-                    for bb in range(aa + 1, len(self.text)):
-                        line = self.text[bb]
-                        res = regex.search(line)
-                        if res:
-                            #print( &#34;end&#34;, line, res.start(), res.end())
-                            break
-
-                    regex2 = re.compile(localpywords)
-                    for cc in range(aa + 1, bb - 1):
-                        line = self.text[cc]
-                        res = regex2.search(line)
-                        if res:
-                            #print( &#34;match&#34;, line, res.start(), res.end())
-                            sumw2.append(line)
-
-            except:
-                print(&#34;Exception in py func handler&#34;, sys.exc_info())
-                raise
-                pass
-        else:
-            pass
-
-        # Always show todo
-        got_todo = 0
-        for line in self.text:
-            if &#34;TODO&#34; in line:
-                if not got_todo:
-                    got_todo = 1
-                    sumw2.append(&#34;----------- TODO List ----------&#34;)
-                sumw2.append(line)
-
-    try:
-        self.mained.update_treestore2(sumw2)
-    except:
-        # This is normal, ignore it
-        print(&#34;walk2&#34;, sys.exc_info())
-        pass</code></pre>
 </details>
 </dd>
 <dt id="peddoc.pedDoc.writeout"><code class="name flex">
@@ -9498,14 +8597,6 @@ xx, yy - absolute position in the text buffer</p></div>
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="peddoc.idle_callback" href="#peddoc.idle_callback">idle_callback</a></code></li>
-<li><code><a title="peddoc.idle_callback2" href="#peddoc.idle_callback2">idle_callback2</a></code></li>
-<li><code><a title="peddoc.keytime" href="#peddoc.keytime">keytime</a></code></li>
-<li><code><a title="peddoc.run_async_time" href="#peddoc.run_async_time">run_async_time</a></code></li>
-</ul>
-</li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
@@ -9557,7 +8648,6 @@ xx, yy - absolute position in the text buffer</p></div>
 <li><code><a title="peddoc.pedDoc.intersect" href="#peddoc.pedDoc.intersect">intersect</a></code></li>
 <li><code><a title="peddoc.pedDoc.inval_line" href="#peddoc.pedDoc.inval_line">inval_line</a></code></li>
 <li><code><a title="peddoc.pedDoc.invalidate" href="#peddoc.pedDoc.invalidate">invalidate</a></code></li>
-<li><code><a title="peddoc.pedDoc.is_c_like" href="#peddoc.pedDoc.is_c_like">is_c_like</a></code></li>
 <li><code><a title="peddoc.pedDoc.iterdocs" href="#peddoc.pedDoc.iterdocs">iterdocs</a></code></li>
 <li><code><a title="peddoc.pedDoc.loadbuff" href="#peddoc.pedDoc.loadbuff">loadbuff</a></code></li>
 <li><code><a title="peddoc.pedDoc.loadfile" href="#peddoc.pedDoc.loadfile">loadfile</a></code></li>
@@ -9615,7 +8705,6 @@ xx, yy - absolute position in the text buffer</p></div>
 <li><code><a title="peddoc.pedDoc.uniview" href="#peddoc.pedDoc.uniview">uniview</a></code></li>
 <li><code><a title="peddoc.pedDoc.update_bar2" href="#peddoc.pedDoc.update_bar2">update_bar2</a></code></li>
 <li><code><a title="peddoc.pedDoc.vscroll_cb" href="#peddoc.pedDoc.vscroll_cb">vscroll_cb</a></code></li>
-<li><code><a title="peddoc.pedDoc.walk_func" href="#peddoc.pedDoc.walk_func">walk_func</a></code></li>
 <li><code><a title="peddoc.pedDoc.writeout" href="#peddoc.pedDoc.writeout">writeout</a></code></li>
 </ul>
 </li>

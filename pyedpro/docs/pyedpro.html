@@ -74,20 +74,6 @@ in acthand.py The default key map resembles gedit / wed / etp / brief / Notepad<
 <p>It is fast, it is extendable. The editor has a table driven key mapping.
 One can easily edit the key map in keyhand.py, and the key actions
 in acthand.py The default key map resembles gedit / wed / etp / brief</p>
-<p>History:
-(incomplete list, see git log for a more complete list)</p>
-<pre><code>jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
-Jul/xx/2018       Update README, KEYS.TXT
-Jun/xx/2018       Log Files for time accounting.
-Jun/08/2020       Menu control / Headerbar / Version update
-Mon 28.Sep.2020   Reshuffled imports pylint
-Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
-Fri 07.May.2021   Many fixed, installs, new features
-Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
-Tue 06.Sep.2022   Installation, anchor for search ...
-Thu 27.Oct.2022   Restored menu keymaps for the system to handle it.
-Sun 05.May.2024   Import webView dummySun
-</code></pre>
 <p>ASCII text editor, requires pyGtk. (pygobject)
 See pygtk-dependencies for easy install of dependencies.
 See also the INSTALL file.</p>
@@ -162,27 +148,13 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
  One can easily edit the key map in keyhand.py, and the key actions
  in acthand.py The default key map resembles gedit / wed / etp / brief
 
-History:  (incomplete list, see git log for a more complete list)
-
-    jul/19/2018       Coloring for spell check, Trigger by scroll, more dominant color
-    Jul/xx/2018       Update README, KEYS.TXT
-    Jun/xx/2018       Log Files for time accounting.
-    Jun/08/2020       Menu control / Headerbar / Version update
-    Mon 28.Sep.2020   Reshuffled imports pylint
-    Fri 25.Dec.2020   Added web view, m4 filter md2html filterRelese ready
-    Fri 07.May.2021   Many fixed, installs, new features
-    Sun 05.Sep.2021   ported to Mac M1 ... what a pain .. half the things did not work
-    Tue 06.Sep.2022   Installation, anchor for search ...
-    Thu 27.Oct.2022   Restored menu keymaps for the system to handle it.
-    Sun 05.May.2024   Import webView dummySun
-
  ASCII text editor, requires pyGtk. (pygobject)
  See pygtk-dependencies for easy install of dependencies.
  See also the INSTALL file.
 
 &#39;&#39;&#39;
 
-import os, sys, getopt, signal, time, platform, atexit
+import os, sys, getopt, signal, time, platform, atexit, warnings
 
 import gettext
 gettext.bindtextdomain(&#39;pyedpro&#39;, &#39;./locale/&#39;)
@@ -204,9 +176,19 @@ orgbase = os.getcwd()
 
 basedir = os.path.dirname(os.path.realpath(__file__))
 #print(&#34;file dir&#34;, basedir)
-sys.path.append(basedir + os.sep)
-sys.path.append(basedir + os.sep + &#34;pycommon&#34;)
-sys.path.append(basedir + os.sep + &#34;pedlib&#34;)
+
+from pedlib import pedconfig
+libdir = os.path.dirname(os.path.realpath(pedconfig.__file__))
+#print(&#34;lib dir&#34;, libdir)
+
+parentd = os.path.dirname(os.path.realpath(libdir))
+#print(&#34;par dir&#34;, parentd)
+
+#sys.path.append(basedir + os.sep)
+#sys.path.append(parentd + os.sep + &#34;pycommon&#34;)
+sys.path.append(parentd)
+sys.path.append(parentd + os.sep + &#34;pedlib&#34;)
+
 #sys.path.append(basedir + os.sep + &#34;..&#34; + os.sep + &#34;pycommon&#34;)
 
 from pedlib import pedconfig
@@ -236,14 +218,10 @@ def tracer(frame, event, arg):
         print(event, frame.f_code.co_filename, frame.f_lineno)
     return tracer
 
-#try:
-#    from pkg_resources import resource_filename
-#    print (os.path.abspath(resource_filename(__name__.data, &#39;pedicon.png&#39;)) )
-#except:
-#    print(sys.exc_info())
+warnings.simplefilter(&#34;default&#34;)
 
-VERSION     = &#34;3.6.0&#34;
-BUILDDATE   = &#34;Mon 15.Sep.2025&#34;
+VERSION     = &#34;3.7.9&#34;
+BUILDDATE   = &#34;Tue 02.Dec.2025&#34;
 PROGNAME    = &#34;PyEdPro&#34;
 
 # ------------------------------------------------------------------------
@@ -325,6 +303,7 @@ def xhelp():
     print(_(&#34;Option(s):&#34;))
     print(_(&#34;            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)&#34;))
     print(_(&#34;            -j pname  - Load project (pname = saved session name)&#34;))
+    print(_(&#34;            -z keyw   - output keyword specific trace events&#34;))
     print(_(&#34;            -v        - Verbose (to stdout and log) repeat for more verbosity&#34;))
     print(_(&#34;            -f        - Start Full screen&#34;))
     print(_(&#34;            -c        - Dump Config&#34;))
@@ -333,10 +312,11 @@ def xhelp():
     print(_(&#34;            -x        - Clear (eXtinguish) config (will prompt)&#34;))
     print(_(&#34;            -g        - Key log on&#34;))
     print(_(&#34;            -k        - Show Keys Presses&#34;))
-    print(_(&#34;            -t        - Set tracer ON (lots of output)&#34;))
     print(_(&#34;            -h        - Help (this screen)&#34;))
     print()
     sys.exit(1)
+
+#print(_(&#34;            -t        - Set tracer ON (lots of output)&#34;))
 
 # ------------------------------------------------------------------------
 
@@ -373,7 +353,7 @@ def mainstart(name = &#34;&#34;, args = &#34;&#34;, oldpath = &#34;&#34;):
     opts = []; args = []
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], &#34;d:h?vVj:fxctoktg&#34;,
+        opts, args = getopt.getopt(sys.argv[1:], &#34;d:h?vVj:fxctoktgz:&#34;,
                         [&#34;debug=&#34;, &#34;help&#34;, &#34;help&#34;, &#34;verbose&#34;, &#34;version&#34;, &#34;project=&#34;])
 
     except getopt.GetoptError as err:
@@ -397,6 +377,14 @@ def mainstart(name = &#34;&#34;, args = &#34;&#34;, oldpath = &#34;&#34;):
                 print( PROGNAME, _(&#34;Running at debug level:&#34;),  pedconfig.conf.pgdebug)
             except:
                 pedconfig.conf.pgdebug = 0
+
+        if aa[0] == &#34;-z&#34;:
+            #print(&#34;Trace subsys&#34;)
+            try:
+                pedconfig.conf.trace = aa[1]
+                print( PROGNAME, _(&#34;Running trace:&#34;),  pedconfig.conf.trace)
+            except:
+                pedconfig.conf.trace = &#34;&#34;
 
         if aa[0] == &#34;-j&#34; or aa[0] == &#34;--project&#34;:
             rrr = False
@@ -437,12 +425,15 @@ def mainstart(name = &#34;&#34;, args = &#34;&#34;, oldpath = &#34;&#34;):
             USE_STDOUT = True
         if aa[0] == &#34;-k&#34;:
             pedconfig.conf.show_keys = True
-        if aa[0] == &#34;-t&#34;:
-            print(&#34;Tracing ON&#34;)
-            sys.settrace(tracer)
+        #if aa[0] == &#34;-t&#34;:
+        #    print(&#34;Tracing ON&#34;)
+        #    sys.settrace(tracer)
 
     if pedconfig.conf.pgdebug &gt; 0:
         print(&#34;Running &#39;{}&#39;&#34;.format(os.path.abspath(sys.argv[0])) )
+
+    #if pedconfig.conf.verbose:
+    #    print(&#34;Icon Size:&#34;, Gtk.IconSize.BUTTON)
 
     try:
         if not os.path.isdir(pedconfig.conf.config_dir):
@@ -637,7 +628,7 @@ command line.</p></div>
     opts = []; args = []
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], &#34;d:h?vVj:fxctoktg&#34;,
+        opts, args = getopt.getopt(sys.argv[1:], &#34;d:h?vVj:fxctoktgz:&#34;,
                         [&#34;debug=&#34;, &#34;help&#34;, &#34;help&#34;, &#34;verbose&#34;, &#34;version&#34;, &#34;project=&#34;])
 
     except getopt.GetoptError as err:
@@ -661,6 +652,14 @@ command line.</p></div>
                 print( PROGNAME, _(&#34;Running at debug level:&#34;),  pedconfig.conf.pgdebug)
             except:
                 pedconfig.conf.pgdebug = 0
+
+        if aa[0] == &#34;-z&#34;:
+            #print(&#34;Trace subsys&#34;)
+            try:
+                pedconfig.conf.trace = aa[1]
+                print( PROGNAME, _(&#34;Running trace:&#34;),  pedconfig.conf.trace)
+            except:
+                pedconfig.conf.trace = &#34;&#34;
 
         if aa[0] == &#34;-j&#34; or aa[0] == &#34;--project&#34;:
             rrr = False
@@ -701,12 +700,15 @@ command line.</p></div>
             USE_STDOUT = True
         if aa[0] == &#34;-k&#34;:
             pedconfig.conf.show_keys = True
-        if aa[0] == &#34;-t&#34;:
-            print(&#34;Tracing ON&#34;)
-            sys.settrace(tracer)
+        #if aa[0] == &#34;-t&#34;:
+        #    print(&#34;Tracing ON&#34;)
+        #    sys.settrace(tracer)
 
     if pedconfig.conf.pgdebug &gt; 0:
         print(&#34;Running &#39;{}&#39;&#34;.format(os.path.abspath(sys.argv[0])) )
+
+    #if pedconfig.conf.verbose:
+    #    print(&#34;Icon Size:&#34;, Gtk.IconSize.BUTTON)
 
     try:
         if not os.path.isdir(pedconfig.conf.config_dir):
@@ -873,6 +875,7 @@ command line.</p></div>
     print(_(&#34;Option(s):&#34;))
     print(_(&#34;            -d level  - Debug level 1-10 (0 silent; 1 some; 10 lots)&#34;))
     print(_(&#34;            -j pname  - Load project (pname = saved session name)&#34;))
+    print(_(&#34;            -z keyw   - output keyword specific trace events&#34;))
     print(_(&#34;            -v        - Verbose (to stdout and log) repeat for more verbosity&#34;))
     print(_(&#34;            -f        - Start Full screen&#34;))
     print(_(&#34;            -c        - Dump Config&#34;))
@@ -881,7 +884,6 @@ command line.</p></div>
     print(_(&#34;            -x        - Clear (eXtinguish) config (will prompt)&#34;))
     print(_(&#34;            -g        - Key log on&#34;))
     print(_(&#34;            -k        - Show Keys Presses&#34;))
-    print(_(&#34;            -t        - Set tracer ON (lots of output)&#34;))
     print(_(&#34;            -h        - Help (this screen)&#34;))
     print()
     sys.exit(1)</code></pre>

@@ -185,10 +185,12 @@ class pgnotes(Gtk.VBox):
         #self.edview.callb = self.savetext
         self.edview.findcall = self.findx, self
 
+        warnings.simplefilter(&#34;ignore&#34;)
         self.edview.textview.set_margin_left(2)
         self.edview.textview.set_margin_right(2)
         self.edview.textview.set_margin_top(2)
         self.edview.textview.set_margin_bottom(2)
+        warnings.simplefilter(&#34;default&#34;)
 
         self.fd = Pango.FontDescription()
         pg = Gtk.Widget.create_pango_context(self.edview.textview)
@@ -1130,10 +1132,12 @@ sets through the use of explicit keyword arguments.</p></div>
         #self.edview.callb = self.savetext
         self.edview.findcall = self.findx, self
 
+        warnings.simplefilter(&#34;ignore&#34;)
         self.edview.textview.set_margin_left(2)
         self.edview.textview.set_margin_right(2)
         self.edview.textview.set_margin_top(2)
         self.edview.textview.set_margin_bottom(2)
+        warnings.simplefilter(&#34;default&#34;)
 
         self.fd = Pango.FontDescription()
         pg = Gtk.Widget.create_pango_context(self.edview.textview)

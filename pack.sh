@@ -10,14 +10,14 @@ fi
 
 #CURR=`pwd | awk -F '/' {'print $NF'} |  sort -n | tail -1`
 VAR=$(grep "VERSION.*=" pyedpro/pyedpro.py | awk '{print $3}' | sed "s/\"//g")
-CURR=../pyedpro-$VAR.tar.gz
-#echo "name:" $CURR ; exit
-if [ -f $CURR ] ; then
+CURR=pyedpro-$VAR.tar.gz
+#echo "Packing: " $CURR ; exit
+if [ -f ../$CURR ] ; then
     echo "File \"$CURR\" exist. Please delete to recreate."
     exit
 fi
 
 cd ..
-echo "Packing / Archiving project into \"$CURR\" "
+echo "Packing / Archiving project into \"../$CURR\" "
 tar cfz $CURR pyedpro
 #echo Created $CURR in parent directory

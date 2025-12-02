@@ -8,7 +8,7 @@
 #  OTHER DEALINGS IN THE SOFTWARE.
 #
 
-.PHONY:  docs clean prepimage
+.PHONY:  pack docs clean prepimage
 
 all:
 	@echo "Targets: docs setup pack prepimage -- Type 'make help' more targets"
@@ -23,7 +23,7 @@ help:
 	@echo "	 make remove       -- *remove (all) traces of pyedpro from the system"
 	@echo "	 make docs         -- *create documentation (see pyedpro dir)"
 	@echo
-	@echo Targets marked with '*' are obsolete or defective
+	@echo Targets marked with '*' are obsolete or moved or defective
 	@echo
 
 pipinstall:
