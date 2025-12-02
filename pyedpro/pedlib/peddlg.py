@@ -45,7 +45,7 @@ def  _keypress(area, event):
 
 def  config_dlg(title, head, clip, parent = None):
 
-    dialog = Gtk.Dialog(title=title, Modal=True)
+    dialog = Gtk.Dialog(title=title, modal=True)
     dialog.add_buttons(Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                             Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT)
 
@@ -61,10 +61,10 @@ def  config_dlg(title, head, clip, parent = None):
     '''
 
     # Spacers
-    label1 = Gtk.Label("   ");  label2 = Gtk.Label("   ")
-    label3 = Gtk.Label("   ");  label4 = Gtk.Label("   ")
-    label5 = Gtk.Label("   ");  label6 = Gtk.Label("   ")
-    label7 = Gtk.Label("   ");  label8 = Gtk.Label("   ")
+    label1 = Gtk.Label(label="   ");  label2 = Gtk.Label(label="   ")
+    label3 = Gtk.Label(label="   ");  label4 = Gtk.Label(label="   ")
+    label5 = Gtk.Label(label="   ");  label6 = Gtk.Label(label="   ")
+    label7 = Gtk.Label(label="   ");  label8 = Gtk.Label(label="   ")
 
     entry = Gtk.Entry(); entry.set_max_width_chars(64);
     entry.set_text(head)
@@ -100,11 +100,11 @@ def  config_dlg(title, head, clip, parent = None):
     spacer(dialog.vbox)
 
     hbox3 = Gtk.HBox()
-    hbox3.pack_start(Gtk.Label("   "), 0, 0, 0)
+    hbox3.pack_start(Gtk.Label(label="   "), 0, 0, 0)
     #hbox3.pack_start(entry2, True, True, 0)
     #hbox3.pack_start(tview, True, True, 0)
     hbox3.pack_start(scroll, True, True, 0)
-    hbox3.pack_start(Gtk.Label("   "), 0, 0, 0)
+    hbox3.pack_start(Gtk.Label(label="   "), 0, 0, 0)
     dialog.vbox.pack_start(hbox3, 0, 0, 0)
     spacer(dialog.vbox)
 
@@ -118,9 +118,9 @@ def  config_dlg(title, head, clip, parent = None):
     #dialog.vbox.pack_start(hbox, 0, 0, 0)
     #dialog.vbox.pack_start(label8, 0, 0, 0)
 
-    label30 = Gtk.Label("   ");  label31 = Gtk.Label("   ")
-    label32 = Gtk.Label("   ");  label33 = Gtk.Label("   ")
-    label34 = Gtk.Label("   ");  label35 = Gtk.Label("   ")
+    label30 = Gtk.Label(label="   ");  label31 = Gtk.Label(label="   ")
+    label32 = Gtk.Label(label="   ");  label33 = Gtk.Label(label="   ")
+    label34 = Gtk.Label(label="   ");  label35 = Gtk.Label(label="   ")
 
     #dialog.checkbox3 = Gtk.CheckButton.new_with_mnemonic("Search _All Buffers")
     #dialog.checkbox4 = Gtk.CheckButton("Hello")
@@ -157,7 +157,7 @@ def  config_dlg(title, head, clip, parent = None):
 def     spacer(vbox, txt = "   "):
 
     hbox = Gtk.HBox()
-    hbox.pack_start(Gtk.Label(" " + txt + " "), 0, 0, 0)
+    hbox.pack_start(Gtk.Label(label=" " + txt + " "), 0, 0, 0)
     vbox.pack_start(hbox, 0, 0, 0)
     return hbox
 
