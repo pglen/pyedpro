@@ -201,7 +201,7 @@ class pgweb(Gtk.VBox):
             if pedconfig.conf.verbose:
                 put_exception("WebView load")
 
-        print("browwin", self.brow_win)
+        #print("browwin", self.brow_win)
 
         vbox5 = Gtk.VBox()
         frame4 = Gtk.Frame();

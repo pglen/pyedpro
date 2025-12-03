@@ -21,7 +21,7 @@ userdic = []
 
 # Punctuation characters (most all non-alphanumeric chars)
 # Note the space at the beginning
-punctuation = " ,./<>?;\':[]\{}|=-`!@#$%^&*()_+\""
+punctuation = r" ,./<>?;\':[]\{}|=-`!@#$%^&*()_+\""
 
 # Benchmark time
 #got_clock = 0

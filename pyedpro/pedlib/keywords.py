@@ -36,11 +36,11 @@ clwords =  ("class ", " self.", "try:", "except", "except:", "finally",
 # Keywords for summary extraction: (left side window)
 basekeywords = ("(sub )|(SUB )")
 basewalk = ("(sub )|(SUB )")
-cwalk =  "^[_a-zA-Z].*\(.*\)"
+cwalk =  r"^[_a-zA-Z].*\(.*\)"
 
-asmwalk =   "^[_a-zA-Z].*:"
-asmkeywords = "(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)|(\%if )|(%else)|(\%endif)"
-asmkeywords2 = "(^[_a-zA-Z].*:)|(jmp )|(ret )"
+asmwalk =   r"^[_a-zA-Z].*:"
+asmkeywords = r"(^[_a-zA-Z].*:)|(\.bss)|(\.text)|(\.macro)|(\%if )|(%else)|(\%endif)"
+asmkeywords2 = r"(^[_a-zA-Z].*:)|(jmp )|(ret )"
 
 pykeywords = ("class ", "def ")
 pykeywords2 = "(class )|(def )|(__main__)"
@@ -49,9 +49,9 @@ pykeywords4 = "(def )|(for )|(while )|(return )|(import )|(def )"
 pywalk = "class"
 
 sumkeywords = "class ", "def ", "TODO "
-htmlkeywords = "(\{ .* \})"
+htmlkeywords = r"(\{ .* \})"
 
-ckeywords =  "^[_a-zA-Z].*\(.*\)"
+ckeywords =  r"^[_a-zA-Z].*\(.*\)"
 ckeywords2 = "(int .*)|(char .*)|(for )|(while )|(if )|(return )"
 
 vwalk =   "module"
