@@ -73,8 +73,12 @@ class pgAI(Gtk.VBox):
         #vbox = Gtk.VBox()
         Gtk.VBox.__init__(self)
 
+        self.exename  = "ollama"
+        self.modelname = "llama3.2:1b"
+
         vbox5 = Gtk.VBox()
         hbox13a = Gtk.HBox()
+        hbox13b = Gtk.HBox()
 
         #frame4 = Gtk.Frame();
         #scrolled_window = Gtk.ScrolledWindow()
@@ -102,15 +106,31 @@ class pgAI(Gtk.VBox):
 
         vbox5.pack_start(hbox2, 0, 0, 0)
 
+        hbox13b.pack_start(Gtk.Label(label="  "), 1, 1, 0)
+        hbox13b.pack_start(Gtk.Label(label=" Model: "), 0, 0, 0)
+        self.modelN = Gtk.Entry()
+        self.modelN.set_text(self.modelname)
+        self.modelN.set_width_chars(12)
+
+        hbox13b.pack_start(self.modelN, 0, 0, 0)
+        hbox13b.pack_start(Gtk.Label(label=" Exe: "), 0, 0, 0)
+        self.exeN = Gtk.Entry()
+        self.exeN.set_width_chars(12)
+        self.exeN.set_text(self.exename)
+        hbox13b.pack_start(self.exeN, 0, 0, 0)
+
+        hbox13b.pack_start(Gtk.Label(label="  "), 1, 1, 0)
+
         hbox13a.pack_start(Gtk.Label(label="  "), 1, 1, 0)
-        butt11 = smallbutt(" [Send ] ", self.send2, "Send query to ollama")
+        butt11 = smallbutt(" [_Send ] ", self.send2, "Send query to ollama")
         hbox13a.pack_start(butt11, 0, 0, 0)
-        butt11 = smallbutt(" [ Stop ] ", self.stopfunc, "Stop ollama query")
+        butt11 = smallbutt(" [ Sto_p ] ", self.stopfunc, "Stop ollama query")
         hbox13a.pack_start(butt11, 0, 0, 0)
-        butt11 = smallbutt(" [ Start Server ] ", self.server, "Start ollama server")
+        butt11 = smallbutt(" [ Sta_rt Server ] ", self.server, "Start ollama server")
         hbox13a.pack_start(butt11, 0, 0, 0)
         hbox13a.pack_start(Gtk.Label(label="  "), 1, 1, 0)
 
+        vbox5.pack_start(hbox13b, 0, 0, 0)
         vbox5.pack_start(hbox13a, 0, 0, 0)
 
         #self.butt = Gtk.Button.new_with_mnemonic("_Send")
@@ -150,59 +170,67 @@ class pgAI(Gtk.VBox):
     def connect_server(self, arg2): #prompt, context):
         pass
 
-    def server(self, arg2): #prompt, context):
-        ret = subprocess.Popen(["/usr/bin/ollama", "serve", ])
-        print(ret)
+    def server(self, arg2):
+        try:
+            self.exename = self.exeN.get_text()
+            ret = subprocess.Popen([self.exename, "serve", ])
+        except:
+            self.lab.set_text("Server said: '%s'" % (str(sys.exc_info())) )
         pass
 
-    def send(self, arg2): #prompt, context):
-        model = "llama3"
-        prompt = self.entry.get_text()
+        #print(ret)
 
-        self.lab.set_text("Query: '%s'" % prompt)
-        usleep(20)
-        self.stop = False
-        try:
-            r = requests.post('http://localhost:11434/api/generate',
-                              json={
-                                  'model': model,
-                                  'prompt': prompt,
-                              },
-                              stream=True)
-            r.raise_for_status()
-            cnt = 1
-            self.lab.set_text("")
-            usleep(20)
-            for line in r.iter_lines():
-                #print(line)
-                body = json.loads(line)
-                response_part = body.get('response', '')
-                # the response streams one token at a time, print that as we receive it
-                print(response_part, end='', flush=True)
-
-                old = self.lab.get_text(self.lab.get_start_iter(),
-                                    self.lab.get_end_iter(), False)
-                #self.lab.set_text(old + response_part)
-                self.lab.insert(self.lab.get_end_iter(),  response_part)
-                #usleep(20)
-                mark = self.lab.create_mark(None, self.lab.get_end_iter(), "end")
-                self.tv.scroll_to_mark(mark, 0., False, 0., 0.)
-
-                #if cnt % 5 == 0:
-                #    self.lab.set_text(self.lab.get_text() + "\n")
-                if self.stop:
-                    self.lab.set_text(old + "\n ... Stopped ...\n")
-                    break
-
-                usleep(20)
-                cnt += 1
-                if 'error' in body:
-                    raise Exception(body['error'])
-
-                if body.get('done', False):
-                    return body['context']
-        except:
-            self.lab.set_text(str(sys.exc_info()[1]))
+    #def send(self, arg2): #prompt, context):
+    #    #self.modelname = self.modelN.get_text()
+    #    prompt = self.entry.get_text()
+    #    self.lab.set_text("Query: '%s' model: '%s'" % (prompt, self.modelname))
+    #    print("modelname", self.modelname)
+    #
+    #    usleep(20)
+    #    self.stop = False
+    #    try:
+    #        r = requests.post('http://localhost:11434/api/generate',
+    #                          json={
+    #                              'model': self.modelname,
+    #                              'prompt': prompt,
+    #                          },
+    #                          stream=True)
+    #        r.raise_for_status()
+    #        cnt = 1
+    #        self.lab.set_text("")
+    #        usleep(20)
+    #        for line in r.iter_lines():
+    #            print(line)
+    #            body = json.loads(line)
+    #            response_part = body.get('response', '')
+    #            # the response streams one token at a time, print that as we receive it
+    #            print(response_part, end='', flush=True)
+    #
+    #            old = self.lab.get_text(self.lab.get_start_iter(),
+    #                                self.lab.get_end_iter(), False)
+    #            #self.lab.set_text(old + response_part)
+    #            self.lab.insert(self.lab.get_end_iter(),  response_part)
+    #            #usleep(20)
+    #            mark = self.lab.create_mark(None, self.lab.get_end_iter(), "end")
+    #            self.tv.scroll_to_mark(mark, 0., False, 0., 0.)
+    #
+    #            #if cnt % 5 == 0:
+    #            #    self.lab.set_text(self.lab.get_text() + "\n")
+    #            if self.stop:
+    #                self.lab.set_text(old + "\n ... Stopped ...\n")
+    #                break
+    #
+    #            usleep(2)
+    #            cnt += 1
+    #            if 'error' in body:
+    #                raise Exception(body['error'])
+    #
+    #            if body.get('done', False):
+    #                return body['context']
+    #    except:
+    #        self.lab.set_text(str(sys.exc_info()[1]))
+    #        print(sys.exc_info())
+    #
 
     def send2(self, but):
         #print("but:", but)
@@ -223,12 +251,12 @@ class pgAI(Gtk.VBox):
         #print("sock:", self.sock)
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-
+        self.modelname = self.modelN.get_text()
         jsonstr={
-                    #"model": "llama3",
-                    "model": "mistral",
+                    "model":  self.modelname,
                     "prompt": old,
-                    "stream": True },
+                    "stream": True
+                },
 
         body = json.dumps(jsonstr)
         body = str(body)[1:-1]
@@ -257,7 +285,9 @@ class pgAI(Gtk.VBox):
             usleep(20)
             if self.stop:
                 break
-
+            # Windows are going away ... stop
+            if not self.tv.get_realized():
+                break
             try:
                 rr, ww, xx = select.select([self.sock, ], [], [], 0.01)
                 if not rr:
@@ -290,24 +320,30 @@ class pgAI(Gtk.VBox):
                 #print ("ini body: '%s'" % body)
             idx  = retx2.find("{"); idx2 = retx2.find("}")
             body = retx2[idx:idx+idx2]
-            #print ("body: '%s'" % body)
 
             try:
                 ooo = json.loads(body)
             except:
                 print("exc: json", sys.exc_info(), body)
-                pass
+                self.stop = True
 
             #print("Json:", ooo)
 
             if ooo.get("done"):
+                self.stop = True
                 break
+            try:
+                resp = ooo.get('response',"")
+                if pedconfig.conf.verbose:
+                    print ("resp: '%s'" % resp)
 
-            self.lab.insert(self.lab.get_end_iter(),  ooo.get('response',""))
-            #usleep(20)
-            mark = self.lab.create_mark(None, self.lab.get_end_iter(), "end")
-            self.tv.scroll_to_mark(mark, 0., False, 0., 0.)
-
+                self.lab.insert(self.lab.get_end_iter(), resp)
+                #usleep(20)
+                mark = self.lab.create_mark(None, self.lab.get_end_iter(), "end")
+                self.tv.scroll_to_mark(mark, 0., False, 0., 0.)
+            except:
+                self.stop = True
+                break
 
         self.sock.close()
 

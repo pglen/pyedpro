@@ -137,8 +137,8 @@ def tracer(frame, event, arg):
 
 warnings.simplefilter("default")
 
-VERSION     = "3.7.9"
-BUILDDATE   = "Tue 02.Dec.2025"
+VERSION     = "3.8.0"
+BUILDDATE   = "Wed 10.Dec.2025"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -262,7 +262,7 @@ def mainstart(name = "", args = "", oldpath = ""):
     USE_STDOUT = 0
     KEYLOG_ON = 0
 
-    #print ("cmd opts", sys.argv, os.getcwd(), sys.path[0])
+   #print ("cmd opts", sys.argv, os.getcwd(), sys.path[0])
 
     # Redirect stdout to a fork to real stdout and log. This way messages can
     # be seen even if pydepro is started without a terminal (from the GUI)
@@ -348,6 +348,10 @@ def mainstart(name = "", args = "", oldpath = ""):
 
     if pedconfig.conf.pgdebug > 0:
         print("Running '{}'".format(os.path.abspath(sys.argv[0])) )
+
+    if pedconfig.conf.verbose:
+        from pyvguicom import pggui
+        print("pggui version:", pggui.VERSION)
 
     #if pedconfig.conf.verbose:
     #    print("Icon Size:", Gtk.IconSize.BUTTON)

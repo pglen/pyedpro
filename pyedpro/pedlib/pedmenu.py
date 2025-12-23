@@ -121,7 +121,7 @@ def create_action_group(self):
       ( "FileMenu", None, "_File" ),                # name, stock id, label
       ( "EditMenu", None, "_Edit" ),
       ( "PreferencesMenu", None, "Settings" ),
-      ( "NavMenu", None, "Navigation" ),
+      ( "NavMenu", None, "_Navigation" ),
       ( "MacrosMenu", None, "_Macros" ),
       ( "ColorMenu", None, "_Color"  ),
       ( "ShapeMenu", None, "Shape" ),
@@ -313,6 +313,11 @@ def create_action_group(self):
         ( "Begin", Gtk.STOCK_MEDIA_PLAY,
         "Begin of doc\tCtrl-Home", "",
         "Goto the beginning of document",
+         self.activate_action ),
+
+        ( "Connect Viewer", Gtk.STOCK_INDEX,
+        "Connect external viewer\tCtrl-??", "",
+        "External viewer",
          self.activate_action ),
 
         ( "End", Gtk.STOCK_MEDIA_PAUSE,

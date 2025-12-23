@@ -110,7 +110,7 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         # Gather globals
         self.keyh = pedconfig.conf.keyh
         self.acth = pedconfig.conf.acth
-
+        self.viewer = None
         self.lastkey = ' '
         self.second = False
         self.strip = 50

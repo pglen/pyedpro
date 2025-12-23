@@ -235,7 +235,7 @@ class EdMainWindow():
         else:
             self.klfp = None
 
-        register_stock_icons()
+        #register_stock_icons()
 
         #Gdk.threads_init()
 
@@ -308,6 +308,19 @@ class EdMainWindow():
         warnings.simplefilter("ignore")
         if self.mywin.is_composited():
             self.mywin.set_opacity(self.alpha)
+
+        #icon_list = []
+        #fname = get_img_path("pyedpro_sub.png")
+        #for size in [24, 32, 48, 64, 96, 128]:
+        #    try:
+        #        pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(
+        #                                fname, size, size)
+        #        icon_list.append(pixbuf)
+        #    except Exception as e:
+        #        print(f"Could not load icon size {size}: {e}")
+        #
+        #if icon_list:
+        #    Gtk.Window.set_default_icon_list(icon_list)
 
         try:
             self.mywin.set_icon_from_file(get_img_path("pyedpro.png"))
@@ -448,7 +461,7 @@ class EdMainWindow():
 
         self.tbar = self.merge.get_widget("/ToolBar")
         #self.tbar.set_tooltips(True)
-        self.tbar.set_icon_size(Gtk.IconSize.LARGE_TOOLBAR)
+        #self.tbar.set_icon_size(Gtk.IconSize.LARGE_TOOLBAR)
         self.tbar.show()
 
         self.hpaned = Gtk.HPaned(); self.hpaned.set_border_width(2)
@@ -1872,6 +1885,13 @@ class EdMainWindow():
 
         if pedconfig.conf.verbose:
             print ("activate_action with:", strx)
+
+        if strx == "Connect Viewer":
+            print("Connect viewer")
+            nn2 = notebook.get_current_page()
+            vcurr2 = notebook.get_nth_page(nn2)
+            if vcurr2:
+               print("file", vcurr2.area.fname)
 
         if strx == "Close All":
             self.closeall()

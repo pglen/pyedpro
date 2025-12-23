@@ -29,11 +29,13 @@ includex = [    "*", "panglib/",
                 "pedlib/", "pedlib/images", "pedlib/examples",
                 "image.png", "pyedpro_ubuntu.png"]
 
-#import shutil
-#shutil.copy("../README.md", "README.md")
-
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+# Make it location neutral
+try:
+    with open("README.md", "r", encoding="utf-8") as fh:
+        long_description = fh.read()
+except:
+    with open("../README.md", "r", encoding="utf-8") as fh:
+        long_description = fh.read()
 
 # Get version number  from the server support file:
 fp = open("pyedpro.py", "rt")
@@ -50,7 +52,7 @@ for aa in vvv.split("\n"):
 print("loc_vers:", loc_vers)
 #sys.exit()
 
-deplist = ["pyvpacker", "pydbase", "pyvguicom"] ,
+deplist = ["pyvpacker", "pydbase", "pyvguicom", "pygobject==3.50.1"] ,
 
 setuptools.setup(
     name="pyedpro",

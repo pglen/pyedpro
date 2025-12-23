@@ -3,7 +3,7 @@
 .PHONY: docs ver clean
 
 all:
-	@echo Targets: clean package docs pipup pipbuild
+	@echo Targets: clean package docs pipup pipbuild pipinstall
 
 clean:
 	@-find . -name "__pycache__" -exec rm -rf {} \;
@@ -63,7 +63,7 @@ docs:
 	@${PPP} -o pedlib/docs pedlib/pedync.py
 	@${PPP} -o pedlib/docs pedlib/stack.py
 
-pipup: pipbuild
+pipup: #pipbuild
 	@./pip-upload.sh
 
 pipbuild:
@@ -104,5 +104,10 @@ local-pipx-cycle:  local-pipx-uninstall local-pipx-install
 
 local-uninstall:
 	pip uninstall pyedpro
+
+pipinstall:
+	cp ../README.md .
+	pip install .
+	rm README.md
 
 # EOF

@@ -10,9 +10,19 @@ from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Pango
 
-ww = Gtk.Window()
+class myWindow(Gtk.Window):
+    def __init__(self):
+        super().__init__()
+
+ww = myWindow()
 ww.connect("delete-event", Gtk.main_quit)
 ww.connect("destroy", Gtk.main_quit)
+ww.set_default_size(300, 400)
+ww.add(Gtk.Label(label="Hello"))
+try:
+    ww.set_icon_from_file("pedlib/images/pyedpro.png")
+except:
+    pass
 
 ww.show_all()
 Gtk.main()

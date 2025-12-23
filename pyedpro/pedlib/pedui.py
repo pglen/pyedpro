@@ -81,6 +81,8 @@ ui_info = \
       <separator/>
       <menuitem action='Begin'/>
       <menuitem action='End'/>
+      <separator/>
+      <menuitem action='Connect Viewer'/>
     </menu>
 
     <menu action='MacrosMenu'>
