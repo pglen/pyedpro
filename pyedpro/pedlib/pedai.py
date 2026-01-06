@@ -68,6 +68,7 @@ class pgAI(Gtk.VBox):
 
     def __init__(self):
 
+        self.sock = None
         self. wasin = True
         self.stop = False
         #vbox = Gtk.VBox()
@@ -94,7 +95,7 @@ class pgAI(Gtk.VBox):
         self.entry = Gtk.TextView()
         self.lab2 = self.entry.get_buffer()
         scroll2 = Gtk.ScrolledWindow()
-        scroll2.set_size_request(-1, 140)
+        scroll2.set_size_request(-1, 100)
         scroll2.add(self.entry)
         frame = Gtk.Frame()
         #frame.set_label_widget(Gtk.Label(label="  Enter Text:  "))
@@ -138,7 +139,7 @@ class pgAI(Gtk.VBox):
         #hbox2.pack_start(self.butt, 0, 0, 2)
 
         self.lab = self.tv.get_buffer()
-        self.lab.set_text("AI Content")
+        self.lab.set_text("AI content will show here.")
         #self.lab = Gtk.Label(label="AI Content")
         #self.lab.set_line_wrap(True)
         scroll = Gtk.ScrolledWindow()
@@ -171,6 +172,7 @@ class pgAI(Gtk.VBox):
         pass
 
     def server(self, arg2):
+        self.lab.set_text("")
         try:
             self.exename = self.exeN.get_text()
             ret = subprocess.Popen([self.exename, "serve", ])
@@ -232,11 +234,21 @@ class pgAI(Gtk.VBox):
     #        print(sys.exc_info())
     #
 
+    def addstr(self, resp):
+        self.lab.insert(self.lab.get_end_iter(), resp)
+        mark = self.lab.create_mark(None, self.lab.get_end_iter(), "end")
+        self.tv.scroll_to_mark(mark, 0., False, 0., 0.)
+
     def send2(self, but):
         #print("but:", but)
 
         old = self.lab2.get_text(self.lab2.get_start_iter(),
                                     self.lab2.get_end_iter(), False)
+
+        if not old:
+            self.lab.set_text("Please input a query.")
+            return
+
         self.lab.set_text(old)
 
         localhost = "127.0.0.1"; port = 11434
@@ -282,7 +294,7 @@ class pgAI(Gtk.VBox):
         initial = True
         self.stop = False
         while True:
-            usleep(20)
+            usleep(10)
             if self.stop:
                 break
             # Windows are going away ... stop
@@ -291,12 +303,10 @@ class pgAI(Gtk.VBox):
             try:
                 rr, ww, xx = select.select([self.sock, ], [], [], 0.01)
                 if not rr:
-                    #print(rr)
                     continue
             except:
                 print("exc: sel", sys.exc_info())
-
-            retx = ""
+            retx = None
             try:
                 retx = self.sock.recv(4096)
             except BlockingIOError:
@@ -304,13 +314,10 @@ class pgAI(Gtk.VBox):
             except:
                 print("exc rec:", sys.exc_info())
                 break
-
             if not retx:
                 continue
-
             retx2 = retx.decode()
             #print("got: ['%s']" % retx2)
-
             ooo = {}
             if initial:
                 self.lab.set_text("")
@@ -318,34 +325,42 @@ class pgAI(Gtk.VBox):
                 idx = retx2.find("\r\n" * 2)
                 retx2 = retx2[idx:]
                 #print ("ini body: '%s'" % body)
-            idx  = retx2.find("{"); idx2 = retx2.find("}")
-            body = retx2[idx:idx+idx2]
-
+            idx  = retx2.find("{"); idx2 = retx2.rfind("}")
+            body = retx2[idx:idx+idx2-1]
             try:
                 ooo = json.loads(body)
             except:
                 print("exc: json", sys.exc_info(), body)
                 self.stop = True
-
             #print("Json:", ooo)
-
             if ooo.get("done"):
+                self.stop = True
+                break
+            if ooo.get("error"):
                 self.stop = True
                 break
             try:
                 resp = ooo.get('response',"")
                 if pedconfig.conf.verbose:
                     print ("resp: '%s'" % resp)
-
-                self.lab.insert(self.lab.get_end_iter(), resp)
-                #usleep(20)
-                mark = self.lab.create_mark(None, self.lab.get_end_iter(), "end")
-                self.tv.scroll_to_mark(mark, 0., False, 0., 0.)
+                self.addstr(resp)
             except:
                 self.stop = True
                 break
-
+        #print("final:", ooo)
+        try:
+            cnt = ooo.get('eval_count')
+            dur = ooo.get('eval_duration') / 1000000000
+            self.addstr("\n%d tokens, %.2f seconds (%.2f toks/sec)" % \
+                        (cnt, dur, cnt / dur) )
+        except:
+            pass
         self.sock.close()
+
+    def __del__(self):
+        #print("AI del")
+        if self.sock:
+            self.sock.close()
 
 #print(dir(ollama))
 

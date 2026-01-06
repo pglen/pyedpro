@@ -202,6 +202,7 @@ class EdMainWindow():
 
         #Gdk.threads_init()
         self.togstrip = True
+        self.parent = parent
 
         pedconfig.conf.pedwin = self
 
@@ -265,6 +266,7 @@ class EdMainWindow():
         # Create the toplevel window
         #window = Gtk.Window(Gtk.WINDOW_TOPLEVEL)
         self.mywin = Gtk.Window()
+        self.popbase = PopBase(self.mywin)
 
         #www = Gdk.screen_width(); hhh = Gdk.screen_height();
 
@@ -526,7 +528,6 @@ class EdMainWindow():
                 print(sys.exc_info())
                 if pedconfig.conf.verbose:
                     put_exception("load AI tab")
-
         try:
             notebook2.append_page(pedcal.pgcal())
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
@@ -537,7 +538,6 @@ class EdMainWindow():
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
                 pedutil.put_exception("cal tab")
-
         try:
             notebook2.append_page(pednotes.pgnotes())
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
@@ -551,7 +551,6 @@ class EdMainWindow():
 
             if pedconfig.conf.pgdebug > 2:
                 put_exception("Notes")
-
         try:
             notebook2.append_page(pedoline.pgoline())
             ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
@@ -562,7 +561,6 @@ class EdMainWindow():
             if pedconfig.conf.verbose:
                 print(sys.exc_info())
                 pedutil.put_exception("outline")
-
         try:
             pw = pedweb.pgweb()
             notebook2.append_page(pw)
@@ -782,7 +780,7 @@ class EdMainWindow():
         #self.mywin.show_all()
 
         pedfind.load_find_history(False)
-        self.update_statusbar("Initial", True)
+        self.update_statusbar("Initial.", True)
 
         # Add to accounting:
         self.start_time = time.time()
@@ -1891,7 +1889,7 @@ class EdMainWindow():
             nn2 = notebook.get_current_page()
             vcurr2 = notebook.get_nth_page(nn2)
             if vcurr2:
-               print("file", vcurr2.area.fname)
+               print("file", vcurr.area.fname)
 
         if strx == "Close All":
             self.closeall()
@@ -2323,8 +2321,9 @@ class EdMainWindow():
         finally:
             self.update_statusbar("Started terminal '%s'" % exename)
 
-    def status_hist(self, arg1, arg2):
+    def status_hist(self, arg1):
         print("hist pressed")
+        self.update_statusbar("Hist .. Not implemented.")
         pass
 
     # -------------------------------------------------------------------
@@ -2429,14 +2428,15 @@ class EdMainWindow():
         #self.statusbar2.push(0, strx2)
         self.slab2.set_text(strx2)
 
-    def status_lang(self, atg1, arf2):
+    def status_lang(self, atg1):
         print("Lang pressed")
+        self.update_statusbar("Lang .. Not implemented.")
 
     def update_statusbar(self, strx, nolog = False):
         # Clear any previous message, underflow is allowed
         #self.statusbar.pop(0)
         if not strx:
-            self.update_statusbar("Idle", True)
+            self.update_statusbar("Idle.", True)
             return
 
         #self.statusbar.push(0, strx)
@@ -2444,6 +2444,30 @@ class EdMainWindow():
         self.slab.set_text(strx)
         if not nolog:
             pedlog.log(strx)
+        if not self.filter_popbase(strx):
+            self.popbase.submit(strx, 2000 + len(strx) * 400)
+
+    def filter_popbase(self, strx):
+
+        ''' Return TRUE for no popup display '''
+
+        if strx == "":
+            return True
+        if beginswith(strx, "Searching at"):
+            return True
+        if beginswith(strx,  "Switched to"):
+            return True
+        if beginswith(strx, "Idle."):
+            return True
+        if beginswith(strx, "Initial."):
+            return True
+        if beginswith(strx, "Opening "):
+            return True
+        if beginswith(strx, "Backed up"):
+            return True
+        if beginswith(strx, "Esc."):
+            return True
+        # Falling thrue
 
     def update_resize_grip(self, widget, event):
         #print "update state", event, event.changed_mask

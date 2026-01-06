@@ -198,8 +198,8 @@ class pgweb(Gtk.VBox):
             pass
         except:
             #self.brow_win = Gtk.Label(label="No WebView Available.")
-            if pedconfig.conf.verbose:
-                put_exception("WebView load")
+            #if pedconfig.conf.verbose:
+            put_exception("WebView load")
 
         #print("browwin", self.brow_win)
 
@@ -266,6 +266,8 @@ class pgweb(Gtk.VBox):
 
         #Gtk.connect
         #self.connect("window_state_event", self.eventx)
+        #if pedconfig.conf.verbose:
+        #    print("Loaded web view.")
 
     def popx(self, arg):
 

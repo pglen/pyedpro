@@ -614,7 +614,7 @@ class ActHand(acthand2.ActHand2):
 
     def esc(self, self2):
 
-        self2.mained.update_statusbar("Esc")
+        self2.mained.update_statusbar("Esc.")
         self2.clearsel()
         if pedconfig.conf.pgdebug > 4:
             print ("ESC")

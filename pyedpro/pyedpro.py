@@ -70,6 +70,9 @@ Pyedpro functions near identical on Linux / Windows / Mac / Raspberry PI
  See also the INSTALL file.
 
 '''
+import logging
+# Set the logging level to DEBUG to see all messages
+logging.basicConfig(level=logging.DEBUG)
 
 import os, sys, getopt, signal, time, platform, atexit, warnings
 
@@ -137,8 +140,8 @@ def tracer(frame, event, arg):
 
 warnings.simplefilter("default")
 
-VERSION     = "3.8.0"
-BUILDDATE   = "Wed 10.Dec.2025"
+VERSION     = "3.9.0"
+BUILDDATE   = "Wed 24.Dec.2025"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

@@ -642,6 +642,10 @@ def  selasci2(strx, xidx, addi = ""):
 
     return cntb, cnte
 
+def beginswith(strx, strbeg):
+    if strx[:len(strbeg)] == strbeg:
+        return True
+
 # ------------------------------------------------------------------------
 # Convert tabs into apprporiate spaces:
 
@@ -993,22 +997,19 @@ def uni(xtab):
 
     return ccc
 
-def is_ascii(strx):
-
-    pos = 0; lenx = len(strx)
-    while True:
-        if pos >= lenx:
-            break
-
-        chh = strx[pos]
-        #print (ord(chh))
-        if ord(chh) > 127:
-            #print (ord(chh))
-            if pos == 0: pos += 1
-            return pos
-        pos+= 1
-
-    return 0
+#def is_ascii(strx):
+#    pos = 0; lenx = len(strx)
+#    while True:
+#        if pos >= lenx:
+#            break
+#        chh = strx[pos]
+#        #print (ord(chh))
+#        if ord(chh) > 127:
+#            #print (ord(chh))
+#            if pos == 0: pos += 1
+#            return pos
+#        pos+= 1
+#    return 0
 
 def kill_non_ascii(strx):
 
