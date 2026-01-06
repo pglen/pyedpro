@@ -140,8 +140,8 @@ def tracer(frame, event, arg):
 
 warnings.simplefilter("default")
 
-VERSION     = "3.9.0"
-BUILDDATE   = "Wed 24.Dec.2025"
+VERSION     = "3.9.1"
+BUILDDATE   = "Wed 07.Jan.2026"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------

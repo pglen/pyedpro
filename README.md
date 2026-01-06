@@ -111,6 +111,7 @@ it works. And no destructive errors.
 ### History:
 
     (this is extracted, use git log for up-to-date information)
+    3.9.1   Wed 07.Jan.2026 -- Added sliding popup
     3.7.9   Tue 02.Dec.2025 -- Corrected pydlg modal keyword
     3.7.5   Sat 15.Nov.2025 -- Tested pipx on newer linux (es)
     3.7.4   Sat 25.Oct.2025 -- Updated left side function displays
