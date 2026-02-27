@@ -132,7 +132,7 @@ def run_async_time(win, arg):
     try:
         win.mained.update_treestore(sumw, sumnum)
     except:
-        if pedconfig.conf.verbose > 2:
+        if pedconfig.conf.verbose > 0:
             # This is 'normal', ignore it
             print("exc run_async_time", sys.exc_info())
         pass
@@ -246,7 +246,7 @@ def _walk_one(self, sline, backstr, keywords, backstr2 = "" ):
         beginx = 0 ; endd = 0
         regex = re.compile(backstr)
         # Walk back
-        for aa in range(int(sline), 0, -1):
+        for aa in range(int(sline)-1, -1, -1):
             line = self.text[aa]
             res = regex.search(line)
             if res:
@@ -291,7 +291,7 @@ def _walk_one(self, sline, backstr, keywords, backstr2 = "" ):
         #        sumw2.append(line)
 
     except:
-        if pedconfig.conf.verbose > 2:
+        if pedconfig.conf.verbose > 0:
             #print("Exception in walk handler", sys.exc_info())
             put_exception("Walk handler")
         pass
@@ -340,7 +340,7 @@ def walk_func(self):
     try:
         self.mained.update_treestore2(sumw2)
     except:
-        if pedconfig.conf.verbose > 2:
+        if pedconfig.conf.verbose > 0:
             # This is normal, ignore it
             print("walk2", sys.exc_info())
         pass

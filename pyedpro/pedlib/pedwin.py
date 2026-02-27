@@ -2444,8 +2444,8 @@ class EdMainWindow():
         self.slab.set_text(strx)
         if not nolog:
             pedlog.log(strx)
-        if not self.filter_popbase(strx):
-            self.popbase.submit(strx, 2000 + len(strx) * 400)
+        #if not self.filter_popbase(strx):
+        #    self.popbase.submit(strx, 2000 + len(strx) * 400)
 
     def filter_popbase(self, strx):
 

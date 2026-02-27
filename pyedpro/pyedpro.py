@@ -140,8 +140,8 @@ def tracer(frame, event, arg):
 
 warnings.simplefilter("default")
 
-VERSION     = "3.9.1"
-BUILDDATE   = "Wed 07.Jan.2026"
+VERSION     = "3.9.5"
+BUILDDATE   = "Fri 27.Feb.2026"
 PROGNAME    = "PyEdPro"
 
 # ------------------------------------------------------------------------
@@ -365,7 +365,8 @@ def mainstart(name = "", args = "", oldpath = ""):
                 print("making", pedconfig.conf.config_dir)
             os.mkdir(pedconfig.conf.config_dir)
     except:
-        pass
+        if pedconfig.conf.verbose:
+            print("exception on create dir:", pedconfig.conf.config_dir)
 
     # Let the user know if it needs fixin'
     if not os.path.isdir(pedconfig.conf.config_dir):
@@ -421,7 +422,7 @@ def mainstart(name = "", args = "", oldpath = ""):
 
     # Uncomment this for buffered output
     if pedconfig.conf.verbose:
-        print("Started:", PROGNAME, "in", pedconfig.conf.orig_dir)
+        print("Started:", PROGNAME, VERSION, "in", pedconfig.conf.orig_dir)
         print("From dir", pedconfig.conf.orig_path)
 
     if pedconfig.conf.pgdebug > 2:

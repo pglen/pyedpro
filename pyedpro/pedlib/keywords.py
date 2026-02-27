@@ -58,7 +58,7 @@ vwalk =   "module"
 vkeywords  = "(module )|(endmodule )|(import )(always)"
 vkeywords2 = "(if )|(else )|(end )|(wire )|(input )(output )"
 
-commwords = "*.c", ".h", ".h", ".y", ".l", ".f", ".v"
+commwords = ".c", ".h", ".h", ".y", ".l", ".f", ".v"
 
 '''
  Keywords for auto correct. This corrects strings as we type.

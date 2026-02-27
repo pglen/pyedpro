@@ -499,16 +499,17 @@ class KeyHand:
         #print ("KEY:",   event.keyval  )
         # Ramp up debug level
         if pedconfig.conf.pgdebug > 6:
-             print( "key val ",  event.keyval, "key name", event.string)
+             print( "key val ",  event.keyval, "key name",
+                                    Gdk.keyval_name(event.keyval))
         if pedconfig.conf.pgdebug > 7:
-            print( "key event",  event.type)
+            print( "key type",  event.type)
         if pedconfig.conf.pgdebug > 8:
             print( "key state",  event.state)
+
         if pedconfig.conf.show_keys:
-            print ("Key: '%s'" % event.string,
-                      "%d (0x%x)" % (event.keyval, event.keyval), "type:", int(event.type))
-            if pedconfig.conf.verbose:
-                print ("KEYSTR:", event.state, event.string)
+            print ("Key: '%s' '%s' " % (event.string, Gdk.keyval_name(event.keyval)),
+                      "%d (0x%x)" % (event.keyval, event.keyval),
+                        "type:", int(event.type), "state:", int(event.state))
         try:
             pedplug.keypress(self, event)
         except:

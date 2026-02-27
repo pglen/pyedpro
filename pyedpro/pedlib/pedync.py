@@ -16,6 +16,7 @@ from gi.repository import GObject
 from gi.repository import GdkPixbuf
 
 from pedlib import pedconfig
+import pyvguicom.pggui as pggui
 
 # ------------------------------------------------------------------------
 
@@ -115,7 +116,8 @@ def  about(self2):
         "\nRunning on Python %s" % platform.python_version() +\
         "\non %s %s\n" % (platform.system(), platform.release()) +\
         "\nBuild Date: %s\n" % pedconfig.conf.build_date +\
-        "Script path:\n%s\n" % os.path.realpath(ddd)
+        "\nLib: pyvgui version: %s\n" % pggui.VERSION +\
+        "\nScript path:\n%s\n" % os.path.realpath(ddd)
 
     dialog.set_comments(comm);
     dialog.set_copyright(pedconfig.conf.progname + " Created by Peter Glen.\n"
