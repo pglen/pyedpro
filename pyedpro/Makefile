@@ -63,7 +63,7 @@ docs:
 	@${PPP} -o pedlib/docs pedlib/pedync.py
 	@${PPP} -o pedlib/docs pedlib/stack.py
 
-pipup: #pipbuild
+pipup: pipbuild
 	@./pip-upload.sh
 
 pipbuild:

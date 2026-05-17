@@ -223,6 +223,7 @@ class EdMainWindow():
         self.altkey = False
         self.names = names
         self.show_menu = True
+        self.show_butts = True
         self.show_tbar = True
         self.old_x = 0
         self.old_y = 0
@@ -632,15 +633,15 @@ class EdMainWindow():
         self.hbox3.pack_start(shbox, 1, 1, 2)
         self.hbox3.pack_start(self.slab2, 0, 0, 2)
 
-        bbox = Gtk.VBox()
-        nbox = Gtk.HBox()
-        obox = Gtk.VBox()
+        self.bbox = Gtk.VBox()
+        self.nbox = Gtk.HBox()
+        self.obox = Gtk.VBox()
 
-        obox.pack_start(self.mbar, 0, 0, 0)
-        obox.pack_start(self.tbar, 0, 0, 0)
-        nbox.pack_start(obox, 0, 0, 0)
+        self.obox.pack_start(self.mbar, 0, 0, 0)
+        self.obox.pack_start(self.tbar, 0, 0, 0)
+        self.nbox.pack_start(self.obox, 0, 0, 0)
 
-        obox3 = Gtk.HBox()
+        self.obox3 = Gtk.HBox()
         obox2 = Gtk.VBox()
         self.newbox = Gtk.HBox()
         self.newbox2 = Gtk.HBox()
@@ -660,14 +661,14 @@ class EdMainWindow():
             #butt.connect("pressed", self.buttA, aa + 1)
             self.newbox.pack_start(butt, 1, 1, 0)
         self.newbox.pack_start(Gtk.Label(label=" "), 0, 0, 0)
-        combox = Gtk.VBox()
-        combox.pack_start(self.newbox, 1, 1, 1)
+        self.combox = Gtk.VBox()
+        self.combox.pack_start(self.newbox, 1, 1, 1)
         newscroll = Gtk.ScrolledWindow()
         newscroll.set_overlay_scrolling(False)
         newscroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.NEVER)
 
         warnings.simplefilter("ignore")
-        newscroll.add_with_viewport(combox)
+        newscroll.add_with_viewport(self.combox)
         warnings.simplefilter("default")
 
         obox2.pack_start(newscroll, 1, 1, 0)
@@ -684,7 +685,7 @@ class EdMainWindow():
             #butt.connect("pressed", self.buttB, aa + 1)
             self.newbox2.pack_start(butt, 1, 1, 0)
         self.newbox2.pack_start(Gtk.Label(label=" "), 0, 0, 0)
-        combox.pack_start(self.newbox2, 1, 1, 1)
+        self.combox.pack_start(self.newbox2, 1, 1, 1)
 
         leftb = Gtk.Button(label="<")
         rightb = Gtk.Button(label=">")
@@ -695,17 +696,17 @@ class EdMainWindow():
         oscroll.set_hadjustment(adj)
         oscroll.get_hscrollbar().hide()
         oscroll.add(obox2)
-        obox3.pack_start(oscroll, 1, 1, 0)
+        self.obox3.pack_start(oscroll, 1, 1, 0)
         #obox3.pack_start(obox2, 1,1,0)
 
         #obox3.pack_start(rightb, 0,0,0)
-        nbox.pack_start(obox3, 1, 1, 0)
-        bbox.pack_start(nbox, 0, 0, 0)
-        bbox.pack_start(self.hpaned3, 1, 1, 0)
+        self.nbox.pack_start(self.obox3, 1, 1, 0)
+        self.bbox.pack_start(self.nbox, 0, 0, 0)
+        self.bbox.pack_start(self.hpaned3, 1, 1, 0)
 
         # Buttom statubar
-        #bbox.pack_start(self.hpaned2, 0, 0, 0)
-        bbox.pack_start(self.hbox3, 0, 0, 0)
+        #self.bbox.pack_start(self.hpaned2, 0, 0, 0)
+        self.bbox.pack_start(self.hbox3, 0, 0, 0)
 
         #self.hpaned2.modify_bg(Gtk.StateType.NORMAL, Gdk.color_parse("#888888"))
 
@@ -738,7 +739,6 @@ class EdMainWindow():
         button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
         button.set_tooltip_text("Show / Hide Toolbar")
         box.add(button)
-        box.add(Gtk.Label(label=" "))
         button.connect("pressed", self.ttt)
 
         button = Gtk.Button()
@@ -746,6 +746,19 @@ class EdMainWindow():
         button.connect("pressed", self.mmm)
         button.set_tooltip_text("Show / Hide menu")
         box.add(button)
+
+        button = Gtk.Button()
+        button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
+        button.connect("pressed", self.bbb)
+        button.set_tooltip_text("Show / Hide button bar")
+        box.add(button)
+
+        button = Gtk.Button()
+        button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
+        button.connect("pressed", self.rrr)
+        button.set_tooltip_text("Hide window title bar")
+        box.add(button)
+
         box.add(Gtk.Label(label="   "))
 
         button = Gtk.Button()
@@ -758,6 +771,7 @@ class EdMainWindow():
         button.add(Gtk.Arrow(Gtk.ArrowType.RIGHT, Gtk.ShadowType.NONE))
         button.connect("pressed", self.bright)
         box.add(button)
+
         warnings.simplefilter("default")
 
         # See if session is remembred
@@ -768,6 +782,7 @@ class EdMainWindow():
         self.headbar.pack_start(box)
         self.sess_label =  Gtk.Label(label=self.sess)
         self.headbar.pack_start(self.sess_label)
+
         self.root_label =  Gtk.Label(label=self.rootlab)
         self.headbar.pack_start(self.root_label)
 
@@ -786,7 +801,7 @@ class EdMainWindow():
         self.start_time = time.time()
         timesheet("Started pyedpro", self.start_time, 0)
 
-        self.mywin.add(bbox)
+        self.mywin.add(self.bbox)
         self.mywin.show_all()
 
         if 1: #not self.mac:
@@ -1003,6 +1018,16 @@ class EdMainWindow():
             self.mbar.show()
         else:
             self.mbar.hide()
+
+    def bbb(self, butt):
+        self.show_butts = not self.show_butts
+        if self.show_butts:
+            self.obox3.show()
+        else:
+            self.obox3.hide()
+
+    def rrr(self, butt):
+        self.mywin.set_decorated(False)
 
     def doall(self, butt):
         #pedync.message("\n" + "Under construction" + "\n")
