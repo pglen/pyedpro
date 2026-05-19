@@ -106,6 +106,7 @@ rclick_menu = (
     ( _("File Actions"),  None,             rclick_action, 14, rclick_menu3 ),
     ( "",               None,               None, 10, "<Separator>" ),
     ( _("Read Selection"), None,            rclick_action, 16, None ),
+    ( _("Restore Controls"), None,          rclick_action, 28, None ),
     ( "",               None,               None, 12, "<Separator>" ),
     ( _("E_xit\t\t"),          "<alt>X",        rclick_quit, 13, None ),
     )

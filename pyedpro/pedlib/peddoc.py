@@ -1665,6 +1665,9 @@ class pedDoc(Gtk.DrawingArea, peddraw.peddraw, pedxtnd.pedxtnd, pedtask.pedtask)
         elif ttt == 27:
             #print("Alt-Y")
             self.check_syntax()
+        elif ttt == 28:
+            #print("Restore controls")
+            self.mained.showctrls()
         else:
             print("peddoc: Invalid menu item selected", ttt)
 

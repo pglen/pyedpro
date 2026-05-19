@@ -232,6 +232,7 @@ class EdMainWindow():
         self.os = itemhistory(pedconfig.conf.sessions)
         self.sess = "initial.sess"
         self.rootlab = ""
+        self.nbutton = None
         if pedconfig.conf.keylog_on:
             self.klfp = open(pedconfig.conf.keylog_file, "at")
         else:
@@ -381,7 +382,7 @@ class EdMainWindow():
         # Create note for the main window, give access to it for all
         notebook = Gtk.Notebook.new(); self.notebook = notebook
         #notebook.size_allocate(Gdk.Rectangle(0, 0, 10,10))
-
+        notebook.connect("motion-notify-event", self.notemouse)
         #notebook.popup_enable()
         notebook.set_scrollable(True)
         # test
@@ -442,6 +443,7 @@ class EdMainWindow():
         #notebook.connect("enter-notify-event", self.note_enter_notify)
 
         notebook.connect("button-press-event", self.note_button)
+        notebook.connect("button-release-event", self.note_button_up)
         self.mywin.connect("window_state_event", self.update_resize_grip)
         self.mywin.connect("delete-event", OnExit)
         #self.mywin.connect("unmap", OnExit, self)
@@ -753,10 +755,12 @@ class EdMainWindow():
         button.set_tooltip_text("Show / Hide button bar")
         box.add(button)
 
+        box.add(Gtk.Label(label="   "))
+
         button = Gtk.Button()
         button.add(Gtk.Arrow(Gtk.ArrowType.DOWN, Gtk.ShadowType.NONE))
         button.connect("pressed", self.rrr)
-        button.set_tooltip_text("Hide window title bar")
+        button.set_tooltip_text("Hide all tool buttons, menus and window title bar")
         box.add(button)
 
         box.add(Gtk.Label(label="   "))
@@ -792,7 +796,7 @@ class EdMainWindow():
         #signal.signal(signal.SIGALRM, handler_tick)
         #signal.alarm(1)
         # Show newly created buffers:
-        #self.mywin.show_all()
+        self.mywin.show_all()
 
         pedfind.load_find_history(False)
         self.update_statusbar("Initial.", True)
@@ -824,7 +828,16 @@ class EdMainWindow():
         #threading.Thread(target=self.ThredMine, daemon=True).start()
         #GLib.timeout_add(1000, self.ThredCallback)
 
-    #Gtk.Action
+    def notemouse(self, arg1 = None, arg2 = None):
+        if notebook.get_window() == arg1.get_window():
+            if self.nbutton:
+                #print("butt", self.nbutton.button.button)
+                if self.nbutton.button.button == 1:
+                    #print("Note button move", arg2.x - self.nbutton.x,
+                    #            arg2.y - self.nbutton.y, self.nbutton.button)
+                    curr = self.mywin.get_position()
+                    self.mywin.move(curr[0]+arg2.x - self.nbutton.x,
+                                curr[1] + arg2.y - self.nbutton.y )
 
     def activate_webtab(self):
         ppp = self.notebook2.get_nth_page(self.notebook2.get_n_pages()-1)
@@ -889,8 +902,17 @@ class EdMainWindow():
         pass
 
     def note_button(self, arg1, arg2):
-        #print("note_button", arg1, arg2)
-        pass
+        # Gdk.EventButton
+        #print("note_button", arg1, arg2.button)
+        if arg2.button == 3:
+            #print("Right on notebook")
+            self.showctrls()
+        self.nbutton = arg2.copy()
+
+    def note_button_up(self, arg1, arg2):
+        # Gdk.EventButton
+        #print("note_button_up", arg1, arg2.button)
+        self.nbutton = None
 
     def ThredMine(self):
         cnt = 0
@@ -1027,7 +1049,18 @@ class EdMainWindow():
             self.obox3.hide()
 
     def rrr(self, butt):
+        self.tbar.hide()
+        self.mbar.hide()
+        self.obox3.hide()
         self.mywin.set_decorated(False)
+        self.update_statusbar("Hiding title bar. Restore from right click menu.")
+
+    def showctrls(self):
+        self.update_statusbar("Restored controls")
+        self.mywin.set_decorated(True)
+        self.tbar.show()
+        self.mbar.show()
+        self.obox3.show()
 
     def doall(self, butt):
         #pedync.message("\n" + "Under construction" + "\n")
@@ -2232,7 +2265,7 @@ class EdMainWindow():
         vcurr2 = notebook.get_nth_page(nn2)
         self.mywin.set_focus(vcurr2.vbox.area)
         notebook.remove_page(nn)
-        self.mywin.show_all()
+        #self.mywin.show_all()
 
     def  firstwin(self):
         cc = notebook.get_n_pages()
@@ -2242,7 +2275,7 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         self.mywin.set_focus(vcurr2.vbox.area)
-        self.mywin.show_all()
+        #self.mywin.show_all()
 
     def  lastwin(self):
         cc = notebook.get_n_pages()
@@ -2252,7 +2285,7 @@ class EdMainWindow():
         nn2 = notebook.get_current_page()
         vcurr2 = notebook.get_nth_page(nn2)
         self.mywin.set_focus(vcurr2.vbox.area)
-        self.mywin.show_all()
+        #self.mywin.show_all()
 
     def  nextwin(self):
         cc = notebook.get_n_pages()
@@ -2397,7 +2430,11 @@ class EdMainWindow():
         # Add to the list of buffers
         add_page(vpaned)
         vpaned.area.set_tablabel()
-        self.mywin.show_all()
+
+        #self.mywin.show_all()
+        #self.mywin.show()
+        vpaned.show_all()
+
         # Make it current
         nn = notebook.get_n_pages()
         if nn:
