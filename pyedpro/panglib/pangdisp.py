@@ -203,11 +203,11 @@ class PangoView(Gtk.Window):
     def add_text_xtag(self, text, tags, flag=False):
         if flag:
             try: self.buffer_2.get_tag_table().add(tags)
-            except: pass
+            except Exception: pass
             self.buffer_2.insert_with_tags(self.iter2, text, tags)
         else:
             try: self.buffer_1.get_tag_table().add(tags)
-            except: pass
+            except Exception: pass
 
             self.buffer_1.insert_with_tags(self.iter, text, tags)
         self.waiting = False

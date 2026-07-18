@@ -176,7 +176,7 @@ if __name__ == '__main__':
             if(pyedlib.pedconfig.conf.verbose):
                 print("making", pyedlib.pedconfig.con.config_dir)
             os.mkdir(pyedlib.pedconfig.conf.config_dir)
-    except: pass
+    except Exception: pass
 
     # Let the user know if it needs fixin'
     if not os.path.isdir(pyedlib.pedconfig.conf.config_dir):
