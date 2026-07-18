@@ -1430,7 +1430,7 @@ class ActHand(acthand2.ActHand2):
 
             try:
                 bb = xstr.split(" ")[0].split(":")
-            except: pass
+            except Exception: pass
             #print ("TREE sel", bb)
             # See if match on the same line
             try:
@@ -1471,7 +1471,7 @@ class ActHand(acthand2.ActHand2):
             # Get back numbers the python way
             try:
                 bb = xstr.split(" ")[0].split(":")
-            except: pass
+            except Exception: pass
             #-print ("TREE sel", bb)
             # See if match on the same line
             if int(bb[1]) == yidx:

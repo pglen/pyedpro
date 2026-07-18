@@ -558,7 +558,7 @@ class Canvas(Gtk.DrawingArea):
                 #print("Please select two objects to disconnect")
                 print("disconnecting", ccc[0].text, ccc[1].text)
                 try:    ccc[0].other.remove(ccc[1].id)
-                except: pass
+                except Exception: pass
             else:
                 for dd in ccc:
                     dd.other = []
