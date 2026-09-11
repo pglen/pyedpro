@@ -302,6 +302,34 @@ def ncompare(model, row1, row2, user_data):
     else:
         return 1
 
+def pcompare(model, row1, row2, user_data):
+    sort_column, _ = model.get_sort_column_id()
+    value1 = str2mode(model.get_value(row1, sort_column))
+    value2 = str2mode(model.get_value(row2, sort_column))
+    #print("p", sort_column, value1, value2, type(value1))
+
+    if int(value1) < int(value2):
+        return -1
+    elif int(value1) == int(value2):
+        return 0
+    else:
+        return 1
+
+def dcompare(model, row1, row2, user_data):
+    sort_column, _ = model.get_sort_column_id()
+    value1 = model.get_value(row1, sort_column)
+    value1t = time.mktime(time.strptime(value1))
+    value2 = model.get_value(row2, sort_column)
+    value2t = time.mktime(time.strptime(value2))
+    #print("d", sort_column, value1t, value2t, type(value1t))
+
+    if int(value1t) < int(value2t):
+        return -1
+    elif int(value1t) == int(value2t):
+        return 0
+    else:
+        return 1
+
 def create_ftree(ts, text = None):
 
     # create the tview using ts
@@ -312,6 +340,8 @@ def create_ftree(ts, text = None):
     #tv.set_enable_search(True)
     ts.set_sort_func(0, compare, None)
     ts.set_sort_func(1, ncompare, None)
+    ts.set_sort_func(2, pcompare, None)
+    ts.set_sort_func(3, dcompare, None)
 
     # create a CellRendererText to render the data
     cell = Gtk.CellRendererText()
@@ -336,6 +366,7 @@ def create_ftree(ts, text = None):
     tvcolumn3 = Gtk.TreeViewColumn('Perm')
     tvcolumn3.set_min_width(120)
     tvcolumn3.pack_start(cell3, True)
+    tvcolumn3.set_sort_column_id(2)
     tvcolumn3.add_attribute(cell3, 'text', 2)
     tv.append_column(tvcolumn3)
 
@@ -433,7 +464,6 @@ def area_key(area, event, self):
 
     return None
 
-# ------------------------------------------------------------------------
 def mode2str(mode):
 
     #print mode, oct(mode), hex(mode)
@@ -456,5 +486,33 @@ def mode2str(mode):
 
     estr = dstr + estr
     return estr
+
+def str2mode(mstr):
+
+    #print mode, oct(mode), hex(mode)
+
+    mode = 0
+    for aa in mstr:
+        if aa == "r":
+            mode |= 1
+        elif aa == "w":
+            mode |= 2
+        elif aa == "x":
+            mode |= 4
+        elif aa == "d":
+            mode |= 8
+        else:
+            continue
+        #print(aa, hex(mode))
+        mode <<= 3
+
+    return mode
+
+if __name__ == '__main__':
+
+    mmm = mode2str(0x777)
+    print(mmm)
+    ooo = str2mode(mmm)
+    print(ooo)
 
 # eof
